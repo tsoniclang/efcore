@@ -1,0 +1,1988 @@
+{
+  "namespace": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal",
+  "types": [
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.CompositeValueConverter\u00603",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.CompositeValueConverter\u00603",
+      "tsEmitName": "CompositeValueConverter_3",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.CompositeValueConverter\u00603::.ctor(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664929,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.CompositeValueConverter\u00603",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.CompositeValueConverter\u00603",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664929
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602",
+      "tsEmitName": "StringCharConverter_2",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664931,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664931
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
+      "tsEmitName": "StringDateOnlyConverter_2",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664934,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664934
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
+      "tsEmitName": "StringDateTimeConverter_2",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664938,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664938
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
+      "tsEmitName": "StringDateTimeOffsetConverter_2",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664942,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664942
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+      "tsEmitName": "StringEnumConverter_3",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603::ConvertToEnum(System.String):TEnum",
+          "clrName": "ConvertToEnum",
+          "tsEmitName": "convertToEnum",
+          "metadataToken": 100664949,
+          "canonicalSignature": "(System.String):TEnum",
+          "normalizedSignature": "ConvertToEnum|(System.String):TEnum|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 1,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664946,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "convertToEnum",
+          "isStatic": true,
+          "tsSignatureId": "ConvertToEnum|(System.String):TEnum|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664949
+          }
+        },
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664946
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
+      "tsEmitName": "StringGuidConverter_2",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664950,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664950
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
+      "tsEmitName": "StringNumberConverter_3",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664954,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664954
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
+      "tsEmitName": "StringTimeOnlyConverter_2",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664958,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664958
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
+      "tsEmitName": "StringTimeSpanConverter_2",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664962,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664962
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602",
+      "tsEmitName": "StringUriConverter_2",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602::.ctor(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "metadataToken": 100664966,
+          "canonicalSignature": "(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "composeWith",
+          "isStatic": false,
+          "tsSignatureId": "ComposeWith|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664897
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "convertToProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876289
+          }
+        },
+        {
+          "tsName": "convertFromProvider",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProvider|:System.Func_2[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876290
+          }
+        },
+        {
+          "tsName": "convertToProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876291
+          }
+        },
+        {
+          "tsName": "convertFromProviderTyped",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderTyped|:Func_2|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876292
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876293
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:Expression_1|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876294
+          }
+        },
+        {
+          "tsName": "modelClrType",
+          "isStatic": false,
+          "tsSignatureId": "ModelClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876295
+          }
+        },
+        {
+          "tsName": "providerClrType",
+          "isStatic": false,
+          "tsSignatureId": "ProviderClrType|:System.Type|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876296
+          }
+        },
+        {
+          "tsName": "constructorExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876297
+          }
+        },
+        {
+          "tsName": "convertToProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertToProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876278
+          }
+        },
+        {
+          "tsName": "convertFromProviderExpression",
+          "isStatic": false,
+          "tsSignatureId": "ConvertFromProviderExpression|:System.Linq.Expressions.LambdaExpression|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876279
+          }
+        },
+        {
+          "tsName": "mappingHints",
+          "isStatic": false,
+          "tsSignatureId": "MappingHints|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876282
+          }
+        },
+        {
+          "tsName": "convertsNulls",
+          "isStatic": false,
+          "tsSignatureId": "ConvertsNulls|:System.Boolean|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385876283
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100664966
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "namespace": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal",
+  "contributingAssemblies": [
+    "Microsoft.EntityFrameworkCore"
+  ],
+  "types": [
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.CompositeValueConverter\u00603",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.CompositeValueConverter\u00603",
+      "tsEmitName": "CompositeValueConverter_3",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 3,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602",
+      "tsEmitName": "StringCharConverter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
+      "tsEmitName": "StringDateOnlyConverter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
+      "tsEmitName": "StringDateTimeConverter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
+      "tsEmitName": "StringDateTimeOffsetConverter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+      "tsEmitName": "StringEnumConverter_3",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 3,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603::ConvertToEnum(System.String):TEnum",
+          "clrName": "ConvertToEnum",
+          "tsEmitName": "convertToEnum",
+          "normalizedSignature": "ConvertToEnum|(System.String):TEnum|static=true",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 1,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
+      "tsEmitName": "StringGuidConverter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
+      "tsEmitName": "StringNumberConverter_3",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 3,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
+      "tsEmitName": "StringTimeOnlyConverter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
+      "tsEmitName": "StringTimeSpanConverter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602",
+      "tsEmitName": "StringUriConverter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3
+        }
+      ]
+    }
+  ]
+}

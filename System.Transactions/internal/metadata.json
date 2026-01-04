@@ -1,0 +1,58 @@
+{
+  "namespace": "System.Transactions",
+  "contributingAssemblies": [
+    "Microsoft.EntityFrameworkCore",
+    "System.Transactions.Local"
+  ],
+  "types": [
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions",
+      "clrName": "System.Transactions.TransactionsDatabaseFacadeExtensions",
+      "tsEmitName": "TransactionsDatabaseFacadeExtensions",
+      "kind": "StaticNamespace",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": true,
+      "isStatic": true,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions::EnlistTransaction(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void",
+          "clrName": "EnlistTransaction",
+          "tsEmitName": "enlistTransaction",
+          "normalizedSignature": "EnlistTransaction|(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void|static=true",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions::GetEnlistedTransaction(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade):System.Transactions.Transaction",
+          "clrName": "GetEnlistedTransaction",
+          "tsEmitName": "getEnlistedTransaction",
+          "normalizedSignature": "GetEnlistedTransaction|(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade):System.Transactions.Transaction|static=true",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 1,
+          "isExtensionMethod": true
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    }
+  ]
+}
