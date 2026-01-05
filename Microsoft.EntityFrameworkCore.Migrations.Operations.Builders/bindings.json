@@ -1,0 +1,746 @@
+{
+  "namespace": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders",
+  "types": [
+    {
+      "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+      "clrName": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+      "tsEmitName": "AlterOperationBuilder_1",
+      "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
+      "metadataToken": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601::Annotation(System.String,System.Object):AlterOperationBuilder_1",
+          "clrName": "Annotation",
+          "tsEmitName": "annotation2",
+          "metadataToken": 100668649,
+          "canonicalSignature": "(System.String,System.Object):AlterOperationBuilder_1",
+          "normalizedSignature": "Annotation|(System.String,System.Object):AlterOperationBuilder_1|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601::OldAnnotation(System.String,System.Object):AlterOperationBuilder_1",
+          "clrName": "OldAnnotation",
+          "tsEmitName": "oldAnnotation",
+          "metadataToken": 100668650,
+          "canonicalSignature": "(System.String,System.Object):AlterOperationBuilder_1",
+          "normalizedSignature": "OldAnnotation|(System.String,System.Object):AlterOperationBuilder_1|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601::Annotation(System.String,System.Object):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1",
+          "clrName": "Annotation",
+          "tsEmitName": "annotation",
+          "metadataToken": 0,
+          "canonicalSignature": "(System.String,System.Object):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1",
+          "normalizedSignature": "Annotation|(System.String,System.Object):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601::Instance:T",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "metadataToken": 385877704,
+          "canonicalSignature": ":T",
+          "normalizedSignature": "Instance|:T|static=false|accessor=get",
+          "emitScope": "ViewOnly",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601::.ctor(TOperation):void",
+          "metadataToken": 100668648,
+          "canonicalSignature": "(TOperation):void",
+          "normalizedSignature": "constructor|(TOperation):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "annotation2",
+          "isStatic": false,
+          "tsSignatureId": "Annotation|(System.String,System.Object):AlterOperationBuilder_1|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668649
+          }
+        },
+        {
+          "tsName": "oldAnnotation",
+          "isStatic": false,
+          "tsSignatureId": "OldAnnotation|(System.String,System.Object):AlterOperationBuilder_1|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668650
+          }
+        },
+        {
+          "tsName": "annotation",
+          "isStatic": false,
+          "tsSignatureId": "Annotation|(System.String,System.Object):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 0
+          }
+        },
+        {
+          "tsName": "annotation",
+          "isStatic": false,
+          "tsSignatureId": "Annotation|(System.String,System.Object):OperationBuilder_1|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668668
+          }
+        },
+        {
+          "tsName": "toString",
+          "isStatic": false,
+          "tsSignatureId": "ToString|():System.String|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668669
+          }
+        },
+        {
+          "tsName": "equals",
+          "isStatic": false,
+          "tsSignatureId": "Equals|(System.Object):System.Boolean|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668670
+          }
+        },
+        {
+          "tsName": "getHashCode",
+          "isStatic": false,
+          "tsSignatureId": "GetHashCode|():System.Int32|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668671
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "instance",
+          "isStatic": false,
+          "tsSignatureId": "Instance|:T|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385877704
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(TOperation):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668648
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+      "clrName": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+      "tsEmitName": "ColumnsBuilder",
+      "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
+      "metadataToken": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder::Column(System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Boolean,System.String,System.Boolean,System.Object,System.String,System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "Column",
+          "tsEmitName": "column",
+          "metadataToken": 100668652,
+          "canonicalSignature": "(System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Boolean,System.String,System.Boolean,System.Object,System.String,System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "Column|(System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Boolean,System.String,System.Boolean,System.Object,System.String,System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 15,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder::ToString():System.String",
+          "clrName": "ToString",
+          "tsEmitName": "toString",
+          "metadataToken": 100668653,
+          "canonicalSignature": "():System.String",
+          "normalizedSignature": "ToString|():System.String|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 0,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder::Equals(System.Object):System.Boolean",
+          "clrName": "Equals",
+          "tsEmitName": "equals",
+          "metadataToken": 100668654,
+          "canonicalSignature": "(System.Object):System.Boolean",
+          "normalizedSignature": "Equals|(System.Object):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 1,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder::GetHashCode():System.Int32",
+          "clrName": "GetHashCode",
+          "tsEmitName": "getHashCode",
+          "metadataToken": 100668655,
+          "canonicalSignature": "():System.Int32",
+          "normalizedSignature": "GetHashCode|():System.Int32|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 0,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder::.ctor(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation):void",
+          "metadataToken": 100668651,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "column",
+          "isStatic": false,
+          "tsSignatureId": "Column|(System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Boolean,System.String,System.Boolean,System.Object,System.String,System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668652
+          }
+        },
+        {
+          "tsName": "toString",
+          "isStatic": false,
+          "tsSignatureId": "ToString|():System.String|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668653
+          }
+        },
+        {
+          "tsName": "equals",
+          "isStatic": false,
+          "tsSignatureId": "Equals|(System.Object):System.Boolean|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668654
+          }
+        },
+        {
+          "tsName": "getHashCode",
+          "isStatic": false,
+          "tsSignatureId": "GetHashCode|():System.Int32|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668655
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668651
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+      "clrName": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+      "tsEmitName": "CreateTableBuilder_1",
+      "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
+      "metadataToken": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601::ForeignKey(System.String,Expression_1,System.String,System.String,System.String,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddForeignKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "ForeignKey",
+          "tsEmitName": "foreignKey",
+          "metadataToken": 100668657,
+          "canonicalSignature": "(System.String,Expression_1,System.String,System.String,System.String,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddForeignKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "ForeignKey|(System.String,Expression_1,System.String,System.String,System.String,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddForeignKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 7,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601::ForeignKey(System.String,Expression_1,System.String,System.String[],System.String,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddForeignKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "ForeignKey",
+          "tsEmitName": "foreignKey",
+          "metadataToken": 100668658,
+          "canonicalSignature": "(System.String,Expression_1,System.String,System.String[],System.String,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddForeignKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "ForeignKey|(System.String,Expression_1,System.String,System.String[],System.String,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddForeignKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 7,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601::PrimaryKey(System.String,Expression_1):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddPrimaryKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "PrimaryKey",
+          "tsEmitName": "primaryKey",
+          "metadataToken": 100668659,
+          "canonicalSignature": "(System.String,Expression_1):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddPrimaryKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "PrimaryKey|(System.String,Expression_1):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddPrimaryKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601::UniqueConstraint(System.String,Expression_1):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddUniqueConstraintOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "UniqueConstraint",
+          "tsEmitName": "uniqueConstraint",
+          "metadataToken": 100668660,
+          "canonicalSignature": "(System.String,Expression_1):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddUniqueConstraintOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "UniqueConstraint|(System.String,Expression_1):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddUniqueConstraintOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601::CheckConstraint(System.String,System.String):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddCheckConstraintOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "CheckConstraint",
+          "tsEmitName": "checkConstraint",
+          "metadataToken": 100668661,
+          "canonicalSignature": "(System.String,System.String):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddCheckConstraintOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "CheckConstraint|(System.String,System.String):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddCheckConstraintOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601::Annotation(System.String,System.Object):CreateTableBuilder_1",
+          "clrName": "Annotation",
+          "tsEmitName": "annotation2",
+          "metadataToken": 100668662,
+          "canonicalSignature": "(System.String,System.Object):CreateTableBuilder_1",
+          "normalizedSignature": "Annotation|(System.String,System.Object):CreateTableBuilder_1|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601::Annotation(System.String,System.Object):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1",
+          "clrName": "Annotation",
+          "tsEmitName": "annotation",
+          "metadataToken": 0,
+          "canonicalSignature": "(System.String,System.Object):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1",
+          "normalizedSignature": "Annotation|(System.String,System.Object):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601::Instance:T",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "metadataToken": 385877704,
+          "canonicalSignature": ":T",
+          "normalizedSignature": "Instance|:T|static=false|accessor=get",
+          "emitScope": "ViewOnly",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601::.ctor(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation,System.Collections.Generic.IReadOnlyDictionary_2[[System.Reflection.PropertyInfo,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
+          "metadataToken": 100668656,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation,System.Collections.Generic.IReadOnlyDictionary_2[[System.Reflection.PropertyInfo,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation,System.Collections.Generic.IReadOnlyDictionary_2[[System.Reflection.PropertyInfo,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
+          "isStatic": false,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "foreignKey",
+          "isStatic": false,
+          "tsSignatureId": "ForeignKey|(System.String,Expression_1,System.String,System.String,System.String,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddForeignKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668657
+          }
+        },
+        {
+          "tsName": "foreignKey",
+          "isStatic": false,
+          "tsSignatureId": "ForeignKey|(System.String,Expression_1,System.String,System.String[],System.String,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddForeignKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668658
+          }
+        },
+        {
+          "tsName": "primaryKey",
+          "isStatic": false,
+          "tsSignatureId": "PrimaryKey|(System.String,Expression_1):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddPrimaryKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668659
+          }
+        },
+        {
+          "tsName": "uniqueConstraint",
+          "isStatic": false,
+          "tsSignatureId": "UniqueConstraint|(System.String,Expression_1):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddUniqueConstraintOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668660
+          }
+        },
+        {
+          "tsName": "checkConstraint",
+          "isStatic": false,
+          "tsSignatureId": "CheckConstraint|(System.String,System.String):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddCheckConstraintOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668661
+          }
+        },
+        {
+          "tsName": "annotation2",
+          "isStatic": false,
+          "tsSignatureId": "Annotation|(System.String,System.Object):CreateTableBuilder_1|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668662
+          }
+        },
+        {
+          "tsName": "annotation",
+          "isStatic": false,
+          "tsSignatureId": "Annotation|(System.String,System.Object):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 0
+          }
+        },
+        {
+          "tsName": "annotation",
+          "isStatic": false,
+          "tsSignatureId": "Annotation|(System.String,System.Object):OperationBuilder_1|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668668
+          }
+        },
+        {
+          "tsName": "toString",
+          "isStatic": false,
+          "tsSignatureId": "ToString|():System.String|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668669
+          }
+        },
+        {
+          "tsName": "equals",
+          "isStatic": false,
+          "tsSignatureId": "Equals|(System.Object):System.Boolean|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668670
+          }
+        },
+        {
+          "tsName": "getHashCode",
+          "isStatic": false,
+          "tsSignatureId": "GetHashCode|():System.Int32|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668671
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "instance",
+          "isStatic": false,
+          "tsSignatureId": "Instance|:T|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385877704
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation,System.Collections.Generic.IReadOnlyDictionary_2[[System.Reflection.PropertyInfo,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668656
+          }
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+      "clrName": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+      "tsEmitName": "OperationBuilder_1",
+      "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
+      "metadataToken": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601::Annotation(System.String,System.Object):OperationBuilder_1",
+          "clrName": "Annotation",
+          "tsEmitName": "annotation",
+          "metadataToken": 100668668,
+          "canonicalSignature": "(System.String,System.Object):OperationBuilder_1",
+          "normalizedSignature": "Annotation|(System.String,System.Object):OperationBuilder_1|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 2,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601::ToString():System.String",
+          "clrName": "ToString",
+          "tsEmitName": "toString",
+          "metadataToken": 100668669,
+          "canonicalSignature": "():System.String",
+          "normalizedSignature": "ToString|():System.String|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 0,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601::Equals(System.Object):System.Boolean",
+          "clrName": "Equals",
+          "tsEmitName": "equals",
+          "metadataToken": 100668670,
+          "canonicalSignature": "(System.Object):System.Boolean",
+          "normalizedSignature": "Equals|(System.Object):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 1,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601::GetHashCode():System.Int32",
+          "clrName": "GetHashCode",
+          "tsEmitName": "getHashCode",
+          "metadataToken": 100668671,
+          "canonicalSignature": "():System.Int32",
+          "normalizedSignature": "GetHashCode|():System.Int32|static=false",
+          "emitScope": "ClassSurface",
+          "arity": 0,
+          "parameterCount": 0,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601::Instance:T",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "metadataToken": 385877704,
+          "canonicalSignature": ":T",
+          "normalizedSignature": "Instance|:T|static=false|accessor=get",
+          "emitScope": "ViewOnly",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601::.ctor(TOperation):void",
+          "metadataToken": 100668665,
+          "canonicalSignature": "(TOperation):void",
+          "normalizedSignature": "constructor|(TOperation):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ],
+      "exposedMethods": [
+        {
+          "tsName": "annotation",
+          "isStatic": false,
+          "tsSignatureId": "Annotation|(System.String,System.Object):OperationBuilder_1|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668668
+          }
+        },
+        {
+          "tsName": "toString",
+          "isStatic": false,
+          "tsSignatureId": "ToString|():System.String|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668669
+          }
+        },
+        {
+          "tsName": "equals",
+          "isStatic": false,
+          "tsSignatureId": "Equals|(System.Object):System.Boolean|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668670
+          }
+        },
+        {
+          "tsName": "getHashCode",
+          "isStatic": false,
+          "tsSignatureId": "GetHashCode|():System.Int32|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668671
+          }
+        }
+      ],
+      "exposedProperties": [
+        {
+          "tsName": "instance",
+          "isStatic": false,
+          "tsSignatureId": "Instance|:T|static=false|accessor=get",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 385877704
+          }
+        }
+      ],
+      "exposedConstructors": [
+        {
+          "isStatic": false,
+          "tsSignatureId": "constructor|(TOperation):void|static=false",
+          "target": {
+            "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+            "metadataToken": 100668665
+          }
+        }
+      ]
+    }
+  ]
+}

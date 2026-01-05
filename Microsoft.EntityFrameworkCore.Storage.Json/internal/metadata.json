@@ -1,0 +1,4424 @@
+{
+  "namespace": "Microsoft.EntityFrameworkCore.Storage.Json",
+  "contributingAssemblies": [
+    "Microsoft.EntityFrameworkCore"
+  ],
+  "types": [
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.IJsonValueReaderWriterSource",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.IJsonValueReaderWriterSource",
+      "tsEmitName": "IJsonValueReaderWriterSource",
+      "kind": "Interface",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.IJsonValueReaderWriterSource::FindReaderWriter(System.Type):Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+          "clrName": "FindReaderWriter",
+          "tsEmitName": "findReaderWriter",
+          "normalizedSignature": "FindReaderWriter|(System.Type):Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 1,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager",
+      "tsEmitName": "Utf8JsonReaderManager",
+      "kind": "Struct",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager::MoveNext():System.Text.Json.JsonTokenType",
+          "clrName": "MoveNext",
+          "tsEmitName": "moveNext",
+          "normalizedSignature": "MoveNext|():System.Text.Json.JsonTokenType|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 0,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager::Skip():System.Void",
+          "clrName": "Skip",
+          "tsEmitName": "skip",
+          "normalizedSignature": "Skip|():System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 0,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager::CaptureState():System.Void",
+          "clrName": "CaptureState",
+          "tsEmitName": "captureState",
+          "normalizedSignature": "CaptureState|():System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 0,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager::QueryLogger:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "QueryLogger",
+          "tsEmitName": "queryLogger",
+          "normalizedSignature": "QueryLogger|:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager::DataMicrosoft.EntityFrameworkCore.Storage.Json.JsonReaderData",
+          "clrName": "Data",
+          "tsEmitName": "data",
+          "normalizedSignature": "Data|Microsoft.EntityFrameworkCore.Storage.Json.JsonReaderData|static=false|const=false",
+          "isStatic": false,
+          "isReadOnly": true,
+          "isLiteral": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager::CurrentReaderSystem.Text.Json.Utf8JsonReader",
+          "clrName": "CurrentReader",
+          "tsEmitName": "currentReader",
+          "normalizedSignature": "CurrentReader|System.Text.Json.Utf8JsonReader|static=false|const=false",
+          "isStatic": false,
+          "isReadOnly": false,
+          "isLiteral": false
+        }
+      ],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Json.JsonReaderData,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
+          "isStatic": false,
+          "parameterCount": 2
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter",
+      "tsEmitName": "JsonBoolReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Boolean",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Boolean|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Boolean):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Boolean):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonBoolReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter",
+      "tsEmitName": "JsonByteArrayReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Byte[]",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Byte[]|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Byte[]):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Byte[]):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter",
+      "tsEmitName": "JsonByteReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Byte",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Byte|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Byte):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Byte):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonByteReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601",
+      "tsEmitName": "JsonCastValueReaderWriter_1",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 1,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TConverted",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TConverted|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TConverted):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TConverted):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter::InnerReaderWriter:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+          "clrName": "InnerReaderWriter",
+          "tsEmitName": "innerReaderWriter",
+          "normalizedSignature": "InnerReaderWriter|:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter|static=false|accessor=get",
+          "provenance": "ExplicitView",
+          "emitScope": "ViewOnly",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter"
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter",
+      "tsEmitName": "JsonCharReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Char",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Char|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Char):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Char):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCharReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602",
+      "tsEmitName": "JsonCollectionOfNullableStructsReaderWriter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter::InnerReaderWriter:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+          "clrName": "InnerReaderWriter",
+          "tsEmitName": "innerReaderWriter",
+          "normalizedSignature": "InnerReaderWriter|:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter|static=false|accessor=get",
+          "provenance": "ExplicitView",
+          "emitScope": "ViewOnly",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter"
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(JsonValueReaderWriter_1):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfReferencesReaderWriter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfReferencesReaderWriter\u00602",
+      "tsEmitName": "JsonCollectionOfReferencesReaderWriter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfReferencesReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Object",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Object|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfReferencesReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Object):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Object):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfReferencesReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfReferencesReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfReferencesReaderWriter\u00602::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter::InnerReaderWriter:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+          "clrName": "InnerReaderWriter",
+          "tsEmitName": "innerReaderWriter",
+          "normalizedSignature": "InnerReaderWriter|:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter|static=false|accessor=get",
+          "provenance": "ExplicitView",
+          "emitScope": "ViewOnly",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter"
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602",
+      "tsEmitName": "JsonCollectionOfStructsReaderWriter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter::InnerReaderWriter:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+          "clrName": "InnerReaderWriter",
+          "tsEmitName": "innerReaderWriter",
+          "normalizedSignature": "InnerReaderWriter|:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter|static=false|accessor=get",
+          "provenance": "ExplicitView",
+          "emitScope": "ViewOnly",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter"
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(JsonValueReaderWriter_1):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602",
+      "tsEmitName": "JsonConvertedValueReaderWriter_2",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 2,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TModel",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TModel|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TModel):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TModel):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.IJsonConvertedValueReaderWriter::Converter:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
+          "clrName": "Converter",
+          "tsEmitName": "converter",
+          "normalizedSignature": "Converter|:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter|static=false|accessor=get",
+          "provenance": "ExplicitView",
+          "emitScope": "ViewOnly",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.Internal.IJsonConvertedValueReaderWriter"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter::InnerReaderWriter:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+          "clrName": "InnerReaderWriter",
+          "tsEmitName": "innerReaderWriter",
+          "normalizedSignature": "InnerReaderWriter|:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter|static=false|accessor=get",
+          "provenance": "ExplicitView",
+          "emitScope": "ViewOnly",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter"
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(JsonValueReaderWriter_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):void|static=false",
+          "isStatic": false,
+          "parameterCount": 2
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter",
+      "tsEmitName": "JsonDateOnlyReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.DateOnly",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.DateOnly|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.DateOnly):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.DateOnly):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateOnlyReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter",
+      "tsEmitName": "JsonDateTimeOffsetReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.DateTimeOffset",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.DateTimeOffset|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.DateTimeOffset):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.DateTimeOffset):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeOffsetReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter",
+      "tsEmitName": "JsonDateTimeReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.DateTime",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.DateTime|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.DateTime):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.DateTime):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDateTimeReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter",
+      "tsEmitName": "JsonDecimalReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Decimal",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Decimal|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Decimal):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Decimal):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDecimalReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter",
+      "tsEmitName": "JsonDoubleReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Double",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Double|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Double):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Double):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonDoubleReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter",
+      "tsEmitName": "JsonFloatReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Single",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Single|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Single):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Single):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonFloatReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter",
+      "tsEmitName": "JsonGuidReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Guid",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Guid|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Guid):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Guid):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonGuidReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter",
+      "tsEmitName": "JsonInt16ReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Int16",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Int16|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Int16):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Int16):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt16ReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter",
+      "tsEmitName": "JsonInt32ReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Int32",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Int32|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Int32):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Int32):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt32ReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter",
+      "tsEmitName": "JsonInt64ReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Int64",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Int64|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Int64):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Int64):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonInt64ReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter",
+      "tsEmitName": "JsonNullReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Object",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Object|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Object):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Object):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonNullReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonReaderData",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonReaderData",
+      "tsEmitName": "JsonReaderData",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonReaderData::CaptureState(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026):System.Void",
+          "clrName": "CaptureState",
+          "tsEmitName": "captureState",
+          "normalizedSignature": "CaptureState|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 1,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonReaderData::ReadBytes(System.Int32,System.Text.Json.JsonReaderState):System.Text.Json.Utf8JsonReader",
+          "clrName": "ReadBytes",
+          "tsEmitName": "readBytes",
+          "normalizedSignature": "ReadBytes|(System.Int32,System.Text.Json.JsonReaderState):System.Text.Json.Utf8JsonReader|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonReaderData::CreateReader():System.Text.Json.Utf8JsonReader",
+          "clrName": "CreateReader",
+          "tsEmitName": "createReader",
+          "normalizedSignature": "CreateReader|():System.Text.Json.Utf8JsonReader|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 0,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(System.Byte[]):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1
+        },
+        {
+          "normalizedSignature": "constructor|(System.IO.Stream):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter",
+      "tsEmitName": "JsonSByteReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.SByte",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.SByte|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.SByte):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.SByte):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSByteReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601",
+      "tsEmitName": "JsonSignedEnumReaderWriter_1",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 1,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TEnum):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TEnum):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::Instance:JsonSignedEnumReaderWriter_1",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:JsonSignedEnumReaderWriter_1|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter",
+      "tsEmitName": "JsonStringReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.String",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.String|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.String):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.String):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonStringReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter",
+      "tsEmitName": "JsonTimeOnlyReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.TimeOnly",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.TimeOnly|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.TimeOnly):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.TimeOnly):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeOnlyReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter",
+      "tsEmitName": "JsonTimeSpanReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.TimeSpan",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.TimeSpan|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.TimeSpan):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.TimeSpan):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonTimeSpanReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter",
+      "tsEmitName": "JsonUInt16ReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.UInt16",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.UInt16|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.UInt16):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.UInt16):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt16ReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter",
+      "tsEmitName": "JsonUInt32ReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.UInt32",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.UInt32|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.UInt32):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.UInt32):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt32ReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter",
+      "tsEmitName": "JsonUInt64ReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.UInt64",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.UInt64|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.UInt64):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.UInt64):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUInt64ReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601",
+      "tsEmitName": "JsonUnsignedEnumReaderWriter_1",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 1,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TEnum):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TEnum):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::Instance:JsonUnsignedEnumReaderWriter_1",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:JsonUnsignedEnumReaderWriter_1|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+      "tsEmitName": "JsonValueReaderWriter",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter::FromJson(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Object",
+          "clrName": "FromJson",
+          "tsEmitName": "fromJson",
+          "normalizedSignature": "FromJson|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Object|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter::ToJson(System.Text.Json.Utf8JsonWriter,System.Object):System.Void",
+          "clrName": "ToJson",
+          "tsEmitName": "toJson",
+          "normalizedSignature": "ToJson|(System.Text.Json.Utf8JsonWriter,System.Object):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter::FromJsonString(System.String,System.Object):System.Object",
+          "clrName": "FromJsonString",
+          "tsEmitName": "fromJsonString",
+          "normalizedSignature": "FromJsonString|(System.String,System.Object):System.Object|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter::ToJsonString(System.Object):System.String",
+          "clrName": "ToJsonString",
+          "tsEmitName": "toJsonString",
+          "normalizedSignature": "ToJsonString|(System.Object):System.String|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 1,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter::ToJsonObjectString(System.String,System.Object):System.String",
+          "clrName": "ToJsonObjectString",
+          "tsEmitName": "toJsonObjectString",
+          "normalizedSignature": "ToJsonObjectString|(System.String,System.Object):System.String|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter::CreateFromType(System.Type):Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+          "clrName": "CreateFromType",
+          "tsEmitName": "createFromType",
+          "normalizedSignature": "CreateFromType|(System.Type):Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter|static=true",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 1,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter::ValueType:System.Type",
+          "clrName": "ValueType",
+          "tsEmitName": "valueType",
+          "normalizedSignature": "ValueType|:System.Type|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601",
+      "tsEmitName": "JsonValueReaderWriter_1",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 1,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601::FromJson(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Object",
+          "clrName": "FromJson",
+          "tsEmitName": "fromJson",
+          "normalizedSignature": "FromJson|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Object|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": true,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601::ToJson(System.Text.Json.Utf8JsonWriter,System.Object):System.Void",
+          "clrName": "ToJson",
+          "tsEmitName": "toJson",
+          "normalizedSignature": "ToJson|(System.Text.Json.Utf8JsonWriter,System.Object):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": true,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601::ValueType:System.Type",
+          "clrName": "ValueType",
+          "tsEmitName": "valueType",
+          "normalizedSignature": "ValueType|:System.Type|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSource",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSource",
+      "tsEmitName": "JsonValueReaderWriterSource",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSource::FindReaderWriter(System.Type):Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+          "clrName": "FindReaderWriter",
+          "tsEmitName": "findReaderWriter",
+          "normalizedSignature": "FindReaderWriter|(System.Type):Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 1,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.IJsonValueReaderWriterSource::FindReaderWriter(System.Type):Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter",
+          "clrName": "FindReaderWriter",
+          "tsEmitName": "findReaderWriter$view",
+          "normalizedSignature": "FindReaderWriter|(System.Type):Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter|static=false",
+          "provenance": "ExplicitView",
+          "emitScope": "ViewOnly",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 1,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.Json.IJsonValueReaderWriterSource",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies",
+      "tsEmitName": "JsonValueReaderWriterSourceDependencies",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies::ToString():System.String",
+          "clrName": "ToString",
+          "tsEmitName": "toString",
+          "normalizedSignature": "ToString|():System.String|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 0,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies::GetHashCode():System.Int32",
+          "clrName": "GetHashCode",
+          "tsEmitName": "getHashCode",
+          "normalizedSignature": "GetHashCode|():System.Int32|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 0,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies::Equals(System.Object):System.Boolean",
+          "clrName": "Equals",
+          "tsEmitName": "equals",
+          "normalizedSignature": "Equals|(System.Object):System.Boolean|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 1,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies::Equals(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies):System.Boolean",
+          "clrName": "Equals",
+          "tsEmitName": "equals",
+          "normalizedSignature": "Equals|(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies):System.Boolean|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": true,
+          "arity": 0,
+          "parameterCount": 1,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies::\u003CClone\u003E$():Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies",
+          "clrName": "\u003CClone\u003E$",
+          "tsEmitName": "_Clone_$",
+          "normalizedSignature": "\u003CClone\u003E$|():Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSourceDependencies|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 0,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601",
+      "clrName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601",
+      "tsEmitName": "JsonWarningEnumReaderWriter_1",
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 1,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped2",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TEnum):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped2",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TEnum):System.Void|static=false",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "clrName": "FromJsonTyped",
+          "tsEmitName": "fromJsonTyped",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "ref"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "clrName": "ToJsonTyped",
+          "tsEmitName": "toJsonTyped",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
+          "provenance": "BaseOverload",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "arity": 0,
+          "parameterCount": 2,
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::Instance:JsonWarningEnumReaderWriter_1",
+          "clrName": "Instance",
+          "tsEmitName": "instance",
+          "normalizedSignature": "Instance|:JsonWarningEnumReaderWriter_1|static=true|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::ConstructorExpression:System.Linq.Expressions.Expression",
+          "clrName": "ConstructorExpression",
+          "tsEmitName": "constructorExpression",
+          "normalizedSignature": "ConstructorExpression|:System.Linq.Expressions.Expression|static=false|accessor=get",
+          "provenance": "Original",
+          "emitScope": "ClassSurface",
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": []
+    }
+  ]
+}

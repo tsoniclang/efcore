@@ -1,0 +1,366 @@
+{
+  "Microsoft.EntityFrameworkCore.DbContextOptions": {
+    "stem": "DbContextOptions",
+    "namespace": "Microsoft.EntityFrameworkCore",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.DbContextOptionsBuilder": {
+    "stem": "DbContextOptionsBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry": {
+    "stem": "EntityEntry",
+    "namespace": "Microsoft.EntityFrameworkCore.ChangeTracking",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntryGraphNode": {
+    "stem": "EntityEntryGraphNode",
+    "namespace": "Microsoft.EntityFrameworkCore.ChangeTracking",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.ChangeTracking.IDependentKeyValueFactory": {
+    "stem": "IDependentKeyValueFactory",
+    "namespace": "Microsoft.EntityFrameworkCore.ChangeTracking",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.ChangeTracking.IPrincipalKeyValueFactory": {
+    "stem": "IPrincipalKeyValueFactory",
+    "namespace": "Microsoft.EntityFrameworkCore.ChangeTracking",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer": {
+    "stem": "ValueComparer",
+    "namespace": "Microsoft.EntityFrameworkCore.ChangeTracking",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IIdentityMap": {
+    "stem": "IIdentityMap",
+    "namespace": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.Snapshot": {
+    "stem": "Snapshot",
+    "namespace": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal",
+    "minArity": 0,
+    "maxArity": 30,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.SnapshotFactoryFactory": {
+    "stem": "SnapshotFactoryFactory",
+    "namespace": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition": {
+    "stem": "EventDefinition",
+    "namespace": "Microsoft.EntityFrameworkCore.Diagnostics",
+    "minArity": 0,
+    "maxArity": 6,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger": {
+    "stem": "IDiagnosticsLogger",
+    "namespace": "Microsoft.EntityFrameworkCore.Diagnostics",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult": {
+    "stem": "InterceptionResult",
+    "namespace": "Microsoft.EntityFrameworkCore.Diagnostics",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Internal.ICollectionLoader": {
+    "stem": "ICollectionLoader",
+    "namespace": "Microsoft.EntityFrameworkCore.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Internal.IDbContextPool": {
+    "stem": "IDbContextPool",
+    "namespace": "Microsoft.EntityFrameworkCore.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Internal.IEntityFinder": {
+    "stem": "IEntityFinder",
+    "namespace": "Microsoft.EntityFrameworkCore.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexCollectionBuilder": {
+    "stem": "ComplexCollectionBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexCollectionTypePropertyBuilder": {
+    "stem": "ComplexCollectionTypePropertyBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexPropertiesConfigurationBuilder": {
+    "stem": "ComplexPropertiesConfigurationBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexPropertyBuilder": {
+    "stem": "ComplexPropertyBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexTypeDiscriminatorBuilder": {
+    "stem": "ComplexTypeDiscriminatorBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexTypePrimitiveCollectionBuilder": {
+    "stem": "ComplexTypePrimitiveCollectionBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexTypePropertyBuilder": {
+    "stem": "ComplexTypePropertyBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.DataBuilder": {
+    "stem": "DataBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.DiscriminatorBuilder": {
+    "stem": "DiscriminatorBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder": {
+    "stem": "EntityTypeBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.IndexBuilder": {
+    "stem": "IndexBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.KeyBuilder": {
+    "stem": "KeyBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.OwnedEntityTypeBuilder": {
+    "stem": "OwnedEntityTypeBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.PrimitiveCollectionBuilder": {
+    "stem": "PrimitiveCollectionBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.PropertiesConfigurationBuilder": {
+    "stem": "PropertiesConfigurationBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder": {
+    "stem": "PropertyBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.TypeMappingConfigurationBuilder": {
+    "stem": "TypeMappingConfigurationBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ColumnBuilder": {
+    "stem": "ColumnBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.SplitTableBuilder": {
+    "stem": "SplitTableBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.SplitViewBuilder": {
+    "stem": "SplitViewBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.StoredProcedureBuilder": {
+    "stem": "StoredProcedureBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.TableBuilder": {
+    "stem": "TableBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.TableValuedFunctionBuilder": {
+    "stem": "TableValuedFunctionBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ViewBuilder": {
+    "stem": "ViewBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Builders.ViewColumnBuilder": {
+    "stem": "ViewColumnBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Builders",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext": {
+    "stem": "IConventionContext",
+    "namespace": "Microsoft.EntityFrameworkCore.Metadata.Conventions",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Query.UpdateSettersBuilder": {
+    "stem": "UpdateSettersBuilder",
+    "namespace": "Microsoft.EntityFrameworkCore.Query",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable": {
+    "stem": "FromSqlQueryingEnumerable",
+    "namespace": "Microsoft.EntityFrameworkCore.Query.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable": {
+    "stem": "SingleQueryingEnumerable",
+    "namespace": "Microsoft.EntityFrameworkCore.Query.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable": {
+    "stem": "SplitQueryingEnumerable",
+    "namespace": "Microsoft.EntityFrameworkCore.Query.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Storage.ReaderColumn": {
+    "stem": "ReaderColumn",
+    "namespace": "Microsoft.EntityFrameworkCore.Storage",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter": {
+    "stem": "JsonValueReaderWriter",
+    "namespace": "Microsoft.EntityFrameworkCore.Storage.Json",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory": {
+    "stem": "IRowForeignKeyValueFactory",
+    "namespace": "Microsoft.EntityFrameworkCore.Update.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory": {
+    "stem": "IRowIndexValueFactory",
+    "namespace": "Microsoft.EntityFrameworkCore.Update.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory": {
+    "stem": "IRowKeyValueFactory",
+    "namespace": "Microsoft.EntityFrameworkCore.Update.Internal",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  },
+  "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator": {
+    "stem": "ValueGenerator",
+    "namespace": "Microsoft.EntityFrameworkCore.ValueGeneration",
+    "minArity": 0,
+    "maxArity": 1,
+    "isDelegate": false
+  }
+}

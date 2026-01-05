@@ -1,0 +1,284 @@
+{
+  "namespace": "Microsoft.Extensions.DependencyInjection",
+  "types": [
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+      "clrName": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+      "tsEmitName": "EntityFrameworkServiceCollectionExtensions",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "AddDbContext",
+          "tsEmitName": "addDbContext",
+          "metadataToken": 100663385,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "AddDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 4,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddDbContextPool(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "AddDbContextPool",
+          "tsEmitName": "addDbContextPool",
+          "metadataToken": 100663387,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "AddDbContextPool|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddDbContextPool(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "AddDbContextPool",
+          "tsEmitName": "addDbContextPool",
+          "metadataToken": 100663389,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "AddDbContextPool|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "AddDbContext",
+          "tsEmitName": "addDbContext",
+          "metadataToken": 100663392,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "AddDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "AddDbContext",
+          "tsEmitName": "addDbContext",
+          "metadataToken": 100663394,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "AddDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 4,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddDbContextFactory(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "AddDbContextFactory",
+          "tsEmitName": "addDbContextFactory",
+          "metadataToken": 100663396,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "AddDbContextFactory|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddDbContextFactory(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "AddDbContextFactory",
+          "tsEmitName": "addDbContextFactory",
+          "metadataToken": 100663398,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "AddDbContextFactory|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddPooledDbContextFactory(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "AddPooledDbContextFactory",
+          "tsEmitName": "addPooledDbContextFactory",
+          "metadataToken": 100663400,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "AddPooledDbContextFactory|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddPooledDbContextFactory(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "AddPooledDbContextFactory",
+          "tsEmitName": "addPooledDbContextFactory",
+          "metadataToken": 100663401,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "AddPooledDbContextFactory|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::ConfigureDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "ConfigureDbContext",
+          "tsEmitName": "configureDbContext",
+          "metadataToken": 100663402,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "ConfigureDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::ConfigureDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "clrName": "ConfigureDbContext",
+          "tsEmitName": "configureDbContext",
+          "metadataToken": 100663403,
+          "canonicalSignature": "(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
+          "normalizedSignature": "ConfigureDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "emitScope": "ClassSurface",
+          "arity": 1,
+          "parameterCount": 3,
+          "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": true
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [],
+      "exposedMethods": [
+        {
+          "tsName": "addDbContext",
+          "isStatic": true,
+          "tsSignatureId": "AddDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663385
+          }
+        },
+        {
+          "tsName": "addDbContextPool",
+          "isStatic": true,
+          "tsSignatureId": "AddDbContextPool|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663387
+          }
+        },
+        {
+          "tsName": "addDbContextPool",
+          "isStatic": true,
+          "tsSignatureId": "AddDbContextPool|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663389
+          }
+        },
+        {
+          "tsName": "addDbContext",
+          "isStatic": true,
+          "tsSignatureId": "AddDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663392
+          }
+        },
+        {
+          "tsName": "addDbContext",
+          "isStatic": true,
+          "tsSignatureId": "AddDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663394
+          }
+        },
+        {
+          "tsName": "addDbContextFactory",
+          "isStatic": true,
+          "tsSignatureId": "AddDbContextFactory|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663396
+          }
+        },
+        {
+          "tsName": "addDbContextFactory",
+          "isStatic": true,
+          "tsSignatureId": "AddDbContextFactory|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663398
+          }
+        },
+        {
+          "tsName": "addPooledDbContextFactory",
+          "isStatic": true,
+          "tsSignatureId": "AddPooledDbContextFactory|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663400
+          }
+        },
+        {
+          "tsName": "addPooledDbContextFactory",
+          "isStatic": true,
+          "tsSignatureId": "AddPooledDbContextFactory|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Int32):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663401
+          }
+        },
+        {
+          "tsName": "configureDbContext",
+          "isStatic": true,
+          "tsSignatureId": "ConfigureDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663402
+          }
+        },
+        {
+          "tsName": "configureDbContext",
+          "isStatic": true,
+          "tsSignatureId": "ConfigureDbContext|(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection|static=true",
+          "target": {
+            "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
+            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+            "metadataToken": 100663403
+          }
+        }
+      ]
+    }
+  ]
+}
