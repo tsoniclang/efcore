@@ -154,6 +154,8 @@ export { TableNameFromDbSetConvention as TableNameFromDbSetConvention } from './
 export { TableSharingConcurrencyTokenConvention as TableSharingConcurrencyTokenConvention } from './Microsoft.EntityFrameworkCore.Metadata.Conventions/internal/index.js';
 export { TableValuedDbFunctionConvention as TableValuedDbFunctionConvention } from './Microsoft.EntityFrameworkCore.Metadata.Conventions/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

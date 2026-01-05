@@ -108,6 +108,11 @@ export { LikeTranslator as LikeTranslator } from './Microsoft.EntityFrameworkCor
 export { RandomTranslator as RandomTranslator } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { StringMethodTranslator as StringMethodTranslator } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const FromSqlQueryingEnumerable: typeof Internal.FromSqlQueryingEnumerable$instance;
+export const SingleQueryingEnumerable: typeof Internal.SingleQueryingEnumerable$instance;
+export const SplitQueryingEnumerable: typeof Internal.SplitQueryingEnumerable$instance;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

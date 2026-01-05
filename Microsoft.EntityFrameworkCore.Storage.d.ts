@@ -132,6 +132,9 @@ export { UIntTypeMapping as UIntTypeMapping } from './Microsoft.EntityFrameworkC
 export { ULongTypeMapping as ULongTypeMapping } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 export { UShortTypeMapping as UShortTypeMapping } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const ReaderColumn: typeof Internal.ReaderColumn;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

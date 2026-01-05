@@ -56,6 +56,8 @@ export { SimpleNullableRowForeignKeyValueFactory_2 as SimpleNullableRowForeignKe
 export { SimpleRowIndexValueFactory_1 as SimpleRowIndexValueFactory } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
 export { SimpleRowKeyValueFactory_1 as SimpleRowKeyValueFactory } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

@@ -32,6 +32,9 @@ export { ValueGeneratorSelector as ValueGeneratorSelector } from './Microsoft.En
 export { ValueGeneratorSelectorDependencies as ValueGeneratorSelectorDependencies } from './Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js';
 export { RelationalValueGeneratorSelector as RelationalValueGeneratorSelector } from './Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const ValueGenerator: typeof Internal.ValueGenerator;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

@@ -161,6 +161,10 @@ export { TransactionStartingEventData as TransactionStartingEventData } from './
 export { TwoSqlExpressionsEventData as TwoSqlExpressionsEventData } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
 export { RelationalStrings$instance as RelationalStrings } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const EventDefinition: typeof Internal.EventDefinition;
+export const InterceptionResult: typeof Internal.InterceptionResult;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

@@ -99,6 +99,10 @@ export { ValueGenerationManager as ValueGenerationManager } from './Microsoft.En
 export { ObservableBackedBindingList_1 as ObservableBackedBindingList } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 export { SortableBindingList_1 as SortableBindingList } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const Snapshot: typeof Internal.Snapshot;
+export const SnapshotFactoryFactory: typeof Internal.SnapshotFactoryFactory;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
