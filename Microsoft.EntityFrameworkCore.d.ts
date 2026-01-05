@@ -126,6 +126,10 @@ export { RelationalTypeMappingConfigurationBuilderExtensions$instance as Relatio
 export { TableExpressionExtensions$instance as TableExpressionExtensions } from './Microsoft.EntityFrameworkCore/internal/index.js';
 export { QuerySplittingBehavior as QuerySplittingBehavior } from './Microsoft.EntityFrameworkCore/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const DbContextOptions: typeof Internal.DbContextOptions;
+export const DbContextOptionsBuilder: typeof Internal.DbContextOptionsBuilder;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

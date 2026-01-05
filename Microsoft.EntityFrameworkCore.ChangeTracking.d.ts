@@ -65,6 +65,11 @@ export { ReferenceEntry_2 as ReferenceEntry } from './Microsoft.EntityFrameworkC
 export { ValueComparerExtensions$instance as ValueComparerExtensions } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 export { ObservableCollectionListSource_1 as ObservableCollectionListSource } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const EntityEntry: typeof Internal.EntityEntry;
+export const EntityEntryGraphNode: typeof Internal.EntityEntryGraphNode;
+export const ValueComparer: typeof Internal.ValueComparer;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

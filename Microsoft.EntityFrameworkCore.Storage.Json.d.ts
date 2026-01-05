@@ -53,6 +53,9 @@ export { JsonValueReaderWriterSourceDependencies as JsonValueReaderWriterSourceD
 export { JsonWarningEnumReaderWriter_1 as JsonWarningEnumReaderWriter } from './Microsoft.EntityFrameworkCore.Storage.Json/internal/index.js';
 export { Utf8JsonReaderManager as Utf8JsonReaderManager } from './Microsoft.EntityFrameworkCore.Storage.Json/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const JsonValueReaderWriter: typeof Internal.JsonValueReaderWriter;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

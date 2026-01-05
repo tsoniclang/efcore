@@ -169,6 +169,9 @@ export { SqlTreePruner as SqlTreePruner } from './Microsoft.EntityFrameworkCore.
 export { StructuralTypeProjectionExpression as StructuralTypeProjectionExpression } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor as RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const UpdateSettersBuilder: typeof Internal.UpdateSettersBuilder;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

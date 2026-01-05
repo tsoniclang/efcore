@@ -77,6 +77,8 @@ export { RelationalModelExtensions$instance as RelationalModelExtensions } from 
 export { TupleExtensions$instance as TupleExtensions } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 export { SemanticVersionComparer as SemanticVersionComparer } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;

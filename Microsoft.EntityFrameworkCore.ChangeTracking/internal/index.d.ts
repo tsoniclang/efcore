@@ -164,7 +164,7 @@ export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 
 
 export interface CollectionEntry$instance extends NavigationEntry$instance {
-    currentValue: IEnumerable | unknown;
+    currentValue: IEnumerable | IEnumerable_1<TRelatedEntity> | unknown;
     isModified: boolean;
     findEntry(entity: unknown): EntityEntry | undefined;
     load(): void;
@@ -737,7 +737,7 @@ export const LocalView_1: {
 export type LocalView_1<TEntity> = LocalView_1$instance<TEntity>;
 
 export interface MemberEntry$instance {
-    currentValue: IEnumerable | unknown;
+    currentValue: TComplexProperty | unknown;
     readonly entityEntry: EntityEntry | EntityEntry_1<TEntity>;
     isModified: boolean;
     readonly metadata: IProperty | IPropertyBase;

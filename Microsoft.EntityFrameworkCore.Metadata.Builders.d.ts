@@ -93,6 +93,33 @@ export { StoredProcedureParameterBuilder as StoredProcedureParameterBuilder } fr
 export { StoredProcedureResultColumnBuilder as StoredProcedureResultColumnBuilder } from './Microsoft.EntityFrameworkCore.Metadata.Builders/internal/index.js';
 export { TableTriggerBuilder as TableTriggerBuilder } from './Microsoft.EntityFrameworkCore.Metadata.Builders/internal/index.js';
 
+// Multi-arity family value exports (arity-0 constructors/static namespaces)
+export const ColumnBuilder: typeof Internal.ColumnBuilder;
+export const ComplexCollectionBuilder: typeof Internal.ComplexCollectionBuilder;
+export const ComplexCollectionTypePropertyBuilder: typeof Internal.ComplexCollectionTypePropertyBuilder;
+export const ComplexPropertiesConfigurationBuilder: typeof Internal.ComplexPropertiesConfigurationBuilder;
+export const ComplexPropertyBuilder: typeof Internal.ComplexPropertyBuilder;
+export const ComplexTypeDiscriminatorBuilder: typeof Internal.ComplexTypeDiscriminatorBuilder;
+export const ComplexTypePrimitiveCollectionBuilder: typeof Internal.ComplexTypePrimitiveCollectionBuilder;
+export const ComplexTypePropertyBuilder: typeof Internal.ComplexTypePropertyBuilder;
+export const DataBuilder: typeof Internal.DataBuilder;
+export const DiscriminatorBuilder: typeof Internal.DiscriminatorBuilder;
+export const EntityTypeBuilder: typeof Internal.EntityTypeBuilder;
+export const IndexBuilder: typeof Internal.IndexBuilder;
+export const KeyBuilder: typeof Internal.KeyBuilder;
+export const OwnedEntityTypeBuilder: typeof Internal.OwnedEntityTypeBuilder;
+export const PrimitiveCollectionBuilder: typeof Internal.PrimitiveCollectionBuilder;
+export const PropertiesConfigurationBuilder: typeof Internal.PropertiesConfigurationBuilder;
+export const PropertyBuilder: typeof Internal.PropertyBuilder;
+export const SplitTableBuilder: typeof Internal.SplitTableBuilder;
+export const SplitViewBuilder: typeof Internal.SplitViewBuilder;
+export const StoredProcedureBuilder: typeof Internal.StoredProcedureBuilder;
+export const TableBuilder: typeof Internal.TableBuilder;
+export const TableValuedFunctionBuilder: typeof Internal.TableValuedFunctionBuilder;
+export const TypeMappingConfigurationBuilder: typeof Internal.TypeMappingConfigurationBuilder;
+export const ViewBuilder: typeof Internal.ViewBuilder;
+export const ViewColumnBuilder: typeof Internal.ViewColumnBuilder;
+
 // Multi-arity family sentinel (detects unspecified type parameters)
 declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
