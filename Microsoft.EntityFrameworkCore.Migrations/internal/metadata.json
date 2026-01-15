@@ -82,7 +82,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.MigrationsSqlGenerationOptions::DefaultMicrosoft.EntityFrameworkCore.Migrations.MigrationsSqlGenerationOptions",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|Microsoft.EntityFrameworkCore.Migrations.MigrationsSqlGenerationOptions|static=true|const=true",
           "isStatic": true,
           "isReadOnly": false,

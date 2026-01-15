@@ -66,7 +66,7 @@ export interface ICSharpHelper$instance {
     fragment(fragment: IMethodCallCodeFragment, instanceIdentifier: string, typeQualified: boolean): string;
     fragment(fragment: NestedClosureCodeFragment, indent?: int): string;
     fragment(fragment: PropertyAccessorCodeFragment): string;
-    getRequiredUsings(type_: Type): IEnumerable<System_Internal.String>;
+    getRequiredUsings(type: Type): IEnumerable<System_Internal.String>;
     identifier(name: string, scope?: ICollection<System_Internal.String>, capitalize?: Nullable<System_Internal.Boolean>): string;
     identifier<T>(name: string, value: T, scope: IDictionary<System_Internal.String, T>, capitalize?: Nullable<System_Internal.Boolean>): string;
     lambda(properties: IEnumerable<IProperty>, lambdaIdentifier?: string): string;
@@ -99,7 +99,7 @@ export interface ICSharpHelper$instance {
     literal(value: uint): string;
     literal(value: ulong): string;
     literal<T>(values: T[], vertical?: boolean): string;
-    namespace_(...name: string[]): string;
+    namespace(...name: string[]): string;
     statement(node: Expression, collectedNamespaces: ISet<System_Internal.String>, unsafeAccessors: ISet<System_Internal.String>, constantReplacements?: IReadOnlyDictionary<unknown, System_Internal.String>, memberAccessReplacements?: IReadOnlyDictionary<MemberInfo, QualifiedName>): string;
     unknownLiteral(value: unknown): string;
     xmlComment(comment: string, indent?: int): string;
@@ -205,13 +205,13 @@ export type AnnotationCodeGeneratorDependencies = AnnotationCodeGeneratorDepende
 export interface AttributeCodeFragment$instance {
     readonly arguments: IReadOnlyList<unknown | undefined>;
     readonly namedArguments: IReadOnlyDictionary<System_Internal.String, unknown | undefined>;
-    readonly type_: Type;
+    readonly type: Type;
 }
 
 
 export const AttributeCodeFragment: {
-    new(type_: Type, arguments: unknown[]): AttributeCodeFragment;
-    new(type_: Type, arguments: IEnumerable<unknown>, namedArguments: IDictionary<System_Internal.String, unknown>): AttributeCodeFragment;
+    new(type: Type, arguments: unknown[]): AttributeCodeFragment;
+    new(type: Type, arguments: IEnumerable<unknown>, namedArguments: IDictionary<System_Internal.String, unknown>): AttributeCodeFragment;
 };
 
 
@@ -275,7 +275,7 @@ export interface MethodCallCodeFragment$instance {
     readonly declaringType: string;
     readonly method: string;
     readonly methodInfo: MethodInfo | undefined;
-    readonly namespace_: string;
+    readonly namespace: string;
     chain(methodInfo: MethodInfo, ...arguments: unknown[]): MethodCallCodeFragment;
     chain(method: string, ...arguments: unknown[]): MethodCallCodeFragment;
     chain(call: MethodCallCodeFragment): MethodCallCodeFragment;

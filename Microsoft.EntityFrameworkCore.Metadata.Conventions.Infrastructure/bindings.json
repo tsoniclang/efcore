@@ -213,7 +213,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::With(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "metadataToken": 100671411,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies|static=false",
@@ -425,7 +425,7 @@
       ],
       "exposedMethods": [
         {
-          "tsName": "with_",
+          "tsName": "with",
           "isStatic": false,
           "tsSignatureId": "With|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies|static=false",
           "target": {

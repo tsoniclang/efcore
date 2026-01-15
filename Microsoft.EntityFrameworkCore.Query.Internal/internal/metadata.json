@@ -7154,7 +7154,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.Internal.TableValuedFunctionQueryRootExpression::Function:Microsoft.EntityFrameworkCore.Metadata.IStoreFunction",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "normalizedSignature": "Function|:Microsoft.EntityFrameworkCore.Metadata.IStoreFunction|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",

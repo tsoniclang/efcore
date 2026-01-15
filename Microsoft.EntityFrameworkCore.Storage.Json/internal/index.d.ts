@@ -23,7 +23,7 @@ import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
 import type { JsonReaderState, JsonTokenType, Utf8JsonReader, Utf8JsonWriter } from "@tsonic/dotnet/System.Text.Json.js";
 
 export interface IJsonValueReaderWriterSource$instance {
-    findReaderWriter(type_: Type): JsonValueReaderWriter | undefined;
+    findReaderWriter(type: Type): JsonValueReaderWriter | undefined;
 }
 
 
@@ -551,7 +551,7 @@ export const JsonValueReaderWriter_1: {
 export type JsonValueReaderWriter_1<TValue> = JsonValueReaderWriter_1$instance<TValue>;
 
 export interface JsonValueReaderWriterSource$instance {
-    findReaderWriter(type_: Type): JsonValueReaderWriter | undefined;
+    findReaderWriter(type: Type): JsonValueReaderWriter | undefined;
 }
 
 

@@ -244,12 +244,12 @@ export type ConcurrencyDetectorCriticalSectionDisposer = ConcurrencyDetectorCrit
 export interface DbSetProperty$instance {
     readonly name: string;
     readonly setter: IClrPropertySetter | undefined;
-    readonly type_: Type;
+    readonly type: Type;
 }
 
 
 export const DbSetProperty: {
-    new(name: string, type_: Type, setter: IClrPropertySetter): DbSetProperty;
+    new(name: string, type: Type, setter: IClrPropertySetter): DbSetProperty;
 };
 
 
@@ -1242,7 +1242,7 @@ export abstract class ExpressionExtensions$instance {
     static createEFPropertyExpression(target: Expression, propertyDeclaringType: Type, propertyType: Type, propertyName: string, makeNullable: boolean): Expression;
     static createEqualsExpression(left: Expression, right: Expression, negated?: boolean): Expression;
     static createKeyValuesExpression(target: Expression, properties: IReadOnlyList<IProperty>, makeNullable?: boolean): Expression;
-    static createValueBufferReadValueExpression(valueBuffer: Expression, type_: Type, index: int, property: IPropertyBase): Expression;
+    static createValueBufferReadValueExpression(valueBuffer: Expression, type: Type, index: int, property: IPropertyBase): Expression;
     static getMemberAccess(memberAccessExpression: LambdaExpression): MemberInfo;
     static getMemberAccessList(memberAccessExpression: LambdaExpression): IReadOnlyList<MemberInfo>;
     static getPropertyAccess(propertyAccessExpression: LambdaExpression): PropertyInfo;
@@ -1295,7 +1295,7 @@ export abstract class RelationalPropertyExtensions$instance {
 export type RelationalPropertyExtensions = RelationalPropertyExtensions$instance;
 
 export abstract class TypeExtensions$instance {
-    static shortDisplayName(type_: Type): string;
+    static shortDisplayName(type: Type): string;
 }
 
 

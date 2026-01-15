@@ -139,7 +139,7 @@ export interface ConverterMappingHints$instance {
     readonly size: Nullable<System_Internal.Int32>;
     readonly valueGeneratorFactory: Func<IProperty, IEntityType, ValueGenerator> | undefined;
     overrideWith(hints: ConverterMappingHints): ConverterMappingHints;
-    with_(hints: ConverterMappingHints): ConverterMappingHints;
+    with(hints: ConverterMappingHints): ConverterMappingHints;
 }
 
 
@@ -385,7 +385,7 @@ export interface RelationalConverterMappingHints$instance extends ConverterMappi
     readonly dbType: Nullable<DbType>;
     readonly isFixedLength: Nullable<System_Internal.Boolean>;
     overrideWith(hints: ConverterMappingHints): ConverterMappingHints;
-    with_(hints: ConverterMappingHints): ConverterMappingHints;
+    with(hints: ConverterMappingHints): ConverterMappingHints;
 }
 
 

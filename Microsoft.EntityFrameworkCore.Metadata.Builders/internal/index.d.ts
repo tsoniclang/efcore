@@ -90,8 +90,8 @@ export interface IConventionComplexTypeBuilder$instance extends IConventionTypeB
     canRemoveProperty(property: IConventionProperty, fromDataAnnotation?: boolean): boolean;
     canSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
-    canSetDiscriminator(name: string, type_: Type, fromDataAnnotation?: boolean): boolean;
-    canSetDiscriminator(type_: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
     complexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     complexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     getOrCreateProperties(memberInfos: IEnumerable<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty> | undefined;
@@ -104,8 +104,8 @@ export interface IConventionComplexTypeBuilder$instance extends IConventionTypeB
     hasDiscriminator(fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
     hasDiscriminator(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
     hasDiscriminator(name: string, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
-    hasDiscriminator(name: string, type_: Type, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
-    hasDiscriminator(type_: Type, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
+    hasDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
+    hasDiscriminator(type: Type, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
@@ -218,7 +218,7 @@ export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBa
     readonly modelBuilder: IConventionModelBuilder;
     canHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): boolean;
     canHaveComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): boolean;
-    canHaveNavigation(navigationName: string, type_: Type, fromDataAnnotation?: boolean): boolean;
+    canHaveNavigation(navigationName: string, type: Type, fromDataAnnotation?: boolean): boolean;
     canHaveProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): boolean;
     canHaveProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): boolean;
     canHaveServiceProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): boolean;
@@ -235,8 +235,8 @@ export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBa
     canSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     canSetBaseType(baseEntityType: IConventionEntityType, fromDataAnnotation?: boolean): boolean;
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
-    canSetDiscriminator(type_: Type, fromDataAnnotation?: boolean): boolean;
-    canSetDiscriminator(name: string, type_: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     canSetPrimaryKey(propertyNames: IReadOnlyList<System_Internal.String>, fromDataAnnotation?: boolean): boolean;
     canSetQueryFilter(filter: LambdaExpression, fromDataAnnotation?: boolean): boolean;
     canSetQueryFilter(filterKey: string, filter: LambdaExpression, fromDataAnnotation?: boolean): boolean;
@@ -254,8 +254,8 @@ export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBa
     hasDiscriminator(fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
     hasDiscriminator(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
     hasDiscriminator(name: string, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    hasDiscriminator(name: string, type_: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    hasDiscriminator(type_: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
+    hasDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
+    hasDiscriminator(type: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
     hasIndex(propertyNames: IReadOnlyList<System_Internal.String>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
     hasIndex(propertyNames: IReadOnlyList<System_Internal.String>, name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
@@ -389,15 +389,15 @@ export type IConventionKeyBuilder = IConventionKeyBuilder$instance;
 export interface IConventionModelBuilder$instance extends IConventionAnnotatableBuilder {
     readonly metadata: IConventionModel;
     readonly modelBuilder: IConventionModelBuilder;
-    canHaveSharedTypeEntity(name: string, type_: Type, fromDataAnnotation?: boolean): boolean;
+    canHaveSharedTypeEntity(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     canRemoveEntity(entityType: IConventionEntityType, fromDataAnnotation?: boolean): boolean;
     canSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
-    complexType(type_: Type, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
+    complexType(type: Type, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
     entity(name: string, shouldBeOwned?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     entity(name: string, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    entity(type_: Type, shouldBeOwned?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    entity(type_: Type, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    entity(type: Type, shouldBeOwned?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    entity(type: Type, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     hasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     hasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
     hasChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
@@ -405,9 +405,9 @@ export interface IConventionModelBuilder$instance extends IConventionAnnotatable
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
     hasNoEntityType(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
     isIgnored(typeName: string, fromDataAnnotation?: boolean): boolean;
-    isIgnored(type_: Type, fromDataAnnotation?: boolean): boolean;
-    owned(type_: Type, fromDataAnnotation?: boolean): IConventionOwnedEntityTypeBuilder | undefined;
-    sharedTypeEntity(name: string, type_: Type, shouldBeOwned?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    isIgnored(type: Type, fromDataAnnotation?: boolean): boolean;
+    owned(type: Type, fromDataAnnotation?: boolean): IConventionOwnedEntityTypeBuilder | undefined;
+    sharedTypeEntity(name: string, type: Type, shouldBeOwned?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     canRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -518,12 +518,12 @@ export interface IConventionSequenceBuilder$instance extends IConventionAnnotata
     canRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     canSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     canSetIncrementsBy(increment: Nullable<System_Internal.Int32>, fromDataAnnotation?: boolean): boolean;
-    canSetType(type_: Type, fromDataAnnotation?: boolean): boolean;
+    canSetType(type: Type, fromDataAnnotation?: boolean): boolean;
     hasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     hasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
-    hasType(type_: Type, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
+    hasType(type: Type, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
     incrementsBy(increment: Nullable<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
 }
 
@@ -662,8 +662,8 @@ export interface IConventionTypeBaseBuilder$instance extends IConventionAnnotata
     canRemoveProperty(property: IConventionProperty, fromDataAnnotation?: boolean): boolean;
     canSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
-    canSetDiscriminator(name: string, type_: Type, fromDataAnnotation?: boolean): boolean;
-    canSetDiscriminator(type_: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
     complexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     complexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     getOrCreateProperties(memberInfos: IEnumerable<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty> | undefined;
@@ -1128,7 +1128,7 @@ export interface ComplexPropertyBuilder$instance {
     getHashCode(): int;
     hasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexPropertyBuilder;
     hasDiscriminator(): ComplexTypeDiscriminatorBuilder;
-    hasDiscriminator(name: string, type_: Type): ComplexTypeDiscriminatorBuilder;
+    hasDiscriminator(name: string, type: Type): ComplexTypeDiscriminatorBuilder;
     hasDiscriminator<TDiscriminator>(name: string): ComplexTypeDiscriminatorBuilder_1<TDiscriminator>;
     hasField(fieldName: string): ComplexPropertyBuilder;
     hasNoDiscriminator(): ComplexPropertyBuilder;
@@ -1189,7 +1189,7 @@ export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexProp
     complexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexPropertyBuilder;
     hasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexPropertyBuilder;
     hasDiscriminator(): ComplexTypeDiscriminatorBuilder;
-    hasDiscriminator(name: string, type_: Type): ComplexTypeDiscriminatorBuilder;
+    hasDiscriminator(name: string, type: Type): ComplexTypeDiscriminatorBuilder;
     hasDiscriminator<TDiscriminator>(name: string): ComplexTypeDiscriminatorBuilder_1<TDiscriminator>;
     hasField(fieldName: string): ComplexPropertyBuilder;
     hasNoDiscriminator(): ComplexPropertyBuilder;
@@ -1671,7 +1671,7 @@ export interface EntityTypeBuilder$instance {
     hasData(...data: unknown[]): DataBuilder;
     hasData(data: IEnumerable<unknown>): DataBuilder;
     hasDiscriminator(): DiscriminatorBuilder;
-    hasDiscriminator(name: string, type_: Type): DiscriminatorBuilder;
+    hasDiscriminator(name: string, type: Type): DiscriminatorBuilder;
     hasDiscriminator<TDiscriminator>(name: string): DiscriminatorBuilder_1<TDiscriminator>;
     hasIndex(...propertyNames: string[]): IndexBuilder;
     hasIndex(propertyNames: string[], name: string): IndexBuilder;
@@ -1764,7 +1764,7 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     hasData(...data: unknown[]): DataBuilder;
     hasData(data: IEnumerable<unknown>): DataBuilder;
     hasDiscriminator(): DiscriminatorBuilder;
-    hasDiscriminator(name: string, type_: Type): DiscriminatorBuilder;
+    hasDiscriminator(name: string, type: Type): DiscriminatorBuilder;
     hasDiscriminator<TDiscriminator>(name: string): DiscriminatorBuilder_1<TDiscriminator>;
     hasIndex(...propertyNames: string[]): IndexBuilder_1<TEntity>;
     hasIndex(propertyNames: string[], name: string): IndexBuilder_1<TEntity>;

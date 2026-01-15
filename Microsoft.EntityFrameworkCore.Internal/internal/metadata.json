@@ -365,7 +365,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IDbContextPool::Return(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void",
           "clrName": "Return",
-          "tsEmitName": "return_",
+          "tsEmitName": "return",
           "normalizedSignature": "Return|(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -430,7 +430,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IDbContextPool::Return(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void",
           "clrName": "Return",
-          "tsEmitName": "return_",
+          "tsEmitName": "return",
           "normalizedSignature": "Return|(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -2249,7 +2249,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.DbContextPool\u00601::Return(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void",
           "clrName": "Return",
-          "tsEmitName": "return_",
+          "tsEmitName": "return",
           "normalizedSignature": "Return|(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",

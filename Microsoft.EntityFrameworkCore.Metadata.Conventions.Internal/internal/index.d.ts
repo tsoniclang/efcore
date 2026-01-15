@@ -77,7 +77,7 @@ export interface ConventionDispatcher$instance {
     onEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
     onEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, previousBaseType: IConventionEntityType): IConventionEntityType | undefined;
     onEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string): string | undefined;
-    onEntityTypeRemoved(modelBuilder: IConventionModelBuilder, type_: IConventionEntityType): IConventionEntityType | undefined;
+    onEntityTypeRemoved(modelBuilder: IConventionModelBuilder, type: IConventionEntityType): IConventionEntityType | undefined;
     onForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder): IConventionForeignKeyBuilder | undefined;
     onForeignKeyAnnotationChanged(relationshipBuilder: IConventionForeignKeyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
     onForeignKeyDependentRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder): Nullable<System_Internal.Boolean>;
@@ -116,7 +116,7 @@ export interface ConventionDispatcher$instance {
     onSkipNavigationRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, navigation: IConventionSkipNavigation): IConventionSkipNavigation | undefined;
     onTriggerAdded(triggerBuilder: IConventionTriggerBuilder): IConventionTriggerBuilder | undefined;
     onTriggerRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, trigger: IConventionTrigger): IConventionTrigger | undefined;
-    onTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type_: Type): string | undefined;
+    onTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type): string | undefined;
     track<T>(func: Func<T>, foreignKey: IConventionForeignKey): T;
 }
 

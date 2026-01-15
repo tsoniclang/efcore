@@ -1322,7 +1322,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.ICSharpHelper::Namespace(System.String[]):System.String",
           "clrName": "Namespace",
-          "tsEmitName": "namespace_",
+          "tsEmitName": "namespace",
           "metadataToken": 100674914,
           "canonicalSignature": "(System.String[]):System.String",
           "normalizedSignature": "Namespace|(System.String[]):System.String|static=false",
@@ -1784,7 +1784,7 @@
           }
         },
         {
-          "tsName": "namespace_",
+          "tsName": "namespace",
           "isStatic": false,
           "tsSignatureId": "Namespace|(System.String[]):System.String|static=false",
           "target": {
@@ -3956,7 +3956,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385878002,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -4022,7 +4022,7 @@
       ],
       "exposedProperties": [
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -4576,7 +4576,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment::Namespace:System.String",
           "clrName": "Namespace",
-          "tsEmitName": "namespace_",
+          "tsEmitName": "namespace",
           "metadataToken": 385878014,
           "canonicalSignature": ":System.String",
           "normalizedSignature": "Namespace|:System.String|static=false|accessor=get",
@@ -4782,7 +4782,7 @@
           }
         },
         {
-          "tsName": "namespace_",
+          "tsName": "namespace",
           "isStatic": false,
           "tsSignatureId": "Namespace|:System.String|static=false|accessor=get",
           "target": {

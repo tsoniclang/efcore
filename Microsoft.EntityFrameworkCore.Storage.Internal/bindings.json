@@ -1319,7 +1319,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "metadataToken": 385876404,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping|static=true|accessor=get",
@@ -1489,7 +1489,7 @@
       ],
       "exposedProperties": [
         {
-          "tsName": "default_",
+          "tsName": "default",
           "isStatic": true,
           "tsSignatureId": "Default|:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping|static=true|accessor=get",
           "target": {

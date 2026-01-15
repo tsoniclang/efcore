@@ -174,7 +174,7 @@ export interface IEntityTypeBaseTypeChangedConvention$instance extends IConventi
 export type IEntityTypeBaseTypeChangedConvention = IEntityTypeBaseTypeChangedConvention$instance;
 
 export interface IEntityTypeIgnoredConvention$instance extends IConvention {
-    processEntityTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type_: Type, context: IConventionContext_1<System_Internal.String>): void;
+    processEntityTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -561,7 +561,7 @@ export interface ITriggerRemovedConvention$instance extends IConvention$instance
 export type ITriggerRemovedConvention = ITriggerRemovedConvention$instance;
 
 export interface ITypeIgnoredConvention$instance extends IConvention {
-    processTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type_: Type, context: IConventionContext_1<System_Internal.String>): void;
+    processTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -1431,8 +1431,8 @@ export interface NavigationAttributeConventionBase_1$instance<TAttribute extends
     processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: TAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
     processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
     processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, attribute: TAttribute, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
-    processTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type_: Type, context: IConventionContext_1<System_Internal.String>): void;
-    processTypeIgnored(modelBuilder: IConventionModelBuilder, type_: Type, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<System_Internal.String>): void;
+    processTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
+    processTypeIgnored(modelBuilder: IConventionModelBuilder, type: Type, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -1989,7 +1989,7 @@ export interface RelationshipDiscoveryConvention$instance extends IConvention {
     processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
     processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
     processNavigationRemoved(sourceEntityTypeBuilder: IConventionEntityTypeBuilder, targetEntityTypeBuilder: IConventionEntityTypeBuilder, navigationName: string, memberInfo: MemberInfo, context: IConventionContext_1<System_Internal.String>): void;
-    processTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type_: Type, context: IConventionContext_1<System_Internal.String>): void;
+    processTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 

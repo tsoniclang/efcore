@@ -101,7 +101,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior::ThrowMicrosoft.EntityFrameworkCore.Metadata.PropertySaveBehavior",
           "clrName": "Throw",
-          "tsEmitName": "throw_",
+          "tsEmitName": "throw",
           "normalizedSignature": "Throw|Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior|static=true|const=true",
           "isStatic": true,
           "isReadOnly": false,
@@ -163,7 +163,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.StoreObjectType::FunctionMicrosoft.EntityFrameworkCore.Metadata.StoreObjectType",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "normalizedSignature": "Function|Microsoft.EntityFrameworkCore.Metadata.StoreObjectType|static=true|const=true",
           "isStatic": true,
           "isReadOnly": false,
@@ -225,7 +225,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ValueGenerated::NeverMicrosoft.EntityFrameworkCore.Metadata.ValueGenerated",
           "clrName": "Never",
-          "tsEmitName": "never_",
+          "tsEmitName": "never",
           "normalizedSignature": "Never|Microsoft.EntityFrameworkCore.Metadata.ValueGenerated|static=true|const=true",
           "isStatic": true,
           "isReadOnly": false,
@@ -658,7 +658,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.IClrIndexedCollectionAccessor::Get(System.Object,System.Int32):System.Object",
           "clrName": "Get",
-          "tsEmitName": "get_",
+          "tsEmitName": "get",
           "normalizedSignature": "Get|(System.Object,System.Int32):System.Object|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -674,7 +674,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.IClrIndexedCollectionAccessor::Set(System.Object,System.Int32,System.Object,System.Boolean):System.Void",
           "clrName": "Set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "normalizedSignature": "Set|(System.Object,System.Int32,System.Object,System.Boolean):System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -6023,7 +6023,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IConventionDbFunctionParameter::Function:Microsoft.EntityFrameworkCore.Metadata.IConventionDbFunction",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "normalizedSignature": "Function|:Microsoft.EntityFrameworkCore.Metadata.IConventionDbFunction|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -13481,7 +13481,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IReadOnlySequence::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -17376,7 +17376,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IDbFunctionParameter::Function:Microsoft.EntityFrameworkCore.Metadata.IDbFunction",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "normalizedSignature": "Function|:Microsoft.EntityFrameworkCore.Metadata.IDbFunction|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -20158,7 +20158,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IFunctionColumn::Function:Microsoft.EntityFrameworkCore.Metadata.IStoreFunction",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "normalizedSignature": "Function|:Microsoft.EntityFrameworkCore.Metadata.IStoreFunction|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -21316,7 +21316,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.IMetadataReference\u00601::Object:T",
           "clrName": "Object",
-          "tsEmitName": "object_",
+          "tsEmitName": "object",
           "normalizedSignature": "Object|:T|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -23932,7 +23932,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IMutableDbFunctionParameter::Function:Microsoft.EntityFrameworkCore.Metadata.IMutableDbFunction",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "normalizedSignature": "Function|:Microsoft.EntityFrameworkCore.Metadata.IMutableDbFunction|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -30140,7 +30140,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IMutableSequence::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=getset",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -36810,7 +36810,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IReadOnlyDbFunctionParameter::Function:Microsoft.EntityFrameworkCore.Metadata.IReadOnlyDbFunction",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "normalizedSignature": "Function|:Microsoft.EntityFrameworkCore.Metadata.IReadOnlyDbFunction|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -40856,7 +40856,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IReadOnlySequence::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42850,7 +42850,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IRelationalModel,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IRelationalModel,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42866,7 +42866,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ITable,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ITable,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42882,7 +42882,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42898,7 +42898,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IView,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IView,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42914,7 +42914,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IViewColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IViewColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42930,7 +42930,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ISqlQuery,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ISqlQuery,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42946,7 +42946,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ISqlQueryColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ISqlQueryColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42962,7 +42962,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreFunction,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreFunction,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42978,7 +42978,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreFunctionParameter,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreFunctionParameter,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -42994,7 +42994,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IFunctionColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IFunctionColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43010,7 +43010,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedure,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedure,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43026,7 +43026,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedureParameter,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedureParameter,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43042,7 +43042,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedureResultColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedureResultColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43058,7 +43058,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IUniqueConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IUniqueConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43074,7 +43074,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ITableIndex,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ITableIndex,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43090,7 +43090,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43106,7 +43106,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ISequence,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ISequence,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43122,7 +43122,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43138,7 +43138,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ITrigger,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ITrigger,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -43987,7 +43987,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IReadOnlySequence::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -48399,7 +48399,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IStoreFunctionParameter::Function:Microsoft.EntityFrameworkCore.Metadata.IStoreFunction",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "normalizedSignature": "Function|:Microsoft.EntityFrameworkCore.Metadata.IStoreFunction|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -48459,7 +48459,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IStoreFunctionParameter::Type:System.String",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "normalizedSignature": "Type|:System.String|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -54686,7 +54686,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ConstructorBinding::With(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding",
           "clrName": "With",
-          "tsEmitName": "with_2",
+          "tsEmitName": "with2",
           "normalizedSignature": "With|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -54702,7 +54702,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ConstructorBinding::With(System.Collections.Generic.IReadOnlyList_1):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(System.Collections.Generic.IReadOnlyList_1):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding|static=false",
           "provenance": "BaseOverload",
           "emitScope": "ClassSurface",
@@ -54720,7 +54720,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ConstructorBinding::Constructor:System.Reflection.ConstructorInfo",
           "clrName": "Constructor",
-          "tsEmitName": "constructor_",
+          "tsEmitName": "constructor",
           "normalizedSignature": "Constructor|:System.Reflection.ConstructorInfo|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -54788,7 +54788,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ContextParameterBinding::With(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -54859,7 +54859,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.DefaultValueBinding::With(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding",
           "clrName": "With",
-          "tsEmitName": "with_2",
+          "tsEmitName": "with2",
           "normalizedSignature": "With|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -54875,7 +54875,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.DefaultValueBinding::With(System.Collections.Generic.IReadOnlyList_1):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(System.Collections.Generic.IReadOnlyList_1):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding|static=false",
           "provenance": "BaseOverload",
           "emitScope": "ClassSurface",
@@ -54946,7 +54946,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.DependencyInjectionMethodParameterBinding::With(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -55048,7 +55048,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.DependencyInjectionParameterBinding::With(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -55210,7 +55210,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.EntityTypeParameterBinding::With(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -55281,7 +55281,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.FactoryMethodBinding::With(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding",
           "clrName": "With",
-          "tsEmitName": "with_2",
+          "tsEmitName": "with2",
           "normalizedSignature": "With|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -55297,7 +55297,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.FactoryMethodBinding::With(System.Collections.Generic.IReadOnlyList_1):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(System.Collections.Generic.IReadOnlyList_1):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding|static=false",
           "provenance": "BaseOverload",
           "emitScope": "ClassSurface",
@@ -55523,7 +55523,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding::With(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -55936,7 +55936,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ObjectArrayParameterBinding::With(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -55991,7 +55991,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ParameterBinding::With(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56071,7 +56071,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.PropertyParameterBinding::With(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):Microsoft.EntityFrameworkCore.Metadata.ParameterBinding|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56285,7 +56285,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IRelationalModel,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IRelationalModel,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56301,7 +56301,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ITable,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ITable,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56317,7 +56317,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56333,7 +56333,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IView,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IView,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56349,7 +56349,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IViewColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IViewColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56365,7 +56365,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ISqlQuery,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ISqlQuery,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56381,7 +56381,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ISqlQueryColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ISqlQueryColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56397,7 +56397,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreFunction,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreFunction,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56413,7 +56413,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreFunctionParameter,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreFunctionParameter,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56429,7 +56429,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IFunctionColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IFunctionColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56445,7 +56445,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedure,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedure,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56461,7 +56461,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedureParameter,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedureParameter,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56477,7 +56477,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedureResultColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IStoreStoredProcedureResultColumn,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56493,7 +56493,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56509,7 +56509,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ITableIndex,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ITableIndex,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56525,7 +56525,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.IUniqueConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.IUniqueConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56541,7 +56541,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ISequence,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ISequence,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56557,7 +56557,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -56573,7 +56573,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RelationalAnnotationProvider::For(Microsoft.EntityFrameworkCore.Metadata.ITrigger,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "For",
-          "tsEmitName": "for_",
+          "tsEmitName": "for",
           "normalizedSignature": "For|(Microsoft.EntityFrameworkCore.Metadata.ITrigger,System.Boolean):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -61097,7 +61097,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RuntimeDbFunctionParameter::Function:Microsoft.EntityFrameworkCore.Metadata.RuntimeDbFunction",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "normalizedSignature": "Function|:Microsoft.EntityFrameworkCore.Metadata.RuntimeDbFunction|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -73818,7 +73818,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.IReadOnlySequence::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
           "provenance": "ExplicitView",
           "emitScope": "ViewOnly",

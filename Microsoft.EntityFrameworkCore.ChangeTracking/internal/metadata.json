@@ -48,7 +48,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.CascadeTiming::NeverMicrosoft.EntityFrameworkCore.ChangeTracking.CascadeTiming",
           "clrName": "Never",
-          "tsEmitName": "never_",
+          "tsEmitName": "never",
           "normalizedSignature": "Never|Microsoft.EntityFrameworkCore.ChangeTracking.CascadeTiming|static=true|const=true",
           "isStatic": true,
           "isReadOnly": false,
@@ -6557,7 +6557,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -6761,7 +6761,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer\u00601::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",

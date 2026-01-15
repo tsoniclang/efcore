@@ -493,7 +493,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IDbContextPool::Return(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void",
           "clrName": "Return",
-          "tsEmitName": "return_",
+          "tsEmitName": "return",
           "metadataToken": 100673692,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void",
           "normalizedSignature": "Return|(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void|static=false",
@@ -535,7 +535,7 @@
           }
         },
         {
-          "tsName": "return_",
+          "tsName": "return",
           "isStatic": false,
           "tsSignatureId": "Return|(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void|static=false",
           "target": {
@@ -580,7 +580,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IDbContextPool::Return(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void",
           "clrName": "Return",
-          "tsEmitName": "return_",
+          "tsEmitName": "return",
           "metadataToken": 100673692,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void",
           "normalizedSignature": "Return|(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void|static=false",
@@ -622,7 +622,7 @@
           }
         },
         {
-          "tsName": "return_",
+          "tsName": "return",
           "isStatic": false,
           "tsSignatureId": "Return|(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void|static=false",
           "target": {
@@ -3194,7 +3194,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.DbContextPool\u00601::Return(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void",
           "clrName": "Return",
-          "tsEmitName": "return_",
+          "tsEmitName": "return",
           "metadataToken": 100673577,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void",
           "normalizedSignature": "Return|(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void|static=false",
@@ -3329,7 +3329,7 @@
           }
         },
         {
-          "tsName": "return_",
+          "tsName": "return",
           "isStatic": false,
           "tsSignatureId": "Return|(Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable):System.Void|static=false",
           "target": {

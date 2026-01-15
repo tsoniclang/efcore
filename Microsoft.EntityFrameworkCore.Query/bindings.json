@@ -1564,7 +1564,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.ISqlExpressionFactory::Case(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Case",
-          "tsEmitName": "case_",
+          "tsEmitName": "case",
           "metadataToken": 100666091,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Case|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -1578,7 +1578,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.ISqlExpressionFactory::Case(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Case",
-          "tsEmitName": "case_",
+          "tsEmitName": "case",
           "metadataToken": 100666092,
           "canonicalSignature": "(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Case|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -1592,7 +1592,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.ISqlExpressionFactory::Function(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "metadataToken": 100666093,
           "canonicalSignature": "(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Function|(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -1606,7 +1606,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.ISqlExpressionFactory::Function(System.String,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "metadataToken": 100666094,
           "canonicalSignature": "(System.String,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Function|(System.String,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -1620,7 +1620,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.ISqlExpressionFactory::Function(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "metadataToken": 100666095,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Function|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -1690,7 +1690,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.ISqlExpressionFactory::In(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "In",
-          "tsEmitName": "in_",
+          "tsEmitName": "in",
           "metadataToken": 100666100,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -1704,7 +1704,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.ISqlExpressionFactory::In(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "In",
-          "tsEmitName": "in_",
+          "tsEmitName": "in",
           "metadataToken": 100666101,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -1718,7 +1718,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.ISqlExpressionFactory::In(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlParameterExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "In",
-          "tsEmitName": "in_",
+          "tsEmitName": "in",
           "metadataToken": 100666102,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlParameterExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlParameterExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -1890,7 +1890,7 @@
           }
         },
         {
-          "tsName": "case_",
+          "tsName": "case",
           "isStatic": false,
           "tsSignatureId": "Case|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -1900,7 +1900,7 @@
           }
         },
         {
-          "tsName": "case_",
+          "tsName": "case",
           "isStatic": false,
           "tsSignatureId": "Case|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -1910,7 +1910,7 @@
           }
         },
         {
-          "tsName": "function_",
+          "tsName": "function",
           "isStatic": false,
           "tsSignatureId": "Function|(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -1920,7 +1920,7 @@
           }
         },
         {
-          "tsName": "function_",
+          "tsName": "function",
           "isStatic": false,
           "tsSignatureId": "Function|(System.String,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -1930,7 +1930,7 @@
           }
         },
         {
-          "tsName": "function_",
+          "tsName": "function",
           "isStatic": false,
           "tsSignatureId": "Function|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -1980,7 +1980,7 @@
           }
         },
         {
-          "tsName": "in_",
+          "tsName": "in",
           "isStatic": false,
           "tsSignatureId": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -1990,7 +1990,7 @@
           }
         },
         {
-          "tsName": "in_",
+          "tsName": "in",
           "isStatic": false,
           "tsSignatureId": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -2000,7 +2000,7 @@
           }
         },
         {
-          "tsName": "in_",
+          "tsName": "in",
           "isStatic": false,
           "tsSignatureId": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlParameterExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -3029,7 +3029,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.CollectionResultExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876487,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -3161,7 +3161,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -3804,7 +3804,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -4043,7 +4043,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.EnumerableExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876496,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -4213,7 +4213,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -5025,7 +5025,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.GroupByShaperExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876404,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -5119,7 +5119,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -5261,7 +5261,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.IncludeExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876412,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -5371,7 +5371,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -5610,7 +5610,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -5887,7 +5887,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.JsonQueryExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876507,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -6087,7 +6087,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -6214,7 +6214,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.LiftableConstantExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876417,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -6318,7 +6318,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -6885,7 +6885,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.MaterializeCollectionNavigationExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876425,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -6965,7 +6965,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -7801,7 +7801,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -8068,7 +8068,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.ProjectionBindingExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876435,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -8182,7 +8182,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -10632,7 +10632,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.QueryParameterExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876552,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -10774,7 +10774,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -10954,7 +10954,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.QueryRootExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876559,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -11057,7 +11057,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -12399,7 +12399,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalCollectionShaperExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876531,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -12553,7 +12553,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -13192,7 +13192,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalGroupByResultExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876542,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -13296,7 +13296,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -13458,7 +13458,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -17743,7 +17743,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor\u002BShaperProcessingExpressionVisitor::Any(System.Collections.IEnumerable):System.Boolean",
           "clrName": "Any",
-          "tsEmitName": "any_",
+          "tsEmitName": "any",
           "metadataToken": 100673504,
           "canonicalSignature": "(System.Collections.IEnumerable):System.Boolean",
           "normalizedSignature": "Any|(System.Collections.IEnumerable):System.Boolean|static=true",
@@ -18054,7 +18054,7 @@
           }
         },
         {
-          "tsName": "any_",
+          "tsName": "any",
           "isStatic": true,
           "tsSignatureId": "Any|(System.Collections.IEnumerable):System.Boolean|static=true",
           "target": {
@@ -18498,7 +18498,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalSplitCollectionShaperExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876609,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -18632,7 +18632,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -19598,7 +19598,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -20411,7 +20411,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.ShapedQueryExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876586,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -20535,7 +20535,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -21121,7 +21121,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory::Case(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Case",
-          "tsEmitName": "case_",
+          "tsEmitName": "case",
           "metadataToken": 100666841,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Case|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -21135,7 +21135,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory::Case(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Case",
-          "tsEmitName": "case_",
+          "tsEmitName": "case",
           "metadataToken": 100666842,
           "canonicalSignature": "(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Case|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -21149,7 +21149,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory::Function(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "metadataToken": 100666843,
           "canonicalSignature": "(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Function|(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -21163,7 +21163,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory::Function(System.String,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "metadataToken": 100666844,
           "canonicalSignature": "(System.String,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Function|(System.String,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -21177,7 +21177,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory::Function(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "metadataToken": 100666845,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "Function|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -21247,7 +21247,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory::In(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "In",
-          "tsEmitName": "in_",
+          "tsEmitName": "in",
           "metadataToken": 100666850,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -21261,7 +21261,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory::In(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "In",
-          "tsEmitName": "in_",
+          "tsEmitName": "in",
           "metadataToken": 100666851,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -21275,7 +21275,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory::In(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlParameterExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "clrName": "In",
-          "tsEmitName": "in_",
+          "tsEmitName": "in",
           "metadataToken": 100666852,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlParameterExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
           "normalizedSignature": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlParameterExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
@@ -21988,7 +21988,7 @@
           }
         },
         {
-          "tsName": "case_",
+          "tsName": "case",
           "isStatic": false,
           "tsSignatureId": "Case|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -21998,7 +21998,7 @@
           }
         },
         {
-          "tsName": "case_",
+          "tsName": "case",
           "isStatic": false,
           "tsSignatureId": "Case|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.CaseWhenClause,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -22008,7 +22008,7 @@
           }
         },
         {
-          "tsName": "function_",
+          "tsName": "function",
           "isStatic": false,
           "tsSignatureId": "Function|(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -22018,7 +22018,7 @@
           }
         },
         {
-          "tsName": "function_",
+          "tsName": "function",
           "isStatic": false,
           "tsSignatureId": "Function|(System.String,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -22028,7 +22028,7 @@
           }
         },
         {
-          "tsName": "function_",
+          "tsName": "function",
           "isStatic": false,
           "tsSignatureId": "Function|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -22078,7 +22078,7 @@
           }
         },
         {
-          "tsName": "in_",
+          "tsName": "in",
           "isStatic": false,
           "tsSignatureId": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -22088,7 +22088,7 @@
           }
         },
         {
-          "tsName": "in_",
+          "tsName": "in",
           "isStatic": false,
           "tsSignatureId": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -22098,7 +22098,7 @@
           }
         },
         {
-          "tsName": "in_",
+          "tsName": "in",
           "isStatic": false,
           "tsSignatureId": "In|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlParameterExpression):Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false",
           "target": {
@@ -22993,7 +22993,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.StructuralTypeProjectionExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876640,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -23163,7 +23163,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -23374,7 +23374,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.StructuralTypeShaperExpression::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "metadataToken": 385876592,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
@@ -23538,7 +23538,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {

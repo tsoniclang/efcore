@@ -407,7 +407,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints::With(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -1432,7 +1432,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.ValueConversion.RelationalConverterMappingHints::With(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",

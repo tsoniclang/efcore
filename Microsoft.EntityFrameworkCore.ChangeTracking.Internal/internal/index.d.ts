@@ -266,7 +266,7 @@ export interface IStateManager$instance extends IResettableService {
     stopTracking(entry: InternalComplexEntry, oldState: EntityState): void;
     tryGetEntry(key: IKey, keyValues: IReadOnlyList<unknown>): InternalEntityEntry | undefined;
     tryGetEntry(key: IKey, keyValues: unknown[], throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
-    tryGetEntry(entity: unknown, type_: IEntityType, throwOnTypeMismatch?: boolean): InternalEntityEntry | undefined;
+    tryGetEntry(entity: unknown, type: IEntityType, throwOnTypeMismatch?: boolean): InternalEntityEntry | undefined;
     tryGetEntry(entity: unknown, throwOnNonUniqueness?: boolean): InternalEntityEntry | undefined;
     tryGetEntryTyped<TKey>(key: IKey, keyValue: TKey): InternalEntityEntry | undefined;
     tryGetExistingEntry(entity: unknown, key: IKey): InternalEntityEntry | undefined;

@@ -174,7 +174,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::With(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",

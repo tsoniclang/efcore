@@ -431,7 +431,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.Internal.QualifiedName::Namespace:System.String",
           "clrName": "Namespace",
-          "tsEmitName": "namespace_",
+          "tsEmitName": "namespace",
           "normalizedSignature": "Namespace|:System.String|static=false|accessor=getset",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -1106,7 +1106,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.Internal.CSharpRuntimeAnnotationCodeGeneratorParameters::Namespace:System.String",
           "clrName": "Namespace",
-          "tsEmitName": "namespace_",
+          "tsEmitName": "namespace",
           "normalizedSignature": "Namespace|:System.String|static=false|accessor=getset",
           "provenance": "Original",
           "emitScope": "ClassSurface",

@@ -59,7 +59,7 @@ export interface AtTimeZoneExpression$instance extends SqlExpression$instance {
 
 
 export const AtTimeZoneExpression: {
-    new(operand: SqlExpression, timeZone: SqlExpression, type_: Type, typeMapping: RelationalTypeMapping): AtTimeZoneExpression;
+    new(operand: SqlExpression, timeZone: SqlExpression, type: Type, typeMapping: RelationalTypeMapping): AtTimeZoneExpression;
 };
 
 
@@ -158,8 +158,8 @@ export interface ColumnExpression$instance extends SqlExpression$instance {
 
 
 export const ColumnExpression: {
-    new(name: string, tableAlias: string, type_: Type, typeMapping: RelationalTypeMapping, nullable: boolean): ColumnExpression;
-    new(name: string, tableAlias: string, column: IColumnBase, type_: Type, typeMapping: RelationalTypeMapping, nullable: boolean): ColumnExpression;
+    new(name: string, tableAlias: string, type: Type, typeMapping: RelationalTypeMapping, nullable: boolean): ColumnExpression;
+    new(name: string, tableAlias: string, column: IColumnBase, type: Type, typeMapping: RelationalTypeMapping, nullable: boolean): ColumnExpression;
 };
 
 
@@ -220,7 +220,7 @@ export interface DeleteExpression$instance extends Expression {
     readonly selectExpression: SelectExpression;
     readonly table: TableExpression;
     readonly tags: ISet<System_Internal.String>;
-    readonly type_: Type;
+    readonly type: Type;
     applyTags(tags: ISet<System_Internal.String>): DeleteExpression;
     equals(obj: unknown): boolean;
     getHashCode(): int;
@@ -474,7 +474,7 @@ export interface JsonScalarExpression$instance extends SqlExpression$instance {
 
 
 export const JsonScalarExpression: {
-    new(json: SqlExpression, path: IReadOnlyList<PathSegment>, type_: Type, typeMapping: RelationalTypeMapping, nullable: boolean): JsonScalarExpression;
+    new(json: SqlExpression, path: IReadOnlyList<PathSegment>, type: Type, typeMapping: RelationalTypeMapping, nullable: boolean): JsonScalarExpression;
 };
 
 
@@ -541,7 +541,7 @@ export interface OrderingExpression$instance extends Expression {
     readonly expression: SqlExpression;
     readonly isAscending: boolean;
     readonly nodeType: ExpressionType;
-    readonly type_: Type;
+    readonly type: Type;
     equals(obj: unknown): boolean;
     getHashCode(): int;
     quote(): Expression;
@@ -612,7 +612,7 @@ export interface ProjectionExpression$instance extends Expression {
     readonly alias: string;
     readonly expression: SqlExpression;
     readonly nodeType: ExpressionType;
-    readonly type_: Type;
+    readonly type: Type;
     equals(obj: unknown): boolean;
     getHashCode(): int;
     quote(): Expression;
@@ -775,7 +775,7 @@ export interface SelectExpression$instance extends TableExpressionBase$instance 
     applyUnion(source2: SelectExpression, distinct: boolean): void;
     clearOrdering(): void;
     clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    createColumnExpression(tableExpression: TableExpressionBase, columnName: string, type_: Type, typeMapping: RelationalTypeMapping, columnNullable?: Nullable<System_Internal.Boolean>): ColumnExpression;
+    createColumnExpression(tableExpression: TableExpressionBase, columnName: string, type: Type, typeMapping: RelationalTypeMapping, columnNullable?: Nullable<System_Internal.Boolean>): ColumnExpression;
     equals(obj: unknown): boolean;
     generateOwnedReferenceEntityProjectionExpression(principalEntityProjection: StructuralTypeProjectionExpression, navigation: INavigation, sqlExpressionFactory: ISqlExpressionFactory, sqlAliasManager: SqlAliasManager): StructuralTypeShaperExpression;
     getHashCode(): int;
@@ -858,7 +858,7 @@ export interface SqlBinaryExpression$instance extends SqlExpression$instance {
 
 
 export const SqlBinaryExpression: {
-    new(operatorType: ExpressionType, left: SqlExpression, right: SqlExpression, type_: Type, typeMapping: RelationalTypeMapping): SqlBinaryExpression;
+    new(operatorType: ExpressionType, left: SqlExpression, right: SqlExpression, type: Type, typeMapping: RelationalTypeMapping): SqlBinaryExpression;
 };
 
 
@@ -884,9 +884,9 @@ export interface SqlConstantExpression$instance extends SqlExpression$instance {
 
 
 export const SqlConstantExpression: {
-    new(value: unknown, type_: Type, typeMapping: RelationalTypeMapping): SqlConstantExpression;
+    new(value: unknown, type: Type, typeMapping: RelationalTypeMapping): SqlConstantExpression;
     new(value: unknown, typeMapping: RelationalTypeMapping): SqlConstantExpression;
-    new(value: unknown, type_: Type, sensitive: boolean, typeMapping: RelationalTypeMapping): SqlConstantExpression;
+    new(value: unknown, type: Type, sensitive: boolean, typeMapping: RelationalTypeMapping): SqlConstantExpression;
     new(value: unknown, sensitive: boolean, typeMapping: RelationalTypeMapping): SqlConstantExpression;
     new(constantExpression: ConstantExpression, typeMapping: RelationalTypeMapping): SqlConstantExpression;
 };
@@ -904,7 +904,7 @@ export type SqlConstantExpression = SqlConstantExpression$instance & __SqlConsta
 
 export interface SqlExpression$instance extends Expression {
     readonly nodeType: ExpressionType;
-    readonly type_: Type;
+    readonly type: Type;
     readonly typeMapping: RelationalTypeMapping | undefined;
     equals(obj: unknown): boolean;
     getHashCode(): int;
@@ -936,7 +936,7 @@ export interface SqlFragmentExpression$instance extends SqlExpression$instance {
 
 
 export const SqlFragmentExpression: {
-    new(sql: string, type_: Type, typeMapping: RelationalTypeMapping): SqlFragmentExpression;
+    new(sql: string, type: Type, typeMapping: RelationalTypeMapping): SqlFragmentExpression;
 };
 
 
@@ -971,13 +971,13 @@ export interface SqlFunctionExpression$instance extends SqlExpression$instance {
 
 
 export const SqlFunctionExpression: {
-    new(functionName: string, nullable: boolean, type_: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
-    new(schema: string, functionName: string, nullable: boolean, type_: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
-    new(instance: SqlExpression, functionName: string, nullable: boolean, instancePropagatesNullability: boolean, type_: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
-    new(functionName: string, arguments: IEnumerable<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable<System_Internal.Boolean>, type_: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
-    new(schema: string, functionName: string, arguments: IEnumerable<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable<System_Internal.Boolean>, type_: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
-    new(instance: SqlExpression, functionName: string, arguments: IEnumerable<SqlExpression>, nullable: boolean, instancePropagatesNullability: boolean, argumentsPropagateNullability: IEnumerable<System_Internal.Boolean>, type_: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
-    new(instance: SqlExpression, schema: string, name: string, arguments: IEnumerable<SqlExpression>, nullable: boolean, instancePropagatesNullability: Nullable<System_Internal.Boolean>, argumentsPropagateNullability: IEnumerable<System_Internal.Boolean>, builtIn: boolean, type_: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
+    new(functionName: string, nullable: boolean, type: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
+    new(schema: string, functionName: string, nullable: boolean, type: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
+    new(instance: SqlExpression, functionName: string, nullable: boolean, instancePropagatesNullability: boolean, type: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
+    new(functionName: string, arguments: IEnumerable<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable<System_Internal.Boolean>, type: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
+    new(schema: string, functionName: string, arguments: IEnumerable<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable<System_Internal.Boolean>, type: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
+    new(instance: SqlExpression, functionName: string, arguments: IEnumerable<SqlExpression>, nullable: boolean, instancePropagatesNullability: boolean, argumentsPropagateNullability: IEnumerable<System_Internal.Boolean>, type: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
+    new(instance: SqlExpression, schema: string, name: string, arguments: IEnumerable<SqlExpression>, nullable: boolean, instancePropagatesNullability: Nullable<System_Internal.Boolean>, argumentsPropagateNullability: IEnumerable<System_Internal.Boolean>, builtIn: boolean, type: Type, typeMapping: RelationalTypeMapping): SqlFunctionExpression;
 };
 
 
@@ -1005,8 +1005,8 @@ export interface SqlParameterExpression$instance extends SqlExpression$instance 
 
 
 export const SqlParameterExpression: {
-    new(name: string, type_: Type, typeMapping: RelationalTypeMapping): SqlParameterExpression;
-    new(invariantName: string, name: string, type_: Type, nullable: boolean, translationMode: Nullable<ParameterTranslationMode>, typeMapping: RelationalTypeMapping): SqlParameterExpression;
+    new(name: string, type: Type, typeMapping: RelationalTypeMapping): SqlParameterExpression;
+    new(invariantName: string, name: string, type: Type, nullable: boolean, translationMode: Nullable<ParameterTranslationMode>, typeMapping: RelationalTypeMapping): SqlParameterExpression;
 };
 
 
@@ -1032,7 +1032,7 @@ export interface SqlUnaryExpression$instance extends SqlExpression$instance {
 
 
 export const SqlUnaryExpression: {
-    new(operatorType: ExpressionType, operand: SqlExpression, type_: Type, typeMapping: RelationalTypeMapping): SqlUnaryExpression;
+    new(operatorType: ExpressionType, operand: SqlExpression, type: Type, typeMapping: RelationalTypeMapping): SqlUnaryExpression;
 };
 
 
@@ -1079,7 +1079,7 @@ export type TableExpression = TableExpression$instance & __TableExpression$views
 export interface TableExpressionBase$instance extends Expression {
     readonly alias: string;
     readonly nodeType: ExpressionType;
-    readonly type_: Type;
+    readonly type: Type;
     addAnnotation(name: string, value: unknown): TableExpressionBase;
     clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
     equals(obj: unknown): boolean;
@@ -1169,7 +1169,7 @@ export interface UpdateExpression$instance extends Expression {
     readonly selectExpression: SelectExpression;
     readonly table: TableExpression;
     readonly tags: ISet<System_Internal.String>;
-    readonly type_: Type;
+    readonly type: Type;
     applyTags(tags: ISet<System_Internal.String>): UpdateExpression;
     equals(obj: unknown): boolean;
     getHashCode(): int;

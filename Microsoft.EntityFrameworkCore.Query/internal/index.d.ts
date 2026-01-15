@@ -72,7 +72,7 @@ export interface IAsyncQueryProvider$instance extends IQueryProvider {
 export type IAsyncQueryProvider = IAsyncQueryProvider$instance;
 
 export interface ICompiledQueryCacheKeyGenerator$instance {
-    generateCacheKey(query: Expression, async_: boolean): unknown;
+    generateCacheKey(query: Expression, async: boolean): unknown;
 }
 
 
@@ -105,7 +105,7 @@ export interface IIncludableQueryable_2$instance<TEntity, TProperty> extends IQu
 export type IIncludableQueryable_2<TEntity, TProperty> = IIncludableQueryable_2$instance<TEntity, TProperty>;
 
 export interface ILiftableConstantFactory$instance {
-    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<MaterializerLiftableConstantContext, unknown>>, variableName: string, type_: Type): Expression;
+    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<MaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): Expression;
 }
 
 
@@ -186,7 +186,7 @@ export interface IQueryableMethodTranslatingExpressionVisitorFactory$instance {
 export type IQueryableMethodTranslatingExpressionVisitorFactory = IQueryableMethodTranslatingExpressionVisitorFactory$instance;
 
 export interface IQueryCompilationContextFactory$instance {
-    create(async_: boolean): QueryCompilationContext;
+    create(async: boolean): QueryCompilationContext;
 }
 
 
@@ -228,8 +228,8 @@ export interface IQueryTranslationPreprocessorFactory$instance {
 export type IQueryTranslationPreprocessorFactory = IQueryTranslationPreprocessorFactory$instance;
 
 export interface IRelationalLiftableConstantFactory$instance extends ILiftableConstantFactory {
-    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<MaterializerLiftableConstantContext, unknown>>, variableName: string, type_: Type): Expression;
-    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<RelationalMaterializerLiftableConstantContext, unknown>>, variableName: string, type_: Type): LiftableConstantExpression;
+    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<MaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): Expression;
+    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<RelationalMaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): LiftableConstantExpression;
 }
 
 
@@ -283,25 +283,25 @@ export interface ISqlExpressionFactory$instance {
     add(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping): SqlExpression;
     applyDefaultTypeMapping(sqlExpression: SqlExpression): SqlExpression | undefined;
     applyTypeMapping(sqlExpression: SqlExpression, typeMapping: RelationalTypeMapping): SqlExpression | undefined;
-    case_(operand: SqlExpression, whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression, existingExpression?: SqlExpression): SqlExpression;
-    case_(whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression): SqlExpression;
+    case(operand: SqlExpression, whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression, existingExpression?: SqlExpression): SqlExpression;
+    case(whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression): SqlExpression;
     constant(value: unknown, typeMapping?: RelationalTypeMapping): SqlExpression;
     constant(value: unknown, sensitive: boolean, typeMapping?: RelationalTypeMapping): SqlExpression;
-    constant(value: unknown, type_: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
-    constant(value: unknown, type_: Type, sensitive: boolean, typeMapping?: RelationalTypeMapping): SqlExpression;
-    convert(operand: SqlExpression, type_: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    constant(value: unknown, type: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    constant(value: unknown, type: Type, sensitive: boolean, typeMapping?: RelationalTypeMapping): SqlExpression;
+    convert(operand: SqlExpression, type: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
     equal(left: SqlExpression, right: SqlExpression): SqlExpression;
     exists(subquery: SelectExpression): SqlExpression;
-    fragment(sql: string, type_?: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
-    function_(instance: SqlExpression, name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, instancePropagatesNullability: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
-    function_(name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
-    function_(schema: string, name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
-    in_(item: SqlExpression, subquery: SelectExpression): SqlExpression;
-    in_(item: SqlExpression, valuesParameter: SqlParameterExpression): SqlExpression;
-    in_(item: SqlExpression, values: IReadOnlyList<SqlExpression>): SqlExpression;
+    fragment(sql: string, type?: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    function(instance: SqlExpression, name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, instancePropagatesNullability: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    function(name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    function(schema: string, name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    in(item: SqlExpression, subquery: SelectExpression): SqlExpression;
+    in(item: SqlExpression, valuesParameter: SqlParameterExpression): SqlExpression;
+    in(item: SqlExpression, values: IReadOnlyList<SqlExpression>): SqlExpression;
     like(match: SqlExpression, pattern: SqlExpression, escapeChar?: SqlExpression): SqlExpression;
     makeBinary(operatorType: ExpressionType, left: SqlExpression, right: SqlExpression, typeMapping: RelationalTypeMapping, existingExpression?: SqlExpression): SqlExpression | undefined;
-    makeUnary(operatorType: ExpressionType, operand: SqlExpression, type_: Type, typeMapping?: RelationalTypeMapping, existingExpression?: SqlExpression): SqlExpression | undefined;
+    makeUnary(operatorType: ExpressionType, operand: SqlExpression, type: Type, typeMapping?: RelationalTypeMapping, existingExpression?: SqlExpression): SqlExpression | undefined;
     niladicFunction(instance: SqlExpression, name: string, nullable: boolean, instancePropagatesNullability: boolean, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
     niladicFunction(name: string, nullable: boolean, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
     niladicFunction(schema: string, name: string, nullable: boolean, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
@@ -391,7 +391,7 @@ export interface CollectionResultExpression$instance extends Expression {
     readonly projectionBindingExpression: ProjectionBindingExpression;
     readonly queryExpression: Expression;
     readonly structuralProperty: IPropertyBase | undefined;
-    readonly type_: Type;
+    readonly type: Type;
     print(expressionPrinter: ExpressionPrinter): void;
     update(queryExpression: Expression): CollectionResultExpression;
 }
@@ -412,7 +412,7 @@ export type CollectionResultExpression = CollectionResultExpression$instance & _
 
 
 export interface CompiledQueryCacheKeyGenerator$instance {
-    generateCacheKey(query: Expression, async_: boolean): unknown;
+    generateCacheKey(query: Expression, async: boolean): unknown;
 }
 
 
@@ -482,7 +482,7 @@ export interface EnumerableExpression$instance extends Expression {
     readonly orderings: IReadOnlyList<OrderingExpression>;
     readonly predicate: SqlExpression | undefined;
     readonly selector: Expression;
-    readonly type_: Type;
+    readonly type: Type;
     appendOrdering(orderingExpression: OrderingExpression): EnumerableExpression;
     applyOrdering(orderingExpression: OrderingExpression): EnumerableExpression;
     applyPredicate(sqlExpression: SqlExpression): EnumerableExpression;
@@ -586,7 +586,7 @@ export interface GroupByShaperExpression$instance extends Expression {
     readonly groupingEnumerable: ShapedQueryExpression;
     readonly keySelector: Expression;
     readonly nodeType: ExpressionType;
-    readonly type_: Type;
+    readonly type: Type;
     print(expressionPrinter: ExpressionPrinter): void;
     update(keySelector: Expression, groupingEnumerable: ShapedQueryExpression): GroupByShaperExpression;
 }
@@ -612,7 +612,7 @@ export interface IncludeExpression$instance extends Expression {
     readonly navigationExpression: Expression;
     readonly nodeType: ExpressionType;
     readonly setLoaded: boolean;
-    readonly type_: Type;
+    readonly type: Type;
     update(entityExpression: Expression, navigationExpression: Expression): IncludeExpression;
 }
 
@@ -663,7 +663,7 @@ export interface JsonQueryExpression$instance extends Expression {
     readonly nodeType: ExpressionType;
     readonly path: IReadOnlyList<PathSegment>;
     readonly structuralType: ITypeBase;
-    readonly type_: Type;
+    readonly type: Type;
     bindCollectionElement(collectionIndexExpression: SqlExpression): JsonQueryExpression;
     bindProperty(property: IProperty): SqlExpression;
     bindStructuralProperty(structuralProperty: IPropertyBase): JsonQueryExpression;
@@ -676,8 +676,8 @@ export interface JsonQueryExpression$instance extends Expression {
 
 
 export const JsonQueryExpression: {
-    new(structuralType: ITypeBase, jsonColumn: ColumnExpression, keyPropertyMap: IReadOnlyDictionary<IProperty, ColumnExpression>, type_: Type, collection: boolean): JsonQueryExpression;
-    new(structuralType: ITypeBase, jsonColumn: ColumnExpression, keyPropertyMap: IReadOnlyDictionary<IProperty, ColumnExpression>, path: IReadOnlyList<PathSegment>, type_: Type, collection: boolean, nullable: boolean): JsonQueryExpression;
+    new(structuralType: ITypeBase, jsonColumn: ColumnExpression, keyPropertyMap: IReadOnlyDictionary<IProperty, ColumnExpression>, type: Type, collection: boolean): JsonQueryExpression;
+    new(structuralType: ITypeBase, jsonColumn: ColumnExpression, keyPropertyMap: IReadOnlyDictionary<IProperty, ColumnExpression>, path: IReadOnlyList<PathSegment>, type: Type, collection: boolean, nullable: boolean): JsonQueryExpression;
 };
 
 
@@ -694,7 +694,7 @@ export interface LiftableConstantExpression$instance extends Expression {
     readonly nodeType: ExpressionType;
     readonly originalExpression: ConstantExpression;
     readonly resolverExpression: LambdaExpression;
-    readonly type_: Type;
+    readonly type: Type;
     readonly variableName: string;
     print(expressionPrinter: ExpressionPrinter): void;
     update(resolverExpression: LambdaExpression): LiftableConstantExpression;
@@ -702,7 +702,7 @@ export interface LiftableConstantExpression$instance extends Expression {
 
 
 export const LiftableConstantExpression: {
-    new(originalValue: unknown, resolverExpression: LambdaExpression, variableName: string, type_: Type): LiftableConstantExpression;
+    new(originalValue: unknown, resolverExpression: LambdaExpression, variableName: string, type: Type): LiftableConstantExpression;
 };
 
 
@@ -733,7 +733,7 @@ export type LiftableConstantExpressionDependencies = LiftableConstantExpressionD
 
 export interface LiftableConstantFactory$instance {
     readonly dependencies: LiftableConstantExpressionDependencies;
-    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<MaterializerLiftableConstantContext, unknown>>, variableName: string, type_: Type): Expression;
+    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<MaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): Expression;
 }
 
 
@@ -776,7 +776,7 @@ export interface MaterializeCollectionNavigationExpression$instance extends Expr
     readonly navigation: INavigationBase;
     readonly nodeType: ExpressionType;
     readonly subquery: Expression;
-    readonly type_: Type;
+    readonly type: Type;
     update(subquery: Expression): MaterializeCollectionNavigationExpression;
 }
 
@@ -905,15 +905,15 @@ export interface ProjectionBindingExpression$instance extends Expression {
     readonly nodeType: ExpressionType;
     readonly projectionMember: ProjectionMember | undefined;
     readonly queryExpression: Expression;
-    readonly type_: Type;
+    readonly type: Type;
     equals(obj: unknown): boolean;
     getHashCode(): int;
 }
 
 
 export const ProjectionBindingExpression: {
-    new(queryExpression: Expression, projectionMember: ProjectionMember, type_: Type): ProjectionBindingExpression;
-    new(queryExpression: Expression, index: int, type_: Type): ProjectionBindingExpression;
+    new(queryExpression: Expression, projectionMember: ProjectionMember, type: Type): ProjectionBindingExpression;
+    new(queryExpression: Expression, index: int, type: Type): ProjectionBindingExpression;
 };
 
 
@@ -1013,8 +1013,8 @@ export interface QueryCompilationContext$instance {
 
 
 export const QueryCompilationContext: {
-    new(dependencies: QueryCompilationContextDependencies, async_: boolean): QueryCompilationContext;
-    new(dependencies: QueryCompilationContextDependencies, async_: boolean, precompiling: boolean): QueryCompilationContext;
+    new(dependencies: QueryCompilationContextDependencies, async: boolean): QueryCompilationContext;
+    new(dependencies: QueryCompilationContextDependencies, async: boolean, precompiling: boolean): QueryCompilationContext;
     readonly queryContextParameter: ParameterExpression;
     readonly notTranslatedExpression: Expression;
 };
@@ -1102,7 +1102,7 @@ export interface QueryParameterExpression$instance extends Expression {
     readonly name: string;
     readonly nodeType: ExpressionType;
     readonly translationMode: Nullable<ParameterTranslationMode>;
-    readonly type_: Type;
+    readonly type: Type;
     equals(obj: unknown): boolean;
     getHashCode(): int;
     print(expressionPrinter: ExpressionPrinter): void;
@@ -1110,9 +1110,9 @@ export interface QueryParameterExpression$instance extends Expression {
 
 
 export const QueryParameterExpression: {
-    new(name: string, type_: Type): QueryParameterExpression;
-    new(name: string, type_: Type, translationMode: ParameterTranslationMode): QueryParameterExpression;
-    new(name: string, type_: Type, translationMode: Nullable<ParameterTranslationMode>, isNonNullableReferenceType: boolean): QueryParameterExpression;
+    new(name: string, type: Type): QueryParameterExpression;
+    new(name: string, type: Type, translationMode: ParameterTranslationMode): QueryParameterExpression;
+    new(name: string, type: Type, translationMode: Nullable<ParameterTranslationMode>, isNonNullableReferenceType: boolean): QueryParameterExpression;
 };
 
 
@@ -1130,7 +1130,7 @@ export interface QueryRootExpression$instance extends Expression {
     readonly elementType: Type;
     readonly nodeType: ExpressionType;
     readonly queryProvider: IAsyncQueryProvider | undefined;
-    readonly type_: Type;
+    readonly type: Type;
     detachQueryProvider(): Expression;
     equals(obj: unknown): boolean;
     getHashCode(): int;
@@ -1300,7 +1300,7 @@ export interface RelationalCollectionShaperExpression$instance extends Expressio
     readonly parentIdentifierValueComparers: IReadOnlyList<ValueComparer>;
     readonly selfIdentifier: Expression;
     readonly selfIdentifierValueComparers: IReadOnlyList<ValueComparer>;
-    readonly type_: Type;
+    readonly type: Type;
     update(parentIdentifier: Expression, outerIdentifier: Expression, selfIdentifier: Expression, innerShaper: Expression): RelationalCollectionShaperExpression;
 }
 
@@ -1320,7 +1320,7 @@ export type RelationalCollectionShaperExpression = RelationalCollectionShaperExp
 
 
 export interface RelationalCompiledQueryCacheKeyGenerator$instance extends CompiledQueryCacheKeyGenerator$instance {
-    generateCacheKey(query: Expression, async_: boolean): unknown;
+    generateCacheKey(query: Expression, async: boolean): unknown;
 }
 
 
@@ -1392,7 +1392,7 @@ export interface RelationalGroupByResultExpression$instance extends Expression {
     readonly keyIdentifierValueComparers: IReadOnlyList<ValueComparer>;
     readonly keyShaper: Expression;
     readonly nodeType: ExpressionType;
-    readonly type_: Type;
+    readonly type: Type;
     update(keyIdentifier: Expression, keyShaper: Expression, elementShaper: Expression): RelationalGroupByResultExpression;
 }
 
@@ -1447,7 +1447,7 @@ export type RelationalLiftableConstantExpressionDependencies = RelationalLiftabl
 
 export interface RelationalLiftableConstantFactory$instance extends LiftableConstantFactory$instance {
     readonly relationalDependencies: RelationalLiftableConstantExpressionDependencies;
-    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<MaterializerLiftableConstantContext, unknown>>, variableName: string, type_: Type): Expression;
+    createLiftableConstant(originalValue: unknown, resolverExpression: Expression<Func<MaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): Expression;
 }
 
 
@@ -1671,8 +1671,8 @@ export interface RelationalQueryCompilationContext$instance extends QueryCompila
 
 
 export const RelationalQueryCompilationContext: {
-    new(dependencies: QueryCompilationContextDependencies, relationalDependencies: RelationalQueryCompilationContextDependencies, async_: boolean): RelationalQueryCompilationContext;
-    new(dependencies: QueryCompilationContextDependencies, relationalDependencies: RelationalQueryCompilationContextDependencies, async_: boolean, precompiling: boolean): RelationalQueryCompilationContext;
+    new(dependencies: QueryCompilationContextDependencies, relationalDependencies: RelationalQueryCompilationContextDependencies, async: boolean): RelationalQueryCompilationContext;
+    new(dependencies: QueryCompilationContextDependencies, relationalDependencies: RelationalQueryCompilationContextDependencies, async: boolean, precompiling: boolean): RelationalQueryCompilationContext;
 };
 
 
@@ -1821,7 +1821,7 @@ export interface RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessin
 export const RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor: {
     new(parentVisitor: RelationalShapedQueryCompilingExpressionVisitor, selectExpression: SelectExpression, tags: ISet<System_Internal.String>, splitQuery: boolean, indexMap: boolean): RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor;
     readonly getFieldValueMethod: MethodInfo;
-    any_(source: IEnumerable): boolean;
+    any(source: IEnumerable): boolean;
     includeJsonEntityCollection<TIncludingEntity, TIncludedCollectionElement>(queryContext: QueryContext, keyPropertyValues: unknown[], jsonReaderData: JsonReaderData, entity: TIncludingEntity, innerShaper: Func<QueryContext, unknown[], JsonReaderData, TIncludedCollectionElement>, getOrCreateCollectionObject: Action<TIncludingEntity>, fixup: Action<TIncludingEntity, TIncludedCollectionElement>, performFixup: boolean): void;
     includeJsonEntityReference<TStructural, TRelatedStructural>(queryContext: QueryContext, keyPropertyValues: unknown[], jsonReaderData: JsonReaderData, structuralType: TStructural, innerShaper: Func<QueryContext, unknown[], JsonReaderData, TRelatedStructural>, fixup: Action<TStructural, TRelatedStructural>, performFixup: boolean): void;
     includeReference<TEntity, TIncludingEntity extends TEntity, TIncludedEntity>(queryContext: QueryContext, entity: TEntity, relatedEntity: TIncludedEntity, navigation: INavigationBase, inverseNavigation: INavigationBase, fixup: Action<TIncludingEntity, TIncludedEntity>, trackingQuery: boolean): void;
@@ -1874,7 +1874,7 @@ export interface RelationalSplitCollectionShaperExpression$instance extends Expr
     readonly nodeType: ExpressionType;
     readonly parentIdentifier: Expression;
     readonly selectExpression: SelectExpression;
-    readonly type_: Type;
+    readonly type: Type;
     update(parentIdentifier: Expression, childIdentifier: Expression, selectExpression: SelectExpression, innerShaper: Expression): RelationalSplitCollectionShaperExpression;
 }
 
@@ -1959,7 +1959,7 @@ export interface RelationalStructuralTypeShaperExpression$instance extends Struc
     makeNullable(nullable?: boolean): StructuralTypeShaperExpression;
     print(expressionPrinter: ExpressionPrinter): void;
     update(valueBufferExpression: Expression): StructuralTypeShaperExpression;
-    withType(type_: ITypeBase): StructuralTypeShaperExpression;
+    withType(type: ITypeBase): StructuralTypeShaperExpression;
 }
 
 
@@ -2047,7 +2047,7 @@ export interface ShapedQueryExpression$instance extends Expression {
     readonly queryExpression: Expression;
     readonly resultCardinality: ResultCardinality;
     readonly shaperExpression: Expression;
-    readonly type_: Type;
+    readonly type: Type;
     update(queryExpression: Expression, shaperExpression: Expression): ShapedQueryExpression;
     updateQueryExpression(queryExpression: Expression): ShapedQueryExpression;
     updateResultCardinality(resultCardinality: ResultCardinality): ShapedQueryExpression;
@@ -2108,33 +2108,33 @@ export interface SqlExpressionFactory$instance {
     andAlso(left: SqlExpression, right: SqlExpression): SqlExpression;
     applyDefaultTypeMapping(sqlExpression: SqlExpression): SqlExpression | undefined;
     applyTypeMapping(sqlExpression: SqlExpression, typeMapping: RelationalTypeMapping): SqlExpression | undefined;
-    case_(operand: SqlExpression, whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression, existingExpression?: SqlExpression): SqlExpression;
-    case_(whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression): SqlExpression;
+    case(operand: SqlExpression, whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression, existingExpression?: SqlExpression): SqlExpression;
+    case(whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression): SqlExpression;
     coalesce(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping): SqlExpression;
     constant(value: unknown, typeMapping?: RelationalTypeMapping): SqlExpression;
-    constant(value: unknown, type_: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    constant(value: unknown, type: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
     constant(value: unknown, sensitive: boolean, typeMapping?: RelationalTypeMapping): SqlExpression;
-    constant(value: unknown, type_: Type, sensitive: boolean, typeMapping?: RelationalTypeMapping): SqlExpression;
-    convert(operand: SqlExpression, type_: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    constant(value: unknown, type: Type, sensitive: boolean, typeMapping?: RelationalTypeMapping): SqlExpression;
+    convert(operand: SqlExpression, type: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
     divide(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping): SqlExpression;
     equal(left: SqlExpression, right: SqlExpression): SqlExpression;
     exists(subquery: SelectExpression): SqlExpression;
-    fragment(sql: string, type_?: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
-    function_(name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
-    function_(schema: string, name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
-    function_(instance: SqlExpression, name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, instancePropagatesNullability: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    fragment(sql: string, type?: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    function(name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    function(schema: string, name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
+    function(instance: SqlExpression, name: string, arguments: IEnumerable__System_Collections_Generic<SqlExpression>, nullable: boolean, instancePropagatesNullability: boolean, argumentsPropagateNullability: IEnumerable__System_Collections_Generic<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping): SqlExpression;
     greaterThan(left: SqlExpression, right: SqlExpression): SqlExpression;
     greaterThanOrEqual(left: SqlExpression, right: SqlExpression): SqlExpression;
-    in_(item: SqlExpression, subquery: SelectExpression): SqlExpression;
-    in_(item: SqlExpression, values: IReadOnlyList<SqlExpression>): SqlExpression;
-    in_(item: SqlExpression, valuesParameter: SqlParameterExpression): SqlExpression;
+    in(item: SqlExpression, subquery: SelectExpression): SqlExpression;
+    in(item: SqlExpression, values: IReadOnlyList<SqlExpression>): SqlExpression;
+    in(item: SqlExpression, valuesParameter: SqlParameterExpression): SqlExpression;
     isNotNull(operand: SqlExpression): SqlExpression;
     isNull(operand: SqlExpression): SqlExpression;
     lessThan(left: SqlExpression, right: SqlExpression): SqlExpression;
     lessThanOrEqual(left: SqlExpression, right: SqlExpression): SqlExpression;
     like(match: SqlExpression, pattern: SqlExpression, escapeChar?: SqlExpression): SqlExpression;
     makeBinary(operatorType: ExpressionType, left: SqlExpression, right: SqlExpression, typeMapping: RelationalTypeMapping, existingExpression?: SqlExpression): SqlExpression | undefined;
-    makeUnary(operatorType: ExpressionType, operand: SqlExpression, type_: Type, typeMapping?: RelationalTypeMapping, existingExpression?: SqlExpression): SqlExpression | undefined;
+    makeUnary(operatorType: ExpressionType, operand: SqlExpression, type: Type, typeMapping?: RelationalTypeMapping, existingExpression?: SqlExpression): SqlExpression | undefined;
     modulo(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping): SqlExpression;
     multiply(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping): SqlExpression;
     negate(operand: SqlExpression): SqlExpression;
@@ -2220,7 +2220,7 @@ export interface StructuralTypeProjectionExpression$instance extends Expression 
     readonly nodeType: ExpressionType;
     readonly structuralType: ITypeBase;
     readonly tableMap: IReadOnlyDictionary<ITableBase, System_Internal.String>;
-    readonly type_: Type;
+    readonly type: Type;
     addNavigationBinding(navigation: INavigation, shaper: StructuralTypeShaperExpression): void;
     bindComplexProperty(complexProperty: IComplexProperty): Expression;
     bindNavigation(navigation: INavigation): StructuralTypeShaperExpression | undefined;
@@ -2233,8 +2233,8 @@ export interface StructuralTypeProjectionExpression$instance extends Expression 
 
 
 export const StructuralTypeProjectionExpression: {
-    new(type_: ITypeBase, propertyExpressionMap: IReadOnlyDictionary<IProperty, ColumnExpression>, tableMap: IReadOnlyDictionary<ITableBase, System_Internal.String>, nullable: boolean, discriminatorExpression: SqlExpression): StructuralTypeProjectionExpression;
-    new(type_: ITypeBase, propertyExpressionMap: IReadOnlyDictionary<IProperty, ColumnExpression>, complexPropertyCache: Dictionary<IComplexProperty, Expression>, tableMap: IReadOnlyDictionary<ITableBase, System_Internal.String>, nullable: boolean, discriminatorExpression: SqlExpression): StructuralTypeProjectionExpression;
+    new(type: ITypeBase, propertyExpressionMap: IReadOnlyDictionary<IProperty, ColumnExpression>, tableMap: IReadOnlyDictionary<ITableBase, System_Internal.String>, nullable: boolean, discriminatorExpression: SqlExpression): StructuralTypeProjectionExpression;
+    new(type: ITypeBase, propertyExpressionMap: IReadOnlyDictionary<IProperty, ColumnExpression>, complexPropertyCache: Dictionary<IComplexProperty, Expression>, tableMap: IReadOnlyDictionary<ITableBase, System_Internal.String>, nullable: boolean, discriminatorExpression: SqlExpression): StructuralTypeProjectionExpression;
 };
 
 
@@ -2245,20 +2245,20 @@ export interface StructuralTypeShaperExpression$instance extends Expression {
     readonly materializationCondition: LambdaExpression;
     readonly nodeType: ExpressionType;
     readonly structuralType: ITypeBase;
-    readonly type_: Type;
+    readonly type: Type;
     readonly valueBufferExpression: Expression;
     debuggerDisplay(): string;
     makeClrTypeNonNullable(): StructuralTypeShaperExpression;
     makeClrTypeNullable(): StructuralTypeShaperExpression;
     makeNullable(nullable?: boolean): StructuralTypeShaperExpression;
     update(valueBufferExpression: Expression): StructuralTypeShaperExpression;
-    withType(type_: ITypeBase): StructuralTypeShaperExpression;
+    withType(type: ITypeBase): StructuralTypeShaperExpression;
 }
 
 
 export const StructuralTypeShaperExpression: {
-    new(type_: ITypeBase, valueBufferExpression: Expression, nullable: boolean): StructuralTypeShaperExpression;
-    createUnableToDiscriminateException(type_: ITypeBase, discriminator: unknown): Exception;
+    new(type: ITypeBase, valueBufferExpression: Expression, nullable: boolean): StructuralTypeShaperExpression;
+    createUnableToDiscriminateException(type: ITypeBase, discriminator: unknown): Exception;
 };
 
 
@@ -2314,7 +2314,7 @@ export abstract class LiftableConstantExpressionHelpers$instance {
     static buildMemberAccessForEntityOrComplexType(targetType: ITypeBase, liftableConstantContextParameter: ParameterExpression): Expression;
     static buildMemberAccessForProperty(property: IPropertyBase, liftableConstantContextParameter: ParameterExpression): Expression;
     static buildMemberAccessLambdaForProperty(property: IPropertyBase): Expression<Func<MaterializerLiftableConstantContext, unknown>>;
-    static buildMemberAccessLambdaForStructuralType(type_: ITypeBase): Expression<Func<MaterializerLiftableConstantContext, unknown>>;
+    static buildMemberAccessLambdaForStructuralType(type: ITypeBase): Expression<Func<MaterializerLiftableConstantContext, unknown>>;
     static buildStructuralPropertyAccess(structuralProperty: IPropertyBase, liftableConstantContextParameter: ParameterExpression): Expression;
     static buildStructuralPropertyAccessLambda(structuralProperty: IPropertyBase): Expression<Func<MaterializerLiftableConstantContext, unknown>>;
     static isLiteral(value: unknown): boolean;
@@ -2383,10 +2383,10 @@ export abstract class QueryableMethods$instance {
     static readonly thenByDescending: MethodInfo;
     static readonly union: MethodInfo;
     static readonly where: MethodInfo;
-    static getAverageWithoutSelector(type_: Type): MethodInfo;
-    static getAverageWithSelector(type_: Type): MethodInfo;
-    static getSumWithoutSelector(type_: Type): MethodInfo;
-    static getSumWithSelector(type_: Type): MethodInfo;
+    static getAverageWithoutSelector(type: Type): MethodInfo;
+    static getAverageWithSelector(type: Type): MethodInfo;
+    static getSumWithoutSelector(type: Type): MethodInfo;
+    static getSumWithSelector(type: Type): MethodInfo;
     static isAverageWithoutSelector(methodInfo: MethodInfo): boolean;
     static isAverageWithSelector(methodInfo: MethodInfo): boolean;
     static isSumWithoutSelector(methodInfo: MethodInfo): boolean;

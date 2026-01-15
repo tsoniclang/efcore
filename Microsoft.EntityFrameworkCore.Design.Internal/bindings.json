@@ -554,7 +554,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.Internal.QualifiedName::Namespace:System.String",
           "clrName": "Namespace",
-          "tsEmitName": "namespace_",
+          "tsEmitName": "namespace",
           "metadataToken": 385878044,
           "canonicalSignature": ":System.String",
           "normalizedSignature": "Namespace|:System.String|static=false|accessor=getset",
@@ -644,7 +644,7 @@
           }
         },
         {
-          "tsName": "namespace_",
+          "tsName": "namespace",
           "isStatic": false,
           "tsSignatureId": "Namespace|:System.String|static=false|accessor=getset",
           "target": {
@@ -1563,7 +1563,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.Internal.CSharpRuntimeAnnotationCodeGeneratorParameters::Namespace:System.String",
           "clrName": "Namespace",
-          "tsEmitName": "namespace_",
+          "tsEmitName": "namespace",
           "metadataToken": 385878033,
           "canonicalSignature": ":System.String",
           "normalizedSignature": "Namespace|:System.String|static=false|accessor=getset",
@@ -1799,7 +1799,7 @@
           }
         },
         {
-          "tsName": "namespace_",
+          "tsName": "namespace",
           "isStatic": false,
           "tsSignatureId": "Namespace|:System.String|static=false|accessor=getset",
           "target": {

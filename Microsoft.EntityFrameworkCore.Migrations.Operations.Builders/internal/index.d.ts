@@ -38,7 +38,7 @@ export type AlterOperationBuilder_1<TOperation extends MigrationOperation & IAlt
 
 
 export interface ColumnsBuilder$instance {
-    column<T>(type_?: string, unicode?: Nullable<System_Internal.Boolean>, maxLength?: Nullable<System_Internal.Int32>, rowVersion?: boolean, name?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, fixedLength?: Nullable<System_Internal.Boolean>, comment?: string, collation?: string, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, stored?: Nullable<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
+    column<T>(type?: string, unicode?: Nullable<System_Internal.Boolean>, maxLength?: Nullable<System_Internal.Int32>, rowVersion?: boolean, name?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, fixedLength?: Nullable<System_Internal.Boolean>, comment?: string, collation?: string, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, stored?: Nullable<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
     equals(obj: unknown): boolean;
     getHashCode(): int;
     toString(): string;
