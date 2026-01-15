@@ -71,7 +71,7 @@ export interface ProviderConventionSetBuilderDependencies$instance {
     equals(other: ProviderConventionSetBuilderDependencies): boolean;
     getHashCode(): int;
     toString(): string;
-    with_(currentContext: ICurrentDbContext): ProviderConventionSetBuilderDependencies;
+    with(currentContext: ICurrentDbContext): ProviderConventionSetBuilderDependencies;
 }
 
 

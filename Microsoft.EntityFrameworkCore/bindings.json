@@ -46,7 +46,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.AutoTransactionBehavior::NeverMicrosoft.EntityFrameworkCore.AutoTransactionBehavior",
           "clrName": "Never",
-          "tsEmitName": "never_",
+          "tsEmitName": "never",
           "metadataToken": 67108888,
           "normalizedSignature": "Never|Microsoft.EntityFrameworkCore.AutoTransactionBehavior|static=true|const=true",
           "isStatic": true,
@@ -89,7 +89,7 @@
           }
         },
         {
-          "tsName": "never_",
+          "tsName": "never",
           "isStatic": true,
           "tsSignatureId": "Never|Microsoft.EntityFrameworkCore.AutoTransactionBehavior|static=true|const=true",
           "target": {
@@ -1027,7 +1027,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.WarningBehavior::ThrowMicrosoft.EntityFrameworkCore.WarningBehavior",
           "clrName": "Throw",
-          "tsEmitName": "throw_",
+          "tsEmitName": "throw",
           "metadataToken": 67108973,
           "normalizedSignature": "Throw|Microsoft.EntityFrameworkCore.WarningBehavior|static=true|const=true",
           "isStatic": true,
@@ -1070,7 +1070,7 @@
           }
         },
         {
-          "tsName": "throw_",
+          "tsName": "throw",
           "isStatic": true,
           "tsSignatureId": "Throw|Microsoft.EntityFrameworkCore.WarningBehavior|static=true|const=true",
           "target": {
@@ -1499,7 +1499,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbContext::Set():DbSet_1",
           "clrName": "Set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "metadataToken": 100663426,
           "canonicalSignature": "():DbSet_1",
           "normalizedSignature": "Set|():DbSet_1|static=false",
@@ -1513,7 +1513,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbContext::Set(System.String):DbSet_1",
           "clrName": "Set",
-          "tsEmitName": "set_",
+          "tsEmitName": "set",
           "metadataToken": 100663427,
           "canonicalSignature": "(System.String):DbSet_1",
           "normalizedSignature": "Set|(System.String):DbSet_1|static=false",
@@ -2414,7 +2414,7 @@
       ],
       "exposedMethods": [
         {
-          "tsName": "set_",
+          "tsName": "set",
           "isStatic": false,
           "tsSignatureId": "Set|():DbSet_1|static=false",
           "target": {
@@ -2424,7 +2424,7 @@
           }
         },
         {
-          "tsName": "set_",
+          "tsName": "set",
           "isStatic": false,
           "tsSignatureId": "Set|(System.String):DbSet_1|static=false",
           "target": {

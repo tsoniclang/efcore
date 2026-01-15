@@ -79,7 +79,7 @@ export type IDbContextFactorySource_1<TContext extends DbContext> = IDbContextFa
 
 export interface IDbContextPool$instance {
     rent(): IDbContextPoolable;
-    return_(context: IDbContextPoolable): void;
+    return(context: IDbContextPoolable): void;
     returnAsync(context: IDbContextPoolable, cancellationToken?: CancellationToken): ValueTask;
 }
 
@@ -88,7 +88,7 @@ export type IDbContextPool = IDbContextPool$instance;
 
 export interface IDbContextPool_1$instance<TContext extends DbContext> extends IDbContextPool {
     rent(): IDbContextPoolable;
-    return_(context: IDbContextPoolable): void;
+    return(context: IDbContextPoolable): void;
     returnAsync(context: IDbContextPoolable, cancellationToken?: CancellationToken): ValueTask;
 }
 
@@ -123,8 +123,8 @@ export interface IDbContextServices$instance {
 export type IDbContextServices = IDbContextServices$instance;
 
 export interface IDbSetCache$instance {
-    getOrAddSet(source: IDbSetSource, entityTypeName: string, type_: Type): unknown;
-    getOrAddSet(source: IDbSetSource, type_: Type): unknown;
+    getOrAddSet(source: IDbSetSource, entityTypeName: string, type: Type): unknown;
+    getOrAddSet(source: IDbSetSource, type: Type): unknown;
     getSets(): IEnumerable__System_Collections_Generic<unknown>;
 }
 
@@ -139,8 +139,8 @@ export interface IDbSetInitializer$instance {
 export type IDbSetInitializer = IDbSetInitializer$instance;
 
 export interface IDbSetSource$instance {
-    create(context: DbContext, name: string, type_: Type): unknown;
-    create(context: DbContext, type_: Type): unknown;
+    create(context: DbContext, name: string, type: Type): unknown;
+    create(context: DbContext, type: Type): unknown;
 }
 
 
@@ -188,14 +188,14 @@ export interface IEntityFinder_1$instance<TEntity> extends IEntityFinder {
 export type IEntityFinder_1<TEntity> = IEntityFinder_1$instance<TEntity>;
 
 export interface IEntityFinderFactory$instance {
-    create(type_: IEntityType): IEntityFinder;
+    create(type: IEntityType): IEntityFinder;
 }
 
 
 export type IEntityFinderFactory = IEntityFinderFactory$instance;
 
 export interface IEntityFinderSource$instance {
-    create(stateManager: IStateManager, setSource: IDbSetSource, setCache: IDbSetCache, type_: IEntityType): IEntityFinder;
+    create(stateManager: IStateManager, setSource: IDbSetSource, setCache: IDbSetCache, type: IEntityType): IEntityFinder;
 }
 
 
@@ -332,7 +332,7 @@ export interface DbContextPool_1$instance<TContext extends DbContext> extends ID
     dispose(): void;
     disposeAsync(): ValueTask;
     rent(): IDbContextPoolable;
-    return_(context: IDbContextPoolable): void;
+    return(context: IDbContextPoolable): void;
     returnAsync(context: IDbContextPoolable, cancellationToken?: CancellationToken): ValueTask;
 }
 
@@ -427,8 +427,8 @@ export type DbSetInitializer = DbSetInitializer$instance & __DbSetInitializer$vi
 
 
 export interface DbSetSource$instance {
-    create(context: DbContext, type_: Type): unknown;
-    create(context: DbContext, name: string, type_: Type): unknown;
+    create(context: DbContext, type: Type): unknown;
+    create(context: DbContext, name: string, type: Type): unknown;
 }
 
 
@@ -498,7 +498,7 @@ export type EntityFinderCollectionLoaderAdapter = EntityFinderCollectionLoaderAd
 
 
 export interface EntityFinderFactory$instance {
-    create(type_: IEntityType): IEntityFinder;
+    create(type: IEntityType): IEntityFinder;
 }
 
 
@@ -517,7 +517,7 @@ export type EntityFinderFactory = EntityFinderFactory$instance & __EntityFinderF
 
 
 export interface EntityFinderSource$instance {
-    create(stateManager: IStateManager, setSource: IDbSetSource, setCache: IDbSetCache, type_: IEntityType): IEntityFinder;
+    create(stateManager: IStateManager, setSource: IDbSetSource, setCache: IDbSetCache, type: IEntityType): IEntityFinder;
 }
 
 
@@ -806,10 +806,10 @@ export type TupleExtensions = TupleExtensions$instance;
 
 export abstract class TypeBaseExtensions$instance {
     static displayName(entityType: TypeBase): string;
-    static getComplexProperty(type_: ITypeBase, name: string): IComplexProperty;
-    static getOwnedName(type_: IReadOnlyTypeBase, simpleName: string, ownershipNavigation: string): string;
-    static getRuntimeFields(type_: IReadOnlyTypeBase): IReadOnlyDictionary<System_Internal.String, FieldInfo>;
-    static getRuntimeProperties(type_: IReadOnlyTypeBase): IReadOnlyDictionary<System_Internal.String, PropertyInfo>;
+    static getComplexProperty(type: ITypeBase, name: string): IComplexProperty;
+    static getOwnedName(type: IReadOnlyTypeBase, simpleName: string, ownershipNavigation: string): string;
+    static getRuntimeFields(type: IReadOnlyTypeBase): IReadOnlyDictionary<System_Internal.String, FieldInfo>;
+    static getRuntimeProperties(type: IReadOnlyTypeBase): IReadOnlyDictionary<System_Internal.String, PropertyInfo>;
     static shortName(entityType: TypeBase): string;
 }
 
@@ -817,10 +817,10 @@ export abstract class TypeBaseExtensions$instance {
 export type TypeBaseExtensions = TypeBaseExtensions$instance;
 
 export abstract class TypeExtensions$instance {
-    static findIndexerProperty(type_: Type): PropertyInfo | undefined;
-    static generateParameterName(type_: Type): string;
-    static getFieldInfo(type_: Type, fieldName: string): FieldInfo | undefined;
-    static isDefaultValue(type_: Type, value: unknown): boolean;
+    static findIndexerProperty(type: Type): PropertyInfo | undefined;
+    static generateParameterName(type: Type): string;
+    static getFieldInfo(type: Type, fieldName: string): FieldInfo | undefined;
+    static isDefaultValue(type: Type, value: unknown): boolean;
 }
 
 

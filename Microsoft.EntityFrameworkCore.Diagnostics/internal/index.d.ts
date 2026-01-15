@@ -37,7 +37,7 @@ import type { Transaction } from "@tsonic/dotnet/System.Transactions.js";
 import type { EventId, ILogger, LogLevel } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging.js";
 
 export enum CommandSource {
-    unknown_ = 0,
+    unknown = 0,
     linqQuery = 1,
     saveChanges = 2,
     migrations = 3,
@@ -548,7 +548,7 @@ export interface CommandCorrelatedEventData$instance extends DbContextEventData 
 
 
 export const CommandCorrelatedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async_: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandCorrelatedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandCorrelatedEventData;
 };
 
 
@@ -560,7 +560,7 @@ export interface CommandEndEventData$instance extends CommandEventData {
 
 
 export const CommandEndEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async_: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandEndEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandEndEventData;
 };
 
 
@@ -572,7 +572,7 @@ export interface CommandErrorEventData$instance extends CommandEndEventData {
 
 
 export const CommandErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, async_: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandErrorEventData;
 };
 
 
@@ -593,7 +593,7 @@ export interface CommandEventData$instance extends CommandCorrelatedEventData {
 
 
 export const CommandEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async_: boolean, logParameterValues: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandEventData;
 };
 
 
@@ -605,7 +605,7 @@ export interface CommandExecutedEventData$instance extends CommandEndEventData {
 
 
 export const CommandExecutedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, result: unknown, async_: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandExecutedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, result: unknown, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandExecutedEventData;
 };
 
 
@@ -690,7 +690,7 @@ export interface ConnectionEndEventData$instance extends ConnectionEventData {
 
 
 export const ConnectionEndEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async_: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionEndEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionEndEventData;
 };
 
 
@@ -702,7 +702,7 @@ export interface ConnectionErrorEventData$instance extends ConnectionEndEventDat
 
 
 export const ConnectionErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, exception: Exception, async_: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, exception: Exception, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionErrorEventData;
 };
 
 
@@ -724,7 +724,7 @@ export interface ConnectionEventData$instance extends DbContextEventData {
 
 
 export const ConnectionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async_: boolean, startTime: DateTimeOffset): ConnectionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async: boolean, startTime: DateTimeOffset): ConnectionEventData;
 };
 
 
@@ -749,7 +749,7 @@ export interface DataReaderClosingEventData$instance extends DataReaderEventData
 
 
 export const DataReaderClosingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, async_: boolean, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderClosingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, async: boolean, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderClosingEventData;
 };
 
 
@@ -1131,7 +1131,7 @@ export interface ExecutionStrategyEventData$instance extends EventData {
 
 
 export const ExecutionStrategyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, exceptionsEncountered: IReadOnlyList<Exception>, delay: TimeSpan, async_: boolean): ExecutionStrategyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, exceptionsEncountered: IReadOnlyList<Exception>, delay: TimeSpan, async: boolean): ExecutionStrategyEventData;
 };
 
 
@@ -1942,7 +1942,7 @@ export interface TransactionEndEventData$instance extends TransactionEventData {
 
 
 export const TransactionEndEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async_: boolean, startTime: DateTimeOffset, duration: TimeSpan): TransactionEndEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): TransactionEndEventData;
 };
 
 
@@ -1969,7 +1969,7 @@ export interface TransactionErrorEventData$instance extends TransactionEndEventD
 
 
 export const TransactionErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async_: boolean, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan): TransactionErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan): TransactionErrorEventData;
 };
 
 
@@ -1992,7 +1992,7 @@ export interface TransactionEventData$instance extends DbContextEventData {
 
 
 export const TransactionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async_: boolean, startTime: DateTimeOffset): TransactionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionEventData;
 };
 
 
@@ -2008,7 +2008,7 @@ export interface TransactionStartingEventData$instance extends DbContextEventDat
 
 
 export const TransactionStartingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, isolationLevel: IsolationLevel, transactionId: Guid, connectionId: Guid, async_: boolean, startTime: DateTimeOffset): TransactionStartingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, isolationLevel: IsolationLevel, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionStartingEventData;
 };
 
 
@@ -2161,11 +2161,11 @@ export const WarningsConfiguration: {
 export type WarningsConfiguration = WarningsConfiguration$instance;
 
 export interface WarningsConfigurationBuilder$instance {
-    default_(warningBehavior: WarningBehavior): WarningsConfigurationBuilder;
+    default(warningBehavior: WarningBehavior): WarningsConfigurationBuilder;
     ignore(...eventIds: EventId[]): WarningsConfigurationBuilder;
     log(...eventIds: EventId[]): WarningsConfigurationBuilder;
     log(...eventsAndLevels: ValueTuple<EventId, LogLevel>[]): WarningsConfigurationBuilder;
-    throw_(...eventIds: EventId[]): WarningsConfigurationBuilder;
+    throw(...eventIds: EventId[]): WarningsConfigurationBuilder;
 }
 
 
@@ -2294,7 +2294,7 @@ export abstract class CoreLoggerExtensions$instance {
     static detectChangesStarting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, context: DbContext): void;
     static distinctAfterOrderByWithoutRowLimitingOperatorWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>): void;
     static duplicateDependentEntityTypeInstanceWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, dependent1: IEntityType, dependent2: IEntityType): void;
-    static executionStrategyRetrying(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, exceptionsEncountered: IReadOnlyList<Exception>, delay: TimeSpan, async_: boolean): void;
+    static executionStrategyRetrying(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, exceptionsEncountered: IReadOnlyList<Exception>, delay: TimeSpan, async: boolean): void;
     static firstWithoutOrderByAndFilterWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>): void;
     static foreignKeyAttributesOnBothNavigationsWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstNavigation: IReadOnlyNavigation, secondNavigation: IReadOnlyNavigation): void;
     static foreignKeyAttributesOnBothPropertiesWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstNavigation: IReadOnlyNavigation, secondNavigation: IReadOnlyNavigation, firstProperty: MemberInfo, secondProperty: MemberInfo): void;
@@ -2351,7 +2351,7 @@ export abstract class CoreLoggerExtensions$instance {
     static shadowPropertyCreated(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, property: IProperty): void;
     static skipCollectionChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet<unknown>, removed: ISet<unknown>): void;
     static skipCollectionChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet<unknown>, removed: ISet<unknown>): void;
-    static skippedEntityTypeConfigurationWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, type_: Type): void;
+    static skippedEntityTypeConfigurationWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, type: Type): void;
     static startedTracking(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry): void;
     static startedTrackingSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry): void;
     static stateChanged(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, oldState: EntityState, newState: EntityState): void;
@@ -2432,7 +2432,7 @@ export abstract class CoreStrings$instance {
     static annotationNotFound(annotation: unknown, annotatable: unknown): string;
     static argumentNotConstant(parameter: unknown, methodName: unknown): string;
     static argumentPropertyNull(property: unknown, argument: unknown): string;
-    static attributeNotOnEntityTypeProperty(attribute: unknown, type_: unknown, propertyName: unknown): string;
+    static attributeNotOnEntityTypeProperty(attribute: unknown, type: unknown, propertyName: unknown): string;
     static autoIncludeNavigationCycle(cycleNavigations: unknown): string;
     static backingFieldOnIndexer(field: unknown, entityType: unknown, property: unknown): string;
     static badBackingFieldType(field: unknown, fieldType: unknown, entityType: unknown, property: unknown, propertyType: unknown): string;
@@ -2455,8 +2455,8 @@ export abstract class CoreStrings$instance {
     static cannotCreateValueConverter(generatorType: unknown, method: unknown): string;
     static cannotCreateValueGenerator(generatorType: unknown, method: unknown): string;
     static cannotLoadDetachedShadow(navigation: unknown, entityType: unknown): string;
-    static cannotMarkNonShared(type_: unknown): string;
-    static cannotMarkShared(type_: unknown): string;
+    static cannotMarkNonShared(type: unknown): string;
+    static cannotMarkShared(type: unknown): string;
     static cannotMaterializeAbstractType(entityType: unknown): string;
     static canOnlyConfigureExistingNavigations(navigationName: unknown, entityType: unknown): string;
     static changeTrackingInterfaceMissing(entityType: unknown, changeTrackingStrategy: unknown, notificationInterface: unknown): string;
@@ -2466,7 +2466,7 @@ export abstract class CoreStrings$instance {
     static clashingNamedOwnedType(ownedTypeName: unknown, ownerEntityType: unknown, navigation: unknown): string;
     static clashingNonOwnedDerivedEntityType(entityType: unknown, derivedType: unknown): string;
     static clashingNonOwnedEntityType(entityType: unknown): string;
-    static clashingNonSharedType(entityType: unknown, type_: unknown): string;
+    static clashingNonSharedType(entityType: unknown, type: unknown): string;
     static clashingOwnedDerivedEntityType(entityType: unknown, derivedType: unknown): string;
     static clashingOwnedEntityType(entityType: unknown): string;
     static clashingSharedType(entityType: unknown): string;
@@ -2474,8 +2474,8 @@ export abstract class CoreStrings$instance {
     static clientProjectionCapturingConstantInMethodInstance(constantType: unknown, methodName: unknown): string;
     static clientProjectionCapturingConstantInTree(constantType: unknown): string;
     static collectionIsReference(property: unknown, entityType: unknown, collectionMethod: unknown, referenceMethod: unknown): string;
-    static comparerPropertyMismatch(type_: unknown, entityType: unknown, propertyName: unknown, propertyType: unknown): string;
-    static comparerPropertyMismatchElement(type_: unknown, entityType: unknown, propertyName: unknown, elementType: unknown): string;
+    static comparerPropertyMismatch(type: unknown, entityType: unknown, propertyName: unknown, propertyType: unknown): string;
+    static comparerPropertyMismatchElement(type: unknown, entityType: unknown, propertyName: unknown, elementType: unknown): string;
     static compiledModelDuplicateAttribute(assemblyName: unknown, contextType: unknown): string;
     static compiledModelIncompatibleTypeMapping(typeMapping: unknown): string;
     static compiledModelMissingInstance(modelType: unknown): string;
@@ -2493,33 +2493,33 @@ export abstract class CoreStrings$instance {
     static complexCollectionNullElementSetter(complexType: unknown, property: unknown, collectionDeclaringType: unknown, collection: unknown, ordinal: unknown): string;
     static complexCollectionOriginalEntryAddedEntity(ordinal: unknown, declaringType: unknown, collection: unknown): string;
     static complexCollectionValueNotDictionaryList(property: unknown, typeName: unknown): string;
-    static complexCollectionWrongClrType(property: unknown, type_: unknown, clrType: unknown, targetType: unknown): string;
-    static complexPropertyIndexer(type_: unknown, property: unknown): string;
-    static complexPropertyNotCollection(type_: unknown, property: unknown): string;
-    static complexPropertyNotFound(type_: unknown, property: unknown): string;
-    static complexPropertyShadow(type_: unknown, property: unknown): string;
+    static complexCollectionWrongClrType(property: unknown, type: unknown, clrType: unknown, targetType: unknown): string;
+    static complexPropertyIndexer(type: unknown, property: unknown): string;
+    static complexPropertyNotCollection(type: unknown, property: unknown): string;
+    static complexPropertyNotFound(type: unknown, property: unknown): string;
+    static complexPropertyShadow(type: unknown, property: unknown): string;
     static complexPropertyValueNotDictionary(property: unknown, typeName: unknown): string;
     static complexPropertyValueNotList(property: unknown, clrType: unknown, typeName: unknown): string;
-    static complexPropertyWrongClrType(property: unknown, type_: unknown, clrType: unknown, targetType: unknown): string;
+    static complexPropertyWrongClrType(property: unknown, type: unknown, clrType: unknown, targetType: unknown): string;
     static complexReferenceIsCollection(entityType: unknown, property: unknown, referenceMethod: unknown, collectionMethod: unknown): string;
     static complexTypeNotificationChangeTracking(complexType: unknown, changeTrackingStrategy: unknown): string;
     static complexTypeShadowProperty(complexType: unknown, property: unknown): string;
     static complexTypesNotSupported(service: unknown): string;
-    static complexValueTypeCollection(type_: unknown, property: unknown): string;
-    static complexValueTypeShadowProperty(type_: unknown, property: unknown): string;
+    static complexValueTypeCollection(type: unknown, property: unknown): string;
+    static complexValueTypeShadowProperty(type: unknown, property: unknown): string;
     static compositeFkOnProperty(navigation: unknown, entityType: unknown): string;
     static compositePKWithDataAnnotation(entityType: unknown): string;
     static conflictingBackingFields(property: unknown, entityType: unknown, field1: unknown, field2: unknown): string;
-    static conflictingFieldProperty(type_: unknown, property: unknown, field: unknown, conflictingType: unknown, conflictingProperty: unknown): string;
+    static conflictingFieldProperty(type: unknown, property: unknown, field: unknown, conflictingType: unknown, conflictingProperty: unknown): string;
     static conflictingForeignKeyAttributes(propertyList: unknown, entityType: unknown, principalEntityType: unknown): string;
     static conflictingKeylessAndPrimaryKeyAttributes(entity: unknown): string;
-    static conflictingPropertyOrNavigation(member: unknown, type_: unknown, conflictingType: unknown): string;
+    static conflictingPropertyOrNavigation(member: unknown, type: unknown, conflictingType: unknown): string;
     static conflictingRelationshipConversions(entityType: unknown, property: unknown, valueConversion: unknown, conflictingValueConversion: unknown): string;
     static conflictingRelationshipNavigation(newPrincipalNavigationSpecification: unknown, newDependentNavigationSpecification: unknown, existingPrincipalNavigationSpecification: unknown, existingDependentNavigationSpecification: unknown): string;
     static constructorBindingFailed(failedBinds: unknown, parameters: unknown): string;
     static constructorConflict(firstConstructor: unknown, secondConstructor: unknown): string;
-    static constructorNotFound(type_: unknown, constructors: unknown): string;
-    static converterBadType(converter: unknown, type_: unknown, allowed: unknown): string;
+    static constructorNotFound(type: unknown, constructors: unknown): string;
+    static converterBadType(converter: unknown, type: unknown, allowed: unknown): string;
     static converterPropertyMismatch(converterType: unknown, entityType: unknown, propertyName: unknown, propertyType: unknown): string;
     static converterPropertyMismatchElement(converterType: unknown, entityType: unknown, propertyName: unknown, elementType: unknown): string;
     static convertersCannotBeComposed(typeOneIn: unknown, typeOneOut: unknown, typeTwoIn: unknown, typeTwoOut: unknown): string;
@@ -2528,7 +2528,7 @@ export abstract class CoreStrings$instance {
     static debugViewError(message: unknown): string;
     static debugViewQueryExpressionError(message: unknown): string;
     static debugViewQueryStringError(message: unknown): string;
-    static deleteBehaviorAttributeNotOnNavigationProperty(type_: unknown, propertyName: unknown): string;
+    static deleteBehaviorAttributeNotOnNavigationProperty(type: unknown, propertyName: unknown): string;
     static deleteBehaviorAttributeOnPrincipalProperty(entityType: unknown, navigationName: unknown): string;
     static dependentEntityTypeNotInRelationship(dependentEntityType: unknown, principalEntityType: unknown, entityType: unknown): string;
     static derivedEntityCannotBeKeyless(entityType: unknown): string;
@@ -2539,7 +2539,7 @@ export abstract class CoreStrings$instance {
     static derivedTypeDefiningQuery(entityType: unknown, baseType: unknown): string;
     static discriminatorEntityTypeNotDerived(entityType: unknown, rootEntityType: unknown): string;
     static discriminatorPropertyMustBeOnRoot(entityType: unknown): string;
-    static discriminatorPropertyNotAllowedOnComplexCollection(type_: unknown, containingType: unknown): string;
+    static discriminatorPropertyNotAllowedOnComplexCollection(type: unknown, containingType: unknown): string;
     static discriminatorPropertyNotFound(property: unknown, entityType: unknown): string;
     static discriminatorValueIncompatible(value: unknown, entityType: unknown, discriminatorType: unknown): string;
     static duplicateAnnotation(annotation: unknown, annotatable: unknown): string;
@@ -2600,16 +2600,16 @@ export abstract class CoreStrings$instance {
     static includeOnEntityWithDefiningQueryNotSupported(expression: unknown, entityType: unknown): string;
     static includeOnNonEntity(expression: unknown): string;
     static includeWithCycle(navigationName: unknown, inverseNavigationName: unknown): string;
-    static incompatibleSentinelValue(sentinel: unknown, entityType: unknown, property: unknown, type_: unknown): string;
+    static incompatibleSentinelValue(sentinel: unknown, entityType: unknown, property: unknown, type: unknown): string;
     static inconsistentInheritance(entityType: unknown, baseEntityType: unknown, clrBaseEntityType: unknown): string;
     static incorrectNumberOfArguments(method: unknown, argumentCount: unknown, parameterCount: unknown): string;
     static indexPropertiesWrongEntity(indexProperties: unknown, entityType: unknown): string;
     static indexWrongType(index: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static inheritedPropertyCannotBeIgnored(property: unknown, type_: unknown, baseType: unknown): string;
+    static inheritedPropertyCannotBeIgnored(property: unknown, type: unknown, baseType: unknown): string;
     static interfacePropertyNotAdded(entityType: unknown, navigation: unknown, propertyType: unknown): string;
     static invalidAlternateKeyValue(entityType: unknown, keyProperty: unknown): string;
-    static invalidComplexType(type_: unknown): string;
-    static invalidEntityType(type_: unknown): string;
+    static invalidComplexType(type: unknown): string;
+    static invalidEntityType(type: unknown): string;
     static invalidEntityTypeConfigurationAttribute(entityTypeConfigurationType: unknown, entityType: unknown): string;
     static invalidEnumValue(value: unknown, argumentName: unknown, enumType: unknown): string;
     static invalidIncludeExpression(expression: unknown): string;
@@ -2628,7 +2628,7 @@ export abstract class CoreStrings$instance {
     static invalidSetTypeOwned(typeName: unknown, ownerType: unknown): string;
     static invalidSwitch(name: unknown, value: unknown): string;
     static invalidType(property: unknown, entityType: unknown, valueType: unknown, propertyType: unknown): string;
-    static invalidTypeConversionWithInclude(includeExpression: unknown, type_: unknown): string;
+    static invalidTypeConversionWithInclude(includeExpression: unknown, type: unknown): string;
     static invalidUseService(useService: unknown, useInternalServiceProvider: unknown, service: unknown): string;
     static invalidValueGeneratorFactoryProperty(factory: unknown, property: unknown, entityType: unknown): string;
     static inversePropertyMismatch(navigation: unknown, entityType: unknown, referencedNavigation: unknown, referencedEntityType: unknown): string;
@@ -2638,14 +2638,14 @@ export abstract class CoreStrings$instance {
     static keyAttributeOnDerivedEntity(derivedType: unknown, property: unknown, rootType: unknown): string;
     static keyInUse(keyProperties: unknown, entityType: unknown, foreignKeyProperties: unknown, dependentType: unknown): string;
     static keylessTypeExistingKey(entityType: unknown, keyProperties: unknown): string;
-    static keylessTypeTracked(type_: unknown): string;
+    static keylessTypeTracked(type: unknown): string;
     static keylessTypeWithKey(keyProperties: unknown, entityType: unknown): string;
     static keyPropertiesWrongEntity(keyProperties: unknown, entityType: unknown): string;
     static keyPropertyCannotBeNullable(property: unknown, entityType: unknown, keyProperties: unknown): string;
     static keyPropertyMustBeReadOnly(property: unknown, entityType: unknown): string;
     static keyReadOnly(property: unknown, entityType: unknown): string;
     static keyWrongType(keyProperties: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static literalGenerationNotSupported(type_: unknown): string;
+    static literalGenerationNotSupported(type: unknown): string;
     static manyToManyOneNav(entityType: unknown, navigation: unknown): string;
     static missingBackingField(field: unknown, property: unknown, entityType: unknown): string;
     static modelNotFinalized(method: unknown): string;
@@ -2653,7 +2653,7 @@ export abstract class CoreStrings$instance {
     static multipleNavigationsSameFk(entityType: unknown, properties: unknown, navigations: unknown): string;
     static multipleOwnerships(entityType: unknown, navigations: unknown): string;
     static multipleProvidersConfigured(storeNames: unknown): string;
-    static mustRewriteToSameNode(caller: unknown, type_: unknown): string;
+    static mustRewriteToSameNode(caller: unknown, type: unknown): string;
     static mutableKeyProperty(keyProperty: unknown): string;
     static namedIndexDefinedOnIgnoredProperty(indexName: unknown, entityType: unknown, indexProperties: unknown, propertyName: unknown): string;
     static namedIndexDefinedOnNonExistentProperty(indexName: unknown, entityType: unknown, indexProperties: unknown, propertyName: unknown): string;
@@ -2683,15 +2683,15 @@ export abstract class CoreStrings$instance {
     static nonComparableKeyTypes(entityType: unknown, property: unknown, modelType: unknown, providerType: unknown): string;
     static nonConfiguredNavigationToSharedType(navigation: unknown, entityType: unknown): string;
     static nonGenericOptions(contextType: unknown): string;
-    static nonIndexerEntityType(property: unknown, entityType: unknown, type_: unknown): string;
-    static nonListCollection(entityType: unknown, name: unknown, type_: unknown, listInterface: unknown): string;
+    static nonIndexerEntityType(property: unknown, entityType: unknown, type: unknown): string;
+    static nonListCollection(entityType: unknown, name: unknown, type: unknown, listInterface: unknown): string;
     static nonNotifyingCollection(navigation: unknown, entityType: unknown, collectionType: unknown, changeTrackingStrategy: unknown): string;
     static nonQueryTranslationFailedWithDetails(expression: unknown, details: unknown): string;
     static nonUniqueRequiredDependentForeignKey(foreignKeyProperties: unknown, declaringEntityType: unknown): string;
     static nonUniqueRequiredDependentNavigation(principalEntityType: unknown, principalNavigation: unknown): string;
     static noParameterlessConstructor(entityType: unknown): string;
     static noProperty(field: unknown, entity: unknown, propertyAccessMode: unknown): string;
-    static noPropertyType(property: unknown, type_: unknown): string;
+    static noPropertyType(property: unknown, type: unknown): string;
     static noProviderConfiguredFailedToResolveService(service: unknown): string;
     static noSetter(property: unknown, entityType: unknown, propertyAccessMode: unknown): string;
     static notAnEFService(service: unknown): string;
@@ -2701,8 +2701,8 @@ export abstract class CoreStrings$instance {
     static notParameterizedAttributeWithNonConstantNotSupportedInPrecompiledQueries(parameter: unknown, method: unknown): string;
     static noValueGenerator(property: unknown, entityType: unknown, propertyType: unknown): string;
     static nullableKey(entityType: unknown, property: unknown): string;
-    static nullRequiredComplexProperty(type_: unknown, property: unknown): string;
-    static nullRequiredPrimitiveCollection(type_: unknown, property: unknown): string;
+    static nullRequiredComplexProperty(type: unknown, property: unknown): string;
+    static nullRequiredPrimitiveCollection(type: unknown, property: unknown): string;
     static objectRemovedFromModel(name: unknown): string;
     static optionsExtensionNotFound(optionsExtension: unknown): string;
     static originalValueNotStored(structuralType: unknown, property: unknown): string;
@@ -2719,11 +2719,11 @@ export abstract class CoreStrings$instance {
     static principalEntityTypeNotInRelationship(dependentEntityType: unknown, principalEntityType: unknown, entityType: unknown): string;
     static principalKeylessType(entityType: unknown, firstNavigationSpecification: unknown, secondNavigationSpecification: unknown): string;
     static principalOwnedType(referencingEntityTypeOrNavigation: unknown, referencedEntityTypeOrNavigation: unknown, ownedType: unknown): string;
-    static propertyClashingNonIndexer(property: unknown, type_: unknown): string;
+    static propertyClashingNonIndexer(property: unknown, type: unknown): string;
     static propertyConceptualNull(property: unknown, entityType: unknown): string;
     static propertyConceptualNullSensitive(property: unknown, entityType: unknown, keyValue: unknown): string;
     static propertyDoesNotBelong(property: unknown, expectedType: unknown, actualType: unknown): string;
-    static propertyInUseForeignKey(property: unknown, type_: unknown, foreignKeyProperties: unknown, foreignKeyType: unknown): string;
+    static propertyInUseForeignKey(property: unknown, type: unknown, foreignKeyProperties: unknown, foreignKeyType: unknown): string;
     static propertyInUseIndex(property: unknown, entityType: unknown, index: unknown, indexType: unknown): string;
     static propertyInUseKey(property: unknown, entityType: unknown, keyProperties: unknown): string;
     static propertyIsNotACollection(propertyName: unknown, entityType: unknown): string;
@@ -2733,17 +2733,17 @@ export abstract class CoreStrings$instance {
     static propertyNotMapped(propertyType: unknown, entityType: unknown, property: unknown): string;
     static propertyReadOnlyAfterSave(property: unknown, entityType: unknown): string;
     static propertyReadOnlyBeforeSave(property: unknown, entityType: unknown): string;
-    static propertyWrongClrType(property: unknown, type_: unknown, clrType: unknown, propertyType: unknown): string;
-    static propertyWrongEntityClrType(property: unknown, type_: unknown, clrType: unknown): string;
-    static propertyWrongName(property: unknown, type_: unknown, clrName: unknown): string;
-    static propertyWrongType(property: unknown, type_: unknown, otherType: unknown): string;
+    static propertyWrongClrType(property: unknown, type: unknown, clrType: unknown, propertyType: unknown): string;
+    static propertyWrongEntityClrType(property: unknown, type: unknown, clrType: unknown): string;
+    static propertyWrongName(property: unknown, type: unknown, clrName: unknown): string;
+    static propertyWrongType(property: unknown, type: unknown, otherType: unknown): string;
     static queryEntityMaterializationConditionWrongShape(entityType: unknown): string;
     static queryInvalidMaterializationType(projection: unknown, queryableType: unknown): string;
     static queryRootDifferentEntityType(entityType: unknown): string;
     static queryUnableToTranslateEFProperty(expression: unknown): string;
     static queryUnableToTranslateMember(member: unknown, entityType: unknown): string;
     static queryUnableToTranslateMethod(declaringTypeName: unknown, methodName: unknown): string;
-    static queryUnhandledQueryRootExpression(type_: unknown): string;
+    static queryUnhandledQueryRootExpression(type: unknown): string;
     static referencedShadowKey(referencingEntityTypeOrNavigation: unknown, referencedEntityTypeOrNavigation: unknown, foreignKeyPropertiesWithTypes: unknown, primaryKeyPropertiesWithTypes: unknown): string;
     static referenceIsCollection(property: unknown, entityType: unknown, referenceMethod: unknown, collectionMethod: unknown): string;
     static referenceMustBeLoaded(navigation: unknown, entityType: unknown): string;
@@ -2760,8 +2760,8 @@ export abstract class CoreStrings$instance {
     static seedDatumDerivedType(entityType: unknown, derivedType: unknown): string;
     static seedDatumDuplicate(entityType: unknown, keyProperties: unknown): string;
     static seedDatumDuplicateSensitive(entityType: unknown, keyValue: unknown): string;
-    static seedDatumIncompatibleValue(entityType: unknown, property: unknown, type_: unknown): string;
-    static seedDatumIncompatibleValueSensitive(entityType: unknown, value: unknown, property: unknown, type_: unknown): string;
+    static seedDatumIncompatibleValue(entityType: unknown, property: unknown, type: unknown): string;
+    static seedDatumIncompatibleValueSensitive(entityType: unknown, value: unknown, property: unknown, type: unknown): string;
     static seedDatumMissingValue(entityType: unknown, property: unknown): string;
     static seedDatumNavigation(entityType: unknown, navigation: unknown, relatedEntityType: unknown, foreignKeyProperties: unknown): string;
     static seedDatumNavigationSensitive(entityType: unknown, keyValue: unknown, navigation: unknown, relatedEntityType: unknown, foreignKeyProperties: unknown): string;
@@ -2790,15 +2790,15 @@ export abstract class CoreStrings$instance {
     static trackingTypeMismatch(runtimeEntityType: unknown, entityType: unknown): string;
     static translationFailed(expression: unknown): string;
     static translationFailedWithDetails(expression: unknown, details: unknown): string;
-    static typeConfigurationConflict(type_: unknown, typeConfiguration: unknown, otherType: unknown, otherTypeConfiguration: unknown): string;
-    static typeNotMarkedAsShared(type_: unknown): string;
+    static typeConfigurationConflict(type: unknown, typeConfiguration: unknown, otherType: unknown, otherTypeConfiguration: unknown): string;
+    static typeNotMarkedAsShared(type: unknown): string;
     static unableToDiscriminate(entityType: unknown, discriminator: unknown): string;
     static unableToSetIsUnique(isUnique: unknown, navigationName: unknown, entityType: unknown): string;
-    static unconfigurableType(type_: unknown, configuration: unknown, expectedConfiguration: unknown, configurationType: unknown): string;
-    static unconfigurableTypeMapping(type_: unknown): string;
+    static unconfigurableType(type: unknown, configuration: unknown, expectedConfiguration: unknown, configurationType: unknown): string;
+    static unconfigurableTypeMapping(type: unknown): string;
     static unhandledExpressionNode(nodeType: unknown): string;
     static unhandledMemberBinding(bindingType: unknown): string;
-    static unhandledNavigationBase(type_: unknown): string;
+    static unhandledNavigationBase(type: unknown): string;
     static unknownEntity(entity: unknown): string;
     static unknownKeyValue(entityType: unknown, property: unknown): string;
     static unknownShadowKeyValue(entityType: unknown, property: unknown): string;
@@ -3033,9 +3033,9 @@ export abstract class RelationalStrings$instance {
     static complexPropertyBothJsonColumnAndJsonPropertyName(complexProperty: unknown, columnName: unknown, propertyName: unknown): string;
     static complexPropertyJsonPropertyNameConflict(property1: unknown, property2: unknown, jsonPropertyName: unknown): string;
     static complexPropertyJsonPropertyNameWithoutJsonMapping(complexProperty: unknown): string;
-    static complexPropertyOptionalTableSharing(type_: unknown, property: unknown): string;
+    static complexPropertyOptionalTableSharing(type: unknown, property: unknown): string;
     static computedColumnSqlUnspecified(table: unknown, column: unknown): string;
-    static concurrencyTokenOnJsonMappedProperty(property: unknown, type_: unknown): string;
+    static concurrencyTokenOnJsonMappedProperty(property: unknown, type: unknown): string;
     static conflictingColumnServerGeneration(conflictingConfiguration: unknown, property: unknown, existingConfiguration: unknown): string;
     static conflictingOriginalRowValues(firstEntityType: unknown, secondEntityType: unknown, firstProperty: unknown, secondProperty: unknown, column: unknown): string;
     static conflictingOriginalRowValuesSensitive(firstEntityType: unknown, secondEntityType: unknown, keyValue: unknown, firstConflictingValues: unknown, secondConflictingValues: unknown, column: unknown): string;
@@ -3053,15 +3053,15 @@ export abstract class RelationalStrings$instance {
     static dataOperationNoTable(table: unknown): string;
     static dbFunctionExpressionIsNotMethodCall(expression: unknown): string;
     static dbFunctionGenericMethodNotSupported(function_: unknown): string;
-    static dbFunctionInvalidInstanceType(function_: unknown, type_: unknown): string;
-    static dbFunctionInvalidIQueryableOwnedReturnType(function_: unknown, type_: unknown): string;
-    static dbFunctionInvalidIQueryableReturnType(function_: unknown, type_: unknown): string;
+    static dbFunctionInvalidInstanceType(function_: unknown, type: unknown): string;
+    static dbFunctionInvalidIQueryableOwnedReturnType(function_: unknown, type: unknown): string;
+    static dbFunctionInvalidIQueryableReturnType(function_: unknown, type: unknown): string;
     static dbFunctionInvalidParameterName(function_: unknown, parameter: unknown): string;
-    static dbFunctionInvalidParameterType(parameter: unknown, function_: unknown, type_: unknown): string;
-    static dbFunctionInvalidReturnEntityType(function_: unknown, type_: unknown, elementType: unknown): string;
-    static dbFunctionInvalidReturnType(function_: unknown, type_: unknown): string;
+    static dbFunctionInvalidParameterType(parameter: unknown, function_: unknown, type: unknown): string;
+    static dbFunctionInvalidReturnEntityType(function_: unknown, type: unknown, elementType: unknown): string;
+    static dbFunctionInvalidReturnType(function_: unknown, type: unknown): string;
     static dbFunctionNonScalarCustomTranslation(function_: unknown): string;
-    static dbFunctionNullableValueReturnType(function_: unknown, type_: unknown): string;
+    static dbFunctionNullableValueReturnType(function_: unknown, type: unknown): string;
     static defaultValueSqlUnspecified(table: unknown, column: unknown): string;
     static defaultValueUnspecified(table: unknown, column: unknown): string;
     static deleteDataOperationNoModel(table: unknown): string;
@@ -3167,7 +3167,7 @@ export abstract class RelationalStrings$instance {
     static jsonEntityWithNonTphInheritanceOnOwner(rootType: unknown): string;
     static jsonEntityWithOwnerNotMappedToTableOrView(entity: unknown): string;
     static jsonErrorExtractingJsonProperty(entityType: unknown, propertyName: unknown): string;
-    static jsonObjectWithMultiplePropertiesMappedToSameJsonProperty(property1: unknown, property2: unknown, type_: unknown, jsonPropertyName: unknown): string;
+    static jsonObjectWithMultiplePropertiesMappedToSameJsonProperty(property1: unknown, property2: unknown, type: unknown, jsonPropertyName: unknown): string;
     static jsonProjectingCollectionElementAccessedUsingParmeterNoTrackingWithIdentityResolution(entityTypeName: unknown, asNoTrackingWithIdentityResolution: unknown): string;
     static jsonProjectingEntitiesIncorrectOrderNoTrackingWithIdentityResolution(asNoTrackingWithIdentityResolution: unknown, entityTypeName: unknown): string;
     static jsonProjectingQueryableOperationNoTrackingWithIdentityResolution(asNoTrackingWithIdentityResolution: unknown): string;
@@ -3186,10 +3186,10 @@ export abstract class RelationalStrings$instance {
     static multipleColumnsWithSameJsonContainerName(entityType: unknown, columnName: unknown): string;
     static multipleTablesInExecuteUpdate(propertySelector1: unknown, propertySelector2: unknown): string;
     static namedConnectionStringNotFound(name: unknown): string;
-    static nestedCollectionsNotSupported(propertyType: unknown, type_: unknown, property: unknown): string;
+    static nestedCollectionsNotSupported(propertyType: unknown, type: unknown, property: unknown): string;
     static nestedComplexPropertyJsonWithTableSharing(complexProperty: unknown, containingType: unknown): string;
     static noAliasOnTable(table: unknown): string;
-    static nonConstantOrParameterAsInExpressionValue(type_: unknown): string;
+    static nonConstantOrParameterAsInExpressionValue(type: unknown): string;
     static nonScalarFunctionCannotBeNullable(functionName: unknown): string;
     static nonScalarFunctionParameterCannotPropagatesNullability(parameterName: unknown, functionName: unknown): string;
     static nonTphDiscriminatorValueNotString(value: unknown, entityType: unknown): string;
@@ -3266,11 +3266,11 @@ export abstract class RelationalStrings$instance {
     static unhandledExpressionInVisitor(expression: unknown, expressionType: unknown, visitor: unknown): string;
     static unknownOperation(sqlGeneratorType: unknown, operationType: unknown): string;
     static unmappedNonTPHOwner(ownerType: unknown, navigation: unknown, ownedType: unknown, storeObjectType: unknown): string;
-    static unsupportedDataOperationStoreType(type_: unknown, column: unknown): string;
+    static unsupportedDataOperationStoreType(type: unknown, column: unknown): string;
     static unsupportedJsonColumnType(storeType: unknown, columnName: unknown, tableName: unknown): string;
     static unsupportedOperatorForSqlExpression(nodeType: unknown, expressionType: unknown): string;
     static unsupportedPropertyType(entity: unknown, property: unknown, clrType: unknown): string;
-    static unsupportedStoreType(type_: unknown): string;
+    static unsupportedStoreType(type: unknown): string;
     static unsupportedType(clrType: unknown): string;
     static unsupportedTypeForColumn(table: unknown, column: unknown, clrType: unknown): string;
     static updateConcurrencyException(expectedRows: unknown, actualRows: unknown): string;

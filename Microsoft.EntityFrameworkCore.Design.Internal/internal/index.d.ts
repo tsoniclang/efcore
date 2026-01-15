@@ -46,7 +46,7 @@ export type ICSharpRuntimeAnnotationCodeGenerator = ICSharpRuntimeAnnotationCode
 
 export interface QualifiedName$instance {
     name: string;
-    namespace_: string;
+    namespace: string;
     deconstruct(Name: string, Namespace: string): void;
     equals(obj: unknown): boolean;
     equals(other: QualifiedName): boolean;
@@ -85,7 +85,7 @@ export interface CSharpRuntimeAnnotationCodeGenerator$instance {
 
 export const CSharpRuntimeAnnotationCodeGenerator: {
     new(dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies): CSharpRuntimeAnnotationCodeGenerator;
-    addNamespace(type_: Type, namespaces: ISet<System_Internal.String>): void;
+    addNamespace(type: Type, namespaces: ISet<System_Internal.String>): void;
     create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
     create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
     createJsonValueReaderWriter(jsonValueReaderWriter: JsonValueReaderWriter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
@@ -125,7 +125,7 @@ export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
     isRuntime: boolean;
     mainBuilder: IndentedStringBuilder;
     methodBuilder: IndentedStringBuilder;
-    namespace_: string;
+    namespace: string;
     namespaces: ISet<System_Internal.String>;
     scopeObjects: IDictionary<System_Internal.String, unknown>;
     scopeVariables: IDictionary<unknown, System_Internal.String>;
@@ -140,7 +140,7 @@ export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
 
 
 export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
-    new(targetName: string, className: string, namespace_: string, mainBuilder: IndentedStringBuilder, methodBuilder: IndentedStringBuilder, namespaces: ISet<System_Internal.String>, scopeObjects: IDictionary<System_Internal.String, unknown>, scopeVariables: IDictionary<unknown, System_Internal.String>, configurationClassNames: Dictionary<ITypeBase, System_Internal.String>, nullable: boolean, nativeAot: boolean): CSharpRuntimeAnnotationCodeGeneratorParameters;
+    new(targetName: string, className: string, namespace: string, mainBuilder: IndentedStringBuilder, methodBuilder: IndentedStringBuilder, namespaces: ISet<System_Internal.String>, scopeObjects: IDictionary<System_Internal.String, unknown>, scopeVariables: IDictionary<unknown, System_Internal.String>, configurationClassNames: Dictionary<ITypeBase, System_Internal.String>, nullable: boolean, nativeAot: boolean): CSharpRuntimeAnnotationCodeGeneratorParameters;
 };
 
 

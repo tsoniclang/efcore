@@ -173,7 +173,7 @@ export interface NullTypeMapping$instance extends RelationalTypeMapping {
 
 export const NullTypeMapping: {
     new(storeType: string): NullTypeMapping;
-    readonly default_: NullTypeMapping;
+    readonly default: NullTypeMapping;
 };
 
 

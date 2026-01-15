@@ -38,7 +38,7 @@ import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 export enum CascadeTiming {
     immediate = 0,
     onSaveChanges = 1,
-    never_ = 2
+    never = 2
 }
 
 
@@ -164,7 +164,7 @@ export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 
 
 export interface CollectionEntry$instance extends NavigationEntry$instance {
-    currentValue: IEnumerable | IEnumerable_1<TRelatedEntity> | unknown;
+    currentValue: IEnumerable | unknown;
     isModified: boolean;
     findEntry(entity: unknown): EntityEntry | undefined;
     load(): void;
@@ -730,17 +730,17 @@ export interface LocalView_1$instance<TEntity> {
 
 
 export const LocalView_1: {
-    new<TEntity>(set_: DbSet_1<TEntity>): LocalView_1<TEntity>;
+    new<TEntity>(set: DbSet_1<TEntity>): LocalView_1<TEntity>;
 };
 
 
 export type LocalView_1<TEntity> = LocalView_1$instance<TEntity>;
 
 export interface MemberEntry$instance {
-    currentValue: TComplexProperty | unknown;
+    currentValue: IEnumerable | unknown;
     readonly entityEntry: EntityEntry | EntityEntry_1<TEntity>;
     isModified: boolean;
-    readonly metadata: IProperty | IPropertyBase;
+    readonly metadata: IComplexProperty | IPropertyBase;
     equals(obj: unknown): boolean;
     getHashCode(): int;
     toString(): string | undefined;
@@ -957,7 +957,7 @@ export interface ValueComparer$instance {
     readonly hashCodeExpression: LambdaExpression;
     readonly objectEqualsExpression: LambdaExpression;
     readonly snapshotExpression: LambdaExpression;
-    readonly type_: Type;
+    readonly type: Type;
     equals(left: unknown, right: unknown): boolean;
     extractEqualsBody(leftExpression: Expression, rightExpression: Expression): Expression;
     extractHashCodeBody(expression: Expression): Expression;
@@ -970,8 +970,8 @@ export interface ValueComparer$instance {
 export const ValueComparer: {
     add(hash: HashCode, code: int): HashCode;
     createDefault<T>(favorStructuralComparisons: boolean): ValueComparer;
-    createDefault(type_: Type, favorStructuralComparisons: boolean): ValueComparer;
-    getGenericSnapshotMethod(type_: Type): MethodInfo;
+    createDefault(type: Type, favorStructuralComparisons: boolean): ValueComparer;
+    getGenericSnapshotMethod(type: Type): MethodInfo;
 };
 
 
@@ -982,7 +982,7 @@ export interface ValueComparer_1$instance<T> extends ValueComparer {
     readonly hashCodeExpression: Expression<Func<T, System_Internal.Int32>>;
     readonly objectEqualsExpression: LambdaExpression;
     readonly snapshotExpression: Expression<Func<T, T>>;
-    readonly type_: Type;
+    readonly type: Type;
     equals(left: unknown, right: unknown): boolean;
     equals(left: T, right: T): boolean;
     getHashCode(instance: unknown): int;

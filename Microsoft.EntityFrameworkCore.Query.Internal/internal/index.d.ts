@@ -59,7 +59,7 @@ export interface IQueryCompiler$instance {
     createCompiledQuery<TResult>(query: Expression): Func<QueryContext, TResult>;
     execute<TResult>(query: Expression): TResult;
     executeAsync<TResult>(query: Expression, cancellationToken: CancellationToken): TResult;
-    precompileQuery<TResult>(query: Expression, async_: boolean): Expression<Func<QueryContext, TResult>>;
+    precompileQuery<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
 }
 
 
@@ -147,7 +147,7 @@ export interface BufferedDataReader$instance extends DbDataReader {
 
 export const BufferedDataReader: {
     new(reader: DbDataReader, detailedErrorsEnabled: boolean): BufferedDataReader;
-    isSupportedValueType(type_: Type): boolean;
+    isSupportedValueType(type: Type): boolean;
 };
 
 
@@ -742,8 +742,8 @@ export const QueryableMethodNormalizingExpressionVisitor: {
 export type QueryableMethodNormalizingExpressionVisitor = QueryableMethodNormalizingExpressionVisitor$instance;
 
 export interface QueryCompilationContextFactory$instance {
-    create(async_: boolean): QueryCompilationContext;
-    createPrecompiled(async_: boolean): QueryCompilationContext;
+    create(async: boolean): QueryCompilationContext;
+    createPrecompiled(async: boolean): QueryCompilationContext;
 }
 
 
@@ -762,13 +762,13 @@ export type QueryCompilationContextFactory = QueryCompilationContextFactory$inst
 
 
 export interface QueryCompiler$instance {
-    compileQueryCore<TResult>(database: IDatabase, query: Expression, model: IModel, async_: boolean): Func<QueryContext, TResult>;
+    compileQueryCore<TResult>(database: IDatabase, query: Expression, model: IModel, async: boolean): Func<QueryContext, TResult>;
     createCompiledAsyncQuery<TResult>(query: Expression): Func<QueryContext, TResult>;
     createCompiledQuery<TResult>(query: Expression): Func<QueryContext, TResult>;
     execute<TResult>(query: Expression): TResult;
     executeAsync<TResult>(query: Expression, cancellationToken?: CancellationToken): TResult;
     extractParameters(query: Expression, parameters: Dictionary<System_Internal.String, unknown>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>, compiledQuery?: boolean, generateContextAccessors?: boolean): Expression;
-    precompileQuery<TResult>(query: Expression, async_: boolean): Expression<Func<QueryContext, TResult>>;
+    precompileQuery<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
 }
 
 
@@ -994,8 +994,8 @@ export type RelationalQueryableMethodTranslatingExpressionVisitorFactory = Relat
 
 
 export interface RelationalQueryCompilationContextFactory$instance {
-    create(async_: boolean): QueryCompilationContext;
-    createPrecompiled(async_: boolean): QueryCompilationContext;
+    create(async: boolean): QueryCompilationContext;
+    createPrecompiled(async: boolean): QueryCompilationContext;
 }
 
 
@@ -1402,7 +1402,7 @@ export type SubqueryMemberPushdownExpressionVisitor = SubqueryMemberPushdownExpr
 
 export interface TableValuedFunctionQueryRootExpression$instance extends EntityQueryRootExpression {
     readonly arguments: IReadOnlyCollection<Expression>;
-    readonly function_: IStoreFunction;
+    readonly function: IStoreFunction;
     equals(obj: unknown): boolean;
     getHashCode(): int;
     print(expressionPrinter: ExpressionPrinter): void;

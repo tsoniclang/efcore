@@ -52,7 +52,7 @@ import type { EventId, ILoggerFactory, LogLevel } from "@tsonic/microsoft-extens
 export enum AutoTransactionBehavior {
     whenNeeded = 0,
     always = 1,
-    never_ = 2
+    never = 2
 }
 
 
@@ -117,7 +117,7 @@ export enum QueryTrackingBehavior {
 export enum WarningBehavior {
     log = 0,
     ignore = 1,
-    throw_ = 2
+    throw = 2
 }
 
 
@@ -215,8 +215,8 @@ export interface DbContext$instance {
     saveChanges(acceptAllChangesOnSuccess: boolean): int;
     saveChangesAsync(cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
     saveChangesAsync(acceptAllChangesOnSuccess: boolean, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
-    set_<TEntity>(): DbSet_1<TEntity>;
-    set_<TEntity>(name: string): DbSet_1<TEntity>;
+    set<TEntity>(): DbSet_1<TEntity>;
+    set<TEntity>(name: string): DbSet_1<TEntity>;
     toString(): string | undefined;
     update<TEntity>(entity: TEntity): EntityEntry_1<TEntity>;
     update(entity: unknown): EntityEntry;
@@ -698,10 +698,10 @@ export interface ModelBuilder$instance {
     applyConfiguration<TEntity>(configuration: IEntityTypeConfiguration_1<TEntity>): ModelBuilder;
     applyConfigurationsFromAssembly(assembly: Assembly, predicate?: Func<Type, System_Internal.Boolean>): ModelBuilder;
     entity<TEntity>(): EntityTypeBuilder_1<TEntity>;
-    entity(type_: Type): EntityTypeBuilder;
+    entity(type: Type): EntityTypeBuilder;
     entity(name: string): EntityTypeBuilder;
     entity<TEntity>(buildAction: Action<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
-    entity(type_: Type, buildAction: Action<EntityTypeBuilder>): ModelBuilder;
+    entity(type: Type, buildAction: Action<EntityTypeBuilder>): ModelBuilder;
     entity(name: string, buildAction: Action<EntityTypeBuilder>): ModelBuilder;
     equals(obj: unknown): boolean;
     finalizeModel(): IModel;
@@ -710,14 +710,14 @@ export interface ModelBuilder$instance {
     hasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ModelBuilder;
     hasEmbeddedDiscriminatorName(name: string): ModelBuilder;
     ignore<TStructural>(): ModelBuilder;
-    ignore(type_: Type): ModelBuilder;
+    ignore(type: Type): ModelBuilder;
     ignore(typeName: string): ModelBuilder;
     owned<T>(): OwnedEntityTypeBuilder_1<T>;
-    owned(type_: Type): OwnedEntityTypeBuilder;
+    owned(type: Type): OwnedEntityTypeBuilder;
     sharedTypeEntity<TEntity>(name: string): EntityTypeBuilder_1<TEntity>;
-    sharedTypeEntity(name: string, type_: Type): EntityTypeBuilder;
+    sharedTypeEntity(name: string, type: Type): EntityTypeBuilder;
     sharedTypeEntity<TEntity>(name: string, buildAction: Action<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
-    sharedTypeEntity(name: string, type_: Type, buildAction: Action<EntityTypeBuilder>): ModelBuilder;
+    sharedTypeEntity(name: string, type: Type, buildAction: Action<EntityTypeBuilder>): ModelBuilder;
     toString(): string | undefined;
     usePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ModelBuilder;
 }
@@ -753,7 +753,7 @@ export interface ModelConfigurationBuilder$instance {
     equals(obj: unknown): boolean;
     getHashCode(): int;
     ignoreAny<T>(): ModelConfigurationBuilder;
-    ignoreAny(type_: Type): ModelConfigurationBuilder;
+    ignoreAny(type: Type): ModelConfigurationBuilder;
     properties<TProperty>(): PropertiesConfigurationBuilder_1<TProperty>;
     properties<TProperty>(buildAction: Action<PropertiesConfigurationBuilder_1<TProperty>>): ModelConfigurationBuilder;
     properties(propertyType: Type): PropertiesConfigurationBuilder;
@@ -1694,9 +1694,9 @@ export abstract class RelationalModelBuilderExtensions$instance {
     static hasSequence(modelBuilder: ModelBuilder, name: string, builderAction: Action<SequenceBuilder>): ModelBuilder;
     static hasSequence(modelBuilder: ModelBuilder, name: string, schema: string, builderAction: Action<SequenceBuilder>): ModelBuilder;
     static hasSequence(modelBuilder: ModelBuilder, name: string, schema?: string): SequenceBuilder;
-    static hasSequence(modelBuilder: ModelBuilder, type_: Type, name: string, builderAction: Action<SequenceBuilder>): ModelBuilder;
-    static hasSequence(modelBuilder: ModelBuilder, type_: Type, name: string, schema: string, builderAction: Action<SequenceBuilder>): ModelBuilder;
-    static hasSequence(modelBuilder: ModelBuilder, type_: Type, name: string, schema?: string): SequenceBuilder;
+    static hasSequence(modelBuilder: ModelBuilder, type: Type, name: string, builderAction: Action<SequenceBuilder>): ModelBuilder;
+    static hasSequence(modelBuilder: ModelBuilder, type: Type, name: string, schema: string, builderAction: Action<SequenceBuilder>): ModelBuilder;
+    static hasSequence(modelBuilder: ModelBuilder, type: Type, name: string, schema?: string): SequenceBuilder;
     static useCollation(modelBuilder: IConventionModelBuilder, collation: string, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
     static useCollation(modelBuilder: ModelBuilder, collation: string): ModelBuilder;
 }

@@ -4048,7 +4048,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.BoolTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.BoolTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.BoolTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -4086,7 +4086,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.ByteArrayTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.ByteArrayTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.ByteArrayTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -4124,7 +4124,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.ByteTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.ByteTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.ByteTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -4162,7 +4162,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.CharTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.CharTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.CharTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -4912,7 +4912,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.DateOnlyTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.DateOnlyTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.DateOnlyTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -4950,7 +4950,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.DateTimeOffsetTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.DateTimeOffsetTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.DateTimeOffsetTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -4988,7 +4988,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.DateTimeTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.DateTimeTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.DateTimeTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5026,7 +5026,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.DecimalTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.DecimalTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.DecimalTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5064,7 +5064,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.DoubleTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.DoubleTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.DoubleTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5480,7 +5480,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.FloatTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.FloatTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.FloatTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5518,7 +5518,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.GuidTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.GuidTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.GuidTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5556,7 +5556,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.IntTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.IntTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.IntTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -5626,7 +5626,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.LongTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.LongTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.LongTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -6090,7 +6090,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.ReaderColumn::Type:System.Type",
           "clrName": "Type",
-          "tsEmitName": "type_",
+          "tsEmitName": "type",
           "normalizedSignature": "Type|:System.Type|static=false|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -8583,7 +8583,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator::Delete():System.Void",
           "clrName": "Delete",
-          "tsEmitName": "delete_",
+          "tsEmitName": "delete",
           "normalizedSignature": "Delete|():System.Void|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -11749,7 +11749,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.SByteTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.SByteTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.SByteTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -11787,7 +11787,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.ShortTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.ShortTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.ShortTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -11825,7 +11825,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.StringTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.StringTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.StringTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -11863,7 +11863,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.TimeOnlyTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.TimeOnlyTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.TimeOnlyTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -11901,7 +11901,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.TimeSpanTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.TimeSpanTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.TimeSpanTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -12649,7 +12649,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.UIntTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.UIntTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.UIntTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -12687,7 +12687,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.ULongTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.ULongTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.ULongTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -12725,7 +12725,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.UShortTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.UShortTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.UShortTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",

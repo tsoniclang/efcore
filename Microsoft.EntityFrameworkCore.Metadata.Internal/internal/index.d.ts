@@ -67,7 +67,7 @@ export type IMemberClassifier = IMemberClassifier$instance;
 
 export interface IReferenceRoot_1$instance<T> {
     release(reference: Reference_1<T>): void;
-    track(object_: T): Reference_1<T>;
+    track(object: T): Reference_1<T>;
 }
 
 
@@ -175,7 +175,7 @@ export interface IRuntimeComplexType$instance extends IComplexType, IReadOnlyCom
     getRootType(): IReadOnlyTypeBase;
     isAbstract(): boolean;
     isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    isContainedBy(type_: Type): boolean;
+    isContainedBy(type: Type): boolean;
     setCounts(value: PropertyCounts): void;
     toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
     findComplexProperty2(name: string): IComplexProperty | undefined;
@@ -227,7 +227,7 @@ export type IRuntimeDbFunction = IRuntimeDbFunction$instance;
 export interface IRuntimeDbFunctionParameter$instance extends IDbFunctionParameter, IReadOnlyDbFunctionParameter, IReadOnlyAnnotatable, IAnnotatable {
     storeFunctionParameter: IStoreFunctionParameter;
     readonly storeType: string;
-    readonly function_: IDbFunction;
+    readonly function: IDbFunction;
     readonly name: string;
     readonly clrType: Type;
     readonly propagatesNullability: boolean;
@@ -467,17 +467,17 @@ export interface IRuntimeModel$instance extends IModel, IReadOnlyModel, IReadOnl
     findAnnotation(name: string): IAnnotation | undefined;
     findEntityType(name: string, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | undefined;
     findEntityType(name: string): IEntityType | undefined;
-    findEntityType(type_: Type, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | undefined;
+    findEntityType(type: Type, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | undefined;
     findEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
     findEntityType(name: string): IReadOnlyEntityType | undefined;
-    findEntityType(type_: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findEntityType(type_: Type): IReadOnlyEntityType | undefined;
-    findEntityTypes(type_: Type): IEnumerable__System_Collections_Generic<IEntityType>;
-    findEntityTypes(type_: Type): IEnumerable__System_Collections_Generic<IReadOnlyEntityType>;
-    findLeastDerivedEntityTypes(type_: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable__System_Collections_Generic<IEntityType>;
-    findLeastDerivedEntityTypes(type_: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable__System_Collections_Generic<IReadOnlyEntityType>;
+    findEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    findEntityType(type: Type): IReadOnlyEntityType | undefined;
+    findEntityTypes(type: Type): IEnumerable__System_Collections_Generic<IEntityType>;
+    findEntityTypes(type: Type): IEnumerable__System_Collections_Generic<IReadOnlyEntityType>;
+    findLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable__System_Collections_Generic<IEntityType>;
+    findLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable__System_Collections_Generic<IReadOnlyEntityType>;
     findRuntimeAnnotationValue(name: string): unknown | undefined;
-    findRuntimeEntityType(type_: Type): IEntityType | undefined;
+    findRuntimeEntityType(type: Type): IEntityType | undefined;
     findTypeMappingConfiguration(scalarType: Type): ITypeMappingConfiguration | undefined;
     getChangeTrackingStrategy(): ChangeTrackingStrategy;
     getEmbeddedDiscriminatorName(): string;
@@ -488,7 +488,7 @@ export interface IRuntimeModel$instance extends IModel, IReadOnlyModel, IReadOnl
     getPropertyAccessMode(): PropertyAccessMode;
     getUnsafeAccessors(): IReadOnlyDictionary<MemberInfo, QualifiedName>;
     isIndexerMethod(methodInfo: MethodInfo): boolean;
-    isShared(type_: Type): boolean;
+    isShared(type: Type): boolean;
     toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
     findEntityType2(name: string): IReadOnlyEntityType | undefined;
     findRuntimeAnnotation(name: string): IAnnotation | undefined;
@@ -927,7 +927,7 @@ export type IRuntimeTypeBase = IRuntimeTypeBase$instance;
 export interface TypeIdentity$instance {
     readonly isNamed: boolean;
     readonly name: string;
-    readonly type_: Type;
+    readonly type: Type;
     equals(obj: unknown): boolean;
     equals(other: TypeIdentity): boolean;
     getHashCode(): int;
@@ -936,8 +936,8 @@ export interface TypeIdentity$instance {
 
 export const TypeIdentity: {
     new(name: string): TypeIdentity;
-    new(name: string, type_: Type): TypeIdentity;
-    new(type_: Type, model: Model): TypeIdentity;
+    new(name: string, type: Type): TypeIdentity;
+    new(type: Type, model: Model): TypeIdentity;
 };
 
 
@@ -1070,15 +1070,15 @@ export type ClrCollectionAccessorFactory = ClrCollectionAccessorFactory$instance
 
 export interface ClrIndexedCollectionAccessor_3$instance<TStructural, TCollection extends IList<TElement>, TElement> {
     create(capacity: int): unknown;
-    get_(entity: unknown, index: int): unknown | undefined;
-    get_(entity: TStructural, index: int): TElement | undefined;
-    set_(entity: unknown, index: int, value: unknown, forMaterialization: boolean): void;
-    set_(entity: TStructural, index: int, value: TElement, forMaterialization: boolean): void;
+    get(entity: unknown, index: int): unknown | undefined;
+    get(entity: TStructural, index: int): TElement | undefined;
+    set(entity: unknown, index: int, value: unknown, forMaterialization: boolean): void;
+    set(entity: TStructural, index: int, value: TElement, forMaterialization: boolean): void;
 }
 
 
 export const ClrIndexedCollectionAccessor_3: {
-    new<TStructural, TCollection extends IList<TElement>, TElement>(propertyName: string, shadow: boolean, get_: Func<TStructural, System_Internal.Int32, TElement>, set_: Action<TStructural, System_Internal.Int32, TElement>, setForMaterialization: Action<TStructural, System_Internal.Int32, TElement>, createCollection: Func<System_Internal.Int32, TCollection>): ClrIndexedCollectionAccessor_3<TStructural, TCollection, TElement>;
+    new<TStructural, TCollection extends IList<TElement>, TElement>(propertyName: string, shadow: boolean, get: Func<TStructural, System_Internal.Int32, TElement>, set: Action<TStructural, System_Internal.Int32, TElement>, setForMaterialization: Action<TStructural, System_Internal.Int32, TElement>, createCollection: Func<System_Internal.Int32, TCollection>): ClrIndexedCollectionAccessor_3<TStructural, TCollection, TElement>;
 };
 
 
@@ -1093,7 +1093,7 @@ export type ClrIndexedCollectionAccessor_3<TStructural, TCollection extends ILis
 
 export interface ClrIndexedCollectionAccessorFactory$instance {
     create(collection: IPropertyBase): IClrIndexedCollectionAccessor;
-    create(collection: IPropertyBase, entityType: Type, propertyType: Type, elementType: Type, get_: Expression, set_: Expression, setForMaterialization: Expression, createCollection: Expression): void;
+    create(collection: IPropertyBase, entityType: Type, propertyType: Type, elementType: Type, get: Expression, set: Expression, setForMaterialization: Expression, createCollection: Expression): void;
 }
 
 
@@ -1230,7 +1230,7 @@ export interface Column$instance extends ColumnBase_1$instance<ColumnMapping> {
 
 
 export const Column: {
-    new(name: string, type_: string, table: Table, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): Column;
+    new(name: string, type: string, table: Table, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): Column;
 };
 
 
@@ -1278,7 +1278,7 @@ export interface ColumnBase_1$instance<TColumnMappingBase extends IColumnMapping
 
 
 export const ColumnBase_1: {
-    new<TColumnMappingBase extends IColumnMappingBase>(name: string, type_: string, table: TableBase, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): ColumnBase_1<TColumnMappingBase>;
+    new<TColumnMappingBase extends IColumnMappingBase>(name: string, type: string, table: TableBase, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): ColumnBase_1<TColumnMappingBase>;
     format<TColumnMappingBase extends IColumnMappingBase>(columns: IEnumerable__System_Collections_Generic<IColumnBase>): string;
 };
 
@@ -1478,7 +1478,7 @@ export interface ComplexProperty$instance extends PropertyBase$instance {
 
 
 export const ComplexProperty: {
-    new(name: string, type_: Type, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, declaringType: TypeBase, targetTypeName: string, targetType: Type, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty;
+    new(name: string, type: Type, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, declaringType: TypeBase, targetTypeName: string, targetType: Type, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty;
 };
 
 
@@ -1680,7 +1680,7 @@ export interface ComplexType$instance extends TypeBase$instance {
 
 
 export const ComplexType: {
-    new(name: string, type_: Type, property: ComplexProperty, configurationSource: ConfigurationSource): ComplexType;
+    new(name: string, type: Type, property: ComplexProperty, configurationSource: ConfigurationSource): ComplexType;
 };
 
 
@@ -1708,8 +1708,8 @@ export interface ConstructorBindingFactory$instance {
     getBindings(entityType: IMutableEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
     getBindings(entityType: IReadOnlyEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
     getBindings(complexType: IReadOnlyComplexType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
-    tryBindConstructor(entityType: IMutableEntityType, constructor_: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable__System_Collections_Generic<ParameterInfo>): boolean;
-    tryBindConstructor(entityType: IConventionEntityType, constructor_: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable__System_Collections_Generic<ParameterInfo>): boolean;
+    tryBindConstructor(entityType: IMutableEntityType, constructor: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable__System_Collections_Generic<ParameterInfo>): boolean;
+    tryBindConstructor(entityType: IConventionEntityType, constructor: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable__System_Collections_Generic<ParameterInfo>): boolean;
 }
 
 
@@ -1862,7 +1862,7 @@ export type DbFunction = DbFunction$instance & __DbFunction$views;
 
 export interface DbFunctionParameter$instance extends ConventionAnnotatable {
     readonly clrType: Type;
-    readonly function_: DbFunction;
+    readonly function: DbFunction;
     readonly isInModel: boolean;
     readonly isReadOnly: boolean;
     readonly name: string;
@@ -2292,8 +2292,8 @@ export interface EntityType$instance extends TypeBase$instance {
 
 export const EntityType: {
     new(name: string, model: Model, owned: boolean, configurationSource: ConfigurationSource): EntityType;
-    new(type_: Type, model: Model, owned: boolean, configurationSource: ConfigurationSource): EntityType;
-    new(name: string, type_: Type, model: Model, owned: boolean, configurationSource: ConfigurationSource): EntityType;
+    new(type: Type, model: Model, owned: boolean, configurationSource: ConfigurationSource): EntityType;
+    new(name: string, type: Type, model: Model, owned: boolean, configurationSource: ConfigurationSource): EntityType;
 };
 
 
@@ -2373,7 +2373,7 @@ export const EntityTypeMappingFragment: {
     new(entityType: IReadOnlyEntityType, storeObject: StoreObjectIdentifier, configurationSource: ConfigurationSource): EntityTypeMappingFragment;
     attach(entityType: IConventionEntityType, detachedFragment: IConventionEntityTypeMappingFragment): void;
     find(entityType: IReadOnlyEntityType, storeObject: StoreObjectIdentifier): IReadOnlyEntityTypeMappingFragment | undefined;
-    get_(entityType: IReadOnlyEntityType): IEnumerable__System_Collections_Generic<IReadOnlyEntityTypeMappingFragment> | undefined;
+    get(entityType: IReadOnlyEntityType): IEnumerable__System_Collections_Generic<IReadOnlyEntityTypeMappingFragment> | undefined;
     getOrCreate(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier, configurationSource: ConfigurationSource): EntityTypeMappingFragment;
     mergeInto(detachedFragment: IConventionEntityTypeMappingFragment, existingFragment: IConventionEntityTypeMappingFragment): EntityTypeMappingFragment;
     remove(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier): EntityTypeMappingFragment | undefined;
@@ -2589,7 +2589,7 @@ export const ForeignKeyConstraintComparer: {
 export type ForeignKeyConstraintComparer = ForeignKeyConstraintComparer$instance;
 
 export interface FunctionColumn$instance extends ColumnBase_1$instance<FunctionColumnMapping> {
-    readonly function_: StoreFunction;
+    readonly function: StoreFunction;
     addAnnotation(name: string, value: unknown): IAnnotation;
     addAnnotation(name: string, value: unknown): Annotation;
     addAnnotations(annotations: IEnumerable__System_Collections_Generic<IAnnotation>): void;
@@ -2615,7 +2615,7 @@ export interface FunctionColumn$instance extends ColumnBase_1$instance<FunctionC
 
 
 export const FunctionColumn: {
-    new(name: string, type_: string, function_: StoreFunction, storeTypeMapping: RelationalTypeMapping): FunctionColumn;
+    new(name: string, type: string, function_: StoreFunction, storeTypeMapping: RelationalTypeMapping): FunctionColumn;
 };
 
 
@@ -2866,9 +2866,9 @@ export interface InternalComplexTypeBuilder$instance extends InternalTypeBaseBui
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): boolean;
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
     canSetConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): boolean;
-    canSetDiscriminator(name: string, type_: Type, configurationSource: ConfigurationSource): boolean;
-    canSetDiscriminator(type_: Type, fromDataAnnotation?: boolean): boolean;
-    canSetDiscriminator(name: string, type_: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(name: string, type: Type, configurationSource: ConfigurationSource): boolean;
+    canSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     canSetServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): boolean;
     complexProperty(memberInfo: MemberInfo, complexTypeName: string, collection: Nullable<System_Internal.Boolean>, configurationSource: Nullable<ConfigurationSource>): InternalComplexPropertyBuilder | undefined;
     complexProperty(propertyType: Type, propertyName: string, complexTypeName: string, collection: Nullable<System_Internal.Boolean>, configurationSource: Nullable<ConfigurationSource>): InternalComplexPropertyBuilder | undefined;
@@ -2887,7 +2887,7 @@ export interface InternalComplexTypeBuilder$instance extends InternalTypeBaseBui
     hasChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
     hasConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): InternalComplexTypeBuilder | undefined;
     hasDiscriminator(configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | undefined;
-    hasDiscriminator(name: string, type_: Type, configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | undefined;
+    hasDiscriminator(name: string, type: Type, configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | undefined;
     hasDiscriminator(memberInfo: MemberInfo, configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | undefined;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
@@ -3047,17 +3047,17 @@ export type InternalElementTypeBuilder = InternalElementTypeBuilder$instance & _
 
 export interface InternalEntityTypeBuilder$instance extends InternalTypeBaseBuilder$instance {
     canAddComplexProperty(propertyName: string, propertyType: Type, targetType: Type, collection: Nullable<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
-    canAddNavigation(navigationName: string, type_: Type, configurationSource: ConfigurationSource): boolean;
+    canAddNavigation(navigationName: string, type: Type, configurationSource: ConfigurationSource): boolean;
     canHaveComplexProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, complexType: Type, collection: Nullable<System_Internal.Boolean>, configurationSource: Nullable<ConfigurationSource>): boolean;
     canHaveComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): boolean;
     canHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): boolean;
     canHaveIndex(propertyNames: IReadOnlyList<System_Internal.String>, configurationSource: ConfigurationSource): boolean;
-    canHaveNavigation(navigationName: string, type_: Type, configurationSource: Nullable<ConfigurationSource>): boolean;
+    canHaveNavigation(navigationName: string, type: Type, configurationSource: Nullable<ConfigurationSource>): boolean;
     canHaveProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable<ConfigurationSource>, configurationSource: Nullable<ConfigurationSource>, checkClrProperty?: boolean): boolean;
     canHaveProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): boolean;
     canHaveProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): boolean;
     canHaveServiceProperty(memberInfo: MemberInfo, configurationSource: Nullable<ConfigurationSource>): boolean;
-    canHaveSkipNavigation(skipNavigationName: string, type_: Type, configurationSource: Nullable<ConfigurationSource>): boolean;
+    canHaveSkipNavigation(skipNavigationName: string, type: Type, configurationSource: Nullable<ConfigurationSource>): boolean;
     canRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     canRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     canRemoveComplexProperty(complexProperty: ComplexProperty, configurationSource: ConfigurationSource): boolean;
@@ -3080,9 +3080,9 @@ export interface InternalEntityTypeBuilder$instance extends InternalTypeBaseBuil
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): boolean;
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
     canSetConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): boolean;
-    canSetDiscriminator(name: string, type_: Type, configurationSource: ConfigurationSource): boolean;
-    canSetDiscriminator(type_: Type, fromDataAnnotation?: boolean): boolean;
-    canSetDiscriminator(name: string, type_: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(name: string, type: Type, configurationSource: ConfigurationSource): boolean;
+    canSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
+    canSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     canSetIsOwned(owned: boolean, configurationSource: ConfigurationSource): boolean;
     canSetPrimaryKey(propertyNames: IReadOnlyList<System_Internal.String>, configurationSource: ConfigurationSource): boolean;
     canSetPrimaryKey(properties: IReadOnlyList<IConventionProperty>, configurationSource: ConfigurationSource): boolean;
@@ -3112,7 +3112,7 @@ export interface InternalEntityTypeBuilder$instance extends InternalTypeBaseBuil
     hasConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): IConventionEntityTypeBuilder | undefined;
     hasData(data: IEnumerable__System_Collections_Generic<unknown>, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
     hasDiscriminator(configurationSource: ConfigurationSource): DiscriminatorBuilder | undefined;
-    hasDiscriminator(name: string, type_: Type, configurationSource: ConfigurationSource): DiscriminatorBuilder | undefined;
+    hasDiscriminator(name: string, type: Type, configurationSource: ConfigurationSource): DiscriminatorBuilder | undefined;
     hasDiscriminator(memberInfo: MemberInfo, configurationSource: ConfigurationSource): DiscriminatorBuilder | undefined;
     hasIndex(propertyNames: IReadOnlyList<System_Internal.String>, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
     hasIndex(propertyNames: IReadOnlyList<System_Internal.String>, name: string, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
@@ -3369,9 +3369,9 @@ export type InternalKeyBuilder = InternalKeyBuilder$instance & __InternalKeyBuil
 
 
 export interface InternalModelBuilder$instance extends AnnotatableBuilder_2<Model, InternalModelBuilder> {
-    canBeConfigured(type_: Type, configurationType: TypeConfigurationType, configurationSource: ConfigurationSource): boolean;
-    canHaveEntity(type_: TypeIdentity, configurationSource: ConfigurationSource, shouldBeOwned: Nullable<System_Internal.Boolean>, shouldThrow?: boolean): boolean;
-    canIgnore(type_: Type, configurationSource: ConfigurationSource): boolean;
+    canBeConfigured(type: Type, configurationType: TypeConfigurationType, configurationSource: ConfigurationSource): boolean;
+    canHaveEntity(type: TypeIdentity, configurationSource: ConfigurationSource, shouldBeOwned: Nullable<System_Internal.Boolean>, shouldThrow?: boolean): boolean;
+    canIgnore(type: Type, configurationSource: ConfigurationSource): boolean;
     canIgnore(name: string, configurationSource: ConfigurationSource): boolean;
     canRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     canRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -3381,11 +3381,11 @@ export interface InternalModelBuilder$instance extends AnnotatableBuilder_2<Mode
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): boolean;
     canSetEmbeddedDiscriminatorName(name: string, configurationSource: ConfigurationSource): boolean;
     canSetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, configurationSource: ConfigurationSource): boolean;
-    complex(type_: Type, configurationSource: ConfigurationSource): InternalModelBuilder;
+    complex(type: Type, configurationSource: ConfigurationSource): InternalModelBuilder;
     entity(name: string, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
-    entity(type_: Type, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
+    entity(type: Type, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
     entity(name: string, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    entity(type_: Type, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
+    entity(type: Type, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
     hasAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): AnnotatableBuilder_2<Model, InternalModelBuilder>;
     hasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     hasChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
@@ -3393,13 +3393,13 @@ export interface InternalModelBuilder$instance extends AnnotatableBuilder_2<Mode
     hasNoAnnotation(name: string, configurationSource: ConfigurationSource): AnnotatableBuilder_2<Model, InternalModelBuilder>;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     hasNoEntityType(entityType: EntityType, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
-    ignore(type_: Type, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
+    ignore(type: Type, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
     ignore(name: string, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
-    isIgnored(type_: Type, configurationSource: Nullable<ConfigurationSource>): boolean;
+    isIgnored(type: Type, configurationSource: Nullable<ConfigurationSource>): boolean;
     isIgnored(name: string, configurationSource: Nullable<ConfigurationSource>): boolean;
-    owned(type_: Type, configurationSource: ConfigurationSource): IConventionOwnedEntityTypeBuilder | undefined;
+    owned(type: Type, configurationSource: ConfigurationSource): IConventionOwnedEntityTypeBuilder | undefined;
     removeImplicitJoinEntity(joinEntityType: EntityType, configurationSource?: ConfigurationSource): InternalModelBuilder | undefined;
-    sharedTypeEntity(name: string, type_: Type, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
+    sharedTypeEntity(name: string, type: Type, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
     usePropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
 }
 
@@ -3611,14 +3611,14 @@ export interface InternalSequenceBuilder$instance extends AnnotatableBuilder_2<S
     canSetMax(maximum: Nullable<System_Internal.Int64>, configurationSource: ConfigurationSource): boolean;
     canSetMin(minimum: Nullable<System_Internal.Int64>, configurationSource: ConfigurationSource): boolean;
     canSetStartsAt(startValue: Nullable<System_Internal.Int64>, configurationSource: ConfigurationSource): boolean;
-    canSetType(type_: Type, configurationSource: ConfigurationSource): boolean;
+    canSetType(type: Type, configurationSource: ConfigurationSource): boolean;
     hasAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): AnnotatableBuilder_2<Sequence, IConventionModelBuilder>;
     hasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     hasMax(maximum: Nullable<System_Internal.Int64>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
     hasMin(minimum: Nullable<System_Internal.Int64>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
     hasNoAnnotation(name: string, configurationSource: ConfigurationSource): AnnotatableBuilder_2<Sequence, IConventionModelBuilder>;
     hasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    hasType(type_: Type, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
+    hasType(type: Type, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
     incrementsBy(increment: Nullable<System_Internal.Int32>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
     isCyclic(cyclic: Nullable<System_Internal.Boolean>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
     startsAt(startValue: Nullable<System_Internal.Int64>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
@@ -3857,7 +3857,7 @@ export interface InternalTypeBaseBuilder$instance extends AnnotatableBuilder_2<T
     canSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
     canSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     canSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): boolean;
-    canSetDiscriminator(name: string, type_: Type, configurationSource: ConfigurationSource): boolean;
+    canSetDiscriminator(name: string, type: Type, configurationSource: ConfigurationSource): boolean;
     canSetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, configurationSource: ConfigurationSource): boolean;
     complexCollection(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     complexCollection(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
@@ -3940,7 +3940,7 @@ export interface JsonColumn$instance extends Column$instance {
 
 
 export const JsonColumn: {
-    new(name: string, type_: string, table: Table, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): JsonColumn;
+    new(name: string, type: string, table: Table, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): JsonColumn;
 };
 
 
@@ -3980,7 +3980,7 @@ export interface JsonColumnBase$instance extends ColumnBase_1$instance<ColumnMap
 
 
 export const JsonColumnBase: {
-    new(name: string, type_: string, table: TableBase, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): JsonColumnBase;
+    new(name: string, type: string, table: TableBase, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): JsonColumnBase;
 };
 
 
@@ -4020,7 +4020,7 @@ export interface JsonViewColumn$instance extends ViewColumn$instance {
 
 
 export const JsonViewColumn: {
-    new(name: string, type_: string, view: View, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): JsonViewColumn;
+    new(name: string, type: string, view: View, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): JsonViewColumn;
 };
 
 
@@ -4137,21 +4137,21 @@ export interface Model$instance extends ConventionAnnotatable {
     addAnnotations(annotations: IEnumerable__System_Collections_Generic<IAnnotation>): void;
     addAnnotations(annotations: IEnumerable__System_Collections_Generic<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
     addAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
-    addComplex(type_: Type, configurationSource: ConfigurationSource): Nullable<ConfigurationSource>;
+    addComplex(type: Type, configurationSource: ConfigurationSource): Nullable<ConfigurationSource>;
     addComplexType(complexType: ComplexType): void;
     addEntityType(name: string, owned: boolean, configurationSource: ConfigurationSource): EntityType | undefined;
-    addEntityType(type_: Type, owned: boolean, configurationSource: ConfigurationSource): EntityType | undefined;
-    addEntityType(name: string, type_: Type, owned: boolean, configurationSource: ConfigurationSource): EntityType | undefined;
+    addEntityType(type: Type, owned: boolean, configurationSource: ConfigurationSource): EntityType | undefined;
+    addEntityType(name: string, type: Type, owned: boolean, configurationSource: ConfigurationSource): EntityType | undefined;
     addEntityType(name: string, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): EntityType | undefined;
-    addEntityType(type_: Type, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): EntityType | undefined;
-    addIgnored(type_: Type, configurationSource: ConfigurationSource): string | undefined;
+    addEntityType(type: Type, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): EntityType | undefined;
+    addIgnored(type: Type, configurationSource: ConfigurationSource): string | undefined;
     addIgnored(name: string, configurationSource: ConfigurationSource): string | undefined;
-    addIgnored(name: string, type_: Type, configurationSource: ConfigurationSource): string | undefined;
-    addOwned(type_: Type, configurationSource: ConfigurationSource): void;
+    addIgnored(name: string, type: Type, configurationSource: ConfigurationSource): string | undefined;
+    addOwned(type: Type, configurationSource: ConfigurationSource): void;
     addProperty(property: Property): void;
     addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addShared(type_: Type, configurationSource: ConfigurationSource): void;
+    addShared(type: Type, configurationSource: ConfigurationSource): void;
     annotationsToDebugString(indent?: int): string;
     delayConventions(): IConventionBatch;
     finalizeModel(): IModel;
@@ -4162,18 +4162,18 @@ export interface Model$instance extends ConventionAnnotatable {
     findAnnotation(name: string): Annotation | undefined;
     findClrType(name: string): Type | undefined;
     findComplexType(name: string): ComplexType | undefined;
-    findEntityType(type_: Type): EntityType | undefined;
+    findEntityType(type: Type): EntityType | undefined;
     findEntityType(name: string): EntityType | undefined;
-    findEntityType(type_: Type, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
+    findEntityType(type: Type, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
     findEntityType(name: string, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
-    findEntityTypes(type_: Type): IEnumerable__System_Collections_Generic<EntityType>;
-    findIgnoredConfigurationSource(type_: Type): Nullable<ConfigurationSource>;
+    findEntityTypes(type: Type): IEnumerable__System_Collections_Generic<EntityType>;
+    findIgnoredConfigurationSource(type: Type): Nullable<ConfigurationSource>;
     findIgnoredConfigurationSource(name: string): Nullable<ConfigurationSource>;
-    findIndexerPropertyInfo(type_: Type): PropertyInfo | undefined;
-    findIsComplexConfigurationSource(type_: Type): Nullable<ConfigurationSource>;
-    findIsOwnedConfigurationSource(type_: Type): Nullable<ConfigurationSource>;
-    findIsSharedConfigurationSource(type_: Type): Nullable<ConfigurationSource>;
-    findProperties(type_: Type): IReadOnlySet<Property> | undefined;
+    findIndexerPropertyInfo(type: Type): PropertyInfo | undefined;
+    findIsComplexConfigurationSource(type: Type): Nullable<ConfigurationSource>;
+    findIsOwnedConfigurationSource(type: Type): Nullable<ConfigurationSource>;
+    findIsSharedConfigurationSource(type: Type): Nullable<ConfigurationSource>;
+    findProperties(type: Type): IReadOnlySet<Property> | undefined;
     findRuntimeAnnotation(name: string): IAnnotation | undefined;
     findRuntimeAnnotation(name: string): Annotation | undefined;
     findRuntimeAnnotationValue(name: string): unknown | undefined;
@@ -4181,7 +4181,7 @@ export interface Model$instance extends ConventionAnnotatable {
     getAnnotations(): IEnumerable__System_Collections_Generic<ConventionAnnotation>;
     getChangeTrackingStrategy(): ChangeTrackingStrategy;
     getChangeTrackingStrategyConfigurationSource(): Nullable<ConfigurationSource>;
-    getDisplayName(type_: Type): string;
+    getDisplayName(type: Type): string;
     getEmbeddedDiscriminatorName(): string;
     getEmbeddedDiscriminatorNameConfigurationSource(): Nullable<ConfigurationSource>;
     getEntityTypes(): IEnumerable__System_Collections_Generic<EntityType>;
@@ -4192,25 +4192,25 @@ export interface Model$instance extends ConventionAnnotatable {
     getRuntimeAnnotations(): IEnumerable__System_Collections_Generic<IAnnotation>;
     getTypeMappingConfigurations(): IEnumerable__System_Collections_Generic<ITypeMappingConfiguration>;
     isIgnored(name: string): boolean;
-    isIgnored(type_: Type): boolean;
-    isIgnoredType(type_: Type): boolean;
+    isIgnored(type: Type): boolean;
+    isIgnoredType(type: Type): boolean;
     isIndexerMethod(methodInfo: MethodInfo): boolean;
-    isOwned(type_: Type): boolean;
-    isShared(type_: Type): boolean;
+    isOwned(type: Type): boolean;
+    isShared(type: Type): boolean;
     onModelFinalized(): IModel;
     removeAnnotation(name: string): IAnnotation | undefined;
     removeAnnotation(name: string): Annotation | undefined;
     removeComplexType(complexType: ComplexType): void;
-    removeEntityType(type_: Type): EntityType | undefined;
+    removeEntityType(type: Type): EntityType | undefined;
     removeEntityType(name: string): EntityType | undefined;
     removeEntityType(entityType: EntityType): EntityType | undefined;
-    removeEntityType(type_: Type, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
+    removeEntityType(type: Type, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
     removeEntityType(name: string, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
-    removeIgnored(type_: Type): string | undefined;
+    removeIgnored(type: Type): string | undefined;
     removeIgnored(name: string): string | undefined;
-    removeOwned(type_: Type): string | undefined;
+    removeOwned(type: Type): string | undefined;
     removeProperty(property: Property): Property | undefined;
-    removeShared(type_: Type): Type | undefined;
+    removeShared(type: Type): Type | undefined;
     setAnnotation(name: string, value: unknown): void;
     setAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation | undefined;
     setChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): Nullable<ChangeTrackingStrategy>;
@@ -4246,23 +4246,23 @@ export type Model = Model$instance & __Model$views;
 
 
 export interface ModelConfiguration$instance {
-    addIgnored(type_: Type): void;
+    addIgnored(type: Type): void;
     configureComplexProperty(property: IMutableComplexProperty): void;
     configureProperty(property: IMutableProperty): void;
-    findComplexProperty(type_: Type): ComplexPropertyConfiguration | undefined;
-    findProperty(type_: Type): PropertyConfiguration | undefined;
-    findTypeMapping(type_: Type): PropertyConfiguration | undefined;
+    findComplexProperty(type: Type): ComplexPropertyConfiguration | undefined;
+    findProperty(type: Type): PropertyConfiguration | undefined;
+    findTypeMapping(type: Type): PropertyConfiguration | undefined;
     findTypeMappingConfiguration(scalarType: Type): ITypeMappingConfiguration | undefined;
-    getConfigurationType(type_: Type): Nullable<TypeConfigurationType>;
-    getOrAddComplexProperty(type_: Type): ComplexPropertyConfiguration;
-    getOrAddProperty(type_: Type): PropertyConfiguration;
-    getOrAddTypeMapping(type_: Type): PropertyConfiguration;
+    getConfigurationType(type: Type): Nullable<TypeConfigurationType>;
+    getOrAddComplexProperty(type: Type): ComplexPropertyConfiguration;
+    getOrAddProperty(type: Type): PropertyConfiguration;
+    getOrAddTypeMapping(type: Type): PropertyConfiguration;
     getTypeMappingConfigurations(): IEnumerable__System_Collections_Generic<ITypeMappingConfiguration>;
     isEmpty(): boolean;
-    isIgnored(type_: Type): boolean;
-    removeComplexProperty(type_: Type): boolean;
-    removeIgnored(type_: Type): boolean;
-    removeProperty(type_: Type): boolean;
+    isIgnored(type: Type): boolean;
+    removeComplexProperty(type: Type): boolean;
+    removeIgnored(type: Type): boolean;
+    removeProperty(type: Type): boolean;
     validate(): ModelConfiguration;
 }
 
@@ -4671,7 +4671,7 @@ export interface PropertyBase$instance extends ConventionAnnotatable {
 
 
 export const PropertyBase: {
-    getFieldInfo(fieldName: string, type_: TypeBase, propertyName: string, shouldThrow: boolean): FieldInfo | undefined;
+    getFieldInfo(fieldName: string, type: TypeBase, propertyName: string, shouldThrow: boolean): FieldInfo | undefined;
     isCompatible(fieldInfo: FieldInfo, propertyType: Type, entityType: Type, propertyName: string, shouldThrow: boolean): boolean;
 };
 
@@ -4848,7 +4848,7 @@ export interface QueryFilterCollection$instance {
     readonly count: int;
     readonly item: IQueryFilter | undefined;
     getEnumerator(): IEnumerator<IQueryFilter>;
-    set_(filter: IQueryFilter): IQueryFilter | undefined;
+    set(filter: IQueryFilter): IQueryFilter | undefined;
     setRange(newFilters: IEnumerable__System_Collections_Generic<IQueryFilter>): void;
 }
 
@@ -4862,15 +4862,15 @@ export const QueryFilterCollection: {
 export type QueryFilterCollection = QueryFilterCollection$instance;
 
 export interface Reference_1$instance<T> {
-    object_: T;
+    object: T;
     dispose(): void;
     increaseReferenceCount(): void;
 }
 
 
 export const Reference_1: {
-    new<T>(object_: T): Reference_1<T>;
-    new<T>(object_: T, root: IReferenceRoot_1<T>): Reference_1<T>;
+    new<T>(object: T): Reference_1<T>;
+    new<T>(object: T, root: IReferenceRoot_1<T>): Reference_1<T>;
 };
 
 
@@ -4996,7 +4996,7 @@ export const RelationalPropertyOverrides: {
     attach(property: IConventionProperty, detachedOverrides: IConventionRelationalPropertyOverrides, newStoreObject: StoreObjectIdentifier): void;
     attach(property: IConventionProperty, detachedOverrides: IConventionRelationalPropertyOverrides): void;
     find(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): IReadOnlyRelationalPropertyOverrides | undefined;
-    get_(property: IReadOnlyProperty): IEnumerable__System_Collections_Generic<IReadOnlyRelationalPropertyOverrides> | undefined;
+    get(property: IReadOnlyProperty): IEnumerable__System_Collections_Generic<IReadOnlyRelationalPropertyOverrides> | undefined;
     getOrCreate(property: IMutableProperty, storeObject: StoreObjectIdentifier, configurationSource: ConfigurationSource): RelationalPropertyOverrides;
     mergeInto(detachedOverrides: IConventionRelationalPropertyOverrides, existingOverrides: IConventionRelationalPropertyOverrides): RelationalPropertyOverrides;
     remove(property: IMutableProperty, storeObject: StoreObjectIdentifier): RelationalPropertyOverrides | undefined;
@@ -5130,7 +5130,7 @@ export interface Sequence$instance extends ConventionAnnotatable {
     name: string;
     readonly schema: string;
     startValue: long;
-    type_: Type;
+    type: Type;
     addAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation;
     addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
     addAnnotation(name: string, value: unknown): IAnnotation;
@@ -5168,7 +5168,7 @@ export interface Sequence$instance extends ConventionAnnotatable {
     setMinValue(minValue: Nullable<System_Internal.Int64>, configurationSource: ConfigurationSource): Nullable<System_Internal.Int64>;
     setRemovedFromModel(): void;
     setStartValue(startValue: Nullable<System_Internal.Int64>, configurationSource: ConfigurationSource): Nullable<System_Internal.Int64>;
-    setType(type_: Type, configurationSource: ConfigurationSource): Type | undefined;
+    setType(type: Type, configurationSource: ConfigurationSource): Type | undefined;
     toString(): string;
     updateConfigurationSource(configurationSource: ConfigurationSource): void;
 }
@@ -5476,7 +5476,7 @@ export interface SqlQueryColumn$instance extends ColumnBase_1$instance<SqlQueryC
 
 
 export const SqlQueryColumn: {
-    new(name: string, type_: string, sqlQuery: SqlQuery, storeTypeMapping: RelationalTypeMapping): SqlQueryColumn;
+    new(name: string, type: string, sqlQuery: SqlQuery, storeTypeMapping: RelationalTypeMapping): SqlQueryColumn;
 };
 
 
@@ -5980,7 +5980,7 @@ export type StoreFunction = StoreFunction$instance & __StoreFunction$views;
 
 export interface StoreFunctionParameter$instance extends Annotatable {
     readonly dbFunctionParameters: List<IDbFunctionParameter>;
-    readonly function_: StoreFunction;
+    readonly function: StoreFunction;
     readonly isReadOnly: boolean;
     readonly name: string;
     readonly storeType: string;
@@ -6108,7 +6108,7 @@ export interface StoreStoredProcedureParameter$instance extends ColumnBase_1$ins
 
 
 export const StoreStoredProcedureParameter: {
-    new(name: string, type_: string, position: int, storedProcedure: StoreStoredProcedure, direction: ParameterDirection, storeTypeMapping: RelationalTypeMapping): StoreStoredProcedureParameter;
+    new(name: string, type: string, position: int, storedProcedure: StoreStoredProcedure, direction: ParameterDirection, storeTypeMapping: RelationalTypeMapping): StoreStoredProcedureParameter;
 };
 
 
@@ -6152,7 +6152,7 @@ export interface StoreStoredProcedureResultColumn$instance extends ColumnBase_1$
 
 
 export const StoreStoredProcedureResultColumn: {
-    new(name: string, type_: string, position: int, storedProcedure: StoreStoredProcedure, storeTypeMapping: RelationalTypeMapping): StoreStoredProcedureResultColumn;
+    new(name: string, type: string, position: int, storedProcedure: StoreStoredProcedure, storeTypeMapping: RelationalTypeMapping): StoreStoredProcedureResultColumn;
 };
 
 
@@ -6195,7 +6195,7 @@ export interface StoreStoredProcedureReturnValue$instance extends ColumnBase_1$i
 
 
 export const StoreStoredProcedureReturnValue: {
-    new(name: string, type_: string, storedProcedure: StoreStoredProcedure, storeTypeMapping: RelationalTypeMapping): StoreStoredProcedureReturnValue;
+    new(name: string, type: string, storedProcedure: StoreStoredProcedure, storeTypeMapping: RelationalTypeMapping): StoreStoredProcedureReturnValue;
 };
 
 
@@ -6831,7 +6831,7 @@ export interface ViewColumn$instance extends ColumnBase_1$instance<ViewColumnMap
 
 
 export const ViewColumn: {
-    new(name: string, type_: string, view: View, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): ViewColumn;
+    new(name: string, type: string, view: View, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): ViewColumn;
 };
 
 
@@ -7028,7 +7028,7 @@ export abstract class KeyExtensions$instance {
 export type KeyExtensions = KeyExtensions$instance;
 
 export abstract class ModelExtensions$instance {
-    static findSameTypeNameWithDifferentNamespace(model: IModel, type_: Type): string | undefined;
+    static findSameTypeNameWithDifferentNamespace(model: IModel, type: Type): string | undefined;
     static getEntityTypesInHierarchicalOrder(model: IModel): IEnumerable__System_Collections_Generic<IEntityType>;
     static getRootEntityTypes(model: IModel): IEnumerable__System_Collections_Generic<IEntityType>;
     static setProductVersion(model: IMutableModel, value: string): void;
@@ -7080,8 +7080,8 @@ export abstract class RelationalEntityTypeExtensions$instance {
     static readonly maxEntityTypesSharingTable: int;
     static findDeclaredReferencingRowInternalForeignKeys(entityType: IEntityType, storeObject: StoreObjectIdentifier): IEnumerable__System_Collections_Generic<IForeignKey>;
     static getNonPrincipalSharedNonPkProperties(entityType: IEntityType, table: ITableBase): List<IProperty>;
-    static getStoreObjectConfigurationSource(entityType: IConventionEntityType, type_: StoreObjectType): Nullable<ConfigurationSource>;
-    static isMainFragment(type_: IReadOnlyTypeBase, storeObject: StoreObjectIdentifier): boolean;
+    static getStoreObjectConfigurationSource(entityType: IConventionEntityType, type: StoreObjectType): Nullable<ConfigurationSource>;
+    static isMainFragment(type: IReadOnlyTypeBase, storeObject: StoreObjectIdentifier): boolean;
 }
 
 

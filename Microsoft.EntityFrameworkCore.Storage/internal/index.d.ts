@@ -46,8 +46,8 @@ export enum StoreTypePostfix {
 
 
 export interface IDatabase$instance {
-    compileQuery<TResult>(query: Expression, async_: boolean): Func<QueryContext, TResult>;
-    compileQueryExpression<TResult>(query: Expression, async_: boolean): Expression<Func<QueryContext, TResult>>;
+    compileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
+    compileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
     saveChanges(entries: IList<IUpdateEntry>): int;
     saveChangesAsync(entries: IList<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
@@ -318,14 +318,14 @@ export interface IRelationalTypeMappingSource$instance extends ITypeMappingSourc
     findMapping(property: IProperty): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo): CoreTypeMapping | undefined;
-    findMapping(type_: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
-    findMapping(type_: Type): CoreTypeMapping | undefined;
+    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    findMapping(type: Type): CoreTypeMapping | undefined;
     findMapping(property: IProperty): RelationalTypeMapping | undefined;
     findMapping(member: MemberInfo): RelationalTypeMapping | undefined;
     findMapping(storeTypeName: string): RelationalTypeMapping | undefined;
-    findMapping(type_: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
-    findMapping(type_: Type, storeTypeName: string, keyOrIndex?: boolean, unicode?: Nullable<System_Internal.Boolean>, size?: Nullable<System_Internal.Int32>, rowVersion?: Nullable<System_Internal.Boolean>, fixedLength?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>): RelationalTypeMapping | undefined;
-    findMapping(type_: Type): RelationalTypeMapping | undefined;
+    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
+    findMapping(type: Type, storeTypeName: string, keyOrIndex?: boolean, unicode?: Nullable<System_Internal.Boolean>, size?: Nullable<System_Internal.Int32>, rowVersion?: Nullable<System_Internal.Boolean>, fixedLength?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>): RelationalTypeMapping | undefined;
+    findMapping(type: Type): RelationalTypeMapping | undefined;
 }
 
 
@@ -367,8 +367,8 @@ export interface ITypeMappingSource$instance {
     findMapping(property: IProperty): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo): CoreTypeMapping | undefined;
-    findMapping(type_: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
-    findMapping(type_: Type): CoreTypeMapping | undefined;
+    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    findMapping(type: Type): CoreTypeMapping | undefined;
 }
 
 
@@ -455,8 +455,8 @@ export const RelationalTypeMappingInfo: {
     new(storeTypeName: string, storeTypeNameBase: string, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): RelationalTypeMappingInfo;
     new(member: MemberInfo, elementTypeMapping: RelationalTypeMapping, storeTypeName: string, storeTypeNameBase: string, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): RelationalTypeMappingInfo;
     new(source: RelationalTypeMappingInfo, converter: ValueConverterInfo): RelationalTypeMappingInfo;
-    new(type_: Type, elementTypeMapping: RelationalTypeMapping, storeTypeName: string, storeTypeNameBase: string, keyOrIndex: boolean, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, rowVersion: Nullable<System_Internal.Boolean>, fixedLength: Nullable<System_Internal.Boolean>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>, dbType: Nullable<DbType>, key: boolean): RelationalTypeMappingInfo;
-    new(type_: Type, typeMappingConfiguration: ITypeMappingConfiguration, elementTypeMapping: RelationalTypeMapping, storeTypeName: string, storeTypeNameBase: string, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): RelationalTypeMappingInfo;
+    new(type: Type, elementTypeMapping: RelationalTypeMapping, storeTypeName: string, storeTypeNameBase: string, keyOrIndex: boolean, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, rowVersion: Nullable<System_Internal.Boolean>, fixedLength: Nullable<System_Internal.Boolean>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>, dbType: Nullable<DbType>, key: boolean): RelationalTypeMappingInfo;
+    new(type: Type, typeMappingConfiguration: ITypeMappingConfiguration, elementTypeMapping: RelationalTypeMapping, storeTypeName: string, storeTypeNameBase: string, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): RelationalTypeMappingInfo;
 };
 
 
@@ -488,8 +488,8 @@ export const TypeMappingInfo: {
     new(elementType: IElementType, fallbackUnicode: Nullable<System_Internal.Boolean>, fallbackSize: Nullable<System_Internal.Int32>, fallbackPrecision: Nullable<System_Internal.Int32>, fallbackScale: Nullable<System_Internal.Int32>): TypeMappingInfo;
     new(principals: IReadOnlyList<IProperty>, fallbackUnicode: Nullable<System_Internal.Boolean>, fallbackSize: Nullable<System_Internal.Int32>, fallbackPrecision: Nullable<System_Internal.Int32>, fallbackScale: Nullable<System_Internal.Int32>): TypeMappingInfo;
     new(member: MemberInfo, elementTypeMapping: CoreTypeMapping, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): TypeMappingInfo;
-    new(type_: Type, typeMappingConfiguration: ITypeMappingConfiguration, elementTypeMapping: CoreTypeMapping): TypeMappingInfo;
-    new(type_: Type, elementTypeMapping: CoreTypeMapping, keyOrIndex: boolean, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, rowVersion: Nullable<System_Internal.Boolean>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>, key: boolean): TypeMappingInfo;
+    new(type: Type, typeMappingConfiguration: ITypeMappingConfiguration, elementTypeMapping: CoreTypeMapping): TypeMappingInfo;
+    new(type: Type, elementTypeMapping: CoreTypeMapping, keyOrIndex: boolean, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, rowVersion: Nullable<System_Internal.Boolean>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>, key: boolean): TypeMappingInfo;
     new(source: TypeMappingInfo, converter: ValueConverterInfo, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): TypeMappingInfo;
 };
 
@@ -520,7 +520,7 @@ export interface BoolTypeMapping$instance extends RelationalTypeMapping {
 
 export const BoolTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): BoolTypeMapping;
-    readonly default_: BoolTypeMapping;
+    readonly default: BoolTypeMapping;
 };
 
 
@@ -532,7 +532,7 @@ export interface ByteArrayTypeMapping$instance extends RelationalTypeMapping {
 
 export const ByteArrayTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>, size: Nullable<System_Internal.Int32>): ByteArrayTypeMapping;
-    readonly default_: ByteArrayTypeMapping;
+    readonly default: ByteArrayTypeMapping;
 };
 
 
@@ -544,7 +544,7 @@ export interface ByteTypeMapping$instance extends RelationalTypeMapping {
 
 export const ByteTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): ByteTypeMapping;
-    readonly default_: ByteTypeMapping;
+    readonly default: ByteTypeMapping;
 };
 
 
@@ -556,7 +556,7 @@ export interface CharTypeMapping$instance extends RelationalTypeMapping {
 
 export const CharTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): CharTypeMapping;
-    readonly default_: CharTypeMapping;
+    readonly default: CharTypeMapping;
 };
 
 
@@ -584,8 +584,8 @@ export const CoreTypeMapping: {
 export type CoreTypeMapping = CoreTypeMapping$instance;
 
 export interface Database$instance {
-    compileQuery<TResult>(query: Expression, async_: boolean): Func<QueryContext, TResult>;
-    compileQueryExpression<TResult>(query: Expression, async_: boolean): Expression<Func<QueryContext, TResult>>;
+    compileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
+    compileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
     saveChanges(entries: IList<IUpdateEntry>): int;
     saveChangesAsync(entries: IList<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
@@ -666,7 +666,7 @@ export interface DateOnlyTypeMapping$instance extends RelationalTypeMapping {
 
 export const DateOnlyTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DateOnlyTypeMapping;
-    readonly default_: DateOnlyTypeMapping;
+    readonly default: DateOnlyTypeMapping;
 };
 
 
@@ -678,7 +678,7 @@ export interface DateTimeOffsetTypeMapping$instance extends RelationalTypeMappin
 
 export const DateTimeOffsetTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DateTimeOffsetTypeMapping;
-    readonly default_: DateTimeOffsetTypeMapping;
+    readonly default: DateTimeOffsetTypeMapping;
 };
 
 
@@ -690,7 +690,7 @@ export interface DateTimeTypeMapping$instance extends RelationalTypeMapping {
 
 export const DateTimeTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DateTimeTypeMapping;
-    readonly default_: DateTimeTypeMapping;
+    readonly default: DateTimeTypeMapping;
 };
 
 
@@ -702,7 +702,7 @@ export interface DecimalTypeMapping$instance extends RelationalTypeMapping {
 
 export const DecimalTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): DecimalTypeMapping;
-    readonly default_: DecimalTypeMapping;
+    readonly default: DecimalTypeMapping;
 };
 
 
@@ -714,7 +714,7 @@ export interface DoubleTypeMapping$instance extends RelationalTypeMapping {
 
 export const DoubleTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DoubleTypeMapping;
-    readonly default_: DoubleTypeMapping;
+    readonly default: DoubleTypeMapping;
 };
 
 
@@ -782,7 +782,7 @@ export interface FloatTypeMapping$instance extends RelationalTypeMapping {
 
 export const FloatTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): FloatTypeMapping;
-    readonly default_: FloatTypeMapping;
+    readonly default: FloatTypeMapping;
 };
 
 
@@ -794,7 +794,7 @@ export interface GuidTypeMapping$instance extends RelationalTypeMapping {
 
 export const GuidTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): GuidTypeMapping;
-    readonly default_: GuidTypeMapping;
+    readonly default: GuidTypeMapping;
 };
 
 
@@ -806,7 +806,7 @@ export interface IntTypeMapping$instance extends RelationalTypeMapping {
 
 export const IntTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): IntTypeMapping;
-    readonly default_: IntTypeMapping;
+    readonly default: IntTypeMapping;
 };
 
 
@@ -839,7 +839,7 @@ export interface LongTypeMapping$instance extends RelationalTypeMapping {
 
 export const LongTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): LongTypeMapping;
-    readonly default_: LongTypeMapping;
+    readonly default: LongTypeMapping;
 };
 
 
@@ -933,13 +933,13 @@ export interface ReaderColumn$instance {
     readonly isNullable: boolean;
     readonly name: string;
     readonly property: IPropertyBase;
-    readonly type_: Type;
+    readonly type: Type;
 }
 
 
 export const ReaderColumn: {
-    create(type_: Type, nullable: boolean, columnName: string, property: IPropertyBase, readFunc: LambdaExpression): ReaderColumn;
-    getConstructor(type_: Type): ConstructorInfo;
+    create(type: Type, nullable: boolean, columnName: string, property: IPropertyBase, readFunc: LambdaExpression): ReaderColumn;
+    getConstructor(type: Type): ConstructorInfo;
 };
 
 
@@ -1128,8 +1128,8 @@ export const RelationalConnectionDependencies: {
 export type RelationalConnectionDependencies = RelationalConnectionDependencies$instance;
 
 export interface RelationalDatabase$instance extends Database$instance {
-    compileQuery<TResult>(query: Expression, async_: boolean): Func<QueryContext, TResult>;
-    compileQueryExpression<TResult>(query: Expression, async_: boolean): Expression<Func<QueryContext, TResult>>;
+    compileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
+    compileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
     saveChanges(entries: IList<IUpdateEntry>): int;
     saveChangesAsync(entries: IList<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
@@ -1154,7 +1154,7 @@ export interface RelationalDatabaseCreator$instance {
     createAsync(cancellationToken?: CancellationToken): Task;
     createTables(): void;
     createTablesAsync(cancellationToken?: CancellationToken): Task;
-    delete_(): void;
+    delete(): void;
     deleteAsync(cancellationToken?: CancellationToken): Task;
     ensureCreated(): boolean;
     ensureCreatedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
@@ -1430,7 +1430,7 @@ export interface RelationalTypeMapping$instance extends CoreTypeMapping {
 
 export const RelationalTypeMapping: {
     readonly nullMapping: RelationalTypeMapping;
-    getDataReaderMethod(type_: Type): MethodInfo;
+    getDataReaderMethod(type: Type): MethodInfo;
 };
 
 
@@ -1439,12 +1439,12 @@ export type RelationalTypeMapping = RelationalTypeMapping$instance;
 export interface RelationalTypeMappingSource$instance extends TypeMappingSourceBase$instance {
     findMapping(property: IProperty): CoreTypeMapping | undefined;
     findMapping(elementType: IElementType): CoreTypeMapping | undefined;
-    findMapping(type_: Type): RelationalTypeMapping | undefined;
-    findMapping(type_: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
+    findMapping(type: Type): RelationalTypeMapping | undefined;
+    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
     findMapping(member: MemberInfo): RelationalTypeMapping | undefined;
     findMapping(storeTypeName: string): RelationalTypeMapping | undefined;
-    findMapping(type_: Type): CoreTypeMapping | undefined;
-    findMapping(type_: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    findMapping(type: Type): CoreTypeMapping | undefined;
+    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
 }
@@ -1499,7 +1499,7 @@ export interface SByteTypeMapping$instance extends RelationalTypeMapping {
 
 export const SByteTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): SByteTypeMapping;
-    readonly default_: SByteTypeMapping;
+    readonly default: SByteTypeMapping;
 };
 
 
@@ -1511,7 +1511,7 @@ export interface ShortTypeMapping$instance extends RelationalTypeMapping {
 
 export const ShortTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): ShortTypeMapping;
-    readonly default_: ShortTypeMapping;
+    readonly default: ShortTypeMapping;
 };
 
 
@@ -1523,7 +1523,7 @@ export interface StringTypeMapping$instance extends RelationalTypeMapping {
 
 export const StringTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>, unicode: boolean, size: Nullable<System_Internal.Int32>): StringTypeMapping;
-    readonly default_: StringTypeMapping;
+    readonly default: StringTypeMapping;
 };
 
 
@@ -1535,7 +1535,7 @@ export interface TimeOnlyTypeMapping$instance extends RelationalTypeMapping {
 
 export const TimeOnlyTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): TimeOnlyTypeMapping;
-    readonly default_: TimeOnlyTypeMapping;
+    readonly default: TimeOnlyTypeMapping;
 };
 
 
@@ -1547,7 +1547,7 @@ export interface TimeSpanTypeMapping$instance extends RelationalTypeMapping {
 
 export const TimeSpanTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): TimeSpanTypeMapping;
-    readonly default_: TimeSpanTypeMapping;
+    readonly default: TimeSpanTypeMapping;
 };
 
 
@@ -1556,8 +1556,8 @@ export type TimeSpanTypeMapping = TimeSpanTypeMapping$instance;
 export interface TypeMappingSource$instance extends TypeMappingSourceBase$instance {
     findMapping(property: IProperty): CoreTypeMapping | undefined;
     findMapping(elementType: IElementType): CoreTypeMapping | undefined;
-    findMapping(type_: Type): CoreTypeMapping | undefined;
-    findMapping(type_: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    findMapping(type: Type): CoreTypeMapping | undefined;
+    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
 }
@@ -1577,8 +1577,8 @@ export type TypeMappingSource = TypeMappingSource$instance & __TypeMappingSource
 export interface TypeMappingSourceBase$instance {
     findMapping(property: IProperty): CoreTypeMapping | undefined;
     findMapping(elementType: IElementType): CoreTypeMapping | undefined;
-    findMapping(type_: Type): CoreTypeMapping | undefined;
-    findMapping(type_: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    findMapping(type: Type): CoreTypeMapping | undefined;
+    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo): CoreTypeMapping | undefined;
     findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
 }
@@ -1638,7 +1638,7 @@ export interface UIntTypeMapping$instance extends RelationalTypeMapping {
 
 export const UIntTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): UIntTypeMapping;
-    readonly default_: UIntTypeMapping;
+    readonly default: UIntTypeMapping;
 };
 
 
@@ -1650,7 +1650,7 @@ export interface ULongTypeMapping$instance extends RelationalTypeMapping {
 
 export const ULongTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): ULongTypeMapping;
-    readonly default_: ULongTypeMapping;
+    readonly default: ULongTypeMapping;
 };
 
 
@@ -1662,7 +1662,7 @@ export interface UShortTypeMapping$instance extends RelationalTypeMapping {
 
 export const UShortTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): UShortTypeMapping;
-    readonly default_: UShortTypeMapping;
+    readonly default: UShortTypeMapping;
 };
 
 

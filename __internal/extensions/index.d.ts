@@ -1082,9 +1082,9 @@ export interface __Ext_Microsoft_EntityFrameworkCore_ModelBuilder {
   hasSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>;
   hasSequence(name: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
   hasSequence(name: string, schema: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
-  hasSequence(type_: Type, name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>;
-  hasSequence(type_: Type, name: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
-  hasSequence(type_: Type, name: string, schema: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
+  hasSequence(type: Type, name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>;
+  hasSequence(type: Type, name: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
+  hasSequence(type: Type, name: string, schema: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
   hasDbFunction(methodInfo: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.DbFunctionBuilder>;
   hasDbFunction<TResult>(expression: Expression_1<Func_1<TResult>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.DbFunctionBuilder>;
   hasDbFunction(methodInfo: MethodInfo, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.DbFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
@@ -1160,7 +1160,7 @@ export interface __Ext_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLog
   queryExecutionPlanned(context: Microsoft_EntityFrameworkCore.DbContext, expressionPrinter: Microsoft_EntityFrameworkCore_Query.ExpressionPrinter, queryExecutorExpression: Expression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   sensitiveDataLoggingEnabledWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   typeLoadingErrorWarning(assembly: Assembly, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  skippedEntityTypeConfigurationWarning(type_: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  skippedEntityTypeConfigurationWarning(type: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   noEntityTypeConfigurationsWarning(assembly: Assembly): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   possibleUnintendedCollectionNavigationNullComparisonWarning(navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   possibleUnintendedReferenceComparisonWarning(left: Expression, right: Expression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
@@ -1169,7 +1169,7 @@ export interface __Ext_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLog
   manyServiceProvidersCreatedWarning(serviceProviders: ICollection_1<IServiceProvider>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   serviceProviderDebugInfo(newDebugInfo: IDictionary_2<System_Internal.String, System_Internal.String>, cachedDebugInfos: IList_1<IDictionary_2<System_Internal.String, System_Internal.String>>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   contextInitialized(context: Microsoft_EntityFrameworkCore.DbContext, contextOptions: Microsoft_EntityFrameworkCore.DbContextOptions): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  executionStrategyRetrying(exceptionsEncountered: IReadOnlyList_1<Exception>, delay: TimeSpan, async_: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  executionStrategyRetrying(exceptionsEncountered: IReadOnlyList_1<Exception>, delay: TimeSpan, async: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   lazyLoadOnDisposedContextWarning(context: Microsoft_EntityFrameworkCore.DbContext, entityType: unknown, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   navigationLazyLoading(context: Microsoft_EntityFrameworkCore.DbContext, entityType: unknown, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
   detachedLazyLoadingWarning(context: Microsoft_EntityFrameworkCore.DbContext, entityType: unknown, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
@@ -1376,7 +1376,7 @@ export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IComplexP
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IConventionEntityType {
   findDeclaredOwnership(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey | undefined>;
-  getStoreObjectConfigurationSource(type_: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  getStoreObjectConfigurationSource(type: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IEntityType {
@@ -1391,7 +1391,7 @@ export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IForeignK
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IModel {
   getRootEntityTypes(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityType>>;
   getEntityTypesInHierarchicalOrder(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityType>>;
-  findSameTypeNameWithDifferentNamespace(type_: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
+  findSameTypeNameWithDifferentNamespace(type: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IMutableModel {

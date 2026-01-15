@@ -5126,7 +5126,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -10335,7 +10335,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -11062,7 +11062,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.Internal.TableValuedFunctionQueryRootExpression::Function:Microsoft.EntityFrameworkCore.Metadata.IStoreFunction",
           "clrName": "Function",
-          "tsEmitName": "function_",
+          "tsEmitName": "function",
           "metadataToken": 385876810,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.IStoreFunction",
           "normalizedSignature": "Function|:Microsoft.EntityFrameworkCore.Metadata.IStoreFunction|static=false|accessor=get",
@@ -11166,7 +11166,7 @@
       ],
       "exposedProperties": [
         {
-          "tsName": "function_",
+          "tsName": "function",
           "isStatic": false,
           "tsSignatureId": "Function|:Microsoft.EntityFrameworkCore.Metadata.IStoreFunction|static=false|accessor=get",
           "target": {
@@ -11236,7 +11236,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {
@@ -11686,7 +11686,7 @@
           }
         },
         {
-          "tsName": "type_",
+          "tsName": "type",
           "isStatic": false,
           "tsSignatureId": "Type|:System.Type|static=false|accessor=get",
           "target": {

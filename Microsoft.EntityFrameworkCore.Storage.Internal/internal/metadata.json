@@ -899,7 +899,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping|static=true|accessor=get",
           "provenance": "Original",
           "emitScope": "ClassSurface",

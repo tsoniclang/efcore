@@ -1658,7 +1658,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints::With(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "metadataToken": 100664710,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false",
@@ -1772,7 +1772,7 @@
       ],
       "exposedMethods": [
         {
-          "tsName": "with_",
+          "tsName": "with",
           "isStatic": false,
           "tsSignatureId": "With|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false",
           "target": {
@@ -5892,7 +5892,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.ValueConversion.RelationalConverterMappingHints::With(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
           "clrName": "With",
-          "tsEmitName": "with_",
+          "tsEmitName": "with",
           "metadataToken": 100665803,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false",
@@ -5974,7 +5974,7 @@
       ],
       "exposedMethods": [
         {
-          "tsName": "with_",
+          "tsName": "with",
           "isStatic": false,
           "tsSignatureId": "With|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=false",
           "target": {

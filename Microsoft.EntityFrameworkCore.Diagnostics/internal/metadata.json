@@ -31,7 +31,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Diagnostics.CommandSource::UnknownMicrosoft.EntityFrameworkCore.Diagnostics.CommandSource",
           "clrName": "Unknown",
-          "tsEmitName": "unknown_",
+          "tsEmitName": "unknown",
           "normalizedSignature": "Unknown|Microsoft.EntityFrameworkCore.Diagnostics.CommandSource|static=true|const=true",
           "isStatic": true,
           "isReadOnly": false,
@@ -12959,7 +12959,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfigurationBuilder::Default(Microsoft.EntityFrameworkCore.WarningBehavior):Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfigurationBuilder",
           "clrName": "Default",
-          "tsEmitName": "default_",
+          "tsEmitName": "default",
           "normalizedSignature": "Default|(Microsoft.EntityFrameworkCore.WarningBehavior):Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfigurationBuilder|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
@@ -12975,7 +12975,7 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfigurationBuilder::Throw(Microsoft.Extensions.Logging.EventId[]):Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfigurationBuilder",
           "clrName": "Throw",
-          "tsEmitName": "throw_",
+          "tsEmitName": "throw",
           "normalizedSignature": "Throw|(Microsoft.Extensions.Logging.EventId[]):Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfigurationBuilder|static=false",
           "provenance": "Original",
           "emitScope": "ClassSurface",
