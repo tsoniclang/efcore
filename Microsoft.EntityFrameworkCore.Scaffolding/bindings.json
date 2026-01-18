@@ -1,23 +1,36 @@
 {
   "namespace": "Microsoft.EntityFrameworkCore.Scaffolding",
+  "contributingAssemblies": [
+    "Microsoft.EntityFrameworkCore.Relational"
+  ],
   "types": [
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
       "clrName": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
-      "tsEmitName": "IDatabaseModelFactory",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
+      "kind": "Interface",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory::Create(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "clrName": "Create",
-          "tsEmitName": "create",
           "metadataToken": 100665874,
           "canonicalSignature": "(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "normalizedSignature": "Create|(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -25,13 +38,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory::Create(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "clrName": "Create",
-          "tsEmitName": "create",
           "metadataToken": 100665875,
           "canonicalSignature": "(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "normalizedSignature": "Create|(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -40,47 +58,35 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "create",
-          "isStatic": false,
-          "tsSignatureId": "Create|(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665874
-          }
-        },
-        {
-          "tsName": "create",
-          "isStatic": false,
-          "tsSignatureId": "Create|(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665875
-          }
-        }
-      ]
+      "constructors": []
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin",
       "clrName": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin",
-      "tsEmitName": "IProviderCodeGeneratorPlugin",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
+      "kind": "Interface",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin::GenerateProviderOptions():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateProviderOptions",
-          "tsEmitName": "generateProviderOptions",
           "metadataToken": 100665876,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -89,37 +95,35 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "generateProviderOptions",
-          "isStatic": false,
-          "tsSignatureId": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665876
-          }
-        }
-      ]
+      "constructors": []
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
       "clrName": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
-      "tsEmitName": "IProviderConfigurationCodeGenerator",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
+      "kind": "Interface",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator::GenerateProviderOptions():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateProviderOptions",
-          "tsEmitName": "generateProviderOptions",
           "metadataToken": 100665878,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -127,13 +131,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator::GenerateUseProvider(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateUseProvider",
-          "tsEmitName": "generateUseProvider",
           "metadataToken": 100665879,
           "canonicalSignature": "(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateUseProvider|(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -141,13 +150,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator::GenerateUseProvider(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateUseProvider",
-          "tsEmitName": "generateUseProvider",
           "metadataToken": 100665881,
           "canonicalSignature": "(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateUseProvider|(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -156,57 +170,35 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "generateProviderOptions",
-          "isStatic": false,
-          "tsSignatureId": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665878
-          }
-        },
-        {
-          "tsName": "generateUseProvider",
-          "isStatic": false,
-          "tsSignatureId": "GenerateUseProvider|(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665879
-          }
-        },
-        {
-          "tsName": "generateUseProvider",
-          "isStatic": false,
-          "tsSignatureId": "GenerateUseProvider|(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665881
-          }
-        }
-      ]
+      "constructors": []
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactory",
       "clrName": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactory",
-      "tsEmitName": "DatabaseModelFactory",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactory::Create(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "clrName": "Create",
-          "tsEmitName": "create",
           "metadataToken": 100665868,
           "canonicalSignature": "(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "normalizedSignature": "Create|(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -214,13 +206,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactory::Create(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "clrName": "Create",
-          "tsEmitName": "create",
           "metadataToken": 100665869,
           "canonicalSignature": "(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "normalizedSignature": "Create|(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -228,112 +225,95 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory::Create(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "clrName": "Create",
-          "tsEmitName": "create$view2",
           "metadataToken": 100665874,
           "canonicalSignature": "(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "normalizedSignature": "Create|(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory::Create(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "clrName": "Create",
-          "tsEmitName": "create$view",
           "metadataToken": 100665875,
           "canonicalSignature": "(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel",
           "normalizedSignature": "Create|(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory"
         }
       ],
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "create",
-          "isStatic": false,
-          "tsSignatureId": "Create|(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665868
-          }
-        },
-        {
-          "tsName": "create",
-          "isStatic": false,
-          "tsSignatureId": "Create|(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665869
-          }
-        },
-        {
-          "tsName": "create$view2",
-          "isStatic": false,
-          "tsSignatureId": "Create|(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665874
-          }
-        },
-        {
-          "tsName": "create$view",
-          "isStatic": false,
-          "tsSignatureId": "Create|(System.Data.Common.DbConnection,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions):Microsoft.EntityFrameworkCore.Scaffolding.Metadata.DatabaseModel|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IDatabaseModelFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665875
-          }
-        }
-      ]
+      "constructors": []
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions",
       "clrName": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions",
-      "tsEmitName": "DatabaseModelFactoryOptions",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [],
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions::Tables:System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "Tables",
-          "tsEmitName": "tables",
           "metadataToken": 385876425,
           "canonicalSignature": ":System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "Tables|:System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions::Schemas:System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "Schemas",
-          "tsEmitName": "schemas",
           "metadataToken": 385876426,
           "canonicalSignature": ":System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "Schemas|:System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -351,58 +331,35 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
-      ],
-      "exposedProperties": [
-        {
-          "tsName": "tables",
-          "isStatic": false,
-          "tsSignatureId": "Tables|:System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 385876425
-          }
-        },
-        {
-          "tsName": "schemas",
-          "isStatic": false,
-          "tsSignatureId": "Schemas|:System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 385876426
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|(System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Collections.Generic.IEnumerable_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665871
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
       "clrName": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
-      "tsEmitName": "ProviderCodeGenerator",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator::GenerateProviderOptions():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateProviderOptions",
-          "tsEmitName": "generateProviderOptions",
           "metadataToken": 100665885,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -410,13 +367,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator::GenerateUseProvider(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateUseProvider",
-          "tsEmitName": "generateUseProvider",
           "metadataToken": 100665886,
           "canonicalSignature": "(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateUseProvider|(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -424,13 +386,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator::GenerateContextOptions():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateContextOptions",
-          "tsEmitName": "generateContextOptions",
           "metadataToken": 100665887,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateContextOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -438,13 +405,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator::GenerateUseProvider(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateUseProvider",
-          "tsEmitName": "generateUseProvider",
           "metadataToken": 100665888,
           "canonicalSignature": "(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateUseProvider|(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -452,140 +424,96 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator::GenerateProviderOptions():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateProviderOptions",
-          "tsEmitName": "generateProviderOptions$view",
           "metadataToken": 100665878,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator::GenerateUseProvider(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateUseProvider",
-          "tsEmitName": "generateUseProvider$view",
           "metadataToken": 100665879,
           "canonicalSignature": "(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateUseProvider|(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator::GenerateUseProvider(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateUseProvider",
-          "tsEmitName": "generateUseProvider$view2",
           "metadataToken": 100665881,
           "canonicalSignature": "(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateUseProvider|(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator"
         }
       ],
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "generateProviderOptions",
-          "isStatic": false,
-          "tsSignatureId": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665885
-          }
-        },
-        {
-          "tsName": "generateUseProvider",
-          "isStatic": false,
-          "tsSignatureId": "GenerateUseProvider|(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665886
-          }
-        },
-        {
-          "tsName": "generateContextOptions",
-          "isStatic": false,
-          "tsSignatureId": "GenerateContextOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665887
-          }
-        },
-        {
-          "tsName": "generateUseProvider",
-          "isStatic": false,
-          "tsSignatureId": "GenerateUseProvider|(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665888
-          }
-        },
-        {
-          "tsName": "generateProviderOptions$view",
-          "isStatic": false,
-          "tsSignatureId": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665878
-          }
-        },
-        {
-          "tsName": "generateUseProvider$view",
-          "isStatic": false,
-          "tsSignatureId": "GenerateUseProvider|(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665879
-          }
-        },
-        {
-          "tsName": "generateUseProvider$view2",
-          "isStatic": false,
-          "tsSignatureId": "GenerateUseProvider|(System.String):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderConfigurationCodeGenerator",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665881
-          }
-        }
-      ]
+      "constructors": []
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
       "clrName": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
-      "tsEmitName": "ProviderCodeGeneratorDependencies",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies::ToString():System.String",
           "clrName": "ToString",
-          "tsEmitName": "toString",
           "metadataToken": 100665893,
           "canonicalSignature": "():System.String",
           "normalizedSignature": "ToString|():System.String|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -593,13 +521,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies::GetHashCode():System.Int32",
           "clrName": "GetHashCode",
-          "tsEmitName": "getHashCode",
           "metadataToken": 100665897,
           "canonicalSignature": "():System.Int32",
           "normalizedSignature": "GetHashCode|():System.Int32|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -607,13 +540,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies::Equals(System.Object):System.Boolean",
           "clrName": "Equals",
-          "tsEmitName": "equals",
           "metadataToken": 100665898,
           "canonicalSignature": "(System.Object):System.Boolean",
           "normalizedSignature": "Equals|(System.Object):System.Boolean|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -621,13 +559,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies::Equals(Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies):System.Boolean",
           "clrName": "Equals",
-          "tsEmitName": "equals",
           "metadataToken": 100665899,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies):System.Boolean",
           "normalizedSignature": "Equals|(Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies):System.Boolean|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": true,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -635,13 +578,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies::\u003CClone\u003E$():Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
           "clrName": "\u003CClone\u003E$",
-          "tsEmitName": "_Clone_$",
           "metadataToken": 100665900,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
           "normalizedSignature": "\u003CClone\u003E$|():Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -651,14 +599,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies::Plugins:System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "Plugins",
-          "tsEmitName": "plugins",
           "metadataToken": 385876429,
           "canonicalSignature": ":System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "normalizedSignature": "Plugins|:System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=getset",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": true,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -676,100 +628,35 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
-      ],
-      "exposedMethods": [
-        {
-          "tsName": "toString",
-          "isStatic": false,
-          "tsSignatureId": "ToString|():System.String|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665893
-          }
-        },
-        {
-          "tsName": "getHashCode",
-          "isStatic": false,
-          "tsSignatureId": "GetHashCode|():System.Int32|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665897
-          }
-        },
-        {
-          "tsName": "equals",
-          "isStatic": false,
-          "tsSignatureId": "Equals|(System.Object):System.Boolean|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665898
-          }
-        },
-        {
-          "tsName": "equals",
-          "isStatic": false,
-          "tsSignatureId": "Equals|(Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies):System.Boolean|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665899
-          }
-        },
-        {
-          "tsName": "_Clone_$",
-          "isStatic": false,
-          "tsSignatureId": "\u003CClone\u003E$|():Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665900
-          }
-        }
-      ],
-      "exposedProperties": [
-        {
-          "tsName": "plugins",
-          "isStatic": false,
-          "tsSignatureId": "Plugins|:System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=getset",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 385876429
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|(System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorDependencies",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665890
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin",
       "clrName": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin",
-      "tsEmitName": "ProviderCodeGeneratorPlugin",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin::GenerateContextOptions():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateContextOptions",
-          "tsEmitName": "generateContextOptions",
           "metadataToken": 100665902,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateContextOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -777,13 +664,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin::GenerateProviderOptions():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateProviderOptions",
-          "tsEmitName": "generateProviderOptions",
           "metadataToken": 100665903,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -791,16 +683,22 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin::GenerateProviderOptions():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "clrName": "GenerateProviderOptions",
-          "tsEmitName": "generateProviderOptions$view",
           "metadataToken": 100665876,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "normalizedSignature": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin"
         }
       ],
       "properties": [],
@@ -816,49 +714,6 @@
           "parameterCount": 0,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
-        }
-      ],
-      "exposedMethods": [
-        {
-          "tsName": "generateContextOptions",
-          "isStatic": false,
-          "tsSignatureId": "GenerateContextOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665902
-          }
-        },
-        {
-          "tsName": "generateProviderOptions",
-          "isStatic": false,
-          "tsSignatureId": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665903
-          }
-        },
-        {
-          "tsName": "generateProviderOptions$view",
-          "isStatic": false,
-          "tsSignatureId": "GenerateProviderOptions|():Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.IProviderCodeGeneratorPlugin",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665876
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|():void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Scaffolding.ProviderCodeGeneratorPlugin",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-            "metadataToken": 100665904
-          }
         }
       ]
     }

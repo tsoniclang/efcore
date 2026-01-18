@@ -1,23 +1,36 @@
 {
   "namespace": "Microsoft.EntityFrameworkCore.Infrastructure.Internal",
+  "contributingAssemblies": [
+    "Microsoft.EntityFrameworkCore"
+  ],
   "types": [
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
-      "tsEmitName": "ILazyLoaderFactory",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Interface",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory::Create():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "clrName": "Create",
-          "tsEmitName": "create",
           "metadataToken": 100673473,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "normalizedSignature": "Create|():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -25,13 +38,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService::ResetState():System.Void",
           "clrName": "ResetState",
-          "tsEmitName": "resetState",
           "metadataToken": 100673199,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ResetState|():System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -39,13 +57,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService::ResetStateAsync(System.Threading.CancellationToken):System.Threading.Tasks.Task",
           "clrName": "ResetStateAsync",
-          "tsEmitName": "resetStateAsync",
           "metadataToken": 100673200,
           "canonicalSignature": "(System.Threading.CancellationToken):System.Threading.Tasks.Task",
           "normalizedSignature": "ResetStateAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -54,57 +77,35 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "create",
-          "isStatic": false,
-          "tsSignatureId": "Create|():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673473
-          }
-        },
-        {
-          "tsName": "resetState",
-          "isStatic": false,
-          "tsSignatureId": "ResetState|():System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673199
-          }
-        },
-        {
-          "tsName": "resetStateAsync",
-          "isStatic": false,
-          "tsSignatureId": "ResetStateAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673200
-          }
-        }
-      ]
+      "constructors": []
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
-      "tsEmitName": "ConcurrencyDetector",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector::EnterCriticalSection():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer",
           "clrName": "EnterCriticalSection",
-          "tsEmitName": "enterCriticalSection",
           "metadataToken": 100673450,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer",
           "normalizedSignature": "EnterCriticalSection|():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -112,13 +113,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector::ExitCriticalSection():System.Void",
           "clrName": "ExitCriticalSection",
-          "tsEmitName": "exitCriticalSection",
           "metadataToken": 100673451,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ExitCriticalSection|():System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -126,30 +132,42 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector::EnterCriticalSection():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer",
           "clrName": "EnterCriticalSection",
-          "tsEmitName": "enterCriticalSection$view",
           "metadataToken": 100673149,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer",
           "normalizedSignature": "EnterCriticalSection|():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector::ExitCriticalSection():System.Void",
           "clrName": "ExitCriticalSection",
-          "tsEmitName": "exitCriticalSection$view",
           "metadataToken": 100673150,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ExitCriticalSection|():System.Void|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector"
         }
       ],
       "properties": [],
@@ -166,78 +184,35 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
-      ],
-      "exposedMethods": [
-        {
-          "tsName": "enterCriticalSection",
-          "isStatic": false,
-          "tsSignatureId": "EnterCriticalSection|():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673450
-          }
-        },
-        {
-          "tsName": "exitCriticalSection",
-          "isStatic": false,
-          "tsSignatureId": "ExitCriticalSection|():System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673451
-          }
-        },
-        {
-          "tsName": "enterCriticalSection$view",
-          "isStatic": false,
-          "tsSignatureId": "EnterCriticalSection|():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673149
-          }
-        },
-        {
-          "tsName": "exitCriticalSection$view",
-          "isStatic": false,
-          "tsSignatureId": "ExitCriticalSection|():System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673150
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|():void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673452
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-      "tsEmitName": "CoreSingletonOptions",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::Initialize(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
           "clrName": "Initialize",
-          "tsEmitName": "initialize",
           "metadataToken": 100673454,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
           "normalizedSignature": "Initialize|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -245,13 +220,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::Validate(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
           "clrName": "Validate",
-          "tsEmitName": "validate",
           "metadataToken": 100673455,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
           "normalizedSignature": "Validate|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -259,100 +239,133 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions::Initialize(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
           "clrName": "Initialize",
-          "tsEmitName": "initialize$view",
           "metadataToken": 100673201,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
           "normalizedSignature": "Initialize|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions"
         }
       ],
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::AreDetailedErrorsEnabled:System.Boolean",
           "clrName": "AreDetailedErrorsEnabled",
-          "tsEmitName": "areDetailedErrorsEnabled",
           "metadataToken": 385877738,
           "canonicalSignature": ":System.Boolean",
           "normalizedSignature": "AreDetailedErrorsEnabled|:System.Boolean|static=false|accessor=get",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::AreThreadSafetyChecksEnabled:System.Boolean",
           "clrName": "AreThreadSafetyChecksEnabled",
-          "tsEmitName": "areThreadSafetyChecksEnabled",
           "metadataToken": 385877739,
           "canonicalSignature": ":System.Boolean",
           "normalizedSignature": "AreThreadSafetyChecksEnabled|:System.Boolean|static=false|accessor=get",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::RootApplicationServiceProvider:System.IServiceProvider",
           "clrName": "RootApplicationServiceProvider",
-          "tsEmitName": "rootApplicationServiceProvider",
           "metadataToken": 385877740,
           "canonicalSignature": ":System.IServiceProvider",
           "normalizedSignature": "RootApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=get",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions::AreDetailedErrorsEnabled:System.Boolean",
           "clrName": "AreDetailedErrorsEnabled",
-          "tsEmitName": "areDetailedErrorsEnabled$view",
           "metadataToken": 385877698,
           "canonicalSignature": ":System.Boolean",
           "normalizedSignature": "AreDetailedErrorsEnabled|:System.Boolean|static=false|accessor=get",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions::AreThreadSafetyChecksEnabled:System.Boolean",
           "clrName": "AreThreadSafetyChecksEnabled",
-          "tsEmitName": "areThreadSafetyChecksEnabled$view",
           "metadataToken": 385877699,
           "canonicalSignature": ":System.Boolean",
           "normalizedSignature": "AreThreadSafetyChecksEnabled|:System.Boolean|static=false|accessor=get",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions::RootApplicationServiceProvider:System.IServiceProvider",
           "clrName": "RootApplicationServiceProvider",
-          "tsEmitName": "rootApplicationServiceProvider$view",
           "metadataToken": 385877700,
           "canonicalSignature": ":System.IServiceProvider",
           "normalizedSignature": "RootApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=get",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -370,146 +383,55 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
-      ],
-      "exposedMethods": [
-        {
-          "tsName": "initialize",
-          "isStatic": false,
-          "tsSignatureId": "Initialize|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673454
-          }
-        },
-        {
-          "tsName": "validate",
-          "isStatic": false,
-          "tsSignatureId": "Validate|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673455
-          }
-        },
-        {
-          "tsName": "initialize$view",
-          "isStatic": false,
-          "tsSignatureId": "Initialize|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673201
-          }
-        }
-      ],
-      "exposedProperties": [
-        {
-          "tsName": "areDetailedErrorsEnabled",
-          "isStatic": false,
-          "tsSignatureId": "AreDetailedErrorsEnabled|:System.Boolean|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 385877738
-          }
-        },
-        {
-          "tsName": "areThreadSafetyChecksEnabled",
-          "isStatic": false,
-          "tsSignatureId": "AreThreadSafetyChecksEnabled|:System.Boolean|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 385877739
-          }
-        },
-        {
-          "tsName": "rootApplicationServiceProvider",
-          "isStatic": false,
-          "tsSignatureId": "RootApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 385877740
-          }
-        },
-        {
-          "tsName": "areDetailedErrorsEnabled$view",
-          "isStatic": false,
-          "tsSignatureId": "AreDetailedErrorsEnabled|:System.Boolean|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 385877698
-          }
-        },
-        {
-          "tsName": "areThreadSafetyChecksEnabled$view",
-          "isStatic": false,
-          "tsSignatureId": "AreThreadSafetyChecksEnabled|:System.Boolean|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 385877699
-          }
-        },
-        {
-          "tsName": "rootApplicationServiceProvider$view",
-          "isStatic": false,
-          "tsSignatureId": "RootApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 385877700
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|():void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673462
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
-      "tsEmitName": "CurrentDbContext",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
       "methods": [],
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext::Context:Microsoft.EntityFrameworkCore.DbContext",
           "clrName": "Context",
-          "tsEmitName": "context",
           "metadataToken": 385877741,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.DbContext",
           "normalizedSignature": "Context|:Microsoft.EntityFrameworkCore.DbContext|static=false|accessor=get",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext::Context:Microsoft.EntityFrameworkCore.DbContext",
           "clrName": "Context",
-          "tsEmitName": "context$view",
           "metadataToken": 385877701,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.DbContext",
           "normalizedSignature": "Context|:Microsoft.EntityFrameworkCore.DbContext|static=false|accessor=get",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -527,58 +449,35 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
-      ],
-      "exposedProperties": [
-        {
-          "tsName": "context",
-          "isStatic": false,
-          "tsSignatureId": "Context|:Microsoft.EntityFrameworkCore.DbContext|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 385877741
-          }
-        },
-        {
-          "tsName": "context$view",
-          "isStatic": false,
-          "tsSignatureId": "Context|:Microsoft.EntityFrameworkCore.DbContext|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 385877701
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|(Microsoft.EntityFrameworkCore.DbContext):void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673463
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
-      "tsEmitName": "DbContextOptionsConfiguration_1",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 1,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601::Configure(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
           "clrName": "Configure",
-          "tsEmitName": "configure",
           "metadataToken": 100673466,
           "canonicalSignature": "(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
           "normalizedSignature": "Configure|(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -586,16 +485,22 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601::Configure(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
           "clrName": "Configure",
-          "tsEmitName": "configure$view",
           "metadataToken": 100673158,
           "canonicalSignature": "(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
           "normalizedSignature": "Configure|(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601"
         }
       ],
       "properties": [],
@@ -612,58 +517,35 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
-      ],
-      "exposedMethods": [
-        {
-          "tsName": "configure",
-          "isStatic": false,
-          "tsSignatureId": "Configure|(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673466
-          }
-        },
-        {
-          "tsName": "configure$view",
-          "isStatic": false,
-          "tsSignatureId": "Configure|(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673158
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|(System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673465
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
-      "tsEmitName": "DbSetFinder",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder::FindSets(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "FindSets",
-          "tsEmitName": "findSets",
           "metadataToken": 100673468,
           "canonicalSignature": "(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "normalizedSignature": "FindSets|(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -671,16 +553,22 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder::FindSets(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "clrName": "FindSets",
-          "tsEmitName": "findSets$view",
           "metadataToken": 100673163,
           "canonicalSignature": "(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "normalizedSignature": "FindSets|(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder"
         }
       ],
       "properties": [],
@@ -697,135 +585,107 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
-      ],
-      "exposedMethods": [
-        {
-          "tsName": "findSets",
-          "isStatic": false,
-          "tsSignatureId": "FindSets|(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673468
-          }
-        },
-        {
-          "tsName": "findSets$view",
-          "isStatic": false,
-          "tsSignatureId": "FindSets|(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673163
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|():void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673470
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-      "tsEmitName": "EntityFrameworkMetrics",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
       "methods": [],
       "properties": [],
       "fields": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::MeterNameSystem.String",
           "clrName": "MeterName",
-          "tsEmitName": "meterName",
           "metadataToken": 67110526,
           "normalizedSignature": "MeterName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
+          "isLiteral": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::ActiveDbContextsInstrumentNameSystem.String",
           "clrName": "ActiveDbContextsInstrumentName",
-          "tsEmitName": "activeDbContextsInstrumentName",
           "metadataToken": 67110527,
           "normalizedSignature": "ActiveDbContextsInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
+          "isLiteral": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::QueriesInstrumentNameSystem.String",
           "clrName": "QueriesInstrumentName",
-          "tsEmitName": "queriesInstrumentName",
           "metadataToken": 67110528,
           "normalizedSignature": "QueriesInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
+          "isLiteral": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::SaveChangesInstrumentNameSystem.String",
           "clrName": "SaveChangesInstrumentName",
-          "tsEmitName": "saveChangesInstrumentName",
           "metadataToken": 67110529,
           "normalizedSignature": "SaveChangesInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
+          "isLiteral": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::CompiledQueryCacheHitsInstrumentNameSystem.String",
           "clrName": "CompiledQueryCacheHitsInstrumentName",
-          "tsEmitName": "compiledQueryCacheHitsInstrumentName",
           "metadataToken": 67110530,
           "normalizedSignature": "CompiledQueryCacheHitsInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
+          "isLiteral": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::CompiledQueryCacheMissesInstrumentNameSystem.String",
           "clrName": "CompiledQueryCacheMissesInstrumentName",
-          "tsEmitName": "compiledQueryCacheMissesInstrumentName",
           "metadataToken": 67110531,
           "normalizedSignature": "CompiledQueryCacheMissesInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
+          "isLiteral": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::ExecutionStrategyFailuresInstrumentNameSystem.String",
           "clrName": "ExecutionStrategyFailuresInstrumentName",
-          "tsEmitName": "executionStrategyFailuresInstrumentName",
           "metadataToken": 67110532,
           "normalizedSignature": "ExecutionStrategyFailuresInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
+          "isLiteral": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::OptimisticConcurrencyFailuresInstrumentNameSystem.String",
           "clrName": "OptimisticConcurrencyFailuresInstrumentName",
-          "tsEmitName": "optimisticConcurrencyFailuresInstrumentName",
           "metadataToken": 67110533,
           "normalizedSignature": "OptimisticConcurrencyFailuresInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
+          "isLiteral": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -842,118 +702,35 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
-      ],
-      "exposedFields": [
-        {
-          "tsName": "meterName",
-          "isStatic": true,
-          "tsSignatureId": "MeterName|System.String|static=true|const=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 67110526
-          }
-        },
-        {
-          "tsName": "activeDbContextsInstrumentName",
-          "isStatic": true,
-          "tsSignatureId": "ActiveDbContextsInstrumentName|System.String|static=true|const=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 67110527
-          }
-        },
-        {
-          "tsName": "queriesInstrumentName",
-          "isStatic": true,
-          "tsSignatureId": "QueriesInstrumentName|System.String|static=true|const=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 67110528
-          }
-        },
-        {
-          "tsName": "saveChangesInstrumentName",
-          "isStatic": true,
-          "tsSignatureId": "SaveChangesInstrumentName|System.String|static=true|const=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 67110529
-          }
-        },
-        {
-          "tsName": "compiledQueryCacheHitsInstrumentName",
-          "isStatic": true,
-          "tsSignatureId": "CompiledQueryCacheHitsInstrumentName|System.String|static=true|const=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 67110530
-          }
-        },
-        {
-          "tsName": "compiledQueryCacheMissesInstrumentName",
-          "isStatic": true,
-          "tsSignatureId": "CompiledQueryCacheMissesInstrumentName|System.String|static=true|const=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 67110531
-          }
-        },
-        {
-          "tsName": "executionStrategyFailuresInstrumentName",
-          "isStatic": true,
-          "tsSignatureId": "ExecutionStrategyFailuresInstrumentName|System.String|static=true|const=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 67110532
-          }
-        },
-        {
-          "tsName": "optimisticConcurrencyFailuresInstrumentName",
-          "isStatic": true,
-          "tsSignatureId": "OptimisticConcurrencyFailuresInstrumentName|System.String|static=true|const=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 67110533
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|():void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673471
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-      "tsEmitName": "InternalServiceCollectionMap",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::GetOrCreateDescriptorIndexes(System.Type):System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "clrName": "GetOrCreateDescriptorIndexes",
-          "tsEmitName": "getOrCreateDescriptorIndexes",
           "metadataToken": 100673478,
           "canonicalSignature": "(System.Type):System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "GetOrCreateDescriptorIndexes|(System.Type):System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -961,13 +738,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::AddNewDescriptor(System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],Microsoft.Extensions.DependencyInjection.ServiceDescriptor):System.Void",
           "clrName": "AddNewDescriptor",
-          "tsEmitName": "addNewDescriptor",
           "metadataToken": 100673479,
           "canonicalSignature": "(System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],Microsoft.Extensions.DependencyInjection.ServiceDescriptor):System.Void",
           "normalizedSignature": "AddNewDescriptor|(System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],Microsoft.Extensions.DependencyInjection.ServiceDescriptor):System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -975,13 +757,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::AddDependencySingleton():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
           "clrName": "AddDependencySingleton",
-          "tsEmitName": "addDependencySingleton",
           "metadataToken": 100673480,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
           "normalizedSignature": "AddDependencySingleton|():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 1,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -989,13 +776,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::AddDependencyScoped():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
           "clrName": "AddDependencyScoped",
-          "tsEmitName": "addDependencyScoped",
           "metadataToken": 100673481,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
           "normalizedSignature": "AddDependencyScoped|():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 1,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1003,13 +795,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::AddDependency(System.Type,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
           "clrName": "AddDependency",
-          "tsEmitName": "addDependency",
           "metadataToken": 100673482,
           "canonicalSignature": "(System.Type,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
           "normalizedSignature": "AddDependency|(System.Type,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1017,13 +814,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::DoPatchInjection():Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "clrName": "DoPatchInjection",
-          "tsEmitName": "doPatchInjection",
           "metadataToken": 100673483,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "normalizedSignature": "DoPatchInjection|():Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 1,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1033,14 +835,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::ServiceCollection:Microsoft.Extensions.DependencyInjection.IServiceCollection",
           "clrName": "ServiceCollection",
-          "tsEmitName": "serviceCollection",
           "metadataToken": 385877742,
           "canonicalSignature": ":Microsoft.Extensions.DependencyInjection.IServiceCollection",
           "normalizedSignature": "ServiceCollection|:Microsoft.Extensions.DependencyInjection.IServiceCollection|static=false|accessor=get",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
           "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1058,110 +864,35 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
-      ],
-      "exposedMethods": [
-        {
-          "tsName": "getOrCreateDescriptorIndexes",
-          "isStatic": false,
-          "tsSignatureId": "GetOrCreateDescriptorIndexes|(System.Type):System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673478
-          }
-        },
-        {
-          "tsName": "addNewDescriptor",
-          "isStatic": false,
-          "tsSignatureId": "AddNewDescriptor|(System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],Microsoft.Extensions.DependencyInjection.ServiceDescriptor):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673479
-          }
-        },
-        {
-          "tsName": "addDependencySingleton",
-          "isStatic": false,
-          "tsSignatureId": "AddDependencySingleton|():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673480
-          }
-        },
-        {
-          "tsName": "addDependencyScoped",
-          "isStatic": false,
-          "tsSignatureId": "AddDependencyScoped|():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673481
-          }
-        },
-        {
-          "tsName": "addDependency",
-          "isStatic": false,
-          "tsSignatureId": "AddDependency|(System.Type,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673482
-          }
-        },
-        {
-          "tsName": "doPatchInjection",
-          "isStatic": false,
-          "tsSignatureId": "DoPatchInjection|():Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673483
-          }
-        }
-      ],
-      "exposedProperties": [
-        {
-          "tsName": "serviceCollection",
-          "isStatic": false,
-          "tsSignatureId": "ServiceCollection|:Microsoft.Extensions.DependencyInjection.IServiceCollection|static=false|accessor=get",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 385877742
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|(Microsoft.Extensions.DependencyInjection.IServiceCollection):void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673476
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-      "tsEmitName": "LazyLoader",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Injected(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void",
           "clrName": "Injected",
-          "tsEmitName": "injected",
           "metadataToken": 100673488,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void",
           "normalizedSignature": "Injected|(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 4,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1169,13 +900,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::SetLoaded(System.Object,System.String,System.Boolean):System.Void",
           "clrName": "SetLoaded",
-          "tsEmitName": "setLoaded",
           "metadataToken": 100673489,
           "canonicalSignature": "(System.Object,System.String,System.Boolean):System.Void",
           "normalizedSignature": "SetLoaded|(System.Object,System.String,System.Boolean):System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1183,13 +919,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::IsLoaded(System.Object,System.String):System.Boolean",
           "clrName": "IsLoaded",
-          "tsEmitName": "isLoaded",
           "metadataToken": 100673490,
           "canonicalSignature": "(System.Object,System.String):System.Boolean",
           "normalizedSignature": "IsLoaded|(System.Object,System.String):System.Boolean|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1197,13 +938,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Load(System.Object,System.String):System.Void",
           "clrName": "Load",
-          "tsEmitName": "load",
           "metadataToken": 100673494,
           "canonicalSignature": "(System.Object,System.String):System.Void",
           "normalizedSignature": "Load|(System.Object,System.String):System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1211,13 +957,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::LoadAsync(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task",
           "clrName": "LoadAsync",
-          "tsEmitName": "loadAsync",
           "metadataToken": 100673495,
           "canonicalSignature": "(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task",
           "normalizedSignature": "LoadAsync|(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1225,13 +976,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Dispose():System.Void",
           "clrName": "Dispose",
-          "tsEmitName": "dispose",
           "metadataToken": 100673497,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "Dispose|():System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1239,13 +995,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Detaching(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean",
           "clrName": "Detaching",
-          "tsEmitName": "detaching",
           "metadataToken": 100673498,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean",
           "normalizedSignature": "Detaching|(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1253,13 +1014,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Attaching(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void",
           "clrName": "Attaching",
-          "tsEmitName": "attaching",
           "metadataToken": 100673499,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void",
           "normalizedSignature": "Attaching|(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1267,114 +1033,162 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::SetLoaded(System.Object,System.String,System.Boolean):System.Void",
           "clrName": "SetLoaded",
-          "tsEmitName": "setLoaded$view",
           "metadataToken": 100663375,
           "canonicalSignature": "(System.Object,System.String,System.Boolean):System.Void",
           "normalizedSignature": "SetLoaded|(System.Object,System.String,System.Boolean):System.Void|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::IsLoaded(System.Object,System.String):System.Boolean",
           "clrName": "IsLoaded",
-          "tsEmitName": "isLoaded$view",
           "metadataToken": 100663376,
           "canonicalSignature": "(System.Object,System.String):System.Boolean",
           "normalizedSignature": "IsLoaded|(System.Object,System.String):System.Boolean|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::Load(System.Object,System.String):System.Void",
           "clrName": "Load",
-          "tsEmitName": "load$view",
           "metadataToken": 100663377,
           "canonicalSignature": "(System.Object,System.String):System.Void",
           "normalizedSignature": "Load|(System.Object,System.String):System.Void|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::LoadAsync(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task",
           "clrName": "LoadAsync",
-          "tsEmitName": "loadAsync$view",
           "metadataToken": 100663378,
           "canonicalSignature": "(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task",
           "normalizedSignature": "LoadAsync|(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::Dispose():System.Void",
           "clrName": "Dispose",
-          "tsEmitName": "dispose$view",
           "metadataToken": 100663379,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "Dispose|():System.Void|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IInjectableService::Injected(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void",
           "clrName": "Injected",
-          "tsEmitName": "injected$view",
           "metadataToken": 100673728,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void",
           "normalizedSignature": "Injected|(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 4,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IInjectableService::Detaching(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean",
           "clrName": "Detaching",
-          "tsEmitName": "detaching$view",
           "metadataToken": 100673729,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean",
           "normalizedSignature": "Detaching|(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IInjectableService::Attaching(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void",
           "clrName": "Attaching",
-          "tsEmitName": "attaching$view",
           "metadataToken": 100673730,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void",
           "normalizedSignature": "Attaching|(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
         }
       ],
       "properties": [],
@@ -1391,198 +1205,35 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
-      ],
-      "exposedMethods": [
-        {
-          "tsName": "injected",
-          "isStatic": false,
-          "tsSignatureId": "Injected|(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673488
-          }
-        },
-        {
-          "tsName": "setLoaded",
-          "isStatic": false,
-          "tsSignatureId": "SetLoaded|(System.Object,System.String,System.Boolean):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673489
-          }
-        },
-        {
-          "tsName": "isLoaded",
-          "isStatic": false,
-          "tsSignatureId": "IsLoaded|(System.Object,System.String):System.Boolean|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673490
-          }
-        },
-        {
-          "tsName": "load",
-          "isStatic": false,
-          "tsSignatureId": "Load|(System.Object,System.String):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673494
-          }
-        },
-        {
-          "tsName": "loadAsync",
-          "isStatic": false,
-          "tsSignatureId": "LoadAsync|(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673495
-          }
-        },
-        {
-          "tsName": "dispose",
-          "isStatic": false,
-          "tsSignatureId": "Dispose|():System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673497
-          }
-        },
-        {
-          "tsName": "detaching",
-          "isStatic": false,
-          "tsSignatureId": "Detaching|(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673498
-          }
-        },
-        {
-          "tsName": "attaching",
-          "isStatic": false,
-          "tsSignatureId": "Attaching|(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673499
-          }
-        },
-        {
-          "tsName": "setLoaded$view",
-          "isStatic": false,
-          "tsSignatureId": "SetLoaded|(System.Object,System.String,System.Boolean):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-            "metadataToken": 100663375
-          }
-        },
-        {
-          "tsName": "isLoaded$view",
-          "isStatic": false,
-          "tsSignatureId": "IsLoaded|(System.Object,System.String):System.Boolean|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-            "metadataToken": 100663376
-          }
-        },
-        {
-          "tsName": "load$view",
-          "isStatic": false,
-          "tsSignatureId": "Load|(System.Object,System.String):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-            "metadataToken": 100663377
-          }
-        },
-        {
-          "tsName": "loadAsync$view",
-          "isStatic": false,
-          "tsSignatureId": "LoadAsync|(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-            "metadataToken": 100663378
-          }
-        },
-        {
-          "tsName": "dispose$view",
-          "isStatic": false,
-          "tsSignatureId": "Dispose|():System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
-            "metadataToken": 100663379
-          }
-        },
-        {
-          "tsName": "injected$view",
-          "isStatic": false,
-          "tsSignatureId": "Injected|(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673728
-          }
-        },
-        {
-          "tsName": "detaching$view",
-          "isStatic": false,
-          "tsSignatureId": "Detaching|(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673729
-          }
-        },
-        {
-          "tsName": "attaching$view",
-          "isStatic": false,
-          "tsSignatureId": "Attaching|(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673730
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673487
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-      "tsEmitName": "LazyLoaderFactory",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::Create():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "clrName": "Create",
-          "tsEmitName": "create",
           "metadataToken": 100673503,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "normalizedSignature": "Create|():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1590,13 +1241,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::Dispose():System.Void",
           "clrName": "Dispose",
-          "tsEmitName": "dispose",
           "metadataToken": 100673504,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "Dispose|():System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": true,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1604,13 +1260,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::ResetState():System.Void",
           "clrName": "ResetState",
-          "tsEmitName": "resetState",
           "metadataToken": 100673505,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ResetState|():System.Void|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": true,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1618,13 +1279,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::ResetStateAsync(System.Threading.CancellationToken):System.Threading.Tasks.Task",
           "clrName": "ResetStateAsync",
-          "tsEmitName": "resetStateAsync",
           "metadataToken": 100673506,
           "canonicalSignature": "(System.Threading.CancellationToken):System.Threading.Tasks.Task",
           "normalizedSignature": "ResetStateAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": true,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1632,44 +1298,62 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory::Create():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "clrName": "Create",
-          "tsEmitName": "create$view",
           "metadataToken": 100673473,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "normalizedSignature": "Create|():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService::ResetState():System.Void",
           "clrName": "ResetState",
-          "tsEmitName": "resetState$view",
           "metadataToken": 100673199,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ResetState|():System.Void|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService::ResetStateAsync(System.Threading.CancellationToken):System.Threading.Tasks.Task",
           "clrName": "ResetStateAsync",
-          "tsEmitName": "resetStateAsync$view",
           "metadataToken": 100673200,
           "canonicalSignature": "(System.Threading.CancellationToken):System.Threading.Tasks.Task",
           "normalizedSignature": "ResetStateAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task|static=false",
           "emitScope": "ViewOnly",
+          "provenance": "ExplicitView",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": false
+          "isExtensionMethod": false,
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
         }
       ],
       "properties": [],
@@ -1686,108 +1370,35 @@
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
-      ],
-      "exposedMethods": [
-        {
-          "tsName": "create",
-          "isStatic": false,
-          "tsSignatureId": "Create|():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673503
-          }
-        },
-        {
-          "tsName": "dispose",
-          "isStatic": false,
-          "tsSignatureId": "Dispose|():System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673504
-          }
-        },
-        {
-          "tsName": "resetState",
-          "isStatic": false,
-          "tsSignatureId": "ResetState|():System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673505
-          }
-        },
-        {
-          "tsName": "resetStateAsync",
-          "isStatic": false,
-          "tsSignatureId": "ResetStateAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673506
-          }
-        },
-        {
-          "tsName": "create$view",
-          "isStatic": false,
-          "tsSignatureId": "Create|():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673473
-          }
-        },
-        {
-          "tsName": "resetState$view",
-          "isStatic": false,
-          "tsSignatureId": "ResetState|():System.Void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673199
-          }
-        },
-        {
-          "tsName": "resetStateAsync$view",
-          "isStatic": false,
-          "tsSignatureId": "ResetStateAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673200
-          }
-        }
-      ],
-      "exposedConstructors": [
-        {
-          "isStatic": false,
-          "tsSignatureId": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673502
-          }
-        }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
-      "tsEmitName": "MemberInfoNameComparer",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer::Compare(System.Reflection.MemberInfo,System.Reflection.MemberInfo):System.Int32",
           "clrName": "Compare",
-          "tsEmitName": "compare",
           "metadataToken": 100673508,
           "canonicalSignature": "(System.Reflection.MemberInfo,System.Reflection.MemberInfo):System.Int32",
           "normalizedSignature": "Compare|(System.Reflection.MemberInfo,System.Reflection.MemberInfo):System.Int32|static=false",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": true,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1798,59 +1409,45 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer::InstanceMicrosoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
           "clrName": "Instance",
-          "tsEmitName": "instance",
           "metadataToken": 67110557,
           "normalizedSignature": "Instance|Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
+          "isLiteral": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
       ],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "compare",
-          "isStatic": false,
-          "tsSignatureId": "Compare|(System.Reflection.MemberInfo,System.Reflection.MemberInfo):System.Int32|static=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673508
-          }
-        }
-      ],
-      "exposedFields": [
-        {
-          "tsName": "instance",
-          "isStatic": true,
-          "tsSignatureId": "Instance|Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer|static=true|const=false",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 67110557
-          }
-        }
-      ]
+      "constructors": []
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
-      "tsEmitName": "DbContextOptionsExtensions",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "StaticNamespace",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": true,
+      "isStatic": true,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions::BuildOptionsFragment(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.String",
           "clrName": "BuildOptionsFragment",
-          "tsEmitName": "buildOptionsFragment",
           "metadataToken": 100673467,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.String",
           "normalizedSignature": "BuildOptionsFragment|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.String|static=true",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -1859,37 +1456,35 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "buildOptionsFragment",
-          "isStatic": true,
-          "tsSignatureId": "BuildOptionsFragment|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.String|static=true",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673467
-          }
-        }
-      ]
+      "constructors": []
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
       "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
-      "tsEmitName": "InfrastructureExtensions",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "StaticNamespace",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": true,
+      "isStatic": true,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions::GetService(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService",
           "clrName": "GetService",
-          "tsEmitName": "getService",
           "metadataToken": 100673474,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService",
           "normalizedSignature": "GetService|(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService|static=true",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 1,
           "parameterCount": 1,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1897,13 +1492,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions::GetService(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Type):System.Object",
           "clrName": "GetService",
-          "tsEmitName": "getService",
           "metadataToken": 100673475,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Type):System.Object",
           "normalizedSignature": "GetService|(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Type):System.Object|static=true",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1912,29 +1512,7 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "getService",
-          "isStatic": true,
-          "tsSignatureId": "GetService|(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService|static=true",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673474
-          }
-        },
-        {
-          "tsName": "getService",
-          "isStatic": true,
-          "tsSignatureId": "GetService|(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Type):System.Object|static=true",
-          "target": {
-            "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100673475
-          }
-        }
-      ]
+      "constructors": []
     }
   ]
 }

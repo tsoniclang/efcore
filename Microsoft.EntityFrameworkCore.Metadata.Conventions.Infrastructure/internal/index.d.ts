@@ -18,28 +18,28 @@ import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString, Type } from "@tsonic/dotnet/System.js";
 
 export interface IConventionSetBuilder$instance {
-    createConventionSet(): ConventionSet;
+    CreateConventionSet(): ConventionSet;
 }
 
 
 export type IConventionSetBuilder = IConventionSetBuilder$instance;
 
 export interface IConventionSetPlugin$instance {
-    modifyConventions(conventionSet: ConventionSet): ConventionSet;
+    ModifyConventions(conventionSet: ConventionSet): ConventionSet;
 }
 
 
 export type IConventionSetPlugin = IConventionSetPlugin$instance;
 
 export interface IProviderConventionSetBuilder$instance {
-    createConventionSet(): ConventionSet;
+    CreateConventionSet(): ConventionSet;
 }
 
 
 export type IProviderConventionSetBuilder = IProviderConventionSetBuilder$instance;
 
 export interface ProviderConventionSetBuilder$instance {
-    createConventionSet(): ConventionSet;
+    CreateConventionSet(): ConventionSet;
 }
 
 
@@ -58,20 +58,20 @@ export type ProviderConventionSetBuilder = ProviderConventionSetBuilder$instance
 
 
 export interface ProviderConventionSetBuilderDependencies$instance {
-    constructorBindingFactory: IConstructorBindingFactory;
-    readonly contextType: Type;
-    logger: IDiagnosticsLogger_1<DbLoggerCategory_Model>;
-    memberClassifier: IMemberClassifier;
-    parameterBindingFactories: IParameterBindingFactories;
-    setFinder: IDbSetFinder;
-    typeMappingSource: ITypeMappingSource;
-    validationLogger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>;
+    ConstructorBindingFactory: IConstructorBindingFactory;
+    readonly ContextType: Type;
+    Logger: IDiagnosticsLogger_1<DbLoggerCategory_Model>;
+    MemberClassifier: IMemberClassifier;
+    ParameterBindingFactories: IParameterBindingFactories;
+    SetFinder: IDbSetFinder;
+    TypeMappingSource: ITypeMappingSource;
+    ValidationLogger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>;
     _Clone_$(): ProviderConventionSetBuilderDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ProviderConventionSetBuilderDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
-    with(currentContext: ICurrentDbContext): ProviderConventionSetBuilderDependencies;
+    Equals(obj: unknown): boolean;
+    Equals(other: ProviderConventionSetBuilderDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
+    With(currentContext: ICurrentDbContext): ProviderConventionSetBuilderDependencies;
 }
 
 
@@ -83,7 +83,7 @@ export const ProviderConventionSetBuilderDependencies: {
 export type ProviderConventionSetBuilderDependencies = ProviderConventionSetBuilderDependencies$instance;
 
 export interface RelationalConventionSetBuilder$instance extends ProviderConventionSetBuilder$instance {
-    createConventionSet(): ConventionSet;
+    CreateConventionSet(): ConventionSet;
 }
 
 
@@ -99,13 +99,13 @@ export type RelationalConventionSetBuilder = RelationalConventionSetBuilder$inst
 
 
 export interface RelationalConventionSetBuilderDependencies$instance {
-    relationalAnnotationProvider: IRelationalAnnotationProvider;
-    updateSqlGenerator: IUpdateSqlGenerator;
+    RelationalAnnotationProvider: IRelationalAnnotationProvider;
+    UpdateSqlGenerator: IUpdateSqlGenerator;
     _Clone_$(): RelationalConventionSetBuilderDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalConventionSetBuilderDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalConventionSetBuilderDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 

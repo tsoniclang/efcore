@@ -36,340 +36,340 @@ import type { Expression, LambdaExpression, ParameterExpression } from "@tsonic/
 import type { ConstructorInfo, FieldInfo, MemberInfo, MethodInfo, ParameterInfo, PropertyInfo } from "@tsonic/dotnet/System.Reflection.js";
 
 export enum ConfigurationSource {
-    explicit = 0,
-    dataAnnotation = 1,
-    convention = 2
+    Explicit = 0,
+    DataAnnotation = 1,
+    Convention = 2
 }
 
 
 export enum PropertySaveBehavior {
-    save = 0,
-    ignore = 1,
-    throw = 2
+    Save = 0,
+    Ignore = 1,
+    Throw = 2
 }
 
 
 export enum StoreObjectType {
-    table = 0,
-    view = 1,
-    sqlQuery = 2,
-    function = 3,
-    insertStoredProcedure = 4,
-    deleteStoredProcedure = 5,
-    updateStoredProcedure = 6
+    Table = 0,
+    View = 1,
+    SqlQuery = 2,
+    Function = 3,
+    InsertStoredProcedure = 4,
+    DeleteStoredProcedure = 5,
+    UpdateStoredProcedure = 6
 }
 
 
 export enum ValueGenerated {
-    never = 0,
-    onAdd = 1,
-    onUpdate = 2,
-    onUpdateSometimes = 4,
-    onAddOrUpdate = 3
+    Never = 0,
+    OnAdd = 1,
+    OnUpdate = 2,
+    OnUpdateSometimes = 4,
+    OnAddOrUpdate = 3
 }
 
 
 export interface IAdHocMapper$instance {
-    getOrAddEntityType(clrType: Type): RuntimeEntityType;
+    GetOrAddEntityType(clrType: Type): RuntimeEntityType;
 }
 
 
 export type IAdHocMapper = IAdHocMapper$instance;
 
 export interface ICheckConstraint$instance extends IReadOnlyCheckConstraint, IReadOnlyAnnotatable, IAnnotatable {
-    readonly entityType: IEntityType;
-    readonly modelName: string;
-    readonly name: string;
-    readonly sql: string;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getDefaultName(): string | undefined;
-    getName(storeObject: StoreObjectIdentifier): string | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly EntityType: IEntityType;
+    readonly ModelName: string;
+    readonly Name: string;
+    readonly Sql: string;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetDefaultName(): string | undefined;
+    GetName(storeObject: StoreObjectIdentifier): string | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ICheckConstraint = ICheckConstraint$instance;
 
 export interface IClrCollectionAccessor$instance {
-    readonly collectionType: Type;
-    add(entity: unknown, value: unknown, forMaterialization: boolean): boolean;
-    contains(entity: unknown, value: unknown): boolean;
-    create(): unknown;
-    getOrCreate(entity: unknown, forMaterialization: boolean): unknown;
+    readonly CollectionType: Type;
+    Add(entity: unknown, value: unknown, forMaterialization: boolean): boolean;
+    Contains(entity: unknown, value: unknown): boolean;
+    Create(): unknown;
+    GetOrCreate(entity: unknown, forMaterialization: boolean): unknown;
 }
 
 
 export type IClrCollectionAccessor = IClrCollectionAccessor$instance;
 
 export interface IClrIndexedCollectionAccessor$instance {
-    create(capacity: int): unknown;
-    get(entity: unknown, index: int): unknown | undefined;
-    set(entity: unknown, index: int, value: unknown, forMaterialization: boolean): void;
+    Create(capacity: int): unknown;
+    Get(entity: unknown, index: int): unknown | undefined;
+    Set(entity: unknown, index: int, value: unknown, forMaterialization: boolean): void;
 }
 
 
 export type IClrIndexedCollectionAccessor = IClrIndexedCollectionAccessor$instance;
 
 export interface IClrPropertyGetter$instance {
-    getClrValueUsingContainingEntity(entity: unknown, indices: IReadOnlyList<System_Internal.Int32>): unknown | undefined;
-    getClrValueUsingContainingEntity(entity: unknown): unknown | undefined;
-    hasSentinelValueUsingContainingEntity(entity: unknown, indices: IReadOnlyList<System_Internal.Int32>): boolean;
-    hasSentinelValueUsingContainingEntity(entity: unknown): boolean;
+    GetClrValueUsingContainingEntity(entity: unknown, indices: IReadOnlyList<System_Internal.Int32>): unknown | undefined;
+    GetClrValueUsingContainingEntity(entity: unknown): unknown | undefined;
+    HasSentinelValueUsingContainingEntity(entity: unknown, indices: IReadOnlyList<System_Internal.Int32>): boolean;
+    HasSentinelValueUsingContainingEntity(entity: unknown): boolean;
 }
 
 
 export type IClrPropertyGetter = IClrPropertyGetter$instance;
 
 export interface IClrPropertySetter$instance {
-    setClrValue(instance: unknown, value: unknown): unknown;
-    setClrValueUsingContainingEntity(instance: unknown, indices: IReadOnlyList<System_Internal.Int32>, value: unknown): void;
-    setClrValueUsingContainingEntity(instance: unknown, value: unknown): void;
+    SetClrValue(instance: unknown, value: unknown): unknown;
+    SetClrValueUsingContainingEntity(instance: unknown, indices: IReadOnlyList<System_Internal.Int32>, value: unknown): void;
+    SetClrValueUsingContainingEntity(instance: unknown, value: unknown): void;
 }
 
 
 export type IClrPropertySetter = IClrPropertySetter$instance;
 
 export interface IColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly table: ITable;
-    readonly propertyMappings: IReadOnlyList<IColumnMapping>;
-    readonly maxLength: Nullable<System_Internal.Int32>;
-    readonly precision: Nullable<System_Internal.Int32>;
-    readonly scale: Nullable<System_Internal.Int32>;
-    readonly isUnicode: Nullable<System_Internal.Boolean>;
-    readonly isFixedLength: Nullable<System_Internal.Boolean>;
-    readonly isRowVersion: boolean;
-    readonly order: Nullable<System_Internal.Int32>;
-    readonly defaultValue: unknown | undefined;
-    readonly defaultValueSql: string | undefined;
-    readonly computedColumnSql: string | undefined;
-    readonly isStored: Nullable<System_Internal.Boolean>;
-    readonly comment: string | undefined;
-    readonly collation: string | undefined;
-    readonly name: string;
-    readonly storeType: string;
-    readonly providerClrType: Type;
-    readonly storeTypeMapping: RelationalTypeMapping;
-    readonly isNullable: boolean;
-    readonly providerValueComparer: ValueComparer;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumnMapping(entityType: IReadOnlyEntityType): IColumnMapping | undefined;
-    findColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    tryGetDefaultValue(defaultValue: unknown): boolean;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Table: ITable;
+    readonly PropertyMappings: IReadOnlyList<IColumnMapping>;
+    readonly MaxLength: Nullable<System_Internal.Int32>;
+    readonly Precision: Nullable<System_Internal.Int32>;
+    readonly Scale: Nullable<System_Internal.Int32>;
+    readonly IsUnicode: Nullable<System_Internal.Boolean>;
+    readonly IsFixedLength: Nullable<System_Internal.Boolean>;
+    readonly IsRowVersion: boolean;
+    readonly Order: Nullable<System_Internal.Int32>;
+    readonly DefaultValue: unknown | undefined;
+    readonly DefaultValueSql: string | undefined;
+    readonly ComputedColumnSql: string | undefined;
+    readonly IsStored: Nullable<System_Internal.Boolean>;
+    readonly Comment: string | undefined;
+    readonly Collation: string | undefined;
+    readonly Name: string;
+    readonly StoreType: string;
+    readonly ProviderClrType: Type;
+    readonly StoreTypeMapping: RelationalTypeMapping;
+    readonly IsNullable: boolean;
+    readonly ProviderValueComparer: ValueComparer;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IColumnMapping | undefined;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    TryGetDefaultValue(defaultValue: unknown): boolean;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IColumn = IColumn$instance;
 
 export interface IColumnBase$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly storeType: string;
-    readonly providerClrType: Type;
-    readonly storeTypeMapping: RelationalTypeMapping;
-    readonly isNullable: boolean;
-    readonly table: ITableBase;
-    readonly propertyMappings: IReadOnlyList<IColumnMappingBase>;
-    readonly providerValueComparer: ValueComparer;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Name: string;
+    readonly StoreType: string;
+    readonly ProviderClrType: Type;
+    readonly StoreTypeMapping: RelationalTypeMapping;
+    readonly IsNullable: boolean;
+    readonly Table: ITableBase;
+    readonly PropertyMappings: IReadOnlyList<IColumnMappingBase>;
+    readonly ProviderValueComparer: ValueComparer;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IColumnBase = IColumnBase$instance;
 
 export interface IColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly column: IColumn;
-    readonly tableMapping: ITableMapping;
-    readonly property: IProperty;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Column: IColumn;
+    readonly TableMapping: ITableMapping;
+    readonly Property: IProperty;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IColumnMapping = IColumnMapping$instance;
 
 export interface IColumnMappingBase$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly property: IProperty;
-    readonly column: IColumnBase;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly tableMapping: ITableMappingBase;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Property: IProperty;
+    readonly Column: IColumnBase;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly TableMapping: ITableMappingBase;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IColumnMappingBase = IColumnMappingBase$instance;
 
 export interface IComplexProperty$instance extends IReadOnlyComplexProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
-    readonly complexType: IComplexType;
-    readonly isNullable: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly ComplexType: IComplexType;
+    readonly IsNullable: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IComplexProperty = IComplexProperty$instance;
 
 export interface IComplexType$instance extends IReadOnlyComplexType, IReadOnlyTypeBase, IReadOnlyAnnotatable, ITypeBase, IAnnotatable {
-    readonly complexProperty: IComplexProperty;
-    readonly baseType: IComplexType | undefined;
-    readonly model: IReadOnlyModel;
-    readonly containingEntityType: IReadOnlyEntityType;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    readonly constructorBinding: InstantiationBinding | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
-    findComplexProperty(name: string): IComplexProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findDiscriminatorProperty(): IProperty | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMember(name: string): IPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findMembersInHierarchy(name: string): IEnumerable<IPropertyBase>;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IProperty | undefined;
-    findProperty(name: string): IProperty | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDerivedTypes(): IEnumerable<IComplexType>;
-    getDerivedTypes(): IEnumerable<IReadOnlyComplexType>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDerivedTypes(): IEnumerable<ITypeBase>;
-    getDiscriminatorValue(): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IReadOnlyComplexType;
-    getRootType(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    isContainedBy(type: Type): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findComplexProperty2(name: string): IComplexProperty | undefined;
-    findComplexProperty3(memberInfo: MemberInfo): IComplexProperty | undefined;
-    findDiscriminatorProperty2(): IProperty | undefined;
-    findMember2(name: string): IPropertyBase | undefined;
-    findProperty2(name: string): IProperty | undefined;
-    findProperty3(memberInfo: MemberInfo): IProperty | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getRootType2(): IReadOnlyTypeBase;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly ComplexProperty: IComplexProperty;
+    readonly BaseType: IComplexType | undefined;
+    readonly Model: IReadOnlyModel;
+    readonly ContainingEntityType: IReadOnlyEntityType;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    readonly ConstructorBinding: InstantiationBinding | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
+    FindComplexProperty(name: string): IComplexProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindDiscriminatorProperty(): IProperty | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMember(name: string): IPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindMembersInHierarchy(name: string): IEnumerable<IPropertyBase>;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IProperty | undefined;
+    FindProperty(name: string): IProperty | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDerivedTypes(): IEnumerable<IComplexType>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyComplexType>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDerivedTypes(): IEnumerable<ITypeBase>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IReadOnlyComplexType;
+    GetRootType(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    IsContainedBy(type: Type): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindComplexProperty2(name: string): IComplexProperty | undefined;
+    FindComplexProperty3(memberInfo: MemberInfo): IComplexProperty | undefined;
+    FindDiscriminatorProperty2(): IProperty | undefined;
+    FindMember2(name: string): IPropertyBase | undefined;
+    FindProperty2(name: string): IProperty | undefined;
+    FindProperty3(memberInfo: MemberInfo): IProperty | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetRootType2(): IReadOnlyTypeBase;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IComplexType = IComplexType$instance;
 
 export interface IConstructorBindingFactory$instance {
-    getBindings(entityType: IConventionEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
-    getBindings(entityType: IMutableEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
-    getBindings(complexType: IReadOnlyComplexType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
-    getBindings(entityType: IReadOnlyEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
-    tryBindConstructor(entityType: IConventionEntityType, constructor: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable<ParameterInfo>): boolean;
-    tryBindConstructor(entityType: IMutableEntityType, constructor: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable<ParameterInfo>): boolean;
+    GetBindings(entityType: IConventionEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
+    GetBindings(entityType: IMutableEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
+    GetBindings(complexType: IReadOnlyComplexType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
+    GetBindings(entityType: IReadOnlyEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
+    TryBindConstructor(entityType: IConventionEntityType, constructor: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable<ParameterInfo>): boolean;
+    TryBindConstructor(entityType: IMutableEntityType, constructor: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable<ParameterInfo>): boolean;
 }
 
 
 export type IConstructorBindingFactory = IConstructorBindingFactory$instance;
 
 export interface IConventionAnnotatable$instance extends IReadOnlyAnnotatable {
-    readonly builder: IConventionAnnotatableBuilder;
-    readonly isInModel: boolean;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Builder: IConventionAnnotatableBuilder;
+    readonly IsInModel: boolean;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IConventionAnnotatable = IConventionAnnotatable$instance;
 
 export interface IConventionAnnotation$instance extends IAnnotation {
-    readonly name: string;
-    readonly value: unknown | undefined;
-    getConfigurationSource(): ConfigurationSource;
+    readonly Name: string;
+    readonly Value: unknown | undefined;
+    GetConfigurationSource(): ConfigurationSource;
 }
 
 
@@ -378,2680 +378,2680 @@ export interface IConventionAnnotation$instance extends Microsoft_EntityFramewor
 export type IConventionAnnotation = IConventionAnnotation$instance;
 
 export interface IConventionCheckConstraint$instance extends IReadOnlyCheckConstraint, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly builder: IConventionCheckConstraintBuilder;
-    readonly entityType: IConventionEntityType;
-    readonly modelName: string;
-    readonly name: string;
-    readonly sql: string;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getDefaultName(): string | undefined;
-    getName(storeObject: StoreObjectIdentifier): string | undefined;
-    getNameConfigurationSource(): Nullable<ConfigurationSource>;
-    setName(name: string, fromDataAnnotation?: boolean): string;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly Builder: IConventionCheckConstraintBuilder;
+    readonly EntityType: IConventionEntityType;
+    readonly ModelName: string;
+    readonly Name: string;
+    readonly Sql: string;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetDefaultName(): string | undefined;
+    GetName(storeObject: StoreObjectIdentifier): string | undefined;
+    GetNameConfigurationSource(): Nullable<ConfigurationSource>;
+    SetName(name: string, fromDataAnnotation?: boolean): string;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionCheckConstraint = IConventionCheckConstraint$instance;
 
 export interface IConventionComplexProperty$instance extends IReadOnlyComplexProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionPropertyBase, IConventionAnnotatable {
-    readonly builder: IConventionComplexPropertyBuilder;
-    readonly complexType: IConventionComplexType;
-    readonly isNullable: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getFieldName(): string | undefined;
-    getIsNullableConfigurationSource(): Nullable<ConfigurationSource>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setIsNullable(nullable: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
+    readonly Builder: IConventionComplexPropertyBuilder;
+    readonly ComplexType: IConventionComplexType;
+    readonly IsNullable: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetFieldName(): string | undefined;
+    GetIsNullableConfigurationSource(): Nullable<ConfigurationSource>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetIsNullable(nullable: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
 }
 
 
 export type IConventionComplexProperty = IConventionComplexProperty$instance;
 
 export interface IConventionComplexType$instance extends IReadOnlyComplexType, IReadOnlyTypeBase, IReadOnlyAnnotatable, IConventionTypeBase, IConventionAnnotatable {
-    readonly builder: IConventionComplexTypeBuilder;
-    readonly complexProperty: IConventionComplexProperty;
-    readonly baseType: IConventionComplexType | undefined;
-    readonly model: IReadOnlyModel;
-    readonly containingEntityType: IReadOnlyEntityType;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    addComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addComplexProperty(name: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addIgnored(memberName: string, fromDataAnnotation?: boolean): string | undefined;
-    addProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addProperty(name: string, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addProperty(name: string, propertyType: Type, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addProperty(name: string, propertyType: Type, memberInfo: MemberInfo, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IConventionComplexProperty | undefined;
-    findComplexProperty(name: string): IConventionComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty(): IConventionProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findIgnoredConfigurationSource(memberName: string): Nullable<ConfigurationSource>;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): IConventionPropertyBase | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findMembersInHierarchy(name: string): IEnumerable<IConventionPropertyBase>;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IConventionProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IConventionProperty | undefined;
-    findProperty(name: string): IConventionProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDerivedTypes(): IEnumerable<IConventionComplexType>;
-    getDerivedTypes(): IEnumerable<IConventionTypeBase>;
-    getDerivedTypes(): IEnumerable<IReadOnlyComplexType>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDiscriminatorPropertyConfigurationSource(): Nullable<ConfigurationSource>;
-    getDiscriminatorValue(): unknown | undefined;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IConventionComplexType;
-    getRootType(): IConventionTypeBase;
-    getRootType(): IReadOnlyComplexType;
-    getRootType(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    isContainedBy(type: Type): boolean;
-    isIgnored(memberName: string): boolean;
-    removeComplexProperty(property: IConventionComplexProperty): IConventionComplexProperty | undefined;
-    removeIgnored(memberName: string): string | undefined;
-    removeProperty(property: IReadOnlyProperty): IConventionProperty | undefined;
-    setBaseType(structuralType: IConventionTypeBase, fromDataAnnotation?: boolean): IConventionTypeBase | undefined;
-    setChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): Nullable<ChangeTrackingStrategy>;
-    setDiscriminatorProperty(property: IReadOnlyProperty, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    setDiscriminatorValue(value: unknown, fromDataAnnotation?: boolean): unknown | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    findComplexProperty2(name: string): IReadOnlyComplexProperty | undefined;
-    findComplexProperty3(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty2(): IReadOnlyProperty | undefined;
-    findMember2(name: string): IReadOnlyPropertyBase | undefined;
-    findProperty2(name: string): IReadOnlyProperty | undefined;
-    findProperty3(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getRootType2(): IReadOnlyTypeBase;
-    removeDiscriminatorValue(): unknown | undefined;
+    readonly Builder: IConventionComplexTypeBuilder;
+    readonly ComplexProperty: IConventionComplexProperty;
+    readonly BaseType: IConventionComplexType | undefined;
+    readonly Model: IReadOnlyModel;
+    readonly ContainingEntityType: IReadOnlyEntityType;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AddComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddComplexProperty(name: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddIgnored(memberName: string, fromDataAnnotation?: boolean): string | undefined;
+    AddProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddProperty(name: string, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddProperty(name: string, propertyType: Type, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddProperty(name: string, propertyType: Type, memberInfo: MemberInfo, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IConventionComplexProperty | undefined;
+    FindComplexProperty(name: string): IConventionComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty(): IConventionProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindIgnoredConfigurationSource(memberName: string): Nullable<ConfigurationSource>;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): IConventionPropertyBase | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindMembersInHierarchy(name: string): IEnumerable<IConventionPropertyBase>;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IConventionProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IConventionProperty | undefined;
+    FindProperty(name: string): IConventionProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDerivedTypes(): IEnumerable<IConventionComplexType>;
+    GetDerivedTypes(): IEnumerable<IConventionTypeBase>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyComplexType>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDiscriminatorPropertyConfigurationSource(): Nullable<ConfigurationSource>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IConventionComplexType;
+    GetRootType(): IConventionTypeBase;
+    GetRootType(): IReadOnlyComplexType;
+    GetRootType(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    IsContainedBy(type: Type): boolean;
+    IsIgnored(memberName: string): boolean;
+    RemoveComplexProperty(property: IConventionComplexProperty): IConventionComplexProperty | undefined;
+    RemoveIgnored(memberName: string): string | undefined;
+    RemoveProperty(property: IReadOnlyProperty): IConventionProperty | undefined;
+    SetBaseType(structuralType: IConventionTypeBase, fromDataAnnotation?: boolean): IConventionTypeBase | undefined;
+    SetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): Nullable<ChangeTrackingStrategy>;
+    SetDiscriminatorProperty(property: IReadOnlyProperty, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    SetDiscriminatorValue(value: unknown, fromDataAnnotation?: boolean): unknown | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    FindComplexProperty2(name: string): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty3(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty2(): IReadOnlyProperty | undefined;
+    FindMember2(name: string): IReadOnlyPropertyBase | undefined;
+    FindProperty2(name: string): IReadOnlyProperty | undefined;
+    FindProperty3(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetRootType2(): IReadOnlyTypeBase;
+    RemoveDiscriminatorValue(): unknown | undefined;
 }
 
 
 export type IConventionComplexType = IConventionComplexType$instance;
 
 export interface IConventionDbFunction$instance extends IReadOnlyDbFunction, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly model: IConventionModel;
-    readonly builder: IConventionDbFunctionBuilder;
-    readonly parameters: IReadOnlyList<IConventionDbFunctionParameter>;
-    readonly name: string;
-    readonly schema: string;
-    readonly modelName: string;
-    readonly methodInfo: MethodInfo | undefined;
-    readonly isBuiltIn: boolean;
-    readonly isScalar: boolean;
-    readonly isAggregate: boolean;
-    readonly isNullable: boolean;
-    readonly storeType: string;
-    readonly returnType: Type;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly translation: Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getNameConfigurationSource(): Nullable<ConfigurationSource>;
-    setIsBuiltIn(builtIn: boolean, fromDataAnnotation?: boolean): boolean;
-    setName(name: string, fromDataAnnotation?: boolean): string;
-    setTranslation(translation: Func<IReadOnlyList<SqlExpression>, SqlExpression>, fromDataAnnotation?: boolean): Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
-    setTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): RelationalTypeMapping | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly Model: IConventionModel;
+    readonly Builder: IConventionDbFunctionBuilder;
+    readonly Parameters: IReadOnlyList<IConventionDbFunctionParameter>;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly ModelName: string;
+    readonly MethodInfo: MethodInfo | undefined;
+    readonly IsBuiltIn: boolean;
+    readonly IsScalar: boolean;
+    readonly IsAggregate: boolean;
+    readonly IsNullable: boolean;
+    readonly StoreType: string;
+    readonly ReturnType: Type;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly Translation: Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetNameConfigurationSource(): Nullable<ConfigurationSource>;
+    SetIsBuiltIn(builtIn: boolean, fromDataAnnotation?: boolean): boolean;
+    SetName(name: string, fromDataAnnotation?: boolean): string;
+    SetTranslation(translation: Func<IReadOnlyList<SqlExpression>, SqlExpression>, fromDataAnnotation?: boolean): Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
+    SetTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): RelationalTypeMapping | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionDbFunction = IConventionDbFunction$instance;
 
 export interface IConventionDbFunctionParameter$instance extends IReadOnlyDbFunctionParameter, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly function: IConventionDbFunction;
-    readonly builder: IConventionDbFunctionParameterBuilder;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly storeType: string;
-    readonly propagatesNullability: boolean;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getStoreTypeConfigurationSource(): Nullable<ConfigurationSource>;
-    setStoreType(storeType: string, fromDataAnnotation?: boolean): string | undefined;
-    setTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): RelationalTypeMapping | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly Function: IConventionDbFunction;
+    readonly Builder: IConventionDbFunctionParameterBuilder;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly StoreType: string;
+    readonly PropagatesNullability: boolean;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetStoreTypeConfigurationSource(): Nullable<ConfigurationSource>;
+    SetStoreType(storeType: string, fromDataAnnotation?: boolean): string | undefined;
+    SetTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): RelationalTypeMapping | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionDbFunctionParameter = IConventionDbFunctionParameter$instance;
 
 export interface IConventionElementType$instance extends IReadOnlyElementType, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly collectionProperty: IConventionProperty;
-    readonly builder: IConventionElementTypeBuilder;
-    readonly clrType: Type;
-    readonly isNullable: boolean;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getIsNullableConfigurationSource(): Nullable<ConfigurationSource>;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getProviderClrType(): Type | undefined;
-    getTypeMapping(): CoreTypeMapping;
-    getValueComparer(): ValueComparer;
-    getValueConverter(): ValueConverter | undefined;
-    setIsNullable(nullable: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    setTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): CoreTypeMapping | undefined;
-    setValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): ValueComparer | undefined;
-    setValueConverter(converter: ValueConverter, fromDataAnnotation?: boolean): ValueConverter | undefined;
-    setValueConverter(converterType: Type, fromDataAnnotation?: boolean): Type | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getMaxLength(): Nullable<System_Internal.Int32>;
+    readonly CollectionProperty: IConventionProperty;
+    readonly Builder: IConventionElementTypeBuilder;
+    readonly ClrType: Type;
+    readonly IsNullable: boolean;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetIsNullableConfigurationSource(): Nullable<ConfigurationSource>;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetProviderClrType(): Type | undefined;
+    GetTypeMapping(): CoreTypeMapping;
+    GetValueComparer(): ValueComparer;
+    GetValueConverter(): ValueConverter | undefined;
+    SetIsNullable(nullable: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    SetTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): CoreTypeMapping | undefined;
+    SetValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): ValueComparer | undefined;
+    SetValueConverter(converter: ValueConverter, fromDataAnnotation?: boolean): ValueConverter | undefined;
+    SetValueConverter(converterType: Type, fromDataAnnotation?: boolean): Type | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
 }
 
 
 export type IConventionElementType = IConventionElementType$instance;
 
 export interface IConventionEntityType$instance extends IReadOnlyEntityType, IReadOnlyTypeBase, IReadOnlyAnnotatable, IConventionTypeBase, IConventionAnnotatable {
-    readonly builder: IConventionEntityTypeBuilder;
-    readonly baseType: IConventionEntityType | undefined;
-    readonly isKeyless: boolean;
-    readonly model: IReadOnlyModel;
-    readonly containingEntityType: IReadOnlyEntityType;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    addComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addComplexProperty(name: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addForeignKey(property: IConventionProperty, principalKey: IConventionKey, principalEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionForeignKey | undefined;
-    addForeignKey(properties: IReadOnlyList<IConventionProperty>, principalKey: IConventionKey, principalEntityType: IConventionEntityType, setComponentConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionForeignKey | undefined;
-    addIgnored(memberName: string, fromDataAnnotation?: boolean): string | undefined;
-    addIndex(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionIndex | undefined;
-    addIndex(property: IConventionProperty, name: string, fromDataAnnotation?: boolean): IConventionIndex | undefined;
-    addIndex(properties: IReadOnlyList<IConventionProperty>, fromDataAnnotation?: boolean): IConventionIndex | undefined;
-    addIndex(properties: IReadOnlyList<IConventionProperty>, name: string, fromDataAnnotation?: boolean): IConventionIndex;
-    addProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addProperty(name: string, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addProperty(name: string, propertyType: Type, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addProperty(name: string, propertyType: Type, memberInfo: MemberInfo, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addServiceProperty(memberInfo: MemberInfo, serviceType?: Type, fromDataAnnotation?: boolean): IConventionServiceProperty;
-    addSkipNavigation(name: string, navigationType: Type, memberInfo: MemberInfo, targetEntityType: IConventionEntityType, collection: boolean, onDependent: boolean, fromDataAnnotation?: boolean): IConventionSkipNavigation | undefined;
-    addTrigger(name: string, fromDataAnnotation?: boolean): IConventionTrigger | undefined;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    findClosestCommonParent(otherEntityType: IReadOnlyEntityType): IConventionEntityType | undefined;
-    findClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IConventionComplexProperty | undefined;
-    findComplexProperty(name: string): IConventionComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
-    findDeclaredTrigger(name: string): IConventionTrigger | undefined;
-    findDeclaredTrigger(name: string): IReadOnlyTrigger | undefined;
-    findDiscriminatorProperty(): IConventionProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IConventionForeignKey | undefined;
-    findForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IConventionForeignKey | undefined;
-    findForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    findForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    findForeignKeys(property: IReadOnlyProperty): IEnumerable<IConventionForeignKey>;
-    findForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IConventionForeignKey>;
-    findForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IReadOnlyForeignKey>;
-    findForeignKeys(property: IReadOnlyProperty): IEnumerable<IReadOnlyForeignKey>;
-    findIndex(property: IReadOnlyProperty): IConventionIndex | undefined;
-    findIndex(properties: IReadOnlyList<IReadOnlyProperty>): IConventionIndex | undefined;
-    findIndex(name: string): IConventionIndex | undefined;
-    findIndex(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
-    findIndex(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyIndex | undefined;
-    findIndex(name: string): IReadOnlyIndex | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findKey(property: IReadOnlyProperty): IConventionKey | undefined;
-    findKey(properties: IReadOnlyList<IReadOnlyProperty>): IConventionKey | undefined;
-    findKey(property: IReadOnlyProperty): IReadOnlyKey | undefined;
-    findKey(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyKey | undefined;
-    findMember(name: string): IConventionPropertyBase | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findMembersInHierarchy(name: string): IEnumerable<IConventionPropertyBase>;
-    findNavigation(memberInfo: MemberInfo): IConventionNavigation | undefined;
-    findNavigation(name: string): IConventionNavigation | undefined;
-    findNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
-    findNavigation(name: string): IReadOnlyNavigation | undefined;
-    findOwnership(): IConventionForeignKey | undefined;
-    findOwnership(): IReadOnlyForeignKey | undefined;
-    findPrimaryKey(): IConventionKey | undefined;
-    findPrimaryKey(): IReadOnlyKey | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IConventionProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IConventionProperty | undefined;
-    findProperty(name: string): IConventionProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    findServiceProperty(name: string): IConventionServiceProperty | undefined;
-    findServiceProperty(name: string): IReadOnlyServiceProperty | undefined;
-    findSkipNavigation(memberInfo: MemberInfo): IConventionSkipNavigation | undefined;
-    findSkipNavigation(name: string): IConventionSkipNavigation | undefined;
-    findSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
-    findSkipNavigation(name: string): IReadOnlySkipNavigation | undefined;
-    getAllBaseTypes(): IEnumerable<IConventionEntityType>;
-    getAllBaseTypes(): IEnumerable<IReadOnlyEntityType>;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getConfigurationSource(): ConfigurationSource;
-    getDeclaredQueryFilters(): IReadOnlyCollection<IQueryFilter>;
-    getDiscriminatorValue(): unknown | undefined;
-    getIsDiscriminatorMappingComplete(): boolean;
-    getNavigationAccessMode(): PropertyAccessMode;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getQueryFilter(): LambdaExpression | undefined;
-    getQueryFilterConfigurationSource(): Nullable<ConfigurationSource>;
-    getQueryFilterConfigurationSource(filterKey: string): Nullable<ConfigurationSource>;
-    getRootType(): IConventionEntityType;
-    getRootType(): IConventionTypeBase;
-    getRootType(): IReadOnlyEntityType;
-    getRootType(): IReadOnlyTypeBase;
-    getSeedData(providerValues?: boolean): IEnumerable<IDictionary<System_Internal.String, unknown | undefined>>;
-    isAssignableFrom(derivedType: IReadOnlyEntityType): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    isIgnored(memberName: string): boolean;
-    removeComplexProperty(property: IConventionComplexProperty): IConventionComplexProperty | undefined;
-    removeForeignKey(foreignKey: IReadOnlyForeignKey): IConventionForeignKey | undefined;
-    removeForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IConventionKey, principalEntityType: IConventionEntityType): IConventionForeignKey | undefined;
-    removeIgnored(memberName: string): string | undefined;
-    removeIndex(index: IReadOnlyIndex): IConventionIndex | undefined;
-    removeKey(key: IReadOnlyKey): IConventionKey | undefined;
-    removeProperty(property: IReadOnlyProperty): IConventionProperty | undefined;
-    removeServiceProperty(property: IReadOnlyServiceProperty): IConventionServiceProperty | undefined;
-    removeSkipNavigation(navigation: IReadOnlySkipNavigation): IConventionSkipNavigation | undefined;
-    setBaseType(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
-    setBaseType(structuralType: IConventionTypeBase, fromDataAnnotation?: boolean): IConventionTypeBase | undefined;
-    setDiscriminatorMappingComplete(complete: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    setDiscriminatorProperty(property: IReadOnlyProperty, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    setDiscriminatorValue(value: unknown, fromDataAnnotation?: boolean): unknown | undefined;
-    setPrimaryKey(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionKey | undefined;
-    setPrimaryKey(properties: IReadOnlyList<IConventionProperty>, fromDataAnnotation?: boolean): IConventionKey | undefined;
-    setQueryFilter(queryFilter: LambdaExpression, fromDataAnnotation?: boolean): LambdaExpression | undefined;
-    setQueryFilter(filterKey: string, filter: LambdaExpression, fromDataAnnotation?: boolean): IQueryFilter | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    findComplexProperty2(name: string): IReadOnlyComplexProperty | undefined;
-    findComplexProperty3(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty2(): IReadOnlyProperty | undefined;
-    findIgnoredConfigurationSource(memberName: string): Nullable<ConfigurationSource>;
-    findMember2(name: string): IReadOnlyPropertyBase | undefined;
-    findProperty2(name: string): IReadOnlyProperty | undefined;
-    findProperty3(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getDerivedTypes(): IEnumerable<IConventionTypeBase>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDiscriminatorPropertyConfigurationSource(): Nullable<ConfigurationSource>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType2(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    removeDiscriminatorValue(): unknown | undefined;
-    setChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): Nullable<ChangeTrackingStrategy>;
+    readonly Builder: IConventionEntityTypeBuilder;
+    readonly BaseType: IConventionEntityType | undefined;
+    readonly IsKeyless: boolean;
+    readonly Model: IReadOnlyModel;
+    readonly ContainingEntityType: IReadOnlyEntityType;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AddComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddComplexProperty(name: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddForeignKey(property: IConventionProperty, principalKey: IConventionKey, principalEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionForeignKey | undefined;
+    AddForeignKey(properties: IReadOnlyList<IConventionProperty>, principalKey: IConventionKey, principalEntityType: IConventionEntityType, setComponentConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionForeignKey | undefined;
+    AddIgnored(memberName: string, fromDataAnnotation?: boolean): string | undefined;
+    AddIndex(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionIndex | undefined;
+    AddIndex(property: IConventionProperty, name: string, fromDataAnnotation?: boolean): IConventionIndex | undefined;
+    AddIndex(properties: IReadOnlyList<IConventionProperty>, fromDataAnnotation?: boolean): IConventionIndex | undefined;
+    AddIndex(properties: IReadOnlyList<IConventionProperty>, name: string, fromDataAnnotation?: boolean): IConventionIndex;
+    AddProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddProperty(name: string, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddProperty(name: string, propertyType: Type, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddProperty(name: string, propertyType: Type, memberInfo: MemberInfo, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddServiceProperty(memberInfo: MemberInfo, serviceType?: Type, fromDataAnnotation?: boolean): IConventionServiceProperty;
+    AddSkipNavigation(name: string, navigationType: Type, memberInfo: MemberInfo, targetEntityType: IConventionEntityType, collection: boolean, onDependent: boolean, fromDataAnnotation?: boolean): IConventionSkipNavigation | undefined;
+    AddTrigger(name: string, fromDataAnnotation?: boolean): IConventionTrigger | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    FindClosestCommonParent(otherEntityType: IReadOnlyEntityType): IConventionEntityType | undefined;
+    FindClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IConventionComplexProperty | undefined;
+    FindComplexProperty(name: string): IConventionComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
+    FindDeclaredTrigger(name: string): IConventionTrigger | undefined;
+    FindDeclaredTrigger(name: string): IReadOnlyTrigger | undefined;
+    FindDiscriminatorProperty(): IConventionProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IConventionForeignKey | undefined;
+    FindForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IConventionForeignKey | undefined;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
+    FindForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
+    FindForeignKeys(property: IReadOnlyProperty): IEnumerable<IConventionForeignKey>;
+    FindForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IConventionForeignKey>;
+    FindForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IReadOnlyForeignKey>;
+    FindForeignKeys(property: IReadOnlyProperty): IEnumerable<IReadOnlyForeignKey>;
+    FindIndex(property: IReadOnlyProperty): IConventionIndex | undefined;
+    FindIndex(properties: IReadOnlyList<IReadOnlyProperty>): IConventionIndex | undefined;
+    FindIndex(name: string): IConventionIndex | undefined;
+    FindIndex(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
+    FindIndex(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyIndex | undefined;
+    FindIndex(name: string): IReadOnlyIndex | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindKey(property: IReadOnlyProperty): IConventionKey | undefined;
+    FindKey(properties: IReadOnlyList<IReadOnlyProperty>): IConventionKey | undefined;
+    FindKey(property: IReadOnlyProperty): IReadOnlyKey | undefined;
+    FindKey(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyKey | undefined;
+    FindMember(name: string): IConventionPropertyBase | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindMembersInHierarchy(name: string): IEnumerable<IConventionPropertyBase>;
+    FindNavigation(memberInfo: MemberInfo): IConventionNavigation | undefined;
+    FindNavigation(name: string): IConventionNavigation | undefined;
+    FindNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
+    FindNavigation(name: string): IReadOnlyNavigation | undefined;
+    FindOwnership(): IConventionForeignKey | undefined;
+    FindOwnership(): IReadOnlyForeignKey | undefined;
+    FindPrimaryKey(): IConventionKey | undefined;
+    FindPrimaryKey(): IReadOnlyKey | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IConventionProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IConventionProperty | undefined;
+    FindProperty(name: string): IConventionProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    FindServiceProperty(name: string): IConventionServiceProperty | undefined;
+    FindServiceProperty(name: string): IReadOnlyServiceProperty | undefined;
+    FindSkipNavigation(memberInfo: MemberInfo): IConventionSkipNavigation | undefined;
+    FindSkipNavigation(name: string): IConventionSkipNavigation | undefined;
+    FindSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
+    FindSkipNavigation(name: string): IReadOnlySkipNavigation | undefined;
+    GetAllBaseTypes(): IEnumerable<IConventionEntityType>;
+    GetAllBaseTypes(): IEnumerable<IReadOnlyEntityType>;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetConfigurationSource(): ConfigurationSource;
+    GetDeclaredQueryFilters(): IReadOnlyCollection<IQueryFilter>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetIsDiscriminatorMappingComplete(): boolean;
+    GetNavigationAccessMode(): PropertyAccessMode;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetQueryFilter(): LambdaExpression | undefined;
+    GetQueryFilterConfigurationSource(): Nullable<ConfigurationSource>;
+    GetQueryFilterConfigurationSource(filterKey: string): Nullable<ConfigurationSource>;
+    GetRootType(): IConventionEntityType;
+    GetRootType(): IConventionTypeBase;
+    GetRootType(): IReadOnlyEntityType;
+    GetRootType(): IReadOnlyTypeBase;
+    GetSeedData(providerValues?: boolean): IEnumerable<IDictionary<System_Internal.String, unknown | undefined>>;
+    IsAssignableFrom(derivedType: IReadOnlyEntityType): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    IsIgnored(memberName: string): boolean;
+    RemoveComplexProperty(property: IConventionComplexProperty): IConventionComplexProperty | undefined;
+    RemoveForeignKey(foreignKey: IReadOnlyForeignKey): IConventionForeignKey | undefined;
+    RemoveForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IConventionKey, principalEntityType: IConventionEntityType): IConventionForeignKey | undefined;
+    RemoveIgnored(memberName: string): string | undefined;
+    RemoveIndex(index: IReadOnlyIndex): IConventionIndex | undefined;
+    RemoveKey(key: IReadOnlyKey): IConventionKey | undefined;
+    RemoveProperty(property: IReadOnlyProperty): IConventionProperty | undefined;
+    RemoveServiceProperty(property: IReadOnlyServiceProperty): IConventionServiceProperty | undefined;
+    RemoveSkipNavigation(navigation: IReadOnlySkipNavigation): IConventionSkipNavigation | undefined;
+    SetBaseType(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
+    SetBaseType(structuralType: IConventionTypeBase, fromDataAnnotation?: boolean): IConventionTypeBase | undefined;
+    SetDiscriminatorMappingComplete(complete: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    SetDiscriminatorProperty(property: IReadOnlyProperty, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    SetDiscriminatorValue(value: unknown, fromDataAnnotation?: boolean): unknown | undefined;
+    SetPrimaryKey(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionKey | undefined;
+    SetPrimaryKey(properties: IReadOnlyList<IConventionProperty>, fromDataAnnotation?: boolean): IConventionKey | undefined;
+    SetQueryFilter(queryFilter: LambdaExpression, fromDataAnnotation?: boolean): LambdaExpression | undefined;
+    SetQueryFilter(filterKey: string, filter: LambdaExpression, fromDataAnnotation?: boolean): IQueryFilter | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    FindComplexProperty2(name: string): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty3(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty2(): IReadOnlyProperty | undefined;
+    FindIgnoredConfigurationSource(memberName: string): Nullable<ConfigurationSource>;
+    FindMember2(name: string): IReadOnlyPropertyBase | undefined;
+    FindProperty2(name: string): IReadOnlyProperty | undefined;
+    FindProperty3(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetDerivedTypes(): IEnumerable<IConventionTypeBase>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDiscriminatorPropertyConfigurationSource(): Nullable<ConfigurationSource>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType2(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    RemoveDiscriminatorValue(): unknown | undefined;
+    SetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): Nullable<ChangeTrackingStrategy>;
 }
 
 
 export type IConventionEntityType = IConventionEntityType$instance;
 
 export interface IConventionEntityTypeMappingFragment$instance extends IReadOnlyEntityTypeMappingFragment, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly entityType: IConventionEntityType;
-    readonly builder: IConventionEntityTypeMappingFragmentBuilder;
-    readonly storeObject: StoreObjectIdentifier;
-    readonly isTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getIsTableExcludedFromMigrationsConfigurationSource(): Nullable<ConfigurationSource>;
-    setIsTableExcludedFromMigrations(excluded: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly EntityType: IConventionEntityType;
+    readonly Builder: IConventionEntityTypeMappingFragmentBuilder;
+    readonly StoreObject: StoreObjectIdentifier;
+    readonly IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetIsTableExcludedFromMigrationsConfigurationSource(): Nullable<ConfigurationSource>;
+    SetIsTableExcludedFromMigrations(excluded: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionEntityTypeMappingFragment = IConventionEntityTypeMappingFragment$instance;
 
 export interface IConventionForeignKey$instance extends IReadOnlyForeignKey, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly builder: IConventionForeignKeyBuilder;
-    readonly properties: IReadOnlyList<IConventionProperty>;
-    readonly principalKey: IConventionKey;
-    readonly declaringEntityType: IConventionEntityType;
-    readonly principalEntityType: IConventionEntityType;
-    readonly dependentToPrincipal: IConventionNavigation | undefined;
-    readonly principalToDependent: IConventionNavigation | undefined;
-    readonly isUnique: boolean;
-    readonly isRequired: boolean;
-    readonly isRequiredDependent: boolean;
-    readonly isOwnership: boolean;
-    readonly deleteBehavior: DeleteBehavior;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getConfigurationSource(): ConfigurationSource;
-    getNavigation(pointsToPrincipal: boolean): IConventionNavigation | undefined;
-    getNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
-    getPropertiesConfigurationSource(): Nullable<ConfigurationSource>;
-    getReferencingSkipNavigations(): IEnumerable<IConventionSkipNavigation>;
-    getReferencingSkipNavigations(): IEnumerable<IReadOnlySkipNavigation>;
-    getRelatedEntityType(entityType: IReadOnlyEntityType): IConventionEntityType;
-    getRelatedEntityType(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
-    isBaseLinking(): boolean;
-    setDependentToPrincipal(property: MemberInfo, fromDataAnnotation?: boolean): IConventionNavigation | undefined;
-    setDependentToPrincipal(name: string, fromDataAnnotation?: boolean): IConventionNavigation | undefined;
-    setIsUnique(unique: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    setProperties(properties: IReadOnlyList<IConventionProperty>, principalKey: IConventionKey, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
+    readonly Builder: IConventionForeignKeyBuilder;
+    readonly Properties: IReadOnlyList<IConventionProperty>;
+    readonly PrincipalKey: IConventionKey;
+    readonly DeclaringEntityType: IConventionEntityType;
+    readonly PrincipalEntityType: IConventionEntityType;
+    readonly DependentToPrincipal: IConventionNavigation | undefined;
+    readonly PrincipalToDependent: IConventionNavigation | undefined;
+    readonly IsUnique: boolean;
+    readonly IsRequired: boolean;
+    readonly IsRequiredDependent: boolean;
+    readonly IsOwnership: boolean;
+    readonly DeleteBehavior: DeleteBehavior;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetConfigurationSource(): ConfigurationSource;
+    GetNavigation(pointsToPrincipal: boolean): IConventionNavigation | undefined;
+    GetNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
+    GetPropertiesConfigurationSource(): Nullable<ConfigurationSource>;
+    GetReferencingSkipNavigations(): IEnumerable<IConventionSkipNavigation>;
+    GetReferencingSkipNavigations(): IEnumerable<IReadOnlySkipNavigation>;
+    GetRelatedEntityType(entityType: IReadOnlyEntityType): IConventionEntityType;
+    GetRelatedEntityType(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
+    IsBaseLinking(): boolean;
+    SetDependentToPrincipal(property: MemberInfo, fromDataAnnotation?: boolean): IConventionNavigation | undefined;
+    SetDependentToPrincipal(name: string, fromDataAnnotation?: boolean): IConventionNavigation | undefined;
+    SetIsUnique(unique: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    SetProperties(properties: IReadOnlyList<IConventionProperty>, principalKey: IConventionKey, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
 }
 
 
 export type IConventionForeignKey = IConventionForeignKey$instance;
 
 export interface IConventionIndex$instance extends IReadOnlyIndex, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly builder: IConventionIndexBuilder;
-    readonly properties: IReadOnlyList<IConventionProperty>;
-    readonly declaringEntityType: IConventionEntityType;
-    readonly name: string;
-    readonly isUnique: boolean;
-    readonly isDescending: IReadOnlyList<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getIsUniqueConfigurationSource(): Nullable<ConfigurationSource>;
-    setIsDescending(descending: IReadOnlyList<System_Internal.Boolean>, fromDataAnnotation?: boolean): IReadOnlyList<System_Internal.Boolean> | undefined;
-    setIsUnique(unique: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly Builder: IConventionIndexBuilder;
+    readonly Properties: IReadOnlyList<IConventionProperty>;
+    readonly DeclaringEntityType: IConventionEntityType;
+    readonly Name: string;
+    readonly IsUnique: boolean;
+    readonly IsDescending: IReadOnlyList<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetIsUniqueConfigurationSource(): Nullable<ConfigurationSource>;
+    SetIsDescending(descending: IReadOnlyList<System_Internal.Boolean>, fromDataAnnotation?: boolean): IReadOnlyList<System_Internal.Boolean> | undefined;
+    SetIsUnique(unique: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionIndex = IConventionIndex$instance;
 
 export interface IConventionKey$instance extends IReadOnlyKey, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly builder: IConventionKeyBuilder;
-    readonly properties: IReadOnlyList<IConventionProperty>;
-    readonly declaringEntityType: IConventionEntityType;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getConfigurationSource(): ConfigurationSource;
-    getReferencingForeignKeys(): IEnumerable<IConventionForeignKey>;
-    getReferencingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
-    isPrimaryKey(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
+    readonly Builder: IConventionKeyBuilder;
+    readonly Properties: IReadOnlyList<IConventionProperty>;
+    readonly DeclaringEntityType: IConventionEntityType;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetConfigurationSource(): ConfigurationSource;
+    GetReferencingForeignKeys(): IEnumerable<IConventionForeignKey>;
+    GetReferencingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
+    IsPrimaryKey(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
 }
 
 
 export type IConventionKey = IConventionKey$instance;
 
 export interface IConventionModel$instance extends IReadOnlyModel, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly builder: IConventionModelBuilder;
-    readonly modelId: Guid;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    addEntityType(name: string, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
-    addEntityType(name: string, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
-    addEntityType(name: string, clrType: Type, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
-    addEntityType(type: Type, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
-    addEntityType(type: Type, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
-    addIgnored(type: Type, fromDataAnnotation?: boolean): string | undefined;
-    addShared(type: Type, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    delayConventions(): IConventionBatch;
-    finalizeModel(): IModel;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    findEntityType(name: string, definingNavigationName: string, definingEntityType: IConventionEntityType): IConventionEntityType | undefined;
-    findEntityType(name: string): IConventionEntityType | undefined;
-    findEntityType(type: Type, definingNavigationName: string, definingEntityType: IConventionEntityType): IConventionEntityType | undefined;
-    findEntityType(type: Type): IConventionEntityType | undefined;
-    findEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findEntityType(name: string): IReadOnlyEntityType | undefined;
-    findEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findEntityType(type: Type): IReadOnlyEntityType | undefined;
-    findEntityTypes(type: Type): IEnumerable<IConventionEntityType>;
-    findEntityTypes(type: Type): IEnumerable<IReadOnlyEntityType>;
-    findIgnoredConfigurationSource(typeName: string): Nullable<ConfigurationSource>;
-    findIsSharedConfigurationSource(type: Type): Nullable<ConfigurationSource>;
-    findLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IConventionEntityType>;
-    findLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IReadOnlyEntityType>;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getEmbeddedDiscriminatorName(): string;
-    getEntityTypes(): IEnumerable<IConventionEntityType>;
-    getEntityTypes(): IEnumerable<IReadOnlyEntityType>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getPropertyAccessModeConfigurationSource(): Nullable<ConfigurationSource>;
-    isIgnored(typeName: string): boolean;
-    isOwned(type: Type): boolean;
-    removeEntityType(entityType: IConventionEntityType): IConventionEntityType | undefined;
-    removeIgnored(typeName: string): string | undefined;
-    removeOwned(type: Type): string | undefined;
-    removeShared(type: Type): Type | undefined;
-    setEmbeddedDiscriminatorName(name: string, fromDataAnnotation?: boolean): string | undefined;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    isShared(type: Type): boolean;
+    readonly Builder: IConventionModelBuilder;
+    readonly ModelId: Guid;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AddEntityType(name: string, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
+    AddEntityType(name: string, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
+    AddEntityType(name: string, clrType: Type, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
+    AddEntityType(type: Type, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
+    AddEntityType(type: Type, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityType | undefined;
+    AddIgnored(type: Type, fromDataAnnotation?: boolean): string | undefined;
+    AddShared(type: Type, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    DelayConventions(): IConventionBatch;
+    FinalizeModel(): IModel;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IConventionEntityType): IConventionEntityType | undefined;
+    FindEntityType(name: string): IConventionEntityType | undefined;
+    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IConventionEntityType): IConventionEntityType | undefined;
+    FindEntityType(type: Type): IConventionEntityType | undefined;
+    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindEntityType(name: string): IReadOnlyEntityType | undefined;
+    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindEntityType(type: Type): IReadOnlyEntityType | undefined;
+    FindEntityTypes(type: Type): IEnumerable<IConventionEntityType>;
+    FindEntityTypes(type: Type): IEnumerable<IReadOnlyEntityType>;
+    FindIgnoredConfigurationSource(typeName: string): Nullable<ConfigurationSource>;
+    FindIsSharedConfigurationSource(type: Type): Nullable<ConfigurationSource>;
+    FindLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IConventionEntityType>;
+    FindLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IReadOnlyEntityType>;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetEmbeddedDiscriminatorName(): string;
+    GetEntityTypes(): IEnumerable<IConventionEntityType>;
+    GetEntityTypes(): IEnumerable<IReadOnlyEntityType>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetPropertyAccessModeConfigurationSource(): Nullable<ConfigurationSource>;
+    IsIgnored(typeName: string): boolean;
+    IsOwned(type: Type): boolean;
+    RemoveEntityType(entityType: IConventionEntityType): IConventionEntityType | undefined;
+    RemoveIgnored(typeName: string): string | undefined;
+    RemoveOwned(type: Type): string | undefined;
+    RemoveShared(type: Type): Type | undefined;
+    SetEmbeddedDiscriminatorName(name: string, fromDataAnnotation?: boolean): string | undefined;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    IsShared(type: Type): boolean;
 }
 
 
 export type IConventionModel = IConventionModel$instance;
 
 export interface IConventionNavigation$instance extends IReadOnlyNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionNavigationBase, IConventionPropertyBase, IConventionAnnotatable {
-    readonly builder: IConventionNavigationBuilder;
-    readonly declaringEntityType: IConventionEntityType;
-    readonly targetEntityType: IConventionEntityType;
-    readonly foreignKey: IConventionForeignKey;
-    readonly inverse: IConventionNavigation;
-    readonly isOnDependent: boolean;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getFieldName(): string | undefined;
-    getInverseConfigurationSource(): Nullable<ConfigurationSource>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setInverse(inverse: MemberInfo, fromDataAnnotation?: boolean): IConventionNavigation | undefined;
-    setInverse(inverseName: string, fromDataAnnotation?: boolean): IConventionNavigation | undefined;
-    setIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
-    getIsEagerLoadedConfigurationSource(): Nullable<ConfigurationSource>;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
+    readonly Builder: IConventionNavigationBuilder;
+    readonly DeclaringEntityType: IConventionEntityType;
+    readonly TargetEntityType: IConventionEntityType;
+    readonly ForeignKey: IConventionForeignKey;
+    readonly Inverse: IConventionNavigation;
+    readonly IsOnDependent: boolean;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetFieldName(): string | undefined;
+    GetInverseConfigurationSource(): Nullable<ConfigurationSource>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetInverse(inverse: MemberInfo, fromDataAnnotation?: boolean): IConventionNavigation | undefined;
+    SetInverse(inverseName: string, fromDataAnnotation?: boolean): IConventionNavigation | undefined;
+    SetIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
+    GetIsEagerLoadedConfigurationSource(): Nullable<ConfigurationSource>;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
 }
 
 
 export type IConventionNavigation = IConventionNavigation$instance;
 
 export interface IConventionNavigationBase$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionPropertyBase, IConventionAnnotatable {
-    readonly targetEntityType: IConventionEntityType;
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly inverse: IReadOnlyNavigationBase;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    readonly builder: IConventionAnnotatableBuilder;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getFieldName(): string | undefined;
-    getIsEagerLoadedConfigurationSource(): Nullable<ConfigurationSource>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
+    readonly TargetEntityType: IConventionEntityType;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly Inverse: IReadOnlyNavigationBase;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    readonly Builder: IConventionAnnotatableBuilder;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetFieldName(): string | undefined;
+    GetIsEagerLoadedConfigurationSource(): Nullable<ConfigurationSource>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
 }
 
 
 export type IConventionNavigationBase = IConventionNavigationBase$instance;
 
 export interface IConventionProperty$instance extends IReadOnlyProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionPropertyBase, IConventionAnnotatable {
-    readonly builder: IConventionPropertyBuilder;
-    readonly declaringEntityType: IConventionEntityType;
-    readonly isNullable: boolean;
-    readonly valueGenerated: ValueGenerated;
-    readonly isConcurrencyToken: boolean;
-    readonly isPrimitiveCollection: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    findContainingPrimaryKey(): IConventionKey | undefined;
-    findContainingPrimaryKey(): IReadOnlyKey | undefined;
-    findFirstPrincipal(): IConventionProperty | undefined;
-    findFirstPrincipal(): IReadOnlyProperty | undefined;
-    getBeforeSaveBehavior(): PropertySaveBehavior;
-    getConfigurationSource(): ConfigurationSource;
-    getContainingForeignKeys(): IEnumerable<IConventionForeignKey>;
-    getContainingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
-    getElementType(): IConventionElementType | undefined;
-    getElementType(): IReadOnlyElementType | undefined;
-    getFieldName(): string | undefined;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getPrincipals(): IReadOnlyList<IConventionProperty>;
-    getPrincipals(): IReadOnlyList<IReadOnlyProperty>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getProviderClrType(): Type | undefined;
-    getTypeConfigurationSource(): Nullable<ConfigurationSource>;
-    getTypeMapping(): CoreTypeMapping;
-    getValueComparer(): ValueComparer;
-    getValueConverter(): ValueConverter | undefined;
-    getValueGeneratorFactory(): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
-    isImplicitlyCreated(): boolean;
-    setElementType(elementType: Type, fromDataAnnotation?: boolean): IConventionElementType | undefined;
-    setField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setIsNullable(nullable: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    setSentinel(sentinel: unknown, fromDataAnnotation?: boolean): unknown | undefined;
-    setTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): CoreTypeMapping | undefined;
-    setValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): ValueComparer | undefined;
-    setValueConverter(converter: ValueConverter, fromDataAnnotation?: boolean): ValueConverter | undefined;
-    setValueGeneratorFactory(valueGeneratorFactory: Func<IProperty, ITypeBase, ValueGenerator>, fromDataAnnotation?: boolean): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
-    setValueGeneratorFactory(valueGeneratorFactory: Type, fromDataAnnotation?: boolean): Type | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
-    getMaxLength(): Nullable<System_Internal.Int32>;
-    isForeignKey(): boolean;
-    isShadowProperty(): boolean;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
+    readonly Builder: IConventionPropertyBuilder;
+    readonly DeclaringEntityType: IConventionEntityType;
+    readonly IsNullable: boolean;
+    readonly ValueGenerated: ValueGenerated;
+    readonly IsConcurrencyToken: boolean;
+    readonly IsPrimitiveCollection: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    FindContainingPrimaryKey(): IConventionKey | undefined;
+    FindContainingPrimaryKey(): IReadOnlyKey | undefined;
+    FindFirstPrincipal(): IConventionProperty | undefined;
+    FindFirstPrincipal(): IReadOnlyProperty | undefined;
+    GetBeforeSaveBehavior(): PropertySaveBehavior;
+    GetConfigurationSource(): ConfigurationSource;
+    GetContainingForeignKeys(): IEnumerable<IConventionForeignKey>;
+    GetContainingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
+    GetElementType(): IConventionElementType | undefined;
+    GetElementType(): IReadOnlyElementType | undefined;
+    GetFieldName(): string | undefined;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetPrincipals(): IReadOnlyList<IConventionProperty>;
+    GetPrincipals(): IReadOnlyList<IReadOnlyProperty>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetProviderClrType(): Type | undefined;
+    GetTypeConfigurationSource(): Nullable<ConfigurationSource>;
+    GetTypeMapping(): CoreTypeMapping;
+    GetValueComparer(): ValueComparer;
+    GetValueConverter(): ValueConverter | undefined;
+    GetValueGeneratorFactory(): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
+    IsImplicitlyCreated(): boolean;
+    SetElementType(elementType: Type, fromDataAnnotation?: boolean): IConventionElementType | undefined;
+    SetField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetIsNullable(nullable: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    SetSentinel(sentinel: unknown, fromDataAnnotation?: boolean): unknown | undefined;
+    SetTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): CoreTypeMapping | undefined;
+    SetValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): ValueComparer | undefined;
+    SetValueConverter(converter: ValueConverter, fromDataAnnotation?: boolean): ValueConverter | undefined;
+    SetValueGeneratorFactory(valueGeneratorFactory: Func<IProperty, ITypeBase, ValueGenerator>, fromDataAnnotation?: boolean): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
+    SetValueGeneratorFactory(valueGeneratorFactory: Type, fromDataAnnotation?: boolean): Type | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
+    IsForeignKey(): boolean;
+    IsShadowProperty(): boolean;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
 }
 
 
 export type IConventionProperty = IConventionProperty$instance;
 
 export interface IConventionPropertyBase$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly declaringType: IConventionTypeBase;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    readonly builder: IConventionAnnotatableBuilder;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly DeclaringType: IConventionTypeBase;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    readonly Builder: IConventionAnnotatableBuilder;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionPropertyBase = IConventionPropertyBase$instance;
 
 export interface IConventionRelationalPropertyOverrides$instance extends IReadOnlyRelationalPropertyOverrides, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly property: IConventionProperty;
-    readonly builder: IConventionRelationalPropertyOverridesBuilder;
-    readonly storeObject: StoreObjectIdentifier;
-    readonly columnName: string;
-    readonly isColumnNameOverridden: boolean;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getColumnNameConfigurationSource(): Nullable<ConfigurationSource>;
-    getConfigurationSource(): ConfigurationSource;
-    removeColumnNameOverride(fromDataAnnotation?: boolean): boolean;
-    setColumnName(name: string, fromDataAnnotation?: boolean): string | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly Property: IConventionProperty;
+    readonly Builder: IConventionRelationalPropertyOverridesBuilder;
+    readonly StoreObject: StoreObjectIdentifier;
+    readonly ColumnName: string;
+    readonly IsColumnNameOverridden: boolean;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetColumnNameConfigurationSource(): Nullable<ConfigurationSource>;
+    GetConfigurationSource(): ConfigurationSource;
+    RemoveColumnNameOverride(fromDataAnnotation?: boolean): boolean;
+    SetColumnName(name: string, fromDataAnnotation?: boolean): string | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionRelationalPropertyOverrides = IConventionRelationalPropertyOverrides$instance;
 
 export interface IConventionSequence$instance extends IReadOnlySequence, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly model: IConventionModel;
-    readonly builder: IConventionSequenceBuilder;
-    readonly name: string;
-    readonly modelSchema: string | undefined;
-    readonly schema: string;
-    readonly startValue: long;
-    readonly incrementBy: int;
-    readonly minValue: Nullable<System_Internal.Int64>;
-    readonly maxValue: Nullable<System_Internal.Int64>;
-    readonly type: Type;
-    readonly isCyclic: boolean;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getStartValueConfigurationSource(): Nullable<ConfigurationSource>;
-    setStartValue(startValue: Nullable<System_Internal.Int64>, fromDataAnnotation?: boolean): Nullable<System_Internal.Int64>;
-    setType(type: Type, fromDataAnnotation?: boolean): Type | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly Model: IConventionModel;
+    readonly Builder: IConventionSequenceBuilder;
+    readonly Name: string;
+    readonly ModelSchema: string | undefined;
+    readonly Schema: string;
+    readonly StartValue: long;
+    readonly IncrementBy: int;
+    readonly MinValue: Nullable<System_Internal.Int64>;
+    readonly MaxValue: Nullable<System_Internal.Int64>;
+    readonly Type: Type;
+    readonly IsCyclic: boolean;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetStartValueConfigurationSource(): Nullable<ConfigurationSource>;
+    SetStartValue(startValue: Nullable<System_Internal.Int64>, fromDataAnnotation?: boolean): Nullable<System_Internal.Int64>;
+    SetType(type: Type, fromDataAnnotation?: boolean): Type | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionSequence = IConventionSequence$instance;
 
 export interface IConventionServiceProperty$instance extends IReadOnlyServiceProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionPropertyBase, IConventionAnnotatable {
-    readonly builder: IConventionServicePropertyBuilder;
-    readonly declaringEntityType: IConventionEntityType;
-    readonly parameterBinding: ServiceParameterBinding;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getFieldName(): string | undefined;
-    getParameterBindingConfigurationSource(): Nullable<ConfigurationSource>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setParameterBinding(parameterBinding: ServiceParameterBinding, fromDataAnnotation?: boolean): ServiceParameterBinding | undefined;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
+    readonly Builder: IConventionServicePropertyBuilder;
+    readonly DeclaringEntityType: IConventionEntityType;
+    readonly ParameterBinding: ServiceParameterBinding;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetFieldName(): string | undefined;
+    GetParameterBindingConfigurationSource(): Nullable<ConfigurationSource>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetParameterBinding(parameterBinding: ServiceParameterBinding, fromDataAnnotation?: boolean): ServiceParameterBinding | undefined;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
 }
 
 
 export type IConventionServiceProperty = IConventionServiceProperty$instance;
 
 export interface IConventionSkipNavigation$instance extends IReadOnlySkipNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionNavigationBase, IConventionPropertyBase, IConventionAnnotatable {
-    readonly builder: IConventionSkipNavigationBuilder;
-    readonly declaringEntityType: IConventionEntityType;
-    readonly targetEntityType: IConventionEntityType;
-    readonly joinEntityType: IConventionEntityType;
-    readonly foreignKey: IConventionForeignKey;
-    readonly inverse: IConventionSkipNavigation;
-    readonly isOnDependent: boolean;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getFieldName(): string | undefined;
-    getForeignKeyConfigurationSource(): Nullable<ConfigurationSource>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
-    setForeignKey(foreignKey: IConventionForeignKey, fromDataAnnotation?: boolean): IConventionForeignKey | undefined;
-    setInverse(inverse: IConventionSkipNavigation, fromDataAnnotation?: boolean): IConventionSkipNavigation | undefined;
-    setIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
-    getIsEagerLoadedConfigurationSource(): Nullable<ConfigurationSource>;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
+    readonly Builder: IConventionSkipNavigationBuilder;
+    readonly DeclaringEntityType: IConventionEntityType;
+    readonly TargetEntityType: IConventionEntityType;
+    readonly JoinEntityType: IConventionEntityType;
+    readonly ForeignKey: IConventionForeignKey;
+    readonly Inverse: IConventionSkipNavigation;
+    readonly IsOnDependent: boolean;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetFieldName(): string | undefined;
+    GetForeignKeyConfigurationSource(): Nullable<ConfigurationSource>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetField(fieldName: string, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetFieldInfo(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): FieldInfo | undefined;
+    SetForeignKey(foreignKey: IConventionForeignKey, fromDataAnnotation?: boolean): IConventionForeignKey | undefined;
+    SetInverse(inverse: IConventionSkipNavigation, fromDataAnnotation?: boolean): IConventionSkipNavigation | undefined;
+    SetIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable<System_Internal.Boolean>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetFieldInfoConfigurationSource(): Nullable<ConfigurationSource>;
+    GetIsEagerLoadedConfigurationSource(): Nullable<ConfigurationSource>;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): Nullable<PropertyAccessMode>;
 }
 
 
 export type IConventionSkipNavigation = IConventionSkipNavigation$instance;
 
 export interface IConventionStoredProcedure$instance extends IReadOnlyStoredProcedure, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly entityType: IConventionEntityType;
-    readonly builder: IConventionStoredProcedureBuilder;
-    readonly parameters: IReadOnlyList<IConventionStoredProcedureParameter>;
-    readonly resultColumns: IReadOnlyList<IConventionStoredProcedureResultColumn>;
-    readonly name: string;
-    readonly schema: string;
-    readonly isRowsAffectedReturned: boolean;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    addParameter(propertyName: string, fromDataAnnotation?: boolean): IConventionStoredProcedureParameter | undefined;
-    addResultColumn(propertyName: string, fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumn | undefined;
-    addRowsAffectedParameter(fromDataAnnotation?: boolean): IConventionStoredProcedureParameter | undefined;
-    addRowsAffectedResultColumn(fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumn | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    findParameter(propertyName: string): IConventionStoredProcedureParameter | undefined;
-    findParameter(propertyName: string): IReadOnlyStoredProcedureParameter | undefined;
-    findResultColumn(propertyName: string): IConventionStoredProcedureResultColumn | undefined;
-    findResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | undefined;
-    findRowsAffectedParameter(): IConventionStoredProcedureParameter | undefined;
-    findRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | undefined;
-    findRowsAffectedResultColumn(): IConventionStoredProcedureResultColumn | undefined;
-    findRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    getNameConfigurationSource(): Nullable<ConfigurationSource>;
-    getSchemaQualifiedName(): string | undefined;
-    setIsRowsAffectedReturned(rowsAffectedReturned: boolean, fromDataAnnotation?: boolean): boolean;
-    setName(name: string, fromDataAnnotation?: boolean): string;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getStoreIdentifier(): Nullable<StoreObjectIdentifier>;
+    readonly EntityType: IConventionEntityType;
+    readonly Builder: IConventionStoredProcedureBuilder;
+    readonly Parameters: IReadOnlyList<IConventionStoredProcedureParameter>;
+    readonly ResultColumns: IReadOnlyList<IConventionStoredProcedureResultColumn>;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly IsRowsAffectedReturned: boolean;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AddParameter(propertyName: string, fromDataAnnotation?: boolean): IConventionStoredProcedureParameter | undefined;
+    AddResultColumn(propertyName: string, fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumn | undefined;
+    AddRowsAffectedParameter(fromDataAnnotation?: boolean): IConventionStoredProcedureParameter | undefined;
+    AddRowsAffectedResultColumn(fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumn | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    FindParameter(propertyName: string): IConventionStoredProcedureParameter | undefined;
+    FindParameter(propertyName: string): IReadOnlyStoredProcedureParameter | undefined;
+    FindResultColumn(propertyName: string): IConventionStoredProcedureResultColumn | undefined;
+    FindResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | undefined;
+    FindRowsAffectedParameter(): IConventionStoredProcedureParameter | undefined;
+    FindRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | undefined;
+    FindRowsAffectedResultColumn(): IConventionStoredProcedureResultColumn | undefined;
+    FindRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    GetNameConfigurationSource(): Nullable<ConfigurationSource>;
+    GetSchemaQualifiedName(): string | undefined;
+    SetIsRowsAffectedReturned(rowsAffectedReturned: boolean, fromDataAnnotation?: boolean): boolean;
+    SetName(name: string, fromDataAnnotation?: boolean): string;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetStoreIdentifier(): Nullable<StoreObjectIdentifier>;
 }
 
 
 export type IConventionStoredProcedure = IConventionStoredProcedure$instance;
 
 export interface IConventionStoredProcedureParameter$instance extends IReadOnlyStoredProcedureParameter, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly storedProcedure: IConventionStoredProcedure;
-    readonly builder: IConventionStoredProcedureParameterBuilder;
-    readonly name: string;
-    readonly propertyName: string;
-    readonly direction: ParameterDirection;
-    readonly forOriginalValue: Nullable<System_Internal.Boolean>;
-    readonly forRowsAffected: boolean;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getNameConfigurationSource(): Nullable<ConfigurationSource>;
-    setDirection(direction: ParameterDirection, fromDataAnnotation?: boolean): ParameterDirection;
-    setName(name: string, fromDataAnnotation?: boolean): string;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly StoredProcedure: IConventionStoredProcedure;
+    readonly Builder: IConventionStoredProcedureParameterBuilder;
+    readonly Name: string;
+    readonly PropertyName: string;
+    readonly Direction: ParameterDirection;
+    readonly ForOriginalValue: Nullable<System_Internal.Boolean>;
+    readonly ForRowsAffected: boolean;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetNameConfigurationSource(): Nullable<ConfigurationSource>;
+    SetDirection(direction: ParameterDirection, fromDataAnnotation?: boolean): ParameterDirection;
+    SetName(name: string, fromDataAnnotation?: boolean): string;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionStoredProcedureParameter = IConventionStoredProcedureParameter$instance;
 
 export interface IConventionStoredProcedureResultColumn$instance extends IReadOnlyStoredProcedureResultColumn, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly storedProcedure: IConventionStoredProcedure;
-    readonly builder: IConventionStoredProcedureResultColumnBuilder;
-    readonly name: string;
-    readonly propertyName: string;
-    readonly forRowsAffected: boolean;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getNameConfigurationSource(): Nullable<ConfigurationSource>;
-    setName(name: string, fromDataAnnotation?: boolean): string;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly StoredProcedure: IConventionStoredProcedure;
+    readonly Builder: IConventionStoredProcedureResultColumnBuilder;
+    readonly Name: string;
+    readonly PropertyName: string;
+    readonly ForRowsAffected: boolean;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetNameConfigurationSource(): Nullable<ConfigurationSource>;
+    SetName(name: string, fromDataAnnotation?: boolean): string;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionStoredProcedureResultColumn = IConventionStoredProcedureResultColumn$instance;
 
 export interface IConventionTrigger$instance extends IReadOnlyTrigger, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly builder: IConventionTriggerBuilder;
-    readonly entityType: IConventionEntityType;
-    readonly modelName: string;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getConfigurationSource(): ConfigurationSource;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
+    readonly Builder: IConventionTriggerBuilder;
+    readonly EntityType: IConventionEntityType;
+    readonly ModelName: string;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetConfigurationSource(): ConfigurationSource;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
 }
 
 
 export type IConventionTrigger = IConventionTrigger$instance;
 
 export interface IConventionTypeBase$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable, IConventionAnnotatable {
-    readonly model: IConventionModel;
-    readonly builder: IConventionTypeBaseBuilder;
-    readonly containingEntityType: IConventionEntityType;
-    readonly baseType: IConventionTypeBase | undefined;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    readonly isInModel: boolean;
-    addAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
-    addAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
-    addComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addComplexProperty(name: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
-    addIgnored(memberName: string, fromDataAnnotation?: boolean): string | undefined;
-    addProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addProperty(name: string, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addProperty(name: string, propertyType: Type, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    addProperty(name: string, propertyType: Type, memberInfo: MemberInfo, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): IConventionAnnotation | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IConventionComplexProperty | undefined;
-    findComplexProperty(name: string): IConventionComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty(): IConventionProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findIgnoredConfigurationSource(memberName: string): Nullable<ConfigurationSource>;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): IConventionPropertyBase | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IConventionPropertyBase>;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IConventionProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IConventionProperty | undefined;
-    findProperty(name: string): IConventionProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDerivedTypes(): IEnumerable<IConventionTypeBase>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDiscriminatorPropertyConfigurationSource(): Nullable<ConfigurationSource>;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IConventionTypeBase;
-    getRootType(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    isIgnored(memberName: string): boolean;
-    removeComplexProperty(property: IConventionComplexProperty): IConventionComplexProperty | undefined;
-    removeDiscriminatorValue(): unknown | undefined;
-    removeIgnored(memberName: string): string | undefined;
-    removeProperty(property: IReadOnlyProperty): IConventionProperty | undefined;
-    setBaseType(structuralType: IConventionTypeBase, fromDataAnnotation?: boolean): IConventionTypeBase | undefined;
-    setChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): Nullable<ChangeTrackingStrategy>;
-    setDiscriminatorProperty(property: IReadOnlyProperty, fromDataAnnotation?: boolean): IConventionProperty | undefined;
-    setDiscriminatorValue(value: unknown, fromDataAnnotation?: boolean): unknown | undefined;
-    findAnnotation2(name: string): IConventionAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getAnnotations(): IEnumerable<IConventionAnnotation>;
-    getDiscriminatorValue(): unknown | undefined;
+    readonly Model: IConventionModel;
+    readonly Builder: IConventionTypeBaseBuilder;
+    readonly ContainingEntityType: IConventionEntityType;
+    readonly BaseType: IConventionTypeBase | undefined;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    readonly IsInModel: boolean;
+    AddAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotation;
+    AddAnnotations(annotations: IEnumerable<IConventionAnnotation>, fromDataAnnotation?: boolean): void;
+    AddComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddComplexProperty(name: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean, fromDataAnnotation?: boolean): IConventionComplexProperty | undefined;
+    AddIgnored(memberName: string, fromDataAnnotation?: boolean): string | undefined;
+    AddProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddProperty(name: string, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddProperty(name: string, propertyType: Type, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AddProperty(name: string, propertyType: Type, memberInfo: MemberInfo, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): IConventionAnnotation | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IConventionComplexProperty | undefined;
+    FindComplexProperty(name: string): IConventionComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty(): IConventionProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindIgnoredConfigurationSource(memberName: string): Nullable<ConfigurationSource>;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): IConventionPropertyBase | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IConventionPropertyBase>;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IConventionProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IConventionProperty | undefined;
+    FindProperty(name: string): IConventionProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDerivedTypes(): IEnumerable<IConventionTypeBase>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDiscriminatorPropertyConfigurationSource(): Nullable<ConfigurationSource>;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IConventionTypeBase;
+    GetRootType(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    IsIgnored(memberName: string): boolean;
+    RemoveComplexProperty(property: IConventionComplexProperty): IConventionComplexProperty | undefined;
+    RemoveDiscriminatorValue(): unknown | undefined;
+    RemoveIgnored(memberName: string): string | undefined;
+    RemoveProperty(property: IReadOnlyProperty): IConventionProperty | undefined;
+    SetBaseType(structuralType: IConventionTypeBase, fromDataAnnotation?: boolean): IConventionTypeBase | undefined;
+    SetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): Nullable<ChangeTrackingStrategy>;
+    SetDiscriminatorProperty(property: IReadOnlyProperty, fromDataAnnotation?: boolean): IConventionProperty | undefined;
+    SetDiscriminatorValue(value: unknown, fromDataAnnotation?: boolean): unknown | undefined;
+    FindAnnotation2(name: string): IConventionAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable<IConventionAnnotation>;
+    GetDiscriminatorValue(): unknown | undefined;
 }
 
 
 export type IConventionTypeBase = IConventionTypeBase$instance;
 
 export interface IDbFunction$instance extends IReadOnlyDbFunction, IReadOnlyAnnotatable, IAnnotatable {
-    readonly model: IModel;
-    readonly parameters: IReadOnlyList<IDbFunctionParameter>;
-    readonly storeFunction: IStoreFunction;
-    readonly name: string;
-    readonly schema: string;
-    readonly modelName: string;
-    readonly methodInfo: MethodInfo | undefined;
-    readonly isBuiltIn: boolean;
-    readonly isScalar: boolean;
-    readonly isAggregate: boolean;
-    readonly isNullable: boolean;
-    readonly storeType: string;
-    readonly returnType: Type;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly translation: Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly Model: IModel;
+    readonly Parameters: IReadOnlyList<IDbFunctionParameter>;
+    readonly StoreFunction: IStoreFunction;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly ModelName: string;
+    readonly MethodInfo: MethodInfo | undefined;
+    readonly IsBuiltIn: boolean;
+    readonly IsScalar: boolean;
+    readonly IsAggregate: boolean;
+    readonly IsNullable: boolean;
+    readonly StoreType: string;
+    readonly ReturnType: Type;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly Translation: Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IDbFunction = IDbFunction$instance;
 
 export interface IDbFunctionParameter$instance extends IReadOnlyDbFunctionParameter, IReadOnlyAnnotatable, IAnnotatable {
-    readonly storeType: string;
-    readonly function: IDbFunction;
-    readonly storeFunctionParameter: IStoreFunctionParameter;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly propagatesNullability: boolean;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoreType: string;
+    readonly Function: IDbFunction;
+    readonly StoreFunctionParameter: IStoreFunctionParameter;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly PropagatesNullability: boolean;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IDbFunctionParameter = IDbFunctionParameter$instance;
 
 export interface IDesignTimeModel$instance {
-    readonly model: IModel;
+    readonly Model: IModel;
 }
 
 
 export type IDesignTimeModel = IDesignTimeModel$instance;
 
 export interface IElementType$instance extends IReadOnlyElementType, IReadOnlyAnnotatable, IAnnotatable {
-    readonly collectionProperty: IProperty;
-    readonly clrType: Type;
-    readonly isNullable: boolean;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getMaxLength(): Nullable<System_Internal.Int32>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getProviderClrType(): Type | undefined;
-    getTypeMapping(): CoreTypeMapping;
-    getValueComparer(): ValueComparer;
-    getValueConverter(): ValueConverter | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly CollectionProperty: IProperty;
+    readonly ClrType: Type;
+    readonly IsNullable: boolean;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetProviderClrType(): Type | undefined;
+    GetTypeMapping(): CoreTypeMapping;
+    GetValueComparer(): ValueComparer;
+    GetValueConverter(): ValueConverter | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IElementType = IElementType$instance;
 
 export interface IEntityType$instance extends IReadOnlyEntityType, IReadOnlyTypeBase, IReadOnlyAnnotatable, ITypeBase, IAnnotatable {
-    readonly baseType: IEntityType | undefined;
-    readonly serviceOnlyConstructorBinding: InstantiationBinding | undefined;
-    readonly model: IReadOnlyModel;
-    readonly containingEntityType: IReadOnlyEntityType;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    readonly constructorBinding: InstantiationBinding | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findClosestCommonParent(otherEntityType: IEntityType): IEntityType | undefined;
-    findClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
-    findComplexProperty(name: string): IComplexProperty | undefined;
-    findDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
-    findDeclaredTrigger(name: string): ITrigger | undefined;
-    findDeclaredTrigger(name: string): IReadOnlyTrigger | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findDiscriminatorProperty(): IProperty | undefined;
-    findForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IForeignKey | undefined;
-    findForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IForeignKey | undefined;
-    findForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    findForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    findForeignKeys(property: IReadOnlyProperty): IEnumerable<IForeignKey>;
-    findForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IForeignKey>;
-    findForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IReadOnlyForeignKey>;
-    findForeignKeys(property: IReadOnlyProperty): IEnumerable<IReadOnlyForeignKey>;
-    findIndex(property: IReadOnlyProperty): IIndex | undefined;
-    findIndex(properties: IReadOnlyList<IReadOnlyProperty>): IIndex | undefined;
-    findIndex(name: string): IIndex | undefined;
-    findIndex(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
-    findIndex(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyIndex | undefined;
-    findIndex(name: string): IReadOnlyIndex | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findKey(property: IReadOnlyProperty): IKey | undefined;
-    findKey(properties: IReadOnlyList<IReadOnlyProperty>): IKey | undefined;
-    findKey(property: IReadOnlyProperty): IReadOnlyKey | undefined;
-    findKey(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyKey | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMember(name: string): IPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findMembersInHierarchy(name: string): IEnumerable<IPropertyBase>;
-    findNavigation(memberInfo: MemberInfo): INavigation | undefined;
-    findNavigation(name: string): INavigation | undefined;
-    findNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
-    findNavigation(name: string): IReadOnlyNavigation | undefined;
-    findOwnership(): IForeignKey | undefined;
-    findOwnership(): IReadOnlyForeignKey | undefined;
-    findPrimaryKey(): IKey | undefined;
-    findPrimaryKey(): IReadOnlyKey | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IProperty | undefined;
-    findProperty(name: string): IProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    findServiceProperty(name: string): IServiceProperty | undefined;
-    findServiceProperty(name: string): IReadOnlyServiceProperty | undefined;
-    findSkipNavigation(memberInfo: MemberInfo): ISkipNavigation | undefined;
-    findSkipNavigation(name: string): ISkipNavigation | undefined;
-    findSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
-    findSkipNavigation(name: string): IReadOnlySkipNavigation | undefined;
-    getAllBaseTypes(): IEnumerable<IEntityType>;
-    getAllBaseTypes(): IEnumerable<IReadOnlyEntityType>;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDeclaredQueryFilters(): IReadOnlyCollection<IQueryFilter>;
-    getDiscriminatorValue(): unknown | undefined;
-    getIsDiscriminatorMappingComplete(): boolean;
-    getNavigationAccessMode(): PropertyAccessMode;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getQueryFilter(): LambdaExpression | undefined;
-    getRootType(): IEntityType;
-    getRootType(): IReadOnlyEntityType;
-    getRootType(): IReadOnlyTypeBase;
-    getSeedData(providerValues?: boolean): IEnumerable<IDictionary<System_Internal.String, unknown | undefined>>;
-    isAssignableFrom(derivedType: IReadOnlyEntityType): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findComplexProperty2(name: string): IComplexProperty | undefined;
-    findComplexProperty3(memberInfo: MemberInfo): IComplexProperty | undefined;
-    findDiscriminatorProperty2(): IProperty | undefined;
-    findMember2(name: string): IPropertyBase | undefined;
-    findProperty2(name: string): IProperty | undefined;
-    findProperty3(memberInfo: MemberInfo): IProperty | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDerivedTypes(): IEnumerable<ITypeBase>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType2(): IReadOnlyTypeBase;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    isAbstract(): boolean;
+    readonly BaseType: IEntityType | undefined;
+    readonly ServiceOnlyConstructorBinding: InstantiationBinding | undefined;
+    readonly Model: IReadOnlyModel;
+    readonly ContainingEntityType: IReadOnlyEntityType;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    readonly ConstructorBinding: InstantiationBinding | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindClosestCommonParent(otherEntityType: IEntityType): IEntityType | undefined;
+    FindClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
+    FindComplexProperty(name: string): IComplexProperty | undefined;
+    FindDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
+    FindDeclaredTrigger(name: string): ITrigger | undefined;
+    FindDeclaredTrigger(name: string): IReadOnlyTrigger | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindDiscriminatorProperty(): IProperty | undefined;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IForeignKey | undefined;
+    FindForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IForeignKey | undefined;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
+    FindForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
+    FindForeignKeys(property: IReadOnlyProperty): IEnumerable<IForeignKey>;
+    FindForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IForeignKey>;
+    FindForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IReadOnlyForeignKey>;
+    FindForeignKeys(property: IReadOnlyProperty): IEnumerable<IReadOnlyForeignKey>;
+    FindIndex(property: IReadOnlyProperty): IIndex | undefined;
+    FindIndex(properties: IReadOnlyList<IReadOnlyProperty>): IIndex | undefined;
+    FindIndex(name: string): IIndex | undefined;
+    FindIndex(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
+    FindIndex(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyIndex | undefined;
+    FindIndex(name: string): IReadOnlyIndex | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindKey(property: IReadOnlyProperty): IKey | undefined;
+    FindKey(properties: IReadOnlyList<IReadOnlyProperty>): IKey | undefined;
+    FindKey(property: IReadOnlyProperty): IReadOnlyKey | undefined;
+    FindKey(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyKey | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMember(name: string): IPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindMembersInHierarchy(name: string): IEnumerable<IPropertyBase>;
+    FindNavigation(memberInfo: MemberInfo): INavigation | undefined;
+    FindNavigation(name: string): INavigation | undefined;
+    FindNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
+    FindNavigation(name: string): IReadOnlyNavigation | undefined;
+    FindOwnership(): IForeignKey | undefined;
+    FindOwnership(): IReadOnlyForeignKey | undefined;
+    FindPrimaryKey(): IKey | undefined;
+    FindPrimaryKey(): IReadOnlyKey | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IProperty | undefined;
+    FindProperty(name: string): IProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindServiceProperty(name: string): IServiceProperty | undefined;
+    FindServiceProperty(name: string): IReadOnlyServiceProperty | undefined;
+    FindSkipNavigation(memberInfo: MemberInfo): ISkipNavigation | undefined;
+    FindSkipNavigation(name: string): ISkipNavigation | undefined;
+    FindSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
+    FindSkipNavigation(name: string): IReadOnlySkipNavigation | undefined;
+    GetAllBaseTypes(): IEnumerable<IEntityType>;
+    GetAllBaseTypes(): IEnumerable<IReadOnlyEntityType>;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDeclaredQueryFilters(): IReadOnlyCollection<IQueryFilter>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetIsDiscriminatorMappingComplete(): boolean;
+    GetNavigationAccessMode(): PropertyAccessMode;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetQueryFilter(): LambdaExpression | undefined;
+    GetRootType(): IEntityType;
+    GetRootType(): IReadOnlyEntityType;
+    GetRootType(): IReadOnlyTypeBase;
+    GetSeedData(providerValues?: boolean): IEnumerable<IDictionary<System_Internal.String, unknown | undefined>>;
+    IsAssignableFrom(derivedType: IReadOnlyEntityType): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindComplexProperty2(name: string): IComplexProperty | undefined;
+    FindComplexProperty3(memberInfo: MemberInfo): IComplexProperty | undefined;
+    FindDiscriminatorProperty2(): IProperty | undefined;
+    FindMember2(name: string): IPropertyBase | undefined;
+    FindProperty2(name: string): IProperty | undefined;
+    FindProperty3(memberInfo: MemberInfo): IProperty | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDerivedTypes(): IEnumerable<ITypeBase>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType2(): IReadOnlyTypeBase;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    IsAbstract(): boolean;
 }
 
 
 export type IEntityType = IEntityType$instance;
 
 export interface IEntityTypeMappingFragment$instance extends IReadOnlyEntityTypeMappingFragment, IReadOnlyAnnotatable, IAnnotatable {
-    readonly entityType: IEntityType;
-    readonly storeObject: StoreObjectIdentifier;
-    readonly isTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly EntityType: IEntityType;
+    readonly StoreObject: StoreObjectIdentifier;
+    readonly IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IEntityTypeMappingFragment = IEntityTypeMappingFragment$instance;
 
 export interface IForeignKey$instance extends IReadOnlyForeignKey, IReadOnlyAnnotatable, IAnnotatable {
-    readonly properties: IReadOnlyList<IProperty>;
-    readonly principalKey: IKey;
-    readonly declaringEntityType: IEntityType;
-    readonly principalEntityType: IEntityType;
-    readonly dependentToPrincipal: INavigation | undefined;
-    readonly principalToDependent: INavigation | undefined;
-    readonly isUnique: boolean;
-    readonly isRequired: boolean;
-    readonly isRequiredDependent: boolean;
-    readonly isOwnership: boolean;
-    readonly deleteBehavior: DeleteBehavior;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getDependentKeyValueFactory<TKey>(): IDependentKeyValueFactory_1<TKey>;
-    getDependentKeyValueFactory(): IDependentKeyValueFactory;
-    getNavigation(pointsToPrincipal: boolean): INavigation | undefined;
-    getNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getReferencingSkipNavigations(): IEnumerable<ISkipNavigation>;
-    getReferencingSkipNavigations(): IEnumerable<IReadOnlySkipNavigation>;
-    getRelatedEntityType(entityType: IReadOnlyEntityType): IEntityType;
-    getRelatedEntityType(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
-    isBaseLinking(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly Properties: IReadOnlyList<IProperty>;
+    readonly PrincipalKey: IKey;
+    readonly DeclaringEntityType: IEntityType;
+    readonly PrincipalEntityType: IEntityType;
+    readonly DependentToPrincipal: INavigation | undefined;
+    readonly PrincipalToDependent: INavigation | undefined;
+    readonly IsUnique: boolean;
+    readonly IsRequired: boolean;
+    readonly IsRequiredDependent: boolean;
+    readonly IsOwnership: boolean;
+    readonly DeleteBehavior: DeleteBehavior;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetDependentKeyValueFactory<TKey>(): IDependentKeyValueFactory_1<TKey>;
+    GetDependentKeyValueFactory(): IDependentKeyValueFactory;
+    GetNavigation(pointsToPrincipal: boolean): INavigation | undefined;
+    GetNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetReferencingSkipNavigations(): IEnumerable<ISkipNavigation>;
+    GetReferencingSkipNavigations(): IEnumerable<IReadOnlySkipNavigation>;
+    GetRelatedEntityType(entityType: IReadOnlyEntityType): IEntityType;
+    GetRelatedEntityType(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
+    IsBaseLinking(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IForeignKey = IForeignKey$instance;
 
 export interface IForeignKeyConstraint$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly mappedForeignKeys: IEnumerable<IForeignKey>;
-    readonly table: ITable;
-    readonly principalTable: ITable;
-    readonly columns: IReadOnlyList<IColumn>;
-    readonly principalColumns: IReadOnlyList<IColumn>;
-    readonly principalUniqueConstraint: IUniqueConstraint;
-    readonly onDeleteAction: ReferentialAction;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Name: string;
+    readonly MappedForeignKeys: IEnumerable<IForeignKey>;
+    readonly Table: ITable;
+    readonly PrincipalTable: ITable;
+    readonly Columns: IReadOnlyList<IColumn>;
+    readonly PrincipalColumns: IReadOnlyList<IColumn>;
+    readonly PrincipalUniqueConstraint: IUniqueConstraint;
+    readonly OnDeleteAction: ReferentialAction;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IForeignKeyConstraint = IForeignKeyConstraint$instance;
 
 export interface IFunctionColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly function: IStoreFunction;
-    readonly propertyMappings: IReadOnlyList<IFunctionColumnMapping>;
-    readonly name: string;
-    readonly storeType: string;
-    readonly providerClrType: Type;
-    readonly storeTypeMapping: RelationalTypeMapping;
-    readonly isNullable: boolean;
-    readonly table: ITableBase;
-    readonly providerValueComparer: ValueComparer;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
-    findColumnMapping(entityType: IReadOnlyEntityType): IFunctionColumnMapping | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Function: IStoreFunction;
+    readonly PropertyMappings: IReadOnlyList<IFunctionColumnMapping>;
+    readonly Name: string;
+    readonly StoreType: string;
+    readonly ProviderClrType: Type;
+    readonly StoreTypeMapping: RelationalTypeMapping;
+    readonly IsNullable: boolean;
+    readonly Table: ITableBase;
+    readonly ProviderValueComparer: ValueComparer;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IFunctionColumnMapping | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IFunctionColumn = IFunctionColumn$instance;
 
 export interface IFunctionColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly column: IFunctionColumn;
-    readonly functionMapping: IFunctionMapping;
-    readonly property: IProperty;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly tableMapping: ITableMappingBase;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Column: IFunctionColumn;
+    readonly FunctionMapping: IFunctionMapping;
+    readonly Property: IProperty;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly TableMapping: ITableMappingBase;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IFunctionColumnMapping = IFunctionColumnMapping$instance;
 
 export interface IFunctionMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly isDefaultFunctionMapping: boolean;
-    readonly storeFunction: IStoreFunction;
-    readonly dbFunction: IDbFunction;
-    readonly columnMappings: IEnumerable<IFunctionColumnMapping>;
-    readonly typeBase: ITypeBase;
-    readonly table: ITableBase;
-    readonly isSharedTablePrincipal: Nullable<System_Internal.Boolean>;
-    readonly isSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
-    readonly includesDerivedTypes: Nullable<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly IsDefaultFunctionMapping: boolean;
+    readonly StoreFunction: IStoreFunction;
+    readonly DbFunction: IDbFunction;
+    readonly ColumnMappings: IEnumerable<IFunctionColumnMapping>;
+    readonly TypeBase: ITypeBase;
+    readonly Table: ITableBase;
+    readonly IsSharedTablePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IsSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IncludesDerivedTypes: Nullable<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IFunctionMapping = IFunctionMapping$instance;
 
 export interface IIndex$instance extends IReadOnlyIndex, IReadOnlyAnnotatable, IAnnotatable {
-    readonly properties: IReadOnlyList<IProperty>;
-    readonly declaringEntityType: IEntityType;
-    readonly name: string;
-    readonly isUnique: boolean;
-    readonly isDescending: IReadOnlyList<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getNullableValueFactory<TKey>(): IDependentKeyValueFactory_1<TKey>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly Properties: IReadOnlyList<IProperty>;
+    readonly DeclaringEntityType: IEntityType;
+    readonly Name: string;
+    readonly IsUnique: boolean;
+    readonly IsDescending: IReadOnlyList<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetNullableValueFactory<TKey>(): IDependentKeyValueFactory_1<TKey>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IIndex = IIndex$instance;
 
 export interface IKey$instance extends IReadOnlyKey, IReadOnlyAnnotatable, IAnnotatable {
-    readonly properties: IReadOnlyList<IProperty>;
-    readonly declaringEntityType: IEntityType;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getKeyType(): Type;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPrincipalKeyValueFactory<TKey>(): IPrincipalKeyValueFactory_1<TKey>;
-    getPrincipalKeyValueFactory(): IPrincipalKeyValueFactory;
-    getReferencingForeignKeys(): IEnumerable<IForeignKey>;
-    getReferencingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
-    isPrimaryKey(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly Properties: IReadOnlyList<IProperty>;
+    readonly DeclaringEntityType: IEntityType;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetKeyType(): Type;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPrincipalKeyValueFactory<TKey>(): IPrincipalKeyValueFactory_1<TKey>;
+    GetPrincipalKeyValueFactory(): IPrincipalKeyValueFactory;
+    GetReferencingForeignKeys(): IEnumerable<IForeignKey>;
+    GetReferencingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
+    IsPrimaryKey(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IKey = IKey$instance;
 
 export interface IMetadataReference_1$instance<T> extends IDisposable {
-    readonly object: T;
+    readonly Object: T;
 }
 
 
 export type IMetadataReference_1<T> = IMetadataReference_1$instance<T>;
 
 export interface IModel$instance extends IReadOnlyModel, IReadOnlyAnnotatable, IAnnotatable {
-    get modelDependencies(): RuntimeModelDependencies | undefined;
-    set modelDependencies(value: RuntimeModelDependencies);
-    readonly modelId: Guid;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findEntityType(name: string, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | undefined;
-    findEntityType(name: string): IEntityType | undefined;
-    findEntityType(type: Type, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | undefined;
-    findEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findEntityType(name: string): IReadOnlyEntityType | undefined;
-    findEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findEntityType(type: Type): IReadOnlyEntityType | undefined;
-    findEntityTypes(type: Type): IEnumerable<IEntityType>;
-    findEntityTypes(type: Type): IEnumerable<IReadOnlyEntityType>;
-    findLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IEntityType>;
-    findLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IReadOnlyEntityType>;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    findRuntimeEntityType(type: Type): IEntityType | undefined;
-    findTypeMappingConfiguration(scalarType: Type): ITypeMappingConfiguration | undefined;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getEmbeddedDiscriminatorName(): string;
-    getEntityTypes(): IEnumerable<IEntityType>;
-    getEntityTypes(): IEnumerable<IReadOnlyEntityType>;
-    getModelDependencies(): RuntimeModelDependencies;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isIndexerMethod(methodInfo: MethodInfo): boolean;
-    isShared(type: Type): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    get ModelDependencies(): RuntimeModelDependencies | undefined;
+    set ModelDependencies(value: RuntimeModelDependencies);
+    readonly ModelId: Guid;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | undefined;
+    FindEntityType(name: string): IEntityType | undefined;
+    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | undefined;
+    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindEntityType(name: string): IReadOnlyEntityType | undefined;
+    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindEntityType(type: Type): IReadOnlyEntityType | undefined;
+    FindEntityTypes(type: Type): IEnumerable<IEntityType>;
+    FindEntityTypes(type: Type): IEnumerable<IReadOnlyEntityType>;
+    FindLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IEntityType>;
+    FindLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IReadOnlyEntityType>;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindRuntimeEntityType(type: Type): IEntityType | undefined;
+    FindTypeMappingConfiguration(scalarType: Type): ITypeMappingConfiguration | undefined;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetEmbeddedDiscriminatorName(): string;
+    GetEntityTypes(): IEnumerable<IEntityType>;
+    GetEntityTypes(): IEnumerable<IReadOnlyEntityType>;
+    GetModelDependencies(): RuntimeModelDependencies;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsIndexerMethod(methodInfo: MethodInfo): boolean;
+    IsShared(type: Type): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IModel = IModel$instance;
 
 export interface IMutableAnnotatable$instance extends IReadOnlyAnnotatable {
-    get item(): unknown | undefined;
-    set item(value: unknown);
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    removeAnnotation(name: string): IAnnotation | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    findAnnotation(name: string): IAnnotation | undefined;
+    get Item(): unknown | undefined;
+    set Item(value: unknown);
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    FindAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableAnnotatable = IMutableAnnotatable$instance;
 
 export interface IMutableCheckConstraint$instance extends IReadOnlyCheckConstraint, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly entityType: IMutableEntityType;
-    name: string;
-    readonly modelName: string;
-    readonly sql: string;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getDefaultName(): string | undefined;
-    getName(storeObject: StoreObjectIdentifier): string | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly EntityType: IMutableEntityType;
+    Name: string;
+    readonly ModelName: string;
+    readonly Sql: string;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetDefaultName(): string | undefined;
+    GetName(storeObject: StoreObjectIdentifier): string | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableCheckConstraint = IMutableCheckConstraint$instance;
 
 export interface IMutableComplexProperty$instance extends IReadOnlyComplexProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutablePropertyBase, IMutableAnnotatable {
-    readonly complexType: IMutableComplexType;
-    isNullable: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setAnnotation(name: string, value: unknown): void;
-    setField(fieldName: string): void;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly ComplexType: IMutableComplexType;
+    IsNullable: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetAnnotation(name: string, value: unknown): void;
+    SetField(fieldName: string): void;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableComplexProperty = IMutableComplexProperty$instance;
 
 export interface IMutableComplexType$instance extends IReadOnlyComplexType, IReadOnlyTypeBase, IReadOnlyAnnotatable, IMutableTypeBase, IMutableAnnotatable {
-    readonly complexProperty: IMutableComplexProperty;
-    readonly baseType: IMutableComplexType | undefined;
-    readonly model: IReadOnlyModel;
-    readonly containingEntityType: IReadOnlyEntityType;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    addComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
-    addComplexProperty(name: string, collection?: boolean): IMutableComplexProperty;
-    addComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
-    addComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
-    addIgnored(memberName: string): string;
-    addProperty(memberInfo: MemberInfo): IMutableProperty;
-    addProperty(name: string, propertyType: Type, memberInfo: MemberInfo): IMutableProperty;
-    addProperty(name: string, propertyType: Type): IMutableProperty;
-    addProperty(name: string): IMutableProperty;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IMutableComplexProperty | undefined;
-    findComplexProperty(name: string): IMutableComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty(): IMutableProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): IMutablePropertyBase | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findMembersInHierarchy(name: string): IEnumerable<IMutablePropertyBase>;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IMutableProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDerivedTypes(): IEnumerable<IMutableComplexType>;
-    getDerivedTypes(): IEnumerable<IMutableTypeBase>;
-    getDerivedTypes(): IEnumerable<IReadOnlyComplexType>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDiscriminatorValue(): unknown | undefined;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IMutableComplexType;
-    getRootType(): IMutableTypeBase;
-    getRootType(): IReadOnlyComplexType;
-    getRootType(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    isContainedBy(type: Type): boolean;
-    isIgnored(memberName: string): boolean;
-    removeComplexProperty(property: IReadOnlyComplexProperty): IMutableComplexProperty | undefined;
-    removeDiscriminatorValue(): void;
-    removeProperty(property: IReadOnlyProperty): IMutableProperty | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    setChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>): void;
-    setDiscriminatorProperty(property: IReadOnlyProperty): void;
-    setDiscriminatorValue(value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findComplexProperty2(name: string): IReadOnlyComplexProperty | undefined;
-    findComplexProperty3(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty2(): IReadOnlyProperty | undefined;
-    findMember2(name: string): IReadOnlyPropertyBase | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getRootType2(): IReadOnlyTypeBase;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly ComplexProperty: IMutableComplexProperty;
+    readonly BaseType: IMutableComplexType | undefined;
+    readonly Model: IReadOnlyModel;
+    readonly ContainingEntityType: IReadOnlyEntityType;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AddComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
+    AddComplexProperty(name: string, collection?: boolean): IMutableComplexProperty;
+    AddComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
+    AddComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
+    AddIgnored(memberName: string): string;
+    AddProperty(memberInfo: MemberInfo): IMutableProperty;
+    AddProperty(name: string, propertyType: Type, memberInfo: MemberInfo): IMutableProperty;
+    AddProperty(name: string, propertyType: Type): IMutableProperty;
+    AddProperty(name: string): IMutableProperty;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IMutableComplexProperty | undefined;
+    FindComplexProperty(name: string): IMutableComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty(): IMutableProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): IMutablePropertyBase | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindMembersInHierarchy(name: string): IEnumerable<IMutablePropertyBase>;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IMutableProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDerivedTypes(): IEnumerable<IMutableComplexType>;
+    GetDerivedTypes(): IEnumerable<IMutableTypeBase>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyComplexType>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IMutableComplexType;
+    GetRootType(): IMutableTypeBase;
+    GetRootType(): IReadOnlyComplexType;
+    GetRootType(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    IsContainedBy(type: Type): boolean;
+    IsIgnored(memberName: string): boolean;
+    RemoveComplexProperty(property: IReadOnlyComplexProperty): IMutableComplexProperty | undefined;
+    RemoveDiscriminatorValue(): void;
+    RemoveProperty(property: IReadOnlyProperty): IMutableProperty | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    SetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>): void;
+    SetDiscriminatorProperty(property: IReadOnlyProperty): void;
+    SetDiscriminatorValue(value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindComplexProperty2(name: string): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty3(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty2(): IReadOnlyProperty | undefined;
+    FindMember2(name: string): IReadOnlyPropertyBase | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetRootType2(): IReadOnlyTypeBase;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableComplexType = IMutableComplexType$instance;
 
 export interface IMutableDbFunction$instance extends IReadOnlyDbFunction, IReadOnlyAnnotatable, IMutableAnnotatable {
-    name: string;
-    schema: string;
-    isBuiltIn: boolean;
-    isNullable: boolean;
-    storeType: string;
-    typeMapping: RelationalTypeMapping;
-    readonly model: IMutableModel;
-    readonly parameters: IReadOnlyList<IMutableDbFunctionParameter>;
-    get translation(): Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
-    set translation(value: Func<IReadOnlyList<SqlExpression>, SqlExpression>);
-    readonly modelName: string;
-    readonly methodInfo: MethodInfo | undefined;
-    readonly isScalar: boolean;
-    readonly isAggregate: boolean;
-    readonly returnType: Type;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    Name: string;
+    Schema: string;
+    IsBuiltIn: boolean;
+    IsNullable: boolean;
+    StoreType: string;
+    TypeMapping: RelationalTypeMapping;
+    readonly Model: IMutableModel;
+    readonly Parameters: IReadOnlyList<IMutableDbFunctionParameter>;
+    get Translation(): Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
+    set Translation(value: Func<IReadOnlyList<SqlExpression>, SqlExpression>);
+    readonly ModelName: string;
+    readonly MethodInfo: MethodInfo | undefined;
+    readonly IsScalar: boolean;
+    readonly IsAggregate: boolean;
+    readonly ReturnType: Type;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableDbFunction = IMutableDbFunction$instance;
 
 export interface IMutableDbFunctionParameter$instance extends IReadOnlyDbFunctionParameter, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly function: IMutableDbFunction;
-    storeType: string;
-    typeMapping: RelationalTypeMapping;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly propagatesNullability: boolean;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly Function: IMutableDbFunction;
+    StoreType: string;
+    TypeMapping: RelationalTypeMapping;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly PropagatesNullability: boolean;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableDbFunctionParameter = IMutableDbFunctionParameter$instance;
 
 export interface IMutableElementType$instance extends IReadOnlyElementType, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly collectionProperty: IMutableProperty;
-    isNullable: boolean;
-    readonly clrType: Type;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getMaxLength(): Nullable<System_Internal.Int32>;
-    getProviderClrType(): Type | undefined;
-    getTypeMapping(): CoreTypeMapping;
-    getValueComparer(): ValueComparer;
-    getValueConverter(): ValueConverter | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    setMaxLength(maxLength: Nullable<System_Internal.Int32>): void;
-    setTypeMapping(typeMapping: CoreTypeMapping): void;
-    setValueComparer(comparer: ValueComparer): void;
-    setValueConverter(converter: ValueConverter): void;
-    setValueConverter(converterType: Type): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly CollectionProperty: IMutableProperty;
+    IsNullable: boolean;
+    readonly ClrType: Type;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
+    GetProviderClrType(): Type | undefined;
+    GetTypeMapping(): CoreTypeMapping;
+    GetValueComparer(): ValueComparer;
+    GetValueConverter(): ValueConverter | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    SetMaxLength(maxLength: Nullable<System_Internal.Int32>): void;
+    SetTypeMapping(typeMapping: CoreTypeMapping): void;
+    SetValueComparer(comparer: ValueComparer): void;
+    SetValueConverter(converter: ValueConverter): void;
+    SetValueConverter(converterType: Type): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableElementType = IMutableElementType$instance;
 
 export interface IMutableEntityType$instance extends IReadOnlyEntityType, IReadOnlyTypeBase, IReadOnlyAnnotatable, IMutableTypeBase, IMutableAnnotatable {
-    get baseType(): IMutableEntityType | undefined;
-    set baseType(value: IMutableEntityType);
-    isKeyless: boolean;
-    readonly model: IReadOnlyModel;
-    readonly containingEntityType: IReadOnlyEntityType;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
-    addComplexProperty(name: string, collection?: boolean): IMutableComplexProperty;
-    addComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
-    addComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
-    addData(data: IEnumerable<unknown>): void;
-    addForeignKey(property: IMutableProperty, principalKey: IMutableKey, principalEntityType: IMutableEntityType): IMutableForeignKey;
-    addForeignKey(properties: IReadOnlyList<IMutableProperty>, principalKey: IMutableKey, principalEntityType: IMutableEntityType): IMutableForeignKey;
-    addIgnored(memberName: string): string;
-    addIndex(property: IMutableProperty, name: string): IMutableIndex;
-    addIndex(property: IMutableProperty): IMutableIndex;
-    addIndex(properties: IReadOnlyList<IMutableProperty>, name: string): IMutableIndex;
-    addIndex(properties: IReadOnlyList<IMutableProperty>): IMutableIndex;
-    addProperty(memberInfo: MemberInfo): IMutableProperty;
-    addProperty(name: string, propertyType: Type, memberInfo: MemberInfo): IMutableProperty;
-    addProperty(name: string, propertyType: Type): IMutableProperty;
-    addProperty(name: string): IMutableProperty;
-    addServiceProperty(memberInfo: MemberInfo, serviceType?: Type): IMutableServiceProperty;
-    addSkipNavigation(name: string, memberInfo: MemberInfo, targetEntityType: IMutableEntityType, collection: boolean, onDependent: boolean): IMutableSkipNavigation;
-    addSkipNavigation(name: string, navigationType: Type, memberInfo: MemberInfo, targetEntityType: IMutableEntityType, collection: boolean, onDependent: boolean): IMutableSkipNavigation;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findClosestCommonParent(otherEntityType: IReadOnlyEntityType): IMutableEntityType | undefined;
-    findClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IMutableComplexProperty | undefined;
-    findComplexProperty(name: string): IMutableComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
-    findDeclaredTrigger(name: string): IMutableTrigger | undefined;
-    findDeclaredTrigger(name: string): IReadOnlyTrigger | undefined;
-    findDiscriminatorProperty(): IMutableProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IMutableForeignKey | undefined;
-    findForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IMutableForeignKey | undefined;
-    findForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    findForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    findForeignKeys(property: IReadOnlyProperty): IEnumerable<IMutableForeignKey>;
-    findForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IMutableForeignKey>;
-    findForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IReadOnlyForeignKey>;
-    findForeignKeys(property: IReadOnlyProperty): IEnumerable<IReadOnlyForeignKey>;
-    findIndex(property: IReadOnlyProperty): IMutableIndex | undefined;
-    findIndex(name: string): IMutableIndex | undefined;
-    findIndex(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
-    findIndex(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyIndex | undefined;
-    findIndex(name: string): IReadOnlyIndex | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findKey(property: IReadOnlyProperty): IMutableKey | undefined;
-    findKey(property: IReadOnlyProperty): IReadOnlyKey | undefined;
-    findKey(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyKey | undefined;
-    findMember(name: string): IMutablePropertyBase | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findMembersInHierarchy(name: string): IEnumerable<IMutablePropertyBase>;
-    findNavigation(memberInfo: MemberInfo): IMutableNavigation | undefined;
-    findNavigation(name: string): IMutableNavigation | undefined;
-    findNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
-    findNavigation(name: string): IReadOnlyNavigation | undefined;
-    findOwnership(): IMutableForeignKey | undefined;
-    findOwnership(): IReadOnlyForeignKey | undefined;
-    findPrimaryKey(): IMutableKey | undefined;
-    findPrimaryKey(): IReadOnlyKey | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IMutableProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    findServiceProperty(name: string): IMutableServiceProperty | undefined;
-    findServiceProperty(name: string): IReadOnlyServiceProperty | undefined;
-    findSkipNavigation(memberInfo: MemberInfo): IMutableSkipNavigation | undefined;
-    findSkipNavigation(name: string): IMutableSkipNavigation | undefined;
-    findSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
-    findSkipNavigation(name: string): IReadOnlySkipNavigation | undefined;
-    getAllBaseTypes(): IEnumerable<IMutableEntityType>;
-    getAllBaseTypes(): IEnumerable<IReadOnlyEntityType>;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDeclaredQueryFilters(): IReadOnlyCollection<IQueryFilter>;
-    getDiscriminatorValue(): unknown | undefined;
-    getIsDiscriminatorMappingComplete(): boolean;
-    getNavigationAccessMode(): PropertyAccessMode;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getQueryFilter(): LambdaExpression | undefined;
-    getRootType(): IMutableEntityType;
-    getRootType(): IMutableTypeBase;
-    getRootType(): IReadOnlyEntityType;
-    getRootType(): IReadOnlyTypeBase;
-    getSeedData(providerValues?: boolean): IEnumerable<IDictionary<System_Internal.String, unknown | undefined>>;
-    isAssignableFrom(derivedType: IReadOnlyEntityType): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    isIgnored(memberName: string): boolean;
-    removeComplexProperty(property: IReadOnlyComplexProperty): IMutableComplexProperty | undefined;
-    removeDiscriminatorValue(): void;
-    removeForeignKey(foreignKey: IReadOnlyForeignKey): IMutableForeignKey | undefined;
-    removeIndex(index: IReadOnlyIndex): IMutableIndex | undefined;
-    removeKey(key: IReadOnlyKey): IMutableKey | undefined;
-    removeProperty(property: IReadOnlyProperty): IMutableProperty | undefined;
-    removeServiceProperty(property: IReadOnlyServiceProperty): IMutableServiceProperty | undefined;
-    removeSkipNavigation(navigation: IReadOnlySkipNavigation): IMutableSkipNavigation | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    setDiscriminatorMappingComplete(complete: Nullable<System_Internal.Boolean>): void;
-    setDiscriminatorProperty(property: IReadOnlyProperty): void;
-    setDiscriminatorValue(value: unknown): void;
-    setPrimaryKey(property: IMutableProperty): IMutableKey | undefined;
-    setPrimaryKey(properties: IReadOnlyList<IMutableProperty>): IMutableKey | undefined;
-    setQueryFilter(queryFilter: LambdaExpression): void;
-    setQueryFilter(filterKey: string, filter: LambdaExpression): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    findComplexProperty2(name: string): IReadOnlyComplexProperty | undefined;
-    findComplexProperty3(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty2(): IReadOnlyProperty | undefined;
-    findMember2(name: string): IReadOnlyPropertyBase | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getDerivedTypes(): IEnumerable<IMutableTypeBase>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType2(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    removeAnnotation(name: string): IAnnotation | undefined;
-    setChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>): void;
+    get BaseType(): IMutableEntityType | undefined;
+    set BaseType(value: IMutableEntityType);
+    IsKeyless: boolean;
+    readonly Model: IReadOnlyModel;
+    readonly ContainingEntityType: IReadOnlyEntityType;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
+    AddComplexProperty(name: string, collection?: boolean): IMutableComplexProperty;
+    AddComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
+    AddComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
+    AddData(data: IEnumerable<unknown>): void;
+    AddForeignKey(property: IMutableProperty, principalKey: IMutableKey, principalEntityType: IMutableEntityType): IMutableForeignKey;
+    AddForeignKey(properties: IReadOnlyList<IMutableProperty>, principalKey: IMutableKey, principalEntityType: IMutableEntityType): IMutableForeignKey;
+    AddIgnored(memberName: string): string;
+    AddIndex(property: IMutableProperty, name: string): IMutableIndex;
+    AddIndex(property: IMutableProperty): IMutableIndex;
+    AddIndex(properties: IReadOnlyList<IMutableProperty>, name: string): IMutableIndex;
+    AddIndex(properties: IReadOnlyList<IMutableProperty>): IMutableIndex;
+    AddProperty(memberInfo: MemberInfo): IMutableProperty;
+    AddProperty(name: string, propertyType: Type, memberInfo: MemberInfo): IMutableProperty;
+    AddProperty(name: string, propertyType: Type): IMutableProperty;
+    AddProperty(name: string): IMutableProperty;
+    AddServiceProperty(memberInfo: MemberInfo, serviceType?: Type): IMutableServiceProperty;
+    AddSkipNavigation(name: string, memberInfo: MemberInfo, targetEntityType: IMutableEntityType, collection: boolean, onDependent: boolean): IMutableSkipNavigation;
+    AddSkipNavigation(name: string, navigationType: Type, memberInfo: MemberInfo, targetEntityType: IMutableEntityType, collection: boolean, onDependent: boolean): IMutableSkipNavigation;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindClosestCommonParent(otherEntityType: IReadOnlyEntityType): IMutableEntityType | undefined;
+    FindClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IMutableComplexProperty | undefined;
+    FindComplexProperty(name: string): IMutableComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
+    FindDeclaredTrigger(name: string): IMutableTrigger | undefined;
+    FindDeclaredTrigger(name: string): IReadOnlyTrigger | undefined;
+    FindDiscriminatorProperty(): IMutableProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IMutableForeignKey | undefined;
+    FindForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IMutableForeignKey | undefined;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
+    FindForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
+    FindForeignKeys(property: IReadOnlyProperty): IEnumerable<IMutableForeignKey>;
+    FindForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IMutableForeignKey>;
+    FindForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IReadOnlyForeignKey>;
+    FindForeignKeys(property: IReadOnlyProperty): IEnumerable<IReadOnlyForeignKey>;
+    FindIndex(property: IReadOnlyProperty): IMutableIndex | undefined;
+    FindIndex(name: string): IMutableIndex | undefined;
+    FindIndex(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
+    FindIndex(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyIndex | undefined;
+    FindIndex(name: string): IReadOnlyIndex | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindKey(property: IReadOnlyProperty): IMutableKey | undefined;
+    FindKey(property: IReadOnlyProperty): IReadOnlyKey | undefined;
+    FindKey(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyKey | undefined;
+    FindMember(name: string): IMutablePropertyBase | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindMembersInHierarchy(name: string): IEnumerable<IMutablePropertyBase>;
+    FindNavigation(memberInfo: MemberInfo): IMutableNavigation | undefined;
+    FindNavigation(name: string): IMutableNavigation | undefined;
+    FindNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
+    FindNavigation(name: string): IReadOnlyNavigation | undefined;
+    FindOwnership(): IMutableForeignKey | undefined;
+    FindOwnership(): IReadOnlyForeignKey | undefined;
+    FindPrimaryKey(): IMutableKey | undefined;
+    FindPrimaryKey(): IReadOnlyKey | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IMutableProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    FindServiceProperty(name: string): IMutableServiceProperty | undefined;
+    FindServiceProperty(name: string): IReadOnlyServiceProperty | undefined;
+    FindSkipNavigation(memberInfo: MemberInfo): IMutableSkipNavigation | undefined;
+    FindSkipNavigation(name: string): IMutableSkipNavigation | undefined;
+    FindSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
+    FindSkipNavigation(name: string): IReadOnlySkipNavigation | undefined;
+    GetAllBaseTypes(): IEnumerable<IMutableEntityType>;
+    GetAllBaseTypes(): IEnumerable<IReadOnlyEntityType>;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDeclaredQueryFilters(): IReadOnlyCollection<IQueryFilter>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetIsDiscriminatorMappingComplete(): boolean;
+    GetNavigationAccessMode(): PropertyAccessMode;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetQueryFilter(): LambdaExpression | undefined;
+    GetRootType(): IMutableEntityType;
+    GetRootType(): IMutableTypeBase;
+    GetRootType(): IReadOnlyEntityType;
+    GetRootType(): IReadOnlyTypeBase;
+    GetSeedData(providerValues?: boolean): IEnumerable<IDictionary<System_Internal.String, unknown | undefined>>;
+    IsAssignableFrom(derivedType: IReadOnlyEntityType): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    IsIgnored(memberName: string): boolean;
+    RemoveComplexProperty(property: IReadOnlyComplexProperty): IMutableComplexProperty | undefined;
+    RemoveDiscriminatorValue(): void;
+    RemoveForeignKey(foreignKey: IReadOnlyForeignKey): IMutableForeignKey | undefined;
+    RemoveIndex(index: IReadOnlyIndex): IMutableIndex | undefined;
+    RemoveKey(key: IReadOnlyKey): IMutableKey | undefined;
+    RemoveProperty(property: IReadOnlyProperty): IMutableProperty | undefined;
+    RemoveServiceProperty(property: IReadOnlyServiceProperty): IMutableServiceProperty | undefined;
+    RemoveSkipNavigation(navigation: IReadOnlySkipNavigation): IMutableSkipNavigation | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    SetDiscriminatorMappingComplete(complete: Nullable<System_Internal.Boolean>): void;
+    SetDiscriminatorProperty(property: IReadOnlyProperty): void;
+    SetDiscriminatorValue(value: unknown): void;
+    SetPrimaryKey(property: IMutableProperty): IMutableKey | undefined;
+    SetPrimaryKey(properties: IReadOnlyList<IMutableProperty>): IMutableKey | undefined;
+    SetQueryFilter(queryFilter: LambdaExpression): void;
+    SetQueryFilter(filterKey: string, filter: LambdaExpression): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    FindComplexProperty2(name: string): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty3(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty2(): IReadOnlyProperty | undefined;
+    FindMember2(name: string): IReadOnlyPropertyBase | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetDerivedTypes(): IEnumerable<IMutableTypeBase>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType2(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
+    SetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>): void;
 }
 
 
 export type IMutableEntityType = IMutableEntityType$instance;
 
 export interface IMutableEntityTypeMappingFragment$instance extends IReadOnlyEntityTypeMappingFragment, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly entityType: IMutableEntityType;
-    isTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
-    readonly storeObject: StoreObjectIdentifier;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly EntityType: IMutableEntityType;
+    IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
+    readonly StoreObject: StoreObjectIdentifier;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableEntityTypeMappingFragment = IMutableEntityTypeMappingFragment$instance;
 
 export interface IMutableForeignKey$instance extends IReadOnlyForeignKey, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly properties: IReadOnlyList<IMutableProperty>;
-    readonly principalKey: IMutableKey;
-    readonly declaringEntityType: IMutableEntityType;
-    readonly principalEntityType: IMutableEntityType;
-    isUnique: boolean;
-    isRequired: boolean;
-    isRequiredDependent: boolean;
-    isOwnership: boolean;
-    deleteBehavior: DeleteBehavior;
-    readonly dependentToPrincipal: IMutableNavigation | undefined;
-    readonly principalToDependent: IMutableNavigation | undefined;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getNavigation(pointsToPrincipal: boolean): IMutableNavigation | undefined;
-    getNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
-    getReferencingSkipNavigations(): IEnumerable<IMutableSkipNavigation>;
-    getReferencingSkipNavigations(): IEnumerable<IReadOnlySkipNavigation>;
-    getRelatedEntityType(entityType: IReadOnlyEntityType): IMutableEntityType;
-    getRelatedEntityType(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
-    isBaseLinking(): boolean;
-    setAnnotation(name: string, value: unknown): void;
-    setDependentToPrincipal(property: MemberInfo): IMutableNavigation | undefined;
-    setDependentToPrincipal(name: string): IMutableNavigation | undefined;
-    setProperties(properties: IReadOnlyList<IMutableProperty>, principalKey: IMutableKey): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly Properties: IReadOnlyList<IMutableProperty>;
+    readonly PrincipalKey: IMutableKey;
+    readonly DeclaringEntityType: IMutableEntityType;
+    readonly PrincipalEntityType: IMutableEntityType;
+    IsUnique: boolean;
+    IsRequired: boolean;
+    IsRequiredDependent: boolean;
+    IsOwnership: boolean;
+    DeleteBehavior: DeleteBehavior;
+    readonly DependentToPrincipal: IMutableNavigation | undefined;
+    readonly PrincipalToDependent: IMutableNavigation | undefined;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetNavigation(pointsToPrincipal: boolean): IMutableNavigation | undefined;
+    GetNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
+    GetReferencingSkipNavigations(): IEnumerable<IMutableSkipNavigation>;
+    GetReferencingSkipNavigations(): IEnumerable<IReadOnlySkipNavigation>;
+    GetRelatedEntityType(entityType: IReadOnlyEntityType): IMutableEntityType;
+    GetRelatedEntityType(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
+    IsBaseLinking(): boolean;
+    SetAnnotation(name: string, value: unknown): void;
+    SetDependentToPrincipal(property: MemberInfo): IMutableNavigation | undefined;
+    SetDependentToPrincipal(name: string): IMutableNavigation | undefined;
+    SetProperties(properties: IReadOnlyList<IMutableProperty>, principalKey: IMutableKey): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableForeignKey = IMutableForeignKey$instance;
 
 export interface IMutableIndex$instance extends IReadOnlyIndex, IReadOnlyAnnotatable, IMutableAnnotatable {
-    isUnique: boolean;
-    isDescending: IReadOnlyList<System_Internal.Boolean>;
-    readonly properties: IReadOnlyList<IMutableProperty>;
-    readonly declaringEntityType: IMutableEntityType;
-    readonly name: string;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    IsUnique: boolean;
+    IsDescending: IReadOnlyList<System_Internal.Boolean>;
+    readonly Properties: IReadOnlyList<IMutableProperty>;
+    readonly DeclaringEntityType: IMutableEntityType;
+    readonly Name: string;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableIndex = IMutableIndex$instance;
 
 export interface IMutableKey$instance extends IReadOnlyKey, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly properties: IReadOnlyList<IMutableProperty>;
-    readonly declaringEntityType: IMutableEntityType;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getReferencingForeignKeys(): IEnumerable<IMutableForeignKey>;
-    getReferencingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
-    isPrimaryKey(): boolean;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly Properties: IReadOnlyList<IMutableProperty>;
+    readonly DeclaringEntityType: IMutableEntityType;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetReferencingForeignKeys(): IEnumerable<IMutableForeignKey>;
+    GetReferencingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
+    IsPrimaryKey(): boolean;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableKey = IMutableKey$instance;
 
 export interface IMutableModel$instance extends IReadOnlyModel, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly modelId: Guid;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    addEntityType(name: string, definingNavigationName: string, definingEntityType: IMutableEntityType): IMutableEntityType;
-    addEntityType(name: string, type: Type): IMutableEntityType;
-    addEntityType(name: string): IMutableEntityType;
-    addEntityType(type: Type, definingNavigationName: string, definingEntityType: IMutableEntityType): IMutableEntityType;
-    addEntityType(type: Type): IMutableEntityType;
-    addIgnored(typeName: string): string;
-    addShared(type: Type): void;
-    annotationsToDebugString(indent?: int): string;
-    delayConventions(): IConventionBatch;
-    finalizeModel(): IModel;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findEntityType(name: string): IReadOnlyEntityType | undefined;
-    findEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findEntityType(type: Type): IReadOnlyEntityType | undefined;
-    findEntityTypes(type: Type): IEnumerable<IMutableEntityType>;
-    findEntityTypes(type: Type): IEnumerable<IReadOnlyEntityType>;
-    findLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IMutableEntityType>;
-    findLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IReadOnlyEntityType>;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getEmbeddedDiscriminatorName(): string;
-    getEntityTypes(): IEnumerable<IMutableEntityType>;
-    getEntityTypes(): IEnumerable<IReadOnlyEntityType>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isIgnored(typeName: string): boolean;
-    isOwned(type: Type): boolean;
-    removeEntityType(entityType: IMutableEntityType): IMutableEntityType | undefined;
-    removeOwned(type: Type): string | undefined;
-    removeShared(type: Type): Type | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    setEmbeddedDiscriminatorName(name: string): void;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    isShared(type: Type): boolean;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly ModelId: Guid;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AddEntityType(name: string, definingNavigationName: string, definingEntityType: IMutableEntityType): IMutableEntityType;
+    AddEntityType(name: string, type: Type): IMutableEntityType;
+    AddEntityType(name: string): IMutableEntityType;
+    AddEntityType(type: Type, definingNavigationName: string, definingEntityType: IMutableEntityType): IMutableEntityType;
+    AddEntityType(type: Type): IMutableEntityType;
+    AddIgnored(typeName: string): string;
+    AddShared(type: Type): void;
+    AnnotationsToDebugString(indent?: int): string;
+    DelayConventions(): IConventionBatch;
+    FinalizeModel(): IModel;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindEntityType(name: string): IReadOnlyEntityType | undefined;
+    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindEntityType(type: Type): IReadOnlyEntityType | undefined;
+    FindEntityTypes(type: Type): IEnumerable<IMutableEntityType>;
+    FindEntityTypes(type: Type): IEnumerable<IReadOnlyEntityType>;
+    FindLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IMutableEntityType>;
+    FindLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IReadOnlyEntityType>;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetEmbeddedDiscriminatorName(): string;
+    GetEntityTypes(): IEnumerable<IMutableEntityType>;
+    GetEntityTypes(): IEnumerable<IReadOnlyEntityType>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsIgnored(typeName: string): boolean;
+    IsOwned(type: Type): boolean;
+    RemoveEntityType(entityType: IMutableEntityType): IMutableEntityType | undefined;
+    RemoveOwned(type: Type): string | undefined;
+    RemoveShared(type: Type): Type | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    SetEmbeddedDiscriminatorName(name: string): void;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    IsShared(type: Type): boolean;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableModel = IMutableModel$instance;
 
 export interface IMutableNavigation$instance extends IReadOnlyNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutableNavigationBase, IMutablePropertyBase, IMutableAnnotatable {
-    readonly declaringEntityType: IMutableEntityType;
-    readonly targetEntityType: IMutableEntityType;
-    readonly foreignKey: IMutableForeignKey;
-    readonly inverse: IMutableNavigation;
-    readonly isOnDependent: boolean;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setAnnotation(name: string, value: unknown): void;
-    setField(fieldName: string): void;
-    setInverse(inverse: MemberInfo): IMutableNavigation | undefined;
-    setInverse(inverseName: string): IMutableNavigation | undefined;
-    setIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
+    readonly DeclaringEntityType: IMutableEntityType;
+    readonly TargetEntityType: IMutableEntityType;
+    readonly ForeignKey: IMutableForeignKey;
+    readonly Inverse: IMutableNavigation;
+    readonly IsOnDependent: boolean;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetAnnotation(name: string, value: unknown): void;
+    SetField(fieldName: string): void;
+    SetInverse(inverse: MemberInfo): IMutableNavigation | undefined;
+    SetInverse(inverseName: string): IMutableNavigation | undefined;
+    SetIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
 }
 
 
 export type IMutableNavigation = IMutableNavigation$instance;
 
 export interface IMutableNavigationBase$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutablePropertyBase, IMutableAnnotatable {
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly targetEntityType: IReadOnlyEntityType;
-    readonly inverse: IReadOnlyNavigationBase;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setAnnotation(name: string, value: unknown): void;
-    setField(fieldName: string): void;
-    setIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>): void;
-    removeAnnotation(name: string): IAnnotation | undefined;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly TargetEntityType: IReadOnlyEntityType;
+    readonly Inverse: IReadOnlyNavigationBase;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetAnnotation(name: string, value: unknown): void;
+    SetField(fieldName: string): void;
+    SetIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>): void;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
 }
 
 
 export type IMutableNavigationBase = IMutableNavigationBase$instance;
 
 export interface IMutableProperty$instance extends IReadOnlyProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutablePropertyBase, IMutableAnnotatable {
-    readonly declaringEntityType: IMutableEntityType;
-    isNullable: boolean;
-    valueGenerated: ValueGenerated;
-    isConcurrencyToken: boolean;
-    get sentinel(): unknown | undefined;
-    set sentinel(value: unknown);
-    readonly isPrimitiveCollection: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findContainingPrimaryKey(): IMutableKey | undefined;
-    findContainingPrimaryKey(): IReadOnlyKey | undefined;
-    findFirstPrincipal(): IMutableProperty | undefined;
-    findFirstPrincipal(): IReadOnlyProperty | undefined;
-    getBeforeSaveBehavior(): PropertySaveBehavior;
-    getContainingForeignKeys(): IEnumerable<IMutableForeignKey>;
-    getContainingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
-    getElementType(): IMutableElementType | undefined;
-    getElementType(): IReadOnlyElementType | undefined;
-    getFieldName(): string | undefined;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getMaxLength(): Nullable<System_Internal.Int32>;
-    getPrincipals(): IReadOnlyList<IMutableProperty>;
-    getPrincipals(): IReadOnlyList<IReadOnlyProperty>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getProviderClrType(): Type | undefined;
-    getTypeMapping(): CoreTypeMapping;
-    getValueComparer(): ValueComparer;
-    getValueConverter(): ValueConverter | undefined;
-    getValueGeneratorFactory(): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
-    isForeignKey(): boolean;
-    setAnnotation(name: string, value: unknown): void;
-    setField(fieldName: string): void;
-    setMaxLength(maxLength: Nullable<System_Internal.Int32>): void;
-    setTypeMapping(typeMapping: CoreTypeMapping): void;
-    setValueComparer(comparer: ValueComparer): void;
-    setValueConverter(converter: ValueConverter): void;
-    setValueGeneratorFactory(valueGeneratorFactory: Func<IProperty, ITypeBase, ValueGenerator>): void;
-    setValueGeneratorFactory(valueGeneratorFactory: Type): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    isShadowProperty(): boolean;
-    removeAnnotation(name: string): IAnnotation | undefined;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
+    readonly DeclaringEntityType: IMutableEntityType;
+    IsNullable: boolean;
+    ValueGenerated: ValueGenerated;
+    IsConcurrencyToken: boolean;
+    get Sentinel(): unknown | undefined;
+    set Sentinel(value: unknown);
+    readonly IsPrimitiveCollection: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindContainingPrimaryKey(): IMutableKey | undefined;
+    FindContainingPrimaryKey(): IReadOnlyKey | undefined;
+    FindFirstPrincipal(): IMutableProperty | undefined;
+    FindFirstPrincipal(): IReadOnlyProperty | undefined;
+    GetBeforeSaveBehavior(): PropertySaveBehavior;
+    GetContainingForeignKeys(): IEnumerable<IMutableForeignKey>;
+    GetContainingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
+    GetElementType(): IMutableElementType | undefined;
+    GetElementType(): IReadOnlyElementType | undefined;
+    GetFieldName(): string | undefined;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
+    GetPrincipals(): IReadOnlyList<IMutableProperty>;
+    GetPrincipals(): IReadOnlyList<IReadOnlyProperty>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetProviderClrType(): Type | undefined;
+    GetTypeMapping(): CoreTypeMapping;
+    GetValueComparer(): ValueComparer;
+    GetValueConverter(): ValueConverter | undefined;
+    GetValueGeneratorFactory(): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
+    IsForeignKey(): boolean;
+    SetAnnotation(name: string, value: unknown): void;
+    SetField(fieldName: string): void;
+    SetMaxLength(maxLength: Nullable<System_Internal.Int32>): void;
+    SetTypeMapping(typeMapping: CoreTypeMapping): void;
+    SetValueComparer(comparer: ValueComparer): void;
+    SetValueConverter(converter: ValueConverter): void;
+    SetValueGeneratorFactory(valueGeneratorFactory: Func<IProperty, ITypeBase, ValueGenerator>): void;
+    SetValueGeneratorFactory(valueGeneratorFactory: Type): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    IsShadowProperty(): boolean;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
 }
 
 
 export type IMutableProperty = IMutableProperty$instance;
 
 export interface IMutablePropertyBase$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly declaringType: IMutableTypeBase;
-    get fieldInfo(): FieldInfo | undefined;
-    set fieldInfo(value: FieldInfo);
-    readonly name: string;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setAnnotation(name: string, value: unknown): void;
-    setField(fieldName: string): void;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly DeclaringType: IMutableTypeBase;
+    get FieldInfo(): FieldInfo | undefined;
+    set FieldInfo(value: FieldInfo);
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetAnnotation(name: string, value: unknown): void;
+    SetField(fieldName: string): void;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutablePropertyBase = IMutablePropertyBase$instance;
 
 export interface IMutableRelationalPropertyOverrides$instance extends IReadOnlyRelationalPropertyOverrides, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly property: IMutableProperty;
-    columnName: string;
-    readonly storeObject: StoreObjectIdentifier;
-    readonly isColumnNameOverridden: boolean;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    removeColumnNameOverride(): void;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly Property: IMutableProperty;
+    ColumnName: string;
+    readonly StoreObject: StoreObjectIdentifier;
+    readonly IsColumnNameOverridden: boolean;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    RemoveColumnNameOverride(): void;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableRelationalPropertyOverrides = IMutableRelationalPropertyOverrides$instance;
 
 export interface IMutableSequence$instance extends IReadOnlySequence, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly model: IMutableModel;
-    startValue: long;
-    incrementBy: int;
-    minValue: Nullable<System_Internal.Int64>;
-    maxValue: Nullable<System_Internal.Int64>;
-    type: Type;
-    isCyclic: boolean;
-    readonly name: string;
-    readonly modelSchema: string | undefined;
-    readonly schema: string;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly Model: IMutableModel;
+    StartValue: long;
+    IncrementBy: int;
+    MinValue: Nullable<System_Internal.Int64>;
+    MaxValue: Nullable<System_Internal.Int64>;
+    Type: Type;
+    IsCyclic: boolean;
+    readonly Name: string;
+    readonly ModelSchema: string | undefined;
+    readonly Schema: string;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableSequence = IMutableSequence$instance;
 
 export interface IMutableServiceProperty$instance extends IReadOnlyServiceProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutablePropertyBase, IMutableAnnotatable {
-    readonly declaringEntityType: IMutableEntityType;
-    parameterBinding: ServiceParameterBinding;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setAnnotation(name: string, value: unknown): void;
-    setField(fieldName: string): void;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly DeclaringEntityType: IMutableEntityType;
+    ParameterBinding: ServiceParameterBinding;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetAnnotation(name: string, value: unknown): void;
+    SetField(fieldName: string): void;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableServiceProperty = IMutableServiceProperty$instance;
 
 export interface IMutableSkipNavigation$instance extends IReadOnlySkipNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutableNavigationBase, IMutablePropertyBase, IMutableAnnotatable {
-    readonly declaringEntityType: IMutableEntityType;
-    readonly targetEntityType: IMutableEntityType;
-    readonly joinEntityType: IMutableEntityType;
-    readonly foreignKey: IMutableForeignKey;
-    readonly inverse: IMutableSkipNavigation;
-    readonly isOnDependent: boolean;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setAnnotation(name: string, value: unknown): void;
-    setField(fieldName: string): void;
-    setForeignKey(foreignKey: IMutableForeignKey): void;
-    setInverse(inverse: IMutableSkipNavigation): IMutableSkipNavigation | undefined;
-    setIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
-    setPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
+    readonly DeclaringEntityType: IMutableEntityType;
+    readonly TargetEntityType: IMutableEntityType;
+    readonly JoinEntityType: IMutableEntityType;
+    readonly ForeignKey: IMutableForeignKey;
+    readonly Inverse: IMutableSkipNavigation;
+    readonly IsOnDependent: boolean;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetAnnotation(name: string, value: unknown): void;
+    SetField(fieldName: string): void;
+    SetForeignKey(foreignKey: IMutableForeignKey): void;
+    SetInverse(inverse: IMutableSkipNavigation): IMutableSkipNavigation | undefined;
+    SetIsEagerLoaded(eagerLoaded: Nullable<System_Internal.Boolean>): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
+    SetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>): void;
 }
 
 
 export type IMutableSkipNavigation = IMutableSkipNavigation$instance;
 
 export interface IMutableStoredProcedure$instance extends IReadOnlyStoredProcedure, IReadOnlyAnnotatable, IMutableAnnotatable {
-    name: string;
-    schema: string;
-    readonly entityType: IMutableEntityType;
-    isRowsAffectedReturned: boolean;
-    readonly parameters: IReadOnlyList<IMutableStoredProcedureParameter>;
-    readonly resultColumns: IReadOnlyList<IMutableStoredProcedureResultColumn>;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findParameter(propertyName: string): IMutableStoredProcedureParameter | undefined;
-    findParameter(propertyName: string): IReadOnlyStoredProcedureParameter | undefined;
-    findResultColumn(propertyName: string): IMutableStoredProcedureResultColumn | undefined;
-    findResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | undefined;
-    findRowsAffectedParameter(): IMutableStoredProcedureParameter | undefined;
-    findRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | undefined;
-    findRowsAffectedResultColumn(): IMutableStoredProcedureResultColumn | undefined;
-    findRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getSchemaQualifiedName(): string | undefined;
-    getStoreIdentifier(): Nullable<StoreObjectIdentifier>;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    Name: string;
+    Schema: string;
+    readonly EntityType: IMutableEntityType;
+    IsRowsAffectedReturned: boolean;
+    readonly Parameters: IReadOnlyList<IMutableStoredProcedureParameter>;
+    readonly ResultColumns: IReadOnlyList<IMutableStoredProcedureResultColumn>;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindParameter(propertyName: string): IMutableStoredProcedureParameter | undefined;
+    FindParameter(propertyName: string): IReadOnlyStoredProcedureParameter | undefined;
+    FindResultColumn(propertyName: string): IMutableStoredProcedureResultColumn | undefined;
+    FindResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | undefined;
+    FindRowsAffectedParameter(): IMutableStoredProcedureParameter | undefined;
+    FindRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | undefined;
+    FindRowsAffectedResultColumn(): IMutableStoredProcedureResultColumn | undefined;
+    FindRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetSchemaQualifiedName(): string | undefined;
+    GetStoreIdentifier(): Nullable<StoreObjectIdentifier>;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableStoredProcedure = IMutableStoredProcedure$instance;
 
 export interface IMutableStoredProcedureParameter$instance extends IReadOnlyStoredProcedureParameter, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly storedProcedure: IMutableStoredProcedure;
-    name: string;
-    direction: ParameterDirection;
-    readonly propertyName: string;
-    readonly forOriginalValue: Nullable<System_Internal.Boolean>;
-    readonly forRowsAffected: boolean;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly StoredProcedure: IMutableStoredProcedure;
+    Name: string;
+    Direction: ParameterDirection;
+    readonly PropertyName: string;
+    readonly ForOriginalValue: Nullable<System_Internal.Boolean>;
+    readonly ForRowsAffected: boolean;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableStoredProcedureParameter = IMutableStoredProcedureParameter$instance;
 
 export interface IMutableStoredProcedureResultColumn$instance extends IReadOnlyStoredProcedureResultColumn, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly storedProcedure: IMutableStoredProcedure;
-    name: string;
-    readonly propertyName: string;
-    readonly forRowsAffected: boolean;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly StoredProcedure: IMutableStoredProcedure;
+    Name: string;
+    readonly PropertyName: string;
+    readonly ForRowsAffected: boolean;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableStoredProcedureResultColumn = IMutableStoredProcedureResultColumn$instance;
 
 export interface IMutableTrigger$instance extends IReadOnlyTrigger, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly entityType: IMutableEntityType;
-    readonly modelName: string;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    setAnnotation(name: string, value: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly EntityType: IMutableEntityType;
+    readonly ModelName: string;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    SetAnnotation(name: string, value: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableTrigger = IMutableTrigger$instance;
 
 export interface IMutableTypeBase$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable, IMutableAnnotatable {
-    readonly model: IMutableModel;
-    readonly containingEntityType: IMutableEntityType;
-    get baseType(): IMutableTypeBase | undefined;
-    set baseType(value: IMutableTypeBase);
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    addComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
-    addComplexProperty(name: string, collection?: boolean): IMutableComplexProperty;
-    addComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
-    addComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
-    addIgnored(memberName: string): string;
-    addProperty(memberInfo: MemberInfo): IMutableProperty;
-    addProperty(name: string, propertyType: Type, memberInfo: MemberInfo): IMutableProperty;
-    addProperty(name: string, propertyType: Type): IMutableProperty;
-    addProperty(name: string): IMutableProperty;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IMutableComplexProperty | undefined;
-    findComplexProperty(name: string): IMutableComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty(): IMutableProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): IMutablePropertyBase | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IMutablePropertyBase>;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IMutableProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDerivedTypes(): IEnumerable<IMutableTypeBase>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDiscriminatorValue(): unknown | undefined;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IMutableTypeBase;
-    getRootType(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    isIgnored(memberName: string): boolean;
-    removeComplexProperty(property: IReadOnlyComplexProperty): IMutableComplexProperty | undefined;
-    removeDiscriminatorValue(): void;
-    removeProperty(property: IReadOnlyProperty): IMutableProperty | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    setChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>): void;
-    setDiscriminatorProperty(property: IReadOnlyProperty): void;
-    setDiscriminatorValue(value: unknown): void;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    removeAnnotation(name: string): IAnnotation | undefined;
+    readonly Model: IMutableModel;
+    readonly ContainingEntityType: IMutableEntityType;
+    get BaseType(): IMutableTypeBase | undefined;
+    set BaseType(value: IMutableTypeBase);
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AddComplexProperty(memberInfo: MemberInfo, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
+    AddComplexProperty(name: string, collection?: boolean): IMutableComplexProperty;
+    AddComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
+    AddComplexProperty(name: string, propertyType: Type, complexType: Type, complexTypeName?: string, collection?: boolean): IMutableComplexProperty;
+    AddIgnored(memberName: string): string;
+    AddProperty(memberInfo: MemberInfo): IMutableProperty;
+    AddProperty(name: string, propertyType: Type, memberInfo: MemberInfo): IMutableProperty;
+    AddProperty(name: string, propertyType: Type): IMutableProperty;
+    AddProperty(name: string): IMutableProperty;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IMutableComplexProperty | undefined;
+    FindComplexProperty(name: string): IMutableComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty(): IMutableProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): IMutablePropertyBase | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IMutablePropertyBase>;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IMutableProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDerivedTypes(): IEnumerable<IMutableTypeBase>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IMutableTypeBase;
+    GetRootType(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    IsIgnored(memberName: string): boolean;
+    RemoveComplexProperty(property: IReadOnlyComplexProperty): IMutableComplexProperty | undefined;
+    RemoveDiscriminatorValue(): void;
+    RemoveProperty(property: IReadOnlyProperty): IMutableProperty | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    SetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>): void;
+    SetDiscriminatorProperty(property: IReadOnlyProperty): void;
+    SetDiscriminatorValue(value: unknown): void;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
 }
 
 
 export type IMutableTypeBase = IMutableTypeBase$instance;
 
 export interface INavigation$instance extends IReadOnlyNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, INavigationBase, IPropertyBase, IAnnotatable {
-    readonly declaringEntityType: IEntityType;
-    readonly targetEntityType: IEntityType;
-    readonly foreignKey: IForeignKey;
-    readonly inverse: INavigation;
-    readonly isOnDependent: boolean;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setIsLoadedWhenNoTracking(entity: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly DeclaringEntityType: IEntityType;
+    readonly TargetEntityType: IEntityType;
+    readonly ForeignKey: IForeignKey;
+    readonly Inverse: INavigation;
+    readonly IsOnDependent: boolean;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetIsLoadedWhenNoTracking(entity: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type INavigation = INavigation$instance;
 
 export interface INavigationBase$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
-    readonly declaringEntityType: IEntityType;
-    readonly targetEntityType: IEntityType;
-    readonly inverse: INavigationBase;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setIsLoadedWhenNoTracking(entity: unknown): void;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly DeclaringEntityType: IEntityType;
+    readonly TargetEntityType: IEntityType;
+    readonly Inverse: INavigationBase;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetIsLoadedWhenNoTracking(entity: unknown): void;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type INavigationBase = INavigationBase$instance;
 
 export interface IParameterBindingFactories$instance {
-    findFactory(parameterType: Type, parameterName: string): IParameterBindingFactory | undefined;
+    FindFactory(parameterType: Type, parameterName: string): IParameterBindingFactory | undefined;
 }
 
 
 export type IParameterBindingFactories = IParameterBindingFactories$instance;
 
 export interface IParameterBindingFactory$instance {
-    bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
-    bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
-    bind(entityType: IReadOnlyEntityType, parameterType: Type, parameterName: string): ParameterBinding;
-    canBind(parameterType: Type, parameterName: string): boolean;
+    Bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
+    Bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
+    Bind(entityType: IReadOnlyEntityType, parameterType: Type, parameterName: string): ParameterBinding;
+    CanBind(parameterType: Type, parameterName: string): boolean;
 }
 
 
 export type IParameterBindingFactory = IParameterBindingFactory$instance;
 
 export interface IPrimaryKeyConstraint$instance extends IUniqueConstraint, IAnnotatable, IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly mappedKeys: IEnumerable<IKey>;
-    readonly table: ITable;
-    readonly columns: IReadOnlyList<IColumn>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getIsPrimaryKey(): boolean;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Name: string;
+    readonly MappedKeys: IEnumerable<IKey>;
+    readonly Table: ITable;
+    readonly Columns: IReadOnlyList<IColumn>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetIsPrimaryKey(): boolean;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IPrimaryKeyConstraint = IPrimaryKeyConstraint$instance;
 
 export interface IProperty$instance extends IReadOnlyProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
-    readonly declaringEntityType: IEntityType;
-    readonly isNullable: boolean;
-    readonly valueGenerated: ValueGenerated;
-    readonly isConcurrencyToken: boolean;
-    readonly isPrimitiveCollection: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    createKeyEqualityComparer<TProperty>(): IEqualityComparer<TProperty>;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findContainingPrimaryKey(): IKey | undefined;
-    findContainingPrimaryKey(): IReadOnlyKey | undefined;
-    findFirstPrincipal(): IProperty | undefined;
-    findFirstPrincipal(): IReadOnlyProperty | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getBeforeSaveBehavior(): PropertySaveBehavior;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getContainingForeignKeys(): IEnumerable<IForeignKey>;
-    getContainingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getElementType(): IElementType | undefined;
-    getElementType(): IReadOnlyElementType | undefined;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getMaxLength(): Nullable<System_Internal.Int32>;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPrincipals(): IReadOnlyList<IProperty>;
-    getPrincipals(): IReadOnlyList<IReadOnlyProperty>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getProviderClrType(): Type | undefined;
-    getTypeMapping(): CoreTypeMapping;
-    getValueComparer(): ValueComparer;
-    getValueConverter(): ValueConverter | undefined;
-    getValueGeneratorFactory(): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
-    isForeignKey(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    isShadowProperty(): boolean;
+    readonly DeclaringEntityType: IEntityType;
+    readonly IsNullable: boolean;
+    readonly ValueGenerated: ValueGenerated;
+    readonly IsConcurrencyToken: boolean;
+    readonly IsPrimitiveCollection: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    CreateKeyEqualityComparer<TProperty>(): IEqualityComparer<TProperty>;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindContainingPrimaryKey(): IKey | undefined;
+    FindContainingPrimaryKey(): IReadOnlyKey | undefined;
+    FindFirstPrincipal(): IProperty | undefined;
+    FindFirstPrincipal(): IReadOnlyProperty | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetBeforeSaveBehavior(): PropertySaveBehavior;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetContainingForeignKeys(): IEnumerable<IForeignKey>;
+    GetContainingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetElementType(): IElementType | undefined;
+    GetElementType(): IReadOnlyElementType | undefined;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPrincipals(): IReadOnlyList<IProperty>;
+    GetPrincipals(): IReadOnlyList<IReadOnlyProperty>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetProviderClrType(): Type | undefined;
+    GetTypeMapping(): CoreTypeMapping;
+    GetValueComparer(): ValueComparer;
+    GetValueConverter(): ValueConverter | undefined;
+    GetValueGeneratorFactory(): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
+    IsForeignKey(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    IsShadowProperty(): boolean;
 }
 
 
 export type IProperty = IProperty$instance;
 
 export interface IPropertyBase$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable, IAnnotatable {
-    readonly declaringType: ITypeBase;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly DeclaringType: ITypeBase;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IPropertyBase = IPropertyBase$instance;
 
 export interface IPropertyParameterBindingFactory$instance {
-    findParameter(complexType: IComplexType, parameterType: Type, parameterName: string): ParameterBinding | undefined;
-    findParameter(entityType: IEntityType, parameterType: Type, parameterName: string): ParameterBinding | undefined;
+    FindParameter(complexType: IComplexType, parameterType: Type, parameterName: string): ParameterBinding | undefined;
+    FindParameter(entityType: IEntityType, parameterType: Type, parameterName: string): ParameterBinding | undefined;
 }
 
 
 export type IPropertyParameterBindingFactory = IPropertyParameterBindingFactory$instance;
 
 export interface IQueryFilter$instance {
-    readonly expression: LambdaExpression;
-    readonly key: string;
-    readonly isAnonymous: boolean;
+    readonly Expression: LambdaExpression;
+    readonly Key: string;
+    readonly IsAnonymous: boolean;
 }
 
 
 export type IQueryFilter = IQueryFilter$instance;
 
 export interface IReadOnlyCheckConstraint$instance extends IReadOnlyAnnotatable {
-    readonly modelName: string;
-    readonly name: string;
-    readonly entityType: IReadOnlyEntityType;
-    readonly sql: string;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getDefaultName(): string | undefined;
-    getName(storeObject: StoreObjectIdentifier): string | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly ModelName: string;
+    readonly Name: string;
+    readonly EntityType: IReadOnlyEntityType;
+    readonly Sql: string;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetDefaultName(): string | undefined;
+    GetName(storeObject: StoreObjectIdentifier): string | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3060,89 +3060,89 @@ export interface IReadOnlyCheckConstraint$instance extends Microsoft_EntityFrame
 export type IReadOnlyCheckConstraint = IReadOnlyCheckConstraint$instance;
 
 export interface IReadOnlyComplexProperty$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable {
-    readonly complexType: IReadOnlyComplexType;
-    readonly isNullable: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly ComplexType: IReadOnlyComplexType;
+    readonly IsNullable: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
 export type IReadOnlyComplexProperty = IReadOnlyComplexProperty$instance;
 
 export interface IReadOnlyComplexType$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable {
-    readonly complexProperty: IReadOnlyComplexProperty;
-    readonly baseType: IReadOnlyComplexType | undefined;
-    readonly model: IReadOnlyModel;
-    readonly containingEntityType: IReadOnlyEntityType;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDerivedTypes(): IEnumerable<IReadOnlyComplexType>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDiscriminatorValue(): unknown | undefined;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IReadOnlyComplexType;
-    getRootType(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    isContainedBy(type: Type): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly ComplexProperty: IReadOnlyComplexProperty;
+    readonly BaseType: IReadOnlyComplexType | undefined;
+    readonly Model: IReadOnlyModel;
+    readonly ContainingEntityType: IReadOnlyEntityType;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDerivedTypes(): IEnumerable<IReadOnlyComplexType>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IReadOnlyComplexType;
+    GetRootType(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    IsContainedBy(type: Type): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IReadOnlyComplexType = IReadOnlyComplexType$instance;
 
 export interface IReadOnlyDbFunction$instance extends IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly schema: string;
-    readonly modelName: string;
-    readonly model: IReadOnlyModel;
-    readonly methodInfo: MethodInfo | undefined;
-    readonly isBuiltIn: boolean;
-    readonly isScalar: boolean;
-    readonly isAggregate: boolean;
-    readonly isNullable: boolean;
-    readonly storeType: string;
-    readonly returnType: Type;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly parameters: IReadOnlyList<IReadOnlyDbFunctionParameter>;
-    readonly translation: Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly ModelName: string;
+    readonly Model: IReadOnlyModel;
+    readonly MethodInfo: MethodInfo | undefined;
+    readonly IsBuiltIn: boolean;
+    readonly IsScalar: boolean;
+    readonly IsAggregate: boolean;
+    readonly IsNullable: boolean;
+    readonly StoreType: string;
+    readonly ReturnType: Type;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly Parameters: IReadOnlyList<IReadOnlyDbFunctionParameter>;
+    readonly Translation: Func<IReadOnlyList<SqlExpression>, SqlExpression> | undefined;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3151,17 +3151,17 @@ export interface IReadOnlyDbFunction$instance extends Microsoft_EntityFrameworkC
 export type IReadOnlyDbFunction = IReadOnlyDbFunction$instance;
 
 export interface IReadOnlyDbFunctionParameter$instance extends IReadOnlyAnnotatable {
-    readonly function: IReadOnlyDbFunction;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly storeType: string;
-    readonly propagatesNullability: boolean;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly Function: IReadOnlyDbFunction;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly StoreType: string;
+    readonly PropagatesNullability: boolean;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3170,20 +3170,20 @@ export interface IReadOnlyDbFunctionParameter$instance extends Microsoft_EntityF
 export type IReadOnlyDbFunctionParameter = IReadOnlyDbFunctionParameter$instance;
 
 export interface IReadOnlyElementType$instance extends IReadOnlyAnnotatable {
-    readonly collectionProperty: IReadOnlyProperty;
-    readonly clrType: Type;
-    readonly isNullable: boolean;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getMaxLength(): Nullable<System_Internal.Int32>;
-    getProviderClrType(): Type | undefined;
-    getTypeMapping(): CoreTypeMapping;
-    getValueComparer(): ValueComparer;
-    getValueConverter(): ValueConverter | undefined;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly CollectionProperty: IReadOnlyProperty;
+    readonly ClrType: Type;
+    readonly IsNullable: boolean;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
+    GetProviderClrType(): Type | undefined;
+    GetTypeMapping(): CoreTypeMapping;
+    GetValueComparer(): ValueComparer;
+    GetValueConverter(): ValueConverter | undefined;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3192,78 +3192,78 @@ export interface IReadOnlyElementType$instance extends Microsoft_EntityFramework
 export type IReadOnlyElementType = IReadOnlyElementType$instance;
 
 export interface IReadOnlyEntityType$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable {
-    readonly baseType: IReadOnlyEntityType | undefined;
-    readonly model: IReadOnlyModel;
-    readonly containingEntityType: IReadOnlyEntityType;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
-    findDeclaredTrigger(name: string): IReadOnlyTrigger | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    findForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    findForeignKeys(property: IReadOnlyProperty): IEnumerable<IReadOnlyForeignKey>;
-    findForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IReadOnlyForeignKey>;
-    findIndex(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
-    findIndex(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyIndex | undefined;
-    findIndex(name: string): IReadOnlyIndex | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findKey(property: IReadOnlyProperty): IReadOnlyKey | undefined;
-    findKey(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyKey | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
-    findNavigation(name: string): IReadOnlyNavigation | undefined;
-    findOwnership(): IReadOnlyForeignKey | undefined;
-    findPrimaryKey(): IReadOnlyKey | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    findServiceProperty(name: string): IReadOnlyServiceProperty | undefined;
-    findSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
-    findSkipNavigation(name: string): IReadOnlySkipNavigation | undefined;
-    getAllBaseTypes(): IEnumerable<IReadOnlyEntityType>;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDeclaredQueryFilters(): IReadOnlyCollection<IQueryFilter>;
-    getDiscriminatorValue(): unknown | undefined;
-    getIsDiscriminatorMappingComplete(): boolean;
-    getNavigationAccessMode(): PropertyAccessMode;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getQueryFilter(): LambdaExpression | undefined;
-    getRootType(): IReadOnlyEntityType;
-    getRootType(): IReadOnlyTypeBase;
-    getSeedData(providerValues?: boolean): IEnumerable<IDictionary<System_Internal.String, unknown | undefined>>;
-    isAssignableFrom(derivedType: IReadOnlyEntityType): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isAbstract(): boolean;
+    readonly BaseType: IReadOnlyEntityType | undefined;
+    readonly Model: IReadOnlyModel;
+    readonly ContainingEntityType: IReadOnlyEntityType;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
+    FindDeclaredTrigger(name: string): IReadOnlyTrigger | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
+    FindForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
+    FindForeignKeys(property: IReadOnlyProperty): IEnumerable<IReadOnlyForeignKey>;
+    FindForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<IReadOnlyForeignKey>;
+    FindIndex(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
+    FindIndex(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyIndex | undefined;
+    FindIndex(name: string): IReadOnlyIndex | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindKey(property: IReadOnlyProperty): IReadOnlyKey | undefined;
+    FindKey(properties: IReadOnlyList<IReadOnlyProperty>): IReadOnlyKey | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
+    FindNavigation(name: string): IReadOnlyNavigation | undefined;
+    FindOwnership(): IReadOnlyForeignKey | undefined;
+    FindPrimaryKey(): IReadOnlyKey | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    FindServiceProperty(name: string): IReadOnlyServiceProperty | undefined;
+    FindSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
+    FindSkipNavigation(name: string): IReadOnlySkipNavigation | undefined;
+    GetAllBaseTypes(): IEnumerable<IReadOnlyEntityType>;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDeclaredQueryFilters(): IReadOnlyCollection<IQueryFilter>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetIsDiscriminatorMappingComplete(): boolean;
+    GetNavigationAccessMode(): PropertyAccessMode;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetQueryFilter(): LambdaExpression | undefined;
+    GetRootType(): IReadOnlyEntityType;
+    GetRootType(): IReadOnlyTypeBase;
+    GetSeedData(providerValues?: boolean): IEnumerable<IDictionary<System_Internal.String, unknown | undefined>>;
+    IsAssignableFrom(derivedType: IReadOnlyEntityType): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsAbstract(): boolean;
 }
 
 
 export type IReadOnlyEntityType = IReadOnlyEntityType$instance;
 
 export interface IReadOnlyEntityTypeMappingFragment$instance extends IReadOnlyAnnotatable {
-    readonly entityType: IReadOnlyEntityType;
-    readonly storeObject: StoreObjectIdentifier;
-    readonly isTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly EntityType: IReadOnlyEntityType;
+    readonly StoreObject: StoreObjectIdentifier;
+    readonly IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3272,26 +3272,26 @@ export interface IReadOnlyEntityTypeMappingFragment$instance extends Microsoft_E
 export type IReadOnlyEntityTypeMappingFragment = IReadOnlyEntityTypeMappingFragment$instance;
 
 export interface IReadOnlyForeignKey$instance extends IReadOnlyAnnotatable {
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly properties: IReadOnlyList<IReadOnlyProperty>;
-    readonly principalEntityType: IReadOnlyEntityType;
-    readonly principalKey: IReadOnlyKey;
-    readonly dependentToPrincipal: IReadOnlyNavigation | undefined;
-    readonly principalToDependent: IReadOnlyNavigation | undefined;
-    readonly isUnique: boolean;
-    readonly isRequired: boolean;
-    readonly isRequiredDependent: boolean;
-    readonly isOwnership: boolean;
-    readonly deleteBehavior: DeleteBehavior;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
-    getReferencingSkipNavigations(): IEnumerable<IReadOnlySkipNavigation>;
-    getRelatedEntityType(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
-    isBaseLinking(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly Properties: IReadOnlyList<IReadOnlyProperty>;
+    readonly PrincipalEntityType: IReadOnlyEntityType;
+    readonly PrincipalKey: IReadOnlyKey;
+    readonly DependentToPrincipal: IReadOnlyNavigation | undefined;
+    readonly PrincipalToDependent: IReadOnlyNavigation | undefined;
+    readonly IsUnique: boolean;
+    readonly IsRequired: boolean;
+    readonly IsRequiredDependent: boolean;
+    readonly IsOwnership: boolean;
+    readonly DeleteBehavior: DeleteBehavior;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
+    GetReferencingSkipNavigations(): IEnumerable<IReadOnlySkipNavigation>;
+    GetRelatedEntityType(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
+    IsBaseLinking(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
@@ -3300,17 +3300,17 @@ export interface IReadOnlyForeignKey$instance extends Microsoft_EntityFrameworkC
 export type IReadOnlyForeignKey = IReadOnlyForeignKey$instance;
 
 export interface IReadOnlyIndex$instance extends IReadOnlyAnnotatable {
-    readonly properties: IReadOnlyList<IReadOnlyProperty>;
-    readonly name: string;
-    readonly isUnique: boolean;
-    readonly isDescending: IReadOnlyList<System_Internal.Boolean>;
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly Properties: IReadOnlyList<IReadOnlyProperty>;
+    readonly Name: string;
+    readonly IsUnique: boolean;
+    readonly IsDescending: IReadOnlyList<System_Internal.Boolean>;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3319,15 +3319,15 @@ export interface IReadOnlyIndex$instance extends Microsoft_EntityFrameworkCore_I
 export type IReadOnlyIndex = IReadOnlyIndex$instance;
 
 export interface IReadOnlyKey$instance extends IReadOnlyAnnotatable {
-    readonly properties: IReadOnlyList<IReadOnlyProperty>;
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getReferencingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
-    isPrimaryKey(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Properties: IReadOnlyList<IReadOnlyProperty>;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetReferencingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
+    IsPrimaryKey(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
@@ -3336,23 +3336,23 @@ export interface IReadOnlyKey$instance extends Microsoft_EntityFrameworkCore_Inf
 export type IReadOnlyKey = IReadOnlyKey$instance;
 
 export interface IReadOnlyModel$instance extends IReadOnlyAnnotatable {
-    readonly modelId: Guid;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findEntityType(name: string): IReadOnlyEntityType | undefined;
-    findEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    findEntityType(type: Type): IReadOnlyEntityType | undefined;
-    findEntityTypes(type: Type): IEnumerable<IReadOnlyEntityType>;
-    findLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IReadOnlyEntityType>;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getEmbeddedDiscriminatorName(): string;
-    getEntityTypes(): IEnumerable<IReadOnlyEntityType>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShared(type: Type): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly ModelId: Guid;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindEntityType(name: string): IReadOnlyEntityType | undefined;
+    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
+    FindEntityType(type: Type): IReadOnlyEntityType | undefined;
+    FindEntityTypes(type: Type): IEnumerable<IReadOnlyEntityType>;
+    FindLeastDerivedEntityTypes(type: Type, condition?: Func<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable<IReadOnlyEntityType>;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetEmbeddedDiscriminatorName(): string;
+    GetEntityTypes(): IEnumerable<IReadOnlyEntityType>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShared(type: Type): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
@@ -3361,113 +3361,113 @@ export interface IReadOnlyModel$instance extends Microsoft_EntityFrameworkCore_I
 export type IReadOnlyModel = IReadOnlyModel$instance;
 
 export interface IReadOnlyNavigation$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable {
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly targetEntityType: IReadOnlyEntityType;
-    readonly inverse: IReadOnlyNavigation;
-    readonly foreignKey: IReadOnlyForeignKey;
-    readonly isOnDependent: boolean;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly TargetEntityType: IReadOnlyEntityType;
+    readonly Inverse: IReadOnlyNavigation;
+    readonly ForeignKey: IReadOnlyForeignKey;
+    readonly IsOnDependent: boolean;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
 export type IReadOnlyNavigation = IReadOnlyNavigation$instance;
 
 export interface IReadOnlyNavigationBase$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable {
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly targetEntityType: IReadOnlyEntityType;
-    readonly inverse: IReadOnlyNavigationBase;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly TargetEntityType: IReadOnlyEntityType;
+    readonly Inverse: IReadOnlyNavigationBase;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
 }
 
 
 export type IReadOnlyNavigationBase = IReadOnlyNavigationBase$instance;
 
 export interface IReadOnlyProperty$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable {
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly isNullable: boolean;
-    readonly valueGenerated: ValueGenerated;
-    readonly isConcurrencyToken: boolean;
-    readonly isPrimitiveCollection: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findContainingPrimaryKey(): IReadOnlyKey | undefined;
-    findFirstPrincipal(): IReadOnlyProperty | undefined;
-    getBeforeSaveBehavior(): PropertySaveBehavior;
-    getContainingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
-    getElementType(): IReadOnlyElementType | undefined;
-    getFieldName(): string | undefined;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getMaxLength(): Nullable<System_Internal.Int32>;
-    getPrincipals(): IReadOnlyList<IReadOnlyProperty>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getProviderClrType(): Type | undefined;
-    getTypeMapping(): CoreTypeMapping;
-    getValueComparer(): ValueComparer;
-    getValueConverter(): ValueConverter | undefined;
-    getValueGeneratorFactory(): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
-    isForeignKey(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    isShadowProperty(): boolean;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly IsNullable: boolean;
+    readonly ValueGenerated: ValueGenerated;
+    readonly IsConcurrencyToken: boolean;
+    readonly IsPrimitiveCollection: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindContainingPrimaryKey(): IReadOnlyKey | undefined;
+    FindFirstPrincipal(): IReadOnlyProperty | undefined;
+    GetBeforeSaveBehavior(): PropertySaveBehavior;
+    GetContainingForeignKeys(): IEnumerable<IReadOnlyForeignKey>;
+    GetElementType(): IReadOnlyElementType | undefined;
+    GetFieldName(): string | undefined;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
+    GetPrincipals(): IReadOnlyList<IReadOnlyProperty>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetProviderClrType(): Type | undefined;
+    GetTypeMapping(): CoreTypeMapping;
+    GetValueComparer(): ValueComparer;
+    GetValueConverter(): ValueConverter | undefined;
+    GetValueGeneratorFactory(): Func<IProperty, ITypeBase, ValueGenerator> | undefined;
+    IsForeignKey(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    IsShadowProperty(): boolean;
 }
 
 
 export type IReadOnlyProperty = IReadOnlyProperty$instance;
 
 export interface IReadOnlyPropertyBase$instance extends IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
 }
 
 
@@ -3476,15 +3476,15 @@ export interface IReadOnlyPropertyBase$instance extends Microsoft_EntityFramewor
 export type IReadOnlyPropertyBase = IReadOnlyPropertyBase$instance;
 
 export interface IReadOnlyRelationalPropertyOverrides$instance extends IReadOnlyAnnotatable {
-    readonly property: IReadOnlyProperty;
-    readonly storeObject: StoreObjectIdentifier;
-    readonly columnName: string;
-    readonly isColumnNameOverridden: boolean;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly Property: IReadOnlyProperty;
+    readonly StoreObject: StoreObjectIdentifier;
+    readonly ColumnName: string;
+    readonly IsColumnNameOverridden: boolean;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3493,21 +3493,21 @@ export interface IReadOnlyRelationalPropertyOverrides$instance extends Microsoft
 export type IReadOnlyRelationalPropertyOverrides = IReadOnlyRelationalPropertyOverrides$instance;
 
 export interface IReadOnlySequence$instance extends IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly modelSchema: string | undefined;
-    readonly schema: string;
-    readonly model: IReadOnlyModel;
-    readonly startValue: long;
-    readonly incrementBy: int;
-    readonly minValue: Nullable<System_Internal.Int64>;
-    readonly maxValue: Nullable<System_Internal.Int64>;
-    readonly type: Type;
-    readonly isCyclic: boolean;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly Name: string;
+    readonly ModelSchema: string | undefined;
+    readonly Schema: string;
+    readonly Model: IReadOnlyModel;
+    readonly StartValue: long;
+    readonly IncrementBy: int;
+    readonly MinValue: Nullable<System_Internal.Int64>;
+    readonly MaxValue: Nullable<System_Internal.Int64>;
+    readonly Type: Type;
+    readonly IsCyclic: boolean;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3516,75 +3516,75 @@ export interface IReadOnlySequence$instance extends Microsoft_EntityFrameworkCor
 export type IReadOnlySequence = IReadOnlySequence$instance;
 
 export interface IReadOnlyServiceProperty$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable {
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly parameterBinding: ServiceParameterBinding;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly ParameterBinding: ServiceParameterBinding;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
 export type IReadOnlyServiceProperty = IReadOnlyServiceProperty$instance;
 
 export interface IReadOnlySkipNavigation$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable {
-    readonly joinEntityType: IReadOnlyEntityType;
-    readonly inverse: IReadOnlySkipNavigation;
-    readonly foreignKey: IReadOnlyForeignKey;
-    readonly isOnDependent: boolean;
-    readonly declaringEntityType: IReadOnlyEntityType;
-    readonly targetEntityType: IReadOnlyEntityType;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getFieldName(): string | undefined;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly JoinEntityType: IReadOnlyEntityType;
+    readonly Inverse: IReadOnlySkipNavigation;
+    readonly ForeignKey: IReadOnlyForeignKey;
+    readonly IsOnDependent: boolean;
+    readonly DeclaringEntityType: IReadOnlyEntityType;
+    readonly TargetEntityType: IReadOnlyEntityType;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetFieldName(): string | undefined;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
 export type IReadOnlySkipNavigation = IReadOnlySkipNavigation$instance;
 
 export interface IReadOnlyStoredProcedure$instance extends IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly schema: string;
-    readonly entityType: IReadOnlyEntityType;
-    readonly isRowsAffectedReturned: boolean;
-    readonly parameters: IReadOnlyList<IReadOnlyStoredProcedureParameter>;
-    readonly resultColumns: IReadOnlyList<IReadOnlyStoredProcedureResultColumn>;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findParameter(propertyName: string): IReadOnlyStoredProcedureParameter | undefined;
-    findResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | undefined;
-    findRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | undefined;
-    findRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getSchemaQualifiedName(): string | undefined;
-    getStoreIdentifier(): Nullable<StoreObjectIdentifier>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly EntityType: IReadOnlyEntityType;
+    readonly IsRowsAffectedReturned: boolean;
+    readonly Parameters: IReadOnlyList<IReadOnlyStoredProcedureParameter>;
+    readonly ResultColumns: IReadOnlyList<IReadOnlyStoredProcedureResultColumn>;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindParameter(propertyName: string): IReadOnlyStoredProcedureParameter | undefined;
+    FindResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | undefined;
+    FindRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | undefined;
+    FindRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetSchemaQualifiedName(): string | undefined;
+    GetStoreIdentifier(): Nullable<StoreObjectIdentifier>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3593,17 +3593,17 @@ export interface IReadOnlyStoredProcedure$instance extends Microsoft_EntityFrame
 export type IReadOnlyStoredProcedure = IReadOnlyStoredProcedure$instance;
 
 export interface IReadOnlyStoredProcedureParameter$instance extends IReadOnlyAnnotatable {
-    readonly storedProcedure: IReadOnlyStoredProcedure;
-    readonly name: string;
-    readonly propertyName: string;
-    readonly direction: ParameterDirection;
-    readonly forOriginalValue: Nullable<System_Internal.Boolean>;
-    readonly forRowsAffected: boolean;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly StoredProcedure: IReadOnlyStoredProcedure;
+    readonly Name: string;
+    readonly PropertyName: string;
+    readonly Direction: ParameterDirection;
+    readonly ForOriginalValue: Nullable<System_Internal.Boolean>;
+    readonly ForRowsAffected: boolean;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3612,15 +3612,15 @@ export interface IReadOnlyStoredProcedureParameter$instance extends Microsoft_En
 export type IReadOnlyStoredProcedureParameter = IReadOnlyStoredProcedureParameter$instance;
 
 export interface IReadOnlyStoredProcedureResultColumn$instance extends IReadOnlyAnnotatable {
-    readonly storedProcedure: IReadOnlyStoredProcedure;
-    readonly name: string;
-    readonly propertyName: string;
-    readonly forRowsAffected: boolean;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly StoredProcedure: IReadOnlyStoredProcedure;
+    readonly Name: string;
+    readonly PropertyName: string;
+    readonly ForRowsAffected: boolean;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3629,21 +3629,21 @@ export interface IReadOnlyStoredProcedureResultColumn$instance extends Microsoft
 export type IReadOnlyStoredProcedureResultColumn = IReadOnlyStoredProcedureResultColumn$instance;
 
 export interface IReadOnlyStoreObjectDictionary_1$instance<T> {
-    find(storeObject: StoreObjectIdentifier): T | undefined;
-    getValues(): IEnumerable<T>;
+    Find(storeObject: StoreObjectIdentifier): T | undefined;
+    GetValues(): IEnumerable<T>;
 }
 
 
 export type IReadOnlyStoreObjectDictionary_1<T> = IReadOnlyStoreObjectDictionary_1$instance<T>;
 
 export interface IReadOnlyTrigger$instance extends IReadOnlyAnnotatable {
-    readonly modelName: string;
-    readonly entityType: IReadOnlyEntityType;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    readonly ModelName: string;
+    readonly EntityType: IReadOnlyEntityType;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
 }
 
 
@@ -3652,36 +3652,36 @@ export interface IReadOnlyTrigger$instance extends Microsoft_EntityFrameworkCore
 export type IReadOnlyTrigger = IReadOnlyTrigger$instance;
 
 export interface IReadOnlyTypeBase$instance extends IReadOnlyAnnotatable {
-    readonly model: IReadOnlyModel;
-    readonly containingEntityType: IReadOnlyEntityType;
-    readonly baseType: IReadOnlyTypeBase | undefined;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDiscriminatorValue(): unknown | undefined;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Model: IReadOnlyModel;
+    readonly ContainingEntityType: IReadOnlyEntityType;
+    readonly BaseType: IReadOnlyTypeBase | undefined;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
@@ -3690,984 +3690,984 @@ export interface IReadOnlyTypeBase$instance extends Microsoft_EntityFrameworkCor
 export type IReadOnlyTypeBase = IReadOnlyTypeBase$instance;
 
 export interface IRelationalAnnotationProvider$instance {
-    for(checkConstraint: ICheckConstraint, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: IColumn, designTime: boolean): IEnumerable<IAnnotation>;
-    for(foreignKey: IForeignKeyConstraint, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: IFunctionColumn, designTime: boolean): IEnumerable<IAnnotation>;
-    for(model: IRelationalModel, designTime: boolean): IEnumerable<IAnnotation>;
-    for(sequence: ISequence, designTime: boolean): IEnumerable<IAnnotation>;
-    for(sqlQuery: ISqlQuery, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: ISqlQueryColumn, designTime: boolean): IEnumerable<IAnnotation>;
-    for(function_: IStoreFunction, designTime: boolean): IEnumerable<IAnnotation>;
-    for(parameter: IStoreFunctionParameter, designTime: boolean): IEnumerable<IAnnotation>;
-    for(storedProcedure: IStoreStoredProcedure, designTime: boolean): IEnumerable<IAnnotation>;
-    for(parameter: IStoreStoredProcedureParameter, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: IStoreStoredProcedureResultColumn, designTime: boolean): IEnumerable<IAnnotation>;
-    for(table: ITable, designTime: boolean): IEnumerable<IAnnotation>;
-    for(index: ITableIndex, designTime: boolean): IEnumerable<IAnnotation>;
-    for(trigger: ITrigger, designTime: boolean): IEnumerable<IAnnotation>;
-    for(constraint: IUniqueConstraint, designTime: boolean): IEnumerable<IAnnotation>;
-    for(view: IView, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: IViewColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(checkConstraint: ICheckConstraint, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: IColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(foreignKey: IForeignKeyConstraint, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: IFunctionColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(model: IRelationalModel, designTime: boolean): IEnumerable<IAnnotation>;
+    For(sequence: ISequence, designTime: boolean): IEnumerable<IAnnotation>;
+    For(sqlQuery: ISqlQuery, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: ISqlQueryColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(function_: IStoreFunction, designTime: boolean): IEnumerable<IAnnotation>;
+    For(parameter: IStoreFunctionParameter, designTime: boolean): IEnumerable<IAnnotation>;
+    For(storedProcedure: IStoreStoredProcedure, designTime: boolean): IEnumerable<IAnnotation>;
+    For(parameter: IStoreStoredProcedureParameter, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: IStoreStoredProcedureResultColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(table: ITable, designTime: boolean): IEnumerable<IAnnotation>;
+    For(index: ITableIndex, designTime: boolean): IEnumerable<IAnnotation>;
+    For(trigger: ITrigger, designTime: boolean): IEnumerable<IAnnotation>;
+    For(constraint: IUniqueConstraint, designTime: boolean): IEnumerable<IAnnotation>;
+    For(view: IView, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: IViewColumn, designTime: boolean): IEnumerable<IAnnotation>;
 }
 
 
 export type IRelationalAnnotationProvider = IRelationalAnnotationProvider$instance;
 
 export interface IRelationalModel$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly model: IModel;
-    readonly tables: IEnumerable<ITable>;
-    readonly views: IEnumerable<IView>;
-    readonly queries: IEnumerable<ISqlQuery>;
-    readonly sequences: IEnumerable<ISequence>;
-    readonly functions: IEnumerable<IStoreFunction>;
-    readonly storedProcedures: IEnumerable<IStoreStoredProcedure>;
-    readonly collation: string | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findDefaultTable(name: string): TableBase | undefined;
-    findFunction(name: string, schema: string, parameters: IReadOnlyList<System_Internal.String>): IStoreFunction | undefined;
-    findQuery(name: string): ISqlQuery | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    findSequence(name: string, schema: string): ISequence | undefined;
-    findStoredProcedure(name: string, schema: string): IStoreStoredProcedure | undefined;
-    findTable(name: string, schema: string): ITable | undefined;
-    findView(name: string, schema: string): IView | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Model: IModel;
+    readonly Tables: IEnumerable<ITable>;
+    readonly Views: IEnumerable<IView>;
+    readonly Queries: IEnumerable<ISqlQuery>;
+    readonly Sequences: IEnumerable<ISequence>;
+    readonly Functions: IEnumerable<IStoreFunction>;
+    readonly StoredProcedures: IEnumerable<IStoreStoredProcedure>;
+    readonly Collation: string | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindDefaultTable(name: string): TableBase | undefined;
+    FindFunction(name: string, schema: string, parameters: IReadOnlyList<System_Internal.String>): IStoreFunction | undefined;
+    FindQuery(name: string): ISqlQuery | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindSequence(name: string, schema: string): ISequence | undefined;
+    FindStoredProcedure(name: string, schema: string): IStoreStoredProcedure | undefined;
+    FindTable(name: string, schema: string): ITable | undefined;
+    FindView(name: string, schema: string): IView | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IRelationalModel = IRelationalModel$instance;
 
 export interface IRelationalPropertyOverrides$instance extends IReadOnlyRelationalPropertyOverrides, IReadOnlyAnnotatable, IAnnotatable {
-    readonly property: IProperty;
-    readonly storeObject: StoreObjectIdentifier;
-    readonly columnName: string;
-    readonly isColumnNameOverridden: boolean;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly Property: IProperty;
+    readonly StoreObject: StoreObjectIdentifier;
+    readonly ColumnName: string;
+    readonly IsColumnNameOverridden: boolean;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IRelationalPropertyOverrides = IRelationalPropertyOverrides$instance;
 
 export interface ISequence$instance extends IReadOnlySequence, IReadOnlyAnnotatable, IAnnotatable {
-    readonly model: IModel;
-    readonly name: string;
-    readonly modelSchema: string | undefined;
-    readonly schema: string;
-    readonly startValue: long;
-    readonly incrementBy: int;
-    readonly minValue: Nullable<System_Internal.Int64>;
-    readonly maxValue: Nullable<System_Internal.Int64>;
-    readonly type: Type;
-    readonly isCyclic: boolean;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly Model: IModel;
+    readonly Name: string;
+    readonly ModelSchema: string | undefined;
+    readonly Schema: string;
+    readonly StartValue: long;
+    readonly IncrementBy: int;
+    readonly MinValue: Nullable<System_Internal.Int64>;
+    readonly MaxValue: Nullable<System_Internal.Int64>;
+    readonly Type: Type;
+    readonly IsCyclic: boolean;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ISequence = ISequence$instance;
 
 export interface IServiceProperty$instance extends IReadOnlyServiceProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
-    readonly declaringEntityType: IEntityType;
-    readonly parameterBinding: ServiceParameterBinding;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly DeclaringEntityType: IEntityType;
+    readonly ParameterBinding: ServiceParameterBinding;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IServiceProperty = IServiceProperty$instance;
 
 export interface ISkipNavigation$instance extends IReadOnlySkipNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, INavigationBase, IPropertyBase, IAnnotatable {
-    readonly declaringEntityType: IEntityType;
-    readonly targetEntityType: IEntityType;
-    readonly joinEntityType: IEntityType;
-    readonly foreignKey: IForeignKey;
-    readonly inverse: ISkipNavigation;
-    readonly isOnDependent: boolean;
-    readonly isEagerLoaded: boolean;
-    readonly lazyLoadingEnabled: boolean;
-    readonly name: string;
-    readonly declaringType: IReadOnlyTypeBase;
-    readonly clrType: Type;
-    readonly sentinel: unknown | undefined;
-    readonly isCollection: boolean;
-    readonly propertyInfo: PropertyInfo | undefined;
-    readonly fieldInfo: FieldInfo | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    isShadowProperty(): boolean;
-    setIsLoadedWhenNoTracking(entity: unknown): void;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly DeclaringEntityType: IEntityType;
+    readonly TargetEntityType: IEntityType;
+    readonly JoinEntityType: IEntityType;
+    readonly ForeignKey: IForeignKey;
+    readonly Inverse: ISkipNavigation;
+    readonly IsOnDependent: boolean;
+    readonly IsEagerLoaded: boolean;
+    readonly LazyLoadingEnabled: boolean;
+    readonly Name: string;
+    readonly DeclaringType: IReadOnlyTypeBase;
+    readonly ClrType: Type;
+    readonly Sentinel: unknown | undefined;
+    readonly IsCollection: boolean;
+    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly FieldInfo: FieldInfo | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    IsShadowProperty(): boolean;
+    SetIsLoadedWhenNoTracking(entity: unknown): void;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ISkipNavigation = ISkipNavigation$instance;
 
 export interface ISqlQuery$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly entityTypeMappings: IEnumerable<ISqlQueryMapping>;
-    readonly columns: IEnumerable<ISqlQueryColumn>;
-    readonly sql: string;
-    readonly name: string;
-    readonly schema: string;
-    readonly schemaQualifiedName: string;
-    readonly model: IRelationalModel;
-    readonly isShared: boolean;
-    readonly complexTypeMappings: IEnumerable<ITableMappingBase>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumn(property: IProperty): ISqlQueryColumn | undefined;
-    findColumn(name: string): ISqlQueryColumn | undefined;
-    findColumn(property: IProperty): IColumnBase | undefined;
-    findColumn(name: string): IColumnBase | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    isOptional(typeBase: ITypeBase): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly EntityTypeMappings: IEnumerable<ISqlQueryMapping>;
+    readonly Columns: IEnumerable<ISqlQueryColumn>;
+    readonly Sql: string;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly SchemaQualifiedName: string;
+    readonly Model: IRelationalModel;
+    readonly IsShared: boolean;
+    readonly ComplexTypeMappings: IEnumerable<ITableMappingBase>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumn(property: IProperty): ISqlQueryColumn | undefined;
+    FindColumn(name: string): ISqlQueryColumn | undefined;
+    FindColumn(property: IProperty): IColumnBase | undefined;
+    FindColumn(name: string): IColumnBase | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    IsOptional(typeBase: ITypeBase): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ISqlQuery = ISqlQuery$instance;
 
 export interface ISqlQueryColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly sqlQuery: ISqlQuery;
-    readonly propertyMappings: IReadOnlyList<ISqlQueryColumnMapping>;
-    readonly name: string;
-    readonly storeType: string;
-    readonly providerClrType: Type;
-    readonly storeTypeMapping: RelationalTypeMapping;
-    readonly isNullable: boolean;
-    readonly table: ITableBase;
-    readonly providerValueComparer: ValueComparer;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
-    findColumnMapping(entityType: IReadOnlyEntityType): ISqlQueryColumnMapping | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly SqlQuery: ISqlQuery;
+    readonly PropertyMappings: IReadOnlyList<ISqlQueryColumnMapping>;
+    readonly Name: string;
+    readonly StoreType: string;
+    readonly ProviderClrType: Type;
+    readonly StoreTypeMapping: RelationalTypeMapping;
+    readonly IsNullable: boolean;
+    readonly Table: ITableBase;
+    readonly ProviderValueComparer: ValueComparer;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
+    FindColumnMapping(entityType: IReadOnlyEntityType): ISqlQueryColumnMapping | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ISqlQueryColumn = ISqlQueryColumn$instance;
 
 export interface ISqlQueryColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly column: ISqlQueryColumn;
-    readonly sqlQueryMapping: ISqlQueryMapping;
-    readonly property: IProperty;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly tableMapping: ITableMappingBase;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Column: ISqlQueryColumn;
+    readonly SqlQueryMapping: ISqlQueryMapping;
+    readonly Property: IProperty;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly TableMapping: ITableMappingBase;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ISqlQueryColumnMapping = ISqlQueryColumnMapping$instance;
 
 export interface ISqlQueryMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    isDefaultSqlQueryMapping: boolean;
-    readonly sqlQuery: ISqlQuery;
-    readonly columnMappings: IEnumerable<ISqlQueryColumnMapping>;
-    readonly typeBase: ITypeBase;
-    readonly table: ITableBase;
-    readonly isSharedTablePrincipal: Nullable<System_Internal.Boolean>;
-    readonly isSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
-    readonly includesDerivedTypes: Nullable<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    IsDefaultSqlQueryMapping: boolean;
+    readonly SqlQuery: ISqlQuery;
+    readonly ColumnMappings: IEnumerable<ISqlQueryColumnMapping>;
+    readonly TypeBase: ITypeBase;
+    readonly Table: ITableBase;
+    readonly IsSharedTablePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IsSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IncludesDerivedTypes: Nullable<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ISqlQueryMapping = ISqlQueryMapping$instance;
 
 export interface IStoredProcedure$instance extends IReadOnlyStoredProcedure, IReadOnlyAnnotatable, IAnnotatable {
-    readonly name: string;
-    readonly entityType: IEntityType;
-    readonly storeStoredProcedure: IStoreStoredProcedure;
-    readonly parameters: IReadOnlyList<IStoredProcedureParameter>;
-    readonly resultColumns: IReadOnlyList<IStoredProcedureResultColumn>;
-    readonly schema: string;
-    readonly isRowsAffectedReturned: boolean;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findParameter(propertyName: string): IReadOnlyStoredProcedureParameter | undefined;
-    findParameter(propertyName: string): IStoredProcedureParameter | undefined;
-    findResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | undefined;
-    findResultColumn(propertyName: string): IStoredProcedureResultColumn | undefined;
-    findRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | undefined;
-    findRowsAffectedParameter(): IStoredProcedureParameter | undefined;
-    findRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | undefined;
-    findRowsAffectedResultColumn(): IStoredProcedureResultColumn | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getSchemaQualifiedName(): string | undefined;
-    getStoreIdentifier(): Nullable<StoreObjectIdentifier>;
-    getStoreIdentifier(): StoreObjectIdentifier;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly Name: string;
+    readonly EntityType: IEntityType;
+    readonly StoreStoredProcedure: IStoreStoredProcedure;
+    readonly Parameters: IReadOnlyList<IStoredProcedureParameter>;
+    readonly ResultColumns: IReadOnlyList<IStoredProcedureResultColumn>;
+    readonly Schema: string;
+    readonly IsRowsAffectedReturned: boolean;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindParameter(propertyName: string): IReadOnlyStoredProcedureParameter | undefined;
+    FindParameter(propertyName: string): IStoredProcedureParameter | undefined;
+    FindResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | undefined;
+    FindResultColumn(propertyName: string): IStoredProcedureResultColumn | undefined;
+    FindRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | undefined;
+    FindRowsAffectedParameter(): IStoredProcedureParameter | undefined;
+    FindRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | undefined;
+    FindRowsAffectedResultColumn(): IStoredProcedureResultColumn | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetSchemaQualifiedName(): string | undefined;
+    GetStoreIdentifier(): Nullable<StoreObjectIdentifier>;
+    GetStoreIdentifier(): StoreObjectIdentifier;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoredProcedure = IStoredProcedure$instance;
 
 export interface IStoredProcedureMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly storeStoredProcedure: IStoreStoredProcedure;
-    readonly storedProcedure: IStoredProcedure;
-    readonly storedProcedureIdentifier: StoreObjectIdentifier;
-    readonly tableMapping: ITableMapping;
-    readonly parameterMappings: IEnumerable<IStoredProcedureParameterMapping>;
-    readonly resultColumnMappings: IEnumerable<IStoredProcedureResultColumnMapping>;
-    readonly typeBase: ITypeBase;
-    readonly table: ITableBase;
-    readonly columnMappings: IEnumerable<IColumnMappingBase>;
-    readonly isSharedTablePrincipal: Nullable<System_Internal.Boolean>;
-    readonly isSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
-    readonly includesDerivedTypes: Nullable<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoreStoredProcedure: IStoreStoredProcedure;
+    readonly StoredProcedure: IStoredProcedure;
+    readonly StoredProcedureIdentifier: StoreObjectIdentifier;
+    readonly TableMapping: ITableMapping;
+    readonly ParameterMappings: IEnumerable<IStoredProcedureParameterMapping>;
+    readonly ResultColumnMappings: IEnumerable<IStoredProcedureResultColumnMapping>;
+    readonly TypeBase: ITypeBase;
+    readonly Table: ITableBase;
+    readonly ColumnMappings: IEnumerable<IColumnMappingBase>;
+    readonly IsSharedTablePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IsSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IncludesDerivedTypes: Nullable<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoredProcedureMapping = IStoredProcedureMapping$instance;
 
 export interface IStoredProcedureParameter$instance extends IReadOnlyStoredProcedureParameter, IReadOnlyAnnotatable, IAnnotatable {
-    readonly storedProcedure: IStoredProcedure;
-    readonly storeParameter: IStoreStoredProcedureParameter;
-    readonly name: string;
-    readonly propertyName: string;
-    readonly direction: ParameterDirection;
-    readonly forOriginalValue: Nullable<System_Internal.Boolean>;
-    readonly forRowsAffected: boolean;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoredProcedure: IStoredProcedure;
+    readonly StoreParameter: IStoreStoredProcedureParameter;
+    readonly Name: string;
+    readonly PropertyName: string;
+    readonly Direction: ParameterDirection;
+    readonly ForOriginalValue: Nullable<System_Internal.Boolean>;
+    readonly ForRowsAffected: boolean;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoredProcedureParameter = IStoredProcedureParameter$instance;
 
 export interface IStoredProcedureParameterMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly storeParameter: IStoreStoredProcedureParameter;
-    readonly parameter: IStoredProcedureParameter;
-    readonly storedProcedureMapping: IStoredProcedureMapping;
-    readonly property: IProperty;
-    readonly column: IColumnBase;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly tableMapping: ITableMappingBase;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoreParameter: IStoreStoredProcedureParameter;
+    readonly Parameter: IStoredProcedureParameter;
+    readonly StoredProcedureMapping: IStoredProcedureMapping;
+    readonly Property: IProperty;
+    readonly Column: IColumnBase;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly TableMapping: ITableMappingBase;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoredProcedureParameterMapping = IStoredProcedureParameterMapping$instance;
 
 export interface IStoredProcedureResultColumn$instance extends IReadOnlyStoredProcedureResultColumn, IReadOnlyAnnotatable, IAnnotatable {
-    readonly storedProcedure: IStoredProcedure;
-    readonly storeResultColumn: IStoreStoredProcedureResultColumn;
-    readonly name: string;
-    readonly propertyName: string;
-    readonly forRowsAffected: boolean;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoredProcedure: IStoredProcedure;
+    readonly StoreResultColumn: IStoreStoredProcedureResultColumn;
+    readonly Name: string;
+    readonly PropertyName: string;
+    readonly ForRowsAffected: boolean;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoredProcedureResultColumn = IStoredProcedureResultColumn$instance;
 
 export interface IStoredProcedureResultColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly storeResultColumn: IStoreStoredProcedureResultColumn;
-    readonly resultColumn: IStoredProcedureResultColumn;
-    readonly storedProcedureMapping: IStoredProcedureMapping;
-    readonly property: IProperty;
-    readonly column: IColumnBase;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly tableMapping: ITableMappingBase;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoreResultColumn: IStoreStoredProcedureResultColumn;
+    readonly ResultColumn: IStoredProcedureResultColumn;
+    readonly StoredProcedureMapping: IStoredProcedureMapping;
+    readonly Property: IProperty;
+    readonly Column: IColumnBase;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly TableMapping: ITableMappingBase;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoredProcedureResultColumnMapping = IStoredProcedureResultColumnMapping$instance;
 
 export interface IStoreFunction$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly dbFunctions: IEnumerable<IDbFunction>;
-    readonly isBuiltIn: boolean;
-    readonly parameters: IEnumerable<IStoreFunctionParameter>;
-    readonly returnType: string;
-    readonly entityTypeMappings: IEnumerable<IFunctionMapping>;
-    readonly columns: IEnumerable<IFunctionColumn>;
-    readonly name: string;
-    readonly schema: string;
-    readonly schemaQualifiedName: string;
-    readonly model: IRelationalModel;
-    readonly isShared: boolean;
-    readonly complexTypeMappings: IEnumerable<ITableMappingBase>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumn(property: IProperty): IFunctionColumn | undefined;
-    findColumn(name: string): IFunctionColumn | undefined;
-    findColumn(property: IProperty): IColumnBase | undefined;
-    findColumn(name: string): IColumnBase | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    isOptional(typeBase: ITypeBase): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly DbFunctions: IEnumerable<IDbFunction>;
+    readonly IsBuiltIn: boolean;
+    readonly Parameters: IEnumerable<IStoreFunctionParameter>;
+    readonly ReturnType: string;
+    readonly EntityTypeMappings: IEnumerable<IFunctionMapping>;
+    readonly Columns: IEnumerable<IFunctionColumn>;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly SchemaQualifiedName: string;
+    readonly Model: IRelationalModel;
+    readonly IsShared: boolean;
+    readonly ComplexTypeMappings: IEnumerable<ITableMappingBase>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumn(property: IProperty): IFunctionColumn | undefined;
+    FindColumn(name: string): IFunctionColumn | undefined;
+    FindColumn(property: IProperty): IColumnBase | undefined;
+    FindColumn(name: string): IColumnBase | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    IsOptional(typeBase: ITypeBase): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoreFunction = IStoreFunction$instance;
 
 export interface IStoreFunctionParameter$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly function: IStoreFunction;
-    readonly dbFunctionParameters: IEnumerable<IDbFunctionParameter>;
-    readonly name: string;
-    readonly storeType: string;
-    readonly type: string;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Function: IStoreFunction;
+    readonly DbFunctionParameters: IEnumerable<IDbFunctionParameter>;
+    readonly Name: string;
+    readonly StoreType: string;
+    readonly Type: string;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoreFunctionParameter = IStoreFunctionParameter$instance;
 
 export interface IStoreStoredProcedure$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly storedProcedures: IEnumerable<IStoredProcedure>;
-    readonly entityTypeMappings: IEnumerable<IStoredProcedureMapping>;
-    readonly returnValue: IStoreStoredProcedureReturnValue | undefined;
-    readonly parameters: IReadOnlyList<IStoreStoredProcedureParameter>;
-    readonly resultColumns: IEnumerable<IStoreStoredProcedureResultColumn>;
-    readonly name: string;
-    readonly schema: string;
-    readonly schemaQualifiedName: string;
-    readonly model: IRelationalModel;
-    readonly isShared: boolean;
-    readonly complexTypeMappings: IEnumerable<ITableMappingBase>;
-    readonly columns: IEnumerable<IColumnBase>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumn(property: IProperty): IColumnBase | undefined;
-    findColumn(name: string): IColumnBase | undefined;
-    findParameter(property: IProperty): IStoreStoredProcedureParameter | undefined;
-    findParameter(name: string): IStoreStoredProcedureParameter | undefined;
-    findResultColumn(property: IProperty): IStoreStoredProcedureResultColumn | undefined;
-    findResultColumn(name: string): IStoreStoredProcedureResultColumn | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    isOptional(typeBase: ITypeBase): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoredProcedures: IEnumerable<IStoredProcedure>;
+    readonly EntityTypeMappings: IEnumerable<IStoredProcedureMapping>;
+    readonly ReturnValue: IStoreStoredProcedureReturnValue | undefined;
+    readonly Parameters: IReadOnlyList<IStoreStoredProcedureParameter>;
+    readonly ResultColumns: IEnumerable<IStoreStoredProcedureResultColumn>;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly SchemaQualifiedName: string;
+    readonly Model: IRelationalModel;
+    readonly IsShared: boolean;
+    readonly ComplexTypeMappings: IEnumerable<ITableMappingBase>;
+    readonly Columns: IEnumerable<IColumnBase>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumn(property: IProperty): IColumnBase | undefined;
+    FindColumn(name: string): IColumnBase | undefined;
+    FindParameter(property: IProperty): IStoreStoredProcedureParameter | undefined;
+    FindParameter(name: string): IStoreStoredProcedureParameter | undefined;
+    FindResultColumn(property: IProperty): IStoreStoredProcedureResultColumn | undefined;
+    FindResultColumn(name: string): IStoreStoredProcedureResultColumn | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    IsOptional(typeBase: ITypeBase): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoreStoredProcedure = IStoreStoredProcedure$instance;
 
 export interface IStoreStoredProcedureParameter$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly storedProcedure: IStoreStoredProcedure;
-    readonly propertyMappings: IReadOnlyList<IStoredProcedureParameterMapping>;
-    readonly direction: ParameterDirection;
-    readonly position: int;
-    readonly name: string;
-    readonly storeType: string;
-    readonly providerClrType: Type;
-    readonly storeTypeMapping: RelationalTypeMapping;
-    readonly isNullable: boolean;
-    readonly table: ITableBase;
-    readonly providerValueComparer: ValueComparer;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
-    findParameterMapping(entityType: IReadOnlyEntityType): IStoredProcedureParameterMapping | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoredProcedure: IStoreStoredProcedure;
+    readonly PropertyMappings: IReadOnlyList<IStoredProcedureParameterMapping>;
+    readonly Direction: ParameterDirection;
+    readonly Position: int;
+    readonly Name: string;
+    readonly StoreType: string;
+    readonly ProviderClrType: Type;
+    readonly StoreTypeMapping: RelationalTypeMapping;
+    readonly IsNullable: boolean;
+    readonly Table: ITableBase;
+    readonly ProviderValueComparer: ValueComparer;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
+    FindParameterMapping(entityType: IReadOnlyEntityType): IStoredProcedureParameterMapping | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoreStoredProcedureParameter = IStoreStoredProcedureParameter$instance;
 
 export interface IStoreStoredProcedureResultColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly storedProcedure: IStoreStoredProcedure;
-    readonly propertyMappings: IReadOnlyList<IStoredProcedureResultColumnMapping>;
-    readonly position: int;
-    readonly name: string;
-    readonly storeType: string;
-    readonly providerClrType: Type;
-    readonly storeTypeMapping: RelationalTypeMapping;
-    readonly isNullable: boolean;
-    readonly table: ITableBase;
-    readonly providerValueComparer: ValueComparer;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
-    findColumnMapping(entityType: IReadOnlyEntityType): IStoredProcedureResultColumnMapping | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoredProcedure: IStoreStoredProcedure;
+    readonly PropertyMappings: IReadOnlyList<IStoredProcedureResultColumnMapping>;
+    readonly Position: int;
+    readonly Name: string;
+    readonly StoreType: string;
+    readonly ProviderClrType: Type;
+    readonly StoreTypeMapping: RelationalTypeMapping;
+    readonly IsNullable: boolean;
+    readonly Table: ITableBase;
+    readonly ProviderValueComparer: ValueComparer;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IStoredProcedureResultColumnMapping | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoreStoredProcedureResultColumn = IStoreStoredProcedureResultColumn$instance;
 
 export interface IStoreStoredProcedureReturnValue$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly storedProcedure: IStoreStoredProcedure;
-    readonly name: string;
-    readonly storeType: string;
-    readonly providerClrType: Type;
-    readonly storeTypeMapping: RelationalTypeMapping;
-    readonly isNullable: boolean;
-    readonly table: ITableBase;
-    readonly propertyMappings: IReadOnlyList<IColumnMappingBase>;
-    readonly providerValueComparer: ValueComparer;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly StoredProcedure: IStoreStoredProcedure;
+    readonly Name: string;
+    readonly StoreType: string;
+    readonly ProviderClrType: Type;
+    readonly StoreTypeMapping: RelationalTypeMapping;
+    readonly IsNullable: boolean;
+    readonly Table: ITableBase;
+    readonly PropertyMappings: IReadOnlyList<IColumnMappingBase>;
+    readonly ProviderValueComparer: ValueComparer;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IStoreStoredProcedureReturnValue = IStoreStoredProcedureReturnValue$instance;
 
 export interface ITable$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly entityTypeMappings: IEnumerable<ITableMapping>;
-    readonly columns: IEnumerable<IColumn>;
-    readonly isExcludedFromMigrations: boolean;
-    readonly foreignKeyConstraints: IEnumerable<IForeignKeyConstraint>;
-    readonly referencingForeignKeyConstraints: IEnumerable<IForeignKeyConstraint>;
-    readonly uniqueConstraints: IEnumerable<IUniqueConstraint>;
-    readonly primaryKey: IPrimaryKeyConstraint | undefined;
-    readonly indexes: IEnumerable<ITableIndex>;
-    readonly checkConstraints: IEnumerable<ICheckConstraint>;
-    readonly triggers: IEnumerable<ITrigger>;
-    readonly comment: string | undefined;
-    readonly name: string;
-    readonly schema: string;
-    readonly schemaQualifiedName: string;
-    readonly model: IRelationalModel;
-    readonly isShared: boolean;
-    readonly complexTypeMappings: IEnumerable<ITableMappingBase>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumn(property: IProperty): IColumn | undefined;
-    findColumn(name: string): IColumn | undefined;
-    findColumn(property: IProperty): IColumnBase | undefined;
-    findColumn(name: string): IColumnBase | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    isOptional(typeBase: ITypeBase): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly EntityTypeMappings: IEnumerable<ITableMapping>;
+    readonly Columns: IEnumerable<IColumn>;
+    readonly IsExcludedFromMigrations: boolean;
+    readonly ForeignKeyConstraints: IEnumerable<IForeignKeyConstraint>;
+    readonly ReferencingForeignKeyConstraints: IEnumerable<IForeignKeyConstraint>;
+    readonly UniqueConstraints: IEnumerable<IUniqueConstraint>;
+    readonly PrimaryKey: IPrimaryKeyConstraint | undefined;
+    readonly Indexes: IEnumerable<ITableIndex>;
+    readonly CheckConstraints: IEnumerable<ICheckConstraint>;
+    readonly Triggers: IEnumerable<ITrigger>;
+    readonly Comment: string | undefined;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly SchemaQualifiedName: string;
+    readonly Model: IRelationalModel;
+    readonly IsShared: boolean;
+    readonly ComplexTypeMappings: IEnumerable<ITableMappingBase>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumn(property: IProperty): IColumn | undefined;
+    FindColumn(name: string): IColumn | undefined;
+    FindColumn(property: IProperty): IColumnBase | undefined;
+    FindColumn(name: string): IColumnBase | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    IsOptional(typeBase: ITypeBase): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ITable = ITable$instance;
 
 export interface ITableBase$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly schema: string;
-    readonly schemaQualifiedName: string;
-    readonly model: IRelationalModel;
-    readonly isShared: boolean;
-    readonly entityTypeMappings: IEnumerable<ITableMappingBase>;
-    readonly complexTypeMappings: IEnumerable<ITableMappingBase>;
-    readonly columns: IEnumerable<IColumnBase>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumn(property: IProperty): IColumnBase | undefined;
-    findColumn(name: string): IColumnBase | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    isOptional(typeBase: ITypeBase): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly SchemaQualifiedName: string;
+    readonly Model: IRelationalModel;
+    readonly IsShared: boolean;
+    readonly EntityTypeMappings: IEnumerable<ITableMappingBase>;
+    readonly ComplexTypeMappings: IEnumerable<ITableMappingBase>;
+    readonly Columns: IEnumerable<IColumnBase>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumn(property: IProperty): IColumnBase | undefined;
+    FindColumn(name: string): IColumnBase | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    IsOptional(typeBase: ITypeBase): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ITableBase = ITableBase$instance;
 
 export interface ITableIndex$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly mappedIndexes: IEnumerable<IIndex>;
-    readonly table: ITable;
-    readonly columns: IReadOnlyList<IColumn>;
-    readonly isUnique: boolean;
-    readonly isDescending: IReadOnlyList<System_Internal.Boolean>;
-    readonly filter: string | undefined;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Name: string;
+    readonly MappedIndexes: IEnumerable<IIndex>;
+    readonly Table: ITable;
+    readonly Columns: IReadOnlyList<IColumn>;
+    readonly IsUnique: boolean;
+    readonly IsDescending: IReadOnlyList<System_Internal.Boolean>;
+    readonly Filter: string | undefined;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ITableIndex = ITableIndex$instance;
 
 export interface ITableMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly table: ITable;
-    readonly columnMappings: IEnumerable<IColumnMapping>;
-    readonly insertStoredProcedureMapping: IStoredProcedureMapping | undefined;
-    readonly deleteStoredProcedureMapping: IStoredProcedureMapping | undefined;
-    readonly updateStoredProcedureMapping: IStoredProcedureMapping | undefined;
-    readonly typeBase: ITypeBase;
-    readonly isSharedTablePrincipal: Nullable<System_Internal.Boolean>;
-    readonly isSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
-    readonly includesDerivedTypes: Nullable<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Table: ITable;
+    readonly ColumnMappings: IEnumerable<IColumnMapping>;
+    readonly InsertStoredProcedureMapping: IStoredProcedureMapping | undefined;
+    readonly DeleteStoredProcedureMapping: IStoredProcedureMapping | undefined;
+    readonly UpdateStoredProcedureMapping: IStoredProcedureMapping | undefined;
+    readonly TypeBase: ITypeBase;
+    readonly IsSharedTablePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IsSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IncludesDerivedTypes: Nullable<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ITableMapping = ITableMapping$instance;
 
 export interface ITableMappingBase$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly typeBase: ITypeBase;
-    readonly table: ITableBase;
-    readonly columnMappings: IEnumerable<IColumnMappingBase>;
-    readonly isSharedTablePrincipal: Nullable<System_Internal.Boolean>;
-    readonly isSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
-    readonly includesDerivedTypes: Nullable<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly TypeBase: ITypeBase;
+    readonly Table: ITableBase;
+    readonly ColumnMappings: IEnumerable<IColumnMappingBase>;
+    readonly IsSharedTablePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IsSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IncludesDerivedTypes: Nullable<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ITableMappingBase = ITableMappingBase$instance;
 
 export interface ITrigger$instance extends IReadOnlyTrigger, IReadOnlyAnnotatable, IAnnotatable {
-    readonly entityType: IEntityType;
-    readonly modelName: string;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly EntityType: IEntityType;
+    readonly ModelName: string;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ITrigger = ITrigger$instance;
 
 export interface ITypeBase$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable, IAnnotatable {
-    readonly model: IModel;
-    readonly containingEntityType: IEntityType;
-    readonly baseType: ITypeBase | undefined;
-    readonly constructorBinding: InstantiationBinding | undefined;
-    readonly name: string;
-    readonly clrType: Type;
-    readonly hasSharedClrType: boolean;
-    readonly isPropertyBag: boolean;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
-    findComplexProperty(name: string): IComplexProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findDiscriminatorProperty(): IProperty | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMember(name: string): IPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<IPropertyBase>;
-    findMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IProperty | undefined;
-    findProperty(name: string): IProperty | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getDerivedTypes(): IEnumerable<ITypeBase>;
-    getDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
-    getDiscriminatorValue(): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IReadOnlyTypeBase;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    readonly Model: IModel;
+    readonly ContainingEntityType: IEntityType;
+    readonly BaseType: ITypeBase | undefined;
+    readonly ConstructorBinding: InstantiationBinding | undefined;
+    readonly Name: string;
+    readonly ClrType: Type;
+    readonly HasSharedClrType: boolean;
+    readonly IsPropertyBag: boolean;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
+    FindComplexProperty(name: string): IComplexProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindDiscriminatorProperty(): IProperty | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMember(name: string): IPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<IPropertyBase>;
+    FindMembersInHierarchy(name: string): IEnumerable<IReadOnlyPropertyBase>;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IReadOnlyProperty> | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IProperty | undefined;
+    FindProperty(name: string): IProperty | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetDerivedTypes(): IEnumerable<ITypeBase>;
+    GetDerivedTypes(): IEnumerable<IReadOnlyTypeBase>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IReadOnlyTypeBase;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ITypeBase = ITypeBase$instance;
 
 export interface ITypeMappingConfiguration$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly clrType: Type;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getMaxLength(): Nullable<System_Internal.Int32>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getProviderClrType(): Type | undefined;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    getValueConverter(): ValueConverter | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly ClrType: Type;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetProviderClrType(): Type | undefined;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetValueConverter(): ValueConverter | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type ITypeMappingConfiguration = ITypeMappingConfiguration$instance;
 
 export interface IUniqueConstraint$instance extends IAnnotatable, IReadOnlyAnnotatable {
-    readonly name: string;
-    readonly mappedKeys: IEnumerable<IKey>;
-    readonly table: ITable;
-    readonly columns: IReadOnlyList<IColumn>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getIsPrimaryKey(): boolean;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Name: string;
+    readonly MappedKeys: IEnumerable<IKey>;
+    readonly Table: ITable;
+    readonly Columns: IReadOnlyList<IColumn>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetIsPrimaryKey(): boolean;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IUniqueConstraint = IUniqueConstraint$instance;
 
 export interface IView$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly entityTypeMappings: IEnumerable<IViewMapping>;
-    readonly columns: IEnumerable<IViewColumn>;
-    readonly viewDefinitionSql: string | undefined;
-    readonly name: string;
-    readonly schema: string;
-    readonly schemaQualifiedName: string;
-    readonly model: IRelationalModel;
-    readonly isShared: boolean;
-    readonly complexTypeMappings: IEnumerable<ITableMappingBase>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumn(property: IProperty): IColumnBase | undefined;
-    findColumn(name: string): IColumnBase | undefined;
-    findColumn(property: IProperty): IViewColumn | undefined;
-    findColumn(name: string): IViewColumn | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    isOptional(typeBase: ITypeBase): boolean;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly EntityTypeMappings: IEnumerable<IViewMapping>;
+    readonly Columns: IEnumerable<IViewColumn>;
+    readonly ViewDefinitionSql: string | undefined;
+    readonly Name: string;
+    readonly Schema: string;
+    readonly SchemaQualifiedName: string;
+    readonly Model: IRelationalModel;
+    readonly IsShared: boolean;
+    readonly ComplexTypeMappings: IEnumerable<ITableMappingBase>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumn(property: IProperty): IColumnBase | undefined;
+    FindColumn(name: string): IColumnBase | undefined;
+    FindColumn(property: IProperty): IViewColumn | undefined;
+    FindColumn(name: string): IViewColumn | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRowInternalForeignKeys(entityType: IEntityType): IEnumerable<IForeignKey>;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    IsOptional(typeBase: ITypeBase): boolean;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IView = IView$instance;
 
 export interface IViewColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly view: IView;
-    readonly propertyMappings: IReadOnlyList<IViewColumnMapping>;
-    readonly name: string;
-    readonly storeType: string;
-    readonly providerClrType: Type;
-    readonly storeTypeMapping: RelationalTypeMapping;
-    readonly isNullable: boolean;
-    readonly table: ITableBase;
-    readonly providerValueComparer: ValueComparer;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
-    findColumnMapping(entityType: IReadOnlyEntityType): IViewColumnMapping | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly View: IView;
+    readonly PropertyMappings: IReadOnlyList<IViewColumnMapping>;
+    readonly Name: string;
+    readonly StoreType: string;
+    readonly ProviderClrType: Type;
+    readonly StoreTypeMapping: RelationalTypeMapping;
+    readonly IsNullable: boolean;
+    readonly Table: ITableBase;
+    readonly ProviderValueComparer: ValueComparer;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IColumnMappingBase | undefined;
+    FindColumnMapping(entityType: IReadOnlyEntityType): IViewColumnMapping | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IViewColumn = IViewColumn$instance;
 
 export interface IViewColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly column: IViewColumn;
-    readonly viewMapping: IViewMapping;
-    readonly property: IProperty;
-    readonly typeMapping: RelationalTypeMapping;
-    readonly tableMapping: ITableMappingBase;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Column: IViewColumn;
+    readonly ViewMapping: IViewMapping;
+    readonly Property: IProperty;
+    readonly TypeMapping: RelationalTypeMapping;
+    readonly TableMapping: ITableMappingBase;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IViewColumnMapping = IViewColumnMapping$instance;
 
 export interface IViewMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
-    readonly view: IView;
-    readonly columnMappings: IEnumerable<IViewColumnMapping>;
-    readonly typeBase: ITypeBase;
-    readonly table: ITableBase;
-    readonly isSharedTablePrincipal: Nullable<System_Internal.Boolean>;
-    readonly isSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
-    readonly includesDerivedTypes: Nullable<System_Internal.Boolean>;
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    toDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly View: IView;
+    readonly ColumnMappings: IEnumerable<IViewColumnMapping>;
+    readonly TypeBase: ITypeBase;
+    readonly Table: ITableBase;
+    readonly IsSharedTablePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IsSplitEntityTypePrincipal: Nullable<System_Internal.Boolean>;
+    readonly IncludesDerivedTypes: Nullable<System_Internal.Boolean>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IViewMapping = IViewMapping$instance;
 
 export interface MemberIdentity$instance {
-    readonly memberInfo: MemberInfo | undefined;
-    readonly name: string;
-    equals(obj: unknown): boolean;
-    equals(other: MemberIdentity): boolean;
-    getHashCode(): int;
+    readonly MemberInfo: MemberInfo | undefined;
+    readonly Name: string;
+    Equals(obj: unknown): boolean;
+    Equals(other: MemberIdentity): boolean;
+    GetHashCode(): int;
 }
 
 
 export const MemberIdentity: {
     new(name: string): MemberIdentity;
     new(memberInfo: MemberInfo): MemberIdentity;
-    readonly none: MemberIdentity;
-    create(memberInfo: MemberInfo): MemberIdentity;
-    create(name: string): MemberIdentity;
+    readonly None: MemberIdentity;
+    Create(memberInfo: MemberInfo): MemberIdentity;
+    Create(name: string): MemberIdentity;
 };
 
 
 export type MemberIdentity = MemberIdentity$instance;
 
 export interface ParameterBindingInfo$instance {
-    readonly instanceName: string;
-    readonly materializationContextExpression: Expression;
-    readonly queryTrackingBehavior: Nullable<QueryTrackingBehavior>;
-    readonly serviceInstances: List<ParameterExpression>;
-    readonly structuralType: ITypeBase;
-    getValueBufferIndex(property: IPropertyBase): int;
+    readonly InstanceName: string;
+    readonly MaterializationContextExpression: Expression;
+    readonly QueryTrackingBehavior: Nullable<QueryTrackingBehavior>;
+    readonly ServiceInstances: List<ParameterExpression>;
+    readonly StructuralType: ITypeBase;
+    GetValueBufferIndex(property: IPropertyBase): int;
 }
 
 
@@ -4680,37 +4680,37 @@ export const ParameterBindingInfo: {
 export type ParameterBindingInfo = ParameterBindingInfo$instance;
 
 export interface StoreObjectIdentifier$instance {
-    readonly name: string;
-    readonly schema: string | undefined;
-    readonly storeObjectType: StoreObjectType;
-    compareTo(other: StoreObjectIdentifier): int;
-    displayName(): string;
-    equals(obj: unknown): boolean;
-    equals(other: StoreObjectIdentifier): boolean;
-    getHashCode(): int;
-    toString(): string;
+    readonly Name: string;
+    readonly Schema: string | undefined;
+    readonly StoreObjectType: StoreObjectType;
+    CompareTo(other: StoreObjectIdentifier): int;
+    DisplayName(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: StoreObjectIdentifier): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
 export const StoreObjectIdentifier: {
     new(): StoreObjectIdentifier;
-    create(typeBase: IReadOnlyTypeBase, type: StoreObjectType): Nullable<StoreObjectIdentifier>;
-    dbFunction(modelName: string): StoreObjectIdentifier;
-    deleteStoredProcedure(name: string, schema?: string): StoreObjectIdentifier;
-    insertStoredProcedure(name: string, schema?: string): StoreObjectIdentifier;
-    sqlQuery(entityType: IReadOnlyEntityType): StoreObjectIdentifier;
-    sqlQuery(name: string): StoreObjectIdentifier;
-    table(name: string, schema?: string): StoreObjectIdentifier;
-    updateStoredProcedure(name: string, schema?: string): StoreObjectIdentifier;
-    view(name: string, schema?: string): StoreObjectIdentifier;
+    Create(typeBase: IReadOnlyTypeBase, type: StoreObjectType): Nullable<StoreObjectIdentifier>;
+    DbFunction(modelName: string): StoreObjectIdentifier;
+    DeleteStoredProcedure(name: string, schema?: string): StoreObjectIdentifier;
+    InsertStoredProcedure(name: string, schema?: string): StoreObjectIdentifier;
+    SqlQuery(entityType: IReadOnlyEntityType): StoreObjectIdentifier;
+    SqlQuery(name: string): StoreObjectIdentifier;
+    Table(name: string, schema?: string): StoreObjectIdentifier;
+    UpdateStoredProcedure(name: string, schema?: string): StoreObjectIdentifier;
+    View(name: string, schema?: string): StoreObjectIdentifier;
 };
 
 
 export type StoreObjectIdentifier = StoreObjectIdentifier$instance;
 
 export interface AdHocMapper$instance {
-    buildConventionSet(): ConventionSet;
-    getOrAddEntityType(clrType: Type): RuntimeEntityType;
+    BuildConventionSet(): ConventionSet;
+    GetOrAddEntityType(clrType: Type): RuntimeEntityType;
 }
 
 
@@ -4729,13 +4729,13 @@ export type AdHocMapper = AdHocMapper$instance & __AdHocMapper$views;
 
 
 export interface AdHocMapperDependencies$instance {
-    model: IModel;
-    modelCreationDependencies: ModelCreationDependencies;
+    Model: IModel;
+    ModelCreationDependencies: ModelCreationDependencies;
     _Clone_$(): AdHocMapperDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: AdHocMapperDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: AdHocMapperDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -4747,10 +4747,10 @@ export const AdHocMapperDependencies: {
 export type AdHocMapperDependencies = AdHocMapperDependencies$instance;
 
 export interface ConstructorBinding$instance extends InstantiationBinding {
-    readonly constructor: ConstructorInfo;
-    readonly runtimeType: Type;
-    createConstructorExpression(bindingInfo: ParameterBindingInfo): Expression;
-    with(parameterBindings: IReadOnlyList<ParameterBinding>): InstantiationBinding;
+    readonly Constructor: ConstructorInfo;
+    readonly RuntimeType: Type;
+    CreateConstructorExpression(bindingInfo: ParameterBindingInfo): Expression;
+    With(parameterBindings: IReadOnlyList<ParameterBinding>): InstantiationBinding;
 }
 
 
@@ -4762,9 +4762,9 @@ export const ConstructorBinding: {
 export type ConstructorBinding = ConstructorBinding$instance;
 
 export interface ContextParameterBinding$instance extends ServiceParameterBinding {
-    bindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
-    bindToParameter(bindingInfo: ParameterBindingInfo): Expression;
-    with(consumedProperties: IPropertyBase[]): ParameterBinding;
+    BindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
+    BindToParameter(bindingInfo: ParameterBindingInfo): Expression;
+    With(consumedProperties: IPropertyBase[]): ParameterBinding;
 }
 
 
@@ -4776,9 +4776,9 @@ export const ContextParameterBinding: {
 export type ContextParameterBinding = ContextParameterBinding$instance;
 
 export interface DefaultValueBinding$instance extends InstantiationBinding {
-    readonly runtimeType: Type;
-    createConstructorExpression(bindingInfo: ParameterBindingInfo): Expression;
-    with(parameterBindings: IReadOnlyList<ParameterBinding>): InstantiationBinding;
+    readonly RuntimeType: Type;
+    CreateConstructorExpression(bindingInfo: ParameterBindingInfo): Expression;
+    With(parameterBindings: IReadOnlyList<ParameterBinding>): InstantiationBinding;
 }
 
 
@@ -4790,11 +4790,11 @@ export const DefaultValueBinding: {
 export type DefaultValueBinding = DefaultValueBinding$instance;
 
 export interface DependencyInjectionMethodParameterBinding$instance extends DependencyInjectionParameterBinding {
-    readonly method: MethodInfo;
-    readonly serviceDelegate: Func<MaterializationContext, IEntityType, unknown, unknown | undefined>;
-    bindToParameter(bindingInfo: ParameterBindingInfo): Expression;
-    bindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
-    with(consumedProperties: IPropertyBase[]): ParameterBinding;
+    readonly Method: MethodInfo;
+    readonly ServiceDelegate: Func<MaterializationContext, IEntityType, unknown, unknown | undefined>;
+    BindToParameter(bindingInfo: ParameterBindingInfo): Expression;
+    BindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
+    With(consumedProperties: IPropertyBase[]): ParameterBinding;
 }
 
 
@@ -4806,10 +4806,10 @@ export const DependencyInjectionMethodParameterBinding: {
 export type DependencyInjectionMethodParameterBinding = DependencyInjectionMethodParameterBinding$instance;
 
 export interface DependencyInjectionParameterBinding$instance extends ServiceParameterBinding {
-    readonly serviceDelegate: Func<MaterializationContext, IEntityType, unknown, unknown | undefined>;
-    bindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
-    bindToParameter(bindingInfo: ParameterBindingInfo): Expression;
-    with(consumedProperties: IPropertyBase[]): ParameterBinding;
+    readonly ServiceDelegate: Func<MaterializationContext, IEntityType, unknown, unknown | undefined>;
+    BindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
+    BindToParameter(bindingInfo: ParameterBindingInfo): Expression;
+    With(consumedProperties: IPropertyBase[]): ParameterBinding;
 }
 
 
@@ -4821,24 +4821,24 @@ export const DependencyInjectionParameterBinding: {
 export type DependencyInjectionParameterBinding = DependencyInjectionParameterBinding$instance;
 
 export interface EntityTypeFullNameComparer$instance {
-    compare(x: IReadOnlyEntityType, y: IReadOnlyEntityType): int;
-    equals(x: IReadOnlyEntityType, y: IReadOnlyEntityType): boolean;
-    getHashCode(obj: IReadOnlyEntityType): int;
+    Compare(x: IReadOnlyEntityType, y: IReadOnlyEntityType): int;
+    Equals(x: IReadOnlyEntityType, y: IReadOnlyEntityType): boolean;
+    GetHashCode(obj: IReadOnlyEntityType): int;
 }
 
 
 export const EntityTypeFullNameComparer: {
     new(): EntityTypeFullNameComparer;
-    readonly instance: EntityTypeFullNameComparer;
+    readonly Instance: EntityTypeFullNameComparer;
 };
 
 
 export type EntityTypeFullNameComparer = EntityTypeFullNameComparer$instance;
 
 export interface EntityTypeParameterBinding$instance extends ServiceParameterBinding {
-    bindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
-    bindToParameter(bindingInfo: ParameterBindingInfo): Expression;
-    with(consumedProperties: IPropertyBase[]): ParameterBinding;
+    BindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
+    BindToParameter(bindingInfo: ParameterBindingInfo): Expression;
+    With(consumedProperties: IPropertyBase[]): ParameterBinding;
 }
 
 
@@ -4850,9 +4850,9 @@ export const EntityTypeParameterBinding: {
 export type EntityTypeParameterBinding = EntityTypeParameterBinding$instance;
 
 export interface FactoryMethodBinding$instance extends InstantiationBinding {
-    readonly runtimeType: Type;
-    createConstructorExpression(bindingInfo: ParameterBindingInfo): Expression;
-    with(parameterBindings: IReadOnlyList<ParameterBinding>): InstantiationBinding;
+    readonly RuntimeType: Type;
+    CreateConstructorExpression(bindingInfo: ParameterBindingInfo): Expression;
+    With(parameterBindings: IReadOnlyList<ParameterBinding>): InstantiationBinding;
 }
 
 
@@ -4865,40 +4865,40 @@ export const FactoryMethodBinding: {
 export type FactoryMethodBinding = FactoryMethodBinding$instance;
 
 export interface ForeignKeyComparer$instance {
-    compare(x: IReadOnlyForeignKey, y: IReadOnlyForeignKey): int;
-    equals(x: IReadOnlyForeignKey, y: IReadOnlyForeignKey): boolean;
-    getHashCode(obj: IReadOnlyForeignKey): int;
+    Compare(x: IReadOnlyForeignKey, y: IReadOnlyForeignKey): int;
+    Equals(x: IReadOnlyForeignKey, y: IReadOnlyForeignKey): boolean;
+    GetHashCode(obj: IReadOnlyForeignKey): int;
 }
 
 
 export const ForeignKeyComparer: {
     new(): ForeignKeyComparer;
-    readonly instance: ForeignKeyComparer;
+    readonly Instance: ForeignKeyComparer;
 };
 
 
 export type ForeignKeyComparer = ForeignKeyComparer$instance;
 
 export interface IndexComparer$instance {
-    compare(x: IReadOnlyIndex, y: IReadOnlyIndex): int;
-    equals(x: IReadOnlyIndex, y: IReadOnlyIndex): boolean;
-    getHashCode(obj: IReadOnlyIndex): int;
+    Compare(x: IReadOnlyIndex, y: IReadOnlyIndex): int;
+    Equals(x: IReadOnlyIndex, y: IReadOnlyIndex): boolean;
+    GetHashCode(obj: IReadOnlyIndex): int;
 }
 
 
 export const IndexComparer: {
     new(): IndexComparer;
-    readonly instance: IndexComparer;
+    readonly Instance: IndexComparer;
 };
 
 
 export type IndexComparer = IndexComparer$instance;
 
 export interface InstantiationBinding$instance {
-    readonly parameterBindings: IReadOnlyList<ParameterBinding>;
-    readonly runtimeType: Type;
-    createConstructorExpression(bindingInfo: ParameterBindingInfo): Expression;
-    with(parameterBindings: IReadOnlyList<ParameterBinding>): InstantiationBinding;
+    readonly ParameterBindings: IReadOnlyList<ParameterBinding>;
+    readonly RuntimeType: Type;
+    CreateConstructorExpression(bindingInfo: ParameterBindingInfo): Expression;
+    With(parameterBindings: IReadOnlyList<ParameterBinding>): InstantiationBinding;
 }
 
 
@@ -4909,25 +4909,25 @@ export const InstantiationBinding: {
 export type InstantiationBinding = InstantiationBinding$instance;
 
 export interface KeyComparer$instance {
-    compare(x: IReadOnlyKey, y: IReadOnlyKey): int;
-    equals(x: IReadOnlyKey, y: IReadOnlyKey): boolean;
-    getHashCode(obj: IReadOnlyKey): int;
+    Compare(x: IReadOnlyKey, y: IReadOnlyKey): int;
+    Equals(x: IReadOnlyKey, y: IReadOnlyKey): boolean;
+    GetHashCode(obj: IReadOnlyKey): int;
 }
 
 
 export const KeyComparer: {
     new(): KeyComparer;
-    readonly instance: KeyComparer;
+    readonly Instance: KeyComparer;
 };
 
 
 export type KeyComparer = KeyComparer$instance;
 
 export interface LazyLoaderParameterBindingFactory$instance extends ServiceParameterBindingFactory$instance {
-    bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
-    bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
-    bind(entityType: IReadOnlyEntityType, parameterType: Type, parameterName: string): ParameterBinding;
-    canBind(parameterType: Type, parameterName: string): boolean;
+    Bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
+    Bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
+    Bind(entityType: IReadOnlyEntityType, parameterType: Type, parameterName: string): ParameterBinding;
+    CanBind(parameterType: Type, parameterName: string): boolean;
 }
 
 
@@ -4945,10 +4945,10 @@ export type LazyLoaderParameterBindingFactory = LazyLoaderParameterBindingFactor
 
 export interface LazyLoaderParameterBindingFactoryDependencies$instance {
     _Clone_$(): LazyLoaderParameterBindingFactoryDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: LazyLoaderParameterBindingFactoryDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: LazyLoaderParameterBindingFactoryDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -4960,8 +4960,8 @@ export const LazyLoaderParameterBindingFactoryDependencies: {
 export type LazyLoaderParameterBindingFactoryDependencies = LazyLoaderParameterBindingFactoryDependencies$instance;
 
 export interface ObjectArrayParameterBinding$instance extends ParameterBinding {
-    bindToParameter(bindingInfo: ParameterBindingInfo): Expression;
-    with(consumedProperties: IPropertyBase[]): ParameterBinding;
+    BindToParameter(bindingInfo: ParameterBindingInfo): Expression;
+    With(consumedProperties: IPropertyBase[]): ParameterBinding;
 }
 
 
@@ -4973,10 +4973,10 @@ export const ObjectArrayParameterBinding: {
 export type ObjectArrayParameterBinding = ObjectArrayParameterBinding$instance;
 
 export interface ParameterBinding$instance {
-    readonly consumedProperties: IReadOnlyList<IPropertyBase>;
-    readonly parameterType: Type;
-    bindToParameter(bindingInfo: ParameterBindingInfo): Expression;
-    with(consumedProperties: IPropertyBase[]): ParameterBinding;
+    readonly ConsumedProperties: IReadOnlyList<IPropertyBase>;
+    readonly ParameterType: Type;
+    BindToParameter(bindingInfo: ParameterBindingInfo): Expression;
+    With(consumedProperties: IPropertyBase[]): ParameterBinding;
 }
 
 
@@ -4987,8 +4987,8 @@ export const ParameterBinding: {
 export type ParameterBinding = ParameterBinding$instance;
 
 export interface PropertyParameterBinding$instance extends ParameterBinding {
-    bindToParameter(bindingInfo: ParameterBindingInfo): Expression;
-    with(consumedProperties: IPropertyBase[]): ParameterBinding;
+    BindToParameter(bindingInfo: ParameterBindingInfo): Expression;
+    With(consumedProperties: IPropertyBase[]): ParameterBinding;
 }
 
 
@@ -5000,8 +5000,8 @@ export const PropertyParameterBinding: {
 export type PropertyParameterBinding = PropertyParameterBinding$instance;
 
 export interface RelationalAdHocMapper$instance extends AdHocMapper$instance {
-    buildConventionSet(): ConventionSet;
-    getOrAddEntityType(clrType: Type): RuntimeEntityType;
+    BuildConventionSet(): ConventionSet;
+    GetOrAddEntityType(clrType: Type): RuntimeEntityType;
 }
 
 
@@ -5019,10 +5019,10 @@ export type RelationalAdHocMapper = RelationalAdHocMapper$instance & __Relationa
 
 export interface RelationalAdHocMapperDependencies$instance {
     _Clone_$(): RelationalAdHocMapperDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalAdHocMapperDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalAdHocMapperDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -5034,25 +5034,25 @@ export const RelationalAdHocMapperDependencies: {
 export type RelationalAdHocMapperDependencies = RelationalAdHocMapperDependencies$instance;
 
 export interface RelationalAnnotationProvider$instance {
-    for(model: IRelationalModel, designTime: boolean): IEnumerable<IAnnotation>;
-    for(table: ITable, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: IColumn, designTime: boolean): IEnumerable<IAnnotation>;
-    for(view: IView, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: IViewColumn, designTime: boolean): IEnumerable<IAnnotation>;
-    for(sqlQuery: ISqlQuery, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: ISqlQueryColumn, designTime: boolean): IEnumerable<IAnnotation>;
-    for(function_: IStoreFunction, designTime: boolean): IEnumerable<IAnnotation>;
-    for(parameter: IStoreFunctionParameter, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: IFunctionColumn, designTime: boolean): IEnumerable<IAnnotation>;
-    for(storedProcedure: IStoreStoredProcedure, designTime: boolean): IEnumerable<IAnnotation>;
-    for(parameter: IStoreStoredProcedureParameter, designTime: boolean): IEnumerable<IAnnotation>;
-    for(column: IStoreStoredProcedureResultColumn, designTime: boolean): IEnumerable<IAnnotation>;
-    for(foreignKey: IForeignKeyConstraint, designTime: boolean): IEnumerable<IAnnotation>;
-    for(index: ITableIndex, designTime: boolean): IEnumerable<IAnnotation>;
-    for(constraint: IUniqueConstraint, designTime: boolean): IEnumerable<IAnnotation>;
-    for(sequence: ISequence, designTime: boolean): IEnumerable<IAnnotation>;
-    for(checkConstraint: ICheckConstraint, designTime: boolean): IEnumerable<IAnnotation>;
-    for(trigger: ITrigger, designTime: boolean): IEnumerable<IAnnotation>;
+    For(model: IRelationalModel, designTime: boolean): IEnumerable<IAnnotation>;
+    For(table: ITable, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: IColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(view: IView, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: IViewColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(sqlQuery: ISqlQuery, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: ISqlQueryColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(function_: IStoreFunction, designTime: boolean): IEnumerable<IAnnotation>;
+    For(parameter: IStoreFunctionParameter, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: IFunctionColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(storedProcedure: IStoreStoredProcedure, designTime: boolean): IEnumerable<IAnnotation>;
+    For(parameter: IStoreStoredProcedureParameter, designTime: boolean): IEnumerable<IAnnotation>;
+    For(column: IStoreStoredProcedureResultColumn, designTime: boolean): IEnumerable<IAnnotation>;
+    For(foreignKey: IForeignKeyConstraint, designTime: boolean): IEnumerable<IAnnotation>;
+    For(index: ITableIndex, designTime: boolean): IEnumerable<IAnnotation>;
+    For(constraint: IUniqueConstraint, designTime: boolean): IEnumerable<IAnnotation>;
+    For(sequence: ISequence, designTime: boolean): IEnumerable<IAnnotation>;
+    For(checkConstraint: ICheckConstraint, designTime: boolean): IEnumerable<IAnnotation>;
+    For(trigger: ITrigger, designTime: boolean): IEnumerable<IAnnotation>;
 }
 
 
@@ -5070,10 +5070,10 @@ export type RelationalAnnotationProvider = RelationalAnnotationProvider$instance
 
 export interface RelationalAnnotationProviderDependencies$instance {
     _Clone_$(): RelationalAnnotationProviderDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalAnnotationProviderDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalAnnotationProviderDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -5085,34 +5085,34 @@ export const RelationalAnnotationProviderDependencies: {
 export type RelationalAnnotationProviderDependencies = RelationalAnnotationProviderDependencies$instance;
 
 export interface RuntimeComplexProperty$instance extends RuntimePropertyBase$instance {
-    readonly complexType: RuntimeComplexType;
-    readonly debugView: DebugView;
-    readonly declaringType: RuntimeTypeBase;
-    readonly isCollection: boolean;
-    readonly sentinel: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    getSetter(): IClrPropertySetter;
-    getShadowIndex(): int;
-    isShadowProperty(): boolean;
-    toString(): string;
+    readonly ComplexType: RuntimeComplexType;
+    readonly DebugView: DebugView;
+    readonly DeclaringType: RuntimeTypeBase;
+    readonly IsCollection: boolean;
+    readonly Sentinel: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetSetter(): IClrPropertySetter;
+    GetShadowIndex(): int;
+    IsShadowProperty(): boolean;
+    ToString(): string;
 }
 
 
@@ -5135,59 +5135,59 @@ export type RuntimeComplexProperty = RuntimeComplexProperty$instance & __Runtime
 
 
 export interface RuntimeComplexType$instance extends RuntimeTypeBase$instance {
-    readonly complexProperty: RuntimeComplexProperty;
-    get constructorBinding(): InstantiationBinding | undefined;
-    set constructorBinding(value: InstantiationBinding);
-    readonly debugView: DebugView;
-    get serviceOnlyConstructorBinding(): InstantiationBinding | undefined;
-    set serviceOnlyConstructorBinding(value: InstantiationBinding);
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    annotationsToDebugString(indent?: int): string;
-    calculateCounts(): PropertyCounts;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): Annotation | undefined;
-    findComplexProperty(name: string): RuntimeComplexProperty | undefined;
-    findComplexProperty(name: string): IComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findDiscriminatorProperty(): IProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): RuntimePropertyBase | undefined;
-    findMember(name: string): IPropertyBase | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<RuntimePropertyBase>;
-    findProperties(propertyNames: IEnumerable<System_Internal.String>): IReadOnlyList<RuntimeProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
-    findProperty(name: string): RuntimeProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IProperty | undefined;
-    findProperty(name: string): IProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getConstructorBindingConfigurationSource(): Nullable<ConfigurationSource>;
-    getDeclaredMembers(): IEnumerable<RuntimePropertyBase>;
-    getDerivedTypes(): IEnumerable<RuntimeTypeBase>;
-    getDiscriminatorValue(): unknown | undefined;
-    getMembers(): IEnumerable<RuntimePropertyBase>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IReadOnlyTypeBase;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    setCounts(value: PropertyCounts): void;
-    toString(): string;
+    readonly ComplexProperty: RuntimeComplexProperty;
+    get ConstructorBinding(): InstantiationBinding | undefined;
+    set ConstructorBinding(value: InstantiationBinding);
+    readonly DebugView: DebugView;
+    get ServiceOnlyConstructorBinding(): InstantiationBinding | undefined;
+    set ServiceOnlyConstructorBinding(value: InstantiationBinding);
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AnnotationsToDebugString(indent?: int): string;
+    CalculateCounts(): PropertyCounts;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindComplexProperty(name: string): RuntimeComplexProperty | undefined;
+    FindComplexProperty(name: string): IComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindDiscriminatorProperty(): IProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): RuntimePropertyBase | undefined;
+    FindMember(name: string): IPropertyBase | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<RuntimePropertyBase>;
+    FindProperties(propertyNames: IEnumerable<System_Internal.String>): IReadOnlyList<RuntimeProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
+    FindProperty(name: string): RuntimeProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IProperty | undefined;
+    FindProperty(name: string): IProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetConstructorBindingConfigurationSource(): Nullable<ConfigurationSource>;
+    GetDeclaredMembers(): IEnumerable<RuntimePropertyBase>;
+    GetDerivedTypes(): IEnumerable<RuntimeTypeBase>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetMembers(): IEnumerable<RuntimePropertyBase>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IReadOnlyTypeBase;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    SetCounts(value: PropertyCounts): void;
+    ToString(): string;
 }
 
 
@@ -5210,24 +5210,24 @@ export type RuntimeComplexType = RuntimeComplexType$instance & __RuntimeComplexT
 
 
 export interface RuntimeDbFunction$instance extends AnnotatableBase {
-    readonly debugView: DebugView;
-    readonly model: RuntimeModel;
-    readonly modelName: string;
-    readonly storeFunction: IStoreFunction;
-    typeMapping: RelationalTypeMapping;
-    addParameter(name: string, clrType: Type, propagatesNullability: boolean, storeType: string, typeMapping?: RelationalTypeMapping): RuntimeDbFunctionParameter;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<Annotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly Model: RuntimeModel;
+    readonly ModelName: string;
+    readonly StoreFunction: IStoreFunction;
+    TypeMapping: RelationalTypeMapping;
+    AddParameter(name: string, clrType: Type, propagatesNullability: boolean, storeType: string, typeMapping?: RelationalTypeMapping): RuntimeDbFunctionParameter;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<Annotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    ToString(): string;
 }
 
 
@@ -5247,22 +5247,22 @@ export type RuntimeDbFunction = RuntimeDbFunction$instance & __RuntimeDbFunction
 
 
 export interface RuntimeDbFunctionParameter$instance extends AnnotatableBase {
-    readonly debugView: DebugView;
-    readonly function: RuntimeDbFunction;
-    readonly name: string;
-    typeMapping: RelationalTypeMapping;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<Annotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly Function: RuntimeDbFunction;
+    readonly Name: string;
+    TypeMapping: RelationalTypeMapping;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<Annotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    ToString(): string;
 }
 
 
@@ -5282,34 +5282,34 @@ export type RuntimeDbFunctionParameter = RuntimeDbFunctionParameter$instance & _
 
 
 export interface RuntimeElementType$instance extends RuntimeAnnotatableBase {
-    readonly clrType: Type;
-    readonly collectionProperty: IProperty;
-    readonly debugView: DebugView;
-    readonly isNullable: boolean;
-    typeMapping: CoreTypeMapping;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    findTypeMapping(): CoreTypeMapping | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getMaxLength(): Nullable<System_Internal.Int32>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPrecision(): Nullable<System_Internal.Int32>;
-    getProviderClrType(): Type | undefined;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    getScale(): Nullable<System_Internal.Int32>;
-    getValueComparer(): ValueComparer;
-    getValueConverter(): ValueConverter | undefined;
-    isUnicode(): Nullable<System_Internal.Boolean>;
-    setComparer(valueComparer: ValueComparer): ValueComparer;
-    setValueConverter(converter: ValueConverter): void;
-    toString(): string;
+    readonly ClrType: Type;
+    readonly CollectionProperty: IProperty;
+    readonly DebugView: DebugView;
+    readonly IsNullable: boolean;
+    TypeMapping: CoreTypeMapping;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindTypeMapping(): CoreTypeMapping | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetMaxLength(): Nullable<System_Internal.Int32>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPrecision(): Nullable<System_Internal.Int32>;
+    GetProviderClrType(): Type | undefined;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    GetScale(): Nullable<System_Internal.Int32>;
+    GetValueComparer(): ValueComparer;
+    GetValueConverter(): ValueConverter | undefined;
+    IsUnicode(): Nullable<System_Internal.Boolean>;
+    SetComparer(valueComparer: ValueComparer): ValueComparer;
+    SetValueConverter(converter: ValueConverter): void;
+    ToString(): string;
 }
 
 
@@ -5329,88 +5329,88 @@ export type RuntimeElementType = RuntimeElementType$instance & __RuntimeElementT
 
 
 export interface RuntimeEntityType$instance extends RuntimeTypeBase$instance {
-    get constructorBinding(): InstantiationBinding | undefined;
-    set constructorBinding(value: InstantiationBinding);
-    readonly debugView: DebugView;
-    get serviceOnlyConstructorBinding(): InstantiationBinding | undefined;
-    set serviceOnlyConstructorBinding(value: InstantiationBinding);
-    addForeignKey(properties: IReadOnlyList<RuntimeProperty>, principalKey: RuntimeKey, principalEntityType: RuntimeEntityType, deleteBehavior?: DeleteBehavior, unique?: boolean, required?: boolean, requiredDependent?: boolean, ownership?: boolean): RuntimeForeignKey;
-    addIndex(properties: IReadOnlyList<RuntimeProperty>, name?: string, unique?: boolean): RuntimeIndex;
-    addKey(properties: IReadOnlyList<RuntimeProperty>): RuntimeKey;
-    addNavigation(name: string, foreignKey: RuntimeForeignKey, onDependent: boolean, clrType: Type, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, propertyAccessMode?: PropertyAccessMode, eagerLoaded?: boolean, lazyLoadingEnabled?: boolean): RuntimeNavigation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addServiceProperty(name: string, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, serviceType?: Type, propertyAccessMode?: PropertyAccessMode): RuntimeServiceProperty;
-    addSkipNavigation(name: string, targetEntityType: RuntimeEntityType, foreignKey: RuntimeForeignKey, collection: boolean, onDependent: boolean, clrType: Type, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, propertyAccessMode?: PropertyAccessMode, eagerLoaded?: boolean, lazyLoadingEnabled?: boolean): RuntimeSkipNavigation;
-    addTrigger(modelName: string): RuntimeTrigger;
-    annotationsToDebugString(indent?: int): string;
-    calculateCounts(): PropertyCounts;
-    displayName(): string;
-    displayName(omitSharedType: boolean): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): Annotation | undefined;
-    findComplexProperty(name: string): RuntimeComplexProperty | undefined;
-    findComplexProperty(name: string): IComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
-    findComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    findComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    findDeclaredForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<RuntimeForeignKey>;
-    findDeclaredTrigger(modelName: string): RuntimeTrigger | undefined;
-    findDiscriminatorProperty(): IProperty | undefined;
-    findDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    findForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): RuntimeForeignKey | undefined;
-    findIndex(properties: IReadOnlyList<IReadOnlyProperty>): RuntimeIndex | undefined;
-    findIndex(name: string): RuntimeIndex | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findKey(properties: IReadOnlyList<IReadOnlyProperty>): RuntimeKey | undefined;
-    findMember(name: string): RuntimePropertyBase | undefined;
-    findMember(name: string): IPropertyBase | undefined;
-    findMember(name: string): IReadOnlyPropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<RuntimePropertyBase>;
-    findNavigation(name: string): RuntimeNavigation | undefined;
-    findNavigationsInHierarchy(name: string): IEnumerable<RuntimeNavigation>;
-    findProperties(propertyNames: IEnumerable<System_Internal.String>): IReadOnlyList<RuntimeProperty> | undefined;
-    findProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
-    findProperty(name: string): RuntimeProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IProperty | undefined;
-    findProperty(name: string): IProperty | undefined;
-    findProperty(name: string): IReadOnlyProperty | undefined;
-    findProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    findServicePropertiesInHierarchy(propertyName: string): IEnumerable<RuntimeServiceProperty>;
-    findServiceProperty(name: string): RuntimeServiceProperty | undefined;
-    findSkipNavigation(name: string): RuntimeSkipNavigation | undefined;
-    findSkipNavigationsInHierarchy(name: string): IEnumerable<RuntimeSkipNavigation>;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getChangeTrackingStrategy(): ChangeTrackingStrategy;
-    getConstructorBindingConfigurationSource(): Nullable<ConfigurationSource>;
-    getDeclaredForeignKeys(): List<RuntimeForeignKey>;
-    getDeclaredIndexes(): IEnumerable<RuntimeIndex>;
-    getDeclaredKeys(): IEnumerable<RuntimeKey>;
-    getDeclaredMembers(): IEnumerable<RuntimePropertyBase>;
-    getDerivedTypes(): IEnumerable<RuntimeTypeBase>;
-    getDiscriminatorValue(): unknown | undefined;
-    getForeignKeys(): IEnumerable<RuntimeForeignKey>;
-    getIndexes(): IEnumerable<RuntimeIndex>;
-    getKeys(): IEnumerable<RuntimeKey>;
-    getMembers(): IEnumerable<RuntimePropertyBase>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRootType(): IReadOnlyTypeBase;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    getSnapshottableMembers(): IEnumerable<RuntimePropertyBase>;
-    getSnapshottableMembers(): IEnumerable<RuntimePropertyBase>;
-    isAbstract(): boolean;
-    isAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    reparent(model: RuntimeModel): void;
-    setCounts(counts: PropertyCounts): void;
-    setPrimaryKey(key: RuntimeKey): void;
-    setRelationshipSnapshotFactory(factory: Func<IInternalEntry, ISnapshot>): void;
-    toString(): string;
+    get ConstructorBinding(): InstantiationBinding | undefined;
+    set ConstructorBinding(value: InstantiationBinding);
+    readonly DebugView: DebugView;
+    get ServiceOnlyConstructorBinding(): InstantiationBinding | undefined;
+    set ServiceOnlyConstructorBinding(value: InstantiationBinding);
+    AddForeignKey(properties: IReadOnlyList<RuntimeProperty>, principalKey: RuntimeKey, principalEntityType: RuntimeEntityType, deleteBehavior?: DeleteBehavior, unique?: boolean, required?: boolean, requiredDependent?: boolean, ownership?: boolean): RuntimeForeignKey;
+    AddIndex(properties: IReadOnlyList<RuntimeProperty>, name?: string, unique?: boolean): RuntimeIndex;
+    AddKey(properties: IReadOnlyList<RuntimeProperty>): RuntimeKey;
+    AddNavigation(name: string, foreignKey: RuntimeForeignKey, onDependent: boolean, clrType: Type, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, propertyAccessMode?: PropertyAccessMode, eagerLoaded?: boolean, lazyLoadingEnabled?: boolean): RuntimeNavigation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddServiceProperty(name: string, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, serviceType?: Type, propertyAccessMode?: PropertyAccessMode): RuntimeServiceProperty;
+    AddSkipNavigation(name: string, targetEntityType: RuntimeEntityType, foreignKey: RuntimeForeignKey, collection: boolean, onDependent: boolean, clrType: Type, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, propertyAccessMode?: PropertyAccessMode, eagerLoaded?: boolean, lazyLoadingEnabled?: boolean): RuntimeSkipNavigation;
+    AddTrigger(modelName: string): RuntimeTrigger;
+    AnnotationsToDebugString(indent?: int): string;
+    CalculateCounts(): PropertyCounts;
+    DisplayName(): string;
+    DisplayName(omitSharedType: boolean): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindComplexProperty(name: string): RuntimeComplexProperty | undefined;
+    FindComplexProperty(name: string): IComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
+    FindDeclaredForeignKeys(properties: IReadOnlyList<IReadOnlyProperty>): IEnumerable<RuntimeForeignKey>;
+    FindDeclaredTrigger(modelName: string): RuntimeTrigger | undefined;
+    FindDiscriminatorProperty(): IProperty | undefined;
+    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
+    FindForeignKey(properties: IReadOnlyList<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): RuntimeForeignKey | undefined;
+    FindIndex(properties: IReadOnlyList<IReadOnlyProperty>): RuntimeIndex | undefined;
+    FindIndex(name: string): RuntimeIndex | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindKey(properties: IReadOnlyList<IReadOnlyProperty>): RuntimeKey | undefined;
+    FindMember(name: string): RuntimePropertyBase | undefined;
+    FindMember(name: string): IPropertyBase | undefined;
+    FindMember(name: string): IReadOnlyPropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<RuntimePropertyBase>;
+    FindNavigation(name: string): RuntimeNavigation | undefined;
+    FindNavigationsInHierarchy(name: string): IEnumerable<RuntimeNavigation>;
+    FindProperties(propertyNames: IEnumerable<System_Internal.String>): IReadOnlyList<RuntimeProperty> | undefined;
+    FindProperties(propertyNames: IReadOnlyList<System_Internal.String>): IReadOnlyList<IProperty> | undefined;
+    FindProperty(name: string): RuntimeProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IProperty | undefined;
+    FindProperty(name: string): IProperty | undefined;
+    FindProperty(name: string): IReadOnlyProperty | undefined;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindServicePropertiesInHierarchy(propertyName: string): IEnumerable<RuntimeServiceProperty>;
+    FindServiceProperty(name: string): RuntimeServiceProperty | undefined;
+    FindSkipNavigation(name: string): RuntimeSkipNavigation | undefined;
+    FindSkipNavigationsInHierarchy(name: string): IEnumerable<RuntimeSkipNavigation>;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetChangeTrackingStrategy(): ChangeTrackingStrategy;
+    GetConstructorBindingConfigurationSource(): Nullable<ConfigurationSource>;
+    GetDeclaredForeignKeys(): List<RuntimeForeignKey>;
+    GetDeclaredIndexes(): IEnumerable<RuntimeIndex>;
+    GetDeclaredKeys(): IEnumerable<RuntimeKey>;
+    GetDeclaredMembers(): IEnumerable<RuntimePropertyBase>;
+    GetDerivedTypes(): IEnumerable<RuntimeTypeBase>;
+    GetDiscriminatorValue(): unknown | undefined;
+    GetForeignKeys(): IEnumerable<RuntimeForeignKey>;
+    GetIndexes(): IEnumerable<RuntimeIndex>;
+    GetKeys(): IEnumerable<RuntimeKey>;
+    GetMembers(): IEnumerable<RuntimePropertyBase>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRootType(): IReadOnlyTypeBase;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetSnapshottableMembers(): IEnumerable<RuntimePropertyBase>;
+    GetSnapshottableMembers(): IEnumerable<RuntimePropertyBase>;
+    IsAbstract(): boolean;
+    IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
+    Reparent(model: RuntimeModel): void;
+    SetCounts(counts: PropertyCounts): void;
+    SetPrimaryKey(key: RuntimeKey): void;
+    SetRelationshipSnapshotFactory(factory: Func<IInternalEntry, ISnapshot>): void;
+    ToString(): string;
 }
 
 
@@ -5434,22 +5434,22 @@ export type RuntimeEntityType = RuntimeEntityType$instance & __RuntimeEntityType
 
 
 export interface RuntimeEntityTypeMappingFragment$instance extends AnnotatableBase {
-    readonly debugView: DebugView;
-    readonly entityType: RuntimeEntityType;
-    readonly isTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
-    readonly storeObject: StoreObjectIdentifier;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<Annotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly EntityType: RuntimeEntityType;
+    readonly IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
+    readonly StoreObject: StoreObjectIdentifier;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<Annotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    ToString(): string;
 }
 
 
@@ -5469,26 +5469,26 @@ export type RuntimeEntityTypeMappingFragment = RuntimeEntityTypeMappingFragment$
 
 
 export interface RuntimeForeignKey$instance extends RuntimeAnnotatableBase {
-    readonly debugView: DebugView;
-    readonly declaringEntityType: RuntimeEntityType;
-    readonly principalEntityType: RuntimeEntityType;
-    readonly principalKey: RuntimeKey;
-    readonly properties: IReadOnlyList<RuntimeProperty>;
-    get referencingSkipNavigations(): ISet<RuntimeSkipNavigation> | undefined;
-    set referencingSkipNavigations(value: ISet<RuntimeSkipNavigation>);
-    addNavigation(navigation: RuntimeNavigation, onDependent: boolean): void;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly DeclaringEntityType: RuntimeEntityType;
+    readonly PrincipalEntityType: RuntimeEntityType;
+    readonly PrincipalKey: RuntimeKey;
+    readonly Properties: IReadOnlyList<RuntimeProperty>;
+    get ReferencingSkipNavigations(): ISet<RuntimeSkipNavigation> | undefined;
+    set ReferencingSkipNavigations(value: ISet<RuntimeSkipNavigation>);
+    AddNavigation(navigation: RuntimeNavigation, onDependent: boolean): void;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    ToString(): string;
 }
 
 
@@ -5509,22 +5509,22 @@ export type RuntimeForeignKey = RuntimeForeignKey$instance & __RuntimeForeignKey
 
 
 export interface RuntimeIndex$instance extends RuntimeAnnotatableBase {
-    readonly debugView: DebugView;
-    readonly declaringEntityType: RuntimeEntityType;
-    readonly name: string;
-    readonly properties: IReadOnlyList<RuntimeProperty>;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly DeclaringEntityType: RuntimeEntityType;
+    readonly Name: string;
+    readonly Properties: IReadOnlyList<RuntimeProperty>;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    ToString(): string;
 }
 
 
@@ -5544,25 +5544,25 @@ export type RuntimeIndex = RuntimeIndex$instance & __RuntimeIndex$views;
 
 
 export interface RuntimeKey$instance extends RuntimeAnnotatableBase {
-    readonly debugView: DebugView;
-    readonly declaringEntityType: RuntimeEntityType;
-    readonly properties: IReadOnlyList<RuntimeProperty>;
-    get referencingForeignKeys(): ISet<RuntimeForeignKey> | undefined;
-    set referencingForeignKeys(value: ISet<RuntimeForeignKey>);
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    setIdentityMapFactory(factory: Func<System_Internal.Boolean, IIdentityMap>): void;
-    setPrincipalKeyValueFactory<TKey>(factory: IPrincipalKeyValueFactory_1<TKey>): void;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly DeclaringEntityType: RuntimeEntityType;
+    readonly Properties: IReadOnlyList<RuntimeProperty>;
+    get ReferencingForeignKeys(): ISet<RuntimeForeignKey> | undefined;
+    set ReferencingForeignKeys(value: ISet<RuntimeForeignKey>);
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    SetIdentityMapFactory(factory: Func<System_Internal.Boolean, IIdentityMap>): void;
+    SetPrincipalKeyValueFactory<TKey>(factory: IPrincipalKeyValueFactory_1<TKey>): void;
+    ToString(): string;
 }
 
 
@@ -5583,27 +5583,27 @@ export type RuntimeKey = RuntimeKey$instance & __RuntimeKey$views;
 
 
 export interface RuntimeModel$instance extends RuntimeAnnotatableBase {
-    readonly debugView: DebugView;
-    modelId: Guid;
-    addEntityType(name: string, type: Type, baseType?: RuntimeEntityType, sharedClrType?: boolean, changeTrackingStrategy?: ChangeTrackingStrategy, indexerPropertyInfo?: PropertyInfo, propertyBag?: boolean, discriminatorProperty?: string, discriminatorValue?: unknown, derivedTypesCount?: int, propertyCount?: int, complexPropertyCount?: int, navigationCount?: int, skipNavigationCount?: int, servicePropertyCount?: int, foreignKeyCount?: int, unnamedIndexCount?: int, namedIndexCount?: int, keyCount?: int, triggerCount?: int): RuntimeEntityType;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    addTypeMappingConfiguration(clrType: Type, maxLength?: Nullable<System_Internal.Int32>, unicode?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, providerPropertyType?: Type, valueConverter?: ValueConverter): RuntimeTypeMappingConfiguration;
-    annotationsToDebugString(indent?: int): string;
-    finalizeModel(): IModel;
-    findAdHocEntityType(clrType: Type): RuntimeEntityType | undefined;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findEntityType(name: string): RuntimeEntityType | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAdHocEntityTypes(): IEnumerable<IReadOnlyEntityType>;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddAdHocEntityType(entityType: RuntimeEntityType): RuntimeEntityType;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    setSkipDetectChanges(skipDetectChanges: boolean): void;
+    readonly DebugView: DebugView;
+    ModelId: Guid;
+    AddEntityType(name: string, type: Type, baseType?: RuntimeEntityType, sharedClrType?: boolean, changeTrackingStrategy?: ChangeTrackingStrategy, indexerPropertyInfo?: PropertyInfo, propertyBag?: boolean, discriminatorProperty?: string, discriminatorValue?: unknown, derivedTypesCount?: int, propertyCount?: int, complexPropertyCount?: int, navigationCount?: int, skipNavigationCount?: int, servicePropertyCount?: int, foreignKeyCount?: int, unnamedIndexCount?: int, namedIndexCount?: int, keyCount?: int, triggerCount?: int): RuntimeEntityType;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddTypeMappingConfiguration(clrType: Type, maxLength?: Nullable<System_Internal.Int32>, unicode?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, providerPropertyType?: Type, valueConverter?: ValueConverter): RuntimeTypeMappingConfiguration;
+    AnnotationsToDebugString(indent?: int): string;
+    FinalizeModel(): IModel;
+    FindAdHocEntityType(clrType: Type): RuntimeEntityType | undefined;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindEntityType(name: string): RuntimeEntityType | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAdHocEntityTypes(): IEnumerable<IReadOnlyEntityType>;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddAdHocEntityType(entityType: RuntimeEntityType): RuntimeEntityType;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    SetSkipDetectChanges(skipDetectChanges: boolean): void;
 }
 
 
@@ -5625,36 +5625,36 @@ export type RuntimeModel = RuntimeModel$instance & __RuntimeModel$views;
 
 
 export interface RuntimeNavigation$instance extends RuntimePropertyBase$instance {
-    readonly debugView: DebugView;
-    readonly declaringEntityType: RuntimeEntityType;
-    readonly declaringType: RuntimeTypeBase;
-    readonly foreignKey: RuntimeForeignKey;
-    readonly isCollection: boolean;
-    readonly sentinel: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    getSetter(): IClrPropertySetter;
-    getShadowIndex(): int;
-    isShadowProperty(): boolean;
-    setCollectionAccessor<TEntity, TCollection extends IEnumerable<TElement>, TElement>(getCollection: Func<TEntity, TCollection>, setCollection: Action<TEntity, TCollection>, setCollectionForMaterialization: Action<TEntity, TCollection>, createAndSetCollection: Func<TEntity, Action<TEntity, TCollection>, TCollection>, createCollection: Func<TCollection>): void;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly DeclaringEntityType: RuntimeEntityType;
+    readonly DeclaringType: RuntimeTypeBase;
+    readonly ForeignKey: RuntimeForeignKey;
+    readonly IsCollection: boolean;
+    readonly Sentinel: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetSetter(): IClrPropertySetter;
+    GetShadowIndex(): int;
+    IsShadowProperty(): boolean;
+    SetCollectionAccessor<TEntity, TCollection extends IEnumerable<TElement>, TElement>(getCollection: Func<TEntity, TCollection>, setCollection: Action<TEntity, TCollection>, setCollectionForMaterialization: Action<TEntity, TCollection>, createAndSetCollection: Func<TEntity, Action<TEntity, TCollection>, TCollection>, createCollection: Func<TCollection>): void;
+    ToString(): string;
 }
 
 
@@ -5679,51 +5679,51 @@ export type RuntimeNavigation = RuntimeNavigation$instance & __RuntimeNavigation
 
 
 export interface RuntimeProperty$instance extends RuntimePropertyBase$instance {
-    readonly debugView: DebugView;
-    readonly declaringType: RuntimeTypeBase;
-    foreignKeys: ISet<RuntimeForeignKey>;
-    indexes: List<RuntimeIndex>;
-    readonly isCollection: boolean;
-    readonly isPrimitiveCollection: boolean;
-    get keys(): List<RuntimeKey> | undefined;
-    set keys(value: List<RuntimeKey>);
-    get primaryKey(): RuntimeKey | undefined;
-    set primaryKey(value: RuntimeKey);
-    readonly sentinel: unknown | undefined;
-    typeMapping: CoreTypeMapping;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getElementType(): IElementType | undefined;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
-    getJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    getKeyValueComparer(): ValueComparer;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    getSetter(): IClrPropertySetter;
-    getShadowIndex(): int;
-    getValueComparer(): ValueComparer;
-    isShadowProperty(): boolean;
-    setComparer(valueComparer: ValueComparer): ValueComparer;
-    setElementType(clrType: Type, nullable?: boolean, maxLength?: Nullable<System_Internal.Int32>, unicode?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, providerClrType?: Type, valueConverter?: ValueConverter, valueComparer?: ValueComparer, jsonValueReaderWriter?: JsonValueReaderWriter, typeMapping?: CoreTypeMapping): RuntimeElementType;
-    setKeyComparer(valueComparer: ValueComparer): ValueComparer;
-    setProviderValueComparer(valueComparer: ValueComparer): ValueComparer;
-    setSentinelFromProviderValue(providerValue: unknown): void;
-    setValueConverter(converter: ValueConverter): void;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly DeclaringType: RuntimeTypeBase;
+    ForeignKeys: ISet<RuntimeForeignKey>;
+    Indexes: List<RuntimeIndex>;
+    readonly IsCollection: boolean;
+    readonly IsPrimitiveCollection: boolean;
+    get Keys(): List<RuntimeKey> | undefined;
+    set Keys(value: List<RuntimeKey>);
+    get PrimaryKey(): RuntimeKey | undefined;
+    set PrimaryKey(value: RuntimeKey);
+    readonly Sentinel: unknown | undefined;
+    TypeMapping: CoreTypeMapping;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetElementType(): IElementType | undefined;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetKeyValueComparer(): ValueComparer;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetSetter(): IClrPropertySetter;
+    GetShadowIndex(): int;
+    GetValueComparer(): ValueComparer;
+    IsShadowProperty(): boolean;
+    SetComparer(valueComparer: ValueComparer): ValueComparer;
+    SetElementType(clrType: Type, nullable?: boolean, maxLength?: Nullable<System_Internal.Int32>, unicode?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, providerClrType?: Type, valueConverter?: ValueConverter, valueComparer?: ValueComparer, jsonValueReaderWriter?: JsonValueReaderWriter, typeMapping?: CoreTypeMapping): RuntimeElementType;
+    SetKeyComparer(valueComparer: ValueComparer): ValueComparer;
+    SetProviderValueComparer(valueComparer: ValueComparer): ValueComparer;
+    SetSentinelFromProviderValue(providerValue: unknown): void;
+    SetValueConverter(converter: ValueConverter): void;
+    ToString(): string;
 }
 
 
@@ -5746,31 +5746,31 @@ export type RuntimeProperty = RuntimeProperty$instance & __RuntimeProperty$views
 
 
 export interface RuntimePropertyBase$instance extends RuntimeAnnotatableBase {
-    readonly declaringType: RuntimeTypeBase;
-    readonly isCollection: boolean;
-    readonly name: string;
-    readonly sentinel: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    setAccessors<TProperty>(currentValueGetter: Func<IInternalEntry, TProperty>, preStoreGeneratedCurrentValueGetter: Func<IInternalEntry, TProperty>, originalValueGetter: Func<IInternalEntry, TProperty>, relationshipSnapshotGetter: Func<IInternalEntry, TProperty>): void;
-    setCurrentValueComparer(comparer: IComparer<IUpdateEntry>): void;
-    setGetter<TEntity, TValue>(getClrValue: Func<TEntity, TValue>, hasSentinel: Func<TEntity, System_Internal.Boolean>): void;
-    setGetter<TEntity, TStructural, TValue>(getClrValueUsingContainingEntity: Func<TEntity, IReadOnlyList<System_Internal.Int32>, TValue>, hasSentinelUsingContainingEntity: Func<TEntity, IReadOnlyList<System_Internal.Int32>, System_Internal.Boolean>, getClrValue: Func<TStructural, TValue>, hasSentinel: Func<TStructural, System_Internal.Boolean>): void;
-    setIndexedCollectionAccessor<TEntity, TCollection extends IList<TElement>, TElement>(get: Func<TEntity, System_Internal.Int32, TElement>, set: Action<TEntity, System_Internal.Int32, TElement>, setForMaterialization: Action<TEntity, System_Internal.Int32, TElement>, createCollection: Func<System_Internal.Int32, TCollection>): void;
-    setMaterializationSetter<TEntity, TStructural, TValue>(setClrValueUsingContainingEntity: Action<TEntity, IReadOnlyList<System_Internal.Int32>, TValue>, setClrValue: Func<TStructural, TValue, TStructural>): void;
-    setMaterializationSetter<TEntity, TValue>(setClrValue: Func<TEntity, TValue, TEntity>): void;
-    setPropertyIndexes(index: int, originalValueIndex: int, shadowIndex: int, relationshipIndex: int, storeGenerationIndex: int): void;
-    setSetter<TEntity, TStructural, TValue>(setClrValueUsingContainingEntity: Action<TEntity, IReadOnlyList<System_Internal.Int32>, TValue>, setClrValue: Func<TStructural, TValue, TStructural>): void;
-    setSetter<TEntity, TValue>(setClrValue: Func<TEntity, TValue, TEntity>): void;
+    readonly DeclaringType: RuntimeTypeBase;
+    readonly IsCollection: boolean;
+    readonly Name: string;
+    readonly Sentinel: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    SetAccessors<TProperty>(currentValueGetter: Func<IInternalEntry, TProperty>, preStoreGeneratedCurrentValueGetter: Func<IInternalEntry, TProperty>, originalValueGetter: Func<IInternalEntry, TProperty>, relationshipSnapshotGetter: Func<IInternalEntry, TProperty>): void;
+    SetCurrentValueComparer(comparer: IComparer<IUpdateEntry>): void;
+    SetGetter<TEntity, TValue>(getClrValue: Func<TEntity, TValue>, hasSentinel: Func<TEntity, System_Internal.Boolean>): void;
+    SetGetter<TEntity, TStructural, TValue>(getClrValueUsingContainingEntity: Func<TEntity, IReadOnlyList<System_Internal.Int32>, TValue>, hasSentinelUsingContainingEntity: Func<TEntity, IReadOnlyList<System_Internal.Int32>, System_Internal.Boolean>, getClrValue: Func<TStructural, TValue>, hasSentinel: Func<TStructural, System_Internal.Boolean>): void;
+    SetIndexedCollectionAccessor<TEntity, TCollection extends IList<TElement>, TElement>(get: Func<TEntity, System_Internal.Int32, TElement>, set: Action<TEntity, System_Internal.Int32, TElement>, setForMaterialization: Action<TEntity, System_Internal.Int32, TElement>, createCollection: Func<System_Internal.Int32, TCollection>): void;
+    SetMaterializationSetter<TEntity, TStructural, TValue>(setClrValueUsingContainingEntity: Action<TEntity, IReadOnlyList<System_Internal.Int32>, TValue>, setClrValue: Func<TStructural, TValue, TStructural>): void;
+    SetMaterializationSetter<TEntity, TValue>(setClrValue: Func<TEntity, TValue, TEntity>): void;
+    SetPropertyIndexes(index: int, originalValueIndex: int, shadowIndex: int, relationshipIndex: int, storeGenerationIndex: int): void;
+    SetSetter<TEntity, TStructural, TValue>(setClrValueUsingContainingEntity: Action<TEntity, IReadOnlyList<System_Internal.Int32>, TValue>, setClrValue: Func<TStructural, TValue, TStructural>): void;
+    SetSetter<TEntity, TValue>(setClrValue: Func<TEntity, TValue, TEntity>): void;
 }
 
 
@@ -5790,21 +5790,21 @@ export type RuntimePropertyBase = RuntimePropertyBase$instance & __RuntimeProper
 
 
 export interface RuntimeRelationalPropertyOverrides$instance extends AnnotatableBase {
-    readonly debugView: DebugView;
-    readonly property: RuntimeProperty;
-    readonly storeObject: StoreObjectIdentifier;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<Annotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly Property: RuntimeProperty;
+    readonly StoreObject: StoreObjectIdentifier;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<Annotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    ToString(): string;
 }
 
 
@@ -5824,23 +5824,23 @@ export type RuntimeRelationalPropertyOverrides = RuntimeRelationalPropertyOverri
 
 
 export interface RuntimeSequence$instance extends AnnotatableBase {
-    readonly debugView: DebugView;
-    readonly model: RuntimeModel;
-    readonly modelSchema: string | undefined;
-    readonly name: string;
-    readonly schema: string;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<Annotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly Model: RuntimeModel;
+    readonly ModelSchema: string | undefined;
+    readonly Name: string;
+    readonly Schema: string;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<Annotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    ToString(): string;
 }
 
 
@@ -5860,35 +5860,35 @@ export type RuntimeSequence = RuntimeSequence$instance & __RuntimeSequence$views
 
 
 export interface RuntimeServiceProperty$instance extends RuntimePropertyBase$instance {
-    readonly debugView: DebugView;
-    readonly declaringEntityType: RuntimeEntityType;
-    readonly declaringType: RuntimeTypeBase;
-    readonly isCollection: boolean;
-    parameterBinding: ServiceParameterBinding;
-    readonly sentinel: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    getSetter(): IClrPropertySetter;
-    getShadowIndex(): int;
-    isShadowProperty(): boolean;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly DeclaringEntityType: RuntimeEntityType;
+    readonly DeclaringType: RuntimeTypeBase;
+    readonly IsCollection: boolean;
+    ParameterBinding: ServiceParameterBinding;
+    readonly Sentinel: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetSetter(): IClrPropertySetter;
+    GetShadowIndex(): int;
+    IsShadowProperty(): boolean;
+    ToString(): string;
 }
 
 
@@ -5911,37 +5911,37 @@ export type RuntimeServiceProperty = RuntimeServiceProperty$instance & __Runtime
 
 
 export interface RuntimeSkipNavigation$instance extends RuntimePropertyBase$instance {
-    readonly debugView: DebugView;
-    readonly declaringEntityType: RuntimeEntityType;
-    readonly declaringType: RuntimeTypeBase;
-    inverse: RuntimeSkipNavigation;
-    readonly isCollection: boolean;
-    readonly sentinel: unknown | undefined;
-    readonly targetEntityType: RuntimeEntityType;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getCollectionAccessor(): IClrCollectionAccessor | undefined;
-    getCurrentValueComparer(): IComparer<IUpdateEntry>;
-    getFieldName(): string | undefined;
-    getGetter(): IClrPropertyGetter;
-    getIndex(): int;
-    getIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
-    getMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getPropertyAccessMode(): PropertyAccessMode;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    getSetter(): IClrPropertySetter;
-    getShadowIndex(): int;
-    isShadowProperty(): boolean;
-    setCollectionAccessor<TEntity, TCollection extends IEnumerable<TElement>, TElement>(getCollection: Func<TEntity, TCollection>, setCollection: Action<TEntity, TCollection>, setCollectionForMaterialization: Action<TEntity, TCollection>, createAndSetCollection: Func<TEntity, Action<TEntity, TCollection>, TCollection>, createCollection: Func<TCollection>): void;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly DeclaringEntityType: RuntimeEntityType;
+    readonly DeclaringType: RuntimeTypeBase;
+    Inverse: RuntimeSkipNavigation;
+    readonly IsCollection: boolean;
+    readonly Sentinel: unknown | undefined;
+    readonly TargetEntityType: RuntimeEntityType;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCurrentValueComparer(): IComparer<IUpdateEntry>;
+    GetFieldName(): string | undefined;
+    GetGetter(): IClrPropertyGetter;
+    GetIndex(): int;
+    GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
+    GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetPropertyAccessMode(): PropertyAccessMode;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetSetter(): IClrPropertySetter;
+    GetShadowIndex(): int;
+    IsShadowProperty(): boolean;
+    SetCollectionAccessor<TEntity, TCollection extends IEnumerable<TElement>, TElement>(getCollection: Func<TEntity, TCollection>, setCollection: Action<TEntity, TCollection>, setCollectionForMaterialization: Action<TEntity, TCollection>, createAndSetCollection: Func<TEntity, Action<TEntity, TCollection>, TCollection>, createCollection: Func<TCollection>): void;
+    ToString(): string;
 }
 
 
@@ -5967,22 +5967,22 @@ export type RuntimeSkipNavigation = RuntimeSkipNavigation$instance & __RuntimeSk
 
 
 export interface RuntimeStoredProcedure$instance extends AnnotatableBase {
-    readonly debugView: DebugView;
-    entityType: RuntimeEntityType;
-    addParameter(name: string, direction: ParameterDirection, forRowsAffected: boolean, propertyName: string, forOriginalValue: Nullable<System_Internal.Boolean>): RuntimeStoredProcedureParameter;
-    addResultColumn(name: string, forRowsAffected: boolean, propertyName: string): RuntimeStoredProcedureResultColumn;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<Annotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    toString(): string;
+    readonly DebugView: DebugView;
+    EntityType: RuntimeEntityType;
+    AddParameter(name: string, direction: ParameterDirection, forRowsAffected: boolean, propertyName: string, forOriginalValue: Nullable<System_Internal.Boolean>): RuntimeStoredProcedureParameter;
+    AddResultColumn(name: string, forRowsAffected: boolean, propertyName: string): RuntimeStoredProcedureResultColumn;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<Annotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    ToString(): string;
 }
 
 
@@ -6002,21 +6002,21 @@ export type RuntimeStoredProcedure = RuntimeStoredProcedure$instance & __Runtime
 
 
 export interface RuntimeTrigger$instance extends RuntimeAnnotatableBase {
-    readonly debugView: DebugView;
-    readonly entityType: IEntityType;
-    readonly modelName: string;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    toString(): string;
+    readonly DebugView: DebugView;
+    readonly EntityType: IEntityType;
+    readonly ModelName: string;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    ToString(): string;
 }
 
 
@@ -6036,63 +6036,63 @@ export type RuntimeTrigger = RuntimeTrigger$instance & __RuntimeTrigger$views;
 
 
 export interface RuntimeTypeBase$instance extends RuntimeAnnotatableBase {
-    readonly baseType: RuntimeTypeBase | undefined;
-    readonly clrType: Type;
-    get constructorBinding(): InstantiationBinding | undefined;
-    set constructorBinding(value: InstantiationBinding);
-    readonly emptyShadowValuesFactory: Func<ISnapshot>;
-    model: RuntimeModel;
-    readonly name: string;
-    readonly originalValuesFactory: Func<IInternalEntry, ISnapshot>;
-    readonly shadowValuesFactory: Func<IDictionary<System_Internal.String, unknown | undefined>, ISnapshot>;
-    readonly storeGeneratedValuesFactory: Func<ISnapshot>;
-    readonly temporaryValuesFactory: Func<IInternalEntry, ISnapshot>;
-    addComplexProperty(name: string, clrType: Type, targetTypeName: string, targetType: Type, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, propertyAccessMode?: PropertyAccessMode, nullable?: boolean, collection?: boolean, changeTrackingStrategy?: ChangeTrackingStrategy, indexerPropertyInfo?: PropertyInfo, propertyBag?: boolean, discriminatorProperty?: string, discriminatorValue?: unknown, propertyCount?: int, complexPropertyCount?: int): RuntimeComplexProperty;
-    addProperty(name: string, clrType: Type, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, propertyAccessMode?: PropertyAccessMode, nullable?: boolean, concurrencyToken?: boolean, valueGenerated?: ValueGenerated, beforeSaveBehavior?: PropertySaveBehavior, afterSaveBehavior?: PropertySaveBehavior, maxLength?: Nullable<System_Internal.Int32>, unicode?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, providerPropertyType?: Type, valueGeneratorFactory?: Func<IProperty, ITypeBase, ValueGenerator>, valueConverter?: ValueConverter, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer, jsonValueReaderWriter?: JsonValueReaderWriter, typeMapping?: CoreTypeMapping, sentinel?: unknown): RuntimeProperty;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    calculateCounts(): PropertyCounts;
-    finalizeType(): void;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findComplexPropertiesInHierarchy(propertyName: string): IEnumerable<RuntimeComplexProperty>;
-    findComplexProperty(name: string): RuntimeComplexProperty | undefined;
-    findIndexerPropertyInfo(): PropertyInfo | undefined;
-    findMember(name: string): RuntimePropertyBase | undefined;
-    findMembersInHierarchy(name: string): IEnumerable<RuntimePropertyBase>;
-    findProperties(propertyNames: IEnumerable<System_Internal.String>): IReadOnlyList<RuntimeProperty> | undefined;
-    findPropertiesInHierarchy(propertyName: string): IEnumerable<RuntimeProperty>;
-    findProperty(name: string): RuntimeProperty | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getComplexProperties(): IEnumerable<RuntimeComplexProperty>;
-    getDeclaredComplexProperties(): IEnumerable<RuntimeComplexProperty>;
-    getDeclaredMembers(): IEnumerable<RuntimePropertyBase>;
-    getDeclaredProperties(): IEnumerable<RuntimeProperty>;
-    getDerivedTypes(): IEnumerable<RuntimeTypeBase>;
-    getFlattenedComplexProperties(): IEnumerable<RuntimeComplexProperty>;
-    getFlattenedDeclaredProperties(): IEnumerable<RuntimeProperty>;
-    getFlattenedProperties(): IEnumerable<RuntimeProperty>;
-    getFlattenedValueGeneratingProperties(): IEnumerable<RuntimeProperty>;
-    getMembers(): IEnumerable<RuntimePropertyBase>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    getSnapshottableMembers(): IEnumerable<RuntimePropertyBase>;
-    setEmptyShadowValuesFactory(factory: Func<ISnapshot>): void;
-    setOriginalValuesFactory(factory: Func<IInternalEntry, ISnapshot>): void;
-    setShadowValuesFactory(factory: Func<IDictionary<System_Internal.String, unknown>, ISnapshot>): void;
-    setStoreGeneratedValuesFactory(factory: Func<ISnapshot>): void;
-    setTemporaryValuesFactory(factory: Func<IInternalEntry, ISnapshot>): void;
+    readonly BaseType: RuntimeTypeBase | undefined;
+    readonly ClrType: Type;
+    get ConstructorBinding(): InstantiationBinding | undefined;
+    set ConstructorBinding(value: InstantiationBinding);
+    readonly EmptyShadowValuesFactory: Func<ISnapshot>;
+    Model: RuntimeModel;
+    readonly Name: string;
+    readonly OriginalValuesFactory: Func<IInternalEntry, ISnapshot>;
+    readonly ShadowValuesFactory: Func<IDictionary<System_Internal.String, unknown | undefined>, ISnapshot>;
+    readonly StoreGeneratedValuesFactory: Func<ISnapshot>;
+    readonly TemporaryValuesFactory: Func<IInternalEntry, ISnapshot>;
+    AddComplexProperty(name: string, clrType: Type, targetTypeName: string, targetType: Type, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, propertyAccessMode?: PropertyAccessMode, nullable?: boolean, collection?: boolean, changeTrackingStrategy?: ChangeTrackingStrategy, indexerPropertyInfo?: PropertyInfo, propertyBag?: boolean, discriminatorProperty?: string, discriminatorValue?: unknown, propertyCount?: int, complexPropertyCount?: int): RuntimeComplexProperty;
+    AddProperty(name: string, clrType: Type, propertyInfo?: PropertyInfo, fieldInfo?: FieldInfo, propertyAccessMode?: PropertyAccessMode, nullable?: boolean, concurrencyToken?: boolean, valueGenerated?: ValueGenerated, beforeSaveBehavior?: PropertySaveBehavior, afterSaveBehavior?: PropertySaveBehavior, maxLength?: Nullable<System_Internal.Int32>, unicode?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, providerPropertyType?: Type, valueGeneratorFactory?: Func<IProperty, ITypeBase, ValueGenerator>, valueConverter?: ValueConverter, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer, jsonValueReaderWriter?: JsonValueReaderWriter, typeMapping?: CoreTypeMapping, sentinel?: unknown): RuntimeProperty;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    CalculateCounts(): PropertyCounts;
+    FinalizeType(): void;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindComplexPropertiesInHierarchy(propertyName: string): IEnumerable<RuntimeComplexProperty>;
+    FindComplexProperty(name: string): RuntimeComplexProperty | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | undefined;
+    FindMember(name: string): RuntimePropertyBase | undefined;
+    FindMembersInHierarchy(name: string): IEnumerable<RuntimePropertyBase>;
+    FindProperties(propertyNames: IEnumerable<System_Internal.String>): IReadOnlyList<RuntimeProperty> | undefined;
+    FindPropertiesInHierarchy(propertyName: string): IEnumerable<RuntimeProperty>;
+    FindProperty(name: string): RuntimeProperty | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetComplexProperties(): IEnumerable<RuntimeComplexProperty>;
+    GetDeclaredComplexProperties(): IEnumerable<RuntimeComplexProperty>;
+    GetDeclaredMembers(): IEnumerable<RuntimePropertyBase>;
+    GetDeclaredProperties(): IEnumerable<RuntimeProperty>;
+    GetDerivedTypes(): IEnumerable<RuntimeTypeBase>;
+    GetFlattenedComplexProperties(): IEnumerable<RuntimeComplexProperty>;
+    GetFlattenedDeclaredProperties(): IEnumerable<RuntimeProperty>;
+    GetFlattenedProperties(): IEnumerable<RuntimeProperty>;
+    GetFlattenedValueGeneratingProperties(): IEnumerable<RuntimeProperty>;
+    GetMembers(): IEnumerable<RuntimePropertyBase>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func<MaterializationContext, unknown>;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    GetSnapshottableMembers(): IEnumerable<RuntimePropertyBase>;
+    SetEmptyShadowValuesFactory(factory: Func<ISnapshot>): void;
+    SetOriginalValuesFactory(factory: Func<IInternalEntry, ISnapshot>): void;
+    SetShadowValuesFactory(factory: Func<IDictionary<System_Internal.String, unknown>, ISnapshot>): void;
+    SetStoreGeneratedValuesFactory(factory: Func<ISnapshot>): void;
+    SetTemporaryValuesFactory(factory: Func<IInternalEntry, ISnapshot>): void;
 }
 
 
 export const RuntimeTypeBase: {
-    findIndexerProperty(type: Type): PropertyInfo | undefined;
+    FindIndexerProperty(type: Type): PropertyInfo | undefined;
 };
 
 
@@ -6108,18 +6108,18 @@ export type RuntimeTypeBase = RuntimeTypeBase$instance & __RuntimeTypeBase$views
 
 
 export interface RuntimeTypeMappingConfiguration$instance extends RuntimeAnnotatableBase {
-    readonly clrType: Type;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
+    readonly ClrType: Type;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
 }
 
 
@@ -6138,10 +6138,10 @@ export type RuntimeTypeMappingConfiguration = RuntimeTypeMappingConfiguration$in
 
 
 export interface ServiceParameterBinding$instance extends ParameterBinding {
-    readonly serviceDelegate: Func<MaterializationContext, IEntityType, unknown, unknown | undefined>;
-    readonly serviceType: Type;
-    bindToParameter(bindingInfo: ParameterBindingInfo): Expression;
-    bindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
+    readonly ServiceDelegate: Func<MaterializationContext, IEntityType, unknown, unknown | undefined>;
+    readonly ServiceType: Type;
+    BindToParameter(bindingInfo: ParameterBindingInfo): Expression;
+    BindToParameter(materializationExpression: Expression, bindingInfoExpression: Expression): Expression;
 }
 
 
@@ -6152,10 +6152,10 @@ export const ServiceParameterBinding: {
 export type ServiceParameterBinding = ServiceParameterBinding$instance;
 
 export interface ServiceParameterBindingFactory$instance {
-    bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
-    bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
-    bind(entityType: IReadOnlyEntityType, parameterType: Type, parameterName: string): ParameterBinding;
-    canBind(parameterType: Type, parameterName: string): boolean;
+    Bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
+    Bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
+    Bind(entityType: IReadOnlyEntityType, parameterType: Type, parameterName: string): ParameterBinding;
+    CanBind(parameterType: Type, parameterName: string): boolean;
 }
 
 
@@ -6172,7 +6172,7 @@ export type ServiceParameterBindingFactory = ServiceParameterBindingFactory$inst
 
 
 export interface SimpleModelFactory$instance {
-    create(): IMutableModel;
+    Create(): IMutableModel;
 }
 
 
@@ -6184,10 +6184,10 @@ export const SimpleModelFactory: {
 export type SimpleModelFactory = SimpleModelFactory$instance;
 
 export interface StoreObjectDictionary_1$instance<T> {
-    add(storeObject: StoreObjectIdentifier, value: T): void;
-    find(storeObject: StoreObjectIdentifier): T | undefined;
-    getValues(): IEnumerable<T>;
-    remove(storeObject: StoreObjectIdentifier): T | undefined;
+    Add(storeObject: StoreObjectIdentifier, value: T): void;
+    Find(storeObject: StoreObjectIdentifier): T | undefined;
+    GetValues(): IEnumerable<T>;
+    Remove(storeObject: StoreObjectIdentifier): T | undefined;
 }
 
 
@@ -6204,102 +6204,102 @@ export type StoreObjectDictionary_1<T> = StoreObjectDictionary_1$instance<T> & _
 
 
 export interface TypeBaseNameComparer$instance {
-    compare(x: IReadOnlyTypeBase, y: IReadOnlyTypeBase): int;
-    equals(x: IReadOnlyTypeBase, y: IReadOnlyTypeBase): boolean;
-    getHashCode(obj: IReadOnlyTypeBase): int;
+    Compare(x: IReadOnlyTypeBase, y: IReadOnlyTypeBase): int;
+    Equals(x: IReadOnlyTypeBase, y: IReadOnlyTypeBase): boolean;
+    GetHashCode(obj: IReadOnlyTypeBase): int;
 }
 
 
 export const TypeBaseNameComparer: {
     new(): TypeBaseNameComparer;
-    readonly instance: TypeBaseNameComparer;
+    readonly Instance: TypeBaseNameComparer;
 };
 
 
 export type TypeBaseNameComparer = TypeBaseNameComparer$instance;
 
 export abstract class ConfigurationSourceExtensions$instance {
-    static max(left: ConfigurationSource, right: Nullable<ConfigurationSource>): ConfigurationSource;
-    static max(left: Nullable<ConfigurationSource>, right: Nullable<ConfigurationSource>): Nullable<ConfigurationSource>;
-    static overrides(newConfigurationSource: ConfigurationSource, oldConfigurationSource: Nullable<ConfigurationSource>): boolean;
-    static overrides(newConfigurationSource: Nullable<ConfigurationSource>, oldConfigurationSource: Nullable<ConfigurationSource>): boolean;
-    static overridesStrictly(newConfigurationSource: ConfigurationSource, oldConfigurationSource: Nullable<ConfigurationSource>): boolean;
-    static overridesStrictly(newConfigurationSource: Nullable<ConfigurationSource>, oldConfigurationSource: Nullable<ConfigurationSource>): boolean;
+    static Max(left: ConfigurationSource, right: Nullable<ConfigurationSource>): ConfigurationSource;
+    static Max(left: Nullable<ConfigurationSource>, right: Nullable<ConfigurationSource>): Nullable<ConfigurationSource>;
+    static Overrides(newConfigurationSource: ConfigurationSource, oldConfigurationSource: Nullable<ConfigurationSource>): boolean;
+    static Overrides(newConfigurationSource: Nullable<ConfigurationSource>, oldConfigurationSource: Nullable<ConfigurationSource>): boolean;
+    static OverridesStrictly(newConfigurationSource: ConfigurationSource, oldConfigurationSource: Nullable<ConfigurationSource>): boolean;
+    static OverridesStrictly(newConfigurationSource: Nullable<ConfigurationSource>, oldConfigurationSource: Nullable<ConfigurationSource>): boolean;
 }
 
 
 export type ConfigurationSourceExtensions = ConfigurationSourceExtensions$instance;
 
 export abstract class RelationalAnnotationNames$instance {
-    static readonly allNames: ISet<System_Internal.String>;
-    static readonly prefix: string;
-    static readonly columnName: string;
-    static readonly columnOrder: string;
-    static readonly columnType: string;
-    static readonly defaultValueSql: string;
-    static readonly computedColumnSql: string;
-    static readonly isStored: string;
-    static readonly defaultValue: string;
-    static readonly defaultConstraintName: string;
-    static readonly useNamedDefaultConstraints: string;
-    static readonly tableName: string;
-    static readonly schema: string;
-    static readonly viewName: string;
-    static readonly viewSchema: string;
-    static readonly functionName: string;
-    static readonly deleteStoredProcedure: string;
-    static readonly insertStoredProcedure: string;
-    static readonly updateStoredProcedure: string;
-    static readonly sqlQuery: string;
-    static readonly comment: string;
-    static readonly collation: string;
-    static readonly defaultSchema: string;
-    static readonly name: string;
-    static readonly sequencePrefix: string;
-    static readonly sequences: string;
-    static readonly checkConstraints: string;
-    static readonly filter: string;
-    static readonly dbFunctions: string;
-    static readonly maxIdentifierLength: string;
-    static readonly isFixedLength: string;
-    static readonly viewDefinitionSql: string;
-    static readonly isTableExcludedFromMigrations: string;
-    static readonly mappingStrategy: string;
-    static readonly tpcMappingStrategy: string;
-    static readonly tphMappingStrategy: string;
-    static readonly tptMappingStrategy: string;
-    static readonly relationalModel: string;
-    static readonly relationalModelFactory: string;
-    static readonly defaultMappings: string;
-    static readonly defaultColumnMappings: string;
-    static readonly tableMappings: string;
-    static readonly tableColumnMappings: string;
-    static readonly viewMappings: string;
-    static readonly viewColumnMappings: string;
-    static readonly functionMappings: string;
-    static readonly functionColumnMappings: string;
-    static readonly insertStoredProcedureMappings: string;
-    static readonly insertStoredProcedureResultColumnMappings: string;
-    static readonly insertStoredProcedureParameterMappings: string;
-    static readonly deleteStoredProcedureMappings: string;
-    static readonly deleteStoredProcedureParameterMappings: string;
-    static readonly updateStoredProcedureMappings: string;
-    static readonly updateStoredProcedureResultColumnMappings: string;
-    static readonly updateStoredProcedureParameterMappings: string;
-    static readonly sqlQueryMappings: string;
-    static readonly sqlQueryColumnMappings: string;
-    static readonly foreignKeyMappings: string;
-    static readonly tableIndexMappings: string;
-    static readonly uniqueConstraintMappings: string;
-    static readonly mappingFragments: string;
-    static readonly relationalOverrides: string;
-    static readonly modelDependencies: string;
-    static readonly fieldValueGetter: string;
-    static readonly containerColumnName: string;
-    static readonly containerColumnType: string;
-    static readonly containerColumnTypeMapping: string;
-    static readonly jsonPropertyName: string;
-    static readonly storeType: string;
+    static readonly AllNames: ISet<System_Internal.String>;
+    static readonly Prefix: string;
+    static readonly ColumnName: string;
+    static readonly ColumnOrder: string;
+    static readonly ColumnType: string;
+    static readonly DefaultValueSql: string;
+    static readonly ComputedColumnSql: string;
+    static readonly IsStored: string;
+    static readonly DefaultValue: string;
+    static readonly DefaultConstraintName: string;
+    static readonly UseNamedDefaultConstraints: string;
+    static readonly TableName: string;
+    static readonly Schema: string;
+    static readonly ViewName: string;
+    static readonly ViewSchema: string;
+    static readonly FunctionName: string;
+    static readonly DeleteStoredProcedure: string;
+    static readonly InsertStoredProcedure: string;
+    static readonly UpdateStoredProcedure: string;
+    static readonly SqlQuery: string;
+    static readonly Comment: string;
+    static readonly Collation: string;
+    static readonly DefaultSchema: string;
+    static readonly Name: string;
+    static readonly SequencePrefix: string;
+    static readonly Sequences: string;
+    static readonly CheckConstraints: string;
+    static readonly Filter: string;
+    static readonly DbFunctions: string;
+    static readonly MaxIdentifierLength: string;
+    static readonly IsFixedLength: string;
+    static readonly ViewDefinitionSql: string;
+    static readonly IsTableExcludedFromMigrations: string;
+    static readonly MappingStrategy: string;
+    static readonly TpcMappingStrategy: string;
+    static readonly TphMappingStrategy: string;
+    static readonly TptMappingStrategy: string;
+    static readonly RelationalModel: string;
+    static readonly RelationalModelFactory: string;
+    static readonly DefaultMappings: string;
+    static readonly DefaultColumnMappings: string;
+    static readonly TableMappings: string;
+    static readonly TableColumnMappings: string;
+    static readonly ViewMappings: string;
+    static readonly ViewColumnMappings: string;
+    static readonly FunctionMappings: string;
+    static readonly FunctionColumnMappings: string;
+    static readonly InsertStoredProcedureMappings: string;
+    static readonly InsertStoredProcedureResultColumnMappings: string;
+    static readonly InsertStoredProcedureParameterMappings: string;
+    static readonly DeleteStoredProcedureMappings: string;
+    static readonly DeleteStoredProcedureParameterMappings: string;
+    static readonly UpdateStoredProcedureMappings: string;
+    static readonly UpdateStoredProcedureResultColumnMappings: string;
+    static readonly UpdateStoredProcedureParameterMappings: string;
+    static readonly SqlQueryMappings: string;
+    static readonly SqlQueryColumnMappings: string;
+    static readonly ForeignKeyMappings: string;
+    static readonly TableIndexMappings: string;
+    static readonly UniqueConstraintMappings: string;
+    static readonly MappingFragments: string;
+    static readonly RelationalOverrides: string;
+    static readonly ModelDependencies: string;
+    static readonly FieldValueGetter: string;
+    static readonly ContainerColumnName: string;
+    static readonly ContainerColumnType: string;
+    static readonly ContainerColumnTypeMapping: string;
+    static readonly JsonPropertyName: string;
+    static readonly StoreType: string;
 }
 
 

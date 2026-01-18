@@ -1,23 +1,37 @@
 {
   "namespace": "System.Transactions",
+  "contributingAssemblies": [
+    "Microsoft.EntityFrameworkCore",
+    "System.Transactions.Local"
+  ],
   "types": [
     {
       "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions",
       "clrName": "System.Transactions.TransactionsDatabaseFacadeExtensions",
-      "tsEmitName": "TransactionsDatabaseFacadeExtensions",
       "assemblyName": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
+      "kind": "StaticNamespace",
+      "accessibility": "Public",
+      "isAbstract": true,
+      "isSealed": true,
+      "isStatic": true,
+      "arity": 0,
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions::EnlistTransaction(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void",
           "clrName": "EnlistTransaction",
-          "tsEmitName": "enlistTransaction",
           "metadataToken": 100663383,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void",
           "normalizedSignature": "EnlistTransaction|(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void|static=true",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 2,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "System.Transactions.TransactionsDatabaseFacadeExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -25,13 +39,18 @@
         {
           "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions::GetEnlistedTransaction(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade):System.Transactions.Transaction",
           "clrName": "GetEnlistedTransaction",
-          "tsEmitName": "getEnlistedTransaction",
           "metadataToken": 100663384,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade):System.Transactions.Transaction",
           "normalizedSignature": "GetEnlistedTransaction|(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade):System.Transactions.Transaction|static=true",
           "emitScope": "ClassSurface",
+          "provenance": "Original",
           "arity": 0,
           "parameterCount": 1,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
           "declaringClrType": "System.Transactions.TransactionsDatabaseFacadeExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -40,29 +59,7 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": [],
-      "exposedMethods": [
-        {
-          "tsName": "enlistTransaction",
-          "isStatic": true,
-          "tsSignatureId": "EnlistTransaction|(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void|static=true",
-          "target": {
-            "declaringClrType": "System.Transactions.TransactionsDatabaseFacadeExtensions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100663383
-          }
-        },
-        {
-          "tsName": "getEnlistedTransaction",
-          "isStatic": true,
-          "tsSignatureId": "GetEnlistedTransaction|(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade):System.Transactions.Transaction|static=true",
-          "target": {
-            "declaringClrType": "System.Transactions.TransactionsDatabaseFacadeExtensions",
-            "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-            "metadataToken": 100663384
-          }
-        }
-      ]
+      "constructors": []
     }
   ]
 }

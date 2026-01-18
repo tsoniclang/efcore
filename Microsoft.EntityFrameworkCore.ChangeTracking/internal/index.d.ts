@@ -36,37 +36,37 @@ import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
 export enum CascadeTiming {
-    immediate = 0,
-    onSaveChanges = 1,
-    never = 2
+    Immediate = 0,
+    OnSaveChanges = 1,
+    Never = 2
 }
 
 
 export enum ChangeTrackerDebugStringOptions {
-    includeProperties = 1,
-    includeNavigations = 2,
-    shortDefault = 0,
-    longDefault = 3
+    IncludeProperties = 1,
+    IncludeNavigations = 2,
+    ShortDefault = 0,
+    LongDefault = 3
 }
 
 
 export enum LoadOptions {
-    none = 0,
-    forceIdentityResolution = 1
+    None = 0,
+    ForceIdentityResolution = 1
 }
 
 
 export interface IDependentKeyValueFactory$instance {
-    createPrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
+    CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
 }
 
 
 export type IDependentKeyValueFactory = IDependentKeyValueFactory$instance;
 
 export interface IDependentKeyValueFactory_1$instance<TKey> extends IDependentKeyValueFactory {
-    readonly equalityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
-    createPrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
-    tryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
+    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
+    TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
 }
 
 
@@ -75,28 +75,28 @@ export interface IDependentKeyValueFactory_1$instance<TKey> extends IDependentKe
 export type IDependentKeyValueFactory_1<TKey> = IDependentKeyValueFactory_1$instance<TKey>;
 
 export interface IEntityEntryGraphIterator$instance {
-    traverseGraph<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
-    traverseGraphAsync<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, CancellationToken, Task<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
+    TraverseGraph<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
+    TraverseGraphAsync<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, CancellationToken, Task<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
 }
 
 
 export type IEntityEntryGraphIterator = IEntityEntryGraphIterator$instance;
 
 export interface IPrincipalKeyValueFactory$instance {
-    createEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
+    CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
 }
 
 
 export type IPrincipalKeyValueFactory = IPrincipalKeyValueFactory$instance;
 
 export interface IPrincipalKeyValueFactory_1$instance<TKey> extends IPrincipalKeyValueFactory {
-    readonly equalityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
-    createEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
-    createFromCurrentValues(entry: IUpdateEntry): TKey;
-    createFromKeyValues(keyValues: IReadOnlyList<unknown>): unknown | undefined;
-    createFromRelationshipSnapshot(entry: IUpdateEntry): TKey;
-    findNullPropertyInCurrentValues(entry: IUpdateEntry): IProperty;
-    findNullPropertyInKeyValues(keyValues: IReadOnlyList<unknown>): IProperty;
+    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
+    CreateFromCurrentValues(entry: IUpdateEntry): TKey;
+    CreateFromKeyValues(keyValues: IReadOnlyList<unknown>): unknown | undefined;
+    CreateFromRelationshipSnapshot(entry: IUpdateEntry): TKey;
+    FindNullPropertyInCurrentValues(entry: IUpdateEntry): IProperty;
+    FindNullPropertyInKeyValues(keyValues: IReadOnlyList<unknown>): IProperty;
 }
 
 
@@ -127,25 +127,25 @@ export const CaseInsensitiveValueComparer: {
 export type CaseInsensitiveValueComparer = CaseInsensitiveValueComparer$instance;
 
 export interface ChangeTracker$instance {
-    autoDetectChangesEnabled: boolean;
-    cascadeDeleteTiming: CascadeTiming;
-    readonly context: DbContext;
-    readonly debugView: DebugView;
-    deleteOrphansTiming: CascadeTiming;
-    lazyLoadingEnabled: boolean;
-    queryTrackingBehavior: QueryTrackingBehavior;
-    acceptAllChanges(): void;
-    cascadeChanges(): void;
-    clear(): void;
-    detectChanges(): void;
-    entries(): IEnumerable__System_Collections_Generic<EntityEntry>;
-    entries<TEntity>(): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    hasChanges(): boolean;
-    toString(): string | undefined;
-    trackGraph(rootEntity: unknown, callback: Action<EntityEntryGraphNode>): void;
-    trackGraph<TState>(rootEntity: unknown, state: TState, callback: Func<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
+    AutoDetectChangesEnabled: boolean;
+    CascadeDeleteTiming: CascadeTiming;
+    readonly Context: DbContext;
+    readonly DebugView: DebugView;
+    DeleteOrphansTiming: CascadeTiming;
+    LazyLoadingEnabled: boolean;
+    QueryTrackingBehavior: QueryTrackingBehavior;
+    AcceptAllChanges(): void;
+    CascadeChanges(): void;
+    Clear(): void;
+    DetectChanges(): void;
+    Entries(): IEnumerable__System_Collections_Generic<EntityEntry>;
+    Entries<TEntity>(): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    HasChanges(): boolean;
+    ToString(): string | undefined;
+    TrackGraph(rootEntity: unknown, callback: Action<EntityEntryGraphNode>): void;
+    TrackGraph<TState>(rootEntity: unknown, state: TState, callback: Func<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
 }
 
 
@@ -164,14 +164,14 @@ export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 
 
 export interface CollectionEntry$instance extends NavigationEntry$instance {
-    currentValue: IEnumerable | unknown;
-    isModified: boolean;
-    findEntry(entity: unknown): EntityEntry | undefined;
-    load(): void;
-    load(options: LoadOptions): void;
-    loadAsync(cancellationToken?: CancellationToken): Task;
-    loadAsync(options: LoadOptions, cancellationToken?: CancellationToken): Task;
-    query(): IQueryable;
+    CurrentValue: IEnumerable | unknown;
+    IsModified: boolean;
+    FindEntry(entity: unknown): EntityEntry | undefined;
+    Load(): void;
+    Load(options: LoadOptions): void;
+    LoadAsync(cancellationToken?: CancellationToken): Task;
+    LoadAsync(options: LoadOptions, cancellationToken?: CancellationToken): Task;
+    Query(): IQueryable;
 }
 
 
@@ -191,9 +191,9 @@ export type CollectionEntry = CollectionEntry$instance & __CollectionEntry$views
 
 
 export interface CollectionEntry_2$instance<TEntity, TRelatedEntity> extends CollectionEntry$instance {
-    readonly entityEntry: EntityEntry | EntityEntry_1<TEntity>;
-    findEntry(entity: unknown): EntityEntry | undefined;
-    query(): IQueryable;
+    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    FindEntry(entity: unknown): EntityEntry | undefined;
+    Query(): IQueryable;
 }
 
 
@@ -213,10 +213,10 @@ export type CollectionEntry_2<TEntity, TRelatedEntity> = CollectionEntry_2$insta
 
 
 export interface ComplexCollectionEntry$instance extends MemberEntry$instance {
-    isModified: boolean;
-    readonly item: ComplexElementEntry;
-    getEnumerator(): IEnumerator<ComplexElementEntry>;
-    getOriginalEntry(ordinal: int): ComplexElementEntry;
+    IsModified: boolean;
+    readonly Item: ComplexElementEntry;
+    GetEnumerator(): IEnumerator<ComplexElementEntry>;
+    GetOriginalEntry(ordinal: int): ComplexElementEntry;
 }
 
 
@@ -235,8 +235,8 @@ export type ComplexCollectionEntry = ComplexCollectionEntry$instance & __Complex
 
 
 export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends ComplexCollectionEntry$instance {
-    readonly entityEntry: EntityEntry | EntityEntry_1<TEntity>;
-    getOriginalEntry(ordinal: int): ComplexElementEntry;
+    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    GetOriginalEntry(ordinal: int): ComplexElementEntry;
 }
 
 
@@ -255,20 +255,20 @@ export type ComplexCollectionEntry_2<TEntity, TElement> = ComplexCollectionEntry
 
 
 export interface ComplexElementEntry$instance {
-    readonly complexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
-    readonly complexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
-    readonly currentValue: TComplexProperty | unknown;
-    readonly entityEntry: EntityEntry | EntityEntry_1<TEntity>;
-    isModified: boolean;
-    readonly metadata: IComplexProperty;
-    readonly properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
-    state: EntityState;
-    complexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    complexCollection(propertyName: string): ComplexCollectionEntry;
-    complexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    complexProperty(propertyName: string): ComplexPropertyEntry;
-    property(property: IProperty): PropertyEntry;
-    property(propertyName: string): PropertyEntry;
+    readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
+    readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
+    readonly CurrentValue: TComplexProperty | unknown;
+    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    IsModified: boolean;
+    readonly Metadata: IComplexProperty;
+    readonly Properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
+    State: EntityState;
+    ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
+    ComplexCollection(propertyName: string): ComplexCollectionEntry;
+    ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
+    ComplexProperty(propertyName: string): ComplexPropertyEntry;
+    Property(property: IProperty): PropertyEntry;
+    Property(propertyName: string): PropertyEntry;
 }
 
 
@@ -287,18 +287,18 @@ export type ComplexElementEntry = ComplexElementEntry$instance & __ComplexElemen
 
 
 export interface ComplexElementEntry_2$instance<TEntity, TComplexProperty> extends ComplexElementEntry$instance {
-    complexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
-    complexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
-    complexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    complexCollection(propertyName: string): ComplexCollectionEntry;
-    complexProperty<TNestedComplexProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
-    complexProperty<TNestedComplexProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
-    complexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    complexProperty(propertyName: string): ComplexPropertyEntry;
-    property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
-    property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
-    property(property: IProperty): PropertyEntry;
-    property(propertyName: string): PropertyEntry;
+    ComplexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
+    ComplexCollection(propertyName: string): ComplexCollectionEntry;
+    ComplexProperty<TNestedComplexProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty<TNestedComplexProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
+    ComplexProperty(propertyName: string): ComplexPropertyEntry;
+    Property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
+    Property(property: IProperty): PropertyEntry;
+    Property(propertyName: string): PropertyEntry;
 }
 
 
@@ -317,16 +317,16 @@ export type ComplexElementEntry_2<TEntity, TComplexProperty> = ComplexElementEnt
 
 
 export interface ComplexPropertyEntry$instance extends MemberEntry$instance {
-    readonly complexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
-    readonly complexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
-    isModified: boolean;
-    readonly properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
-    complexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    complexCollection(propertyName: string): ComplexCollectionEntry;
-    complexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    complexProperty(propertyName: string): ComplexPropertyEntry;
-    property(property: IProperty): PropertyEntry;
-    property(propertyName: string): PropertyEntry;
+    readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
+    readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
+    IsModified: boolean;
+    readonly Properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
+    ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
+    ComplexCollection(propertyName: string): ComplexCollectionEntry;
+    ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
+    ComplexProperty(propertyName: string): ComplexPropertyEntry;
+    Property(property: IProperty): PropertyEntry;
+    Property(propertyName: string): PropertyEntry;
 }
 
 
@@ -345,20 +345,20 @@ export type ComplexPropertyEntry = ComplexPropertyEntry$instance & __ComplexProp
 
 
 export interface ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> extends ComplexPropertyEntry$instance {
-    currentValue: TComplexProperty | unknown;
-    readonly entityEntry: EntityEntry | EntityEntry_1<TEntity>;
-    complexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
-    complexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
-    complexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    complexCollection(propertyName: string): ComplexCollectionEntry;
-    complexProperty<TNestedComplexProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
-    complexProperty<TNestedComplexProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
-    complexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    complexProperty(propertyName: string): ComplexPropertyEntry;
-    property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
-    property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
-    property(property: IProperty): PropertyEntry;
-    property(propertyName: string): PropertyEntry;
+    CurrentValue: TComplexProperty | unknown;
+    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    ComplexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
+    ComplexCollection(propertyName: string): ComplexCollectionEntry;
+    ComplexProperty<TNestedComplexProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty<TNestedComplexProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
+    ComplexProperty(propertyName: string): ComplexPropertyEntry;
+    Property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
+    Property(property: IProperty): PropertyEntry;
+    Property(propertyName: string): PropertyEntry;
 }
 
 
@@ -388,7 +388,7 @@ export const DetectChangesEventArgs: {
 export type DetectChangesEventArgs = DetectChangesEventArgs$instance;
 
 export interface DetectedChangesEventArgs$instance extends EventArgs {
-    readonly changesFound: boolean;
+    readonly ChangesFound: boolean;
 }
 
 
@@ -400,7 +400,7 @@ export const DetectedChangesEventArgs: {
 export type DetectedChangesEventArgs = DetectedChangesEventArgs$instance;
 
 export interface DetectedEntityChangesEventArgs$instance extends DetectedChangesEventArgs {
-    readonly entry: EntityEntry;
+    readonly Entry: EntityEntry;
 }
 
 
@@ -412,7 +412,7 @@ export const DetectedEntityChangesEventArgs: {
 export type DetectedEntityChangesEventArgs = DetectedEntityChangesEventArgs$instance;
 
 export interface DetectEntityChangesEventArgs$instance extends DetectChangesEventArgs {
-    readonly entry: EntityEntry;
+    readonly Entry: EntityEntry;
 }
 
 
@@ -424,43 +424,43 @@ export const DetectEntityChangesEventArgs: {
 export type DetectEntityChangesEventArgs = DetectEntityChangesEventArgs$instance;
 
 export interface EntityEntry$instance {
-    readonly collections: IEnumerable__System_Collections_Generic<CollectionEntry>;
-    readonly complexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
-    readonly complexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
-    readonly context: DbContext;
-    readonly currentValues: PropertyValues;
-    readonly debugView: DebugView;
-    readonly entity: TEntity | unknown;
-    readonly isKeySet: boolean;
-    readonly members: IEnumerable__System_Collections_Generic<MemberEntry>;
-    readonly metadata: IEntityType;
-    readonly navigations: IEnumerable__System_Collections_Generic<NavigationEntry>;
-    readonly originalValues: PropertyValues;
-    readonly properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
-    readonly references: IEnumerable__System_Collections_Generic<ReferenceEntry>;
-    state: EntityState;
-    collection(navigation: INavigationBase): CollectionEntry;
-    collection(propertyName: string): CollectionEntry;
-    complexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    complexCollection(propertyName: string): ComplexCollectionEntry;
-    complexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    complexProperty(propertyName: string): ComplexPropertyEntry;
-    detectChanges(): void;
-    equals(obj: unknown): boolean;
-    getDatabaseValues(): PropertyValues | undefined;
-    getDatabaseValuesAsync(cancellationToken?: CancellationToken): Task<PropertyValues | undefined>;
-    getHashCode(): int;
-    member(propertyBase: IPropertyBase): MemberEntry;
-    member(propertyName: string): MemberEntry;
-    navigation(navigationBase: INavigationBase): NavigationEntry;
-    navigation(propertyName: string): NavigationEntry;
-    property(property: IProperty): PropertyEntry;
-    property(propertyName: string): PropertyEntry;
-    reference(navigation: INavigationBase): ReferenceEntry;
-    reference(propertyName: string): ReferenceEntry;
-    reload(): void;
-    reloadAsync(cancellationToken?: CancellationToken): Task;
-    toString(): string;
+    readonly Collections: IEnumerable__System_Collections_Generic<CollectionEntry>;
+    readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
+    readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
+    readonly Context: DbContext;
+    readonly CurrentValues: PropertyValues;
+    readonly DebugView: DebugView;
+    readonly Entity: TEntity | unknown;
+    readonly IsKeySet: boolean;
+    readonly Members: IEnumerable__System_Collections_Generic<MemberEntry>;
+    readonly Metadata: IEntityType;
+    readonly Navigations: IEnumerable__System_Collections_Generic<NavigationEntry>;
+    readonly OriginalValues: PropertyValues;
+    readonly Properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
+    readonly References: IEnumerable__System_Collections_Generic<ReferenceEntry>;
+    State: EntityState;
+    Collection(navigation: INavigationBase): CollectionEntry;
+    Collection(propertyName: string): CollectionEntry;
+    ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
+    ComplexCollection(propertyName: string): ComplexCollectionEntry;
+    ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
+    ComplexProperty(propertyName: string): ComplexPropertyEntry;
+    DetectChanges(): void;
+    Equals(obj: unknown): boolean;
+    GetDatabaseValues(): PropertyValues | undefined;
+    GetDatabaseValuesAsync(cancellationToken?: CancellationToken): Task<PropertyValues | undefined>;
+    GetHashCode(): int;
+    Member(propertyBase: IPropertyBase): MemberEntry;
+    Member(propertyName: string): MemberEntry;
+    Navigation(navigationBase: INavigationBase): NavigationEntry;
+    Navigation(propertyName: string): NavigationEntry;
+    Property(property: IProperty): PropertyEntry;
+    Property(propertyName: string): PropertyEntry;
+    Reference(navigation: INavigationBase): ReferenceEntry;
+    Reference(propertyName: string): ReferenceEntry;
+    Reload(): void;
+    ReloadAsync(cancellationToken?: CancellationToken): Task;
+    ToString(): string;
 }
 
 
@@ -479,26 +479,26 @@ export type EntityEntry = EntityEntry$instance & __EntityEntry$views;
 
 
 export interface EntityEntry_1$instance<TEntity> extends EntityEntry$instance {
-    collection<TProperty>(navigation: INavigationBase): CollectionEntry_2<TEntity, TProperty>;
-    collection<TProperty>(propertyName: string): CollectionEntry_2<TEntity, TProperty>;
-    collection(navigation: INavigationBase): CollectionEntry;
-    collection(propertyName: string): CollectionEntry;
-    complexCollection<TElement>(complexProperty: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
-    complexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
-    complexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    complexCollection(propertyName: string): ComplexCollectionEntry;
-    complexProperty<TProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TProperty>;
-    complexProperty<TProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TProperty>;
-    complexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    complexProperty(propertyName: string): ComplexPropertyEntry;
-    property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
-    property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
-    property(property: IProperty): PropertyEntry;
-    property(propertyName: string): PropertyEntry;
-    reference<TProperty>(navigation: INavigationBase): ReferenceEntry_2<TEntity, TProperty>;
-    reference<TProperty>(propertyName: string): ReferenceEntry_2<TEntity, TProperty>;
-    reference(navigation: INavigationBase): ReferenceEntry;
-    reference(propertyName: string): ReferenceEntry;
+    Collection<TProperty>(navigation: INavigationBase): CollectionEntry_2<TEntity, TProperty>;
+    Collection<TProperty>(propertyName: string): CollectionEntry_2<TEntity, TProperty>;
+    Collection(navigation: INavigationBase): CollectionEntry;
+    Collection(propertyName: string): CollectionEntry;
+    ComplexCollection<TElement>(complexProperty: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
+    ComplexCollection(propertyName: string): ComplexCollectionEntry;
+    ComplexProperty<TProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TProperty>;
+    ComplexProperty<TProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TProperty>;
+    ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
+    ComplexProperty(propertyName: string): ComplexPropertyEntry;
+    Property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
+    Property(property: IProperty): PropertyEntry;
+    Property(propertyName: string): PropertyEntry;
+    Reference<TProperty>(navigation: INavigationBase): ReferenceEntry_2<TEntity, TProperty>;
+    Reference<TProperty>(propertyName: string): ReferenceEntry_2<TEntity, TProperty>;
+    Reference(navigation: INavigationBase): ReferenceEntry;
+    Reference(propertyName: string): ReferenceEntry;
 }
 
 
@@ -517,7 +517,7 @@ export type EntityEntry_1<TEntity> = EntityEntry_1$instance<TEntity> & __EntityE
 
 
 export interface EntityEntryEventArgs$instance extends EventArgs {
-    readonly entry: EntityEntry;
+    readonly Entry: EntityEntry;
 }
 
 
@@ -529,10 +529,10 @@ export const EntityEntryEventArgs: {
 export type EntityEntryEventArgs = EntityEntryEventArgs$instance;
 
 export interface EntityEntryGraphNode$instance {
-    readonly entry: EntityEntry;
-    readonly inboundNavigation: INavigationBase | undefined;
-    readonly sourceEntry: EntityEntry | undefined;
-    createNode(currentNode: EntityEntryGraphNode, internalEntityEntry: InternalEntityEntry, reachedVia: INavigationBase): EntityEntryGraphNode;
+    readonly Entry: EntityEntry;
+    readonly InboundNavigation: INavigationBase | undefined;
+    readonly SourceEntry: EntityEntry | undefined;
+    CreateNode(currentNode: EntityEntryGraphNode, internalEntityEntry: InternalEntityEntry, reachedVia: INavigationBase): EntityEntryGraphNode;
 }
 
 
@@ -551,8 +551,8 @@ export type EntityEntryGraphNode = EntityEntryGraphNode$instance & __EntityEntry
 
 
 export interface EntityEntryGraphNode_1$instance<TState> extends EntityEntryGraphNode$instance {
-    nodeState: TState;
-    createNode(currentNode: EntityEntryGraphNode, internalEntityEntry: InternalEntityEntry, reachedVia: INavigationBase): EntityEntryGraphNode;
+    NodeState: TState;
+    CreateNode(currentNode: EntityEntryGraphNode, internalEntityEntry: InternalEntityEntry, reachedVia: INavigationBase): EntityEntryGraphNode;
 }
 
 
@@ -572,8 +572,8 @@ export type EntityEntryGraphNode_1<TState> = EntityEntryGraphNode_1$instance<TSt
 
 
 export interface EntityStateChangedEventArgs$instance extends EntityEntryEventArgs {
-    readonly newState: EntityState;
-    readonly oldState: EntityState;
+    readonly NewState: EntityState;
+    readonly OldState: EntityState;
 }
 
 
@@ -585,8 +585,8 @@ export const EntityStateChangedEventArgs: {
 export type EntityStateChangedEventArgs = EntityStateChangedEventArgs$instance;
 
 export interface EntityStateChangingEventArgs$instance extends EntityEntryEventArgs {
-    readonly newState: EntityState;
-    readonly oldState: EntityState;
+    readonly NewState: EntityState;
+    readonly OldState: EntityState;
 }
 
 
@@ -598,7 +598,7 @@ export const EntityStateChangingEventArgs: {
 export type EntityStateChangingEventArgs = EntityStateChangingEventArgs$instance;
 
 export interface EntityTrackedEventArgs$instance extends EntityEntryEventArgs {
-    readonly fromQuery: boolean;
+    readonly FromQuery: boolean;
 }
 
 
@@ -610,8 +610,8 @@ export const EntityTrackedEventArgs: {
 export type EntityTrackedEventArgs = EntityTrackedEventArgs$instance;
 
 export interface EntityTrackingEventArgs$instance extends EntityEntryEventArgs {
-    readonly fromQuery: boolean;
-    readonly state: EntityState;
+    readonly FromQuery: boolean;
+    readonly State: EntityState;
 }
 
 
@@ -623,9 +623,9 @@ export const EntityTrackingEventArgs: {
 export type EntityTrackingEventArgs = EntityTrackingEventArgs$instance;
 
 export interface EntryCurrentValueComparer_1$instance<TProperty> {
-    compare(x: IUpdateEntry, y: IUpdateEntry): int;
-    equals(x: IUpdateEntry, y: IUpdateEntry): boolean;
-    getHashCode(obj: IUpdateEntry): int;
+    Compare(x: IUpdateEntry, y: IUpdateEntry): int;
+    Equals(x: IUpdateEntry, y: IUpdateEntry): boolean;
+    GetHashCode(obj: IUpdateEntry): int;
 }
 
 
@@ -648,7 +648,7 @@ export const GeometryValueComparer_1: {
 export type GeometryValueComparer_1<TGeometry> = GeometryValueComparer_1$instance<TGeometry>;
 
 export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable__System_Collections_Generic<Nullable<TElement>>> {
-    readonly elementComparer: ValueComparer;
+    readonly ElementComparer: ValueComparer;
 }
 
 
@@ -667,7 +667,7 @@ export type ListOfNullableValueTypesComparer_2<TConcreteList, TElement> = ListOf
 
 
 export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends ValueComparer_1<unknown> {
-    readonly elementComparer: ValueComparer;
+    readonly ElementComparer: ValueComparer;
 }
 
 
@@ -686,7 +686,7 @@ export type ListOfReferenceTypesComparer_2<TConcreteList, TElement> = ListOfRefe
 
 
 export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable__System_Collections_Generic<TElement>> {
-    readonly elementComparer: ValueComparer;
+    readonly ElementComparer: ValueComparer;
 }
 
 
@@ -705,27 +705,27 @@ export type ListOfValueTypesComparer_2<TConcreteList, TElement> = ListOfValueTyp
 
 
 export interface LocalView_1$instance<TEntity> {
-    readonly count: int;
-    readonly isReadOnly: boolean;
-    add(item: TEntity): void;
-    clear(): void;
-    contains(item: TEntity): boolean;
-    copyTo(array: TEntity[], arrayIndex: int): void;
-    findEntry<TKey>(keyValue: TKey): EntityEntry_1<TEntity> | undefined;
-    findEntry<TProperty>(propertyName: string, propertyValue: TProperty): EntityEntry_1<TEntity> | undefined;
-    findEntry(propertyNames: IEnumerable__System_Collections_Generic<System_Internal.String>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): EntityEntry_1<TEntity> | undefined;
-    findEntry<TProperty>(property: IProperty, propertyValue: TProperty): EntityEntry_1<TEntity> | undefined;
-    findEntry(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): EntityEntry_1<TEntity> | undefined;
-    findEntryUntyped(keyValues: IEnumerable__System_Collections_Generic<unknown>): EntityEntry_1<TEntity> | undefined;
-    getEntries<TProperty>(propertyName: string, propertyValue: TProperty): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
-    getEntries(propertyNames: IEnumerable__System_Collections_Generic<System_Internal.String>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
-    getEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
-    getEntries(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
-    getEnumerator(): IEnumerator<TEntity>;
-    remove(item: TEntity): boolean;
-    reset(): void;
-    toBindingList(): BindingList<TEntity>;
-    toObservableCollection(): ObservableCollection<TEntity>;
+    readonly Count: int;
+    readonly IsReadOnly: boolean;
+    Add(item: TEntity): void;
+    Clear(): void;
+    Contains(item: TEntity): boolean;
+    CopyTo(array: TEntity[], arrayIndex: int): void;
+    FindEntry<TKey>(keyValue: TKey): EntityEntry_1<TEntity> | undefined;
+    FindEntry<TProperty>(propertyName: string, propertyValue: TProperty): EntityEntry_1<TEntity> | undefined;
+    FindEntry(propertyNames: IEnumerable__System_Collections_Generic<System_Internal.String>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): EntityEntry_1<TEntity> | undefined;
+    FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): EntityEntry_1<TEntity> | undefined;
+    FindEntry(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): EntityEntry_1<TEntity> | undefined;
+    FindEntryUntyped(keyValues: IEnumerable__System_Collections_Generic<unknown>): EntityEntry_1<TEntity> | undefined;
+    GetEntries<TProperty>(propertyName: string, propertyValue: TProperty): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
+    GetEntries(propertyNames: IEnumerable__System_Collections_Generic<System_Internal.String>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
+    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
+    GetEntries(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
+    GetEnumerator(): IEnumerator<TEntity>;
+    Remove(item: TEntity): boolean;
+    Reset(): void;
+    ToBindingList(): BindingList<TEntity>;
+    ToObservableCollection(): ObservableCollection<TEntity>;
 }
 
 
@@ -737,13 +737,13 @@ export const LocalView_1: {
 export type LocalView_1<TEntity> = LocalView_1$instance<TEntity>;
 
 export interface MemberEntry$instance {
-    currentValue: IEnumerable | unknown;
-    readonly entityEntry: EntityEntry | EntityEntry_1<TEntity>;
-    isModified: boolean;
-    readonly metadata: IComplexProperty | IPropertyBase;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    toString(): string | undefined;
+    CurrentValue: TComplexProperty | unknown;
+    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    IsModified: boolean;
+    readonly Metadata: IComplexProperty | IPropertyBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    ToString(): string | undefined;
 }
 
 
@@ -761,12 +761,12 @@ export type MemberEntry = MemberEntry$instance & __MemberEntry$views;
 
 
 export interface NavigationEntry$instance extends MemberEntry$instance {
-    isLoaded: boolean;
-    load(): void;
-    load(options: LoadOptions): void;
-    loadAsync(cancellationToken?: CancellationToken): Task;
-    loadAsync(options: LoadOptions, cancellationToken?: CancellationToken): Task;
-    query(): IQueryable;
+    IsLoaded: boolean;
+    Load(): void;
+    Load(options: LoadOptions): void;
+    LoadAsync(cancellationToken?: CancellationToken): Task;
+    LoadAsync(options: LoadOptions, cancellationToken?: CancellationToken): Task;
+    Query(): IQueryable;
 }
 
 
@@ -797,29 +797,29 @@ export const ObservableCollectionListSource_1: {
 export type ObservableCollectionListSource_1<T> = ObservableCollectionListSource_1$instance<T>;
 
 export interface ObservableHashSet_1$instance<T> {
-    readonly comparer: IEqualityComparer__System_Collections_Generic<T>;
-    readonly count: int;
-    readonly isReadOnly: boolean;
-    add(item: T): boolean;
-    clear(): void;
-    contains(item: T): boolean;
-    copyTo(array: T[], arrayIndex: int): void;
-    copyTo(array: T[]): void;
-    copyTo(array: T[], arrayIndex: int, count: int): void;
-    exceptWith(other: IEnumerable__System_Collections_Generic<T>): void;
-    getEnumerator(): HashSet_1$Enumerator<T>;
-    intersectWith(other: IEnumerable__System_Collections_Generic<T>): void;
-    isProperSubsetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    isProperSupersetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    isSubsetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    isSupersetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    overlaps(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    remove(item: T): boolean;
-    removeWhere(match: Predicate<T>): int;
-    setEquals(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    symmetricExceptWith(other: IEnumerable__System_Collections_Generic<T>): void;
-    trimExcess(): void;
-    unionWith(other: IEnumerable__System_Collections_Generic<T>): void;
+    readonly Comparer: IEqualityComparer__System_Collections_Generic<T>;
+    readonly Count: int;
+    readonly IsReadOnly: boolean;
+    Add(item: T): boolean;
+    Clear(): void;
+    Contains(item: T): boolean;
+    CopyTo(array: T[], arrayIndex: int): void;
+    CopyTo(array: T[]): void;
+    CopyTo(array: T[], arrayIndex: int, count: int): void;
+    ExceptWith(other: IEnumerable__System_Collections_Generic<T>): void;
+    GetEnumerator(): HashSet_1$Enumerator<T>;
+    IntersectWith(other: IEnumerable__System_Collections_Generic<T>): void;
+    IsProperSubsetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
+    IsProperSupersetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
+    IsSubsetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
+    IsSupersetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
+    Overlaps(other: IEnumerable__System_Collections_Generic<T>): boolean;
+    Remove(item: T): boolean;
+    RemoveWhere(match: Predicate<T>): int;
+    SetEquals(other: IEnumerable__System_Collections_Generic<T>): boolean;
+    SymmetricExceptWith(other: IEnumerable__System_Collections_Generic<T>): void;
+    TrimExcess(): void;
+    UnionWith(other: IEnumerable__System_Collections_Generic<T>): void;
 }
 
 
@@ -834,9 +834,9 @@ export const ObservableHashSet_1: {
 export type ObservableHashSet_1<T> = ObservableHashSet_1$instance<T>;
 
 export interface PropertyEntry$instance extends MemberEntry$instance {
-    isModified: boolean;
-    isTemporary: boolean;
-    originalValue: TProperty | unknown;
+    IsModified: boolean;
+    IsTemporary: boolean;
+    OriginalValue: TProperty | unknown;
 }
 
 
@@ -855,8 +855,8 @@ export type PropertyEntry = PropertyEntry$instance & __PropertyEntry$views;
 
 
 export interface PropertyEntry_2$instance<TEntity, TProperty> extends PropertyEntry$instance {
-    currentValue: TProperty | unknown;
-    readonly entityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    CurrentValue: TProperty | unknown;
+    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
 }
 
 
@@ -875,26 +875,26 @@ export type PropertyEntry_2<TEntity, TProperty> = PropertyEntry_2$instance<TEnti
 
 
 export interface PropertyValues$instance {
-    readonly complexCollectionProperties: IReadOnlyList<IComplexProperty>;
-    readonly properties: IReadOnlyList<IProperty>;
-    readonly structuralType: ITypeBase;
-    clone(): PropertyValues;
-    equals(obj: unknown): boolean;
+    readonly ComplexCollectionProperties: IReadOnlyList<IComplexProperty>;
+    readonly Properties: IReadOnlyList<IProperty>;
+    readonly StructuralType: ITypeBase;
+    Clone(): PropertyValues;
+    Equals(obj: unknown): boolean;
     get_Item(propertyName: string): unknown | undefined;
     get_Item(property: IProperty): unknown | undefined;
     get_Item(complexProperty: IComplexProperty): IList | undefined;
-    getHashCode(): int;
-    getValue<TValue>(propertyName: string): TValue;
-    getValue<TValue>(property: IProperty): TValue;
+    GetHashCode(): int;
+    GetValue<TValue>(propertyName: string): TValue;
+    GetValue<TValue>(property: IProperty): TValue;
     set_Item(propertyName: string, value: unknown | undefined): void;
     set_Item(property: IProperty, value: unknown | undefined): void;
     set_Item(complexProperty: IComplexProperty, value: IList | undefined): void;
-    setValues(obj: unknown): void;
-    setValues(propertyValues: PropertyValues): void;
-    setValues<TProperty>(values: IDictionary<System_Internal.String, TProperty>): void;
-    toObject(): unknown;
-    toString(): string | undefined;
-    tryGetValue<TValue>(propertyName: string, value: TValue): boolean;
+    SetValues(obj: unknown): void;
+    SetValues(propertyValues: PropertyValues): void;
+    SetValues<TProperty>(values: IDictionary<System_Internal.String, TProperty>): void;
+    ToObject(): unknown;
+    ToString(): string | undefined;
+    TryGetValue<TValue>(propertyName: string, value: TValue): boolean;
 }
 
 
@@ -905,13 +905,13 @@ export const PropertyValues: {
 export type PropertyValues = PropertyValues$instance;
 
 export interface ReferenceEntry$instance extends NavigationEntry$instance {
-    isModified: boolean;
-    readonly targetEntry: EntityEntry | undefined | EntityEntry_1<TProperty> | undefined;
-    load(): void;
-    load(options: LoadOptions): void;
-    loadAsync(cancellationToken?: CancellationToken): Task;
-    loadAsync(options: LoadOptions, cancellationToken?: CancellationToken): Task;
-    query(): IQueryable;
+    IsModified: boolean;
+    readonly TargetEntry: EntityEntry | undefined | EntityEntry_1<TProperty> | undefined;
+    Load(): void;
+    Load(options: LoadOptions): void;
+    LoadAsync(cancellationToken?: CancellationToken): Task;
+    LoadAsync(options: LoadOptions, cancellationToken?: CancellationToken): Task;
+    Query(): IQueryable;
 }
 
 
@@ -931,9 +931,9 @@ export type ReferenceEntry = ReferenceEntry$instance & __ReferenceEntry$views;
 
 
 export interface ReferenceEntry_2$instance<TEntity, TProperty> extends ReferenceEntry$instance {
-    currentValue: TProperty | unknown;
-    readonly entityEntry: EntityEntry | EntityEntry_1<TEntity>;
-    query(): IQueryable;
+    CurrentValue: TProperty | unknown;
+    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    Query(): IQueryable;
 }
 
 
@@ -953,42 +953,42 @@ export type ReferenceEntry_2<TEntity, TProperty> = ReferenceEntry_2$instance<TEn
 
 
 export interface ValueComparer$instance {
-    readonly equalsExpression: LambdaExpression;
-    readonly hashCodeExpression: LambdaExpression;
-    readonly objectEqualsExpression: LambdaExpression;
-    readonly snapshotExpression: LambdaExpression;
-    readonly type: Type;
-    equals(left: unknown, right: unknown): boolean;
-    extractEqualsBody(leftExpression: Expression, rightExpression: Expression): Expression;
-    extractHashCodeBody(expression: Expression): Expression;
-    extractSnapshotBody(expression: Expression): Expression;
-    getHashCode(instance: unknown): int;
-    snapshot(instance: unknown): unknown | undefined;
+    readonly EqualsExpression: LambdaExpression;
+    readonly HashCodeExpression: LambdaExpression;
+    readonly ObjectEqualsExpression: LambdaExpression;
+    readonly SnapshotExpression: LambdaExpression;
+    readonly Type: Type;
+    Equals(left: unknown, right: unknown): boolean;
+    ExtractEqualsBody(leftExpression: Expression, rightExpression: Expression): Expression;
+    ExtractHashCodeBody(expression: Expression): Expression;
+    ExtractSnapshotBody(expression: Expression): Expression;
+    GetHashCode(instance: unknown): int;
+    Snapshot(instance: unknown): unknown | undefined;
 }
 
 
 export const ValueComparer: {
-    add(hash: HashCode, code: int): HashCode;
-    createDefault<T>(favorStructuralComparisons: boolean): ValueComparer;
-    createDefault(type: Type, favorStructuralComparisons: boolean): ValueComparer;
-    getGenericSnapshotMethod(type: Type): MethodInfo;
+    Add(hash: HashCode, code: int): HashCode;
+    CreateDefault<T>(favorStructuralComparisons: boolean): ValueComparer;
+    CreateDefault(type: Type, favorStructuralComparisons: boolean): ValueComparer;
+    GetGenericSnapshotMethod(type: Type): MethodInfo;
 };
 
 
 export type ValueComparer = ValueComparer$instance;
 
 export interface ValueComparer_1$instance<T> extends ValueComparer {
-    readonly equalsExpression: Expression<Func<T | undefined, T | undefined, System_Internal.Boolean>>;
-    readonly hashCodeExpression: Expression<Func<T, System_Internal.Int32>>;
-    readonly objectEqualsExpression: LambdaExpression;
-    readonly snapshotExpression: Expression<Func<T, T>>;
-    readonly type: Type;
-    equals(left: unknown, right: unknown): boolean;
-    equals(left: T, right: T): boolean;
-    getHashCode(instance: unknown): int;
-    getHashCode(instance: T): int;
-    snapshot(instance: unknown): unknown | undefined;
-    snapshot(instance: T): T;
+    readonly EqualsExpression: Expression<Func<T | undefined, T | undefined, System_Internal.Boolean>>;
+    readonly HashCodeExpression: Expression<Func<T, System_Internal.Int32>>;
+    readonly ObjectEqualsExpression: LambdaExpression;
+    readonly SnapshotExpression: Expression<Func<T, T>>;
+    readonly Type: Type;
+    Equals(left: unknown, right: unknown): boolean;
+    Equals(left: T, right: T): boolean;
+    GetHashCode(instance: unknown): int;
+    GetHashCode(instance: T): int;
+    Snapshot(instance: unknown): unknown | undefined;
+    Snapshot(instance: T): T;
 }
 
 
@@ -1002,7 +1002,7 @@ export const ValueComparer_1: {
 export type ValueComparer_1<T> = ValueComparer_1$instance<T>;
 
 export abstract class ValueComparerExtensions$instance {
-    static isDefault(valueComparer: ValueComparer): boolean;
+    static IsDefault(valueComparer: ValueComparer): boolean;
 }
 
 

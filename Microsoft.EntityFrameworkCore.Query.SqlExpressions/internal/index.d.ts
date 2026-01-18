@@ -23,20 +23,20 @@ import * as System_Linq_Expressions_Internal from "@tsonic/dotnet/System.Linq.Ex
 import type { ConstantExpression, Expression, ExpressionType, ExpressionVisitor } from "@tsonic/dotnet/System.Linq.Expressions.js";
 
 export interface ITableBasedExpression$instance {
-    readonly table: ITableBase;
+    readonly Table: ITableBase;
 }
 
 
 export type ITableBasedExpression = ITableBasedExpression$instance;
 
 export interface ColumnValueSetter$instance {
-    column: ColumnExpression;
-    value: SqlExpression;
-    deconstruct(Column: ColumnExpression, Value: SqlExpression): void;
-    equals(obj: unknown): boolean;
-    equals(other: ColumnValueSetter): boolean;
-    getHashCode(): int;
-    toString(): string | undefined;
+    Column: ColumnExpression;
+    Value: SqlExpression;
+    Deconstruct(Column: ColumnExpression, Value: SqlExpression): void;
+    Equals(obj: unknown): boolean;
+    Equals(other: ColumnValueSetter): boolean;
+    GetHashCode(): int;
+    ToString(): string | undefined;
 }
 
 
@@ -48,13 +48,13 @@ export const ColumnValueSetter: {
 export type ColumnValueSetter = ColumnValueSetter$instance;
 
 export interface AtTimeZoneExpression$instance extends SqlExpression$instance {
-    readonly operand: SqlExpression;
-    readonly timeZone: SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(operand: SqlExpression, timeZone: SqlExpression): AtTimeZoneExpression;
+    readonly Operand: SqlExpression;
+    readonly TimeZone: SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(operand: SqlExpression, timeZone: SqlExpression): AtTimeZoneExpression;
 }
 
 
@@ -74,14 +74,14 @@ export type AtTimeZoneExpression = AtTimeZoneExpression$instance & __AtTimeZoneE
 
 
 export interface CaseExpression$instance extends SqlExpression$instance {
-    readonly elseResult: SqlExpression | undefined;
-    readonly operand: SqlExpression;
-    readonly whenClauses: IReadOnlyList<CaseWhenClause>;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(operand: SqlExpression, whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression): CaseExpression;
+    readonly ElseResult: SqlExpression | undefined;
+    readonly Operand: SqlExpression;
+    readonly WhenClauses: IReadOnlyList<CaseWhenClause>;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(operand: SqlExpression, whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression): CaseExpression;
 }
 
 
@@ -102,10 +102,10 @@ export type CaseExpression = CaseExpression$instance & __CaseExpression$views;
 
 
 export interface CaseWhenClause$instance {
-    readonly result: SqlExpression;
-    readonly test: SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
+    readonly Result: SqlExpression;
+    readonly Test: SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
 }
 
 
@@ -117,13 +117,13 @@ export const CaseWhenClause: {
 export type CaseWhenClause = CaseWhenClause$instance;
 
 export interface CollateExpression$instance extends SqlExpression$instance {
-    readonly collation: string;
-    readonly operand: SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(operand: SqlExpression): CollateExpression;
+    readonly Collation: string;
+    readonly Operand: SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(operand: SqlExpression): CollateExpression;
 }
 
 
@@ -143,17 +143,17 @@ export type CollateExpression = CollateExpression$instance & __CollateExpression
 
 
 export interface ColumnExpression$instance extends SqlExpression$instance {
-    readonly column: IColumnBase | undefined;
-    readonly isNullable: boolean;
-    readonly name: string;
-    readonly tableAlias: string;
-    applyTypeMapping(typeMapping: RelationalTypeMapping): SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    makeNullable(): ColumnExpression;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    toString(): string;
+    readonly Column: IColumnBase | undefined;
+    readonly IsNullable: boolean;
+    readonly Name: string;
+    readonly TableAlias: string;
+    ApplyTypeMapping(typeMapping: RelationalTypeMapping): SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    MakeNullable(): ColumnExpression;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    ToString(): string;
 }
 
 
@@ -174,10 +174,10 @@ export type ColumnExpression = ColumnExpression$instance & __ColumnExpression$vi
 
 
 export interface CrossApplyExpression$instance extends JoinExpressionBase$instance {
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
 }
 
 
@@ -195,10 +195,10 @@ export type CrossApplyExpression = CrossApplyExpression$instance & __CrossApplyE
 
 
 export interface CrossJoinExpression$instance extends JoinExpressionBase$instance {
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
 }
 
 
@@ -216,17 +216,17 @@ export type CrossJoinExpression = CrossJoinExpression$instance & __CrossJoinExpr
 
 
 export interface DeleteExpression$instance extends Expression {
-    readonly nodeType: ExpressionType;
-    readonly selectExpression: SelectExpression;
-    readonly table: TableExpression;
-    readonly tags: ISet<System_Internal.String>;
-    readonly type: Type;
-    applyTags(tags: ISet<System_Internal.String>): DeleteExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(table: TableExpression, selectExpression: SelectExpression): DeleteExpression;
+    readonly NodeType: ExpressionType;
+    readonly SelectExpression: SelectExpression;
+    readonly Table: TableExpression;
+    readonly Tags: ISet<System_Internal.String>;
+    readonly Type: Type;
+    ApplyTags(tags: ISet<System_Internal.String>): DeleteExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(table: TableExpression, selectExpression: SelectExpression): DeleteExpression;
 }
 
 
@@ -247,12 +247,12 @@ export type DeleteExpression = DeleteExpression$instance & __DeleteExpression$vi
 
 
 export interface DistinctExpression$instance extends SqlExpression$instance {
-    readonly operand: SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(operand: SqlExpression): DistinctExpression;
+    readonly Operand: SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(operand: SqlExpression): DistinctExpression;
 }
 
 
@@ -272,12 +272,12 @@ export type DistinctExpression = DistinctExpression$instance & __DistinctExpress
 
 
 export interface ExceptExpression$instance extends SetOperationBase$instance {
-    clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    withAlias(newAlias: string): ExceptExpression;
+    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    WithAlias(newAlias: string): ExceptExpression;
 }
 
 
@@ -296,12 +296,12 @@ export type ExceptExpression = ExceptExpression$instance & __ExceptExpression$vi
 
 
 export interface ExistsExpression$instance extends SqlExpression$instance {
-    readonly subquery: SelectExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(subquery: SelectExpression): ExistsExpression;
+    readonly Subquery: SelectExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(subquery: SelectExpression): ExistsExpression;
 }
 
 
@@ -321,16 +321,16 @@ export type ExistsExpression = ExistsExpression$instance & __ExistsExpression$vi
 
 
 export interface FromSqlExpression$instance extends TableExpressionBase$instance {
-    readonly alias: string;
-    readonly arguments: Expression;
-    readonly sql: string;
-    readonly table: ITableBase;
-    clone(alias: string, cloningVisitor: ExpressionVisitor): TableExpressionBase;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(arguments: Expression): FromSqlExpression;
+    readonly Alias: string;
+    readonly Arguments: Expression;
+    readonly Sql: string;
+    readonly Table: ITableBase;
+    Clone(alias: string, cloningVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(arguments: Expression): FromSqlExpression;
 }
 
 
@@ -353,19 +353,19 @@ export type FromSqlExpression = FromSqlExpression$instance & __FromSqlExpression
 
 
 export interface InExpression$instance extends SqlExpression$instance {
-    readonly item: SqlExpression;
-    readonly subquery: SelectExpression;
-    readonly values: IReadOnlyList<SqlExpression>;
-    readonly valuesParameter: SqlParameterExpression | undefined;
-    applyTypeMapping(typeMapping: RelationalTypeMapping): InExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(item: SqlExpression, subquery: SelectExpression): InExpression;
-    update(item: SqlExpression, values: IReadOnlyList<SqlExpression>): InExpression;
-    update(item: SqlExpression, valuesParameter: SqlParameterExpression): InExpression;
-    update(item: SqlExpression, subquery: SelectExpression, values: IReadOnlyList<SqlExpression>, valuesParameter: SqlParameterExpression): InExpression;
+    readonly Item: SqlExpression;
+    readonly Subquery: SelectExpression;
+    readonly Values: IReadOnlyList<SqlExpression>;
+    readonly ValuesParameter: SqlParameterExpression | undefined;
+    ApplyTypeMapping(typeMapping: RelationalTypeMapping): InExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(item: SqlExpression, subquery: SelectExpression): InExpression;
+    Update(item: SqlExpression, values: IReadOnlyList<SqlExpression>): InExpression;
+    Update(item: SqlExpression, valuesParameter: SqlParameterExpression): InExpression;
+    Update(item: SqlExpression, subquery: SelectExpression, values: IReadOnlyList<SqlExpression>, valuesParameter: SqlParameterExpression): InExpression;
 }
 
 
@@ -387,11 +387,11 @@ export type InExpression = InExpression$instance & __InExpression$views;
 
 
 export interface InnerJoinExpression$instance extends PredicateJoinExpressionBase$instance {
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(table: TableExpressionBase, joinPredicate: SqlExpression): JoinExpressionBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(table: TableExpressionBase, joinPredicate: SqlExpression): JoinExpressionBase;
 }
 
 
@@ -410,12 +410,12 @@ export type InnerJoinExpression = InnerJoinExpression$instance & __InnerJoinExpr
 
 
 export interface IntersectExpression$instance extends SetOperationBase$instance {
-    clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    withAlias(newAlias: string): IntersectExpression;
+    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    WithAlias(newAlias: string): IntersectExpression;
 }
 
 
@@ -434,16 +434,16 @@ export type IntersectExpression = IntersectExpression$instance & __IntersectExpr
 
 
 export interface JoinExpressionBase$instance extends TableExpressionBase$instance {
-    readonly isPrunable: boolean;
-    readonly table: TableExpressionBase;
-    clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    getRequiredAlias(): string;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(table: TableExpressionBase): JoinExpressionBase;
-    withAlias(newAlias: string): TableExpressionBase;
+    readonly IsPrunable: boolean;
+    readonly Table: TableExpressionBase;
+    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    GetRequiredAlias(): string;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(table: TableExpressionBase): JoinExpressionBase;
+    WithAlias(newAlias: string): TableExpressionBase;
 }
 
 
@@ -462,14 +462,14 @@ export type JoinExpressionBase = JoinExpressionBase$instance & __JoinExpressionB
 
 
 export interface JsonScalarExpression$instance extends SqlExpression$instance {
-    readonly isNullable: boolean;
-    readonly json: SqlExpression;
-    readonly path: IReadOnlyList<PathSegment>;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(json: SqlExpression): JsonScalarExpression;
+    readonly IsNullable: boolean;
+    readonly Json: SqlExpression;
+    readonly Path: IReadOnlyList<PathSegment>;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(json: SqlExpression): JsonScalarExpression;
 }
 
 
@@ -489,10 +489,10 @@ export type JsonScalarExpression = JsonScalarExpression$instance & __JsonScalarE
 
 
 export interface LeftJoinExpression$instance extends PredicateJoinExpressionBase$instance {
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
 }
 
 
@@ -511,14 +511,14 @@ export type LeftJoinExpression = LeftJoinExpression$instance & __LeftJoinExpress
 
 
 export interface LikeExpression$instance extends SqlExpression$instance {
-    readonly escapeChar: SqlExpression | undefined;
-    readonly match: SqlExpression;
-    readonly pattern: SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(match: SqlExpression, pattern: SqlExpression, escapeChar: SqlExpression): LikeExpression;
+    readonly EscapeChar: SqlExpression | undefined;
+    readonly Match: SqlExpression;
+    readonly Pattern: SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(match: SqlExpression, pattern: SqlExpression, escapeChar: SqlExpression): LikeExpression;
 }
 
 
@@ -538,14 +538,14 @@ export type LikeExpression = LikeExpression$instance & __LikeExpression$views;
 
 
 export interface OrderingExpression$instance extends Expression {
-    readonly expression: SqlExpression;
-    readonly isAscending: boolean;
-    readonly nodeType: ExpressionType;
-    readonly type: Type;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    quote(): Expression;
-    update(expression: SqlExpression): OrderingExpression;
+    readonly Expression: SqlExpression;
+    readonly IsAscending: boolean;
+    readonly NodeType: ExpressionType;
+    readonly Type: Type;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Quote(): Expression;
+    Update(expression: SqlExpression): OrderingExpression;
 }
 
 
@@ -565,10 +565,10 @@ export type OrderingExpression = OrderingExpression$instance & __OrderingExpress
 
 
 export interface OuterApplyExpression$instance extends JoinExpressionBase$instance {
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
 }
 
 
@@ -587,12 +587,12 @@ export type OuterApplyExpression = OuterApplyExpression$instance & __OuterApplyE
 
 
 export interface PredicateJoinExpressionBase$instance extends JoinExpressionBase$instance {
-    readonly joinPredicate: SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(table: TableExpressionBase): JoinExpressionBase;
+    readonly JoinPredicate: SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(table: TableExpressionBase): JoinExpressionBase;
 }
 
 
@@ -609,14 +609,14 @@ export type PredicateJoinExpressionBase = PredicateJoinExpressionBase$instance &
 
 
 export interface ProjectionExpression$instance extends Expression {
-    readonly alias: string;
-    readonly expression: SqlExpression;
-    readonly nodeType: ExpressionType;
-    readonly type: Type;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    quote(): Expression;
-    update(expression: SqlExpression): ProjectionExpression;
+    readonly Alias: string;
+    readonly Expression: SqlExpression;
+    readonly NodeType: ExpressionType;
+    readonly Type: Type;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Quote(): Expression;
+    Update(expression: SqlExpression): ProjectionExpression;
 }
 
 
@@ -636,10 +636,10 @@ export type ProjectionExpression = ProjectionExpression$instance & __ProjectionE
 
 
 export interface RightJoinExpression$instance extends PredicateJoinExpressionBase$instance {
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
 }
 
 
@@ -658,13 +658,13 @@ export type RightJoinExpression = RightJoinExpression$instance & __RightJoinExpr
 
 
 export interface RowNumberExpression$instance extends SqlExpression$instance {
-    readonly orderings: IReadOnlyList<OrderingExpression>;
-    readonly partitions: IReadOnlyList<SqlExpression>;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(partitions: IReadOnlyList<SqlExpression>, orderings: IReadOnlyList<OrderingExpression>): RowNumberExpression;
+    readonly Orderings: IReadOnlyList<OrderingExpression>;
+    readonly Partitions: IReadOnlyList<SqlExpression>;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(partitions: IReadOnlyList<SqlExpression>, orderings: IReadOnlyList<OrderingExpression>): RowNumberExpression;
 }
 
 
@@ -684,12 +684,12 @@ export type RowNumberExpression = RowNumberExpression$instance & __RowNumberExpr
 
 
 export interface RowValueExpression$instance extends SqlExpression$instance {
-    readonly values: IReadOnlyList<SqlExpression>;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(values: IReadOnlyList<SqlExpression>): RowValueExpression;
+    readonly Values: IReadOnlyList<SqlExpression>;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(values: IReadOnlyList<SqlExpression>): RowValueExpression;
 }
 
 
@@ -709,13 +709,13 @@ export type RowValueExpression = RowValueExpression$instance & __RowValueExpress
 
 
 export interface ScalarSubqueryExpression$instance extends SqlExpression$instance {
-    readonly subquery: SelectExpression;
-    applyTypeMapping(typeMapping: RelationalTypeMapping): SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(subquery: SelectExpression): ScalarSubqueryExpression;
+    readonly Subquery: SelectExpression;
+    ApplyTypeMapping(typeMapping: RelationalTypeMapping): SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(subquery: SelectExpression): ScalarSubqueryExpression;
 }
 
 
@@ -735,66 +735,66 @@ export type ScalarSubqueryExpression = ScalarSubqueryExpression$instance & __Sca
 
 
 export interface SelectExpression$instance extends TableExpressionBase$instance {
-    readonly debugView: string;
-    readonly groupBy: IReadOnlyList<SqlExpression>;
-    readonly having: SqlExpression | undefined;
-    isDistinct: boolean;
-    readonly limit: SqlExpression | undefined;
-    readonly offset: SqlExpression | undefined;
-    readonly orderings: IReadOnlyList<OrderingExpression>;
-    readonly predicate: SqlExpression | undefined;
-    readonly projection: IReadOnlyList<ProjectionExpression>;
-    readonly tables: IReadOnlyList<TableExpressionBase>;
-    readonly tags: ISet<System_Internal.String>;
-    addCrossApply(innerSelectExpression: SelectExpression): void;
-    addCrossApply(innerSource: ShapedQueryExpression, outerShaper: Expression): Expression;
-    addCrossJoin(innerSelectExpression: SelectExpression): void;
-    addCrossJoin(innerSource: ShapedQueryExpression, outerShaper: Expression): Expression;
-    addInnerJoin(innerSelectExpression: SelectExpression, joinPredicate: SqlExpression): void;
-    addInnerJoin(innerSource: ShapedQueryExpression, joinPredicate: SqlExpression, outerShaper: Expression): Expression;
-    addLeftJoin(innerSelectExpression: SelectExpression, joinPredicate: SqlExpression): void;
-    addLeftJoin(innerSource: ShapedQueryExpression, joinPredicate: SqlExpression, outerShaper: Expression): Expression;
-    addOuterApply(innerSelectExpression: SelectExpression): void;
-    addOuterApply(innerSource: ShapedQueryExpression, outerShaper: Expression): Expression;
-    addRightJoin(innerSource: ShapedQueryExpression, joinPredicate: SqlExpression, outerShaper: Expression): Expression;
-    addToProjection(sqlExpression: SqlExpression): int;
-    appendOrdering(orderingExpression: OrderingExpression): void;
-    applyDefaultIfEmpty(sqlExpressionFactory: ISqlExpressionFactory): void;
-    applyDistinct(): void;
-    applyExcept(source2: SelectExpression, distinct: boolean): void;
-    applyGrouping(keySelector: Expression): void;
-    applyGrouping(keySelector: Expression, shaperExpression: Expression, sqlExpressionFactory: ISqlExpressionFactory): RelationalGroupByShaperExpression;
-    applyIntersect(source2: SelectExpression, distinct: boolean): void;
-    applyLimit(sqlExpression: SqlExpression): void;
-    applyOffset(sqlExpression: SqlExpression): void;
-    applyOrdering(orderingExpression: OrderingExpression): void;
-    applyPredicate(sqlExpression: SqlExpression): void;
-    applyProjection(): void;
-    applyProjection(shaperExpression: Expression, resultCardinality: ResultCardinality, querySplittingBehavior: QuerySplittingBehavior): Expression;
-    applyTags(tags: ISet<System_Internal.String>): void;
-    applyUnion(source2: SelectExpression, distinct: boolean): void;
-    clearOrdering(): void;
-    clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    createColumnExpression(tableExpression: TableExpressionBase, columnName: string, type: Type, typeMapping: RelationalTypeMapping, columnNullable?: Nullable<System_Internal.Boolean>): ColumnExpression;
-    equals(obj: unknown): boolean;
-    generateOwnedReferenceEntityProjectionExpression(principalEntityProjection: StructuralTypeProjectionExpression, navigation: INavigation, sqlExpressionFactory: ISqlExpressionFactory, sqlAliasManager: SqlAliasManager): StructuralTypeShaperExpression;
-    getHashCode(): int;
-    getProjection(projectionBindingExpression: ProjectionBindingExpression): Expression;
-    getTable(column: ColumnExpression): TableExpressionBase;
-    getTable(column: ColumnExpression, tableIndex: int): TableExpressionBase;
-    isNonComposedFromSql(): boolean;
-    makeProjectionNullable(sqlExpressionFactory: ISqlExpressionFactory): void;
-    prepareForAggregate(liftOrderings?: boolean): void;
-    print(expressionPrinter: ExpressionPrinter): void;
-    pushdownIntoSubquery(): void;
-    quote(): Expression;
-    removeTpcTableExpression(): SelectExpression;
-    replaceProjection(projectionMapping: IReadOnlyDictionary<ProjectionMember, Expression>): void;
-    replaceProjection(clientProjections: IReadOnlyList<Expression>): void;
-    reverseOrderings(): void;
-    setLimit(sqlExpression: SqlExpression): void;
-    setTables(tables: IReadOnlyList<TableExpressionBase>): void;
-    update(tables: IReadOnlyList<TableExpressionBase>, predicate: SqlExpression, groupBy: IReadOnlyList<SqlExpression>, having: SqlExpression, projections: IReadOnlyList<ProjectionExpression>, orderings: IReadOnlyList<OrderingExpression>, offset: SqlExpression, limit: SqlExpression): SelectExpression;
+    readonly DebugView: string;
+    readonly GroupBy: IReadOnlyList<SqlExpression>;
+    readonly Having: SqlExpression | undefined;
+    IsDistinct: boolean;
+    readonly Limit: SqlExpression | undefined;
+    readonly Offset: SqlExpression | undefined;
+    readonly Orderings: IReadOnlyList<OrderingExpression>;
+    readonly Predicate: SqlExpression | undefined;
+    readonly Projection: IReadOnlyList<ProjectionExpression>;
+    readonly Tables: IReadOnlyList<TableExpressionBase>;
+    readonly Tags: ISet<System_Internal.String>;
+    AddCrossApply(innerSelectExpression: SelectExpression): void;
+    AddCrossApply(innerSource: ShapedQueryExpression, outerShaper: Expression): Expression;
+    AddCrossJoin(innerSelectExpression: SelectExpression): void;
+    AddCrossJoin(innerSource: ShapedQueryExpression, outerShaper: Expression): Expression;
+    AddInnerJoin(innerSelectExpression: SelectExpression, joinPredicate: SqlExpression): void;
+    AddInnerJoin(innerSource: ShapedQueryExpression, joinPredicate: SqlExpression, outerShaper: Expression): Expression;
+    AddLeftJoin(innerSelectExpression: SelectExpression, joinPredicate: SqlExpression): void;
+    AddLeftJoin(innerSource: ShapedQueryExpression, joinPredicate: SqlExpression, outerShaper: Expression): Expression;
+    AddOuterApply(innerSelectExpression: SelectExpression): void;
+    AddOuterApply(innerSource: ShapedQueryExpression, outerShaper: Expression): Expression;
+    AddRightJoin(innerSource: ShapedQueryExpression, joinPredicate: SqlExpression, outerShaper: Expression): Expression;
+    AddToProjection(sqlExpression: SqlExpression): int;
+    AppendOrdering(orderingExpression: OrderingExpression): void;
+    ApplyDefaultIfEmpty(sqlExpressionFactory: ISqlExpressionFactory): void;
+    ApplyDistinct(): void;
+    ApplyExcept(source2: SelectExpression, distinct: boolean): void;
+    ApplyGrouping(keySelector: Expression): void;
+    ApplyGrouping(keySelector: Expression, shaperExpression: Expression, sqlExpressionFactory: ISqlExpressionFactory): RelationalGroupByShaperExpression;
+    ApplyIntersect(source2: SelectExpression, distinct: boolean): void;
+    ApplyLimit(sqlExpression: SqlExpression): void;
+    ApplyOffset(sqlExpression: SqlExpression): void;
+    ApplyOrdering(orderingExpression: OrderingExpression): void;
+    ApplyPredicate(sqlExpression: SqlExpression): void;
+    ApplyProjection(): void;
+    ApplyProjection(shaperExpression: Expression, resultCardinality: ResultCardinality, querySplittingBehavior: QuerySplittingBehavior): Expression;
+    ApplyTags(tags: ISet<System_Internal.String>): void;
+    ApplyUnion(source2: SelectExpression, distinct: boolean): void;
+    ClearOrdering(): void;
+    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    CreateColumnExpression(tableExpression: TableExpressionBase, columnName: string, type: Type, typeMapping: RelationalTypeMapping, columnNullable?: Nullable<System_Internal.Boolean>): ColumnExpression;
+    Equals(obj: unknown): boolean;
+    GenerateOwnedReferenceEntityProjectionExpression(principalEntityProjection: StructuralTypeProjectionExpression, navigation: INavigation, sqlExpressionFactory: ISqlExpressionFactory, sqlAliasManager: SqlAliasManager): StructuralTypeShaperExpression;
+    GetHashCode(): int;
+    GetProjection(projectionBindingExpression: ProjectionBindingExpression): Expression;
+    GetTable(column: ColumnExpression): TableExpressionBase;
+    GetTable(column: ColumnExpression, tableIndex: int): TableExpressionBase;
+    IsNonComposedFromSql(): boolean;
+    MakeProjectionNullable(sqlExpressionFactory: ISqlExpressionFactory): void;
+    PrepareForAggregate(liftOrderings?: boolean): void;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    PushdownIntoSubquery(): void;
+    Quote(): Expression;
+    RemoveTpcTableExpression(): SelectExpression;
+    ReplaceProjection(projectionMapping: IReadOnlyDictionary<ProjectionMember, Expression>): void;
+    ReplaceProjection(clientProjections: IReadOnlyList<Expression>): void;
+    ReverseOrderings(): void;
+    SetLimit(sqlExpression: SqlExpression): void;
+    SetTables(tables: IReadOnlyList<TableExpressionBase>): void;
+    Update(tables: IReadOnlyList<TableExpressionBase>, predicate: SqlExpression, groupBy: IReadOnlyList<SqlExpression>, having: SqlExpression, projections: IReadOnlyList<ProjectionExpression>, orderings: IReadOnlyList<OrderingExpression>, offset: SqlExpression, limit: SqlExpression): SelectExpression;
 }
 
 
@@ -803,8 +803,8 @@ export const SelectExpression: {
     new(alias: string, tables: IReadOnlyList<TableExpressionBase>, predicate: SqlExpression, groupBy: IReadOnlyList<SqlExpression>, having: SqlExpression, projections: IReadOnlyList<ProjectionExpression>, distinct: boolean, orderings: IReadOnlyList<OrderingExpression>, offset: SqlExpression, limit: SqlExpression, sqlAliasManager: SqlAliasManager, tags: IReadOnlySet<System_Internal.String>, annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): SelectExpression;
     new(tables: List<TableExpressionBase>, projection: Expression, identifier: List<ValueTuple<ColumnExpression, ValueComparer>>, sqlAliasManager: SqlAliasManager): SelectExpression;
     new(projection: SqlExpression, sqlAliasManager: SqlAliasManager): SelectExpression;
-    createImmutable(alias: string, tables: List<TableExpressionBase>, projection: List<ProjectionExpression>, sqlAliasManager: SqlAliasManager): SelectExpression;
-    generateComplexPropertyShaperExpression(containerProjection: StructuralTypeProjectionExpression, complexProperty: IComplexProperty): Expression;
+    CreateImmutable(alias: string, tables: List<TableExpressionBase>, projection: List<ProjectionExpression>, sqlAliasManager: SqlAliasManager): SelectExpression;
+    GenerateComplexPropertyShaperExpression(containerProjection: StructuralTypeProjectionExpression, complexProperty: IComplexProperty): Expression;
 };
 
 
@@ -819,15 +819,15 @@ export type SelectExpression = SelectExpression$instance & __SelectExpression$vi
 
 
 export interface SetOperationBase$instance extends TableExpressionBase$instance {
-    readonly alias: string;
-    readonly isDistinct: boolean;
-    readonly source1: SelectExpression;
-    readonly source2: SelectExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(source1: SelectExpression, source2: SelectExpression): SetOperationBase;
+    readonly Alias: string;
+    readonly IsDistinct: boolean;
+    readonly Source1: SelectExpression;
+    readonly Source2: SelectExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(source1: SelectExpression, source2: SelectExpression): SetOperationBase;
 }
 
 
@@ -846,14 +846,14 @@ export type SetOperationBase = SetOperationBase$instance & __SetOperationBase$vi
 
 
 export interface SqlBinaryExpression$instance extends SqlExpression$instance {
-    readonly left: SqlExpression;
-    readonly operatorType: ExpressionType;
-    readonly right: SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(left: SqlExpression, right: SqlExpression): SqlBinaryExpression;
+    readonly Left: SqlExpression;
+    readonly OperatorType: ExpressionType;
+    readonly Right: SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(left: SqlExpression, right: SqlExpression): SqlBinaryExpression;
 }
 
 
@@ -873,13 +873,13 @@ export type SqlBinaryExpression = SqlBinaryExpression$instance & __SqlBinaryExpr
 
 
 export interface SqlConstantExpression$instance extends SqlExpression$instance {
-    readonly isSensitive: boolean;
-    readonly value: unknown | undefined;
-    applyTypeMapping(typeMapping: RelationalTypeMapping): SqlExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
+    readonly IsSensitive: boolean;
+    readonly Value: unknown | undefined;
+    ApplyTypeMapping(typeMapping: RelationalTypeMapping): SqlExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
 }
 
 
@@ -903,12 +903,12 @@ export type SqlConstantExpression = SqlConstantExpression$instance & __SqlConsta
 
 
 export interface SqlExpression$instance extends Expression {
-    readonly nodeType: ExpressionType;
-    readonly type: Type;
-    readonly typeMapping: RelationalTypeMapping | undefined;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    quote(): Expression;
+    readonly NodeType: ExpressionType;
+    readonly Type: Type;
+    readonly TypeMapping: RelationalTypeMapping | undefined;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Quote(): Expression;
 }
 
 
@@ -927,11 +927,11 @@ export type SqlExpression = SqlExpression$instance & __SqlExpression$views;
 
 
 export interface SqlFragmentExpression$instance extends SqlExpression$instance {
-    readonly sql: string;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
+    readonly Sql: string;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
 }
 
 
@@ -951,22 +951,22 @@ export type SqlFragmentExpression = SqlFragmentExpression$instance & __SqlFragme
 
 
 export interface SqlFunctionExpression$instance extends SqlExpression$instance {
-    readonly arguments: IReadOnlyList<SqlExpression>;
-    readonly argumentsPropagateNullability: IReadOnlyList<System_Internal.Boolean> | undefined;
-    readonly instance: SqlExpression | undefined;
-    readonly instancePropagatesNullability: Nullable<System_Internal.Boolean>;
-    readonly isBuiltIn: boolean;
-    readonly isNiladic: boolean;
-    readonly isNullable: boolean;
-    readonly name: string;
-    readonly schema: string | undefined;
-    applyTypeMapping(typeMapping: RelationalTypeMapping): SqlFunctionExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(instance: SqlExpression, arguments: IReadOnlyList<SqlExpression>): SqlFunctionExpression;
-    update(instance: SqlExpression, arguments: IReadOnlyList<SqlExpression>, argumentsPropagateNullability: IReadOnlyList<System_Internal.Boolean>): SqlFunctionExpression;
+    readonly Arguments: IReadOnlyList<SqlExpression>;
+    readonly ArgumentsPropagateNullability: IReadOnlyList<System_Internal.Boolean> | undefined;
+    readonly Instance: SqlExpression | undefined;
+    readonly InstancePropagatesNullability: Nullable<System_Internal.Boolean>;
+    readonly IsBuiltIn: boolean;
+    readonly IsNiladic: boolean;
+    readonly IsNullable: boolean;
+    readonly Name: string;
+    readonly Schema: string | undefined;
+    ApplyTypeMapping(typeMapping: RelationalTypeMapping): SqlFunctionExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(instance: SqlExpression, arguments: IReadOnlyList<SqlExpression>): SqlFunctionExpression;
+    Update(instance: SqlExpression, arguments: IReadOnlyList<SqlExpression>, argumentsPropagateNullability: IReadOnlyList<System_Internal.Boolean>): SqlFunctionExpression;
 }
 
 
@@ -992,15 +992,15 @@ export type SqlFunctionExpression = SqlFunctionExpression$instance & __SqlFuncti
 
 
 export interface SqlParameterExpression$instance extends SqlExpression$instance {
-    readonly invariantName: string;
-    readonly isNullable: boolean;
-    readonly name: string;
-    readonly translationMode: Nullable<ParameterTranslationMode>;
-    applyTypeMapping(typeMapping: RelationalTypeMapping): SqlParameterExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
+    readonly InvariantName: string;
+    readonly IsNullable: boolean;
+    readonly Name: string;
+    readonly TranslationMode: Nullable<ParameterTranslationMode>;
+    ApplyTypeMapping(typeMapping: RelationalTypeMapping): SqlParameterExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
 }
 
 
@@ -1021,13 +1021,13 @@ export type SqlParameterExpression = SqlParameterExpression$instance & __SqlPara
 
 
 export interface SqlUnaryExpression$instance extends SqlExpression$instance {
-    readonly operand: SqlExpression;
-    readonly operatorType: ExpressionType;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(operand: SqlExpression): SqlUnaryExpression;
+    readonly Operand: SqlExpression;
+    readonly OperatorType: ExpressionType;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(operand: SqlExpression): SqlUnaryExpression;
 }
 
 
@@ -1047,15 +1047,15 @@ export type SqlUnaryExpression = SqlUnaryExpression$instance & __SqlUnaryExpress
 
 
 export interface TableExpression$instance extends TableExpressionBase$instance {
-    readonly alias: string;
-    readonly name: string;
-    readonly schema: string | undefined;
-    readonly table: ITableBase;
-    clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
+    readonly Alias: string;
+    readonly Name: string;
+    readonly Schema: string | undefined;
+    readonly Table: ITableBase;
+    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
 }
 
 
@@ -1077,18 +1077,18 @@ export type TableExpression = TableExpression$instance & __TableExpression$views
 
 
 export interface TableExpressionBase$instance extends Expression {
-    readonly alias: string;
-    readonly nodeType: ExpressionType;
-    readonly type: Type;
-    addAnnotation(name: string, value: unknown): TableExpressionBase;
-    clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    equals(obj: unknown): boolean;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getHashCode(): int;
-    getRequiredAlias(): string;
-    quote(): Expression;
-    withAlias(newAlias: string): TableExpressionBase;
+    readonly Alias: string;
+    readonly NodeType: ExpressionType;
+    readonly Type: Type;
+    AddAnnotation(name: string, value: unknown): TableExpressionBase;
+    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: unknown): boolean;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetHashCode(): int;
+    GetRequiredAlias(): string;
+    Quote(): Expression;
+    WithAlias(newAlias: string): TableExpressionBase;
 }
 
 
@@ -1107,18 +1107,18 @@ export type TableExpressionBase = TableExpressionBase$instance & __TableExpressi
 
 
 export interface TableValuedFunctionExpression$instance extends TableExpressionBase$instance {
-    readonly alias: string;
-    readonly arguments: IReadOnlyList<SqlExpression>;
-    readonly isBuiltIn: boolean;
-    readonly name: string;
-    readonly schema: string | undefined;
-    readonly storeFunction: IStoreFunction | undefined;
-    clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(arguments: IReadOnlyList<SqlExpression>): TableValuedFunctionExpression;
+    readonly Alias: string;
+    readonly Arguments: IReadOnlyList<SqlExpression>;
+    readonly IsBuiltIn: boolean;
+    readonly Name: string;
+    readonly Schema: string | undefined;
+    readonly StoreFunction: IStoreFunction | undefined;
+    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(arguments: IReadOnlyList<SqlExpression>): TableValuedFunctionExpression;
 }
 
 
@@ -1140,12 +1140,12 @@ export type TableValuedFunctionExpression = TableValuedFunctionExpression$instan
 
 
 export interface UnionExpression$instance extends SetOperationBase$instance {
-    clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    withAlias(newAlias: string): UnionExpression;
+    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    WithAlias(newAlias: string): UnionExpression;
 }
 
 
@@ -1164,18 +1164,18 @@ export type UnionExpression = UnionExpression$instance & __UnionExpression$views
 
 
 export interface UpdateExpression$instance extends Expression {
-    readonly columnValueSetters: IReadOnlyList<ColumnValueSetter>;
-    readonly nodeType: ExpressionType;
-    readonly selectExpression: SelectExpression;
-    readonly table: TableExpression;
-    readonly tags: ISet<System_Internal.String>;
-    readonly type: Type;
-    applyTags(tags: ISet<System_Internal.String>): UpdateExpression;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(selectExpression: SelectExpression, columnValueSetters: IReadOnlyList<ColumnValueSetter>): UpdateExpression;
+    readonly ColumnValueSetters: IReadOnlyList<ColumnValueSetter>;
+    readonly NodeType: ExpressionType;
+    readonly SelectExpression: SelectExpression;
+    readonly Table: TableExpression;
+    readonly Tags: ISet<System_Internal.String>;
+    readonly Type: Type;
+    ApplyTags(tags: ISet<System_Internal.String>): UpdateExpression;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(selectExpression: SelectExpression, columnValueSetters: IReadOnlyList<ColumnValueSetter>): UpdateExpression;
 }
 
 
@@ -1196,18 +1196,18 @@ export type UpdateExpression = UpdateExpression$instance & __UpdateExpression$vi
 
 
 export interface ValuesExpression$instance extends TableExpressionBase$instance {
-    readonly alias: string;
-    readonly columnNames: IReadOnlyList<System_Internal.String>;
-    readonly rowValues: IReadOnlyList<RowValueExpression> | undefined;
-    readonly valuesParameter: SqlParameterExpression | undefined;
-    clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    print(expressionPrinter: ExpressionPrinter): void;
-    quote(): Expression;
-    update(rowValues: IReadOnlyList<RowValueExpression>): ValuesExpression;
-    update(valuesParameter: SqlParameterExpression): ValuesExpression;
-    update(rowValues: IReadOnlyList<RowValueExpression>, valuesParameter: SqlParameterExpression): ValuesExpression;
+    readonly Alias: string;
+    readonly ColumnNames: IReadOnlyList<System_Internal.String>;
+    readonly RowValues: IReadOnlyList<RowValueExpression> | undefined;
+    readonly ValuesParameter: SqlParameterExpression | undefined;
+    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    Quote(): Expression;
+    Update(rowValues: IReadOnlyList<RowValueExpression>): ValuesExpression;
+    Update(valuesParameter: SqlParameterExpression): ValuesExpression;
+    Update(rowValues: IReadOnlyList<RowValueExpression>, valuesParameter: SqlParameterExpression): ValuesExpression;
 }
 
 

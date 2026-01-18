@@ -37,25 +37,25 @@ import type { IServiceCollection, ServiceLifetime } from "@tsonic/microsoft-exte
 import type { ILoggerFactory } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging.js";
 
 export enum MetadataDebugStringOptions {
-    includeAnnotations = 1,
-    includePropertyIndexes = 2,
-    singleLine = 4,
-    shortDefault = 0,
-    longDefault = 1,
-    singleLineDefault = 4
+    IncludeAnnotations = 1,
+    IncludePropertyIndexes = 2,
+    SingleLine = 4,
+    ShortDefault = 0,
+    LongDefault = 1,
+    SingleLineDefault = 4
 }
 
 
 export interface IAnnotatable$instance extends IReadOnlyAnnotatable {
-    readonly item: unknown | undefined;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Item: unknown | undefined;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
@@ -64,26 +64,26 @@ export interface IAnnotatable$instance extends IReadOnlyAnnotatable$instance {}
 export type IAnnotatable = IAnnotatable$instance;
 
 export interface IAnnotation$instance {
-    readonly name: string;
-    readonly value: unknown | undefined;
+    readonly Name: string;
+    readonly Value: unknown | undefined;
 }
 
 
 export type IAnnotation = IAnnotation$instance;
 
 export interface IConcurrencyDetector$instance {
-    enterCriticalSection(): ConcurrencyDetectorCriticalSectionDisposer;
-    exitCriticalSection(): void;
+    EnterCriticalSection(): ConcurrencyDetectorCriticalSectionDisposer;
+    ExitCriticalSection(): void;
 }
 
 
 export type IConcurrencyDetector = IConcurrencyDetector$instance;
 
 export interface ICoreSingletonOptions$instance extends ISingletonOptions {
-    readonly areDetailedErrorsEnabled: boolean;
-    readonly areThreadSafetyChecksEnabled: boolean;
-    readonly rootApplicationServiceProvider: IServiceProvider | undefined;
-    initialize(options: IDbContextOptions): void;
+    readonly AreDetailedErrorsEnabled: boolean;
+    readonly AreThreadSafetyChecksEnabled: boolean;
+    readonly RootApplicationServiceProvider: IServiceProvider | undefined;
+    Initialize(options: IDbContextOptions): void;
 }
 
 
@@ -92,145 +92,145 @@ export interface ICoreSingletonOptions$instance extends ISingletonOptions$instan
 export type ICoreSingletonOptions = ICoreSingletonOptions$instance;
 
 export interface ICurrentDbContext$instance {
-    readonly context: DbContext;
+    readonly Context: DbContext;
 }
 
 
 export type ICurrentDbContext = ICurrentDbContext$instance;
 
 export interface IDbContextOptions$instance {
-    readonly extensions: IEnumerable<IDbContextOptionsExtension>;
-    findExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | undefined;
+    readonly Extensions: IEnumerable<IDbContextOptionsExtension>;
+    FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | undefined;
 }
 
 
 export type IDbContextOptions = IDbContextOptions$instance;
 
 export interface IDbContextOptionsBuilderInfrastructure$instance {
-    addOrUpdateExtension<TExtension extends IDbContextOptionsExtension>(extension: TExtension): void;
+    AddOrUpdateExtension<TExtension extends IDbContextOptionsExtension>(extension: TExtension): void;
 }
 
 
 export type IDbContextOptionsBuilderInfrastructure = IDbContextOptionsBuilderInfrastructure$instance;
 
 export interface IDbContextOptionsConfiguration_1$instance<TContext extends DbContext> {
-    configure(serviceProvider: IServiceProvider, optionsBuilder: DbContextOptionsBuilder): void;
+    Configure(serviceProvider: IServiceProvider, optionsBuilder: DbContextOptionsBuilder): void;
 }
 
 
 export type IDbContextOptionsConfiguration_1<TContext extends DbContext> = IDbContextOptionsConfiguration_1$instance<TContext>;
 
 export interface IDbContextOptionsExtension$instance {
-    readonly info: DbContextOptionsExtensionInfo;
-    applyDefaults(options: IDbContextOptions): IDbContextOptionsExtension;
-    applyServices(services: IServiceCollection): void;
-    validate(options: IDbContextOptions): void;
+    readonly Info: DbContextOptionsExtensionInfo;
+    ApplyDefaults(options: IDbContextOptions): IDbContextOptionsExtension;
+    ApplyServices(services: IServiceCollection): void;
+    Validate(options: IDbContextOptions): void;
 }
 
 
 export type IDbContextOptionsExtension = IDbContextOptionsExtension$instance;
 
 export interface IDbSetFinder$instance {
-    findSets(contextType: Type): IReadOnlyList<DbSetProperty>;
+    FindSets(contextType: Type): IReadOnlyList<DbSetProperty>;
 }
 
 
 export type IDbSetFinder = IDbSetFinder$instance;
 
 export interface IInfrastructure_1$instance<T> {
-    readonly instance: T;
+    readonly Instance: T;
 }
 
 
 export type IInfrastructure_1<T> = IInfrastructure_1$instance<T>;
 
 export interface IInternalServiceCollectionMap$instance {
-    addDependencySingleton<TDependencies>(): IInternalServiceCollectionMap;
+    AddDependencySingleton<TDependencies>(): IInternalServiceCollectionMap;
 }
 
 
 export type IInternalServiceCollectionMap = IInternalServiceCollectionMap$instance;
 
 export interface ILazyLoader$instance {
-    dispose(): void;
-    isLoaded(entity: unknown, navigationName?: string): boolean;
-    load(entity: unknown, navigationName?: string): void;
-    loadAsync(entity: unknown, cancellationToken?: CancellationToken, navigationName?: string): Task;
-    setLoaded(entity: unknown, navigationName?: string, loaded?: boolean): void;
+    Dispose(): void;
+    IsLoaded(entity: unknown, navigationName?: string): boolean;
+    Load(entity: unknown, navigationName?: string): void;
+    LoadAsync(entity: unknown, cancellationToken?: CancellationToken, navigationName?: string): Task;
+    SetLoaded(entity: unknown, navigationName?: string, loaded?: boolean): void;
 }
 
 
 export type ILazyLoader = ILazyLoader$instance;
 
 export interface IModelCacheKeyFactory$instance {
-    create(context: DbContext, designTime: boolean): unknown;
+    Create(context: DbContext, designTime: boolean): unknown;
 }
 
 
 export type IModelCacheKeyFactory = IModelCacheKeyFactory$instance;
 
 export interface IModelCustomizer$instance {
-    customize(modelBuilder: ModelBuilder, context: DbContext): void;
+    Customize(modelBuilder: ModelBuilder, context: DbContext): void;
 }
 
 
 export type IModelCustomizer = IModelCustomizer$instance;
 
 export interface IModelRuntimeInitializer$instance {
-    initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
+    Initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
 }
 
 
 export type IModelRuntimeInitializer = IModelRuntimeInitializer$instance;
 
 export interface IModelSource$instance {
-    getModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
+    GetModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
 }
 
 
 export type IModelSource = IModelSource$instance;
 
 export interface IModelValidator$instance {
-    validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
 }
 
 
 export type IModelValidator = IModelValidator$instance;
 
 export interface IReadOnlyAnnotatable$instance {
-    readonly item: unknown | undefined;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
+    readonly Item: unknown | undefined;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
 }
 
 
 export type IReadOnlyAnnotatable = IReadOnlyAnnotatable$instance;
 
 export interface IRelationalDbContextOptionsBuilderInfrastructure$instance {
-    readonly optionsBuilder: DbContextOptionsBuilder;
+    readonly OptionsBuilder: DbContextOptionsBuilder;
 }
 
 
 export type IRelationalDbContextOptionsBuilderInfrastructure = IRelationalDbContextOptionsBuilderInfrastructure$instance;
 
 export interface IResettableService$instance {
-    resetState(): void;
-    resetStateAsync(cancellationToken?: CancellationToken): Task;
+    ResetState(): void;
+    ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
 
 
 export type IResettableService = IResettableService$instance;
 
 export interface ISingletonOptions$instance {
-    initialize(options: IDbContextOptions): void;
+    Initialize(options: IDbContextOptions): void;
 }
 
 
 export type ISingletonOptions = ISingletonOptions$instance;
 
 export interface ConcurrencyDetectorCriticalSectionDisposer$instance {
-    dispose(): void;
+    Dispose(): void;
 }
 
 
@@ -242,9 +242,9 @@ export const ConcurrencyDetectorCriticalSectionDisposer: {
 export type ConcurrencyDetectorCriticalSectionDisposer = ConcurrencyDetectorCriticalSectionDisposer$instance;
 
 export interface DbSetProperty$instance {
-    readonly name: string;
-    readonly setter: IClrPropertySetter | undefined;
-    readonly type: Type;
+    readonly Name: string;
+    readonly Setter: IClrPropertySetter | undefined;
+    readonly Type: Type;
 }
 
 
@@ -256,8 +256,8 @@ export const DbSetProperty: {
 export type DbSetProperty = DbSetProperty$instance;
 
 export interface ServiceCharacteristics$instance {
-    readonly lifetime: ServiceLifetime;
-    readonly multipleRegistrations: boolean;
+    readonly Lifetime: ServiceLifetime;
+    readonly MultipleRegistrations: boolean;
 }
 
 
@@ -269,22 +269,22 @@ export const ServiceCharacteristics: {
 export type ServiceCharacteristics = ServiceCharacteristics$instance;
 
 export interface Annotatable$instance extends AnnotatableBase$instance {
-    addAnnotation(name: string, value: unknown): Annotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    addAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): Annotation | undefined;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<Annotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    removeAnnotation(name: string): Annotation | undefined;
-    setAnnotation(name: string, value: unknown): void;
+    AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<Annotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    RemoveAnnotation(name: string): Annotation | undefined;
+    SetAnnotation(name: string, value: unknown): void;
 }
 
 
@@ -303,25 +303,25 @@ export type Annotatable = Annotatable$instance & __Annotatable$views;
 
 
 export interface AnnotatableBase$instance {
-    readonly isReadOnly: boolean;
-    get item(): unknown | undefined;
-    set item(value: unknown);
-    addAnnotation(name: string, value: unknown): Annotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    addAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotations(annotations: IEnumerable<Annotation>): void;
-    addRuntimeAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
-    findAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    getAnnotation(annotationName: string): Annotation;
-    getAnnotations(): IEnumerable<Annotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    removeAnnotation(name: string): Annotation | undefined;
-    removeRuntimeAnnotation(name: string): Annotation | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    setRuntimeAnnotation(name: string, value: unknown): Annotation;
+    readonly IsReadOnly: boolean;
+    get Item(): unknown | undefined;
+    set Item(value: unknown);
+    AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotations(annotations: IEnumerable<Annotation>): void;
+    AddRuntimeAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    GetAnnotation(annotationName: string): Annotation;
+    GetAnnotations(): IEnumerable<Annotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    RemoveAnnotation(name: string): Annotation | undefined;
+    RemoveRuntimeAnnotation(name: string): Annotation | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    SetRuntimeAnnotation(name: string, value: unknown): Annotation;
 }
 
 
@@ -339,16 +339,16 @@ export type AnnotatableBase = AnnotatableBase$instance & __AnnotatableBase$views
 
 
 export interface AnnotatableBuilder_2$instance<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder> {
-    readonly metadata: ComplexType | TMetadata;
-    readonly modelBuilder: InternalModelBuilder | TModelBuilder;
-    canRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
-    canSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
-    hasAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | undefined;
-    hasNoAnnotation(name: string, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | undefined;
-    hasNonNullAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | undefined;
-    mergeAnnotationsFrom(annotatable: TMetadata): AnnotatableBuilder_2<TMetadata, TModelBuilder>;
-    mergeAnnotationsFrom(annotatable: TMetadata, minimalConfigurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder>;
-    removeAnnotation(name: string, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | undefined;
+    readonly Metadata: EntityType | TMetadata;
+    readonly ModelBuilder: InternalModelBuilder | TModelBuilder;
+    CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
+    CanSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
+    HasAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | undefined;
+    HasNoAnnotation(name: string, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | undefined;
+    HasNonNullAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | undefined;
+    MergeAnnotationsFrom(annotatable: TMetadata): AnnotatableBuilder_2<TMetadata, TModelBuilder>;
+    MergeAnnotationsFrom(annotatable: TMetadata, minimalConfigurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder>;
+    RemoveAnnotation(name: string, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | undefined;
 }
 
 
@@ -364,8 +364,8 @@ export type AnnotatableBuilder_2<TMetadata extends ConventionAnnotatable, TModel
 
 
 export interface Annotation$instance {
-    readonly name: string;
-    readonly value: unknown | undefined;
+    readonly Name: string;
+    readonly Value: unknown | undefined;
 }
 
 
@@ -384,25 +384,25 @@ export type Annotation = Annotation$instance & __Annotation$views;
 
 
 export interface ConventionAnnotatable$instance extends Annotatable$instance {
-    addAnnotation(name: string, value: unknown): IAnnotation;
-    addAnnotation(name: string, value: unknown): Annotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    addAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
-    addRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    annotationsToDebugString(indent?: int): string;
-    findAnnotation(name: string): IAnnotation | undefined;
-    findAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): IAnnotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotationValue(name: string): unknown | undefined;
-    getAnnotations(): IEnumerable<IAnnotation>;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<IAnnotation>;
-    removeAnnotation(name: string): IAnnotation | undefined;
-    removeAnnotation(name: string): Annotation | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    setOrRemoveAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation | undefined;
+    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AnnotationsToDebugString(indent?: int): string;
+    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    GetAnnotations(): IEnumerable<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    RemoveAnnotation(name: string): IAnnotation | undefined;
+    RemoveAnnotation(name: string): Annotation | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    SetOrRemoveAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation | undefined;
 }
 
 
@@ -421,51 +421,51 @@ export type ConventionAnnotatable = ConventionAnnotatable$instance & __Conventio
 
 
 export interface CoreOptionsExtension$instance {
-    readonly applicationServiceProvider: IServiceProvider | undefined;
-    readonly asyncSeeder: Func<DbContext, System_Internal.Boolean, CancellationToken, Task> | undefined;
-    readonly autoResolveRootProvider: boolean;
-    readonly dbContextLogger: IDbContextLogger;
-    readonly detailedErrorsEnabled: boolean;
-    readonly info: DbContextOptionsExtensionInfo;
-    readonly interceptors: IEnumerable<IInterceptor>;
-    readonly internalServiceProvider: IServiceProvider;
-    readonly isSensitiveDataLoggingEnabled: boolean;
-    readonly loggerFactory: ILoggerFactory | undefined;
-    readonly loggingCacheTime: TimeSpan;
-    readonly maxPoolSize: Nullable<System_Internal.Int32>;
-    readonly memoryCache: IMemoryCache;
-    readonly model: IModel;
-    readonly queryTrackingBehavior: QueryTrackingBehavior;
-    readonly replacedServices: IReadOnlyDictionary<ValueTuple<Type, Type>, Type | undefined> | undefined;
-    readonly rootApplicationServiceProvider: IServiceProvider | undefined;
-    readonly seeder: Action<DbContext, System_Internal.Boolean> | undefined;
-    readonly serviceProviderCachingEnabled: boolean;
-    readonly singletonInterceptors: IEnumerable<ISingletonInterceptor>;
-    readonly threadSafetyChecksEnabled: boolean;
-    readonly warningsConfiguration: WarningsConfiguration;
-    applyServices(services: IServiceCollection): void;
-    validate(options: IDbContextOptions): void;
-    withApplicationServiceProvider(applicationServiceProvider: IServiceProvider): CoreOptionsExtension;
-    withAsyncSeeding(seedAsync: Func<DbContext, System_Internal.Boolean, CancellationToken, Task>): CoreOptionsExtension;
-    withDbContextLogger(contextLogger: IDbContextLogger): CoreOptionsExtension;
-    withDetailedErrorsEnabled(detailedErrorsEnabled: boolean): CoreOptionsExtension;
-    withInterceptors(interceptors: IEnumerable<IInterceptor>): CoreOptionsExtension;
-    withInternalServiceProvider(internalServiceProvider: IServiceProvider): CoreOptionsExtension;
-    withLoggerFactory(loggerFactory: ILoggerFactory): CoreOptionsExtension;
-    withLoggingCacheTime(timeSpan: TimeSpan): CoreOptionsExtension;
-    withMaxPoolSize(maxPoolSize: Nullable<System_Internal.Int32>): CoreOptionsExtension;
-    withMemoryCache(memoryCache: IMemoryCache): CoreOptionsExtension;
-    withModel(model: IModel): CoreOptionsExtension;
-    withQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): CoreOptionsExtension;
-    withReplacedService(serviceType: Type, newImplementationType: Type, currentImplementationType?: Type): CoreOptionsExtension;
-    withRootApplicationServiceProvider(rootApplicationServiceProvider: IServiceProvider): CoreOptionsExtension;
-    withRootApplicationServiceProvider(autoResolve?: boolean): CoreOptionsExtension;
-    withSeeding(seed: Action<DbContext, System_Internal.Boolean>): CoreOptionsExtension;
-    withSensitiveDataLoggingEnabled(sensitiveDataLoggingEnabled: boolean): CoreOptionsExtension;
-    withServiceProviderCachingEnabled(serviceProviderCachingEnabled: boolean): CoreOptionsExtension;
-    withSingletonInterceptors(interceptors: IEnumerable<ISingletonInterceptor>): CoreOptionsExtension;
-    withThreadSafetyChecksEnabled(checksEnabled: boolean): CoreOptionsExtension;
-    withWarningsConfiguration(warningsConfiguration: WarningsConfiguration): CoreOptionsExtension;
+    readonly ApplicationServiceProvider: IServiceProvider | undefined;
+    readonly AsyncSeeder: Func<DbContext, System_Internal.Boolean, CancellationToken, Task> | undefined;
+    readonly AutoResolveRootProvider: boolean;
+    readonly DbContextLogger: IDbContextLogger;
+    readonly DetailedErrorsEnabled: boolean;
+    readonly Info: DbContextOptionsExtensionInfo;
+    readonly Interceptors: IEnumerable<IInterceptor>;
+    readonly InternalServiceProvider: IServiceProvider;
+    readonly IsSensitiveDataLoggingEnabled: boolean;
+    readonly LoggerFactory: ILoggerFactory | undefined;
+    readonly LoggingCacheTime: TimeSpan;
+    readonly MaxPoolSize: Nullable<System_Internal.Int32>;
+    readonly MemoryCache: IMemoryCache;
+    readonly Model: IModel;
+    readonly QueryTrackingBehavior: QueryTrackingBehavior;
+    readonly ReplacedServices: IReadOnlyDictionary<ValueTuple<Type, Type>, Type | undefined> | undefined;
+    readonly RootApplicationServiceProvider: IServiceProvider | undefined;
+    readonly Seeder: Action<DbContext, System_Internal.Boolean> | undefined;
+    readonly ServiceProviderCachingEnabled: boolean;
+    readonly SingletonInterceptors: IEnumerable<ISingletonInterceptor>;
+    readonly ThreadSafetyChecksEnabled: boolean;
+    readonly WarningsConfiguration: WarningsConfiguration;
+    ApplyServices(services: IServiceCollection): void;
+    Validate(options: IDbContextOptions): void;
+    WithApplicationServiceProvider(applicationServiceProvider: IServiceProvider): CoreOptionsExtension;
+    WithAsyncSeeding(seedAsync: Func<DbContext, System_Internal.Boolean, CancellationToken, Task>): CoreOptionsExtension;
+    WithDbContextLogger(contextLogger: IDbContextLogger): CoreOptionsExtension;
+    WithDetailedErrorsEnabled(detailedErrorsEnabled: boolean): CoreOptionsExtension;
+    WithInterceptors(interceptors: IEnumerable<IInterceptor>): CoreOptionsExtension;
+    WithInternalServiceProvider(internalServiceProvider: IServiceProvider): CoreOptionsExtension;
+    WithLoggerFactory(loggerFactory: ILoggerFactory): CoreOptionsExtension;
+    WithLoggingCacheTime(timeSpan: TimeSpan): CoreOptionsExtension;
+    WithMaxPoolSize(maxPoolSize: Nullable<System_Internal.Int32>): CoreOptionsExtension;
+    WithMemoryCache(memoryCache: IMemoryCache): CoreOptionsExtension;
+    WithModel(model: IModel): CoreOptionsExtension;
+    WithQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): CoreOptionsExtension;
+    WithReplacedService(serviceType: Type, newImplementationType: Type, currentImplementationType?: Type): CoreOptionsExtension;
+    WithRootApplicationServiceProvider(rootApplicationServiceProvider: IServiceProvider): CoreOptionsExtension;
+    WithRootApplicationServiceProvider(autoResolve?: boolean): CoreOptionsExtension;
+    WithSeeding(seed: Action<DbContext, System_Internal.Boolean>): CoreOptionsExtension;
+    WithSensitiveDataLoggingEnabled(sensitiveDataLoggingEnabled: boolean): CoreOptionsExtension;
+    WithServiceProviderCachingEnabled(serviceProviderCachingEnabled: boolean): CoreOptionsExtension;
+    WithSingletonInterceptors(interceptors: IEnumerable<ISingletonInterceptor>): CoreOptionsExtension;
+    WithThreadSafetyChecksEnabled(checksEnabled: boolean): CoreOptionsExtension;
+    WithWarningsConfiguration(warningsConfiguration: WarningsConfiguration): CoreOptionsExtension;
 }
 
 
@@ -484,27 +484,27 @@ export type CoreOptionsExtension = CoreOptionsExtension$instance & __CoreOptions
 
 
 export interface DatabaseFacade$instance {
-    autoSavepointsEnabled: boolean;
-    autoTransactionBehavior: AutoTransactionBehavior;
-    autoTransactionsEnabled: boolean;
-    readonly currentTransaction: IDbContextTransaction | undefined;
-    readonly providerName: string | undefined;
-    beginTransaction(): IDbContextTransaction;
-    beginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
-    canConnect(): boolean;
-    canConnectAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    commitTransaction(): void;
-    commitTransactionAsync(cancellationToken?: CancellationToken): Task;
-    createExecutionStrategy(): IExecutionStrategy;
-    ensureCreated(): boolean;
-    ensureCreatedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    ensureDeleted(): boolean;
-    ensureDeletedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    rollbackTransaction(): void;
-    rollbackTransactionAsync(cancellationToken?: CancellationToken): Task;
-    toString(): string | undefined;
+    AutoSavepointsEnabled: boolean;
+    AutoTransactionBehavior: AutoTransactionBehavior;
+    AutoTransactionsEnabled: boolean;
+    readonly CurrentTransaction: IDbContextTransaction | undefined;
+    readonly ProviderName: string | undefined;
+    BeginTransaction(): IDbContextTransaction;
+    BeginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
+    CanConnect(): boolean;
+    CanConnectAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    CommitTransaction(): void;
+    CommitTransactionAsync(cancellationToken?: CancellationToken): Task;
+    CreateExecutionStrategy(): IExecutionStrategy;
+    EnsureCreated(): boolean;
+    EnsureCreatedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    EnsureDeleted(): boolean;
+    EnsureDeletedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    RollbackTransaction(): void;
+    RollbackTransactionAsync(cancellationToken?: CancellationToken): Task;
+    ToString(): string | undefined;
 }
 
 
@@ -525,7 +525,7 @@ export type DatabaseFacade = DatabaseFacade$instance & __DatabaseFacade$views;
 
 
 export interface DbContextAttribute$instance extends Attribute {
-    readonly contextType: Type;
+    readonly ContextType: Type;
 }
 
 
@@ -537,8 +537,8 @@ export const DbContextAttribute: {
 export type DbContextAttribute = DbContextAttribute$instance;
 
 export interface DbContextModelAttribute$instance extends Attribute {
-    readonly contextType: Type;
-    readonly modelType: Type;
+    readonly ContextType: Type;
+    readonly ModelType: Type;
 }
 
 
@@ -550,12 +550,12 @@ export const DbContextModelAttribute: {
 export type DbContextModelAttribute = DbContextModelAttribute$instance;
 
 export interface DbContextOptionsExtensionInfo$instance {
-    readonly extension: IDbContextOptionsExtension;
-    readonly isDatabaseProvider: boolean;
-    readonly logFragment: string;
-    getServiceProviderHashCode(): int;
-    populateDebugInfo(debugInfo: IDictionary<System_Internal.String, System_Internal.String>): void;
-    shouldUseSameServiceProvider(other: DbContextOptionsExtensionInfo): boolean;
+    readonly Extension: IDbContextOptionsExtension;
+    readonly IsDatabaseProvider: boolean;
+    readonly LogFragment: string;
+    GetServiceProviderHashCode(): int;
+    PopulateDebugInfo(debugInfo: IDictionary<System_Internal.String, System_Internal.String>): void;
+    ShouldUseSameServiceProvider(other: DbContextOptionsExtensionInfo): boolean;
 }
 
 
@@ -566,8 +566,8 @@ export const DbContextOptionsExtensionInfo: {
 export type DbContextOptionsExtensionInfo = DbContextOptionsExtensionInfo$instance;
 
 export interface DebugView$instance {
-    readonly longView: string;
-    readonly shortView: string;
+    readonly LongView: string;
+    readonly ShortView: string;
 }
 
 
@@ -579,20 +579,20 @@ export const DebugView: {
 export type DebugView = DebugView$instance;
 
 export interface EntityFrameworkEventSource$instance extends EventSource {
-    compiledQueryCacheHit(): void;
-    compiledQueryCacheMiss(): void;
-    dbContextDisposing(): void;
-    dbContextInitializing(): void;
-    executionStrategyOperationFailure(): void;
-    optimisticConcurrencyFailure(): void;
-    queryExecuting(): void;
-    savingChanges(): void;
+    CompiledQueryCacheHit(): void;
+    CompiledQueryCacheMiss(): void;
+    DbContextDisposing(): void;
+    DbContextInitializing(): void;
+    ExecutionStrategyOperationFailure(): void;
+    OptimisticConcurrencyFailure(): void;
+    QueryExecuting(): void;
+    SavingChanges(): void;
 }
 
 
 export const EntityFrameworkEventSource: {
     new(): EntityFrameworkEventSource;
-    readonly log: EntityFrameworkEventSource;
+    readonly Log: EntityFrameworkEventSource;
 };
 
 
@@ -610,59 +610,59 @@ export const EntityFrameworkInternalAttribute: {
 export type EntityFrameworkInternalAttribute = EntityFrameworkInternalAttribute$instance;
 
 export interface EntityFrameworkRelationalServicesBuilder$instance extends EntityFrameworkServicesBuilder {
-    tryAddCoreServices(): EntityFrameworkServicesBuilder;
+    TryAddCoreServices(): EntityFrameworkServicesBuilder;
 }
 
 
 export const EntityFrameworkRelationalServicesBuilder: {
     new(serviceCollection: IServiceCollection): EntityFrameworkRelationalServicesBuilder;
-    readonly relationalServices: IDictionary<Type, ServiceCharacteristics>;
+    readonly RelationalServices: IDictionary<Type, ServiceCharacteristics>;
 };
 
 
 export type EntityFrameworkRelationalServicesBuilder = EntityFrameworkRelationalServicesBuilder$instance;
 
 export interface EntityFrameworkServicesBuilder$instance {
-    tryAdd<TService, TImplementation extends TService>(): EntityFrameworkServicesBuilder;
-    tryAdd(serviceType: Type, implementationType: Type): EntityFrameworkServicesBuilder;
-    tryAdd<TService>(factory: Func<IServiceProvider, TService>): EntityFrameworkServicesBuilder;
-    tryAdd(serviceType: Type, implementationType: Type, factory: Func<IServiceProvider, unknown>): EntityFrameworkServicesBuilder;
-    tryAdd<TService>(implementation: TService): EntityFrameworkServicesBuilder;
-    tryAdd(serviceType: Type, implementation: unknown): EntityFrameworkServicesBuilder;
-    tryAddCoreServices(): EntityFrameworkServicesBuilder;
-    tryAddProviderSpecificServices(serviceMap: Action<ServiceCollectionMap>): EntityFrameworkServicesBuilder;
+    TryAdd<TService, TImplementation extends TService>(): EntityFrameworkServicesBuilder;
+    TryAdd(serviceType: Type, implementationType: Type): EntityFrameworkServicesBuilder;
+    TryAdd<TService>(factory: Func<IServiceProvider, TService>): EntityFrameworkServicesBuilder;
+    TryAdd(serviceType: Type, implementationType: Type, factory: Func<IServiceProvider, unknown>): EntityFrameworkServicesBuilder;
+    TryAdd<TService>(implementation: TService): EntityFrameworkServicesBuilder;
+    TryAdd(serviceType: Type, implementation: unknown): EntityFrameworkServicesBuilder;
+    TryAddCoreServices(): EntityFrameworkServicesBuilder;
+    TryAddProviderSpecificServices(serviceMap: Action<ServiceCollectionMap>): EntityFrameworkServicesBuilder;
 }
 
 
 export const EntityFrameworkServicesBuilder: {
     new(serviceCollection: IServiceCollection): EntityFrameworkServicesBuilder;
-    readonly coreServices: IDictionary<Type, ServiceCharacteristics>;
+    readonly CoreServices: IDictionary<Type, ServiceCharacteristics>;
 };
 
 
 export type EntityFrameworkServicesBuilder = EntityFrameworkServicesBuilder$instance;
 
 export interface IndentedStringBuilder$instance {
-    readonly indentCount: int;
-    readonly length: int;
-    append(value: string): IndentedStringBuilder;
-    append(value: FormattableString): IndentedStringBuilder;
-    append(value: char): IndentedStringBuilder;
-    append(value: IEnumerable<System_Internal.String>): IndentedStringBuilder;
-    append(value: IEnumerable<System_Internal.Char>): IndentedStringBuilder;
-    appendJoin(values: IEnumerable<System_Internal.String>, separator?: string): IndentedStringBuilder;
-    appendJoin(separator: string, ...values: string[]): IndentedStringBuilder;
-    appendLine(): IndentedStringBuilder;
-    appendLine(value: string): IndentedStringBuilder;
-    appendLine(value: FormattableString): IndentedStringBuilder;
-    appendLines(value: string, skipFinalNewline?: boolean): IndentedStringBuilder;
-    clear(): IndentedStringBuilder;
-    clone(): IndentedStringBuilder;
-    decrementIndent(): IndentedStringBuilder;
-    incrementIndent(): IndentedStringBuilder;
-    indent(): IDisposable;
-    suspendIndent(): IDisposable;
-    toString(): string;
+    readonly IndentCount: int;
+    readonly Length: int;
+    Append(value: string): IndentedStringBuilder;
+    Append(value: FormattableString): IndentedStringBuilder;
+    Append(value: char): IndentedStringBuilder;
+    Append(value: IEnumerable<System_Internal.String>): IndentedStringBuilder;
+    Append(value: IEnumerable<System_Internal.Char>): IndentedStringBuilder;
+    AppendJoin(values: IEnumerable<System_Internal.String>, separator?: string): IndentedStringBuilder;
+    AppendJoin(separator: string, ...values: string[]): IndentedStringBuilder;
+    AppendLine(): IndentedStringBuilder;
+    AppendLine(value: string): IndentedStringBuilder;
+    AppendLine(value: FormattableString): IndentedStringBuilder;
+    AppendLines(value: string, skipFinalNewline?: boolean): IndentedStringBuilder;
+    Clear(): IndentedStringBuilder;
+    Clone(): IndentedStringBuilder;
+    DecrementIndent(): IndentedStringBuilder;
+    IncrementIndent(): IndentedStringBuilder;
+    Indent(): IDisposable;
+    SuspendIndent(): IDisposable;
+    ToString(): string;
 }
 
 
@@ -674,8 +674,8 @@ export const IndentedStringBuilder: {
 export type IndentedStringBuilder = IndentedStringBuilder$instance;
 
 export interface ModelCacheKey$instance {
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
 }
 
 
@@ -688,8 +688,8 @@ export const ModelCacheKey: {
 export type ModelCacheKey = ModelCacheKey$instance;
 
 export interface ModelCacheKeyFactory$instance {
-    create(context: DbContext): unknown;
-    create(context: DbContext, designTime: boolean): unknown;
+    Create(context: DbContext): unknown;
+    Create(context: DbContext, designTime: boolean): unknown;
 }
 
 
@@ -707,10 +707,10 @@ export type ModelCacheKeyFactory = ModelCacheKeyFactory$instance & __ModelCacheK
 
 export interface ModelCacheKeyFactoryDependencies$instance {
     _Clone_$(): ModelCacheKeyFactoryDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ModelCacheKeyFactoryDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ModelCacheKeyFactoryDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -722,7 +722,7 @@ export const ModelCacheKeyFactoryDependencies: {
 export type ModelCacheKeyFactoryDependencies = ModelCacheKeyFactoryDependencies$instance;
 
 export interface ModelCustomizer$instance {
-    customize(modelBuilder: ModelBuilder, context: DbContext): void;
+    Customize(modelBuilder: ModelBuilder, context: DbContext): void;
 }
 
 
@@ -742,10 +742,10 @@ export type ModelCustomizer = ModelCustomizer$instance & __ModelCustomizer$views
 
 export interface ModelCustomizerDependencies$instance {
     _Clone_$(): ModelCustomizerDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ModelCustomizerDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ModelCustomizerDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -757,12 +757,12 @@ export const ModelCustomizerDependencies: {
 export type ModelCustomizerDependencies = ModelCustomizerDependencies$instance;
 
 export interface ModelDependencies$instance {
-    logger: IDiagnosticsLogger_1<DbLoggerCategory_Model>;
+    Logger: IDiagnosticsLogger_1<DbLoggerCategory_Model>;
     _Clone_$(): ModelDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ModelDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ModelDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -774,7 +774,7 @@ export const ModelDependencies: {
 export type ModelDependencies = ModelDependencies$instance;
 
 export interface ModelRuntimeInitializer$instance {
-    initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
+    Initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
 }
 
 
@@ -786,13 +786,13 @@ export const ModelRuntimeInitializer: {
 export type ModelRuntimeInitializer = ModelRuntimeInitializer$instance;
 
 export interface ModelRuntimeInitializerDependencies$instance {
-    modelDependencies: RuntimeModelDependencies;
-    modelValidator: IModelValidator;
+    ModelDependencies: RuntimeModelDependencies;
+    ModelValidator: IModelValidator;
     _Clone_$(): ModelRuntimeInitializerDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ModelRuntimeInitializerDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ModelRuntimeInitializerDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -804,7 +804,7 @@ export const ModelRuntimeInitializerDependencies: {
 export type ModelRuntimeInitializerDependencies = ModelRuntimeInitializerDependencies$instance;
 
 export interface ModelSnapshot$instance {
-    readonly model: IModel;
+    readonly Model: IModel;
 }
 
 
@@ -815,8 +815,8 @@ export const ModelSnapshot: {
 export type ModelSnapshot = ModelSnapshot$instance;
 
 export interface ModelSource$instance {
-    createModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
-    getModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
+    CreateModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
+    GetModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
 }
 
 
@@ -835,14 +835,14 @@ export type ModelSource = ModelSource$instance & __ModelSource$views;
 
 
 export interface ModelSourceDependencies$instance {
-    memoryCache: IMemoryCache;
-    modelCacheKeyFactory: IModelCacheKeyFactory;
-    modelCustomizer: IModelCustomizer;
+    MemoryCache: IMemoryCache;
+    ModelCacheKeyFactory: IModelCacheKeyFactory;
+    ModelCustomizer: IModelCustomizer;
     _Clone_$(): ModelSourceDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ModelSourceDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ModelSourceDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -854,7 +854,7 @@ export const ModelSourceDependencies: {
 export type ModelSourceDependencies = ModelSourceDependencies$instance;
 
 export interface ModelValidator$instance {
-    validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
 }
 
 
@@ -873,12 +873,12 @@ export type ModelValidator = ModelValidator$instance & __ModelValidator$views;
 
 
 export interface ModelValidatorDependencies$instance {
-    memberClassifier: IMemberClassifier;
+    MemberClassifier: IMemberClassifier;
     _Clone_$(): ModelValidatorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ModelValidatorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ModelValidatorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -890,8 +890,8 @@ export const ModelValidatorDependencies: {
 export type ModelValidatorDependencies = ModelValidatorDependencies$instance;
 
 export interface PooledDbContextFactory_1$instance<TContext extends DbContext> {
-    createDbContext(): TContext;
-    createDbContextAsync(cancellationToken?: CancellationToken): Task<TContext>;
+    CreateDbContext(): TContext;
+    CreateDbContextAsync(cancellationToken?: CancellationToken): Task<TContext>;
 }
 
 
@@ -911,21 +911,21 @@ export type PooledDbContextFactory_1<TContext extends DbContext> = PooledDbConte
 
 
 export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> {
-    commandTimeout(commandTimeout: Nullable<System_Internal.Int32>): TBuilder;
-    equals(obj: unknown): boolean;
-    executionStrategy(getExecutionStrategy: Func<ExecutionStrategyDependencies, IExecutionStrategy>): TBuilder;
-    getHashCode(): int;
-    maxBatchSize(maxBatchSize: int): TBuilder;
-    migrationsAssembly(assemblyName: string): TBuilder;
-    migrationsAssembly(assembly: Assembly): TBuilder;
-    migrationsHistoryTable(tableName: string, schema?: string): TBuilder;
-    minBatchSize(minBatchSize: int): TBuilder;
-    toString(): string | undefined;
-    translateParameterizedCollectionsToConstants(): TBuilder;
-    translateParameterizedCollectionsToParameters(): TBuilder;
-    useParameterizedCollectionMode(parameterizedCollectionMode: ParameterTranslationMode): TBuilder;
-    useQuerySplittingBehavior(querySplittingBehavior: QuerySplittingBehavior): TBuilder;
-    useRelationalNulls(useRelationalNulls?: boolean): TBuilder;
+    CommandTimeout(commandTimeout: Nullable<System_Internal.Int32>): TBuilder;
+    Equals(obj: unknown): boolean;
+    ExecutionStrategy(getExecutionStrategy: Func<ExecutionStrategyDependencies, IExecutionStrategy>): TBuilder;
+    GetHashCode(): int;
+    MaxBatchSize(maxBatchSize: int): TBuilder;
+    MigrationsAssembly(assemblyName: string): TBuilder;
+    MigrationsAssembly(assembly: Assembly): TBuilder;
+    MigrationsHistoryTable(tableName: string, schema?: string): TBuilder;
+    MinBatchSize(minBatchSize: int): TBuilder;
+    ToString(): string | undefined;
+    TranslateParameterizedCollectionsToConstants(): TBuilder;
+    TranslateParameterizedCollectionsToParameters(): TBuilder;
+    UseParameterizedCollectionMode(parameterizedCollectionMode: ParameterTranslationMode): TBuilder;
+    UseQuerySplittingBehavior(querySplittingBehavior: QuerySplittingBehavior): TBuilder;
+    UseRelationalNulls(useRelationalNulls?: boolean): TBuilder;
 }
 
 
@@ -943,7 +943,7 @@ export type RelationalDbContextOptionsBuilder_2<TBuilder extends RelationalDbCon
 
 
 export interface RelationalModelCustomizer$instance extends ModelCustomizer$instance {
-    customize(modelBuilder: ModelBuilder, context: DbContext): void;
+    Customize(modelBuilder: ModelBuilder, context: DbContext): void;
 }
 
 
@@ -960,15 +960,15 @@ export type RelationalModelCustomizer = RelationalModelCustomizer$instance & __R
 
 
 export interface RelationalModelDependencies$instance {
-    rowForeignKeyValueFactoryFactory: IRowForeignKeyValueFactoryFactory;
-    rowIndexValueFactoryFactory: IRowIndexValueFactoryFactory;
-    rowKeyValueFactoryFactory: IRowKeyValueFactoryFactory;
-    valueConverterSelector: IValueConverterSelector;
+    RowForeignKeyValueFactoryFactory: IRowForeignKeyValueFactoryFactory;
+    RowIndexValueFactoryFactory: IRowIndexValueFactoryFactory;
+    RowKeyValueFactoryFactory: IRowKeyValueFactoryFactory;
+    ValueConverterSelector: IValueConverterSelector;
     _Clone_$(): RelationalModelDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalModelDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalModelDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -980,7 +980,7 @@ export const RelationalModelDependencies: {
 export type RelationalModelDependencies = RelationalModelDependencies$instance;
 
 export interface RelationalModelRuntimeInitializer$instance extends ModelRuntimeInitializer {
-    initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
+    Initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
 }
 
 
@@ -997,13 +997,13 @@ export type RelationalModelRuntimeInitializer = RelationalModelRuntimeInitialize
 
 
 export interface RelationalModelRuntimeInitializerDependencies$instance {
-    relationalAnnotationProvider: IRelationalAnnotationProvider;
-    relationalModelDependencies: RelationalModelDependencies;
+    RelationalAnnotationProvider: IRelationalAnnotationProvider;
+    RelationalModelDependencies: RelationalModelDependencies;
     _Clone_$(): RelationalModelRuntimeInitializerDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalModelRuntimeInitializerDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalModelRuntimeInitializerDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1015,8 +1015,8 @@ export const RelationalModelRuntimeInitializerDependencies: {
 export type RelationalModelRuntimeInitializerDependencies = RelationalModelRuntimeInitializerDependencies$instance;
 
 export interface RelationalModelValidator$instance extends ModelValidator$instance {
-    validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
 }
 
 
@@ -1033,12 +1033,12 @@ export type RelationalModelValidator = RelationalModelValidator$instance & __Rel
 
 
 export interface RelationalModelValidatorDependencies$instance {
-    typeMappingSource: IRelationalTypeMappingSource;
+    TypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): RelationalModelValidatorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalModelValidatorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalModelValidatorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1050,43 +1050,43 @@ export const RelationalModelValidatorDependencies: {
 export type RelationalModelValidatorDependencies = RelationalModelValidatorDependencies$instance;
 
 export interface RelationalOptionsExtension$instance {
-    readonly commandTimeout: Nullable<System_Internal.Int32>;
-    readonly connection: DbConnection;
-    readonly connectionString: string | undefined;
-    readonly executionStrategyFactory: Func<ExecutionStrategyDependencies, IExecutionStrategy>;
-    readonly info: DbContextOptionsExtensionInfo;
-    readonly isConnectionOwned: boolean;
-    readonly maxBatchSize: Nullable<System_Internal.Int32>;
-    readonly migrationsAssembly: string;
-    readonly migrationsAssemblyObject: Assembly | undefined;
-    readonly migrationsHistoryTableName: string | undefined;
-    readonly migrationsHistoryTableSchema: string | undefined;
-    readonly minBatchSize: Nullable<System_Internal.Int32>;
-    readonly parameterizedCollectionMode: ParameterTranslationMode;
-    readonly querySplittingBehavior: Nullable<QuerySplittingBehavior>;
-    readonly useRelationalNulls: boolean;
-    applyServices(services: IServiceCollection): void;
-    validate(options: IDbContextOptions): void;
-    withCommandTimeout(commandTimeout: Nullable<System_Internal.Int32>): RelationalOptionsExtension;
-    withConnection(connection: DbConnection): RelationalOptionsExtension;
-    withConnection(connection: DbConnection, owned: boolean): RelationalOptionsExtension;
-    withConnectionString(connectionString: string): RelationalOptionsExtension;
-    withExecutionStrategyFactory(executionStrategyFactory: Func<ExecutionStrategyDependencies, IExecutionStrategy>): RelationalOptionsExtension;
-    withMaxBatchSize(maxBatchSize: Nullable<System_Internal.Int32>): RelationalOptionsExtension;
-    withMigrationsAssembly(migrationsAssembly: string): RelationalOptionsExtension;
-    withMigrationsAssembly(migrationsAssembly: Assembly): RelationalOptionsExtension;
-    withMigrationsHistoryTableName(migrationsHistoryTableName: string): RelationalOptionsExtension;
-    withMigrationsHistoryTableSchema(migrationsHistoryTableSchema: string): RelationalOptionsExtension;
-    withMinBatchSize(minBatchSize: Nullable<System_Internal.Int32>): RelationalOptionsExtension;
-    withUseParameterizedCollectionMode(parameterizedCollectionMode: ParameterTranslationMode): RelationalOptionsExtension;
-    withUseQuerySplittingBehavior(querySplittingBehavior: QuerySplittingBehavior): RelationalOptionsExtension;
-    withUseRelationalNulls(useRelationalNulls: boolean): RelationalOptionsExtension;
+    readonly CommandTimeout: Nullable<System_Internal.Int32>;
+    readonly Connection: DbConnection;
+    readonly ConnectionString: string | undefined;
+    readonly ExecutionStrategyFactory: Func<ExecutionStrategyDependencies, IExecutionStrategy>;
+    readonly Info: DbContextOptionsExtensionInfo;
+    readonly IsConnectionOwned: boolean;
+    readonly MaxBatchSize: Nullable<System_Internal.Int32>;
+    readonly MigrationsAssembly: string;
+    readonly MigrationsAssemblyObject: Assembly | undefined;
+    readonly MigrationsHistoryTableName: string | undefined;
+    readonly MigrationsHistoryTableSchema: string | undefined;
+    readonly MinBatchSize: Nullable<System_Internal.Int32>;
+    readonly ParameterizedCollectionMode: ParameterTranslationMode;
+    readonly QuerySplittingBehavior: Nullable<QuerySplittingBehavior>;
+    readonly UseRelationalNulls: boolean;
+    ApplyServices(services: IServiceCollection): void;
+    Validate(options: IDbContextOptions): void;
+    WithCommandTimeout(commandTimeout: Nullable<System_Internal.Int32>): RelationalOptionsExtension;
+    WithConnection(connection: DbConnection): RelationalOptionsExtension;
+    WithConnection(connection: DbConnection, owned: boolean): RelationalOptionsExtension;
+    WithConnectionString(connectionString: string): RelationalOptionsExtension;
+    WithExecutionStrategyFactory(executionStrategyFactory: Func<ExecutionStrategyDependencies, IExecutionStrategy>): RelationalOptionsExtension;
+    WithMaxBatchSize(maxBatchSize: Nullable<System_Internal.Int32>): RelationalOptionsExtension;
+    WithMigrationsAssembly(migrationsAssembly: string): RelationalOptionsExtension;
+    WithMigrationsAssembly(migrationsAssembly: Assembly): RelationalOptionsExtension;
+    WithMigrationsHistoryTableName(migrationsHistoryTableName: string): RelationalOptionsExtension;
+    WithMigrationsHistoryTableSchema(migrationsHistoryTableSchema: string): RelationalOptionsExtension;
+    WithMinBatchSize(minBatchSize: Nullable<System_Internal.Int32>): RelationalOptionsExtension;
+    WithUseParameterizedCollectionMode(parameterizedCollectionMode: ParameterTranslationMode): RelationalOptionsExtension;
+    WithUseQuerySplittingBehavior(querySplittingBehavior: QuerySplittingBehavior): RelationalOptionsExtension;
+    WithUseRelationalNulls(useRelationalNulls: boolean): RelationalOptionsExtension;
 }
 
 
 export const RelationalOptionsExtension: {
-    extract(options: IDbContextOptions): RelationalOptionsExtension;
-    withDefaultWarningConfiguration(coreOptionsExtension: CoreOptionsExtension): CoreOptionsExtension;
+    Extract(options: IDbContextOptions): RelationalOptionsExtension;
+    WithDefaultWarningConfiguration(coreOptionsExtension: CoreOptionsExtension): CoreOptionsExtension;
 };
 
 
@@ -1100,23 +1100,23 @@ export type RelationalOptionsExtension = RelationalOptionsExtension$instance & _
 
 
 export interface RuntimeAnnotatableBase$instance {
-    get item(): unknown | undefined;
-    set item(value: unknown);
-    addAnnotation(name: string, value: unknown): Annotation;
-    addAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    addAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
-    addRuntimeAnnotation(name: string, value: unknown): Annotation;
-    addRuntimeAnnotations(annotations: IEnumerable<Annotation>): void;
-    addRuntimeAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
-    findAnnotation(name: string): Annotation | undefined;
-    findRuntimeAnnotation(name: string): Annotation | undefined;
-    getAnnotation(annotationName: string): Annotation;
-    getOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    getRuntimeAnnotations(): IEnumerable<Annotation>;
-    removeAnnotation(name: string): Annotation | undefined;
-    removeRuntimeAnnotation(name: string): Annotation | undefined;
-    setAnnotation(name: string, value: unknown): void;
-    setRuntimeAnnotation(name: string, value: unknown): Annotation;
+    get Item(): unknown | undefined;
+    set Item(value: unknown);
+    AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotations(annotations: IEnumerable<Annotation>): void;
+    AddRuntimeAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    FindAnnotation(name: string): Annotation | undefined;
+    FindRuntimeAnnotation(name: string): Annotation | undefined;
+    GetAnnotation(annotationName: string): Annotation;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable<Annotation>;
+    RemoveAnnotation(name: string): Annotation | undefined;
+    RemoveRuntimeAnnotation(name: string): Annotation | undefined;
+    SetAnnotation(name: string, value: unknown): void;
+    SetRuntimeAnnotation(name: string, value: unknown): Annotation;
 }
 
 
@@ -1134,14 +1134,14 @@ export type RuntimeAnnotatableBase = RuntimeAnnotatableBase$instance & __Runtime
 
 
 export interface RuntimeModelDependencies$instance {
-    constructorBindingFactory: IConstructorBindingFactory;
-    parameterBindingFactories: IParameterBindingFactories;
-    typeMappingSource: ITypeMappingSource;
+    ConstructorBindingFactory: IConstructorBindingFactory;
+    ParameterBindingFactories: IParameterBindingFactories;
+    TypeMappingSource: ITypeMappingSource;
     _Clone_$(): RuntimeModelDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RuntimeModelDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RuntimeModelDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1153,36 +1153,36 @@ export const RuntimeModelDependencies: {
 export type RuntimeModelDependencies = RuntimeModelDependencies$instance;
 
 export interface ServiceCollectionMap$instance {
-    readonly serviceCollection: IServiceCollection;
-    tryAdd(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
-    tryAdd(serviceType: Type, factory: Func<IServiceProvider, unknown>, lifetime: ServiceLifetime): ServiceCollectionMap;
-    tryAddEnumerable(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
-    tryAddEnumerable(serviceType: Type, implementationType: Type, factory: Func<IServiceProvider, unknown>, lifetime: ServiceLifetime): ServiceCollectionMap;
-    tryAddScoped<TService, TImplementation extends TService>(): ServiceCollectionMap;
-    tryAddScoped(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    tryAddScoped<TService>(factory: Func<IServiceProvider, TService>): ServiceCollectionMap;
-    tryAddScoped(serviceType: Type, factory: Func<IServiceProvider, unknown>): ServiceCollectionMap;
-    tryAddScopedEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
-    tryAddScopedEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    tryAddScopedEnumerable<TService, TImplementation extends TService>(factory: Func<IServiceProvider, TImplementation>): ServiceCollectionMap;
-    tryAddSingleton<TService, TImplementation extends TService>(): ServiceCollectionMap;
-    tryAddSingleton(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    tryAddSingleton<TService>(factory: Func<IServiceProvider, TService>): ServiceCollectionMap;
-    tryAddSingleton(serviceType: Type, factory: Func<IServiceProvider, unknown>): ServiceCollectionMap;
-    tryAddSingleton<TService>(implementation: TService): ServiceCollectionMap;
-    tryAddSingleton(serviceType: Type, implementation: unknown): ServiceCollectionMap;
-    tryAddSingletonEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
-    tryAddSingletonEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    tryAddSingletonEnumerable<TService, TImplementation extends TService>(factory: Func<IServiceProvider, TImplementation>): ServiceCollectionMap;
-    tryAddSingletonEnumerable<TService>(implementation: TService): ServiceCollectionMap;
-    tryAddSingletonEnumerable(serviceType: Type, implementation: unknown): ServiceCollectionMap;
-    tryAddTransient<TService, TImplementation extends TService>(): ServiceCollectionMap;
-    tryAddTransient(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    tryAddTransient<TService>(factory: Func<IServiceProvider, TService>): ServiceCollectionMap;
-    tryAddTransient(serviceType: Type, factory: Func<IServiceProvider, unknown>): ServiceCollectionMap;
-    tryAddTransientEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
-    tryAddTransientEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    tryAddTransientEnumerable<TService, TImplementation extends TService>(factory: Func<IServiceProvider, TImplementation>): ServiceCollectionMap;
+    readonly ServiceCollection: IServiceCollection;
+    TryAdd(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
+    TryAdd(serviceType: Type, factory: Func<IServiceProvider, unknown>, lifetime: ServiceLifetime): ServiceCollectionMap;
+    TryAddEnumerable(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
+    TryAddEnumerable(serviceType: Type, implementationType: Type, factory: Func<IServiceProvider, unknown>, lifetime: ServiceLifetime): ServiceCollectionMap;
+    TryAddScoped<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddScoped(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddScoped<TService>(factory: Func<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddScoped(serviceType: Type, factory: Func<IServiceProvider, unknown>): ServiceCollectionMap;
+    TryAddScopedEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddScopedEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddScopedEnumerable<TService, TImplementation extends TService>(factory: Func<IServiceProvider, TImplementation>): ServiceCollectionMap;
+    TryAddSingleton<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddSingleton(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddSingleton<TService>(factory: Func<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddSingleton(serviceType: Type, factory: Func<IServiceProvider, unknown>): ServiceCollectionMap;
+    TryAddSingleton<TService>(implementation: TService): ServiceCollectionMap;
+    TryAddSingleton(serviceType: Type, implementation: unknown): ServiceCollectionMap;
+    TryAddSingletonEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddSingletonEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddSingletonEnumerable<TService, TImplementation extends TService>(factory: Func<IServiceProvider, TImplementation>): ServiceCollectionMap;
+    TryAddSingletonEnumerable<TService>(implementation: TService): ServiceCollectionMap;
+    TryAddSingletonEnumerable(serviceType: Type, implementation: unknown): ServiceCollectionMap;
+    TryAddTransient<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddTransient(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddTransient<TService>(factory: Func<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddTransient(serviceType: Type, factory: Func<IServiceProvider, unknown>): ServiceCollectionMap;
+    TryAddTransientEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddTransientEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddTransientEnumerable<TService, TImplementation extends TService>(factory: Func<IServiceProvider, TImplementation>): ServiceCollectionMap;
 }
 
 
@@ -1201,7 +1201,7 @@ export type ServiceCollectionMap = ServiceCollectionMap$instance & __ServiceColl
 
 
 export interface ServiceProviderAccessor$instance {
-    readonly rootServiceProvider: IServiceProvider;
+    readonly RootServiceProvider: IServiceProvider;
 }
 
 
@@ -1213,102 +1213,102 @@ export const ServiceProviderAccessor: {
 export type ServiceProviderAccessor = ServiceProviderAccessor$instance;
 
 export abstract class AccessorExtensions$instance {
-    static getInfrastructure<T>(accessor: IInfrastructure_1<T>): T;
-    static getService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): unknown;
-    static getService<TService>(accessor: IInfrastructure_1<IServiceProvider>): TService;
+    static GetInfrastructure<T>(accessor: IInfrastructure_1<T>): T;
+    static GetService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): unknown;
+    static GetService<TService>(accessor: IInfrastructure_1<IServiceProvider>): TService;
 }
 
 
 export type AccessorExtensions = AccessorExtensions$instance;
 
 export abstract class EntityFrameworkMetricsData$instance {
-    static reportCompiledQueryCacheHit(): void;
-    static reportCompiledQueryCacheMiss(): void;
-    static reportDbContextDisposing(): void;
-    static reportDbContextInitializing(): void;
-    static reportExecutionStrategyOperationFailure(): void;
-    static reportOptimisticConcurrencyFailure(): void;
-    static reportQueryExecuting(): void;
-    static reportSavingChanges(): void;
+    static ReportCompiledQueryCacheHit(): void;
+    static ReportCompiledQueryCacheMiss(): void;
+    static ReportDbContextDisposing(): void;
+    static ReportDbContextInitializing(): void;
+    static ReportExecutionStrategyOperationFailure(): void;
+    static ReportOptimisticConcurrencyFailure(): void;
+    static ReportQueryExecuting(): void;
+    static ReportSavingChanges(): void;
 }
 
 
 export type EntityFrameworkMetricsData = EntityFrameworkMetricsData$instance;
 
 export abstract class ExpressionExtensions$instance {
-    static readonly valueBufferTryReadValueMethod: MethodInfo;
-    static assign(memberExpression: MemberExpression, valueExpression: Expression): Expression;
-    static createEFPropertyExpression(target: Expression, property: IPropertyBase, makeNullable?: boolean): Expression;
-    static createEFPropertyExpression(target: Expression, propertyDeclaringType: Type, propertyType: Type, propertyName: string, makeNullable: boolean): Expression;
-    static createEqualsExpression(left: Expression, right: Expression, negated?: boolean): Expression;
-    static createKeyValuesExpression(target: Expression, properties: IReadOnlyList<IProperty>, makeNullable?: boolean): Expression;
-    static createValueBufferReadValueExpression(valueBuffer: Expression, type: Type, index: int, property: IPropertyBase): Expression;
-    static getMemberAccess(memberAccessExpression: LambdaExpression): MemberInfo;
-    static getMemberAccessList(memberAccessExpression: LambdaExpression): IReadOnlyList<MemberInfo>;
-    static getPropertyAccess(propertyAccessExpression: LambdaExpression): PropertyInfo;
-    static getPropertyAccessList(propertyAccessExpression: LambdaExpression): IReadOnlyList<PropertyInfo>;
-    static isMemberAccess(expression: Expression, model: IModel, baseExpression: Expression, memberIdentity: MemberIdentity): boolean;
-    static isMemberAccess(expression: Expression, model: IModel, baseExpression: Expression): boolean;
-    static makeMemberAccess(expression: Expression, member: MemberInfo): MemberExpression;
-    static print(expression: Expression, characterLimit?: Nullable<System_Internal.Int32>): string;
-    static tryGetEFPropertyArguments(methodCallExpression: MethodCallExpression, entityExpression: Expression, propertyName: string): boolean;
-    static tryGetIndexerArguments(methodCallExpression: MethodCallExpression, model: IModel, entityExpression: Expression, propertyName: string): boolean;
+    static readonly ValueBufferTryReadValueMethod: MethodInfo;
+    static Assign(memberExpression: MemberExpression, valueExpression: Expression): Expression;
+    static CreateEFPropertyExpression(target: Expression, property: IPropertyBase, makeNullable?: boolean): Expression;
+    static CreateEFPropertyExpression(target: Expression, propertyDeclaringType: Type, propertyType: Type, propertyName: string, makeNullable: boolean): Expression;
+    static CreateEqualsExpression(left: Expression, right: Expression, negated?: boolean): Expression;
+    static CreateKeyValuesExpression(target: Expression, properties: IReadOnlyList<IProperty>, makeNullable?: boolean): Expression;
+    static CreateValueBufferReadValueExpression(valueBuffer: Expression, type: Type, index: int, property: IPropertyBase): Expression;
+    static GetMemberAccess(memberAccessExpression: LambdaExpression): MemberInfo;
+    static GetMemberAccessList(memberAccessExpression: LambdaExpression): IReadOnlyList<MemberInfo>;
+    static GetPropertyAccess(propertyAccessExpression: LambdaExpression): PropertyInfo;
+    static GetPropertyAccessList(propertyAccessExpression: LambdaExpression): IReadOnlyList<PropertyInfo>;
+    static IsMemberAccess(expression: Expression, model: IModel, baseExpression: Expression, memberIdentity: MemberIdentity): boolean;
+    static IsMemberAccess(expression: Expression, model: IModel, baseExpression: Expression): boolean;
+    static MakeMemberAccess(expression: Expression, member: MemberInfo): MemberExpression;
+    static Print(expression: Expression, characterLimit?: Nullable<System_Internal.Int32>): string;
+    static TryGetEFPropertyArguments(methodCallExpression: MethodCallExpression, entityExpression: Expression, propertyName: string): boolean;
+    static TryGetIndexerArguments(methodCallExpression: MethodCallExpression, model: IModel, entityExpression: Expression, propertyName: string): boolean;
 }
 
 
 export type ExpressionExtensions = ExpressionExtensions$instance;
 
 export abstract class LazyLoaderExtensions$instance {
-    static load<TRelated>(loader: ILazyLoader, entity: unknown, navigationField: TRelated, navigationName?: string): TRelated | undefined;
+    static Load<TRelated>(loader: ILazyLoader, entity: unknown, navigationField: TRelated, navigationName?: string): TRelated | undefined;
 }
 
 
 export type LazyLoaderExtensions = LazyLoaderExtensions$instance;
 
 export abstract class MethodInfoExtensions$instance {
-    static isEFPropertyMethod(methodInfo: MethodInfo): boolean;
+    static IsEFPropertyMethod(methodInfo: MethodInfo): boolean;
 }
 
 
 export type MethodInfoExtensions = MethodInfoExtensions$instance;
 
 export abstract class ProductInfo$instance {
-    static getVersion(): string;
+    static GetVersion(): string;
 }
 
 
 export type ProductInfo = ProductInfo$instance;
 
 export abstract class RelationalModelExtensions$instance {
-    static getRelationalDependencies(model: IModel, methodName?: string): RelationalModelDependencies;
+    static GetRelationalDependencies(model: IModel, methodName?: string): RelationalModelDependencies;
 }
 
 
 export type RelationalModelExtensions = RelationalModelExtensions$instance;
 
 export abstract class RelationalPropertyExtensions$instance {
-    static formatColumns(properties: IEnumerable<IReadOnlyProperty>, storeObject: StoreObjectIdentifier): string;
-    static getColumnNames(properties: IEnumerable<IReadOnlyProperty>, storeObject: StoreObjectIdentifier): IReadOnlyList<System_Internal.String> | undefined;
+    static FormatColumns(properties: IEnumerable<IReadOnlyProperty>, storeObject: StoreObjectIdentifier): string;
+    static GetColumnNames(properties: IEnumerable<IReadOnlyProperty>, storeObject: StoreObjectIdentifier): IReadOnlyList<System_Internal.String> | undefined;
 }
 
 
 export type RelationalPropertyExtensions = RelationalPropertyExtensions$instance;
 
 export abstract class TypeExtensions$instance {
-    static shortDisplayName(type: Type): string;
+    static ShortDisplayName(type: Type): string;
 }
 
 
 export type TypeExtensions = TypeExtensions$instance;
 
 export abstract class Uniquifier$instance {
-    static truncate(identifier: string, maxLength: int, uniquifier?: Nullable<System_Internal.Int32>): string;
-    static truncate(identifier: string, maxLength: int, suffix: string, uniquifier?: Nullable<System_Internal.Int32>): string;
-    static uniquify<TKey, TValue>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary<TKey, TValue>, keySelector: Func<System_Internal.String, TKey>, maxLength: int): string;
-    static uniquify<TKey, TValue>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary<TKey, TValue>, keySelector: Func<System_Internal.String, TKey>, suffix: string, maxLength: int): string;
-    static uniquify<T>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary<System_Internal.String, T>, maxLength: int): string;
-    static uniquify<T>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary<System_Internal.String, T>, suffix: string, maxLength: int): string;
-    static uniquify(currentIdentifier: string, otherIdentifiers: ISet<System_Internal.String>, suffix: string, maxLength: int): string;
+    static Truncate(identifier: string, maxLength: int, uniquifier?: Nullable<System_Internal.Int32>): string;
+    static Truncate(identifier: string, maxLength: int, suffix: string, uniquifier?: Nullable<System_Internal.Int32>): string;
+    static Uniquify<TKey, TValue>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary<TKey, TValue>, keySelector: Func<System_Internal.String, TKey>, maxLength: int): string;
+    static Uniquify<TKey, TValue>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary<TKey, TValue>, keySelector: Func<System_Internal.String, TKey>, suffix: string, maxLength: int): string;
+    static Uniquify<T>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary<System_Internal.String, T>, maxLength: int): string;
+    static Uniquify<T>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary<System_Internal.String, T>, suffix: string, maxLength: int): string;
+    static Uniquify(currentIdentifier: string, otherIdentifiers: ISet<System_Internal.String>, suffix: string, maxLength: int): string;
 }
 
 

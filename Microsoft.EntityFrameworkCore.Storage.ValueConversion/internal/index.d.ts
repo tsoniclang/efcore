@@ -24,17 +24,17 @@ import type { PhysicalAddress } from "@tsonic/dotnet/System.Net.NetworkInformati
 import type { Encoding } from "@tsonic/dotnet/System.Text.js";
 
 export interface IValueConverterSelector$instance {
-    select(modelClrType: Type, providerClrType?: Type): IEnumerable<ValueConverterInfo>;
+    Select(modelClrType: Type, providerClrType?: Type): IEnumerable<ValueConverterInfo>;
 }
 
 
 export type IValueConverterSelector = IValueConverterSelector$instance;
 
 export interface ValueConverterInfo$instance {
-    readonly mappingHints: ConverterMappingHints | undefined;
-    readonly modelClrType: Type;
-    readonly providerClrType: Type;
-    create(): ValueConverter;
+    readonly MappingHints: ConverterMappingHints | undefined;
+    readonly ModelClrType: Type;
+    readonly ProviderClrType: Type;
+    Create(): ValueConverter;
 }
 
 
@@ -51,7 +51,7 @@ export interface BoolToStringConverter$instance extends BoolToTwoValuesConverter
 
 export const BoolToStringConverter: {
     new(falseValue: string, trueValue: string, mappingHints: ConverterMappingHints): BoolToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -75,7 +75,7 @@ export interface BoolToZeroOneConverter_1$instance<TProvider> extends BoolToTwoV
 export const BoolToZeroOneConverter_1: {
     new<TProvider>(): BoolToZeroOneConverter_1<TProvider>;
     new<TProvider>(mappingHints: ConverterMappingHints): BoolToZeroOneConverter_1<TProvider>;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -88,7 +88,7 @@ export interface BytesToStringConverter$instance extends ValueConverter_2<byte[]
 export const BytesToStringConverter: {
     new(): BytesToStringConverter;
     new(mappingHints: ConverterMappingHints): BytesToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -101,7 +101,7 @@ export interface CastingConverter_2$instance<TModel, TProvider> extends ValueCon
 export const CastingConverter_2: {
     new<TModel, TProvider>(): CastingConverter_2<TModel, TProvider>;
     new<TModel, TProvider>(mappingHints: ConverterMappingHints): CastingConverter_2<TModel, TProvider>;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -114,14 +114,14 @@ export interface CharToStringConverter$instance extends StringCharConverter_2<Sy
 export const CharToStringConverter: {
     new(): CharToStringConverter;
     new(mappingHints: ConverterMappingHints): CharToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
 export type CharToStringConverter = CharToStringConverter$instance;
 
 export interface CollectionToJsonStringConverter_1$instance<TElement> extends ValueConverter_2<IEnumerable<TElement>, System_Internal.String> {
-    readonly jsonReaderWriter: JsonValueReaderWriter;
+    readonly JsonReaderWriter: JsonValueReaderWriter;
 }
 
 
@@ -133,13 +133,13 @@ export const CollectionToJsonStringConverter_1: {
 export type CollectionToJsonStringConverter_1<TElement> = CollectionToJsonStringConverter_1$instance<TElement>;
 
 export interface ConverterMappingHints$instance {
-    readonly isUnicode: Nullable<System_Internal.Boolean>;
-    readonly precision: Nullable<System_Internal.Int32>;
-    readonly scale: Nullable<System_Internal.Int32>;
-    readonly size: Nullable<System_Internal.Int32>;
-    readonly valueGeneratorFactory: Func<IProperty, IEntityType, ValueGenerator> | undefined;
-    overrideWith(hints: ConverterMappingHints): ConverterMappingHints;
-    with(hints: ConverterMappingHints): ConverterMappingHints;
+    readonly IsUnicode: Nullable<System_Internal.Boolean>;
+    readonly Precision: Nullable<System_Internal.Int32>;
+    readonly Scale: Nullable<System_Internal.Int32>;
+    readonly Size: Nullable<System_Internal.Int32>;
+    readonly ValueGeneratorFactory: Func<IProperty, IEntityType, ValueGenerator> | undefined;
+    OverrideWith(hints: ConverterMappingHints): ConverterMappingHints;
+    With(hints: ConverterMappingHints): ConverterMappingHints;
 }
 
 
@@ -157,7 +157,7 @@ export interface DateOnlyToStringConverter$instance extends StringDateOnlyConver
 export const DateOnlyToStringConverter: {
     new(): DateOnlyToStringConverter;
     new(mappingHints: ConverterMappingHints): DateOnlyToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -170,9 +170,9 @@ export interface DateTimeOffsetToBinaryConverter$instance extends ValueConverter
 export const DateTimeOffsetToBinaryConverter: {
     new(): DateTimeOffsetToBinaryConverter;
     new(mappingHints: ConverterMappingHints): DateTimeOffsetToBinaryConverter;
-    readonly defaultInfo: ValueConverterInfo;
-    toDateTimeOffset(v: long): DateTimeOffset;
-    toLong(v: DateTimeOffset): long;
+    readonly DefaultInfo: ValueConverterInfo;
+    ToDateTimeOffset(v: long): DateTimeOffset;
+    ToLong(v: DateTimeOffset): long;
 };
 
 
@@ -185,9 +185,9 @@ export interface DateTimeOffsetToBytesConverter$instance extends ValueConverter_
 export const DateTimeOffsetToBytesConverter: {
     new(): DateTimeOffsetToBytesConverter;
     new(mappingHints: ConverterMappingHints): DateTimeOffsetToBytesConverter;
-    readonly defaultInfo: ValueConverterInfo;
-    fromBytes(bytes: byte[]): DateTimeOffset;
-    toBytes(value: DateTimeOffset): byte[];
+    readonly DefaultInfo: ValueConverterInfo;
+    FromBytes(bytes: byte[]): DateTimeOffset;
+    ToBytes(value: DateTimeOffset): byte[];
 };
 
 
@@ -200,7 +200,7 @@ export interface DateTimeOffsetToStringConverter$instance extends StringDateTime
 export const DateTimeOffsetToStringConverter: {
     new(): DateTimeOffsetToStringConverter;
     new(mappingHints: ConverterMappingHints): DateTimeOffsetToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -213,7 +213,7 @@ export interface DateTimeToBinaryConverter$instance extends ValueConverter_2<Dat
 export const DateTimeToBinaryConverter: {
     new(): DateTimeToBinaryConverter;
     new(mappingHints: ConverterMappingHints): DateTimeToBinaryConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -226,7 +226,7 @@ export interface DateTimeToStringConverter$instance extends StringDateTimeConver
 export const DateTimeToStringConverter: {
     new(): DateTimeToStringConverter;
     new(mappingHints: ConverterMappingHints): DateTimeToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -251,7 +251,7 @@ export interface EnumToNumberConverter_2$instance<TEnum extends number, TNumber 
 export const EnumToNumberConverter_2: {
     new<TEnum extends number, TNumber extends unknown>(): EnumToNumberConverter_2<TEnum, TNumber>;
     new<TEnum extends number, TNumber extends unknown>(mappingHints: ConverterMappingHints): EnumToNumberConverter_2<TEnum, TNumber>;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -264,7 +264,7 @@ export interface EnumToStringConverter_1$instance<TEnum extends number> extends 
 export const EnumToStringConverter_1: {
     new<TEnum extends number>(): EnumToStringConverter_1<TEnum>;
     new<TEnum extends number>(mappingHints: ConverterMappingHints): EnumToStringConverter_1<TEnum>;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -277,7 +277,7 @@ export interface GuidToBytesConverter$instance extends ValueConverter_2<Guid, by
 export const GuidToBytesConverter: {
     new(): GuidToBytesConverter;
     new(mappingHints: ConverterMappingHints): GuidToBytesConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -290,7 +290,7 @@ export interface GuidToStringConverter$instance extends StringGuidConverter_2<Gu
 export const GuidToStringConverter: {
     new(): GuidToStringConverter;
     new(mappingHints: ConverterMappingHints): GuidToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -303,7 +303,7 @@ export interface IPAddressToBytesConverter$instance extends ValueConverter_2<IPA
 export const IPAddressToBytesConverter: {
     new(): IPAddressToBytesConverter;
     new(mappingHints: ConverterMappingHints): IPAddressToBytesConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -316,7 +316,7 @@ export interface IPAddressToStringConverter$instance extends ValueConverter_2<IP
 export const IPAddressToStringConverter: {
     new(): IPAddressToStringConverter;
     new(mappingHints: ConverterMappingHints): IPAddressToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -329,14 +329,14 @@ export interface NumberToBytesConverter_1$instance<TNumber> extends ValueConvert
 export const NumberToBytesConverter_1: {
     new<TNumber>(): NumberToBytesConverter_1<TNumber>;
     new<TNumber>(mappingHints: ConverterMappingHints): NumberToBytesConverter_1<TNumber>;
-    readonly defaultInfo: ValueConverterInfo;
-    bytesToDecimal<TNumber>(bytes: byte[]): decimal;
-    decimalToBytes<TNumber>(value: decimal): byte[];
-    reverseInt<TNumber>(bytes: byte[]): byte[];
-    reverseLong<TNumber>(bytes: byte[]): byte[];
-    reverseShort<TNumber>(bytes: byte[]): byte[];
-    toBytes<TNumber>(): Expression<Func<TNumber, byte[]>>;
-    toNumber<TNumber>(): Expression<Func<byte[], TNumber>>;
+    readonly DefaultInfo: ValueConverterInfo;
+    BytesToDecimal<TNumber>(bytes: byte[]): decimal;
+    DecimalToBytes<TNumber>(value: decimal): byte[];
+    ReverseInt<TNumber>(bytes: byte[]): byte[];
+    ReverseLong<TNumber>(bytes: byte[]): byte[];
+    ReverseShort<TNumber>(bytes: byte[]): byte[];
+    ToBytes<TNumber>(): Expression<Func<TNumber, byte[]>>;
+    ToNumber<TNumber>(): Expression<Func<byte[], TNumber>>;
 };
 
 
@@ -349,7 +349,7 @@ export interface NumberToStringConverter_1$instance<TNumber> extends StringNumbe
 export const NumberToStringConverter_1: {
     new<TNumber>(): NumberToStringConverter_1<TNumber>;
     new<TNumber>(mappingHints: ConverterMappingHints): NumberToStringConverter_1<TNumber>;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -362,7 +362,7 @@ export interface PhysicalAddressToBytesConverter$instance extends ValueConverter
 export const PhysicalAddressToBytesConverter: {
     new(): PhysicalAddressToBytesConverter;
     new(mappingHints: ConverterMappingHints): PhysicalAddressToBytesConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -375,17 +375,17 @@ export interface PhysicalAddressToStringConverter$instance extends ValueConverte
 export const PhysicalAddressToStringConverter: {
     new(): PhysicalAddressToStringConverter;
     new(mappingHints: ConverterMappingHints): PhysicalAddressToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
 export type PhysicalAddressToStringConverter = PhysicalAddressToStringConverter$instance;
 
 export interface RelationalConverterMappingHints$instance extends ConverterMappingHints {
-    readonly dbType: Nullable<DbType>;
-    readonly isFixedLength: Nullable<System_Internal.Boolean>;
-    overrideWith(hints: ConverterMappingHints): ConverterMappingHints;
-    with(hints: ConverterMappingHints): ConverterMappingHints;
+    readonly DbType: Nullable<DbType>;
+    readonly IsFixedLength: Nullable<System_Internal.Boolean>;
+    OverrideWith(hints: ConverterMappingHints): ConverterMappingHints;
+    With(hints: ConverterMappingHints): ConverterMappingHints;
 }
 
 
@@ -404,7 +404,7 @@ export interface StringToBoolConverter$instance extends ValueConverter_2<System_
 export const StringToBoolConverter: {
     new(): StringToBoolConverter;
     new(mappingHints: ConverterMappingHints): StringToBoolConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -416,7 +416,7 @@ export interface StringToBytesConverter$instance extends ValueConverter_2<System
 
 export const StringToBytesConverter: {
     new(encoding: Encoding, mappingHints: ConverterMappingHints): StringToBytesConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -429,7 +429,7 @@ export interface StringToCharConverter$instance extends StringCharConverter_2<Sy
 export const StringToCharConverter: {
     new(): StringToCharConverter;
     new(mappingHints: ConverterMappingHints): StringToCharConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -442,7 +442,7 @@ export interface StringToDateOnlyConverter$instance extends StringDateOnlyConver
 export const StringToDateOnlyConverter: {
     new(): StringToDateOnlyConverter;
     new(mappingHints: ConverterMappingHints): StringToDateOnlyConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -455,7 +455,7 @@ export interface StringToDateTimeConverter$instance extends StringDateTimeConver
 export const StringToDateTimeConverter: {
     new(): StringToDateTimeConverter;
     new(mappingHints: ConverterMappingHints): StringToDateTimeConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -468,7 +468,7 @@ export interface StringToDateTimeOffsetConverter$instance extends StringDateTime
 export const StringToDateTimeOffsetConverter: {
     new(): StringToDateTimeOffsetConverter;
     new(mappingHints: ConverterMappingHints): StringToDateTimeOffsetConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -481,7 +481,7 @@ export interface StringToEnumConverter_1$instance<TEnum extends number> extends 
 export const StringToEnumConverter_1: {
     new<TEnum extends number>(): StringToEnumConverter_1<TEnum>;
     new<TEnum extends number>(mappingHints: ConverterMappingHints): StringToEnumConverter_1<TEnum>;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -494,7 +494,7 @@ export interface StringToGuidConverter$instance extends StringGuidConverter_2<Sy
 export const StringToGuidConverter: {
     new(): StringToGuidConverter;
     new(mappingHints: ConverterMappingHints): StringToGuidConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -507,7 +507,7 @@ export interface StringToNumberConverter_1$instance<TNumber> extends StringNumbe
 export const StringToNumberConverter_1: {
     new<TNumber>(): StringToNumberConverter_1<TNumber>;
     new<TNumber>(mappingHints: ConverterMappingHints): StringToNumberConverter_1<TNumber>;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -520,7 +520,7 @@ export interface StringToTimeOnlyConverter$instance extends StringTimeOnlyConver
 export const StringToTimeOnlyConverter: {
     new(): StringToTimeOnlyConverter;
     new(mappingHints: ConverterMappingHints): StringToTimeOnlyConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -533,7 +533,7 @@ export interface StringToTimeSpanConverter$instance extends StringTimeSpanConver
 export const StringToTimeSpanConverter: {
     new(): StringToTimeSpanConverter;
     new(mappingHints: ConverterMappingHints): StringToTimeSpanConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -546,7 +546,7 @@ export interface StringToUriConverter$instance extends StringUriConverter_2<Syst
 export const StringToUriConverter: {
     new(): StringToUriConverter;
     new(mappingHints: ConverterMappingHints): StringToUriConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -559,7 +559,7 @@ export interface TimeOnlyToStringConverter$instance extends StringTimeOnlyConver
 export const TimeOnlyToStringConverter: {
     new(): TimeOnlyToStringConverter;
     new(mappingHints: ConverterMappingHints): TimeOnlyToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -572,7 +572,7 @@ export interface TimeOnlyToTicksConverter$instance extends ValueConverter_2<Time
 export const TimeOnlyToTicksConverter: {
     new(): TimeOnlyToTicksConverter;
     new(mappingHints: ConverterMappingHints): TimeOnlyToTicksConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -585,7 +585,7 @@ export interface TimeSpanToStringConverter$instance extends StringTimeSpanConver
 export const TimeSpanToStringConverter: {
     new(): TimeSpanToStringConverter;
     new(mappingHints: ConverterMappingHints): TimeSpanToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -598,7 +598,7 @@ export interface TimeSpanToTicksConverter$instance extends ValueConverter_2<Time
 export const TimeSpanToTicksConverter: {
     new(): TimeSpanToTicksConverter;
     new(mappingHints: ConverterMappingHints): TimeSpanToTicksConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
@@ -611,23 +611,23 @@ export interface UriToStringConverter$instance extends StringUriConverter_2<Uri,
 export const UriToStringConverter: {
     new(): UriToStringConverter;
     new(mappingHints: ConverterMappingHints): UriToStringConverter;
-    readonly defaultInfo: ValueConverterInfo;
+    readonly DefaultInfo: ValueConverterInfo;
 };
 
 
 export type UriToStringConverter = UriToStringConverter$instance;
 
 export interface ValueConverter$instance {
-    readonly constructorExpression: Expression;
-    readonly convertFromProvider: Func<unknown | undefined, unknown | undefined>;
-    readonly convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>> | LambdaExpression;
-    readonly convertsNulls: boolean;
-    readonly convertToProvider: Func<unknown | undefined, unknown | undefined>;
-    readonly convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>> | LambdaExpression;
-    readonly mappingHints: ConverterMappingHints | undefined;
-    readonly modelClrType: Type;
-    readonly providerClrType: Type;
-    composeWith(secondConverter: ValueConverter): ValueConverter;
+    readonly ConstructorExpression: Expression;
+    readonly ConvertFromProvider: Func<unknown | undefined, unknown | undefined>;
+    readonly ConvertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>> | LambdaExpression;
+    readonly ConvertsNulls: boolean;
+    readonly ConvertToProvider: Func<unknown | undefined, unknown | undefined>;
+    readonly ConvertToProviderExpression: Expression_1<Func_2<TModel, TProvider>> | LambdaExpression;
+    readonly MappingHints: ConverterMappingHints | undefined;
+    readonly ModelClrType: Type;
+    readonly ProviderClrType: Type;
+    ComposeWith(secondConverter: ValueConverter): ValueConverter;
 }
 
 
@@ -638,15 +638,15 @@ export const ValueConverter: {
 export type ValueConverter = ValueConverter$instance;
 
 export interface ValueConverter_2$instance<TModel, TProvider> extends ValueConverter {
-    readonly constructorExpression: Expression;
-    readonly convertFromProvider: Func<unknown | undefined, unknown | undefined>;
-    readonly convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>> | LambdaExpression;
-    readonly convertFromProviderTyped: Func<TProvider, TModel>;
-    readonly convertToProvider: Func<unknown | undefined, unknown | undefined>;
-    readonly convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>> | LambdaExpression;
-    readonly convertToProviderTyped: Func<TModel, TProvider>;
-    readonly modelClrType: Type;
-    readonly providerClrType: Type;
+    readonly ConstructorExpression: Expression;
+    readonly ConvertFromProvider: Func<unknown | undefined, unknown | undefined>;
+    readonly ConvertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>> | LambdaExpression;
+    readonly ConvertFromProviderTyped: Func<TProvider, TModel>;
+    readonly ConvertToProvider: Func<unknown | undefined, unknown | undefined>;
+    readonly ConvertToProviderExpression: Expression_1<Func_2<TModel, TProvider>> | LambdaExpression;
+    readonly ConvertToProviderTyped: Func<TModel, TProvider>;
+    readonly ModelClrType: Type;
+    readonly ProviderClrType: Type;
 }
 
 
@@ -659,7 +659,7 @@ export const ValueConverter_2: {
 export type ValueConverter_2<TModel, TProvider> = ValueConverter_2$instance<TModel, TProvider>;
 
 export interface ValueConverterSelector$instance {
-    select(modelClrType: Type, providerClrType?: Type): IEnumerable<ValueConverterInfo>;
+    Select(modelClrType: Type, providerClrType?: Type): IEnumerable<ValueConverterInfo>;
 }
 
 
@@ -679,10 +679,10 @@ export type ValueConverterSelector = ValueConverterSelector$instance & __ValueCo
 
 export interface ValueConverterSelectorDependencies$instance {
     _Clone_$(): ValueConverterSelectorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ValueConverterSelectorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ValueConverterSelectorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 

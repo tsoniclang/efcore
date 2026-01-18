@@ -21,37 +21,37 @@ import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString, Type, ValueType, Void } from "@tsonic/dotnet/System.js";
 
 export interface ICSharpRuntimeAnnotationCodeGenerator$instance {
-    create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
-    create(typeMapping: CoreTypeMapping, property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
-    create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
+    Create(typeMapping: CoreTypeMapping, property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
+    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
 }
 
 
 export type ICSharpRuntimeAnnotationCodeGenerator = ICSharpRuntimeAnnotationCodeGenerator$instance;
 
 export interface QualifiedName$instance {
-    name: string;
-    namespace: string;
-    deconstruct(Name: string, Namespace: string): void;
-    equals(obj: unknown): boolean;
-    equals(other: QualifiedName): boolean;
-    getHashCode(): int;
-    toString(): string | undefined;
+    Name: string;
+    Namespace: string;
+    Deconstruct(Name: string, Namespace: string): void;
+    Equals(obj: unknown): boolean;
+    Equals(other: QualifiedName): boolean;
+    GetHashCode(): int;
+    ToString(): string | undefined;
 }
 
 
@@ -63,33 +63,33 @@ export const QualifiedName: {
 export type QualifiedName = QualifiedName$instance;
 
 export interface CSharpRuntimeAnnotationCodeGenerator$instance {
-    create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
-    generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
+    Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
 }
 
 
 export const CSharpRuntimeAnnotationCodeGenerator: {
     new(dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies): CSharpRuntimeAnnotationCodeGenerator;
-    addNamespace(type: Type, namespaces: ISet<System_Internal.String>): void;
-    create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
-    create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
-    createJsonValueReaderWriter(jsonValueReaderWriter: JsonValueReaderWriter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
-    createJsonValueReaderWriter(jsonValueReaderWriterType: Type, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
+    AddNamespace(type: Type, namespaces: ISet<System_Internal.String>): void;
+    Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
+    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
+    CreateJsonValueReaderWriter(jsonValueReaderWriter: JsonValueReaderWriter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
+    CreateJsonValueReaderWriter(jsonValueReaderWriterType: Type, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
 };
 
 
@@ -101,12 +101,12 @@ export type CSharpRuntimeAnnotationCodeGenerator = CSharpRuntimeAnnotationCodeGe
 
 
 export interface CSharpRuntimeAnnotationCodeGeneratorDependencies$instance {
-    cSharpHelper: ICSharpHelper;
+    CSharpHelper: ICSharpHelper;
     _Clone_$(): CSharpRuntimeAnnotationCodeGeneratorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: CSharpRuntimeAnnotationCodeGeneratorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: CSharpRuntimeAnnotationCodeGeneratorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -118,24 +118,24 @@ export const CSharpRuntimeAnnotationCodeGeneratorDependencies: {
 export type CSharpRuntimeAnnotationCodeGeneratorDependencies = CSharpRuntimeAnnotationCodeGeneratorDependencies$instance;
 
 export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
-    annotations: IDictionary<System_Internal.String, unknown | undefined>;
-    className: string;
-    configurationClassNames: IReadOnlyDictionary<ITypeBase, System_Internal.String>;
-    forNativeAot: boolean;
-    isRuntime: boolean;
-    mainBuilder: IndentedStringBuilder;
-    methodBuilder: IndentedStringBuilder;
-    namespace: string;
-    namespaces: ISet<System_Internal.String>;
-    scopeObjects: IDictionary<System_Internal.String, unknown>;
-    scopeVariables: IDictionary<unknown, System_Internal.String>;
-    targetName: string;
-    useNullableReferenceTypes: boolean;
+    Annotations: IDictionary<System_Internal.String, unknown | undefined>;
+    ClassName: string;
+    ConfigurationClassNames: IReadOnlyDictionary<ITypeBase, System_Internal.String>;
+    ForNativeAot: boolean;
+    IsRuntime: boolean;
+    MainBuilder: IndentedStringBuilder;
+    MethodBuilder: IndentedStringBuilder;
+    Namespace: string;
+    Namespaces: ISet<System_Internal.String>;
+    ScopeObjects: IDictionary<System_Internal.String, unknown>;
+    ScopeVariables: IDictionary<unknown, System_Internal.String>;
+    TargetName: string;
+    UseNullableReferenceTypes: boolean;
     _Clone_$(): CSharpRuntimeAnnotationCodeGeneratorParameters;
-    equals(obj: unknown): boolean;
-    equals(other: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -147,56 +147,56 @@ export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
 export type CSharpRuntimeAnnotationCodeGeneratorParameters = CSharpRuntimeAnnotationCodeGeneratorParameters$instance;
 
 export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends CSharpRuntimeAnnotationCodeGenerator$instance {
-    create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
-    create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    create(typeMapping: CoreTypeMapping, property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
-    generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(model: IRelationalModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(table: ITableBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(table: ITable, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(view: IView, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(sqlQuery: ISqlQuery, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(function_: IStoreFunction, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(storedProcedure: IStoreStoredProcedure, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(column: IColumnBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(column: IColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(column: IViewColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(column: ISqlQueryColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(column: IFunctionColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(parameter: IStoreFunctionParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(column: IStoreStoredProcedureResultColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(parameter: IStoreStoredProcedureParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(uniqueConstraint: IUniqueConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(index: ITableIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(foreignKey: IForeignKeyConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(tableMapping: ITableMappingBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(tableMapping: ITableMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(viewMapping: IViewMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(sqlQueryMapping: ISqlQueryMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(functionMapping: IFunctionMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(sprocMapping: IStoredProcedureMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(function_: IDbFunction, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(functionParameter: IDbFunctionParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(sequence: ISequence, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(fragment: IEntityTypeMappingFragment, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(storedProcedure: IStoredProcedure, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(storedProcedure: IStoredProcedureParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(storedProcedure: IStoredProcedureResultColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(overrides: IRelationalPropertyOverrides, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
+    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(typeMapping: CoreTypeMapping, property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
+    Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(model: IRelationalModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(table: ITableBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(table: ITable, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(view: IView, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(sqlQuery: ISqlQuery, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(function_: IStoreFunction, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(storedProcedure: IStoreStoredProcedure, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(column: IColumnBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(column: IColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(column: IViewColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(column: ISqlQueryColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(column: IFunctionColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(parameter: IStoreFunctionParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(column: IStoreStoredProcedureResultColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(parameter: IStoreStoredProcedureParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(uniqueConstraint: IUniqueConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(index: ITableIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(foreignKey: IForeignKeyConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(tableMapping: ITableMappingBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(tableMapping: ITableMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(viewMapping: IViewMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(sqlQueryMapping: ISqlQueryMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(functionMapping: IFunctionMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(sprocMapping: IStoredProcedureMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(function_: IDbFunction, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(functionParameter: IDbFunctionParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(sequence: ISequence, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(fragment: IEntityTypeMappingFragment, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(storedProcedure: IStoredProcedure, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(storedProcedure: IStoredProcedureParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(storedProcedure: IStoredProcedureResultColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(overrides: IRelationalPropertyOverrides, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
 }
 
 
@@ -214,10 +214,10 @@ export type RelationalCSharpRuntimeAnnotationCodeGenerator = RelationalCSharpRun
 
 export interface RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies$instance {
     _Clone_$(): RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 

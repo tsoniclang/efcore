@@ -38,85 +38,85 @@ import type { Task, ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
 import type { Transaction } from "@tsonic/dotnet/System.Transactions.js";
 
 export enum StoreTypePostfix {
-    none = 0,
-    size = 1,
-    precision = 2,
-    precisionAndScale = 3
+    None = 0,
+    Size = 1,
+    Precision = 2,
+    PrecisionAndScale = 3
 }
 
 
 export interface IDatabase$instance {
-    compileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
-    compileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
-    saveChanges(entries: IList<IUpdateEntry>): int;
-    saveChangesAsync(entries: IList<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+    CompileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
+    CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
+    SaveChanges(entries: IList<IUpdateEntry>): int;
+    SaveChangesAsync(entries: IList<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
 
 
 export type IDatabase = IDatabase$instance;
 
 export interface IDatabaseCreator$instance {
-    ensureDeleted(): boolean;
-    ensureDeletedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    EnsureDeleted(): boolean;
+    EnsureDeletedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
 }
 
 
 export type IDatabaseCreator = IDatabaseCreator$instance;
 
 export interface IDatabaseFacadeDependencies$instance {
-    readonly transactionManager: IDbContextTransactionManager;
-    readonly databaseCreator: IDatabaseCreator;
-    readonly executionStrategy: IExecutionStrategy;
-    readonly executionStrategyFactory: IExecutionStrategyFactory;
-    readonly databaseProviders: IEnumerable<IDatabaseProvider>;
-    readonly commandLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Command>;
-    readonly concurrencyDetector: IConcurrencyDetector;
-    readonly coreOptions: ICoreSingletonOptions;
-    readonly queryProvider: IAsyncQueryProvider;
-    readonly adHocMapper: IAdHocMapper;
-    readonly typeMappingSource: ITypeMappingSource;
+    readonly TransactionManager: IDbContextTransactionManager;
+    readonly DatabaseCreator: IDatabaseCreator;
+    readonly ExecutionStrategy: IExecutionStrategy;
+    readonly ExecutionStrategyFactory: IExecutionStrategyFactory;
+    readonly DatabaseProviders: IEnumerable<IDatabaseProvider>;
+    readonly CommandLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Command>;
+    readonly ConcurrencyDetector: IConcurrencyDetector;
+    readonly CoreOptions: ICoreSingletonOptions;
+    readonly QueryProvider: IAsyncQueryProvider;
+    readonly AdHocMapper: IAdHocMapper;
+    readonly TypeMappingSource: ITypeMappingSource;
 }
 
 
 export type IDatabaseFacadeDependencies = IDatabaseFacadeDependencies$instance;
 
 export interface IDatabaseFacadeDependenciesAccessor$instance {
-    readonly dependencies: IDatabaseFacadeDependencies;
-    readonly context: DbContext;
+    readonly Dependencies: IDatabaseFacadeDependencies;
+    readonly Context: DbContext;
 }
 
 
 export type IDatabaseFacadeDependenciesAccessor = IDatabaseFacadeDependenciesAccessor$instance;
 
 export interface IDatabaseProvider$instance {
-    readonly name: string;
-    readonly version: string | undefined;
-    isConfigured(options: IDbContextOptions): boolean;
+    readonly Name: string;
+    readonly Version: string | undefined;
+    IsConfigured(options: IDbContextOptions): boolean;
 }
 
 
 export type IDatabaseProvider = IDatabaseProvider$instance;
 
 export interface IDbContextTransaction$instance extends IDisposable, IAsyncDisposable {
-    readonly transactionId: Guid;
-    readonly supportsSavepoints: boolean;
-    commit(): void;
-    commitAsync(cancellationToken?: CancellationToken): Task;
-    createSavepoint(name: string): void;
-    createSavepointAsync(name: string, cancellationToken?: CancellationToken): Task;
+    readonly TransactionId: Guid;
+    readonly SupportsSavepoints: boolean;
+    Commit(): void;
+    CommitAsync(cancellationToken?: CancellationToken): Task;
+    CreateSavepoint(name: string): void;
+    CreateSavepointAsync(name: string, cancellationToken?: CancellationToken): Task;
 }
 
 
 export type IDbContextTransaction = IDbContextTransaction$instance;
 
 export interface IDbContextTransactionManager$instance extends IResettableService {
-    readonly currentTransaction: IDbContextTransaction | undefined;
-    beginTransaction(): IDbContextTransaction;
-    beginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
-    commitTransaction(): void;
-    commitTransactionAsync(cancellationToken?: CancellationToken): Task;
-    resetState(): void;
-    resetStateAsync(cancellationToken?: CancellationToken): Task;
+    readonly CurrentTransaction: IDbContextTransaction | undefined;
+    BeginTransaction(): IDbContextTransaction;
+    BeginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
+    CommitTransaction(): void;
+    CommitTransactionAsync(cancellationToken?: CancellationToken): Task;
+    ResetState(): void;
+    ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
 
 
@@ -125,54 +125,54 @@ export interface IDbContextTransactionManager$instance extends Microsoft_EntityF
 export type IDbContextTransactionManager = IDbContextTransactionManager$instance;
 
 export interface IExceptionDetector$instance {
-    isCancellation(exception: Exception, cancellationToken?: CancellationToken): boolean;
+    IsCancellation(exception: Exception, cancellationToken?: CancellationToken): boolean;
 }
 
 
 export type IExceptionDetector = IExceptionDetector$instance;
 
 export interface IExecutionStrategy$instance {
-    readonly retriesOnFailure: boolean;
-    execute<TState, TResult>(state: TState, operation: Func<DbContext, TState, TResult>, verifySucceeded: Func<DbContext, TState, ExecutionResult_1<TResult>>): TResult;
-    executeAsync<TState, TResult>(state: TState, operation: Func<DbContext, TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<DbContext, TState, CancellationToken, Task<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task<TResult>;
+    readonly RetriesOnFailure: boolean;
+    Execute<TState, TResult>(state: TState, operation: Func<DbContext, TState, TResult>, verifySucceeded: Func<DbContext, TState, ExecutionResult_1<TResult>>): TResult;
+    ExecuteAsync<TState, TResult>(state: TState, operation: Func<DbContext, TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<DbContext, TState, CancellationToken, Task<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task<TResult>;
 }
 
 
 export type IExecutionStrategy = IExecutionStrategy$instance;
 
 export interface IExecutionStrategyFactory$instance {
-    create(): IExecutionStrategy;
+    Create(): IExecutionStrategy;
 }
 
 
 export type IExecutionStrategyFactory = IExecutionStrategyFactory$instance;
 
 export interface IParameterNameGeneratorFactory$instance {
-    create(): ParameterNameGenerator;
+    Create(): ParameterNameGenerator;
 }
 
 
 export type IParameterNameGeneratorFactory = IParameterNameGeneratorFactory$instance;
 
 export interface IRawSqlCommandBuilder$instance {
-    build(sql: string, parameters: IEnumerable<unknown>, model: IModel): RawSqlCommand;
-    build(sql: string, parameters: IEnumerable<unknown>): RawSqlCommand;
-    build(sql: string): IRelationalCommand;
+    Build(sql: string, parameters: IEnumerable<unknown>, model: IModel): RawSqlCommand;
+    Build(sql: string, parameters: IEnumerable<unknown>): RawSqlCommand;
+    Build(sql: string): IRelationalCommand;
 }
 
 
 export type IRawSqlCommandBuilder = IRawSqlCommandBuilder$instance;
 
 export interface IRelationalCommand$instance extends IRelationalCommandTemplate {
-    readonly commandText: string;
-    readonly logCommandText: string;
-    readonly parameters: IReadOnlyList<IRelationalParameter>;
-    createDbCommand(parameterObject: RelationalCommandParameterObject, commandId: Guid, commandMethod: DbCommandMethod): DbCommand;
-    executeNonQuery(parameterObject: RelationalCommandParameterObject): int;
-    executeNonQueryAsync(parameterObject: RelationalCommandParameterObject, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
-    executeReader(parameterObject: RelationalCommandParameterObject): RelationalDataReader;
-    executeScalar(parameterObject: RelationalCommandParameterObject): unknown | undefined;
-    populateFrom(commandTemplate: IRelationalCommandTemplate): void;
+    readonly CommandText: string;
+    readonly LogCommandText: string;
+    readonly Parameters: IReadOnlyList<IRelationalParameter>;
+    CreateDbCommand(parameterObject: RelationalCommandParameterObject, commandId: Guid, commandMethod: DbCommandMethod): DbCommand;
+    ExecuteNonQuery(parameterObject: RelationalCommandParameterObject): int;
+    ExecuteNonQueryAsync(parameterObject: RelationalCommandParameterObject, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+    ExecuteReader(parameterObject: RelationalCommandParameterObject): RelationalDataReader;
+    ExecuteScalar(parameterObject: RelationalCommandParameterObject): unknown | undefined;
+    PopulateFrom(commandTemplate: IRelationalCommandTemplate): void;
 }
 
 
@@ -181,77 +181,77 @@ export interface IRelationalCommand$instance extends IRelationalCommandTemplate$
 export type IRelationalCommand = IRelationalCommand$instance;
 
 export interface IRelationalCommandBuilder$instance {
-    readonly parameters: IReadOnlyList<IRelationalParameter>;
-    readonly typeMappingSource: IRelationalTypeMappingSource;
-    readonly commandTextLength: int;
-    addParameter(parameter: IRelationalParameter): IRelationalCommandBuilder;
-    append(value: FormattableString, sensitive?: boolean): IRelationalCommandBuilder;
-    append(value: string, sensitive?: boolean): IRelationalCommandBuilder;
-    appendLine(): IRelationalCommandBuilder;
-    build(): IRelationalCommand;
-    removeParameterAt(index: int): IRelationalCommandBuilder;
+    readonly Parameters: IReadOnlyList<IRelationalParameter>;
+    readonly TypeMappingSource: IRelationalTypeMappingSource;
+    readonly CommandTextLength: int;
+    AddParameter(parameter: IRelationalParameter): IRelationalCommandBuilder;
+    Append(value: FormattableString, sensitive?: boolean): IRelationalCommandBuilder;
+    Append(value: string, sensitive?: boolean): IRelationalCommandBuilder;
+    AppendLine(): IRelationalCommandBuilder;
+    Build(): IRelationalCommand;
+    RemoveParameterAt(index: int): IRelationalCommandBuilder;
 }
 
 
 export type IRelationalCommandBuilder = IRelationalCommandBuilder$instance;
 
 export interface IRelationalCommandBuilderFactory$instance {
-    create(): IRelationalCommandBuilder;
+    Create(): IRelationalCommandBuilder;
 }
 
 
 export type IRelationalCommandBuilderFactory = IRelationalCommandBuilderFactory$instance;
 
 export interface IRelationalCommandTemplate$instance {
-    readonly commandText: string;
-    readonly logCommandText: string;
-    readonly parameters: IReadOnlyList<IRelationalParameter>;
-    createDbCommand(parameterObject: RelationalCommandParameterObject, commandId: Guid, commandMethod: DbCommandMethod): DbCommand;
+    readonly CommandText: string;
+    readonly LogCommandText: string;
+    readonly Parameters: IReadOnlyList<IRelationalParameter>;
+    CreateDbCommand(parameterObject: RelationalCommandParameterObject, commandId: Guid, commandMethod: DbCommandMethod): DbCommand;
 }
 
 
 export type IRelationalCommandTemplate = IRelationalCommandTemplate$instance;
 
 export interface IRelationalConnection$instance extends IRelationalTransactionManager, IDbContextTransactionManager, IResettableService, IDisposable, IAsyncDisposable {
-    get connectionString(): string | undefined;
-    set connectionString(value: string);
-    dbConnection: DbConnection;
-    readonly context: DbContext;
-    readonly connectionId: Guid;
-    commandTimeout: Nullable<System_Internal.Int32>;
-    readonly currentTransaction: IDbContextTransaction | undefined;
-    beginTransaction(): IDbContextTransaction;
-    beginTransaction(isolationLevel: IsolationLevel): IDbContextTransaction;
-    beginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
-    beginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
-    close(): boolean;
-    closeAsync(): Task<System_Internal.Boolean>;
-    commitTransaction(): void;
-    commitTransactionAsync(cancellationToken?: CancellationToken): Task;
-    open(errorsExpected?: boolean): boolean;
-    openAsync(cancellationToken: CancellationToken, errorsExpected?: boolean): Task<System_Internal.Boolean>;
-    rentCommand(): IRelationalCommand;
-    returnCommand(command: IRelationalCommand): void;
-    setDbConnection(value: DbConnection, contextOwnsConnection: boolean): void;
-    useTransaction(transaction: DbTransaction, transactionId: Guid): IDbContextTransaction | undefined;
-    useTransaction(transaction: DbTransaction): IDbContextTransaction | undefined;
-    useTransactionAsync(transaction: DbTransaction, transactionId: Guid, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
-    useTransactionAsync(transaction: DbTransaction, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
-    resetState(): void;
-    resetStateAsync(cancellationToken?: CancellationToken): Task;
+    get ConnectionString(): string | undefined;
+    set ConnectionString(value: string);
+    DbConnection: DbConnection;
+    readonly Context: DbContext;
+    readonly ConnectionId: Guid;
+    CommandTimeout: Nullable<System_Internal.Int32>;
+    readonly CurrentTransaction: IDbContextTransaction | undefined;
+    BeginTransaction(): IDbContextTransaction;
+    BeginTransaction(isolationLevel: IsolationLevel): IDbContextTransaction;
+    BeginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
+    BeginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
+    Close(): boolean;
+    CloseAsync(): Task<System_Internal.Boolean>;
+    CommitTransaction(): void;
+    CommitTransactionAsync(cancellationToken?: CancellationToken): Task;
+    Open(errorsExpected?: boolean): boolean;
+    OpenAsync(cancellationToken: CancellationToken, errorsExpected?: boolean): Task<System_Internal.Boolean>;
+    RentCommand(): IRelationalCommand;
+    ReturnCommand(command: IRelationalCommand): void;
+    SetDbConnection(value: DbConnection, contextOwnsConnection: boolean): void;
+    UseTransaction(transaction: DbTransaction, transactionId: Guid): IDbContextTransaction | undefined;
+    UseTransaction(transaction: DbTransaction): IDbContextTransaction | undefined;
+    UseTransactionAsync(transaction: DbTransaction, transactionId: Guid, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
+    UseTransactionAsync(transaction: DbTransaction, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
+    ResetState(): void;
+    ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
 
 
 export type IRelationalConnection = IRelationalConnection$instance;
 
 export interface IRelationalDatabaseCreator$instance extends IDatabaseCreator {
-    create(): void;
-    createAsync(cancellationToken?: CancellationToken): Task;
-    exists(): boolean;
-    existsAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    generateCreateScript(): string;
-    ensureDeleted(): boolean;
-    ensureDeletedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    Create(): void;
+    CreateAsync(cancellationToken?: CancellationToken): Task;
+    Exists(): boolean;
+    ExistsAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    GenerateCreateScript(): string;
+    EnsureDeleted(): boolean;
+    EnsureDeletedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
 }
 
 
@@ -260,153 +260,153 @@ export interface IRelationalDatabaseCreator$instance extends IDatabaseCreator$in
 export type IRelationalDatabaseCreator = IRelationalDatabaseCreator$instance;
 
 export interface IRelationalDatabaseFacadeDependencies$instance extends IDatabaseFacadeDependencies {
-    readonly relationalConnection: IRelationalConnection;
-    readonly rawSqlCommandBuilder: IRawSqlCommandBuilder;
-    readonly commandLogger: IRelationalCommandDiagnosticsLogger;
-    readonly transactionManager: IDbContextTransactionManager;
-    readonly databaseCreator: IDatabaseCreator;
-    readonly executionStrategy: IExecutionStrategy;
-    readonly executionStrategyFactory: IExecutionStrategyFactory;
-    readonly databaseProviders: IEnumerable<IDatabaseProvider>;
-    readonly concurrencyDetector: IConcurrencyDetector;
-    readonly coreOptions: ICoreSingletonOptions;
-    readonly queryProvider: IAsyncQueryProvider;
-    readonly adHocMapper: IAdHocMapper;
-    readonly typeMappingSource: ITypeMappingSource;
+    readonly RelationalConnection: IRelationalConnection;
+    readonly RawSqlCommandBuilder: IRawSqlCommandBuilder;
+    readonly CommandLogger: IRelationalCommandDiagnosticsLogger;
+    readonly TransactionManager: IDbContextTransactionManager;
+    readonly DatabaseCreator: IDatabaseCreator;
+    readonly ExecutionStrategy: IExecutionStrategy;
+    readonly ExecutionStrategyFactory: IExecutionStrategyFactory;
+    readonly DatabaseProviders: IEnumerable<IDatabaseProvider>;
+    readonly ConcurrencyDetector: IConcurrencyDetector;
+    readonly CoreOptions: ICoreSingletonOptions;
+    readonly QueryProvider: IAsyncQueryProvider;
+    readonly AdHocMapper: IAdHocMapper;
+    readonly TypeMappingSource: ITypeMappingSource;
 }
 
 
 export type IRelationalDatabaseFacadeDependencies = IRelationalDatabaseFacadeDependencies$instance;
 
 export interface IRelationalParameter$instance {
-    readonly invariantName: string;
-    addDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
-    addDbParameter(command: DbCommand, value: unknown): void;
+    readonly InvariantName: string;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddDbParameter(command: DbCommand, value: unknown): void;
 }
 
 
 export type IRelationalParameter = IRelationalParameter$instance;
 
 export interface IRelationalTransactionFactory$instance {
-    create(connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, logger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, transactionOwned: boolean): RelationalTransaction;
+    Create(connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, logger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, transactionOwned: boolean): RelationalTransaction;
 }
 
 
 export type IRelationalTransactionFactory = IRelationalTransactionFactory$instance;
 
 export interface IRelationalTransactionManager$instance extends IDbContextTransactionManager, IResettableService {
-    readonly currentTransaction: IDbContextTransaction | undefined;
-    beginTransaction(): IDbContextTransaction;
-    beginTransaction(isolationLevel: IsolationLevel): IDbContextTransaction;
-    beginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
-    beginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
-    commitTransaction(): void;
-    commitTransactionAsync(cancellationToken?: CancellationToken): Task;
-    useTransaction(transaction: DbTransaction, transactionId: Guid): IDbContextTransaction | undefined;
-    useTransaction(transaction: DbTransaction): IDbContextTransaction | undefined;
-    useTransactionAsync(transaction: DbTransaction, transactionId: Guid, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
-    useTransactionAsync(transaction: DbTransaction, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
-    resetState(): void;
-    resetStateAsync(cancellationToken?: CancellationToken): Task;
+    readonly CurrentTransaction: IDbContextTransaction | undefined;
+    BeginTransaction(): IDbContextTransaction;
+    BeginTransaction(isolationLevel: IsolationLevel): IDbContextTransaction;
+    BeginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
+    BeginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
+    CommitTransaction(): void;
+    CommitTransactionAsync(cancellationToken?: CancellationToken): Task;
+    UseTransaction(transaction: DbTransaction, transactionId: Guid): IDbContextTransaction | undefined;
+    UseTransaction(transaction: DbTransaction): IDbContextTransaction | undefined;
+    UseTransactionAsync(transaction: DbTransaction, transactionId: Guid, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
+    UseTransactionAsync(transaction: DbTransaction, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
+    ResetState(): void;
+    ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
 
 
 export type IRelationalTransactionManager = IRelationalTransactionManager$instance;
 
 export interface IRelationalTypeMappingSource$instance extends ITypeMappingSource {
-    findMapping(elementType: IElementType): CoreTypeMapping | undefined;
-    findMapping(property: IProperty): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo): CoreTypeMapping | undefined;
-    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
-    findMapping(type: Type): CoreTypeMapping | undefined;
-    findMapping(property: IProperty): RelationalTypeMapping | undefined;
-    findMapping(member: MemberInfo): RelationalTypeMapping | undefined;
-    findMapping(storeTypeName: string): RelationalTypeMapping | undefined;
-    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
-    findMapping(type: Type, storeTypeName: string, keyOrIndex?: boolean, unicode?: Nullable<System_Internal.Boolean>, size?: Nullable<System_Internal.Int32>, rowVersion?: Nullable<System_Internal.Boolean>, fixedLength?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>): RelationalTypeMapping | undefined;
-    findMapping(type: Type): RelationalTypeMapping | undefined;
+    FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
+    FindMapping(property: IProperty): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo): CoreTypeMapping | undefined;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    FindMapping(type: Type): CoreTypeMapping | undefined;
+    FindMapping(property: IProperty): RelationalTypeMapping | undefined;
+    FindMapping(member: MemberInfo): RelationalTypeMapping | undefined;
+    FindMapping(storeTypeName: string): RelationalTypeMapping | undefined;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
+    FindMapping(type: Type, storeTypeName: string, keyOrIndex?: boolean, unicode?: Nullable<System_Internal.Boolean>, size?: Nullable<System_Internal.Int32>, rowVersion?: Nullable<System_Internal.Boolean>, fixedLength?: Nullable<System_Internal.Boolean>, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>): RelationalTypeMapping | undefined;
+    FindMapping(type: Type): RelationalTypeMapping | undefined;
 }
 
 
 export type IRelationalTypeMappingSource = IRelationalTypeMappingSource$instance;
 
 export interface IRelationalTypeMappingSourcePlugin$instance {
-    findMapping(mappingInfo: RelationalTypeMappingInfo): RelationalTypeMapping | undefined;
+    FindMapping(mappingInfo: RelationalTypeMappingInfo): RelationalTypeMapping | undefined;
 }
 
 
 export type IRelationalTypeMappingSourcePlugin = IRelationalTypeMappingSourcePlugin$instance;
 
 export interface ISqlGenerationHelper$instance {
-    readonly statementTerminator: string;
-    readonly batchTerminator: string;
-    readonly startTransactionStatement: string;
-    readonly commitTransactionStatement: string;
-    readonly singleLineCommentToken: string;
-    delimitIdentifier(name: string, schema: string): string;
-    delimitIdentifier(builder: StringBuilder, name: string, schema: string): void;
-    generateParameterName(name: string): string;
-    generateParameterName(builder: StringBuilder, name: string): void;
+    readonly StatementTerminator: string;
+    readonly BatchTerminator: string;
+    readonly StartTransactionStatement: string;
+    readonly CommitTransactionStatement: string;
+    readonly SingleLineCommentToken: string;
+    DelimitIdentifier(name: string, schema: string): string;
+    DelimitIdentifier(builder: StringBuilder, name: string, schema: string): void;
+    GenerateParameterName(name: string): string;
+    GenerateParameterName(builder: StringBuilder, name: string): void;
 }
 
 
 export type ISqlGenerationHelper = ISqlGenerationHelper$instance;
 
 export interface ITransactionEnlistmentManager$instance {
-    readonly currentAmbientTransaction: Transaction | undefined;
-    readonly enlistedTransaction: Transaction | undefined;
-    enlistTransaction(transaction: Transaction): void;
+    readonly CurrentAmbientTransaction: Transaction | undefined;
+    readonly EnlistedTransaction: Transaction | undefined;
+    EnlistTransaction(transaction: Transaction): void;
 }
 
 
 export type ITransactionEnlistmentManager = ITransactionEnlistmentManager$instance;
 
 export interface ITypeMappingSource$instance {
-    findMapping(elementType: IElementType): CoreTypeMapping | undefined;
-    findMapping(property: IProperty): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo): CoreTypeMapping | undefined;
-    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
-    findMapping(type: Type): CoreTypeMapping | undefined;
+    FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
+    FindMapping(property: IProperty): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo): CoreTypeMapping | undefined;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    FindMapping(type: Type): CoreTypeMapping | undefined;
 }
 
 
 export type ITypeMappingSource = ITypeMappingSource$instance;
 
 export interface ITypeMappingSourcePlugin$instance {
-    findMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping | undefined;
+    FindMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping | undefined;
 }
 
 
 export type ITypeMappingSourcePlugin = ITypeMappingSourcePlugin$instance;
 
 export interface MaterializationContext$instance {
-    readonly context: DbContext;
-    readonly valueBuffer: ValueBuffer;
+    readonly Context: DbContext;
+    readonly ValueBuffer: ValueBuffer;
 }
 
 
 export const MaterializationContext: {
     new(valueBuffer: ValueBuffer, context: DbContext): MaterializationContext;
-    readonly getValueBufferMethod: MethodInfo;
+    readonly GetValueBufferMethod: MethodInfo;
 };
 
 
 export type MaterializationContext = MaterializationContext$instance;
 
 export interface RelationalCommandParameterObject$instance {
-    readonly commandSource: CommandSource;
-    readonly connection: IRelationalConnection;
-    readonly context: DbContext;
-    readonly detailedErrorsEnabled: boolean;
-    readonly logger: IRelationalCommandDiagnosticsLogger;
-    readonly parameterValues: IReadOnlyDictionary<System_Internal.String, unknown | undefined> | undefined;
-    readonly readerColumns: IReadOnlyList<ReaderColumn | undefined> | undefined;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalCommandParameterObject): boolean;
-    getHashCode(): int;
-    toString(): string | undefined;
+    readonly CommandSource: CommandSource;
+    readonly Connection: IRelationalConnection;
+    readonly Context: DbContext;
+    readonly DetailedErrorsEnabled: boolean;
+    readonly Logger: IRelationalCommandDiagnosticsLogger;
+    readonly ParameterValues: IReadOnlyDictionary<System_Internal.String, unknown | undefined> | undefined;
+    readonly ReaderColumns: IReadOnlyList<ReaderColumn | undefined> | undefined;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalCommandParameterObject): boolean;
+    GetHashCode(): int;
+    ToString(): string | undefined;
 }
 
 
@@ -421,30 +421,30 @@ export const RelationalCommandParameterObject: {
 export type RelationalCommandParameterObject = RelationalCommandParameterObject$instance;
 
 export interface RelationalTypeMappingInfo$instance {
-    clrType: Type;
-    readonly coreTypeMappingInfo: TypeMappingInfo;
-    dbType: Nullable<DbType>;
-    get elementTypeMapping(): RelationalTypeMapping | undefined;
-    set elementTypeMapping(value: RelationalTypeMapping);
-    isFixedLength: Nullable<System_Internal.Boolean>;
-    isKey: boolean;
-    isKeyOrIndex: boolean;
-    isRowVersion: Nullable<System_Internal.Boolean>;
-    isUnicode: Nullable<System_Internal.Boolean>;
-    get jsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    set jsonValueReaderWriter(value: JsonValueReaderWriter);
-    precision: Nullable<System_Internal.Int32>;
-    scale: Nullable<System_Internal.Int32>;
-    size: Nullable<System_Internal.Int32>;
-    get storeTypeName(): string | undefined;
-    set storeTypeName(value: string);
-    get storeTypeNameBase(): string | undefined;
-    set storeTypeNameBase(value: string);
-    equals(obj: unknown): boolean;
-    equals(other: RelationalTypeMappingInfo): boolean;
-    getHashCode(): int;
-    toString(): string | undefined;
-    withConverter(converterInfo: ValueConverterInfo): RelationalTypeMappingInfo;
+    ClrType: Type;
+    readonly CoreTypeMappingInfo: TypeMappingInfo;
+    DbType: Nullable<DbType>;
+    get ElementTypeMapping(): RelationalTypeMapping | undefined;
+    set ElementTypeMapping(value: RelationalTypeMapping);
+    IsFixedLength: Nullable<System_Internal.Boolean>;
+    IsKey: boolean;
+    IsKeyOrIndex: boolean;
+    IsRowVersion: Nullable<System_Internal.Boolean>;
+    IsUnicode: Nullable<System_Internal.Boolean>;
+    get JsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    set JsonValueReaderWriter(value: JsonValueReaderWriter);
+    Precision: Nullable<System_Internal.Int32>;
+    Scale: Nullable<System_Internal.Int32>;
+    Size: Nullable<System_Internal.Int32>;
+    get StoreTypeName(): string | undefined;
+    set StoreTypeName(value: string);
+    get StoreTypeNameBase(): string | undefined;
+    set StoreTypeNameBase(value: string);
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalTypeMappingInfo): boolean;
+    GetHashCode(): int;
+    ToString(): string | undefined;
+    WithConverter(converterInfo: ValueConverterInfo): RelationalTypeMappingInfo;
 }
 
 
@@ -463,23 +463,23 @@ export const RelationalTypeMappingInfo: {
 export type RelationalTypeMappingInfo = RelationalTypeMappingInfo$instance;
 
 export interface TypeMappingInfo$instance {
-    clrType: Type;
-    get elementTypeMapping(): CoreTypeMapping | undefined;
-    set elementTypeMapping(value: CoreTypeMapping);
-    isKey: boolean;
-    isKeyOrIndex: boolean;
-    isRowVersion: Nullable<System_Internal.Boolean>;
-    isUnicode: Nullable<System_Internal.Boolean>;
-    get jsonValueReaderWriter(): JsonValueReaderWriter | undefined;
-    set jsonValueReaderWriter(value: JsonValueReaderWriter);
-    precision: Nullable<System_Internal.Int32>;
-    scale: Nullable<System_Internal.Int32>;
-    size: Nullable<System_Internal.Int32>;
-    equals(obj: unknown): boolean;
-    equals(other: TypeMappingInfo): boolean;
-    getHashCode(): int;
-    toString(): string | undefined;
-    withConverter(converterInfo: ValueConverterInfo): TypeMappingInfo;
+    ClrType: Type;
+    get ElementTypeMapping(): CoreTypeMapping | undefined;
+    set ElementTypeMapping(value: CoreTypeMapping);
+    IsKey: boolean;
+    IsKeyOrIndex: boolean;
+    IsRowVersion: Nullable<System_Internal.Boolean>;
+    IsUnicode: Nullable<System_Internal.Boolean>;
+    get JsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    set JsonValueReaderWriter(value: JsonValueReaderWriter);
+    Precision: Nullable<System_Internal.Int32>;
+    Scale: Nullable<System_Internal.Int32>;
+    Size: Nullable<System_Internal.Int32>;
+    Equals(obj: unknown): boolean;
+    Equals(other: TypeMappingInfo): boolean;
+    GetHashCode(): int;
+    ToString(): string | undefined;
+    WithConverter(converterInfo: ValueConverterInfo): TypeMappingInfo;
 }
 
 
@@ -497,18 +497,18 @@ export const TypeMappingInfo: {
 export type TypeMappingInfo = TypeMappingInfo$instance;
 
 export interface ValueBuffer$instance {
-    readonly count: int;
-    readonly isEmpty: boolean;
-    item: unknown;
-    equals(obj: unknown): boolean;
-    equals(other: ValueBuffer): boolean;
-    getHashCode(): int;
+    readonly Count: int;
+    readonly IsEmpty: boolean;
+    Item: unknown;
+    Equals(obj: unknown): boolean;
+    Equals(other: ValueBuffer): boolean;
+    GetHashCode(): int;
 }
 
 
 export const ValueBuffer: {
     new(values: unknown[]): ValueBuffer;
-    readonly empty: ValueBuffer;
+    readonly Empty: ValueBuffer;
 };
 
 
@@ -520,7 +520,7 @@ export interface BoolTypeMapping$instance extends RelationalTypeMapping {
 
 export const BoolTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): BoolTypeMapping;
-    readonly default: BoolTypeMapping;
+    readonly Default: BoolTypeMapping;
 };
 
 
@@ -532,7 +532,7 @@ export interface ByteArrayTypeMapping$instance extends RelationalTypeMapping {
 
 export const ByteArrayTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>, size: Nullable<System_Internal.Int32>): ByteArrayTypeMapping;
-    readonly default: ByteArrayTypeMapping;
+    readonly Default: ByteArrayTypeMapping;
 };
 
 
@@ -544,7 +544,7 @@ export interface ByteTypeMapping$instance extends RelationalTypeMapping {
 
 export const ByteTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): ByteTypeMapping;
-    readonly default: ByteTypeMapping;
+    readonly Default: ByteTypeMapping;
 };
 
 
@@ -556,24 +556,24 @@ export interface CharTypeMapping$instance extends RelationalTypeMapping {
 
 export const CharTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): CharTypeMapping;
-    readonly default: CharTypeMapping;
+    readonly Default: CharTypeMapping;
 };
 
 
 export type CharTypeMapping = CharTypeMapping$instance;
 
 export interface CoreTypeMapping$instance {
-    readonly clrType: Type;
-    readonly comparer: ValueComparer;
-    readonly converter: ValueConverter | undefined;
-    readonly elementTypeMapping: CoreTypeMapping | undefined;
-    readonly jsonValueReaderWriter: JsonValueReaderWriter | undefined;
-    readonly keyComparer: ValueComparer;
-    readonly providerValueComparer: ValueComparer;
-    readonly valueGeneratorFactory: Func<IProperty, IEntityType, ValueGenerator> | undefined;
-    clone(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
-    generateCodeLiteral(value: unknown): Expression;
-    withComposedConverter(converter: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
+    readonly ClrType: Type;
+    readonly Comparer: ValueComparer;
+    readonly Converter: ValueConverter | undefined;
+    readonly ElementTypeMapping: CoreTypeMapping | undefined;
+    readonly JsonValueReaderWriter: JsonValueReaderWriter | undefined;
+    readonly KeyComparer: ValueComparer;
+    readonly ProviderValueComparer: ValueComparer;
+    readonly ValueGeneratorFactory: Func<IProperty, IEntityType, ValueGenerator> | undefined;
+    Clone(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
+    GenerateCodeLiteral(value: unknown): Expression;
+    WithComposedConverter(converter: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
@@ -584,10 +584,10 @@ export const CoreTypeMapping: {
 export type CoreTypeMapping = CoreTypeMapping$instance;
 
 export interface Database$instance {
-    compileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
-    compileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
-    saveChanges(entries: IList<IUpdateEntry>): int;
-    saveChangesAsync(entries: IList<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+    CompileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
+    CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
+    SaveChanges(entries: IList<IUpdateEntry>): int;
+    SaveChangesAsync(entries: IList<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
 
 
@@ -605,14 +605,14 @@ export type Database = Database$instance & __Database$views;
 
 
 export interface DatabaseDependencies$instance {
-    readonly logger: IDiagnosticsLogger_1<DbLoggerCategory_Update>;
-    queryCompilationContextFactory: IQueryCompilationContextFactory;
-    updateAdapterFactory: IUpdateAdapterFactory;
+    readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Update>;
+    QueryCompilationContextFactory: IQueryCompilationContextFactory;
+    UpdateAdapterFactory: IUpdateAdapterFactory;
     _Clone_$(): DatabaseDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: DatabaseDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: DatabaseDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -624,9 +624,9 @@ export const DatabaseDependencies: {
 export type DatabaseDependencies = DatabaseDependencies$instance;
 
 export interface DatabaseProvider_1$instance<TOptionsExtension extends IDbContextOptionsExtension> {
-    readonly name: string;
-    readonly version: string | undefined;
-    isConfigured(options: IDbContextOptions): boolean;
+    readonly Name: string;
+    readonly Version: string | undefined;
+    IsConfigured(options: IDbContextOptions): boolean;
 }
 
 
@@ -646,10 +646,10 @@ export type DatabaseProvider_1<TOptionsExtension extends IDbContextOptionsExtens
 
 export interface DatabaseProviderDependencies$instance {
     _Clone_$(): DatabaseProviderDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: DatabaseProviderDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: DatabaseProviderDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -666,7 +666,7 @@ export interface DateOnlyTypeMapping$instance extends RelationalTypeMapping {
 
 export const DateOnlyTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DateOnlyTypeMapping;
-    readonly default: DateOnlyTypeMapping;
+    readonly Default: DateOnlyTypeMapping;
 };
 
 
@@ -678,7 +678,7 @@ export interface DateTimeOffsetTypeMapping$instance extends RelationalTypeMappin
 
 export const DateTimeOffsetTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DateTimeOffsetTypeMapping;
-    readonly default: DateTimeOffsetTypeMapping;
+    readonly Default: DateTimeOffsetTypeMapping;
 };
 
 
@@ -690,7 +690,7 @@ export interface DateTimeTypeMapping$instance extends RelationalTypeMapping {
 
 export const DateTimeTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DateTimeTypeMapping;
-    readonly default: DateTimeTypeMapping;
+    readonly Default: DateTimeTypeMapping;
 };
 
 
@@ -702,7 +702,7 @@ export interface DecimalTypeMapping$instance extends RelationalTypeMapping {
 
 export const DecimalTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): DecimalTypeMapping;
-    readonly default: DecimalTypeMapping;
+    readonly Default: DecimalTypeMapping;
 };
 
 
@@ -714,15 +714,15 @@ export interface DoubleTypeMapping$instance extends RelationalTypeMapping {
 
 export const DoubleTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DoubleTypeMapping;
-    readonly default: DoubleTypeMapping;
+    readonly Default: DoubleTypeMapping;
 };
 
 
 export type DoubleTypeMapping = DoubleTypeMapping$instance;
 
 export interface ExecutionResult_1$instance<TResult> {
-    readonly isSuccessful: boolean;
-    readonly result: TResult;
+    readonly IsSuccessful: boolean;
+    readonly Result: TResult;
 }
 
 
@@ -734,17 +734,17 @@ export const ExecutionResult_1: {
 export type ExecutionResult_1<TResult> = ExecutionResult_1$instance<TResult>;
 
 export interface ExecutionStrategy$instance {
-    readonly maxRetryCount: int;
-    readonly maxRetryDelay: TimeSpan;
-    readonly retriesOnFailure: boolean;
-    execute<TState, TResult>(state: TState, operation: Func<DbContext, TState, TResult>, verifySucceeded: Func<DbContext, TState, ExecutionResult_1<TResult>>): TResult;
-    executeAsync<TState, TResult>(state: TState, operation: Func<DbContext, TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<DbContext, TState, CancellationToken, Task<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task<TResult>;
+    readonly MaxRetryCount: int;
+    readonly MaxRetryDelay: TimeSpan;
+    readonly RetriesOnFailure: boolean;
+    Execute<TState, TResult>(state: TState, operation: Func<DbContext, TState, TResult>, verifySucceeded: Func<DbContext, TState, ExecutionResult_1<TResult>>): TResult;
+    ExecuteAsync<TState, TResult>(state: TState, operation: Func<DbContext, TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<DbContext, TState, CancellationToken, Task<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task<TResult>;
 }
 
 
 export const ExecutionStrategy: {
-    readonly current: ExecutionStrategy | undefined;
-    callOnWrappedException<TResult>(exception: Exception, exceptionHandler: Func<Exception, TResult>): TResult;
+    readonly Current: ExecutionStrategy | undefined;
+    CallOnWrappedException<TResult>(exception: Exception, exceptionHandler: Func<Exception, TResult>): TResult;
 };
 
 
@@ -758,14 +758,14 @@ export type ExecutionStrategy = ExecutionStrategy$instance & __ExecutionStrategy
 
 
 export interface ExecutionStrategyDependencies$instance {
-    currentContext: ICurrentDbContext;
-    logger: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>;
-    options: IDbContextOptions;
+    CurrentContext: ICurrentDbContext;
+    Logger: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>;
+    Options: IDbContextOptions;
     _Clone_$(): ExecutionStrategyDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ExecutionStrategyDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ExecutionStrategyDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -782,7 +782,7 @@ export interface FloatTypeMapping$instance extends RelationalTypeMapping {
 
 export const FloatTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): FloatTypeMapping;
-    readonly default: FloatTypeMapping;
+    readonly Default: FloatTypeMapping;
 };
 
 
@@ -794,7 +794,7 @@ export interface GuidTypeMapping$instance extends RelationalTypeMapping {
 
 export const GuidTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): GuidTypeMapping;
-    readonly default: GuidTypeMapping;
+    readonly Default: GuidTypeMapping;
 };
 
 
@@ -806,7 +806,7 @@ export interface IntTypeMapping$instance extends RelationalTypeMapping {
 
 export const IntTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): IntTypeMapping;
-    readonly default: IntTypeMapping;
+    readonly Default: IntTypeMapping;
 };
 
 
@@ -839,16 +839,16 @@ export interface LongTypeMapping$instance extends RelationalTypeMapping {
 
 export const LongTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): LongTypeMapping;
-    readonly default: LongTypeMapping;
+    readonly Default: LongTypeMapping;
 };
 
 
 export type LongTypeMapping = LongTypeMapping$instance;
 
 export interface NonRetryingExecutionStrategy$instance {
-    readonly retriesOnFailure: boolean;
-    execute<TState, TResult>(state: TState, operation: Func<DbContext, TState, TResult>, verifySucceeded: Func<DbContext, TState, ExecutionResult_1<TResult>>): TResult;
-    executeAsync<TState, TResult>(state: TState, operation: Func<DbContext, TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<DbContext, TState, CancellationToken, Task<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task<TResult>;
+    readonly RetriesOnFailure: boolean;
+    Execute<TState, TResult>(state: TState, operation: Func<DbContext, TState, TResult>, verifySucceeded: Func<DbContext, TState, ExecutionResult_1<TResult>>): TResult;
+    ExecuteAsync<TState, TResult>(state: TState, operation: Func<DbContext, TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<DbContext, TState, CancellationToken, Task<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task<TResult>;
 }
 
 
@@ -868,8 +868,8 @@ export type NonRetryingExecutionStrategy = NonRetryingExecutionStrategy$instance
 
 
 export interface ParameterNameGenerator$instance {
-    generateNext(): string;
-    reset(): void;
+    GenerateNext(): string;
+    Reset(): void;
 }
 
 
@@ -882,10 +882,10 @@ export type ParameterNameGenerator = ParameterNameGenerator$instance;
 
 export interface ParameterNameGeneratorDependencies$instance {
     _Clone_$(): ParameterNameGeneratorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ParameterNameGeneratorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ParameterNameGeneratorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -897,7 +897,7 @@ export const ParameterNameGeneratorDependencies: {
 export type ParameterNameGeneratorDependencies = ParameterNameGeneratorDependencies$instance;
 
 export interface ParameterNameGeneratorFactory$instance {
-    create(): ParameterNameGenerator;
+    Create(): ParameterNameGenerator;
 }
 
 
@@ -916,8 +916,8 @@ export type ParameterNameGeneratorFactory = ParameterNameGeneratorFactory$instan
 
 
 export interface RawSqlCommand$instance {
-    readonly parameterValues: IReadOnlyDictionary<System_Internal.String, unknown | undefined>;
-    readonly relationalCommand: IRelationalCommand;
+    readonly ParameterValues: IReadOnlyDictionary<System_Internal.String, unknown | undefined>;
+    readonly RelationalCommand: IRelationalCommand;
 }
 
 
@@ -929,24 +929,24 @@ export const RawSqlCommand: {
 export type RawSqlCommand = RawSqlCommand$instance;
 
 export interface ReaderColumn$instance {
-    readonly getFieldValueExpression: LambdaExpression;
-    readonly isNullable: boolean;
-    readonly name: string;
-    readonly property: IPropertyBase;
-    readonly type: Type;
+    readonly GetFieldValueExpression: LambdaExpression;
+    readonly IsNullable: boolean;
+    readonly Name: string;
+    readonly Property: IPropertyBase;
+    readonly Type: Type;
 }
 
 
 export const ReaderColumn: {
-    create(type: Type, nullable: boolean, columnName: string, property: IPropertyBase, readFunc: LambdaExpression): ReaderColumn;
-    getConstructor(type: Type): ConstructorInfo;
+    Create(type: Type, nullable: boolean, columnName: string, property: IPropertyBase, readFunc: LambdaExpression): ReaderColumn;
+    GetConstructor(type: Type): ConstructorInfo;
 };
 
 
 export type ReaderColumn = ReaderColumn$instance;
 
 export interface ReaderColumn_1$instance<T> extends ReaderColumn {
-    readonly getFieldValue: Func<DbDataReader, int[], T>;
+    readonly GetFieldValue: Func<DbDataReader, int[], T>;
 }
 
 
@@ -958,17 +958,17 @@ export const ReaderColumn_1: {
 export type ReaderColumn_1<T> = ReaderColumn_1$instance<T>;
 
 export interface RelationalCommand$instance {
-    readonly commandText: string;
-    readonly logCommandText: string;
-    readonly parameters: IReadOnlyList<IRelationalParameter>;
-    createDbCommand(parameterObject: RelationalCommandParameterObject, commandId: Guid, commandMethod: DbCommandMethod): DbCommand;
-    executeNonQuery(parameterObject: RelationalCommandParameterObject): int;
-    executeNonQueryAsync(parameterObject: RelationalCommandParameterObject, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
-    executeReader(parameterObject: RelationalCommandParameterObject): RelationalDataReader;
-    executeReaderAsync(parameterObject: RelationalCommandParameterObject, cancellationToken?: CancellationToken): Task<RelationalDataReader>;
-    executeScalar(parameterObject: RelationalCommandParameterObject): unknown | undefined;
-    executeScalarAsync(parameterObject: RelationalCommandParameterObject, cancellationToken?: CancellationToken): Task<unknown | undefined>;
-    populateFrom(commandTemplate: IRelationalCommandTemplate): void;
+    readonly CommandText: string;
+    readonly LogCommandText: string;
+    readonly Parameters: IReadOnlyList<IRelationalParameter>;
+    CreateDbCommand(parameterObject: RelationalCommandParameterObject, commandId: Guid, commandMethod: DbCommandMethod): DbCommand;
+    ExecuteNonQuery(parameterObject: RelationalCommandParameterObject): int;
+    ExecuteNonQueryAsync(parameterObject: RelationalCommandParameterObject, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+    ExecuteReader(parameterObject: RelationalCommandParameterObject): RelationalDataReader;
+    ExecuteReaderAsync(parameterObject: RelationalCommandParameterObject, cancellationToken?: CancellationToken): Task<RelationalDataReader>;
+    ExecuteScalar(parameterObject: RelationalCommandParameterObject): unknown | undefined;
+    ExecuteScalarAsync(parameterObject: RelationalCommandParameterObject, cancellationToken?: CancellationToken): Task<unknown | undefined>;
+    PopulateFrom(commandTemplate: IRelationalCommandTemplate): void;
 }
 
 
@@ -986,18 +986,18 @@ export type RelationalCommand = RelationalCommand$instance & __RelationalCommand
 
 
 export interface RelationalCommandBuilder$instance {
-    readonly commandTextLength: int;
-    readonly parameters: IReadOnlyList<IRelationalParameter>;
-    readonly typeMappingSource: IRelationalTypeMappingSource;
-    addParameter(parameter: IRelationalParameter): IRelationalCommandBuilder;
-    append(value: string, sensitive?: boolean): IRelationalCommandBuilder;
-    append(value: FormattableString, sensitive?: boolean): IRelationalCommandBuilder;
-    appendLine(): IRelationalCommandBuilder;
-    build(): IRelationalCommand;
-    decrementIndent(): IRelationalCommandBuilder;
-    incrementIndent(): IRelationalCommandBuilder;
-    removeParameterAt(index: int): IRelationalCommandBuilder;
-    toString(): string;
+    readonly CommandTextLength: int;
+    readonly Parameters: IReadOnlyList<IRelationalParameter>;
+    readonly TypeMappingSource: IRelationalTypeMappingSource;
+    AddParameter(parameter: IRelationalParameter): IRelationalCommandBuilder;
+    Append(value: string, sensitive?: boolean): IRelationalCommandBuilder;
+    Append(value: FormattableString, sensitive?: boolean): IRelationalCommandBuilder;
+    AppendLine(): IRelationalCommandBuilder;
+    Build(): IRelationalCommand;
+    DecrementIndent(): IRelationalCommandBuilder;
+    IncrementIndent(): IRelationalCommandBuilder;
+    RemoveParameterAt(index: int): IRelationalCommandBuilder;
+    ToString(): string;
 }
 
 
@@ -1014,14 +1014,14 @@ export type RelationalCommandBuilder = RelationalCommandBuilder$instance & __Rel
 
 
 export interface RelationalCommandBuilderDependencies$instance {
-    exceptionDetector: IExceptionDetector;
-    loggingOptions: ILoggingOptions;
-    typeMappingSource: IRelationalTypeMappingSource;
+    ExceptionDetector: IExceptionDetector;
+    LoggingOptions: ILoggingOptions;
+    TypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): RelationalCommandBuilderDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalCommandBuilderDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalCommandBuilderDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1033,7 +1033,7 @@ export const RelationalCommandBuilderDependencies: {
 export type RelationalCommandBuilderDependencies = RelationalCommandBuilderDependencies$instance;
 
 export interface RelationalCommandBuilderFactory$instance {
-    create(): IRelationalCommandBuilder;
+    Create(): IRelationalCommandBuilder;
 }
 
 
@@ -1052,37 +1052,37 @@ export type RelationalCommandBuilderFactory = RelationalCommandBuilderFactory$in
 
 
 export interface RelationalConnection$instance {
-    commandTimeout: Nullable<System_Internal.Int32>;
-    readonly connectionId: Guid;
-    get connectionString(): string | undefined;
-    set connectionString(value: string);
-    readonly context: DbContext;
-    readonly currentAmbientTransaction: Transaction | undefined;
-    readonly currentTransaction: IDbContextTransaction | undefined;
-    dbConnection: DbConnection;
-    readonly enlistedTransaction: Transaction | undefined;
-    beginTransaction(): IDbContextTransaction;
-    beginTransaction(isolationLevel: IsolationLevel): IDbContextTransaction;
-    beginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
-    beginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
-    close(): boolean;
-    closeAsync(): Task<System_Internal.Boolean>;
-    commitTransaction(): void;
-    commitTransactionAsync(cancellationToken?: CancellationToken): Task;
-    dispose(): void;
-    disposeAsync(): ValueTask;
-    enlistTransaction(transaction: Transaction): void;
-    open(errorsExpected?: boolean): boolean;
-    openAsync(cancellationToken: CancellationToken, errorsExpected?: boolean): Task<System_Internal.Boolean>;
-    rentCommand(): IRelationalCommand;
-    returnCommand(command: IRelationalCommand): void;
-    rollbackTransaction(): void;
-    rollbackTransactionAsync(cancellationToken?: CancellationToken): Task;
-    setDbConnection(value: DbConnection, contextOwnsConnection: boolean): void;
-    useTransaction(transaction: DbTransaction): IDbContextTransaction | undefined;
-    useTransaction(transaction: DbTransaction, transactionId: Guid): IDbContextTransaction | undefined;
-    useTransactionAsync(transaction: DbTransaction, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
-    useTransactionAsync(transaction: DbTransaction, transactionId: Guid, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
+    CommandTimeout: Nullable<System_Internal.Int32>;
+    readonly ConnectionId: Guid;
+    get ConnectionString(): string | undefined;
+    set ConnectionString(value: string);
+    readonly Context: DbContext;
+    readonly CurrentAmbientTransaction: Transaction | undefined;
+    readonly CurrentTransaction: IDbContextTransaction | undefined;
+    DbConnection: DbConnection;
+    readonly EnlistedTransaction: Transaction | undefined;
+    BeginTransaction(): IDbContextTransaction;
+    BeginTransaction(isolationLevel: IsolationLevel): IDbContextTransaction;
+    BeginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
+    BeginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
+    Close(): boolean;
+    CloseAsync(): Task<System_Internal.Boolean>;
+    CommitTransaction(): void;
+    CommitTransactionAsync(cancellationToken?: CancellationToken): Task;
+    Dispose(): void;
+    DisposeAsync(): ValueTask;
+    EnlistTransaction(transaction: Transaction): void;
+    Open(errorsExpected?: boolean): boolean;
+    OpenAsync(cancellationToken: CancellationToken, errorsExpected?: boolean): Task<System_Internal.Boolean>;
+    RentCommand(): IRelationalCommand;
+    ReturnCommand(command: IRelationalCommand): void;
+    RollbackTransaction(): void;
+    RollbackTransactionAsync(cancellationToken?: CancellationToken): Task;
+    SetDbConnection(value: DbConnection, contextOwnsConnection: boolean): void;
+    UseTransaction(transaction: DbTransaction): IDbContextTransaction | undefined;
+    UseTransaction(transaction: DbTransaction, transactionId: Guid): IDbContextTransaction | undefined;
+    UseTransactionAsync(transaction: DbTransaction, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
+    UseTransactionAsync(transaction: DbTransaction, transactionId: Guid, cancellationToken?: CancellationToken): Task<IDbContextTransaction | undefined>;
 }
 
 
@@ -1104,19 +1104,19 @@ export type RelationalConnection = RelationalConnection$instance & __RelationalC
 
 
 export interface RelationalConnectionDependencies$instance {
-    connectionLogger: IRelationalConnectionDiagnosticsLogger;
-    connectionStringResolver: INamedConnectionStringResolver;
-    contextOptions: IDbContextOptions;
-    currentContext: ICurrentDbContext;
-    exceptionDetector: IExceptionDetector;
-    relationalCommandBuilderFactory: IRelationalCommandBuilderFactory;
-    relationalTransactionFactory: IRelationalTransactionFactory;
-    transactionLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>;
+    ConnectionLogger: IRelationalConnectionDiagnosticsLogger;
+    ConnectionStringResolver: INamedConnectionStringResolver;
+    ContextOptions: IDbContextOptions;
+    CurrentContext: ICurrentDbContext;
+    ExceptionDetector: IExceptionDetector;
+    RelationalCommandBuilderFactory: IRelationalCommandBuilderFactory;
+    RelationalTransactionFactory: IRelationalTransactionFactory;
+    TransactionLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>;
     _Clone_$(): RelationalConnectionDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalConnectionDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalConnectionDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1128,10 +1128,10 @@ export const RelationalConnectionDependencies: {
 export type RelationalConnectionDependencies = RelationalConnectionDependencies$instance;
 
 export interface RelationalDatabase$instance extends Database$instance {
-    compileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
-    compileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
-    saveChanges(entries: IList<IUpdateEntry>): int;
-    saveChangesAsync(entries: IList<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+    CompileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
+    CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
+    SaveChanges(entries: IList<IUpdateEntry>): int;
+    SaveChangesAsync(entries: IList<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
 
 
@@ -1148,23 +1148,23 @@ export type RelationalDatabase = RelationalDatabase$instance & __RelationalDatab
 
 
 export interface RelationalDatabaseCreator$instance {
-    canConnect(): boolean;
-    canConnectAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    create(): void;
-    createAsync(cancellationToken?: CancellationToken): Task;
-    createTables(): void;
-    createTablesAsync(cancellationToken?: CancellationToken): Task;
-    delete(): void;
-    deleteAsync(cancellationToken?: CancellationToken): Task;
-    ensureCreated(): boolean;
-    ensureCreatedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    ensureDeleted(): boolean;
-    ensureDeletedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    exists(): boolean;
-    existsAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    generateCreateScript(): string;
-    hasTables(): boolean;
-    hasTablesAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    CanConnect(): boolean;
+    CanConnectAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    Create(): void;
+    CreateAsync(cancellationToken?: CancellationToken): Task;
+    CreateTables(): void;
+    CreateTablesAsync(cancellationToken?: CancellationToken): Task;
+    Delete(): void;
+    DeleteAsync(cancellationToken?: CancellationToken): Task;
+    EnsureCreated(): boolean;
+    EnsureCreatedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    EnsureDeleted(): boolean;
+    EnsureDeletedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    Exists(): boolean;
+    ExistsAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    GenerateCreateScript(): string;
+    HasTables(): boolean;
+    HasTablesAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
 }
 
 
@@ -1183,21 +1183,21 @@ export type RelationalDatabaseCreator = RelationalDatabaseCreator$instance & __R
 
 
 export interface RelationalDatabaseCreatorDependencies$instance {
-    commandLogger: IRelationalCommandDiagnosticsLogger;
-    connection: IRelationalConnection;
-    contextOptions: IDbContextOptions;
-    currentContext: ICurrentDbContext;
-    exceptionDetector: IExceptionDetector;
-    readonly executionStrategy: IExecutionStrategy;
-    migrationCommandExecutor: IMigrationCommandExecutor;
-    migrationsSqlGenerator: IMigrationsSqlGenerator;
-    modelDiffer: IMigrationsModelDiffer;
-    sqlGenerationHelper: ISqlGenerationHelper;
+    CommandLogger: IRelationalCommandDiagnosticsLogger;
+    Connection: IRelationalConnection;
+    ContextOptions: IDbContextOptions;
+    CurrentContext: ICurrentDbContext;
+    ExceptionDetector: IExceptionDetector;
+    readonly ExecutionStrategy: IExecutionStrategy;
+    MigrationCommandExecutor: IMigrationCommandExecutor;
+    MigrationsSqlGenerator: IMigrationsSqlGenerator;
+    ModelDiffer: IMigrationsModelDiffer;
+    SqlGenerationHelper: ISqlGenerationHelper;
     _Clone_$(): RelationalDatabaseCreatorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalDatabaseCreatorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalDatabaseCreatorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1209,14 +1209,14 @@ export const RelationalDatabaseCreatorDependencies: {
 export type RelationalDatabaseCreatorDependencies = RelationalDatabaseCreatorDependencies$instance;
 
 export interface RelationalDatabaseDependencies$instance {
-    batchExecutor: IBatchExecutor;
-    batchPreparer: ICommandBatchPreparer;
-    connection: IRelationalConnection;
+    BatchExecutor: IBatchExecutor;
+    BatchPreparer: ICommandBatchPreparer;
+    Connection: IRelationalConnection;
     _Clone_$(): RelationalDatabaseDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalDatabaseDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalDatabaseDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1228,17 +1228,17 @@ export const RelationalDatabaseDependencies: {
 export type RelationalDatabaseDependencies = RelationalDatabaseDependencies$instance;
 
 export interface RelationalDataReader$instance {
-    readonly commandId: Guid;
-    readonly dbCommand: DbCommand;
-    readonly dbDataReader: DbDataReader;
-    readonly relationalConnection: IRelationalConnection;
-    close(): void;
-    closeAsync(): ValueTask;
-    dispose(): void;
-    disposeAsync(): ValueTask;
-    initialize(relationalConnection: IRelationalConnection, command: DbCommand, reader: DbDataReader, commandId: Guid, logger: IRelationalCommandDiagnosticsLogger): void;
-    read(): boolean;
-    readAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    readonly CommandId: Guid;
+    readonly DbCommand: DbCommand;
+    readonly DbDataReader: DbDataReader;
+    readonly RelationalConnection: IRelationalConnection;
+    Close(): void;
+    CloseAsync(): ValueTask;
+    Dispose(): void;
+    DisposeAsync(): ValueTask;
+    Initialize(relationalConnection: IRelationalConnection, command: DbCommand, reader: DbDataReader, commandId: Guid, logger: IRelationalCommandDiagnosticsLogger): void;
+    Read(): boolean;
+    ReadAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
 }
 
 
@@ -1250,7 +1250,7 @@ export const RelationalDataReader: {
 export type RelationalDataReader = RelationalDataReader$instance;
 
 export interface RelationalExecutionStrategyFactory$instance {
-    create(): IExecutionStrategy;
+    Create(): IExecutionStrategy;
 }
 
 
@@ -1269,10 +1269,10 @@ export type RelationalExecutionStrategyFactory = RelationalExecutionStrategyFact
 
 
 export interface RelationalGeometryTypeMapping_2$instance<TGeometry, TProvider> extends RelationalTypeMapping {
-    createParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
-    createParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
-    customizeDataReaderExpression(expression: Expression): Expression;
-    generateCodeLiteral(value: unknown): Expression;
+    CreateParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
+    CreateParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
+    CustomizeDataReaderExpression(expression: Expression): Expression;
+    GenerateCodeLiteral(value: unknown): Expression;
 }
 
 
@@ -1283,27 +1283,27 @@ export const RelationalGeometryTypeMapping_2: {
 export type RelationalGeometryTypeMapping_2<TGeometry, TProvider> = RelationalGeometryTypeMapping_2$instance<TGeometry, TProvider>;
 
 export interface RelationalSqlGenerationHelper$instance {
-    readonly batchTerminator: string;
-    readonly commitTransactionStatement: string;
-    readonly singleLineCommentToken: string;
-    readonly startTransactionStatement: string;
-    readonly statementTerminator: string;
-    delimitIdentifier(identifier: string): string;
-    delimitIdentifier(builder: StringBuilder, identifier: string): void;
-    delimitIdentifier(name: string, schema: string): string;
-    delimitIdentifier(builder: StringBuilder, name: string, schema: string): void;
-    delimitJsonPathElement(pathElement: string): string;
-    escapeIdentifier(identifier: string): string;
-    escapeIdentifier(builder: StringBuilder, identifier: string): void;
-    escapeJsonPathElement(identifier: string): string;
-    generateComment(text: string): string;
-    generateCreateSavepointStatement(name: string): string;
-    generateParameterName(name: string): string;
-    generateParameterName(builder: StringBuilder, name: string): void;
-    generateParameterNamePlaceholder(name: string): string;
-    generateParameterNamePlaceholder(builder: StringBuilder, name: string): void;
-    generateReleaseSavepointStatement(name: string): string;
-    generateRollbackToSavepointStatement(name: string): string;
+    readonly BatchTerminator: string;
+    readonly CommitTransactionStatement: string;
+    readonly SingleLineCommentToken: string;
+    readonly StartTransactionStatement: string;
+    readonly StatementTerminator: string;
+    DelimitIdentifier(identifier: string): string;
+    DelimitIdentifier(builder: StringBuilder, identifier: string): void;
+    DelimitIdentifier(name: string, schema: string): string;
+    DelimitIdentifier(builder: StringBuilder, name: string, schema: string): void;
+    DelimitJsonPathElement(pathElement: string): string;
+    EscapeIdentifier(identifier: string): string;
+    EscapeIdentifier(builder: StringBuilder, identifier: string): void;
+    EscapeJsonPathElement(identifier: string): string;
+    GenerateComment(text: string): string;
+    GenerateCreateSavepointStatement(name: string): string;
+    GenerateParameterName(name: string): string;
+    GenerateParameterName(builder: StringBuilder, name: string): void;
+    GenerateParameterNamePlaceholder(name: string): string;
+    GenerateParameterNamePlaceholder(builder: StringBuilder, name: string): void;
+    GenerateReleaseSavepointStatement(name: string): string;
+    GenerateRollbackToSavepointStatement(name: string): string;
 }
 
 
@@ -1321,10 +1321,10 @@ export type RelationalSqlGenerationHelper = RelationalSqlGenerationHelper$instan
 
 export interface RelationalSqlGenerationHelperDependencies$instance {
     _Clone_$(): RelationalSqlGenerationHelperDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalSqlGenerationHelperDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalSqlGenerationHelperDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1336,20 +1336,20 @@ export const RelationalSqlGenerationHelperDependencies: {
 export type RelationalSqlGenerationHelperDependencies = RelationalSqlGenerationHelperDependencies$instance;
 
 export interface RelationalTransaction$instance {
-    readonly supportsSavepoints: boolean;
-    readonly transactionId: Guid;
-    commit(): void;
-    commitAsync(cancellationToken?: CancellationToken): Task;
-    createSavepoint(name: string): void;
-    createSavepointAsync(name: string, cancellationToken?: CancellationToken): Task;
-    dispose(): void;
-    disposeAsync(): ValueTask;
-    releaseSavepoint(name: string): void;
-    releaseSavepointAsync(name: string, cancellationToken?: CancellationToken): Task;
-    rollback(): void;
-    rollbackAsync(cancellationToken?: CancellationToken): Task;
-    rollbackToSavepoint(name: string): void;
-    rollbackToSavepointAsync(name: string, cancellationToken?: CancellationToken): Task;
+    readonly SupportsSavepoints: boolean;
+    readonly TransactionId: Guid;
+    Commit(): void;
+    CommitAsync(cancellationToken?: CancellationToken): Task;
+    CreateSavepoint(name: string): void;
+    CreateSavepointAsync(name: string, cancellationToken?: CancellationToken): Task;
+    Dispose(): void;
+    DisposeAsync(): ValueTask;
+    ReleaseSavepoint(name: string): void;
+    ReleaseSavepointAsync(name: string, cancellationToken?: CancellationToken): Task;
+    Rollback(): void;
+    RollbackAsync(cancellationToken?: CancellationToken): Task;
+    RollbackToSavepoint(name: string): void;
+    RollbackToSavepointAsync(name: string, cancellationToken?: CancellationToken): Task;
 }
 
 
@@ -1369,7 +1369,7 @@ export type RelationalTransaction = RelationalTransaction$instance & __Relationa
 
 
 export interface RelationalTransactionFactory$instance {
-    create(connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, logger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, transactionOwned: boolean): RelationalTransaction;
+    Create(connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, logger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, transactionOwned: boolean): RelationalTransaction;
 }
 
 
@@ -1388,12 +1388,12 @@ export type RelationalTransactionFactory = RelationalTransactionFactory$instance
 
 
 export interface RelationalTransactionFactoryDependencies$instance {
-    sqlGenerationHelper: ISqlGenerationHelper;
+    SqlGenerationHelper: ISqlGenerationHelper;
     _Clone_$(): RelationalTransactionFactoryDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalTransactionFactoryDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalTransactionFactoryDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1405,48 +1405,48 @@ export const RelationalTransactionFactoryDependencies: {
 export type RelationalTransactionFactoryDependencies = RelationalTransactionFactoryDependencies$instance;
 
 export interface RelationalTypeMapping$instance extends CoreTypeMapping {
-    readonly dbType: Nullable<DbType>;
-    readonly isFixedLength: boolean;
-    readonly isUnicode: boolean;
-    readonly precision: Nullable<System_Internal.Int32>;
-    readonly scale: Nullable<System_Internal.Int32>;
-    readonly size: Nullable<System_Internal.Int32>;
-    readonly storeType: string;
-    readonly storeTypeNameBase: string;
-    readonly storeTypePostfix: StoreTypePostfix;
-    clone(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
-    clone(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
-    createParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
-    customizeDataReaderExpression(expression: Expression): Expression;
-    generateProviderValueSqlLiteral(value: unknown): string;
-    generateSqlLiteral(value: unknown): string;
-    getDataReaderMethod(): MethodInfo;
-    withComposedConverter(converter: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
-    withPrecisionAndScale(precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): RelationalTypeMapping;
-    withStoreTypeAndSize(storeType: string, size: Nullable<System_Internal.Int32>): RelationalTypeMapping;
-    withTypeMappingInfo(mappingInfo: RelationalTypeMappingInfo): RelationalTypeMapping;
+    readonly DbType: Nullable<DbType>;
+    readonly IsFixedLength: boolean;
+    readonly IsUnicode: boolean;
+    readonly Precision: Nullable<System_Internal.Int32>;
+    readonly Scale: Nullable<System_Internal.Int32>;
+    readonly Size: Nullable<System_Internal.Int32>;
+    readonly StoreType: string;
+    readonly StoreTypeNameBase: string;
+    readonly StoreTypePostfix: StoreTypePostfix;
+    Clone(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
+    CreateParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
+    CustomizeDataReaderExpression(expression: Expression): Expression;
+    GenerateProviderValueSqlLiteral(value: unknown): string;
+    GenerateSqlLiteral(value: unknown): string;
+    GetDataReaderMethod(): MethodInfo;
+    WithComposedConverter(converter: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
+    WithPrecisionAndScale(precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): RelationalTypeMapping;
+    WithStoreTypeAndSize(storeType: string, size: Nullable<System_Internal.Int32>): RelationalTypeMapping;
+    WithTypeMappingInfo(mappingInfo: RelationalTypeMappingInfo): RelationalTypeMapping;
 }
 
 
 export const RelationalTypeMapping: {
-    readonly nullMapping: RelationalTypeMapping;
-    getDataReaderMethod(type: Type): MethodInfo;
+    readonly NullMapping: RelationalTypeMapping;
+    GetDataReaderMethod(type: Type): MethodInfo;
 };
 
 
 export type RelationalTypeMapping = RelationalTypeMapping$instance;
 
 export interface RelationalTypeMappingSource$instance extends TypeMappingSourceBase$instance {
-    findMapping(property: IProperty): CoreTypeMapping | undefined;
-    findMapping(elementType: IElementType): CoreTypeMapping | undefined;
-    findMapping(type: Type): RelationalTypeMapping | undefined;
-    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
-    findMapping(member: MemberInfo): RelationalTypeMapping | undefined;
-    findMapping(storeTypeName: string): RelationalTypeMapping | undefined;
-    findMapping(type: Type): CoreTypeMapping | undefined;
-    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
+    FindMapping(property: IProperty): CoreTypeMapping | undefined;
+    FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
+    FindMapping(type: Type): RelationalTypeMapping | undefined;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
+    FindMapping(member: MemberInfo): RelationalTypeMapping | undefined;
+    FindMapping(storeTypeName: string): RelationalTypeMapping | undefined;
+    FindMapping(type: Type): CoreTypeMapping | undefined;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
 }
 
 
@@ -1463,12 +1463,12 @@ export type RelationalTypeMappingSource = RelationalTypeMappingSource$instance &
 
 
 export interface RelationalTypeMappingSourceDependencies$instance {
-    plugins: IEnumerable<IRelationalTypeMappingSourcePlugin>;
+    Plugins: IEnumerable<IRelationalTypeMappingSourcePlugin>;
     _Clone_$(): RelationalTypeMappingSourceDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalTypeMappingSourceDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalTypeMappingSourceDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1499,7 +1499,7 @@ export interface SByteTypeMapping$instance extends RelationalTypeMapping {
 
 export const SByteTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): SByteTypeMapping;
-    readonly default: SByteTypeMapping;
+    readonly Default: SByteTypeMapping;
 };
 
 
@@ -1511,7 +1511,7 @@ export interface ShortTypeMapping$instance extends RelationalTypeMapping {
 
 export const ShortTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): ShortTypeMapping;
-    readonly default: ShortTypeMapping;
+    readonly Default: ShortTypeMapping;
 };
 
 
@@ -1523,7 +1523,7 @@ export interface StringTypeMapping$instance extends RelationalTypeMapping {
 
 export const StringTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>, unicode: boolean, size: Nullable<System_Internal.Int32>): StringTypeMapping;
-    readonly default: StringTypeMapping;
+    readonly Default: StringTypeMapping;
 };
 
 
@@ -1535,7 +1535,7 @@ export interface TimeOnlyTypeMapping$instance extends RelationalTypeMapping {
 
 export const TimeOnlyTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): TimeOnlyTypeMapping;
-    readonly default: TimeOnlyTypeMapping;
+    readonly Default: TimeOnlyTypeMapping;
 };
 
 
@@ -1547,19 +1547,19 @@ export interface TimeSpanTypeMapping$instance extends RelationalTypeMapping {
 
 export const TimeSpanTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): TimeSpanTypeMapping;
-    readonly default: TimeSpanTypeMapping;
+    readonly Default: TimeSpanTypeMapping;
 };
 
 
 export type TimeSpanTypeMapping = TimeSpanTypeMapping$instance;
 
 export interface TypeMappingSource$instance extends TypeMappingSourceBase$instance {
-    findMapping(property: IProperty): CoreTypeMapping | undefined;
-    findMapping(elementType: IElementType): CoreTypeMapping | undefined;
-    findMapping(type: Type): CoreTypeMapping | undefined;
-    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
+    FindMapping(property: IProperty): CoreTypeMapping | undefined;
+    FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
+    FindMapping(type: Type): CoreTypeMapping | undefined;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
 }
 
 
@@ -1575,12 +1575,12 @@ export type TypeMappingSource = TypeMappingSource$instance & __TypeMappingSource
 
 
 export interface TypeMappingSourceBase$instance {
-    findMapping(property: IProperty): CoreTypeMapping | undefined;
-    findMapping(elementType: IElementType): CoreTypeMapping | undefined;
-    findMapping(type: Type): CoreTypeMapping | undefined;
-    findMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo): CoreTypeMapping | undefined;
-    findMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
+    FindMapping(property: IProperty): CoreTypeMapping | undefined;
+    FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
+    FindMapping(type: Type): CoreTypeMapping | undefined;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo): CoreTypeMapping | undefined;
+    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
 }
 
 
@@ -1596,14 +1596,14 @@ export type TypeMappingSourceBase = TypeMappingSourceBase$instance & __TypeMappi
 
 
 export interface TypeMappingSourceDependencies$instance {
-    readonly jsonValueReaderWriterSource: IJsonValueReaderWriterSource;
-    plugins: IEnumerable<ITypeMappingSourcePlugin>;
-    valueConverterSelector: IValueConverterSelector;
+    readonly JsonValueReaderWriterSource: IJsonValueReaderWriterSource;
+    Plugins: IEnumerable<ITypeMappingSourcePlugin>;
+    ValueConverterSelector: IValueConverterSelector;
     _Clone_$(): TypeMappingSourceDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: TypeMappingSourceDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: TypeMappingSourceDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -1615,13 +1615,13 @@ export const TypeMappingSourceDependencies: {
 export type TypeMappingSourceDependencies = TypeMappingSourceDependencies$instance;
 
 export interface TypeMaterializationInfo$instance {
-    readonly isNullable: Nullable<System_Internal.Boolean>;
-    readonly mapping: RelationalTypeMapping;
-    readonly modelClrType: Type;
-    readonly property: IProperty;
-    readonly providerClrType: Type;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
+    readonly IsNullable: Nullable<System_Internal.Boolean>;
+    readonly Mapping: RelationalTypeMapping;
+    readonly ModelClrType: Type;
+    readonly Property: IProperty;
+    readonly ProviderClrType: Type;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
 }
 
 
@@ -1638,7 +1638,7 @@ export interface UIntTypeMapping$instance extends RelationalTypeMapping {
 
 export const UIntTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): UIntTypeMapping;
-    readonly default: UIntTypeMapping;
+    readonly Default: UIntTypeMapping;
 };
 
 
@@ -1650,7 +1650,7 @@ export interface ULongTypeMapping$instance extends RelationalTypeMapping {
 
 export const ULongTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): ULongTypeMapping;
-    readonly default: ULongTypeMapping;
+    readonly Default: ULongTypeMapping;
 };
 
 
@@ -1662,55 +1662,55 @@ export interface UShortTypeMapping$instance extends RelationalTypeMapping {
 
 export const UShortTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): UShortTypeMapping;
-    readonly default: UShortTypeMapping;
+    readonly Default: UShortTypeMapping;
 };
 
 
 export type UShortTypeMapping = UShortTypeMapping$instance;
 
 export abstract class DbContextTransactionExtensions$instance {
-    static getDbTransaction(dbContextTransaction: IDbContextTransaction): DbTransaction;
+    static GetDbTransaction(dbContextTransaction: IDbContextTransaction): DbTransaction;
 }
 
 
 export type DbContextTransactionExtensions = DbContextTransactionExtensions$instance;
 
 export abstract class RelationalCommandBuilderExtensions$instance {
-    static addCompositeParameter(commandBuilder: IRelationalCommandBuilder, invariantName: string, subParameters: IReadOnlyList<IRelationalParameter>): IRelationalCommandBuilder;
-    static addParameter(commandBuilder: IRelationalCommandBuilder, invariantName: string, name: string, relationalTypeMapping: RelationalTypeMapping, nullable: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): IRelationalCommandBuilder;
-    static addParameter(commandBuilder: IRelationalCommandBuilder, invariantName: string, name: string): IRelationalCommandBuilder;
-    static addRawParameter(commandBuilder: IRelationalCommandBuilder, invariantName: string, dbParameter: DbParameter): IRelationalCommandBuilder;
-    static appendLine(commandBuilder: IRelationalCommandBuilder, value: FormattableString): IRelationalCommandBuilder;
-    static appendLine(commandBuilder: IRelationalCommandBuilder, value: string): IRelationalCommandBuilder;
-    static appendLines(commandBuilder: IRelationalCommandBuilder, value: string, skipFinalNewline?: boolean): IRelationalCommandBuilder;
-    static indent(commandBuilder: IRelationalCommandBuilder): IDisposable;
+    static AddCompositeParameter(commandBuilder: IRelationalCommandBuilder, invariantName: string, subParameters: IReadOnlyList<IRelationalParameter>): IRelationalCommandBuilder;
+    static AddParameter(commandBuilder: IRelationalCommandBuilder, invariantName: string, name: string, relationalTypeMapping: RelationalTypeMapping, nullable: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): IRelationalCommandBuilder;
+    static AddParameter(commandBuilder: IRelationalCommandBuilder, invariantName: string, name: string): IRelationalCommandBuilder;
+    static AddRawParameter(commandBuilder: IRelationalCommandBuilder, invariantName: string, dbParameter: DbParameter): IRelationalCommandBuilder;
+    static AppendLine(commandBuilder: IRelationalCommandBuilder, value: FormattableString): IRelationalCommandBuilder;
+    static AppendLine(commandBuilder: IRelationalCommandBuilder, value: string): IRelationalCommandBuilder;
+    static AppendLines(commandBuilder: IRelationalCommandBuilder, value: string, skipFinalNewline?: boolean): IRelationalCommandBuilder;
+    static Indent(commandBuilder: IRelationalCommandBuilder): IDisposable;
 }
 
 
 export type RelationalCommandBuilderExtensions = RelationalCommandBuilderExtensions$instance;
 
 export abstract class RelationalExecutionStrategyExtensions$instance {
-    static executeInTransaction<TResult>(strategy: IExecutionStrategy, operation: Func<TResult>, verifySucceeded: Func<System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
-    static executeInTransaction(strategy: IExecutionStrategy, operation: Action, verifySucceeded: Func<System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
-    static executeInTransaction<TState>(strategy: IExecutionStrategy, state: TState, operation: Action<TState>, verifySucceeded: Func<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
-    static executeInTransaction<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func<TState, TResult>, verifySucceeded: Func<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
-    static executeInTransactionAsync<TResult>(strategy: IExecutionStrategy, operation: Func<CancellationToken, Task<TResult>>, verifySucceeded: Func<CancellationToken, Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<TResult>;
-    static executeInTransactionAsync(strategy: IExecutionStrategy, operation: Func<Task>, verifySucceeded: Func<Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel): Task;
-    static executeInTransactionAsync(strategy: IExecutionStrategy, operation: Func<CancellationToken, Task>, verifySucceeded: Func<CancellationToken, Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
-    static executeInTransactionAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func<TState, CancellationToken, Task>, verifySucceeded: Func<TState, CancellationToken, Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
-    static executeInTransactionAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func<TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<TState, CancellationToken, Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<TResult>;
+    static ExecuteInTransaction<TResult>(strategy: IExecutionStrategy, operation: Func<TResult>, verifySucceeded: Func<System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
+    static ExecuteInTransaction(strategy: IExecutionStrategy, operation: Action, verifySucceeded: Func<System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
+    static ExecuteInTransaction<TState>(strategy: IExecutionStrategy, state: TState, operation: Action<TState>, verifySucceeded: Func<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
+    static ExecuteInTransaction<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func<TState, TResult>, verifySucceeded: Func<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
+    static ExecuteInTransactionAsync<TResult>(strategy: IExecutionStrategy, operation: Func<CancellationToken, Task<TResult>>, verifySucceeded: Func<CancellationToken, Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<TResult>;
+    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func<Task>, verifySucceeded: Func<Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel): Task;
+    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func<CancellationToken, Task>, verifySucceeded: Func<CancellationToken, Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
+    static ExecuteInTransactionAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func<TState, CancellationToken, Task>, verifySucceeded: Func<TState, CancellationToken, Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
+    static ExecuteInTransactionAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func<TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<TState, CancellationToken, Task<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task<TResult>;
 }
 
 
 export type RelationalExecutionStrategyExtensions = RelationalExecutionStrategyExtensions$instance;
 
 export abstract class RelationalTypeMappingSourceExtensions$instance {
-    static getMapping(typeMappingSource: IRelationalTypeMappingSource, property: IProperty): RelationalTypeMapping;
-    static getMapping(typeMappingSource: IRelationalTypeMappingSource, typeName: string): RelationalTypeMapping;
-    static getMapping(typeMappingSource: IRelationalTypeMappingSource, clrType: Type, model: IModel): RelationalTypeMapping;
-    static getMapping(typeMappingSource: IRelationalTypeMappingSource, clrType: Type): RelationalTypeMapping;
-    static getMappingForValue(typeMappingSource: IRelationalTypeMappingSource, value: unknown, model: IModel): RelationalTypeMapping;
-    static getMappingForValue(typeMappingSource: IRelationalTypeMappingSource, value: unknown): RelationalTypeMapping;
+    static GetMapping(typeMappingSource: IRelationalTypeMappingSource, property: IProperty): RelationalTypeMapping;
+    static GetMapping(typeMappingSource: IRelationalTypeMappingSource, typeName: string): RelationalTypeMapping;
+    static GetMapping(typeMappingSource: IRelationalTypeMappingSource, clrType: Type, model: IModel): RelationalTypeMapping;
+    static GetMapping(typeMappingSource: IRelationalTypeMappingSource, clrType: Type): RelationalTypeMapping;
+    static GetMappingForValue(typeMappingSource: IRelationalTypeMappingSource, value: unknown, model: IModel): RelationalTypeMapping;
+    static GetMappingForValue(typeMappingSource: IRelationalTypeMappingSource, value: unknown): RelationalTypeMapping;
 }
 
 
