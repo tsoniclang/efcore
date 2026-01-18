@@ -24,145 +24,145 @@ import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
 export enum LockReleaseBehavior {
-    transaction = 0,
-    connection = 1,
-    explicit = 2
+    Transaction = 0,
+    Connection = 1,
+    Explicit = 2
 }
 
 
 export enum MigrationsSqlGenerationOptions {
-    default = 0,
-    script = 1,
-    idempotent = 2,
-    noTransactions = 4
+    Default = 0,
+    Script = 1,
+    Idempotent = 2,
+    NoTransactions = 4
 }
 
 
 export enum ReferentialAction {
-    noAction = 0,
-    restrict = 1,
-    cascade = 2,
-    setNull = 3,
-    setDefault = 4
+    NoAction = 0,
+    Restrict = 1,
+    Cascade = 2,
+    SetNull = 3,
+    SetDefault = 4
 }
 
 
 export interface IHistoryRepository$instance {
-    readonly lockReleaseBehavior: LockReleaseBehavior;
-    acquireDatabaseLock(): IMigrationsDatabaseLock;
-    create(): void;
-    createAsync(cancellationToken?: CancellationToken): Task;
-    exists(): boolean;
-    existsAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    getAppliedMigrations(): IReadOnlyList<HistoryRow>;
-    getCreateScript(): string;
-    getDeleteScript(migrationId: string): string;
-    getInsertScript(row: HistoryRow): string;
+    readonly LockReleaseBehavior: LockReleaseBehavior;
+    AcquireDatabaseLock(): IMigrationsDatabaseLock;
+    Create(): void;
+    CreateAsync(cancellationToken?: CancellationToken): Task;
+    Exists(): boolean;
+    ExistsAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    GetAppliedMigrations(): IReadOnlyList<HistoryRow>;
+    GetCreateScript(): string;
+    GetDeleteScript(migrationId: string): string;
+    GetInsertScript(row: HistoryRow): string;
 }
 
 
 export type IHistoryRepository = IHistoryRepository$instance;
 
 export interface IMigrationCommandExecutor$instance {
-    executeNonQuery(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection): void;
-    executeNonQuery(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>): int;
-    executeNonQueryAsync(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task;
-    executeNonQueryAsync(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+    ExecuteNonQuery(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection): void;
+    ExecuteNonQuery(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>): int;
+    ExecuteNonQueryAsync(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task;
+    ExecuteNonQueryAsync(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
 
 
 export type IMigrationCommandExecutor = IMigrationCommandExecutor$instance;
 
 export interface IMigrationsAnnotationProvider$instance {
-    forRemove(checkConstraint: ICheckConstraint): IEnumerable<IAnnotation>;
-    forRemove(column: IColumn): IEnumerable<IAnnotation>;
-    forRemove(foreignKey: IForeignKeyConstraint): IEnumerable<IAnnotation>;
-    forRemove(model: IRelationalModel): IEnumerable<IAnnotation>;
-    forRemove(sequence: ISequence): IEnumerable<IAnnotation>;
-    forRemove(table: ITable): IEnumerable<IAnnotation>;
-    forRemove(index: ITableIndex): IEnumerable<IAnnotation>;
-    forRemove(constraint: IUniqueConstraint): IEnumerable<IAnnotation>;
-    forRemove(view: IView): IEnumerable<IAnnotation>;
-    forRemove(column: IViewColumn): IEnumerable<IAnnotation>;
+    ForRemove(checkConstraint: ICheckConstraint): IEnumerable<IAnnotation>;
+    ForRemove(column: IColumn): IEnumerable<IAnnotation>;
+    ForRemove(foreignKey: IForeignKeyConstraint): IEnumerable<IAnnotation>;
+    ForRemove(model: IRelationalModel): IEnumerable<IAnnotation>;
+    ForRemove(sequence: ISequence): IEnumerable<IAnnotation>;
+    ForRemove(table: ITable): IEnumerable<IAnnotation>;
+    ForRemove(index: ITableIndex): IEnumerable<IAnnotation>;
+    ForRemove(constraint: IUniqueConstraint): IEnumerable<IAnnotation>;
+    ForRemove(view: IView): IEnumerable<IAnnotation>;
+    ForRemove(column: IViewColumn): IEnumerable<IAnnotation>;
 }
 
 
 export type IMigrationsAnnotationProvider = IMigrationsAnnotationProvider$instance;
 
 export interface IMigrationsAssembly$instance {
-    readonly migrations: IReadOnlyDictionary<System_Internal.String, TypeInfo>;
-    readonly modelSnapshot: ModelSnapshot | undefined;
-    readonly assembly: Assembly;
-    createMigration(migrationClass: TypeInfo, activeProvider: string): Migration;
-    findMigrationId(nameOrId: string): string | undefined;
+    readonly Migrations: IReadOnlyDictionary<System_Internal.String, TypeInfo>;
+    readonly ModelSnapshot: ModelSnapshot | undefined;
+    readonly Assembly: Assembly;
+    CreateMigration(migrationClass: TypeInfo, activeProvider: string): Migration;
+    FindMigrationId(nameOrId: string): string | undefined;
 }
 
 
 export type IMigrationsAssembly = IMigrationsAssembly$instance;
 
 export interface IMigrationsDatabaseLock$instance extends IDisposable, IAsyncDisposable {
-    reacquireIfNeeded(connectionReopened: boolean, transactionRestarted: Nullable<System_Internal.Boolean>): IMigrationsDatabaseLock;
-    reacquireIfNeededAsync(connectionReopened: boolean, transactionRestarted: Nullable<System_Internal.Boolean>, cancellationToken?: CancellationToken): Task<IMigrationsDatabaseLock>;
+    ReacquireIfNeeded(connectionReopened: boolean, transactionRestarted: Nullable<System_Internal.Boolean>): IMigrationsDatabaseLock;
+    ReacquireIfNeededAsync(connectionReopened: boolean, transactionRestarted: Nullable<System_Internal.Boolean>, cancellationToken?: CancellationToken): Task<IMigrationsDatabaseLock>;
 }
 
 
 export type IMigrationsDatabaseLock = IMigrationsDatabaseLock$instance;
 
 export interface IMigrationsIdGenerator$instance {
-    generateId(name: string): string;
-    isValidId(value: string): boolean;
+    GenerateId(name: string): string;
+    IsValidId(value: string): boolean;
 }
 
 
 export type IMigrationsIdGenerator = IMigrationsIdGenerator$instance;
 
 export interface IMigrationsModelDiffer$instance {
-    getDifferences(source: IRelationalModel, target: IRelationalModel): IReadOnlyList<MigrationOperation>;
-    hasDifferences(source: IRelationalModel, target: IRelationalModel): boolean;
+    GetDifferences(source: IRelationalModel, target: IRelationalModel): IReadOnlyList<MigrationOperation>;
+    HasDifferences(source: IRelationalModel, target: IRelationalModel): boolean;
 }
 
 
 export type IMigrationsModelDiffer = IMigrationsModelDiffer$instance;
 
 export interface IMigrationsSqlGenerator$instance {
-    generate(operations: IReadOnlyList<MigrationOperation>, model?: IModel, options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
+    Generate(operations: IReadOnlyList<MigrationOperation>, model?: IModel, options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
 }
 
 
 export type IMigrationsSqlGenerator = IMigrationsSqlGenerator$instance;
 
 export interface IMigrator$instance {
-    generateScript(fromMigration?: string, toMigration?: string, options?: MigrationsSqlGenerationOptions): string;
-    hasPendingModelChanges(): boolean;
-    migrate(targetMigration?: string): void;
-    migrateAsync(targetMigration?: string, cancellationToken?: CancellationToken): Task;
+    GenerateScript(fromMigration?: string, toMigration?: string, options?: MigrationsSqlGenerationOptions): string;
+    HasPendingModelChanges(): boolean;
+    Migrate(targetMigration?: string): void;
+    MigrateAsync(targetMigration?: string, cancellationToken?: CancellationToken): Task;
 }
 
 
 export type IMigrator = IMigrator$instance;
 
 export interface HistoryRepository$instance {
-    readonly lockReleaseBehavior: LockReleaseBehavior;
-    acquireDatabaseLock(): IMigrationsDatabaseLock;
-    acquireDatabaseLockAsync(cancellationToken?: CancellationToken): Task<IMigrationsDatabaseLock>;
-    create(): void;
-    createAsync(cancellationToken?: CancellationToken): Task;
-    exists(): boolean;
-    existsAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
-    getAppliedMigrations(): IReadOnlyList<HistoryRow>;
-    getAppliedMigrationsAsync(cancellationToken?: CancellationToken): Task<IReadOnlyList<HistoryRow>>;
-    getBeginIfExistsScript(migrationId: string): string;
-    getBeginIfNotExistsScript(migrationId: string): string;
-    getCreateIfNotExistsScript(): string;
-    getCreateScript(): string;
-    getDeleteScript(migrationId: string): string;
-    getEndIfScript(): string;
-    getInsertScript(row: HistoryRow): string;
+    readonly LockReleaseBehavior: LockReleaseBehavior;
+    AcquireDatabaseLock(): IMigrationsDatabaseLock;
+    AcquireDatabaseLockAsync(cancellationToken?: CancellationToken): Task<IMigrationsDatabaseLock>;
+    Create(): void;
+    CreateAsync(cancellationToken?: CancellationToken): Task;
+    Exists(): boolean;
+    ExistsAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    GetAppliedMigrations(): IReadOnlyList<HistoryRow>;
+    GetAppliedMigrationsAsync(cancellationToken?: CancellationToken): Task<IReadOnlyList<HistoryRow>>;
+    GetBeginIfExistsScript(migrationId: string): string;
+    GetBeginIfNotExistsScript(migrationId: string): string;
+    GetCreateIfNotExistsScript(): string;
+    GetCreateScript(): string;
+    GetDeleteScript(migrationId: string): string;
+    GetEndIfScript(): string;
+    GetInsertScript(row: HistoryRow): string;
 }
 
 
 export const HistoryRepository: {
-    readonly defaultTableName: string;
+    readonly DefaultTableName: string;
 };
 
 
@@ -176,26 +176,26 @@ export type HistoryRepository = HistoryRepository$instance & __HistoryRepository
 
 
 export interface HistoryRepositoryDependencies$instance {
-    commandLogger: IRelationalCommandDiagnosticsLogger;
-    connection: IRelationalConnection;
-    conventionSetBuilder: IConventionSetBuilder;
-    currentContext: ICurrentDbContext;
-    databaseCreator: IRelationalDatabaseCreator;
-    migrationCommandExecutor: IMigrationCommandExecutor;
-    migrationsLogger: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>;
-    migrationsSqlGenerator: IMigrationsSqlGenerator;
-    modelDependencies: ModelDependencies;
-    modelDiffer: IMigrationsModelDiffer;
-    modelRuntimeInitializer: IModelRuntimeInitializer;
-    options: IDbContextOptions;
-    rawSqlCommandBuilder: IRawSqlCommandBuilder;
-    sqlGenerationHelper: ISqlGenerationHelper;
-    typeMappingSource: IRelationalTypeMappingSource;
+    CommandLogger: IRelationalCommandDiagnosticsLogger;
+    Connection: IRelationalConnection;
+    ConventionSetBuilder: IConventionSetBuilder;
+    CurrentContext: ICurrentDbContext;
+    DatabaseCreator: IRelationalDatabaseCreator;
+    MigrationCommandExecutor: IMigrationCommandExecutor;
+    MigrationsLogger: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>;
+    MigrationsSqlGenerator: IMigrationsSqlGenerator;
+    ModelDependencies: ModelDependencies;
+    ModelDiffer: IMigrationsModelDiffer;
+    ModelRuntimeInitializer: IModelRuntimeInitializer;
+    Options: IDbContextOptions;
+    RawSqlCommandBuilder: IRawSqlCommandBuilder;
+    SqlGenerationHelper: ISqlGenerationHelper;
+    TypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): HistoryRepositoryDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: HistoryRepositoryDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: HistoryRepositoryDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -207,8 +207,8 @@ export const HistoryRepositoryDependencies: {
 export type HistoryRepositoryDependencies = HistoryRepositoryDependencies$instance;
 
 export interface HistoryRow$instance {
-    readonly migrationId: string;
-    readonly productVersion: string;
+    readonly MigrationId: string;
+    readonly ProductVersion: string;
 }
 
 
@@ -220,23 +220,23 @@ export const HistoryRow: {
 export type HistoryRow = HistoryRow$instance;
 
 export interface Migration$instance {
-    get activeProvider(): string | undefined;
-    set activeProvider(value: string);
-    readonly downOperations: IReadOnlyList<MigrationOperation>;
-    readonly targetModel: IModel;
-    readonly upOperations: IReadOnlyList<MigrationOperation>;
+    get ActiveProvider(): string | undefined;
+    set ActiveProvider(value: string);
+    readonly DownOperations: IReadOnlyList<MigrationOperation>;
+    readonly TargetModel: IModel;
+    readonly UpOperations: IReadOnlyList<MigrationOperation>;
 }
 
 
 export const Migration: {
-    readonly initialDatabase: string;
+    readonly InitialDatabase: string;
 };
 
 
 export type Migration = Migration$instance;
 
 export interface MigrationAttribute$instance extends Attribute {
-    readonly id: string;
+    readonly Id: string;
 }
 
 
@@ -248,70 +248,70 @@ export const MigrationAttribute: {
 export type MigrationAttribute = MigrationAttribute$instance;
 
 export interface MigrationBuilder$instance {
-    readonly activeProvider: string | undefined;
-    readonly operations: List<MigrationOperation>;
-    addCheckConstraint(name: string, table: string, sql: string, schema?: string): OperationBuilder_1<AddCheckConstraintOperation>;
-    addColumn<T>(name: string, table: string, type?: string, unicode?: Nullable<System_Internal.Boolean>, maxLength?: Nullable<System_Internal.Int32>, rowVersion?: boolean, schema?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, fixedLength?: Nullable<System_Internal.Boolean>, comment?: string, collation?: string, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, stored?: Nullable<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
-    addForeignKey(name: string, table: string, column: string, principalTable: string, schema?: string, principalSchema?: string, principalColumn?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
-    addForeignKey(name: string, table: string, columns: string[], principalTable: string, schema?: string, principalSchema?: string, principalColumns?: string[], onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
-    addPrimaryKey(name: string, table: string, column: string, schema?: string): OperationBuilder_1<AddPrimaryKeyOperation>;
-    addPrimaryKey(name: string, table: string, columns: string[], schema?: string): OperationBuilder_1<AddPrimaryKeyOperation>;
-    addUniqueConstraint(name: string, table: string, column: string, schema?: string): OperationBuilder_1<AddUniqueConstraintOperation>;
-    addUniqueConstraint(name: string, table: string, columns: string[], schema?: string): OperationBuilder_1<AddUniqueConstraintOperation>;
-    alterColumn<T>(name: string, table: string, type?: string, unicode?: Nullable<System_Internal.Boolean>, maxLength?: Nullable<System_Internal.Int32>, rowVersion?: boolean, schema?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, oldClrType?: Type, oldType?: string, oldUnicode?: Nullable<System_Internal.Boolean>, oldMaxLength?: Nullable<System_Internal.Int32>, oldRowVersion?: boolean, oldNullable?: boolean, oldDefaultValue?: unknown, oldDefaultValueSql?: string, oldComputedColumnSql?: string, fixedLength?: Nullable<System_Internal.Boolean>, oldFixedLength?: Nullable<System_Internal.Boolean>, comment?: string, oldComment?: string, collation?: string, oldCollation?: string, precision?: Nullable<System_Internal.Int32>, oldPrecision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, oldScale?: Nullable<System_Internal.Int32>, stored?: Nullable<System_Internal.Boolean>, oldStored?: Nullable<System_Internal.Boolean>): AlterOperationBuilder_1<AlterColumnOperation>;
-    alterDatabase(collation?: string, oldCollation?: string): AlterOperationBuilder_1<AlterDatabaseOperation>;
-    alterSequence(name: string, schema?: string, incrementBy?: int, minValue?: Nullable<System_Internal.Int64>, maxValue?: Nullable<System_Internal.Int64>, cyclic?: boolean, oldIncrementBy?: int, oldMinValue?: Nullable<System_Internal.Int64>, oldMaxValue?: Nullable<System_Internal.Int64>, oldCyclic?: boolean): AlterOperationBuilder_1<AlterSequenceOperation>;
-    alterTable(name: string, schema?: string, comment?: string, oldComment?: string): AlterOperationBuilder_1<AlterTableOperation>;
-    createCheckConstraint(name: string, table: string, sql: string, schema?: string): OperationBuilder_1<AddCheckConstraintOperation>;
-    createIndex(name: string, table: string, column: string, schema?: string, unique?: boolean, filter?: string, descending?: boolean[]): OperationBuilder_1<CreateIndexOperation>;
-    createIndex(name: string, table: string, columns: string[], schema?: string, unique?: boolean, filter?: string, descending?: boolean[]): OperationBuilder_1<CreateIndexOperation>;
-    createSequence(name: string, schema?: string, startValue?: long, incrementBy?: int, minValue?: Nullable<System_Internal.Int64>, maxValue?: Nullable<System_Internal.Int64>, cyclic?: boolean): OperationBuilder_1<CreateSequenceOperation>;
-    createTable<TColumns>(name: string, columns: Func<ColumnsBuilder, TColumns>, schema?: string, constraints?: Action<CreateTableBuilder_1<TColumns>>, comment?: string): CreateTableBuilder_1<TColumns>;
-    deleteData(table: string, keyColumn: string, keyValue: unknown, schema?: string): OperationBuilder_1<DeleteDataOperation>;
-    deleteData(table: string, keyColumn: string, keyColumnType: string, keyValue: unknown, schema?: string): OperationBuilder_1<DeleteDataOperation>;
-    deleteData(table: string, keyColumns: string[], keyValues: unknown[], schema?: string): OperationBuilder_1<DeleteDataOperation>;
-    deleteData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: unknown[], schema?: string): OperationBuilder_1<DeleteDataOperation>;
-    deleteData(table: string, keyColumn: string, keyValues: unknown[], schema?: string): OperationBuilder_1<DeleteDataOperation>;
-    deleteData(table: string, keyColumn: string, keyColumnType: string, keyValues: unknown[], schema?: string): OperationBuilder_1<DeleteDataOperation>;
-    deleteData(table: string, keyColumns: string[], keyValues: Array<Array<unknown>>, schema?: string): OperationBuilder_1<DeleteDataOperation>;
-    deleteData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: Array<Array<unknown>>, schema?: string): OperationBuilder_1<DeleteDataOperation>;
-    dropCheckConstraint(name: string, table: string, schema?: string): OperationBuilder_1<DropCheckConstraintOperation>;
-    dropColumn(name: string, table: string, schema?: string): OperationBuilder_1<DropColumnOperation>;
-    dropForeignKey(name: string, table: string, schema?: string): OperationBuilder_1<DropForeignKeyOperation>;
-    dropIndex(name: string, table?: string, schema?: string): OperationBuilder_1<DropIndexOperation>;
-    dropPrimaryKey(name: string, table: string, schema?: string): OperationBuilder_1<DropPrimaryKeyOperation>;
-    dropSchema(name: string): OperationBuilder_1<DropSchemaOperation>;
-    dropSequence(name: string, schema?: string): OperationBuilder_1<DropSequenceOperation>;
-    dropTable(name: string, schema?: string): OperationBuilder_1<DropTableOperation>;
-    dropUniqueConstraint(name: string, table: string, schema?: string): OperationBuilder_1<DropUniqueConstraintOperation>;
-    ensureSchema(name: string): OperationBuilder_1<EnsureSchemaOperation>;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    insertData(table: string, column: string, value: unknown, schema?: string): OperationBuilder_1<InsertDataOperation>;
-    insertData(table: string, column: string, columnType: string, value: unknown, schema?: string): OperationBuilder_1<InsertDataOperation>;
-    insertData(table: string, columns: string[], values: unknown[], schema?: string): OperationBuilder_1<InsertDataOperation>;
-    insertData(table: string, columns: string[], columnTypes: string[], values: unknown[], schema?: string): OperationBuilder_1<InsertDataOperation>;
-    insertData(table: string, column: string, values: unknown[], schema?: string): OperationBuilder_1<InsertDataOperation>;
-    insertData(table: string, column: string, columnType: string, values: unknown[], schema?: string): OperationBuilder_1<InsertDataOperation>;
-    insertData(table: string, columns: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<InsertDataOperation>;
-    insertData(table: string, columns: string[], columnTypes: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<InsertDataOperation>;
-    renameColumn(name: string, table: string, newName: string, schema?: string): OperationBuilder_1<RenameColumnOperation>;
-    renameIndex(name: string, newName: string, table?: string, schema?: string): OperationBuilder_1<RenameIndexOperation>;
-    renameSequence(name: string, schema?: string, newName?: string, newSchema?: string): OperationBuilder_1<RenameSequenceOperation>;
-    renameTable(name: string, schema?: string, newName?: string, newSchema?: string): OperationBuilder_1<RenameTableOperation>;
-    restartSequence(name: string, startValue?: Nullable<System_Internal.Int64>, schema?: string): OperationBuilder_1<RestartSequenceOperation>;
-    sql(sql: string, suppressTransaction?: boolean): OperationBuilder_1<SqlOperation>;
-    toString(): string;
-    updateData(table: string, keyColumn: string, keyValue: unknown, column: string, value: unknown, schema?: string): OperationBuilder_1<UpdateDataOperation>;
-    updateData(table: string, keyColumn: string, keyValue: unknown, columns: string[], values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
-    updateData(table: string, keyColumns: string[], keyValues: unknown[], column: string, value: unknown, schema?: string): OperationBuilder_1<UpdateDataOperation>;
-    updateData(table: string, keyColumns: string[], keyValues: unknown[], columns: string[], values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
-    updateData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: unknown[], columns: string[], columnTypes: string[], values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
-    updateData(table: string, keyColumn: string, keyValues: unknown[], column: string, values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
-    updateData(table: string, keyColumn: string, keyValues: unknown[], columns: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<UpdateDataOperation>;
-    updateData(table: string, keyColumns: string[], keyValues: Array<Array<unknown>>, column: string, values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
-    updateData(table: string, keyColumns: string[], keyValues: Array<Array<unknown>>, columns: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<UpdateDataOperation>;
-    updateData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: Array<Array<unknown>>, columns: string[], columnTypes: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    readonly ActiveProvider: string | undefined;
+    readonly Operations: List<MigrationOperation>;
+    AddCheckConstraint(name: string, table: string, sql: string, schema?: string): OperationBuilder_1<AddCheckConstraintOperation>;
+    AddColumn<T>(name: string, table: string, type?: string, unicode?: Nullable<System_Internal.Boolean>, maxLength?: Nullable<System_Internal.Int32>, rowVersion?: boolean, schema?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, fixedLength?: Nullable<System_Internal.Boolean>, comment?: string, collation?: string, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, stored?: Nullable<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
+    AddForeignKey(name: string, table: string, column: string, principalTable: string, schema?: string, principalSchema?: string, principalColumn?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
+    AddForeignKey(name: string, table: string, columns: string[], principalTable: string, schema?: string, principalSchema?: string, principalColumns?: string[], onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
+    AddPrimaryKey(name: string, table: string, column: string, schema?: string): OperationBuilder_1<AddPrimaryKeyOperation>;
+    AddPrimaryKey(name: string, table: string, columns: string[], schema?: string): OperationBuilder_1<AddPrimaryKeyOperation>;
+    AddUniqueConstraint(name: string, table: string, column: string, schema?: string): OperationBuilder_1<AddUniqueConstraintOperation>;
+    AddUniqueConstraint(name: string, table: string, columns: string[], schema?: string): OperationBuilder_1<AddUniqueConstraintOperation>;
+    AlterColumn<T>(name: string, table: string, type?: string, unicode?: Nullable<System_Internal.Boolean>, maxLength?: Nullable<System_Internal.Int32>, rowVersion?: boolean, schema?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, oldClrType?: Type, oldType?: string, oldUnicode?: Nullable<System_Internal.Boolean>, oldMaxLength?: Nullable<System_Internal.Int32>, oldRowVersion?: boolean, oldNullable?: boolean, oldDefaultValue?: unknown, oldDefaultValueSql?: string, oldComputedColumnSql?: string, fixedLength?: Nullable<System_Internal.Boolean>, oldFixedLength?: Nullable<System_Internal.Boolean>, comment?: string, oldComment?: string, collation?: string, oldCollation?: string, precision?: Nullable<System_Internal.Int32>, oldPrecision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, oldScale?: Nullable<System_Internal.Int32>, stored?: Nullable<System_Internal.Boolean>, oldStored?: Nullable<System_Internal.Boolean>): AlterOperationBuilder_1<AlterColumnOperation>;
+    AlterDatabase(collation?: string, oldCollation?: string): AlterOperationBuilder_1<AlterDatabaseOperation>;
+    AlterSequence(name: string, schema?: string, incrementBy?: int, minValue?: Nullable<System_Internal.Int64>, maxValue?: Nullable<System_Internal.Int64>, cyclic?: boolean, oldIncrementBy?: int, oldMinValue?: Nullable<System_Internal.Int64>, oldMaxValue?: Nullable<System_Internal.Int64>, oldCyclic?: boolean): AlterOperationBuilder_1<AlterSequenceOperation>;
+    AlterTable(name: string, schema?: string, comment?: string, oldComment?: string): AlterOperationBuilder_1<AlterTableOperation>;
+    CreateCheckConstraint(name: string, table: string, sql: string, schema?: string): OperationBuilder_1<AddCheckConstraintOperation>;
+    CreateIndex(name: string, table: string, column: string, schema?: string, unique?: boolean, filter?: string, descending?: boolean[]): OperationBuilder_1<CreateIndexOperation>;
+    CreateIndex(name: string, table: string, columns: string[], schema?: string, unique?: boolean, filter?: string, descending?: boolean[]): OperationBuilder_1<CreateIndexOperation>;
+    CreateSequence(name: string, schema?: string, startValue?: long, incrementBy?: int, minValue?: Nullable<System_Internal.Int64>, maxValue?: Nullable<System_Internal.Int64>, cyclic?: boolean): OperationBuilder_1<CreateSequenceOperation>;
+    CreateTable<TColumns>(name: string, columns: Func<ColumnsBuilder, TColumns>, schema?: string, constraints?: Action<CreateTableBuilder_1<TColumns>>, comment?: string): CreateTableBuilder_1<TColumns>;
+    DeleteData(table: string, keyColumn: string, keyValue: unknown, schema?: string): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumn: string, keyColumnType: string, keyValue: unknown, schema?: string): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumns: string[], keyValues: unknown[], schema?: string): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: unknown[], schema?: string): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumn: string, keyValues: unknown[], schema?: string): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumn: string, keyColumnType: string, keyValues: unknown[], schema?: string): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumns: string[], keyValues: Array<Array<unknown>>, schema?: string): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: Array<Array<unknown>>, schema?: string): OperationBuilder_1<DeleteDataOperation>;
+    DropCheckConstraint(name: string, table: string, schema?: string): OperationBuilder_1<DropCheckConstraintOperation>;
+    DropColumn(name: string, table: string, schema?: string): OperationBuilder_1<DropColumnOperation>;
+    DropForeignKey(name: string, table: string, schema?: string): OperationBuilder_1<DropForeignKeyOperation>;
+    DropIndex(name: string, table?: string, schema?: string): OperationBuilder_1<DropIndexOperation>;
+    DropPrimaryKey(name: string, table: string, schema?: string): OperationBuilder_1<DropPrimaryKeyOperation>;
+    DropSchema(name: string): OperationBuilder_1<DropSchemaOperation>;
+    DropSequence(name: string, schema?: string): OperationBuilder_1<DropSequenceOperation>;
+    DropTable(name: string, schema?: string): OperationBuilder_1<DropTableOperation>;
+    DropUniqueConstraint(name: string, table: string, schema?: string): OperationBuilder_1<DropUniqueConstraintOperation>;
+    EnsureSchema(name: string): OperationBuilder_1<EnsureSchemaOperation>;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    InsertData(table: string, column: string, value: unknown, schema?: string): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, column: string, columnType: string, value: unknown, schema?: string): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, columns: string[], values: unknown[], schema?: string): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, columns: string[], columnTypes: string[], values: unknown[], schema?: string): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, column: string, values: unknown[], schema?: string): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, column: string, columnType: string, values: unknown[], schema?: string): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, columns: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, columns: string[], columnTypes: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<InsertDataOperation>;
+    RenameColumn(name: string, table: string, newName: string, schema?: string): OperationBuilder_1<RenameColumnOperation>;
+    RenameIndex(name: string, newName: string, table?: string, schema?: string): OperationBuilder_1<RenameIndexOperation>;
+    RenameSequence(name: string, schema?: string, newName?: string, newSchema?: string): OperationBuilder_1<RenameSequenceOperation>;
+    RenameTable(name: string, schema?: string, newName?: string, newSchema?: string): OperationBuilder_1<RenameTableOperation>;
+    RestartSequence(name: string, startValue?: Nullable<System_Internal.Int64>, schema?: string): OperationBuilder_1<RestartSequenceOperation>;
+    Sql(sql: string, suppressTransaction?: boolean): OperationBuilder_1<SqlOperation>;
+    ToString(): string;
+    UpdateData(table: string, keyColumn: string, keyValue: unknown, column: string, value: unknown, schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumn: string, keyValue: unknown, columns: string[], values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyValues: unknown[], column: string, value: unknown, schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyValues: unknown[], columns: string[], values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: unknown[], columns: string[], columnTypes: string[], values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumn: string, keyValues: unknown[], column: string, values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumn: string, keyValues: unknown[], columns: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyValues: Array<Array<unknown>>, column: string, values: unknown[], schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyValues: Array<Array<unknown>>, columns: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: Array<Array<unknown>>, columns: string[], columnTypes: string[], values: Array<Array<unknown>>, schema?: string): OperationBuilder_1<UpdateDataOperation>;
 }
 
 
@@ -323,11 +323,11 @@ export const MigrationBuilder: {
 export type MigrationBuilder = MigrationBuilder$instance;
 
 export interface MigrationCommand$instance {
-    readonly commandLogger: IRelationalCommandDiagnosticsLogger;
-    readonly commandText: string;
-    readonly transactionSuppressed: boolean;
-    executeNonQuery(connection: IRelationalConnection, parameterValues?: IReadOnlyDictionary<System_Internal.String, unknown>): int;
-    executeNonQueryAsync(connection: IRelationalConnection, parameterValues?: IReadOnlyDictionary<System_Internal.String, unknown>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+    readonly CommandLogger: IRelationalCommandDiagnosticsLogger;
+    readonly CommandText: string;
+    readonly TransactionSuppressed: boolean;
+    ExecuteNonQuery(connection: IRelationalConnection, parameterValues?: IReadOnlyDictionary<System_Internal.String, unknown>): int;
+    ExecuteNonQueryAsync(connection: IRelationalConnection, parameterValues?: IReadOnlyDictionary<System_Internal.String, unknown>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
 
 
@@ -339,16 +339,16 @@ export const MigrationCommand: {
 export type MigrationCommand = MigrationCommand$instance;
 
 export interface MigrationCommandListBuilder$instance {
-    append(o: string): MigrationCommandListBuilder;
-    appendLine(): MigrationCommandListBuilder;
-    appendLine(value: string): MigrationCommandListBuilder;
-    appendLine(value: FormattableString): MigrationCommandListBuilder;
-    appendLines(value: string): MigrationCommandListBuilder;
-    decrementIndent(): MigrationCommandListBuilder;
-    endCommand(suppressTransaction?: boolean): MigrationCommandListBuilder;
-    getCommandList(): IReadOnlyList<MigrationCommand>;
-    incrementIndent(): MigrationCommandListBuilder;
-    indent(): IDisposable;
+    Append(o: string): MigrationCommandListBuilder;
+    AppendLine(): MigrationCommandListBuilder;
+    AppendLine(value: string): MigrationCommandListBuilder;
+    AppendLine(value: FormattableString): MigrationCommandListBuilder;
+    AppendLines(value: string): MigrationCommandListBuilder;
+    DecrementIndent(): MigrationCommandListBuilder;
+    EndCommand(suppressTransaction?: boolean): MigrationCommandListBuilder;
+    GetCommandList(): IReadOnlyList<MigrationCommand>;
+    IncrementIndent(): MigrationCommandListBuilder;
+    Indent(): IDisposable;
 }
 
 
@@ -360,13 +360,13 @@ export const MigrationCommandListBuilder: {
 export type MigrationCommandListBuilder = MigrationCommandListBuilder$instance;
 
 export interface MigrationExecutionState$instance {
-    anyOperationPerformed: boolean;
-    get currentMigrationId(): string | undefined;
-    set currentMigrationId(value: string);
-    get databaseLock(): IMigrationsDatabaseLock | undefined;
-    set databaseLock(value: IMigrationsDatabaseLock);
-    lastCommittedCommandIndex: int;
-    transaction: IDbContextTransaction;
+    AnyOperationPerformed: boolean;
+    get CurrentMigrationId(): string | undefined;
+    set CurrentMigrationId(value: string);
+    get DatabaseLock(): IMigrationsDatabaseLock | undefined;
+    set DatabaseLock(value: IMigrationsDatabaseLock);
+    LastCommittedCommandIndex: int;
+    Transaction: IDbContextTransaction;
 }
 
 
@@ -378,20 +378,20 @@ export const MigrationExecutionState: {
 export type MigrationExecutionState = MigrationExecutionState$instance;
 
 export interface MigrationsAnnotationProvider$instance {
-    forRemove(model: IRelationalModel): IEnumerable<IAnnotation>;
-    forRemove(table: ITable): IEnumerable<IAnnotation>;
-    forRemove(column: IColumn): IEnumerable<IAnnotation>;
-    forRemove(view: IView): IEnumerable<IAnnotation>;
-    forRemove(column: IViewColumn): IEnumerable<IAnnotation>;
-    forRemove(constraint: IUniqueConstraint): IEnumerable<IAnnotation>;
-    forRemove(index: ITableIndex): IEnumerable<IAnnotation>;
-    forRemove(foreignKey: IForeignKeyConstraint): IEnumerable<IAnnotation>;
-    forRemove(sequence: ISequence): IEnumerable<IAnnotation>;
-    forRemove(checkConstraint: ICheckConstraint): IEnumerable<IAnnotation>;
-    forRename(table: ITable): IEnumerable<IAnnotation>;
-    forRename(column: IColumn): IEnumerable<IAnnotation>;
-    forRename(index: ITableIndex): IEnumerable<IAnnotation>;
-    forRename(sequence: ISequence): IEnumerable<IAnnotation>;
+    ForRemove(model: IRelationalModel): IEnumerable<IAnnotation>;
+    ForRemove(table: ITable): IEnumerable<IAnnotation>;
+    ForRemove(column: IColumn): IEnumerable<IAnnotation>;
+    ForRemove(view: IView): IEnumerable<IAnnotation>;
+    ForRemove(column: IViewColumn): IEnumerable<IAnnotation>;
+    ForRemove(constraint: IUniqueConstraint): IEnumerable<IAnnotation>;
+    ForRemove(index: ITableIndex): IEnumerable<IAnnotation>;
+    ForRemove(foreignKey: IForeignKeyConstraint): IEnumerable<IAnnotation>;
+    ForRemove(sequence: ISequence): IEnumerable<IAnnotation>;
+    ForRemove(checkConstraint: ICheckConstraint): IEnumerable<IAnnotation>;
+    ForRename(table: ITable): IEnumerable<IAnnotation>;
+    ForRename(column: IColumn): IEnumerable<IAnnotation>;
+    ForRename(index: ITableIndex): IEnumerable<IAnnotation>;
+    ForRename(sequence: ISequence): IEnumerable<IAnnotation>;
 }
 
 
@@ -409,10 +409,10 @@ export type MigrationsAnnotationProvider = MigrationsAnnotationProvider$instance
 
 export interface MigrationsAnnotationProviderDependencies$instance {
     _Clone_$(): MigrationsAnnotationProviderDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: MigrationsAnnotationProviderDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: MigrationsAnnotationProviderDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -424,7 +424,7 @@ export const MigrationsAnnotationProviderDependencies: {
 export type MigrationsAnnotationProviderDependencies = MigrationsAnnotationProviderDependencies$instance;
 
 export interface MigrationsSqlGenerator$instance {
-    generate(operations: IReadOnlyList<MigrationOperation>, model?: IModel, options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
+    Generate(operations: IReadOnlyList<MigrationOperation>, model?: IModel, options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
 }
 
 
@@ -443,20 +443,20 @@ export type MigrationsSqlGenerator = MigrationsSqlGenerator$instance & __Migrati
 
 
 export interface MigrationsSqlGeneratorDependencies$instance {
-    commandBuilderFactory: IRelationalCommandBuilderFactory;
-    currentContext: ICurrentDbContext;
-    logger: IRelationalCommandDiagnosticsLogger;
-    loggingOptions: ILoggingOptions;
-    migrationsLogger: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>;
-    modificationCommandFactory: IModificationCommandFactory;
-    sqlGenerationHelper: ISqlGenerationHelper;
-    typeMappingSource: IRelationalTypeMappingSource;
-    updateSqlGenerator: IUpdateSqlGenerator;
+    CommandBuilderFactory: IRelationalCommandBuilderFactory;
+    CurrentContext: ICurrentDbContext;
+    Logger: IRelationalCommandDiagnosticsLogger;
+    LoggingOptions: ILoggingOptions;
+    MigrationsLogger: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>;
+    ModificationCommandFactory: IModificationCommandFactory;
+    SqlGenerationHelper: ISqlGenerationHelper;
+    TypeMappingSource: IRelationalTypeMappingSource;
+    UpdateSqlGenerator: IUpdateSqlGenerator;
     _Clone_$(): MigrationsSqlGeneratorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: MigrationsSqlGeneratorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: MigrationsSqlGeneratorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -468,7 +468,7 @@ export const MigrationsSqlGeneratorDependencies: {
 export type MigrationsSqlGeneratorDependencies = MigrationsSqlGeneratorDependencies$instance;
 
 export abstract class MigrationsAssemblyExtensions$instance {
-    static getMigrationId(assembly: IMigrationsAssembly, nameOrId: string): string;
+    static GetMigrationId(assembly: IMigrationsAssembly, nameOrId: string): string;
 }
 
 

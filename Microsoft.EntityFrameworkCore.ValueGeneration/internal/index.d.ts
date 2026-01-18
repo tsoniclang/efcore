@@ -18,24 +18,24 @@ import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { Task, ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
 export interface IValueGeneratorCache$instance {
-    getOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
+    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
 }
 
 
 export type IValueGeneratorCache = IValueGeneratorCache$instance;
 
 export interface IValueGeneratorSelector$instance {
-    select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
-    trySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
+    Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
+    TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
 }
 
 
 export type IValueGeneratorSelector = IValueGeneratorSelector$instance;
 
 export interface BinaryValueGenerator$instance extends ValueGenerator_1<byte[]> {
-    readonly generatesTemporaryValues: boolean;
-    next4(entry: EntityEntry): byte[];
-    next4(entry: EntityEntry): unknown;
+    readonly GeneratesTemporaryValues: boolean;
+    Next4(entry: EntityEntry): byte[];
+    Next4(entry: EntityEntry): unknown;
 }
 
 
@@ -47,7 +47,7 @@ export const BinaryValueGenerator: {
 export type BinaryValueGenerator = BinaryValueGenerator$instance;
 
 export interface DiscriminatorValueGeneratorFactory$instance extends ValueGeneratorFactory {
-    create(property: IProperty, entityType: ITypeBase): ValueGenerator;
+    Create(property: IProperty, entityType: ITypeBase): ValueGenerator;
 }
 
 
@@ -59,9 +59,9 @@ export const DiscriminatorValueGeneratorFactory: {
 export type DiscriminatorValueGeneratorFactory = DiscriminatorValueGeneratorFactory$instance;
 
 export interface GuidValueGenerator$instance extends ValueGenerator_1<Guid> {
-    readonly generatesTemporaryValues: boolean;
-    next4(entry: EntityEntry): Guid;
-    next4(entry: EntityEntry): unknown;
+    readonly GeneratesTemporaryValues: boolean;
+    Next4(entry: EntityEntry): Guid;
+    Next4(entry: EntityEntry): unknown;
 }
 
 
@@ -73,10 +73,10 @@ export const GuidValueGenerator: {
 export type GuidValueGenerator = GuidValueGenerator$instance;
 
 export interface HiLoValueGenerator_1$instance<TValue> extends ValueGenerator_1<TValue> {
-    next(entry: EntityEntry): TValue;
-    next(entry: EntityEntry): unknown;
-    nextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
-    nextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
+    Next(entry: EntityEntry): TValue;
+    Next(entry: EntityEntry): unknown;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
 }
 
 
@@ -87,9 +87,9 @@ export const HiLoValueGenerator_1: {
 export type HiLoValueGenerator_1<TValue> = HiLoValueGenerator_1$instance<TValue>;
 
 export interface HiLoValueGeneratorState$instance {
-    dispose(): void;
-    next<TValue>(getNewLowValue: Func<System_Internal.Int64>): TValue;
-    nextAsync<TValue>(getNewLowValue: Func<CancellationToken, Task<System_Internal.Int64>>, cancellationToken?: CancellationToken): ValueTask<TValue>;
+    Dispose(): void;
+    Next<TValue>(getNewLowValue: Func<System_Internal.Int64>): TValue;
+    NextAsync<TValue>(getNewLowValue: Func<CancellationToken, Task<System_Internal.Int64>>, cancellationToken?: CancellationToken): ValueTask<TValue>;
 }
 
 
@@ -101,8 +101,8 @@ export const HiLoValueGeneratorState: {
 export type HiLoValueGeneratorState = HiLoValueGeneratorState$instance;
 
 export interface RelationalValueGeneratorSelector$instance extends ValueGeneratorSelector$instance {
-    select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
-    trySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
+    Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
+    TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
 }
 
 
@@ -119,9 +119,9 @@ export type RelationalValueGeneratorSelector = RelationalValueGeneratorSelector$
 
 
 export interface SequentialGuidValueGenerator$instance extends ValueGenerator_1<Guid> {
-    readonly generatesTemporaryValues: boolean;
-    next4(entry: EntityEntry): Guid;
-    next4(entry: EntityEntry): unknown;
+    readonly GeneratesTemporaryValues: boolean;
+    Next4(entry: EntityEntry): Guid;
+    Next4(entry: EntityEntry): unknown;
 }
 
 
@@ -133,9 +133,9 @@ export const SequentialGuidValueGenerator: {
 export type SequentialGuidValueGenerator = SequentialGuidValueGenerator$instance;
 
 export interface StringValueGenerator$instance extends ValueGenerator_1<System_Internal.String> {
-    readonly generatesTemporaryValues: boolean;
-    next4(entry: EntityEntry): string;
-    next4(entry: EntityEntry): unknown;
+    readonly GeneratesTemporaryValues: boolean;
+    Next4(entry: EntityEntry): string;
+    Next4(entry: EntityEntry): unknown;
 }
 
 
@@ -147,7 +147,7 @@ export const StringValueGenerator: {
 export type StringValueGenerator = StringValueGenerator$instance;
 
 export interface TemporaryGuidValueGenerator$instance extends GuidValueGenerator {
-    readonly generatesTemporaryValues: boolean;
+    readonly GeneratesTemporaryValues: boolean;
 }
 
 
@@ -159,7 +159,7 @@ export const TemporaryGuidValueGenerator: {
 export type TemporaryGuidValueGenerator = TemporaryGuidValueGenerator$instance;
 
 export interface TemporaryNumberValueGeneratorFactory$instance extends ValueGeneratorFactory {
-    create(property: IProperty, entityType: ITypeBase): ValueGenerator;
+    Create(property: IProperty, entityType: ITypeBase): ValueGenerator;
 }
 
 
@@ -171,11 +171,11 @@ export const TemporaryNumberValueGeneratorFactory: {
 export type TemporaryNumberValueGeneratorFactory = TemporaryNumberValueGeneratorFactory$instance;
 
 export interface ValueGenerator$instance {
-    readonly generatesStableValues: boolean;
-    readonly generatesTemporaryValues: boolean;
-    next(entry: EntityEntry): unknown;
-    nextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
-    withConverter(converter: ValueConverter): ValueGenerator;
+    readonly GeneratesStableValues: boolean;
+    readonly GeneratesTemporaryValues: boolean;
+    Next(entry: EntityEntry): unknown;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    WithConverter(converter: ValueConverter): ValueGenerator;
 }
 
 
@@ -186,10 +186,10 @@ export const ValueGenerator: {
 export type ValueGenerator = ValueGenerator$instance;
 
 export interface ValueGenerator_1$instance<TValue> extends ValueGenerator {
-    next(entry: EntityEntry): TValue;
-    next(entry: EntityEntry): unknown;
-    nextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
-    nextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    Next(entry: EntityEntry): TValue;
+    Next(entry: EntityEntry): unknown;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
 }
 
 
@@ -200,7 +200,7 @@ export const ValueGenerator_1: {
 export type ValueGenerator_1<TValue> = ValueGenerator_1$instance<TValue>;
 
 export interface ValueGeneratorCache$instance {
-    getOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
+    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
 }
 
 
@@ -220,10 +220,10 @@ export type ValueGeneratorCache = ValueGeneratorCache$instance & __ValueGenerato
 
 export interface ValueGeneratorCacheDependencies$instance {
     _Clone_$(): ValueGeneratorCacheDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ValueGeneratorCacheDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ValueGeneratorCacheDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -235,7 +235,7 @@ export const ValueGeneratorCacheDependencies: {
 export type ValueGeneratorCacheDependencies = ValueGeneratorCacheDependencies$instance;
 
 export interface ValueGeneratorFactory$instance {
-    create(property: IProperty, typeBase: ITypeBase): ValueGenerator;
+    Create(property: IProperty, typeBase: ITypeBase): ValueGenerator;
 }
 
 
@@ -246,11 +246,11 @@ export const ValueGeneratorFactory: {
 export type ValueGeneratorFactory = ValueGeneratorFactory$instance;
 
 export interface ValueGeneratorSelector$instance {
-    readonly cache: IValueGeneratorCache;
-    create(property: IProperty, typeBase: ITypeBase): ValueGenerator;
-    select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
-    tryCreate(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
-    trySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
+    readonly Cache: IValueGeneratorCache;
+    Create(property: IProperty, typeBase: ITypeBase): ValueGenerator;
+    Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
+    TryCreate(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
+    TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
 }
 
 
@@ -269,12 +269,12 @@ export type ValueGeneratorSelector = ValueGeneratorSelector$instance & __ValueGe
 
 
 export interface ValueGeneratorSelectorDependencies$instance {
-    cache: IValueGeneratorCache;
+    Cache: IValueGeneratorCache;
     _Clone_$(): ValueGeneratorSelectorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ValueGeneratorSelectorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ValueGeneratorSelectorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 

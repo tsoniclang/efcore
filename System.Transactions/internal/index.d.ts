@@ -12,8 +12,8 @@ import type { Object as ClrObject, Void } from "@tsonic/dotnet/System.js";
 import type { Transaction } from "@tsonic/dotnet/System.Transactions.js";
 
 export abstract class TransactionsDatabaseFacadeExtensions$instance {
-    static enlistTransaction(databaseFacade: DatabaseFacade, transaction: Transaction): void;
-    static getEnlistedTransaction(databaseFacade: DatabaseFacade): Transaction | undefined;
+    static EnlistTransaction(databaseFacade: DatabaseFacade, transaction: Transaction): void;
+    static GetEnlistedTransaction(databaseFacade: DatabaseFacade): Transaction | undefined;
 }
 
 

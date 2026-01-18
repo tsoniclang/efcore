@@ -24,9 +24,9 @@ import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 import type { IServiceCollection, ServiceDescriptor, ServiceLifetime } from "@tsonic/microsoft-extensions/Microsoft.Extensions.DependencyInjection.js";
 
 export interface ILazyLoaderFactory$instance extends IDisposable, IResettableService {
-    create(): ILazyLoader;
-    resetState(): void;
-    resetStateAsync(cancellationToken?: CancellationToken): Task;
+    Create(): ILazyLoader;
+    ResetState(): void;
+    ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
 
 
@@ -35,8 +35,8 @@ export interface ILazyLoaderFactory$instance extends Microsoft_EntityFrameworkCo
 export type ILazyLoaderFactory = ILazyLoaderFactory$instance;
 
 export interface ConcurrencyDetector$instance {
-    enterCriticalSection(): ConcurrencyDetectorCriticalSectionDisposer;
-    exitCriticalSection(): void;
+    EnterCriticalSection(): ConcurrencyDetectorCriticalSectionDisposer;
+    ExitCriticalSection(): void;
 }
 
 
@@ -55,11 +55,11 @@ export type ConcurrencyDetector = ConcurrencyDetector$instance & __ConcurrencyDe
 
 
 export interface CoreSingletonOptions$instance {
-    readonly areDetailedErrorsEnabled: boolean;
-    readonly areThreadSafetyChecksEnabled: boolean;
-    readonly rootApplicationServiceProvider: IServiceProvider | undefined;
-    initialize(options: IDbContextOptions): void;
-    validate(options: IDbContextOptions): void;
+    readonly AreDetailedErrorsEnabled: boolean;
+    readonly AreThreadSafetyChecksEnabled: boolean;
+    readonly RootApplicationServiceProvider: IServiceProvider | undefined;
+    Initialize(options: IDbContextOptions): void;
+    Validate(options: IDbContextOptions): void;
 }
 
 
@@ -77,7 +77,7 @@ export type CoreSingletonOptions = CoreSingletonOptions$instance & __CoreSinglet
 
 
 export interface CurrentDbContext$instance {
-    readonly context: DbContext;
+    readonly Context: DbContext;
 }
 
 
@@ -96,7 +96,7 @@ export type CurrentDbContext = CurrentDbContext$instance & __CurrentDbContext$vi
 
 
 export interface DbContextOptionsConfiguration_1$instance<TContext extends DbContext> {
-    configure(serviceProvider: IServiceProvider, optionsBuilder: DbContextOptionsBuilder): void;
+    Configure(serviceProvider: IServiceProvider, optionsBuilder: DbContextOptionsBuilder): void;
 }
 
 
@@ -115,7 +115,7 @@ export type DbContextOptionsConfiguration_1<TContext extends DbContext> = DbCont
 
 
 export interface DbSetFinder$instance {
-    findSets(contextType: Type): IReadOnlyList<DbSetProperty>;
+    FindSets(contextType: Type): IReadOnlyList<DbSetProperty>;
 }
 
 
@@ -139,27 +139,27 @@ export interface EntityFrameworkMetrics$instance {
 
 export const EntityFrameworkMetrics: {
     new(): EntityFrameworkMetrics;
-    readonly meterName: string;
-    readonly activeDbContextsInstrumentName: string;
-    readonly queriesInstrumentName: string;
-    readonly saveChangesInstrumentName: string;
-    readonly compiledQueryCacheHitsInstrumentName: string;
-    readonly compiledQueryCacheMissesInstrumentName: string;
-    readonly executionStrategyFailuresInstrumentName: string;
-    readonly optimisticConcurrencyFailuresInstrumentName: string;
+    readonly MeterName: string;
+    readonly ActiveDbContextsInstrumentName: string;
+    readonly QueriesInstrumentName: string;
+    readonly SaveChangesInstrumentName: string;
+    readonly CompiledQueryCacheHitsInstrumentName: string;
+    readonly CompiledQueryCacheMissesInstrumentName: string;
+    readonly ExecutionStrategyFailuresInstrumentName: string;
+    readonly OptimisticConcurrencyFailuresInstrumentName: string;
 };
 
 
 export type EntityFrameworkMetrics = EntityFrameworkMetrics$instance;
 
 export interface InternalServiceCollectionMap$instance {
-    readonly serviceCollection: IServiceCollection;
-    addDependency(serviceType: Type, lifetime: ServiceLifetime): IInternalServiceCollectionMap;
-    addDependencyScoped<TDependencies>(): IInternalServiceCollectionMap;
-    addDependencySingleton<TDependencies>(): IInternalServiceCollectionMap;
-    addNewDescriptor(indexes: IList<System_Internal.Int32>, newDescriptor: ServiceDescriptor): void;
-    doPatchInjection<TService>(): InternalServiceCollectionMap;
-    getOrCreateDescriptorIndexes(serviceType: Type): IList<System_Internal.Int32>;
+    readonly ServiceCollection: IServiceCollection;
+    AddDependency(serviceType: Type, lifetime: ServiceLifetime): IInternalServiceCollectionMap;
+    AddDependencyScoped<TDependencies>(): IInternalServiceCollectionMap;
+    AddDependencySingleton<TDependencies>(): IInternalServiceCollectionMap;
+    AddNewDescriptor(indexes: IList<System_Internal.Int32>, newDescriptor: ServiceDescriptor): void;
+    DoPatchInjection<TService>(): InternalServiceCollectionMap;
+    GetOrCreateDescriptorIndexes(serviceType: Type): IList<System_Internal.Int32>;
 }
 
 
@@ -171,14 +171,14 @@ export const InternalServiceCollectionMap: {
 export type InternalServiceCollectionMap = InternalServiceCollectionMap$instance;
 
 export interface LazyLoader$instance {
-    attaching(context: DbContext, entityType: IEntityType, entity: unknown): void;
-    detaching(context: DbContext, entity: unknown): boolean;
-    dispose(): void;
-    injected(context: DbContext, entity: unknown, queryTrackingBehavior: Nullable<QueryTrackingBehavior>, structuralType: ITypeBase): void;
-    isLoaded(entity: unknown, navigationName?: string): boolean;
-    load(entity: unknown, navigationName?: string): void;
-    loadAsync(entity: unknown, cancellationToken?: CancellationToken, navigationName?: string): Task;
-    setLoaded(entity: unknown, navigationName?: string, loaded?: boolean): void;
+    Attaching(context: DbContext, entityType: IEntityType, entity: unknown): void;
+    Detaching(context: DbContext, entity: unknown): boolean;
+    Dispose(): void;
+    Injected(context: DbContext, entity: unknown, queryTrackingBehavior: Nullable<QueryTrackingBehavior>, structuralType: ITypeBase): void;
+    IsLoaded(entity: unknown, navigationName?: string): boolean;
+    Load(entity: unknown, navigationName?: string): void;
+    LoadAsync(entity: unknown, cancellationToken?: CancellationToken, navigationName?: string): Task;
+    SetLoaded(entity: unknown, navigationName?: string, loaded?: boolean): void;
 }
 
 
@@ -198,10 +198,10 @@ export type LazyLoader = LazyLoader$instance & __LazyLoader$views;
 
 
 export interface LazyLoaderFactory$instance {
-    create(): ILazyLoader;
-    dispose(): void;
-    resetState(): void;
-    resetStateAsync(cancellationToken?: CancellationToken): Task;
+    Create(): ILazyLoader;
+    Dispose(): void;
+    ResetState(): void;
+    ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
 
 
@@ -219,28 +219,28 @@ export type LazyLoaderFactory = LazyLoaderFactory$instance & __LazyLoaderFactory
 
 
 export interface MemberInfoNameComparer$instance {
-    compare(x: MemberInfo, y: MemberInfo): int;
+    Compare(x: MemberInfo, y: MemberInfo): int;
 }
 
 
 export const MemberInfoNameComparer: {
     new(): MemberInfoNameComparer;
-    readonly instance: MemberInfoNameComparer;
+    readonly Instance: MemberInfoNameComparer;
 };
 
 
 export type MemberInfoNameComparer = MemberInfoNameComparer$instance;
 
 export abstract class DbContextOptionsExtensions$instance {
-    static buildOptionsFragment(contextOptions: IDbContextOptions): string;
+    static BuildOptionsFragment(contextOptions: IDbContextOptions): string;
 }
 
 
 export type DbContextOptionsExtensions = DbContextOptionsExtensions$instance;
 
 export abstract class InfrastructureExtensions$instance {
-    static getService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): unknown;
-    static getService<TService>(accessor: IInfrastructure_1<IServiceProvider>): TService;
+    static GetService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): unknown;
+    static GetService<TService>(accessor: IInfrastructure_1<IServiceProvider>): TService;
 }
 
 

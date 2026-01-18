@@ -23,19 +23,19 @@ import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
 import type { JsonReaderState, JsonTokenType, Utf8JsonReader, Utf8JsonWriter } from "@tsonic/dotnet/System.Text.Json.js";
 
 export interface IJsonValueReaderWriterSource$instance {
-    findReaderWriter(type: Type): JsonValueReaderWriter | undefined;
+    FindReaderWriter(type: Type): JsonValueReaderWriter | undefined;
 }
 
 
 export type IJsonValueReaderWriterSource = IJsonValueReaderWriterSource$instance;
 
 export interface Utf8JsonReaderManager$instance {
-    readonly data: JsonReaderData;
-    currentReader: Utf8JsonReader;
-    readonly queryLogger: IDiagnosticsLogger_1<DbLoggerCategory_Query> | undefined;
-    captureState(): void;
-    moveNext(): JsonTokenType;
-    skip(): void;
+    readonly Data: JsonReaderData;
+    CurrentReader: Utf8JsonReader;
+    readonly QueryLogger: IDiagnosticsLogger_1<DbLoggerCategory_Query> | undefined;
+    CaptureState(): void;
+    MoveNext(): JsonTokenType;
+    Skip(): void;
 }
 
 
@@ -47,52 +47,52 @@ export const Utf8JsonReaderManager: {
 export type Utf8JsonReaderManager = Utf8JsonReaderManager$instance;
 
 export interface JsonBoolReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Boolean> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): boolean;
-    toJsonTyped(writer: Utf8JsonWriter, value: boolean): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): boolean;
+    ToJsonTyped(writer: Utf8JsonWriter, value: boolean): void;
 }
 
 
 export const JsonBoolReaderWriter: {
     new(): JsonBoolReaderWriter;
-    readonly instance: JsonBoolReaderWriter;
+    readonly Instance: JsonBoolReaderWriter;
 };
 
 
 export type JsonBoolReaderWriter = JsonBoolReaderWriter$instance;
 
 export interface JsonByteArrayReaderWriter$instance extends JsonValueReaderWriter_1<byte[]> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): byte[];
-    toJsonTyped(writer: Utf8JsonWriter, value: byte[]): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): byte[];
+    ToJsonTyped(writer: Utf8JsonWriter, value: byte[]): void;
 }
 
 
 export const JsonByteArrayReaderWriter: {
     new(): JsonByteArrayReaderWriter;
-    readonly instance: JsonByteArrayReaderWriter;
+    readonly Instance: JsonByteArrayReaderWriter;
 };
 
 
 export type JsonByteArrayReaderWriter = JsonByteArrayReaderWriter$instance;
 
 export interface JsonByteReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Byte> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): byte;
-    toJsonTyped(writer: Utf8JsonWriter, value: byte): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): byte;
+    ToJsonTyped(writer: Utf8JsonWriter, value: byte): void;
 }
 
 
 export const JsonByteReaderWriter: {
     new(): JsonByteReaderWriter;
-    readonly instance: JsonByteReaderWriter;
+    readonly Instance: JsonByteReaderWriter;
 };
 
 
 export type JsonByteReaderWriter = JsonByteReaderWriter$instance;
 
 export interface JsonCastValueReaderWriter_1$instance<TConverted> extends JsonValueReaderWriter_1<TConverted> {
-    readonly constructorExpression: Expression;
+    readonly ConstructorExpression: Expression;
 }
 
 
@@ -111,22 +111,22 @@ export type JsonCastValueReaderWriter_1<TConverted> = JsonCastValueReaderWriter_
 
 
 export interface JsonCharReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Char> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): char;
-    toJsonTyped(writer: Utf8JsonWriter, value: char): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): char;
+    ToJsonTyped(writer: Utf8JsonWriter, value: char): void;
 }
 
 
 export const JsonCharReaderWriter: {
     new(): JsonCharReaderWriter;
-    readonly instance: JsonCharReaderWriter;
+    readonly Instance: JsonCharReaderWriter;
 };
 
 
 export type JsonCharReaderWriter = JsonCharReaderWriter$instance;
 
 export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable<Nullable<TElement>>> {
-    readonly constructorExpression: Expression;
+    readonly ConstructorExpression: Expression;
 }
 
 
@@ -145,7 +145,7 @@ export type JsonCollectionOfNullableStructsReaderWriter_2<TConcreteCollection, T
 
 
 export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> extends JsonValueReaderWriter_1<unknown> {
-    readonly constructorExpression: Expression;
+    readonly ConstructorExpression: Expression;
 }
 
 
@@ -164,7 +164,7 @@ export type JsonCollectionOfReferencesReaderWriter_2<TConcreteCollection, TEleme
 
 
 export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable<TElement>> {
-    readonly constructorExpression: Expression;
+    readonly ConstructorExpression: Expression;
 }
 
 
@@ -183,7 +183,7 @@ export type JsonCollectionOfStructsReaderWriter_2<TConcreteCollection, TElement>
 
 
 export interface JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> extends JsonValueReaderWriter_1<TModel> {
-    readonly constructorExpression: Expression;
+    readonly ConstructorExpression: Expression;
 }
 
 
@@ -203,174 +203,174 @@ export type JsonConvertedValueReaderWriter_2<TModel, TProvider> = JsonConvertedV
 
 
 export interface JsonDateOnlyReaderWriter$instance extends JsonValueReaderWriter_1<DateOnly> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): DateOnly;
-    toJsonTyped(writer: Utf8JsonWriter, value: DateOnly): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): DateOnly;
+    ToJsonTyped(writer: Utf8JsonWriter, value: DateOnly): void;
 }
 
 
 export const JsonDateOnlyReaderWriter: {
     new(): JsonDateOnlyReaderWriter;
-    readonly instance: JsonDateOnlyReaderWriter;
+    readonly Instance: JsonDateOnlyReaderWriter;
 };
 
 
 export type JsonDateOnlyReaderWriter = JsonDateOnlyReaderWriter$instance;
 
 export interface JsonDateTimeOffsetReaderWriter$instance extends JsonValueReaderWriter_1<DateTimeOffset> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): DateTimeOffset;
-    toJsonTyped(writer: Utf8JsonWriter, value: DateTimeOffset): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): DateTimeOffset;
+    ToJsonTyped(writer: Utf8JsonWriter, value: DateTimeOffset): void;
 }
 
 
 export const JsonDateTimeOffsetReaderWriter: {
     new(): JsonDateTimeOffsetReaderWriter;
-    readonly instance: JsonDateTimeOffsetReaderWriter;
+    readonly Instance: JsonDateTimeOffsetReaderWriter;
 };
 
 
 export type JsonDateTimeOffsetReaderWriter = JsonDateTimeOffsetReaderWriter$instance;
 
 export interface JsonDateTimeReaderWriter$instance extends JsonValueReaderWriter_1<DateTime> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): DateTime;
-    toJsonTyped(writer: Utf8JsonWriter, value: DateTime): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): DateTime;
+    ToJsonTyped(writer: Utf8JsonWriter, value: DateTime): void;
 }
 
 
 export const JsonDateTimeReaderWriter: {
     new(): JsonDateTimeReaderWriter;
-    readonly instance: JsonDateTimeReaderWriter;
+    readonly Instance: JsonDateTimeReaderWriter;
 };
 
 
 export type JsonDateTimeReaderWriter = JsonDateTimeReaderWriter$instance;
 
 export interface JsonDecimalReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Decimal> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): decimal;
-    toJsonTyped(writer: Utf8JsonWriter, value: decimal): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): decimal;
+    ToJsonTyped(writer: Utf8JsonWriter, value: decimal): void;
 }
 
 
 export const JsonDecimalReaderWriter: {
     new(): JsonDecimalReaderWriter;
-    readonly instance: JsonDecimalReaderWriter;
+    readonly Instance: JsonDecimalReaderWriter;
 };
 
 
 export type JsonDecimalReaderWriter = JsonDecimalReaderWriter$instance;
 
 export interface JsonDoubleReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Double> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): double;
-    toJsonTyped(writer: Utf8JsonWriter, value: double): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): double;
+    ToJsonTyped(writer: Utf8JsonWriter, value: double): void;
 }
 
 
 export const JsonDoubleReaderWriter: {
     new(): JsonDoubleReaderWriter;
-    readonly instance: JsonDoubleReaderWriter;
+    readonly Instance: JsonDoubleReaderWriter;
 };
 
 
 export type JsonDoubleReaderWriter = JsonDoubleReaderWriter$instance;
 
 export interface JsonFloatReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Single> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): float;
-    toJsonTyped(writer: Utf8JsonWriter, value: float): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): float;
+    ToJsonTyped(writer: Utf8JsonWriter, value: float): void;
 }
 
 
 export const JsonFloatReaderWriter: {
     new(): JsonFloatReaderWriter;
-    readonly instance: JsonFloatReaderWriter;
+    readonly Instance: JsonFloatReaderWriter;
 };
 
 
 export type JsonFloatReaderWriter = JsonFloatReaderWriter$instance;
 
 export interface JsonGuidReaderWriter$instance extends JsonValueReaderWriter_1<Guid> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): Guid;
-    toJsonTyped(writer: Utf8JsonWriter, value: Guid): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): Guid;
+    ToJsonTyped(writer: Utf8JsonWriter, value: Guid): void;
 }
 
 
 export const JsonGuidReaderWriter: {
     new(): JsonGuidReaderWriter;
-    readonly instance: JsonGuidReaderWriter;
+    readonly Instance: JsonGuidReaderWriter;
 };
 
 
 export type JsonGuidReaderWriter = JsonGuidReaderWriter$instance;
 
 export interface JsonInt16ReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Int16> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): short;
-    toJsonTyped(writer: Utf8JsonWriter, value: short): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): short;
+    ToJsonTyped(writer: Utf8JsonWriter, value: short): void;
 }
 
 
 export const JsonInt16ReaderWriter: {
     new(): JsonInt16ReaderWriter;
-    readonly instance: JsonInt16ReaderWriter;
+    readonly Instance: JsonInt16ReaderWriter;
 };
 
 
 export type JsonInt16ReaderWriter = JsonInt16ReaderWriter$instance;
 
 export interface JsonInt32ReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Int32> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): int;
-    toJsonTyped(writer: Utf8JsonWriter, value: int): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): int;
+    ToJsonTyped(writer: Utf8JsonWriter, value: int): void;
 }
 
 
 export const JsonInt32ReaderWriter: {
     new(): JsonInt32ReaderWriter;
-    readonly instance: JsonInt32ReaderWriter;
+    readonly Instance: JsonInt32ReaderWriter;
 };
 
 
 export type JsonInt32ReaderWriter = JsonInt32ReaderWriter$instance;
 
 export interface JsonInt64ReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Int64> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): long;
-    toJsonTyped(writer: Utf8JsonWriter, value: long): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): long;
+    ToJsonTyped(writer: Utf8JsonWriter, value: long): void;
 }
 
 
 export const JsonInt64ReaderWriter: {
     new(): JsonInt64ReaderWriter;
-    readonly instance: JsonInt64ReaderWriter;
+    readonly Instance: JsonInt64ReaderWriter;
 };
 
 
 export type JsonInt64ReaderWriter = JsonInt64ReaderWriter$instance;
 
 export interface JsonNullReaderWriter$instance extends JsonValueReaderWriter_1<unknown> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): unknown;
-    toJsonTyped(writer: Utf8JsonWriter, value: unknown): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): unknown;
+    ToJsonTyped(writer: Utf8JsonWriter, value: unknown): void;
 }
 
 
 export const JsonNullReaderWriter: {
     new(): JsonNullReaderWriter;
-    readonly instance: JsonNullReaderWriter;
+    readonly Instance: JsonNullReaderWriter;
 };
 
 
 export type JsonNullReaderWriter = JsonNullReaderWriter$instance;
 
 export interface JsonReaderData$instance {
-    captureState(manager: Utf8JsonReaderManager): void;
-    createReader(): Utf8JsonReader;
-    readBytes(bytesConsumed: int, state: JsonReaderState): Utf8JsonReader;
+    CaptureState(manager: Utf8JsonReaderManager): void;
+    CreateReader(): Utf8JsonReader;
+    ReadBytes(bytesConsumed: int, state: JsonReaderState): Utf8JsonReader;
 }
 
 
@@ -383,164 +383,164 @@ export const JsonReaderData: {
 export type JsonReaderData = JsonReaderData$instance;
 
 export interface JsonSByteReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.SByte> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): sbyte;
-    toJsonTyped(writer: Utf8JsonWriter, value: sbyte): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): sbyte;
+    ToJsonTyped(writer: Utf8JsonWriter, value: sbyte): void;
 }
 
 
 export const JsonSByteReaderWriter: {
     new(): JsonSByteReaderWriter;
-    readonly instance: JsonSByteReaderWriter;
+    readonly Instance: JsonSByteReaderWriter;
 };
 
 
 export type JsonSByteReaderWriter = JsonSByteReaderWriter$instance;
 
 export interface JsonSignedEnumReaderWriter_1$instance<TEnum extends number> extends JsonValueReaderWriter_1<TEnum> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TEnum;
-    toJsonTyped(writer: Utf8JsonWriter, value: TEnum): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TEnum;
+    ToJsonTyped(writer: Utf8JsonWriter, value: TEnum): void;
 }
 
 
 export const JsonSignedEnumReaderWriter_1: {
     new<TEnum extends number>(): JsonSignedEnumReaderWriter_1<TEnum>;
-    readonly instance: unknown;
+    readonly Instance: unknown;
 };
 
 
 export type JsonSignedEnumReaderWriter_1<TEnum extends number> = JsonSignedEnumReaderWriter_1$instance<TEnum>;
 
 export interface JsonStringReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.String> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): string;
-    toJsonTyped(writer: Utf8JsonWriter, value: string): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): string;
+    ToJsonTyped(writer: Utf8JsonWriter, value: string): void;
 }
 
 
 export const JsonStringReaderWriter: {
     new(): JsonStringReaderWriter;
-    readonly instance: JsonStringReaderWriter;
+    readonly Instance: JsonStringReaderWriter;
 };
 
 
 export type JsonStringReaderWriter = JsonStringReaderWriter$instance;
 
 export interface JsonTimeOnlyReaderWriter$instance extends JsonValueReaderWriter_1<TimeOnly> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TimeOnly;
-    toJsonTyped(writer: Utf8JsonWriter, value: TimeOnly): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TimeOnly;
+    ToJsonTyped(writer: Utf8JsonWriter, value: TimeOnly): void;
 }
 
 
 export const JsonTimeOnlyReaderWriter: {
     new(): JsonTimeOnlyReaderWriter;
-    readonly instance: JsonTimeOnlyReaderWriter;
+    readonly Instance: JsonTimeOnlyReaderWriter;
 };
 
 
 export type JsonTimeOnlyReaderWriter = JsonTimeOnlyReaderWriter$instance;
 
 export interface JsonTimeSpanReaderWriter$instance extends JsonValueReaderWriter_1<TimeSpan> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TimeSpan;
-    toJsonTyped(writer: Utf8JsonWriter, value: TimeSpan): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TimeSpan;
+    ToJsonTyped(writer: Utf8JsonWriter, value: TimeSpan): void;
 }
 
 
 export const JsonTimeSpanReaderWriter: {
     new(): JsonTimeSpanReaderWriter;
-    readonly instance: JsonTimeSpanReaderWriter;
+    readonly Instance: JsonTimeSpanReaderWriter;
 };
 
 
 export type JsonTimeSpanReaderWriter = JsonTimeSpanReaderWriter$instance;
 
 export interface JsonUInt16ReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.UInt16> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): ushort;
-    toJsonTyped(writer: Utf8JsonWriter, value: ushort): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): ushort;
+    ToJsonTyped(writer: Utf8JsonWriter, value: ushort): void;
 }
 
 
 export const JsonUInt16ReaderWriter: {
     new(): JsonUInt16ReaderWriter;
-    readonly instance: JsonUInt16ReaderWriter;
+    readonly Instance: JsonUInt16ReaderWriter;
 };
 
 
 export type JsonUInt16ReaderWriter = JsonUInt16ReaderWriter$instance;
 
 export interface JsonUInt32ReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.UInt32> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): uint;
-    toJsonTyped(writer: Utf8JsonWriter, value: uint): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): uint;
+    ToJsonTyped(writer: Utf8JsonWriter, value: uint): void;
 }
 
 
 export const JsonUInt32ReaderWriter: {
     new(): JsonUInt32ReaderWriter;
-    readonly instance: JsonUInt32ReaderWriter;
+    readonly Instance: JsonUInt32ReaderWriter;
 };
 
 
 export type JsonUInt32ReaderWriter = JsonUInt32ReaderWriter$instance;
 
 export interface JsonUInt64ReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.UInt64> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): ulong;
-    toJsonTyped(writer: Utf8JsonWriter, value: ulong): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): ulong;
+    ToJsonTyped(writer: Utf8JsonWriter, value: ulong): void;
 }
 
 
 export const JsonUInt64ReaderWriter: {
     new(): JsonUInt64ReaderWriter;
-    readonly instance: JsonUInt64ReaderWriter;
+    readonly Instance: JsonUInt64ReaderWriter;
 };
 
 
 export type JsonUInt64ReaderWriter = JsonUInt64ReaderWriter$instance;
 
 export interface JsonUnsignedEnumReaderWriter_1$instance<TEnum extends number> extends JsonValueReaderWriter_1<TEnum> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TEnum;
-    toJsonTyped(writer: Utf8JsonWriter, value: TEnum): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TEnum;
+    ToJsonTyped(writer: Utf8JsonWriter, value: TEnum): void;
 }
 
 
 export const JsonUnsignedEnumReaderWriter_1: {
     new<TEnum extends number>(): JsonUnsignedEnumReaderWriter_1<TEnum>;
-    readonly instance: unknown;
+    readonly Instance: unknown;
 };
 
 
 export type JsonUnsignedEnumReaderWriter_1<TEnum extends number> = JsonUnsignedEnumReaderWriter_1$instance<TEnum>;
 
 export interface JsonValueReaderWriter$instance {
-    readonly constructorExpression: Expression;
-    readonly valueType: Type;
-    fromJson(manager: Utf8JsonReaderManager, existingObject?: unknown): unknown;
-    fromJsonString(json: string, existingObject?: unknown): unknown;
-    toJson(writer: Utf8JsonWriter, value: unknown): void;
-    toJsonObjectString(propertyName: string, value: unknown): string;
-    toJsonString(value: unknown): string;
+    readonly ConstructorExpression: Expression;
+    readonly ValueType: Type;
+    FromJson(manager: Utf8JsonReaderManager, existingObject?: unknown): unknown;
+    FromJsonString(json: string, existingObject?: unknown): unknown;
+    ToJson(writer: Utf8JsonWriter, value: unknown): void;
+    ToJsonObjectString(propertyName: string, value: unknown): string;
+    ToJsonString(value: unknown): string;
 }
 
 
 export const JsonValueReaderWriter: {
-    createFromType(readerWriterType: Type): JsonValueReaderWriter | undefined;
+    CreateFromType(readerWriterType: Type): JsonValueReaderWriter | undefined;
 };
 
 
 export type JsonValueReaderWriter = JsonValueReaderWriter$instance;
 
 export interface JsonValueReaderWriter_1$instance<TValue> extends JsonValueReaderWriter {
-    readonly valueType: Type;
-    fromJson(manager: Utf8JsonReaderManager, existingObject?: unknown): unknown;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TValue;
-    toJson(writer: Utf8JsonWriter, value: unknown): void;
-    toJsonTyped(writer: Utf8JsonWriter, value: TValue): void;
+    readonly ValueType: Type;
+    FromJson(manager: Utf8JsonReaderManager, existingObject?: unknown): unknown;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TValue;
+    ToJson(writer: Utf8JsonWriter, value: unknown): void;
+    ToJsonTyped(writer: Utf8JsonWriter, value: TValue): void;
 }
 
 
@@ -551,7 +551,7 @@ export const JsonValueReaderWriter_1: {
 export type JsonValueReaderWriter_1<TValue> = JsonValueReaderWriter_1$instance<TValue>;
 
 export interface JsonValueReaderWriterSource$instance {
-    findReaderWriter(type: Type): JsonValueReaderWriter | undefined;
+    FindReaderWriter(type: Type): JsonValueReaderWriter | undefined;
 }
 
 
@@ -571,10 +571,10 @@ export type JsonValueReaderWriterSource = JsonValueReaderWriterSource$instance &
 
 export interface JsonValueReaderWriterSourceDependencies$instance {
     _Clone_$(): JsonValueReaderWriterSourceDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: JsonValueReaderWriterSourceDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: JsonValueReaderWriterSourceDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -586,15 +586,15 @@ export const JsonValueReaderWriterSourceDependencies: {
 export type JsonValueReaderWriterSourceDependencies = JsonValueReaderWriterSourceDependencies$instance;
 
 export interface JsonWarningEnumReaderWriter_1$instance<TEnum extends number> extends JsonValueReaderWriter_1<TEnum> {
-    readonly constructorExpression: Expression;
-    fromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TEnum;
-    toJsonTyped(writer: Utf8JsonWriter, value: TEnum): void;
+    readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TEnum;
+    ToJsonTyped(writer: Utf8JsonWriter, value: TEnum): void;
 }
 
 
 export const JsonWarningEnumReaderWriter_1: {
     new<TEnum extends number>(): JsonWarningEnumReaderWriter_1<TEnum>;
-    readonly instance: unknown;
+    readonly Instance: unknown;
 };
 
 

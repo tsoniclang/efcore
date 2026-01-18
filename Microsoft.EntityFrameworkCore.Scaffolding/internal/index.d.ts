@@ -14,32 +14,32 @@ import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString } from "@tsonic/dotnet/System.js";
 
 export interface IDatabaseModelFactory$instance {
-    create(connection: DbConnection, options: DatabaseModelFactoryOptions): DatabaseModel;
-    create(connectionString: string, options: DatabaseModelFactoryOptions): DatabaseModel;
+    Create(connection: DbConnection, options: DatabaseModelFactoryOptions): DatabaseModel;
+    Create(connectionString: string, options: DatabaseModelFactoryOptions): DatabaseModel;
 }
 
 
 export type IDatabaseModelFactory = IDatabaseModelFactory$instance;
 
 export interface IProviderCodeGeneratorPlugin$instance {
-    generateProviderOptions(): MethodCallCodeFragment | undefined;
+    GenerateProviderOptions(): MethodCallCodeFragment | undefined;
 }
 
 
 export type IProviderCodeGeneratorPlugin = IProviderCodeGeneratorPlugin$instance;
 
 export interface IProviderConfigurationCodeGenerator$instance {
-    generateProviderOptions(): MethodCallCodeFragment | undefined;
-    generateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment): MethodCallCodeFragment;
-    generateUseProvider(connectionString: string): MethodCallCodeFragment;
+    GenerateProviderOptions(): MethodCallCodeFragment | undefined;
+    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment): MethodCallCodeFragment;
+    GenerateUseProvider(connectionString: string): MethodCallCodeFragment;
 }
 
 
 export type IProviderConfigurationCodeGenerator = IProviderConfigurationCodeGenerator$instance;
 
 export interface DatabaseModelFactory$instance {
-    create(connectionString: string, options: DatabaseModelFactoryOptions): DatabaseModel;
-    create(connection: DbConnection, options: DatabaseModelFactoryOptions): DatabaseModel;
+    Create(connectionString: string, options: DatabaseModelFactoryOptions): DatabaseModel;
+    Create(connection: DbConnection, options: DatabaseModelFactoryOptions): DatabaseModel;
 }
 
 
@@ -55,8 +55,8 @@ export type DatabaseModelFactory = DatabaseModelFactory$instance & __DatabaseMod
 
 
 export interface DatabaseModelFactoryOptions$instance {
-    readonly schemas: IEnumerable<System_Internal.String>;
-    readonly tables: IEnumerable<System_Internal.String>;
+    readonly Schemas: IEnumerable<System_Internal.String>;
+    readonly Tables: IEnumerable<System_Internal.String>;
 }
 
 
@@ -68,10 +68,10 @@ export const DatabaseModelFactoryOptions: {
 export type DatabaseModelFactoryOptions = DatabaseModelFactoryOptions$instance;
 
 export interface ProviderCodeGenerator$instance {
-    generateContextOptions(): MethodCallCodeFragment | undefined;
-    generateProviderOptions(): MethodCallCodeFragment | undefined;
-    generateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment): MethodCallCodeFragment;
-    generateUseProvider(connectionString: string): MethodCallCodeFragment;
+    GenerateContextOptions(): MethodCallCodeFragment | undefined;
+    GenerateProviderOptions(): MethodCallCodeFragment | undefined;
+    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment): MethodCallCodeFragment;
+    GenerateUseProvider(connectionString: string): MethodCallCodeFragment;
 }
 
 
@@ -89,12 +89,12 @@ export type ProviderCodeGenerator = ProviderCodeGenerator$instance & __ProviderC
 
 
 export interface ProviderCodeGeneratorDependencies$instance {
-    plugins: IEnumerable<IProviderCodeGeneratorPlugin>;
+    Plugins: IEnumerable<IProviderCodeGeneratorPlugin>;
     _Clone_$(): ProviderCodeGeneratorDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: ProviderCodeGeneratorDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: ProviderCodeGeneratorDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -106,8 +106,8 @@ export const ProviderCodeGeneratorDependencies: {
 export type ProviderCodeGeneratorDependencies = ProviderCodeGeneratorDependencies$instance;
 
 export interface ProviderCodeGeneratorPlugin$instance {
-    generateContextOptions(): MethodCallCodeFragment | undefined;
-    generateProviderOptions(): MethodCallCodeFragment | undefined;
+    GenerateContextOptions(): MethodCallCodeFragment | undefined;
+    GenerateProviderOptions(): MethodCallCodeFragment | undefined;
 }
 
 

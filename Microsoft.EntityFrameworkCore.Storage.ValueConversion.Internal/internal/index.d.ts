@@ -73,7 +73,7 @@ export interface StringEnumConverter_3$instance<TModel, TProvider, TEnum extends
 
 export const StringEnumConverter_3: {
     new<TModel, TProvider, TEnum extends number>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringEnumConverter_3<TModel, TProvider, TEnum>;
-    convertToEnum<TModel, TProvider, TEnum extends number>(value: string): TEnum;
+    ConvertToEnum<TModel, TProvider, TEnum extends number>(value: string): TEnum;
 };
 
 

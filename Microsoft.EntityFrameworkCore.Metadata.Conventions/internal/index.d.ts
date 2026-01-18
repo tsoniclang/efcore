@@ -26,7 +26,7 @@ import * as System_Text_Json_Serialization_Internal from "@tsonic/dotnet/System.
 import type { JsonPropertyNameAttribute } from "@tsonic/dotnet/System.Text.Json.Serialization.js";
 
 export interface IComplexPropertyAddedConvention$instance extends IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
 }
 
 
@@ -35,7 +35,7 @@ export interface IComplexPropertyAddedConvention$instance extends IConvention$in
 export type IComplexPropertyAddedConvention = IComplexPropertyAddedConvention$instance;
 
 export interface IComplexPropertyAnnotationChangedConvention$instance extends IConvention {
-    processComplexPropertyAnnotationChanged(propertyBuilder: IConventionComplexPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessComplexPropertyAnnotationChanged(propertyBuilder: IConventionComplexPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -44,7 +44,7 @@ export interface IComplexPropertyAnnotationChangedConvention$instance extends IC
 export type IComplexPropertyAnnotationChangedConvention = IComplexPropertyAnnotationChangedConvention$instance;
 
 export interface IComplexPropertyFieldChangedConvention$instance extends IConvention {
-    processComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -53,7 +53,7 @@ export interface IComplexPropertyFieldChangedConvention$instance extends IConven
 export type IComplexPropertyFieldChangedConvention = IComplexPropertyFieldChangedConvention$instance;
 
 export interface IComplexPropertyNullabilityChangedConvention$instance extends IConvention {
-    processComplexPropertyNullabilityChanged(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessComplexPropertyNullabilityChanged(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -62,7 +62,7 @@ export interface IComplexPropertyNullabilityChangedConvention$instance extends I
 export type IComplexPropertyNullabilityChangedConvention = IComplexPropertyNullabilityChangedConvention$instance;
 
 export interface IComplexPropertyRemovedConvention$instance extends IConvention {
-    processComplexPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionComplexProperty, context: IConventionContext_1<IConventionComplexProperty>): void;
+    ProcessComplexPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionComplexProperty, context: IConventionContext_1<IConventionComplexProperty>): void;
 }
 
 
@@ -71,7 +71,7 @@ export interface IComplexPropertyRemovedConvention$instance extends IConvention$
 export type IComplexPropertyRemovedConvention = IComplexPropertyRemovedConvention$instance;
 
 export interface IComplexTypeAnnotationChangedConvention$instance extends IConvention {
-    processComplexTypeAnnotationChanged(complexTypeBuilder: IConventionComplexTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessComplexTypeAnnotationChanged(complexTypeBuilder: IConventionComplexTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -80,7 +80,7 @@ export interface IComplexTypeAnnotationChangedConvention$instance extends IConve
 export type IComplexTypeAnnotationChangedConvention = IComplexTypeAnnotationChangedConvention$instance;
 
 export interface IComplexTypeMemberIgnoredConvention$instance extends IConvention {
-    processComplexTypeMemberIgnored(complexTypeBuilder: IConventionComplexTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessComplexTypeMemberIgnored(complexTypeBuilder: IConventionComplexTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -95,32 +95,32 @@ export interface IConvention$instance {
 export type IConvention = IConvention$instance;
 
 export interface IConventionBatch$instance extends IDisposable {
-    run(foreignKey: IConventionForeignKey): IConventionForeignKey | undefined;
-    track(foreignKey: IConventionForeignKey): IMetadataReference_1<IConventionForeignKey>;
+    Run(foreignKey: IConventionForeignKey): IConventionForeignKey | undefined;
+    Track(foreignKey: IConventionForeignKey): IMetadataReference_1<IConventionForeignKey>;
 }
 
 
 export type IConventionBatch = IConventionBatch$instance;
 
 export interface IConventionContext$instance {
-    delayConventions(): IConventionBatch;
-    stopProcessing(): void;
+    DelayConventions(): IConventionBatch;
+    StopProcessing(): void;
 }
 
 
 export type IConventionContext = IConventionContext$instance;
 
 export interface IConventionContext_1$instance<TMetadata> extends IConventionContext {
-    delayConventions(): IConventionBatch;
-    stopProcessing(): void;
-    stopProcessing(result: TMetadata): void;
+    DelayConventions(): IConventionBatch;
+    StopProcessing(): void;
+    StopProcessing(result: TMetadata): void;
 }
 
 
 export type IConventionContext_1<TMetadata> = IConventionContext_1$instance<TMetadata>;
 
 export interface IDiscriminatorPropertySetConvention$instance extends IConvention {
-    processDiscriminatorPropertySet(structuralTypeBuilder: IConventionTypeBaseBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessDiscriminatorPropertySet(structuralTypeBuilder: IConventionTypeBaseBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -129,7 +129,7 @@ export interface IDiscriminatorPropertySetConvention$instance extends IConventio
 export type IDiscriminatorPropertySetConvention = IDiscriminatorPropertySetConvention$instance;
 
 export interface IElementTypeAnnotationChangedConvention$instance extends IConvention {
-    processElementTypeAnnotationChanged(builder: IConventionElementTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessElementTypeAnnotationChanged(builder: IConventionElementTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -138,7 +138,7 @@ export interface IElementTypeAnnotationChangedConvention$instance extends IConve
 export type IElementTypeAnnotationChangedConvention = IElementTypeAnnotationChangedConvention$instance;
 
 export interface IElementTypeNullabilityChangedConvention$instance extends IConvention {
-    processElementTypeNullabilityChanged(builder: IConventionElementTypeBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessElementTypeNullabilityChanged(builder: IConventionElementTypeBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -147,7 +147,7 @@ export interface IElementTypeNullabilityChangedConvention$instance extends IConv
 export type IElementTypeNullabilityChangedConvention = IElementTypeNullabilityChangedConvention$instance;
 
 export interface IEntityTypeAddedConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -156,7 +156,7 @@ export interface IEntityTypeAddedConvention$instance extends IConvention$instanc
 export type IEntityTypeAddedConvention = IEntityTypeAddedConvention$instance;
 
 export interface IEntityTypeAnnotationChangedConvention$instance extends IConvention {
-    processEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -165,7 +165,7 @@ export interface IEntityTypeAnnotationChangedConvention$instance extends IConven
 export type IEntityTypeAnnotationChangedConvention = IEntityTypeAnnotationChangedConvention$instance;
 
 export interface IEntityTypeBaseTypeChangedConvention$instance extends IConvention {
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
 }
 
 
@@ -174,7 +174,7 @@ export interface IEntityTypeBaseTypeChangedConvention$instance extends IConventi
 export type IEntityTypeBaseTypeChangedConvention = IEntityTypeBaseTypeChangedConvention$instance;
 
 export interface IEntityTypeIgnoredConvention$instance extends IConvention {
-    processEntityTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -183,7 +183,7 @@ export interface IEntityTypeIgnoredConvention$instance extends IConvention$insta
 export type IEntityTypeIgnoredConvention = IEntityTypeIgnoredConvention$instance;
 
 export interface IEntityTypeMemberIgnoredConvention$instance extends IConvention {
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -192,7 +192,7 @@ export interface IEntityTypeMemberIgnoredConvention$instance extends IConvention
 export type IEntityTypeMemberIgnoredConvention = IEntityTypeMemberIgnoredConvention$instance;
 
 export interface IEntityTypePrimaryKeyChangedConvention$instance extends IConvention {
-    processEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
+    ProcessEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
 }
 
 
@@ -201,7 +201,7 @@ export interface IEntityTypePrimaryKeyChangedConvention$instance extends IConven
 export type IEntityTypePrimaryKeyChangedConvention = IEntityTypePrimaryKeyChangedConvention$instance;
 
 export interface IEntityTypeRemovedConvention$instance extends IConvention {
-    processEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
 }
 
 
@@ -210,7 +210,7 @@ export interface IEntityTypeRemovedConvention$instance extends IConvention$insta
 export type IEntityTypeRemovedConvention = IEntityTypeRemovedConvention$instance;
 
 export interface IForeignKeyAddedConvention$instance extends IConvention {
-    processForeignKeyAdded(foreignKeyBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyAdded(foreignKeyBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
 }
 
 
@@ -219,7 +219,7 @@ export interface IForeignKeyAddedConvention$instance extends IConvention$instanc
 export type IForeignKeyAddedConvention = IForeignKeyAddedConvention$instance;
 
 export interface IForeignKeyAnnotationChangedConvention$instance extends IConvention {
-    processForeignKeyAnnotationChanged(relationshipBuilder: IConventionForeignKeyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessForeignKeyAnnotationChanged(relationshipBuilder: IConventionForeignKeyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -228,7 +228,7 @@ export interface IForeignKeyAnnotationChangedConvention$instance extends IConven
 export type IForeignKeyAnnotationChangedConvention = IForeignKeyAnnotationChangedConvention$instance;
 
 export interface IForeignKeyDependentRequirednessChangedConvention$instance extends IConvention {
-    processForeignKeyDependentRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyDependentRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -237,7 +237,7 @@ export interface IForeignKeyDependentRequirednessChangedConvention$instance exte
 export type IForeignKeyDependentRequirednessChangedConvention = IForeignKeyDependentRequirednessChangedConvention$instance;
 
 export interface IForeignKeyNullNavigationSetConvention$instance extends IConvention {
-    processForeignKeyNullNavigationSet(relationshipBuilder: IConventionForeignKeyBuilder, pointsToPrincipal: boolean, context: IConventionContext_1<IConventionNavigation>): void;
+    ProcessForeignKeyNullNavigationSet(relationshipBuilder: IConventionForeignKeyBuilder, pointsToPrincipal: boolean, context: IConventionContext_1<IConventionNavigation>): void;
 }
 
 
@@ -246,7 +246,7 @@ export interface IForeignKeyNullNavigationSetConvention$instance extends IConven
 export type IForeignKeyNullNavigationSetConvention = IForeignKeyNullNavigationSetConvention$instance;
 
 export interface IForeignKeyOwnershipChangedConvention$instance extends IConvention {
-    processForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -255,7 +255,7 @@ export interface IForeignKeyOwnershipChangedConvention$instance extends IConvent
 export type IForeignKeyOwnershipChangedConvention = IForeignKeyOwnershipChangedConvention$instance;
 
 export interface IForeignKeyPrincipalEndChangedConvention$instance extends IConvention {
-    processForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
 }
 
 
@@ -264,7 +264,7 @@ export interface IForeignKeyPrincipalEndChangedConvention$instance extends IConv
 export type IForeignKeyPrincipalEndChangedConvention = IForeignKeyPrincipalEndChangedConvention$instance;
 
 export interface IForeignKeyPropertiesChangedConvention$instance extends IConvention {
-    processForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
+    ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
 }
 
 
@@ -273,7 +273,7 @@ export interface IForeignKeyPropertiesChangedConvention$instance extends IConven
 export type IForeignKeyPropertiesChangedConvention = IForeignKeyPropertiesChangedConvention$instance;
 
 export interface IForeignKeyRemovedConvention$instance extends IConvention {
-    processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
 }
 
 
@@ -282,7 +282,7 @@ export interface IForeignKeyRemovedConvention$instance extends IConvention$insta
 export type IForeignKeyRemovedConvention = IForeignKeyRemovedConvention$instance;
 
 export interface IForeignKeyRequirednessChangedConvention$instance extends IConvention {
-    processForeignKeyRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -291,7 +291,7 @@ export interface IForeignKeyRequirednessChangedConvention$instance extends IConv
 export type IForeignKeyRequirednessChangedConvention = IForeignKeyRequirednessChangedConvention$instance;
 
 export interface IForeignKeyUniquenessChangedConvention$instance extends IConvention {
-    processForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -300,7 +300,7 @@ export interface IForeignKeyUniquenessChangedConvention$instance extends IConven
 export type IForeignKeyUniquenessChangedConvention = IForeignKeyUniquenessChangedConvention$instance;
 
 export interface IIndexAddedConvention$instance extends IConvention {
-    processIndexAdded(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<IConventionIndexBuilder>): void;
+    ProcessIndexAdded(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<IConventionIndexBuilder>): void;
 }
 
 
@@ -309,7 +309,7 @@ export interface IIndexAddedConvention$instance extends IConvention$instance {}
 export type IIndexAddedConvention = IIndexAddedConvention$instance;
 
 export interface IIndexAnnotationChangedConvention$instance extends IConvention {
-    processIndexAnnotationChanged(indexBuilder: IConventionIndexBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessIndexAnnotationChanged(indexBuilder: IConventionIndexBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -318,7 +318,7 @@ export interface IIndexAnnotationChangedConvention$instance extends IConvention$
 export type IIndexAnnotationChangedConvention = IIndexAnnotationChangedConvention$instance;
 
 export interface IIndexRemovedConvention$instance extends IConvention {
-    processIndexRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, index: IConventionIndex, context: IConventionContext_1<IConventionIndex>): void;
+    ProcessIndexRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, index: IConventionIndex, context: IConventionContext_1<IConventionIndex>): void;
 }
 
 
@@ -327,7 +327,7 @@ export interface IIndexRemovedConvention$instance extends IConvention$instance {
 export type IIndexRemovedConvention = IIndexRemovedConvention$instance;
 
 export interface IIndexSortOrderChangedConvention$instance extends IConvention {
-    processIndexSortOrderChanged(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<IReadOnlyList<System_Internal.Boolean>>): void;
+    ProcessIndexSortOrderChanged(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<IReadOnlyList<System_Internal.Boolean>>): void;
 }
 
 
@@ -336,7 +336,7 @@ export interface IIndexSortOrderChangedConvention$instance extends IConvention$i
 export type IIndexSortOrderChangedConvention = IIndexSortOrderChangedConvention$instance;
 
 export interface IIndexUniquenessChangedConvention$instance extends IConvention {
-    processIndexUniquenessChanged(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessIndexUniquenessChanged(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -345,7 +345,7 @@ export interface IIndexUniquenessChangedConvention$instance extends IConvention$
 export type IIndexUniquenessChangedConvention = IIndexUniquenessChangedConvention$instance;
 
 export interface IKeyAddedConvention$instance extends IConvention {
-    processKeyAdded(keyBuilder: IConventionKeyBuilder, context: IConventionContext_1<IConventionKeyBuilder>): void;
+    ProcessKeyAdded(keyBuilder: IConventionKeyBuilder, context: IConventionContext_1<IConventionKeyBuilder>): void;
 }
 
 
@@ -354,7 +354,7 @@ export interface IKeyAddedConvention$instance extends IConvention$instance {}
 export type IKeyAddedConvention = IKeyAddedConvention$instance;
 
 export interface IKeyAnnotationChangedConvention$instance extends IConvention {
-    processKeyAnnotationChanged(keyBuilder: IConventionKeyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessKeyAnnotationChanged(keyBuilder: IConventionKeyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -363,7 +363,7 @@ export interface IKeyAnnotationChangedConvention$instance extends IConvention$in
 export type IKeyAnnotationChangedConvention = IKeyAnnotationChangedConvention$instance;
 
 export interface IKeyRemovedConvention$instance extends IConvention {
-    processKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
+    ProcessKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
 }
 
 
@@ -372,7 +372,7 @@ export interface IKeyRemovedConvention$instance extends IConvention$instance {}
 export type IKeyRemovedConvention = IKeyRemovedConvention$instance;
 
 export interface IModelAnnotationChangedConvention$instance extends IConvention {
-    processModelAnnotationChanged(modelBuilder: IConventionModelBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessModelAnnotationChanged(modelBuilder: IConventionModelBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -381,7 +381,7 @@ export interface IModelAnnotationChangedConvention$instance extends IConvention$
 export type IModelAnnotationChangedConvention = IModelAnnotationChangedConvention$instance;
 
 export interface IModelEmbeddedDiscriminatorNameConvention$instance extends IConvention {
-    processEmbeddedDiscriminatorName(modelBuilder: IConventionModelBuilder, newName: string, oldName: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEmbeddedDiscriminatorName(modelBuilder: IConventionModelBuilder, newName: string, oldName: string, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -390,7 +390,7 @@ export interface IModelEmbeddedDiscriminatorNameConvention$instance extends ICon
 export type IModelEmbeddedDiscriminatorNameConvention = IModelEmbeddedDiscriminatorNameConvention$instance;
 
 export interface IModelFinalizedConvention$instance extends IConvention {
-    processModelFinalized(model: IModel): IModel;
+    ProcessModelFinalized(model: IModel): IModel;
 }
 
 
@@ -399,7 +399,7 @@ export interface IModelFinalizedConvention$instance extends IConvention$instance
 export type IModelFinalizedConvention = IModelFinalizedConvention$instance;
 
 export interface IModelFinalizingConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -408,7 +408,7 @@ export interface IModelFinalizingConvention$instance extends IConvention$instanc
 export type IModelFinalizingConvention = IModelFinalizingConvention$instance;
 
 export interface IModelInitializedConvention$instance extends IConvention {
-    processModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -417,7 +417,7 @@ export interface IModelInitializedConvention$instance extends IConvention$instan
 export type IModelInitializedConvention = IModelInitializedConvention$instance;
 
 export interface INavigationAddedConvention$instance extends IConvention {
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
 }
 
 
@@ -426,7 +426,7 @@ export interface INavigationAddedConvention$instance extends IConvention$instanc
 export type INavigationAddedConvention = INavigationAddedConvention$instance;
 
 export interface INavigationAnnotationChangedConvention$instance extends IConvention {
-    processNavigationAnnotationChanged(relationshipBuilder: IConventionForeignKeyBuilder, navigation: IConventionNavigation, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessNavigationAnnotationChanged(relationshipBuilder: IConventionForeignKeyBuilder, navigation: IConventionNavigation, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -435,7 +435,7 @@ export interface INavigationAnnotationChangedConvention$instance extends IConven
 export type INavigationAnnotationChangedConvention = INavigationAnnotationChangedConvention$instance;
 
 export interface INavigationRemovedConvention$instance extends IConvention {
-    processNavigationRemoved(sourceEntityTypeBuilder: IConventionEntityTypeBuilder, targetEntityTypeBuilder: IConventionEntityTypeBuilder, navigationName: string, memberInfo: MemberInfo, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessNavigationRemoved(sourceEntityTypeBuilder: IConventionEntityTypeBuilder, targetEntityTypeBuilder: IConventionEntityTypeBuilder, navigationName: string, memberInfo: MemberInfo, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -444,7 +444,7 @@ export interface INavigationRemovedConvention$instance extends IConvention$insta
 export type INavigationRemovedConvention = INavigationRemovedConvention$instance;
 
 export interface IPropertyAddedConvention$instance extends IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
 }
 
 
@@ -453,7 +453,7 @@ export interface IPropertyAddedConvention$instance extends IConvention$instance 
 export type IPropertyAddedConvention = IPropertyAddedConvention$instance;
 
 export interface IPropertyAnnotationChangedConvention$instance extends IConvention {
-    processPropertyAnnotationChanged(propertyBuilder: IConventionPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessPropertyAnnotationChanged(propertyBuilder: IConventionPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -462,7 +462,7 @@ export interface IPropertyAnnotationChangedConvention$instance extends IConventi
 export type IPropertyAnnotationChangedConvention = IPropertyAnnotationChangedConvention$instance;
 
 export interface IPropertyElementTypeChangedConvention$instance extends IConvention {
-    processPropertyElementTypeChanged(propertyBuilder: IConventionPropertyBuilder, newElementType: IElementType, oldElementType: IElementType, context: IConventionContext_1<IElementType>): void;
+    ProcessPropertyElementTypeChanged(propertyBuilder: IConventionPropertyBuilder, newElementType: IElementType, oldElementType: IElementType, context: IConventionContext_1<IElementType>): void;
 }
 
 
@@ -471,7 +471,7 @@ export interface IPropertyElementTypeChangedConvention$instance extends IConvent
 export type IPropertyElementTypeChangedConvention = IPropertyElementTypeChangedConvention$instance;
 
 export interface IPropertyFieldChangedConvention$instance extends IConvention {
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -480,7 +480,7 @@ export interface IPropertyFieldChangedConvention$instance extends IConvention$in
 export type IPropertyFieldChangedConvention = IPropertyFieldChangedConvention$instance;
 
 export interface IPropertyNullabilityChangedConvention$instance extends IConvention {
-    processPropertyNullabilityChanged(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessPropertyNullabilityChanged(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -489,7 +489,7 @@ export interface IPropertyNullabilityChangedConvention$instance extends IConvent
 export type IPropertyNullabilityChangedConvention = IPropertyNullabilityChangedConvention$instance;
 
 export interface IPropertyRemovedConvention$instance extends IConvention {
-    processPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionProperty, context: IConventionContext_1<IConventionProperty>): void;
+    ProcessPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionProperty, context: IConventionContext_1<IConventionProperty>): void;
 }
 
 
@@ -498,7 +498,7 @@ export interface IPropertyRemovedConvention$instance extends IConvention$instanc
 export type IPropertyRemovedConvention = IPropertyRemovedConvention$instance;
 
 export interface ISkipNavigationAddedConvention$instance extends IConvention {
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
 }
 
 
@@ -507,7 +507,7 @@ export interface ISkipNavigationAddedConvention$instance extends IConvention$ins
 export type ISkipNavigationAddedConvention = ISkipNavigationAddedConvention$instance;
 
 export interface ISkipNavigationAnnotationChangedConvention$instance extends IConvention {
-    processSkipNavigationAnnotationChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessSkipNavigationAnnotationChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -516,7 +516,7 @@ export interface ISkipNavigationAnnotationChangedConvention$instance extends ICo
 export type ISkipNavigationAnnotationChangedConvention = ISkipNavigationAnnotationChangedConvention$instance;
 
 export interface ISkipNavigationForeignKeyChangedConvention$instance extends IConvention {
-    processSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
 }
 
 
@@ -525,7 +525,7 @@ export interface ISkipNavigationForeignKeyChangedConvention$instance extends ICo
 export type ISkipNavigationForeignKeyChangedConvention = ISkipNavigationForeignKeyChangedConvention$instance;
 
 export interface ISkipNavigationInverseChangedConvention$instance extends IConvention {
-    processSkipNavigationInverseChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, inverse: IConventionSkipNavigation, oldInverse: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
+    ProcessSkipNavigationInverseChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, inverse: IConventionSkipNavigation, oldInverse: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
 }
 
 
@@ -534,7 +534,7 @@ export interface ISkipNavigationInverseChangedConvention$instance extends IConve
 export type ISkipNavigationInverseChangedConvention = ISkipNavigationInverseChangedConvention$instance;
 
 export interface ISkipNavigationRemovedConvention$instance extends IConvention {
-    processSkipNavigationRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, navigation: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
+    ProcessSkipNavigationRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, navigation: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
 }
 
 
@@ -543,7 +543,7 @@ export interface ISkipNavigationRemovedConvention$instance extends IConvention$i
 export type ISkipNavigationRemovedConvention = ISkipNavigationRemovedConvention$instance;
 
 export interface ITriggerAddedConvention$instance extends IConvention {
-    processTriggerAdded(triggerBuilder: IConventionTriggerBuilder, context: IConventionContext_1<IConventionTriggerBuilder>): void;
+    ProcessTriggerAdded(triggerBuilder: IConventionTriggerBuilder, context: IConventionContext_1<IConventionTriggerBuilder>): void;
 }
 
 
@@ -552,7 +552,7 @@ export interface ITriggerAddedConvention$instance extends IConvention$instance {
 export type ITriggerAddedConvention = ITriggerAddedConvention$instance;
 
 export interface ITriggerRemovedConvention$instance extends IConvention {
-    processTriggerRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, trigger: IConventionTrigger, context: IConventionContext_1<IConventionTrigger>): void;
+    ProcessTriggerRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, trigger: IConventionTrigger, context: IConventionContext_1<IConventionTrigger>): void;
 }
 
 
@@ -561,7 +561,7 @@ export interface ITriggerRemovedConvention$instance extends IConvention$instance
 export type ITriggerRemovedConvention = ITriggerRemovedConvention$instance;
 
 export interface ITypeIgnoredConvention$instance extends IConvention {
-    processTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -570,10 +570,10 @@ export interface ITypeIgnoredConvention$instance extends IConvention$instance {}
 export type ITypeIgnoredConvention = ITypeIgnoredConvention$instance;
 
 export interface BackingFieldAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<BackingFieldAttribute>, IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -593,11 +593,11 @@ export type BackingFieldAttributeConvention = BackingFieldAttributeConvention$in
 
 
 export interface BackingFieldConvention$instance extends IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
 }
 
 
@@ -620,8 +620,8 @@ export type BackingFieldConvention = BackingFieldConvention$instance & __Backing
 
 
 export interface BaseTypeDiscoveryConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
 }
 
 
@@ -641,8 +641,8 @@ export type BaseTypeDiscoveryConvention = BaseTypeDiscoveryConvention$instance &
 
 
 export interface CascadeDeleteConvention$instance extends IConvention {
-    processForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -662,7 +662,7 @@ export type CascadeDeleteConvention = CascadeDeleteConvention$instance & __Casca
 
 
 export interface ChangeTrackingStrategyConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -681,8 +681,8 @@ export type ChangeTrackingStrategyConvention = ChangeTrackingStrategyConvention$
 
 
 export interface CheckConstraintConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
 }
 
 
@@ -702,17 +702,17 @@ export type CheckConstraintConvention = CheckConstraintConvention$instance & __C
 
 
 export interface ComplexPropertyDiscoveryConvention$instance extends IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processNavigationRemoved(sourceEntityTypeBuilder: IConventionEntityTypeBuilder, targetEntityTypeBuilder: IConventionEntityTypeBuilder, navigationName: string, memberInfo: MemberInfo, context: IConventionContext_1<System_Internal.String>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionProperty, context: IConventionContext_1<IConventionProperty>): void;
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
-    processSkipNavigationRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, navigation: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessNavigationRemoved(sourceEntityTypeBuilder: IConventionEntityTypeBuilder, targetEntityTypeBuilder: IConventionEntityTypeBuilder, navigationName: string, memberInfo: MemberInfo, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionProperty, context: IConventionContext_1<IConventionProperty>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessSkipNavigationRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, navigation: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
 }
 
 
@@ -741,9 +741,9 @@ export type ComplexPropertyDiscoveryConvention = ComplexPropertyDiscoveryConvent
 
 
 export interface ComplexTypeAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<ComplexTypeAttribute>, IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -761,8 +761,8 @@ export type ComplexTypeAttributeConvention = ComplexTypeAttributeConvention$inst
 
 
 export interface ConcurrencyCheckAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<ConcurrencyCheckAttribute>, IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -780,7 +780,7 @@ export type ConcurrencyCheckAttributeConvention = ConcurrencyCheckAttributeConve
 
 
 export interface ConstructorBindingConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -799,83 +799,83 @@ export type ConstructorBindingConvention = ConstructorBindingConvention$instance
 
 
 export interface ConventionSet$instance {
-    readonly complexPropertyAddedConventions: List<IComplexPropertyAddedConvention>;
-    readonly complexPropertyAnnotationChangedConventions: List<IComplexPropertyAnnotationChangedConvention>;
-    readonly complexPropertyFieldChangedConventions: List<IComplexPropertyFieldChangedConvention>;
-    readonly complexPropertyNullabilityChangedConventions: List<IComplexPropertyNullabilityChangedConvention>;
-    readonly complexPropertyRemovedConventions: List<IComplexPropertyRemovedConvention>;
-    readonly complexTypeAnnotationChangedConventions: List<IComplexTypeAnnotationChangedConvention>;
-    readonly complexTypeMemberIgnoredConventions: List<IComplexTypeMemberIgnoredConvention>;
-    readonly discriminatorPropertySetConventions: List<IDiscriminatorPropertySetConvention>;
-    readonly elementTypeAnnotationChangedConventions: List<IElementTypeAnnotationChangedConvention>;
-    readonly elementTypeNullabilityChangedConventions: List<IElementTypeNullabilityChangedConvention>;
-    readonly entityTypeAddedConventions: List<IEntityTypeAddedConvention>;
-    readonly entityTypeAnnotationChangedConventions: List<IEntityTypeAnnotationChangedConvention>;
-    readonly entityTypeBaseTypeChangedConventions: List<IEntityTypeBaseTypeChangedConvention>;
-    readonly entityTypeMemberIgnoredConventions: List<IEntityTypeMemberIgnoredConvention>;
-    readonly entityTypePrimaryKeyChangedConventions: List<IEntityTypePrimaryKeyChangedConvention>;
-    readonly entityTypeRemovedConventions: List<IEntityTypeRemovedConvention>;
-    readonly foreignKeyAddedConventions: List<IForeignKeyAddedConvention>;
-    readonly foreignKeyAnnotationChangedConventions: List<IForeignKeyAnnotationChangedConvention>;
-    readonly foreignKeyDependentRequirednessChangedConventions: List<IForeignKeyDependentRequirednessChangedConvention>;
-    readonly foreignKeyNullNavigationSetConventions: List<IForeignKeyNullNavigationSetConvention>;
-    readonly foreignKeyOwnershipChangedConventions: List<IForeignKeyOwnershipChangedConvention>;
-    readonly foreignKeyPrincipalEndChangedConventions: List<IForeignKeyPrincipalEndChangedConvention>;
-    readonly foreignKeyPropertiesChangedConventions: List<IForeignKeyPropertiesChangedConvention>;
-    readonly foreignKeyRemovedConventions: List<IForeignKeyRemovedConvention>;
-    readonly foreignKeyRequirednessChangedConventions: List<IForeignKeyRequirednessChangedConvention>;
-    readonly foreignKeyUniquenessChangedConventions: List<IForeignKeyUniquenessChangedConvention>;
-    readonly indexAddedConventions: List<IIndexAddedConvention>;
-    readonly indexAnnotationChangedConventions: List<IIndexAnnotationChangedConvention>;
-    readonly indexRemovedConventions: List<IIndexRemovedConvention>;
-    readonly indexSortOrderChangedConventions: List<IIndexSortOrderChangedConvention>;
-    readonly indexUniquenessChangedConventions: List<IIndexUniquenessChangedConvention>;
-    readonly keyAddedConventions: List<IKeyAddedConvention>;
-    readonly keyAnnotationChangedConventions: List<IKeyAnnotationChangedConvention>;
-    readonly keyRemovedConventions: List<IKeyRemovedConvention>;
-    readonly modelAnnotationChangedConventions: List<IModelAnnotationChangedConvention>;
-    readonly modelEmbeddedDiscriminatorNameConventions: List<IModelEmbeddedDiscriminatorNameConvention>;
-    readonly modelFinalizedConventions: List<IModelFinalizedConvention>;
-    readonly modelFinalizingConventions: List<IModelFinalizingConvention>;
-    readonly modelInitializedConventions: List<IModelInitializedConvention>;
-    readonly navigationAddedConventions: List<INavigationAddedConvention>;
-    readonly navigationAnnotationChangedConventions: List<INavigationAnnotationChangedConvention>;
-    readonly navigationRemovedConventions: List<INavigationRemovedConvention>;
-    readonly propertyAddedConventions: List<IPropertyAddedConvention>;
-    readonly propertyAnnotationChangedConventions: List<IPropertyAnnotationChangedConvention>;
-    readonly propertyElementTypeChangedConventions: List<IPropertyElementTypeChangedConvention>;
-    readonly propertyFieldChangedConventions: List<IPropertyFieldChangedConvention>;
-    readonly propertyNullabilityChangedConventions: List<IPropertyNullabilityChangedConvention>;
-    readonly propertyRemovedConventions: List<IPropertyRemovedConvention>;
-    readonly skipNavigationAddedConventions: List<ISkipNavigationAddedConvention>;
-    readonly skipNavigationAnnotationChangedConventions: List<ISkipNavigationAnnotationChangedConvention>;
-    readonly skipNavigationForeignKeyChangedConventions: List<ISkipNavigationForeignKeyChangedConvention>;
-    readonly skipNavigationInverseChangedConventions: List<ISkipNavigationInverseChangedConvention>;
-    readonly skipNavigationRemovedConventions: List<ISkipNavigationRemovedConvention>;
-    readonly triggerAddedConventions: List<ITriggerAddedConvention>;
-    readonly triggerRemovedConventions: List<ITriggerRemovedConvention>;
-    readonly typeIgnoredConventions: List<ITypeIgnoredConvention>;
-    add(convention: IConvention): void;
-    remove(conventionType: Type): void;
-    replace<TImplementation extends IConvention>(newConvention: TImplementation): void;
+    readonly ComplexPropertyAddedConventions: List<IComplexPropertyAddedConvention>;
+    readonly ComplexPropertyAnnotationChangedConventions: List<IComplexPropertyAnnotationChangedConvention>;
+    readonly ComplexPropertyFieldChangedConventions: List<IComplexPropertyFieldChangedConvention>;
+    readonly ComplexPropertyNullabilityChangedConventions: List<IComplexPropertyNullabilityChangedConvention>;
+    readonly ComplexPropertyRemovedConventions: List<IComplexPropertyRemovedConvention>;
+    readonly ComplexTypeAnnotationChangedConventions: List<IComplexTypeAnnotationChangedConvention>;
+    readonly ComplexTypeMemberIgnoredConventions: List<IComplexTypeMemberIgnoredConvention>;
+    readonly DiscriminatorPropertySetConventions: List<IDiscriminatorPropertySetConvention>;
+    readonly ElementTypeAnnotationChangedConventions: List<IElementTypeAnnotationChangedConvention>;
+    readonly ElementTypeNullabilityChangedConventions: List<IElementTypeNullabilityChangedConvention>;
+    readonly EntityTypeAddedConventions: List<IEntityTypeAddedConvention>;
+    readonly EntityTypeAnnotationChangedConventions: List<IEntityTypeAnnotationChangedConvention>;
+    readonly EntityTypeBaseTypeChangedConventions: List<IEntityTypeBaseTypeChangedConvention>;
+    readonly EntityTypeMemberIgnoredConventions: List<IEntityTypeMemberIgnoredConvention>;
+    readonly EntityTypePrimaryKeyChangedConventions: List<IEntityTypePrimaryKeyChangedConvention>;
+    readonly EntityTypeRemovedConventions: List<IEntityTypeRemovedConvention>;
+    readonly ForeignKeyAddedConventions: List<IForeignKeyAddedConvention>;
+    readonly ForeignKeyAnnotationChangedConventions: List<IForeignKeyAnnotationChangedConvention>;
+    readonly ForeignKeyDependentRequirednessChangedConventions: List<IForeignKeyDependentRequirednessChangedConvention>;
+    readonly ForeignKeyNullNavigationSetConventions: List<IForeignKeyNullNavigationSetConvention>;
+    readonly ForeignKeyOwnershipChangedConventions: List<IForeignKeyOwnershipChangedConvention>;
+    readonly ForeignKeyPrincipalEndChangedConventions: List<IForeignKeyPrincipalEndChangedConvention>;
+    readonly ForeignKeyPropertiesChangedConventions: List<IForeignKeyPropertiesChangedConvention>;
+    readonly ForeignKeyRemovedConventions: List<IForeignKeyRemovedConvention>;
+    readonly ForeignKeyRequirednessChangedConventions: List<IForeignKeyRequirednessChangedConvention>;
+    readonly ForeignKeyUniquenessChangedConventions: List<IForeignKeyUniquenessChangedConvention>;
+    readonly IndexAddedConventions: List<IIndexAddedConvention>;
+    readonly IndexAnnotationChangedConventions: List<IIndexAnnotationChangedConvention>;
+    readonly IndexRemovedConventions: List<IIndexRemovedConvention>;
+    readonly IndexSortOrderChangedConventions: List<IIndexSortOrderChangedConvention>;
+    readonly IndexUniquenessChangedConventions: List<IIndexUniquenessChangedConvention>;
+    readonly KeyAddedConventions: List<IKeyAddedConvention>;
+    readonly KeyAnnotationChangedConventions: List<IKeyAnnotationChangedConvention>;
+    readonly KeyRemovedConventions: List<IKeyRemovedConvention>;
+    readonly ModelAnnotationChangedConventions: List<IModelAnnotationChangedConvention>;
+    readonly ModelEmbeddedDiscriminatorNameConventions: List<IModelEmbeddedDiscriminatorNameConvention>;
+    readonly ModelFinalizedConventions: List<IModelFinalizedConvention>;
+    readonly ModelFinalizingConventions: List<IModelFinalizingConvention>;
+    readonly ModelInitializedConventions: List<IModelInitializedConvention>;
+    readonly NavigationAddedConventions: List<INavigationAddedConvention>;
+    readonly NavigationAnnotationChangedConventions: List<INavigationAnnotationChangedConvention>;
+    readonly NavigationRemovedConventions: List<INavigationRemovedConvention>;
+    readonly PropertyAddedConventions: List<IPropertyAddedConvention>;
+    readonly PropertyAnnotationChangedConventions: List<IPropertyAnnotationChangedConvention>;
+    readonly PropertyElementTypeChangedConventions: List<IPropertyElementTypeChangedConvention>;
+    readonly PropertyFieldChangedConventions: List<IPropertyFieldChangedConvention>;
+    readonly PropertyNullabilityChangedConventions: List<IPropertyNullabilityChangedConvention>;
+    readonly PropertyRemovedConventions: List<IPropertyRemovedConvention>;
+    readonly SkipNavigationAddedConventions: List<ISkipNavigationAddedConvention>;
+    readonly SkipNavigationAnnotationChangedConventions: List<ISkipNavigationAnnotationChangedConvention>;
+    readonly SkipNavigationForeignKeyChangedConventions: List<ISkipNavigationForeignKeyChangedConvention>;
+    readonly SkipNavigationInverseChangedConventions: List<ISkipNavigationInverseChangedConvention>;
+    readonly SkipNavigationRemovedConventions: List<ISkipNavigationRemovedConvention>;
+    readonly TriggerAddedConventions: List<ITriggerAddedConvention>;
+    readonly TriggerRemovedConventions: List<ITriggerRemovedConvention>;
+    readonly TypeIgnoredConventions: List<ITypeIgnoredConvention>;
+    Add(convention: IConvention): void;
+    Remove(conventionType: Type): void;
+    Replace<TImplementation extends IConvention>(newConvention: TImplementation): void;
 }
 
 
 export const ConventionSet: {
     new(): ConventionSet;
-    addAfter<TConvention>(conventionsList: List<TConvention>, newConvention: TConvention, existingConventionType: Type): boolean;
-    addBefore<TConvention>(conventionsList: List<TConvention>, newConvention: TConvention, existingConventionType: Type): boolean;
-    createConventionSet(context: DbContext): ConventionSet;
-    remove<TConvention>(conventionsList: List<TConvention>, existingConventionType: Type): boolean;
-    replace<TConvention, TImplementation extends TConvention>(conventionsList: List<TConvention>, newConvention: TImplementation): boolean;
+    AddAfter<TConvention>(conventionsList: List<TConvention>, newConvention: TConvention, existingConventionType: Type): boolean;
+    AddBefore<TConvention>(conventionsList: List<TConvention>, newConvention: TConvention, existingConventionType: Type): boolean;
+    CreateConventionSet(context: DbContext): ConventionSet;
+    Remove<TConvention>(conventionsList: List<TConvention>, existingConventionType: Type): boolean;
+    Replace<TConvention, TImplementation extends TConvention>(conventionsList: List<TConvention>, newConvention: TImplementation): boolean;
 };
 
 
 export type ConventionSet = ConventionSet$instance;
 
 export interface DatabaseGeneratedAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<DatabaseGeneratedAttribute>, IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -893,7 +893,7 @@ export type DatabaseGeneratedAttributeConvention = DatabaseGeneratedAttributeCon
 
 
 export interface DbSetFindingConvention$instance extends IConvention {
-    processModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -912,12 +912,12 @@ export type DbSetFindingConvention = DbSetFindingConvention$instance & __DbSetFi
 
 
 export interface DeleteBehaviorAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<DeleteBehaviorAttribute>, IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -941,9 +941,9 @@ export type DeleteBehaviorAttributeConvention = DeleteBehaviorAttributeConventio
 
 
 export interface DiscriminatorConvention$instance extends IConvention {
-    processDiscriminatorPropertySet(structuralTypeBuilder: IConventionTypeBaseBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessDiscriminatorPropertySet(structuralTypeBuilder: IConventionTypeBaseBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
 }
 
 
@@ -964,7 +964,7 @@ export type DiscriminatorConvention = DiscriminatorConvention$instance & __Discr
 
 
 export interface DiscriminatorLengthConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -983,7 +983,7 @@ export type DiscriminatorLengthConvention = DiscriminatorLengthConvention$instan
 
 
 export interface ElementMappingConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1002,9 +1002,9 @@ export type ElementMappingConvention = ElementMappingConvention$instance & __Ele
 
 
 export interface ElementTypeChangedConvention$instance extends IConvention {
-    processForeignKeyAdded(foreignKeyBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
-    processPropertyElementTypeChanged(propertyBuilder: IConventionPropertyBuilder, newElementType: IElementType, oldElementType: IElementType, context: IConventionContext_1<IElementType>): void;
+    ProcessForeignKeyAdded(foreignKeyBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
+    ProcessPropertyElementTypeChanged(propertyBuilder: IConventionPropertyBuilder, newElementType: IElementType, oldElementType: IElementType, context: IConventionContext_1<IElementType>): void;
 }
 
 
@@ -1025,8 +1025,8 @@ export type ElementTypeChangedConvention = ElementTypeChangedConvention$instance
 
 
 export interface EntitySplittingConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1046,8 +1046,8 @@ export type EntitySplittingConvention = EntitySplittingConvention$instance & __E
 
 
 export interface EntityTypeConfigurationAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<EntityTypeConfigurationAttribute>, IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -1065,7 +1065,7 @@ export type EntityTypeConfigurationAttributeConvention = EntityTypeConfiguration
 
 
 export interface EntityTypeHierarchyMappingConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1084,13 +1084,13 @@ export type EntityTypeHierarchyMappingConvention = EntityTypeHierarchyMappingCon
 
 
 export interface ForeignKeyAttributeConvention$instance extends IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
 }
 
 
@@ -1115,17 +1115,17 @@ export type ForeignKeyAttributeConvention = ForeignKeyAttributeConvention$instan
 
 
 export interface ForeignKeyIndexConvention$instance extends IConvention {
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
-    processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
-    processForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processIndexAdded(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<IConventionIndexBuilder>): void;
-    processIndexRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, index: IConventionIndex, context: IConventionContext_1<IConventionIndex>): void;
-    processIndexUniquenessChanged(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processKeyAdded(keyBuilder: IConventionKeyBuilder, context: IConventionContext_1<IConventionKeyBuilder>): void;
-    processKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
+    ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessIndexAdded(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<IConventionIndexBuilder>): void;
+    ProcessIndexRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, index: IConventionIndex, context: IConventionContext_1<IConventionIndex>): void;
+    ProcessIndexUniquenessChanged(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessKeyAdded(keyBuilder: IConventionKeyBuilder, context: IConventionContext_1<IConventionKeyBuilder>): void;
+    ProcessKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1154,28 +1154,28 @@ export type ForeignKeyIndexConvention = ForeignKeyIndexConvention$instance & __F
 
 
 export interface ForeignKeyPropertyDiscoveryConvention$instance extends IConvention {
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
-    processEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
-    processForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
-    processForeignKeyRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processKeyAdded(keyBuilder: IConventionKeyBuilder, context: IConventionContext_1<IConventionKeyBuilder>): void;
-    processKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
-    processPropertyNullabilityChanged(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
-    processSkipNavigationInverseChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, inverse: IConventionSkipNavigation, oldInverse: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
+    ProcessForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
+    ProcessForeignKeyRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessKeyAdded(keyBuilder: IConventionKeyBuilder, context: IConventionContext_1<IConventionKeyBuilder>): void;
+    ProcessKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyNullabilityChanged(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessSkipNavigationInverseChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, inverse: IConventionSkipNavigation, oldInverse: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
 }
 
 
 export const ForeignKeyPropertyDiscoveryConvention: {
     new(dependencies: ProviderConventionSetBuilderDependencies): ForeignKeyPropertyDiscoveryConvention;
-    getPropertyBaseName(foreignKey: IReadOnlyForeignKey): string;
+    GetPropertyBaseName(foreignKey: IReadOnlyForeignKey): string;
 };
 
 
@@ -1204,9 +1204,9 @@ export type ForeignKeyPropertyDiscoveryConvention = ForeignKeyPropertyDiscoveryC
 
 
 export interface IndexAttributeConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1227,25 +1227,25 @@ export type IndexAttributeConvention = IndexAttributeConvention$instance & __Ind
 
 
 export interface InversePropertyAttributeConvention$instance extends NavigationAttributeConventionBase_1<InversePropertyAttribute>, IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: InversePropertyAttribute, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: InversePropertyAttribute, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: InversePropertyAttribute, context: IConventionContext_1<System_Internal.String>): void;
-    processEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: InversePropertyAttribute, context: IConventionContext_1<IConventionEntityType>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: InversePropertyAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: InversePropertyAttribute, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: InversePropertyAttribute, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: InversePropertyAttribute, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: InversePropertyAttribute, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: InversePropertyAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
 }
 
 
 export const InversePropertyAttributeConvention: {
     new(dependencies: ProviderConventionSetBuilderDependencies): InversePropertyAttributeConvention;
-    isAmbiguous(entityType: IConventionEntityType, navigation: MemberInfo, targetEntityType: IConventionEntityType): boolean;
+    IsAmbiguous(entityType: IConventionEntityType, navigation: MemberInfo, targetEntityType: IConventionEntityType): boolean;
 };
 
 
@@ -1264,12 +1264,12 @@ export type InversePropertyAttributeConvention = InversePropertyAttributeConvent
 
 
 export interface KeyAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<KeyAttribute>, IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -1293,23 +1293,23 @@ export type KeyAttributeConvention = KeyAttributeConvention$instance & __KeyAttr
 
 
 export interface KeyDiscoveryConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
-    processForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
-    processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
-    processForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
+    ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
 }
 
 
 export const KeyDiscoveryConvention: {
     new(dependencies: ProviderConventionSetBuilderDependencies): KeyDiscoveryConvention;
-    discoverKeyProperties(entityType: IConventionEntityType, candidateProperties: IEnumerable<IConventionProperty>): IEnumerable<IConventionProperty>;
+    DiscoverKeyProperties(entityType: IConventionEntityType, candidateProperties: IEnumerable<IConventionProperty>): IEnumerable<IConventionProperty>;
 };
 
 
@@ -1333,7 +1333,7 @@ export type KeyDiscoveryConvention = KeyDiscoveryConvention$instance & __KeyDisc
 
 
 export interface KeylessAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<KeylessAttribute>, IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -1350,10 +1350,10 @@ export type KeylessAttributeConvention = KeylessAttributeConvention$instance & _
 
 
 export interface ManyToManyJoinEntityTypeConvention$instance extends IConvention {
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
-    processSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
-    processSkipNavigationInverseChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, inverse: IConventionSkipNavigation, oldInverse: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
-    processSkipNavigationRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, navigation: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessSkipNavigationInverseChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, inverse: IConventionSkipNavigation, oldInverse: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
+    ProcessSkipNavigationRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, navigation: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
 }
 
 
@@ -1375,9 +1375,9 @@ export type ManyToManyJoinEntityTypeConvention = ManyToManyJoinEntityTypeConvent
 
 
 export interface MaxLengthAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<MaxLengthAttribute>, IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -1396,8 +1396,8 @@ export type MaxLengthAttributeConvention = MaxLengthAttributeConvention$instance
 
 
 export interface ModelCleanupConvention$instance extends IConvention {
-    processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1417,22 +1417,22 @@ export type ModelCleanupConvention = ModelCleanupConvention$instance & __ModelCl
 
 
 export interface NavigationAttributeConventionBase_1$instance<TAttribute extends Attribute> {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<System_Internal.String>): void;
-    processEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<IConventionEntityType>): void;
-    processForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, dependentToPrincipalAttributes: IEnumerable<TAttribute>, principalToDependentAttributes: IEnumerable<TAttribute>, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: TAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, attribute: TAttribute, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
-    processTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
-    processTypeIgnored(modelBuilder: IConventionModelBuilder, type: Type, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, dependentToPrincipalAttributes: IEnumerable<TAttribute>, principalToDependentAttributes: IEnumerable<TAttribute>, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: TAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, attribute: TAttribute, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessTypeIgnored(modelBuilder: IConventionModelBuilder, type: Type, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: TAttribute, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -1443,10 +1443,10 @@ export const NavigationAttributeConventionBase_1: {
 export type NavigationAttributeConventionBase_1<TAttribute extends Attribute> = NavigationAttributeConventionBase_1$instance<TAttribute>;
 
 export interface NavigationBackingFieldAttributeConvention$instance extends NavigationAttributeConventionBase_1<BackingFieldAttribute>, IConvention {
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: BackingFieldAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, attribute: BackingFieldAttribute, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: BackingFieldAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, attribute: BackingFieldAttribute, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
 }
 
 
@@ -1464,7 +1464,7 @@ export type NavigationBackingFieldAttributeConvention = NavigationBackingFieldAt
 
 
 export interface NavigationEagerLoadingConvention$instance extends IConvention {
-    processForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
 
@@ -1493,8 +1493,8 @@ export const NonNullableConventionBase: {
 export type NonNullableConventionBase = NonNullableConventionBase$instance;
 
 export interface NonNullableNavigationConvention$instance extends NonNullableConventionBase, IConvention {
-    processForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
 }
 
 
@@ -1514,11 +1514,11 @@ export type NonNullableNavigationConvention = NonNullableNavigationConvention$in
 
 
 export interface NonNullableReferencePropertyConvention$instance extends NonNullableConventionBase, IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyElementTypeChanged(propertyBuilder: IConventionPropertyBuilder, newElementType: IElementType, oldElementType: IElementType, context: IConventionContext_1<IElementType>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyElementTypeChanged(propertyBuilder: IConventionPropertyBuilder, newElementType: IElementType, oldElementType: IElementType, context: IConventionContext_1<IElementType>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -1541,8 +1541,8 @@ export type NonNullableReferencePropertyConvention = NonNullableReferencePropert
 
 
 export interface NotMappedMemberAttributeConvention$instance extends IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -1562,7 +1562,7 @@ export type NotMappedMemberAttributeConvention = NotMappedMemberAttributeConvent
 
 
 export interface NotMappedTypeAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<NotMappedAttribute>, IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -1579,8 +1579,8 @@ export type NotMappedTypeAttributeConvention = NotMappedTypeAttributeConvention$
 
 
 export interface OwnedAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<OwnedAttribute>, IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -1598,8 +1598,8 @@ export type OwnedAttributeConvention = OwnedAttributeConvention$instance & __Own
 
 
 export interface PrecisionAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<PrecisionAttribute>, IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -1617,10 +1617,10 @@ export type PrecisionAttributeConvention = PrecisionAttributeConvention$instance
 
 
 export interface PropertyAttributeConventionBase_1$instance<TAttribute extends Attribute> extends IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -1639,9 +1639,9 @@ export type PropertyAttributeConventionBase_1<TAttribute extends Attribute> = Pr
 
 
 export interface PropertyDiscoveryConvention$instance extends IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
 }
 
 
@@ -1662,7 +1662,7 @@ export type PropertyDiscoveryConvention = PropertyDiscoveryConvention$instance &
 
 
 export interface PropertyOverridesConvention$instance extends IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
 }
 
 
@@ -1681,7 +1681,7 @@ export type PropertyOverridesConvention = PropertyOverridesConvention$instance &
 
 
 export interface QueryFilterRewritingConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1700,8 +1700,8 @@ export type QueryFilterRewritingConvention = QueryFilterRewritingConvention$inst
 
 
 export interface RelationalColumnAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<ColumnAttribute>, IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -1719,8 +1719,8 @@ export type RelationalColumnAttributeConvention = RelationalColumnAttributeConve
 
 
 export interface RelationalColumnCommentAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<CommentAttribute>, IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -1738,8 +1738,8 @@ export type RelationalColumnCommentAttributeConvention = RelationalColumnComment
 
 
 export interface RelationalDbFunctionAttributeConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
-    processModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1759,25 +1759,25 @@ export type RelationalDbFunctionAttributeConvention = RelationalDbFunctionAttrib
 
 
 export interface RelationalKeyDiscoveryConvention$instance extends KeyDiscoveryConvention$instance, IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
-    processForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
-    processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
-    processForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
+    ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
 }
 
 
 export const RelationalKeyDiscoveryConvention: {
     new(dependencies: ProviderConventionSetBuilderDependencies, relationalDependencies: RelationalConventionSetBuilderDependencies): RelationalKeyDiscoveryConvention;
-    readonly synthesizedOrdinalPropertyName: string;
+    readonly SynthesizedOrdinalPropertyName: string;
 };
 
 
@@ -1802,8 +1802,8 @@ export type RelationalKeyDiscoveryConvention = RelationalKeyDiscoveryConvention$
 
 
 export interface RelationalMapToJsonConvention$instance extends IConvention {
-    processEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1823,8 +1823,8 @@ export type RelationalMapToJsonConvention = RelationalMapToJsonConvention$instan
 
 
 export interface RelationalMaxIdentifierLengthConvention$instance extends IConvention {
-    readonly maxIdentifierLength: int;
-    processModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    readonly MaxIdentifierLength: int;
+    ProcessModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1843,8 +1843,8 @@ export type RelationalMaxIdentifierLengthConvention = RelationalMaxIdentifierLen
 
 
 export interface RelationalNavigationJsonPropertyNameAttributeConvention$instance extends NavigationAttributeConventionBase_1<JsonPropertyNameAttribute>, IConvention {
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: JsonPropertyNameAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: JsonPropertyNameAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
 }
 
 
@@ -1861,8 +1861,8 @@ export type RelationalNavigationJsonPropertyNameAttributeConvention = Relational
 
 
 export interface RelationalPropertyJsonPropertyNameAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<JsonPropertyNameAttribute>, IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -1880,7 +1880,7 @@ export type RelationalPropertyJsonPropertyNameAttributeConvention = RelationalPr
 
 
 export interface RelationalQueryFilterRewritingConvention$instance extends QueryFilterRewritingConvention$instance, IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -1897,7 +1897,7 @@ export type RelationalQueryFilterRewritingConvention = RelationalQueryFilterRewr
 
 
 export interface RelationalRuntimeModelConvention$instance extends RuntimeModelConvention$instance, IConvention {
-    processModelFinalized(model: IModel): IModel;
+    ProcessModelFinalized(model: IModel): IModel;
 }
 
 
@@ -1914,7 +1914,7 @@ export type RelationalRuntimeModelConvention = RelationalRuntimeModelConvention$
 
 
 export interface RelationalTableAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<TableAttribute>, IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -1931,7 +1931,7 @@ export type RelationalTableAttributeConvention = RelationalTableAttributeConvent
 
 
 export interface RelationalTableCommentAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<CommentAttribute>, IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -1948,14 +1948,14 @@ export type RelationalTableCommentAttributeConvention = RelationalTableCommentAt
 
 
 export interface RelationalValueGenerationConvention$instance extends ValueGenerationConvention$instance, IConvention {
-    processEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
-    processForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
-    processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
-    processPropertyAnnotationChanged(propertyBuilder: IConventionPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
+    ProcessForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
+    ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessPropertyAnnotationChanged(propertyBuilder: IConventionPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -1981,15 +1981,15 @@ export type RelationalValueGenerationConvention = RelationalValueGenerationConve
 
 
 export interface RelationshipDiscoveryConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
-    processForeignKeyNullNavigationSet(relationshipBuilder: IConventionForeignKeyBuilder, pointsToPrincipal: boolean, context: IConventionContext_1<IConventionNavigation>): void;
-    processForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processNavigationRemoved(sourceEntityTypeBuilder: IConventionEntityTypeBuilder, targetEntityTypeBuilder: IConventionEntityTypeBuilder, navigationName: string, memberInfo: MemberInfo, context: IConventionContext_1<System_Internal.String>): void;
-    processTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessForeignKeyNullNavigationSet(relationshipBuilder: IConventionForeignKeyBuilder, pointsToPrincipal: boolean, context: IConventionContext_1<IConventionNavigation>): void;
+    ProcessForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessNavigationRemoved(sourceEntityTypeBuilder: IConventionEntityTypeBuilder, targetEntityTypeBuilder: IConventionEntityTypeBuilder, navigationName: string, memberInfo: MemberInfo, context: IConventionContext_1<System_Internal.String>): void;
+    ProcessTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
 }
 
 
@@ -2016,12 +2016,12 @@ export type RelationshipDiscoveryConvention = RelationshipDiscoveryConvention$in
 
 
 export interface RequiredNavigationAttributeConvention$instance extends NavigationAttributeConventionBase_1<RequiredAttribute>, IConvention {
-    processForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, dependentToPrincipalAttributes: IEnumerable<RequiredAttribute>, principalToDependentAttributes: IEnumerable<RequiredAttribute>, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: RequiredAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
-    processSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, attribute: RequiredAttribute, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, dependentToPrincipalAttributes: IEnumerable<RequiredAttribute>, principalToDependentAttributes: IEnumerable<RequiredAttribute>, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: RequiredAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
+    ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, attribute: RequiredAttribute, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
 }
 
 
@@ -2040,10 +2040,10 @@ export type RequiredNavigationAttributeConvention = RequiredNavigationAttributeC
 
 
 export interface RequiredPropertyAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<RequiredAttribute>, IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -2063,7 +2063,7 @@ export type RequiredPropertyAttributeConvention = RequiredPropertyAttributeConve
 
 
 export interface RuntimeModelConvention$instance extends IConvention {
-    processModelFinalized(model: IModel): IModel;
+    ProcessModelFinalized(model: IModel): IModel;
 }
 
 
@@ -2082,7 +2082,7 @@ export type RuntimeModelConvention = RuntimeModelConvention$instance & __Runtime
 
 
 export interface SequenceUniquificationConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -2101,8 +2101,8 @@ export type SequenceUniquificationConvention = SequenceUniquificationConvention$
 
 
 export interface ServicePropertyDiscoveryConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
 }
 
 
@@ -2122,7 +2122,7 @@ export type ServicePropertyDiscoveryConvention = ServicePropertyDiscoveryConvent
 
 
 export interface SharedTableConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -2141,7 +2141,7 @@ export type SharedTableConvention = SharedTableConvention$instance & __SharedTab
 
 
 export interface StoredProcedureConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -2160,8 +2160,8 @@ export type StoredProcedureConvention = StoredProcedureConvention$instance & __S
 
 
 export interface StoreGenerationConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
-    processPropertyAnnotationChanged(propertyBuilder: IConventionPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessPropertyAnnotationChanged(propertyBuilder: IConventionPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
 
@@ -2181,8 +2181,8 @@ export type StoreGenerationConvention = StoreGenerationConvention$instance & __S
 
 
 export interface StringLengthAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<StringLengthAttribute>, IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -2200,10 +2200,10 @@ export type StringLengthAttributeConvention = StringLengthAttributeConvention$in
 
 
 export interface TableNameFromDbSetConvention$instance extends IConvention {
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
-    processEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -2225,14 +2225,14 @@ export type TableNameFromDbSetConvention = TableNameFromDbSetConvention$instance
 
 
 export interface TableSharingConcurrencyTokenConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
 export const TableSharingConcurrencyTokenConvention: {
     new(dependencies: ProviderConventionSetBuilderDependencies, relationalDependencies: RelationalConventionSetBuilderDependencies): TableSharingConcurrencyTokenConvention;
-    getConcurrencyTokensMap(storeObject: StoreObjectIdentifier, mappedTypes: IReadOnlyList<IReadOnlyEntityType>): Dictionary<System_Internal.String, List<IReadOnlyProperty>> | undefined;
-    isConcurrencyTokenMissing(propertiesMappedToConcurrencyColumn: List<IReadOnlyProperty>, entityType: IReadOnlyEntityType, mappedTypes: IReadOnlyList<IReadOnlyEntityType>): boolean;
+    GetConcurrencyTokensMap(storeObject: StoreObjectIdentifier, mappedTypes: IReadOnlyList<IReadOnlyEntityType>): Dictionary<System_Internal.String, List<IReadOnlyProperty>> | undefined;
+    IsConcurrencyTokenMissing(propertiesMappedToConcurrencyColumn: List<IReadOnlyProperty>, entityType: IReadOnlyEntityType, mappedTypes: IReadOnlyList<IReadOnlyEntityType>): boolean;
 };
 
 
@@ -2246,7 +2246,7 @@ export type TableSharingConcurrencyTokenConvention = TableSharingConcurrencyToke
 
 
 export interface TableValuedDbFunctionConvention$instance extends IConvention {
-    processModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
+    ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
 
@@ -2265,8 +2265,8 @@ export type TableValuedDbFunctionConvention = TableValuedDbFunctionConvention$in
 
 
 export interface TimestampAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<TimestampAttribute>, IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -2284,8 +2284,8 @@ export type TimestampAttributeConvention = TimestampAttributeConvention$instance
 
 
 export interface TypeAttributeConventionBase_1$instance<TAttribute extends Attribute> extends IConvention {
-    processComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
-    processEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
+    ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
+    ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
 
@@ -2303,8 +2303,8 @@ export type TypeAttributeConventionBase_1<TAttribute extends Attribute> = TypeAt
 
 
 export interface UnicodeAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<UnicodeAttribute>, IConvention {
-    processPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
-    processPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
+    ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
+    ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
 
@@ -2322,18 +2322,18 @@ export type UnicodeAttributeConvention = UnicodeAttributeConvention$instance & _
 
 
 export interface ValueGenerationConvention$instance extends IConvention {
-    processEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
-    processEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
-    processForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
-    processForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
-    processForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
-    processForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
+    ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
+    ProcessEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
+    ProcessForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
+    ProcessForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
+    ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
+    ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
 }
 
 
 export const ValueGenerationConvention: {
     new(dependencies: ProviderConventionSetBuilderDependencies): ValueGenerationConvention;
-    getValueGenerated(property: IReadOnlyProperty): Nullable<ValueGenerated>;
+    GetValueGenerated(property: IReadOnlyProperty): Nullable<ValueGenerated>;
 };
 
 

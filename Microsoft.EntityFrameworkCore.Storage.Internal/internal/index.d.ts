@@ -27,15 +27,15 @@ import type { MethodInfo } from "@tsonic/dotnet/System.Reflection.js";
 import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 
 export interface ICompositeJsonValueReaderWriter$instance {
-    readonly innerReaderWriter: JsonValueReaderWriter;
+    readonly InnerReaderWriter: JsonValueReaderWriter;
 }
 
 
 export type ICompositeJsonValueReaderWriter = ICompositeJsonValueReaderWriter$instance;
 
 export interface IJsonConvertedValueReaderWriter$instance extends ICompositeJsonValueReaderWriter {
-    readonly converter: ValueConverter;
-    readonly innerReaderWriter: JsonValueReaderWriter;
+    readonly Converter: ValueConverter;
+    readonly InnerReaderWriter: JsonValueReaderWriter;
 }
 
 
@@ -44,16 +44,16 @@ export interface IJsonConvertedValueReaderWriter$instance extends ICompositeJson
 export type IJsonConvertedValueReaderWriter = IJsonConvertedValueReaderWriter$instance;
 
 export interface INamedConnectionStringResolver$instance {
-    resolveConnectionString(connectionString: string): string;
+    ResolveConnectionString(connectionString: string): string;
 }
 
 
 export type INamedConnectionStringResolver = INamedConnectionStringResolver$instance;
 
 export interface CompositeRelationalParameter$instance extends RelationalParameterBase$instance {
-    readonly relationalParameters: IReadOnlyList<IRelationalParameter>;
-    addDbParameter(command: DbCommand, value: unknown): void;
-    addDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    readonly RelationalParameters: IReadOnlyList<IRelationalParameter>;
+    AddDbParameter(command: DbCommand, value: unknown): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
 }
 
 
@@ -70,22 +70,22 @@ export type CompositeRelationalParameter = CompositeRelationalParameter$instance
 
 
 export interface DatabaseFacadeDependencies$instance {
-    readonly adHocMapper: IAdHocMapper;
-    readonly commandLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Command>;
-    readonly concurrencyDetector: IConcurrencyDetector;
-    readonly coreOptions: ICoreSingletonOptions;
-    readonly databaseCreator: IDatabaseCreator;
-    readonly databaseProviders: IEnumerable<IDatabaseProvider>;
-    readonly executionStrategy: IExecutionStrategy;
-    readonly executionStrategyFactory: IExecutionStrategyFactory;
-    readonly queryProvider: IAsyncQueryProvider;
-    readonly transactionManager: IDbContextTransactionManager;
-    readonly typeMappingSource: ITypeMappingSource;
+    readonly AdHocMapper: IAdHocMapper;
+    readonly CommandLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Command>;
+    readonly ConcurrencyDetector: IConcurrencyDetector;
+    readonly CoreOptions: ICoreSingletonOptions;
+    readonly DatabaseCreator: IDatabaseCreator;
+    readonly DatabaseProviders: IEnumerable<IDatabaseProvider>;
+    readonly ExecutionStrategy: IExecutionStrategy;
+    readonly ExecutionStrategyFactory: IExecutionStrategyFactory;
+    readonly QueryProvider: IAsyncQueryProvider;
+    readonly TransactionManager: IDbContextTransactionManager;
+    readonly TypeMappingSource: ITypeMappingSource;
     _Clone_$(): DatabaseFacadeDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: DatabaseFacadeDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: DatabaseFacadeDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -104,7 +104,7 @@ export type DatabaseFacadeDependencies = DatabaseFacadeDependencies$instance & _
 
 
 export interface ExceptionDetector$instance {
-    isCancellation(exception: Exception, cancellationToken: CancellationToken): boolean;
+    IsCancellation(exception: Exception, cancellationToken: CancellationToken): boolean;
 }
 
 
@@ -121,7 +121,7 @@ export type ExceptionDetector = ExceptionDetector$instance & __ExceptionDetector
 
 
 export interface ExecutionStrategyFactory$instance {
-    create(): IExecutionStrategy;
+    Create(): IExecutionStrategy;
 }
 
 
@@ -140,7 +140,7 @@ export type ExecutionStrategyFactory = ExecutionStrategyFactory$instance & __Exe
 
 
 export interface NamedConnectionStringResolver$instance extends NamedConnectionStringResolverBase {
-    resolveConnectionString(connectionString: string): string;
+    ResolveConnectionString(connectionString: string): string;
 }
 
 
@@ -157,7 +157,7 @@ export type NamedConnectionStringResolver = NamedConnectionStringResolver$instan
 
 
 export interface NamedConnectionStringResolverBase$instance {
-    resolveConnectionString(connectionString: string): string;
+    ResolveConnectionString(connectionString: string): string;
 }
 
 
@@ -173,16 +173,16 @@ export interface NullTypeMapping$instance extends RelationalTypeMapping {
 
 export const NullTypeMapping: {
     new(storeType: string): NullTypeMapping;
-    readonly default: NullTypeMapping;
+    readonly Default: NullTypeMapping;
 };
 
 
 export type NullTypeMapping = NullTypeMapping$instance;
 
 export interface RawRelationalParameter$instance extends RelationalParameterBase$instance {
-    addDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
-    addDbParameter(command: DbCommand, value: unknown): void;
-    addDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddDbParameter(command: DbCommand, value: unknown): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
 }
 
 
@@ -199,9 +199,9 @@ export type RawRelationalParameter = RawRelationalParameter$instance & __RawRela
 
 
 export interface RawSqlCommandBuilder$instance {
-    build(sql: string): IRelationalCommand;
-    build(sql: string, parameters: IEnumerable<unknown>): RawSqlCommand;
-    build(sql: string, parameters: IEnumerable<unknown>, model: IModel): RawSqlCommand;
+    Build(sql: string): IRelationalCommand;
+    Build(sql: string, parameters: IEnumerable<unknown>): RawSqlCommand;
+    Build(sql: string, parameters: IEnumerable<unknown>, model: IModel): RawSqlCommand;
 }
 
 
@@ -220,24 +220,24 @@ export type RawSqlCommandBuilder = RawSqlCommandBuilder$instance & __RawSqlComma
 
 
 export interface RelationalDatabaseFacadeDependencies$instance {
-    readonly adHocMapper: IAdHocMapper;
-    readonly commandLogger: IRelationalCommandDiagnosticsLogger;
-    readonly concurrencyDetector: IConcurrencyDetector;
-    readonly coreOptions: ICoreSingletonOptions;
-    readonly databaseCreator: IDatabaseCreator;
-    readonly databaseProviders: IEnumerable<IDatabaseProvider>;
-    readonly executionStrategy: IExecutionStrategy;
-    readonly executionStrategyFactory: IExecutionStrategyFactory;
-    readonly queryProvider: IAsyncQueryProvider;
-    readonly rawSqlCommandBuilder: IRawSqlCommandBuilder;
-    readonly relationalConnection: IRelationalConnection;
-    readonly transactionManager: IDbContextTransactionManager;
-    readonly typeMappingSource: ITypeMappingSource;
+    readonly AdHocMapper: IAdHocMapper;
+    readonly CommandLogger: IRelationalCommandDiagnosticsLogger;
+    readonly ConcurrencyDetector: IConcurrencyDetector;
+    readonly CoreOptions: ICoreSingletonOptions;
+    readonly DatabaseCreator: IDatabaseCreator;
+    readonly DatabaseProviders: IEnumerable<IDatabaseProvider>;
+    readonly ExecutionStrategy: IExecutionStrategy;
+    readonly ExecutionStrategyFactory: IExecutionStrategyFactory;
+    readonly QueryProvider: IAsyncQueryProvider;
+    readonly RawSqlCommandBuilder: IRawSqlCommandBuilder;
+    readonly RelationalConnection: IRelationalConnection;
+    readonly TransactionManager: IDbContextTransactionManager;
+    readonly TypeMappingSource: ITypeMappingSource;
     _Clone_$(): RelationalDatabaseFacadeDependencies;
-    equals(obj: unknown): boolean;
-    equals(other: RelationalDatabaseFacadeDependencies): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Equals(obj: unknown): boolean;
+    Equals(other: RelationalDatabaseFacadeDependencies): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -257,9 +257,9 @@ export type RelationalDatabaseFacadeDependencies = RelationalDatabaseFacadeDepen
 
 
 export interface RelationalParameterBase$instance {
-    readonly invariantName: string;
-    addDbParameter(command: DbCommand, value: unknown): void;
-    addDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    readonly InvariantName: string;
+    AddDbParameter(command: DbCommand, value: unknown): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
 }
 
 
@@ -275,10 +275,10 @@ export type RelationalParameterBase = RelationalParameterBase$instance & __Relat
 
 
 export interface TypeMappedRelationalParameter$instance extends RelationalParameterBase$instance {
-    readonly direction: ParameterDirection;
-    readonly name: string;
-    addDbParameter(command: DbCommand, value: unknown): void;
-    addDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    readonly Direction: ParameterDirection;
+    readonly Name: string;
+    AddDbParameter(command: DbCommand, value: unknown): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
 }
 
 
@@ -295,9 +295,9 @@ export type TypeMappedRelationalParameter = TypeMappedRelationalParameter$instan
 
 
 export abstract class DbParameterCollectionExtensions$instance {
-    static formatParameter(parameter: DbParameter, logParameterValues: boolean): string;
-    static formatParameter(name: string, value: unknown, hasValue: boolean, direction: ParameterDirection, dbType: DbType, nullable: boolean, size: int, precision: byte, scale: byte): string;
-    static formatParameters(parameters: DbParameterCollection, logParameterValues: boolean): string;
+    static FormatParameter(parameter: DbParameter, logParameterValues: boolean): string;
+    static FormatParameter(name: string, value: unknown, hasValue: boolean, direction: ParameterDirection, dbType: DbType, nullable: boolean, size: int, precision: byte, scale: byte): string;
+    static FormatParameters(parameters: DbParameterCollection, logParameterValues: boolean): string;
 }
 
 

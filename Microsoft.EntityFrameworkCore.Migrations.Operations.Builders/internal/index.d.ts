@@ -18,8 +18,8 @@ import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
 import type { PropertyInfo } from "@tsonic/dotnet/System.Reflection.js";
 
 export interface AlterOperationBuilder_1$instance<TOperation extends MigrationOperation & IAlterMigrationOperation> extends OperationBuilder_1$instance<TOperation> {
-    annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
-    oldAnnotation(name: string, value: unknown): AlterOperationBuilder_1<TOperation>;
+    Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
+    OldAnnotation(name: string, value: unknown): AlterOperationBuilder_1<TOperation>;
 }
 
 
@@ -38,10 +38,10 @@ export type AlterOperationBuilder_1<TOperation extends MigrationOperation & IAlt
 
 
 export interface ColumnsBuilder$instance {
-    column<T>(type?: string, unicode?: Nullable<System_Internal.Boolean>, maxLength?: Nullable<System_Internal.Int32>, rowVersion?: boolean, name?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, fixedLength?: Nullable<System_Internal.Boolean>, comment?: string, collation?: string, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, stored?: Nullable<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Column<T>(type?: string, unicode?: Nullable<System_Internal.Boolean>, maxLength?: Nullable<System_Internal.Int32>, rowVersion?: boolean, name?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, fixedLength?: Nullable<System_Internal.Boolean>, comment?: string, collation?: string, precision?: Nullable<System_Internal.Int32>, scale?: Nullable<System_Internal.Int32>, stored?: Nullable<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 
@@ -53,12 +53,12 @@ export const ColumnsBuilder: {
 export type ColumnsBuilder = ColumnsBuilder$instance;
 
 export interface CreateTableBuilder_1$instance<TColumns> extends OperationBuilder_1$instance<CreateTableOperation> {
-    annotation(name: string, value: unknown): OperationBuilder_1<CreateTableOperation>;
-    checkConstraint(name: string, sql: string): OperationBuilder_1<AddCheckConstraintOperation>;
-    foreignKey(name: string, column: Expression<Func<TColumns, unknown>>, principalTable: string, principalColumn?: string, principalSchema?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
-    foreignKey(name: string, columns: Expression<Func<TColumns, unknown>>, principalTable: string, principalColumns: string[], principalSchema?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
-    primaryKey(name: string, columns: Expression<Func<TColumns, unknown>>): OperationBuilder_1<AddPrimaryKeyOperation>;
-    uniqueConstraint(name: string, columns: Expression<Func<TColumns, unknown>>): OperationBuilder_1<AddUniqueConstraintOperation>;
+    Annotation(name: string, value: unknown): OperationBuilder_1<CreateTableOperation>;
+    CheckConstraint(name: string, sql: string): OperationBuilder_1<AddCheckConstraintOperation>;
+    ForeignKey(name: string, column: Expression<Func<TColumns, unknown>>, principalTable: string, principalColumn?: string, principalSchema?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
+    ForeignKey(name: string, columns: Expression<Func<TColumns, unknown>>, principalTable: string, principalColumns: string[], principalSchema?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
+    PrimaryKey(name: string, columns: Expression<Func<TColumns, unknown>>): OperationBuilder_1<AddPrimaryKeyOperation>;
+    UniqueConstraint(name: string, columns: Expression<Func<TColumns, unknown>>): OperationBuilder_1<AddUniqueConstraintOperation>;
 }
 
 
@@ -77,10 +77,10 @@ export type CreateTableBuilder_1<TColumns> = CreateTableBuilder_1$instance<TColu
 
 
 export interface OperationBuilder_1$instance<TOperation extends MigrationOperation> {
-    annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
-    equals(obj: unknown): boolean;
-    getHashCode(): int;
-    toString(): string;
+    Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
+    Equals(obj: unknown): boolean;
+    GetHashCode(): int;
+    ToString(): string;
 }
 
 

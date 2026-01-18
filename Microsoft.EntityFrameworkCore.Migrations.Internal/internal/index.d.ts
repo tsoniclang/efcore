@@ -24,10 +24,10 @@ import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
 export interface MigrationCommandExecutor$instance {
-    executeNonQuery(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection): void;
-    executeNonQuery(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>): int;
-    executeNonQueryAsync(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task;
-    executeNonQueryAsync(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+    ExecuteNonQuery(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection): void;
+    ExecuteNonQuery(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>): int;
+    ExecuteNonQueryAsync(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task;
+    ExecuteNonQueryAsync(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
 
 
@@ -46,11 +46,11 @@ export type MigrationCommandExecutor = MigrationCommandExecutor$instance & __Mig
 
 
 export interface MigrationsAssembly$instance {
-    readonly assembly: Assembly;
-    readonly migrations: IReadOnlyDictionary<System_Internal.String, TypeInfo>;
-    readonly modelSnapshot: ModelSnapshot | undefined;
-    createMigration(migrationClass: TypeInfo, activeProvider: string): Migration;
-    findMigrationId(nameOrId: string): string | undefined;
+    readonly Assembly: Assembly;
+    readonly Migrations: IReadOnlyDictionary<System_Internal.String, TypeInfo>;
+    readonly ModelSnapshot: ModelSnapshot | undefined;
+    CreateMigration(migrationClass: TypeInfo, activeProvider: string): Migration;
+    FindMigrationId(nameOrId: string): string | undefined;
 }
 
 
@@ -69,9 +69,9 @@ export type MigrationsAssembly = MigrationsAssembly$instance & __MigrationsAssem
 
 
 export interface MigrationsIdGenerator$instance {
-    generateId(name: string): string;
-    getName(id: string): string;
-    isValidId(value: string): boolean;
+    GenerateId(name: string): string;
+    GetName(id: string): string;
+    IsValidId(value: string): boolean;
 }
 
 
@@ -90,8 +90,8 @@ export type MigrationsIdGenerator = MigrationsIdGenerator$instance & __Migration
 
 
 export interface MigrationsModelDiffer$instance {
-    getDifferences(source: IRelationalModel, target: IRelationalModel): IReadOnlyList<MigrationOperation>;
-    hasDifferences(source: IRelationalModel, target: IRelationalModel): boolean;
+    GetDifferences(source: IRelationalModel, target: IRelationalModel): IReadOnlyList<MigrationOperation>;
+    HasDifferences(source: IRelationalModel, target: IRelationalModel): boolean;
 }
 
 
@@ -110,10 +110,10 @@ export type MigrationsModelDiffer = MigrationsModelDiffer$instance & __Migration
 
 
 export interface Migrator$instance {
-    generateScript(fromMigration?: string, toMigration?: string, options?: MigrationsSqlGenerationOptions): string;
-    hasPendingModelChanges(): boolean;
-    migrate(targetMigration: string): void;
-    migrateAsync(targetMigration: string, cancellationToken?: CancellationToken): Task;
+    GenerateScript(fromMigration?: string, toMigration?: string, options?: MigrationsSqlGenerationOptions): string;
+    HasPendingModelChanges(): boolean;
+    Migrate(targetMigration: string): void;
+    MigrateAsync(targetMigration: string, cancellationToken?: CancellationToken): Task;
 }
 
 
@@ -130,9 +130,9 @@ export type Migrator = Migrator$instance & __Migrator$views;
 
 
 export interface MigratorData$instance {
-    readonly appliedMigrations: IReadOnlyList<Migration>;
-    readonly revertedMigrations: IReadOnlyList<Migration>;
-    readonly targetMigration: Migration | undefined;
+    readonly AppliedMigrations: IReadOnlyList<Migration>;
+    readonly RevertedMigrations: IReadOnlyList<Migration>;
+    readonly TargetMigration: Migration | undefined;
 }
 
 
@@ -144,7 +144,7 @@ export const MigratorData: {
 export type MigratorData = MigratorData$instance;
 
 export abstract class MigrationExtensions$instance {
-    static getId(migration: Migration): string;
+    static GetId(migration: Migration): string;
 }
 
 

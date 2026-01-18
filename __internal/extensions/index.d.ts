@@ -32,1543 +32,1543 @@ import * as System_Internal from "../../System/internal/index.js";
 import type { ptr } from '@tsonic/core/types.js';
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ChangeTracker {
-  toDebugString(options: Microsoft_EntityFrameworkCore_ChangeTracking.ChangeTrackerDebugStringOptions, indent: int): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  ToDebugString(options: Microsoft_EntityFrameworkCore_ChangeTracking.ChangeTrackerDebugStringOptions, indent: int): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_DbFunctions {
-  like(matchExpression: string, pattern: string): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  like(matchExpression: string, pattern: string, escapeCharacter: string): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  random(): ExtensionMethods_Microsoft_EntityFrameworkCore<double>;
-  collate<TProperty>(operand: TProperty, collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<TProperty>;
-  least<T>(values: T[]): ExtensionMethods_Microsoft_EntityFrameworkCore<T>;
-  greatest<T>(values: T[]): ExtensionMethods_Microsoft_EntityFrameworkCore<T>;
+  Like(matchExpression: string, pattern: string): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  Like(matchExpression: string, pattern: string, escapeCharacter: string): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  Random(): ExtensionMethods_Microsoft_EntityFrameworkCore<double>;
+  Collate<TProperty>(operand: TProperty, collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<TProperty>;
+  Least<T>(values: T[]): ExtensionMethods_Microsoft_EntityFrameworkCore<T>;
+  Greatest<T>(values: T[]): ExtensionMethods_Microsoft_EntityFrameworkCore<T>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_DbSet_1<TEntity> {
-  fromSqlRaw(sql: string, parameters: unknown[]): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TEntity>>;
-  fromSqlInterpolated(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TEntity>>;
-  fromSql(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TEntity>>;
+  FromSqlRaw(sql: string, parameters: unknown[]): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TEntity>>;
+  FromSqlInterpolated(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TEntity>>;
+  FromSql(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TEntity>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_DatabaseFacade {
-  getMigrations(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<System_Internal.String>>;
-  getAppliedMigrations(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<System_Internal.String>>;
-  getAppliedMigrationsAsync(cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<IEnumerable_1<System_Internal.String>>>;
-  getPendingMigrations(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<System_Internal.String>>;
-  getPendingMigrationsAsync(cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<IEnumerable_1<System_Internal.String>>>;
-  migrate(): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  migrate(targetMigration: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  migrateAsync(cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  migrateAsync(targetMigration: string, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  executeSqlRaw(sql: string, parameters: unknown[]): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
-  executeSqlInterpolated(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
-  executeSql(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
-  executeSqlRaw(sql: string, parameters: IEnumerable_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
-  sqlQueryRaw<TResult>(sql: string, parameters: unknown[]): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TResult>>;
-  sqlQuery<TResult>(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TResult>>;
-  executeSqlInterpolatedAsync(sql: FormattableString, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
-  executeSqlAsync(sql: FormattableString, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
-  executeSqlRawAsync(sql: string, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
-  executeSqlRawAsync(sql: string, parameters: unknown[]): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
-  executeSqlRawAsync(sql: string, parameters: IEnumerable_1<unknown>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
-  getDbConnection(): ExtensionMethods_Microsoft_EntityFrameworkCore<DbConnection>;
-  setDbConnection(connection: DbConnection, contextOwnsConnection: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  getConnectionString(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  setConnectionString(connectionString: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  openConnection(): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  openConnectionAsync(cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  closeConnection(): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  closeConnectionAsync(): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  beginTransaction(isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction>;
-  beginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction>>;
-  useTransaction(transaction: DbTransaction): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction | undefined>;
-  useTransaction(transaction: DbTransaction, transactionId: Guid): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction | undefined>;
-  useTransactionAsync(transaction: DbTransaction, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction | undefined>>;
-  useTransactionAsync(transaction: DbTransaction, transactionId: Guid, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction | undefined>>;
-  setCommandTimeout(timeout: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setCommandTimeout(timeout: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  getCommandTimeout(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
-  generateCreateScript(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
-  isRelational(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasPendingModelChanges(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  GetMigrations(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<System_Internal.String>>;
+  GetAppliedMigrations(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<System_Internal.String>>;
+  GetAppliedMigrationsAsync(cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<IEnumerable_1<System_Internal.String>>>;
+  GetPendingMigrations(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<System_Internal.String>>;
+  GetPendingMigrationsAsync(cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<IEnumerable_1<System_Internal.String>>>;
+  Migrate(): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  Migrate(targetMigration: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  MigrateAsync(cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  MigrateAsync(targetMigration: string, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  ExecuteSqlRaw(sql: string, parameters: unknown[]): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
+  ExecuteSqlInterpolated(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
+  ExecuteSql(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
+  ExecuteSqlRaw(sql: string, parameters: IEnumerable_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
+  SqlQueryRaw<TResult>(sql: string, parameters: unknown[]): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TResult>>;
+  SqlQuery<TResult>(sql: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore<IQueryable_1<TResult>>;
+  ExecuteSqlInterpolatedAsync(sql: FormattableString, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
+  ExecuteSqlAsync(sql: FormattableString, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
+  ExecuteSqlRawAsync(sql: string, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
+  ExecuteSqlRawAsync(sql: string, parameters: unknown[]): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
+  ExecuteSqlRawAsync(sql: string, parameters: IEnumerable_1<unknown>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<System_Internal.Int32>>;
+  GetDbConnection(): ExtensionMethods_Microsoft_EntityFrameworkCore<DbConnection>;
+  SetDbConnection(connection: DbConnection, contextOwnsConnection: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  GetConnectionString(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  SetConnectionString(connectionString: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  OpenConnection(): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  OpenConnectionAsync(cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  CloseConnection(): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  CloseConnectionAsync(): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  BeginTransaction(isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction>;
+  BeginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction>>;
+  UseTransaction(transaction: DbTransaction): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction | undefined>;
+  UseTransaction(transaction: DbTransaction, transactionId: Guid): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction | undefined>;
+  UseTransactionAsync(transaction: DbTransaction, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction | undefined>>;
+  UseTransactionAsync(transaction: DbTransaction, transactionId: Guid, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<Microsoft_EntityFrameworkCore_Storage.IDbContextTransaction | undefined>>;
+  SetCommandTimeout(timeout: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetCommandTimeout(timeout: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  GetCommandTimeout(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
+  GenerateCreateScript(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  IsRelational(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasPendingModelChanges(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionBuilder {
-  toJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder>;
-  hasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder>;
+  ToJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder>;
+  HasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionBuilder_1<TComplex> {
-  toJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<TComplex>>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<TComplex>>;
-  hasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<TComplex>>;
+  ToJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<TComplex>>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<TComplex>>;
+  HasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<TComplex>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionTypePropertyBuilder {
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionTypePropertyBuilder_1<TProperty> {
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder_1<TProperty>>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder_1<TProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexPropertyBuilder {
-  toJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder>;
-  hasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder>;
+  ToJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder>;
+  HasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexPropertyBuilder_1<TComplex> {
-  toJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<TComplex>>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<TComplex>>;
-  hasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<TComplex>>;
+  ToJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<TComplex>>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<TComplex>>;
+  HasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<TComplex>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexTypePrimitiveCollectionBuilder {
-  hasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexTypePrimitiveCollectionBuilder_1<TProperty> {
-  hasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<TProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexTypePropertyBuilder {
-  hasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ComplexTypePropertyBuilder_1<TProperty> {
-  hasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<TProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ElementTypeBuilder {
-  hasStoreType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ElementTypeBuilder>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ElementTypeBuilder>;
+  HasStoreType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ElementTypeBuilder>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ElementTypeBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_EntityTypeBuilder {
-  useTpcMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  useTphMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  useTptMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toSqlQuery(query: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toFunction(function_: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toFunction(name: string, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableValuedFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toFunction(function_: MethodInfo, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableValuedFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  hasCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  hasCheckConstraint(name: string, sql: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.CheckConstraintBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toTable(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toTable(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toTable(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  splitToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  splitToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toView(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toView(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.ViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  toView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.ViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  splitToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  splitToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  updateUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  updateUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  updateUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  deleteUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  deleteUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  deleteUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  insertUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  insertUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
-  insertUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  UseTpcMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  UseTphMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  UseTptMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToSqlQuery(query: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToFunction(function_: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToFunction(name: string, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableValuedFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToFunction(function_: MethodInfo, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableValuedFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  HasCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  HasCheckConstraint(name: string, sql: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.CheckConstraintBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToTable(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToTable(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToTable(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  SplitToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  SplitToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToView(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToView(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.ViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  ToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.ViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  SplitToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  SplitToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  UpdateUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  UpdateUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  UpdateUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  DeleteUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  DeleteUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  DeleteUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  InsertUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  InsertUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
+  InsertUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_EntityTypeBuilder_1<TEntity> {
-  useTpcMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  useTphMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  useTptMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toSqlQuery(query: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toFunction(function_: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toFunction(name: string, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableValuedFunctionBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toFunction(function_: MethodInfo, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableValuedFunctionBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  hasCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  hasCheckConstraint(name: string, sql: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.CheckConstraintBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toTable(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toTable(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toTable(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  splitToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitTableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  splitToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitTableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toView(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toView(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.ViewBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  toView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.ViewBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  splitToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitViewBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  splitToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitViewBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  updateUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  updateUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  updateUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  deleteUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  deleteUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  deleteUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  insertUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  insertUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
-  insertUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  UseTpcMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  UseTphMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  UseTptMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToSqlQuery(query: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToFunction(function_: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToFunction(name: string, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableValuedFunctionBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToFunction(function_: MethodInfo, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableValuedFunctionBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  HasCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  HasCheckConstraint(name: string, sql: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.CheckConstraintBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToTable(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToTable(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToTable(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.TableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  SplitToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitTableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  SplitToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitTableBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToView(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToView(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.ViewBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  ToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.ViewBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  SplitToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitViewBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  SplitToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SplitViewBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  UpdateUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  UpdateUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  UpdateUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  DeleteUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  DeleteUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  DeleteUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  InsertUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  InsertUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
+  InsertUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.StoredProcedureBuilder_1<TEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<TEntity>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionElementTypeBuilder {
-  hasStoreType(typeName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionElementTypeBuilder | undefined>;
-  canSetStoreType(typeName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  isFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionElementTypeBuilder | undefined>;
-  canSetFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasStoreType(typeName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionElementTypeBuilder | undefined>;
+  CanSetStoreType(typeName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  IsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionElementTypeBuilder | undefined>;
+  CanSetFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionEntityTypeBuilder {
-  useMappingStrategy(strategy: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canSetMappingStrategy(strategy: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  excludeTableFromMigrations(excludedFromMigrations: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canExcludeTableFromMigrations(excludedFromMigrations: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  toSqlQuery(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canSetSqlQuery(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  toFunction(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  toFunction(function_: MethodInfo, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canSetFunction(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  canSetFunction(function_: MethodInfo, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasCheckConstraint(name: string, sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionCheckConstraintBuilder | undefined>;
-  canHaveCheckConstraint(name: string, sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canSetComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canSetJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  toTable(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  toTable(name: string, schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canSetTable(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  toSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canSetSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  toView(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  toView(name: string, schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canSetView(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  toViewSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
-  canSetViewSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  updateUsingStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionStoredProcedureBuilder | undefined>;
-  deleteUsingStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionStoredProcedureBuilder | undefined>;
-  insertUsingStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionStoredProcedureBuilder | undefined>;
+  UseMappingStrategy(strategy: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanSetMappingStrategy(strategy: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  ExcludeTableFromMigrations(excludedFromMigrations: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanExcludeTableFromMigrations(excludedFromMigrations: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  ToSqlQuery(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanSetSqlQuery(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  ToFunction(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  ToFunction(function_: MethodInfo, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanSetFunction(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  CanSetFunction(function_: MethodInfo, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasCheckConstraint(name: string, sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionCheckConstraintBuilder | undefined>;
+  CanHaveCheckConstraint(name: string, sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanSetComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanSetJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  ToTable(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  ToTable(name: string, schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanSetTable(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  ToSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanSetSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  ToView(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  ToView(name: string, schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanSetView(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  ToViewSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder | undefined>;
+  CanSetViewSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  UpdateUsingStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionStoredProcedureBuilder | undefined>;
+  DeleteUsingStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionStoredProcedureBuilder | undefined>;
+  InsertUsingStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionStoredProcedureBuilder | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionForeignKeyBuilder {
-  hasConstraintName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionForeignKeyBuilder | undefined>;
-  canSetConstraintName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasConstraintName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionForeignKeyBuilder | undefined>;
+  CanSetConstraintName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionIndexBuilder {
-  hasDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionIndexBuilder | undefined>;
-  canSetDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasFilter(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionIndexBuilder | undefined>;
-  canSetFilter(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionIndexBuilder | undefined>;
+  CanSetDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasFilter(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionIndexBuilder | undefined>;
+  CanSetFilter(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionKeyBuilder {
-  hasName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionKeyBuilder | undefined>;
-  canSetName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionKeyBuilder | undefined>;
+  CanSetName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionModelBuilder {
-  hasSequence(name: string, schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionSequenceBuilder>;
-  hasDbFunction(methodInfo: MethodInfo, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionDbFunctionBuilder>;
-  hasDbFunction(name: string, returnType: Type, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionDbFunctionBuilder>;
-  hasDefaultSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionModelBuilder | undefined>;
-  canSetDefaultSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasMaxIdentifierLength(length: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionModelBuilder | undefined>;
-  canSetMaxIdentifierLength(length: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  useCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionModelBuilder | undefined>;
-  canSetCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasSequence(name: string, schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionSequenceBuilder>;
+  HasDbFunction(methodInfo: MethodInfo, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionDbFunctionBuilder>;
+  HasDbFunction(name: string, returnType: Type, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionDbFunctionBuilder>;
+  HasDefaultSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionModelBuilder | undefined>;
+  CanSetDefaultSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasMaxIdentifierLength(length: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionModelBuilder | undefined>;
+  CanSetMaxIdentifierLength(length: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  UseCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionModelBuilder | undefined>;
+  CanSetCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionPropertyBuilder {
-  hasColumnName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  hasColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetColumnName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  canSetColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasColumnOrder(order: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetColumnOrder(order: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasColumnType(typeName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetColumnType(typeName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  isFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasDefaultValueSql(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetDefaultValueSql(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasComputedColumnSql(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  isStoredComputedColumn(stored: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetComputedColumnSql(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  canSetIsStoredComputedColumn(stored: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasDefaultValue(value: unknown, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetDefaultValue(value: unknown, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  useCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
-  canSetJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasColumnName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  HasColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetColumnName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  CanSetColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasColumnOrder(order: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetColumnOrder(order: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasColumnType(typeName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetColumnType(typeName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  IsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasDefaultValueSql(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetDefaultValueSql(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasComputedColumnSql(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  IsStoredComputedColumn(stored: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetComputedColumnSql(sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  CanSetIsStoredComputedColumn(stored: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasDefaultValue(value: unknown, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetDefaultValue(value: unknown, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  UseCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder | undefined>;
+  CanSetJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionTriggerBuilder {
-  hasDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionTriggerBuilder | undefined>;
-  canSetDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasTableName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionTriggerBuilder | undefined>;
-  canSetTableName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  hasTableSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionTriggerBuilder | undefined>;
-  canSetTableSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionTriggerBuilder | undefined>;
+  CanSetDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasTableName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionTriggerBuilder | undefined>;
+  CanSetTableName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  HasTableSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionTriggerBuilder | undefined>;
+  CanSetTableSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IndexBuilder {
-  hasDatabaseName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder>;
-  hasName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder>;
-  hasFilter(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder>;
+  HasDatabaseName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder>;
+  HasName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder>;
+  HasFilter(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IndexBuilder_1<T> {
-  hasDatabaseName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<T>>;
-  hasFilter(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<T>>;
+  HasDatabaseName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<T>>;
+  HasFilter(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<T>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_KeyBuilder {
-  hasName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder>;
+  HasName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_KeyBuilder_1<T> {
-  hasName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder_1<T>>;
+  HasName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder_1<T>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_OwnedNavigationBuilder {
-  toFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toFunction(function_: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toFunction(name: string, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableValuedFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toFunction(function_: MethodInfo, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableValuedFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  hasCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  hasCheckConstraint(name: string, sql: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.CheckConstraintBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toTable(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toTable(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toTable(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  splitToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  splitToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toView(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toView(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  splitToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  splitToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  updateUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  updateUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  updateUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  deleteUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  deleteUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  deleteUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  insertUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  insertUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  insertUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toJson(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  toJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  hasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToFunction(function_: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToFunction(name: string, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableValuedFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToFunction(function_: MethodInfo, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableValuedFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  HasCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  HasCheckConstraint(name: string, sql: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.CheckConstraintBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToTable(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToTable(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToTable(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  SplitToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  SplitToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitTableBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToView(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToView(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  SplitToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  SplitToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitViewBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  UpdateUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  UpdateUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  UpdateUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  DeleteUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  DeleteUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  DeleteUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  InsertUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  InsertUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  InsertUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToJson(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  ToJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  HasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity> {
-  toFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toFunction(function_: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toFunction(name: string, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toFunction(function_: MethodInfo, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  hasCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  hasCheckConstraint(name: string, sql: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.CheckConstraintBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toTable(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toTable(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toTable(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  splitToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  splitToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toView(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toView(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  splitToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  splitToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  updateUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  updateUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  updateUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  deleteUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  deleteUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  deleteUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  insertUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  insertUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  insertUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toJson(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  toJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  hasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToFunction(function_: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToFunction(name: string, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToFunction(function_: MethodInfo, configureFunction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  HasCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  HasCheckConstraint(name: string, sql: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.CheckConstraintBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToTable(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToTable(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToTable(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  SplitToTable(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  SplitToTable(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToView(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToView(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  SplitToView(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  SplitToView(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  UpdateUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  UpdateUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  UpdateUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  DeleteUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  DeleteUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  DeleteUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  InsertUsingStoredProcedure(buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  InsertUsingStoredProcedure(name: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  InsertUsingStoredProcedure(name: string, schema: string, buildAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToJson(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  ToJson(jsonColumnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  HasColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_OwnershipBuilder {
-  hasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder>;
+  HasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_OwnershipBuilder_2<TEntity, TDependentEntity> {
-  hasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder_2<TEntity, TDependentEntity>>;
+  HasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder_2<TEntity, TDependentEntity>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_PrimitiveCollectionBuilder {
-  hasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_PrimitiveCollectionBuilder_1<TProperty> {
-  hasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<TProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_PropertiesConfigurationBuilder {
-  haveColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder>;
-  areFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder>;
+  HaveColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder>;
+  AreFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_PropertiesConfigurationBuilder_1<TProperty> {
-  haveColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<TProperty>>;
-  areFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<TProperty>>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<TProperty>>;
+  HaveColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<TProperty>>;
+  AreFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<TProperty>>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<TProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_PropertyBuilder {
-  hasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_PropertyBuilder_1<TProperty> {
-  hasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
-  hasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasDefaultValueSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasComputedColumnSql(sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasComputedColumnSql(sql: string, stored: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
+  HasJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<TProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ReferenceCollectionBuilder {
-  hasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder>;
+  HasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity> {
-  hasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>>;
+  HasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ReferenceReferenceBuilder {
-  hasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder>;
+  HasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ReferenceReferenceBuilder_2<TEntity, TRelatedEntity> {
-  hasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>>;
+  HasConstraintName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_TypeMappingConfigurationBuilder {
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_TypeMappingConfigurationBuilder_1<TProperty> {
-  hasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder_1<TProperty>>;
-  isFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder_1<TProperty>>;
+  HasColumnType(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder_1<TProperty>>;
+  IsFixedLength(fixedLength: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder_1<TProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionComplexProperty {
-  setJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getJsonPropertyNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetJsonPropertyNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionElementType {
-  setStoreType(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getStoreTypeConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  getIsFixedLengthConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetStoreType(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetStoreTypeConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  GetIsFixedLengthConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionEntityType {
-  setTableName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getTableNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setSchema(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getSchemaConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setViewName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getViewNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setViewSchema(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getViewSchemaConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setSqlQuery(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getSqlQueryConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setFunctionName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getFunctionNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  getDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
-  setDeleteStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
-  removeDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
-  getDeleteStoredProcedureConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  getInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
-  setInsertStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
-  removeInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
-  getInsertStoredProcedureConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  getUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
-  setUpdateStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
-  removeUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
-  getUpdateStoredProcedureConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  findCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint | undefined>;
-  addCheckConstraint(name: string, sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint>;
-  removeCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint | undefined>;
-  getCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint>>;
-  getDeclaredCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint>>;
-  setComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getCommentConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  getMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment>>;
-  getMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment>>;
-  findMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment | undefined>;
-  getOrCreateMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment>;
-  removeMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment | undefined>;
-  findRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey>>;
-  setIsTableExcludedFromMigrations(excluded: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  setIsTableExcludedFromMigrations(excluded: Nullable_1<System_Internal.Boolean>, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  getIsTableExcludedFromMigrationsConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  getIsTableExcludedFromMigrationsConfigurationSource(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setMappingStrategy(strategy: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getMappingStrategyConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setContainerColumnTypeMapping(typeMapping: Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
-  getContainerColumnTypeMappingConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getJsonPropertyNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetTableName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetTableNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetSchema(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetSchemaConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetViewName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetViewNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetViewSchema(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetViewSchemaConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetSqlQuery(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetSqlQueryConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetFunctionName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetFunctionNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  GetDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
+  SetDeleteStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
+  RemoveDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
+  GetDeleteStoredProcedureConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  GetInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
+  SetInsertStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
+  RemoveInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
+  GetInsertStoredProcedureConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  GetUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
+  SetUpdateStoredProcedure(fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
+  RemoveUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionStoredProcedure | undefined>;
+  GetUpdateStoredProcedureConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  FindCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint | undefined>;
+  AddCheckConstraint(name: string, sql: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint>;
+  RemoveCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint | undefined>;
+  GetCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint>>;
+  GetDeclaredCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionCheckConstraint>>;
+  SetComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetCommentConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  GetMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment>>;
+  GetMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment>>;
+  FindMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment | undefined>;
+  GetOrCreateMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment>;
+  RemoveMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionEntityTypeMappingFragment | undefined>;
+  FindRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey>>;
+  SetIsTableExcludedFromMigrations(excluded: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  SetIsTableExcludedFromMigrations(excluded: Nullable_1<System_Internal.Boolean>, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  GetIsTableExcludedFromMigrationsConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  GetIsTableExcludedFromMigrationsConfigurationSource(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetMappingStrategy(strategy: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetMappingStrategyConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetContainerColumnTypeMapping(typeMapping: Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  GetContainerColumnTypeMappingConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetJsonPropertyNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionForeignKey {
-  setConstraintName(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getConstraintNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  findSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey | undefined>;
+  SetConstraintName(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetConstraintNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  FindSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionIndex {
-  setDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDatabaseNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setFilter(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getFilterConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  findSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionIndex | undefined>;
+  SetDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDatabaseNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetFilter(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetFilterConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  FindSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionIndex | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionKey {
-  setName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  findSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionKey | undefined>;
+  SetName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  FindSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionModel {
-  setDefaultSchema(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultSchemaConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setMaxIdentifierLength(length: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
-  getMaxIdentifierLengthConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  findSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionSequence | undefined>;
-  addSequence(name: string, schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionSequence | undefined>;
-  removeSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionSequence | undefined>;
-  getSequences(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionSequence>>;
-  findDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction | undefined>;
-  findDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction | undefined>;
-  addDbFunction(methodInfo: MethodInfo, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction>;
-  addDbFunction(name: string, returnType: Type, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction>;
-  removeDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction | undefined>;
-  removeDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction | undefined>;
-  getDbFunctions(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction>>;
-  setCollation(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getCollationConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  useNamedDefaultConstraints(value: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  useNamedDefaultConstraintsConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetDefaultSchema(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultSchemaConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetMaxIdentifierLength(length: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
+  GetMaxIdentifierLengthConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  FindSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionSequence | undefined>;
+  AddSequence(name: string, schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionSequence | undefined>;
+  RemoveSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionSequence | undefined>;
+  GetSequences(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionSequence>>;
+  FindDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction | undefined>;
+  FindDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction | undefined>;
+  AddDbFunction(methodInfo: MethodInfo, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction>;
+  AddDbFunction(name: string, returnType: Type, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction>;
+  RemoveDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction | undefined>;
+  RemoveDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction | undefined>;
+  GetDbFunctions(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionDbFunction>>;
+  SetCollation(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetCollationConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  UseNamedDefaultConstraints(value: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  UseNamedDefaultConstraintsConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionProperty {
-  setColumnName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  setColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getColumnNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  getColumnNameConfigurationSource(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setColumnOrder(order: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
-  getColumnOrderConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setColumnType(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getColumnTypeConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setDefaultValueSql(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultValueSqlConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setComputedColumnSql(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getComputedColumnSqlConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setIsStored(value: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  getIsStoredConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setDefaultValue(value: unknown, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<unknown | undefined>;
-  getDefaultValueConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  getIsFixedLengthConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getCommentConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getCollationConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  findSharedStoreObjectRootProperty(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionProperty | undefined>;
-  getOverrides(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionRelationalPropertyOverrides>>;
-  findOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionRelationalPropertyOverrides | undefined>;
-  getOrCreateOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionRelationalPropertyOverrides>;
-  removeOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionRelationalPropertyOverrides | undefined>;
-  setJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getJsonPropertyNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setDefaultConstraintName(defaultConstraintName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultConstraintNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetColumnName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  SetColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetColumnNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  GetColumnNameConfigurationSource(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetColumnOrder(order: Nullable_1<System_Internal.Int32>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
+  GetColumnOrderConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetColumnType(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetColumnTypeConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetDefaultValueSql(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultValueSqlConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetComputedColumnSql(value: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetComputedColumnSqlConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetIsStored(value: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  GetIsStoredConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetDefaultValue(value: unknown, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<unknown | undefined>;
+  GetDefaultValueConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  GetIsFixedLengthConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetComment(comment: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetCommentConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetCollation(collation: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetCollationConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  FindSharedStoreObjectRootProperty(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionProperty | undefined>;
+  GetOverrides(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IConventionRelationalPropertyOverrides>>;
+  FindOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionRelationalPropertyOverrides | undefined>;
+  GetOrCreateOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionRelationalPropertyOverrides>;
+  RemoveOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IConventionRelationalPropertyOverrides | undefined>;
+  SetJsonPropertyName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetJsonPropertyNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetDefaultConstraintName(defaultConstraintName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultConstraintNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionTrigger {
-  setDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDatabaseNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setTableName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getTableNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setTableSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getTableSchemaConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetDatabaseName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDatabaseNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetTableName(name: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetTableNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetTableSchema(schema: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetTableSchemaConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionTypeBase {
-  setContainerColumnName(columnName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getContainerColumnNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
-  setContainerColumnType(columnType: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getContainerColumnTypeConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetContainerColumnName(columnName: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetContainerColumnNameConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  SetContainerColumnType(columnType: string, fromDataAnnotation: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetContainerColumnTypeConfigurationSource(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IElementType {
-  getStoreType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetStoreType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IEntityType {
-  getDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
-  getInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
-  getUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
-  findCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.ICheckConstraint | undefined>;
-  getCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ICheckConstraint>>;
-  getDeclaredCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ICheckConstraint>>;
-  getMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment>>;
-  getMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment>>;
-  findMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment | undefined>;
-  findRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IForeignKey>>;
+  GetDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
+  GetInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
+  GetUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
+  FindCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.ICheckConstraint | undefined>;
+  GetCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ICheckConstraint>>;
+  GetDeclaredCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ICheckConstraint>>;
+  GetMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment>>;
+  GetMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment>>;
+  FindMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment | undefined>;
+  FindRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IForeignKey>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IForeignKey {
-  getMappedConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IForeignKeyConstraint>>;
-  findSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IForeignKey | undefined>;
+  GetMappedConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IForeignKeyConstraint>>;
+  FindSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IForeignKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IIndex {
-  getMappedTableIndexes(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableIndex>>;
-  findSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IIndex | undefined>;
+  GetMappedTableIndexes(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableIndex>>;
+  FindSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IIndex | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IKey {
-  getMappedConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IUniqueConstraint>>;
-  findSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IKey | undefined>;
+  GetMappedConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IUniqueConstraint>>;
+  FindSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IModel {
-  getRelationalModel(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IRelationalModel>;
-  findSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.ISequence | undefined>;
-  getSequences(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ISequence>>;
-  findDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IDbFunction | undefined>;
-  findDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IDbFunction | undefined>;
-  getDbFunctions(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IDbFunction>>;
+  GetRelationalModel(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IRelationalModel>;
+  FindSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.ISequence | undefined>;
+  GetSequences(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ISequence>>;
+  FindDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IDbFunction | undefined>;
+  FindDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IDbFunction | undefined>;
+  GetDbFunctions(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IDbFunction>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableComplexProperty {
-  setJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableElementType {
-  setStoreType(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetStoreType(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableEntityType {
-  setTableName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setSchema(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setViewName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setViewSchema(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setSqlQuery(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setFunctionName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  getDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
-  setDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure>;
-  removeDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
-  getInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
-  setInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure>;
-  removeInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
-  getUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
-  setUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure>;
-  removeUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
-  findCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint | undefined>;
-  addCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint>;
-  removeCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint | undefined>;
-  getCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint>>;
-  getDeclaredCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint>>;
-  setComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  getMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment>>;
-  getMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment>>;
-  findMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment | undefined>;
-  getOrCreateMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment>;
-  removeMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment | undefined>;
-  findRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableForeignKey>>;
-  setIsTableExcludedFromMigrations(excluded: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setIsTableExcludedFromMigrations(excluded: Nullable_1<System_Internal.Boolean>, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setMappingStrategy(strategy: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setContainerColumnTypeMapping(typeMapping: Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetTableName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetSchema(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetViewName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetViewSchema(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetSqlQuery(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetFunctionName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  GetDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
+  SetDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure>;
+  RemoveDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
+  GetInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
+  SetInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure>;
+  RemoveInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
+  GetUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
+  SetUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure>;
+  RemoveUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableStoredProcedure | undefined>;
+  FindCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint | undefined>;
+  AddCheckConstraint(name: string, sql: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint>;
+  RemoveCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint | undefined>;
+  GetCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint>>;
+  GetDeclaredCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableCheckConstraint>>;
+  SetComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  GetMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment>>;
+  GetMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment>>;
+  FindMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment | undefined>;
+  GetOrCreateMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment>;
+  RemoveMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableEntityTypeMappingFragment | undefined>;
+  FindRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableForeignKey>>;
+  SetIsTableExcludedFromMigrations(excluded: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetIsTableExcludedFromMigrations(excluded: Nullable_1<System_Internal.Boolean>, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetMappingStrategy(strategy: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetContainerColumnTypeMapping(typeMapping: Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableForeignKey {
-  setConstraintName(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  findSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableForeignKey | undefined>;
+  SetConstraintName(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  FindSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableForeignKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableIndex {
-  setDatabaseName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setFilter(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  findSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableIndex | undefined>;
+  SetDatabaseName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetFilter(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  FindSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableIndex | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableKey {
-  setName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  findSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableKey | undefined>;
+  SetName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  FindSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableModel {
-  setDefaultSchema(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setMaxIdentifierLength(length: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  findSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableSequence | undefined>;
-  addSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableSequence>;
-  removeSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableSequence | undefined>;
-  getSequences(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableSequence>>;
-  findDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction | undefined>;
-  findDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction | undefined>;
-  addDbFunction(methodInfo: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction>;
-  addDbFunction(name: string, returnType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction>;
-  removeDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction | undefined>;
-  removeDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction | undefined>;
-  getDbFunctions(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction>>;
-  setCollation(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  useNamedDefaultConstraints(value: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetDefaultSchema(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetMaxIdentifierLength(length: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  FindSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableSequence | undefined>;
+  AddSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableSequence>;
+  RemoveSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableSequence | undefined>;
+  GetSequences(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableSequence>>;
+  FindDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction | undefined>;
+  FindDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction | undefined>;
+  AddDbFunction(methodInfo: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction>;
+  AddDbFunction(name: string, returnType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction>;
+  RemoveDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction | undefined>;
+  RemoveDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction | undefined>;
+  GetDbFunctions(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableDbFunction>>;
+  SetCollation(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  UseNamedDefaultConstraints(value: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableProperty {
-  setColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setColumnType(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setDefaultValueSql(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setComputedColumnSql(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setIsStored(value: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  findSharedStoreObjectRootProperty(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableProperty | undefined>;
-  getOverrides(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableRelationalPropertyOverrides>>;
-  findOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableRelationalPropertyOverrides | undefined>;
-  getOrCreateOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableRelationalPropertyOverrides>;
-  removeOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableRelationalPropertyOverrides | undefined>;
-  setJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setDefaultConstraintName(defaultConstraintName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetColumnName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetColumnOrder(order: Nullable_1<System_Internal.Int32>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetColumnType(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetDefaultValueSql(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetComputedColumnSql(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetIsStored(value: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetDefaultValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetIsFixedLength(fixedLength: Nullable_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetComment(comment: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  FindSharedStoreObjectRootProperty(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableProperty | undefined>;
+  GetOverrides(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IMutableRelationalPropertyOverrides>>;
+  FindOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableRelationalPropertyOverrides | undefined>;
+  GetOrCreateOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableRelationalPropertyOverrides>;
+  RemoveOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IMutableRelationalPropertyOverrides | undefined>;
+  SetJsonPropertyName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetDefaultConstraintName(defaultConstraintName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableTrigger {
-  setDatabaseName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setTableName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setTableSchema(schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetDatabaseName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetTableName(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetTableSchema(schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableTypeBase {
-  setContainerColumnName(columnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  setContainerColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetContainerColumnName(columnName: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  SetContainerColumnType(columnType: string): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IProperty {
-  getColumnType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
-  getColumnType(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
-  getDefaultColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IColumnMappingBase>>;
-  getTableColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IColumnMapping>>;
-  getViewColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IViewColumnMapping>>;
-  getSqlQueryColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ISqlQueryColumnMapping>>;
-  getFunctionColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IFunctionColumnMapping>>;
-  getInsertStoredProcedureResultColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureResultColumnMapping>>;
-  getInsertStoredProcedureParameterMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureParameterMapping>>;
-  getDeleteStoredProcedureParameterMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureParameterMapping>>;
-  getUpdateStoredProcedureResultColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureResultColumnMapping>>;
-  getUpdateStoredProcedureParameterMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureParameterMapping>>;
-  findColumn(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IColumnBase | undefined>;
-  findSharedStoreObjectRootProperty(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IProperty | undefined>;
-  getOverrides(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IRelationalPropertyOverrides>>;
-  findOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IRelationalPropertyOverrides | undefined>;
-  getReaderFieldValue(relationalReader: Microsoft_EntityFrameworkCore_Storage.RelationalDataReader, ordinal: int, detailedErrorsEnabled: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<unknown | undefined>;
+  GetColumnType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetColumnType(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetDefaultColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IColumnMappingBase>>;
+  GetTableColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IColumnMapping>>;
+  GetViewColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IViewColumnMapping>>;
+  GetSqlQueryColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ISqlQueryColumnMapping>>;
+  GetFunctionColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IFunctionColumnMapping>>;
+  GetInsertStoredProcedureResultColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureResultColumnMapping>>;
+  GetInsertStoredProcedureParameterMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureParameterMapping>>;
+  GetDeleteStoredProcedureParameterMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureParameterMapping>>;
+  GetUpdateStoredProcedureResultColumnMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureResultColumnMapping>>;
+  GetUpdateStoredProcedureParameterMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureParameterMapping>>;
+  FindColumn(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IColumnBase | undefined>;
+  FindSharedStoreObjectRootProperty(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IProperty | undefined>;
+  GetOverrides(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IRelationalPropertyOverrides>>;
+  FindOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IRelationalPropertyOverrides | undefined>;
+  GetReaderFieldValue(relationalReader: Microsoft_EntityFrameworkCore_Storage.RelationalDataReader, ordinal: int, detailedErrorsEnabled: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<unknown | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyComplexProperty {
-  getJsonPropertyName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetJsonPropertyName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyElementType {
-  getStoreType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  isFixedLength(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  isFixedLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  getRelationalTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
-  findRelationalTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  GetStoreType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  IsFixedLength(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  GetRelationalTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  FindRelationalTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyEntityType {
-  getTableName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultTableName(truncate: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getSchemaQualifiedTableName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getSchemaQualifiedViewName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getViewName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultViewName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getViewSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultViewSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultSqlQueryName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
-  getSqlQuery(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getFunctionName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
-  getInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
-  getUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
-  findCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyCheckConstraint | undefined>;
-  getCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyCheckConstraint>>;
-  getDeclaredCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyCheckConstraint>>;
-  getComment(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment>>;
-  getMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment>>;
-  findMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment | undefined>;
-  findRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey>>;
-  isTableExcludedFromMigrations(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  isTableExcludedFromMigrations(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  getMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  isMappedToJson(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  getContainerColumnTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
-  getJsonPropertyName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetTableName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultTableName(truncate: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetSchemaQualifiedTableName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetSchemaQualifiedViewName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetViewName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultViewName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetViewSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultViewSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultSqlQueryName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetSqlQuery(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetFunctionName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
+  GetInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
+  GetUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
+  FindCheckConstraint(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyCheckConstraint | undefined>;
+  GetCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyCheckConstraint>>;
+  GetDeclaredCheckConstraints(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyCheckConstraint>>;
+  GetComment(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment>>;
+  GetMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment>>;
+  FindMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment | undefined>;
+  FindRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey>>;
+  IsTableExcludedFromMigrations(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  IsTableExcludedFromMigrations(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  GetMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  IsMappedToJson(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  GetContainerColumnTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  GetJsonPropertyName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyForeignKey {
-  getConstraintName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  findSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey | undefined>;
-  isRowInternal(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  GetConstraintName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  FindSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey | undefined>;
+  IsRowInternal(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyIndex {
-  getDatabaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultDatabaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getFilter(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getFilter(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  findSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyIndex | undefined>;
+  GetDatabaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultDatabaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetFilter(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetFilter(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  FindSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyIndex | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyKey {
-  getName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  findSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey | undefined>;
+  GetName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  FindSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyModel {
-  getDefaultSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getMaxIdentifierLength(): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
-  findSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlySequence | undefined>;
-  getSequences(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlySequence>>;
-  findDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyDbFunction | undefined>;
-  findDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyDbFunction | undefined>;
-  getDbFunctions(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyDbFunction>>;
-  getCollation(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  areNamedDefaultConstraintsUsed(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  GetDefaultSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetMaxIdentifierLength(): ExtensionMethods_Microsoft_EntityFrameworkCore<int>;
+  FindSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlySequence | undefined>;
+  GetSequences(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlySequence>>;
+  FindDbFunction(method: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyDbFunction | undefined>;
+  FindDbFunction(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyDbFunction | undefined>;
+  GetDbFunctions(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyDbFunction>>;
+  GetCollation(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  AreNamedDefaultConstraintsUsed(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyProperty {
-  getColumnBaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
-  getColumnName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
-  getColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultColumnBaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
-  getDefaultColumnName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
-  getDefaultColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getColumnOrder(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
-  getColumnOrder(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
-  getColumnType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getColumnType(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultValueSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getComputedColumnSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getIsStored(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  getIsStored(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  getDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<unknown | undefined>;
-  tryGetDefaultValue(defaultValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  getDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<unknown | undefined>;
-  tryGetDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, defaultValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  getMaxLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
-  getPrecision(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
-  getScale(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
-  isUnicode(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  isFixedLength(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  isFixedLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
-  isColumnNullable(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  isColumnNullable(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  getComment(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getComment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getCollation(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getCollation(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getRelationalTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
-  findRelationalTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
-  findRelationalTypeMapping(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
-  findSharedStoreObjectRootProperty(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty | undefined>;
-  getOverrides(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyRelationalPropertyOverrides>>;
-  findOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyRelationalPropertyOverrides | undefined>;
-  getMappedStoreObjects(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier>>;
-  getJsonPropertyName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultConstraintName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetColumnBaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetColumnName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultColumnBaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetDefaultColumnName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetDefaultColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetColumnOrder(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
+  GetColumnOrder(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
+  GetColumnType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetColumnType(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultValueSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultValueSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetComputedColumnSql(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetComputedColumnSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetIsStored(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  GetIsStored(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  GetDefaultValue(): ExtensionMethods_Microsoft_EntityFrameworkCore<unknown | undefined>;
+  TryGetDefaultValue(defaultValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  GetDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<unknown | undefined>;
+  TryGetDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, defaultValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  GetMaxLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
+  GetPrecision(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
+  GetScale(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Int32>>;
+  IsUnicode(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Nullable_1<System_Internal.Boolean>>;
+  IsColumnNullable(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  IsColumnNullable(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  GetComment(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetComment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetCollation(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetCollation(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetRelationalTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  FindRelationalTypeMapping(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  FindRelationalTypeMapping(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  FindSharedStoreObjectRootProperty(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty | undefined>;
+  GetOverrides(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyRelationalPropertyOverrides>>;
+  FindOverrides(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyRelationalPropertyOverrides | undefined>;
+  GetMappedStoreObjects(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier>>;
+  GetJsonPropertyName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultConstraintName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyTrigger {
-  getDatabaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultDatabaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDefaultDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getTableName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
-  getTableSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDatabaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultDatabaseName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDefaultDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetTableName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string>;
+  GetTableSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyTypeBase {
-  getTableName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getViewName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getViewSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getSqlQuery(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getFunctionName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
-  getInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
-  getUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
-  getMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment>>;
-  getMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment>>;
-  findMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment | undefined>;
-  getMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  isMappedToJson(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
-  getContainerColumnName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getContainerColumnType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
-  getJsonPropertyName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetTableName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetViewName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetViewSchema(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetSqlQuery(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetFunctionName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
+  GetInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
+  GetUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyStoredProcedure | undefined>;
+  GetMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment>>;
+  GetMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment>>;
+  FindMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityTypeMappingFragment | undefined>;
+  GetMappingStrategy(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  IsMappedToJson(): ExtensionMethods_Microsoft_EntityFrameworkCore<boolean>;
+  GetContainerColumnName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetContainerColumnType(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
+  GetJsonPropertyName(): ExtensionMethods_Microsoft_EntityFrameworkCore<string | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ITypeBase {
-  getDefaultMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableMappingBase>>;
-  getTableMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableMapping>>;
-  getViewMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IViewMapping>>;
-  getSqlQueryMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ISqlQueryMapping>>;
-  getFunctionMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IFunctionMapping>>;
-  getDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
-  getInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
-  getUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
-  getInsertStoredProcedureMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureMapping>>;
-  getDeleteStoredProcedureMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureMapping>>;
-  getUpdateStoredProcedureMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureMapping>>;
-  getMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment>>;
-  getMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment>>;
-  findMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment | undefined>;
+  GetDefaultMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableMappingBase>>;
+  GetTableMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableMapping>>;
+  GetViewMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IViewMapping>>;
+  GetSqlQueryMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ISqlQueryMapping>>;
+  GetFunctionMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IFunctionMapping>>;
+  GetDeleteStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
+  GetInsertStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
+  GetUpdateStoredProcedure(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
+  GetInsertStoredProcedureMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureMapping>>;
+  GetDeleteStoredProcedureMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureMapping>>;
+  GetUpdateStoredProcedureMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IStoredProcedureMapping>>;
+  GetMappingFragments(): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment>>;
+  GetMappingFragments(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment>>;
+  FindMappingFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata.IEntityTypeMappingFragment | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ModelBuilder {
-  hasSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>;
-  hasSequence(name: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
-  hasSequence(name: string, schema: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
-  hasSequence(type: Type, name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>;
-  hasSequence(type: Type, name: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
-  hasSequence(type: Type, name: string, schema: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
-  hasDbFunction(methodInfo: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.DbFunctionBuilder>;
-  hasDbFunction<TResult>(expression: Expression_1<Func_1<TResult>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.DbFunctionBuilder>;
-  hasDbFunction(methodInfo: MethodInfo, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.DbFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
-  hasDefaultSchema(schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
-  useCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
+  HasSequence(name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>;
+  HasSequence(name: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
+  HasSequence(name: string, schema: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
+  HasSequence(type: Type, name: string, schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>;
+  HasSequence(type: Type, name: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
+  HasSequence(type: Type, name: string, schema: string, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.SequenceBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
+  HasDbFunction(methodInfo: MethodInfo): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.DbFunctionBuilder>;
+  HasDbFunction<TResult>(expression: Expression_1<Func_1<TResult>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Metadata_Builders.DbFunctionBuilder>;
+  HasDbFunction(methodInfo: MethodInfo, builderAction: Action_1<Microsoft_EntityFrameworkCore_Metadata_Builders.DbFunctionBuilder>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
+  HasDefaultSchema(schema: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
+  UseCollation(collation: string): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore.ModelBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IIncludableQueryable_2<TEntity, TProperty> {
-  thenInclude<TPreviousProperty, TProperty>(navigationPropertyPath: Expression_1<Func_2<TPreviousProperty, TProperty>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Query.IIncludableQueryable_2<TEntity, TProperty>>;
+  ThenInclude<TPreviousProperty, TProperty>(navigationPropertyPath: Expression_1<Func_2<TPreviousProperty, TProperty>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Query.IIncludableQueryable_2<TEntity, TProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_TableExpressionBase {
-  unwrapJoin(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Query_SqlExpressions.TableExpressionBase>;
+  UnwrapJoin(): ExtensionMethods_Microsoft_EntityFrameworkCore<Microsoft_EntityFrameworkCore_Query_SqlExpressions.TableExpressionBase>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IExecutionStrategy {
-  execute(operation: Action): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  execute<TResult>(operation: Func_1<TResult>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
-  execute<TState>(state: TState, operation: Action_1<TState>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  executeAsync(operation: Func_1<Task>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  executeAsync(operation: Func_2<CancellationToken, Task>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  executeAsync<TResult>(operation: Func_1<Task_1<TResult>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
-  executeAsync<TResult>(operation: Func_2<CancellationToken, Task_1<TResult>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
-  executeAsync<TState>(state: TState, operation: Func_2<TState, Task>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  executeAsync<TState>(state: TState, operation: Func_3<TState, CancellationToken, Task>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  executeAsync<TState, TResult>(state: TState, operation: Func_2<TState, Task_1<TResult>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
-  execute<TState, TResult>(state: TState, operation: Func_2<TState, TResult>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
-  executeAsync<TState, TResult>(state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
-  execute<TState, TResult>(state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, Microsoft_EntityFrameworkCore_Storage.ExecutionResult_1<TResult>>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
-  executeAsync<TState, TResult>(state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<Microsoft_EntityFrameworkCore_Storage.ExecutionResult_1<TResult>>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
-  executeInTransaction(operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  executeInTransactionAsync(operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  executeInTransactionAsync(operation: Func_2<CancellationToken, Task>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  executeInTransaction<TResult>(operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
-  executeInTransactionAsync<TResult>(operation: Func_2<CancellationToken, Task_1<TResult>>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
-  executeInTransaction<TState>(state: TState, operation: Action_1<TState>, verifySucceeded: Func_2<TState, System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
-  executeInTransactionAsync<TState>(state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
-  executeInTransaction<TState, TResult>(state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
-  executeInTransactionAsync<TState, TResult>(state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
+  Execute(operation: Action): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  Execute<TResult>(operation: Func_1<TResult>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
+  Execute<TState>(state: TState, operation: Action_1<TState>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  ExecuteAsync(operation: Func_1<Task>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  ExecuteAsync(operation: Func_2<CancellationToken, Task>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  ExecuteAsync<TResult>(operation: Func_1<Task_1<TResult>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
+  ExecuteAsync<TResult>(operation: Func_2<CancellationToken, Task_1<TResult>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
+  ExecuteAsync<TState>(state: TState, operation: Func_2<TState, Task>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  ExecuteAsync<TState>(state: TState, operation: Func_3<TState, CancellationToken, Task>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  ExecuteAsync<TState, TResult>(state: TState, operation: Func_2<TState, Task_1<TResult>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
+  Execute<TState, TResult>(state: TState, operation: Func_2<TState, TResult>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
+  ExecuteAsync<TState, TResult>(state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
+  Execute<TState, TResult>(state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, Microsoft_EntityFrameworkCore_Storage.ExecutionResult_1<TResult>>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
+  ExecuteAsync<TState, TResult>(state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<Microsoft_EntityFrameworkCore_Storage.ExecutionResult_1<TResult>>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
+  ExecuteInTransaction(operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  ExecuteInTransactionAsync(operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  ExecuteInTransactionAsync(operation: Func_2<CancellationToken, Task>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  ExecuteInTransaction<TResult>(operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
+  ExecuteInTransactionAsync<TResult>(operation: Func_2<CancellationToken, Task_1<TResult>>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
+  ExecuteInTransaction<TState>(state: TState, operation: Action_1<TState>, verifySucceeded: Func_2<TState, System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<void>;
+  ExecuteInTransactionAsync<TState>(state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task>;
+  ExecuteInTransaction<TState, TResult>(state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, System_Internal.Boolean>): ExtensionMethods_Microsoft_EntityFrameworkCore<TResult>;
+  ExecuteInTransactionAsync<TState, TResult>(state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore<Task_1<TResult>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ChangeTracking_ValueComparer {
-  isDefault(): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking<boolean>;
+  IsDefault(): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IStateManager {
-  toListForState(added: boolean, modified: boolean, deleted: boolean, unchanged: boolean, returnDeletedSharedIdentity: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking_Internal<IReadOnlyList_1<Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry>>;
-  toList(): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking_Internal<IReadOnlyList_1<Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry>>;
+  ToListForState(added: boolean, modified: boolean, deleted: boolean, unchanged: boolean, returnDeletedSharedIdentity: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking_Internal<IReadOnlyList_1<Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry>>;
+  ToList(): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking_Internal<IReadOnlyList_1<Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ValueComparer {
-  toNullableComparer(clrType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking_Internal<Microsoft_EntityFrameworkCore_ChangeTracking.ValueComparer | undefined>;
-  composeConversion(targetClrType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking_Internal<Microsoft_EntityFrameworkCore_ChangeTracking.ValueComparer | undefined>;
+  ToNullableComparer(clrType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking_Internal<Microsoft_EntityFrameworkCore_ChangeTracking.ValueComparer | undefined>;
+  ComposeConversion(targetClrType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking_Internal<Microsoft_EntityFrameworkCore_ChangeTracking.ValueComparer | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger_1<TLoggerCategory> {
-  saveChangesFailed(context: Microsoft_EntityFrameworkCore.DbContext, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  saveChangesFailedAsync(context: Microsoft_EntityFrameworkCore.DbContext, exception: Exception, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
-  saveChangesCanceled(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  saveChangesCanceledAsync(context: Microsoft_EntityFrameworkCore.DbContext, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
-  oldModelVersionWarning(context: Microsoft_EntityFrameworkCore.DbContext, contextOptions: Microsoft_EntityFrameworkCore.DbContextOptions): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  optimisticConcurrencyException(context: Microsoft_EntityFrameworkCore.DbContext, entries: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, exception: Microsoft_EntityFrameworkCore.DbUpdateConcurrencyException, createEventData: Func_5<Microsoft_EntityFrameworkCore.DbContext, Microsoft_EntityFrameworkCore.DbUpdateConcurrencyException, IReadOnlyList_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, Microsoft_EntityFrameworkCore_Diagnostics.EventDefinition_1<Exception>, Microsoft_EntityFrameworkCore_Diagnostics.ConcurrencyExceptionEventData>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
-  optimisticConcurrencyExceptionAsync(context: Microsoft_EntityFrameworkCore.DbContext, entries: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, exception: Microsoft_EntityFrameworkCore.DbUpdateConcurrencyException, createEventData: Func_5<Microsoft_EntityFrameworkCore.DbContext, Microsoft_EntityFrameworkCore.DbUpdateConcurrencyException, IReadOnlyList_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, Microsoft_EntityFrameworkCore_Diagnostics.EventDefinition_1<Exception>, Microsoft_EntityFrameworkCore_Diagnostics.ConcurrencyExceptionEventData>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
-  duplicateDependentEntityTypeInstanceWarning(dependent1: Microsoft_EntityFrameworkCore_Metadata.IEntityType, dependent2: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  queryIterationFailed(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  queryCanceled(contextType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  queryCompilationStarting(context: Microsoft_EntityFrameworkCore.DbContext, expressionPrinter: Microsoft_EntityFrameworkCore_Query.ExpressionPrinter, queryExpression: Expression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTuple_2<Expression, Microsoft_EntityFrameworkCore_Diagnostics.QueryExpressionEventData>>;
-  firstWithoutOrderByAndFilterWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  rowLimitingOperationWithoutOrderByWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  distinctAfterOrderByWithoutRowLimitingOperatorWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  navigationBaseIncluded(navigation: Microsoft_EntityFrameworkCore_Metadata.INavigationBase): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  navigationBaseIncludeIgnored(navigation: Microsoft_EntityFrameworkCore_Metadata.INavigationBase): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  queryExecutionPlanned(context: Microsoft_EntityFrameworkCore.DbContext, expressionPrinter: Microsoft_EntityFrameworkCore_Query.ExpressionPrinter, queryExecutorExpression: Expression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  sensitiveDataLoggingEnabledWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  typeLoadingErrorWarning(assembly: Assembly, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  skippedEntityTypeConfigurationWarning(type: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  noEntityTypeConfigurationsWarning(assembly: Assembly): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  possibleUnintendedCollectionNavigationNullComparisonWarning(navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  possibleUnintendedReferenceComparisonWarning(left: Expression, right: Expression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  invalidIncludePathError(navigationChain: string, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  serviceProviderCreated(serviceProvider: IServiceProvider): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  manyServiceProvidersCreatedWarning(serviceProviders: ICollection_1<IServiceProvider>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  serviceProviderDebugInfo(newDebugInfo: IDictionary_2<System_Internal.String, System_Internal.String>, cachedDebugInfos: IList_1<IDictionary_2<System_Internal.String, System_Internal.String>>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  contextInitialized(context: Microsoft_EntityFrameworkCore.DbContext, contextOptions: Microsoft_EntityFrameworkCore.DbContextOptions): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  executionStrategyRetrying(exceptionsEncountered: IReadOnlyList_1<Exception>, delay: TimeSpan, async: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  lazyLoadOnDisposedContextWarning(context: Microsoft_EntityFrameworkCore.DbContext, entityType: unknown, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  navigationLazyLoading(context: Microsoft_EntityFrameworkCore.DbContext, entityType: unknown, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  detachedLazyLoadingWarning(context: Microsoft_EntityFrameworkCore.DbContext, entityType: unknown, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  redundantAddServicesCallWarning(serviceProvider: IServiceProvider): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  shadowForeignKeyPropertyCreated(property: Microsoft_EntityFrameworkCore_Metadata.IProperty, basePropertyName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  shadowPropertyCreated(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  collectionWithoutComparer(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  redundantIndexRemoved(redundantIndex: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase>, otherIndex: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  redundantForeignKeyWarning(redundantForeignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  incompatibleMatchingForeignKeyProperties(dependentToPrincipalNavigationSpecification: string, principalToDependentNavigationSpecification: string, foreignKeyProperties: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase>, principalKeyProperties: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  accidentalEntityType(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  accidentalComplexPropertyCollection(complexProperty: Microsoft_EntityFrameworkCore_Metadata.IComplexProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  ambiguousEndRequiredWarning(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  requiredAttributeOnCollection(navigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  requiredAttributeOnSkipNavigation(navigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlySkipNavigation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  conflictingShadowForeignKeysWarning(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  multiplePrimaryKeyCandidates(firstProperty: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty, secondProperty: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  multipleNavigationProperties(firstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>, secondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  multipleInversePropertiesSameTargetWarning(conflictingNavigations: IEnumerable_1<Tuple_2<MemberInfo, Type>>, inverseNavigation: MemberInfo, targetType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  nonOwnershipInverseNavigationWarning(declaringType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType, navigation: MemberInfo, targetType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType, inverseNavigation: MemberInfo, ownershipNavigation: MemberInfo): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  foreignKeyAttributesOnBothPropertiesWarning(firstNavigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation, secondNavigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation, firstProperty: MemberInfo, secondProperty: MemberInfo): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  foreignKeyAttributesOnBothNavigationsWarning(firstNavigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation, secondNavigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  conflictingForeignKeyAttributesOnNavigationAndPropertyWarning(navigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation, property: MemberInfo): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  detectChangesStarting(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  detectChangesCompleted(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  propertyChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  propertyChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  complexElementPropertyChangeDetected(internalComplexEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalComplexEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  complexElementPropertyChangeDetectedSensitive(internalComplexEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalComplexEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  foreignKeyChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  foreignKeyChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  collectionChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  collectionChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  skipCollectionChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.ISkipNavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  skipCollectionChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.ISkipNavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  referenceChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  referenceChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  stringEnumValueInJson(enumType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  startedTracking(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  startedTrackingSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  stateChanged(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, oldState: Microsoft_EntityFrameworkCore.EntityState, newState: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  stateChangedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, oldState: Microsoft_EntityFrameworkCore.EntityState, newState: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  valueGenerated(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, value: unknown, temporary: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  valueGeneratedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, value: unknown, temporary: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  cascadeDelete(internalChildEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, internalParentEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, state: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  cascadeDeleteSensitive(internalChildEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, internalParentEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, state: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  cascadeDeleteOrphan(internalChildEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, parentEntityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, state: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  mappedNavigationIgnoredWarning(navigation: Microsoft_EntityFrameworkCore_Metadata.INavigationBase): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  mappedPropertyIgnoredWarning(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  mappedComplexPropertyIgnoredWarning(property: Microsoft_EntityFrameworkCore_Metadata.IComplexProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  mappedEntityTypeIgnoredWarning(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  cascadeDeleteOrphanSensitive(internalChildEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, parentEntityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, state: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  saveChangesStarting(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult_1<System_Internal.Int32>>;
-  saveChangesStartingAsync(context: Microsoft_EntityFrameworkCore.DbContext, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult_1<System_Internal.Int32>>>;
-  saveChangesCompleted(context: Microsoft_EntityFrameworkCore.DbContext, entitiesSavedCount: int): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<int>;
-  saveChangesCompletedAsync(context: Microsoft_EntityFrameworkCore.DbContext, entitiesSavedCount: int, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<System_Internal.Int32>>;
-  contextDisposed(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  conflictingKeylessAndKeyAttributesWarning(property: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  possibleIncorrectRequiredNavigationWithQueryFilterInteractionWarning(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  transactionStarting(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, isolationLevel: IsolationLevel, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult_1<DbTransaction>>;
-  transactionStartingAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, isolationLevel: IsolationLevel, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult_1<DbTransaction>>>;
-  transactionStarted(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<DbTransaction>;
-  transactionStartedAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<DbTransaction>>;
-  transactionUsed(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<DbTransaction>;
-  transactionUsedAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<DbTransaction>>;
-  transactionCommitting(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
-  transactionCommittingAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
-  transactionCommitted(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  transactionCommittedAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
-  transactionRolledBack(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  transactionRolledBackAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
-  transactionRollingBack(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
-  transactionRollingBackAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
-  creatingTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
-  creatingTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
-  createdTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  createdTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
-  rollingBackToTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
-  rollingBackToTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
-  rolledBackToTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  rolledBackToTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
-  releasingTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
-  releasingTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
-  releasedTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  releasedTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
-  transactionDisposed(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  triggerOnNonRootTphEntity(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  transactionError(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  transactionErrorAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
-  ambientTransactionWarning(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  ambientTransactionEnlisted(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: Transaction): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  explicitTransactionEnlisted(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: Transaction): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  migrateUsingConnection(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  migrationReverting(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  migrationApplying(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  migrationGeneratingDownScript(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration, fromMigration: string, toMigration: string, idempotent: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  migrationGeneratingUpScript(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration, fromMigration: string, toMigration: string, idempotent: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  migrationsNotApplied(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  migrationsNotFound(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migrationsAssembly: Microsoft_EntityFrameworkCore_Migrations.IMigrationsAssembly): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  migrationAttributeMissingWarning(migrationType: TypeInfo): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  pendingModelChangesWarning(contextType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  nonDeterministicModel(contextType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  modelSnapshotNotFound(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migrationsAssembly: Microsoft_EntityFrameworkCore_Migrations.IMigrationsAssembly): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  nonTransactionalMigrationOperationWarning(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration, command: Microsoft_EntityFrameworkCore_Migrations.MigrationCommand): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  acquiringMigrationLock(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  migrationsUserTransactionWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  queryPossibleUnintendedUseOfEqualsWarning(left: Microsoft_EntityFrameworkCore_Query_SqlExpressions.SqlExpression, right: Microsoft_EntityFrameworkCore_Query_SqlExpressions.SqlExpression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  executeDeleteFailed(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  executeUpdateFailed(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  nonQueryOperationFailed(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  multipleCollectionIncludeWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  modelValidationKeyDefaultValueWarning(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  boolWithDefaultWarning(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  batchReadyForExecution(entries: IEnumerable_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, commandCount: int): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  batchSmallerThanMinBatchSize(entries: IEnumerable_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, commandCount: int, minBatchSize: int): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  allIndexPropertiesNotToMappedToAnyTable(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, index: Microsoft_EntityFrameworkCore_Metadata.IIndex): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  indexPropertiesBothMappedAndNotMappedToTable(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, index: Microsoft_EntityFrameworkCore_Metadata.IIndex, unmappedPropertyName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  indexPropertiesMappedToNonOverlappingTables(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, index: Microsoft_EntityFrameworkCore_Metadata.IIndex, property1Name: string, tablesMappedToProperty1: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>, property2Name: string, tablesMappedToProperty2: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  keyPropertiesNotMappedToTable(key: Microsoft_EntityFrameworkCore_Metadata.IKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  foreignKeyPropertiesMappedToUnrelatedTables(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  foreignKeyTpcPrincipalWarning(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  tpcStoreGeneratedIdentityWarning(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  optionalDependentWithoutIdentifyingPropertyWarning(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  storedProcedureConcurrencyTokenNotMapped(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, concurrencyProperty: Microsoft_EntityFrameworkCore_Metadata.IProperty, storedProcedureName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  batchExecutorFailedToRollbackToSavepoint(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  batchExecutorFailedToReleaseSavepoint(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  optionalDependentWithAllNullPropertiesWarning(entry: Microsoft_EntityFrameworkCore_Update.IUpdateEntry): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  optionalDependentWithAllNullPropertiesWarningSensitive(entry: Microsoft_EntityFrameworkCore_Update.IUpdateEntry): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  duplicateColumnOrders(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, columns: IReadOnlyList_1<System_Internal.String>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  columnOrderIgnoredWarning(operation: Microsoft_EntityFrameworkCore_Migrations_Operations.ColumnOperation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
-  unexpectedTrailingResultSetWhenSaving(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  SaveChangesFailed(context: Microsoft_EntityFrameworkCore.DbContext, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  SaveChangesFailedAsync(context: Microsoft_EntityFrameworkCore.DbContext, exception: Exception, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
+  SaveChangesCanceled(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  SaveChangesCanceledAsync(context: Microsoft_EntityFrameworkCore.DbContext, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
+  OldModelVersionWarning(context: Microsoft_EntityFrameworkCore.DbContext, contextOptions: Microsoft_EntityFrameworkCore.DbContextOptions): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  OptimisticConcurrencyException(context: Microsoft_EntityFrameworkCore.DbContext, entries: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, exception: Microsoft_EntityFrameworkCore.DbUpdateConcurrencyException, createEventData: Func_5<Microsoft_EntityFrameworkCore.DbContext, Microsoft_EntityFrameworkCore.DbUpdateConcurrencyException, IReadOnlyList_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, Microsoft_EntityFrameworkCore_Diagnostics.EventDefinition_1<Exception>, Microsoft_EntityFrameworkCore_Diagnostics.ConcurrencyExceptionEventData>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
+  OptimisticConcurrencyExceptionAsync(context: Microsoft_EntityFrameworkCore.DbContext, entries: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, exception: Microsoft_EntityFrameworkCore.DbUpdateConcurrencyException, createEventData: Func_5<Microsoft_EntityFrameworkCore.DbContext, Microsoft_EntityFrameworkCore.DbUpdateConcurrencyException, IReadOnlyList_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, Microsoft_EntityFrameworkCore_Diagnostics.EventDefinition_1<Exception>, Microsoft_EntityFrameworkCore_Diagnostics.ConcurrencyExceptionEventData>, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
+  DuplicateDependentEntityTypeInstanceWarning(dependent1: Microsoft_EntityFrameworkCore_Metadata.IEntityType, dependent2: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  QueryIterationFailed(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  QueryCanceled(contextType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  QueryCompilationStarting(context: Microsoft_EntityFrameworkCore.DbContext, expressionPrinter: Microsoft_EntityFrameworkCore_Query.ExpressionPrinter, queryExpression: Expression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTuple_2<Expression, Microsoft_EntityFrameworkCore_Diagnostics.QueryExpressionEventData>>;
+  FirstWithoutOrderByAndFilterWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  RowLimitingOperationWithoutOrderByWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  DistinctAfterOrderByWithoutRowLimitingOperatorWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  NavigationBaseIncluded(navigation: Microsoft_EntityFrameworkCore_Metadata.INavigationBase): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  NavigationBaseIncludeIgnored(navigation: Microsoft_EntityFrameworkCore_Metadata.INavigationBase): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  QueryExecutionPlanned(context: Microsoft_EntityFrameworkCore.DbContext, expressionPrinter: Microsoft_EntityFrameworkCore_Query.ExpressionPrinter, queryExecutorExpression: Expression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  SensitiveDataLoggingEnabledWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  TypeLoadingErrorWarning(assembly: Assembly, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  SkippedEntityTypeConfigurationWarning(type: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  NoEntityTypeConfigurationsWarning(assembly: Assembly): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  PossibleUnintendedCollectionNavigationNullComparisonWarning(navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  PossibleUnintendedReferenceComparisonWarning(left: Expression, right: Expression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  InvalidIncludePathError(navigationChain: string, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ServiceProviderCreated(serviceProvider: IServiceProvider): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ManyServiceProvidersCreatedWarning(serviceProviders: ICollection_1<IServiceProvider>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ServiceProviderDebugInfo(newDebugInfo: IDictionary_2<System_Internal.String, System_Internal.String>, cachedDebugInfos: IList_1<IDictionary_2<System_Internal.String, System_Internal.String>>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ContextInitialized(context: Microsoft_EntityFrameworkCore.DbContext, contextOptions: Microsoft_EntityFrameworkCore.DbContextOptions): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ExecutionStrategyRetrying(exceptionsEncountered: IReadOnlyList_1<Exception>, delay: TimeSpan, async: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  LazyLoadOnDisposedContextWarning(context: Microsoft_EntityFrameworkCore.DbContext, entityType: unknown, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  NavigationLazyLoading(context: Microsoft_EntityFrameworkCore.DbContext, entityType: unknown, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  DetachedLazyLoadingWarning(context: Microsoft_EntityFrameworkCore.DbContext, entityType: unknown, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  RedundantAddServicesCallWarning(serviceProvider: IServiceProvider): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ShadowForeignKeyPropertyCreated(property: Microsoft_EntityFrameworkCore_Metadata.IProperty, basePropertyName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ShadowPropertyCreated(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  CollectionWithoutComparer(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  RedundantIndexRemoved(redundantIndex: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase>, otherIndex: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  RedundantForeignKeyWarning(redundantForeignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  IncompatibleMatchingForeignKeyProperties(dependentToPrincipalNavigationSpecification: string, principalToDependentNavigationSpecification: string, foreignKeyProperties: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase>, principalKeyProperties: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  AccidentalEntityType(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  AccidentalComplexPropertyCollection(complexProperty: Microsoft_EntityFrameworkCore_Metadata.IComplexProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  AmbiguousEndRequiredWarning(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  RequiredAttributeOnCollection(navigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  RequiredAttributeOnSkipNavigation(navigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlySkipNavigation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ConflictingShadowForeignKeysWarning(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MultiplePrimaryKeyCandidates(firstProperty: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty, secondProperty: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MultipleNavigationProperties(firstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>, secondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MultipleInversePropertiesSameTargetWarning(conflictingNavigations: IEnumerable_1<Tuple_2<MemberInfo, Type>>, inverseNavigation: MemberInfo, targetType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  NonOwnershipInverseNavigationWarning(declaringType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType, navigation: MemberInfo, targetType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType, inverseNavigation: MemberInfo, ownershipNavigation: MemberInfo): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ForeignKeyAttributesOnBothPropertiesWarning(firstNavigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation, secondNavigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation, firstProperty: MemberInfo, secondProperty: MemberInfo): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ForeignKeyAttributesOnBothNavigationsWarning(firstNavigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation, secondNavigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ConflictingForeignKeyAttributesOnNavigationAndPropertyWarning(navigation: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation, property: MemberInfo): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  DetectChangesStarting(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  DetectChangesCompleted(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  PropertyChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  PropertyChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ComplexElementPropertyChangeDetected(internalComplexEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalComplexEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ComplexElementPropertyChangeDetectedSensitive(internalComplexEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalComplexEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ForeignKeyChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ForeignKeyChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  CollectionChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  CollectionChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  SkipCollectionChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.ISkipNavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  SkipCollectionChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.ISkipNavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ReferenceChangeDetected(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ReferenceChangeDetectedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, navigation: Microsoft_EntityFrameworkCore_Metadata.INavigation, oldValue: unknown, newValue: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  StringEnumValueInJson(enumType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  StartedTracking(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  StartedTrackingSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  StateChanged(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, oldState: Microsoft_EntityFrameworkCore.EntityState, newState: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  StateChangedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, oldState: Microsoft_EntityFrameworkCore.EntityState, newState: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ValueGenerated(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, value: unknown, temporary: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ValueGeneratedSensitive(internalEntityEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, property: Microsoft_EntityFrameworkCore_Metadata.IProperty, value: unknown, temporary: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  CascadeDelete(internalChildEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, internalParentEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, state: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  CascadeDeleteSensitive(internalChildEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, internalParentEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, state: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  CascadeDeleteOrphan(internalChildEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, parentEntityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, state: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MappedNavigationIgnoredWarning(navigation: Microsoft_EntityFrameworkCore_Metadata.INavigationBase): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MappedPropertyIgnoredWarning(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MappedComplexPropertyIgnoredWarning(property: Microsoft_EntityFrameworkCore_Metadata.IComplexProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MappedEntityTypeIgnoredWarning(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  CascadeDeleteOrphanSensitive(internalChildEntry: Microsoft_EntityFrameworkCore_ChangeTracking_Internal.InternalEntityEntry, parentEntityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, state: Microsoft_EntityFrameworkCore.EntityState): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  SaveChangesStarting(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult_1<System_Internal.Int32>>;
+  SaveChangesStartingAsync(context: Microsoft_EntityFrameworkCore.DbContext, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult_1<System_Internal.Int32>>>;
+  SaveChangesCompleted(context: Microsoft_EntityFrameworkCore.DbContext, entitiesSavedCount: int): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<int>;
+  SaveChangesCompletedAsync(context: Microsoft_EntityFrameworkCore.DbContext, entitiesSavedCount: int, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<System_Internal.Int32>>;
+  ContextDisposed(context: Microsoft_EntityFrameworkCore.DbContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ConflictingKeylessAndKeyAttributesWarning(property: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  PossibleIncorrectRequiredNavigationWithQueryFilterInteractionWarning(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  TransactionStarting(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, isolationLevel: IsolationLevel, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult_1<DbTransaction>>;
+  TransactionStartingAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, isolationLevel: IsolationLevel, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult_1<DbTransaction>>>;
+  TransactionStarted(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<DbTransaction>;
+  TransactionStartedAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<DbTransaction>>;
+  TransactionUsed(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<DbTransaction>;
+  TransactionUsedAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<DbTransaction>>;
+  TransactionCommitting(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
+  TransactionCommittingAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
+  TransactionCommitted(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  TransactionCommittedAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
+  TransactionRolledBack(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  TransactionRolledBackAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
+  TransactionRollingBack(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
+  TransactionRollingBackAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
+  CreatingTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
+  CreatingTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
+  CreatedTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  CreatedTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
+  RollingBackToTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
+  RollingBackToTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
+  RolledBackToTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  RolledBackToTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
+  ReleasingTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>;
+  ReleasingTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<ValueTask_1<Microsoft_EntityFrameworkCore_Diagnostics.InterceptionResult>>;
+  ReleasedTransactionSavepoint(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ReleasedTransactionSavepointAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
+  TransactionDisposed(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  TriggerOnNonRootTphEntity(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  TransactionError(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  TransactionErrorAsync(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: DbTransaction, transactionId: Guid, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<Task>;
+  AmbientTransactionWarning(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, startTime: DateTimeOffset): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  AmbientTransactionEnlisted(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: Transaction): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ExplicitTransactionEnlisted(connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection, transaction: Transaction): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MigrateUsingConnection(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, connection: Microsoft_EntityFrameworkCore_Storage.IRelationalConnection): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MigrationReverting(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MigrationApplying(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MigrationGeneratingDownScript(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration, fromMigration: string, toMigration: string, idempotent: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MigrationGeneratingUpScript(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration, fromMigration: string, toMigration: string, idempotent: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MigrationsNotApplied(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MigrationsNotFound(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migrationsAssembly: Microsoft_EntityFrameworkCore_Migrations.IMigrationsAssembly): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MigrationAttributeMissingWarning(migrationType: TypeInfo): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  PendingModelChangesWarning(contextType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  NonDeterministicModel(contextType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ModelSnapshotNotFound(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migrationsAssembly: Microsoft_EntityFrameworkCore_Migrations.IMigrationsAssembly): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  NonTransactionalMigrationOperationWarning(migrator: Microsoft_EntityFrameworkCore_Migrations.IMigrator, migration: Microsoft_EntityFrameworkCore_Migrations.Migration, command: Microsoft_EntityFrameworkCore_Migrations.MigrationCommand): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  AcquiringMigrationLock(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MigrationsUserTransactionWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  QueryPossibleUnintendedUseOfEqualsWarning(left: Microsoft_EntityFrameworkCore_Query_SqlExpressions.SqlExpression, right: Microsoft_EntityFrameworkCore_Query_SqlExpressions.SqlExpression): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ExecuteDeleteFailed(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ExecuteUpdateFailed(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  NonQueryOperationFailed(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  MultipleCollectionIncludeWarning(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ModelValidationKeyDefaultValueWarning(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  BoolWithDefaultWarning(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  BatchReadyForExecution(entries: IEnumerable_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, commandCount: int): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  BatchSmallerThanMinBatchSize(entries: IEnumerable_1<Microsoft_EntityFrameworkCore_Update.IUpdateEntry>, commandCount: int, minBatchSize: int): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  AllIndexPropertiesNotToMappedToAnyTable(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, index: Microsoft_EntityFrameworkCore_Metadata.IIndex): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  IndexPropertiesBothMappedAndNotMappedToTable(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, index: Microsoft_EntityFrameworkCore_Metadata.IIndex, unmappedPropertyName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  IndexPropertiesMappedToNonOverlappingTables(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, index: Microsoft_EntityFrameworkCore_Metadata.IIndex, property1Name: string, tablesMappedToProperty1: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>, property2Name: string, tablesMappedToProperty2: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  KeyPropertiesNotMappedToTable(key: Microsoft_EntityFrameworkCore_Metadata.IKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ForeignKeyPropertiesMappedToUnrelatedTables(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ForeignKeyTpcPrincipalWarning(foreignKey: Microsoft_EntityFrameworkCore_Metadata.IForeignKey): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  TpcStoreGeneratedIdentityWarning(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  OptionalDependentWithoutIdentifyingPropertyWarning(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  StoredProcedureConcurrencyTokenNotMapped(entityType: Microsoft_EntityFrameworkCore_Metadata.IEntityType, concurrencyProperty: Microsoft_EntityFrameworkCore_Metadata.IProperty, storedProcedureName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  BatchExecutorFailedToRollbackToSavepoint(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  BatchExecutorFailedToReleaseSavepoint(contextType: Type, exception: Exception): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  OptionalDependentWithAllNullPropertiesWarning(entry: Microsoft_EntityFrameworkCore_Update.IUpdateEntry): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  OptionalDependentWithAllNullPropertiesWarningSensitive(entry: Microsoft_EntityFrameworkCore_Update.IUpdateEntry): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  DuplicateColumnOrders(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, columns: IReadOnlyList_1<System_Internal.String>): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  ColumnOrderIgnoredWarning(operation: Microsoft_EntityFrameworkCore_Migrations_Operations.ColumnOperation): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
+  UnexpectedTrailingResultSetWhenSaving(): ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1<T> {
-  getService<TService>(): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<TService>;
-  getService(serviceType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<unknown>;
-  getInfrastructure(): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<T>;
+  GetService<TService>(): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<TService>;
+  GetService(serviceType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<unknown>;
+  GetInfrastructure(): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<T>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Infrastructure_ILazyLoader {
-  load<TRelated>(entity: unknown, navigationField: TRelated, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<TRelated | undefined>;
+  Load<TRelated>(entity: unknown, navigationField: TRelated, navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<TRelated | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Infrastructure_IModel {
-  getRelationalDependencies(methodName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<Microsoft_EntityFrameworkCore_Infrastructure.RelationalModelDependencies>;
+  GetRelationalDependencies(methodName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure<Microsoft_EntityFrameworkCore_Infrastructure.RelationalModelDependencies>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Infrastructure_Internal_IDbContextOptions {
-  buildOptionsFragment(): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure_Internal<string>;
+  BuildOptionsFragment(): ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure_Internal<string>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Internal_DbContext {
-  configureConventions(configurationBuilder: Microsoft_EntityFrameworkCore.ModelConfigurationBuilder): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<void>;
+  ConfigureConventions(configurationBuilder: Microsoft_EntityFrameworkCore.ModelConfigurationBuilder): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Internal_ICurrentDbContext {
-  getDependencies(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<Microsoft_EntityFrameworkCore_Internal.IDbContextDependencies>;
+  GetDependencies(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<Microsoft_EntityFrameworkCore_Internal.IDbContextDependencies>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Internal_IDbContextDependencies {
-  getDependencies(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<Microsoft_EntityFrameworkCore_Internal.IDbContextDependencies>;
+  GetDependencies(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<Microsoft_EntityFrameworkCore_Internal.IDbContextDependencies>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Internal_IEntityType {
-  isAdHoc(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<boolean>;
+  IsAdHoc(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Internal_IModel {
-  ensureRelationalModel(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<void>;
+  EnsureRelationalModel(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Internal_IReadOnlyTypeBase {
-  getOwnedName(simpleName: string, ownershipNavigation: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<string>;
-  getRuntimeProperties(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<IReadOnlyDictionary_2<System_Internal.String, PropertyInfo>>;
-  getRuntimeFields(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<IReadOnlyDictionary_2<System_Internal.String, FieldInfo>>;
+  GetOwnedName(simpleName: string, ownershipNavigation: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<string>;
+  GetRuntimeProperties(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<IReadOnlyDictionary_2<System_Internal.String, PropertyInfo>>;
+  GetRuntimeFields(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<IReadOnlyDictionary_2<System_Internal.String, FieldInfo>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Internal_ITypeBase {
-  getComplexProperty(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<Microsoft_EntityFrameworkCore_Metadata.IComplexProperty>;
+  GetComplexProperty(name: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<Microsoft_EntityFrameworkCore_Metadata.IComplexProperty>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Internal_TypeBase {
-  displayName(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<string>;
-  shortName(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<string>;
+  DisplayName(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<string>;
+  ShortName(): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<string>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Internal_RelationalCommandResolver {
-  rentAndPopulateRelationalCommand(queryContext: Microsoft_EntityFrameworkCore_Query.RelationalQueryContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<Microsoft_EntityFrameworkCore_Storage.IRelationalCommand>;
+  RentAndPopulateRelationalCommand(queryContext: Microsoft_EntityFrameworkCore_Query.RelationalQueryContext): ExtensionMethods_Microsoft_EntityFrameworkCore_Internal<Microsoft_EntityFrameworkCore_Storage.IRelationalCommand>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_ConfigurationSource {
-  overrides(oldConfigurationSource: Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata<boolean>;
-  overridesStrictly(oldConfigurationSource: Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata<boolean>;
-  max(right: Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>;
+  Overrides(oldConfigurationSource: Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata<boolean>;
+  OverridesStrictly(oldConfigurationSource: Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata<boolean>;
+  Max(right: Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_IConventionBatch {
-  run(relationshipBuilder: Microsoft_EntityFrameworkCore_Metadata_Internal.InternalForeignKeyBuilder): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.InternalForeignKeyBuilder | undefined>;
+  Run(relationshipBuilder: Microsoft_EntityFrameworkCore_Metadata_Internal.InternalForeignKeyBuilder): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.InternalForeignKeyBuilder | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IComplexProperty {
-  getChainToComplexProperty(fromEntity: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IComplexProperty>>;
+  GetChainToComplexProperty(fromEntity: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IComplexProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IConventionEntityType {
-  findDeclaredOwnership(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey | undefined>;
-  getStoreObjectConfigurationSource(type: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
+  FindDeclaredOwnership(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey | undefined>;
+  GetStoreObjectConfigurationSource(type: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IEntityType {
-  findDeclaredReferencingRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IForeignKey>>;
-  getNonPrincipalSharedNonPkProperties(table: Microsoft_EntityFrameworkCore_Metadata.ITableBase): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<List_1<Microsoft_EntityFrameworkCore_Metadata.IProperty>>;
+  FindDeclaredReferencingRowInternalForeignKeys(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IForeignKey>>;
+  GetNonPrincipalSharedNonPkProperties(table: Microsoft_EntityFrameworkCore_Metadata.ITableBase): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<List_1<Microsoft_EntityFrameworkCore_Metadata.IProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IForeignKey {
-  getPropertiesWithMinimalOverlapIfPossible(foreignKeyProperties: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IProperty>, principalKeyProperties: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IProperty>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<void>;
+  GetPropertiesWithMinimalOverlapIfPossible(foreignKeyProperties: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IProperty>, principalKeyProperties: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Metadata.IProperty>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IModel {
-  getRootEntityTypes(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityType>>;
-  getEntityTypesInHierarchicalOrder(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityType>>;
-  findSameTypeNameWithDifferentNamespace(type: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
+  GetRootEntityTypes(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityType>>;
+  GetEntityTypesInHierarchicalOrder(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IEntityType>>;
+  FindSameTypeNameWithDifferentNamespace(type: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IMutableModel {
-  setProductVersion(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<void>;
+  SetProductVersion(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<void>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IProperty {
-  findGenerationProperty(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IProperty | undefined>;
-  mayBeStoreGenerated(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  FindGenerationProperty(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IProperty | undefined>;
+  MayBeStoreGenerated(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IPropertyBase {
-  getShadowIndex(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
-  getStoreGeneratedIndex(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
-  getRelationshipIndex(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
-  getOriginalValueIndex(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
-  getPropertyIndexes(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.PropertyIndexes>;
-  getPropertyAccessors(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.PropertyAccessors>;
-  tryGetMemberInfo(forMaterialization: boolean, forSet: boolean, memberInfo: MemberInfo, errorMessage: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  GetShadowIndex(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
+  GetStoreGeneratedIndex(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
+  GetRelationshipIndex(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
+  GetOriginalValueIndex(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
+  GetPropertyIndexes(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.PropertyIndexes>;
+  GetPropertyAccessors(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.PropertyAccessors>;
+  TryGetMemberInfo(forMaterialization: boolean, forSet: boolean, memberInfo: MemberInfo, errorMessage: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyComplexProperty {
-  requiresOriginalValue(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  RequiresOriginalValue(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyEntityType {
-  getNavigationMemberInfo(navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<MemberInfo>;
-  isOwned(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  findDeclaredOwnership(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey | undefined>;
-  findInOwnershipPath(targetType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType | undefined>;
-  isInOwnershipPath(targetType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  isInOwnershipPath(targetType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  findDeclaredPrimaryKey(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey | undefined>;
-  findDerivedNavigations(navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
+  GetNavigationMemberInfo(navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<MemberInfo>;
+  IsOwned(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  FindDeclaredOwnership(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey | undefined>;
+  FindInOwnershipPath(targetType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType | undefined>;
+  IsInOwnershipPath(targetType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  IsInOwnershipPath(targetType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  FindDeclaredPrimaryKey(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey | undefined>;
+  FindDerivedNavigations(navigationName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyForeignKey {
-  isSelfReferencing(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  getNavigations(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
-  findNavigationsFrom(entityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
-  findNavigationsFromInHierarchy(entityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
-  findNavigationsTo(entityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
-  findNavigationsToInHierarchy(entityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
-  areCompatible(duplicateForeignKey: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, shouldThrow: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  getConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
-  getDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
+  IsSelfReferencing(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  GetNavigations(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
+  FindNavigationsFrom(entityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
+  FindNavigationsFromInHierarchy(entityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
+  FindNavigationsTo(entityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
+  FindNavigationsToInHierarchy(entityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
+  AreCompatible(duplicateForeignKey: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, shouldThrow: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  GetConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyIndex {
-  areCompatible(duplicateIndex: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyIndex, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, shouldThrow: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  getDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
-  getDefaultDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
+  AreCompatible(duplicateIndex: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyIndex, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, shouldThrow: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  GetDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
+  GetDefaultDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyKey {
-  indexOf(property: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
-  areCompatible(duplicateKey: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, shouldThrow: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  getName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
-  getDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
+  IndexOf(property: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<int>;
+  AreCompatible(duplicateKey: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, shouldThrow: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  GetName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, logger: Microsoft_EntityFrameworkCore_Diagnostics.IDiagnosticsLogger_1<Microsoft_EntityFrameworkCore.DbLoggerCategory_Model_Validation>): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyNavigation {
-  createMemberIdentity(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.MemberIdentity>;
+  CreateMemberIdentity(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.MemberIdentity>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyProperty {
-  findFirstDifferentPrincipal(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty | undefined>;
-  requiresValueGenerator(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  isForeignKeyToSelf(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  requiresOriginalValue(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  getConfiguredColumnType(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
-  isOrdinalKeyProperty(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  FindFirstDifferentPrincipal(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty | undefined>;
+  RequiresValueGenerator(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  IsForeignKeyToSelf(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  RequiresOriginalValue(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  GetConfiguredColumnType(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string | undefined>;
+  IsOrdinalKeyProperty(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyPropertyBase {
-  getIdentifyingMemberInfo(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<MemberInfo | undefined>;
+  GetIdentifyingMemberInfo(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<MemberInfo | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlySkipNavigation {
-  createMemberIdentity(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.MemberIdentity>;
+  CreateMemberIdentity(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata.MemberIdentity>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyTypeBase {
-  useEagerSnapshots(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  shortNameChain(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string>;
-  checkContains<T>(property: T): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<T>;
-  isMainFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  UseEagerSnapshots(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  ShortNameChain(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<string>;
+  CheckContains<T>(property: T): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<T>;
+  IsMainFragment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_ITypeBase {
-  getViewOrTableMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableMappingBase>>;
+  GetViewOrTableMappings(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableMappingBase>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_EntityType {
-  leastDerivedType(otherEntityType: Microsoft_EntityFrameworkCore_Metadata_Internal.EntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.EntityType | undefined>;
-  isAssignableFrom(otherEntityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  isStrictlyDerivedFrom(otherEntityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  getDiscriminatorValue(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<unknown | undefined>;
+  LeastDerivedType(otherEntityType: Microsoft_EntityFrameworkCore_Metadata_Internal.EntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.EntityType | undefined>;
+  IsAssignableFrom(otherEntityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  IsStrictlyDerivedFrom(otherEntityType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  GetDiscriminatorValue(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<unknown | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeEntityType {
-  calculateCounts(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.PropertyCounts>;
+  CalculateCounts(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<Microsoft_EntityFrameworkCore_Metadata_Internal.PropertyCounts>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_Property {
-  isKey(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  IsKey(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_PropertyBase {
-  isShadowProperty(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  isIndexerProperty(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  IsShadowProperty(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  IsIndexerProperty(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_TypeConfigurationType {
-  isEntityType(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  IsEntityType(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_ValueGenerated {
-  forAdd(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
-  forUpdate(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  ForAdd(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
+  ForUpdate(): ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Internal<boolean>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Migrations_IMigrationsAssembly {
-  getMigrationId(nameOrId: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Migrations<string>;
+  GetMigrationId(nameOrId: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Migrations<string>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Migrations_Internal_Migration {
-  getId(): ExtensionMethods_Microsoft_EntityFrameworkCore_Migrations_Internal<string>;
+  GetId(): ExtensionMethods_Microsoft_EntityFrameworkCore_Migrations_Internal<string>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Storage_IDbContextTransaction {
-  getDbTransaction(): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<DbTransaction>;
+  GetDbTransaction(): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<DbTransaction>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategy {
-  executeInTransaction(operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<void>;
-  executeInTransactionAsync(operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task>;
-  executeInTransactionAsync(operation: Func_2<CancellationToken, Task>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task>;
-  executeInTransaction<TResult>(operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<TResult>;
-  executeInTransactionAsync<TResult>(operation: Func_2<CancellationToken, Task_1<TResult>>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task_1<TResult>>;
-  executeInTransaction<TState>(state: TState, operation: Action_1<TState>, verifySucceeded: Func_2<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<void>;
-  executeInTransactionAsync<TState>(state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task>;
-  executeInTransaction<TState, TResult>(state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<TResult>;
-  executeInTransactionAsync<TState, TResult>(state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task_1<TResult>>;
+  ExecuteInTransaction(operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<void>;
+  ExecuteInTransactionAsync(operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task>;
+  ExecuteInTransactionAsync(operation: Func_2<CancellationToken, Task>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task>;
+  ExecuteInTransaction<TResult>(operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<TResult>;
+  ExecuteInTransactionAsync<TResult>(operation: Func_2<CancellationToken, Task_1<TResult>>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task_1<TResult>>;
+  ExecuteInTransaction<TState>(state: TState, operation: Action_1<TState>, verifySucceeded: Func_2<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<void>;
+  ExecuteInTransactionAsync<TState>(state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task>;
+  ExecuteInTransaction<TState, TResult>(state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<TResult>;
+  ExecuteInTransactionAsync<TState, TResult>(state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken: CancellationToken): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Task_1<TResult>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandBuilder {
-  appendLine(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
-  appendLine(value: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
-  appendLines(value: string, skipFinalNewline: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
-  indent(): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<IDisposable>;
-  addParameter(invariantName: string, name: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
-  addParameter(invariantName: string, name: string, relationalTypeMapping: Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping, nullable: Nullable_1<System_Internal.Boolean>, direction: ParameterDirection): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
-  addCompositeParameter(invariantName: string, subParameters: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Storage.IRelationalParameter>): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
-  addRawParameter(invariantName: string, dbParameter: DbParameter): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
+  AppendLine(value: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
+  AppendLine(value: FormattableString): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
+  AppendLines(value: string, skipFinalNewline: boolean): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
+  Indent(): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<IDisposable>;
+  AddParameter(invariantName: string, name: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
+  AddParameter(invariantName: string, name: string, relationalTypeMapping: Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping, nullable: Nullable_1<System_Internal.Boolean>, direction: ParameterDirection): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
+  AddCompositeParameter(invariantName: string, subParameters: IReadOnlyList_1<Microsoft_EntityFrameworkCore_Storage.IRelationalParameter>): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
+  AddRawParameter(invariantName: string, dbParameter: DbParameter): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.IRelationalCommandBuilder>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Storage_IRelationalTypeMappingSource {
-  getMappingForValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
-  getMappingForValue(value: unknown, model: Microsoft_EntityFrameworkCore_Metadata.IModel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
-  getMapping(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
-  getMapping(clrType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
-  getMapping(clrType: Type, model: Microsoft_EntityFrameworkCore_Metadata.IModel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
-  getMapping(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  GetMappingForValue(value: unknown): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  GetMappingForValue(value: unknown, model: Microsoft_EntityFrameworkCore_Metadata.IModel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  GetMapping(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  GetMapping(clrType: Type): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  GetMapping(clrType: Type, model: Microsoft_EntityFrameworkCore_Metadata.IModel): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  GetMapping(typeName: string): ExtensionMethods_Microsoft_EntityFrameworkCore_Storage<Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Update_IUpdateEntry {
-  getCurrentProviderValue(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<unknown | undefined>;
-  getOriginalProviderValue(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<unknown | undefined>;
-  toDebugString(options: Microsoft_EntityFrameworkCore_ChangeTracking.ChangeTrackerDebugStringOptions, indent: int): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<string>;
-  buildCurrentValuesString(properties: IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IPropertyBase>): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<string>;
-  buildOriginalValuesString(properties: IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IPropertyBase>): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<string>;
+  GetCurrentProviderValue(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<unknown | undefined>;
+  GetOriginalProviderValue(property: Microsoft_EntityFrameworkCore_Metadata.IProperty): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<unknown | undefined>;
+  ToDebugString(options: Microsoft_EntityFrameworkCore_ChangeTracking.ChangeTrackerDebugStringOptions, indent: int): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<string>;
+  BuildCurrentValuesString(properties: IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IPropertyBase>): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<string>;
+  BuildOriginalValuesString(properties: IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IPropertyBase>): ExtensionMethods_Microsoft_EntityFrameworkCore_Update<string>;
 }
 
 export interface __Ext_System_Transactions_DatabaseFacade {
-  enlistTransaction(transaction: Transaction): ExtensionMethods_System_Transactions<void>;
-  getEnlistedTransaction(): ExtensionMethods_System_Transactions<Transaction | undefined>;
+  EnlistTransaction(transaction: Transaction): ExtensionMethods_System_Transactions<void>;
+  GetEnlistedTransaction(): ExtensionMethods_System_Transactions<Transaction | undefined>;
 }
 
 // Generic helper type for extension methods in namespace: Microsoft.EntityFrameworkCore
