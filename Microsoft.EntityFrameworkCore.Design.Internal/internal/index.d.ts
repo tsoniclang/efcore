@@ -62,7 +62,15 @@ export const QualifiedName: {
 
 export type QualifiedName = QualifiedName$instance;
 
-export interface CSharpRuntimeAnnotationCodeGenerator$instance {
+export abstract class CSharpRuntimeAnnotationCodeGenerator$protected {
+    protected readonly Dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies;
+    protected CreateDefaultTypeMapping(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): CoreTypeMapping | undefined;
+    protected GenerateSimpleAnnotation(annotationName: string, valueString: string, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    protected GenerateSimpleAnnotations(parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+}
+
+
+export interface CSharpRuntimeAnnotationCodeGenerator$instance extends CSharpRuntimeAnnotationCodeGenerator$protected {
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
@@ -146,7 +154,12 @@ export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
 
 export type CSharpRuntimeAnnotationCodeGeneratorParameters = CSharpRuntimeAnnotationCodeGeneratorParameters$instance;
 
-export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends CSharpRuntimeAnnotationCodeGenerator$instance {
+export abstract class RelationalCSharpRuntimeAnnotationCodeGenerator$protected {
+    protected readonly RelationalDependencies: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
+}
+
+
+export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends RelationalCSharpRuntimeAnnotationCodeGenerator$protected, CSharpRuntimeAnnotationCodeGenerator$instance {
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;

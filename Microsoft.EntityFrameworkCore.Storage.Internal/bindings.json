@@ -33,6 +33,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -52,6 +53,12 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter"
+        }
+      ],
       "methods": [],
       "properties": [
         {
@@ -69,6 +76,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.IJsonConvertedValueReaderWriter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -87,6 +95,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.ICompositeJsonValueReaderWriter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -122,6 +131,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.INamedConnectionStringResolver",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -143,6 +153,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.CompositeRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Object):System.Void",
@@ -159,6 +179,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.CompositeRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -178,6 +199,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -198,6 +220,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -218,6 +241,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.CompositeRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -239,6 +263,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.CompositeRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -257,6 +282,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -272,6 +298,7 @@
           "normalizedSignature": "constructor|(System.String,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Storage.IRelationalParameter,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.CompositeRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -288,6 +315,23 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
+          "clrName": "System.IEquatable\u00601",
+          "typeArguments": [
+            "DatabaseFacadeDependencies"
+          ]
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies::ToString():System.String",
@@ -304,6 +348,27 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies::PrintMembers(System.Text.StringBuilder):System.Boolean",
+          "clrName": "PrintMembers",
+          "metadataToken": 100665203,
+          "canonicalSignature": "(System.Text.StringBuilder):System.Boolean",
+          "normalizedSignature": "PrintMembers|(System.Text.StringBuilder):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -323,6 +388,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -342,6 +408,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -361,6 +428,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -380,12 +448,32 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         }
       ],
       "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies::EqualityContract:System.Type",
+          "clrName": "EqualityContract",
+          "metadataToken": 385876365,
+          "canonicalSignature": ":System.Type",
+          "normalizedSignature": "EqualityContract|:System.Type|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies::TransactionManager:Microsoft.EntityFrameworkCore.Storage.IDbContextTransactionManager",
           "clrName": "TransactionManager",
@@ -401,6 +489,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -419,6 +508,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -437,6 +527,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -455,6 +546,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -473,6 +565,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -491,6 +584,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -509,6 +603,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -527,6 +622,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -545,6 +641,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -563,6 +660,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -581,6 +679,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -599,6 +698,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -618,6 +718,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -637,6 +738,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -656,6 +758,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -675,6 +778,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -694,6 +798,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -713,6 +818,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -732,6 +838,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -751,6 +858,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -770,6 +878,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -789,6 +898,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -804,6 +914,18 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.IDbContextTransactionManager,Microsoft.EntityFrameworkCore.Storage.IDatabaseCreator,Microsoft.EntityFrameworkCore.Storage.IExecutionStrategy,Microsoft.EntityFrameworkCore.Storage.IExecutionStrategyFactory,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Storage.IDatabaseProvider,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BCommand,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector,Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions,Microsoft.EntityFrameworkCore.Query.IAsyncQueryProvider,Microsoft.EntityFrameworkCore.Metadata.IAdHocMapper,Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource):void|static=false",
           "isStatic": false,
           "parameterCount": 11,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies::.ctor(Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies):void",
+          "metadataToken": 100665210,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -820,6 +942,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.IExceptionDetector",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IExceptionDetector"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.ExceptionDetector::IsCancellation(System.Exception,System.Threading.CancellationToken):System.Boolean",
@@ -836,6 +968,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.ExceptionDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -855,6 +988,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IExceptionDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -872,6 +1006,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.ExceptionDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -888,6 +1023,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.IExecutionStrategyFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IExecutionStrategyFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.ExecutionStrategyFactory::Create():Microsoft.EntityFrameworkCore.Storage.IExecutionStrategy",
@@ -904,6 +1049,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.ExecutionStrategyFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -923,13 +1069,34 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IExecutionStrategyFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IExecutionStrategyFactory"
         }
       ],
-      "properties": [],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.ExecutionStrategyFactory::Dependencies:Microsoft.EntityFrameworkCore.Storage.ExecutionStrategyDependencies",
+          "clrName": "Dependencies",
+          "metadataToken": 385876377,
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Storage.ExecutionStrategyDependencies",
+          "normalizedSignature": "Dependencies|:Microsoft.EntityFrameworkCore.Storage.ExecutionStrategyDependencies|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.ExecutionStrategyFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "fields": [],
       "events": [],
       "constructors": [
@@ -940,6 +1107,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.ExecutionStrategyDependencies):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.ExecutionStrategyFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -956,6 +1124,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.INamedConnectionStringResolver",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.Internal.INamedConnectionStringResolver"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.INamedConnectionStringResolver::ResolveConnectionString(System.String):System.String",
@@ -972,6 +1150,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.INamedConnectionStringResolver",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -992,12 +1171,33 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolver",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         }
       ],
-      "properties": [],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolver::ApplicationServiceProvider:System.IServiceProvider",
+          "clrName": "ApplicationServiceProvider",
+          "metadataToken": 385876402,
+          "canonicalSignature": ":System.IServiceProvider",
+          "normalizedSignature": "ApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolver",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ],
       "fields": [],
       "events": [],
       "constructors": [
@@ -1008,6 +1208,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolver",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1024,6 +1225,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase::ResolveConnectionString(System.String):System.String",
@@ -1040,15 +1245,48 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         }
       ],
-      "properties": [],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase::ApplicationServiceProvider:System.IServiceProvider",
+          "clrName": "ApplicationServiceProvider",
+          "metadataToken": 385876403,
+          "canonicalSignature": ":System.IServiceProvider",
+          "normalizedSignature": "ApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ],
       "fields": [],
       "events": [],
-      "constructors": []
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase::.ctor():void",
+          "metadataToken": 100665821,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
@@ -1061,7 +1299,104 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping"
+      },
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Clone(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping\u002BRelationalTypeMappingParameters):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping",
+          "clrName": "Clone",
+          "metadataToken": 100665824,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping\u002BRelationalTypeMappingParameters):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping",
+          "normalizedSignature": "Clone|(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping\u002BRelationalTypeMappingParameters):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Clone(Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping\u002BCoreTypeMappingParameters):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping",
+          "clrName": "Clone",
+          "metadataToken": 0,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping\u002BCoreTypeMappingParameters):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping",
+          "normalizedSignature": "Clone|(Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping\u002BCoreTypeMappingParameters):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "BaseOverload",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Clone(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter,System.Nullable_1):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping",
+          "clrName": "Clone",
+          "metadataToken": 0,
+          "canonicalSignature": "(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter,System.Nullable_1):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping",
+          "normalizedSignature": "Clone|(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter,System.Nullable_1):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "BaseOverload",
+          "arity": 0,
+          "parameterCount": 9,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "in"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Clone(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping",
+          "clrName": "Clone",
+          "metadataToken": 0,
+          "canonicalSignature": "(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping",
+          "normalizedSignature": "Clone|(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "BaseOverload",
+          "arity": 0,
+          "parameterCount": 8,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 0,
+              "modifier": "in"
+            }
+          ]
+        }
+      ],
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Default:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
@@ -1078,6 +1413,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1092,6 +1428,7 @@
           "normalizedSignature": "constructor|(System.String):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1108,6 +1445,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RawRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
@@ -1124,6 +1471,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1143,6 +1491,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1162,6 +1511,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1182,6 +1532,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1202,6 +1553,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1223,6 +1575,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -1238,6 +1591,7 @@
           "normalizedSignature": "constructor|(System.String,System.Data.Common.DbParameter):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1254,6 +1608,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.IRawSqlCommandBuilder",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IRawSqlCommandBuilder"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RawSqlCommandBuilder::Build(System.String):Microsoft.EntityFrameworkCore.Storage.IRelationalCommand",
@@ -1270,6 +1634,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawSqlCommandBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1289,6 +1654,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawSqlCommandBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1308,6 +1674,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawSqlCommandBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1327,6 +1694,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRawSqlCommandBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1347,6 +1715,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRawSqlCommandBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1367,6 +1736,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRawSqlCommandBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1384,6 +1754,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory,Microsoft.EntityFrameworkCore.Storage.ISqlGenerationHelper,Microsoft.EntityFrameworkCore.Storage.IParameterNameGeneratorFactory,Microsoft.EntityFrameworkCore.Storage.IRelationalTypeMappingSource):void|static=false",
           "isStatic": false,
           "parameterCount": 4,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawSqlCommandBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1400,6 +1771,27 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseFacadeDependencies",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseFacadeDependencies"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
+          "clrName": "System.IEquatable\u00601",
+          "typeArguments": [
+            "RelationalDatabaseFacadeDependencies"
+          ]
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies::ToString():System.String",
@@ -1416,6 +1808,27 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies::PrintMembers(System.Text.StringBuilder):System.Boolean",
+          "clrName": "PrintMembers",
+          "metadataToken": 100665850,
+          "canonicalSignature": "(System.Text.StringBuilder):System.Boolean",
+          "normalizedSignature": "PrintMembers|(System.Text.StringBuilder):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1435,6 +1848,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1454,6 +1868,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1473,6 +1888,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1492,12 +1908,32 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         }
       ],
       "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies::EqualityContract:System.Type",
+          "clrName": "EqualityContract",
+          "metadataToken": 385876405,
+          "canonicalSignature": ":System.Type",
+          "normalizedSignature": "EqualityContract|:System.Type|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies::TransactionManager:Microsoft.EntityFrameworkCore.Storage.IDbContextTransactionManager",
           "clrName": "TransactionManager",
@@ -1513,6 +1949,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1531,6 +1968,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1549,6 +1987,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1567,6 +2006,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1585,6 +2025,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1603,6 +2044,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1621,6 +2063,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1639,6 +2082,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1657,6 +2101,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1675,6 +2120,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1693,6 +2139,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1711,6 +2158,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1729,6 +2177,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1747,6 +2196,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1766,6 +2216,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -1785,6 +2236,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -1804,6 +2256,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -1823,6 +2276,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1842,6 +2296,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1861,6 +2316,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1880,6 +2336,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1899,6 +2356,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1918,6 +2376,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1937,6 +2396,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1956,6 +2416,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1975,6 +2436,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -1994,6 +2456,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -2009,6 +2472,18 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.IDbContextTransactionManager,Microsoft.EntityFrameworkCore.Storage.IDatabaseCreator,Microsoft.EntityFrameworkCore.Storage.IExecutionStrategy,Microsoft.EntityFrameworkCore.Storage.IExecutionStrategyFactory,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Storage.IDatabaseProvider,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Diagnostics.IRelationalCommandDiagnosticsLogger,Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector,Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,Microsoft.EntityFrameworkCore.Storage.IRawSqlCommandBuilder,Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions,Microsoft.EntityFrameworkCore.Query.IAsyncQueryProvider,Microsoft.EntityFrameworkCore.Metadata.IAdHocMapper,Microsoft.EntityFrameworkCore.Storage.IRelationalTypeMappingSource):void|static=false",
           "isStatic": false,
           "parameterCount": 13,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies::.ctor(Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies):void",
+          "metadataToken": 100665857,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -2025,6 +2500,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase::AddDbParameter(System.Data.Common.DbCommand,System.Object):System.Void",
@@ -2041,6 +2526,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2060,6 +2546,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2079,6 +2566,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2099,6 +2587,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2121,6 +2610,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -2139,6 +2629,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -2146,7 +2637,19 @@
       ],
       "fields": [],
       "events": [],
-      "constructors": []
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase::.ctor(System.String):void",
+          "metadataToken": 100665858,
+          "canonicalSignature": "(System.String):void",
+          "normalizedSignature": "constructor|(System.String):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter",
@@ -2159,6 +2662,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
+          "clrName": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Object):System.Void",
@@ -2175,6 +2688,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2194,6 +2708,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2214,6 +2729,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2234,6 +2750,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2255,6 +2772,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -2273,6 +2791,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -2291,6 +2810,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -2306,6 +2826,7 @@
           "normalizedSignature": "constructor|(System.String,System.String,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Data.ParameterDirection):void|static=false",
           "isStatic": false,
           "parameterCount": 5,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -2322,6 +2843,10 @@
       "isSealed": true,
       "isStatic": true,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.DbParameterCollectionExtensions::FormatParameters(System.Data.Common.DbParameterCollection,System.Boolean):System.String",
@@ -2338,6 +2863,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DbParameterCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": true
@@ -2357,6 +2883,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DbParameterCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": true
@@ -2376,6 +2903,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.DbParameterCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false

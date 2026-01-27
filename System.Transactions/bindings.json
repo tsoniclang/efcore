@@ -16,6 +16,10 @@
       "isSealed": true,
       "isStatic": true,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions::EnlistTransaction(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void",
@@ -32,6 +36,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "System.Transactions.TransactionsDatabaseFacadeExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -51,6 +56,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "System.Transactions.TransactionsDatabaseFacadeExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true

@@ -20,6 +20,10 @@
       "isSealed": true,
       "isStatic": true,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions::AddDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action_1[[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.Extensions.DependencyInjection.ServiceLifetime,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.Extensions.DependencyInjection.IServiceCollection",
@@ -36,6 +40,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -55,6 +60,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -74,6 +80,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -93,6 +100,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -112,6 +120,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -131,6 +140,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -150,6 +160,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -169,6 +180,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -188,6 +200,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -207,6 +220,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -226,6 +240,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true

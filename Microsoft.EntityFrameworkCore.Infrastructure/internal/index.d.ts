@@ -13,9 +13,10 @@ import type { IDbContextLogger, IDiagnosticsLogger_1, IInterceptor, ISingletonIn
 import type { IDbContextPool_1 } from "../../Microsoft.EntityFrameworkCore.Internal/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Metadata_Builders_Internal from "../../Microsoft.EntityFrameworkCore.Metadata.Builders/internal/index.js";
 import type { IConventionAnnotatableBuilder, IConventionModelBuilder } from "../../Microsoft.EntityFrameworkCore.Metadata.Builders/internal/index.js";
+import type { IConventionSetBuilder } from "../../Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure/internal/index.js";
 import type { ConventionAnnotation, IMemberClassifier } from "../../Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Metadata_Internal from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
-import type { ConfigurationSource, IClrPropertySetter, IConstructorBindingFactory, IConventionAnnotatable, IConventionAnnotation, IModel, IMutableAnnotatable, IParameterBindingFactories, IProperty, IPropertyBase, IReadOnlyProperty, IRelationalAnnotationProvider, MemberIdentity, StoreObjectIdentifier } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
+import type { ConfigurationSource, ICheckConstraint, IClrPropertySetter, IComplexType, IConstructorBindingFactory, IConventionAnnotatable, IConventionAnnotation, IConventionComplexProperty, IConventionModel, IConventionProperty, IConventionTypeBase, IEntityType, IForeignKey, IIndex, IKey, IModel, IMutableAnnotatable, IParameterBindingFactories, IProperty, IPropertyBase, IReadOnlyProperty, IRelationalAnnotationProvider, ITrigger, MemberIdentity, StoreObjectIdentifier } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { IValueConverterSelector } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Storage_Internal from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
 import type { ExecutionStrategyDependencies, IDatabaseFacadeDependencies, IDatabaseFacadeDependenciesAccessor, IDbContextTransaction, IExecutionStrategy, IRelationalTypeMappingSource, ITypeMappingSource } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
@@ -25,7 +26,7 @@ import type { AutoTransactionBehavior, DbContext, DbContextOptions_1, DbContextO
 import type { IDictionary, IEnumerable, IReadOnlyDictionary, IReadOnlyList, ISet } from "@tsonic/dotnet/System.Collections.Generic.js";
 import type { DbConnection } from "@tsonic/dotnet/System.Data.Common.js";
 import * as System_Diagnostics_Tracing_Internal from "@tsonic/dotnet/System.Diagnostics.Tracing.js";
-import type { EventSource } from "@tsonic/dotnet/System.Diagnostics.Tracing.js";
+import type { EventCommandEventArgs, EventSource } from "@tsonic/dotnet/System.Diagnostics.Tracing.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Action, Attribute, Boolean as ClrBoolean, Char, Enum, FormattableString, Func, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, IServiceProvider, ISpanFormattable, Nullable, Object as ClrObject, String as ClrString, TimeSpan, Type, ValueTuple, ValueType, Void } from "@tsonic/dotnet/System.js";
 import type { Expression, LambdaExpression, MemberExpression, MethodCallExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
@@ -268,7 +269,16 @@ export const ServiceCharacteristics: {
 
 export type ServiceCharacteristics = ServiceCharacteristics$instance;
 
-export interface Annotatable$instance extends AnnotatableBase$instance {
+export abstract class Annotatable$protected {
+    protected AddAnnotation2(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+    protected EnsureMutable(): void;
+    protected EnsureReadOnly(): void;
+    protected SetAnnotation2(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Annotatable$instance extends Annotatable$protected, AnnotatableBase$instance {
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
@@ -302,7 +312,20 @@ export interface __Annotatable$views {
 export type Annotatable = Annotatable$instance & __Annotatable$views;
 
 
-export interface AnnotatableBase$instance {
+export abstract class AnnotatableBase$protected {
+    protected AddAnnotation(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
+    protected CreateAnnotation(name: string, value: unknown): Annotation;
+    protected CreateRuntimeAnnotation(name: string, value: unknown): Annotation;
+    protected EnsureMutable(): void;
+    protected EnsureReadOnly(): void;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetRuntimeAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation;
+}
+
+
+export interface AnnotatableBase$instance extends AnnotatableBase$protected {
     readonly IsReadOnly: boolean;
     get Item(): unknown | undefined;
     set Item(value: unknown);
@@ -339,7 +362,7 @@ export type AnnotatableBase = AnnotatableBase$instance & __AnnotatableBase$views
 
 
 export interface AnnotatableBuilder_2$instance<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder> {
-    readonly Metadata: EntityType | TMetadata;
+    readonly Metadata: ComplexType | TMetadata;
     readonly ModelBuilder: InternalModelBuilder | TModelBuilder;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
@@ -353,6 +376,7 @@ export interface AnnotatableBuilder_2$instance<TMetadata extends ConventionAnnot
 
 
 export const AnnotatableBuilder_2: {
+    new<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder>(metadata: TMetadata, modelBuilder: TModelBuilder): AnnotatableBuilder_2<TMetadata, TModelBuilder>;
 };
 
 
@@ -383,7 +407,17 @@ export interface Annotation$instance extends IAnnotation$instance {}
 export type Annotation = Annotation$instance & __Annotation$views;
 
 
-export interface ConventionAnnotatable$instance extends Annotatable$instance {
+export abstract class ConventionAnnotatable$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected CreateAnnotation(name: string, value: unknown): Annotation;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ConventionAnnotatable$instance extends ConventionAnnotatable$protected, Annotatable$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
@@ -401,12 +435,13 @@ export interface ConventionAnnotatable$instance extends Annotatable$instance {
     GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation2(name: string, value: unknown): void;
     SetOrRemoveAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation | undefined;
 }
 
 
 export const ConventionAnnotatable: {
+    new(): ConventionAnnotatable;
 };
 
 
@@ -420,7 +455,12 @@ export interface __ConventionAnnotatable$views {
 export type ConventionAnnotatable = ConventionAnnotatable$instance & __ConventionAnnotatable$views;
 
 
-export interface CoreOptionsExtension$instance {
+export abstract class CoreOptionsExtension$protected {
+    protected Clone(): CoreOptionsExtension;
+}
+
+
+export interface CoreOptionsExtension$instance extends CoreOptionsExtension$protected {
     readonly ApplicationServiceProvider: IServiceProvider | undefined;
     readonly AsyncSeeder: Func<DbContext, System_Internal.Boolean, CancellationToken, Task> | undefined;
     readonly AutoResolveRootProvider: boolean;
@@ -471,6 +511,7 @@ export interface CoreOptionsExtension$instance {
 
 export const CoreOptionsExtension: {
     new(): CoreOptionsExtension;
+    new(copyFrom: CoreOptionsExtension): CoreOptionsExtension;
 };
 
 
@@ -560,6 +601,7 @@ export interface DbContextOptionsExtensionInfo$instance {
 
 
 export const DbContextOptionsExtensionInfo: {
+    new(extension: IDbContextOptionsExtension): DbContextOptionsExtensionInfo;
 };
 
 
@@ -578,7 +620,12 @@ export const DebugView: {
 
 export type DebugView = DebugView$instance;
 
-export interface EntityFrameworkEventSource$instance extends EventSource {
+export abstract class EntityFrameworkEventSource$protected {
+    protected OnEventCommand(command: EventCommandEventArgs): void;
+}
+
+
+export interface EntityFrameworkEventSource$instance extends EntityFrameworkEventSource$protected, EventSource {
     CompiledQueryCacheHit(): void;
     CompiledQueryCacheMiss(): void;
     DbContextDisposing(): void;
@@ -609,7 +656,13 @@ export const EntityFrameworkInternalAttribute: {
 
 export type EntityFrameworkInternalAttribute = EntityFrameworkInternalAttribute$instance;
 
-export interface EntityFrameworkRelationalServicesBuilder$instance extends EntityFrameworkServicesBuilder {
+export abstract class EntityFrameworkRelationalServicesBuilder$protected {
+    protected TryGetServiceCharacteristics2(serviceType: Type): Nullable<ServiceCharacteristics>;
+    protected TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
+}
+
+
+export interface EntityFrameworkRelationalServicesBuilder$instance extends EntityFrameworkRelationalServicesBuilder$protected, EntityFrameworkServicesBuilder {
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
 }
 
@@ -622,7 +675,14 @@ export const EntityFrameworkRelationalServicesBuilder: {
 
 export type EntityFrameworkRelationalServicesBuilder = EntityFrameworkRelationalServicesBuilder$instance;
 
-export interface EntityFrameworkServicesBuilder$instance {
+export abstract class EntityFrameworkServicesBuilder$protected {
+    protected readonly ServiceCollectionMap: ServiceCollectionMap;
+    protected GetServiceCharacteristics(serviceType: Type): ServiceCharacteristics;
+    protected TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
+}
+
+
+export interface EntityFrameworkServicesBuilder$instance extends EntityFrameworkServicesBuilder$protected {
     TryAdd<TService, TImplementation extends TService>(): EntityFrameworkServicesBuilder;
     TryAdd(serviceType: Type, implementationType: Type): EntityFrameworkServicesBuilder;
     TryAdd<TService>(factory: Func<IServiceProvider, TService>): EntityFrameworkServicesBuilder;
@@ -673,7 +733,12 @@ export const IndentedStringBuilder: {
 
 export type IndentedStringBuilder = IndentedStringBuilder$instance;
 
-export interface ModelCacheKey$instance {
+export abstract class ModelCacheKey$protected {
+    protected Equals(other: ModelCacheKey): boolean;
+}
+
+
+export interface ModelCacheKey$instance extends ModelCacheKey$protected {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
 }
@@ -687,7 +752,12 @@ export const ModelCacheKey: {
 
 export type ModelCacheKey = ModelCacheKey$instance;
 
-export interface ModelCacheKeyFactory$instance {
+export abstract class ModelCacheKeyFactory$protected {
+    protected readonly Dependencies: ModelCacheKeyFactoryDependencies;
+}
+
+
+export interface ModelCacheKeyFactory$instance extends ModelCacheKeyFactory$protected {
     Create(context: DbContext): unknown;
     Create(context: DbContext, designTime: boolean): unknown;
 }
@@ -721,7 +791,12 @@ export const ModelCacheKeyFactoryDependencies: {
 
 export type ModelCacheKeyFactoryDependencies = ModelCacheKeyFactoryDependencies$instance;
 
-export interface ModelCustomizer$instance {
+export abstract class ModelCustomizer$protected {
+    protected readonly Dependencies: ModelCustomizerDependencies;
+}
+
+
+export interface ModelCustomizer$instance extends ModelCustomizer$protected {
     Customize(modelBuilder: ModelBuilder, context: DbContext): void;
 }
 
@@ -773,7 +848,13 @@ export const ModelDependencies: {
 
 export type ModelDependencies = ModelDependencies$instance;
 
-export interface ModelRuntimeInitializer$instance {
+export abstract class ModelRuntimeInitializer$protected {
+    protected readonly Dependencies: ModelRuntimeInitializerDependencies;
+    protected InitializeModel(model: IModel, designTime: boolean, prevalidation: boolean): void;
+}
+
+
+export interface ModelRuntimeInitializer$instance extends ModelRuntimeInitializer$protected {
     Initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
 }
 
@@ -803,18 +884,30 @@ export const ModelRuntimeInitializerDependencies: {
 
 export type ModelRuntimeInitializerDependencies = ModelRuntimeInitializerDependencies$instance;
 
-export interface ModelSnapshot$instance {
+export abstract class ModelSnapshot$protected {
+    protected abstract BuildModel(modelBuilder: ModelBuilder): void;
+}
+
+
+export interface ModelSnapshot$instance extends ModelSnapshot$protected {
     readonly Model: IModel;
 }
 
 
 export const ModelSnapshot: {
+    new(): ModelSnapshot;
 };
 
 
 export type ModelSnapshot = ModelSnapshot$instance;
 
-export interface ModelSource$instance {
+export abstract class ModelSource$protected {
+    protected readonly Dependencies: ModelSourceDependencies;
+    protected CreateModel(context: DbContext, conventionSetBuilder: IConventionSetBuilder, modelDependencies: ModelDependencies): IModel;
+}
+
+
+export interface ModelSource$instance extends ModelSource$protected {
     CreateModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
     GetModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
 }
@@ -853,7 +946,39 @@ export const ModelSourceDependencies: {
 
 export type ModelSourceDependencies = ModelSourceDependencies$instance;
 
-export interface ModelValidator$instance {
+export abstract class ModelValidator$protected {
+    protected readonly Dependencies: ModelValidatorDependencies;
+    protected IsOwned(targetType: Type, conventionModel: IConventionModel): boolean;
+    protected IsRedundant(foreignKey: IForeignKey): boolean;
+    protected LogShadowProperties(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ThrowPropertyNotMappedException(propertyType: string, structuralType: IConventionTypeBase, unmappedProperty: IConventionProperty): void;
+    protected ValidateChangeTrackingStrategy(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateClrInheritance(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateData(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateDiscriminatorValues(rootEntityType: IEntityType): void;
+    protected ValidateDiscriminatorValues(complexType: IComplexType): void;
+    protected ValidateEntityClrTypes(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateFieldMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateForeignKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateIgnoredMembers(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateInheritanceMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateNoCycles(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateNoMutableKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateNonNullPrimaryKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateNoShadowKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateOwnership(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePrimitiveCollections(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePropertyMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePropertyMapping(complexProperty: IConventionComplexProperty, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePropertyMapping(structuralType: IConventionTypeBase, model: IConventionModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateQueryFilters(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateRelationships(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateTriggers(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateTypeMappings(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+}
+
+
+export interface ModelValidator$instance extends ModelValidator$protected {
     Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
 }
 
@@ -910,7 +1035,13 @@ export interface PooledDbContextFactory_1$instance<TContext extends DbContext> e
 export type PooledDbContextFactory_1<TContext extends DbContext> = PooledDbContextFactory_1$instance<TContext> & __PooledDbContextFactory_1$views<TContext>;
 
 
-export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> {
+export abstract class RelationalDbContextOptionsBuilder_2$protected<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> {
+    protected readonly OptionsBuilder: DbContextOptionsBuilder;
+    protected WithOption(setAction: Func<TExtension, TExtension>): TBuilder;
+}
+
+
+export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> extends RelationalDbContextOptionsBuilder_2$protected<TBuilder, TExtension> {
     CommandTimeout(commandTimeout: Nullable<System_Internal.Int32>): TBuilder;
     Equals(obj: unknown): boolean;
     ExecutionStrategy(getExecutionStrategy: Func<ExecutionStrategyDependencies, IExecutionStrategy>): TBuilder;
@@ -930,6 +1061,7 @@ export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends R
 
 
 export const RelationalDbContextOptionsBuilder_2: {
+    new<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension>(optionsBuilder: DbContextOptionsBuilder): RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>;
 };
 
 
@@ -979,7 +1111,13 @@ export const RelationalModelDependencies: {
 
 export type RelationalModelDependencies = RelationalModelDependencies$instance;
 
-export interface RelationalModelRuntimeInitializer$instance extends ModelRuntimeInitializer {
+export abstract class RelationalModelRuntimeInitializer$protected {
+    protected readonly RelationalDependencies: RelationalModelRuntimeInitializerDependencies;
+    protected InitializeModel(model: IModel, designTime: boolean, prevalidation: boolean): void;
+}
+
+
+export interface RelationalModelRuntimeInitializer$instance extends RelationalModelRuntimeInitializer$protected, ModelRuntimeInitializer {
     Initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
 }
 
@@ -1014,7 +1152,60 @@ export const RelationalModelRuntimeInitializerDependencies: {
 
 export type RelationalModelRuntimeInitializerDependencies = RelationalModelRuntimeInitializerDependencies$instance;
 
-export interface RelationalModelValidator$instance extends ModelValidator$instance {
+export abstract class RelationalModelValidator$protected {
+    protected readonly RelationalDependencies: RelationalModelValidatorDependencies;
+    protected GetDefaultColumnValue(property: IProperty, storeObject: StoreObjectIdentifier): unknown | undefined;
+    protected IsRedundant(foreignKey: IForeignKey): boolean;
+    protected ThrowPropertyNotMappedException(propertyType: string, typeBase: IConventionTypeBase, unmappedProperty: IConventionProperty): void;
+    protected ValidateBoolsWithDefaults(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateCompatible(property: IProperty, duplicateProperty: IProperty, columnName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateCompatible(foreignKey: IForeignKey, duplicateForeignKey: IForeignKey, foreignKeyName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateCompatible(index: IIndex, duplicateIndex: IIndex, indexName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateCompatible(key: IKey, duplicateKey: IKey, keyName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateCompatible(checkConstraint: ICheckConstraint, duplicateCheckConstraint: ICheckConstraint, indexName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateCompatible(trigger: ITrigger, duplicateTrigger: ITrigger, indexName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateData2(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateData(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateDbFunctions(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateDefaultValuesOnKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateIndexProperties(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateInheritanceMapping2(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateInheritanceMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateJsonEntities(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateJsonEntityKey(storeObject: StoreObjectIdentifier, jsonEntityType: IEntityType): void;
+    protected ValidateJsonEntityNavigations(storeObject: StoreObjectIdentifier, jsonEntityType: IEntityType): void;
+    protected ValidateJsonEntityProperties(storeObject: StoreObjectIdentifier, jsonEntityType: IEntityType): void;
+    protected ValidateJsonEntityRoot(storeObject: StoreObjectIdentifier, rootType: IEntityType): void;
+    protected ValidateMappingFragments(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateMappingStrategy(entityType: IEntityType, mappingStrategy: string): void;
+    protected ValidateNoMutableKeys2(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateNoMutableKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePrimitiveCollections2(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePrimitiveCollections(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePropertyMapping4(complexProperty: IConventionComplexProperty, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePropertyMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePropertyMapping3(complexProperty: IConventionComplexProperty, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePropertyMapping2(structuralType: IConventionTypeBase, model: IConventionModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidatePropertyOverrides(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedCheckConstraintCompatibility(mappedTypes: IReadOnlyList<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedColumnsCompatibility(mappedTypes: IReadOnlyList<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedForeignKeysCompatibility(mappedTypes: IReadOnlyList<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedIndexesCompatibility(mappedTypes: IReadOnlyList<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedKeysCompatibility(mappedTypes: IReadOnlyList<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedTableCompatibility(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedTableCompatibility(mappedTypes: IReadOnlyList<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedTriggerCompatibility(mappedTypes: IReadOnlyList<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedViewCompatibility(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSharedViewCompatibility(mappedTypes: IReadOnlyList<IEntityType>, viewName: string, schema: string, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateSqlQueries(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateStoredProcedures(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateTriggers2(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateTriggers(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    protected ValidateValueGeneration(entityType: IEntityType, key: IKey, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+}
+
+
+export interface RelationalModelValidator$instance extends RelationalModelValidator$protected, ModelValidator$instance {
     Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
 }
@@ -1049,7 +1240,12 @@ export const RelationalModelValidatorDependencies: {
 
 export type RelationalModelValidatorDependencies = RelationalModelValidatorDependencies$instance;
 
-export interface RelationalOptionsExtension$instance {
+export abstract class RelationalOptionsExtension$protected {
+    protected abstract Clone(): RelationalOptionsExtension;
+}
+
+
+export interface RelationalOptionsExtension$instance extends RelationalOptionsExtension$protected {
     readonly CommandTimeout: Nullable<System_Internal.Int32>;
     readonly Connection: DbConnection;
     readonly ConnectionString: string | undefined;
@@ -1085,6 +1281,8 @@ export interface RelationalOptionsExtension$instance {
 
 
 export const RelationalOptionsExtension: {
+    new(): RelationalOptionsExtension;
+    new(copyFrom: RelationalOptionsExtension): RelationalOptionsExtension;
     Extract(options: IDbContextOptions): RelationalOptionsExtension;
     WithDefaultWarningConfiguration(coreOptionsExtension: CoreOptionsExtension): CoreOptionsExtension;
 };
@@ -1099,7 +1297,15 @@ export interface RelationalOptionsExtension$instance extends IDbContextOptionsEx
 export type RelationalOptionsExtension = RelationalOptionsExtension$instance & __RelationalOptionsExtension$views;
 
 
-export interface RuntimeAnnotatableBase$instance {
+export abstract class RuntimeAnnotatableBase$protected {
+    protected AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
+    protected CreateAnnotation(name: string, value: unknown): Annotation;
+    protected CreateRuntimeAnnotation(name: string, value: unknown): Annotation;
+    protected SetRuntimeAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeAnnotatableBase$instance extends RuntimeAnnotatableBase$protected {
     get Item(): unknown | undefined;
     set Item(value: unknown);
     AddAnnotation(name: string, value: unknown): Annotation;

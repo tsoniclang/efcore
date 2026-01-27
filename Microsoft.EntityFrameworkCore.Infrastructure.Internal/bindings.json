@@ -15,6 +15,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IDisposable",
+          "clrName": "System.IDisposable"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory::Create():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
@@ -31,6 +41,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -50,6 +61,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -69,6 +81,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -90,6 +103,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector::EnterCriticalSection():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer",
@@ -106,6 +129,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -125,6 +149,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -144,6 +169,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -164,6 +190,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -181,6 +208,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -197,6 +225,20 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::Initialize(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
@@ -213,6 +255,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -232,6 +275,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -251,6 +295,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -263,16 +308,17 @@
           "clrName": "AreDetailedErrorsEnabled",
           "metadataToken": 385877738,
           "canonicalSignature": ":System.Boolean",
-          "normalizedSignature": "AreDetailedErrorsEnabled|:System.Boolean|static=false|accessor=get",
+          "normalizedSignature": "AreDetailedErrorsEnabled|:System.Boolean|static=false|accessor=getset",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
-          "hasSetter": false,
+          "hasSetter": true,
           "isStatic": false,
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -281,16 +327,17 @@
           "clrName": "AreThreadSafetyChecksEnabled",
           "metadataToken": 385877739,
           "canonicalSignature": ":System.Boolean",
-          "normalizedSignature": "AreThreadSafetyChecksEnabled|:System.Boolean|static=false|accessor=get",
+          "normalizedSignature": "AreThreadSafetyChecksEnabled|:System.Boolean|static=false|accessor=getset",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
-          "hasSetter": false,
+          "hasSetter": true,
           "isStatic": false,
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -299,16 +346,17 @@
           "clrName": "RootApplicationServiceProvider",
           "metadataToken": 385877740,
           "canonicalSignature": ":System.IServiceProvider",
-          "normalizedSignature": "RootApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=get",
+          "normalizedSignature": "RootApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=getset",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
           "hasGetter": true,
-          "hasSetter": false,
+          "hasSetter": true,
           "isStatic": false,
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -327,6 +375,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -346,6 +395,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -365,6 +415,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -380,6 +431,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -396,6 +448,16 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext"
+        }
+      ],
       "methods": [],
       "properties": [
         {
@@ -413,6 +475,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -431,6 +494,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -446,6 +510,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.DbContext):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -462,6 +527,22 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601",
+          "typeArguments": [
+            "TContext"
+          ]
+        }
+      ],
+      "typeParameters": [
+        "TContext"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601::Configure(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
@@ -478,6 +559,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -497,6 +579,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -514,6 +597,7 @@
           "normalizedSignature": "constructor|(System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -530,6 +614,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder::FindSets(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
@@ -546,6 +640,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -565,6 +660,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -582,6 +678,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -598,6 +695,10 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [],
       "properties": [],
       "fields": [
@@ -609,6 +710,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -620,6 +722,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -631,6 +734,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -642,6 +746,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -653,6 +758,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -664,6 +770,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -675,6 +782,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -686,6 +794,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -699,6 +808,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -715,6 +825,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::GetOrCreateDescriptorIndexes(System.Type):System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -731,6 +845,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -750,6 +865,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -769,6 +885,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -788,6 +905,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -807,6 +925,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -826,6 +945,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -847,6 +967,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -861,6 +982,7 @@
           "normalizedSignature": "constructor|(Microsoft.Extensions.DependencyInjection.IServiceCollection):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -877,6 +999,20 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IInjectableService",
+          "clrName": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Injected(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void",
@@ -893,6 +1029,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -912,6 +1049,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -931,6 +1069,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -950,6 +1089,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -969,6 +1109,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -988,6 +1129,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1007,6 +1149,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1026,6 +1169,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1045,6 +1189,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
@@ -1065,6 +1210,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
@@ -1085,6 +1231,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
@@ -1105,6 +1252,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
@@ -1125,6 +1273,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
@@ -1145,6 +1294,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1165,6 +1315,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1185,13 +1336,53 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
         }
       ],
-      "properties": [],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Logger:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "Logger",
+          "metadataToken": 385877743,
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "Logger|:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Context:Microsoft.EntityFrameworkCore.DbContext",
+          "clrName": "Context",
+          "metadataToken": 385877744,
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.DbContext",
+          "normalizedSignature": "Context|:Microsoft.EntityFrameworkCore.DbContext|static=false|accessor=getset",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": true,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "fields": [],
       "events": [],
       "constructors": [
@@ -1202,6 +1393,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1218,6 +1410,24 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.IDisposable",
+          "clrName": "System.IDisposable"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::Create():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
@@ -1234,6 +1444,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1253,6 +1464,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1272,6 +1484,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1291,6 +1504,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1310,6 +1524,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1330,6 +1545,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1350,6 +1566,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1367,6 +1584,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1383,6 +1601,19 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.Collections.Generic.IComparer\u00601",
+          "clrName": "System.Collections.Generic.IComparer\u00601",
+          "typeArguments": [
+            "MemberInfo"
+          ]
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer::Compare(System.Reflection.MemberInfo,System.Reflection.MemberInfo):System.Int32",
@@ -1399,6 +1630,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1414,6 +1646,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1432,6 +1665,10 @@
       "isSealed": true,
       "isStatic": true,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions::BuildOptionsFragment(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.String",
@@ -1448,6 +1685,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
@@ -1469,6 +1707,10 @@
       "isSealed": true,
       "isStatic": true,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions::GetService(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService",
@@ -1485,6 +1727,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1504,6 +1747,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false

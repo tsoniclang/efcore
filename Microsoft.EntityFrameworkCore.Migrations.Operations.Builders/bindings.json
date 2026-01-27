@@ -15,6 +15,25 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+        "typeArguments": [
+          "TOperation"
+        ]
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+          "typeArguments": [
+            "TOperation"
+          ]
+        }
+      ],
+      "typeParameters": [
+        "TOperation"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601::Annotation(System.String,System.Object):AlterOperationBuilder_1",
@@ -31,6 +50,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -50,6 +70,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -69,6 +90,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -90,6 +112,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -105,6 +128,7 @@
           "normalizedSignature": "constructor|(TOperation):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -121,6 +145,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder::Column(System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Boolean,System.String,System.Boolean,System.Object,System.String,System.String,System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.String,System.String,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Nullable_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
@@ -137,6 +165,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -156,6 +185,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -175,6 +205,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -194,6 +225,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -210,6 +242,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -226,6 +259,25 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+        "typeArguments": [
+          "CreateTableOperation"
+        ]
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+          "typeArguments": [
+            "CreateTableOperation"
+          ]
+        }
+      ],
+      "typeParameters": [
+        "TColumns"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601::ForeignKey(System.String,Expression_1,System.String,System.String,System.String,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction,Microsoft.EntityFrameworkCore.Migrations.ReferentialAction):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.AddForeignKeyOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
@@ -242,6 +294,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -261,6 +314,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -280,6 +334,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -299,6 +354,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -318,6 +374,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -337,6 +394,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -356,6 +414,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -377,6 +436,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -392,6 +452,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Migrations.Operations.CreateTableOperation,System.Collections.Generic.IReadOnlyDictionary_2[[System.Reflection.PropertyInfo,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -408,6 +469,22 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
+          "typeArguments": [
+            "TOperation"
+          ]
+        }
+      ],
+      "typeParameters": [
+        "TOperation"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601::Annotation(System.String,System.Object):OperationBuilder_1",
@@ -424,6 +501,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -443,6 +521,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -462,6 +541,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -481,12 +561,32 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         }
       ],
       "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601::Operation:TOperation",
+          "clrName": "Operation",
+          "metadataToken": 385877025,
+          "canonicalSignature": ":TOperation",
+          "normalizedSignature": "Operation|:TOperation|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601::Instance:T",
           "clrName": "Instance",
@@ -502,6 +602,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -517,6 +618,7 @@
           "normalizedSignature": "constructor|(TOperation):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }

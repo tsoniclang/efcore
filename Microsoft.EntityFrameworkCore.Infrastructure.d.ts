@@ -9,15 +9,16 @@ import * as Internal from './Microsoft.EntityFrameworkCore.Infrastructure/intern
 import type { IDbContextLogger, IDiagnosticsLogger_1, IInterceptor, ISingletonInterceptor, WarningsConfiguration } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
 import type { IDbContextPool_1 } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 import type { IConventionAnnotatableBuilder, IConventionModelBuilder } from './Microsoft.EntityFrameworkCore.Metadata.Builders/internal/index.js';
+import type { IConventionSetBuilder } from './Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure/internal/index.js';
 import type { ConventionAnnotation, IMemberClassifier } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
-import type { ConfigurationSource, IClrPropertySetter, IConstructorBindingFactory, IConventionAnnotatable, IConventionAnnotation, IModel, IMutableAnnotatable, IParameterBindingFactories, IProperty, IPropertyBase, IReadOnlyProperty, IRelationalAnnotationProvider, MemberIdentity, StoreObjectIdentifier } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
+import type { ConfigurationSource, ICheckConstraint, IClrPropertySetter, IComplexType, IConstructorBindingFactory, IConventionAnnotatable, IConventionAnnotation, IConventionComplexProperty, IConventionModel, IConventionProperty, IConventionTypeBase, IEntityType, IForeignKey, IIndex, IKey, IModel, IMutableAnnotatable, IParameterBindingFactories, IProperty, IPropertyBase, IReadOnlyProperty, IRelationalAnnotationProvider, ITrigger, MemberIdentity, StoreObjectIdentifier } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
 import type { IValueConverterSelector } from './Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js';
 import type { ExecutionStrategyDependencies, IDatabaseFacadeDependencies, IDatabaseFacadeDependenciesAccessor, IDbContextTransaction, IExecutionStrategy, IRelationalTypeMappingSource, ITypeMappingSource } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 import type { IRowForeignKeyValueFactoryFactory, IRowIndexValueFactoryFactory, IRowKeyValueFactoryFactory } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
 import type { AutoTransactionBehavior, DbContext, DbContextOptions_1, DbContextOptionsBuilder, DbLoggerCategory_Model, DbLoggerCategory_Model_Validation, IDbContextFactory_1, ModelBuilder, ModelCreationDependencies, ParameterTranslationMode, QuerySplittingBehavior, QueryTrackingBehavior } from './Microsoft.EntityFrameworkCore/internal/index.js';
 import type { IDictionary, IEnumerable, IReadOnlyDictionary, IReadOnlyList, ISet } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { DbConnection } from '@tsonic/dotnet/System.Data.Common.js';
-import type { EventSource } from '@tsonic/dotnet/System.Diagnostics.Tracing.js';
+import type { EventCommandEventArgs, EventSource } from '@tsonic/dotnet/System.Diagnostics.Tracing.js';
 import type { Action, Attribute, Boolean as ClrBoolean, Char, Enum, FormattableString, Func, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, IServiceProvider, ISpanFormattable, Nullable, Object as ClrObject, String as ClrString, TimeSpan, Type, ValueTuple, ValueType, Void } from '@tsonic/dotnet/System.js';
 import type { Expression, LambdaExpression, MemberExpression, MethodCallExpression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { Assembly, MemberInfo, MethodInfo, PropertyInfo } from '@tsonic/dotnet/System.Reflection.js';

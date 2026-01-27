@@ -44,6 +44,7 @@ export interface DatabaseModelFactory$instance {
 
 
 export const DatabaseModelFactory: {
+    new(): DatabaseModelFactory;
 };
 
 
@@ -67,7 +68,12 @@ export const DatabaseModelFactoryOptions: {
 
 export type DatabaseModelFactoryOptions = DatabaseModelFactoryOptions$instance;
 
-export interface ProviderCodeGenerator$instance {
+export abstract class ProviderCodeGenerator$protected {
+    protected readonly Dependencies: ProviderCodeGeneratorDependencies;
+}
+
+
+export interface ProviderCodeGenerator$instance extends ProviderCodeGenerator$protected {
     GenerateContextOptions(): MethodCallCodeFragment | undefined;
     GenerateProviderOptions(): MethodCallCodeFragment | undefined;
     GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment): MethodCallCodeFragment;
@@ -76,6 +82,7 @@ export interface ProviderCodeGenerator$instance {
 
 
 export const ProviderCodeGenerator: {
+    new(dependencies: ProviderCodeGeneratorDependencies): ProviderCodeGenerator;
 };
 
 

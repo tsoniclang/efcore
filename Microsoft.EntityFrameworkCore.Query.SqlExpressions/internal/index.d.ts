@@ -47,12 +47,17 @@ export const ColumnValueSetter: {
 
 export type ColumnValueSetter = ColumnValueSetter$instance;
 
-export interface AtTimeZoneExpression$instance extends SqlExpression$instance {
+export abstract class AtTimeZoneExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface AtTimeZoneExpression$instance extends AtTimeZoneExpression$protected, SqlExpression$instance {
     readonly Operand: SqlExpression;
     readonly TimeZone: SqlExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(operand: SqlExpression, timeZone: SqlExpression): AtTimeZoneExpression;
 }
@@ -68,18 +73,21 @@ export interface __AtTimeZoneExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface AtTimeZoneExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type AtTimeZoneExpression = AtTimeZoneExpression$instance & __AtTimeZoneExpression$views;
 
 
-export interface CaseExpression$instance extends SqlExpression$instance {
+export abstract class CaseExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface CaseExpression$instance extends CaseExpression$protected, SqlExpression$instance {
     readonly ElseResult: SqlExpression | undefined;
     readonly Operand: SqlExpression;
     readonly WhenClauses: IReadOnlyList<CaseWhenClause>;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(operand: SqlExpression, whenClauses: IReadOnlyList<CaseWhenClause>, elseResult: SqlExpression): CaseExpression;
 }
@@ -95,8 +103,6 @@ export interface __CaseExpression$views {
     As_IPrintableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance;
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
-
-export interface CaseExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
 
 export type CaseExpression = CaseExpression$instance & __CaseExpression$views;
 
@@ -116,12 +122,17 @@ export const CaseWhenClause: {
 
 export type CaseWhenClause = CaseWhenClause$instance;
 
-export interface CollateExpression$instance extends SqlExpression$instance {
+export abstract class CollateExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface CollateExpression$instance extends CollateExpression$protected, SqlExpression$instance {
     readonly Collation: string;
     readonly Operand: SqlExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(operand: SqlExpression): CollateExpression;
 }
@@ -137,12 +148,16 @@ export interface __CollateExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface CollateExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type CollateExpression = CollateExpression$instance & __CollateExpression$views;
 
 
-export interface ColumnExpression$instance extends SqlExpression$instance {
+export abstract class ColumnExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface ColumnExpression$instance extends ColumnExpression$protected, SqlExpression$instance {
     readonly Column: IColumnBase | undefined;
     readonly IsNullable: boolean;
     readonly Name: string;
@@ -151,7 +166,6 @@ export interface ColumnExpression$instance extends SqlExpression$instance {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     MakeNullable(): ColumnExpression;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     ToString(): string;
 }
@@ -168,15 +182,20 @@ export interface __ColumnExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface ColumnExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type ColumnExpression = ColumnExpression$instance & __ColumnExpression$views;
 
 
-export interface CrossApplyExpression$instance extends JoinExpressionBase$instance {
+export abstract class CrossApplyExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): CrossApplyExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface CrossApplyExpression$instance extends CrossApplyExpression$protected, JoinExpressionBase$instance {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
 }
 
@@ -194,10 +213,17 @@ export interface __CrossApplyExpression$views {
 export type CrossApplyExpression = CrossApplyExpression$instance & __CrossApplyExpression$views;
 
 
-export interface CrossJoinExpression$instance extends JoinExpressionBase$instance {
+export abstract class CrossJoinExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): CrossJoinExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface CrossJoinExpression$instance extends CrossJoinExpression$protected, JoinExpressionBase$instance {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
 }
 
@@ -215,7 +241,12 @@ export interface __CrossJoinExpression$views {
 export type CrossJoinExpression = CrossJoinExpression$instance & __CrossJoinExpression$views;
 
 
-export interface DeleteExpression$instance extends Expression {
+export abstract class DeleteExpression$protected {
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface DeleteExpression$instance extends DeleteExpression$protected, Expression {
     readonly NodeType: ExpressionType;
     readonly SelectExpression: SelectExpression;
     readonly Table: TableExpression;
@@ -246,11 +277,16 @@ export interface DeleteExpression$instance extends Microsoft_EntityFrameworkCore
 export type DeleteExpression = DeleteExpression$instance & __DeleteExpression$views;
 
 
-export interface DistinctExpression$instance extends SqlExpression$instance {
+export abstract class DistinctExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface DistinctExpression$instance extends DistinctExpression$protected, SqlExpression$instance {
     readonly Operand: SqlExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(operand: SqlExpression): DistinctExpression;
 }
@@ -266,16 +302,21 @@ export interface __DistinctExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface DistinctExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type DistinctExpression = DistinctExpression$instance & __DistinctExpression$views;
 
 
-export interface ExceptExpression$instance extends SetOperationBase$instance {
+export abstract class ExceptExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): ExceptExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface ExceptExpression$instance extends ExceptExpression$protected, SetOperationBase$instance {
     Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     WithAlias(newAlias: string): ExceptExpression;
 }
@@ -295,11 +336,16 @@ export interface __ExceptExpression$views {
 export type ExceptExpression = ExceptExpression$instance & __ExceptExpression$views;
 
 
-export interface ExistsExpression$instance extends SqlExpression$instance {
+export abstract class ExistsExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface ExistsExpression$instance extends ExistsExpression$protected, SqlExpression$instance {
     readonly Subquery: SelectExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(subquery: SelectExpression): ExistsExpression;
 }
@@ -315,12 +361,18 @@ export interface __ExistsExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface ExistsExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type ExistsExpression = ExistsExpression$instance & __ExistsExpression$views;
 
 
-export interface FromSqlExpression$instance extends TableExpressionBase$instance {
+export abstract class FromSqlExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): FromSqlExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface FromSqlExpression$instance extends FromSqlExpression$protected, TableExpressionBase$instance {
     readonly Alias: string;
     readonly Arguments: Expression;
     readonly Sql: string;
@@ -328,7 +380,6 @@ export interface FromSqlExpression$instance extends TableExpressionBase$instance
     Clone(alias: string, cloningVisitor: ExpressionVisitor): TableExpressionBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(arguments: Expression): FromSqlExpression;
 }
@@ -347,12 +398,18 @@ export interface __FromSqlExpression$views {
     As_ITableBasedExpression(): ITableBasedExpression$instance;
 }
 
-export interface FromSqlExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, ITableBasedExpression$instance {}
+export interface FromSqlExpression$instance extends ITableBasedExpression$instance {}
 
 export type FromSqlExpression = FromSqlExpression$instance & __FromSqlExpression$views;
 
 
-export interface InExpression$instance extends SqlExpression$instance {
+export abstract class InExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface InExpression$instance extends InExpression$protected, SqlExpression$instance {
     readonly Item: SqlExpression;
     readonly Subquery: SelectExpression;
     readonly Values: IReadOnlyList<SqlExpression>;
@@ -360,7 +417,6 @@ export interface InExpression$instance extends SqlExpression$instance {
     ApplyTypeMapping(typeMapping: RelationalTypeMapping): InExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(item: SqlExpression, subquery: SelectExpression): InExpression;
     Update(item: SqlExpression, values: IReadOnlyList<SqlExpression>): InExpression;
@@ -381,15 +437,19 @@ export interface __InExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface InExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type InExpression = InExpression$instance & __InExpression$views;
 
 
-export interface InnerJoinExpression$instance extends PredicateJoinExpressionBase$instance {
+export abstract class InnerJoinExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): InnerJoinExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface InnerJoinExpression$instance extends InnerJoinExpression$protected, PredicateJoinExpressionBase$instance {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(table: TableExpressionBase, joinPredicate: SqlExpression): JoinExpressionBase;
 }
@@ -409,11 +469,18 @@ export interface __InnerJoinExpression$views {
 export type InnerJoinExpression = InnerJoinExpression$instance & __InnerJoinExpression$views;
 
 
-export interface IntersectExpression$instance extends SetOperationBase$instance {
+export abstract class IntersectExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): IntersectExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface IntersectExpression$instance extends IntersectExpression$protected, SetOperationBase$instance {
     Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     WithAlias(newAlias: string): IntersectExpression;
 }
@@ -433,14 +500,18 @@ export interface __IntersectExpression$views {
 export type IntersectExpression = IntersectExpression$instance & __IntersectExpression$views;
 
 
-export interface JoinExpressionBase$instance extends TableExpressionBase$instance {
+export abstract class JoinExpressionBase$protected {
+    protected abstract Print(expressionPrinter: ExpressionPrinter): void;
+}
+
+
+export interface JoinExpressionBase$instance extends JoinExpressionBase$protected, TableExpressionBase$instance {
     readonly IsPrunable: boolean;
     readonly Table: TableExpressionBase;
     Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     GetRequiredAlias(): string;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(table: TableExpressionBase): JoinExpressionBase;
     WithAlias(newAlias: string): TableExpressionBase;
@@ -448,6 +519,7 @@ export interface JoinExpressionBase$instance extends TableExpressionBase$instanc
 
 
 export const JoinExpressionBase: {
+    new(table: TableExpressionBase, prunable: boolean, annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): JoinExpressionBase;
 };
 
 
@@ -456,18 +528,21 @@ export interface __JoinExpressionBase$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface JoinExpressionBase$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type JoinExpressionBase = JoinExpressionBase$instance & __JoinExpressionBase$views;
 
 
-export interface JsonScalarExpression$instance extends SqlExpression$instance {
+export abstract class JsonScalarExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface JsonScalarExpression$instance extends JsonScalarExpression$protected, SqlExpression$instance {
     readonly IsNullable: boolean;
     readonly Json: SqlExpression;
     readonly Path: IReadOnlyList<PathSegment>;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(json: SqlExpression): JsonScalarExpression;
 }
@@ -483,15 +558,19 @@ export interface __JsonScalarExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface JsonScalarExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type JsonScalarExpression = JsonScalarExpression$instance & __JsonScalarExpression$views;
 
 
-export interface LeftJoinExpression$instance extends PredicateJoinExpressionBase$instance {
+export abstract class LeftJoinExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): LeftJoinExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface LeftJoinExpression$instance extends LeftJoinExpression$protected, PredicateJoinExpressionBase$instance {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
 }
 
@@ -510,13 +589,18 @@ export interface __LeftJoinExpression$views {
 export type LeftJoinExpression = LeftJoinExpression$instance & __LeftJoinExpression$views;
 
 
-export interface LikeExpression$instance extends SqlExpression$instance {
+export abstract class LikeExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface LikeExpression$instance extends LikeExpression$protected, SqlExpression$instance {
     readonly EscapeChar: SqlExpression | undefined;
     readonly Match: SqlExpression;
     readonly Pattern: SqlExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(match: SqlExpression, pattern: SqlExpression, escapeChar: SqlExpression): LikeExpression;
 }
@@ -532,12 +616,15 @@ export interface __LikeExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface LikeExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type LikeExpression = LikeExpression$instance & __LikeExpression$views;
 
 
-export interface OrderingExpression$instance extends Expression {
+export abstract class OrderingExpression$protected {
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface OrderingExpression$instance extends OrderingExpression$protected, Expression {
     readonly Expression: SqlExpression;
     readonly IsAscending: boolean;
     readonly NodeType: ExpressionType;
@@ -564,10 +651,17 @@ export interface OrderingExpression$instance extends Microsoft_EntityFrameworkCo
 export type OrderingExpression = OrderingExpression$instance & __OrderingExpression$views;
 
 
-export interface OuterApplyExpression$instance extends JoinExpressionBase$instance {
+export abstract class OuterApplyExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): OuterApplyExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface OuterApplyExpression$instance extends OuterApplyExpression$protected, JoinExpressionBase$instance {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
 }
 
@@ -586,7 +680,12 @@ export interface __OuterApplyExpression$views {
 export type OuterApplyExpression = OuterApplyExpression$instance & __OuterApplyExpression$views;
 
 
-export interface PredicateJoinExpressionBase$instance extends JoinExpressionBase$instance {
+export abstract class PredicateJoinExpressionBase$protected {
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface PredicateJoinExpressionBase$instance extends PredicateJoinExpressionBase$protected, JoinExpressionBase$instance {
     readonly JoinPredicate: SqlExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -597,6 +696,7 @@ export interface PredicateJoinExpressionBase$instance extends JoinExpressionBase
 
 
 export const PredicateJoinExpressionBase: {
+    new(table: TableExpressionBase, joinPredicate: SqlExpression, prunable: boolean, annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): PredicateJoinExpressionBase;
 };
 
 
@@ -608,7 +708,12 @@ export interface __PredicateJoinExpressionBase$views {
 export type PredicateJoinExpressionBase = PredicateJoinExpressionBase$instance & __PredicateJoinExpressionBase$views;
 
 
-export interface ProjectionExpression$instance extends Expression {
+export abstract class ProjectionExpression$protected {
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface ProjectionExpression$instance extends ProjectionExpression$protected, Expression {
     readonly Alias: string;
     readonly Expression: SqlExpression;
     readonly NodeType: ExpressionType;
@@ -635,10 +740,16 @@ export interface ProjectionExpression$instance extends Microsoft_EntityFramework
 export type ProjectionExpression = ProjectionExpression$instance & __ProjectionExpression$views;
 
 
-export interface RightJoinExpression$instance extends PredicateJoinExpressionBase$instance {
+export abstract class RightJoinExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): RightJoinExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface RightJoinExpression$instance extends RightJoinExpression$protected, PredicateJoinExpressionBase$instance {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
 }
 
@@ -657,12 +768,17 @@ export interface __RightJoinExpression$views {
 export type RightJoinExpression = RightJoinExpression$instance & __RightJoinExpression$views;
 
 
-export interface RowNumberExpression$instance extends SqlExpression$instance {
+export abstract class RowNumberExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface RowNumberExpression$instance extends RowNumberExpression$protected, SqlExpression$instance {
     readonly Orderings: IReadOnlyList<OrderingExpression>;
     readonly Partitions: IReadOnlyList<SqlExpression>;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(partitions: IReadOnlyList<SqlExpression>, orderings: IReadOnlyList<OrderingExpression>): RowNumberExpression;
 }
@@ -678,16 +794,19 @@ export interface __RowNumberExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface RowNumberExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type RowNumberExpression = RowNumberExpression$instance & __RowNumberExpression$views;
 
 
-export interface RowValueExpression$instance extends SqlExpression$instance {
+export abstract class RowValueExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface RowValueExpression$instance extends RowValueExpression$protected, SqlExpression$instance {
     readonly Values: IReadOnlyList<SqlExpression>;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(values: IReadOnlyList<SqlExpression>): RowValueExpression;
 }
@@ -703,17 +822,20 @@ export interface __RowValueExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface RowValueExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type RowValueExpression = RowValueExpression$instance & __RowValueExpression$views;
 
 
-export interface ScalarSubqueryExpression$instance extends SqlExpression$instance {
+export abstract class ScalarSubqueryExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface ScalarSubqueryExpression$instance extends ScalarSubqueryExpression$protected, SqlExpression$instance {
     readonly Subquery: SelectExpression;
     ApplyTypeMapping(typeMapping: RelationalTypeMapping): SqlExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(subquery: SelectExpression): ScalarSubqueryExpression;
 }
@@ -729,23 +851,33 @@ export interface __ScalarSubqueryExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface ScalarSubqueryExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type ScalarSubqueryExpression = ScalarSubqueryExpression$instance & __ScalarSubqueryExpression$views;
 
 
-export interface SelectExpression$instance extends TableExpressionBase$instance {
+export abstract class SelectExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): SelectExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface SelectExpression$instance extends SelectExpression$protected, TableExpressionBase$instance {
     readonly DebugView: string;
     readonly GroupBy: IReadOnlyList<SqlExpression>;
-    readonly Having: SqlExpression | undefined;
+    get Having(): SqlExpression | undefined;
+    set Having(value: SqlExpression);
     IsDistinct: boolean;
-    readonly Limit: SqlExpression | undefined;
-    readonly Offset: SqlExpression | undefined;
+    get Limit(): SqlExpression | undefined;
+    set Limit(value: SqlExpression);
+    get Offset(): SqlExpression | undefined;
+    set Offset(value: SqlExpression);
     readonly Orderings: IReadOnlyList<OrderingExpression>;
-    readonly Predicate: SqlExpression | undefined;
+    get Predicate(): SqlExpression | undefined;
+    set Predicate(value: SqlExpression);
     readonly Projection: IReadOnlyList<ProjectionExpression>;
     readonly Tables: IReadOnlyList<TableExpressionBase>;
-    readonly Tags: ISet<System_Internal.String>;
+    Tags: ISet<System_Internal.String>;
     AddCrossApply(innerSelectExpression: SelectExpression): void;
     AddCrossApply(innerSource: ShapedQueryExpression, outerShaper: Expression): Expression;
     AddCrossJoin(innerSelectExpression: SelectExpression): void;
@@ -785,7 +917,6 @@ export interface SelectExpression$instance extends TableExpressionBase$instance 
     IsNonComposedFromSql(): boolean;
     MakeProjectionNullable(sqlExpressionFactory: ISqlExpressionFactory): void;
     PrepareForAggregate(liftOrderings?: boolean): void;
-    Print(expressionPrinter: ExpressionPrinter): void;
     PushdownIntoSubquery(): void;
     Quote(): Expression;
     RemoveTpcTableExpression(): SelectExpression;
@@ -813,25 +944,29 @@ export interface __SelectExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface SelectExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type SelectExpression = SelectExpression$instance & __SelectExpression$views;
 
 
-export interface SetOperationBase$instance extends TableExpressionBase$instance {
+export abstract class SetOperationBase$protected {
+    protected abstract Print(expressionPrinter: ExpressionPrinter): void;
+}
+
+
+export interface SetOperationBase$instance extends SetOperationBase$protected, TableExpressionBase$instance {
     readonly Alias: string;
     readonly IsDistinct: boolean;
     readonly Source1: SelectExpression;
     readonly Source2: SelectExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(source1: SelectExpression, source2: SelectExpression): SetOperationBase;
 }
 
 
 export const SetOperationBase: {
+    new(alias: string, source1: SelectExpression, source2: SelectExpression, distinct: boolean): SetOperationBase;
+    new(alias: string, source1: SelectExpression, source2: SelectExpression, distinct: boolean, annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): SetOperationBase;
 };
 
 
@@ -840,18 +975,21 @@ export interface __SetOperationBase$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface SetOperationBase$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type SetOperationBase = SetOperationBase$instance & __SetOperationBase$views;
 
 
-export interface SqlBinaryExpression$instance extends SqlExpression$instance {
+export abstract class SqlBinaryExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface SqlBinaryExpression$instance extends SqlBinaryExpression$protected, SqlExpression$instance {
     readonly Left: SqlExpression;
     readonly OperatorType: ExpressionType;
     readonly Right: SqlExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(left: SqlExpression, right: SqlExpression): SqlBinaryExpression;
 }
@@ -867,18 +1005,21 @@ export interface __SqlBinaryExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface SqlBinaryExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type SqlBinaryExpression = SqlBinaryExpression$instance & __SqlBinaryExpression$views;
 
 
-export interface SqlConstantExpression$instance extends SqlExpression$instance {
+export abstract class SqlConstantExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface SqlConstantExpression$instance extends SqlConstantExpression$protected, SqlExpression$instance {
     readonly IsSensitive: boolean;
     readonly Value: unknown | undefined;
     ApplyTypeMapping(typeMapping: RelationalTypeMapping): SqlExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
 }
 
@@ -897,12 +1038,16 @@ export interface __SqlConstantExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface SqlConstantExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type SqlConstantExpression = SqlConstantExpression$instance & __SqlConstantExpression$views;
 
 
-export interface SqlExpression$instance extends Expression {
+export abstract class SqlExpression$protected {
+    protected abstract Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface SqlExpression$instance extends SqlExpression$protected, Expression {
     readonly NodeType: ExpressionType;
     readonly Type: Type;
     readonly TypeMapping: RelationalTypeMapping | undefined;
@@ -913,6 +1058,7 @@ export interface SqlExpression$instance extends Expression {
 
 
 export const SqlExpression: {
+    new(type: Type, typeMapping: RelationalTypeMapping): SqlExpression;
 };
 
 
@@ -926,11 +1072,16 @@ export interface SqlExpression$instance extends Microsoft_EntityFrameworkCore_Qu
 export type SqlExpression = SqlExpression$instance & __SqlExpression$views;
 
 
-export interface SqlFragmentExpression$instance extends SqlExpression$instance {
+export abstract class SqlFragmentExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface SqlFragmentExpression$instance extends SqlFragmentExpression$protected, SqlExpression$instance {
     readonly Sql: string;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
 }
 
@@ -945,12 +1096,16 @@ export interface __SqlFragmentExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface SqlFragmentExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type SqlFragmentExpression = SqlFragmentExpression$instance & __SqlFragmentExpression$views;
 
 
-export interface SqlFunctionExpression$instance extends SqlExpression$instance {
+export abstract class SqlFunctionExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface SqlFunctionExpression$instance extends SqlFunctionExpression$protected, SqlExpression$instance {
     readonly Arguments: IReadOnlyList<SqlExpression>;
     readonly ArgumentsPropagateNullability: IReadOnlyList<System_Internal.Boolean> | undefined;
     readonly Instance: SqlExpression | undefined;
@@ -963,7 +1118,6 @@ export interface SqlFunctionExpression$instance extends SqlExpression$instance {
     ApplyTypeMapping(typeMapping: RelationalTypeMapping): SqlFunctionExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(instance: SqlExpression, arguments: IReadOnlyList<SqlExpression>): SqlFunctionExpression;
     Update(instance: SqlExpression, arguments: IReadOnlyList<SqlExpression>, argumentsPropagateNullability: IReadOnlyList<System_Internal.Boolean>): SqlFunctionExpression;
@@ -986,12 +1140,16 @@ export interface __SqlFunctionExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface SqlFunctionExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type SqlFunctionExpression = SqlFunctionExpression$instance & __SqlFunctionExpression$views;
 
 
-export interface SqlParameterExpression$instance extends SqlExpression$instance {
+export abstract class SqlParameterExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface SqlParameterExpression$instance extends SqlParameterExpression$protected, SqlExpression$instance {
     readonly InvariantName: string;
     readonly IsNullable: boolean;
     readonly Name: string;
@@ -999,7 +1157,6 @@ export interface SqlParameterExpression$instance extends SqlExpression$instance 
     ApplyTypeMapping(typeMapping: RelationalTypeMapping): SqlParameterExpression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
 }
 
@@ -1015,17 +1172,20 @@ export interface __SqlParameterExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface SqlParameterExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type SqlParameterExpression = SqlParameterExpression$instance & __SqlParameterExpression$views;
 
 
-export interface SqlUnaryExpression$instance extends SqlExpression$instance {
+export abstract class SqlUnaryExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface SqlUnaryExpression$instance extends SqlUnaryExpression$protected, SqlExpression$instance {
     readonly Operand: SqlExpression;
     readonly OperatorType: ExpressionType;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(operand: SqlExpression): SqlUnaryExpression;
 }
@@ -1041,12 +1201,17 @@ export interface __SqlUnaryExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface SqlUnaryExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
-
 export type SqlUnaryExpression = SqlUnaryExpression$instance & __SqlUnaryExpression$views;
 
 
-export interface TableExpression$instance extends TableExpressionBase$instance {
+export abstract class TableExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface TableExpression$instance extends TableExpression$protected, TableExpressionBase$instance {
     readonly Alias: string;
     readonly Name: string;
     readonly Schema: string | undefined;
@@ -1054,7 +1219,6 @@ export interface TableExpression$instance extends TableExpressionBase$instance {
     Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
 }
 
@@ -1071,12 +1235,21 @@ export interface __TableExpression$views {
     As_ITableBasedExpression(): ITableBasedExpression$instance;
 }
 
-export interface TableExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, ITableBasedExpression$instance {}
+export interface TableExpression$instance extends ITableBasedExpression$instance {}
 
 export type TableExpression = TableExpression$instance & __TableExpression$views;
 
 
-export interface TableExpressionBase$instance extends Expression {
+export abstract class TableExpressionBase$protected {
+    protected readonly Annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation> | undefined;
+    protected abstract Print(expressionPrinter: ExpressionPrinter): void;
+    protected PrintAnnotations(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface TableExpressionBase$instance extends TableExpressionBase$protected, Expression {
     readonly Alias: string;
     readonly NodeType: ExpressionType;
     readonly Type: Type;
@@ -1093,6 +1266,8 @@ export interface TableExpressionBase$instance extends Expression {
 
 
 export const TableExpressionBase: {
+    new(alias: string, annotations: IEnumerable<IAnnotation>): TableExpressionBase;
+    new(alias: string, annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
 };
 
 
@@ -1106,7 +1281,15 @@ export interface TableExpressionBase$instance extends Microsoft_EntityFrameworkC
 export type TableExpressionBase = TableExpressionBase$instance & __TableExpressionBase$views;
 
 
-export interface TableValuedFunctionExpression$instance extends TableExpressionBase$instance {
+export abstract class TableValuedFunctionExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableValuedFunctionExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface TableValuedFunctionExpression$instance extends TableValuedFunctionExpression$protected, TableExpressionBase$instance {
     readonly Alias: string;
     readonly Arguments: IReadOnlyList<SqlExpression>;
     readonly IsBuiltIn: boolean;
@@ -1116,7 +1299,6 @@ export interface TableValuedFunctionExpression$instance extends TableExpressionB
     Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(arguments: IReadOnlyList<SqlExpression>): TableValuedFunctionExpression;
 }
@@ -1125,6 +1307,7 @@ export interface TableValuedFunctionExpression$instance extends TableExpressionB
 export const TableValuedFunctionExpression: {
     new(alias: string, storeFunction: IStoreFunction, arguments: IReadOnlyList<SqlExpression>): TableValuedFunctionExpression;
     new(alias: string, name: string, arguments: IReadOnlyList<SqlExpression>): TableValuedFunctionExpression;
+    new(alias: string, name: string, schema: string, builtIn: boolean, arguments: IReadOnlyList<SqlExpression>, annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableValuedFunctionExpression;
 };
 
 
@@ -1134,16 +1317,23 @@ export interface __TableValuedFunctionExpression$views {
     As_ITableBasedExpression(): ITableBasedExpression$instance;
 }
 
-export interface TableValuedFunctionExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, ITableBasedExpression$instance {}
+export interface TableValuedFunctionExpression$instance extends ITableBasedExpression$instance {}
 
 export type TableValuedFunctionExpression = TableValuedFunctionExpression$instance & __TableValuedFunctionExpression$views;
 
 
-export interface UnionExpression$instance extends SetOperationBase$instance {
+export abstract class UnionExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): UnionExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface UnionExpression$instance extends UnionExpression$protected, SetOperationBase$instance {
     Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     WithAlias(newAlias: string): UnionExpression;
 }
@@ -1163,7 +1353,12 @@ export interface __UnionExpression$views {
 export type UnionExpression = UnionExpression$instance & __UnionExpression$views;
 
 
-export interface UpdateExpression$instance extends Expression {
+export abstract class UpdateExpression$protected {
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+}
+
+
+export interface UpdateExpression$instance extends UpdateExpression$protected, Expression {
     readonly ColumnValueSetters: IReadOnlyList<ColumnValueSetter>;
     readonly NodeType: ExpressionType;
     readonly SelectExpression: SelectExpression;
@@ -1195,7 +1390,15 @@ export interface UpdateExpression$instance extends Microsoft_EntityFrameworkCore
 export type UpdateExpression = UpdateExpression$instance & __UpdateExpression$views;
 
 
-export interface ValuesExpression$instance extends TableExpressionBase$instance {
+export abstract class ValuesExpression$protected {
+    protected Print(expressionPrinter: ExpressionPrinter): void;
+    protected VisitChildren(visitor: ExpressionVisitor): Expression;
+    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): ValuesExpression;
+    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
+}
+
+
+export interface ValuesExpression$instance extends ValuesExpression$protected, TableExpressionBase$instance {
     readonly Alias: string;
     readonly ColumnNames: IReadOnlyList<System_Internal.String>;
     readonly RowValues: IReadOnlyList<RowValueExpression> | undefined;
@@ -1203,7 +1406,6 @@ export interface ValuesExpression$instance extends TableExpressionBase$instance 
     Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Quote(): Expression;
     Update(rowValues: IReadOnlyList<RowValueExpression>): ValuesExpression;
     Update(valuesParameter: SqlParameterExpression): ValuesExpression;
@@ -1222,8 +1424,6 @@ export interface __ValuesExpression$views {
     As_IPrintableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance;
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
-
-export interface ValuesExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {}
 
 export type ValuesExpression = ValuesExpression$instance & __ValuesExpression$views;
 

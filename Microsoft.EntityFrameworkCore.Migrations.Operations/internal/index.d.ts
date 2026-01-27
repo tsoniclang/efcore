@@ -30,7 +30,14 @@ export interface ITableMigrationOperation$instance {
 
 export type ITableMigrationOperation = ITableMigrationOperation$instance;
 
-export interface AddCheckConstraintOperation$instance extends MigrationOperation$instance {
+export abstract class AddCheckConstraintOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface AddCheckConstraintOperation$instance extends AddCheckConstraintOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     Sql: string;
@@ -72,7 +79,14 @@ export interface __AddCheckConstraintOperation$views {
 export type AddCheckConstraintOperation = AddCheckConstraintOperation$instance & __AddCheckConstraintOperation$views;
 
 
-export interface AddColumnOperation$instance extends ColumnOperation$instance {
+export abstract class AddColumnOperation$protected {
+    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface AddColumnOperation$instance extends AddColumnOperation$protected, ColumnOperation$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
@@ -109,7 +123,14 @@ export interface __AddColumnOperation$views {
 export type AddColumnOperation = AddColumnOperation$instance & __AddColumnOperation$views;
 
 
-export interface AddForeignKeyOperation$instance extends MigrationOperation$instance {
+export abstract class AddForeignKeyOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface AddForeignKeyOperation$instance extends AddForeignKeyOperation$protected, MigrationOperation$instance {
     Columns: string[];
     Name: string;
     OnDelete: ReferentialAction;
@@ -157,7 +178,14 @@ export interface __AddForeignKeyOperation$views {
 export type AddForeignKeyOperation = AddForeignKeyOperation$instance & __AddForeignKeyOperation$views;
 
 
-export interface AddPrimaryKeyOperation$instance extends MigrationOperation$instance {
+export abstract class AddPrimaryKeyOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface AddPrimaryKeyOperation$instance extends AddPrimaryKeyOperation$protected, MigrationOperation$instance {
     Columns: string[];
     Name: string;
     Schema: string;
@@ -199,7 +227,14 @@ export interface __AddPrimaryKeyOperation$views {
 export type AddPrimaryKeyOperation = AddPrimaryKeyOperation$instance & __AddPrimaryKeyOperation$views;
 
 
-export interface AddUniqueConstraintOperation$instance extends MigrationOperation$instance {
+export abstract class AddUniqueConstraintOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface AddUniqueConstraintOperation$instance extends AddUniqueConstraintOperation$protected, MigrationOperation$instance {
     Columns: string[];
     Name: string;
     Schema: string;
@@ -241,7 +276,14 @@ export interface __AddUniqueConstraintOperation$views {
 export type AddUniqueConstraintOperation = AddUniqueConstraintOperation$instance & __AddUniqueConstraintOperation$views;
 
 
-export interface AlterColumnOperation$instance extends ColumnOperation$instance {
+export abstract class AlterColumnOperation$protected {
+    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface AlterColumnOperation$instance extends AlterColumnOperation$protected, ColumnOperation$instance {
     OldColumn: ColumnOperation;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -282,7 +324,14 @@ export interface AlterColumnOperation$instance extends IAlterMigrationOperation$
 export type AlterColumnOperation = AlterColumnOperation$instance & __AlterColumnOperation$views;
 
 
-export interface AlterDatabaseOperation$instance extends DatabaseOperation$instance {
+export abstract class AlterDatabaseOperation$protected {
+    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface AlterDatabaseOperation$instance extends AlterDatabaseOperation$protected, DatabaseOperation$instance {
     readonly OldDatabase: DatabaseOperation;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -322,7 +371,14 @@ export interface AlterDatabaseOperation$instance extends IAlterMigrationOperatio
 export type AlterDatabaseOperation = AlterDatabaseOperation$instance & __AlterDatabaseOperation$views;
 
 
-export interface AlterSequenceOperation$instance extends SequenceOperation$instance {
+export abstract class AlterSequenceOperation$protected {
+    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface AlterSequenceOperation$instance extends AlterSequenceOperation$protected, SequenceOperation$instance {
     Name: string;
     OldSequence: SequenceOperation;
     Schema: string;
@@ -364,7 +420,14 @@ export interface AlterSequenceOperation$instance extends IAlterMigrationOperatio
 export type AlterSequenceOperation = AlterSequenceOperation$instance & __AlterSequenceOperation$views;
 
 
-export interface AlterTableOperation$instance extends TableOperation$instance {
+export abstract class AlterTableOperation$protected {
+    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface AlterTableOperation$instance extends AlterTableOperation$protected, TableOperation$instance {
     OldTable: TableOperation;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -405,7 +468,14 @@ export interface AlterTableOperation$instance extends IAlterMigrationOperation$i
 export type AlterTableOperation = AlterTableOperation$instance & __AlterTableOperation$views;
 
 
-export interface ColumnOperation$instance extends MigrationOperation$instance {
+export abstract class ColumnOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ColumnOperation$instance extends ColumnOperation$protected, MigrationOperation$instance {
     ClrType: Type;
     get Collation(): string | undefined;
     set Collation(value: string);
@@ -452,6 +522,7 @@ export interface ColumnOperation$instance extends MigrationOperation$instance {
 
 
 export const ColumnOperation: {
+    new(): ColumnOperation;
 };
 
 
@@ -465,7 +536,14 @@ export interface __ColumnOperation$views {
 export type ColumnOperation = ColumnOperation$instance & __ColumnOperation$views;
 
 
-export interface CreateIndexOperation$instance extends MigrationOperation$instance {
+export abstract class CreateIndexOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface CreateIndexOperation$instance extends CreateIndexOperation$protected, MigrationOperation$instance {
     Columns: string[];
     get Filter(): string | undefined;
     set Filter(value: string);
@@ -511,7 +589,14 @@ export interface __CreateIndexOperation$views {
 export type CreateIndexOperation = CreateIndexOperation$instance & __CreateIndexOperation$views;
 
 
-export interface CreateSequenceOperation$instance extends SequenceOperation$instance {
+export abstract class CreateSequenceOperation$protected {
+    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface CreateSequenceOperation$instance extends CreateSequenceOperation$protected, SequenceOperation$instance {
     ClrType: Type;
     Name: string;
     Schema: string;
@@ -551,7 +636,14 @@ export interface __CreateSequenceOperation$views {
 export type CreateSequenceOperation = CreateSequenceOperation$instance & __CreateSequenceOperation$views;
 
 
-export interface CreateTableOperation$instance extends TableOperation$instance {
+export abstract class CreateTableOperation$protected {
+    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface CreateTableOperation$instance extends CreateTableOperation$protected, TableOperation$instance {
     readonly CheckConstraints: List<AddCheckConstraintOperation>;
     readonly Columns: List<AddColumnOperation>;
     readonly ForeignKeys: List<AddForeignKeyOperation>;
@@ -594,7 +686,14 @@ export interface __CreateTableOperation$views {
 export type CreateTableOperation = CreateTableOperation$instance & __CreateTableOperation$views;
 
 
-export interface DatabaseOperation$instance extends MigrationOperation$instance {
+export abstract class DatabaseOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseOperation$instance extends DatabaseOperation$protected, MigrationOperation$instance {
     get Collation(): string | undefined;
     set Collation(value: string);
     AddAnnotation(name: string, value: unknown): IAnnotation;
@@ -619,6 +718,7 @@ export interface DatabaseOperation$instance extends MigrationOperation$instance 
 
 
 export const DatabaseOperation: {
+    new(): DatabaseOperation;
 };
 
 
@@ -631,7 +731,14 @@ export interface __DatabaseOperation$views {
 export type DatabaseOperation = DatabaseOperation$instance & __DatabaseOperation$views;
 
 
-export interface DeleteDataOperation$instance extends MigrationOperation$instance {
+export abstract class DeleteDataOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DeleteDataOperation$instance extends DeleteDataOperation$protected, MigrationOperation$instance {
     KeyColumns: string[];
     get KeyColumnTypes(): string[] | undefined;
     set KeyColumnTypes(value: string[]);
@@ -674,7 +781,14 @@ export interface __DeleteDataOperation$views {
 export type DeleteDataOperation = DeleteDataOperation$instance & __DeleteDataOperation$views;
 
 
-export interface DropCheckConstraintOperation$instance extends MigrationOperation$instance {
+export abstract class DropCheckConstraintOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DropCheckConstraintOperation$instance extends DropCheckConstraintOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     Table: string;
@@ -714,7 +828,14 @@ export interface __DropCheckConstraintOperation$views {
 export type DropCheckConstraintOperation = DropCheckConstraintOperation$instance & __DropCheckConstraintOperation$views;
 
 
-export interface DropColumnOperation$instance extends MigrationOperation$instance {
+export abstract class DropColumnOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DropColumnOperation$instance extends DropColumnOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     Table: string;
@@ -754,7 +875,14 @@ export interface __DropColumnOperation$views {
 export type DropColumnOperation = DropColumnOperation$instance & __DropColumnOperation$views;
 
 
-export interface DropForeignKeyOperation$instance extends MigrationOperation$instance {
+export abstract class DropForeignKeyOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DropForeignKeyOperation$instance extends DropForeignKeyOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     Table: string;
@@ -794,7 +922,14 @@ export interface __DropForeignKeyOperation$views {
 export type DropForeignKeyOperation = DropForeignKeyOperation$instance & __DropForeignKeyOperation$views;
 
 
-export interface DropIndexOperation$instance extends MigrationOperation$instance {
+export abstract class DropIndexOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DropIndexOperation$instance extends DropIndexOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     Table: string;
@@ -833,7 +968,14 @@ export interface __DropIndexOperation$views {
 export type DropIndexOperation = DropIndexOperation$instance & __DropIndexOperation$views;
 
 
-export interface DropPrimaryKeyOperation$instance extends MigrationOperation$instance {
+export abstract class DropPrimaryKeyOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DropPrimaryKeyOperation$instance extends DropPrimaryKeyOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     Table: string;
@@ -873,7 +1015,14 @@ export interface __DropPrimaryKeyOperation$views {
 export type DropPrimaryKeyOperation = DropPrimaryKeyOperation$instance & __DropPrimaryKeyOperation$views;
 
 
-export interface DropSchemaOperation$instance extends MigrationOperation$instance {
+export abstract class DropSchemaOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DropSchemaOperation$instance extends DropSchemaOperation$protected, MigrationOperation$instance {
     Name: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -910,7 +1059,14 @@ export interface __DropSchemaOperation$views {
 export type DropSchemaOperation = DropSchemaOperation$instance & __DropSchemaOperation$views;
 
 
-export interface DropSequenceOperation$instance extends MigrationOperation$instance {
+export abstract class DropSequenceOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DropSequenceOperation$instance extends DropSequenceOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
@@ -948,7 +1104,14 @@ export interface __DropSequenceOperation$views {
 export type DropSequenceOperation = DropSequenceOperation$instance & __DropSequenceOperation$views;
 
 
-export interface DropTableOperation$instance extends MigrationOperation$instance {
+export abstract class DropTableOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DropTableOperation$instance extends DropTableOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
@@ -987,7 +1150,14 @@ export interface __DropTableOperation$views {
 export type DropTableOperation = DropTableOperation$instance & __DropTableOperation$views;
 
 
-export interface DropUniqueConstraintOperation$instance extends MigrationOperation$instance {
+export abstract class DropUniqueConstraintOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DropUniqueConstraintOperation$instance extends DropUniqueConstraintOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     Table: string;
@@ -1027,7 +1197,14 @@ export interface __DropUniqueConstraintOperation$views {
 export type DropUniqueConstraintOperation = DropUniqueConstraintOperation$instance & __DropUniqueConstraintOperation$views;
 
 
-export interface EnsureSchemaOperation$instance extends MigrationOperation$instance {
+export abstract class EnsureSchemaOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface EnsureSchemaOperation$instance extends EnsureSchemaOperation$protected, MigrationOperation$instance {
     Name: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -1064,7 +1241,14 @@ export interface __EnsureSchemaOperation$views {
 export type EnsureSchemaOperation = EnsureSchemaOperation$instance & __EnsureSchemaOperation$views;
 
 
-export interface InsertDataOperation$instance extends MigrationOperation$instance {
+export abstract class InsertDataOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface InsertDataOperation$instance extends InsertDataOperation$protected, MigrationOperation$instance {
     Columns: string[];
     get ColumnTypes(): string[] | undefined;
     set ColumnTypes(value: string[]);
@@ -1107,7 +1291,14 @@ export interface __InsertDataOperation$views {
 export type InsertDataOperation = InsertDataOperation$instance & __InsertDataOperation$views;
 
 
-export interface MigrationOperation$instance extends Annotatable {
+export abstract class MigrationOperation$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface MigrationOperation$instance extends MigrationOperation$protected, Annotatable {
     IsDestructiveChange: boolean;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -1131,6 +1322,7 @@ export interface MigrationOperation$instance extends Annotatable {
 
 
 export const MigrationOperation: {
+    new(): MigrationOperation;
 };
 
 
@@ -1143,7 +1335,14 @@ export interface __MigrationOperation$views {
 export type MigrationOperation = MigrationOperation$instance & __MigrationOperation$views;
 
 
-export interface RenameColumnOperation$instance extends MigrationOperation$instance {
+export abstract class RenameColumnOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface RenameColumnOperation$instance extends RenameColumnOperation$protected, MigrationOperation$instance {
     Name: string;
     NewName: string;
     Schema: string;
@@ -1184,7 +1383,14 @@ export interface __RenameColumnOperation$views {
 export type RenameColumnOperation = RenameColumnOperation$instance & __RenameColumnOperation$views;
 
 
-export interface RenameIndexOperation$instance extends MigrationOperation$instance {
+export abstract class RenameIndexOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface RenameIndexOperation$instance extends RenameIndexOperation$protected, MigrationOperation$instance {
     Name: string;
     NewName: string;
     Schema: string;
@@ -1224,7 +1430,14 @@ export interface __RenameIndexOperation$views {
 export type RenameIndexOperation = RenameIndexOperation$instance & __RenameIndexOperation$views;
 
 
-export interface RenameSequenceOperation$instance extends MigrationOperation$instance {
+export abstract class RenameSequenceOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface RenameSequenceOperation$instance extends RenameSequenceOperation$protected, MigrationOperation$instance {
     Name: string;
     NewName: string;
     get NewSchema(): string | undefined;
@@ -1265,7 +1478,14 @@ export interface __RenameSequenceOperation$views {
 export type RenameSequenceOperation = RenameSequenceOperation$instance & __RenameSequenceOperation$views;
 
 
-export interface RenameTableOperation$instance extends MigrationOperation$instance {
+export abstract class RenameTableOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface RenameTableOperation$instance extends RenameTableOperation$protected, MigrationOperation$instance {
     Name: string;
     NewName: string;
     get NewSchema(): string | undefined;
@@ -1307,7 +1527,14 @@ export interface __RenameTableOperation$views {
 export type RenameTableOperation = RenameTableOperation$instance & __RenameTableOperation$views;
 
 
-export interface RestartSequenceOperation$instance extends MigrationOperation$instance {
+export abstract class RestartSequenceOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface RestartSequenceOperation$instance extends RestartSequenceOperation$protected, MigrationOperation$instance {
     Name: string;
     Schema: string;
     StartValue: Nullable<System_Internal.Int64>;
@@ -1346,7 +1573,14 @@ export interface __RestartSequenceOperation$views {
 export type RestartSequenceOperation = RestartSequenceOperation$instance & __RestartSequenceOperation$views;
 
 
-export interface SequenceOperation$instance extends MigrationOperation$instance {
+export abstract class SequenceOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface SequenceOperation$instance extends SequenceOperation$protected, MigrationOperation$instance {
     IncrementBy: int;
     IsCyclic: boolean;
     MaxValue: Nullable<System_Internal.Int64>;
@@ -1373,6 +1607,7 @@ export interface SequenceOperation$instance extends MigrationOperation$instance 
 
 
 export const SequenceOperation: {
+    new(): SequenceOperation;
 };
 
 
@@ -1385,7 +1620,14 @@ export interface __SequenceOperation$views {
 export type SequenceOperation = SequenceOperation$instance & __SequenceOperation$views;
 
 
-export interface SqlOperation$instance extends MigrationOperation$instance {
+export abstract class SqlOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface SqlOperation$instance extends SqlOperation$protected, MigrationOperation$instance {
     Sql: string;
     SuppressTransaction: boolean;
     AddAnnotation(name: string, value: unknown): IAnnotation;
@@ -1423,7 +1665,14 @@ export interface __SqlOperation$views {
 export type SqlOperation = SqlOperation$instance & __SqlOperation$views;
 
 
-export interface TableOperation$instance extends MigrationOperation$instance {
+export abstract class TableOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface TableOperation$instance extends TableOperation$protected, MigrationOperation$instance {
     get Comment(): string | undefined;
     set Comment(value: string);
     Name: string;
@@ -1450,6 +1699,7 @@ export interface TableOperation$instance extends MigrationOperation$instance {
 
 
 export const TableOperation: {
+    new(): TableOperation;
 };
 
 
@@ -1463,7 +1713,14 @@ export interface __TableOperation$views {
 export type TableOperation = TableOperation$instance & __TableOperation$views;
 
 
-export interface UpdateDataOperation$instance extends MigrationOperation$instance {
+export abstract class UpdateDataOperation$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface UpdateDataOperation$instance extends UpdateDataOperation$protected, MigrationOperation$instance {
     Columns: string[];
     get ColumnTypes(): string[] | undefined;
     set ColumnTypes(value: string[]);

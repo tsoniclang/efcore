@@ -943,7 +943,14 @@ export const TypeIdentity: {
 
 export type TypeIdentity = TypeIdentity$instance;
 
-export interface CheckConstraint$instance extends ConventionAnnotatable {
+export abstract class CheckConstraint$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface CheckConstraint$instance extends CheckConstraint$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     readonly EntityType: IReadOnlyEntityType;
     readonly IsInModel: boolean;
@@ -1012,13 +1019,22 @@ export interface __CheckConstraint$views {
 export type CheckConstraint = CheckConstraint$instance & __CheckConstraint$views;
 
 
-export interface ClrAccessorFactory_1$instance<TAccessor> {
+export abstract class ClrAccessorFactory_1$protected<TAccessor> {
+    protected CreateBase(memberInfo: MemberInfo): TAccessor;
+    protected CreateBase(propertyBase: IPropertyBase): TAccessor;
+    protected abstract CreateGeneric<TEntity, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase): TAccessor;
+    protected abstract GetMemberInfo(propertyBase: IPropertyBase): MemberInfo;
+}
+
+
+export interface ClrAccessorFactory_1$instance<TAccessor> extends ClrAccessorFactory_1$protected<TAccessor> {
     Create(property: IPropertyBase): TAccessor;
     Create(memberInfo: MemberInfo): TAccessor;
 }
 
 
 export const ClrAccessorFactory_1: {
+    new<TAccessor>(): ClrAccessorFactory_1<TAccessor>;
 };
 
 
@@ -1129,7 +1145,14 @@ export interface __ClrPropertyGetter_3$views<TEntity, TStructural, TValue> {
 export type ClrPropertyGetter_3<TEntity, TStructural, TValue> = ClrPropertyGetter_3$instance<TEntity, TStructural, TValue> & __ClrPropertyGetter_3$views<TEntity, TStructural, TValue>;
 
 
-export interface ClrPropertyGetterFactory$instance extends ClrAccessorFactory_1<IClrPropertyGetter> {
+export abstract class ClrPropertyGetterFactory$protected {
+    protected CreateGeneric2<TRoot, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase): IClrPropertyGetter;
+    protected abstract CreateGeneric<TEntity, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase): unknown;
+    protected GetMemberInfo(propertyBase: IPropertyBase): MemberInfo;
+}
+
+
+export interface ClrPropertyGetterFactory$instance extends ClrPropertyGetterFactory$protected, ClrAccessorFactory_1<IClrPropertyGetter> {
     Create(property: IPropertyBase): IClrPropertyGetter;
     Create(propertyBase: IPropertyBase, getClrValueUsingContainingEntityExpression: Expression, hasSentinelValueUsingContainingEntityExpression: Expression, getClrValueExpression: Expression, hasSentinelValueExpression: Expression): void;
     Create(memberInfo: MemberInfo): IClrPropertyGetter;
@@ -1144,7 +1167,12 @@ export const ClrPropertyGetterFactory: {
 
 export type ClrPropertyGetterFactory = ClrPropertyGetterFactory$instance;
 
-export interface ClrPropertyMaterializationSetterFactory$instance extends ClrPropertySetterFactory {
+export abstract class ClrPropertyMaterializationSetterFactory$protected {
+    protected GetMemberInfo(propertyBase: IPropertyBase): MemberInfo;
+}
+
+
+export interface ClrPropertyMaterializationSetterFactory$instance extends ClrPropertyMaterializationSetterFactory$protected, ClrPropertySetterFactory {
 }
 
 
@@ -1175,7 +1203,14 @@ export interface __ClrPropertySetter_3$views<TEntity, TStructural, TValue> {
 export type ClrPropertySetter_3<TEntity, TStructural, TValue> = ClrPropertySetter_3$instance<TEntity, TStructural, TValue> & __ClrPropertySetter_3$views<TEntity, TStructural, TValue>;
 
 
-export interface ClrPropertySetterFactory$instance extends ClrAccessorFactory_1<IClrPropertySetter> {
+export abstract class ClrPropertySetterFactory$protected {
+    protected CreateGeneric2<TRoot, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase): IClrPropertySetter;
+    protected abstract CreateGeneric<TEntity, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase): unknown;
+    protected GetMemberInfo(propertyBase: IPropertyBase): MemberInfo;
+}
+
+
+export interface ClrPropertySetterFactory$instance extends ClrPropertySetterFactory$protected, ClrAccessorFactory_1<IClrPropertySetter> {
     Create(property: IPropertyBase): IClrPropertySetter;
     Create(propertyBase: IPropertyBase, setterUsingContainingEntityExpression: Expression, setterExpression: Expression): void;
     Create(memberInfo: MemberInfo): IClrPropertySetter;
@@ -1203,7 +1238,14 @@ export const CollectionTypeFactory: {
 
 export type CollectionTypeFactory = CollectionTypeFactory$instance;
 
-export interface Column$instance extends ColumnBase_1$instance<ColumnMapping> {
+export abstract class Column$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Column$instance extends Column$protected, ColumnBase_1$instance<ColumnMapping> {
     Accessors: ColumnAccessors;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -1245,7 +1287,16 @@ export interface __Column$views {
 export type Column = Column$instance & __Column$views;
 
 
-export interface ColumnBase_1$instance<TColumnMappingBase extends IColumnMappingBase> extends Annotatable {
+export abstract class ColumnBase_1$protected<TColumnMappingBase extends IColumnMappingBase> {
+    protected readonly PropertyMappings: List<TColumnMappingBase>;
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected GetDefaultStoreTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ColumnBase_1$instance<TColumnMappingBase extends IColumnMappingBase> extends ColumnBase_1$protected<TColumnMappingBase>, Annotatable {
     IsNullable: boolean;
     readonly IsReadOnly: boolean;
     readonly Name: string;
@@ -1308,7 +1359,15 @@ export const ColumnListComparer: {
 
 export type ColumnListComparer = ColumnListComparer$instance;
 
-export interface ColumnMapping$instance extends ColumnMappingBase$instance {
+export abstract class ColumnMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ColumnMapping$instance extends ColumnMapping$protected, ColumnMappingBase$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotations(annotations: IEnumerable__System_Collections_Generic<IAnnotation>): void;
@@ -1347,7 +1406,15 @@ export interface __ColumnMapping$views {
 export type ColumnMapping = ColumnMapping$instance & __ColumnMapping$views;
 
 
-export interface ColumnMappingBase$instance extends Annotatable {
+export abstract class ColumnMappingBase$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected GetTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ColumnMappingBase$instance extends ColumnMappingBase$protected, Annotatable {
     readonly Column: IColumnBase;
     readonly IsReadOnly: boolean;
     readonly Property: IProperty;
@@ -1416,7 +1483,18 @@ export const ColumnNameComparer: {
 
 export type ColumnNameComparer = ColumnNameComparer$instance;
 
-export interface ComplexProperty$instance extends PropertyBase$instance {
+export abstract class ComplexProperty$protected {
+    protected AddAnnotation16(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected OnFieldInfoSet(newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo): FieldInfo | undefined;
+    protected OnPropertyNullableChanged(): Nullable<System_Internal.Boolean>;
+    protected SetAnnotation7(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ComplexProperty$instance extends ComplexProperty$protected, PropertyBase$instance {
     readonly ClrType: Type;
     readonly CollectionAccessor: IClrCollectionAccessor | undefined;
     readonly ComplexType: ComplexType;
@@ -1501,7 +1579,12 @@ export interface __ComplexProperty$views {
 export type ComplexProperty = ComplexProperty$instance & __ComplexProperty$views;
 
 
-export interface ComplexPropertyConfiguration$instance extends AnnotatableBase {
+export abstract class ComplexPropertyConfiguration$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface ComplexPropertyConfiguration$instance extends ComplexPropertyConfiguration$protected, AnnotatableBase {
     readonly ClrType: Type;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
@@ -1545,7 +1628,17 @@ export const ComplexPropertySnapshot: {
 
 export type ComplexPropertySnapshot = ComplexPropertySnapshot$instance;
 
-export interface ComplexType$instance extends TypeBase$instance {
+export abstract class ComplexType$protected {
+    protected readonly BaseBuilder: InternalTypeBaseBuilder;
+    protected AddAnnotation16(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetAnnotation7(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ComplexType$instance extends ComplexType$protected, TypeBase$instance {
     readonly ComplexProperty: ComplexProperty;
     readonly DebugView: DebugView;
     readonly IsInModel: boolean;
@@ -1766,7 +1859,14 @@ export interface ConventionAnnotation$instance extends Microsoft_EntityFramework
 export type ConventionAnnotation = ConventionAnnotation$instance & __ConventionAnnotation$views;
 
 
-export interface DbFunction$instance extends ConventionAnnotatable {
+export abstract class DbFunction$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DbFunction$instance extends DbFunction$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     readonly IsAggregate: boolean;
     IsBuiltIn: boolean;
@@ -1860,7 +1960,14 @@ export interface __DbFunction$views {
 export type DbFunction = DbFunction$instance & __DbFunction$views;
 
 
-export interface DbFunctionParameter$instance extends ConventionAnnotatable {
+export abstract class DbFunctionParameter$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DbFunctionParameter$instance extends DbFunctionParameter$protected, ConventionAnnotatable {
     readonly ClrType: Type;
     readonly Function: DbFunction;
     readonly IsInModel: boolean;
@@ -1943,7 +2050,17 @@ export interface DesignTimeModel$instance extends Microsoft_EntityFrameworkCore_
 export type DesignTimeModel = DesignTimeModel$instance & __DesignTimeModel$views;
 
 
-export interface ElementType$instance extends ConventionAnnotatable {
+export abstract class ElementType$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected OnElementTypeNullableChanged(): Nullable<System_Internal.Boolean>;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ElementType$instance extends ElementType$protected, ConventionAnnotatable {
     readonly ClrType: Type;
     readonly CollectionProperty: Property;
     readonly DebugView: DebugView;
@@ -2034,7 +2151,17 @@ export interface __ElementType$views {
 export type ElementType = ElementType$instance & __ElementType$views;
 
 
-export interface EntityType$instance extends TypeBase$instance {
+export abstract class EntityType$protected {
+    protected readonly BaseBuilder: InternalTypeBaseBuilder;
+    protected AddAnnotation16(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetAnnotation7(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface EntityType$instance extends EntityType$protected, TypeBase$instance {
     readonly DebugView: DebugView;
     readonly ForeignKeyProperties: IReadOnlyList<IProperty>;
     readonly IsImplicitlyCreatedJoinEntityType: boolean;
@@ -2329,7 +2456,14 @@ export const EntityType_Snapshot: {
 
 export type EntityType_Snapshot = EntityType_Snapshot$instance;
 
-export interface EntityTypeMappingFragment$instance extends ConventionAnnotatable {
+export abstract class EntityTypeMappingFragment$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface EntityTypeMappingFragment$instance extends EntityTypeMappingFragment$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     readonly EntityType: IReadOnlyEntityType;
     readonly IsInModel: boolean;
@@ -2414,13 +2548,23 @@ export interface __EntityTypeParameterBindingFactory$views {
 export type EntityTypeParameterBindingFactory = EntityTypeParameterBindingFactory$instance & __EntityTypeParameterBindingFactory$views;
 
 
-export interface ForeignKey$instance extends ConventionAnnotatable {
+export abstract class ForeignKey$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ForeignKey$instance extends ForeignKey$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: EntityType;
     DeleteBehavior: DeleteBehavior;
     DependentKeyValueFactory: IDependentKeyValueFactory;
     DependentsMapFactory: Func<IDependentsMap>;
-    readonly DependentToPrincipal: Navigation | undefined;
+    get DependentToPrincipal(): Navigation | undefined;
+    set DependentToPrincipal(value: Navigation);
     readonly IsInModel: boolean;
     IsOwnership: boolean;
     readonly IsReadOnly: boolean;
@@ -2428,9 +2572,10 @@ export interface ForeignKey$instance extends ConventionAnnotatable {
     IsRequiredDependent: boolean;
     IsUnique: boolean;
     readonly PrincipalEntityType: EntityType;
-    readonly PrincipalKey: Key;
-    readonly PrincipalToDependent: Navigation | undefined;
-    readonly Properties: IReadOnlyList<Property>;
+    PrincipalKey: Key;
+    get PrincipalToDependent(): Navigation | undefined;
+    set PrincipalToDependent(value: Navigation);
+    Properties: IReadOnlyList<Property>;
     get ReferencingSkipNavigations(): ISet<SkipNavigation> | undefined;
     set ReferencingSkipNavigations(value: ISet<SkipNavigation>);
     AddAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation;
@@ -2524,7 +2669,14 @@ export interface __ForeignKey$views {
 export type ForeignKey = ForeignKey$instance & __ForeignKey$views;
 
 
-export interface ForeignKeyConstraint$instance extends Annotatable {
+export abstract class ForeignKeyConstraint$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ForeignKeyConstraint$instance extends ForeignKeyConstraint$protected, Annotatable {
     readonly Columns: IReadOnlyList<Column>;
     readonly IsReadOnly: boolean;
     readonly MappedForeignKeys: SortedSet<IForeignKey>;
@@ -2588,7 +2740,14 @@ export const ForeignKeyConstraintComparer: {
 
 export type ForeignKeyConstraintComparer = ForeignKeyConstraintComparer$instance;
 
-export interface FunctionColumn$instance extends ColumnBase_1$instance<FunctionColumnMapping> {
+export abstract class FunctionColumn$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface FunctionColumn$instance extends FunctionColumn$protected, ColumnBase_1$instance<FunctionColumnMapping> {
     readonly Function: StoreFunction;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -2630,7 +2789,15 @@ export interface __FunctionColumn$views {
 export type FunctionColumn = FunctionColumn$instance & __FunctionColumn$views;
 
 
-export interface FunctionColumnMapping$instance extends ColumnMappingBase$instance {
+export abstract class FunctionColumnMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface FunctionColumnMapping$instance extends FunctionColumnMapping$protected, ColumnMappingBase$instance {
     readonly FunctionMapping: IFunctionMapping;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -2670,7 +2837,14 @@ export interface __FunctionColumnMapping$views {
 export type FunctionColumnMapping = FunctionColumnMapping$instance & __FunctionColumnMapping$views;
 
 
-export interface FunctionMapping$instance extends TableMappingBase_1$instance<FunctionColumnMapping> {
+export abstract class FunctionMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface FunctionMapping$instance extends FunctionMapping$protected, TableMappingBase_1$instance<FunctionColumnMapping> {
     readonly DbFunction: IDbFunction;
     IsDefaultFunctionMapping: boolean;
     readonly StoreFunction: IStoreFunction;
@@ -2713,7 +2887,16 @@ export interface __FunctionMapping$views {
 export type FunctionMapping = FunctionMapping$instance & __FunctionMapping$views;
 
 
-export interface Index$instance extends ConventionAnnotatable {
+export abstract class Index$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Index$instance extends Index$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: EntityType;
     IsDescending: IReadOnlyList<System_Internal.Boolean>;
@@ -2808,7 +2991,12 @@ export interface __InternalCheckConstraintBuilder$views {
 export type InternalCheckConstraintBuilder = InternalCheckConstraintBuilder$instance & __InternalCheckConstraintBuilder$views;
 
 
-export interface InternalComplexPropertyBuilder$instance extends InternalPropertyBaseBuilder_2$instance<IConventionComplexPropertyBuilder, ComplexProperty> {
+export abstract class InternalComplexPropertyBuilder$protected {
+    protected readonly This: InternalComplexPropertyBuilder;
+}
+
+
+export interface InternalComplexPropertyBuilder$instance extends InternalComplexPropertyBuilder$protected, InternalPropertyBaseBuilder_2$instance<IConventionComplexPropertyBuilder, ComplexProperty> {
     readonly ComplexTypeBuilder: InternalComplexTypeBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
@@ -2844,7 +3032,14 @@ export interface __InternalComplexPropertyBuilder$views {
 export type InternalComplexPropertyBuilder = InternalComplexPropertyBuilder$instance & __InternalComplexPropertyBuilder$views;
 
 
-export interface InternalComplexTypeBuilder$instance extends InternalTypeBaseBuilder$instance {
+export abstract class InternalComplexTypeBuilder$protected {
+    protected CanAddProperty(propertyType: Type, propertyName: string, configurationSource: ConfigurationSource, checkClrProperty: boolean, skipTypeCheck: boolean): boolean;
+    protected CanIgnore2(name: string, configurationSource: ConfigurationSource, shouldThrow: boolean): boolean;
+    protected Property5(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable<ConfigurationSource>, configurationSource: Nullable<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | undefined;
+}
+
+
+export interface InternalComplexTypeBuilder$instance extends InternalComplexTypeBuilder$protected, InternalTypeBaseBuilder$instance {
     CanAddComplexProperty(propertyName: string, propertyType: Type, targetType: Type, collection: Nullable<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
     CanHaveComplexProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, complexType: Type, collection: Nullable<System_Internal.Boolean>, configurationSource: Nullable<ConfigurationSource>): boolean;
     CanHaveComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): boolean;
@@ -2852,6 +3047,7 @@ export interface InternalComplexTypeBuilder$instance extends InternalTypeBaseBui
     CanHaveProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable<ConfigurationSource>, configurationSource: Nullable<ConfigurationSource>, checkClrProperty?: boolean): boolean;
     CanHaveProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): boolean;
     CanHaveProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): boolean;
+    CanIgnore(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveComplexProperty(complexProperty: ComplexProperty, configurationSource: ConfigurationSource): boolean;
@@ -2998,7 +3194,12 @@ export interface __InternalDbFunctionParameterBuilder$views {
 export type InternalDbFunctionParameterBuilder = InternalDbFunctionParameterBuilder$instance & __InternalDbFunctionParameterBuilder$views;
 
 
-export interface InternalElementTypeBuilder$instance extends AnnotatableBuilder_2<ElementType, InternalModelBuilder> {
+export abstract class InternalElementTypeBuilder$protected {
+    protected readonly This: IConventionElementTypeBuilder;
+}
+
+
+export interface InternalElementTypeBuilder$instance extends InternalElementTypeBuilder$protected, AnnotatableBuilder_2<ElementType, InternalModelBuilder> {
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
@@ -3045,7 +3246,14 @@ export interface __InternalElementTypeBuilder$views {
 export type InternalElementTypeBuilder = InternalElementTypeBuilder$instance & __InternalElementTypeBuilder$views;
 
 
-export interface InternalEntityTypeBuilder$instance extends InternalTypeBaseBuilder$instance {
+export abstract class InternalEntityTypeBuilder$protected {
+    protected CanAddProperty(propertyType: Type, propertyName: string, configurationSource: ConfigurationSource, checkClrProperty: boolean, skipTypeCheck: boolean): boolean;
+    protected CanIgnore2(name: string, configurationSource: ConfigurationSource, shouldThrow: boolean): boolean;
+    protected Property5(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable<ConfigurationSource>, configurationSource: Nullable<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | undefined;
+}
+
+
+export interface InternalEntityTypeBuilder$instance extends InternalEntityTypeBuilder$protected, InternalTypeBaseBuilder$instance {
     CanAddComplexProperty(propertyName: string, propertyType: Type, targetType: Type, collection: Nullable<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
     CanAddNavigation(navigationName: string, type: Type, configurationSource: ConfigurationSource): boolean;
     CanHaveComplexProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, complexType: Type, collection: Nullable<System_Internal.Boolean>, configurationSource: Nullable<ConfigurationSource>): boolean;
@@ -3058,6 +3266,7 @@ export interface InternalEntityTypeBuilder$instance extends InternalTypeBaseBuil
     CanHaveProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): boolean;
     CanHaveServiceProperty(memberInfo: MemberInfo, configurationSource: Nullable<ConfigurationSource>): boolean;
     CanHaveSkipNavigation(skipNavigationName: string, type: Type, configurationSource: Nullable<ConfigurationSource>): boolean;
+    CanIgnore(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveComplexProperty(complexProperty: ComplexProperty, configurationSource: ConfigurationSource): boolean;
@@ -3417,7 +3626,12 @@ export interface __InternalModelBuilder$views {
 export type InternalModelBuilder = InternalModelBuilder$instance & __InternalModelBuilder$views;
 
 
-export interface InternalNavigationBuilder$instance extends InternalPropertyBaseBuilder_2$instance<IConventionNavigationBuilder, Navigation> {
+export abstract class InternalNavigationBuilder$protected {
+    protected readonly This: IConventionNavigationBuilder;
+}
+
+
+export interface InternalNavigationBuilder$instance extends InternalNavigationBuilder$protected, InternalPropertyBaseBuilder_2$instance<IConventionNavigationBuilder, Navigation> {
     AutoInclude(autoInclude: Nullable<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalNavigationBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
@@ -3467,7 +3681,12 @@ export const InternalOwnedEntityTypeBuilder: {
 
 export type InternalOwnedEntityTypeBuilder = InternalOwnedEntityTypeBuilder$instance;
 
-export interface InternalPropertyBaseBuilder_2$instance<TBuilder extends IConventionPropertyBaseBuilder_1<TBuilder>, TPropertyBase extends PropertyBase> extends AnnotatableBuilder_2<TPropertyBase, InternalModelBuilder> {
+export abstract class InternalPropertyBaseBuilder_2$protected<TBuilder extends IConventionPropertyBaseBuilder_1<TBuilder>, TPropertyBase extends PropertyBase> {
+    protected readonly This: TBuilder;
+}
+
+
+export interface InternalPropertyBaseBuilder_2$instance<TBuilder extends IConventionPropertyBaseBuilder_1<TBuilder>, TPropertyBase extends PropertyBase> extends InternalPropertyBaseBuilder_2$protected<TBuilder, TPropertyBase>, AnnotatableBuilder_2<TPropertyBase, InternalModelBuilder> {
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
@@ -3497,7 +3716,12 @@ export interface __InternalPropertyBaseBuilder_2$views<TBuilder extends IConvent
 export type InternalPropertyBaseBuilder_2<TBuilder extends IConventionPropertyBaseBuilder_1<TBuilder>, TPropertyBase extends PropertyBase> = InternalPropertyBaseBuilder_2$instance<TBuilder, TPropertyBase> & __InternalPropertyBaseBuilder_2$views<TBuilder, TPropertyBase>;
 
 
-export interface InternalPropertyBuilder$instance extends InternalPropertyBaseBuilder_2$instance<IConventionPropertyBuilder, Property> {
+export abstract class InternalPropertyBuilder$protected {
+    protected readonly This: IConventionPropertyBuilder;
+}
+
+
+export interface InternalPropertyBuilder$instance extends InternalPropertyBuilder$protected, InternalPropertyBaseBuilder_2$instance<IConventionPropertyBuilder, Property> {
     AfterSave(behavior: Nullable<PropertySaveBehavior>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
     Attach(typeBaseBuilder: InternalTypeBaseBuilder): InternalPropertyBuilder | undefined;
     BeforeSave(behavior: Nullable<PropertySaveBehavior>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
@@ -3638,7 +3862,12 @@ export interface __InternalSequenceBuilder$views {
 export type InternalSequenceBuilder = InternalSequenceBuilder$instance & __InternalSequenceBuilder$views;
 
 
-export interface InternalServicePropertyBuilder$instance extends InternalPropertyBaseBuilder_2$instance<IConventionServicePropertyBuilder, ServiceProperty> {
+export abstract class InternalServicePropertyBuilder$protected {
+    protected readonly This: IConventionServicePropertyBuilder;
+}
+
+
+export interface InternalServicePropertyBuilder$instance extends InternalServicePropertyBuilder$protected, InternalPropertyBaseBuilder_2$instance<IConventionServicePropertyBuilder, ServiceProperty> {
     Attach(entityTypeBuilder: InternalEntityTypeBuilder): InternalServicePropertyBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
@@ -3674,7 +3903,12 @@ export interface __InternalServicePropertyBuilder$views {
 export type InternalServicePropertyBuilder = InternalServicePropertyBuilder$instance & __InternalServicePropertyBuilder$views;
 
 
-export interface InternalSkipNavigationBuilder$instance extends InternalPropertyBaseBuilder_2$instance<IConventionSkipNavigationBuilder, SkipNavigation> {
+export abstract class InternalSkipNavigationBuilder$protected {
+    protected readonly This: InternalSkipNavigationBuilder;
+}
+
+
+export interface InternalSkipNavigationBuilder$instance extends InternalSkipNavigationBuilder$protected, InternalPropertyBaseBuilder_2$instance<IConventionSkipNavigationBuilder, SkipNavigation> {
     Attach(entityTypeBuilder?: InternalEntityTypeBuilder, targetEntityType?: EntityType, inverseBuilder?: InternalSkipNavigationBuilder): InternalSkipNavigationBuilder | undefined;
     AutoInclude(autoInclude: Nullable<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalSkipNavigationBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -3844,7 +4078,18 @@ export interface __InternalTriggerBuilder$views {
 export type InternalTriggerBuilder = InternalTriggerBuilder$instance & __InternalTriggerBuilder$views;
 
 
-export interface InternalTypeBaseBuilder$instance extends AnnotatableBuilder_2<TypeBase, InternalModelBuilder> {
+export abstract class InternalTypeBaseBuilder$protected {
+    protected abstract CanAddProperty(propertyType: Type, propertyName: string, configurationSource: ConfigurationSource, checkClrProperty?: boolean, skipTypeCheck?: boolean): boolean;
+    protected abstract CanIgnore(name: string, configurationSource: ConfigurationSource, shouldThrow: boolean): boolean;
+    protected GetOrCreateDiscriminatorProperty(type: Type, name: string, memberInfo: MemberInfo, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
+    protected PrimitiveCollection(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable<ConfigurationSource>, configurationSource: Nullable<ConfigurationSource>): InternalPropertyBuilder | undefined;
+    protected Property(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable<ConfigurationSource>, configurationSource: Nullable<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | undefined;
+    protected RemoveIncompatibleDiscriminatorValues(structuralType: TypeBase, newDiscriminatorProperty: Property, configurationSource: ConfigurationSource): void;
+    protected RemovePropertyIfUnused(property: Property, configurationSource: ConfigurationSource): void;
+}
+
+
+export interface InternalTypeBaseBuilder$instance extends InternalTypeBaseBuilder$protected, AnnotatableBuilder_2<TypeBase, InternalModelBuilder> {
     CanAddComplexProperty(propertyName: string, propertyType: Type, targetType: Type, collection: Nullable<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
     CanHaveComplexProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, complexType: Type, collection: Nullable<System_Internal.Boolean>, configurationSource: Nullable<ConfigurationSource>): boolean;
     CanHaveProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable<ConfigurationSource>, configurationSource: Nullable<ConfigurationSource>, checkClrProperty?: boolean): boolean;
@@ -3913,7 +4158,15 @@ export interface __InternalTypeBaseBuilder$views {
 export type InternalTypeBaseBuilder = InternalTypeBaseBuilder$instance & __InternalTypeBaseBuilder$views;
 
 
-export interface JsonColumn$instance extends Column$instance {
+export abstract class JsonColumn$protected {
+    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected GetDefaultStoreTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface JsonColumn$instance extends JsonColumn$protected, Column$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotations(annotations: IEnumerable__System_Collections_Generic<IAnnotation>): void;
@@ -3955,7 +4208,15 @@ export interface __JsonColumn$views {
 export type JsonColumn = JsonColumn$instance & __JsonColumn$views;
 
 
-export interface JsonColumnBase$instance extends ColumnBase_1$instance<ColumnMappingBase> {
+export abstract class JsonColumnBase$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetDefaultStoreTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface JsonColumnBase$instance extends JsonColumnBase$protected, ColumnBase_1$instance<ColumnMappingBase> {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotations(annotations: IEnumerable__System_Collections_Generic<IAnnotation>): void;
@@ -3994,7 +4255,15 @@ export interface __JsonColumnBase$views {
 export type JsonColumnBase = JsonColumnBase$instance & __JsonColumnBase$views;
 
 
-export interface JsonViewColumn$instance extends ViewColumn$instance {
+export abstract class JsonViewColumn$protected {
+    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected GetDefaultStoreTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface JsonViewColumn$instance extends JsonViewColumn$protected, ViewColumn$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotations(annotations: IEnumerable__System_Collections_Generic<IAnnotation>): void;
@@ -4035,7 +4304,16 @@ export interface __JsonViewColumn$views {
 export type JsonViewColumn = JsonViewColumn$instance & __JsonViewColumn$views;
 
 
-export interface Key$instance extends ConventionAnnotatable {
+export abstract class Key$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Key$instance extends Key$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: EntityType;
     readonly IdentityMapFactory: Func<System_Internal.Boolean, IIdentityMap>;
@@ -4120,8 +4398,17 @@ export interface MemberClassifier$instance extends IMemberClassifier$instance {}
 export type MemberClassifier = MemberClassifier$instance & __MemberClassifier$views;
 
 
-export interface Model$instance extends ConventionAnnotatable {
-    readonly Configuration: ModelConfiguration | undefined;
+export abstract class Model$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Model$instance extends Model$protected, ConventionAnnotatable {
+    readonly Configuration: ModelConfiguration;
     readonly ConventionDispatcher: ConventionDispatcher;
     readonly DebugView: DebugView;
     readonly IsReadOnly: boolean;
@@ -4289,7 +4576,16 @@ export const NamedListComparer: {
 
 export type NamedListComparer = NamedListComparer$instance;
 
-export interface Navigation$instance extends PropertyBase$instance {
+export abstract class Navigation$protected {
+    protected AddAnnotation16(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetAnnotation7(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Navigation$instance extends Navigation$protected, PropertyBase$instance {
     readonly ClrType: Type;
     readonly CollectionAccessor: IClrCollectionAccessor | undefined;
     readonly DebugView: DebugView;
@@ -4417,7 +4713,19 @@ export const PropertiesSnapshot: {
 
 export type PropertiesSnapshot = PropertiesSnapshot$instance;
 
-export interface Property$instance extends PropertyBase$instance {
+export abstract class Property$protected {
+    protected AddAnnotation16(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected OnElementTypeSet(newElementType: IElementType, oldElementType: IElementType): IElementType | undefined;
+    protected OnFieldInfoSet(newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo): FieldInfo | undefined;
+    protected OnPropertyNullableChanged(): Nullable<System_Internal.Boolean>;
+    protected SetAnnotation7(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Property$instance extends Property$protected, PropertyBase$instance {
     readonly ClrType: Type;
     readonly DebugView: DebugView;
     readonly DeclaringType: TypeBase;
@@ -4617,7 +4925,15 @@ export const PropertyAccessorsFactory: {
 
 export type PropertyAccessorsFactory = PropertyAccessorsFactory$instance;
 
-export interface PropertyBase$instance extends ConventionAnnotatable {
+export abstract class PropertyBase$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected OnFieldInfoSet(newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo): FieldInfo | undefined;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface PropertyBase$instance extends PropertyBase$protected, ConventionAnnotatable {
     readonly Accessors: PropertyAccessors;
     readonly ClrType: Type;
     readonly DeclaringType: TypeBase;
@@ -4671,6 +4987,7 @@ export interface PropertyBase$instance extends ConventionAnnotatable {
 
 
 export const PropertyBase: {
+    new(name: string, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, configurationSource: ConfigurationSource): PropertyBase;
     GetFieldInfo(fieldName: string, type: TypeBase, propertyName: string, shouldThrow: boolean): FieldInfo | undefined;
     IsCompatible(fieldInfo: FieldInfo, propertyType: Type, entityType: Type, propertyName: string, shouldThrow: boolean): boolean;
 };
@@ -4690,7 +5007,12 @@ export interface __PropertyBase$views {
 export type PropertyBase = PropertyBase$instance & __PropertyBase$views;
 
 
-export interface PropertyConfiguration$instance extends AnnotatableBase {
+export abstract class PropertyConfiguration$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface PropertyConfiguration$instance extends PropertyConfiguration$protected, AnnotatableBase {
     readonly ClrType: Type;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
@@ -4881,7 +5203,14 @@ export interface __Reference_1$views<T> {
 export type Reference_1<T> = Reference_1$instance<T> & __Reference_1$views<T>;
 
 
-export interface RelationalModel$instance extends Annotatable {
+export abstract class RelationalModel$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface RelationalModel$instance extends RelationalModel$protected, Annotatable {
     readonly DebugView: DebugView;
     readonly DefaultTables: Dictionary<System_Internal.String, TableBase>;
     readonly Functions: Dictionary<ValueTuple<System_Internal.String, System_Internal.String, IReadOnlyList<System_Internal.String>>, StoreFunction>;
@@ -4950,7 +5279,14 @@ export interface __RelationalModel$views {
 export type RelationalModel = RelationalModel$instance & __RelationalModel$views;
 
 
-export interface RelationalPropertyOverrides$instance extends ConventionAnnotatable {
+export abstract class RelationalPropertyOverrides$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface RelationalPropertyOverrides$instance extends RelationalPropertyOverrides$protected, ConventionAnnotatable {
     ColumnName: string;
     readonly DebugView: DebugView;
     readonly IsColumnNameOverridden: boolean;
@@ -5052,7 +5388,12 @@ export interface RuntimeQueryFilter$instance extends Microsoft_EntityFrameworkCo
 export type RuntimeQueryFilter = RuntimeQueryFilter$instance & __RuntimeQueryFilter$views;
 
 
-export interface RuntimeStoredProcedureParameter$instance extends AnnotatableBase {
+export abstract class RuntimeStoredProcedureParameter$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeStoredProcedureParameter$instance extends RuntimeStoredProcedureParameter$protected, AnnotatableBase {
     readonly DebugView: DebugView;
     readonly StoredProcedure: RuntimeStoredProcedure;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
@@ -5085,7 +5426,12 @@ export interface __RuntimeStoredProcedureParameter$views {
 export type RuntimeStoredProcedureParameter = RuntimeStoredProcedureParameter$instance & __RuntimeStoredProcedureParameter$views;
 
 
-export interface RuntimeStoredProcedureResultColumn$instance extends AnnotatableBase {
+export abstract class RuntimeStoredProcedureResultColumn$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeStoredProcedureResultColumn$instance extends RuntimeStoredProcedureResultColumn$protected, AnnotatableBase {
     readonly DebugView: DebugView;
     readonly StoredProcedure: RuntimeStoredProcedure;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
@@ -5118,7 +5464,14 @@ export interface __RuntimeStoredProcedureResultColumn$views {
 export type RuntimeStoredProcedureResultColumn = RuntimeStoredProcedureResultColumn$instance & __RuntimeStoredProcedureResultColumn$views;
 
 
-export interface Sequence$instance extends ConventionAnnotatable {
+export abstract class Sequence$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Sequence$instance extends Sequence$protected, ConventionAnnotatable {
     IncrementBy: int;
     IsCyclic: boolean;
     readonly IsInModel: boolean;
@@ -5206,7 +5559,14 @@ export interface __Sequence$views {
 export type Sequence = Sequence$instance & __Sequence$views;
 
 
-export interface ServiceProperty$instance extends PropertyBase$instance {
+export abstract class ServiceProperty$protected {
+    protected AddAnnotation16(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation7(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ServiceProperty$instance extends ServiceProperty$protected, PropertyBase$instance {
     readonly ClrType: Type;
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: EntityType;
@@ -5291,14 +5651,23 @@ export interface __ServiceProperty$views {
 export type ServiceProperty = ServiceProperty$instance & __ServiceProperty$views;
 
 
-export interface SkipNavigation$instance extends PropertyBase$instance {
+export abstract class SkipNavigation$protected {
+    protected AddAnnotation16(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
+    protected OnAnnotationSet2(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
+    protected OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected SetAnnotation7(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface SkipNavigation$instance extends SkipNavigation$protected, PropertyBase$instance {
     readonly ClrType: Type;
     readonly CollectionAccessor: IClrCollectionAccessor | undefined;
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: EntityType;
     readonly DeclaringType: TypeBase;
-    readonly ForeignKey: ForeignKey;
-    readonly Inverse: SkipNavigation;
+    ForeignKey: ForeignKey;
+    Inverse: SkipNavigation;
     readonly IsCollection: boolean;
     readonly IsInModel: boolean;
     readonly IsOnDependent: boolean;
@@ -5403,7 +5772,14 @@ export const SkipNavigationComparer: {
 
 export type SkipNavigationComparer = SkipNavigationComparer$instance;
 
-export interface SqlQuery$instance extends TableBase$instance {
+export abstract class SqlQuery$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface SqlQuery$instance extends SqlQuery$protected, TableBase$instance {
     Sql: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -5449,7 +5825,14 @@ export interface __SqlQuery$views {
 export type SqlQuery = SqlQuery$instance & __SqlQuery$views;
 
 
-export interface SqlQueryColumn$instance extends ColumnBase_1$instance<SqlQueryColumnMapping> {
+export abstract class SqlQueryColumn$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface SqlQueryColumn$instance extends SqlQueryColumn$protected, ColumnBase_1$instance<SqlQueryColumnMapping> {
     readonly SqlQuery: SqlQuery;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -5491,7 +5874,15 @@ export interface __SqlQueryColumn$views {
 export type SqlQueryColumn = SqlQueryColumn$instance & __SqlQueryColumn$views;
 
 
-export interface SqlQueryColumnMapping$instance extends ColumnMappingBase$instance {
+export abstract class SqlQueryColumnMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface SqlQueryColumnMapping$instance extends SqlQueryColumnMapping$protected, ColumnMappingBase$instance {
     readonly SqlQueryMapping: ISqlQueryMapping;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -5531,7 +5922,14 @@ export interface __SqlQueryColumnMapping$views {
 export type SqlQueryColumnMapping = SqlQueryColumnMapping$instance & __SqlQueryColumnMapping$views;
 
 
-export interface SqlQueryMapping$instance extends TableMappingBase_1$instance<SqlQueryColumnMapping> {
+export abstract class SqlQueryMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface SqlQueryMapping$instance extends SqlQueryMapping$protected, TableMappingBase_1$instance<SqlQueryColumnMapping> {
     IsDefaultSqlQueryMapping: boolean;
     readonly SqlQuery: ISqlQuery;
     AddAnnotation(name: string, value: unknown): IAnnotation;
@@ -5573,7 +5971,14 @@ export interface __SqlQueryMapping$views {
 export type SqlQueryMapping = SqlQueryMapping$instance & __SqlQueryMapping$views;
 
 
-export interface StoredProcedure$instance extends ConventionAnnotatable {
+export abstract class StoredProcedure$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoredProcedure$instance extends StoredProcedure$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     EntityType: IMutableEntityType;
     readonly IsInModel: boolean;
@@ -5673,7 +6078,14 @@ export const StoredProcedureComparer: {
 
 export type StoredProcedureComparer = StoredProcedureComparer$instance;
 
-export interface StoredProcedureMapping$instance extends TableMappingBase_1$instance<IStoredProcedureResultColumnMapping> {
+export abstract class StoredProcedureMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoredProcedureMapping$instance extends StoredProcedureMapping$protected, TableMappingBase_1$instance<IStoredProcedureResultColumnMapping> {
     readonly DebugView: DebugView;
     readonly ParameterMappings: List<IStoredProcedureParameterMapping>;
     readonly StoredProcedure: IStoredProcedure;
@@ -5720,7 +6132,14 @@ export interface __StoredProcedureMapping$views {
 export type StoredProcedureMapping = StoredProcedureMapping$instance & __StoredProcedureMapping$views;
 
 
-export interface StoredProcedureParameter$instance extends ConventionAnnotatable {
+export abstract class StoredProcedureParameter$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoredProcedureParameter$instance extends StoredProcedureParameter$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     Direction: ParameterDirection;
     readonly ForOriginalValue: Nullable<System_Internal.Boolean>;
@@ -5784,7 +6203,15 @@ export interface __StoredProcedureParameter$views {
 export type StoredProcedureParameter = StoredProcedureParameter$instance & __StoredProcedureParameter$views;
 
 
-export interface StoredProcedureParameterMapping$instance extends ColumnMappingBase$instance {
+export abstract class StoredProcedureParameterMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoredProcedureParameterMapping$instance extends StoredProcedureParameterMapping$protected, ColumnMappingBase$instance {
     readonly DebugView: DebugView;
     readonly Parameter: IStoredProcedureParameter;
     readonly StoredProcedureMapping: IStoredProcedureMapping;
@@ -5826,7 +6253,14 @@ export interface __StoredProcedureParameterMapping$views {
 export type StoredProcedureParameterMapping = StoredProcedureParameterMapping$instance & __StoredProcedureParameterMapping$views;
 
 
-export interface StoredProcedureResultColumn$instance extends ConventionAnnotatable {
+export abstract class StoredProcedureResultColumn$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoredProcedureResultColumn$instance extends StoredProcedureResultColumn$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     readonly ForRowsAffected: boolean;
     readonly IsInModel: boolean;
@@ -5885,7 +6319,15 @@ export interface __StoredProcedureResultColumn$views {
 export type StoredProcedureResultColumn = StoredProcedureResultColumn$instance & __StoredProcedureResultColumn$views;
 
 
-export interface StoredProcedureResultColumnMapping$instance extends ColumnMappingBase$instance {
+export abstract class StoredProcedureResultColumnMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoredProcedureResultColumnMapping$instance extends StoredProcedureResultColumnMapping$protected, ColumnMappingBase$instance {
     readonly DebugView: DebugView;
     readonly ResultColumn: IStoredProcedureResultColumn;
     readonly StoredProcedureMapping: IStoredProcedureMapping;
@@ -5927,7 +6369,14 @@ export interface __StoredProcedureResultColumnMapping$views {
 export type StoredProcedureResultColumnMapping = StoredProcedureResultColumnMapping$instance & __StoredProcedureResultColumnMapping$views;
 
 
-export interface StoreFunction$instance extends TableBase$instance {
+export abstract class StoreFunction$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoreFunction$instance extends StoreFunction$protected, TableBase$instance {
     readonly DbFunctions: SortedDictionary<System_Internal.String, IDbFunction>;
     readonly IsBuiltIn: boolean;
     readonly Parameters: StoreFunctionParameter[];
@@ -5978,7 +6427,14 @@ export interface __StoreFunction$views {
 export type StoreFunction = StoreFunction$instance & __StoreFunction$views;
 
 
-export interface StoreFunctionParameter$instance extends Annotatable {
+export abstract class StoreFunctionParameter$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoreFunctionParameter$instance extends StoreFunctionParameter$protected, Annotatable {
     readonly DbFunctionParameters: List<IDbFunctionParameter>;
     readonly Function: StoreFunction;
     readonly IsReadOnly: boolean;
@@ -6021,10 +6477,17 @@ export interface __StoreFunctionParameter$views {
 export type StoreFunctionParameter = StoreFunctionParameter$instance & __StoreFunctionParameter$views;
 
 
-export interface StoreStoredProcedure$instance extends TableBase$instance {
+export abstract class StoreStoredProcedure$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoreStoredProcedure$instance extends StoreStoredProcedure$protected, TableBase$instance {
     readonly DebugView: DebugView;
-    readonly Parameters: List<IStoreStoredProcedureParameter>;
-    readonly ResultColumns: List<IStoreStoredProcedureResultColumn>;
+    Parameters: List<IStoreStoredProcedureParameter>;
+    ResultColumns: List<IStoreStoredProcedureResultColumn>;
     get ReturnValue(): IStoreStoredProcedureReturnValue | undefined;
     set ReturnValue(value: IStoreStoredProcedureReturnValue);
     readonly StoredProcedures: SortedSet<IStoredProcedure>;
@@ -6078,7 +6541,15 @@ export interface __StoreStoredProcedure$views {
 export type StoreStoredProcedure = StoreStoredProcedure$instance & __StoreStoredProcedure$views;
 
 
-export interface StoreStoredProcedureParameter$instance extends ColumnBase_1$instance<StoredProcedureParameterMapping> {
+export abstract class StoreStoredProcedureParameter$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetDefaultStoreTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoreStoredProcedureParameter$instance extends StoreStoredProcedureParameter$protected, ColumnBase_1$instance<StoredProcedureParameterMapping> {
     readonly DebugView: DebugView;
     readonly Direction: ParameterDirection;
     readonly Position: int;
@@ -6123,7 +6594,15 @@ export interface __StoreStoredProcedureParameter$views {
 export type StoreStoredProcedureParameter = StoreStoredProcedureParameter$instance & __StoreStoredProcedureParameter$views;
 
 
-export interface StoreStoredProcedureResultColumn$instance extends ColumnBase_1$instance<StoredProcedureResultColumnMapping> {
+export abstract class StoreStoredProcedureResultColumn$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetDefaultStoreTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoreStoredProcedureResultColumn$instance extends StoreStoredProcedureResultColumn$protected, ColumnBase_1$instance<StoredProcedureResultColumnMapping> {
     readonly DebugView: DebugView;
     readonly Position: int;
     readonly StoredProcedure: StoreStoredProcedure;
@@ -6167,7 +6646,15 @@ export interface __StoreStoredProcedureResultColumn$views {
 export type StoreStoredProcedureResultColumn = StoreStoredProcedureResultColumn$instance & __StoreStoredProcedureResultColumn$views;
 
 
-export interface StoreStoredProcedureReturnValue$instance extends ColumnBase_1$instance<ColumnMappingBase> {
+export abstract class StoreStoredProcedureReturnValue$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetDefaultStoreTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface StoreStoredProcedureReturnValue$instance extends StoreStoredProcedureReturnValue$protected, ColumnBase_1$instance<ColumnMappingBase> {
     readonly DebugView: DebugView;
     readonly StoredProcedure: StoreStoredProcedure;
     AddAnnotation(name: string, value: unknown): IAnnotation;
@@ -6210,7 +6697,14 @@ export interface __StoreStoredProcedureReturnValue$views {
 export type StoreStoredProcedureReturnValue = StoreStoredProcedureReturnValue$instance & __StoreStoredProcedureReturnValue$views;
 
 
-export interface Table$instance extends TableBase$instance {
+export abstract class Table$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Table$instance extends Table$protected, TableBase$instance {
     readonly CheckConstraints: SortedDictionary<System_Internal.String, CheckConstraint>;
     readonly ForeignKeyConstraints: SortedSet<ForeignKeyConstraint>;
     readonly Indexes: SortedDictionary<System_Internal.String, TableIndex>;
@@ -6265,18 +6759,27 @@ export interface __Table$views {
 export type Table = Table$instance & __Table$views;
 
 
-export interface TableBase$instance extends Annotatable {
-    readonly Columns: SortedDictionary<System_Internal.String, IColumnBase>;
+export abstract class TableBase$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface TableBase$instance extends TableBase$protected, Annotatable {
+    Columns: SortedDictionary<System_Internal.String, IColumnBase>;
     readonly ComplexTypeMappings: SortedSet<ITableMappingBase>;
     readonly EntityTypeMappings: SortedSet<ITableMappingBase>;
     readonly IsReadOnly: boolean;
-    readonly IsShared: boolean;
+    IsShared: boolean;
     readonly Model: RelationalModel;
     readonly Name: string;
     get OptionalTypes(): Dictionary<ITypeBase, System_Internal.Boolean> | undefined;
     set OptionalTypes(value: Dictionary<ITypeBase, System_Internal.Boolean>);
-    readonly ReferencingRowInternalForeignKeys: SortedDictionary<IEntityType, IEnumerable__System_Collections_Generic<IForeignKey>> | undefined;
-    readonly RowInternalForeignKeys: SortedDictionary<IEntityType, IEnumerable__System_Collections_Generic<IForeignKey>> | undefined;
+    get ReferencingRowInternalForeignKeys(): SortedDictionary<IEntityType, IEnumerable__System_Collections_Generic<IForeignKey>> | undefined;
+    set ReferencingRowInternalForeignKeys(value: SortedDictionary<IEntityType, IEnumerable__System_Collections_Generic<IForeignKey>>);
+    get RowInternalForeignKeys(): SortedDictionary<IEntityType, IEnumerable__System_Collections_Generic<IForeignKey>> | undefined;
+    set RowInternalForeignKeys(value: SortedDictionary<IEntityType, IEnumerable__System_Collections_Generic<IForeignKey>>);
     readonly Schema: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -6334,7 +6837,14 @@ export const TableBaseIdentityComparer: {
 
 export type TableBaseIdentityComparer = TableBaseIdentityComparer$instance;
 
-export interface TableIndex$instance extends Annotatable {
+export abstract class TableIndex$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface TableIndex$instance extends TableIndex$protected, Annotatable {
     readonly Columns: IReadOnlyList<Column>;
     readonly Filter: string | undefined;
     readonly IsDescending: IReadOnlyList<System_Internal.Boolean>;
@@ -6397,7 +6907,14 @@ export const TableIndexComparer: {
 
 export type TableIndexComparer = TableIndexComparer$instance;
 
-export interface TableMapping$instance extends TableMappingBase_1$instance<ColumnMapping> {
+export abstract class TableMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface TableMapping$instance extends TableMapping$protected, TableMappingBase_1$instance<ColumnMapping> {
     get DeleteStoredProcedureMapping(): IStoredProcedureMapping | undefined;
     set DeleteStoredProcedureMapping(value: IStoredProcedureMapping);
     get InsertStoredProcedureMapping(): IStoredProcedureMapping | undefined;
@@ -6444,7 +6961,15 @@ export interface __TableMapping$views {
 export type TableMapping = TableMapping$instance & __TableMapping$views;
 
 
-export interface TableMappingBase_1$instance<TColumnMapping extends IColumnMappingBase> extends Annotatable {
+export abstract class TableMappingBase_1$protected<TColumnMapping extends IColumnMappingBase> {
+    protected readonly ColumnMappings: List<TColumnMapping>;
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface TableMappingBase_1$instance<TColumnMapping extends IColumnMappingBase> extends TableMappingBase_1$protected<TColumnMapping>, Annotatable {
     readonly IncludesDerivedTypes: Nullable<System_Internal.Boolean>;
     readonly IsReadOnly: boolean;
     IsSharedTablePrincipal: Nullable<System_Internal.Boolean>;
@@ -6505,7 +7030,14 @@ export const TableMappingBaseComparer: {
 
 export type TableMappingBaseComparer = TableMappingBaseComparer$instance;
 
-export interface Trigger$instance extends ConventionAnnotatable {
+export abstract class Trigger$protected {
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface Trigger$instance extends Trigger$protected, ConventionAnnotatable {
     readonly DebugView: DebugView;
     readonly EntityType: EntityType;
     readonly IsInModel: boolean;
@@ -6560,8 +7092,19 @@ export interface __Trigger$views {
 export type Trigger = Trigger$instance & __Trigger$views;
 
 
-export interface TypeBase$instance extends ConventionAnnotatable {
-    get BaseType(): EntityType | undefined | TypeBase | undefined;
+export abstract class TypeBase$protected {
+    protected readonly BaseBuilder: InternalTypeBaseBuilder;
+    protected readonly Properties: SortedDictionary<System_Internal.String, Property>;
+    protected AddAnnotation11(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetDerivedTypes<T extends TypeBase>(): IEnumerable__System_Collections_Generic<T>;
+    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    protected ValidateClrMember(name: string, memberInfo: MemberInfo, throwOnNameMismatch?: boolean): Type | undefined;
+}
+
+
+export interface TypeBase$instance extends TypeBase$protected, ConventionAnnotatable {
+    get BaseType(): ComplexType | undefined | TypeBase | undefined;
     set BaseType(value: TypeBase);
     readonly ClrType: Type;
     get ConstructorBinding(): InstantiationBinding | undefined;
@@ -6679,7 +7222,10 @@ export interface TypeBase$instance extends ConventionAnnotatable {
 
 
 export const TypeBase: {
+    new(type: Type, model: Model, configurationSource: ConfigurationSource): TypeBase;
+    new(name: string, type: Type, model: Model, configurationSource: ConfigurationSource): TypeBase;
     CheckChangeTrackingStrategy(structuralType: IReadOnlyTypeBase, value: ChangeTrackingStrategy, requireFullNotifications: boolean): string | undefined;
+    ToEnumerable<T>(element: T): IEnumerable__System_Collections_Generic<T>;
 };
 
 
@@ -6698,7 +7244,14 @@ export interface __TypeBase$views {
 export type TypeBase = TypeBase$instance & __TypeBase$views;
 
 
-export interface UniqueConstraint$instance extends Annotatable {
+export abstract class UniqueConstraint$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface UniqueConstraint$instance extends UniqueConstraint$protected, Annotatable {
     readonly Columns: IReadOnlyList<Column>;
     readonly IsReadOnly: boolean;
     readonly MappedKeys: SortedSet<IKey>;
@@ -6758,7 +7311,14 @@ export const UniqueConstraintComparer: {
 
 export type UniqueConstraintComparer = UniqueConstraintComparer$instance;
 
-export interface View$instance extends TableBase$instance {
+export abstract class View$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface View$instance extends View$protected, TableBase$instance {
     readonly ViewDefinitionSql: string | undefined;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -6804,7 +7364,14 @@ export interface __View$views {
 export type View = View$instance & __View$views;
 
 
-export interface ViewColumn$instance extends ColumnBase_1$instance<ViewColumnMapping> {
+export abstract class ViewColumn$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ViewColumn$instance extends ViewColumn$protected, ColumnBase_1$instance<ViewColumnMapping> {
     readonly View: View;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -6846,7 +7413,15 @@ export interface __ViewColumn$views {
 export type ViewColumn = ViewColumn$instance & __ViewColumn$views;
 
 
-export interface ViewColumnMapping$instance extends ColumnMappingBase$instance {
+export abstract class ViewColumnMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected GetTypeMapping(): RelationalTypeMapping;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ViewColumnMapping$instance extends ViewColumnMapping$protected, ColumnMappingBase$instance {
     readonly ViewMapping: IViewMapping;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -6886,7 +7461,14 @@ export interface __ViewColumnMapping$views {
 export type ViewColumnMapping = ViewColumnMapping$instance & __ViewColumnMapping$views;
 
 
-export interface ViewMapping$instance extends TableMappingBase_1$instance<ViewColumnMapping> {
+export abstract class ViewMapping$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface ViewMapping$instance extends ViewMapping$protected, TableMappingBase_1$instance<ViewColumnMapping> {
     readonly View: IView;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;

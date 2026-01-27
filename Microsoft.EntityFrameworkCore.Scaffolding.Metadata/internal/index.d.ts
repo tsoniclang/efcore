@@ -15,7 +15,14 @@ import type { ReferentialAction } from "../../Microsoft.EntityFrameworkCore.Migr
 import type { IEnumerable, IList, IReadOnlyDictionary } from "@tsonic/dotnet/System.Collections.Generic.js";
 import type { Boolean as ClrBoolean, Func, Int32, Int64, Nullable, Object as ClrObject, String as ClrString, Void } from "@tsonic/dotnet/System.js";
 
-export interface DatabaseColumn$instance extends Annotatable {
+export abstract class DatabaseColumn$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseColumn$instance extends DatabaseColumn$protected, Annotatable {
     get Collation(): string | undefined;
     set Collation(value: string);
     get Comment(): string | undefined;
@@ -68,7 +75,14 @@ export interface __DatabaseColumn$views {
 export type DatabaseColumn = DatabaseColumn$instance & __DatabaseColumn$views;
 
 
-export interface DatabaseForeignKey$instance extends Annotatable {
+export abstract class DatabaseForeignKey$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseForeignKey$instance extends DatabaseForeignKey$protected, Annotatable {
     readonly Columns: IList<DatabaseColumn>;
     Name: string;
     OnDelete: Nullable<ReferentialAction>;
@@ -111,7 +125,14 @@ export interface __DatabaseForeignKey$views {
 export type DatabaseForeignKey = DatabaseForeignKey$instance & __DatabaseForeignKey$views;
 
 
-export interface DatabaseIndex$instance extends Annotatable {
+export abstract class DatabaseIndex$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseIndex$instance extends DatabaseIndex$protected, Annotatable {
     readonly Columns: IList<DatabaseColumn>;
     get Filter(): string | undefined;
     set Filter(value: string);
@@ -155,7 +176,14 @@ export interface __DatabaseIndex$views {
 export type DatabaseIndex = DatabaseIndex$instance & __DatabaseIndex$views;
 
 
-export interface DatabaseModel$instance extends Annotatable {
+export abstract class DatabaseModel$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseModel$instance extends DatabaseModel$protected, Annotatable {
     get Collation(): string | undefined;
     set Collation(value: string);
     get DatabaseName(): string | undefined;
@@ -199,7 +227,14 @@ export interface __DatabaseModel$views {
 export type DatabaseModel = DatabaseModel$instance & __DatabaseModel$views;
 
 
-export interface DatabasePrimaryKey$instance extends Annotatable {
+export abstract class DatabasePrimaryKey$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabasePrimaryKey$instance extends DatabasePrimaryKey$protected, Annotatable {
     readonly Columns: IList<DatabaseColumn>;
     Name: string;
     Table: DatabaseTable;
@@ -239,7 +274,14 @@ export interface __DatabasePrimaryKey$views {
 export type DatabasePrimaryKey = DatabasePrimaryKey$instance & __DatabasePrimaryKey$views;
 
 
-export interface DatabaseSequence$instance extends Annotatable {
+export abstract class DatabaseSequence$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseSequence$instance extends DatabaseSequence$protected, Annotatable {
     Database: DatabaseModel;
     IncrementBy: Nullable<System_Internal.Int32>;
     IsCyclic: Nullable<System_Internal.Boolean>;
@@ -285,7 +327,14 @@ export interface __DatabaseSequence$views {
 export type DatabaseSequence = DatabaseSequence$instance & __DatabaseSequence$views;
 
 
-export interface DatabaseTable$instance extends Annotatable {
+export abstract class DatabaseTable$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseTable$instance extends DatabaseTable$protected, Annotatable {
     readonly Columns: IList<DatabaseColumn>;
     get Comment(): string | undefined;
     set Comment(value: string);
@@ -334,7 +383,14 @@ export interface __DatabaseTable$views {
 export type DatabaseTable = DatabaseTable$instance & __DatabaseTable$views;
 
 
-export interface DatabaseTrigger$instance extends Annotatable {
+export abstract class DatabaseTrigger$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseTrigger$instance extends DatabaseTrigger$protected, Annotatable {
     Name: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -371,7 +427,14 @@ export interface __DatabaseTrigger$views {
 export type DatabaseTrigger = DatabaseTrigger$instance & __DatabaseTrigger$views;
 
 
-export interface DatabaseUniqueConstraint$instance extends Annotatable {
+export abstract class DatabaseUniqueConstraint$protected {
+    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseUniqueConstraint$instance extends DatabaseUniqueConstraint$protected, Annotatable {
     readonly Columns: IList<DatabaseColumn>;
     Name: string;
     Table: DatabaseTable;
@@ -411,7 +474,14 @@ export interface __DatabaseUniqueConstraint$views {
 export type DatabaseUniqueConstraint = DatabaseUniqueConstraint$instance & __DatabaseUniqueConstraint$views;
 
 
-export interface DatabaseView$instance extends DatabaseTable$instance {
+export abstract class DatabaseView$protected {
+    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
+    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+}
+
+
+export interface DatabaseView$instance extends DatabaseView$protected, DatabaseTable$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;

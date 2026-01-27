@@ -16,7 +16,12 @@ import type { Boolean as ClrBoolean, Byte, Char, DateTime, DateTimeOffset, Decim
 import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
-export interface ConvertedValueGenerator$instance extends ValueGenerator {
+export abstract class ConvertedValueGenerator$protected {
+    protected NextValue(entry: EntityEntry): unknown | undefined;
+}
+
+
+export interface ConvertedValueGenerator$instance extends ConvertedValueGenerator$protected, ValueGenerator {
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
@@ -31,7 +36,12 @@ export const ConvertedValueGenerator: {
 
 export type ConvertedValueGenerator = ConvertedValueGenerator$instance;
 
-export interface DiscriminatorValueGenerator$instance extends ValueGenerator {
+export abstract class DiscriminatorValueGenerator$protected {
+    protected NextValue(entry: EntityEntry): unknown;
+}
+
+
+export interface DiscriminatorValueGenerator$instance extends DiscriminatorValueGenerator$protected, ValueGenerator {
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
 }
@@ -183,6 +193,7 @@ export interface TemporaryNumberValueGenerator_1$instance<TValue> extends ValueG
 
 
 export const TemporaryNumberValueGenerator_1: {
+    new<TValue>(): TemporaryNumberValueGenerator_1<TValue>;
 };
 
 

@@ -76,7 +76,12 @@ export interface CreateTableBuilder_1$instance<TColumns> extends Microsoft_Entit
 export type CreateTableBuilder_1<TColumns> = CreateTableBuilder_1$instance<TColumns> & __CreateTableBuilder_1$views<TColumns>;
 
 
-export interface OperationBuilder_1$instance<TOperation extends MigrationOperation> {
+export abstract class OperationBuilder_1$protected<TOperation extends MigrationOperation> {
+    protected readonly Operation: TOperation;
+}
+
+
+export interface OperationBuilder_1$instance<TOperation extends MigrationOperation> extends OperationBuilder_1$protected<TOperation> {
     Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;

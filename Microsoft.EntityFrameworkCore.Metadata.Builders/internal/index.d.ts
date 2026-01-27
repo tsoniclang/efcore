@@ -13,7 +13,7 @@ import type { ValueComparer } from "../../Microsoft.EntityFrameworkCore.ChangeTr
 import * as Microsoft_EntityFrameworkCore_Infrastructure_Internal from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
 import type { IInfrastructure_1 } from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
 import type { ConventionSet, IConvention } from "../../Microsoft.EntityFrameworkCore.Metadata.Conventions/internal/index.js";
-import type { ComplexPropertyConfiguration, InternalStoredProcedureParameterBuilder, InternalStoredProcedureResultColumnBuilder, PropertyConfiguration } from "../../Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js";
+import type { ComplexPropertyConfiguration, EntityType, EntityTypeMappingFragment, ForeignKey, InternalCheckConstraintBuilder, InternalComplexPropertyBuilder, InternalComplexTypeBuilder, InternalDbFunctionBuilder, InternalEntityTypeBuilder, InternalForeignKeyBuilder, InternalModelBuilder, InternalStoredProcedureBuilder, InternalStoredProcedureParameterBuilder, InternalStoredProcedureResultColumnBuilder, InternalTriggerBuilder, PropertyConfiguration, RelationalPropertyOverrides } from "../../Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js";
 import type { IConventionAnnotatable, IConventionCheckConstraint, IConventionComplexProperty, IConventionComplexType, IConventionDbFunction, IConventionDbFunctionParameter, IConventionElementType, IConventionEntityType, IConventionEntityTypeMappingFragment, IConventionForeignKey, IConventionIndex, IConventionKey, IConventionModel, IConventionNavigation, IConventionProperty, IConventionPropertyBase, IConventionRelationalPropertyOverrides, IConventionSequence, IConventionServiceProperty, IConventionSkipNavigation, IConventionStoredProcedure, IConventionStoredProcedureParameter, IConventionStoredProcedureResultColumn, IConventionTrigger, IConventionTypeBase, IMutableCheckConstraint, IMutableComplexProperty, IMutableComplexType, IMutableDbFunction, IMutableDbFunctionParameter, IMutableElementType, IMutableEntityType, IMutableEntityTypeMappingFragment, IMutableForeignKey, IMutableIndex, IMutableKey, IMutableNavigationBase, IMutableProperty, IMutableRelationalPropertyOverrides, IMutableSequence, IMutableSkipNavigation, IMutableStoredProcedure, IMutableStoredProcedureParameter, IMutableStoredProcedureResultColumn, IMutableTrigger, IProperty, ITypeBase, MemberIdentity, ServiceParameterBinding, StoreObjectIdentifier } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { SqlExpression } from "../../Microsoft.EntityFrameworkCore.Query.SqlExpressions/internal/index.js";
 import type { ValueConverter, ValueConverter_2 } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
@@ -686,7 +686,12 @@ export interface IConventionTypeBaseBuilder$instance extends IConventionAnnotata
 
 export type IConventionTypeBaseBuilder = IConventionTypeBaseBuilder$instance;
 
-export interface CheckConstraintBuilder$instance {
+export abstract class CheckConstraintBuilder$protected {
+    protected readonly Builder: InternalCheckConstraintBuilder;
+}
+
+
+export interface CheckConstraintBuilder$instance extends CheckConstraintBuilder$protected {
     readonly Metadata: IMutableCheckConstraint;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -710,7 +715,15 @@ export interface CheckConstraintBuilder$instance extends Microsoft_EntityFramewo
 export type CheckConstraintBuilder = CheckConstraintBuilder$instance & __CheckConstraintBuilder$views;
 
 
-export interface CollectionCollectionBuilder$instance {
+export abstract class CollectionCollectionBuilder$protected {
+    protected readonly LeftEntityType: IMutableEntityType;
+    protected readonly ModelBuilder: InternalModelBuilder;
+    protected readonly RightEntityType: IMutableEntityType;
+    protected UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func<IMutableEntityType, IMutableForeignKey>, configureLeft: Func<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
+}
+
+
+export interface CollectionCollectionBuilder$instance extends CollectionCollectionBuilder$protected {
     readonly LeftNavigation: IMutableSkipNavigation;
     readonly RightNavigation: IMutableSkipNavigation;
     Equals(obj: unknown): boolean;
@@ -741,7 +754,12 @@ export const CollectionCollectionBuilder: {
 
 export type CollectionCollectionBuilder = CollectionCollectionBuilder$instance;
 
-export interface CollectionCollectionBuilder_2$instance<TLeftEntity, TRightEntity> extends CollectionCollectionBuilder {
+export abstract class CollectionCollectionBuilder_2$protected<TLeftEntity, TRightEntity> {
+    protected UsingEntity16(joinEntityName: string, joinEntityType: Type, configureRight: Func<IMutableEntityType, IMutableForeignKey>, configureLeft: Func<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
+}
+
+
+export interface CollectionCollectionBuilder_2$instance<TLeftEntity, TRightEntity> extends CollectionCollectionBuilder_2$protected<TLeftEntity, TRightEntity>, CollectionCollectionBuilder {
     UsingEntity<TJoinEntity>(): EntityTypeBuilder_1<TJoinEntity>;
     UsingEntity<TJoinEntity>(joinEntityName: string): EntityTypeBuilder_1<TJoinEntity>;
     UsingEntity(configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
@@ -783,7 +801,22 @@ export const CollectionCollectionBuilder_2: {
 
 export type CollectionCollectionBuilder_2<TLeftEntity, TRightEntity> = CollectionCollectionBuilder_2$instance<TLeftEntity, TRightEntity>;
 
-export interface CollectionNavigationBuilder$instance {
+export abstract class CollectionNavigationBuilder$protected {
+    protected Builder: InternalForeignKeyBuilder;
+    protected readonly CollectionMember: MemberInfo | undefined;
+    protected readonly CollectionName: string | undefined;
+    protected readonly DeclaringEntityType: IMutableEntityType;
+    protected readonly RelatedEntityType: IMutableEntityType;
+    protected WithLeftManyNavigation(inverseMemberInfo: MemberInfo): IMutableSkipNavigation;
+    protected WithLeftManyNavigation(inverseName: string): IMutableSkipNavigation;
+    protected WithOneBuilder(navigationName: string): InternalForeignKeyBuilder;
+    protected WithOneBuilder(navigationMemberInfo: MemberInfo): InternalForeignKeyBuilder;
+    protected WithRightManyNavigation(navigationName: string, inverseName: string): IMutableSkipNavigation;
+    protected WithRightManyNavigation(navigationMemberInfo: MemberInfo, inverseName: string): IMutableSkipNavigation;
+}
+
+
+export interface CollectionNavigationBuilder$instance extends CollectionNavigationBuilder$protected {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
@@ -828,7 +861,12 @@ export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity>
 export type CollectionNavigationBuilder_2<TEntity, TRelatedEntity> = CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> & __CollectionNavigationBuilder_2$views<TEntity, TRelatedEntity>;
 
 
-export interface ColumnBuilder$instance {
+export abstract class ColumnBuilder$protected {
+    protected readonly InternalOverrides: RelationalPropertyOverrides;
+}
+
+
+export interface ColumnBuilder$instance extends ColumnBuilder$protected {
     readonly Overrides: IMutableRelationalPropertyOverrides;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -872,7 +910,13 @@ export interface ColumnBuilder_1$instance<TProperty> extends Microsoft_EntityFra
 export type ColumnBuilder_1<TProperty> = ColumnBuilder_1$instance<TProperty> & __ColumnBuilder_1$views<TProperty>;
 
 
-export interface ComplexCollectionBuilder$instance {
+export abstract class ComplexCollectionBuilder$protected {
+    protected readonly PropertyBuilder: InternalComplexPropertyBuilder;
+    protected readonly TypeBuilder: InternalComplexTypeBuilder;
+}
+
+
+export interface ComplexCollectionBuilder$instance extends ComplexCollectionBuilder$protected {
     readonly Metadata: IMutableComplexProperty;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1077,7 +1121,12 @@ export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> exte
 export type ComplexCollectionTypePropertyBuilder_1<TProperty> = ComplexCollectionTypePropertyBuilder_1$instance<TProperty> & __ComplexCollectionTypePropertyBuilder_1$views<TProperty>;
 
 
-export interface ComplexPropertiesConfigurationBuilder$instance {
+export abstract class ComplexPropertiesConfigurationBuilder$protected {
+    protected readonly Configuration: ComplexPropertyConfiguration;
+}
+
+
+export interface ComplexPropertiesConfigurationBuilder$instance extends ComplexPropertiesConfigurationBuilder$protected {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
@@ -1102,7 +1151,13 @@ export const ComplexPropertiesConfigurationBuilder_1: {
 
 export type ComplexPropertiesConfigurationBuilder_1<TProperty> = ComplexPropertiesConfigurationBuilder_1$instance<TProperty>;
 
-export interface ComplexPropertyBuilder$instance {
+export abstract class ComplexPropertyBuilder$protected {
+    protected readonly PropertyBuilder: InternalComplexPropertyBuilder;
+    protected readonly TypeBuilder: InternalComplexTypeBuilder;
+}
+
+
+export interface ComplexPropertyBuilder$instance extends ComplexPropertyBuilder$protected {
     readonly Metadata: IMutableComplexProperty;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1223,7 +1278,12 @@ export interface ComplexPropertyBuilder_1$instance<TComplex> extends Microsoft_E
 export type ComplexPropertyBuilder_1<TComplex> = ComplexPropertyBuilder_1$instance<TComplex> & __ComplexPropertyBuilder_1$views<TComplex>;
 
 
-export interface ComplexTypeDiscriminatorBuilder$instance {
+export abstract class ComplexTypeDiscriminatorBuilder$protected {
+    protected readonly ComplexTypeBuilder: InternalComplexTypeBuilder;
+}
+
+
+export interface ComplexTypeDiscriminatorBuilder$instance extends ComplexTypeDiscriminatorBuilder$protected {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     HasValue(value: unknown): ComplexTypeDiscriminatorBuilder;
@@ -1516,7 +1576,12 @@ export interface DbFunctionBuilder$instance extends Microsoft_EntityFrameworkCor
 export type DbFunctionBuilder = DbFunctionBuilder$instance & __DbFunctionBuilder$views;
 
 
-export interface DbFunctionBuilderBase$instance {
+export abstract class DbFunctionBuilderBase$protected {
+    protected readonly Builder: InternalDbFunctionBuilder;
+}
+
+
+export interface DbFunctionBuilderBase$instance extends DbFunctionBuilderBase$protected {
     readonly Metadata: IMutableDbFunction;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1530,6 +1595,7 @@ export interface DbFunctionBuilderBase$instance {
 
 
 export const DbFunctionBuilderBase: {
+    new(function_: IMutableDbFunction): DbFunctionBuilderBase;
 };
 
 
@@ -1566,7 +1632,12 @@ export interface DbFunctionParameterBuilder$instance extends Microsoft_EntityFra
 export type DbFunctionParameterBuilder = DbFunctionParameterBuilder$instance & __DbFunctionParameterBuilder$views;
 
 
-export interface DiscriminatorBuilder$instance {
+export abstract class DiscriminatorBuilder$protected {
+    protected readonly EntityTypeBuilder: InternalEntityTypeBuilder;
+}
+
+
+export interface DiscriminatorBuilder$instance extends DiscriminatorBuilder$protected {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     HasValue(value: unknown): DiscriminatorBuilder;
@@ -1639,7 +1710,15 @@ export interface ElementTypeBuilder$instance extends Microsoft_EntityFrameworkCo
 export type ElementTypeBuilder = ElementTypeBuilder$instance & __ElementTypeBuilder$views;
 
 
-export interface EntityTypeBuilder$instance {
+export abstract class EntityTypeBuilder$protected {
+    protected readonly Builder: InternalEntityTypeBuilder;
+    protected FindRelatedEntityType(relatedTypeName: string, navigationName: string): EntityType;
+    protected FindRelatedEntityType(relatedType: Type, navigationName: string): EntityType;
+    protected HasOneBuilder(navigationId: MemberIdentity, relatedEntityType: EntityType): ForeignKey;
+}
+
+
+export interface EntityTypeBuilder$instance extends EntityTypeBuilder$protected {
     readonly Metadata: IMutableEntityType;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1883,7 +1962,14 @@ export interface IndexBuilder_1$instance<T> extends Microsoft_EntityFrameworkCor
 export type IndexBuilder_1<T> = IndexBuilder_1$instance<T> & __IndexBuilder_1$views<T>;
 
 
-export interface InvertibleRelationshipBuilderBase$instance {
+export abstract class InvertibleRelationshipBuilderBase$protected {
+    protected Builder: InternalForeignKeyBuilder;
+    protected readonly DeclaringEntityType: IMutableEntityType;
+    protected readonly RelatedEntityType: IMutableEntityType;
+}
+
+
+export interface InvertibleRelationshipBuilderBase$instance extends InvertibleRelationshipBuilderBase$protected {
     readonly Metadata: IMutableForeignKey;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1892,6 +1978,8 @@ export interface InvertibleRelationshipBuilderBase$instance {
 
 
 export const InvertibleRelationshipBuilderBase: {
+    new(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, foreignKey: IMutableForeignKey): InvertibleRelationshipBuilderBase;
+    new(builder: InternalForeignKeyBuilder, oldBuilder: InvertibleRelationshipBuilderBase, inverted: boolean, foreignKeySet: boolean, principalKeySet: boolean, requiredSet: boolean): InvertibleRelationshipBuilderBase;
 };
 
 
@@ -2026,7 +2114,18 @@ export const OwnedEntityTypeBuilder_1: {
 
 export type OwnedEntityTypeBuilder_1<T> = OwnedEntityTypeBuilder_1$instance<T>;
 
-export interface OwnedNavigationBuilder$instance {
+export abstract class OwnedNavigationBuilder$protected {
+    protected Builder: InternalForeignKeyBuilder;
+    protected readonly DependentEntityType: EntityType;
+    protected readonly PrincipalEntityType: EntityType;
+    protected FindRelatedEntityType(relatedTypeName: string, navigationName: string): EntityType;
+    protected FindRelatedEntityType(relatedType: Type, navigationName: string): EntityType;
+    protected HasOneBuilder(navigationId: MemberIdentity, relatedEntityType: EntityType): ForeignKey;
+    protected UpdateBuilder<T>(configure: Func<T>): T;
+}
+
+
+export interface OwnedNavigationBuilder$instance extends OwnedNavigationBuilder$protected {
     readonly Metadata: IMutableForeignKey;
     readonly OwnedEntityType: IMutableEntityType;
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder;
@@ -2151,7 +2250,12 @@ export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntit
 export type OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
 
-export interface OwnedNavigationSplitTableBuilder$instance {
+export abstract class OwnedNavigationSplitTableBuilder$protected {
+    protected readonly InternalMappingFragment: EntityTypeMappingFragment;
+}
+
+
+export interface OwnedNavigationSplitTableBuilder$instance extends OwnedNavigationSplitTableBuilder$protected {
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Metadata: IMutableEntityType;
     readonly Name: string;
@@ -2251,7 +2355,14 @@ export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDepen
 export type OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationSplitViewBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
 
-export interface OwnedNavigationStoredProcedureBuilder$instance {
+export abstract class OwnedNavigationStoredProcedureBuilder$protected {
+    protected readonly Builder: InternalStoredProcedureBuilder;
+    protected CreatePropertyBuilder(propertyName: string): PropertyBuilder;
+    protected CreatePropertyBuilder<TDependentEntity, TProperty>(propertyExpression: Expression<Func<TDependentEntity, TProperty>>): PropertyBuilder;
+}
+
+
+export interface OwnedNavigationStoredProcedureBuilder$instance extends OwnedNavigationStoredProcedureBuilder$protected {
     readonly Metadata: IMutableStoredProcedure;
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
@@ -2312,7 +2423,13 @@ export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, 
 export type OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationStoredProcedureBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
 
-export interface OwnedNavigationTableBuilder$instance {
+export abstract class OwnedNavigationTableBuilder$protected {
+    protected readonly StoreObject: Nullable<StoreObjectIdentifier>;
+    protected GetStoreObjectIdentifier(): StoreObjectIdentifier;
+}
+
+
+export interface OwnedNavigationTableBuilder$instance extends OwnedNavigationTableBuilder$protected {
     readonly Metadata: IMutableEntityType;
     readonly Name: string;
     readonly Schema: string;
@@ -2416,7 +2533,12 @@ export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEnti
 export type OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationTableValuedFunctionBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
 
-export interface OwnedNavigationViewBuilder$instance {
+export abstract class OwnedNavigationViewBuilder$protected {
+    protected readonly StoreObject: StoreObjectIdentifier;
+}
+
+
+export interface OwnedNavigationViewBuilder$instance extends OwnedNavigationViewBuilder$protected {
     readonly Name: string;
     readonly Schema: string;
     Equals(obj: unknown): boolean;
@@ -2470,6 +2592,7 @@ export interface OwnershipBuilder$instance extends RelationshipBuilderBase$insta
 
 export const OwnershipBuilder: {
     new(principalEntityType: IMutableEntityType, dependentEntityType: IMutableEntityType, foreignKey: IMutableForeignKey): OwnershipBuilder;
+    new(builder: InternalForeignKeyBuilder, oldBuilder: OwnershipBuilder, foreignKeySet: boolean, principalKeySet: boolean, requiredSet: boolean): OwnershipBuilder;
 };
 
 
@@ -2493,6 +2616,7 @@ export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends 
 
 export const OwnershipBuilder_2: {
     new<TEntity, TDependentEntity>(principalEntityType: IMutableEntityType, dependentEntityType: IMutableEntityType, foreignKey: IMutableForeignKey): OwnershipBuilder_2<TEntity, TDependentEntity>;
+    new<TEntity, TDependentEntity>(builder: InternalForeignKeyBuilder, oldBuilder: OwnershipBuilder, foreignKeySet: boolean, principalKeySet: boolean, requiredSet: boolean): OwnershipBuilder_2<TEntity, TDependentEntity>;
 };
 
 
@@ -2584,7 +2708,12 @@ export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends Micros
 export type PrimitiveCollectionBuilder_1<TProperty> = PrimitiveCollectionBuilder_1$instance<TProperty> & __PrimitiveCollectionBuilder_1$views<TProperty>;
 
 
-export interface PropertiesConfigurationBuilder$instance {
+export abstract class PropertiesConfigurationBuilder$protected {
+    protected readonly Configuration: PropertyConfiguration;
+}
+
+
+export interface PropertiesConfigurationBuilder$instance extends PropertiesConfigurationBuilder$protected {
     AreUnicode(unicode?: boolean): PropertiesConfigurationBuilder;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -2751,7 +2880,15 @@ export interface PropertyBuilder_1$instance<TProperty> extends Microsoft_EntityF
 export type PropertyBuilder_1<TProperty> = PropertyBuilder_1$instance<TProperty> & __PropertyBuilder_1$views<TProperty>;
 
 
-export interface ReferenceCollectionBuilder$instance extends RelationshipBuilderBase$instance {
+export abstract class ReferenceCollectionBuilder$protected {
+    protected HasForeignKeyBuilder(foreignKeyPropertyNames: IReadOnlyList<System_Internal.String>): InternalForeignKeyBuilder;
+    protected HasForeignKeyBuilder(foreignKeyMembers: IReadOnlyList<MemberInfo>): InternalForeignKeyBuilder;
+    protected HasPrincipalKeyBuilder(keyPropertyNames: IReadOnlyList<System_Internal.String>): InternalForeignKeyBuilder;
+    protected HasPrincipalKeyBuilder(keyMembers: IReadOnlyList<MemberInfo>): InternalForeignKeyBuilder;
+}
+
+
+export interface ReferenceCollectionBuilder$instance extends ReferenceCollectionBuilder$protected, RelationshipBuilderBase$instance {
     HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder;
     HasPrincipalKey(...keyPropertyNames: string[]): ReferenceCollectionBuilder;
@@ -2762,6 +2899,7 @@ export interface ReferenceCollectionBuilder$instance extends RelationshipBuilder
 
 export const ReferenceCollectionBuilder: {
     new(principalEntityType: IMutableEntityType, dependentEntityType: IMutableEntityType, foreignKey: IMutableForeignKey): ReferenceCollectionBuilder;
+    new(builder: InternalForeignKeyBuilder, oldBuilder: ReferenceCollectionBuilder, foreignKeySet: boolean, principalKeySet: boolean, requiredSet: boolean): ReferenceCollectionBuilder;
 };
 
 
@@ -2787,6 +2925,7 @@ export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDepend
 
 export const ReferenceCollectionBuilder_2: {
     new<TPrincipalEntity, TDependentEntity>(principalEntityType: IMutableEntityType, dependentEntityType: IMutableEntityType, foreignKey: IMutableForeignKey): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
+    new<TPrincipalEntity, TDependentEntity>(builder: InternalForeignKeyBuilder, oldBuilder: ReferenceCollectionBuilder, foreignKeySet: boolean, principalKeySet: boolean, requiredSet: boolean): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
 };
 
 
@@ -2799,7 +2938,20 @@ export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDepend
 export type ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity> = ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> & __ReferenceCollectionBuilder_2$views<TPrincipalEntity, TDependentEntity>;
 
 
-export interface ReferenceNavigationBuilder$instance {
+export abstract class ReferenceNavigationBuilder$protected {
+    protected readonly Builder: InternalForeignKeyBuilder;
+    protected readonly DeclaringEntityType: IMutableEntityType;
+    protected readonly ReferenceMember: MemberInfo | undefined;
+    protected readonly ReferenceName: string | undefined;
+    protected readonly RelatedEntityType: IMutableEntityType;
+    protected WithManyBuilder(navigationName: string): InternalForeignKeyBuilder;
+    protected WithManyBuilder(navigationMemberInfo: MemberInfo): InternalForeignKeyBuilder;
+    protected WithOneBuilder(navigationName: string): InternalForeignKeyBuilder;
+    protected WithOneBuilder(navigationMemberInfo: MemberInfo): InternalForeignKeyBuilder;
+}
+
+
+export interface ReferenceNavigationBuilder$instance extends ReferenceNavigationBuilder$protected {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
@@ -2846,7 +2998,17 @@ export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> 
 export type ReferenceNavigationBuilder_2<TEntity, TRelatedEntity> = ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> & __ReferenceNavigationBuilder_2$views<TEntity, TRelatedEntity>;
 
 
-export interface ReferenceReferenceBuilder$instance extends InvertibleRelationshipBuilderBase$instance {
+export abstract class ReferenceReferenceBuilder$protected {
+    protected HasForeignKeyBuilder(dependentEntityType: EntityType, dependentEntityTypeName: string, foreignKeyPropertyNames: IReadOnlyList<System_Internal.String>): InternalForeignKeyBuilder;
+    protected HasForeignKeyBuilder(dependentEntityType: EntityType, dependentEntityTypeName: string, foreignKeyMembers: IReadOnlyList<MemberInfo>): InternalForeignKeyBuilder;
+    protected HasPrincipalKeyBuilder(principalEntityType: EntityType, principalEntityTypeName: string, foreignKeyPropertyNames: IReadOnlyList<System_Internal.String>): InternalForeignKeyBuilder;
+    protected HasPrincipalKeyBuilder(principalEntityType: EntityType, principalEntityTypeName: string, foreignKeyMembers: IReadOnlyList<MemberInfo>): InternalForeignKeyBuilder;
+    protected ResolveEntityType(entityTypeName: string): EntityType | undefined;
+    protected ResolveEntityType(entityType: Type): EntityType | undefined;
+}
+
+
+export interface ReferenceReferenceBuilder$instance extends ReferenceReferenceBuilder$protected, InvertibleRelationshipBuilderBase$instance {
     HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityTypeName: string, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityType: Type, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
@@ -2859,6 +3021,7 @@ export interface ReferenceReferenceBuilder$instance extends InvertibleRelationsh
 
 export const ReferenceReferenceBuilder: {
     new(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, foreignKey: IMutableForeignKey): ReferenceReferenceBuilder;
+    new(builder: InternalForeignKeyBuilder, oldBuilder: ReferenceReferenceBuilder, inverted: boolean, foreignKeySet: boolean, principalKeySet: boolean, requiredSet: boolean): ReferenceReferenceBuilder;
 };
 
 
@@ -2888,6 +3051,7 @@ export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> e
 
 export const ReferenceReferenceBuilder_2: {
     new<TEntity, TRelatedEntity>(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, foreignKey: IMutableForeignKey): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    new<TEntity, TRelatedEntity>(builder: InternalForeignKeyBuilder, oldBuilder: ReferenceReferenceBuilder, inverted: boolean, foreignKeySet: boolean, principalKeySet: boolean, requiredSet: boolean): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
 };
 
 
@@ -2900,7 +3064,14 @@ export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> e
 export type ReferenceReferenceBuilder_2<TEntity, TRelatedEntity> = ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> & __ReferenceReferenceBuilder_2$views<TEntity, TRelatedEntity>;
 
 
-export interface RelationshipBuilderBase$instance {
+export abstract class RelationshipBuilderBase$protected {
+    protected Builder: InternalForeignKeyBuilder;
+    protected readonly DependentEntityType: IMutableEntityType;
+    protected readonly PrincipalEntityType: IMutableEntityType;
+}
+
+
+export interface RelationshipBuilderBase$instance extends RelationshipBuilderBase$protected {
     readonly Metadata: IMutableForeignKey;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -2909,6 +3080,8 @@ export interface RelationshipBuilderBase$instance {
 
 
 export const RelationshipBuilderBase: {
+    new(principalEntityType: IMutableEntityType, dependentEntityType: IMutableEntityType, foreignKey: IMutableForeignKey): RelationshipBuilderBase;
+    new(builder: InternalForeignKeyBuilder, oldBuilder: RelationshipBuilderBase, foreignKeySet: boolean, principalKeySet: boolean, requiredSet: boolean): RelationshipBuilderBase;
 };
 
 
@@ -2949,7 +3122,12 @@ export interface SequenceBuilder$instance extends Microsoft_EntityFrameworkCore_
 export type SequenceBuilder = SequenceBuilder$instance & __SequenceBuilder$views;
 
 
-export interface SplitTableBuilder$instance {
+export abstract class SplitTableBuilder$protected {
+    protected readonly InternalMappingFragment: EntityTypeMappingFragment;
+}
+
+
+export interface SplitTableBuilder$instance extends SplitTableBuilder$protected {
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Metadata: IMutableEntityType;
     readonly Name: string;
@@ -3049,7 +3227,14 @@ export interface SplitViewBuilder_1$instance<TEntity> extends Microsoft_EntityFr
 export type SplitViewBuilder_1<TEntity> = SplitViewBuilder_1$instance<TEntity> & __SplitViewBuilder_1$views<TEntity>;
 
 
-export interface StoredProcedureBuilder$instance {
+export abstract class StoredProcedureBuilder$protected {
+    protected readonly Builder: InternalStoredProcedureBuilder;
+    protected CreatePropertyBuilder(propertyName: string): PropertyBuilder;
+    protected CreatePropertyBuilder<TDerivedEntity, TProperty>(propertyExpression: Expression<Func<TDerivedEntity, TProperty>>): PropertyBuilder;
+}
+
+
+export interface StoredProcedureBuilder$instance extends StoredProcedureBuilder$protected {
     readonly Metadata: IMutableStoredProcedure;
     HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder;
@@ -3110,7 +3295,12 @@ export interface StoredProcedureBuilder_1$instance<TEntity> extends Microsoft_En
 export type StoredProcedureBuilder_1<TEntity> = StoredProcedureBuilder_1$instance<TEntity> & __StoredProcedureBuilder_1$views<TEntity>;
 
 
-export interface StoredProcedureParameterBuilder$instance {
+export abstract class StoredProcedureParameterBuilder$protected {
+    protected readonly Builder: InternalStoredProcedureParameterBuilder;
+}
+
+
+export interface StoredProcedureParameterBuilder$instance extends StoredProcedureParameterBuilder$protected {
     readonly Metadata: IMutableStoredProcedureParameter;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -3136,7 +3326,12 @@ export interface StoredProcedureParameterBuilder$instance extends Microsoft_Enti
 export type StoredProcedureParameterBuilder = StoredProcedureParameterBuilder$instance & __StoredProcedureParameterBuilder$views;
 
 
-export interface StoredProcedureResultColumnBuilder$instance {
+export abstract class StoredProcedureResultColumnBuilder$protected {
+    protected readonly Builder: InternalStoredProcedureResultColumnBuilder;
+}
+
+
+export interface StoredProcedureResultColumnBuilder$instance extends StoredProcedureResultColumnBuilder$protected {
     readonly Metadata: IMutableStoredProcedureResultColumn;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -3160,7 +3355,13 @@ export interface StoredProcedureResultColumnBuilder$instance extends Microsoft_E
 export type StoredProcedureResultColumnBuilder = StoredProcedureResultColumnBuilder$instance & __StoredProcedureResultColumnBuilder$views;
 
 
-export interface TableBuilder$instance {
+export abstract class TableBuilder$protected {
+    protected readonly StoreObject: Nullable<StoreObjectIdentifier>;
+    protected GetStoreObjectIdentifier(): StoreObjectIdentifier;
+}
+
+
+export interface TableBuilder$instance extends TableBuilder$protected {
     readonly Metadata: IMutableEntityType;
     readonly Name: string;
     readonly Schema: string;
@@ -3287,7 +3488,13 @@ export interface TableValuedFunctionBuilder_1$instance<TEntity> extends Microsof
 export type TableValuedFunctionBuilder_1<TEntity> = TableValuedFunctionBuilder_1$instance<TEntity> & __TableValuedFunctionBuilder_1$views<TEntity>;
 
 
-export interface TriggerBuilder$instance {
+export abstract class TriggerBuilder$protected {
+    protected readonly Builder: IConventionTriggerBuilder;
+    protected readonly InternalBuilder: InternalTriggerBuilder;
+}
+
+
+export interface TriggerBuilder$instance extends TriggerBuilder$protected {
     readonly Metadata: IMutableTrigger;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -3310,7 +3517,12 @@ export interface TriggerBuilder$instance extends Microsoft_EntityFrameworkCore_I
 export type TriggerBuilder = TriggerBuilder$instance & __TriggerBuilder$views;
 
 
-export interface TypeMappingConfigurationBuilder$instance {
+export abstract class TypeMappingConfigurationBuilder$protected {
+    protected readonly Configuration: PropertyConfiguration;
+}
+
+
+export interface TypeMappingConfigurationBuilder$instance extends TypeMappingConfigurationBuilder$protected {
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     HasAnnotation(annotation: string, value: unknown): TypeMappingConfigurationBuilder;
@@ -3360,7 +3572,12 @@ export const TypeMappingConfigurationBuilder_1: {
 
 export type TypeMappingConfigurationBuilder_1<TProperty> = TypeMappingConfigurationBuilder_1$instance<TProperty>;
 
-export interface ViewBuilder$instance {
+export abstract class ViewBuilder$protected {
+    protected readonly StoreObject: StoreObjectIdentifier;
+}
+
+
+export interface ViewBuilder$instance extends ViewBuilder$protected {
     readonly Name: string;
     readonly Schema: string;
     Equals(obj: unknown): boolean;
@@ -3405,7 +3622,12 @@ export interface ViewBuilder_1$instance<TEntity> extends Microsoft_EntityFramewo
 export type ViewBuilder_1<TEntity> = ViewBuilder_1$instance<TEntity> & __ViewBuilder_1$views<TEntity>;
 
 
-export interface ViewColumnBuilder$instance {
+export abstract class ViewColumnBuilder$protected {
+    protected readonly InternalOverrides: RelationalPropertyOverrides;
+}
+
+
+export interface ViewColumnBuilder$instance extends ViewColumnBuilder$protected {
     readonly Overrides: IMutableRelationalPropertyOverrides;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;

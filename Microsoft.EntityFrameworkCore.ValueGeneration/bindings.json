@@ -32,6 +32,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorCache",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -69,6 +70,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -88,6 +90,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -115,6 +118,13 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "typeArguments": [
+          "Byte[]"
+        ]
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.BinaryValueGenerator::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Byte[]",
@@ -131,6 +141,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.BinaryValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -150,6 +161,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.BinaryValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -169,6 +181,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.BinaryValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -190,6 +203,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.BinaryValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -204,6 +218,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.BinaryValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -220,6 +235,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorFactory",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorFactory"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.DiscriminatorValueGeneratorFactory::Create(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
@@ -236,6 +255,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.DiscriminatorValueGeneratorFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -252,6 +272,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.DiscriminatorValueGeneratorFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -268,6 +289,13 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "typeArguments": [
+          "Guid"
+        ]
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.GuidValueGenerator::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Guid",
@@ -284,6 +312,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.GuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -303,6 +332,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.GuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -322,6 +352,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.GuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -343,6 +374,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.GuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -357,6 +389,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.GuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -373,6 +406,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "typeArguments": [
+          "TValue"
+        ]
+      },
+      "typeParameters": [
+        "TValue"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):TValue",
@@ -389,6 +432,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -408,6 +452,47 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601::GetNewLowValue():System.Int64",
+          "clrName": "GetNewLowValue",
+          "metadataToken": 100664248,
+          "canonicalSignature": "():System.Int64",
+          "normalizedSignature": "GetNewLowValue|():System.Int64|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601::GetNewLowValueAsync(System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "GetNewLowValueAsync",
+          "metadataToken": 100664249,
+          "canonicalSignature": "(System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "GetNewLowValueAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -427,6 +512,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -446,6 +532,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -454,7 +541,19 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": []
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601::.ctor(Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState):void",
+          "metadataToken": 100664245,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState",
@@ -467,6 +566,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IDisposable",
+          "clrName": "System.IDisposable"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState::Next(System.Func_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):TValue",
@@ -483,6 +592,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -502,6 +612,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -521,6 +632,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -537,6 +649,7 @@
           "normalizedSignature": "constructor|(System.Int32):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -553,7 +666,37 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector",
+          "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector"
+        }
+      ],
       "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.ValueGeneration.RelationalValueGeneratorSelector::FindForType(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Type):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
+          "clrName": "FindForType",
+          "metadataToken": 100664490,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Type):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
+          "normalizedSignature": "FindForType|(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Type):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.RelationalValueGeneratorSelector",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector::Select(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
           "clrName": "Select",
@@ -569,6 +712,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -589,6 +733,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -615,6 +760,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.RelationalValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -634,6 +780,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.RelationalValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -656,6 +803,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.RelationalValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -672,6 +820,13 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "typeArguments": [
+          "Guid"
+        ]
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.SequentialGuidValueGenerator::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Guid",
@@ -688,6 +843,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.SequentialGuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -707,6 +863,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.SequentialGuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -726,6 +883,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.SequentialGuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -747,6 +905,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.SequentialGuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -761,6 +920,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.SequentialGuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -777,6 +937,13 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+        "typeArguments": [
+          "String"
+        ]
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.StringValueGenerator::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.String",
@@ -793,6 +960,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.StringValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -812,6 +980,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.StringValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -831,6 +1000,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.StringValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -852,6 +1022,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.StringValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -866,6 +1037,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.StringValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -882,6 +1054,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.GuidValueGenerator",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.GuidValueGenerator"
+      },
       "methods": [],
       "properties": [
         {
@@ -899,6 +1075,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.TemporaryGuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -913,6 +1090,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.TemporaryGuidValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -929,6 +1107,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorFactory",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorFactory"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.TemporaryNumberValueGeneratorFactory::Create(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
@@ -945,6 +1127,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.TemporaryNumberValueGeneratorFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -961,6 +1144,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.TemporaryNumberValueGeneratorFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -977,6 +1161,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Object",
@@ -993,6 +1181,27 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator::NextValue(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Object",
+          "clrName": "NextValue",
+          "metadataToken": 100664271,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Object",
+          "normalizedSignature": "NextValue|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Object|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": true,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1012,6 +1221,27 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator::NextValueAsync(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "NextValueAsync",
+          "metadataToken": 100664273,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "NextValueAsync|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1031,6 +1261,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1052,6 +1283,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -1070,13 +1302,26 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
       ],
       "fields": [],
       "events": [],
-      "constructors": []
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator::.ctor():void",
+          "metadataToken": 100664277,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
@@ -1089,6 +1334,13 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
+        "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator"
+      },
+      "typeParameters": [
+        "TValue"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):TValue",
@@ -1105,6 +1357,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1124,6 +1377,47 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601::NextValue(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Object",
+          "clrName": "NextValue",
+          "metadataToken": 100664320,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Object",
+          "normalizedSignature": "NextValue|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):System.Object|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601::NextValueAsync(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "NextValueAsync",
+          "metadataToken": 100664321,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "NextValueAsync|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1143,6 +1437,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1162,6 +1457,27 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601::NextValueAsync(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1",
+          "clrName": "NextValueAsync",
+          "metadataToken": 0,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1",
+          "normalizedSignature": "NextValueAsync|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "BaseOverload",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1170,7 +1486,19 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": []
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601::.ctor():void",
+          "metadataToken": 100664322,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCache",
@@ -1183,6 +1511,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorCache",
+          "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorCache"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCache::GetOrAdd(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Func_3[[Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[Microsoft.EntityFrameworkCore.Metadata.ITypeBase,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
@@ -1199,6 +1537,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCache",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1218,13 +1557,34 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorCache",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorCache"
         }
       ],
-      "properties": [],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCache::Dependencies:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies",
+          "clrName": "Dependencies",
+          "metadataToken": 385876134,
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies",
+          "normalizedSignature": "Dependencies|:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCache",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "fields": [],
       "events": [],
       "constructors": [
@@ -1235,6 +1595,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCache",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1251,6 +1612,19 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
+          "clrName": "System.IEquatable\u00601",
+          "typeArguments": [
+            "ValueGeneratorCacheDependencies"
+          ]
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies::ToString():System.String",
@@ -1267,6 +1641,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1286,6 +1661,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1305,6 +1681,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1324,6 +1701,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1343,6 +1721,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1359,6 +1738,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCacheDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1375,6 +1755,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorFactory::Create(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
@@ -1391,6 +1775,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1399,7 +1784,19 @@
       "properties": [],
       "fields": [],
       "events": [],
-      "constructors": []
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorFactory::.ctor():void",
+          "metadataToken": 100664293,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
@@ -1412,6 +1809,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector",
+          "clrName": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector::Select(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
@@ -1428,6 +1835,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1447,6 +1855,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1472,6 +1881,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1491,6 +1901,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1500,6 +1911,26 @@
               "modifier": "out"
             }
           ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector::FindForType(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Type):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
+          "clrName": "FindForType",
+          "metadataToken": 100664303,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Type):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
+          "normalizedSignature": "FindForType|(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Type):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector::Select(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.ITypeBase):Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator",
@@ -1516,6 +1947,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1536,6 +1968,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1564,6 +1997,26 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector::Dependencies:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies",
+          "clrName": "Dependencies",
+          "metadataToken": 385876137,
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies",
+          "normalizedSignature": "Dependencies|:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1578,6 +2031,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1594,6 +2048,19 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
+          "clrName": "System.IEquatable\u00601",
+          "typeArguments": [
+            "ValueGeneratorSelectorDependencies"
+          ]
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies::ToString():System.String",
@@ -1610,6 +2077,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1629,6 +2097,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1648,6 +2117,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1667,6 +2137,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1686,6 +2157,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1707,6 +2179,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1721,6 +2194,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ValueGeneration.IValueGeneratorCache):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }

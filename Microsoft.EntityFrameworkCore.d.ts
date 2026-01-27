@@ -21,12 +21,13 @@ import type { IAsyncQueryProvider, IIncludableQueryable_2, UpdateSettersBuilder_
 import type { ExecutionResult_1, IDbContextTransaction, IExceptionDetector, IExecutionStrategy, RelationalDataReader, RelationalTypeMapping } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 import type { IUpdateEntry } from './Microsoft.EntityFrameworkCore.Update/internal/index.js';
 import type { Dictionary, HashSet, IAsyncEnumerable, IAsyncEnumerator, IEnumerable as IEnumerable__System_Collections_Generic, IEqualityComparer, IReadOnlyCollection, IReadOnlyDictionary, IReadOnlyList, List } from '@tsonic/dotnet/System.Collections.Generic.js';
+import type { ImmutableSortedDictionary } from '@tsonic/dotnet/System.Collections.Immutable.js';
 import type { IEnumerable } from '@tsonic/dotnet/System.Collections.js';
 import type { ObservableCollection } from '@tsonic/dotnet/System.Collections.ObjectModel.js';
 import type { BindingList, IListSource } from '@tsonic/dotnet/System.ComponentModel.js';
 import type { DbCommand, DbConnection, DbTransaction } from '@tsonic/dotnet/System.Data.Common.js';
 import type { IsolationLevel } from '@tsonic/dotnet/System.Data.js';
-import type { Action, Attribute, Boolean as ClrBoolean, Decimal, Double, Enum, EventArgs, EventHandler, Exception, FormattableString, Func, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, Int64, IServiceProvider, ISpanFormattable, Nullable, Object as ClrObject, Single, String as ClrString, TimeSpan, Type, ValueType, Void } from '@tsonic/dotnet/System.js';
+import type { Action, Attribute, Boolean as ClrBoolean, Decimal, Double, Enum, EventArgs, EventHandler, Exception, FormattableString, Func, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, Int64, IServiceProvider, ISpanFormattable, Nullable, Object as ClrObject, Single, String as ClrString, TimeSpan, Type, ValueTuple, ValueType, Void } from '@tsonic/dotnet/System.js';
 import type { Expression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { IQueryable } from '@tsonic/dotnet/System.Linq.js';
 import type { Assembly, MethodInfo } from '@tsonic/dotnet/System.Reflection.js';

@@ -55,9 +55,10 @@ export type ConcurrencyDetector = ConcurrencyDetector$instance & __ConcurrencyDe
 
 
 export interface CoreSingletonOptions$instance {
-    readonly AreDetailedErrorsEnabled: boolean;
-    readonly AreThreadSafetyChecksEnabled: boolean;
-    readonly RootApplicationServiceProvider: IServiceProvider | undefined;
+    AreDetailedErrorsEnabled: boolean;
+    AreThreadSafetyChecksEnabled: boolean;
+    get RootApplicationServiceProvider(): IServiceProvider | undefined;
+    set RootApplicationServiceProvider(value: IServiceProvider);
     Initialize(options: IDbContextOptions): void;
     Validate(options: IDbContextOptions): void;
 }
@@ -170,7 +171,13 @@ export const InternalServiceCollectionMap: {
 
 export type InternalServiceCollectionMap = InternalServiceCollectionMap$instance;
 
-export interface LazyLoader$instance {
+export abstract class LazyLoader$protected {
+    protected Context: DbContext;
+    protected readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>;
+}
+
+
+export interface LazyLoader$instance extends LazyLoader$protected {
     Attaching(context: DbContext, entityType: IEntityType, entity: unknown): void;
     Detaching(context: DbContext, entity: unknown): boolean;
     Dispose(): void;

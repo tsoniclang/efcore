@@ -14,6 +14,7 @@ import type { IConstructorBindingFactory, IParameterBindingFactories, IRelationa
 import type { ITypeMappingSource } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
 import type { IUpdateSqlGenerator } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import type { DbLoggerCategory_Model, DbLoggerCategory_Model_Validation } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
+import type { List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString, Type } from "@tsonic/dotnet/System.js";
 
@@ -38,7 +39,13 @@ export interface IProviderConventionSetBuilder$instance {
 
 export type IProviderConventionSetBuilder = IProviderConventionSetBuilder$instance;
 
-export interface ProviderConventionSetBuilder$instance {
+export abstract class ProviderConventionSetBuilder$protected {
+    protected readonly Dependencies: ProviderConventionSetBuilderDependencies;
+    protected ReplaceConvention<TConvention, TImplementation extends TConvention>(conventionsList: List<TConvention>, newConvention: TImplementation): boolean;
+}
+
+
+export interface ProviderConventionSetBuilder$instance extends ProviderConventionSetBuilder$protected {
     CreateConventionSet(): ConventionSet;
 }
 
@@ -82,12 +89,18 @@ export const ProviderConventionSetBuilderDependencies: {
 
 export type ProviderConventionSetBuilderDependencies = ProviderConventionSetBuilderDependencies$instance;
 
-export interface RelationalConventionSetBuilder$instance extends ProviderConventionSetBuilder$instance {
+export abstract class RelationalConventionSetBuilder$protected {
+    protected readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
+}
+
+
+export interface RelationalConventionSetBuilder$instance extends RelationalConventionSetBuilder$protected, ProviderConventionSetBuilder$instance {
     CreateConventionSet(): ConventionSet;
 }
 
 
 export const RelationalConventionSetBuilder: {
+    new(dependencies: ProviderConventionSetBuilderDependencies, relationalDependencies: RelationalConventionSetBuilderDependencies): RelationalConventionSetBuilder;
 };
 
 

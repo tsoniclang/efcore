@@ -9,7 +9,7 @@ import * as Internal from './Microsoft.EntityFrameworkCore.ValueGeneration/inter
 import type { EntityEntry } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 import type { IProperty, ITypeBase } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
 import type { ValueConverter } from './Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js';
-import type { Boolean as ClrBoolean, Byte, Func, Guid, IDisposable, IEquatable, Int32, Int64, Object as ClrObject, String as ClrString, Void } from '@tsonic/dotnet/System.js';
+import type { Boolean as ClrBoolean, Byte, Func, Guid, IDisposable, IEquatable, Int32, Int64, Object as ClrObject, String as ClrString, Type, Void } from '@tsonic/dotnet/System.js';
 import type { CancellationToken } from '@tsonic/dotnet/System.Threading.js';
 import type { Task, ValueTask } from '@tsonic/dotnet/System.Threading.Tasks.js';
 

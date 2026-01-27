@@ -16,7 +16,7 @@ import type { IParameterNameGeneratorFactory, IRelationalConnection } from './Mi
 import type { IBatchExecutor, ICommandBatchPreparer, IModificationCommand, IModificationCommandBatchFactory, IModificationCommandFactory, INonTrackedModificationCommand, IReadOnlyModificationCommand, IUpdateAdapter, IUpdateAdapterFactory, IUpdateEntry, ModificationCommandBatch, ModificationCommandParameters, NonTrackedModificationCommandParameters } from './Microsoft.EntityFrameworkCore.Update/internal/index.js';
 import type { DbLoggerCategory_Update } from './Microsoft.EntityFrameworkCore/internal/index.js';
 import type { IComparer, IDictionary, IEnumerable, IEqualityComparer, IList, IReadOnlyList, List } from '@tsonic/dotnet/System.Collections.Generic.js';
-import type { AsyncCallback, Boolean as ClrBoolean, Delegate, IAsyncResult, ICloneable, IEquatable, Int32, IntPtr, MulticastDelegate, Object as ClrObject, String as ClrString, ValueTuple, ValueType, Void } from '@tsonic/dotnet/System.js';
+import type { AsyncCallback, Boolean as ClrBoolean, Delegate, Func, IAsyncResult, ICloneable, IEquatable, Int32, IntPtr, MulticastDelegate, Object as ClrObject, String as ClrString, ValueTuple, ValueType, Void } from '@tsonic/dotnet/System.js';
 import type { ISerializable } from '@tsonic/dotnet/System.Runtime.Serialization.js';
 import type { CancellationToken } from '@tsonic/dotnet/System.Threading.js';
 import type { Task } from '@tsonic/dotnet/System.Threading.Tasks.js';

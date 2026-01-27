@@ -14,20 +14,20 @@ import type { CommandSource, DbCommandMethod, IDiagnosticsLogger_1, ILoggingOpti
 import * as Microsoft_EntityFrameworkCore_Infrastructure_Internal from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
 import type { IConcurrencyDetector, ICoreSingletonOptions, ICurrentDbContext, IDbContextOptions, IDbContextOptionsExtension, IInfrastructure_1, IResettableService } from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
 import type { IAdHocMapper, IElementType, IEntityType, IModel, IProperty, IPropertyBase, ITypeMappingConfiguration } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
-import type { IMigrationCommandExecutor, IMigrationsModelDiffer, IMigrationsSqlGenerator } from "../../Microsoft.EntityFrameworkCore.Migrations/internal/index.js";
+import type { IMigrationCommandExecutor, IMigrationsModelDiffer, IMigrationsSqlGenerator, MigrationCommand, MigrationsSqlGenerationOptions } from "../../Microsoft.EntityFrameworkCore.Migrations/internal/index.js";
 import type { IAsyncQueryProvider, IQueryCompilationContextFactory, QueryContext } from "../../Microsoft.EntityFrameworkCore.Query/internal/index.js";
 import type { INamedConnectionStringResolver } from "../../Microsoft.EntityFrameworkCore.Storage.Internal/internal/index.js";
 import type { IJsonValueReaderWriterSource, JsonValueReaderWriter } from "../../Microsoft.EntityFrameworkCore.Storage.Json/internal/index.js";
-import type { IValueConverterSelector, ValueConverter, ValueConverterInfo } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
+import type { IValueConverterSelector, ValueConverter, ValueConverter_2, ValueConverterInfo } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
 import type { IBatchExecutor, ICommandBatchPreparer, IUpdateAdapterFactory, IUpdateEntry } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import type { ValueGenerator } from "../../Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js";
 import type { DbContext, DbLoggerCategory_Database_Command, DbLoggerCategory_Database_Transaction, DbLoggerCategory_Infrastructure, DbLoggerCategory_Update } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import type { IEnumerable, IList, IReadOnlyDictionary, IReadOnlyList } from "@tsonic/dotnet/System.Collections.Generic.js";
+import type { IEnumerable, IList, IReadOnlyDictionary, IReadOnlyList, List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import * as System_Data_Common_Internal from "@tsonic/dotnet/System.Data.Common.js";
 import type { DbCommand, DbConnection, DbDataReader, DbParameter, DbTransaction } from "@tsonic/dotnet/System.Data.Common.js";
 import type { DbType, IsolationLevel, ParameterDirection } from "@tsonic/dotnet/System.Data.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Action, Boolean as ClrBoolean, Enum, Exception, FormattableString, Func, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, ISpanFormattable, Nullable, Object as ClrObject, String as ClrString, TimeSpan, Type, ValueType, Void } from "@tsonic/dotnet/System.js";
+import type { Action, Boolean as ClrBoolean, Enum, Exception, FormattableString, Func, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, ISpanFormattable, Nullable, Object as ClrObject, Random, String as ClrString, TimeSpan, Type, ValueType, Void } from "@tsonic/dotnet/System.js";
 import type { Expression, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
 import type { ConstructorInfo, MemberInfo, MethodInfo } from "@tsonic/dotnet/System.Reflection.js";
 import * as System_Runtime_Serialization_Internal from "@tsonic/dotnet/System.Runtime.Serialization.js";
@@ -514,55 +514,100 @@ export const ValueBuffer: {
 
 export type ValueBuffer = ValueBuffer$instance;
 
-export interface BoolTypeMapping$instance extends RelationalTypeMapping {
+export abstract class BoolTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+    protected GenerateNonNullSqlLiteral(value: unknown): string;
+}
+
+
+export interface BoolTypeMapping$instance extends BoolTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const BoolTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): BoolTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): BoolTypeMapping;
     readonly Default: BoolTypeMapping;
 };
 
 
 export type BoolTypeMapping = BoolTypeMapping$instance;
 
-export interface ByteArrayTypeMapping$instance extends RelationalTypeMapping {
+export abstract class ByteArrayTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+    protected GenerateNonNullSqlLiteral(value: unknown): string;
+}
+
+
+export interface ByteArrayTypeMapping$instance extends ByteArrayTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const ByteArrayTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>, size: Nullable<System_Internal.Int32>): ByteArrayTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): ByteArrayTypeMapping;
     readonly Default: ByteArrayTypeMapping;
 };
 
 
 export type ByteArrayTypeMapping = ByteArrayTypeMapping$instance;
 
-export interface ByteTypeMapping$instance extends RelationalTypeMapping {
+export abstract class ByteTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface ByteTypeMapping$instance extends ByteTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const ByteTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): ByteTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): ByteTypeMapping;
     readonly Default: ByteTypeMapping;
 };
 
 
 export type ByteTypeMapping = ByteTypeMapping$instance;
 
-export interface CharTypeMapping$instance extends RelationalTypeMapping {
+export abstract class CharTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+    protected GenerateNonNullSqlLiteral(value: unknown): string;
+}
+
+
+export interface CharTypeMapping$instance extends CharTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const CharTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): CharTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): CharTypeMapping;
     readonly Default: CharTypeMapping;
 };
 
 
 export type CharTypeMapping = CharTypeMapping$instance;
 
-export interface CoreTypeMapping$instance {
+export abstract class CoreTypeMapping$protected {
+    protected readonly Parameters: CoreTypeMapping_CoreTypeMappingParameters;
+    protected abstract Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface CoreTypeMapping$instance extends CoreTypeMapping$protected {
     readonly ClrType: Type;
     readonly Comparer: ValueComparer;
     readonly Converter: ValueConverter | undefined;
@@ -578,12 +623,18 @@ export interface CoreTypeMapping$instance {
 
 
 export const CoreTypeMapping: {
+    new(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
 };
 
 
 export type CoreTypeMapping = CoreTypeMapping$instance;
 
-export interface Database$instance {
+export abstract class Database$protected {
+    protected readonly Dependencies: DatabaseDependencies;
+}
+
+
+export interface Database$instance extends Database$protected {
     CompileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
     CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
     SaveChanges(entries: IList<IUpdateEntry>): int;
@@ -592,6 +643,7 @@ export interface Database$instance {
 
 
 export const Database: {
+    new(dependencies: DatabaseDependencies): Database;
 };
 
 
@@ -623,7 +675,12 @@ export const DatabaseDependencies: {
 
 export type DatabaseDependencies = DatabaseDependencies$instance;
 
-export interface DatabaseProvider_1$instance<TOptionsExtension extends IDbContextOptionsExtension> {
+export abstract class DatabaseProvider_1$protected<TOptionsExtension extends IDbContextOptionsExtension> {
+    protected readonly Dependencies: DatabaseProviderDependencies;
+}
+
+
+export interface DatabaseProvider_1$instance<TOptionsExtension extends IDbContextOptionsExtension> extends DatabaseProvider_1$protected<TOptionsExtension> {
     readonly Name: string;
     readonly Version: string | undefined;
     IsConfigured(options: IDbContextOptions): boolean;
@@ -660,60 +717,110 @@ export const DatabaseProviderDependencies: {
 
 export type DatabaseProviderDependencies = DatabaseProviderDependencies$instance;
 
-export interface DateOnlyTypeMapping$instance extends RelationalTypeMapping {
+export abstract class DateOnlyTypeMapping$protected {
+    protected readonly SqlLiteralFormatString: string;
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface DateOnlyTypeMapping$instance extends DateOnlyTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const DateOnlyTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DateOnlyTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): DateOnlyTypeMapping;
     readonly Default: DateOnlyTypeMapping;
 };
 
 
 export type DateOnlyTypeMapping = DateOnlyTypeMapping$instance;
 
-export interface DateTimeOffsetTypeMapping$instance extends RelationalTypeMapping {
+export abstract class DateTimeOffsetTypeMapping$protected {
+    protected readonly SqlLiteralFormatString: string;
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface DateTimeOffsetTypeMapping$instance extends DateTimeOffsetTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const DateTimeOffsetTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DateTimeOffsetTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): DateTimeOffsetTypeMapping;
     readonly Default: DateTimeOffsetTypeMapping;
 };
 
 
 export type DateTimeOffsetTypeMapping = DateTimeOffsetTypeMapping$instance;
 
-export interface DateTimeTypeMapping$instance extends RelationalTypeMapping {
+export abstract class DateTimeTypeMapping$protected {
+    protected readonly SqlLiteralFormatString: string;
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface DateTimeTypeMapping$instance extends DateTimeTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const DateTimeTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DateTimeTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): DateTimeTypeMapping;
     readonly Default: DateTimeTypeMapping;
 };
 
 
 export type DateTimeTypeMapping = DateTimeTypeMapping$instance;
 
-export interface DecimalTypeMapping$instance extends RelationalTypeMapping {
+export abstract class DecimalTypeMapping$protected {
+    protected readonly SqlLiteralFormatString: string;
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface DecimalTypeMapping$instance extends DecimalTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const DecimalTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): DecimalTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): DecimalTypeMapping;
     readonly Default: DecimalTypeMapping;
 };
 
 
 export type DecimalTypeMapping = DecimalTypeMapping$instance;
 
-export interface DoubleTypeMapping$instance extends RelationalTypeMapping {
+export abstract class DoubleTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+    protected GenerateNonNullSqlLiteral(value: unknown): string;
+}
+
+
+export interface DoubleTypeMapping$instance extends DoubleTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const DoubleTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): DoubleTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): DoubleTypeMapping;
     readonly Default: DoubleTypeMapping;
 };
 
@@ -733,7 +840,19 @@ export const ExecutionResult_1: {
 
 export type ExecutionResult_1<TResult> = ExecutionResult_1$instance<TResult>;
 
-export interface ExecutionStrategy$instance {
+export abstract class ExecutionStrategy$protected {
+    protected readonly Dependencies: ExecutionStrategyDependencies;
+    protected readonly ExceptionsEncountered: List<Exception>;
+    protected readonly Random: Random;
+    protected GetNextDelay(lastException: Exception): Nullable<TimeSpan>;
+    protected OnFirstExecution(): void;
+    protected OnRetry(): void;
+    protected abstract ShouldRetryOn(exception: Exception): boolean;
+    protected ShouldVerifySuccessOn(exception: Exception): boolean;
+}
+
+
+export interface ExecutionStrategy$instance extends ExecutionStrategy$protected {
     readonly MaxRetryCount: int;
     readonly MaxRetryDelay: TimeSpan;
     readonly RetriesOnFailure: boolean;
@@ -743,7 +862,12 @@ export interface ExecutionStrategy$instance {
 
 
 export const ExecutionStrategy: {
-    readonly Current: ExecutionStrategy | undefined;
+    new(context: DbContext, maxRetryCount: int, maxRetryDelay: TimeSpan): ExecutionStrategy;
+    new(dependencies: ExecutionStrategyDependencies, maxRetryCount: int, maxRetryDelay: TimeSpan): ExecutionStrategy;
+    readonly DefaultMaxRetryCount: int;
+    readonly DefaultMaxDelay: TimeSpan;
+    get Current(): ExecutionStrategy | undefined;
+    set Current(value: ExecutionStrategy);
     CallOnWrappedException<TResult>(exception: Exception, exceptionHandler: Func<Exception, TResult>): TResult;
 };
 
@@ -776,47 +900,83 @@ export const ExecutionStrategyDependencies: {
 
 export type ExecutionStrategyDependencies = ExecutionStrategyDependencies$instance;
 
-export interface FloatTypeMapping$instance extends RelationalTypeMapping {
+export abstract class FloatTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+    protected GenerateNonNullSqlLiteral(value: unknown): string;
+}
+
+
+export interface FloatTypeMapping$instance extends FloatTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const FloatTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): FloatTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): FloatTypeMapping;
     readonly Default: FloatTypeMapping;
 };
 
 
 export type FloatTypeMapping = FloatTypeMapping$instance;
 
-export interface GuidTypeMapping$instance extends RelationalTypeMapping {
+export abstract class GuidTypeMapping$protected {
+    protected readonly SqlLiteralFormatString: string;
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface GuidTypeMapping$instance extends GuidTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const GuidTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): GuidTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): GuidTypeMapping;
     readonly Default: GuidTypeMapping;
 };
 
 
 export type GuidTypeMapping = GuidTypeMapping$instance;
 
-export interface IntTypeMapping$instance extends RelationalTypeMapping {
+export abstract class IntTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface IntTypeMapping$instance extends IntTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const IntTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): IntTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): IntTypeMapping;
     readonly Default: IntTypeMapping;
 };
 
 
 export type IntTypeMapping = IntTypeMapping$instance;
 
-export interface JsonTypeMapping$instance extends RelationalTypeMapping {
+export abstract class JsonTypeMapping$protected {
+    protected GenerateNonNullSqlLiteral(value: unknown): string;
+}
+
+
+export interface JsonTypeMapping$instance extends JsonTypeMapping$protected, RelationalTypeMapping {
 }
 
 
 export const JsonTypeMapping: {
+    new(storeType: string, clrType: Type, dbType: Nullable<DbType>): JsonTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): JsonTypeMapping;
 };
 
 
@@ -833,12 +993,21 @@ export const JsonTypePlaceholder: {
 
 export type JsonTypePlaceholder = JsonTypePlaceholder$instance;
 
-export interface LongTypeMapping$instance extends RelationalTypeMapping {
+export abstract class LongTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface LongTypeMapping$instance extends LongTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const LongTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): LongTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): LongTypeMapping;
     readonly Default: LongTypeMapping;
 };
 
@@ -896,7 +1065,12 @@ export const ParameterNameGeneratorDependencies: {
 
 export type ParameterNameGeneratorDependencies = ParameterNameGeneratorDependencies$instance;
 
-export interface ParameterNameGeneratorFactory$instance {
+export abstract class ParameterNameGeneratorFactory$protected {
+    protected readonly Dependencies: ParameterNameGeneratorDependencies;
+}
+
+
+export interface ParameterNameGeneratorFactory$instance extends ParameterNameGeneratorFactory$protected {
     Create(): ParameterNameGenerator;
 }
 
@@ -938,6 +1112,7 @@ export interface ReaderColumn$instance {
 
 
 export const ReaderColumn: {
+    new(type: Type, nullable: boolean, name: string, property: IPropertyBase, getFieldValueExpression: LambdaExpression): ReaderColumn;
     Create(type: Type, nullable: boolean, columnName: string, property: IPropertyBase, readFunc: LambdaExpression): ReaderColumn;
     GetConstructor(type: Type): ConstructorInfo;
 };
@@ -957,10 +1132,16 @@ export const ReaderColumn_1: {
 
 export type ReaderColumn_1<T> = ReaderColumn_1$instance<T>;
 
-export interface RelationalCommand$instance {
-    readonly CommandText: string;
-    readonly LogCommandText: string;
-    readonly Parameters: IReadOnlyList<IRelationalParameter>;
+export abstract class RelationalCommand$protected {
+    protected readonly Dependencies: RelationalCommandBuilderDependencies;
+    protected CreateRelationalDataReader(): RelationalDataReader;
+}
+
+
+export interface RelationalCommand$instance extends RelationalCommand$protected {
+    CommandText: string;
+    LogCommandText: string;
+    Parameters: IReadOnlyList<IRelationalParameter>;
     CreateDbCommand(parameterObject: RelationalCommandParameterObject, commandId: Guid, commandMethod: DbCommandMethod): DbCommand;
     ExecuteNonQuery(parameterObject: RelationalCommandParameterObject): int;
     ExecuteNonQueryAsync(parameterObject: RelationalCommandParameterObject, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
@@ -985,7 +1166,12 @@ export interface __RelationalCommand$views {
 export type RelationalCommand = RelationalCommand$instance & __RelationalCommand$views;
 
 
-export interface RelationalCommandBuilder$instance {
+export abstract class RelationalCommandBuilder$protected {
+    protected readonly Dependencies: RelationalCommandBuilderDependencies;
+}
+
+
+export interface RelationalCommandBuilder$instance extends RelationalCommandBuilder$protected {
     readonly CommandTextLength: int;
     readonly Parameters: IReadOnlyList<IRelationalParameter>;
     readonly TypeMappingSource: IRelationalTypeMappingSource;
@@ -1032,7 +1218,12 @@ export const RelationalCommandBuilderDependencies: {
 
 export type RelationalCommandBuilderDependencies = RelationalCommandBuilderDependencies$instance;
 
-export interface RelationalCommandBuilderFactory$instance {
+export abstract class RelationalCommandBuilderFactory$protected {
+    protected readonly Dependencies: RelationalCommandBuilderDependencies;
+}
+
+
+export interface RelationalCommandBuilderFactory$instance extends RelationalCommandBuilderFactory$protected {
     Create(): IRelationalCommandBuilder;
 }
 
@@ -1051,16 +1242,37 @@ export interface RelationalCommandBuilderFactory$instance extends IRelationalCom
 export type RelationalCommandBuilderFactory = RelationalCommandBuilderFactory$instance & __RelationalCommandBuilderFactory$views;
 
 
-export interface RelationalConnection$instance {
+export abstract class RelationalConnection$protected {
+    protected readonly Dependencies: RelationalConnectionDependencies;
+    protected readonly SupportsAmbientTransactions: boolean;
+    protected CloseDbConnection(): void;
+    protected CloseDbConnectionAsync(): Task;
+    protected ConnectionBeginTransaction(isolationLevel: IsolationLevel): DbTransaction;
+    protected ConnectionBeginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): ValueTask<DbTransaction>;
+    protected ConnectionEnlistTransaction(transaction: Transaction): void;
+    protected abstract CreateDbConnection(): DbConnection;
+    protected DisposeDbConnection(): void;
+    protected DisposeDbConnectionAsync(): ValueTask;
+    protected GetValidatedConnectionString(): string;
+    protected OpenDbConnection(errorsExpected: boolean): void;
+    protected OpenDbConnectionAsync(errorsExpected: boolean, cancellationToken: CancellationToken): Task;
+    protected ResetState(disposeDbConnection: boolean): void;
+    protected ResetStateAsync(disposeDbConnection: boolean): ValueTask;
+}
+
+
+export interface RelationalConnection$instance extends RelationalConnection$protected {
     CommandTimeout: Nullable<System_Internal.Int32>;
     readonly ConnectionId: Guid;
     get ConnectionString(): string | undefined;
     set ConnectionString(value: string);
     readonly Context: DbContext;
     readonly CurrentAmbientTransaction: Transaction | undefined;
-    readonly CurrentTransaction: IDbContextTransaction | undefined;
+    get CurrentTransaction(): IDbContextTransaction | undefined;
+    set CurrentTransaction(value: IDbContextTransaction);
     DbConnection: DbConnection;
-    readonly EnlistedTransaction: Transaction | undefined;
+    get EnlistedTransaction(): Transaction | undefined;
+    set EnlistedTransaction(value: Transaction);
     BeginTransaction(): IDbContextTransaction;
     BeginTransaction(isolationLevel: IsolationLevel): IDbContextTransaction;
     BeginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
@@ -1087,6 +1299,7 @@ export interface RelationalConnection$instance {
 
 
 export const RelationalConnection: {
+    new(dependencies: RelationalConnectionDependencies): RelationalConnection;
 };
 
 
@@ -1097,8 +1310,6 @@ export interface __RelationalConnection$views {
     As_IRelationalConnection(): IRelationalConnection$instance;
     As_IRelationalTransactionManager(): IRelationalTransactionManager$instance;
 }
-
-export interface RelationalConnection$instance extends ITransactionEnlistmentManager$instance {}
 
 export type RelationalConnection = RelationalConnection$instance & __RelationalConnection$views;
 
@@ -1127,7 +1338,12 @@ export const RelationalConnectionDependencies: {
 
 export type RelationalConnectionDependencies = RelationalConnectionDependencies$instance;
 
-export interface RelationalDatabase$instance extends Database$instance {
+export abstract class RelationalDatabase$protected {
+    protected readonly RelationalDependencies: RelationalDatabaseDependencies;
+}
+
+
+export interface RelationalDatabase$instance extends RelationalDatabase$protected, Database$instance {
     CompileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
     CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
     SaveChanges(entries: IList<IUpdateEntry>): int;
@@ -1147,7 +1363,13 @@ export interface __RelationalDatabase$views {
 export type RelationalDatabase = RelationalDatabase$instance & __RelationalDatabase$views;
 
 
-export interface RelationalDatabaseCreator$instance {
+export abstract class RelationalDatabaseCreator$protected {
+    protected readonly Dependencies: RelationalDatabaseCreatorDependencies;
+    protected GetCreateTablesCommands(options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
+}
+
+
+export interface RelationalDatabaseCreator$instance extends RelationalDatabaseCreator$protected {
     CanConnect(): boolean;
     CanConnectAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
     Create(): void;
@@ -1169,6 +1391,7 @@ export interface RelationalDatabaseCreator$instance {
 
 
 export const RelationalDatabaseCreator: {
+    new(dependencies: RelationalDatabaseCreatorDependencies): RelationalDatabaseCreator;
 };
 
 
@@ -1249,7 +1472,13 @@ export const RelationalDataReader: {
 
 export type RelationalDataReader = RelationalDataReader$instance;
 
-export interface RelationalExecutionStrategyFactory$instance {
+export abstract class RelationalExecutionStrategyFactory$protected {
+    protected readonly Dependencies: ExecutionStrategyDependencies;
+    protected CreateDefaultStrategy(dependencies: ExecutionStrategyDependencies): IExecutionStrategy;
+}
+
+
+export interface RelationalExecutionStrategyFactory$instance extends RelationalExecutionStrategyFactory$protected {
     Create(): IExecutionStrategy;
 }
 
@@ -1268,7 +1497,15 @@ export interface RelationalExecutionStrategyFactory$instance extends IExecutionS
 export type RelationalExecutionStrategyFactory = RelationalExecutionStrategyFactory$instance & __RelationalExecutionStrategyFactory$views;
 
 
-export interface RelationalGeometryTypeMapping_2$instance<TGeometry, TProvider> extends RelationalTypeMapping {
+export abstract class RelationalGeometryTypeMapping_2$protected<TGeometry, TProvider> {
+    protected readonly SpatialConverter: ValueConverter_2<TGeometry, TProvider> | undefined;
+    protected readonly WktReaderType: Type;
+    protected abstract AsText(value: unknown): string;
+    protected abstract GetSrid(value: unknown): int;
+}
+
+
+export interface RelationalGeometryTypeMapping_2$instance<TGeometry, TProvider> extends RelationalGeometryTypeMapping_2$protected<TGeometry, TProvider>, RelationalTypeMapping {
     CreateParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
     CreateParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
     CustomizeDataReaderExpression(expression: Expression): Expression;
@@ -1277,12 +1514,19 @@ export interface RelationalGeometryTypeMapping_2$instance<TGeometry, TProvider> 
 
 
 export const RelationalGeometryTypeMapping_2: {
+    new<TGeometry, TProvider>(converter: ValueConverter_2<TGeometry, TProvider>, storeType: string, jsonValueReaderWriter: JsonValueReaderWriter): RelationalGeometryTypeMapping_2<TGeometry, TProvider>;
+    new<TGeometry, TProvider>(parameters: RelationalTypeMapping_RelationalTypeMappingParameters, converter: ValueConverter_2<TGeometry, TProvider>): RelationalGeometryTypeMapping_2<TGeometry, TProvider>;
 };
 
 
 export type RelationalGeometryTypeMapping_2<TGeometry, TProvider> = RelationalGeometryTypeMapping_2$instance<TGeometry, TProvider>;
 
-export interface RelationalSqlGenerationHelper$instance {
+export abstract class RelationalSqlGenerationHelper$protected {
+    protected readonly Dependencies: RelationalSqlGenerationHelperDependencies;
+}
+
+
+export interface RelationalSqlGenerationHelper$instance extends RelationalSqlGenerationHelper$protected {
     readonly BatchTerminator: string;
     readonly CommitTransactionStatement: string;
     readonly SingleLineCommentToken: string;
@@ -1335,7 +1579,15 @@ export const RelationalSqlGenerationHelperDependencies: {
 
 export type RelationalSqlGenerationHelperDependencies = RelationalSqlGenerationHelperDependencies$instance;
 
-export interface RelationalTransaction$instance {
+export abstract class RelationalTransaction$protected {
+    protected readonly Connection: IRelationalConnection;
+    protected readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>;
+    protected ClearTransaction(): void;
+    protected ClearTransactionAsync(cancellationToken?: CancellationToken): Task;
+}
+
+
+export interface RelationalTransaction$instance extends RelationalTransaction$protected {
     readonly SupportsSavepoints: boolean;
     readonly TransactionId: Guid;
     Commit(): void;
@@ -1368,7 +1620,12 @@ export interface RelationalTransaction$instance extends Microsoft_EntityFramewor
 export type RelationalTransaction = RelationalTransaction$instance & __RelationalTransaction$views;
 
 
-export interface RelationalTransactionFactory$instance {
+export abstract class RelationalTransactionFactory$protected {
+    protected readonly Dependencies: RelationalTransactionFactoryDependencies;
+}
+
+
+export interface RelationalTransactionFactory$instance extends RelationalTransactionFactory$protected {
     Create(connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, logger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, transactionOwned: boolean): RelationalTransaction;
 }
 
@@ -1404,7 +1661,18 @@ export const RelationalTransactionFactoryDependencies: {
 
 export type RelationalTransactionFactoryDependencies = RelationalTransactionFactoryDependencies$instance;
 
-export interface RelationalTypeMapping$instance extends CoreTypeMapping {
+export abstract class RelationalTypeMapping$protected {
+    protected readonly Parameters: RelationalTypeMapping_RelationalTypeMappingParameters;
+    protected readonly SqlLiteralFormatString: string;
+    protected Clone2(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+    protected abstract Clone2(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected ConfigureParameter(parameter: DbParameter): void;
+    protected GenerateNonNullSqlLiteral(value: unknown): string;
+    protected ProcessStoreType(parameters: RelationalTypeMapping_RelationalTypeMappingParameters, storeType: string, storeTypeNameBase: string): string;
+}
+
+
+export interface RelationalTypeMapping$instance extends RelationalTypeMapping$protected, CoreTypeMapping {
     readonly DbType: Nullable<DbType>;
     readonly IsFixedLength: boolean;
     readonly IsUnicode: boolean;
@@ -1429,6 +1697,8 @@ export interface RelationalTypeMapping$instance extends CoreTypeMapping {
 
 
 export const RelationalTypeMapping: {
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    new(storeType: string, clrType: Type, dbType: Nullable<DbType>, unicode: boolean, size: Nullable<System_Internal.Int32>, fixedLength: boolean, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>, jsonValueReaderWriter: JsonValueReaderWriter): RelationalTypeMapping;
     readonly NullMapping: RelationalTypeMapping;
     GetDataReaderMethod(type: Type): MethodInfo;
 };
@@ -1436,7 +1706,16 @@ export const RelationalTypeMapping: {
 
 export type RelationalTypeMapping = RelationalTypeMapping$instance;
 
-export interface RelationalTypeMappingSource$instance extends TypeMappingSourceBase$instance {
+export abstract class RelationalTypeMappingSource$protected {
+    protected readonly RelationalDependencies: RelationalTypeMappingSourceDependencies;
+    protected FindCollectionMapping(info: RelationalTypeMappingInfo, modelType: Type, providerType: Type, elementMapping: CoreTypeMapping): RelationalTypeMapping | undefined;
+    protected FindMapping8(mappingInfo: RelationalTypeMappingInfo): RelationalTypeMapping | undefined;
+    protected FindMapping8(mappingInfo: TypeMappingInfo): CoreTypeMapping;
+    protected ParseStoreTypeName(storeTypeName: string, unicode: Nullable<System_Internal.Boolean>, size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>): string | undefined;
+}
+
+
+export interface RelationalTypeMappingSource$instance extends RelationalTypeMappingSource$protected, TypeMappingSourceBase$instance {
     FindMapping(property: IProperty): CoreTypeMapping | undefined;
     FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
     FindMapping(type: Type): RelationalTypeMapping | undefined;
@@ -1451,6 +1730,7 @@ export interface RelationalTypeMappingSource$instance extends TypeMappingSourceB
 
 
 export const RelationalTypeMappingSource: {
+    new(dependencies: TypeMappingSourceDependencies, relationalDependencies: RelationalTypeMappingSourceDependencies): RelationalTypeMappingSource;
 };
 
 
@@ -1493,67 +1773,122 @@ export const RetryLimitExceededException: {
 
 export type RetryLimitExceededException = RetryLimitExceededException$instance;
 
-export interface SByteTypeMapping$instance extends RelationalTypeMapping {
+export abstract class SByteTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface SByteTypeMapping$instance extends SByteTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const SByteTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): SByteTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): SByteTypeMapping;
     readonly Default: SByteTypeMapping;
 };
 
 
 export type SByteTypeMapping = SByteTypeMapping$instance;
 
-export interface ShortTypeMapping$instance extends RelationalTypeMapping {
+export abstract class ShortTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface ShortTypeMapping$instance extends ShortTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const ShortTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): ShortTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): ShortTypeMapping;
     readonly Default: ShortTypeMapping;
 };
 
 
 export type ShortTypeMapping = ShortTypeMapping$instance;
 
-export interface StringTypeMapping$instance extends RelationalTypeMapping {
+export abstract class StringTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+    protected EscapeSqlLiteral(literal: string): string;
+    protected GenerateNonNullSqlLiteral(value: unknown): string;
+}
+
+
+export interface StringTypeMapping$instance extends StringTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const StringTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>, unicode: boolean, size: Nullable<System_Internal.Int32>): StringTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): StringTypeMapping;
     readonly Default: StringTypeMapping;
 };
 
 
 export type StringTypeMapping = StringTypeMapping$instance;
 
-export interface TimeOnlyTypeMapping$instance extends RelationalTypeMapping {
+export abstract class TimeOnlyTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+    protected GenerateNonNullSqlLiteral(value: unknown): string;
+}
+
+
+export interface TimeOnlyTypeMapping$instance extends TimeOnlyTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const TimeOnlyTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): TimeOnlyTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): TimeOnlyTypeMapping;
     readonly Default: TimeOnlyTypeMapping;
 };
 
 
 export type TimeOnlyTypeMapping = TimeOnlyTypeMapping$instance;
 
-export interface TimeSpanTypeMapping$instance extends RelationalTypeMapping {
+export abstract class TimeSpanTypeMapping$protected {
+    protected readonly SqlLiteralFormatString: string;
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface TimeSpanTypeMapping$instance extends TimeSpanTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const TimeSpanTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): TimeSpanTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): TimeSpanTypeMapping;
     readonly Default: TimeSpanTypeMapping;
 };
 
 
 export type TimeSpanTypeMapping = TimeSpanTypeMapping$instance;
 
-export interface TypeMappingSource$instance extends TypeMappingSourceBase$instance {
+export abstract class TypeMappingSource$protected {
+    protected FindCollectionMapping(info: TypeMappingInfo, modelType: Type, providerType: Type, elementMapping: CoreTypeMapping): CoreTypeMapping | undefined;
+    protected FindMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping | undefined;
+}
+
+
+export interface TypeMappingSource$instance extends TypeMappingSource$protected, TypeMappingSourceBase$instance {
     FindMapping(property: IProperty): CoreTypeMapping | undefined;
     FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
     FindMapping(type: Type): CoreTypeMapping | undefined;
@@ -1564,6 +1899,7 @@ export interface TypeMappingSource$instance extends TypeMappingSourceBase$instan
 
 
 export const TypeMappingSource: {
+    new(dependencies: TypeMappingSourceDependencies): TypeMappingSource;
 };
 
 
@@ -1574,7 +1910,15 @@ export interface __TypeMappingSource$views {
 export type TypeMappingSource = TypeMappingSource$instance & __TypeMappingSource$views;
 
 
-export interface TypeMappingSourceBase$instance {
+export abstract class TypeMappingSourceBase$protected {
+    protected readonly Dependencies: TypeMappingSourceDependencies;
+    protected FindMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping | undefined;
+    protected TryFindJsonCollectionMapping(mappingInfo: TypeMappingInfo, modelClrType: Type, providerClrType: Type, elementMapping: CoreTypeMapping, elementComparer: ValueComparer, collectionReaderWriter: JsonValueReaderWriter): boolean;
+    protected ValidateMapping(mapping: CoreTypeMapping, property: IProperty): void;
+}
+
+
+export interface TypeMappingSourceBase$instance extends TypeMappingSourceBase$protected {
     FindMapping(property: IProperty): CoreTypeMapping | undefined;
     FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
     FindMapping(type: Type): CoreTypeMapping | undefined;
@@ -1585,6 +1929,7 @@ export interface TypeMappingSourceBase$instance {
 
 
 export const TypeMappingSourceBase: {
+    new(dependencies: TypeMappingSourceDependencies): TypeMappingSourceBase;
 };
 
 
@@ -1614,7 +1959,12 @@ export const TypeMappingSourceDependencies: {
 
 export type TypeMappingSourceDependencies = TypeMappingSourceDependencies$instance;
 
-export interface TypeMaterializationInfo$instance {
+export abstract class TypeMaterializationInfo$protected {
+    protected Equals(other: TypeMaterializationInfo): boolean;
+}
+
+
+export interface TypeMaterializationInfo$instance extends TypeMaterializationInfo$protected {
     readonly IsNullable: Nullable<System_Internal.Boolean>;
     readonly Mapping: RelationalTypeMapping;
     readonly ModelClrType: Type;
@@ -1632,36 +1982,63 @@ export const TypeMaterializationInfo: {
 
 export type TypeMaterializationInfo = TypeMaterializationInfo$instance;
 
-export interface UIntTypeMapping$instance extends RelationalTypeMapping {
+export abstract class UIntTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface UIntTypeMapping$instance extends UIntTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const UIntTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): UIntTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): UIntTypeMapping;
     readonly Default: UIntTypeMapping;
 };
 
 
 export type UIntTypeMapping = UIntTypeMapping$instance;
 
-export interface ULongTypeMapping$instance extends RelationalTypeMapping {
+export abstract class ULongTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface ULongTypeMapping$instance extends ULongTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const ULongTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): ULongTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): ULongTypeMapping;
     readonly Default: ULongTypeMapping;
 };
 
 
 export type ULongTypeMapping = ULongTypeMapping$instance;
 
-export interface UShortTypeMapping$instance extends RelationalTypeMapping {
+export abstract class UShortTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface UShortTypeMapping$instance extends UShortTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
 export const UShortTypeMapping: {
     new(storeType: string, dbType: Nullable<DbType>): UShortTypeMapping;
+    new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): UShortTypeMapping;
     readonly Default: UShortTypeMapping;
 };
 

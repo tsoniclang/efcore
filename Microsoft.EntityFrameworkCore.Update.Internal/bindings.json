@@ -16,6 +16,23 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.MulticastDelegate",
+        "clrName": "System.MulticastDelegate"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.ICloneable",
+          "clrName": "System.ICloneable"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.Runtime.Serialization.ISerializable",
+          "clrName": "System.Runtime.Serialization.ISerializable"
+        }
+      ],
+      "typeParameters": [
+        "TValue"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMapFactory\u00601::Invoke(SharedTableEntryValueFactory_1):SharedTableEntryMap_1",
@@ -32,6 +49,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMapFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -51,6 +69,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMapFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -70,6 +89,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMapFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -86,6 +106,7 @@
           "normalizedSignature": "constructor|(System.Object,System.IntPtr):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMapFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -102,6 +123,23 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.MulticastDelegate",
+        "clrName": "System.MulticastDelegate"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.ICloneable",
+          "clrName": "System.ICloneable"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.Runtime.Serialization.ISerializable",
+          "clrName": "System.Runtime.Serialization.ISerializable"
+        }
+      ],
+      "typeParameters": [
+        "TValue"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryValueFactory\u00601::Invoke(Microsoft.EntityFrameworkCore.Metadata.ITable,System.Collections.Generic.IComparer_1[[Microsoft.EntityFrameworkCore.Update.IUpdateEntry,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):TValue",
@@ -118,6 +156,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -137,6 +176,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -156,6 +196,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -172,6 +213,7 @@
           "normalizedSignature": "constructor|(System.Object,System.IntPtr):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -204,6 +246,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -223,6 +266,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -242,6 +286,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -263,6 +308,15 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601::TryCreateDependentKeyValue(System.Object[],TKey\u0026):System.Boolean",
@@ -279,6 +333,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -304,6 +359,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -329,6 +385,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -354,6 +411,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -373,6 +431,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -392,6 +451,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -413,6 +473,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -448,6 +509,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -485,6 +547,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -504,6 +567,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -523,6 +587,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -542,6 +607,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -563,6 +629,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -598,6 +665,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMapFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -635,6 +703,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -656,6 +725,15 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601::TryCreateIndexValue(System.Object[],TKey\u0026,System.Boolean\u0026):System.Boolean",
@@ -672,6 +750,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -701,6 +780,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -730,6 +810,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -759,6 +840,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -780,6 +862,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -815,6 +898,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -852,6 +936,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -871,6 +956,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -892,6 +978,15 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601::CreateKeyValue(System.Object[]):TKey",
@@ -908,6 +1003,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -927,6 +1023,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -946,6 +1043,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -965,6 +1063,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -984,6 +1083,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1005,6 +1105,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1040,6 +1141,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1061,6 +1163,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.IBatchExecutor",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.IBatchExecutor"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor::Execute(System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Update.ModificationCommandBatch,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Storage.IRelationalConnection):System.Int32",
@@ -1077,6 +1189,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1096,6 +1209,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1115,6 +1229,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IBatchExecutor",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1135,6 +1250,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IBatchExecutor",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1157,6 +1273,26 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor::UpdateLogger:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "UpdateLogger",
+          "metadataToken": 385876199,
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "UpdateLogger|:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1171,6 +1307,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1187,6 +1324,10 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [],
       "properties": [
         {
@@ -1204,6 +1345,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1222,6 +1364,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1236,6 +1379,7 @@
           "normalizedSignature": "constructor|(System.Delegate,System.Delegate):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1252,6 +1396,20 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.ICommandBatchPreparer",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.ICommandBatchPreparer"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
+          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparer::BatchCommands(System.Collections.Generic.IList_1[[Microsoft.EntityFrameworkCore.Update.IUpdateEntry,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Update.IUpdateAdapter):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Update.ModificationCommandBatch,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
@@ -1268,6 +1426,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1287,6 +1446,27 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparer",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparer::CreateModificationCommands(System.Collections.Generic.IList_1[[Microsoft.EntityFrameworkCore.Update.IUpdateEntry,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Update.IUpdateAdapter,System.Func_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "CreateModificationCommands",
+          "metadataToken": 100664879,
+          "canonicalSignature": "(System.Collections.Generic.IList_1[[Microsoft.EntityFrameworkCore.Update.IUpdateEntry,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Update.IUpdateAdapter,System.Func_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "CreateModificationCommands|(System.Collections.Generic.IList_1[[Microsoft.EntityFrameworkCore.Update.IUpdateEntry,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Update.IUpdateAdapter,System.Func_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1306,6 +1486,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1325,6 +1506,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1345,6 +1527,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -1365,6 +1548,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.ICommandBatchPreparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1385,13 +1569,34 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.ICommandBatchPreparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.ICommandBatchPreparer"
         }
       ],
-      "properties": [],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparer::Dependencies:Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
+          "clrName": "Dependencies",
+          "metadataToken": 385876202,
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
+          "normalizedSignature": "Dependencies|:Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparer",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ],
       "fields": [],
       "events": [],
       "constructors": [
@@ -1402,6 +1607,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1418,6 +1624,19 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
+          "clrName": "System.IEquatable\u00601",
+          "typeArguments": [
+            "CommandBatchPreparerDependencies"
+          ]
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies::ToString():System.String",
@@ -1434,6 +1653,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1453,6 +1673,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1472,6 +1693,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1491,6 +1713,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1510,6 +1733,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1531,6 +1755,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1549,6 +1774,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1567,6 +1793,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1585,6 +1812,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1603,6 +1831,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1621,6 +1850,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1639,6 +1869,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1653,6 +1884,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Update.IModificationCommandBatchFactory,Microsoft.EntityFrameworkCore.Storage.IParameterNameGeneratorFactory,System.Collections.Generic.IComparer_1[[Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Update.IModificationCommandFactory,Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):void|static=false",
           "isStatic": false,
           "parameterCount": 7,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CommandBatchPreparerDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -1669,6 +1901,23 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+        "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "typeArguments": [
+            "Object[]"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory::CreatePrincipalEquatableKeyValue(Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,System.Boolean):System.Object",
@@ -1685,6 +1934,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1704,6 +1954,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1723,6 +1974,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1742,6 +1994,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1761,6 +2014,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1787,6 +2041,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1813,6 +2068,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1839,6 +2095,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1859,6 +2116,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1879,6 +2137,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1899,12 +2158,43 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "parameterModifiers": [
             {
               "index": 1,
+              "modifier": "out"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory::TryCreateDependentKeyValue(System.Object[],System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "clrName": "TryCreateDependentKeyValue",
+          "metadataToken": 0,
+          "canonicalSignature": "(System.Object[],System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "TryCreateDependentKeyValue|(System.Object[],System.Object[]\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "BaseOverload",
+          "arity": 0,
+          "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 1,
+              "modifier": "out"
+            },
+            {
+              "index": 2,
               "modifier": "out"
             }
           ]
@@ -1924,12 +2214,43 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "parameterModifiers": [
             {
               "index": 1,
+              "modifier": "out"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory::TryCreateDependentKeyValue(System.Collections.Generic.IDictionary_2,System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "clrName": "TryCreateDependentKeyValue",
+          "metadataToken": 0,
+          "canonicalSignature": "(System.Collections.Generic.IDictionary_2,System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "TryCreateDependentKeyValue|(System.Collections.Generic.IDictionary_2,System.Object[]\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "BaseOverload",
+          "arity": 0,
+          "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 1,
+              "modifier": "out"
+            },
+            {
+              "index": 2,
               "modifier": "out"
             }
           ]
@@ -1949,6 +2270,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -1958,15 +2280,45 @@
               "modifier": "out"
             }
           ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory::TryCreateDependentKeyValue(Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,System.Boolean,System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "clrName": "TryCreateDependentKeyValue",
+          "metadataToken": 0,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,System.Boolean,System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "TryCreateDependentKeyValue|(Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,System.Boolean,System.Object[]\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "BaseOverload",
+          "arity": 0,
+          "parameterCount": 4,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 2,
+              "modifier": "out"
+            },
+            {
+              "index": 3,
+              "modifier": "out"
+            }
+          ]
         }
       ],
       "properties": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory::EqualityComparer:System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "clrName": "EqualityComparer",
-          "metadataToken": 385876212,
-          "canonicalSignature": ":System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "normalizedSignature": "EqualityComparer|:System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory::ValueConverters:System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "ValueConverters",
+          "metadataToken": 385876211,
+          "canonicalSignature": ":System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "ValueConverters|:System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
@@ -1976,6 +2328,26 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": true,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory::EqualityComparer:System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "EqualityComparer",
+          "metadataToken": 385876212,
+          "canonicalSignature": ":System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "EqualityComparer|:System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=getset",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": true,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -1994,6 +2366,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -2009,6 +2382,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -2025,6 +2399,23 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+        "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
+          "typeArguments": [
+            "Object[]"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowIndexValueFactory::TryCreateIndexValue(System.Object[],System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
@@ -2041,6 +2432,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2070,6 +2462,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2099,6 +2492,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2128,6 +2522,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2147,6 +2542,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2166,6 +2562,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2196,6 +2593,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2226,6 +2624,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2256,6 +2655,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2278,6 +2678,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -2293,6 +2694,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.ITableIndex):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -2309,6 +2711,23 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+        "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
+          "typeArguments": [
+            "Object[]"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowKeyValueFactory::CreateKeyValue(System.Object[]):System.Object[]",
@@ -2325,6 +2744,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2344,6 +2764,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2363,6 +2784,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2382,6 +2804,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2401,6 +2824,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2421,6 +2845,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2441,6 +2866,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2461,6 +2887,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2481,6 +2908,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2503,6 +2931,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -2518,6 +2947,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IUniqueConstraint):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -2534,6 +2964,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::TryCreateDependentKeyValue(System.Object[],System.Object[]\u0026):System.Boolean",
@@ -2550,12 +2984,43 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "parameterModifiers": [
             {
               "index": 1,
+              "modifier": "out"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::TryCreateDependentKeyValue(System.Object[],System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "clrName": "TryCreateDependentKeyValue",
+          "metadataToken": 100664957,
+          "canonicalSignature": "(System.Object[],System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "TryCreateDependentKeyValue|(System.Object[],System.Object[]\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 1,
+              "modifier": "out"
+            },
+            {
+              "index": 2,
               "modifier": "out"
             }
           ]
@@ -2575,12 +3040,43 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "parameterModifiers": [
             {
               "index": 1,
+              "modifier": "out"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::TryCreateDependentKeyValue(System.Collections.Generic.IDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "clrName": "TryCreateDependentKeyValue",
+          "metadataToken": 100664959,
+          "canonicalSignature": "(System.Collections.Generic.IDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "TryCreateDependentKeyValue|(System.Collections.Generic.IDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Object[]\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 1,
+              "modifier": "out"
+            },
+            {
+              "index": 2,
               "modifier": "out"
             }
           ]
@@ -2600,6 +3096,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2609,15 +3106,65 @@
               "modifier": "out"
             }
           ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::TryCreateDependentKeyValue(Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,System.Boolean,System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "clrName": "TryCreateDependentKeyValue",
+          "metadataToken": 100664961,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,System.Boolean,System.Object[]\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "TryCreateDependentKeyValue|(Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,System.Boolean,System.Object[]\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 4,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false,
+          "parameterModifiers": [
+            {
+              "index": 2,
+              "modifier": "out"
+            },
+            {
+              "index": 3,
+              "modifier": "out"
+            }
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::CreateEqualityComparer(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "CreateEqualityComparer",
+          "metadataToken": 100664962,
+          "canonicalSignature": "(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "CreateEqualityComparer|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
         }
       ],
       "properties": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::EqualityComparer:System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "clrName": "EqualityComparer",
-          "metadataToken": 385876214,
-          "canonicalSignature": ":System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "normalizedSignature": "EqualityComparer|:System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::ValueConverters:System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "ValueConverters",
+          "metadataToken": 385876213,
+          "canonicalSignature": ":System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "ValueConverters|:System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
@@ -2627,13 +3174,64 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::EqualityComparer:System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "EqualityComparer",
+          "metadataToken": 385876214,
+          "canonicalSignature": ":System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "EqualityComparer|:System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=getset",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": true,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::Columns:System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "Columns",
+          "metadataToken": 385876215,
+          "canonicalSignature": ":System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "Columns|:System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
       ],
       "fields": [],
       "events": [],
-      "constructors": []
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::.ctor(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
+          "metadataToken": 100664951,
+          "canonicalSignature": "(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
+          "normalizedSignature": "constructor|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.ModificationCommandComparer",
@@ -2646,6 +3244,19 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.Collections.Generic.IComparer\u00601",
+          "clrName": "System.Collections.Generic.IComparer\u00601",
+          "typeArguments": [
+            "IReadOnlyModificationCommand"
+          ]
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.ModificationCommandComparer::Compare(Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand):System.Int32",
@@ -2662,6 +3273,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ModificationCommandComparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2678,6 +3290,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ModificationCommandComparer",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -2694,6 +3307,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.IModificationCommandFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.IModificationCommandFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.ModificationCommandFactory::CreateModificationCommand(Microsoft.EntityFrameworkCore.Update.ModificationCommandParameters\u0026):Microsoft.EntityFrameworkCore.Update.IModificationCommand",
@@ -2710,6 +3333,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ModificationCommandFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2735,6 +3359,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ModificationCommandFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2760,6 +3385,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IModificationCommandFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2786,6 +3412,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IModificationCommandFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2809,6 +3436,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ModificationCommandFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -2825,6 +3453,27 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "typeArguments": [
+            "TKey"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey",
+        "TForeignKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602::CreatePrincipalEquatableKeyValue(Microsoft.EntityFrameworkCore.Update.IReadOnlyModificationCommand,System.Boolean):System.Object",
@@ -2841,6 +3490,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2860,6 +3510,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2879,6 +3530,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2904,6 +3556,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2929,6 +3582,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2954,6 +3608,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2973,6 +3628,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2992,6 +3648,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3018,6 +3675,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3044,6 +3702,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3070,6 +3729,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3090,6 +3750,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3110,6 +3771,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3132,6 +3794,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -3150,6 +3813,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -3168,6 +3832,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -3186,6 +3851,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -3204,6 +3870,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -3211,7 +3878,19 @@
       ],
       "fields": [],
       "events": [],
-      "constructors": []
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602::.ctor(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void",
+          "metadataToken": 100664997,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void|static=false",
+          "isStatic": false,
+          "parameterCount": 3,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactoryFactory",
@@ -3224,6 +3903,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactoryFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactoryFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactoryFactory::Create(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint):Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
@@ -3240,6 +3929,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3259,6 +3949,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3278,6 +3969,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3297,6 +3989,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3314,6 +4007,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3330,6 +4024,19 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap"
+        }
+      ],
+      "typeParameters": [
+        "TKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMap\u00601::FindCommand(System.Object[]):Microsoft.EntityFrameworkCore.Update.INonTrackedModificationCommand",
@@ -3346,6 +4053,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3365,6 +4073,27 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMap\u00601",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMap\u00601::Add(TKey,Microsoft.EntityFrameworkCore.Update.INonTrackedModificationCommand):System.Void",
+          "clrName": "Add",
+          "metadataToken": 100665019,
+          "canonicalSignature": "(TKey,Microsoft.EntityFrameworkCore.Update.INonTrackedModificationCommand):System.Void",
+          "normalizedSignature": "Add|(TKey,Microsoft.EntityFrameworkCore.Update.INonTrackedModificationCommand):System.Void|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3384,6 +4113,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3403,6 +4133,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3422,6 +4153,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3442,6 +4174,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3462,6 +4195,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3482,6 +4216,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3504,6 +4239,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -3522,6 +4258,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -3537,6 +4274,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IUniqueConstraint):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3553,6 +4291,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMapFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMapFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMapFactory::Create(Microsoft.EntityFrameworkCore.Metadata.IUniqueConstraint):Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMap",
@@ -3569,6 +4317,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMapFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3588,6 +4337,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIdentityMapFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3605,6 +4355,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIdentityMapFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3621,6 +4372,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactoryFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactoryFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowIndexValueFactoryFactory::Create(Microsoft.EntityFrameworkCore.Metadata.ITableIndex):Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory",
@@ -3637,6 +4398,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIndexValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3656,6 +4418,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3673,6 +4436,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowIndexValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3689,6 +4453,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactoryFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactoryFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowKeyValueFactoryFactory::Create(Microsoft.EntityFrameworkCore.Metadata.IUniqueConstraint):Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
@@ -3705,6 +4479,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3724,6 +4499,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3741,6 +4517,7 @@
           "normalizedSignature": "constructor|():void|static=false",
           "isStatic": false,
           "parameterCount": 0,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.RowKeyValueFactoryFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3757,6 +4534,13 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "typeParameters": [
+        "TValue"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMap\u00601::GetOrAddValue(Microsoft.EntityFrameworkCore.Update.IUpdateEntry,SharedTableEntryValueFactory_1):TValue",
@@ -3773,6 +4557,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3792,6 +4577,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3811,6 +4597,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3832,6 +4619,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3846,6 +4634,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.ITable,Microsoft.EntityFrameworkCore.Update.IUpdateAdapter):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SharedTableEntryMap\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3862,6 +4651,31 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
+        "typeArguments": [
+          "TKey",
+          "TForeignKey"
+        ]
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "typeArguments": [
+            "TKey"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey",
+        "TForeignKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.SimpleFullyNullableRowForeignKeyValueFactory\u00602::TryCreateDependentKeyValue(System.Object[],TKey\u0026):System.Boolean",
@@ -3878,6 +4692,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleFullyNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3903,6 +4718,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleFullyNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3928,6 +4744,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleFullyNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3953,6 +4770,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3973,6 +4791,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3993,6 +4812,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4019,6 +4839,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4045,6 +4866,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4071,6 +4893,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4091,6 +4914,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleFullyNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -4110,6 +4934,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleFullyNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -4129,6 +4954,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleFullyNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -4148,6 +4974,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleFullyNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4175,6 +5002,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -4190,6 +5018,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleFullyNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -4206,6 +5035,31 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
+        "typeArguments": [
+          "TKey",
+          "TForeignKey"
+        ]
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "typeArguments": [
+            "TKey"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey",
+        "TForeignKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.SimpleNonNullableRowForeignKeyValueFactory\u00602::TryCreateDependentKeyValue(System.Object[],TKey\u0026):System.Boolean",
@@ -4222,6 +5076,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNonNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4247,6 +5102,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNonNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4272,6 +5128,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNonNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4297,6 +5154,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4317,6 +5175,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4337,6 +5196,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4363,6 +5223,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4389,6 +5250,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4415,6 +5277,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4435,6 +5298,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNonNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -4454,6 +5318,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNonNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -4473,6 +5338,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNonNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -4492,6 +5358,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNonNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4519,6 +5386,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -4534,6 +5402,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNonNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -4550,6 +5419,31 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
+        "typeArguments": [
+          "TKey",
+          "TForeignKey"
+        ]
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "typeArguments": [
+            "TKey"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey",
+        "TForeignKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullablePrincipalRowForeignKeyValueFactory\u00602::TryCreateDependentKeyValue(System.Object[],TKey\u0026):System.Boolean",
@@ -4566,6 +5460,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullablePrincipalRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4591,6 +5486,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullablePrincipalRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4616,6 +5512,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullablePrincipalRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4641,6 +5538,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4661,6 +5559,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4681,6 +5580,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4707,6 +5607,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4733,6 +5634,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4759,6 +5661,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4779,6 +5682,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullablePrincipalRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -4798,6 +5702,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullablePrincipalRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -4817,6 +5722,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullablePrincipalRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -4836,6 +5742,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullablePrincipalRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4863,6 +5770,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -4878,6 +5786,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullablePrincipalRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -4894,6 +5803,31 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory\u00602",
+        "typeArguments": [
+          "TKey",
+          "TForeignKey"
+        ]
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
+          "typeArguments": [
+            "TKey"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey",
+        "TForeignKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullableRowForeignKeyValueFactory\u00602::TryCreateDependentKeyValue(System.Object[],TKey\u0026):System.Boolean",
@@ -4910,6 +5844,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4935,6 +5870,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4960,6 +5896,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -4985,6 +5922,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5005,6 +5943,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5025,6 +5964,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5051,6 +5991,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5077,6 +6018,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5103,6 +6045,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5123,6 +6066,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -5142,6 +6086,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -5161,6 +6106,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -5180,6 +6126,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5207,6 +6154,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowForeignKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -5222,6 +6170,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleNullableRowForeignKeyValueFactory\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -5238,6 +6187,26 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
+          "typeArguments": [
+            "TKey"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowIndexValueFactory\u00601::TryCreateIndexValue(System.Object[],TKey\u0026,System.Boolean\u0026):System.Boolean",
@@ -5254,6 +6223,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5283,6 +6253,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5312,6 +6283,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5341,6 +6313,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -5360,6 +6333,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -5379,6 +6353,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5409,6 +6384,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5439,6 +6415,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5469,6 +6446,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5491,6 +6469,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -5509,6 +6488,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -5524,6 +6504,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.ITableIndex):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowIndexValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -5540,6 +6521,26 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
+          "typeArguments": [
+            "TKey"
+          ]
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory"
+        }
+      ],
+      "typeParameters": [
+        "TKey"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowKeyValueFactory\u00601::CreateKeyValue(System.Object[]):TKey",
@@ -5556,6 +6557,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -5575,6 +6577,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -5594,6 +6597,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -5613,6 +6617,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -5632,6 +6637,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5652,6 +6658,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5672,6 +6679,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5692,6 +6700,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5712,6 +6721,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -5734,6 +6744,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         },
@@ -5752,6 +6763,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.IRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
@@ -5767,6 +6779,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IUniqueConstraint):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.SimpleRowKeyValueFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -5783,6 +6796,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter::FindPrincipal(Microsoft.EntityFrameworkCore.Update.IUpdateEntry,Microsoft.EntityFrameworkCore.Metadata.IForeignKey):Microsoft.EntityFrameworkCore.Update.IUpdateEntry",
@@ -5799,6 +6822,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -5818,6 +6842,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -5837,6 +6862,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -5856,6 +6882,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -5875,6 +6902,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -5894,6 +6922,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -5913,6 +6942,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -5932,6 +6962,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -5951,6 +6982,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -5971,6 +7003,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -5991,6 +7024,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -6011,6 +7045,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -6031,6 +7066,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -6051,6 +7087,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -6071,6 +7108,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -6093,6 +7131,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -6111,6 +7150,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -6129,6 +7169,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -6147,6 +7188,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -6165,6 +7207,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -6184,6 +7227,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -6203,6 +7247,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -6222,6 +7267,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -6237,6 +7283,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IStateManager):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapter",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -6253,6 +7300,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.IUpdateAdapterFactory",
+          "clrName": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapterFactory"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapterFactory::Create():Microsoft.EntityFrameworkCore.Update.IUpdateAdapter",
@@ -6269,6 +7326,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapterFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -6288,6 +7346,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapterFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -6307,6 +7366,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapterFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -6327,6 +7387,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.IUpdateAdapterFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
@@ -6344,6 +7405,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.UpdateAdapterFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -6360,6 +7422,10 @@
       "isSealed": true,
       "isStatic": true,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessorsFactory::Create(Microsoft.EntityFrameworkCore.Metadata.IColumn):Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors",
@@ -6376,6 +7442,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessorsFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -6395,6 +7462,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessorsFactory",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false

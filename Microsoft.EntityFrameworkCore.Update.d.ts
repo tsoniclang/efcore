@@ -10,9 +10,9 @@ import type { CascadeTiming, ChangeTrackerDebugStringOptions, EntityEntry } from
 import type { IDiagnosticsLogger_1, IRelationalCommandDiagnosticsLogger } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
 import type { IAnnotatable, ICurrentDbContext, IResettableService } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
 import type { IColumn, IColumnBase, IComplexProperty, IEntityType, IForeignKey, IKey, IModel, IProperty, IPropertyBase, IStoreStoredProcedure, ITable } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
-import type { IRelationalCommandBuilderFactory, IRelationalConnection, IRelationalTypeMappingSource, ISqlGenerationHelper, RelationalDataReader, RelationalTypeMapping } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
+import type { IRelationalCommandBuilder, IRelationalCommandBuilderFactory, IRelationalConnection, IRelationalTypeMappingSource, ISqlGenerationHelper, RawSqlCommand, RelationalDataReader, RelationalTypeMapping } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 import type { DbContext, DbLoggerCategory_Update, EntityState } from './Microsoft.EntityFrameworkCore/internal/index.js';
-import type { IComparer, IDictionary, IEnumerable, IEqualityComparer, IList, IReadOnlyList } from '@tsonic/dotnet/System.Collections.Generic.js';
+import type { Dictionary, IComparer, IDictionary, IEnumerable, IEqualityComparer, IList, IReadOnlyList } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { DbParameterCollection } from '@tsonic/dotnet/System.Data.Common.js';
 import type { Boolean as ClrBoolean, Enum, Func, IComparable, IConvertible, IEquatable, IFormattable, Int32, ISpanFormattable, Nullable, Object as ClrObject, String as ClrString, ValueType, Void } from '@tsonic/dotnet/System.js';
 import type { StringBuilder } from '@tsonic/dotnet/System.Text.js';

@@ -6,7 +6,7 @@
 import * as Internal from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 
 // Cross-namespace type imports for constraints
-import type { IChangeDetector, IInternalEntry, InternalComplexEntry, InternalEntityEntry, IStateManager } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
+import type { IChangeDetector, IInternalEntry, InternalComplexEntry, InternalEntityEntry, InternalEntryBase, IStateManager } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 import type { DebugView, IInfrastructure_1, IResettableService } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
 import type { IComplexProperty, IEntityType, IModel, INavigation, INavigationBase, IProperty, IPropertyBase, ITypeBase } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
 import type { IUpdateEntry } from './Microsoft.EntityFrameworkCore.Update/internal/index.js';
@@ -14,8 +14,8 @@ import type { DbContext, DbSet_1, EntityState, QueryTrackingBehavior } from './M
 import type { HashSet_1$Enumerator, ICollection as ICollection__System_Collections_Generic, IComparer, IDictionary, IEnumerable as IEnumerable__System_Collections_Generic, IEnumerator, IEqualityComparer as IEqualityComparer__System_Collections_Generic, IList as IList__System_Collections_Generic, IReadOnlyCollection, IReadOnlyList, ISet, List } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { ICollection, IEnumerable, IEqualityComparer, IList } from '@tsonic/dotnet/System.Collections.js';
 import type { ObservableCollection } from '@tsonic/dotnet/System.Collections.ObjectModel.js';
-import type { INotifyCollectionChanged, NotifyCollectionChangedEventHandler } from '@tsonic/dotnet/System.Collections.Specialized.js';
-import type { BindingList, IListSource, INotifyPropertyChanged, INotifyPropertyChanging, PropertyChangedEventHandler, PropertyChangingEventHandler } from '@tsonic/dotnet/System.ComponentModel.js';
+import type { INotifyCollectionChanged, NotifyCollectionChangedEventArgs, NotifyCollectionChangedEventHandler } from '@tsonic/dotnet/System.Collections.Specialized.js';
+import type { BindingList, IListSource, INotifyPropertyChanged, INotifyPropertyChanging, PropertyChangedEventArgs, PropertyChangedEventHandler, PropertyChangingEventArgs, PropertyChangingEventHandler } from '@tsonic/dotnet/System.ComponentModel.js';
 import type { Action, Boolean as ClrBoolean, Enum, EventArgs, EventHandler, Func, HashCode, IComparable, IConvertible, IFormattable, Int32, ISpanFormattable, Nullable, Object as ClrObject, Predicate, String as ClrString, Type, ValueType, Void } from '@tsonic/dotnet/System.js';
 import type { Expression, LambdaExpression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { IQueryable } from '@tsonic/dotnet/System.Linq.js';

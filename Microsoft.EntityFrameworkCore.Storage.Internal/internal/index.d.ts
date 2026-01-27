@@ -5,6 +5,9 @@
 // Primitive type aliases from @tsonic/core
 import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
+// Import support types from @tsonic/core
+import type { ptr } from "@tsonic/core/types.js";
+
 // Import types from other namespaces
 import type { ValueComparer } from "../../Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js";
 import type { IDiagnosticsLogger_1, IRelationalCommandDiagnosticsLogger } from "../../Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js";
@@ -21,9 +24,10 @@ import type { IEnumerable, IReadOnlyDictionary, IReadOnlyList } from "@tsonic/do
 import type { DbCommand, DbParameter, DbParameterCollection } from "@tsonic/dotnet/System.Data.Common.js";
 import type { DbType, ParameterDirection } from "@tsonic/dotnet/System.Data.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, Byte, Exception, Func, IEquatable, Int32, Nullable, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
+import type { Boolean as ClrBoolean, Byte, Exception, Func, IEquatable, Int32, IServiceProvider, Nullable, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
 import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
 import type { MethodInfo } from "@tsonic/dotnet/System.Reflection.js";
+import type { StringBuilder } from "@tsonic/dotnet/System.Text.js";
 import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 
 export interface ICompositeJsonValueReaderWriter$instance {
@@ -69,7 +73,13 @@ export interface __CompositeRelationalParameter$views {
 export type CompositeRelationalParameter = CompositeRelationalParameter$instance & __CompositeRelationalParameter$views;
 
 
-export interface DatabaseFacadeDependencies$instance {
+export abstract class DatabaseFacadeDependencies$protected {
+    protected readonly EqualityContract: Type;
+    protected PrintMembers(builder: StringBuilder): boolean;
+}
+
+
+export interface DatabaseFacadeDependencies$instance extends DatabaseFacadeDependencies$protected {
     readonly AdHocMapper: IAdHocMapper;
     readonly CommandLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Command>;
     readonly ConcurrencyDetector: IConcurrencyDetector;
@@ -91,6 +101,7 @@ export interface DatabaseFacadeDependencies$instance {
 
 export const DatabaseFacadeDependencies: {
     new(transactionManager: IDbContextTransactionManager, databaseCreator: IDatabaseCreator, executionStrategy: IExecutionStrategy, executionStrategyFactory: IExecutionStrategyFactory, databaseProviders: IEnumerable<IDatabaseProvider>, commandLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Command>, concurrencyDetector: IConcurrencyDetector, coreOptions: ICoreSingletonOptions, queryProvider: IAsyncQueryProvider, adHocMapper: IAdHocMapper, typeMappingSource: ITypeMappingSource): DatabaseFacadeDependencies;
+    new(original: DatabaseFacadeDependencies): DatabaseFacadeDependencies;
 };
 
 
@@ -120,7 +131,12 @@ export interface __ExceptionDetector$views {
 export type ExceptionDetector = ExceptionDetector$instance & __ExceptionDetector$views;
 
 
-export interface ExecutionStrategyFactory$instance {
+export abstract class ExecutionStrategyFactory$protected {
+    protected readonly Dependencies: ExecutionStrategyDependencies;
+}
+
+
+export interface ExecutionStrategyFactory$instance extends ExecutionStrategyFactory$protected {
     Create(): IExecutionStrategy;
 }
 
@@ -139,7 +155,12 @@ export interface ExecutionStrategyFactory$instance extends Microsoft_EntityFrame
 export type ExecutionStrategyFactory = ExecutionStrategyFactory$instance & __ExecutionStrategyFactory$views;
 
 
-export interface NamedConnectionStringResolver$instance extends NamedConnectionStringResolverBase {
+export abstract class NamedConnectionStringResolver$protected {
+    protected readonly ApplicationServiceProvider: IServiceProvider | undefined;
+}
+
+
+export interface NamedConnectionStringResolver$instance extends NamedConnectionStringResolver$protected, NamedConnectionStringResolverBase {
     ResolveConnectionString(connectionString: string): string;
 }
 
@@ -156,18 +177,32 @@ export interface __NamedConnectionStringResolver$views {
 export type NamedConnectionStringResolver = NamedConnectionStringResolver$instance & __NamedConnectionStringResolver$views;
 
 
-export interface NamedConnectionStringResolverBase$instance {
+export abstract class NamedConnectionStringResolverBase$protected {
+    protected readonly ApplicationServiceProvider: IServiceProvider | undefined;
+}
+
+
+export interface NamedConnectionStringResolverBase$instance extends NamedConnectionStringResolverBase$protected {
     ResolveConnectionString(connectionString: string): string;
 }
 
 
 export const NamedConnectionStringResolverBase: {
+    new(): NamedConnectionStringResolverBase;
 };
 
 
 export type NamedConnectionStringResolverBase = NamedConnectionStringResolverBase$instance;
 
-export interface NullTypeMapping$instance extends RelationalTypeMapping {
+export abstract class NullTypeMapping$protected {
+    protected Clone5(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    protected Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+}
+
+
+export interface NullTypeMapping$instance extends NullTypeMapping$protected, RelationalTypeMapping {
+    Clone2(mappingInfo?: Nullable<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable<StoreTypePostfix>): RelationalTypeMapping;
+    Clone2(mappingInfo?: Nullable<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
 }
 
 
@@ -219,7 +254,13 @@ export interface RawSqlCommandBuilder$instance extends Microsoft_EntityFramework
 export type RawSqlCommandBuilder = RawSqlCommandBuilder$instance & __RawSqlCommandBuilder$views;
 
 
-export interface RelationalDatabaseFacadeDependencies$instance {
+export abstract class RelationalDatabaseFacadeDependencies$protected {
+    protected readonly EqualityContract: Type;
+    protected PrintMembers(builder: StringBuilder): boolean;
+}
+
+
+export interface RelationalDatabaseFacadeDependencies$instance extends RelationalDatabaseFacadeDependencies$protected {
     readonly AdHocMapper: IAdHocMapper;
     readonly CommandLogger: IRelationalCommandDiagnosticsLogger;
     readonly ConcurrencyDetector: IConcurrencyDetector;
@@ -243,6 +284,7 @@ export interface RelationalDatabaseFacadeDependencies$instance {
 
 export const RelationalDatabaseFacadeDependencies: {
     new(transactionManager: IDbContextTransactionManager, databaseCreator: IDatabaseCreator, executionStrategy: IExecutionStrategy, executionStrategyFactory: IExecutionStrategyFactory, databaseProviders: IEnumerable<IDatabaseProvider>, commandLogger: IRelationalCommandDiagnosticsLogger, concurrencyDetector: IConcurrencyDetector, relationalConnection: IRelationalConnection, rawSqlCommandBuilder: IRawSqlCommandBuilder, coreOptions: ICoreSingletonOptions, queryProvider: IAsyncQueryProvider, adHocMapper: IAdHocMapper, relationalTypeMappingSource: IRelationalTypeMappingSource): RelationalDatabaseFacadeDependencies;
+    new(original: RelationalDatabaseFacadeDependencies): RelationalDatabaseFacadeDependencies;
 };
 
 
@@ -264,6 +306,7 @@ export interface RelationalParameterBase$instance {
 
 
 export const RelationalParameterBase: {
+    new(invariantName: string): RelationalParameterBase;
 };
 
 
