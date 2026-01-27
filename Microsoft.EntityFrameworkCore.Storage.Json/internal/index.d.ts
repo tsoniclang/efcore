@@ -545,12 +545,18 @@ export interface JsonValueReaderWriter_1$instance<TValue> extends JsonValueReade
 
 
 export const JsonValueReaderWriter_1: {
+    new<TValue>(): JsonValueReaderWriter_1<TValue>;
 };
 
 
 export type JsonValueReaderWriter_1<TValue> = JsonValueReaderWriter_1$instance<TValue>;
 
-export interface JsonValueReaderWriterSource$instance {
+export abstract class JsonValueReaderWriterSource$protected {
+    protected readonly Dependencies: JsonValueReaderWriterSourceDependencies;
+}
+
+
+export interface JsonValueReaderWriterSource$instance extends JsonValueReaderWriterSource$protected {
     FindReaderWriter(type: Type): JsonValueReaderWriter | undefined;
 }
 

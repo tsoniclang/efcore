@@ -20,7 +20,7 @@ import type { DbContext, DbLoggerCategory_ChangeTracking, DbLoggerCategory_Updat
 import type { HashSet, ICollection as ICollection__System_Collections_Generic, IComparer as IComparer__System_Collections_Generic, IDictionary, IEnumerable as IEnumerable__System_Collections_Generic, IEqualityComparer as IEqualityComparer__System_Collections_Generic, IList as IList__System_Collections_Generic, IReadOnlyCollection, IReadOnlyList, List } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { ICollection, IComparer, IEnumerable, IEqualityComparer, IList } from '@tsonic/dotnet/System.Collections.js';
 import type { NotifyCollectionChangedEventArgs } from '@tsonic/dotnet/System.Collections.Specialized.js';
-import type { BindingList, IBindingList, ICancelAddNew, IRaiseItemChangedEvents, PropertyChangedEventArgs, PropertyChangingEventArgs } from '@tsonic/dotnet/System.ComponentModel.js';
+import type { BindingList, IBindingList, ICancelAddNew, IRaiseItemChangedEvents, ListSortDirection, PropertyChangedEventArgs, PropertyChangingEventArgs, PropertyDescriptor } from '@tsonic/dotnet/System.ComponentModel.js';
 import type { Action, Boolean as ClrBoolean, EventHandler, Func, IEquatable, Int32, Nullable, Object as ClrObject, String as ClrString, Tuple, Type, ValueTuple, ValueType, Void } from '@tsonic/dotnet/System.js';
 import type { Expression, LambdaExpression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { FieldInfo, MethodInfo } from '@tsonic/dotnet/System.Reflection.js';

@@ -10,7 +10,7 @@ import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import * as Microsoft_EntityFrameworkCore_ChangeTracking_Internal_Internal from "../../Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js";
-import type { IChangeDetector, IInternalEntry, InternalComplexEntry, InternalEntityEntry, IStateManager } from "../../Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js";
+import type { IChangeDetector, IInternalEntry, InternalComplexEntry, InternalEntityEntry, InternalEntryBase, IStateManager } from "../../Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Infrastructure_Internal from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
 import type { DebugView, IInfrastructure_1, IResettableService } from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
 import type { IComplexProperty, IEntityType, IModel, INavigation, INavigationBase, IProperty, IPropertyBase, ITypeBase } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
@@ -24,9 +24,9 @@ import type { ICollection, IEnumerable, IEqualityComparer, IList } from "@tsonic
 import * as System_Collections_ObjectModel_Internal from "@tsonic/dotnet/System.Collections.ObjectModel.js";
 import type { ObservableCollection } from "@tsonic/dotnet/System.Collections.ObjectModel.js";
 import * as System_Collections_Specialized_Internal from "@tsonic/dotnet/System.Collections.Specialized.js";
-import type { INotifyCollectionChanged, NotifyCollectionChangedEventHandler } from "@tsonic/dotnet/System.Collections.Specialized.js";
+import type { INotifyCollectionChanged, NotifyCollectionChangedEventArgs, NotifyCollectionChangedEventHandler } from "@tsonic/dotnet/System.Collections.Specialized.js";
 import * as System_ComponentModel_Internal from "@tsonic/dotnet/System.ComponentModel.js";
-import type { BindingList, IListSource, INotifyPropertyChanged, INotifyPropertyChanging, PropertyChangedEventHandler, PropertyChangingEventHandler } from "@tsonic/dotnet/System.ComponentModel.js";
+import type { BindingList, IListSource, INotifyPropertyChanged, INotifyPropertyChanging, PropertyChangedEventArgs, PropertyChangedEventHandler, PropertyChangingEventArgs, PropertyChangingEventHandler } from "@tsonic/dotnet/System.ComponentModel.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Action, Boolean as ClrBoolean, Enum, EventArgs, EventHandler, Func, HashCode, IComparable, IConvertible, IFormattable, Int32, ISpanFormattable, Nullable, Object as ClrObject, Predicate, String as ClrString, Type, ValueType, Void } from "@tsonic/dotnet/System.js";
 import type { Expression, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
@@ -163,7 +163,12 @@ export interface ChangeTracker$instance extends Microsoft_EntityFrameworkCore_In
 export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 
 
-export interface CollectionEntry$instance extends NavigationEntry$instance {
+export abstract class CollectionEntry$protected {
+    protected GetInternalTargetEntry(entity: unknown): InternalEntityEntry | undefined;
+}
+
+
+export interface CollectionEntry$instance extends CollectionEntry$protected, NavigationEntry$instance {
     CurrentValue: IEnumerable | unknown;
     IsModified: boolean;
     FindEntry(entity: unknown): EntityEntry | undefined;
@@ -254,7 +259,12 @@ export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends Mi
 export type ComplexCollectionEntry_2<TEntity, TElement> = ComplexCollectionEntry_2$instance<TEntity, TElement> & __ComplexCollectionEntry_2$views<TEntity, TElement>;
 
 
-export interface ComplexElementEntry$instance {
+export abstract class ComplexElementEntry$protected {
+    protected readonly InternalEntry: InternalComplexEntry;
+}
+
+
+export interface ComplexElementEntry$instance extends ComplexElementEntry$protected {
     readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
     readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
     readonly CurrentValue: TComplexProperty | unknown;
@@ -423,7 +433,12 @@ export const DetectEntityChangesEventArgs: {
 
 export type DetectEntityChangesEventArgs = DetectEntityChangesEventArgs$instance;
 
-export interface EntityEntry$instance {
+export abstract class EntityEntry$protected {
+    protected readonly InternalEntry: InternalEntityEntry;
+}
+
+
+export interface EntityEntry$instance extends EntityEntry$protected {
     readonly Collections: IEnumerable__System_Collections_Generic<CollectionEntry>;
     readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
     readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
@@ -704,7 +719,14 @@ export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement ext
 export type ListOfValueTypesComparer_2<TConcreteList, TElement> = ListOfValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfValueTypesComparer_2$views<TConcreteList, TElement>;
 
 
-export interface LocalView_1$instance<TEntity> {
+export abstract class LocalView_1$protected<TEntity> {
+    protected OnCollectionChanged(e: NotifyCollectionChangedEventArgs): void;
+    protected OnPropertyChanged(e: PropertyChangedEventArgs): void;
+    protected OnPropertyChanging(e: PropertyChangingEventArgs): void;
+}
+
+
+export interface LocalView_1$instance<TEntity> extends LocalView_1$protected<TEntity> {
     readonly Count: int;
     readonly IsReadOnly: boolean;
     Add(item: TEntity): void;
@@ -736,11 +758,16 @@ export const LocalView_1: {
 
 export type LocalView_1<TEntity> = LocalView_1$instance<TEntity>;
 
-export interface MemberEntry$instance {
-    CurrentValue: TComplexProperty | unknown;
+export abstract class MemberEntry$protected {
+    protected readonly InternalEntry: IInternalEntry;
+}
+
+
+export interface MemberEntry$instance extends MemberEntry$protected {
+    CurrentValue: TProperty | unknown;
     readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
     IsModified: boolean;
-    readonly Metadata: IComplexProperty | IPropertyBase;
+    readonly Metadata: INavigationBase | IPropertyBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
@@ -748,6 +775,7 @@ export interface MemberEntry$instance {
 
 
 export const MemberEntry: {
+    new(internalEntry: IInternalEntry, metadata: IPropertyBase): MemberEntry;
 };
 
 
@@ -760,7 +788,12 @@ export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infr
 export type MemberEntry = MemberEntry$instance & __MemberEntry$views;
 
 
-export interface NavigationEntry$instance extends MemberEntry$instance {
+export abstract class NavigationEntry$protected {
+    protected readonly InternalEntityEntry: InternalEntityEntry;
+}
+
+
+export interface NavigationEntry$instance extends NavigationEntry$protected, MemberEntry$instance {
     IsLoaded: boolean;
     Load(): void;
     Load(options: LoadOptions): void;
@@ -771,6 +804,8 @@ export interface NavigationEntry$instance extends MemberEntry$instance {
 
 
 export const NavigationEntry: {
+    new(internalEntry: InternalEntityEntry, name: string, collection: boolean): NavigationEntry;
+    new(internalEntry: InternalEntityEntry, navigationBase: INavigationBase, collection: boolean): NavigationEntry;
 };
 
 
@@ -796,7 +831,14 @@ export const ObservableCollectionListSource_1: {
 
 export type ObservableCollectionListSource_1<T> = ObservableCollectionListSource_1$instance<T>;
 
-export interface ObservableHashSet_1$instance<T> {
+export abstract class ObservableHashSet_1$protected<T> {
+    protected OnCollectionChanged(e: NotifyCollectionChangedEventArgs): void;
+    protected OnPropertyChanged(e: PropertyChangedEventArgs): void;
+    protected OnPropertyChanging(e: PropertyChangingEventArgs): void;
+}
+
+
+export interface ObservableHashSet_1$instance<T> extends ObservableHashSet_1$protected<T> {
     readonly Comparer: IEqualityComparer__System_Collections_Generic<T>;
     readonly Count: int;
     readonly IsReadOnly: boolean;
@@ -874,7 +916,12 @@ export interface PropertyEntry_2$instance<TEntity, TProperty> extends Microsoft_
 export type PropertyEntry_2<TEntity, TProperty> = PropertyEntry_2$instance<TEntity, TProperty> & __PropertyEntry_2$views<TEntity, TProperty>;
 
 
-export interface PropertyValues$instance {
+export abstract class PropertyValues$protected {
+    protected readonly InternalEntry: InternalEntryBase;
+}
+
+
+export interface PropertyValues$instance extends PropertyValues$protected {
     readonly ComplexCollectionProperties: IReadOnlyList<IComplexProperty>;
     readonly Properties: IReadOnlyList<IProperty>;
     readonly StructuralType: ITypeBase;
@@ -899,12 +946,18 @@ export interface PropertyValues$instance {
 
 
 export const PropertyValues: {
+    new(internalEntry: InternalEntryBase): PropertyValues;
 };
 
 
 export type PropertyValues = PropertyValues$instance;
 
-export interface ReferenceEntry$instance extends NavigationEntry$instance {
+export abstract class ReferenceEntry$protected {
+    protected GetTargetEntry(): InternalEntityEntry | undefined;
+}
+
+
+export interface ReferenceEntry$instance extends ReferenceEntry$protected, NavigationEntry$instance {
     IsModified: boolean;
     readonly TargetEntry: EntityEntry | undefined | EntityEntry_1<TProperty> | undefined;
     Load(): void;
@@ -968,6 +1021,10 @@ export interface ValueComparer$instance {
 
 
 export const ValueComparer: {
+    new(equalsExpression: LambdaExpression, hashCodeExpression: LambdaExpression, snapshotExpression: LambdaExpression): ValueComparer;
+    readonly HashCodeAddMethod: MethodInfo;
+    readonly ToHashCodeMethod: MethodInfo;
+    readonly BoolIdentity: Expression<Func<System_Internal.Boolean, System_Internal.Boolean>>;
     Add(hash: HashCode, code: int): HashCode;
     CreateDefault<T>(favorStructuralComparisons: boolean): ValueComparer;
     CreateDefault(type: Type, favorStructuralComparisons: boolean): ValueComparer;
@@ -996,6 +1053,9 @@ export const ValueComparer_1: {
     new<T>(favorStructuralComparisons: boolean): ValueComparer_1<T>;
     new<T>(equalsExpression: Expression<Func<T, T, System_Internal.Boolean>>, hashCodeExpression: Expression<Func<T, System_Internal.Int32>>): ValueComparer_1<T>;
     new<T>(equalsExpression: Expression<Func<T, T, System_Internal.Boolean>>, hashCodeExpression: Expression<Func<T, System_Internal.Int32>>, snapshotExpression: Expression<Func<T, T>>): ValueComparer_1<T>;
+    CreateDefaultEqualsExpression<T>(): Expression<Func<T | undefined, T | undefined, System_Internal.Boolean>>;
+    CreateDefaultHashCodeExpression<T>(favorStructuralComparisons: boolean): Expression<Func<T, System_Internal.Int32>>;
+    CreateDefaultSnapshotExpression<T>(favorStructuralComparisons: boolean): Expression<Func<T, T>>;
 };
 
 

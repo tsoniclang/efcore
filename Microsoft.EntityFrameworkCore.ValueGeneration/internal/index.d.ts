@@ -13,7 +13,7 @@ import type { EntityEntry } from "../../Microsoft.EntityFrameworkCore.ChangeTrac
 import type { IProperty, ITypeBase } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { ValueConverter } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, Byte, Func, Guid, IDisposable, IEquatable, Int32, Int64, Object as ClrObject, String as ClrString, Void } from "@tsonic/dotnet/System.js";
+import type { Boolean as ClrBoolean, Byte, Func, Guid, IDisposable, IEquatable, Int32, Int64, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
 import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { Task, ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
@@ -72,7 +72,13 @@ export const GuidValueGenerator: {
 
 export type GuidValueGenerator = GuidValueGenerator$instance;
 
-export interface HiLoValueGenerator_1$instance<TValue> extends ValueGenerator_1<TValue> {
+export abstract class HiLoValueGenerator_1$protected<TValue> {
+    protected abstract GetNewLowValue(): long;
+    protected GetNewLowValueAsync(cancellationToken?: CancellationToken): Task<System_Internal.Int64>;
+}
+
+
+export interface HiLoValueGenerator_1$instance<TValue> extends HiLoValueGenerator_1$protected<TValue>, ValueGenerator_1<TValue> {
     Next(entry: EntityEntry): TValue;
     Next(entry: EntityEntry): unknown;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
@@ -81,6 +87,7 @@ export interface HiLoValueGenerator_1$instance<TValue> extends ValueGenerator_1<
 
 
 export const HiLoValueGenerator_1: {
+    new<TValue>(generatorState: HiLoValueGeneratorState): HiLoValueGenerator_1<TValue>;
 };
 
 
@@ -100,7 +107,12 @@ export const HiLoValueGeneratorState: {
 
 export type HiLoValueGeneratorState = HiLoValueGeneratorState$instance;
 
-export interface RelationalValueGeneratorSelector$instance extends ValueGeneratorSelector$instance {
+export abstract class RelationalValueGeneratorSelector$protected {
+    protected FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
+}
+
+
+export interface RelationalValueGeneratorSelector$instance extends RelationalValueGeneratorSelector$protected, ValueGeneratorSelector$instance {
     Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
     TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
 }
@@ -170,7 +182,13 @@ export const TemporaryNumberValueGeneratorFactory: {
 
 export type TemporaryNumberValueGeneratorFactory = TemporaryNumberValueGeneratorFactory$instance;
 
-export interface ValueGenerator$instance {
+export abstract class ValueGenerator$protected {
+    protected abstract NextValue(entry: EntityEntry): unknown | undefined;
+    protected NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+}
+
+
+export interface ValueGenerator$instance extends ValueGenerator$protected {
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): unknown;
@@ -180,12 +198,20 @@ export interface ValueGenerator$instance {
 
 
 export const ValueGenerator: {
+    new(): ValueGenerator;
 };
 
 
 export type ValueGenerator = ValueGenerator$instance;
 
-export interface ValueGenerator_1$instance<TValue> extends ValueGenerator {
+export abstract class ValueGenerator_1$protected<TValue> {
+    protected NextValue(entry: EntityEntry): unknown | undefined;
+    protected NextValueAsync2(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    protected NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+}
+
+
+export interface ValueGenerator_1$instance<TValue> extends ValueGenerator_1$protected<TValue>, ValueGenerator {
     Next(entry: EntityEntry): TValue;
     Next(entry: EntityEntry): unknown;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
@@ -194,12 +220,18 @@ export interface ValueGenerator_1$instance<TValue> extends ValueGenerator {
 
 
 export const ValueGenerator_1: {
+    new<TValue>(): ValueGenerator_1<TValue>;
 };
 
 
 export type ValueGenerator_1<TValue> = ValueGenerator_1$instance<TValue>;
 
-export interface ValueGeneratorCache$instance {
+export abstract class ValueGeneratorCache$protected {
+    protected readonly Dependencies: ValueGeneratorCacheDependencies;
+}
+
+
+export interface ValueGeneratorCache$instance extends ValueGeneratorCache$protected {
     GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
 }
 
@@ -240,12 +272,19 @@ export interface ValueGeneratorFactory$instance {
 
 
 export const ValueGeneratorFactory: {
+    new(): ValueGeneratorFactory;
 };
 
 
 export type ValueGeneratorFactory = ValueGeneratorFactory$instance;
 
-export interface ValueGeneratorSelector$instance {
+export abstract class ValueGeneratorSelector$protected {
+    protected readonly Dependencies: ValueGeneratorSelectorDependencies;
+    protected FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
+}
+
+
+export interface ValueGeneratorSelector$instance extends ValueGeneratorSelector$protected {
     readonly Cache: IValueGeneratorCache;
     Create(property: IProperty, typeBase: ITypeBase): ValueGenerator;
     Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;

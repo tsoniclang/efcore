@@ -23,7 +23,7 @@ import type { DbLoggerCategory_Update } from "../../Microsoft.EntityFrameworkCor
 import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic.js";
 import type { IComparer, IDictionary, IEnumerable, IEqualityComparer, IList, IReadOnlyList, List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { AsyncCallback, Boolean as ClrBoolean, Delegate, IAsyncResult, ICloneable, IEquatable, Int32, IntPtr, MulticastDelegate, Object as ClrObject, String as ClrString, ValueTuple, ValueType, Void } from "@tsonic/dotnet/System.js";
+import type { AsyncCallback, Boolean as ClrBoolean, Delegate, Func, IAsyncResult, ICloneable, IEquatable, Int32, IntPtr, MulticastDelegate, Object as ClrObject, String as ClrString, ValueTuple, ValueType, Void } from "@tsonic/dotnet/System.js";
 import * as System_Runtime_Serialization_Internal from "@tsonic/dotnet/System.Runtime.Serialization.js";
 import type { ISerializable } from "@tsonic/dotnet/System.Runtime.Serialization.js";
 import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
@@ -138,7 +138,12 @@ export interface IRowKeyValueFactoryFactory$instance {
 
 export type IRowKeyValueFactoryFactory = IRowKeyValueFactoryFactory$instance;
 
-export interface BatchExecutor$instance {
+export abstract class BatchExecutor$protected {
+    protected readonly UpdateLogger: IDiagnosticsLogger_1<DbLoggerCategory_Update>;
+}
+
+
+export interface BatchExecutor$instance extends BatchExecutor$protected {
     readonly CurrentContext: ICurrentDbContext;
     Execute(commandBatches: IEnumerable<ModificationCommandBatch>, connection: IRelationalConnection): int;
     ExecuteAsync(commandBatches: IEnumerable<ModificationCommandBatch>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
@@ -172,7 +177,13 @@ export const ColumnAccessors: {
 
 export type ColumnAccessors = ColumnAccessors$instance;
 
-export interface CommandBatchPreparer$instance {
+export abstract class CommandBatchPreparer$protected {
+    protected readonly Dependencies: CommandBatchPreparerDependencies;
+    protected CreateModificationCommands(entries: IList<IUpdateEntry>, updateAdapter: IUpdateAdapter, generateParameterName: Func<System_Internal.String>): IEnumerable<IReadOnlyModificationCommand>;
+}
+
+
+export interface CommandBatchPreparer$instance extends CommandBatchPreparer$protected {
     BatchCommands(entries: IList<IUpdateEntry>, updateAdapter: IUpdateAdapter): IEnumerable<ModificationCommandBatch>;
     CreateCommandBatches(commandSet: IEnumerable<IReadOnlyModificationCommand>, moreCommandSets: boolean): IEnumerable<ModificationCommandBatch>;
     TopologicalSort(commands: IEnumerable<IReadOnlyModificationCommand>): IReadOnlyList<List<IReadOnlyModificationCommand>>;
@@ -217,8 +228,16 @@ export const CommandBatchPreparerDependencies: {
 
 export type CommandBatchPreparerDependencies = CommandBatchPreparerDependencies$instance;
 
-export interface CompositeRowForeignKeyValueFactory$instance extends CompositeRowValueFactory {
-    readonly EqualityComparer: IEqualityComparer<(unknown | undefined)[]>;
+export abstract class CompositeRowForeignKeyValueFactory$protected {
+    protected readonly ValueConverters: List<ValueConverter | undefined> | undefined;
+    protected TryCreateDependentKeyValue2(keyValues: unknown[], key: unknown[], hasNullValue: boolean): boolean;
+    protected TryCreateDependentKeyValue4(keyValues: IDictionary<System_Internal.String, unknown>, key: unknown[], hasNullValue: boolean): boolean;
+    protected TryCreateDependentKeyValue6(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: unknown[], hasNullValue: boolean): boolean;
+}
+
+
+export interface CompositeRowForeignKeyValueFactory$instance extends CompositeRowForeignKeyValueFactory$protected, CompositeRowValueFactory {
+    EqualityComparer: IEqualityComparer<(unknown | undefined)[]>;
     CreateDependentEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown | undefined;
     CreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[] | undefined;
     CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
@@ -285,8 +304,17 @@ export interface __CompositeRowKeyValueFactory$views {
 export type CompositeRowKeyValueFactory = CompositeRowKeyValueFactory$instance & __CompositeRowKeyValueFactory$views;
 
 
-export interface CompositeRowValueFactory$instance {
-    readonly EqualityComparer: IEqualityComparer<(unknown | undefined)[]>;
+export abstract class CompositeRowValueFactory$protected {
+    protected readonly Columns: IReadOnlyList<IColumn>;
+    protected readonly ValueConverters: List<ValueConverter | undefined> | undefined;
+    protected TryCreateDependentKeyValue(keyValues: unknown[], key: unknown[], hasNullValue: boolean): boolean;
+    protected TryCreateDependentKeyValue(keyValues: IDictionary<System_Internal.String, unknown>, key: unknown[], hasNullValue: boolean): boolean;
+    protected TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: unknown[], hasNullValue: boolean): boolean;
+}
+
+
+export interface CompositeRowValueFactory$instance extends CompositeRowValueFactory$protected {
+    EqualityComparer: IEqualityComparer<(unknown | undefined)[]>;
     TryCreateDependentKeyValue(keyValues: unknown[], key: unknown[]): boolean;
     TryCreateDependentKeyValue(keyValues: IDictionary<System_Internal.String, unknown>, key: unknown[]): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: unknown[]): boolean;
@@ -294,6 +322,8 @@ export interface CompositeRowValueFactory$instance {
 
 
 export const CompositeRowValueFactory: {
+    new(columns: IReadOnlyList<IColumn>): CompositeRowValueFactory;
+    CreateEqualityComparer(columns: IReadOnlyList<IColumn>, valueConverters: List<ValueConverter>): IEqualityComparer<(unknown | undefined)[]>;
 };
 
 
@@ -347,6 +377,7 @@ export interface RowForeignKeyValueFactory_2$instance<TKey, TForeignKey> {
 
 
 export const RowForeignKeyValueFactory_2: {
+    new<TKey, TForeignKey>(foreignKey: IForeignKeyConstraint, column: IColumn, columnAccessors: ColumnAccessors): RowForeignKeyValueFactory_2<TKey, TForeignKey>;
 };
 
 
@@ -379,7 +410,12 @@ export interface RowForeignKeyValueFactoryFactory$instance extends IRowForeignKe
 export type RowForeignKeyValueFactoryFactory = RowForeignKeyValueFactoryFactory$instance & __RowForeignKeyValueFactoryFactory$views;
 
 
-export interface RowIdentityMap_1$instance<TKey> {
+export abstract class RowIdentityMap_1$protected<TKey> {
+    protected Add(key: TKey, command: INonTrackedModificationCommand): void;
+}
+
+
+export interface RowIdentityMap_1$instance<TKey> extends RowIdentityMap_1$protected<TKey> {
     readonly Rows: IEnumerable<INonTrackedModificationCommand>;
     Add(keyValues: unknown[], command: INonTrackedModificationCommand): void;
     Clear(): void;

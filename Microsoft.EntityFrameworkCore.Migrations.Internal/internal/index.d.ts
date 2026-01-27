@@ -5,10 +5,13 @@
 // Primitive type aliases from @tsonic/core
 import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
+// Import support types from @tsonic/core
+import type { ptr } from "@tsonic/core/types.js";
+
 // Import types from other namespaces
 import type { IDiagnosticsLogger_1, IRelationalCommandDiagnosticsLogger } from "../../Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js";
-import type { ICurrentDbContext, IDbContextOptions, IModelRuntimeInitializer, ModelSnapshot } from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
-import type { IDesignTimeModel, IRelationalAnnotationProvider, IRelationalModel } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
+import type { IAnnotation, ICurrentDbContext, IDbContextOptions, IModelRuntimeInitializer, ModelSnapshot } from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
+import type { ICheckConstraint, IColumn, IDesignTimeModel, IForeignKeyConstraint, IRelationalAnnotationProvider, IRelationalModel, ISequence, ITable, ITableIndex, IUniqueConstraint } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { MigrationOperation } from "../../Microsoft.EntityFrameworkCore.Migrations.Operations/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Migrations_Internal from "../../Microsoft.EntityFrameworkCore.Migrations/internal/index.js";
 import type { IHistoryRepository, IMigrationCommandExecutor, IMigrationsAnnotationProvider, IMigrationsAssembly, IMigrationsIdGenerator, IMigrationsModelDiffer, IMigrationsSqlGenerator, IMigrator, Migration, MigrationCommand, MigrationExecutionState, MigrationsSqlGenerationOptions } from "../../Microsoft.EntityFrameworkCore.Migrations/internal/index.js";
@@ -18,7 +21,7 @@ import type { DbLoggerCategory_Migrations } from "../../Microsoft.EntityFramewor
 import type { IEnumerable, IReadOnlyDictionary, IReadOnlyList } from "@tsonic/dotnet/System.Collections.Generic.js";
 import type { IsolationLevel } from "@tsonic/dotnet/System.Data.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, Int32, Nullable, Object as ClrObject, String as ClrString, Void } from "@tsonic/dotnet/System.js";
+import type { Boolean as ClrBoolean, Func, Int32, Nullable, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
 import type { Assembly, TypeInfo } from "@tsonic/dotnet/System.Reflection.js";
 import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
@@ -89,7 +92,59 @@ export interface MigrationsIdGenerator$instance extends Microsoft_EntityFramewor
 export type MigrationsIdGenerator = MigrationsIdGenerator$instance & __MigrationsIdGenerator$views;
 
 
-export interface MigrationsModelDiffer$instance {
+export abstract class MigrationsModelDiffer$protected {
+    protected readonly CommandBatchPreparerDependencies: CommandBatchPreparerDependencies;
+    protected readonly MigrationsAnnotationProvider: IMigrationsAnnotationProvider;
+    protected readonly RelationalAnnotationProvider: IRelationalAnnotationProvider;
+    protected readonly RowIdentityMapFactory: IRowIdentityMapFactory;
+    protected readonly TypeMappingSource: IRelationalTypeMappingSource;
+    protected Add(target: IRelationalModel, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Add(target: string, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Add(target: ITable, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Add(target: IUniqueConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Add(target: IForeignKeyConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Add(target: ITableIndex, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Add(target: ICheckConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Add(target: ISequence, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Add(target: IColumn, diffContext: MigrationsModelDiffer_DiffContext, inline?: boolean): IEnumerable<MigrationOperation>;
+    protected Diff(source: IRelationalModel, target: IRelationalModel, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IEnumerable<System_Internal.String>, target: IEnumerable<System_Internal.String>, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: string, target: string, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IEnumerable<ITable>, target: IEnumerable<ITable>, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: ITable, target: ITable, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IEnumerable<IColumn>, target: IEnumerable<IColumn>, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IColumn, target: IColumn, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IEnumerable<IUniqueConstraint>, target: IEnumerable<IUniqueConstraint>, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IUniqueConstraint, target: IUniqueConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IEnumerable<IForeignKeyConstraint>, target: IEnumerable<IForeignKeyConstraint>, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IForeignKeyConstraint, target: IForeignKeyConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IEnumerable<ITableIndex>, target: IEnumerable<ITableIndex>, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: ITableIndex, target: ITableIndex, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IEnumerable<ICheckConstraint>, target: IEnumerable<ICheckConstraint>, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: ICheckConstraint, target: ICheckConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: IEnumerable<ISequence>, target: IEnumerable<ISequence>, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Diff(source: ISequence, target: ISequence, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected DiffCollection<T>(sources: IEnumerable<T>, targets: IEnumerable<T>, diffContext: MigrationsModelDiffer_DiffContext, diff: Func<T, T, MigrationsModelDiffer_DiffContext, IEnumerable<MigrationOperation>>, add: Func<T, MigrationsModelDiffer_DiffContext, IEnumerable<MigrationOperation>>, remove: Func<T, MigrationsModelDiffer_DiffContext, IEnumerable<MigrationOperation>>, ...predicates: Func<T, T, MigrationsModelDiffer_DiffContext, System_Internal.Boolean>[]): IEnumerable<MigrationOperation>;
+    protected DiffData(source: IRelationalModel, target: IRelationalModel, diffContext: MigrationsModelDiffer_DiffContext): void;
+    protected GetDataOperations(source: IRelationalModel, target: IRelationalModel, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected GetDefaultValue(type: Type): unknown | undefined;
+    protected GetSchemas(model: IRelationalModel): IEnumerable<System_Internal.String>;
+    protected HasDifferences(source: IEnumerable<IAnnotation>, target: IEnumerable<IAnnotation>): boolean;
+    protected Remove(source: IRelationalModel, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Remove(source: string, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Remove(source: ITable, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Remove(source: IColumn, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Remove(source: IUniqueConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Remove(source: IForeignKeyConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Remove(source: ITableIndex, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Remove(source: ICheckConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Remove(source: ISequence, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable<MigrationOperation>;
+    protected Sort(operations: IEnumerable<MigrationOperation>, diffContext: MigrationsModelDiffer_DiffContext): IReadOnlyList<MigrationOperation>;
+    protected TrackData(source: IRelationalModel, target: IRelationalModel, diffContext: MigrationsModelDiffer_DiffContext): void;
+}
+
+
+export interface MigrationsModelDiffer$instance extends MigrationsModelDiffer$protected {
     GetDifferences(source: IRelationalModel, target: IRelationalModel): IReadOnlyList<MigrationOperation>;
     HasDifferences(source: IRelationalModel, target: IRelationalModel): boolean;
 }
@@ -109,7 +164,17 @@ export interface MigrationsModelDiffer$instance extends Microsoft_EntityFramewor
 export type MigrationsModelDiffer = MigrationsModelDiffer$instance & __MigrationsModelDiffer$views;
 
 
-export interface Migrator$instance {
+export abstract class Migrator$protected {
+    protected readonly MigrationTransactionIsolationLevel: Nullable<IsolationLevel>;
+    protected GenerateDownSql(migration: Migration, previousMigration: Migration, options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
+    protected GenerateUpSql(migration: Migration, options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
+    protected PopulateMigrations(appliedMigrationEntries: IEnumerable<System_Internal.String>, targetMigration: string, parameters: MigratorData): void;
+    protected VerifyMigrationSucceeded(targetMigration: string, state: MigrationExecutionState): boolean;
+    protected VerifyMigrationSucceededAsync(targetMigration: string, state: MigrationExecutionState, cancellationToken: CancellationToken): Task<System_Internal.Boolean>;
+}
+
+
+export interface Migrator$instance extends Migrator$protected {
     GenerateScript(fromMigration?: string, toMigration?: string, options?: MigrationsSqlGenerationOptions): string;
     HasPendingModelChanges(): boolean;
     Migrate(targetMigration: string): void;

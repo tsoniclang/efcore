@@ -19,9 +19,10 @@ import type { DbLoggerCategory_Database_Command } from './Microsoft.EntityFramew
 import type { IEnumerable, IReadOnlyDictionary, IReadOnlyList } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { DbCommand, DbParameter, DbParameterCollection } from '@tsonic/dotnet/System.Data.Common.js';
 import type { DbType, ParameterDirection } from '@tsonic/dotnet/System.Data.js';
-import type { Boolean as ClrBoolean, Byte, Exception, Func, IEquatable, Int32, Nullable, Object as ClrObject, String as ClrString, Type, Void } from '@tsonic/dotnet/System.js';
+import type { Boolean as ClrBoolean, Byte, Exception, Func, IEquatable, Int32, IServiceProvider, Nullable, Object as ClrObject, String as ClrString, Type, Void } from '@tsonic/dotnet/System.js';
 import type { Expression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { MethodInfo } from '@tsonic/dotnet/System.Reflection.js';
+import type { StringBuilder } from '@tsonic/dotnet/System.Text.js';
 import type { CancellationToken } from '@tsonic/dotnet/System.Threading.js';
 
 // Public API exports (curated - no internal $instance/$views leakage)

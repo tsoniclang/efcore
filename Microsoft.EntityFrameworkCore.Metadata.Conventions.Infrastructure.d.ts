@@ -14,6 +14,7 @@ import type { IConstructorBindingFactory, IParameterBindingFactories, IRelationa
 import type { ITypeMappingSource } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 import type { IUpdateSqlGenerator } from './Microsoft.EntityFrameworkCore.Update/internal/index.js';
 import type { DbLoggerCategory_Model, DbLoggerCategory_Model_Validation } from './Microsoft.EntityFrameworkCore/internal/index.js';
+import type { List } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString, Type } from '@tsonic/dotnet/System.js';
 
 // Public API exports (curated - no internal $instance/$views leakage)

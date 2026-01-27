@@ -29,7 +29,7 @@ import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections.
 import type { ICollection, IComparer, IEnumerable, IEqualityComparer, IList } from "@tsonic/dotnet/System.Collections.js";
 import type { NotifyCollectionChangedEventArgs } from "@tsonic/dotnet/System.Collections.Specialized.js";
 import * as System_ComponentModel_Internal from "@tsonic/dotnet/System.ComponentModel.js";
-import type { BindingList, IBindingList, ICancelAddNew, IRaiseItemChangedEvents, PropertyChangedEventArgs, PropertyChangingEventArgs } from "@tsonic/dotnet/System.ComponentModel.js";
+import type { BindingList, IBindingList, ICancelAddNew, IRaiseItemChangedEvents, ListSortDirection, PropertyChangedEventArgs, PropertyChangingEventArgs, PropertyDescriptor } from "@tsonic/dotnet/System.ComponentModel.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Action, Boolean as ClrBoolean, EventHandler, Func, IEquatable, Int32, Nullable, Object as ClrObject, String as ClrString, Tuple, Type, ValueTuple, ValueType, Void } from "@tsonic/dotnet/System.js";
 import type { Expression, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
@@ -437,7 +437,13 @@ export interface __CompositePrincipalKeyValueFactory$views {
 export type CompositePrincipalKeyValueFactory = CompositePrincipalKeyValueFactory$instance & __CompositePrincipalKeyValueFactory$views;
 
 
-export interface CompositeValueFactory$instance {
+export abstract class CompositeValueFactory$protected {
+    protected readonly Properties: IReadOnlyList<IProperty>;
+    protected TryCreateFromEntry(entry: IUpdateEntry, getValue: Func<IUpdateEntry, IProperty, unknown>, key: IReadOnlyList<unknown>): boolean;
+}
+
+
+export interface CompositeValueFactory$instance extends CompositeValueFactory$protected {
     readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<IReadOnlyList<unknown | undefined>>;
     CreateDependentEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown | undefined;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
@@ -451,6 +457,7 @@ export interface CompositeValueFactory$instance {
 
 export const CompositeValueFactory: {
     new(properties: IReadOnlyList<IProperty>): CompositeValueFactory;
+    CreateEqualityComparer(properties: IReadOnlyList<IProperty>): IEqualityComparer__System_Collections_Generic<IReadOnlyList<unknown | undefined>>;
 };
 
 
@@ -480,7 +487,14 @@ export interface ConvertingValueComparer_2$instance<TTo, TFrom> extends Microsof
 export type ConvertingValueComparer_2<TTo, TFrom> = ConvertingValueComparer_2$instance<TTo, TFrom> & __ConvertingValueComparer_2$views<TTo, TFrom>;
 
 
-export interface CurrentPropertyValues$instance extends EntryPropertyValues {
+export abstract class CurrentPropertyValues$protected {
+    protected GetComplexCollectionEntry(entry: InternalEntryBase, complexProperty: IComplexProperty, i: int): InternalComplexEntry;
+    protected GetValueInternal(entry: IInternalEntry, property: IPropertyBase): unknown | undefined;
+    protected SetValueInternal(entry: IInternalEntry, property: IPropertyBase, value: unknown): void;
+}
+
+
+export interface CurrentPropertyValues$instance extends CurrentPropertyValues$protected, EntryPropertyValues {
     GetValue<TValue>(propertyName: string): TValue;
     GetValue<TValue>(property: IProperty): TValue;
 }
@@ -529,6 +543,7 @@ export interface DependentKeyValueFactory_1$instance<TKey> {
 
 
 export const DependentKeyValueFactory_1: {
+    new<TKey>(foreignKey: IForeignKey, principalKeyValueFactory: IPrincipalKeyValueFactory_1<TKey>): DependentKeyValueFactory_1<TKey>;
 };
 
 
@@ -570,7 +585,18 @@ export interface __DependentsMap_1$views<TKey> {
 export type DependentsMap_1<TKey> = DependentsMap_1$instance<TKey> & __DependentsMap_1$views<TKey>;
 
 
-export interface EmptyShadowValuesFactoryFactory$instance extends SnapshotFactoryFactory {
+export abstract class EmptyShadowValuesFactoryFactory$protected {
+    protected readonly UseEntityVariable: boolean;
+    protected CreateReadShadowValueExpression(parameter: Expression, property: IPropertyBase): Expression;
+    protected CreateReadValueExpression(parameter: Expression, property: IPropertyBase): Expression;
+    protected GetPropertyCount(structuralType: IRuntimeTypeBase): int;
+    protected GetPropertyIndex(propertyBase: IPropertyBase): int;
+    protected GetValueComparer(property: IProperty): ValueComparer | undefined;
+    protected GetValueComparerMethod(): MethodInfo | undefined;
+}
+
+
+export interface EmptyShadowValuesFactoryFactory$instance extends EmptyShadowValuesFactoryFactory$protected, SnapshotFactoryFactory {
 }
 
 
@@ -639,7 +665,12 @@ export const EntityReferenceMap: {
 
 export type EntityReferenceMap = EntityReferenceMap$instance;
 
-export interface EntryCurrentProviderValueComparer$instance extends EntryCurrentValueComparer {
+export abstract class EntryCurrentProviderValueComparer$protected {
+    protected GetPropertyValue(entry: IUpdateEntry): unknown | undefined;
+}
+
+
+export interface EntryCurrentProviderValueComparer$instance extends EntryCurrentProviderValueComparer$protected, EntryCurrentValueComparer {
 }
 
 
@@ -650,7 +681,13 @@ export const EntryCurrentProviderValueComparer: {
 
 export type EntryCurrentProviderValueComparer = EntryCurrentProviderValueComparer$instance;
 
-export interface EntryCurrentValueComparer$instance {
+export abstract class EntryCurrentValueComparer$protected {
+    protected ComparePropertyValues(x: unknown, y: unknown): int;
+    protected GetPropertyValue(entry: IUpdateEntry): unknown | undefined;
+}
+
+
+export interface EntryCurrentValueComparer$instance extends EntryCurrentValueComparer$protected {
     Compare(x: IUpdateEntry, y: IUpdateEntry): int;
     Equals(x: IUpdateEntry, y: IUpdateEntry): boolean;
     GetHashCode(obj: IUpdateEntry): int;
@@ -665,7 +702,14 @@ export const EntryCurrentValueComparer: {
 
 export type EntryCurrentValueComparer = EntryCurrentValueComparer$instance;
 
-export interface EntryPropertyValues$instance extends PropertyValues {
+export abstract class EntryPropertyValues$protected {
+    protected abstract GetComplexCollectionEntry(entry: InternalEntryBase, complexProperty: IComplexProperty, i: int): InternalComplexEntry;
+    protected abstract GetValueInternal(entry: IInternalEntry, property: IPropertyBase): unknown | undefined;
+    protected abstract SetValueInternal(entry: IInternalEntry, property: IPropertyBase, value: unknown): void;
+}
+
+
+export interface EntryPropertyValues$instance extends EntryPropertyValues$protected, PropertyValues {
     Clone(): PropertyValues;
     get_Item(propertyName: string): unknown | undefined;
     get_Item(property: IProperty): unknown | undefined;
@@ -682,12 +726,20 @@ export interface EntryPropertyValues$instance extends PropertyValues {
 
 
 export const EntryPropertyValues: {
+    new(internalEntry: InternalEntryBase): EntryPropertyValues;
 };
 
 
 export type EntryPropertyValues = EntryPropertyValues$instance;
 
-export interface IdentityMap_1$instance<TKey> {
+export abstract class IdentityMap_1$protected<TKey> {
+    protected readonly PrincipalKeyValueFactory: IPrincipalKeyValueFactory_1<TKey>;
+    protected Add(key: TKey, entry: InternalEntityEntry): void;
+    protected Remove(key: TKey, entry: InternalEntityEntry): void;
+}
+
+
+export interface IdentityMap_1$instance<TKey> extends IdentityMap_1$protected<TKey> {
     readonly Key: IKey;
     Add(entry: InternalEntityEntry): void;
     Add(keyValues: IReadOnlyList<unknown>, entry: InternalEntityEntry): void;
@@ -734,7 +786,14 @@ export const IdentityMapFactoryFactory: {
 
 export type IdentityMapFactoryFactory = IdentityMapFactoryFactory$instance;
 
-export interface InternalComplexEntry$instance extends InternalEntryBase$instance {
+export abstract class InternalComplexEntry$protected {
+    protected OnStateChanged(oldState: EntityState): void;
+    protected OnStateChanging(newState: EntityState): void;
+    protected SetEntityState2(oldState: EntityState, newState: EntityState, acceptChanges: boolean, modifyProperties: boolean): void;
+}
+
+
+export interface InternalComplexEntry$instance extends InternalComplexEntry$protected, InternalEntryBase$instance {
     readonly ComplexProperty: IComplexProperty;
     readonly ComplexType: IRuntimeComplexType;
     readonly ContainingEntry: InternalEntryBase;
@@ -791,7 +850,16 @@ export interface __InternalComplexEntry$views {
 export type InternalComplexEntry = InternalComplexEntry$instance & __InternalComplexEntry$views;
 
 
-export interface InternalEntityEntry$instance extends InternalEntryBase$instance {
+export abstract class InternalEntityEntry$protected {
+    protected OnPropertyChanged(propertyBase: IPropertyBase, value: unknown, setModified: boolean): void;
+    protected OnStateChanged(oldState: EntityState): void;
+    protected OnStateChanging(newState: EntityState): void;
+    protected SetEntityState2(oldState: EntityState, newState: EntityState, acceptChanges: boolean, modifyProperties: boolean): void;
+    protected SetServiceProperties(oldState: EntityState, newState: EntityState): void;
+}
+
+
+export interface InternalEntityEntry$instance extends InternalEntityEntry$protected, InternalEntryBase$instance {
     readonly DebugView: DebugView;
     readonly Entity: unknown;
     readonly EntityType: IRuntimeEntityType;
@@ -892,11 +960,24 @@ export const InternalEntityEntryNotifier: {
 
 export type InternalEntityEntryNotifier = InternalEntityEntryNotifier$instance;
 
-export interface InternalEntryBase$instance {
+export abstract class InternalEntryBase$protected {
+    protected readonly PropertyStateData: InternalEntryBase_StateData;
+    protected GetOrCreateShadowCollection(navigation: INavigationBase): unknown;
+    protected GetValueType(property: IProperty): InternalEntryBase_CurrentValueType;
+    protected OnPropertyChanged(propertyBase: IPropertyBase, value: unknown, setModified: boolean): void;
+    protected OnStateChanged(oldState: EntityState): void;
+    protected OnStateChanging(newState: EntityState): void;
+    protected PrepareForAdd(newState: EntityState): boolean;
+    protected SetEntityState(oldState: EntityState, newState: EntityState, acceptChanges: boolean, modifyProperties: boolean): void;
+    protected SetServiceProperties(oldState: EntityState, newState: EntityState): void;
+}
+
+
+export interface InternalEntryBase$instance extends InternalEntryBase$protected {
     readonly ContainingEntry: InternalEntryBase;
     readonly Context: DbContext;
     readonly EntityEntry: InternalEntityEntry;
-    readonly EntityState: EntityState;
+    EntityState: EntityState;
     readonly HasConceptualNull: boolean;
     readonly HasOriginalValuesSnapshot: boolean;
     get Item(): unknown | undefined;
@@ -1088,7 +1169,12 @@ export const NullableClassCurrentProviderValueComparer_2: {
 
 export type NullableClassCurrentProviderValueComparer_2<TModel, TProvider> = NullableClassCurrentProviderValueComparer_2$instance<TModel, TProvider>;
 
-export interface NullableKeyIdentityMap_1$instance<TKey> extends IdentityMap_1$instance<TKey> {
+export abstract class NullableKeyIdentityMap_1$protected<TKey> {
+    protected Add2(key: TKey, entry: InternalEntityEntry): void;
+}
+
+
+export interface NullableKeyIdentityMap_1$instance<TKey> extends NullableKeyIdentityMap_1$protected<TKey>, IdentityMap_1$instance<TKey> {
     Add(entry: InternalEntityEntry): void;
     Add(keyValues: IReadOnlyList<unknown>, entry: InternalEntityEntry): void;
     AddOrUpdate(entry: InternalEntityEntry): void;
@@ -1147,7 +1233,16 @@ export interface NullableValueComparer_1$instance<T extends unknown> extends Mic
 export type NullableValueComparer_1<T> = NullableValueComparer_1$instance<T> & __NullableValueComparer_1$views<T>;
 
 
-export interface ObservableBackedBindingList_1$instance<T> extends SortableBindingList_1<T> {
+export abstract class ObservableBackedBindingList_1$protected<T> {
+    protected AddNewCore(): unknown | undefined;
+    protected ClearItems(): void;
+    protected InsertItem(index: int, item: T): void;
+    protected RemoveItem(index: int): void;
+    protected SetItem(index: int, item: T): void;
+}
+
+
+export interface ObservableBackedBindingList_1$instance<T> extends ObservableBackedBindingList_1$protected<T>, SortableBindingList_1<T> {
     CancelNew(itemIndex: int): void;
     EndNew(itemIndex: int): void;
 }
@@ -1160,7 +1255,14 @@ export const ObservableBackedBindingList_1: {
 
 export type ObservableBackedBindingList_1<T> = ObservableBackedBindingList_1$instance<T>;
 
-export interface OriginalPropertyValues$instance extends EntryPropertyValues {
+export abstract class OriginalPropertyValues$protected {
+    protected GetComplexCollectionEntry(entry: InternalEntryBase, complexProperty: IComplexProperty, i: int): InternalComplexEntry;
+    protected GetValueInternal(entry: IInternalEntry, property: IPropertyBase): unknown | undefined;
+    protected SetValueInternal(entry: IInternalEntry, property: IPropertyBase, value: unknown): void;
+}
+
+
+export interface OriginalPropertyValues$instance extends OriginalPropertyValues$protected, EntryPropertyValues {
     GetValue<TValue>(propertyName: string): TValue;
     GetValue<TValue>(property: IProperty): TValue;
 }
@@ -1173,7 +1275,15 @@ export const OriginalPropertyValues: {
 
 export type OriginalPropertyValues = OriginalPropertyValues$instance;
 
-export interface OriginalValuesFactoryFactory$instance extends SnapshotFactoryFactory_1<IInternalEntry> {
+export abstract class OriginalValuesFactoryFactory$protected {
+    protected GetPropertyCount(structuralType: IRuntimeTypeBase): int;
+    protected GetPropertyIndex(propertyBase: IPropertyBase): int;
+    protected GetValueComparer(property: IProperty): ValueComparer | undefined;
+    protected GetValueComparerMethod(): MethodInfo | undefined;
+}
+
+
+export interface OriginalValuesFactoryFactory$instance extends OriginalValuesFactoryFactory$protected, SnapshotFactoryFactory_1<IInternalEntry> {
 }
 
 
@@ -1185,7 +1295,15 @@ export const OriginalValuesFactoryFactory: {
 
 export type OriginalValuesFactoryFactory = OriginalValuesFactoryFactory$instance;
 
-export interface RelationshipSnapshotFactoryFactory$instance extends SnapshotFactoryFactory_1<IInternalEntry> {
+export abstract class RelationshipSnapshotFactoryFactory$protected {
+    protected GetPropertyCount(structuralType: IRuntimeTypeBase): int;
+    protected GetPropertyIndex(propertyBase: IPropertyBase): int;
+    protected GetValueComparer(property: IProperty): ValueComparer | undefined;
+    protected GetValueComparerMethod(): MethodInfo | undefined;
+}
+
+
+export interface RelationshipSnapshotFactoryFactory$instance extends RelationshipSnapshotFactoryFactory$protected, SnapshotFactoryFactory_1<IInternalEntry> {
 }
 
 
@@ -1197,7 +1315,18 @@ export const RelationshipSnapshotFactoryFactory: {
 
 export type RelationshipSnapshotFactoryFactory = RelationshipSnapshotFactoryFactory$instance;
 
-export interface ShadowValuesFactoryFactory$instance extends SnapshotFactoryFactory_1<IDictionary<System_Internal.String, unknown>> {
+export abstract class ShadowValuesFactoryFactory$protected {
+    protected readonly UseEntityVariable: boolean;
+    protected CreateReadShadowValueExpression(parameter: Expression, property: IPropertyBase): Expression;
+    protected CreateReadValueExpression(parameter: Expression, property: IPropertyBase): Expression;
+    protected GetPropertyCount(structuralType: IRuntimeTypeBase): int;
+    protected GetPropertyIndex(propertyBase: IPropertyBase): int;
+    protected GetValueComparer(property: IProperty): ValueComparer | undefined;
+    protected GetValueComparerMethod(): MethodInfo | undefined;
+}
+
+
+export interface ShadowValuesFactoryFactory$instance extends ShadowValuesFactoryFactory$protected, SnapshotFactoryFactory_1<IDictionary<System_Internal.String, unknown>> {
 }
 
 
@@ -1209,7 +1338,15 @@ export const ShadowValuesFactoryFactory: {
 
 export type ShadowValuesFactoryFactory = ShadowValuesFactoryFactory$instance;
 
-export interface SidecarValuesFactoryFactory$instance extends SnapshotFactoryFactory_1<IInternalEntry> {
+export abstract class SidecarValuesFactoryFactory$protected {
+    protected GetPropertyCount(structuralType: IRuntimeTypeBase): int;
+    protected GetPropertyIndex(propertyBase: IPropertyBase): int;
+    protected GetValueComparer(property: IProperty): ValueComparer | undefined;
+    protected GetValueComparerMethod(): MethodInfo | undefined;
+}
+
+
+export interface SidecarValuesFactoryFactory$instance extends SidecarValuesFactoryFactory$protected, SnapshotFactoryFactory_1<IInternalEntry> {
 }
 
 
@@ -1963,7 +2100,19 @@ export interface Snapshot_9$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8> extends
 export type Snapshot_9<T0, T1, T2, T3, T4, T5, T6, T7, T8> = Snapshot_9$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8> & __Snapshot_9$views<T0, T1, T2, T3, T4, T5, T6, T7, T8>;
 
 
-export interface SnapshotFactoryFactory$instance {
+export abstract class SnapshotFactoryFactory$protected {
+    protected readonly UseEntityVariable: boolean;
+    protected CreateReadShadowValueExpression(parameter: Expression, property: IPropertyBase): Expression;
+    protected CreateReadValueExpression(parameter: Expression, property: IPropertyBase): Expression;
+    protected CreateSnapshotExpression(clrType: Type, parameter: Expression, types: Type[], propertyBases: IList__System_Collections_Generic<IPropertyBase>): Expression;
+    protected abstract GetPropertyCount(structuralType: IRuntimeTypeBase): int;
+    protected abstract GetPropertyIndex(propertyBase: IPropertyBase): int;
+    protected abstract GetValueComparer(property: IProperty): ValueComparer | undefined;
+    protected abstract GetValueComparerMethod(): MethodInfo | undefined;
+}
+
+
+export interface SnapshotFactoryFactory$instance extends SnapshotFactoryFactory$protected {
     CreateConstructorExpression(structuralType: IRuntimeTypeBase, parameter: Expression): Expression;
     CreateEmpty(structuralType: IRuntimeTypeBase): Func<ISnapshot>;
     CreateEmptyExpression(structuralType: IRuntimeTypeBase): Expression<Func<ISnapshot>>;
@@ -1971,6 +2120,7 @@ export interface SnapshotFactoryFactory$instance {
 
 
 export const SnapshotFactoryFactory: {
+    new(): SnapshotFactoryFactory;
     SnapshotCollection(collection: IEnumerable): HashSet<unknown> | undefined;
     SnapshotComplexCollection(list: IList, complexProperty: IRuntimeComplexProperty): IList | undefined;
 };
@@ -1985,12 +2135,23 @@ export interface SnapshotFactoryFactory_1$instance<TInput> extends SnapshotFacto
 
 
 export const SnapshotFactoryFactory_1: {
+    new<TInput>(): SnapshotFactoryFactory_1<TInput>;
 };
 
 
 export type SnapshotFactoryFactory_1<TInput> = SnapshotFactoryFactory_1$instance<TInput>;
 
-export interface SortableBindingList_1$instance<T> extends BindingList<T> {
+export abstract class SortableBindingList_1$protected<T> {
+    protected readonly IsSortedCore: boolean;
+    protected readonly SortDirectionCore: ListSortDirection;
+    protected readonly SortPropertyCore: PropertyDescriptor | undefined;
+    protected readonly SupportsSortingCore: boolean;
+    protected ApplySortCore(prop: PropertyDescriptor, direction: ListSortDirection): void;
+    protected RemoveSortCore(): void;
+}
+
+
+export interface SortableBindingList_1$instance<T> extends SortableBindingList_1$protected<T>, BindingList<T> {
 }
 
 
@@ -2001,7 +2162,13 @@ export const SortableBindingList_1: {
 
 export type SortableBindingList_1<T> = SortableBindingList_1$instance<T>;
 
-export interface StateManager$instance {
+export abstract class StateManager$protected {
+    protected SaveChanges(entriesToSave: IList__System_Collections_Generic<IUpdateEntry>): int;
+    protected SaveChangesAsync(entriesToSave: IList__System_Collections_Generic<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+}
+
+
+export interface StateManager$instance extends StateManager$protected {
     CascadeDeleteTiming: CascadeTiming;
     ChangedCount: int;
     readonly ChangeDetector: IChangeDetector;
@@ -2119,7 +2286,14 @@ export const StateManagerDependencies: {
 
 export type StateManagerDependencies = StateManagerDependencies$instance;
 
-export interface StoreGeneratedValuesFactoryFactory$instance {
+export abstract class StoreGeneratedValuesFactoryFactory$protected {
+    protected readonly UseEntityVariable: boolean;
+    protected CreateReadShadowValueExpression(parameter: Expression, property: IPropertyBase): Expression;
+    protected CreateReadValueExpression(parameter: Expression, property: IPropertyBase): Expression;
+}
+
+
+export interface StoreGeneratedValuesFactoryFactory$instance extends StoreGeneratedValuesFactoryFactory$protected, SidecarValuesFactoryFactory {
 }
 
 
@@ -2130,7 +2304,12 @@ export const StoreGeneratedValuesFactoryFactory: {
 
 export type StoreGeneratedValuesFactoryFactory = StoreGeneratedValuesFactoryFactory$instance;
 
-export interface StructuralEntryCurrentProviderValueComparer$instance extends StructuralEntryCurrentValueComparer {
+export abstract class StructuralEntryCurrentProviderValueComparer$protected {
+    protected GetPropertyValue(entry: IUpdateEntry): unknown | undefined;
+}
+
+
+export interface StructuralEntryCurrentProviderValueComparer$instance extends StructuralEntryCurrentProviderValueComparer$protected, StructuralEntryCurrentValueComparer {
 }
 
 
@@ -2153,7 +2332,13 @@ export const StructuralEntryCurrentValueComparer: {
 
 export type StructuralEntryCurrentValueComparer = StructuralEntryCurrentValueComparer$instance;
 
-export interface TemporaryValuesFactoryFactory$instance {
+export abstract class TemporaryValuesFactoryFactory$protected {
+    protected CreateSnapshotExpression2(entityType: Type, parameter: Expression, types: Type[], propertyBases: IList__System_Collections_Generic<IPropertyBase>): Expression;
+    protected CreateSnapshotExpression(clrType: Type, parameter: Expression, types: Type[], propertyBases: IList__System_Collections_Generic<IPropertyBase>): Expression;
+}
+
+
+export interface TemporaryValuesFactoryFactory$instance extends TemporaryValuesFactoryFactory$protected, SidecarValuesFactoryFactory {
 }
 
 

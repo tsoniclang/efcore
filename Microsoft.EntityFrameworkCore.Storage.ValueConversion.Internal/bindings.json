@@ -15,6 +15,19 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 3,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TMiddle",
+        "TProvider"
+      ],
       "methods": [],
       "properties": [],
       "fields": [],
@@ -27,6 +40,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.CompositeValueConverter\u00603",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -43,7 +57,60 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider"
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602::ToString():System.Linq.Expressions.Expression_1[[System.Func_2[[System.Char,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToString",
+          "metadataToken": 100664932,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.Char,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToString|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.Char,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602::ToChar():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Char,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToChar",
+          "metadataToken": 100664933,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Char,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToChar|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Char,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
       "properties": [],
       "fields": [],
       "events": [],
@@ -55,6 +122,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringCharConverter\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -71,9 +139,75 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider"
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602::ToString():System.Linq.Expressions.Expression_1[[System.Func_2[[System.DateOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToString",
+          "metadataToken": 100664935,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.DateOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToString|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.DateOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602::ToDateOnly():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.DateOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToDateOnly",
+          "metadataToken": 100664936,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.DateOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToDateOnly|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.DateOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
       "properties": [],
-      "fields": [],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602::DefaultHintsMicrosoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
+          "clrName": "DefaultHints",
+          "metadataToken": 67109251,
+          "normalizedSignature": "DefaultHints|Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=true|const=false",
+          "isStatic": true,
+          "isReadOnly": true,
+          "isLiteral": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "events": [],
       "constructors": [
         {
@@ -83,6 +217,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateOnlyConverter\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -99,9 +234,75 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider"
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602::ToString():System.Linq.Expressions.Expression_1[[System.Func_2[[System.DateTime,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToString",
+          "metadataToken": 100664939,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.DateTime,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToString|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.DateTime,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602::ToDateTime():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.DateTime,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToDateTime",
+          "metadataToken": 100664940,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.DateTime,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToDateTime|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.DateTime,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
       "properties": [],
-      "fields": [],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602::DefaultHintsMicrosoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
+          "clrName": "DefaultHints",
+          "metadataToken": 67109252,
+          "normalizedSignature": "DefaultHints|Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=true|const=false",
+          "isStatic": true,
+          "isReadOnly": true,
+          "isLiteral": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "events": [],
       "constructors": [
         {
@@ -111,6 +312,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeConverter\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -127,9 +329,75 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider"
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602::ToString():System.Linq.Expressions.Expression_1[[System.Func_2[[System.DateTimeOffset,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToString",
+          "metadataToken": 100664943,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.DateTimeOffset,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToString|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.DateTimeOffset,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602::ToDateTimeOffset():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.DateTimeOffset,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToDateTimeOffset",
+          "metadataToken": 100664944,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.DateTimeOffset,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToDateTimeOffset|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.DateTimeOffset,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
       "properties": [],
-      "fields": [],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602::DefaultHintsMicrosoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
+          "clrName": "DefaultHints",
+          "metadataToken": 67109253,
+          "normalizedSignature": "DefaultHints|Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=true|const=false",
+          "isStatic": true,
+          "isReadOnly": true,
+          "isLiteral": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "events": [],
       "constructors": [
         {
@@ -139,6 +407,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringDateTimeOffsetConverter\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -155,7 +424,60 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 3,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider",
+        "TEnum"
+      ],
       "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603::ToString():Expression_1",
+          "clrName": "ToString",
+          "metadataToken": 100664947,
+          "canonicalSignature": "():Expression_1",
+          "normalizedSignature": "ToString|():Expression_1|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603::ToEnum():Expression_1",
+          "clrName": "ToEnum",
+          "metadataToken": 100664948,
+          "canonicalSignature": "():Expression_1",
+          "normalizedSignature": "ToEnum|():Expression_1|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603::ConvertToEnum(System.String):TEnum",
           "clrName": "ConvertToEnum",
@@ -171,6 +493,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -187,6 +510,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringEnumConverter\u00603",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -203,9 +527,75 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider"
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602::ToString():System.Linq.Expressions.Expression_1[[System.Func_2[[System.Guid,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToString",
+          "metadataToken": 100664951,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.Guid,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToString|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.Guid,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602::ToGuid():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Guid,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToGuid",
+          "metadataToken": 100664952,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Guid,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToGuid|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Guid,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
       "properties": [],
-      "fields": [],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602::DefaultHintsMicrosoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
+          "clrName": "DefaultHints",
+          "metadataToken": 67109254,
+          "normalizedSignature": "DefaultHints|Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=true|const=false",
+          "isStatic": true,
+          "isReadOnly": true,
+          "isLiteral": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "events": [],
       "constructors": [
         {
@@ -215,6 +605,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringGuidConverter\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -231,9 +622,76 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 3,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider",
+        "TNumber"
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603::ToNumber():Expression_1",
+          "clrName": "ToNumber",
+          "metadataToken": 100664955,
+          "canonicalSignature": "():Expression_1",
+          "normalizedSignature": "ToNumber|():Expression_1|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603::ToString():Expression_1",
+          "clrName": "ToString",
+          "metadataToken": 100664956,
+          "canonicalSignature": "():Expression_1",
+          "normalizedSignature": "ToString|():Expression_1|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
       "properties": [],
-      "fields": [],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603::DefaultHintsMicrosoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
+          "clrName": "DefaultHints",
+          "metadataToken": 67109256,
+          "normalizedSignature": "DefaultHints|Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=true|const=false",
+          "isStatic": true,
+          "isReadOnly": true,
+          "isLiteral": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "events": [],
       "constructors": [
         {
@@ -243,6 +701,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringNumberConverter\u00603",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -259,9 +718,75 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider"
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602::ToString():System.Linq.Expressions.Expression_1[[System.Func_2[[System.TimeOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToString",
+          "metadataToken": 100664959,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.TimeOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToString|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.TimeOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602::ToTimeOnly():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.TimeOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToTimeOnly",
+          "metadataToken": 100664960,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.TimeOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToTimeOnly|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.TimeOnly,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
       "properties": [],
-      "fields": [],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602::DefaultHintsMicrosoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
+          "clrName": "DefaultHints",
+          "metadataToken": 67109257,
+          "normalizedSignature": "DefaultHints|Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=true|const=false",
+          "isStatic": true,
+          "isReadOnly": true,
+          "isLiteral": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "events": [],
       "constructors": [
         {
@@ -271,6 +796,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeOnlyConverter\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -287,9 +813,75 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider"
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602::ToString():System.Linq.Expressions.Expression_1[[System.Func_2[[System.TimeSpan,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToString",
+          "metadataToken": 100664963,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.TimeSpan,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToString|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.TimeSpan,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602::ToTimeSpan():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.TimeSpan,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToTimeSpan",
+          "metadataToken": 100664964,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.TimeSpan,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToTimeSpan|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.TimeSpan,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
       "properties": [],
-      "fields": [],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602::DefaultHintsMicrosoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints",
+          "clrName": "DefaultHints",
+          "metadataToken": 67109258,
+          "normalizedSignature": "DefaultHints|Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints|static=true|const=false",
+          "isStatic": true,
+          "isReadOnly": true,
+          "isLiteral": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
       "events": [],
       "constructors": [
         {
@@ -299,6 +891,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringTimeSpanConverter\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -315,7 +908,60 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 2,
-      "methods": [],
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "clrName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter\u00602",
+        "typeArguments": [
+          "TModel",
+          "TProvider"
+        ]
+      },
+      "typeParameters": [
+        "TModel",
+        "TProvider"
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602::ToString():System.Linq.Expressions.Expression_1[[System.Func_2[[System.Uri,System.Private.Uri,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToString",
+          "metadataToken": 100664967,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.Uri,System.Private.Uri,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToString|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.Uri,System.Private.Uri,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602::ToUri():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Uri,System.Private.Uri,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "clrName": "ToUri",
+          "metadataToken": 100664968,
+          "canonicalSignature": "():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Uri,System.Private.Uri,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "normalizedSignature": "ToUri|():System.Linq.Expressions.Expression_1[[System.Func_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Uri,System.Private.Uri,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
       "properties": [],
       "fields": [],
       "events": [],
@@ -327,6 +973,7 @@
           "normalizedSignature": "constructor|(Expression_1,Expression_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal.StringUriConverter\u00602",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }

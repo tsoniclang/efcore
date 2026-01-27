@@ -632,6 +632,9 @@ export interface ValueConverter$instance {
 
 
 export const ValueConverter: {
+    new(convertToProviderExpression: LambdaExpression, convertFromProviderExpression: LambdaExpression, mappingHints: ConverterMappingHints): ValueConverter;
+    new(convertToProviderExpression: LambdaExpression, convertFromProviderExpression: LambdaExpression, convertsNulls: boolean, mappingHints: ConverterMappingHints): ValueConverter;
+    CheckTypeSupported(type: Type, converterType: Type, ...supportedTypes: Type[]): Type;
 };
 
 
@@ -658,7 +661,12 @@ export const ValueConverter_2: {
 
 export type ValueConverter_2<TModel, TProvider> = ValueConverter_2$instance<TModel, TProvider>;
 
-export interface ValueConverterSelector$instance {
+export abstract class ValueConverterSelector$protected {
+    protected readonly Dependencies: ValueConverterSelectorDependencies;
+}
+
+
+export interface ValueConverterSelector$instance extends ValueConverterSelector$protected {
     Select(modelClrType: Type, providerClrType?: Type): IEnumerable<ValueConverterInfo>;
 }
 

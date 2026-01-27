@@ -239,7 +239,7 @@ export interface ISingletonOptionsInitializer$instance {
 export type ISingletonOptionsInitializer = ISingletonOptionsInitializer$instance;
 
 export interface DbContextLease$instance {
-    readonly Context: IDbContextPoolable;
+    Context: IDbContextPoolable;
     readonly IsActive: boolean;
     readonly IsStandalone: boolean;
     ContextDisposed(): void;

@@ -32,6 +32,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -51,6 +52,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -70,6 +72,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -89,6 +92,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -108,6 +112,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -127,6 +132,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -146,6 +152,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -165,6 +172,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -184,6 +192,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -203,6 +212,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -222,6 +232,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -241,6 +252,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -260,6 +272,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -279,6 +292,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -298,6 +312,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -317,6 +332,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -336,6 +352,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -355,6 +372,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -374,6 +392,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -393,6 +412,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -412,6 +432,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -431,6 +452,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -450,6 +472,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -469,6 +492,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -488,6 +512,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -507,6 +532,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -526,6 +552,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -545,6 +572,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -564,6 +592,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -583,6 +612,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -602,6 +632,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -621,6 +652,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -640,6 +672,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -677,6 +710,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -696,6 +730,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -715,6 +750,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -734,6 +770,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -753,6 +790,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -772,6 +810,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -791,6 +830,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -810,6 +850,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -829,6 +870,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -848,6 +890,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -867,6 +910,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -886,6 +930,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -905,6 +950,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -924,6 +970,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -943,6 +990,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -962,6 +1010,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -981,6 +1030,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1000,6 +1050,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1019,6 +1070,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1038,6 +1090,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1057,6 +1110,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1076,6 +1130,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1095,6 +1150,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1114,6 +1170,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1133,6 +1190,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1152,6 +1210,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1171,6 +1230,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1190,6 +1250,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1209,6 +1270,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1228,6 +1290,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1247,6 +1310,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1266,6 +1330,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1285,6 +1350,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1304,6 +1370,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1323,6 +1390,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1342,6 +1410,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1361,6 +1430,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1380,6 +1450,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1399,6 +1470,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1418,6 +1490,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1437,6 +1510,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1456,6 +1530,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1475,6 +1550,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.ICSharpHelper",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1496,6 +1572,9 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 1,
+      "typeParameters": [
+        "TContext"
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory\u00601::CreateDbContext(System.String[]):TContext",
@@ -1512,6 +1591,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory\u00601",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1549,6 +1629,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IDesignTimeServices",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -1587,6 +1668,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -1605,6 +1687,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -1623,6 +1706,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -1641,6 +1725,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -1659,6 +1744,7 @@
           "isAbstract": true,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -1678,6 +1764,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
+          "clrName": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::FilterIgnoredAnnotations(System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
@@ -1694,6 +1790,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1713,6 +1810,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1732,6 +1830,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1751,6 +1850,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1770,6 +1870,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1789,6 +1890,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1808,6 +1910,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1827,6 +1930,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1846,6 +1950,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1865,6 +1970,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1884,6 +1990,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1903,6 +2010,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1922,6 +2030,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1941,6 +2050,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1960,6 +2070,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1979,6 +2090,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -1998,6 +2110,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2017,6 +2130,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2036,6 +2150,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2055,6 +2170,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2074,6 +2190,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2093,6 +2210,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2112,6 +2230,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2131,6 +2250,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2150,6 +2270,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2169,6 +2290,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2188,6 +2310,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2207,6 +2330,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2226,6 +2350,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2245,6 +2370,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2264,6 +2390,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2283,6 +2410,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2302,6 +2430,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2321,6 +2450,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2340,6 +2470,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2359,6 +2490,647 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672432,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672433,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IComplexType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672434,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IComplexType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IComplexType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IEntityTypeMappingFragment,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672435,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IEntityTypeMappingFragment,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IEntityTypeMappingFragment,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672436,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672437,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IComplexProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672438,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IComplexProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IComplexProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672439,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.INavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672440,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.INavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.INavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.ISkipNavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672441,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ISkipNavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.ISkipNavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IIndex,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672442,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IIndex,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IIndex,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672443,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.ITrigger,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672444,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ITrigger,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.ITrigger,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IRelationalPropertyOverrides,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672445,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IRelationalPropertyOverrides,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.IRelationalPropertyOverrides,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.ISequence,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "clrName": "IsHandledByConvention",
+          "metadataToken": 100672446,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ISequence,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean",
+          "normalizedSignature": "IsHandledByConvention|(Microsoft.EntityFrameworkCore.Metadata.ISequence,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672447,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672448,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IComplexType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672449,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IComplexType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IComplexType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IEntityTypeMappingFragment,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672450,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IEntityTypeMappingFragment,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IEntityTypeMappingFragment,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672451,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672452,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IComplexProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672453,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IComplexProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IComplexProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672454,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.INavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672455,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.INavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.INavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.ISkipNavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672456,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ISkipNavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.ISkipNavigation,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IIndex,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672457,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IIndex,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IIndex,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672458,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.ICheckConstraint,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.ITrigger,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672459,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ITrigger,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.ITrigger,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IRelationalPropertyOverrides,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672460,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IRelationalPropertyOverrides,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.IRelationalPropertyOverrides,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.ISequence,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "clrName": "GenerateFluentApi",
+          "metadataToken": 100672461,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ISequence,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
+          "normalizedSignature": "GenerateFluentApi|(Microsoft.EntityFrameworkCore.Metadata.ISequence,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateDataAnnotation(Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment",
+          "clrName": "GenerateDataAnnotation",
+          "metadataToken": 100672462,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment",
+          "normalizedSignature": "GenerateDataAnnotation|(Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::GenerateDataAnnotation(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment",
+          "clrName": "GenerateDataAnnotation",
+          "metadataToken": 100672463,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment",
+          "normalizedSignature": "GenerateDataAnnotation|(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation):Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -2378,6 +3150,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2398,6 +3171,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2418,6 +3192,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2438,6 +3213,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2458,6 +3234,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2478,6 +3255,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2498,6 +3276,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2518,6 +3297,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2538,6 +3318,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2558,6 +3339,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2578,6 +3360,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2598,6 +3381,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2618,6 +3402,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2638,6 +3423,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2658,6 +3444,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2678,6 +3465,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2698,6 +3486,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2718,6 +3507,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2738,6 +3528,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2758,6 +3549,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2778,6 +3570,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2798,6 +3591,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2818,6 +3612,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2838,6 +3633,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2858,6 +3654,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2878,6 +3675,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2898,6 +3696,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2918,6 +3717,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2938,6 +3738,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2958,6 +3759,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2978,6 +3780,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -2998,6 +3801,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
@@ -3018,13 +3822,34 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Design.IAnnotationCodeGenerator"
         }
       ],
-      "properties": [],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator::Dependencies:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies",
+          "clrName": "Dependencies",
+          "metadataToken": 385878157,
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies",
+          "normalizedSignature": "Dependencies|:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies|static=false|accessor=get",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": false,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ],
       "fields": [],
       "events": [],
       "constructors": [
@@ -3035,6 +3860,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGenerator",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3051,6 +3877,19 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
+          "clrName": "System.IEquatable\u00601",
+          "typeArguments": [
+            "AnnotationCodeGeneratorDependencies"
+          ]
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies::ToString():System.String",
@@ -3067,6 +3906,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3086,6 +3926,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3105,6 +3946,7 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3124,6 +3966,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": true,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3143,6 +3986,7 @@
           "isVirtual": false,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3164,6 +4008,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3178,6 +4023,7 @@
           "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.IRelationalTypeMappingSource):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3194,6 +4040,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [],
       "properties": [
         {
@@ -3211,6 +4061,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3229,6 +4080,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3247,6 +4099,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3261,6 +4114,7 @@
           "normalizedSignature": "constructor|(System.Type,System.Object[]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3271,6 +4125,7 @@
           "normalizedSignature": "constructor|(System.Type,System.Collections.Generic.IEnumerable_1[[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Collections.Generic.IDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Object,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.AttributeCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3287,6 +4142,10 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Attribute",
+        "clrName": "System.Attribute"
+      },
       "methods": [],
       "properties": [
         {
@@ -3304,6 +4163,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.DesignTimeProviderServicesAttribute",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3318,6 +4178,7 @@
           "normalizedSignature": "constructor|(System.String):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.DesignTimeProviderServicesAttribute",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3334,6 +4195,10 @@
       "isSealed": true,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Attribute",
+        "clrName": "System.Attribute"
+      },
       "methods": [],
       "properties": [
         {
@@ -3351,6 +4216,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.DesignTimeServicesReferenceAttribute",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3369,6 +4235,7 @@
           "isAbstract": false,
           "isVirtual": false,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.DesignTimeServicesReferenceAttribute",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3383,6 +4250,7 @@
           "normalizedSignature": "constructor|(System.String):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.DesignTimeServicesReferenceAttribute",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3393,6 +4261,7 @@
           "normalizedSignature": "constructor|(System.String,System.String):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.DesignTimeServicesReferenceAttribute",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3409,7 +4278,31 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder",
+        "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder"
+      },
       "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder::TryGetServiceCharacteristics(System.Type):System.Nullable_1[[Microsoft.EntityFrameworkCore.Infrastructure.ServiceCharacteristics,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "TryGetServiceCharacteristics",
+          "metadataToken": 100674875,
+          "canonicalSignature": "(System.Type):System.Nullable_1[[Microsoft.EntityFrameworkCore.Infrastructure.ServiceCharacteristics,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "TryGetServiceCharacteristics|(System.Type):System.Nullable_1[[Microsoft.EntityFrameworkCore.Infrastructure.ServiceCharacteristics,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder::TryAddCoreServices():Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder",
           "clrName": "TryAddCoreServices",
@@ -3425,6 +4318,27 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder::TryGetServiceCharacteristics(System.Type):System.Nullable_1",
+          "clrName": "TryGetServiceCharacteristics",
+          "metadataToken": 0,
+          "canonicalSignature": "(System.Type):System.Nullable_1",
+          "normalizedSignature": "TryGetServiceCharacteristics|(System.Type):System.Nullable_1|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "BaseOverload",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -3440,6 +4354,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3453,6 +4368,7 @@
           "normalizedSignature": "constructor|(Microsoft.Extensions.DependencyInjection.IServiceCollection):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3469,7 +4385,31 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder",
+        "clrName": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkDesignServicesBuilder"
+      },
       "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.EntityFrameworkRelationalDesignServicesBuilder::TryGetServiceCharacteristics(System.Type):System.Nullable_1[[Microsoft.EntityFrameworkCore.Infrastructure.ServiceCharacteristics,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "clrName": "TryGetServiceCharacteristics",
+          "metadataToken": 100672484,
+          "canonicalSignature": "(System.Type):System.Nullable_1[[Microsoft.EntityFrameworkCore.Infrastructure.ServiceCharacteristics,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "TryGetServiceCharacteristics|(System.Type):System.Nullable_1[[Microsoft.EntityFrameworkCore.Infrastructure.ServiceCharacteristics,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkRelationalDesignServicesBuilder",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.EntityFrameworkRelationalDesignServicesBuilder::TryAddCoreServices():Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder",
           "clrName": "TryAddCoreServices",
@@ -3485,6 +4425,27 @@
           "isVirtual": true,
           "isOverride": true,
           "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkRelationalDesignServicesBuilder",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Design.EntityFrameworkRelationalDesignServicesBuilder::TryGetServiceCharacteristics(System.Type):System.Nullable_1",
+          "clrName": "TryGetServiceCharacteristics",
+          "metadataToken": 0,
+          "canonicalSignature": "(System.Type):System.Nullable_1",
+          "normalizedSignature": "TryGetServiceCharacteristics|(System.Type):System.Nullable_1|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "BaseOverload",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkRelationalDesignServicesBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
@@ -3500,6 +4461,7 @@
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkRelationalDesignServicesBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3513,6 +4475,7 @@
           "normalizedSignature": "constructor|(Microsoft.Extensions.DependencyInjection.IServiceCollection):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.EntityFrameworkRelationalDesignServicesBuilder",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
@@ -3529,6 +4492,16 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "interfaces": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
+          "clrName": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment"
+        }
+      ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment::Chain(System.Reflection.MethodInfo,System.Object[]):Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
@@ -3545,6 +4518,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -3564,6 +4538,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -3583,6 +4558,7 @@
           "isVirtual": true,
           "isOverride": false,
           "isSealed": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
@@ -3604,6 +4580,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3622,6 +4599,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3640,6 +4618,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3658,6 +4637,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3676,6 +4656,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3694,6 +4675,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3712,6 +4694,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -3731,6 +4714,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -3750,6 +4734,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -3769,6 +4754,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -3788,6 +4774,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.IMethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
@@ -3803,6 +4790,7 @@
           "normalizedSignature": "constructor|(System.Reflection.MethodInfo,System.Object[]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3813,6 +4801,7 @@
           "normalizedSignature": "constructor|(System.String,System.Object[]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3829,6 +4818,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [],
       "properties": [
         {
@@ -3846,6 +4839,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.NestedClosureCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3864,6 +4858,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.NestedClosureCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3878,6 +4873,7 @@
           "normalizedSignature": "constructor|(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.NestedClosureCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3888,6 +4884,7 @@
           "normalizedSignature": "constructor|(System.String,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.NestedClosureCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3904,6 +4901,10 @@
       "isSealed": false,
       "isStatic": false,
       "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
       "methods": [],
       "properties": [
         {
@@ -3921,6 +4922,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.PropertyAccessorCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         },
@@ -3939,6 +4941,7 @@
           "isAbstract": false,
           "isVirtual": true,
           "isOverride": false,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.PropertyAccessorCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
@@ -3953,6 +4956,7 @@
           "normalizedSignature": "constructor|(System.String,System.Collections.Generic.IReadOnlyList_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
+          "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Design.PropertyAccessorCodeFragment",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }

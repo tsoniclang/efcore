@@ -7,7 +7,7 @@ import * as Internal from './Microsoft.EntityFrameworkCore.Storage.ValueConversi
 
 // Cross-namespace type imports for constraints
 import type { ConverterMappingHints, ValueConverter, ValueConverter_2 } from './Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js';
-import type { Boolean as ClrBoolean, Enum, Func, Object as ClrObject, String as ClrString, Type, ValueType } from '@tsonic/dotnet/System.js';
+import type { Boolean as ClrBoolean, Char, DateOnly, DateTime, DateTimeOffset, Enum, Func, Guid, Object as ClrObject, String as ClrString, TimeOnly, TimeSpan, Type, Uri, ValueType } from '@tsonic/dotnet/System.js';
 import type { Expression, LambdaExpression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 
 // Public API exports (curated - no internal $instance/$views leakage)

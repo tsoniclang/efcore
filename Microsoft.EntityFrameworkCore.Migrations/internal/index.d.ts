@@ -5,17 +5,21 @@
 // Primitive type aliases from @tsonic/core
 import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
+// Import support types from @tsonic/core
+import type { ptr } from "@tsonic/core/types.js";
+
 // Import types from other namespaces
 import type { IDiagnosticsLogger_1, ILoggingOptions, IRelationalCommandDiagnosticsLogger } from "../../Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js";
 import type { IAnnotation, ICurrentDbContext, IDbContextOptions, IModelRuntimeInitializer, ModelDependencies, ModelSnapshot } from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
+import type { EntityTypeBuilder_1 } from "../../Microsoft.EntityFrameworkCore.Metadata.Builders/internal/index.js";
 import type { IConventionSetBuilder } from "../../Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure/internal/index.js";
 import type { ICheckConstraint, IColumn, IForeignKeyConstraint, IModel, IRelationalModel, ISequence, ITable, ITableIndex, IUniqueConstraint, IView, IViewColumn } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { AlterOperationBuilder_1, ColumnsBuilder, CreateTableBuilder_1, OperationBuilder_1 } from "../../Microsoft.EntityFrameworkCore.Migrations.Operations.Builders/internal/index.js";
-import type { AddCheckConstraintOperation, AddColumnOperation, AddForeignKeyOperation, AddPrimaryKeyOperation, AddUniqueConstraintOperation, AlterColumnOperation, AlterDatabaseOperation, AlterSequenceOperation, AlterTableOperation, CreateIndexOperation, CreateSequenceOperation, DeleteDataOperation, DropCheckConstraintOperation, DropColumnOperation, DropForeignKeyOperation, DropIndexOperation, DropPrimaryKeyOperation, DropSchemaOperation, DropSequenceOperation, DropTableOperation, DropUniqueConstraintOperation, EnsureSchemaOperation, InsertDataOperation, MigrationOperation, RenameColumnOperation, RenameIndexOperation, RenameSequenceOperation, RenameTableOperation, RestartSequenceOperation, SqlOperation, UpdateDataOperation } from "../../Microsoft.EntityFrameworkCore.Migrations.Operations/internal/index.js";
+import type { AddCheckConstraintOperation, AddColumnOperation, AddForeignKeyOperation, AddPrimaryKeyOperation, AddUniqueConstraintOperation, AlterColumnOperation, AlterDatabaseOperation, AlterSequenceOperation, AlterTableOperation, ColumnOperation, CreateIndexOperation, CreateSequenceOperation, CreateTableOperation, DeleteDataOperation, DropCheckConstraintOperation, DropColumnOperation, DropForeignKeyOperation, DropIndexOperation, DropPrimaryKeyOperation, DropSchemaOperation, DropSequenceOperation, DropTableOperation, DropUniqueConstraintOperation, EnsureSchemaOperation, InsertDataOperation, MigrationOperation, RenameColumnOperation, RenameIndexOperation, RenameSequenceOperation, RenameTableOperation, RestartSequenceOperation, SequenceOperation, SqlOperation, UpdateDataOperation } from "../../Microsoft.EntityFrameworkCore.Migrations.Operations/internal/index.js";
 import type { IDbContextTransaction, IRawSqlCommandBuilder, IRelationalCommand, IRelationalCommandBuilderFactory, IRelationalConnection, IRelationalDatabaseCreator, IRelationalTypeMappingSource, ISqlGenerationHelper } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
-import type { IModificationCommandFactory, IUpdateSqlGenerator } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
-import type { DbContext, DbLoggerCategory_Migrations } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import type { IEnumerable, IReadOnlyDictionary, IReadOnlyList, List } from "@tsonic/dotnet/System.Collections.Generic.js";
+import type { IModificationCommandFactory, IReadOnlyModificationCommand, IUpdateSqlGenerator } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
+import type { DbContext, DbLoggerCategory_Migrations, ModelBuilder } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
+import type { IComparer, IEnumerable, IReadOnlyDictionary, IReadOnlyList, List } from "@tsonic/dotnet/System.Collections.Generic.js";
 import type { IsolationLevel } from "@tsonic/dotnet/System.Data.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Action, Attribute, Boolean as ClrBoolean, Enum, FormattableString, Func, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, Int64, ISpanFormattable, Nullable, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
@@ -101,6 +105,7 @@ export interface IMigrationsAssembly$instance {
 export type IMigrationsAssembly = IMigrationsAssembly$instance;
 
 export interface IMigrationsDatabaseLock$instance extends IDisposable, IAsyncDisposable {
+    readonly HistoryRepository: IHistoryRepository;
     ReacquireIfNeeded(connectionReopened: boolean, transactionRestarted: Nullable<System_Internal.Boolean>): IMigrationsDatabaseLock;
     ReacquireIfNeededAsync(connectionReopened: boolean, transactionRestarted: Nullable<System_Internal.Boolean>, cancellationToken?: CancellationToken): Task<IMigrationsDatabaseLock>;
 }
@@ -141,7 +146,22 @@ export interface IMigrator$instance {
 
 export type IMigrator = IMigrator$instance;
 
-export interface HistoryRepository$instance {
+export abstract class HistoryRepository$protected {
+    protected readonly Dependencies: HistoryRepositoryDependencies;
+    protected readonly ExistsSql: string;
+    protected readonly GetAppliedMigrationsSql: string;
+    protected readonly MigrationIdColumnName: string;
+    protected readonly ProductVersionColumnName: string;
+    protected readonly SqlGenerationHelper: ISqlGenerationHelper;
+    protected readonly TableName: string;
+    protected readonly TableSchema: string | undefined;
+    protected ConfigureTable(history: EntityTypeBuilder_1<HistoryRow>): void;
+    protected GetCreateCommands(): IReadOnlyList<MigrationCommand>;
+    protected abstract InterpretExistsResult(value: unknown): boolean;
+}
+
+
+export interface HistoryRepository$instance extends HistoryRepository$protected {
     readonly LockReleaseBehavior: LockReleaseBehavior;
     AcquireDatabaseLock(): IMigrationsDatabaseLock;
     AcquireDatabaseLockAsync(cancellationToken?: CancellationToken): Task<IMigrationsDatabaseLock>;
@@ -162,6 +182,7 @@ export interface HistoryRepository$instance {
 
 
 export const HistoryRepository: {
+    new(dependencies: HistoryRepositoryDependencies): HistoryRepository;
     readonly DefaultTableName: string;
 };
 
@@ -219,7 +240,14 @@ export const HistoryRow: {
 
 export type HistoryRow = HistoryRow$instance;
 
-export interface Migration$instance {
+export abstract class Migration$protected {
+    protected BuildTargetModel(modelBuilder: ModelBuilder): void;
+    protected Down(migrationBuilder: MigrationBuilder): void;
+    protected abstract Up(migrationBuilder: MigrationBuilder): void;
+}
+
+
+export interface Migration$instance extends Migration$protected {
     get ActiveProvider(): string | undefined;
     set ActiveProvider(value: string);
     readonly DownOperations: IReadOnlyList<MigrationOperation>;
@@ -229,6 +257,7 @@ export interface Migration$instance {
 
 
 export const Migration: {
+    new(): Migration;
     readonly InitialDatabase: string;
 };
 
@@ -338,7 +367,12 @@ export const MigrationCommand: {
 
 export type MigrationCommand = MigrationCommand$instance;
 
-export interface MigrationCommandListBuilder$instance {
+export abstract class MigrationCommandListBuilder$protected {
+    protected readonly Dependencies: MigrationsSqlGeneratorDependencies;
+}
+
+
+export interface MigrationCommandListBuilder$instance extends MigrationCommandListBuilder$protected {
     Append(o: string): MigrationCommandListBuilder;
     AppendLine(): MigrationCommandListBuilder;
     AppendLine(value: string): MigrationCommandListBuilder;
@@ -377,7 +411,12 @@ export const MigrationExecutionState: {
 
 export type MigrationExecutionState = MigrationExecutionState$instance;
 
-export interface MigrationsAnnotationProvider$instance {
+export abstract class MigrationsAnnotationProvider$protected {
+    protected readonly Dependencies: MigrationsAnnotationProviderDependencies;
+}
+
+
+export interface MigrationsAnnotationProvider$instance extends MigrationsAnnotationProvider$protected {
     ForRemove(model: IRelationalModel): IEnumerable<IAnnotation>;
     ForRemove(table: ITable): IEnumerable<IAnnotation>;
     ForRemove(column: IColumn): IEnumerable<IAnnotation>;
@@ -423,7 +462,78 @@ export const MigrationsAnnotationProviderDependencies: {
 
 export type MigrationsAnnotationProviderDependencies = MigrationsAnnotationProviderDependencies$instance;
 
-export interface MigrationsSqlGenerator$instance {
+export abstract class MigrationsSqlGenerator$protected {
+    protected readonly Dependencies: MigrationsSqlGeneratorDependencies;
+    protected Options: MigrationsSqlGenerationOptions;
+    protected readonly SqlGenerator: IUpdateSqlGenerator;
+    protected readonly VersionComparer: IComparer<System_Internal.String>;
+    protected CheckConstraint(operation: AddCheckConstraintOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected ColumnDefinition(operation: AddColumnOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected ColumnDefinition(schema: string, table: string, name: string, operation: ColumnOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected ColumnList(columns: string[]): string;
+    protected ComputedColumnDefinition(schema: string, table: string, name: string, operation: ColumnOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected CreateTableCheckConstraints(operation: CreateTableOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected CreateTableColumns(operation: CreateTableOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected CreateTableConstraints(operation: CreateTableOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected CreateTableForeignKeys(operation: CreateTableOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected CreateTablePrimaryKeyConstraint(operation: CreateTableOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected CreateTableUniqueConstraints(operation: CreateTableOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected DefaultValue(defaultValue: unknown, defaultValueSql: string, columnType: string, builder: MigrationCommandListBuilder): void;
+    protected EndStatement(builder: MigrationCommandListBuilder, suppressTransaction?: boolean): void;
+    protected ForeignKeyAction(referentialAction: ReferentialAction, builder: MigrationCommandListBuilder): void;
+    protected ForeignKeyConstraint(operation: AddForeignKeyOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: MigrationOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: AddUniqueConstraintOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: AddCheckConstraintOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: AlterColumnOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: AlterDatabaseOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: RenameIndexOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: AlterSequenceOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: AlterTableOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: RenameTableOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: EnsureSchemaOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: CreateSequenceOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: DropSchemaOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: DropSequenceOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: DropUniqueConstraintOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: DropCheckConstraintOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: RenameColumnOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: RenameSequenceOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: RestartSequenceOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: SqlOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: DeleteDataOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: UpdateDataOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected Generate(operation: AddColumnOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: AddForeignKeyOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: AddPrimaryKeyOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: CreateIndexOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: CreateTableOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: DropColumnOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: DropForeignKeyOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: DropIndexOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: DropPrimaryKeyOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: DropTableOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected Generate(operation: InsertDataOperation, model: IModel, builder: MigrationCommandListBuilder, terminate?: boolean): void;
+    protected GenerateIndexColumnList(operation: CreateIndexOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected GenerateModificationCommands(operation: InsertDataOperation, model: IModel): IEnumerable<IReadOnlyModificationCommand>;
+    protected GenerateModificationCommands(operation: DeleteDataOperation, model: IModel): IEnumerable<IReadOnlyModificationCommand>;
+    protected GenerateModificationCommands(operation: UpdateDataOperation, model: IModel): IEnumerable<IReadOnlyModificationCommand>;
+    protected GetColumnType(schema: string, tableName: string, name: string, operation: ColumnOperation, model: IModel): string;
+    protected HasLegacyRenameOperations(model: IModel): boolean;
+    protected IndexOptions(operation: MigrationOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected IndexTraits(operation: MigrationOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected IsOldColumnSupported(model: IModel): boolean;
+    protected PrimaryKeyConstraint(operation: AddPrimaryKeyOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected SequenceOptions(operation: AlterSequenceOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected SequenceOptions(operation: CreateSequenceOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected SequenceOptions(schema: string, name: string, operation: SequenceOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+    protected SequenceOptions(schema: string, name: string, operation: SequenceOperation, model: IModel, builder: MigrationCommandListBuilder, forAlter: boolean): void;
+    protected TryGetVersion(model: IModel, version: string): boolean;
+    protected UniqueConstraint(operation: AddUniqueConstraintOperation, model: IModel, builder: MigrationCommandListBuilder): void;
+}
+
+
+export interface MigrationsSqlGenerator$instance extends MigrationsSqlGenerator$protected {
     Generate(operations: IReadOnlyList<MigrationOperation>, model?: IModel, options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
 }
 
@@ -436,8 +546,6 @@ export const MigrationsSqlGenerator: {
 export interface __MigrationsSqlGenerator$views {
     As_IMigrationsSqlGenerator(): IMigrationsSqlGenerator$instance;
 }
-
-export interface MigrationsSqlGenerator$instance extends IMigrationsSqlGenerator$instance {}
 
 export type MigrationsSqlGenerator = MigrationsSqlGenerator$instance & __MigrationsSqlGenerator$views;
 

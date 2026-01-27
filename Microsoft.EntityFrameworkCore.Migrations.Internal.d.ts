@@ -7,8 +7,8 @@ import * as Internal from './Microsoft.EntityFrameworkCore.Migrations.Internal/i
 
 // Cross-namespace type imports for constraints
 import type { IDiagnosticsLogger_1, IRelationalCommandDiagnosticsLogger } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
-import type { ICurrentDbContext, IDbContextOptions, IModelRuntimeInitializer, ModelSnapshot } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
-import type { IDesignTimeModel, IRelationalAnnotationProvider, IRelationalModel } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
+import type { IAnnotation, ICurrentDbContext, IDbContextOptions, IModelRuntimeInitializer, ModelSnapshot } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
+import type { ICheckConstraint, IColumn, IDesignTimeModel, IForeignKeyConstraint, IRelationalAnnotationProvider, IRelationalModel, ISequence, ITable, ITableIndex, IUniqueConstraint } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
 import type { MigrationOperation } from './Microsoft.EntityFrameworkCore.Migrations.Operations/internal/index.js';
 import type { IHistoryRepository, IMigrationCommandExecutor, IMigrationsAnnotationProvider, IMigrationsAssembly, IMigrationsIdGenerator, IMigrationsModelDiffer, IMigrationsSqlGenerator, IMigrator, Migration, MigrationCommand, MigrationExecutionState, MigrationsSqlGenerationOptions } from './Microsoft.EntityFrameworkCore.Migrations/internal/index.js';
 import type { IDatabaseCreator, IDatabaseProvider, IExecutionStrategy, IRawSqlCommandBuilder, IRelationalConnection, IRelationalTypeMappingSource, ISqlGenerationHelper } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
@@ -16,7 +16,7 @@ import type { CommandBatchPreparerDependencies, IRowIdentityMapFactory } from '.
 import type { DbLoggerCategory_Migrations } from './Microsoft.EntityFrameworkCore/internal/index.js';
 import type { IEnumerable, IReadOnlyDictionary, IReadOnlyList } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { IsolationLevel } from '@tsonic/dotnet/System.Data.js';
-import type { Boolean as ClrBoolean, Int32, Nullable, Object as ClrObject, String as ClrString, Void } from '@tsonic/dotnet/System.js';
+import type { Boolean as ClrBoolean, Func, Int32, Nullable, Object as ClrObject, String as ClrString, Type, Void } from '@tsonic/dotnet/System.js';
 import type { Assembly, TypeInfo } from '@tsonic/dotnet/System.Reflection.js';
 import type { CancellationToken } from '@tsonic/dotnet/System.Threading.js';
 import type { Task } from '@tsonic/dotnet/System.Threading.Tasks.js';

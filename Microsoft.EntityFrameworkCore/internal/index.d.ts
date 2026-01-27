@@ -29,6 +29,7 @@ import type { ExecutionResult_1, IDbContextTransaction, IExceptionDetector, IExe
 import type { IUpdateEntry } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic.js";
 import type { Dictionary, HashSet, IAsyncEnumerable, IAsyncEnumerator, IEnumerable as IEnumerable__System_Collections_Generic, IEqualityComparer, IReadOnlyCollection, IReadOnlyDictionary, IReadOnlyList, List } from "@tsonic/dotnet/System.Collections.Generic.js";
+import type { ImmutableSortedDictionary } from "@tsonic/dotnet/System.Collections.Immutable.js";
 import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections.js";
 import type { IEnumerable } from "@tsonic/dotnet/System.Collections.js";
 import type { ObservableCollection } from "@tsonic/dotnet/System.Collections.ObjectModel.js";
@@ -37,7 +38,7 @@ import type { BindingList, IListSource } from "@tsonic/dotnet/System.ComponentMo
 import type { DbCommand, DbConnection, DbTransaction } from "@tsonic/dotnet/System.Data.Common.js";
 import type { IsolationLevel } from "@tsonic/dotnet/System.Data.js";
 import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Action, Attribute, Boolean as ClrBoolean, Decimal, Double, Enum, EventArgs, EventHandler, Exception, FormattableString, Func, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, Int64, IServiceProvider, ISpanFormattable, Nullable, Object as ClrObject, Single, String as ClrString, TimeSpan, Type, ValueType, Void } from "@tsonic/dotnet/System.js";
+import type { Action, Attribute, Boolean as ClrBoolean, Decimal, Double, Enum, EventArgs, EventHandler, Exception, FormattableString, Func, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, Int64, IServiceProvider, ISpanFormattable, Nullable, Object as ClrObject, Single, String as ClrString, TimeSpan, Type, ValueTuple, ValueType, Void } from "@tsonic/dotnet/System.js";
 import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
 import * as System_Linq_Internal from "@tsonic/dotnet/System.Linq.js";
 import type { IQueryable } from "@tsonic/dotnet/System.Linq.js";
@@ -177,7 +178,14 @@ export const CommentAttribute: {
 
 export type CommentAttribute = CommentAttribute$instance;
 
-export interface DbContext$instance {
+export abstract class DbContext$protected {
+    protected ConfigureConventions(configurationBuilder: ModelConfigurationBuilder): void;
+    protected OnConfiguring(optionsBuilder: DbContextOptionsBuilder): void;
+    protected OnModelCreating(modelBuilder: ModelBuilder): void;
+}
+
+
+export interface DbContext$instance extends DbContext$protected {
     readonly ChangeTracker: ChangeTracker;
     readonly ContextId: DbContextId;
     readonly Database: DatabaseFacade;
@@ -226,6 +234,7 @@ export interface DbContext$instance {
 
 
 export const DbContext: {
+    new(): DbContext;
     new(options: DbContextOptions): DbContext;
 };
 
@@ -243,10 +252,16 @@ export interface DbContext$instance extends Microsoft_EntityFrameworkCore_Infras
 export type DbContext = DbContext$instance & __DbContext$views;
 
 
-export interface DbContextOptions$instance {
+export abstract class DbContextOptions$protected {
+    protected readonly ExtensionsMap: ImmutableSortedDictionary<Type, ValueTuple<IDbContextOptionsExtension, System_Internal.Int32>>;
+    protected Equals(other: DbContextOptions): boolean;
+}
+
+
+export interface DbContextOptions$instance extends DbContextOptions$protected {
     readonly ContextType: Type;
     readonly Extensions: IEnumerable__System_Collections_Generic<IDbContextOptionsExtension>;
-    readonly IsFrozen: boolean;
+    IsFrozen: boolean;
     Equals(obj: unknown): boolean;
     FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | undefined;
     Freeze(): void;
@@ -257,6 +272,9 @@ export interface DbContextOptions$instance {
 
 
 export const DbContextOptions: {
+    new(): DbContextOptions;
+    new(extensions: IReadOnlyDictionary<Type, IDbContextOptionsExtension>): DbContextOptions;
+    new(extensions: ImmutableSortedDictionary<Type, ValueTuple<IDbContextOptionsExtension, System_Internal.Int32>>): DbContextOptions;
 };
 
 
@@ -581,6 +599,7 @@ export interface DbSet_1$instance<TEntity> {
 
 
 export const DbSet_1: {
+    new<TEntity>(): DbSet_1<TEntity>;
 };
 
 
@@ -741,7 +760,12 @@ export interface ModelBuilder$instance extends Microsoft_EntityFrameworkCore_Inf
 export type ModelBuilder = ModelBuilder$instance & __ModelBuilder$views;
 
 
-export interface ModelConfigurationBuilder$instance {
+export abstract class ModelConfigurationBuilder$protected {
+    protected readonly ModelConfiguration: ModelConfiguration;
+}
+
+
+export interface ModelConfigurationBuilder$instance extends ModelConfigurationBuilder$protected {
     readonly Conventions: ConventionSetBuilder;
     ComplexProperties<TProperty>(): ComplexPropertiesConfigurationBuilder_1<TProperty>;
     ComplexProperties(propertyType: Type): ComplexPropertiesConfigurationBuilder;
@@ -833,6 +857,7 @@ export interface SaveChangesEventArgs$instance extends EventArgs {
 
 
 export const SaveChangesEventArgs: {
+    new(acceptAllChangesOnSuccess: boolean): SaveChangesEventArgs;
 };
 
 

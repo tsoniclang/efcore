@@ -4708,7 +4708,12 @@ export const StoreObjectIdentifier: {
 
 export type StoreObjectIdentifier = StoreObjectIdentifier$instance;
 
-export interface AdHocMapper$instance {
+export abstract class AdHocMapper$protected {
+    protected readonly Dependencies: AdHocMapperDependencies;
+}
+
+
+export interface AdHocMapper$instance extends AdHocMapper$protected {
     BuildConventionSet(): ConventionSet;
     GetOrAddEntityType(clrType: Type): RuntimeEntityType;
 }
@@ -4903,6 +4908,7 @@ export interface InstantiationBinding$instance {
 
 
 export const InstantiationBinding: {
+    new(parameterBindings: IReadOnlyList<ParameterBinding>): InstantiationBinding;
 };
 
 
@@ -4923,7 +4929,12 @@ export const KeyComparer: {
 
 export type KeyComparer = KeyComparer$instance;
 
-export interface LazyLoaderParameterBindingFactory$instance extends ServiceParameterBindingFactory$instance {
+export abstract class LazyLoaderParameterBindingFactory$protected {
+    protected readonly Dependencies: LazyLoaderParameterBindingFactoryDependencies;
+}
+
+
+export interface LazyLoaderParameterBindingFactory$instance extends LazyLoaderParameterBindingFactory$protected, ServiceParameterBindingFactory$instance {
     Bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
     Bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
     Bind(entityType: IReadOnlyEntityType, parameterType: Type, parameterName: string): ParameterBinding;
@@ -4981,6 +4992,7 @@ export interface ParameterBinding$instance {
 
 
 export const ParameterBinding: {
+    new(parameterType: Type, consumedProperties: IPropertyBase[]): ParameterBinding;
 };
 
 
@@ -4999,7 +5011,12 @@ export const PropertyParameterBinding: {
 
 export type PropertyParameterBinding = PropertyParameterBinding$instance;
 
-export interface RelationalAdHocMapper$instance extends AdHocMapper$instance {
+export abstract class RelationalAdHocMapper$protected {
+    protected readonly RelationalDependencies: RelationalAdHocMapperDependencies;
+}
+
+
+export interface RelationalAdHocMapper$instance extends RelationalAdHocMapper$protected, AdHocMapper$instance {
     BuildConventionSet(): ConventionSet;
     GetOrAddEntityType(clrType: Type): RuntimeEntityType;
 }
@@ -5033,7 +5050,12 @@ export const RelationalAdHocMapperDependencies: {
 
 export type RelationalAdHocMapperDependencies = RelationalAdHocMapperDependencies$instance;
 
-export interface RelationalAnnotationProvider$instance {
+export abstract class RelationalAnnotationProvider$protected {
+    protected readonly Dependencies: RelationalAnnotationProviderDependencies;
+}
+
+
+export interface RelationalAnnotationProvider$instance extends RelationalAnnotationProvider$protected {
     For(model: IRelationalModel, designTime: boolean): IEnumerable<IAnnotation>;
     For(table: ITable, designTime: boolean): IEnumerable<IAnnotation>;
     For(column: IColumn, designTime: boolean): IEnumerable<IAnnotation>;
@@ -5084,7 +5106,13 @@ export const RelationalAnnotationProviderDependencies: {
 
 export type RelationalAnnotationProviderDependencies = RelationalAnnotationProviderDependencies$instance;
 
-export interface RuntimeComplexProperty$instance extends RuntimePropertyBase$instance {
+export abstract class RuntimeComplexProperty$protected {
+    protected readonly ClrType: Type;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeComplexProperty$instance extends RuntimeComplexProperty$protected, RuntimePropertyBase$instance {
     readonly ComplexType: RuntimeComplexType;
     readonly DebugView: DebugView;
     readonly DeclaringType: RuntimeTypeBase;
@@ -5134,7 +5162,12 @@ export interface __RuntimeComplexProperty$views {
 export type RuntimeComplexProperty = RuntimeComplexProperty$instance & __RuntimeComplexProperty$views;
 
 
-export interface RuntimeComplexType$instance extends RuntimeTypeBase$instance {
+export abstract class RuntimeComplexType$protected {
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeComplexType$instance extends RuntimeComplexType$protected, RuntimeTypeBase$instance {
     readonly ComplexProperty: RuntimeComplexProperty;
     get ConstructorBinding(): InstantiationBinding | undefined;
     set ConstructorBinding(value: InstantiationBinding);
@@ -5209,7 +5242,12 @@ export interface __RuntimeComplexType$views {
 export type RuntimeComplexType = RuntimeComplexType$instance & __RuntimeComplexType$views;
 
 
-export interface RuntimeDbFunction$instance extends AnnotatableBase {
+export abstract class RuntimeDbFunction$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeDbFunction$instance extends RuntimeDbFunction$protected, AnnotatableBase {
     readonly DebugView: DebugView;
     readonly Model: RuntimeModel;
     readonly ModelName: string;
@@ -5246,7 +5284,12 @@ export interface __RuntimeDbFunction$views {
 export type RuntimeDbFunction = RuntimeDbFunction$instance & __RuntimeDbFunction$views;
 
 
-export interface RuntimeDbFunctionParameter$instance extends AnnotatableBase {
+export abstract class RuntimeDbFunctionParameter$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeDbFunctionParameter$instance extends RuntimeDbFunctionParameter$protected, AnnotatableBase {
     readonly DebugView: DebugView;
     readonly Function: RuntimeDbFunction;
     readonly Name: string;
@@ -5281,7 +5324,12 @@ export interface __RuntimeDbFunctionParameter$views {
 export type RuntimeDbFunctionParameter = RuntimeDbFunctionParameter$instance & __RuntimeDbFunctionParameter$views;
 
 
-export interface RuntimeElementType$instance extends RuntimeAnnotatableBase {
+export abstract class RuntimeElementType$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeElementType$instance extends RuntimeElementType$protected, RuntimeAnnotatableBase {
     readonly ClrType: Type;
     readonly CollectionProperty: IProperty;
     readonly DebugView: DebugView;
@@ -5328,7 +5376,12 @@ export interface __RuntimeElementType$views {
 export type RuntimeElementType = RuntimeElementType$instance & __RuntimeElementType$views;
 
 
-export interface RuntimeEntityType$instance extends RuntimeTypeBase$instance {
+export abstract class RuntimeEntityType$protected {
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeEntityType$instance extends RuntimeEntityType$protected, RuntimeTypeBase$instance {
     get ConstructorBinding(): InstantiationBinding | undefined;
     set ConstructorBinding(value: InstantiationBinding);
     readonly DebugView: DebugView;
@@ -5433,7 +5486,12 @@ export interface __RuntimeEntityType$views {
 export type RuntimeEntityType = RuntimeEntityType$instance & __RuntimeEntityType$views;
 
 
-export interface RuntimeEntityTypeMappingFragment$instance extends AnnotatableBase {
+export abstract class RuntimeEntityTypeMappingFragment$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeEntityTypeMappingFragment$instance extends RuntimeEntityTypeMappingFragment$protected, AnnotatableBase {
     readonly DebugView: DebugView;
     readonly EntityType: RuntimeEntityType;
     readonly IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
@@ -5468,7 +5526,12 @@ export interface __RuntimeEntityTypeMappingFragment$views {
 export type RuntimeEntityTypeMappingFragment = RuntimeEntityTypeMappingFragment$instance & __RuntimeEntityTypeMappingFragment$views;
 
 
-export interface RuntimeForeignKey$instance extends RuntimeAnnotatableBase {
+export abstract class RuntimeForeignKey$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeForeignKey$instance extends RuntimeForeignKey$protected, RuntimeAnnotatableBase {
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
     readonly PrincipalEntityType: RuntimeEntityType;
@@ -5508,7 +5571,12 @@ export interface __RuntimeForeignKey$views {
 export type RuntimeForeignKey = RuntimeForeignKey$instance & __RuntimeForeignKey$views;
 
 
-export interface RuntimeIndex$instance extends RuntimeAnnotatableBase {
+export abstract class RuntimeIndex$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeIndex$instance extends RuntimeIndex$protected, RuntimeAnnotatableBase {
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
     readonly Name: string;
@@ -5543,7 +5611,12 @@ export interface __RuntimeIndex$views {
 export type RuntimeIndex = RuntimeIndex$instance & __RuntimeIndex$views;
 
 
-export interface RuntimeKey$instance extends RuntimeAnnotatableBase {
+export abstract class RuntimeKey$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeKey$instance extends RuntimeKey$protected, RuntimeAnnotatableBase {
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
     readonly Properties: IReadOnlyList<RuntimeProperty>;
@@ -5582,7 +5655,12 @@ export interface __RuntimeKey$views {
 export type RuntimeKey = RuntimeKey$instance & __RuntimeKey$views;
 
 
-export interface RuntimeModel$instance extends RuntimeAnnotatableBase {
+export abstract class RuntimeModel$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeModel$instance extends RuntimeModel$protected, RuntimeAnnotatableBase {
     readonly DebugView: DebugView;
     ModelId: Guid;
     AddEntityType(name: string, type: Type, baseType?: RuntimeEntityType, sharedClrType?: boolean, changeTrackingStrategy?: ChangeTrackingStrategy, indexerPropertyInfo?: PropertyInfo, propertyBag?: boolean, discriminatorProperty?: string, discriminatorValue?: unknown, derivedTypesCount?: int, propertyCount?: int, complexPropertyCount?: int, navigationCount?: int, skipNavigationCount?: int, servicePropertyCount?: int, foreignKeyCount?: int, unnamedIndexCount?: int, namedIndexCount?: int, keyCount?: int, triggerCount?: int): RuntimeEntityType;
@@ -5624,7 +5702,13 @@ export interface __RuntimeModel$views {
 export type RuntimeModel = RuntimeModel$instance & __RuntimeModel$views;
 
 
-export interface RuntimeNavigation$instance extends RuntimePropertyBase$instance {
+export abstract class RuntimeNavigation$protected {
+    protected readonly ClrType: Type;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeNavigation$instance extends RuntimeNavigation$protected, RuntimePropertyBase$instance {
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
     readonly DeclaringType: RuntimeTypeBase;
@@ -5678,13 +5762,19 @@ export interface __RuntimeNavigation$views {
 export type RuntimeNavigation = RuntimeNavigation$instance & __RuntimeNavigation$views;
 
 
-export interface RuntimeProperty$instance extends RuntimePropertyBase$instance {
+export abstract class RuntimeProperty$protected {
+    protected readonly ClrType: Type;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeProperty$instance extends RuntimeProperty$protected, RuntimePropertyBase$instance {
     readonly DebugView: DebugView;
     readonly DeclaringType: RuntimeTypeBase;
     ForeignKeys: ISet<RuntimeForeignKey>;
     Indexes: List<RuntimeIndex>;
     readonly IsCollection: boolean;
-    readonly IsPrimitiveCollection: boolean;
+    IsPrimitiveCollection: boolean;
     get Keys(): List<RuntimeKey> | undefined;
     set Keys(value: List<RuntimeKey>);
     get PrimaryKey(): RuntimeKey | undefined;
@@ -5745,7 +5835,13 @@ export interface __RuntimeProperty$views {
 export type RuntimeProperty = RuntimeProperty$instance & __RuntimeProperty$views;
 
 
-export interface RuntimePropertyBase$instance extends RuntimeAnnotatableBase {
+export abstract class RuntimePropertyBase$protected {
+    protected readonly ClrType: Type;
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimePropertyBase$instance extends RuntimePropertyBase$protected, RuntimeAnnotatableBase {
     readonly DeclaringType: RuntimeTypeBase;
     readonly IsCollection: boolean;
     readonly Name: string;
@@ -5775,6 +5871,7 @@ export interface RuntimePropertyBase$instance extends RuntimeAnnotatableBase {
 
 
 export const RuntimePropertyBase: {
+    new(name: string, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, propertyAccessMode: PropertyAccessMode): RuntimePropertyBase;
 };
 
 
@@ -5789,7 +5886,12 @@ export interface __RuntimePropertyBase$views {
 export type RuntimePropertyBase = RuntimePropertyBase$instance & __RuntimePropertyBase$views;
 
 
-export interface RuntimeRelationalPropertyOverrides$instance extends AnnotatableBase {
+export abstract class RuntimeRelationalPropertyOverrides$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeRelationalPropertyOverrides$instance extends RuntimeRelationalPropertyOverrides$protected, AnnotatableBase {
     readonly DebugView: DebugView;
     readonly Property: RuntimeProperty;
     readonly StoreObject: StoreObjectIdentifier;
@@ -5823,7 +5925,12 @@ export interface __RuntimeRelationalPropertyOverrides$views {
 export type RuntimeRelationalPropertyOverrides = RuntimeRelationalPropertyOverrides$instance & __RuntimeRelationalPropertyOverrides$views;
 
 
-export interface RuntimeSequence$instance extends AnnotatableBase {
+export abstract class RuntimeSequence$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeSequence$instance extends RuntimeSequence$protected, AnnotatableBase {
     readonly DebugView: DebugView;
     readonly Model: RuntimeModel;
     readonly ModelSchema: string | undefined;
@@ -5859,7 +5966,13 @@ export interface __RuntimeSequence$views {
 export type RuntimeSequence = RuntimeSequence$instance & __RuntimeSequence$views;
 
 
-export interface RuntimeServiceProperty$instance extends RuntimePropertyBase$instance {
+export abstract class RuntimeServiceProperty$protected {
+    protected readonly ClrType: Type;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeServiceProperty$instance extends RuntimeServiceProperty$protected, RuntimePropertyBase$instance {
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
     readonly DeclaringType: RuntimeTypeBase;
@@ -5910,7 +6023,13 @@ export interface __RuntimeServiceProperty$views {
 export type RuntimeServiceProperty = RuntimeServiceProperty$instance & __RuntimeServiceProperty$views;
 
 
-export interface RuntimeSkipNavigation$instance extends RuntimePropertyBase$instance {
+export abstract class RuntimeSkipNavigation$protected {
+    protected readonly ClrType: Type;
+    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeSkipNavigation$instance extends RuntimeSkipNavigation$protected, RuntimePropertyBase$instance {
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
     readonly DeclaringType: RuntimeTypeBase;
@@ -5966,7 +6085,12 @@ export interface __RuntimeSkipNavigation$views {
 export type RuntimeSkipNavigation = RuntimeSkipNavigation$instance & __RuntimeSkipNavigation$views;
 
 
-export interface RuntimeStoredProcedure$instance extends AnnotatableBase {
+export abstract class RuntimeStoredProcedure$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeStoredProcedure$instance extends RuntimeStoredProcedure$protected, AnnotatableBase {
     readonly DebugView: DebugView;
     EntityType: RuntimeEntityType;
     AddParameter(name: string, direction: ParameterDirection, forRowsAffected: boolean, propertyName: string, forOriginalValue: Nullable<System_Internal.Boolean>): RuntimeStoredProcedureParameter;
@@ -6001,7 +6125,12 @@ export interface __RuntimeStoredProcedure$views {
 export type RuntimeStoredProcedure = RuntimeStoredProcedure$instance & __RuntimeStoredProcedure$views;
 
 
-export interface RuntimeTrigger$instance extends RuntimeAnnotatableBase {
+export abstract class RuntimeTrigger$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeTrigger$instance extends RuntimeTrigger$protected, RuntimeAnnotatableBase {
     readonly DebugView: DebugView;
     readonly EntityType: IEntityType;
     readonly ModelName: string;
@@ -6035,7 +6164,17 @@ export interface __RuntimeTrigger$views {
 export type RuntimeTrigger = RuntimeTrigger$instance & __RuntimeTrigger$views;
 
 
-export interface RuntimeTypeBase$instance extends RuntimeAnnotatableBase {
+export abstract class RuntimeTypeBase$protected {
+    protected readonly DirectlyDerivedTypes: IEnumerable<RuntimeTypeBase>;
+    protected readonly HasDirectlyDerivedTypes: boolean;
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+    protected FindDeclaredProperty(name: string): RuntimeProperty | undefined;
+    protected GetDerivedTypes<T extends RuntimeTypeBase>(): IEnumerable<T>;
+    protected GetProperties(): IEnumerable<RuntimeProperty>;
+}
+
+
+export interface RuntimeTypeBase$instance extends RuntimeTypeBase$protected, RuntimeAnnotatableBase {
     readonly BaseType: RuntimeTypeBase | undefined;
     readonly ClrType: Type;
     get ConstructorBinding(): InstantiationBinding | undefined;
@@ -6092,7 +6231,9 @@ export interface RuntimeTypeBase$instance extends RuntimeAnnotatableBase {
 
 
 export const RuntimeTypeBase: {
+    new(name: string, type: Type, model: RuntimeModel, baseType: RuntimeTypeBase, changeTrackingStrategy: ChangeTrackingStrategy, indexerPropertyInfo: PropertyInfo, propertyBag: boolean, discriminatorProperty: string, discriminatorValue: unknown, derivedTypesCount: int, propertyCount: int, complexPropertyCount: int): RuntimeTypeBase;
     FindIndexerProperty(type: Type): PropertyInfo | undefined;
+    ToEnumerable<T>(element: T): IEnumerable<T>;
 };
 
 
@@ -6107,7 +6248,12 @@ export interface __RuntimeTypeBase$views {
 export type RuntimeTypeBase = RuntimeTypeBase$instance & __RuntimeTypeBase$views;
 
 
-export interface RuntimeTypeMappingConfiguration$instance extends RuntimeAnnotatableBase {
+export abstract class RuntimeTypeMappingConfiguration$protected {
+    protected AddRuntimeAnnotation2(name: string, annotation: Annotation): Annotation;
+}
+
+
+export interface RuntimeTypeMappingConfiguration$instance extends RuntimeTypeMappingConfiguration$protected, RuntimeAnnotatableBase {
     readonly ClrType: Type;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
@@ -6146,6 +6292,7 @@ export interface ServiceParameterBinding$instance extends ParameterBinding {
 
 
 export const ServiceParameterBinding: {
+    new(parameterType: Type, serviceType: Type, serviceProperties: IPropertyBase[]): ServiceParameterBinding;
 };
 
 

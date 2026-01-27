@@ -812,6 +812,7 @@ export interface DbCommandInterceptor$instance extends IInterceptor {
 
 
 export const DbCommandInterceptor: {
+    new(): DbCommandInterceptor;
 };
 
 
@@ -847,6 +848,7 @@ export interface DbConnectionInterceptor$instance extends IInterceptor {
 
 
 export const DbConnectionInterceptor: {
+    new(): DbConnectionInterceptor;
 };
 
 
@@ -954,6 +956,7 @@ export interface DbTransactionInterceptor$instance extends IInterceptor {
 
 
 export const DbTransactionInterceptor: {
+    new(): DbTransactionInterceptor;
 };
 
 
@@ -1109,7 +1112,12 @@ export const EventDefinition_6: {
 
 export type EventDefinition_6<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6> = EventDefinition_6$instance<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>;
 
-export interface EventDefinitionBase$instance {
+export abstract class EventDefinitionBase$protected {
+    protected WarningAsError(message: string): Exception;
+}
+
+
+export interface EventDefinitionBase$instance extends EventDefinitionBase$protected {
     readonly EventId: EventId;
     readonly EventIdCode: string;
     readonly Level: LogLevel;
@@ -1118,6 +1126,7 @@ export interface EventDefinitionBase$instance {
 
 
 export const EventDefinitionBase: {
+    new(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string): EventDefinitionBase;
 };
 
 
@@ -1254,13 +1263,19 @@ export const IndexWithPropertyEventData: {
 
 export type IndexWithPropertyEventData = IndexWithPropertyEventData$instance;
 
-export interface InterceptorAggregator_1$instance<TInterceptor extends IInterceptor> {
+export abstract class InterceptorAggregator_1$protected<TInterceptor extends IInterceptor> {
+    protected abstract CreateChain(interceptors: IEnumerable<TInterceptor>): TInterceptor;
+}
+
+
+export interface InterceptorAggregator_1$instance<TInterceptor extends IInterceptor> extends InterceptorAggregator_1$protected<TInterceptor> {
     readonly InterceptorType: Type;
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
 
 export const InterceptorAggregator_1: {
+    new<TInterceptor extends IInterceptor>(): InterceptorAggregator_1<TInterceptor>;
 };
 
 
@@ -1317,6 +1332,7 @@ export interface LoggerCategory_1$instance<T> {
 
 
 export const LoggerCategory_1: {
+    new<T>(): LoggerCategory_1<T>;
     readonly Name: string;
 };
 
@@ -1415,6 +1431,7 @@ export interface LoggingDefinitions$instance {
 
 
 export const LoggingDefinitions: {
+    new(): LoggingDefinitions;
 };
 
 
@@ -1750,6 +1767,7 @@ export interface RelationalLoggingDefinitions$instance extends LoggingDefinition
 
 
 export const RelationalLoggingDefinitions: {
+    new(): RelationalLoggingDefinitions;
 };
 
 
@@ -1795,6 +1813,7 @@ export interface SaveChangesInterceptor$instance extends IInterceptor {
 
 
 export const SaveChangesInterceptor: {
+    new(): SaveChangesInterceptor;
 };
 
 
@@ -2140,7 +2159,12 @@ export const ValueConverterEventData: {
 
 export type ValueConverterEventData = ValueConverterEventData$instance;
 
-export interface WarningsConfiguration$instance {
+export abstract class WarningsConfiguration$protected {
+    protected Clone(): WarningsConfiguration;
+}
+
+
+export interface WarningsConfiguration$instance extends WarningsConfiguration$protected {
     readonly DefaultBehavior: WarningBehavior;
     GetBehavior(eventId: EventId): Nullable<WarningBehavior>;
     GetLevel(eventId: EventId): Nullable<LogLevel>;
@@ -2155,6 +2179,7 @@ export interface WarningsConfiguration$instance {
 
 export const WarningsConfiguration: {
     new(): WarningsConfiguration;
+    new(copyFrom: WarningsConfiguration): WarningsConfiguration;
 };
 
 
