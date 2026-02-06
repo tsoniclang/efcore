@@ -123,7 +123,7 @@ export interface IDesignTimeServices$instance {
 export type IDesignTimeServices = IDesignTimeServices$instance;
 
 export interface IMethodCallCodeFragment$instance {
-    readonly DeclaringType: string;
+    readonly DeclaringType: string | undefined;
     readonly Method: string;
     readonly TypeArguments: IEnumerable<System_Internal.String>;
     readonly Arguments: IEnumerable<unknown | undefined>;
@@ -133,48 +133,29 @@ export interface IMethodCallCodeFragment$instance {
 
 export type IMethodCallCodeFragment = IMethodCallCodeFragment$instance;
 
-export abstract class AnnotationCodeGenerator$protected {
-    protected readonly Dependencies: AnnotationCodeGeneratorDependencies;
-    protected GenerateDataAnnotation(entityType: IEntityType, annotation: IAnnotation): AttributeCodeFragment | undefined;
-    protected GenerateDataAnnotation(property: IProperty, annotation: IAnnotation): AttributeCodeFragment | undefined;
-    protected GenerateFluentApi(model: IModel, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(entityType: IEntityType, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(complexType: IComplexType, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(fragment: IEntityTypeMappingFragment, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(key: IKey, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(property: IProperty, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(complexProperty: IComplexProperty, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(foreignKey: IForeignKey, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(navigation: INavigation, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(navigation: ISkipNavigation, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(index: IIndex, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(checkConstraint: ICheckConstraint, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(trigger: ITrigger, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(overrides: IRelationalPropertyOverrides, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected GenerateFluentApi(sequence: ISequence, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    protected IsHandledByConvention(model: IModel, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(entityType: IEntityType, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(complexType: IComplexType, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(fragment: IEntityTypeMappingFragment, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(key: IKey, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(property: IProperty, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(complexProperty: IComplexProperty, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(foreignKey: IForeignKey, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(navigation: INavigation, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(navigation: ISkipNavigation, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(index: IIndex, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(checkConstraint: ICheckConstraint, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(trigger: ITrigger, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(overrides: IRelationalPropertyOverrides, annotation: IAnnotation): boolean;
-    protected IsHandledByConvention(sequence: ISequence, annotation: IAnnotation): boolean;
-}
-
-
-export interface AnnotationCodeGenerator$instance extends AnnotationCodeGenerator$protected {
+export interface AnnotationCodeGenerator$instance {
+    readonly Dependencies: AnnotationCodeGeneratorDependencies;
     FilterIgnoredAnnotations(annotations: IEnumerable<IAnnotation>): IEnumerable<IAnnotation>;
+    GenerateDataAnnotation(entityType: IEntityType, annotation: IAnnotation): AttributeCodeFragment | undefined;
+    GenerateDataAnnotation(property: IProperty, annotation: IAnnotation): AttributeCodeFragment | undefined;
     GenerateDataAnnotationAttributes(entityType: IEntityType, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<AttributeCodeFragment>;
     GenerateDataAnnotationAttributes(property: IProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<AttributeCodeFragment>;
     GenerateDataAnnotationAttributes(annotatable: IAnnotatable, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<AttributeCodeFragment>;
+    GenerateFluentApi(model: IModel, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(entityType: IEntityType, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(complexType: IComplexType, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(fragment: IEntityTypeMappingFragment, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(key: IKey, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(property: IProperty, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(complexProperty: IComplexProperty, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(foreignKey: IForeignKey, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(navigation: INavigation, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(navigation: ISkipNavigation, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(index: IIndex, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(checkConstraint: ICheckConstraint, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(trigger: ITrigger, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(overrides: IRelationalPropertyOverrides, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(sequence: ISequence, annotation: IAnnotation): MethodCallCodeFragment | undefined;
     GenerateFluentApiCalls(model: IModel, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
     GenerateFluentApiCalls(entityType: IEntityType, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
     GenerateFluentApiCalls(complexType: IComplexType, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
@@ -191,6 +172,21 @@ export interface AnnotationCodeGenerator$instance extends AnnotationCodeGenerato
     GenerateFluentApiCalls(overrides: IRelationalPropertyOverrides, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
     GenerateFluentApiCalls(sequence: ISequence, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
     GenerateFluentApiCalls(annotatable: IAnnotatable, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
+    IsHandledByConvention(model: IModel, annotation: IAnnotation): boolean;
+    IsHandledByConvention(entityType: IEntityType, annotation: IAnnotation): boolean;
+    IsHandledByConvention(complexType: IComplexType, annotation: IAnnotation): boolean;
+    IsHandledByConvention(fragment: IEntityTypeMappingFragment, annotation: IAnnotation): boolean;
+    IsHandledByConvention(key: IKey, annotation: IAnnotation): boolean;
+    IsHandledByConvention(property: IProperty, annotation: IAnnotation): boolean;
+    IsHandledByConvention(complexProperty: IComplexProperty, annotation: IAnnotation): boolean;
+    IsHandledByConvention(foreignKey: IForeignKey, annotation: IAnnotation): boolean;
+    IsHandledByConvention(navigation: INavigation, annotation: IAnnotation): boolean;
+    IsHandledByConvention(navigation: ISkipNavigation, annotation: IAnnotation): boolean;
+    IsHandledByConvention(index: IIndex, annotation: IAnnotation): boolean;
+    IsHandledByConvention(checkConstraint: ICheckConstraint, annotation: IAnnotation): boolean;
+    IsHandledByConvention(trigger: ITrigger, annotation: IAnnotation): boolean;
+    IsHandledByConvention(overrides: IRelationalPropertyOverrides, annotation: IAnnotation): boolean;
+    IsHandledByConvention(sequence: ISequence, annotation: IAnnotation): boolean;
     RemoveAnnotationsHandledByConventions(model: IModel, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
     RemoveAnnotationsHandledByConventions(entityType: IEntityType, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
     RemoveAnnotationsHandledByConventions(complexType: IComplexType, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
@@ -280,14 +276,10 @@ export const DesignTimeServicesReferenceAttribute: {
 
 export type DesignTimeServicesReferenceAttribute = DesignTimeServicesReferenceAttribute$instance;
 
-export abstract class EntityFrameworkDesignServicesBuilder$protected {
-    protected TryGetServiceCharacteristics2(serviceType: Type): Nullable<ServiceCharacteristics>;
-    protected TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
-}
-
-
-export interface EntityFrameworkDesignServicesBuilder$instance extends EntityFrameworkDesignServicesBuilder$protected, EntityFrameworkServicesBuilder {
+export interface EntityFrameworkDesignServicesBuilder$instance extends EntityFrameworkServicesBuilder {
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
+    TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
+    TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
 }
 
 
@@ -299,14 +291,10 @@ export const EntityFrameworkDesignServicesBuilder: {
 
 export type EntityFrameworkDesignServicesBuilder = EntityFrameworkDesignServicesBuilder$instance;
 
-export abstract class EntityFrameworkRelationalDesignServicesBuilder$protected {
-    protected TryGetServiceCharacteristics2(serviceType: Type): Nullable<ServiceCharacteristics>;
-    protected TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
-}
-
-
-export interface EntityFrameworkRelationalDesignServicesBuilder$instance extends EntityFrameworkRelationalDesignServicesBuilder$protected, EntityFrameworkDesignServicesBuilder {
+export interface EntityFrameworkRelationalDesignServicesBuilder$instance extends EntityFrameworkDesignServicesBuilder {
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
+    TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
+    TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
 }
 
 
@@ -321,10 +309,10 @@ export type EntityFrameworkRelationalDesignServicesBuilder = EntityFrameworkRela
 export interface MethodCallCodeFragment$instance {
     readonly Arguments: IReadOnlyList<unknown | undefined>;
     readonly ChainedCall: MethodCallCodeFragment | undefined;
-    readonly DeclaringType: string;
+    readonly DeclaringType: string | undefined;
     readonly Method: string;
     readonly MethodInfo: MethodInfo | undefined;
-    readonly Namespace: string;
+    readonly Namespace: string | undefined;
     Chain(methodInfo: MethodInfo, ...arguments: unknown[]): MethodCallCodeFragment;
     Chain(method: string, ...arguments: unknown[]): MethodCallCodeFragment;
     Chain(call: MethodCallCodeFragment): MethodCallCodeFragment;

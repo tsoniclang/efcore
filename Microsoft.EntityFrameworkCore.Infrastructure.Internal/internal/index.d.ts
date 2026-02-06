@@ -58,7 +58,7 @@ export interface CoreSingletonOptions$instance {
     AreDetailedErrorsEnabled: boolean;
     AreThreadSafetyChecksEnabled: boolean;
     get RootApplicationServiceProvider(): IServiceProvider | undefined;
-    set RootApplicationServiceProvider(value: IServiceProvider);
+    set RootApplicationServiceProvider(value: IServiceProvider | undefined);
     Initialize(options: IDbContextOptions): void;
     Validate(options: IDbContextOptions): void;
 }
@@ -171,13 +171,10 @@ export const InternalServiceCollectionMap: {
 
 export type InternalServiceCollectionMap = InternalServiceCollectionMap$instance;
 
-export abstract class LazyLoader$protected {
-    protected Context: DbContext;
-    protected readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>;
-}
-
-
-export interface LazyLoader$instance extends LazyLoader$protected {
+export interface LazyLoader$instance {
+    get Context(): DbContext | undefined;
+    set Context(value: DbContext | undefined);
+    readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>;
     Attaching(context: DbContext, entityType: IEntityType, entity: unknown): void;
     Detaching(context: DbContext, entity: unknown): boolean;
     Dispose(): void;
@@ -231,7 +228,6 @@ export interface MemberInfoNameComparer$instance {
 
 
 export const MemberInfoNameComparer: {
-    new(): MemberInfoNameComparer;
     readonly Instance: MemberInfoNameComparer;
 };
 

@@ -51,7 +51,7 @@ export interface QualifiedName$instance {
     Equals(obj: unknown): boolean;
     Equals(other: QualifiedName): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string;
 }
 
 
@@ -62,18 +62,12 @@ export const QualifiedName: {
 
 export type QualifiedName = QualifiedName$instance;
 
-export abstract class CSharpRuntimeAnnotationCodeGenerator$protected {
-    protected readonly Dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies;
-    protected CreateDefaultTypeMapping(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): CoreTypeMapping | undefined;
-    protected GenerateSimpleAnnotation(annotationName: string, valueString: string, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    protected GenerateSimpleAnnotations(parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-}
-
-
-export interface CSharpRuntimeAnnotationCodeGenerator$instance extends CSharpRuntimeAnnotationCodeGenerator$protected {
+export interface CSharpRuntimeAnnotationCodeGenerator$instance {
+    readonly Dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
+    CreateDefaultTypeMapping(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): CoreTypeMapping | undefined;
     Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -88,6 +82,8 @@ export interface CSharpRuntimeAnnotationCodeGenerator$instance extends CSharpRun
     Generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    GenerateSimpleAnnotation(annotationName: string, valueString: string, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    GenerateSimpleAnnotations(parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
 }
 
 
@@ -154,12 +150,8 @@ export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
 
 export type CSharpRuntimeAnnotationCodeGeneratorParameters = CSharpRuntimeAnnotationCodeGeneratorParameters$instance;
 
-export abstract class RelationalCSharpRuntimeAnnotationCodeGenerator$protected {
-    protected readonly RelationalDependencies: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
-}
-
-
-export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends RelationalCSharpRuntimeAnnotationCodeGenerator$protected, CSharpRuntimeAnnotationCodeGenerator$instance {
+export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends CSharpRuntimeAnnotationCodeGenerator$instance {
+    readonly RelationalDependencies: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;

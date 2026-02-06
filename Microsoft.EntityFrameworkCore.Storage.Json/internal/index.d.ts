@@ -69,7 +69,6 @@ export interface JsonByteArrayReaderWriter$instance extends JsonValueReaderWrite
 
 
 export const JsonByteArrayReaderWriter: {
-    new(): JsonByteArrayReaderWriter;
     readonly Instance: JsonByteArrayReaderWriter;
 };
 
@@ -84,7 +83,6 @@ export interface JsonByteReaderWriter$instance extends JsonValueReaderWriter_1<S
 
 
 export const JsonByteReaderWriter: {
-    new(): JsonByteReaderWriter;
     readonly Instance: JsonByteReaderWriter;
 };
 
@@ -118,7 +116,6 @@ export interface JsonCharReaderWriter$instance extends JsonValueReaderWriter_1<S
 
 
 export const JsonCharReaderWriter: {
-    new(): JsonCharReaderWriter;
     readonly Instance: JsonCharReaderWriter;
 };
 
@@ -210,7 +207,6 @@ export interface JsonDateOnlyReaderWriter$instance extends JsonValueReaderWriter
 
 
 export const JsonDateOnlyReaderWriter: {
-    new(): JsonDateOnlyReaderWriter;
     readonly Instance: JsonDateOnlyReaderWriter;
 };
 
@@ -225,7 +221,6 @@ export interface JsonDateTimeOffsetReaderWriter$instance extends JsonValueReader
 
 
 export const JsonDateTimeOffsetReaderWriter: {
-    new(): JsonDateTimeOffsetReaderWriter;
     readonly Instance: JsonDateTimeOffsetReaderWriter;
 };
 
@@ -240,7 +235,6 @@ export interface JsonDateTimeReaderWriter$instance extends JsonValueReaderWriter
 
 
 export const JsonDateTimeReaderWriter: {
-    new(): JsonDateTimeReaderWriter;
     readonly Instance: JsonDateTimeReaderWriter;
 };
 
@@ -255,7 +249,6 @@ export interface JsonDecimalReaderWriter$instance extends JsonValueReaderWriter_
 
 
 export const JsonDecimalReaderWriter: {
-    new(): JsonDecimalReaderWriter;
     readonly Instance: JsonDecimalReaderWriter;
 };
 
@@ -270,7 +263,6 @@ export interface JsonDoubleReaderWriter$instance extends JsonValueReaderWriter_1
 
 
 export const JsonDoubleReaderWriter: {
-    new(): JsonDoubleReaderWriter;
     readonly Instance: JsonDoubleReaderWriter;
 };
 
@@ -285,7 +277,6 @@ export interface JsonFloatReaderWriter$instance extends JsonValueReaderWriter_1<
 
 
 export const JsonFloatReaderWriter: {
-    new(): JsonFloatReaderWriter;
     readonly Instance: JsonFloatReaderWriter;
 };
 
@@ -300,7 +291,6 @@ export interface JsonGuidReaderWriter$instance extends JsonValueReaderWriter_1<G
 
 
 export const JsonGuidReaderWriter: {
-    new(): JsonGuidReaderWriter;
     readonly Instance: JsonGuidReaderWriter;
 };
 
@@ -315,7 +305,6 @@ export interface JsonInt16ReaderWriter$instance extends JsonValueReaderWriter_1<
 
 
 export const JsonInt16ReaderWriter: {
-    new(): JsonInt16ReaderWriter;
     readonly Instance: JsonInt16ReaderWriter;
 };
 
@@ -330,7 +319,6 @@ export interface JsonInt32ReaderWriter$instance extends JsonValueReaderWriter_1<
 
 
 export const JsonInt32ReaderWriter: {
-    new(): JsonInt32ReaderWriter;
     readonly Instance: JsonInt32ReaderWriter;
 };
 
@@ -345,7 +333,6 @@ export interface JsonInt64ReaderWriter$instance extends JsonValueReaderWriter_1<
 
 
 export const JsonInt64ReaderWriter: {
-    new(): JsonInt64ReaderWriter;
     readonly Instance: JsonInt64ReaderWriter;
 };
 
@@ -360,7 +347,6 @@ export interface JsonNullReaderWriter$instance extends JsonValueReaderWriter_1<u
 
 
 export const JsonNullReaderWriter: {
-    new(): JsonNullReaderWriter;
     readonly Instance: JsonNullReaderWriter;
 };
 
@@ -390,7 +376,6 @@ export interface JsonSByteReaderWriter$instance extends JsonValueReaderWriter_1<
 
 
 export const JsonSByteReaderWriter: {
-    new(): JsonSByteReaderWriter;
     readonly Instance: JsonSByteReaderWriter;
 };
 
@@ -405,7 +390,6 @@ export interface JsonSignedEnumReaderWriter_1$instance<TEnum extends number> ext
 
 
 export const JsonSignedEnumReaderWriter_1: {
-    new<TEnum extends number>(): JsonSignedEnumReaderWriter_1<TEnum>;
     readonly Instance: unknown;
 };
 
@@ -420,7 +404,6 @@ export interface JsonStringReaderWriter$instance extends JsonValueReaderWriter_1
 
 
 export const JsonStringReaderWriter: {
-    new(): JsonStringReaderWriter;
     readonly Instance: JsonStringReaderWriter;
 };
 
@@ -435,7 +418,6 @@ export interface JsonTimeOnlyReaderWriter$instance extends JsonValueReaderWriter
 
 
 export const JsonTimeOnlyReaderWriter: {
-    new(): JsonTimeOnlyReaderWriter;
     readonly Instance: JsonTimeOnlyReaderWriter;
 };
 
@@ -450,7 +432,6 @@ export interface JsonTimeSpanReaderWriter$instance extends JsonValueReaderWriter
 
 
 export const JsonTimeSpanReaderWriter: {
-    new(): JsonTimeSpanReaderWriter;
     readonly Instance: JsonTimeSpanReaderWriter;
 };
 
@@ -465,7 +446,6 @@ export interface JsonUInt16ReaderWriter$instance extends JsonValueReaderWriter_1
 
 
 export const JsonUInt16ReaderWriter: {
-    new(): JsonUInt16ReaderWriter;
     readonly Instance: JsonUInt16ReaderWriter;
 };
 
@@ -480,7 +460,6 @@ export interface JsonUInt32ReaderWriter$instance extends JsonValueReaderWriter_1
 
 
 export const JsonUInt32ReaderWriter: {
-    new(): JsonUInt32ReaderWriter;
     readonly Instance: JsonUInt32ReaderWriter;
 };
 
@@ -495,7 +474,6 @@ export interface JsonUInt64ReaderWriter$instance extends JsonValueReaderWriter_1
 
 
 export const JsonUInt64ReaderWriter: {
-    new(): JsonUInt64ReaderWriter;
     readonly Instance: JsonUInt64ReaderWriter;
 };
 
@@ -510,7 +488,6 @@ export interface JsonUnsignedEnumReaderWriter_1$instance<TEnum extends number> e
 
 
 export const JsonUnsignedEnumReaderWriter_1: {
-    new<TEnum extends number>(): JsonUnsignedEnumReaderWriter_1<TEnum>;
     readonly Instance: unknown;
 };
 
@@ -544,19 +521,14 @@ export interface JsonValueReaderWriter_1$instance<TValue> extends JsonValueReade
 }
 
 
-export const JsonValueReaderWriter_1: {
-    new<TValue>(): JsonValueReaderWriter_1<TValue>;
+export const JsonValueReaderWriter_1: (abstract new<TValue>() => JsonValueReaderWriter_1<TValue>) & {
 };
 
 
 export type JsonValueReaderWriter_1<TValue> = JsonValueReaderWriter_1$instance<TValue>;
 
-export abstract class JsonValueReaderWriterSource$protected {
-    protected readonly Dependencies: JsonValueReaderWriterSourceDependencies;
-}
-
-
-export interface JsonValueReaderWriterSource$instance extends JsonValueReaderWriterSource$protected {
+export interface JsonValueReaderWriterSource$instance {
+    readonly Dependencies: JsonValueReaderWriterSourceDependencies;
     FindReaderWriter(type: Type): JsonValueReaderWriter | undefined;
 }
 
@@ -599,7 +571,6 @@ export interface JsonWarningEnumReaderWriter_1$instance<TEnum extends number> ex
 
 
 export const JsonWarningEnumReaderWriter_1: {
-    new<TEnum extends number>(): JsonWarningEnumReaderWriter_1<TEnum>;
     readonly Instance: unknown;
 };
 

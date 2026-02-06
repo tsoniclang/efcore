@@ -159,7 +159,7 @@ export interface IDiagnosticsLogger$instance {
     readonly Logger: ILogger;
     readonly DiagnosticSource: DiagnosticSource;
     readonly DbContextLogger: IDbContextLogger;
-    readonly Interceptors: IInterceptors;
+    readonly Interceptors: IInterceptors | undefined;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
     NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
@@ -176,7 +176,7 @@ export interface IDiagnosticsLogger_1$instance<TLoggerCategory extends LoggerCat
     readonly Logger: ILogger;
     readonly DiagnosticSource: DiagnosticSource;
     readonly DbContextLogger: IDbContextLogger;
-    readonly Interceptors: IInterceptors;
+    readonly Interceptors: IInterceptors | undefined;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
     NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
@@ -283,7 +283,7 @@ export interface IRelationalCommandDiagnosticsLogger$instance extends IDiagnosti
     readonly Logger: ILogger;
     readonly DiagnosticSource: DiagnosticSource;
     readonly DbContextLogger: IDbContextLogger;
-    readonly Interceptors: IInterceptors;
+    readonly Interceptors: IInterceptors | undefined;
     CommandCanceled(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
     CommandCanceledAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
     CommandCreated(connection: IRelationalConnection, command: DbCommand, commandMethod: DbCommandMethod, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbCommand;
@@ -319,7 +319,7 @@ export interface IRelationalConnectionDiagnosticsLogger$instance extends IDiagno
     readonly Logger: ILogger;
     readonly DiagnosticSource: DiagnosticSource;
     readonly DbContextLogger: IDbContextLogger;
-    readonly Interceptors: IInterceptors;
+    readonly Interceptors: IInterceptors | undefined;
     ConnectionCreated(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): DbConnection;
     ConnectionCreating(connection: IRelationalConnection, startTime: DateTimeOffset): InterceptionResult_1<DbConnection>;
     ConnectionDisposed(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): void;
@@ -600,7 +600,7 @@ export const CommandEventData: {
 export type CommandEventData = CommandEventData$instance;
 
 export interface CommandExecutedEventData$instance extends CommandEndEventData {
-    readonly Result: unknown;
+    readonly Result: unknown | undefined;
 }
 
 
@@ -811,8 +811,7 @@ export interface DbCommandInterceptor$instance extends IInterceptor {
 }
 
 
-export const DbCommandInterceptor: {
-    new(): DbCommandInterceptor;
+export const DbCommandInterceptor: (abstract new() => DbCommandInterceptor) & {
 };
 
 
@@ -847,8 +846,7 @@ export interface DbConnectionInterceptor$instance extends IInterceptor {
 }
 
 
-export const DbConnectionInterceptor: {
-    new(): DbConnectionInterceptor;
+export const DbConnectionInterceptor: (abstract new() => DbConnectionInterceptor) & {
 };
 
 
@@ -881,7 +879,7 @@ export type DbContextErrorEventData = DbContextErrorEventData$instance & __DbCon
 
 
 export interface DbContextEventData$instance extends EventData {
-    readonly Context: DbContext;
+    readonly Context: DbContext | undefined;
 }
 
 
@@ -955,8 +953,7 @@ export interface DbTransactionInterceptor$instance extends IInterceptor {
 }
 
 
-export const DbTransactionInterceptor: {
-    new(): DbTransactionInterceptor;
+export const DbTransactionInterceptor: (abstract new() => DbTransactionInterceptor) & {
 };
 
 
@@ -1112,21 +1109,16 @@ export const EventDefinition_6: {
 
 export type EventDefinition_6<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6> = EventDefinition_6$instance<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>;
 
-export abstract class EventDefinitionBase$protected {
-    protected WarningAsError(message: string): Exception;
-}
-
-
-export interface EventDefinitionBase$instance extends EventDefinitionBase$protected {
+export interface EventDefinitionBase$instance {
     readonly EventId: EventId;
     readonly EventIdCode: string;
     readonly Level: LogLevel;
     readonly WarningBehavior: WarningBehavior;
+    WarningAsError(message: string): Exception;
 }
 
 
-export const EventDefinitionBase: {
-    new(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string): EventDefinitionBase;
+export const EventDefinitionBase: (abstract new(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string) => EventDefinitionBase) & {
 };
 
 
@@ -1218,7 +1210,7 @@ export type IgnoringIdentityResolutionInterceptor = IgnoringIdentityResolutionIn
 
 export interface IndexEventData$instance extends EventData {
     readonly EntityType: IEntityType;
-    readonly Name: string;
+    readonly Name: string | undefined;
     readonly PropertyNames: List<System_Internal.String>;
 }
 
@@ -1232,7 +1224,7 @@ export type IndexEventData = IndexEventData$instance;
 
 export interface IndexWithPropertiesEventData$instance extends EventData {
     readonly EntityType: IEntityType;
-    readonly Name: string;
+    readonly Name: string | undefined;
     readonly Property1Name: string;
     readonly Property2Name: string;
     readonly PropertyNames: List<System_Internal.String>;
@@ -1250,7 +1242,7 @@ export type IndexWithPropertiesEventData = IndexWithPropertiesEventData$instance
 
 export interface IndexWithPropertyEventData$instance extends EventData {
     readonly EntityType: IEntityType;
-    readonly Name: string;
+    readonly Name: string | undefined;
     readonly PropertyName: string;
     readonly PropertyNames: List<System_Internal.String>;
 }
@@ -1263,19 +1255,14 @@ export const IndexWithPropertyEventData: {
 
 export type IndexWithPropertyEventData = IndexWithPropertyEventData$instance;
 
-export abstract class InterceptorAggregator_1$protected<TInterceptor extends IInterceptor> {
-    protected abstract CreateChain(interceptors: IEnumerable<TInterceptor>): TInterceptor;
-}
-
-
-export interface InterceptorAggregator_1$instance<TInterceptor extends IInterceptor> extends InterceptorAggregator_1$protected<TInterceptor> {
+export interface InterceptorAggregator_1$instance<TInterceptor extends IInterceptor> {
     readonly InterceptorType: Type;
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
+    CreateChain(interceptors: IEnumerable<TInterceptor>): TInterceptor;
 }
 
 
-export const InterceptorAggregator_1: {
-    new<TInterceptor extends IInterceptor>(): InterceptorAggregator_1<TInterceptor>;
+export const InterceptorAggregator_1: (abstract new<TInterceptor extends IInterceptor>() => InterceptorAggregator_1<TInterceptor>) & {
 };
 
 
@@ -1331,8 +1318,7 @@ export interface LoggerCategory_1$instance<T> {
 }
 
 
-export const LoggerCategory_1: {
-    new<T>(): LoggerCategory_1<T>;
+export const LoggerCategory_1: (abstract new<T>() => LoggerCategory_1<T>) & {
     readonly Name: string;
 };
 
@@ -1430,8 +1416,7 @@ export interface LoggingDefinitions$instance {
 }
 
 
-export const LoggingDefinitions: {
-    new(): LoggingDefinitions;
+export const LoggingDefinitions: (abstract new() => LoggingDefinitions) & {
 };
 
 
@@ -1766,8 +1751,7 @@ export interface RelationalLoggingDefinitions$instance extends LoggingDefinition
 }
 
 
-export const RelationalLoggingDefinitions: {
-    new(): RelationalLoggingDefinitions;
+export const RelationalLoggingDefinitions: (abstract new() => RelationalLoggingDefinitions) & {
 };
 
 
@@ -1812,8 +1796,7 @@ export interface SaveChangesInterceptor$instance extends IInterceptor {
 }
 
 
-export const SaveChangesInterceptor: {
-    new(): SaveChangesInterceptor;
+export const SaveChangesInterceptor: (abstract new() => SaveChangesInterceptor) & {
 };
 
 
@@ -2159,13 +2142,9 @@ export const ValueConverterEventData: {
 
 export type ValueConverterEventData = ValueConverterEventData$instance;
 
-export abstract class WarningsConfiguration$protected {
-    protected Clone(): WarningsConfiguration;
-}
-
-
-export interface WarningsConfiguration$instance extends WarningsConfiguration$protected {
+export interface WarningsConfiguration$instance {
     readonly DefaultBehavior: WarningBehavior;
+    Clone(): WarningsConfiguration;
     GetBehavior(eventId: EventId): Nullable<WarningBehavior>;
     GetLevel(eventId: EventId): Nullable<LogLevel>;
     GetServiceProviderHashCode(): int;
@@ -2179,7 +2158,6 @@ export interface WarningsConfiguration$instance extends WarningsConfiguration$pr
 
 export const WarningsConfiguration: {
     new(): WarningsConfiguration;
-    new(copyFrom: WarningsConfiguration): WarningsConfiguration;
 };
 
 

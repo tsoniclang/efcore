@@ -101,18 +101,14 @@ export const QueryableJsonProjectionInfo: {
 
 export type QueryableJsonProjectionInfo = QueryableJsonProjectionInfo$instance;
 
-export abstract class BufferedDataReader$protected {
-    protected Dispose(disposing: boolean): void;
-}
-
-
-export interface BufferedDataReader$instance extends BufferedDataReader$protected, DbDataReader {
+export interface BufferedDataReader$instance extends DbDataReader {
     readonly Depth: int;
     readonly FieldCount: int;
     readonly HasRows: boolean;
     readonly IsClosed: boolean;
     readonly RecordsAffected: int;
     Close(): void;
+    Dispose(disposing: boolean): void;
     get_Item(name: string): unknown;
     get_Item(ordinal: int): unknown;
     GetBoolean(ordinal: int): boolean;
@@ -177,12 +173,8 @@ export interface ByteArraySequenceEqualTranslator$instance extends Microsoft_Ent
 export type ByteArraySequenceEqualTranslator = ByteArraySequenceEqualTranslator$instance & __ByteArraySequenceEqualTranslator$views;
 
 
-export abstract class CallForwardingExpressionVisitor$protected {
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface CallForwardingExpressionVisitor$instance extends CallForwardingExpressionVisitor$protected, ExpressionVisitor {
+export interface CallForwardingExpressionVisitor$instance extends ExpressionVisitor {
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
@@ -231,13 +223,8 @@ export interface ComparisonTranslator$instance extends Microsoft_EntityFramework
 export type ComparisonTranslator = ComparisonTranslator$instance & __ComparisonTranslator$views;
 
 
-export abstract class CompiledAsyncEnumerableQuery_2$protected<TContext extends DbContext, TResult> {
-    protected CreateCompiledQuery2(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, IAsyncEnumerable<TResult>>;
-    protected abstract CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, TResult>;
-}
-
-
-export interface CompiledAsyncEnumerableQuery_2$instance<TContext extends DbContext, TResult> extends CompiledAsyncEnumerableQuery_2$protected<TContext, TResult>, CompiledQueryBase_2<TContext, IAsyncEnumerable<TResult>> {
+export interface CompiledAsyncEnumerableQuery_2$instance<TContext extends DbContext, TResult> extends CompiledQueryBase_2<TContext, IAsyncEnumerable<TResult>> {
+    CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, IAsyncEnumerable<TResult>>;
     Execute(context: TContext): IAsyncEnumerable<TResult>;
     Execute<TParam1>(context: TContext, param1: TParam1): IAsyncEnumerable<TResult>;
     Execute<TParam1, TParam2>(context: TContext, param1: TParam1, param2: TParam2): IAsyncEnumerable<TResult>;
@@ -264,13 +251,8 @@ export const CompiledAsyncEnumerableQuery_2: {
 
 export type CompiledAsyncEnumerableQuery_2<TContext extends DbContext, TResult> = CompiledAsyncEnumerableQuery_2$instance<TContext, TResult>;
 
-export abstract class CompiledAsyncTaskQuery_2$protected<TContext extends DbContext, TResult> {
-    protected CreateCompiledQuery2(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, Task<TResult>>;
-    protected abstract CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, TResult>;
-}
-
-
-export interface CompiledAsyncTaskQuery_2$instance<TContext extends DbContext, TResult> extends CompiledAsyncTaskQuery_2$protected<TContext, TResult>, CompiledQueryBase_2<TContext, Task<TResult>> {
+export interface CompiledAsyncTaskQuery_2$instance<TContext extends DbContext, TResult> extends CompiledQueryBase_2<TContext, Task<TResult>> {
+    CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, Task<TResult>>;
     ExecuteAsync(context: TContext): Task<TResult>;
     ExecuteAsync(context: TContext, cancellationToken: CancellationToken): Task<TResult>;
     ExecuteAsync<TParam1>(context: TContext, param1: TParam1): Task<TResult>;
@@ -312,13 +294,8 @@ export const CompiledAsyncTaskQuery_2: {
 
 export type CompiledAsyncTaskQuery_2<TContext extends DbContext, TResult> = CompiledAsyncTaskQuery_2$instance<TContext, TResult>;
 
-export abstract class CompiledQuery_2$protected<TContext extends DbContext, TResult> {
-    protected CreateCompiledQuery2(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, TResult>;
-    protected abstract CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, TResult>;
-}
-
-
-export interface CompiledQuery_2$instance<TContext extends DbContext, TResult> extends CompiledQuery_2$protected<TContext, TResult>, CompiledQueryBase_2<TContext, TResult> {
+export interface CompiledQuery_2$instance<TContext extends DbContext, TResult> extends CompiledQueryBase_2<TContext, TResult> {
+    CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, TResult>;
     Execute(context: TContext): TResult;
     Execute<TParam1>(context: TContext, param1: TParam1): TResult;
     Execute<TParam1, TParam2>(context: TContext, param1: TParam1, param2: TParam2): TResult;
@@ -345,19 +322,14 @@ export const CompiledQuery_2: {
 
 export type CompiledQuery_2<TContext extends DbContext, TResult> = CompiledQuery_2$instance<TContext, TResult>;
 
-export abstract class CompiledQueryBase_2$protected<TContext extends DbContext, TResult> {
-    protected abstract CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, TResult>;
-    protected ExecuteCore(context: TContext, ...parameters: unknown[]): TResult;
-    protected ExecuteCore(context: TContext, cancellationToken: CancellationToken, ...parameters: unknown[]): TResult;
+export interface CompiledQueryBase_2$instance<TContext extends DbContext, TResult> {
+    CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func<QueryContext, TResult>;
+    ExecuteCore(context: TContext, ...parameters: unknown[]): TResult;
+    ExecuteCore(context: TContext, cancellationToken: CancellationToken, ...parameters: unknown[]): TResult;
 }
 
 
-export interface CompiledQueryBase_2$instance<TContext extends DbContext, TResult> extends CompiledQueryBase_2$protected<TContext, TResult> {
-}
-
-
-export const CompiledQueryBase_2: {
-    new<TContext extends DbContext, TResult>(queryExpression: LambdaExpression): CompiledQueryBase_2<TContext, TResult>;
+export const CompiledQueryBase_2: (abstract new<TContext extends DbContext, TResult>(queryExpression: LambdaExpression) => CompiledQueryBase_2<TContext, TResult>) & {
 };
 
 
@@ -480,49 +452,45 @@ export interface EqualsTranslator$instance extends Microsoft_EntityFrameworkCore
 export type EqualsTranslator = EqualsTranslator$instance & __EqualsTranslator$views;
 
 
-export abstract class ExpressionTreeFuncletizer$protected {
-    protected VisitBinary(binary: BinaryExpression): Expression;
-    protected VisitBlock(node: BlockExpression): Expression;
-    protected VisitCatchBlock(node: CatchBlock): CatchBlock;
-    protected VisitConditional(conditional: ConditionalExpression): Expression;
-    protected VisitConstant(constant: ConstantExpression): Expression;
-    protected VisitDebugInfo(node: DebugInfoExpression): Expression;
-    protected VisitDefault(node: DefaultExpression): Expression;
-    protected VisitDynamic(node: DynamicExpression): Expression;
-    protected VisitElementInit(node: ElementInit): ElementInit;
-    protected VisitExtension(extension: Expression): Expression;
-    protected VisitGoto(node: GotoExpression): Expression;
-    protected VisitIndex(index: IndexExpression): Expression;
-    protected VisitInvocation(invocation: InvocationExpression): Expression;
-    protected VisitLabel(node: LabelExpression): Expression;
-    protected VisitLabelTarget(node: LabelTarget): LabelTarget;
-    protected VisitLambda<T>(lambda: Expression<T>): Expression;
-    protected VisitListInit(listInit: ListInitExpression): Expression;
-    protected VisitLoop(node: LoopExpression): Expression;
-    protected VisitMember(member: MemberExpression): Expression;
-    protected VisitMemberInit(memberInit: MemberInitExpression): Expression;
-    protected VisitMemberListBinding(node: MemberListBinding): MemberListBinding;
-    protected VisitMemberMemberBinding(node: MemberMemberBinding): MemberMemberBinding;
-    protected VisitMethodCall(methodCall: MethodCallExpression): Expression;
-    protected VisitNew(new_: NewExpression): Expression;
-    protected VisitNewArray(newArray: NewArrayExpression): Expression;
-    protected VisitParameter(parameterExpression: ParameterExpression): Expression;
-    protected VisitRuntimeVariables(node: RuntimeVariablesExpression): Expression;
-    protected VisitSwitch(node: SwitchExpression): Expression;
-    protected VisitSwitchCase(node: SwitchCase): SwitchCase;
-    protected VisitTry(node: TryExpression): Expression;
-    protected VisitTypeBinary(typeBinary: TypeBinaryExpression): Expression;
-    protected VisitUnary(unary: UnaryExpression): Expression;
-}
-
-
-export interface ExpressionTreeFuncletizer$instance extends ExpressionTreeFuncletizer$protected, ExpressionVisitor {
+export interface ExpressionTreeFuncletizer$instance extends ExpressionVisitor {
     CalculatePathsToEvaluatableRoots(linqOperatorMethodCall: MethodCallExpression, argumentIndex: int): ExpressionTreeFuncletizer_PathNode | undefined;
     CalculatePathsToEvaluatableRoots(expression: Expression): ExpressionTreeFuncletizer_PathNode | undefined;
     ExtractParameters(expression: Expression, parameters: Dictionary<System_Internal.String, unknown>, parameterize: boolean, clearParameterizedValues: boolean): Expression;
     ExtractParameters(expression: Expression, parameters: Dictionary<System_Internal.String, unknown>, parameterize: boolean, clearParameterizedValues: boolean, precompiledQuery: boolean): Expression;
     ResetPathCalculation(): void;
     Visit(expression: Expression): Expression | undefined;
+    VisitBinary(binary: BinaryExpression): Expression;
+    VisitBlock(node: BlockExpression): Expression;
+    VisitCatchBlock(node: CatchBlock): CatchBlock;
+    VisitConditional(conditional: ConditionalExpression): Expression;
+    VisitConstant(constant: ConstantExpression): Expression;
+    VisitDebugInfo(node: DebugInfoExpression): Expression;
+    VisitDefault(node: DefaultExpression): Expression;
+    VisitDynamic(node: DynamicExpression): Expression;
+    VisitElementInit(node: ElementInit): ElementInit;
+    VisitExtension(extension: Expression): Expression;
+    VisitGoto(node: GotoExpression): Expression;
+    VisitIndex(index: IndexExpression): Expression;
+    VisitInvocation(invocation: InvocationExpression): Expression;
+    VisitLabel(node: LabelExpression): Expression;
+    VisitLabelTarget(node: LabelTarget): LabelTarget;
+    VisitLambda<T>(lambda: Expression<T>): Expression;
+    VisitListInit(listInit: ListInitExpression): Expression;
+    VisitLoop(node: LoopExpression): Expression;
+    VisitMember(member: MemberExpression): Expression;
+    VisitMemberInit(memberInit: MemberInitExpression): Expression;
+    VisitMemberListBinding(node: MemberListBinding): MemberListBinding;
+    VisitMemberMemberBinding(node: MemberMemberBinding): MemberMemberBinding;
+    VisitMethodCall(methodCall: MethodCallExpression): Expression;
+    VisitNew(new_: NewExpression): Expression;
+    VisitNewArray(newArray: NewArrayExpression): Expression;
+    VisitParameter(parameterExpression: ParameterExpression): Expression;
+    VisitRuntimeVariables(node: RuntimeVariablesExpression): Expression;
+    VisitSwitch(node: SwitchExpression): Expression;
+    VisitSwitchCase(node: SwitchCase): SwitchCase;
+    VisitTry(node: TryExpression): Expression;
+    VisitTypeBinary(typeBinary: TypeBinaryExpression): Expression;
+    VisitUnary(unary: UnaryExpression): Expression;
 }
 
 
@@ -535,12 +503,12 @@ export type ExpressionTreeFuncletizer = ExpressionTreeFuncletizer$instance;
 
 export interface ExpressionTreeFuncletizer_PathNode$instance {
     get Children(): IReadOnlyList<ExpressionTreeFuncletizer_PathNode> | undefined;
-    set Children(value: IReadOnlyList<ExpressionTreeFuncletizer_PathNode>);
+    set Children(value: IReadOnlyList<ExpressionTreeFuncletizer_PathNode> | undefined);
     ExpressionType: Type;
     get ParameterName(): string | undefined;
-    set ParameterName(value: string);
+    set ParameterName(value: string | undefined);
     get PathFromParent(): Func<Expression, Expression> | undefined;
-    set PathFromParent(value: Func<Expression, Expression>);
+    set PathFromParent(value: Func<Expression, Expression> | undefined);
     _Clone_$(): ExpressionTreeFuncletizer_PathNode;
     Equals(obj: unknown): boolean;
     Equals(other: ExpressionTreeFuncletizer_PathNode): boolean;
@@ -578,19 +546,15 @@ export interface __FromSqlQueryingEnumerable_1$views<T> {
 export type FromSqlQueryingEnumerable_1<T> = FromSqlQueryingEnumerable_1$instance<T> & __FromSqlQueryingEnumerable_1$views<T>;
 
 
-export abstract class FromSqlQueryRootExpression$protected {
-    protected Print(expressionPrinter: ExpressionPrinter): void;
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface FromSqlQueryRootExpression$instance extends FromSqlQueryRootExpression$protected, EntityQueryRootExpression {
+export interface FromSqlQueryRootExpression$instance extends EntityQueryRootExpression {
     readonly Argument: Expression;
     readonly Sql: string;
     DetachQueryProvider(): Expression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
     UpdateEntityType(entityType: IEntityType): EntityQueryRootExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -668,12 +632,8 @@ export interface __GroupBySplitQueryingEnumerable_2$views<TKey, TElement> {
 export type GroupBySplitQueryingEnumerable_2<TKey, TElement> = GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> & __GroupBySplitQueryingEnumerable_2$views<TKey, TElement>;
 
 
-export abstract class InvocationExpressionRemovingExpressionVisitor$protected {
-    protected VisitInvocation(invocationExpression: InvocationExpression): Expression;
-}
-
-
-export interface InvocationExpressionRemovingExpressionVisitor$instance extends InvocationExpressionRemovingExpressionVisitor$protected, ExpressionVisitor {
+export interface InvocationExpressionRemovingExpressionVisitor$instance extends ExpressionVisitor {
+    VisitInvocation(invocationExpression: InvocationExpression): Expression;
 }
 
 
@@ -703,16 +663,12 @@ export interface LikeTranslator$instance extends Microsoft_EntityFrameworkCore_Q
 export type LikeTranslator = LikeTranslator$instance & __LikeTranslator$views;
 
 
-export abstract class NavigationExpandingExpressionVisitor$protected {
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected VisitMember(memberExpression: MemberExpression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    protected VisitUnary(unaryExpression: UnaryExpression): Expression;
-}
-
-
-export interface NavigationExpandingExpressionVisitor$instance extends NavigationExpandingExpressionVisitor$protected, ExpressionVisitor {
+export interface NavigationExpandingExpressionVisitor$instance extends ExpressionVisitor {
     Expand(query: Expression): Expression;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitMember(memberExpression: MemberExpression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitUnary(unaryExpression: UnaryExpression): Expression;
 }
 
 
@@ -729,7 +685,6 @@ export interface NullAsyncQueryProvider$instance {
 
 
 export const NullAsyncQueryProvider: {
-    new(): NullAsyncQueryProvider;
     readonly Instance: IAsyncQueryProvider;
 };
 
@@ -743,13 +698,9 @@ export interface NullAsyncQueryProvider$instance extends Microsoft_EntityFramewo
 export type NullAsyncQueryProvider = NullAsyncQueryProvider$instance & __NullAsyncQueryProvider$views;
 
 
-export abstract class NullCheckRemovingExpressionVisitor$protected {
-    protected VisitBinary(binaryExpression: BinaryExpression): Expression;
-    protected VisitConditional(conditionalExpression: ConditionalExpression): Expression;
-}
-
-
-export interface NullCheckRemovingExpressionVisitor$instance extends NullCheckRemovingExpressionVisitor$protected, ExpressionVisitor {
+export interface NullCheckRemovingExpressionVisitor$instance extends ExpressionVisitor {
+    VisitBinary(binaryExpression: BinaryExpression): Expression;
+    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
 }
 
 
@@ -825,14 +776,10 @@ export interface QueryableAggregateMethodTranslator$instance extends Microsoft_E
 export type QueryableAggregateMethodTranslator = QueryableAggregateMethodTranslator$instance & __QueryableAggregateMethodTranslator$views;
 
 
-export abstract class QueryableMethodNormalizingExpressionVisitor$protected {
-    protected VisitBinary(binaryExpression: BinaryExpression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface QueryableMethodNormalizingExpressionVisitor$instance extends QueryableMethodNormalizingExpressionVisitor$protected, ExpressionVisitor {
+export interface QueryableMethodNormalizingExpressionVisitor$instance extends ExpressionVisitor {
     Normalize(expression: Expression): Expression;
+    VisitBinary(binaryExpression: BinaryExpression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
@@ -843,12 +790,8 @@ export const QueryableMethodNormalizingExpressionVisitor: {
 
 export type QueryableMethodNormalizingExpressionVisitor = QueryableMethodNormalizingExpressionVisitor$instance;
 
-export abstract class QueryCompilationContextFactory$protected {
-    protected readonly Dependencies: QueryCompilationContextDependencies;
-}
-
-
-export interface QueryCompilationContextFactory$instance extends QueryCompilationContextFactory$protected {
+export interface QueryCompilationContextFactory$instance {
+    readonly Dependencies: QueryCompilationContextDependencies;
     Create(async: boolean): QueryCompilationContext;
     CreatePrecompiled(async: boolean): QueryCompilationContext;
 }
@@ -930,21 +873,17 @@ export const QueryFiltersCacheKey: {
 
 export type QueryFiltersCacheKey = QueryFiltersCacheKey$instance;
 
-export abstract class QueryOptimizingExpressionVisitor$protected {
-    protected VisitBinary(binaryExpression: BinaryExpression): Expression;
-    protected VisitConditional(conditionalExpression: ConditionalExpression): Expression;
-    protected VisitElementInit(elementInit: ElementInit): ElementInit;
-    protected VisitLambda<T>(lambdaExpression: Expression<T>): Expression;
-    protected VisitMember(memberExpression: MemberExpression): Expression;
-    protected VisitMemberAssignment(memberAssignment: MemberAssignment): MemberAssignment;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    protected VisitNew(newExpression: NewExpression): Expression;
-    protected VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
-    protected VisitUnary(unaryExpression: UnaryExpression): Expression;
-}
-
-
-export interface QueryOptimizingExpressionVisitor$instance extends QueryOptimizingExpressionVisitor$protected, ExpressionVisitor {
+export interface QueryOptimizingExpressionVisitor$instance extends ExpressionVisitor {
+    VisitBinary(binaryExpression: BinaryExpression): Expression;
+    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
+    VisitElementInit(elementInit: ElementInit): ElementInit;
+    VisitLambda<T>(lambdaExpression: Expression<T>): Expression;
+    VisitMember(memberExpression: MemberExpression): Expression;
+    VisitMemberAssignment(memberAssignment: MemberAssignment): MemberAssignment;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitNew(newExpression: NewExpression): Expression;
+    VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
+    VisitUnary(unaryExpression: UnaryExpression): Expression;
 }
 
 
@@ -955,12 +894,8 @@ export const QueryOptimizingExpressionVisitor: {
 
 export type QueryOptimizingExpressionVisitor = QueryOptimizingExpressionVisitor$instance;
 
-export abstract class QuerySqlGeneratorFactory$protected {
-    protected readonly Dependencies: QuerySqlGeneratorDependencies;
-}
-
-
-export interface QuerySqlGeneratorFactory$instance extends QuerySqlGeneratorFactory$protected {
+export interface QuerySqlGeneratorFactory$instance {
+    readonly Dependencies: QuerySqlGeneratorDependencies;
     Create(): QuerySqlGenerator;
 }
 
@@ -979,12 +914,8 @@ export interface QuerySqlGeneratorFactory$instance extends Microsoft_EntityFrame
 export type QuerySqlGeneratorFactory = QuerySqlGeneratorFactory$instance & __QuerySqlGeneratorFactory$views;
 
 
-export abstract class QueryTranslationPostprocessorFactory$protected {
-    protected readonly Dependencies: QueryTranslationPostprocessorDependencies;
-}
-
-
-export interface QueryTranslationPostprocessorFactory$instance extends QueryTranslationPostprocessorFactory$protected {
+export interface QueryTranslationPostprocessorFactory$instance {
+    readonly Dependencies: QueryTranslationPostprocessorDependencies;
     Create(queryCompilationContext: QueryCompilationContext): QueryTranslationPostprocessor;
 }
 
@@ -1003,12 +934,8 @@ export interface QueryTranslationPostprocessorFactory$instance extends Microsoft
 export type QueryTranslationPostprocessorFactory = QueryTranslationPostprocessorFactory$instance & __QueryTranslationPostprocessorFactory$views;
 
 
-export abstract class QueryTranslationPreprocessorFactory$protected {
-    protected readonly Dependencies: QueryTranslationPreprocessorDependencies;
-}
-
-
-export interface QueryTranslationPreprocessorFactory$instance extends QueryTranslationPreprocessorFactory$protected {
+export interface QueryTranslationPreprocessorFactory$instance {
+    readonly Dependencies: QueryTranslationPreprocessorDependencies;
     Create(queryCompilationContext: QueryCompilationContext): QueryTranslationPreprocessor;
 }
 
@@ -1065,12 +992,8 @@ export interface RelationalCommandCache$instance extends Microsoft_EntityFramewo
 export type RelationalCommandCache = RelationalCommandCache$instance & __RelationalCommandCache$views;
 
 
-export abstract class RelationalParameterBasedSqlProcessorFactory$protected {
-    protected readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
-}
-
-
-export interface RelationalParameterBasedSqlProcessorFactory$instance extends RelationalParameterBasedSqlProcessorFactory$protected {
+export interface RelationalParameterBasedSqlProcessorFactory$instance {
+    readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
     Create(parameters: RelationalParameterBasedSqlProcessorParameters): RelationalParameterBasedSqlProcessor;
 }
 
@@ -1089,14 +1012,10 @@ export interface RelationalParameterBasedSqlProcessorFactory$instance extends Mi
 export type RelationalParameterBasedSqlProcessorFactory = RelationalParameterBasedSqlProcessorFactory$instance & __RelationalParameterBasedSqlProcessorFactory$views;
 
 
-export abstract class RelationalParameterProcessor$protected {
-    protected readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
-    protected VisitExtension(expression: Expression): Expression;
-}
-
-
-export interface RelationalParameterProcessor$instance extends RelationalParameterProcessor$protected, ExpressionVisitor {
+export interface RelationalParameterProcessor$instance extends ExpressionVisitor {
+    readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
     Expand(queryExpression: Expression, parametersDecorator: ParametersCacheDecorator): Expression;
+    VisitExtension(expression: Expression): Expression;
 }
 
 
@@ -1107,24 +1026,20 @@ export const RelationalParameterProcessor: {
 
 export type RelationalParameterProcessor = RelationalParameterProcessor$instance;
 
-export abstract class RelationalProjectionBindingExpressionVisitor$protected {
-    protected VisitBinary(binaryExpression: BinaryExpression): Expression;
-    protected VisitConditional(conditionalExpression: ConditionalExpression): Expression;
-    protected VisitElementInit(elementInit: ElementInit): ElementInit;
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected VisitMember(memberExpression: MemberExpression): Expression;
-    protected VisitMemberAssignment(memberAssignment: MemberAssignment): MemberAssignment;
-    protected VisitMemberInit(memberInitExpression: MemberInitExpression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    protected VisitNew(newExpression: NewExpression): Expression;
-    protected VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
-    protected VisitUnary(unaryExpression: UnaryExpression): Expression;
-}
-
-
-export interface RelationalProjectionBindingExpressionVisitor$instance extends RelationalProjectionBindingExpressionVisitor$protected, ExpressionVisitor {
+export interface RelationalProjectionBindingExpressionVisitor$instance extends ExpressionVisitor {
     Translate(selectExpression: SelectExpression, expression: Expression): Expression;
     Visit(expression: Expression): Expression | undefined;
+    VisitBinary(binaryExpression: BinaryExpression): Expression;
+    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
+    VisitElementInit(elementInit: ElementInit): ElementInit;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitMember(memberExpression: MemberExpression): Expression;
+    VisitMemberAssignment(memberAssignment: MemberAssignment): MemberAssignment;
+    VisitMemberInit(memberInitExpression: MemberInitExpression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitNew(newExpression: NewExpression): Expression;
+    VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
+    VisitUnary(unaryExpression: UnaryExpression): Expression;
 }
 
 
@@ -1136,13 +1051,9 @@ export const RelationalProjectionBindingExpressionVisitor: {
 
 export type RelationalProjectionBindingExpressionVisitor = RelationalProjectionBindingExpressionVisitor$instance;
 
-export abstract class RelationalQueryableMethodTranslatingExpressionVisitorFactory$protected {
-    protected readonly Dependencies: QueryableMethodTranslatingExpressionVisitorDependencies;
-    protected readonly RelationalDependencies: RelationalQueryableMethodTranslatingExpressionVisitorDependencies;
-}
-
-
-export interface RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance extends RelationalQueryableMethodTranslatingExpressionVisitorFactory$protected {
+export interface RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance {
+    readonly Dependencies: QueryableMethodTranslatingExpressionVisitorDependencies;
+    readonly RelationalDependencies: RelationalQueryableMethodTranslatingExpressionVisitorDependencies;
     Create(queryCompilationContext: QueryCompilationContext): QueryableMethodTranslatingExpressionVisitor;
 }
 
@@ -1161,13 +1072,9 @@ export interface RelationalQueryableMethodTranslatingExpressionVisitorFactory$in
 export type RelationalQueryableMethodTranslatingExpressionVisitorFactory = RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance & __RelationalQueryableMethodTranslatingExpressionVisitorFactory$views;
 
 
-export abstract class RelationalQueryCompilationContextFactory$protected {
-    protected readonly Dependencies: QueryCompilationContextDependencies;
-    protected readonly RelationalDependencies: RelationalQueryCompilationContextDependencies;
-}
-
-
-export interface RelationalQueryCompilationContextFactory$instance extends RelationalQueryCompilationContextFactory$protected {
+export interface RelationalQueryCompilationContextFactory$instance {
+    readonly Dependencies: QueryCompilationContextDependencies;
+    readonly RelationalDependencies: RelationalQueryCompilationContextDependencies;
     Create(async: boolean): QueryCompilationContext;
     CreatePrecompiled(async: boolean): QueryCompilationContext;
 }
@@ -1187,13 +1094,9 @@ export interface RelationalQueryCompilationContextFactory$instance extends Micro
 export type RelationalQueryCompilationContextFactory = RelationalQueryCompilationContextFactory$instance & __RelationalQueryCompilationContextFactory$views;
 
 
-export abstract class RelationalQueryContextFactory$protected {
-    protected readonly Dependencies: QueryContextDependencies;
-    protected readonly RelationalDependencies: RelationalQueryContextDependencies;
-}
-
-
-export interface RelationalQueryContextFactory$instance extends RelationalQueryContextFactory$protected {
+export interface RelationalQueryContextFactory$instance {
+    readonly Dependencies: QueryContextDependencies;
+    readonly RelationalDependencies: RelationalQueryContextDependencies;
     Create(): QueryContext;
 }
 
@@ -1212,12 +1115,8 @@ export interface RelationalQueryContextFactory$instance extends Microsoft_Entity
 export type RelationalQueryContextFactory = RelationalQueryContextFactory$instance & __RelationalQueryContextFactory$views;
 
 
-export abstract class RelationalQueryMetadataExtractingExpressionVisitor$protected {
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface RelationalQueryMetadataExtractingExpressionVisitor$instance extends RelationalQueryMetadataExtractingExpressionVisitor$protected, ExpressionVisitor {
+export interface RelationalQueryMetadataExtractingExpressionVisitor$instance extends ExpressionVisitor {
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
@@ -1247,13 +1146,9 @@ export interface RelationalQueryStringFactory$instance extends Microsoft_EntityF
 export type RelationalQueryStringFactory = RelationalQueryStringFactory$instance & __RelationalQueryStringFactory$views;
 
 
-export abstract class RelationalQueryTranslationPostprocessorFactory$protected {
-    protected readonly Dependencies: QueryTranslationPostprocessorDependencies;
-    protected readonly RelationalDependencies: RelationalQueryTranslationPostprocessorDependencies;
-}
-
-
-export interface RelationalQueryTranslationPostprocessorFactory$instance extends RelationalQueryTranslationPostprocessorFactory$protected {
+export interface RelationalQueryTranslationPostprocessorFactory$instance {
+    readonly Dependencies: QueryTranslationPostprocessorDependencies;
+    readonly RelationalDependencies: RelationalQueryTranslationPostprocessorDependencies;
     Create(queryCompilationContext: QueryCompilationContext): QueryTranslationPostprocessor;
 }
 
@@ -1272,13 +1167,9 @@ export interface RelationalQueryTranslationPostprocessorFactory$instance extends
 export type RelationalQueryTranslationPostprocessorFactory = RelationalQueryTranslationPostprocessorFactory$instance & __RelationalQueryTranslationPostprocessorFactory$views;
 
 
-export abstract class RelationalQueryTranslationPreprocessorFactory$protected {
-    protected readonly Dependencies: QueryTranslationPreprocessorDependencies;
-    protected readonly RelationalDependencies: RelationalQueryTranslationPreprocessorDependencies;
-}
-
-
-export interface RelationalQueryTranslationPreprocessorFactory$instance extends RelationalQueryTranslationPreprocessorFactory$protected {
+export interface RelationalQueryTranslationPreprocessorFactory$instance {
+    readonly Dependencies: QueryTranslationPreprocessorDependencies;
+    readonly RelationalDependencies: RelationalQueryTranslationPreprocessorDependencies;
     Create(queryCompilationContext: QueryCompilationContext): QueryTranslationPreprocessor;
 }
 
@@ -1297,13 +1188,9 @@ export interface RelationalQueryTranslationPreprocessorFactory$instance extends 
 export type RelationalQueryTranslationPreprocessorFactory = RelationalQueryTranslationPreprocessorFactory$instance & __RelationalQueryTranslationPreprocessorFactory$views;
 
 
-export abstract class RelationalShapedQueryCompilingExpressionVisitorFactory$protected {
-    protected readonly Dependencies: ShapedQueryCompilingExpressionVisitorDependencies;
-    protected readonly RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies;
-}
-
-
-export interface RelationalShapedQueryCompilingExpressionVisitorFactory$instance extends RelationalShapedQueryCompilingExpressionVisitorFactory$protected {
+export interface RelationalShapedQueryCompilingExpressionVisitorFactory$instance {
+    readonly Dependencies: ShapedQueryCompilingExpressionVisitorDependencies;
+    readonly RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies;
     Create(queryCompilationContext: QueryCompilationContext): ShapedQueryCompilingExpressionVisitor;
 }
 
@@ -1322,15 +1209,11 @@ export interface RelationalShapedQueryCompilingExpressionVisitorFactory$instance
 export type RelationalShapedQueryCompilingExpressionVisitorFactory = RelationalShapedQueryCompilingExpressionVisitorFactory$instance & __RelationalShapedQueryCompilingExpressionVisitorFactory$views;
 
 
-export abstract class RelationalStructuralTypeMaterializerSource$protected {
-    protected ReadComplexTypeDirectly(complexType: IComplexType): boolean;
-}
-
-
-export interface RelationalStructuralTypeMaterializerSource$instance extends RelationalStructuralTypeMaterializerSource$protected, StructuralTypeMaterializerSource$instance {
+export interface RelationalStructuralTypeMaterializerSource$instance extends StructuralTypeMaterializerSource$instance {
     CreateMaterializeExpression(parameters: StructuralTypeMaterializerSourceParameters, materializationContextExpression: Expression): Expression;
     GetMaterializer(entityType: IEntityType): Func<MaterializationContext, unknown>;
     GetMaterializer(complexType: IComplexType): Func<MaterializationContext, unknown>;
+    ReadComplexTypeDirectly(complexType: IComplexType): boolean;
 }
 
 
@@ -1346,12 +1229,8 @@ export interface __RelationalStructuralTypeMaterializerSource$views {
 export type RelationalStructuralTypeMaterializerSource = RelationalStructuralTypeMaterializerSource$instance & __RelationalStructuralTypeMaterializerSource$views;
 
 
-export abstract class RelationalValueConverterCompensatingExpressionVisitor$protected {
-    protected VisitExtension(extensionExpression: Expression): Expression;
-}
-
-
-export interface RelationalValueConverterCompensatingExpressionVisitor$instance extends RelationalValueConverterCompensatingExpressionVisitor$protected, ExpressionVisitor {
+export interface RelationalValueConverterCompensatingExpressionVisitor$instance extends ExpressionVisitor {
+    VisitExtension(extensionExpression: Expression): Expression;
 }
 
 
@@ -1363,7 +1242,8 @@ export const RelationalValueConverterCompensatingExpressionVisitor: {
 export type RelationalValueConverterCompensatingExpressionVisitor = RelationalValueConverterCompensatingExpressionVisitor$instance;
 
 export interface ResultContext$instance {
-    Values: unknown[];
+    get Values(): unknown[] | undefined;
+    set Values(value: unknown[] | undefined);
 }
 
 
@@ -1374,12 +1254,8 @@ export const ResultContext: {
 
 export type ResultContext = ResultContext$instance;
 
-export abstract class SelectExpressionProjectionApplyingExpressionVisitor$protected {
-    protected VisitExtension(extensionExpression: Expression): Expression;
-}
-
-
-export interface SelectExpressionProjectionApplyingExpressionVisitor$instance extends SelectExpressionProjectionApplyingExpressionVisitor$protected, ExpressionVisitor {
+export interface SelectExpressionProjectionApplyingExpressionVisitor$instance extends ExpressionVisitor {
+    VisitExtension(extensionExpression: Expression): Expression;
 }
 
 
@@ -1397,7 +1273,7 @@ export interface SingleQueryCollectionContext$instance {
     readonly ParentIdentifier: unknown[];
     readonly ResultContext: ResultContext;
     get SelfIdentifier(): unknown[] | undefined;
-    set SelfIdentifier(value: unknown[]);
+    set SelfIdentifier(value: unknown[] | undefined);
     UpdateSelfIdentifier(selfIdentifier: unknown[]): void;
 }
 
@@ -1512,12 +1388,8 @@ export const SplitQueryResultCoordinator: {
 
 export type SplitQueryResultCoordinator = SplitQueryResultCoordinator$instance;
 
-export abstract class SqlExpressionSimplifyingExpressionVisitor$protected {
-    protected VisitExtension(extensionExpression: Expression): Expression;
-}
-
-
-export interface SqlExpressionSimplifyingExpressionVisitor$instance extends SqlExpressionSimplifyingExpressionVisitor$protected, ExpressionVisitor {
+export interface SqlExpressionSimplifyingExpressionVisitor$instance extends ExpressionVisitor {
+    VisitExtension(extensionExpression: Expression): Expression;
 }
 
 
@@ -1528,18 +1400,14 @@ export const SqlExpressionSimplifyingExpressionVisitor: {
 
 export type SqlExpressionSimplifyingExpressionVisitor = SqlExpressionSimplifyingExpressionVisitor$instance;
 
-export abstract class SqlQueryRootExpression$protected {
-    protected Print(expressionPrinter: ExpressionPrinter): void;
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface SqlQueryRootExpression$instance extends SqlQueryRootExpression$protected, QueryRootExpression {
+export interface SqlQueryRootExpression$instance extends QueryRootExpression {
     readonly Argument: Expression;
     readonly Sql: string;
     DetachQueryProvider(): Expression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -1575,20 +1443,16 @@ export interface StringMethodTranslator$instance extends Microsoft_EntityFramewo
 export type StringMethodTranslator = StringMethodTranslator$instance & __StringMethodTranslator$views;
 
 
-export abstract class StructuralTypeMaterializerSource$protected {
-    protected readonly Dependencies: StructuralTypeMaterializerSourceDependencies;
-    protected AddInitializeExpression(property: IPropertyBase, bindingInfo: ParameterBindingInfo, instanceVariable: Expression, getValueBufferExpression: MethodCallExpression, blockExpressions: List<Expression>, nullable: boolean): void;
-    protected ReadComplexTypeDirectly(complexType: IComplexType): boolean;
-}
-
-
-export interface StructuralTypeMaterializerSource$instance extends StructuralTypeMaterializerSource$protected {
+export interface StructuralTypeMaterializerSource$instance {
+    readonly Dependencies: StructuralTypeMaterializerSourceDependencies;
+    AddInitializeExpression(property: IPropertyBase, bindingInfo: ParameterBindingInfo, instanceVariable: Expression, getValueBufferExpression: MethodCallExpression, blockExpressions: List<Expression>, nullable: boolean): void;
     CreateMaterializeExpression(parameters: StructuralTypeMaterializerSourceParameters, materializationContextExpression: Expression): Expression;
     GetEmptyMaterializer(entityType: IEntityType): Func<MaterializationContext, unknown>;
     GetEmptyMaterializer(complexType: IComplexType): Func<MaterializationContext, unknown>;
     GetEmptyMaterializer(entityType: ITypeBase, binding: InstantiationBinding, serviceProperties: List<IServiceProperty>): Func<MaterializationContext, unknown>;
     GetMaterializer(entityType: IEntityType): Func<MaterializationContext, unknown>;
     GetMaterializer(complexType: IComplexType): Func<MaterializationContext, unknown>;
+    ReadComplexTypeDirectly(complexType: IComplexType): boolean;
 }
 
 
@@ -1623,13 +1487,9 @@ export const StructuralTypeMaterializerSourceDependencies: {
 
 export type StructuralTypeMaterializerSourceDependencies = StructuralTypeMaterializerSourceDependencies$instance;
 
-export abstract class SubqueryMemberPushdownExpressionVisitor$protected {
-    protected VisitMember(memberExpression: MemberExpression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface SubqueryMemberPushdownExpressionVisitor$instance extends SubqueryMemberPushdownExpressionVisitor$protected, ExpressionVisitor {
+export interface SubqueryMemberPushdownExpressionVisitor$instance extends ExpressionVisitor {
+    VisitMember(memberExpression: MemberExpression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
@@ -1640,18 +1500,14 @@ export const SubqueryMemberPushdownExpressionVisitor: {
 
 export type SubqueryMemberPushdownExpressionVisitor = SubqueryMemberPushdownExpressionVisitor$instance;
 
-export abstract class TableValuedFunctionQueryRootExpression$protected {
-    protected Print(expressionPrinter: ExpressionPrinter): void;
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface TableValuedFunctionQueryRootExpression$instance extends TableValuedFunctionQueryRootExpression$protected, EntityQueryRootExpression {
+export interface TableValuedFunctionQueryRootExpression$instance extends EntityQueryRootExpression {
     readonly Arguments: IReadOnlyCollection<Expression>;
     readonly Function: IStoreFunction;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
     UpdateEntityType(entityType: IEntityType): EntityQueryRootExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -1667,16 +1523,8 @@ export interface __TableValuedFunctionQueryRootExpression$views {
 export type TableValuedFunctionQueryRootExpression = TableValuedFunctionQueryRootExpression$instance & __TableValuedFunctionQueryRootExpression$views;
 
 
-export abstract class TpcTablesExpression$protected {
-    protected Print(expressionPrinter: ExpressionPrinter): void;
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-    protected WithAnnotations2(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TpcTablesExpression;
-    protected abstract WithAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, IAnnotation>): TableExpressionBase;
-}
-
-
-export interface TpcTablesExpression$instance extends TpcTablesExpression$protected, TableExpressionBase {
-    readonly Alias: string;
+export interface TpcTablesExpression$instance extends TableExpressionBase {
+    readonly Alias: string | string | undefined;
     readonly DiscriminatorColumn: ColumnExpression;
     DiscriminatorValues: List<System_Internal.String>;
     readonly EntityType: IEntityType;
@@ -1684,8 +1532,10 @@ export interface TpcTablesExpression$instance extends TpcTablesExpression$protec
     Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
     Prune(discriminatorValues: IReadOnlyList<System_Internal.String>): TpcTablesExpression;
     Quote(): Expression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 

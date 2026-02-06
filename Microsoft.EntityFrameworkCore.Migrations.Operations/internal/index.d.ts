@@ -23,31 +23,27 @@ export interface IAlterMigrationOperation$instance {
 export type IAlterMigrationOperation = IAlterMigrationOperation$instance;
 
 export interface ITableMigrationOperation$instance {
-    readonly Schema: string;
+    readonly Schema: string | undefined;
     readonly Table: string;
 }
 
 
 export type ITableMigrationOperation = ITableMigrationOperation$instance;
 
-export abstract class AddCheckConstraintOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface AddCheckConstraintOperation$instance extends AddCheckConstraintOperation$protected, MigrationOperation$instance {
+export interface AddCheckConstraintOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Sql: string;
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -60,6 +56,7 @@ export interface AddCheckConstraintOperation$instance extends AddCheckConstraint
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -79,20 +76,15 @@ export interface __AddCheckConstraintOperation$views {
 export type AddCheckConstraintOperation = AddCheckConstraintOperation$instance & __AddCheckConstraintOperation$views;
 
 
-export abstract class AddColumnOperation$protected {
-    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface AddColumnOperation$instance extends AddColumnOperation$protected, ColumnOperation$instance {
+export interface AddColumnOperation$instance extends ColumnOperation$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -105,6 +97,7 @@ export interface AddColumnOperation$instance extends AddColumnOperation$protecte
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -123,30 +116,27 @@ export interface __AddColumnOperation$views {
 export type AddColumnOperation = AddColumnOperation$instance & __AddColumnOperation$views;
 
 
-export abstract class AddForeignKeyOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface AddForeignKeyOperation$instance extends AddForeignKeyOperation$protected, MigrationOperation$instance {
+export interface AddForeignKeyOperation$instance extends MigrationOperation$instance {
     Columns: string[];
     Name: string;
     OnDelete: ReferentialAction;
     OnUpdate: ReferentialAction;
-    PrincipalColumns: string[];
+    get PrincipalColumns(): string[] | undefined;
+    set PrincipalColumns(value: string[] | undefined);
     get PrincipalSchema(): string | undefined;
-    set PrincipalSchema(value: string);
+    set PrincipalSchema(value: string | undefined);
     PrincipalTable: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -159,6 +149,7 @@ export interface AddForeignKeyOperation$instance extends AddForeignKeyOperation$
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -178,24 +169,20 @@ export interface __AddForeignKeyOperation$views {
 export type AddForeignKeyOperation = AddForeignKeyOperation$instance & __AddForeignKeyOperation$views;
 
 
-export abstract class AddPrimaryKeyOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface AddPrimaryKeyOperation$instance extends AddPrimaryKeyOperation$protected, MigrationOperation$instance {
+export interface AddPrimaryKeyOperation$instance extends MigrationOperation$instance {
     Columns: string[];
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -208,6 +195,7 @@ export interface AddPrimaryKeyOperation$instance extends AddPrimaryKeyOperation$
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -227,24 +215,20 @@ export interface __AddPrimaryKeyOperation$views {
 export type AddPrimaryKeyOperation = AddPrimaryKeyOperation$instance & __AddPrimaryKeyOperation$views;
 
 
-export abstract class AddUniqueConstraintOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface AddUniqueConstraintOperation$instance extends AddUniqueConstraintOperation$protected, MigrationOperation$instance {
+export interface AddUniqueConstraintOperation$instance extends MigrationOperation$instance {
     Columns: string[];
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -257,6 +241,7 @@ export interface AddUniqueConstraintOperation$instance extends AddUniqueConstrai
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -276,21 +261,16 @@ export interface __AddUniqueConstraintOperation$views {
 export type AddUniqueConstraintOperation = AddUniqueConstraintOperation$instance & __AddUniqueConstraintOperation$views;
 
 
-export abstract class AlterColumnOperation$protected {
-    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface AlterColumnOperation$instance extends AlterColumnOperation$protected, ColumnOperation$instance {
+export interface AlterColumnOperation$instance extends ColumnOperation$instance {
     OldColumn: ColumnOperation;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -303,6 +283,7 @@ export interface AlterColumnOperation$instance extends AlterColumnOperation$prot
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -324,21 +305,16 @@ export interface AlterColumnOperation$instance extends IAlterMigrationOperation$
 export type AlterColumnOperation = AlterColumnOperation$instance & __AlterColumnOperation$views;
 
 
-export abstract class AlterDatabaseOperation$protected {
-    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface AlterDatabaseOperation$instance extends AlterDatabaseOperation$protected, DatabaseOperation$instance {
+export interface AlterDatabaseOperation$instance extends DatabaseOperation$instance {
     readonly OldDatabase: DatabaseOperation;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -351,6 +327,7 @@ export interface AlterDatabaseOperation$instance extends AlterDatabaseOperation$
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -371,23 +348,19 @@ export interface AlterDatabaseOperation$instance extends IAlterMigrationOperatio
 export type AlterDatabaseOperation = AlterDatabaseOperation$instance & __AlterDatabaseOperation$views;
 
 
-export abstract class AlterSequenceOperation$protected {
-    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface AlterSequenceOperation$instance extends AlterSequenceOperation$protected, SequenceOperation$instance {
+export interface AlterSequenceOperation$instance extends SequenceOperation$instance {
     Name: string;
     OldSequence: SequenceOperation;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -400,6 +373,7 @@ export interface AlterSequenceOperation$instance extends AlterSequenceOperation$
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -420,21 +394,16 @@ export interface AlterSequenceOperation$instance extends IAlterMigrationOperatio
 export type AlterSequenceOperation = AlterSequenceOperation$instance & __AlterSequenceOperation$views;
 
 
-export abstract class AlterTableOperation$protected {
-    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface AlterTableOperation$instance extends AlterTableOperation$protected, TableOperation$instance {
+export interface AlterTableOperation$instance extends TableOperation$instance {
     OldTable: TableOperation;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -447,6 +416,7 @@ export interface AlterTableOperation$instance extends AlterTableOperation$protec
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -468,27 +438,20 @@ export interface AlterTableOperation$instance extends IAlterMigrationOperation$i
 export type AlterTableOperation = AlterTableOperation$instance & __AlterTableOperation$views;
 
 
-export abstract class ColumnOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface ColumnOperation$instance extends ColumnOperation$protected, MigrationOperation$instance {
+export interface ColumnOperation$instance extends MigrationOperation$instance {
     ClrType: Type;
     get Collation(): string | undefined;
-    set Collation(value: string);
+    set Collation(value: string | undefined);
     get ColumnType(): string | undefined;
-    set ColumnType(value: string);
+    set ColumnType(value: string | undefined);
     get Comment(): string | undefined;
-    set Comment(value: string);
+    set Comment(value: string | undefined);
     get ComputedColumnSql(): string | undefined;
-    set ComputedColumnSql(value: string);
+    set ComputedColumnSql(value: string | undefined);
     get DefaultValue(): unknown | undefined;
-    set DefaultValue(value: unknown);
+    set DefaultValue(value: unknown | undefined);
     get DefaultValueSql(): string | undefined;
-    set DefaultValueSql(value: string);
+    set DefaultValueSql(value: string | undefined);
     IsFixedLength: Nullable<System_Internal.Boolean>;
     IsNullable: boolean;
     IsRowVersion: boolean;
@@ -498,14 +461,17 @@ export interface ColumnOperation$instance extends ColumnOperation$protected, Mig
     Name: string;
     Precision: Nullable<System_Internal.Int32>;
     Scale: Nullable<System_Internal.Int32>;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -518,11 +484,11 @@ export interface ColumnOperation$instance extends ColumnOperation$protected, Mig
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
-export const ColumnOperation: {
-    new(): ColumnOperation;
+export const ColumnOperation: (abstract new() => ColumnOperation) & {
 };
 
 
@@ -536,28 +502,25 @@ export interface __ColumnOperation$views {
 export type ColumnOperation = ColumnOperation$instance & __ColumnOperation$views;
 
 
-export abstract class CreateIndexOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface CreateIndexOperation$instance extends CreateIndexOperation$protected, MigrationOperation$instance {
+export interface CreateIndexOperation$instance extends MigrationOperation$instance {
     Columns: string[];
     get Filter(): string | undefined;
-    set Filter(value: string);
-    IsDescending: boolean[];
+    set Filter(value: string | undefined);
+    get IsDescending(): boolean[] | undefined;
+    set IsDescending(value: boolean[] | undefined);
     IsUnique: boolean;
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -570,6 +533,7 @@ export interface CreateIndexOperation$instance extends CreateIndexOperation$prot
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -589,24 +553,20 @@ export interface __CreateIndexOperation$views {
 export type CreateIndexOperation = CreateIndexOperation$instance & __CreateIndexOperation$views;
 
 
-export abstract class CreateSequenceOperation$protected {
-    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface CreateSequenceOperation$instance extends CreateSequenceOperation$protected, SequenceOperation$instance {
+export interface CreateSequenceOperation$instance extends SequenceOperation$instance {
     ClrType: Type;
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     StartValue: long;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -619,6 +579,7 @@ export interface CreateSequenceOperation$instance extends CreateSequenceOperatio
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -636,26 +597,21 @@ export interface __CreateSequenceOperation$views {
 export type CreateSequenceOperation = CreateSequenceOperation$instance & __CreateSequenceOperation$views;
 
 
-export abstract class CreateTableOperation$protected {
-    protected AddAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation9(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation5(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface CreateTableOperation$instance extends CreateTableOperation$protected, TableOperation$instance {
+export interface CreateTableOperation$instance extends TableOperation$instance {
     readonly CheckConstraints: List<AddCheckConstraintOperation>;
     readonly Columns: List<AddColumnOperation>;
     readonly ForeignKeys: List<AddForeignKeyOperation>;
     get PrimaryKey(): AddPrimaryKeyOperation | undefined;
-    set PrimaryKey(value: AddPrimaryKeyOperation);
+    set PrimaryKey(value: AddPrimaryKeyOperation | undefined);
     readonly UniqueConstraints: List<AddUniqueConstraintOperation>;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -668,6 +624,7 @@ export interface CreateTableOperation$instance extends CreateTableOperation$prot
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -686,22 +643,17 @@ export interface __CreateTableOperation$views {
 export type CreateTableOperation = CreateTableOperation$instance & __CreateTableOperation$views;
 
 
-export abstract class DatabaseOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DatabaseOperation$instance extends DatabaseOperation$protected, MigrationOperation$instance {
+export interface DatabaseOperation$instance extends MigrationOperation$instance {
     get Collation(): string | undefined;
-    set Collation(value: string);
+    set Collation(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -714,11 +666,11 @@ export interface DatabaseOperation$instance extends DatabaseOperation$protected,
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
-export const DatabaseOperation: {
-    new(): DatabaseOperation;
+export const DatabaseOperation: (abstract new() => DatabaseOperation) & {
 };
 
 
@@ -731,26 +683,22 @@ export interface __DatabaseOperation$views {
 export type DatabaseOperation = DatabaseOperation$instance & __DatabaseOperation$views;
 
 
-export abstract class DeleteDataOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DeleteDataOperation$instance extends DeleteDataOperation$protected, MigrationOperation$instance {
+export interface DeleteDataOperation$instance extends MigrationOperation$instance {
     KeyColumns: string[];
     get KeyColumnTypes(): string[] | undefined;
-    set KeyColumnTypes(value: string[]);
+    set KeyColumnTypes(value: string[] | undefined);
     KeyValues: Array<Array<(unknown | undefined)>>;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -763,6 +711,7 @@ export interface DeleteDataOperation$instance extends DeleteDataOperation$protec
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -781,23 +730,19 @@ export interface __DeleteDataOperation$views {
 export type DeleteDataOperation = DeleteDataOperation$instance & __DeleteDataOperation$views;
 
 
-export abstract class DropCheckConstraintOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DropCheckConstraintOperation$instance extends DropCheckConstraintOperation$protected, MigrationOperation$instance {
+export interface DropCheckConstraintOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -810,6 +755,7 @@ export interface DropCheckConstraintOperation$instance extends DropCheckConstrai
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -828,23 +774,19 @@ export interface __DropCheckConstraintOperation$views {
 export type DropCheckConstraintOperation = DropCheckConstraintOperation$instance & __DropCheckConstraintOperation$views;
 
 
-export abstract class DropColumnOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DropColumnOperation$instance extends DropColumnOperation$protected, MigrationOperation$instance {
+export interface DropColumnOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -857,6 +799,7 @@ export interface DropColumnOperation$instance extends DropColumnOperation$protec
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -875,23 +818,19 @@ export interface __DropColumnOperation$views {
 export type DropColumnOperation = DropColumnOperation$instance & __DropColumnOperation$views;
 
 
-export abstract class DropForeignKeyOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DropForeignKeyOperation$instance extends DropForeignKeyOperation$protected, MigrationOperation$instance {
+export interface DropForeignKeyOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -904,6 +843,7 @@ export interface DropForeignKeyOperation$instance extends DropForeignKeyOperatio
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -922,23 +862,20 @@ export interface __DropForeignKeyOperation$views {
 export type DropForeignKeyOperation = DropForeignKeyOperation$instance & __DropForeignKeyOperation$views;
 
 
-export abstract class DropIndexOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DropIndexOperation$instance extends DropIndexOperation$protected, MigrationOperation$instance {
+export interface DropIndexOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
-    Table: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
+    get Table(): string | undefined;
+    set Table(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -951,6 +888,7 @@ export interface DropIndexOperation$instance extends DropIndexOperation$protecte
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -968,23 +906,19 @@ export interface __DropIndexOperation$views {
 export type DropIndexOperation = DropIndexOperation$instance & __DropIndexOperation$views;
 
 
-export abstract class DropPrimaryKeyOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DropPrimaryKeyOperation$instance extends DropPrimaryKeyOperation$protected, MigrationOperation$instance {
+export interface DropPrimaryKeyOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -997,6 +931,7 @@ export interface DropPrimaryKeyOperation$instance extends DropPrimaryKeyOperatio
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1015,21 +950,16 @@ export interface __DropPrimaryKeyOperation$views {
 export type DropPrimaryKeyOperation = DropPrimaryKeyOperation$instance & __DropPrimaryKeyOperation$views;
 
 
-export abstract class DropSchemaOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DropSchemaOperation$instance extends DropSchemaOperation$protected, MigrationOperation$instance {
+export interface DropSchemaOperation$instance extends MigrationOperation$instance {
     Name: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1042,6 +972,7 @@ export interface DropSchemaOperation$instance extends DropSchemaOperation$protec
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1059,22 +990,18 @@ export interface __DropSchemaOperation$views {
 export type DropSchemaOperation = DropSchemaOperation$instance & __DropSchemaOperation$views;
 
 
-export abstract class DropSequenceOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DropSequenceOperation$instance extends DropSequenceOperation$protected, MigrationOperation$instance {
+export interface DropSequenceOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1087,6 +1014,7 @@ export interface DropSequenceOperation$instance extends DropSequenceOperation$pr
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1104,22 +1032,18 @@ export interface __DropSequenceOperation$views {
 export type DropSequenceOperation = DropSequenceOperation$instance & __DropSequenceOperation$views;
 
 
-export abstract class DropTableOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DropTableOperation$instance extends DropTableOperation$protected, MigrationOperation$instance {
+export interface DropTableOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1132,6 +1056,7 @@ export interface DropTableOperation$instance extends DropTableOperation$protecte
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1150,23 +1075,19 @@ export interface __DropTableOperation$views {
 export type DropTableOperation = DropTableOperation$instance & __DropTableOperation$views;
 
 
-export abstract class DropUniqueConstraintOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface DropUniqueConstraintOperation$instance extends DropUniqueConstraintOperation$protected, MigrationOperation$instance {
+export interface DropUniqueConstraintOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1179,6 +1100,7 @@ export interface DropUniqueConstraintOperation$instance extends DropUniqueConstr
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1197,21 +1119,16 @@ export interface __DropUniqueConstraintOperation$views {
 export type DropUniqueConstraintOperation = DropUniqueConstraintOperation$instance & __DropUniqueConstraintOperation$views;
 
 
-export abstract class EnsureSchemaOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface EnsureSchemaOperation$instance extends EnsureSchemaOperation$protected, MigrationOperation$instance {
+export interface EnsureSchemaOperation$instance extends MigrationOperation$instance {
     Name: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1224,6 +1141,7 @@ export interface EnsureSchemaOperation$instance extends EnsureSchemaOperation$pr
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1241,26 +1159,22 @@ export interface __EnsureSchemaOperation$views {
 export type EnsureSchemaOperation = EnsureSchemaOperation$instance & __EnsureSchemaOperation$views;
 
 
-export abstract class InsertDataOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface InsertDataOperation$instance extends InsertDataOperation$protected, MigrationOperation$instance {
+export interface InsertDataOperation$instance extends MigrationOperation$instance {
     Columns: string[];
     get ColumnTypes(): string[] | undefined;
-    set ColumnTypes(value: string[]);
-    Schema: string;
+    set ColumnTypes(value: string[] | undefined);
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     Values: Array<Array<(unknown | undefined)>>;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1273,6 +1187,7 @@ export interface InsertDataOperation$instance extends InsertDataOperation$protec
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1291,21 +1206,16 @@ export interface __InsertDataOperation$views {
 export type InsertDataOperation = InsertDataOperation$instance & __InsertDataOperation$views;
 
 
-export abstract class MigrationOperation$protected {
-    protected AddAnnotation5(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation5(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation3(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface MigrationOperation$instance extends MigrationOperation$protected, Annotatable {
+export interface MigrationOperation$instance extends Annotatable {
     IsDestructiveChange: boolean;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1318,11 +1228,11 @@ export interface MigrationOperation$instance extends MigrationOperation$protecte
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
-export const MigrationOperation: {
-    new(): MigrationOperation;
+export const MigrationOperation: (abstract new() => MigrationOperation) & {
 };
 
 
@@ -1335,24 +1245,20 @@ export interface __MigrationOperation$views {
 export type MigrationOperation = MigrationOperation$instance & __MigrationOperation$views;
 
 
-export abstract class RenameColumnOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface RenameColumnOperation$instance extends RenameColumnOperation$protected, MigrationOperation$instance {
+export interface RenameColumnOperation$instance extends MigrationOperation$instance {
     Name: string;
     NewName: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1365,6 +1271,7 @@ export interface RenameColumnOperation$instance extends RenameColumnOperation$pr
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1383,24 +1290,21 @@ export interface __RenameColumnOperation$views {
 export type RenameColumnOperation = RenameColumnOperation$instance & __RenameColumnOperation$views;
 
 
-export abstract class RenameIndexOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface RenameIndexOperation$instance extends RenameIndexOperation$protected, MigrationOperation$instance {
+export interface RenameIndexOperation$instance extends MigrationOperation$instance {
     Name: string;
     NewName: string;
-    Schema: string;
-    Table: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
+    get Table(): string | undefined;
+    set Table(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1413,6 +1317,7 @@ export interface RenameIndexOperation$instance extends RenameIndexOperation$prot
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1430,25 +1335,22 @@ export interface __RenameIndexOperation$views {
 export type RenameIndexOperation = RenameIndexOperation$instance & __RenameIndexOperation$views;
 
 
-export abstract class RenameSequenceOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface RenameSequenceOperation$instance extends RenameSequenceOperation$protected, MigrationOperation$instance {
+export interface RenameSequenceOperation$instance extends MigrationOperation$instance {
     Name: string;
-    NewName: string;
+    get NewName(): string | undefined;
+    set NewName(value: string | undefined);
     get NewSchema(): string | undefined;
-    set NewSchema(value: string);
-    Schema: string;
+    set NewSchema(value: string | undefined);
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1461,6 +1363,7 @@ export interface RenameSequenceOperation$instance extends RenameSequenceOperatio
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1478,25 +1381,22 @@ export interface __RenameSequenceOperation$views {
 export type RenameSequenceOperation = RenameSequenceOperation$instance & __RenameSequenceOperation$views;
 
 
-export abstract class RenameTableOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface RenameTableOperation$instance extends RenameTableOperation$protected, MigrationOperation$instance {
+export interface RenameTableOperation$instance extends MigrationOperation$instance {
     Name: string;
-    NewName: string;
+    get NewName(): string | undefined;
+    set NewName(value: string | undefined);
     get NewSchema(): string | undefined;
-    set NewSchema(value: string);
-    Schema: string;
+    set NewSchema(value: string | undefined);
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1509,6 +1409,7 @@ export interface RenameTableOperation$instance extends RenameTableOperation$prot
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1527,23 +1428,19 @@ export interface __RenameTableOperation$views {
 export type RenameTableOperation = RenameTableOperation$instance & __RenameTableOperation$views;
 
 
-export abstract class RestartSequenceOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface RestartSequenceOperation$instance extends RestartSequenceOperation$protected, MigrationOperation$instance {
+export interface RestartSequenceOperation$instance extends MigrationOperation$instance {
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     StartValue: Nullable<System_Internal.Int64>;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1556,6 +1453,7 @@ export interface RestartSequenceOperation$instance extends RestartSequenceOperat
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1573,24 +1471,19 @@ export interface __RestartSequenceOperation$views {
 export type RestartSequenceOperation = RestartSequenceOperation$instance & __RestartSequenceOperation$views;
 
 
-export abstract class SequenceOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface SequenceOperation$instance extends SequenceOperation$protected, MigrationOperation$instance {
+export interface SequenceOperation$instance extends MigrationOperation$instance {
     IncrementBy: int;
     IsCyclic: boolean;
     MaxValue: Nullable<System_Internal.Int64>;
     MinValue: Nullable<System_Internal.Int64>;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1603,11 +1496,11 @@ export interface SequenceOperation$instance extends SequenceOperation$protected,
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
-export const SequenceOperation: {
-    new(): SequenceOperation;
+export const SequenceOperation: (abstract new() => SequenceOperation) & {
 };
 
 
@@ -1620,22 +1513,17 @@ export interface __SequenceOperation$views {
 export type SequenceOperation = SequenceOperation$instance & __SequenceOperation$views;
 
 
-export abstract class SqlOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface SqlOperation$instance extends SqlOperation$protected, MigrationOperation$instance {
+export interface SqlOperation$instance extends MigrationOperation$instance {
     Sql: string;
     SuppressTransaction: boolean;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1648,6 +1536,7 @@ export interface SqlOperation$instance extends SqlOperation$protected, Migration
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -1665,24 +1554,20 @@ export interface __SqlOperation$views {
 export type SqlOperation = SqlOperation$instance & __SqlOperation$views;
 
 
-export abstract class TableOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface TableOperation$instance extends TableOperation$protected, MigrationOperation$instance {
+export interface TableOperation$instance extends MigrationOperation$instance {
     get Comment(): string | undefined;
-    set Comment(value: string);
+    set Comment(value: string | undefined);
     Name: string;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1695,11 +1580,11 @@ export interface TableOperation$instance extends TableOperation$protected, Migra
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
-export const TableOperation: {
-    new(): TableOperation;
+export const TableOperation: (abstract new() => TableOperation) & {
 };
 
 
@@ -1713,30 +1598,26 @@ export interface __TableOperation$views {
 export type TableOperation = TableOperation$instance & __TableOperation$views;
 
 
-export abstract class UpdateDataOperation$protected {
-    protected AddAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected AddRuntimeAnnotation7(name: string, annotation: Annotation): Annotation;
-    protected SetAnnotation4(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-}
-
-
-export interface UpdateDataOperation$instance extends UpdateDataOperation$protected, MigrationOperation$instance {
+export interface UpdateDataOperation$instance extends MigrationOperation$instance {
     Columns: string[];
     get ColumnTypes(): string[] | undefined;
-    set ColumnTypes(value: string[]);
+    set ColumnTypes(value: string[] | undefined);
     KeyColumns: string[];
     get KeyColumnTypes(): string[] | undefined;
-    set KeyColumnTypes(value: string[]);
+    set KeyColumnTypes(value: string[] | undefined);
     KeyValues: Array<Array<(unknown | undefined)>>;
-    Schema: string;
+    get Schema(): string | undefined;
+    set Schema(value: string | undefined);
     Table: string;
     Values: Array<Array<(unknown | undefined)>>;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
+    AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
+    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
@@ -1749,6 +1630,7 @@ export interface UpdateDataOperation$instance extends UpdateDataOperation$protec
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
