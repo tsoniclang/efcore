@@ -16,6 +16,8 @@ import type { IEnumerable, IReadOnlyDictionary, List } from "@tsonic/dotnet/Syst
 import type { Boolean as ClrBoolean, Func, Int32, Int64, Nullable, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
 
 export interface IAlterMigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never;
+
     readonly OldAnnotations: IMutableAnnotatable;
 }
 
@@ -23,6 +25,8 @@ export interface IAlterMigrationOperation$instance {
 export type IAlterMigrationOperation = IAlterMigrationOperation$instance;
 
 export interface ITableMigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     readonly Schema: string | undefined;
     readonly Table: string;
 }
@@ -31,6 +35,11 @@ export interface ITableMigrationOperation$instance {
 export type ITableMigrationOperation = ITableMigrationOperation$instance;
 
 export interface AddCheckConstraintOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -77,6 +86,11 @@ export type AddCheckConstraintOperation = AddCheckConstraintOperation$instance &
 
 
 export interface AddColumnOperation$instance extends ColumnOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
@@ -117,6 +131,11 @@ export type AddColumnOperation = AddColumnOperation$instance & __AddColumnOperat
 
 
 export interface AddForeignKeyOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Columns: string[];
     Name: string;
     OnDelete: ReferentialAction;
@@ -170,6 +189,11 @@ export type AddForeignKeyOperation = AddForeignKeyOperation$instance & __AddFore
 
 
 export interface AddPrimaryKeyOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Columns: string[];
     Name: string;
     get Schema(): string | undefined;
@@ -216,6 +240,11 @@ export type AddPrimaryKeyOperation = AddPrimaryKeyOperation$instance & __AddPrim
 
 
 export interface AddUniqueConstraintOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Columns: string[];
     Name: string;
     get Schema(): string | undefined;
@@ -262,6 +291,12 @@ export type AddUniqueConstraintOperation = AddUniqueConstraintOperation$instance
 
 
 export interface AlterColumnOperation$instance extends ColumnOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     OldColumn: ColumnOperation;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -306,6 +341,11 @@ export type AlterColumnOperation = AlterColumnOperation$instance & __AlterColumn
 
 
 export interface AlterDatabaseOperation$instance extends DatabaseOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never;
+
     readonly OldDatabase: DatabaseOperation;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -349,6 +389,11 @@ export type AlterDatabaseOperation = AlterDatabaseOperation$instance & __AlterDa
 
 
 export interface AlterSequenceOperation$instance extends SequenceOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never;
+
     Name: string;
     OldSequence: SequenceOperation;
     get Schema(): string | undefined;
@@ -395,6 +440,12 @@ export type AlterSequenceOperation = AlterSequenceOperation$instance & __AlterSe
 
 
 export interface AlterTableOperation$instance extends TableOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     OldTable: TableOperation;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -439,6 +490,11 @@ export type AlterTableOperation = AlterTableOperation$instance & __AlterTableOpe
 
 
 export interface ColumnOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     ClrType: Type;
     get Collation(): string | undefined;
     set Collation(value: string | undefined);
@@ -503,6 +559,11 @@ export type ColumnOperation = ColumnOperation$instance & __ColumnOperation$views
 
 
 export interface CreateIndexOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Columns: string[];
     get Filter(): string | undefined;
     set Filter(value: string | undefined);
@@ -554,6 +615,10 @@ export type CreateIndexOperation = CreateIndexOperation$instance & __CreateIndex
 
 
 export interface CreateSequenceOperation$instance extends SequenceOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     ClrType: Type;
     Name: string;
     get Schema(): string | undefined;
@@ -598,6 +663,11 @@ export type CreateSequenceOperation = CreateSequenceOperation$instance & __Creat
 
 
 export interface CreateTableOperation$instance extends TableOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     readonly CheckConstraints: List<AddCheckConstraintOperation>;
     readonly Columns: List<AddColumnOperation>;
     readonly ForeignKeys: List<AddForeignKeyOperation>;
@@ -644,6 +714,10 @@ export type CreateTableOperation = CreateTableOperation$instance & __CreateTable
 
 
 export interface DatabaseOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     get Collation(): string | undefined;
     set Collation(value: string | undefined);
     AddAnnotation(name: string, value: unknown): IAnnotation;
@@ -684,6 +758,11 @@ export type DatabaseOperation = DatabaseOperation$instance & __DatabaseOperation
 
 
 export interface DeleteDataOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     KeyColumns: string[];
     get KeyColumnTypes(): string[] | undefined;
     set KeyColumnTypes(value: string[] | undefined);
@@ -731,6 +810,11 @@ export type DeleteDataOperation = DeleteDataOperation$instance & __DeleteDataOpe
 
 
 export interface DropCheckConstraintOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -775,6 +859,11 @@ export type DropCheckConstraintOperation = DropCheckConstraintOperation$instance
 
 
 export interface DropColumnOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -819,6 +908,11 @@ export type DropColumnOperation = DropColumnOperation$instance & __DropColumnOpe
 
 
 export interface DropForeignKeyOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -863,6 +957,10 @@ export type DropForeignKeyOperation = DropForeignKeyOperation$instance & __DropF
 
 
 export interface DropIndexOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -907,6 +1005,11 @@ export type DropIndexOperation = DropIndexOperation$instance & __DropIndexOperat
 
 
 export interface DropPrimaryKeyOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -951,6 +1054,10 @@ export type DropPrimaryKeyOperation = DropPrimaryKeyOperation$instance & __DropP
 
 
 export interface DropSchemaOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Name: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -991,6 +1098,10 @@ export type DropSchemaOperation = DropSchemaOperation$instance & __DropSchemaOpe
 
 
 export interface DropSequenceOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -1033,6 +1144,11 @@ export type DropSequenceOperation = DropSequenceOperation$instance & __DropSeque
 
 
 export interface DropTableOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -1076,6 +1192,11 @@ export type DropTableOperation = DropTableOperation$instance & __DropTableOperat
 
 
 export interface DropUniqueConstraintOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -1120,6 +1241,10 @@ export type DropUniqueConstraintOperation = DropUniqueConstraintOperation$instan
 
 
 export interface EnsureSchemaOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Name: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -1160,6 +1285,11 @@ export type EnsureSchemaOperation = EnsureSchemaOperation$instance & __EnsureSch
 
 
 export interface InsertDataOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Columns: string[];
     get ColumnTypes(): string[] | undefined;
     set ColumnTypes(value: string[] | undefined);
@@ -1207,6 +1337,10 @@ export type InsertDataOperation = InsertDataOperation$instance & __InsertDataOpe
 
 
 export interface MigrationOperation$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     IsDestructiveChange: boolean;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -1246,6 +1380,11 @@ export type MigrationOperation = MigrationOperation$instance & __MigrationOperat
 
 
 export interface RenameColumnOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Name: string;
     NewName: string;
     get Schema(): string | undefined;
@@ -1291,6 +1430,10 @@ export type RenameColumnOperation = RenameColumnOperation$instance & __RenameCol
 
 
 export interface RenameIndexOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Name: string;
     NewName: string;
     get Schema(): string | undefined;
@@ -1336,6 +1479,10 @@ export type RenameIndexOperation = RenameIndexOperation$instance & __RenameIndex
 
 
 export interface RenameSequenceOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Name: string;
     get NewName(): string | undefined;
     set NewName(value: string | undefined);
@@ -1382,6 +1529,11 @@ export type RenameSequenceOperation = RenameSequenceOperation$instance & __Renam
 
 
 export interface RenameTableOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Name: string;
     get NewName(): string | undefined;
     set NewName(value: string | undefined);
@@ -1429,6 +1581,10 @@ export type RenameTableOperation = RenameTableOperation$instance & __RenameTable
 
 
 export interface RestartSequenceOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -1472,6 +1628,10 @@ export type RestartSequenceOperation = RestartSequenceOperation$instance & __Res
 
 
 export interface SequenceOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     IncrementBy: int;
     IsCyclic: boolean;
     MaxValue: Nullable<System_Internal.Int64>;
@@ -1514,6 +1674,10 @@ export type SequenceOperation = SequenceOperation$instance & __SequenceOperation
 
 
 export interface SqlOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Sql: string;
     SuppressTransaction: boolean;
     AddAnnotation(name: string, value: unknown): IAnnotation;
@@ -1555,6 +1719,11 @@ export type SqlOperation = SqlOperation$instance & __SqlOperation$views;
 
 
 export interface TableOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     get Comment(): string | undefined;
     set Comment(value: string | undefined);
     Name: string;
@@ -1599,6 +1768,11 @@ export type TableOperation = TableOperation$instance & __TableOperation$views;
 
 
 export interface UpdateDataOperation$instance extends MigrationOperation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
+
     Columns: string[];
     get ColumnTypes(): string[] | undefined;
     set ColumnTypes(value: string[] | undefined);

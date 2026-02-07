@@ -18,6 +18,8 @@ import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { Task, ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
 export interface IValueGeneratorCache$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorCache: never;
+
     GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
 }
 
@@ -25,6 +27,8 @@ export interface IValueGeneratorCache$instance {
 export type IValueGeneratorCache = IValueGeneratorCache$instance;
 
 export interface IValueGeneratorSelector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorSelector: never;
+
     Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
     TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
 }
@@ -89,6 +93,8 @@ export const HiLoValueGenerator_1: (abstract new<TValue>(generatorState: HiLoVal
 export type HiLoValueGenerator_1<TValue> = HiLoValueGenerator_1$instance<TValue>;
 
 export interface HiLoValueGeneratorState$instance {
+    readonly __tsonic_iface_System_IDisposable: never;
+
     Dispose(): void;
     Next<TValue>(getNewLowValue: Func<System_Internal.Int64>): TValue;
     NextAsync<TValue>(getNewLowValue: Func<CancellationToken, Task<System_Internal.Int64>>, cancellationToken?: CancellationToken): ValueTask<TValue>;
@@ -103,6 +109,8 @@ export const HiLoValueGeneratorState: {
 export type HiLoValueGeneratorState = HiLoValueGeneratorState$instance;
 
 export interface RelationalValueGeneratorSelector$instance extends ValueGeneratorSelector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorSelector: never;
+
     FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
     Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
     TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
@@ -208,6 +216,8 @@ export const ValueGenerator_1: (abstract new<TValue>() => ValueGenerator_1<TValu
 export type ValueGenerator_1<TValue> = ValueGenerator_1$instance<TValue>;
 
 export interface ValueGeneratorCache$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorCache: never;
+
     readonly Dependencies: ValueGeneratorCacheDependencies;
     GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
 }
@@ -228,6 +238,8 @@ export type ValueGeneratorCache = ValueGeneratorCache$instance & __ValueGenerato
 
 
 export interface ValueGeneratorCacheDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): ValueGeneratorCacheDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: ValueGeneratorCacheDependencies): boolean;
@@ -255,6 +267,8 @@ export const ValueGeneratorFactory: (abstract new() => ValueGeneratorFactory) & 
 export type ValueGeneratorFactory = ValueGeneratorFactory$instance;
 
 export interface ValueGeneratorSelector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorSelector: never;
+
     readonly Cache: IValueGeneratorCache;
     readonly Dependencies: ValueGeneratorSelectorDependencies;
     Create(property: IProperty, typeBase: ITypeBase): ValueGenerator;
@@ -280,6 +294,8 @@ export type ValueGeneratorSelector = ValueGeneratorSelector$instance & __ValueGe
 
 
 export interface ValueGeneratorSelectorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     Cache: IValueGeneratorCache;
     _Clone_$(): ValueGeneratorSelectorDependencies;
     Equals(obj: unknown): boolean;

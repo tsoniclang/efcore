@@ -24,6 +24,8 @@ import type { Boolean as ClrBoolean, Func, Nullable, Object as ClrObject, String
 import type { FieldInfo, MemberInfo } from "@tsonic/dotnet/System.Reflection.js";
 
 export interface IReadableConventionContext$instance extends IConventionContext {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_IReadableConventionContext: never;
+
     DelayConventions(): IConventionBatch;
     ShouldStopProcessing(): boolean;
     StopProcessing(): void;
@@ -35,6 +37,10 @@ export interface IReadableConventionContext$instance extends Microsoft_EntityFra
 export type IReadableConventionContext = IReadableConventionContext$instance;
 
 export interface ConventionContext_1$instance<TMetadata> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConventionContext: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConventionContext_1: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_IReadableConventionContext: never;
+
     readonly Result: TMetadata | undefined;
     DelayConventions(): IConventionBatch;
     ResetState(input: TMetadata): void;
@@ -129,6 +135,8 @@ export const ConventionDispatcher: {
 export type ConventionDispatcher = ConventionDispatcher$instance;
 
 export interface MetadataTracker$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IReferenceRoot_1: never;
+
     Track(foreignKey: IConventionForeignKey): Reference_1<IConventionForeignKey>;
     Update(oldForeignKey: IConventionForeignKey, newForeignKey: IConventionForeignKey): void;
 }
@@ -149,6 +157,8 @@ export type MetadataTracker = MetadataTracker$instance & __MetadataTracker$views
 
 
 export interface RuntimeConventionSetBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IConventionSetBuilder: never;
+
     CreateConventionSet(): ConventionSet;
 }
 

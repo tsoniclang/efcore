@@ -24,6 +24,8 @@ import type { PhysicalAddress } from "@tsonic/dotnet/System.Net.NetworkInformati
 import type { Encoding } from "@tsonic/dotnet/System.Text.js";
 
 export interface IValueConverterSelector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ValueConversion_IValueConverterSelector: never;
+
     Select(modelClrType: Type, providerClrType?: Type): IEnumerable<ValueConverterInfo>;
 }
 
@@ -660,6 +662,8 @@ export const ValueConverter_2: {
 export type ValueConverter_2<TModel, TProvider> = ValueConverter_2$instance<TModel, TProvider>;
 
 export interface ValueConverterSelector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ValueConversion_IValueConverterSelector: never;
+
     readonly Dependencies: ValueConverterSelectorDependencies;
     Select(modelClrType: Type, providerClrType?: Type): IEnumerable<ValueConverterInfo>;
 }
@@ -680,6 +684,8 @@ export type ValueConverterSelector = ValueConverterSelector$instance & __ValueCo
 
 
 export interface ValueConverterSelectorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): ValueConverterSelectorDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: ValueConverterSelectorDependencies): boolean;

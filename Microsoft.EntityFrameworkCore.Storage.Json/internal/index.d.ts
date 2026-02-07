@@ -23,6 +23,8 @@ import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
 import type { JsonReaderState, JsonTokenType, Utf8JsonReader, Utf8JsonWriter } from "@tsonic/dotnet/System.Text.Json.js";
 
 export interface IJsonValueReaderWriterSource$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Json_IJsonValueReaderWriterSource: never;
+
     FindReaderWriter(type: Type): JsonValueReaderWriter | undefined;
 }
 
@@ -90,6 +92,8 @@ export const JsonByteReaderWriter: {
 export type JsonByteReaderWriter = JsonByteReaderWriter$instance;
 
 export interface JsonCastValueReaderWriter_1$instance<TConverted> extends JsonValueReaderWriter_1<TConverted> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
+
     readonly ConstructorExpression: Expression;
 }
 
@@ -123,6 +127,8 @@ export const JsonCharReaderWriter: {
 export type JsonCharReaderWriter = JsonCharReaderWriter$instance;
 
 export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable<Nullable<TElement>>> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
+
     readonly ConstructorExpression: Expression;
 }
 
@@ -142,6 +148,8 @@ export type JsonCollectionOfNullableStructsReaderWriter_2<TConcreteCollection, T
 
 
 export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> extends JsonValueReaderWriter_1<unknown> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
+
     readonly ConstructorExpression: Expression;
 }
 
@@ -161,6 +169,8 @@ export type JsonCollectionOfReferencesReaderWriter_2<TConcreteCollection, TEleme
 
 
 export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable<TElement>> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
+
     readonly ConstructorExpression: Expression;
 }
 
@@ -180,6 +190,9 @@ export type JsonCollectionOfStructsReaderWriter_2<TConcreteCollection, TElement>
 
 
 export interface JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> extends JsonValueReaderWriter_1<TModel> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_IJsonConvertedValueReaderWriter: never;
+
     readonly ConstructorExpression: Expression;
 }
 
@@ -528,6 +541,8 @@ export const JsonValueReaderWriter_1: (abstract new<TValue>() => JsonValueReader
 export type JsonValueReaderWriter_1<TValue> = JsonValueReaderWriter_1$instance<TValue>;
 
 export interface JsonValueReaderWriterSource$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Json_IJsonValueReaderWriterSource: never;
+
     readonly Dependencies: JsonValueReaderWriterSourceDependencies;
     FindReaderWriter(type: Type): JsonValueReaderWriter | undefined;
 }
@@ -548,6 +563,8 @@ export type JsonValueReaderWriterSource = JsonValueReaderWriterSource$instance &
 
 
 export interface JsonValueReaderWriterSourceDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): JsonValueReaderWriterSourceDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: JsonValueReaderWriterSourceDependencies): boolean;

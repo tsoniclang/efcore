@@ -28,6 +28,8 @@ import * as Microsoft_Extensions_Logging_Internal from "@tsonic/microsoft-extens
 import type { EventId, ILogger, ILoggerFactory, ILoggerProvider, LogLevel } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging.js";
 
 export interface DbCommandInterceptorAggregator$instance extends InterceptorAggregator_1<IDbCommandInterceptor> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
+
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -45,6 +47,8 @@ export type DbCommandInterceptorAggregator = DbCommandInterceptorAggregator$inst
 
 
 export interface DbConnectionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbConnectionInterceptor> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
+
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -62,6 +66,8 @@ export type DbConnectionInterceptorAggregator = DbConnectionInterceptorAggregato
 
 
 export interface DbTransactionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbTransactionInterceptor> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
+
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -79,6 +85,8 @@ export type DbTransactionInterceptorAggregator = DbTransactionInterceptorAggrega
 
 
 export interface DelegatingDbContextLogger$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbContextLogger: never;
+
     Log(eventData: EventData): void;
     ShouldLog(eventId: EventId, logLevel: LogLevel): boolean;
 }
@@ -99,6 +107,9 @@ export type DelegatingDbContextLogger = DelegatingDbContextLogger$instance & __D
 
 
 export interface DiagnosticsLogger_1$instance<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger_1: never;
+
     readonly DbContextLogger: IDbContextLogger;
     readonly Definitions: LoggingDefinitions;
     readonly DiagnosticSource: DiagnosticSource;
@@ -122,6 +133,8 @@ export type DiagnosticsLogger_1<TLoggerCategory extends LoggerCategory_1<TLogger
 
 
 export interface FormattingDbContextLogger$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbContextLogger: never;
+
     Log(eventData: EventData): void;
     ShouldLog(eventId: EventId, logLevel: LogLevel): boolean;
 }
@@ -142,6 +155,8 @@ export type FormattingDbContextLogger = FormattingDbContextLogger$instance & __F
 
 
 export interface IdentityResolutionInterceptorAggregator$instance extends InterceptorAggregator_1<IIdentityResolutionInterceptor> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
+
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -159,6 +174,8 @@ export type IdentityResolutionInterceptorAggregator = IdentityResolutionIntercep
 
 
 export interface Interceptors$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptors: never;
+
     Aggregate<TInterceptor extends IInterceptor>(): TInterceptor | undefined;
 }
 
@@ -178,6 +195,9 @@ export type Interceptors = Interceptors$instance & __Interceptors$views;
 
 
 export interface LoggingOptions$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ILoggingOptions: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ISingletonOptions: never;
+
     DetailedErrorsEnabled: boolean;
     IsSensitiveDataLoggingEnabled: boolean;
     IsSensitiveDataLoggingWarned: boolean;
@@ -202,6 +222,8 @@ export type LoggingOptions = LoggingOptions$instance & __LoggingOptions$views;
 
 
 export interface MaterializationInterceptorAggregator$instance extends InterceptorAggregator_1<IMaterializationInterceptor> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
+
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -219,6 +241,8 @@ export type MaterializationInterceptorAggregator = MaterializationInterceptorAgg
 
 
 export interface NullDbContextLogger$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbContextLogger: never;
+
     Log(eventData: EventData): void;
     ShouldLog(eventId: EventId, logLevel: LogLevel): boolean;
 }
@@ -239,6 +263,8 @@ export type NullDbContextLogger = NullDbContextLogger$instance & __NullDbContext
 
 
 export interface QueryExpressionInterceptorAggregator$instance extends InterceptorAggregator_1<IQueryExpressionInterceptor> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
+
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -256,6 +282,10 @@ export type QueryExpressionInterceptorAggregator = QueryExpressionInterceptorAgg
 
 
 export interface RelationalCommandDiagnosticsLogger$instance extends DiagnosticsLogger_1$instance<DbLoggerCategory_Database_Command> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger_1: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IRelationalCommandDiagnosticsLogger: never;
+
     CommandCanceled(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
     CommandCanceledAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
     CommandCreated(connection: IRelationalConnection, command: DbCommand, commandMethod: DbCommandMethod, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbCommand;
@@ -301,6 +331,10 @@ export type RelationalCommandDiagnosticsLogger = RelationalCommandDiagnosticsLog
 
 
 export interface RelationalConnectionDiagnosticsLogger$instance extends DiagnosticsLogger_1$instance<DbLoggerCategory_Database_Connection> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger_1: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IRelationalConnectionDiagnosticsLogger: never;
+
     ConnectionCanceled(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): void;
     ConnectionCanceledAsync(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): Task;
     ConnectionClosed(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): void;
@@ -342,6 +376,8 @@ export type RelationalConnectionDiagnosticsLogger = RelationalConnectionDiagnost
 
 
 export interface SaveChangesInterceptorAggregator$instance extends InterceptorAggregator_1<ISaveChangesInterceptor> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
+
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -359,6 +395,9 @@ export type SaveChangesInterceptorAggregator = SaveChangesInterceptorAggregator$
 
 
 export interface ScopedLoggerFactory$instance {
+    readonly __tsonic_iface_Microsoft_Extensions_Logging_ILoggerFactory: never;
+    readonly __tsonic_iface_System_IDisposable: never;
+
     AddProvider(provider: ILoggerProvider): void;
     CreateLogger(categoryName: string): ILogger;
     Dispose(): void;

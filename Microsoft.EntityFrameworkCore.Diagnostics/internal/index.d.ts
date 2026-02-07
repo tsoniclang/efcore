@@ -72,6 +72,8 @@ export enum DbContextLoggerOptions {
 
 
 export interface ICollectionChangedEventData$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
+
     readonly EntityEntry: EntityEntry;
     readonly Added: IEnumerable<unknown>;
     readonly Removed: IEnumerable<unknown>;
@@ -81,6 +83,8 @@ export interface ICollectionChangedEventData$instance {
 export type ICollectionChangedEventData = ICollectionChangedEventData$instance;
 
 export interface IDbCommandInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbCommandInterceptor: never;
+
     CommandCanceled(command: DbCommand, eventData: CommandEndEventData): void;
     CommandCanceledAsync(command: DbCommand, eventData: CommandEndEventData, cancellationToken?: CancellationToken): Task;
     CommandCreated(eventData: CommandEndEventData, result: DbCommand): DbCommand;
@@ -106,6 +110,8 @@ export interface IDbCommandInterceptor$instance extends IInterceptor$instance {}
 export type IDbCommandInterceptor = IDbCommandInterceptor$instance;
 
 export interface IDbConnectionInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbConnectionInterceptor: never;
+
     ConnectionClosedAsync(connection: DbConnection, eventData: ConnectionEndEventData): Task;
     ConnectionClosingAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): ValueTask<InterceptionResult>;
     ConnectionCreated(eventData: ConnectionCreatedEventData, result: DbConnection): DbConnection;
@@ -124,6 +130,8 @@ export interface IDbConnectionInterceptor$instance extends IInterceptor$instance
 export type IDbConnectionInterceptor = IDbConnectionInterceptor$instance;
 
 export interface IDbContextLogger$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbContextLogger: never;
+
     Log(eventData: EventData): void;
     ShouldLog(eventId: EventId, logLevel: LogLevel): boolean;
 }
@@ -132,6 +140,8 @@ export interface IDbContextLogger$instance {
 export type IDbContextLogger = IDbContextLogger$instance;
 
 export interface IDbTransactionInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbTransactionInterceptor: never;
+
     CreatedSavepoint(transaction: DbTransaction, eventData: TransactionEventData): void;
     CreatedSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, cancellationToken?: CancellationToken): Task;
     TransactionCommitted(transaction: DbTransaction, eventData: TransactionEndEventData): void;
@@ -154,6 +164,8 @@ export interface IDbTransactionInterceptor$instance extends IInterceptor$instanc
 export type IDbTransactionInterceptor = IDbTransactionInterceptor$instance;
 
 export interface IDiagnosticsLogger$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger: never;
+
     readonly Options: ILoggingOptions;
     readonly Definitions: LoggingDefinitions;
     readonly Logger: ILogger;
@@ -171,6 +183,8 @@ export interface IDiagnosticsLogger$instance {
 export type IDiagnosticsLogger = IDiagnosticsLogger$instance;
 
 export interface IDiagnosticsLogger_1$instance<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>> extends IDiagnosticsLogger {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger_1: never;
+
     readonly Options: ILoggingOptions;
     readonly Definitions: LoggingDefinitions;
     readonly Logger: ILogger;
@@ -191,6 +205,8 @@ export interface IDiagnosticsLogger_1$instance<TLoggerCategory extends LoggerCat
 export type IDiagnosticsLogger_1<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>> = IDiagnosticsLogger_1$instance<TLoggerCategory>;
 
 export interface IErrorEventData$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
+
     readonly Exception: Exception;
 }
 
@@ -198,6 +214,8 @@ export interface IErrorEventData$instance {
 export type IErrorEventData = IErrorEventData$instance;
 
 export interface IIdentityResolutionInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
+
     UpdateTrackedInstance(interceptionData: IdentityResolutionInterceptionData, existingEntry: EntityEntry, newEntity: unknown): void;
 }
 
@@ -207,6 +225,8 @@ export interface IIdentityResolutionInterceptor$instance extends IInterceptor$in
 export type IIdentityResolutionInterceptor = IIdentityResolutionInterceptor$instance;
 
 export interface IInstantiationBindingInterceptor$instance extends ISingletonInterceptor, IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInstantiationBindingInterceptor: never;
+
     ModifyBinding(interceptionData: InstantiationBindingInterceptionData, binding: InstantiationBinding): InstantiationBinding;
 }
 
@@ -216,12 +236,16 @@ export interface IInstantiationBindingInterceptor$instance extends ISingletonInt
 export type IInstantiationBindingInterceptor = IInstantiationBindingInterceptor$instance;
 
 export interface IInterceptor$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
+
 }
 
 
 export type IInterceptor = IInterceptor$instance;
 
 export interface IInterceptorAggregator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
+
     readonly InterceptorType: Type;
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
@@ -230,6 +254,8 @@ export interface IInterceptorAggregator$instance {
 export type IInterceptorAggregator = IInterceptorAggregator$instance;
 
 export interface IInterceptors$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptors: never;
+
     Aggregate<TInterceptor extends IInterceptor>(): TInterceptor | undefined;
 }
 
@@ -237,6 +263,8 @@ export interface IInterceptors$instance {
 export type IInterceptors = IInterceptors$instance;
 
 export interface ILoggingOptions$instance extends ISingletonOptions {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ILoggingOptions: never;
+
     readonly IsSensitiveDataLoggingEnabled: boolean;
     IsSensitiveDataLoggingWarned: boolean;
     readonly DetailedErrorsEnabled: boolean;
@@ -251,6 +279,8 @@ export interface ILoggingOptions$instance extends Microsoft_EntityFrameworkCore_
 export type ILoggingOptions = ILoggingOptions$instance;
 
 export interface IMaterializationInterceptor$instance extends ISingletonInterceptor, IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IMaterializationInterceptor: never;
+
     CreatedInstance(materializationData: MaterializationInterceptionData, entity: unknown): unknown;
     CreatingInstance(materializationData: MaterializationInterceptionData, result: InterceptionResult_1<unknown>): InterceptionResult_1<unknown>;
     InitializingInstance(materializationData: MaterializationInterceptionData, entity: unknown, result: InterceptionResult): InterceptionResult;
@@ -262,6 +292,8 @@ export interface IMaterializationInterceptor$instance extends ISingletonIntercep
 export type IMaterializationInterceptor = IMaterializationInterceptor$instance;
 
 export interface INavigationBaseEventData$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
+
     readonly NavigationBase: INavigationBase;
 }
 
@@ -269,6 +301,8 @@ export interface INavigationBaseEventData$instance {
 export type INavigationBaseEventData = INavigationBaseEventData$instance;
 
 export interface IQueryExpressionInterceptor$instance extends ISingletonInterceptor, IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IQueryExpressionInterceptor: never;
+
     QueryCompilationStarting(queryExpression: Expression, eventData: QueryExpressionEventData): Expression;
 }
 
@@ -278,6 +312,8 @@ export interface IQueryExpressionInterceptor$instance extends ISingletonIntercep
 export type IQueryExpressionInterceptor = IQueryExpressionInterceptor$instance;
 
 export interface IRelationalCommandDiagnosticsLogger$instance extends IDiagnosticsLogger_1<DbLoggerCategory_Database_Command>, IDiagnosticsLogger {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IRelationalCommandDiagnosticsLogger: never;
+
     readonly Options: ILoggingOptions;
     readonly Definitions: LoggingDefinitions;
     readonly Logger: ILogger;
@@ -314,6 +350,8 @@ export interface IRelationalCommandDiagnosticsLogger$instance extends IDiagnosti
 export type IRelationalCommandDiagnosticsLogger = IRelationalCommandDiagnosticsLogger$instance;
 
 export interface IRelationalConnectionDiagnosticsLogger$instance extends IDiagnosticsLogger_1<DbLoggerCategory_Database_Connection>, IDiagnosticsLogger {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IRelationalConnectionDiagnosticsLogger: never;
+
     readonly Options: ILoggingOptions;
     readonly Definitions: LoggingDefinitions;
     readonly Logger: ILogger;
@@ -343,6 +381,8 @@ export interface IRelationalConnectionDiagnosticsLogger$instance extends IDiagno
 export type IRelationalConnectionDiagnosticsLogger = IRelationalConnectionDiagnosticsLogger$instance;
 
 export interface ISaveChangesInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ISaveChangesInterceptor: never;
+
     SaveChangesCanceled(eventData: DbContextEventData): void;
     SaveChangesCanceledAsync(eventData: DbContextEventData, cancellationToken?: CancellationToken): Task;
     SaveChangesFailed(eventData: DbContextErrorEventData): void;
@@ -361,6 +401,8 @@ export interface ISaveChangesInterceptor$instance extends IInterceptor$instance 
 export type ISaveChangesInterceptor = ISaveChangesInterceptor$instance;
 
 export interface ISingletonInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ISingletonInterceptor: never;
+
 }
 
 
@@ -502,6 +544,9 @@ export const CascadeDeleteOrphanEventData: {
 export type CascadeDeleteOrphanEventData = CascadeDeleteOrphanEventData$instance;
 
 export interface CollectionChangedEventData$instance extends NavigationEventData$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
+
     readonly Added: IEnumerable<unknown>;
     readonly EntityEntry: EntityEntry;
     readonly Removed: IEnumerable<unknown>;
@@ -567,6 +612,8 @@ export const CommandEndEventData: {
 export type CommandEndEventData = CommandEndEventData$instance;
 
 export interface CommandErrorEventData$instance extends CommandEndEventData {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
+
     readonly Exception: Exception;
 }
 
@@ -639,6 +686,8 @@ export const ComplexTypePropertyChangedEventData: {
 export type ComplexTypePropertyChangedEventData = ComplexTypePropertyChangedEventData$instance;
 
 export interface ConcurrencyExceptionEventData$instance extends DbContextErrorEventData$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
+
     readonly Entries: IReadOnlyList<EntityEntry>;
 }
 
@@ -697,6 +746,8 @@ export const ConnectionEndEventData: {
 export type ConnectionEndEventData = ConnectionEndEventData$instance;
 
 export interface ConnectionErrorEventData$instance extends ConnectionEndEventData {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
+
     readonly Exception: Exception;
 }
 
@@ -786,6 +837,9 @@ export const DataReaderEventData: {
 export type DataReaderEventData = DataReaderEventData$instance;
 
 export interface DbCommandInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbCommandInterceptor: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
+
     CommandCanceled(command: DbCommand, eventData: CommandEndEventData): void;
     CommandCanceledAsync(command: DbCommand, eventData: CommandEndEventData, cancellationToken?: CancellationToken): Task;
     CommandCreated(eventData: CommandEndEventData, result: DbCommand): DbCommand;
@@ -825,6 +879,9 @@ export type DbCommandInterceptor = DbCommandInterceptor$instance & __DbCommandIn
 
 
 export interface DbConnectionInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbConnectionInterceptor: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
+
     ConnectionCanceled(connection: DbConnection, eventData: ConnectionEndEventData): void;
     ConnectionCanceledAsync(connection: DbConnection, eventData: ConnectionEndEventData, cancellationToken?: CancellationToken): Task;
     ConnectionClosed(connection: DbConnection, eventData: ConnectionEndEventData): void;
@@ -860,6 +917,8 @@ export type DbConnectionInterceptor = DbConnectionInterceptor$instance & __DbCon
 
 
 export interface DbContextErrorEventData$instance extends DbContextEventData {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
+
     readonly Exception: DbUpdateConcurrencyException | Exception;
 }
 
@@ -891,6 +950,8 @@ export const DbContextEventData: {
 export type DbContextEventData = DbContextEventData$instance;
 
 export interface DbContextTypeErrorEventData$instance extends DbContextTypeEventData {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
+
     readonly Exception: Exception;
 }
 
@@ -922,6 +983,9 @@ export const DbContextTypeEventData: {
 export type DbContextTypeEventData = DbContextTypeEventData$instance;
 
 export interface DbTransactionInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbTransactionInterceptor: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
+
     CreatedSavepoint(transaction: DbTransaction, eventData: TransactionEventData): void;
     CreatedSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, cancellationToken?: CancellationToken): Task;
     CreatingSavepoint(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult): InterceptionResult;
@@ -1190,6 +1254,9 @@ export const ForeignKeyEventData: {
 export type ForeignKeyEventData = ForeignKeyEventData$instance;
 
 export interface IgnoringIdentityResolutionInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
+
     UpdateTrackedInstance(interceptionData: IdentityResolutionInterceptionData, existingEntry: EntityEntry, newEntity: unknown): void;
 }
 
@@ -1256,6 +1323,8 @@ export const IndexWithPropertyEventData: {
 export type IndexWithPropertyEventData = IndexWithPropertyEventData$instance;
 
 export interface InterceptorAggregator_1$instance<TInterceptor extends IInterceptor> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
+
     readonly InterceptorType: Type;
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
     CreateChain(interceptors: IEnumerable<TInterceptor>): TInterceptor;
@@ -1535,6 +1604,8 @@ export const MinBatchSizeEventData: {
 export type MinBatchSizeEventData = MinBatchSizeEventData$instance;
 
 export interface NavigationBaseEventData$instance extends EventData {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
+
     readonly NavigationBase: IReadOnlyNavigationBase;
 }
 
@@ -1552,6 +1623,8 @@ export type NavigationBaseEventData = NavigationBaseEventData$instance & __Navig
 
 
 export interface NavigationEventData$instance extends EventData {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
+
     readonly Navigation: INavigation | IReadOnlyNavigation;
 }
 
@@ -1625,6 +1698,8 @@ export const QueryExpressionEventData: {
 export type QueryExpressionEventData = QueryExpressionEventData$instance;
 
 export interface ReferenceChangedEventData$instance extends NavigationEventData$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
+
     readonly EntityEntry: EntityEntry;
     readonly NewReferencedEntity: unknown | undefined;
     readonly OldReferencedEntity: unknown | undefined;
@@ -1646,6 +1721,8 @@ export type ReferenceChangedEventData = ReferenceChangedEventData$instance & __R
 
 
 export interface RelationalConcurrencyExceptionEventData$instance extends ConcurrencyExceptionEventData$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
+
     readonly Command: DbCommand;
     readonly CommandId: Guid;
     readonly Connection: DbConnection;
@@ -1783,6 +1860,9 @@ export const SaveChangesEventData: {
 export type SaveChangesEventData = SaveChangesEventData$instance;
 
 export interface SaveChangesInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ISaveChangesInterceptor: never;
+
     SaveChangesCanceled(eventData: DbContextEventData): void;
     SaveChangesCanceledAsync(eventData: DbContextEventData, cancellationToken?: CancellationToken): Task;
     SaveChangesFailed(eventData: DbContextErrorEventData): void;
@@ -1872,6 +1952,9 @@ export const SharedDependentEntityEventData: {
 export type SharedDependentEntityEventData = SharedDependentEntityEventData$instance;
 
 export interface SkipCollectionChangedEventData$instance extends SkipNavigationEventData$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
+
     readonly Added: IEnumerable<unknown>;
     readonly EntityEntry: EntityEntry;
     readonly Removed: IEnumerable<unknown>;
@@ -1894,6 +1977,8 @@ export type SkipCollectionChangedEventData = SkipCollectionChangedEventData$inst
 
 
 export interface SkipNavigationEventData$instance extends EventData {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
+
     readonly Navigation: IReadOnlySkipNavigation | ISkipNavigation;
 }
 
@@ -1965,6 +2050,8 @@ export const TransactionEnlistedEventData: {
 export type TransactionEnlistedEventData = TransactionEnlistedEventData$instance;
 
 export interface TransactionErrorEventData$instance extends TransactionEndEventData {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
+
     readonly Action: string;
     readonly Exception: Exception;
 }
@@ -2068,6 +2155,8 @@ export const TypeEventData: {
 export type TypeEventData = TypeEventData$instance;
 
 export interface TypeLoadingEventData$instance extends AssemblyEventData {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
+
     readonly Exception: Exception;
 }
 
@@ -2111,6 +2200,9 @@ export const UpdateEntryEventData: {
 export type UpdateEntryEventData = UpdateEntryEventData$instance;
 
 export interface UpdatingIdentityResolutionInterceptor$instance extends IInterceptor {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
+
     UpdateTrackedInstance(interceptionData: IdentityResolutionInterceptionData, existingEntry: EntityEntry, newEntity: unknown): void;
 }
 

@@ -16,6 +16,10 @@ import type { IEnumerable, IList, IReadOnlyDictionary } from "@tsonic/dotnet/Sys
 import type { Boolean as ClrBoolean, Func, Int32, Int64, Nullable, Object as ClrObject, String as ClrString, Void } from "@tsonic/dotnet/System.js";
 
 export interface DatabaseColumn$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     get Collation(): string | undefined;
     set Collation(value: string | undefined);
     get Comment(): string | undefined;
@@ -73,6 +77,10 @@ export type DatabaseColumn = DatabaseColumn$instance & __DatabaseColumn$views;
 
 
 export interface DatabaseForeignKey$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     readonly Columns: IList<DatabaseColumn>;
     get Name(): string | undefined;
     set Name(value: string | undefined);
@@ -120,6 +128,10 @@ export type DatabaseForeignKey = DatabaseForeignKey$instance & __DatabaseForeign
 
 
 export interface DatabaseIndex$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     readonly Columns: IList<DatabaseColumn>;
     get Filter(): string | undefined;
     set Filter(value: string | undefined);
@@ -169,6 +181,10 @@ export type DatabaseIndex = DatabaseIndex$instance & __DatabaseIndex$views;
 
 
 export interface DatabaseModel$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     get Collation(): string | undefined;
     set Collation(value: string | undefined);
     get DatabaseName(): string | undefined;
@@ -216,6 +232,10 @@ export type DatabaseModel = DatabaseModel$instance & __DatabaseModel$views;
 
 
 export interface DatabasePrimaryKey$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     readonly Columns: IList<DatabaseColumn>;
     get Name(): string | undefined;
     set Name(value: string | undefined);
@@ -261,6 +281,10 @@ export type DatabasePrimaryKey = DatabasePrimaryKey$instance & __DatabasePrimary
 
 
 export interface DatabaseSequence$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Database: DatabaseModel;
     IncrementBy: Nullable<System_Internal.Int32>;
     IsCyclic: Nullable<System_Internal.Boolean>;
@@ -312,6 +336,10 @@ export type DatabaseSequence = DatabaseSequence$instance & __DatabaseSequence$vi
 
 
 export interface DatabaseTable$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     readonly Columns: IList<DatabaseColumn>;
     get Comment(): string | undefined;
     set Comment(value: string | undefined);
@@ -366,6 +394,10 @@ export type DatabaseTable = DatabaseTable$instance & __DatabaseTable$views;
 
 
 export interface DatabaseTrigger$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     Name: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -406,6 +438,10 @@ export type DatabaseTrigger = DatabaseTrigger$instance & __DatabaseTrigger$views
 
 
 export interface DatabaseUniqueConstraint$instance extends Annotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     readonly Columns: IList<DatabaseColumn>;
     get Name(): string | undefined;
     set Name(value: string | undefined);
@@ -450,6 +486,10 @@ export type DatabaseUniqueConstraint = DatabaseUniqueConstraint$instance & __Dat
 
 
 export interface DatabaseView$instance extends DatabaseTable$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;

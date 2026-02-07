@@ -36,6 +36,8 @@ export enum ResultSetMapping {
 
 
 export interface IBatchExecutor$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IBatchExecutor: never;
+
     Execute(commandBatches: IEnumerable<ModificationCommandBatch>, connection: IRelationalConnection): int;
     ExecuteAsync(commandBatches: IEnumerable<ModificationCommandBatch>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
 }
@@ -44,6 +46,8 @@ export interface IBatchExecutor$instance {
 export type IBatchExecutor = IBatchExecutor$instance;
 
 export interface IColumnModification$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IColumnModification: never;
+
     readonly Entry: IUpdateEntry | undefined;
     readonly Property: IProperty | undefined;
     readonly Column: IColumnBase | undefined;
@@ -75,6 +79,8 @@ export interface IColumnModification$instance {
 export type IColumnModification = IColumnModification$instance;
 
 export interface ICommandBatchPreparer$instance extends IResettableService {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_ICommandBatchPreparer: never;
+
     BatchCommands(entries: IList<IUpdateEntry>, updateAdapter: IUpdateAdapter): IEnumerable<ModificationCommandBatch>;
     CreateCommandBatches(commandSet: IEnumerable<IReadOnlyModificationCommand>, moreCommandSets: boolean): IEnumerable<ModificationCommandBatch>;
     ResetState(): void;
@@ -87,6 +93,8 @@ export interface ICommandBatchPreparer$instance extends Microsoft_EntityFramewor
 export type ICommandBatchPreparer = ICommandBatchPreparer$instance;
 
 export interface IModificationCommand$instance extends IReadOnlyModificationCommand {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IModificationCommand: never;
+
     readonly Table: ITable | undefined;
     readonly StoreStoredProcedure: IStoreStoredProcedure | undefined;
     readonly TableName: string;
@@ -106,6 +114,8 @@ export interface IModificationCommand$instance extends IReadOnlyModificationComm
 export type IModificationCommand = IModificationCommand$instance;
 
 export interface IModificationCommandBatchFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IModificationCommandBatchFactory: never;
+
     Create(): ModificationCommandBatch;
 }
 
@@ -113,6 +123,8 @@ export interface IModificationCommandBatchFactory$instance {
 export type IModificationCommandBatchFactory = IModificationCommandBatchFactory$instance;
 
 export interface IModificationCommandFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IModificationCommandFactory: never;
+
     CreateModificationCommand(modificationCommandParameters: ModificationCommandParameters): IModificationCommand;
     CreateNonTrackedModificationCommand(modificationCommandParameters: NonTrackedModificationCommandParameters): INonTrackedModificationCommand;
 }
@@ -121,6 +133,8 @@ export interface IModificationCommandFactory$instance {
 export type IModificationCommandFactory = IModificationCommandFactory$instance;
 
 export interface INonTrackedModificationCommand$instance extends IReadOnlyModificationCommand {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_INonTrackedModificationCommand: never;
+
     EntityState: EntityState;
     readonly Table: ITable | undefined;
     readonly StoreStoredProcedure: IStoreStoredProcedure | undefined;
@@ -138,6 +152,8 @@ export interface INonTrackedModificationCommand$instance extends IReadOnlyModifi
 export type INonTrackedModificationCommand = INonTrackedModificationCommand$instance;
 
 export interface IReadOnlyModificationCommand$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IReadOnlyModificationCommand: never;
+
     readonly Table: ITable | undefined;
     readonly StoreStoredProcedure: IStoreStoredProcedure | undefined;
     readonly TableName: string;
@@ -154,6 +170,8 @@ export interface IReadOnlyModificationCommand$instance {
 export type IReadOnlyModificationCommand = IReadOnlyModificationCommand$instance;
 
 export interface IUpdateAdapter$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateAdapter: never;
+
     DeleteOrphansTiming: CascadeTiming;
     CascadeDeleteTiming: CascadeTiming;
     readonly Entries: IEnumerable<IUpdateEntry>;
@@ -171,6 +189,8 @@ export interface IUpdateAdapter$instance {
 export type IUpdateAdapter = IUpdateAdapter$instance;
 
 export interface IUpdateAdapterFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateAdapterFactory: never;
+
     Create(): IUpdateAdapter;
     CreateStandalone(model?: IModel): IUpdateAdapter;
 }
@@ -179,6 +199,8 @@ export interface IUpdateAdapterFactory$instance {
 export type IUpdateAdapterFactory = IUpdateAdapterFactory$instance;
 
 export interface IUpdateEntry$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateEntry: never;
+
     readonly Context: DbContext;
     readonly EntityType: IEntityType;
     EntityState: EntityState;
@@ -199,6 +221,8 @@ export interface IUpdateEntry$instance {
 export type IUpdateEntry = IUpdateEntry$instance;
 
 export interface IUpdateSqlGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateSqlGenerator: never;
+
     AppendBatchHeader(commandStringBuilder: StringBuilder): void;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
@@ -210,6 +234,8 @@ export interface IUpdateSqlGenerator$instance {
 export type IUpdateSqlGenerator = IUpdateSqlGenerator$instance;
 
 export interface ColumnModificationParameters$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     get Column(): IColumnBase | undefined;
     set Column(value: IColumnBase | undefined);
     ColumnName: string;
@@ -253,6 +279,8 @@ export const ColumnModificationParameters: {
 export type ColumnModificationParameters = ColumnModificationParameters$instance;
 
 export interface ModificationCommandParameters$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     get Comparer(): IComparer<IUpdateEntry> | undefined;
     set Comparer(value: IComparer<IUpdateEntry> | undefined);
     DetailedErrorsEnabled: boolean;
@@ -283,6 +311,8 @@ export const ModificationCommandParameters: {
 export type ModificationCommandParameters = ModificationCommandParameters$instance;
 
 export interface NonTrackedModificationCommandParameters$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
     SensitiveLoggingEnabled: boolean;
@@ -323,6 +353,8 @@ export const AffectedCountModificationCommandBatch: (abstract new(dependencies: 
 export type AffectedCountModificationCommandBatch = AffectedCountModificationCommandBatch$instance;
 
 export interface ColumnModification$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IColumnModification: never;
+
     readonly Column: IColumnBase | undefined;
     readonly ColumnName: string;
     readonly ColumnType: string | undefined;
@@ -386,6 +418,10 @@ export const EquatableKeyValue_1: {
 export type EquatableKeyValue_1<TKey> = EquatableKeyValue_1$instance<TKey>;
 
 export interface ModificationCommand$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IModificationCommand: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_INonTrackedModificationCommand: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IReadOnlyModificationCommand: never;
+
     readonly ColumnModifications: IReadOnlyList<IColumnModification>;
     EntityState: EntityState;
     readonly Entries: IReadOnlyList<IUpdateEntry>;
@@ -439,6 +475,8 @@ export const ModificationCommandBatch: (abstract new() => ModificationCommandBat
 export type ModificationCommandBatch = ModificationCommandBatch$instance;
 
 export interface ModificationCommandBatchFactoryDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     CommandBuilderFactory: IRelationalCommandBuilderFactory;
     CurrentContext: ICurrentDbContext;
     Logger: IRelationalCommandDiagnosticsLogger;
@@ -507,6 +545,8 @@ export const SingularModificationCommandBatch: {
 export type SingularModificationCommandBatch = SingularModificationCommandBatch$instance;
 
 export interface UpdateAndSelectSqlGenerator$instance extends UpdateSqlGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateSqlGenerator: never;
+
     AppendBatchHeader(commandStringBuilder: StringBuilder): void;
     AppendDeleteAndSelectOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
@@ -543,6 +583,8 @@ export type UpdateAndSelectSqlGenerator = UpdateAndSelectSqlGenerator$instance &
 
 
 export interface UpdateSqlGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateSqlGenerator: never;
+
     readonly Dependencies: UpdateSqlGeneratorDependencies;
     readonly SqlGenerationHelper: ISqlGenerationHelper;
     AppendBatchHeader(commandStringBuilder: StringBuilder): void;
@@ -591,6 +633,8 @@ export type UpdateSqlGenerator = UpdateSqlGenerator$instance & __UpdateSqlGenera
 
 
 export interface UpdateSqlGeneratorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     SqlGenerationHelper: ISqlGenerationHelper;
     TypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): UpdateSqlGeneratorDependencies;

@@ -46,6 +46,8 @@ export enum StoreTypePostfix {
 
 
 export interface IDatabase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabase: never;
+
     CompileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
     CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
     SaveChanges(entries: IList<IUpdateEntry>): int;
@@ -56,6 +58,8 @@ export interface IDatabase$instance {
 export type IDatabase = IDatabase$instance;
 
 export interface IDatabaseCreator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseCreator: never;
+
     EnsureDeleted(): boolean;
     EnsureDeletedAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
 }
@@ -64,6 +68,8 @@ export interface IDatabaseCreator$instance {
 export type IDatabaseCreator = IDatabaseCreator$instance;
 
 export interface IDatabaseFacadeDependencies$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseFacadeDependencies: never;
+
     readonly TransactionManager: IDbContextTransactionManager;
     readonly DatabaseCreator: IDatabaseCreator;
     readonly ExecutionStrategy: IExecutionStrategy;
@@ -81,6 +87,8 @@ export interface IDatabaseFacadeDependencies$instance {
 export type IDatabaseFacadeDependencies = IDatabaseFacadeDependencies$instance;
 
 export interface IDatabaseFacadeDependenciesAccessor$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseFacadeDependenciesAccessor: never;
+
     readonly Dependencies: IDatabaseFacadeDependencies;
     readonly Context: DbContext;
 }
@@ -89,6 +97,8 @@ export interface IDatabaseFacadeDependenciesAccessor$instance {
 export type IDatabaseFacadeDependenciesAccessor = IDatabaseFacadeDependenciesAccessor$instance;
 
 export interface IDatabaseProvider$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseProvider: never;
+
     readonly Name: string;
     readonly Version: string | undefined;
     IsConfigured(options: IDbContextOptions): boolean;
@@ -98,6 +108,8 @@ export interface IDatabaseProvider$instance {
 export type IDatabaseProvider = IDatabaseProvider$instance;
 
 export interface IDbContextTransaction$instance extends IDisposable, IAsyncDisposable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDbContextTransaction: never;
+
     readonly TransactionId: Guid;
     readonly SupportsSavepoints: boolean;
     Commit(): void;
@@ -112,6 +124,8 @@ export interface IDbContextTransaction$instance extends System_Internal.IAsyncDi
 export type IDbContextTransaction = IDbContextTransaction$instance;
 
 export interface IDbContextTransactionManager$instance extends IResettableService {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDbContextTransactionManager: never;
+
     readonly CurrentTransaction: IDbContextTransaction | undefined;
     BeginTransaction(): IDbContextTransaction;
     BeginTransactionAsync(cancellationToken?: CancellationToken): Task<IDbContextTransaction>;
@@ -127,6 +141,8 @@ export interface IDbContextTransactionManager$instance extends Microsoft_EntityF
 export type IDbContextTransactionManager = IDbContextTransactionManager$instance;
 
 export interface IExceptionDetector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExceptionDetector: never;
+
     IsCancellation(exception: Exception, cancellationToken?: CancellationToken): boolean;
 }
 
@@ -134,6 +150,8 @@ export interface IExceptionDetector$instance {
 export type IExceptionDetector = IExceptionDetector$instance;
 
 export interface IExecutionStrategy$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategy: never;
+
     readonly RetriesOnFailure: boolean;
     Execute<TState, TResult>(state: TState, operation: Func<DbContext, TState, TResult>, verifySucceeded: Func<DbContext, TState, ExecutionResult_1<TResult>>): TResult;
     ExecuteAsync<TState, TResult>(state: TState, operation: Func<DbContext, TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<DbContext, TState, CancellationToken, Task<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task<TResult>;
@@ -143,6 +161,8 @@ export interface IExecutionStrategy$instance {
 export type IExecutionStrategy = IExecutionStrategy$instance;
 
 export interface IExecutionStrategyFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategyFactory: never;
+
     Create(): IExecutionStrategy;
 }
 
@@ -150,6 +170,8 @@ export interface IExecutionStrategyFactory$instance {
 export type IExecutionStrategyFactory = IExecutionStrategyFactory$instance;
 
 export interface IParameterNameGeneratorFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IParameterNameGeneratorFactory: never;
+
     Create(): ParameterNameGenerator;
 }
 
@@ -157,6 +179,8 @@ export interface IParameterNameGeneratorFactory$instance {
 export type IParameterNameGeneratorFactory = IParameterNameGeneratorFactory$instance;
 
 export interface IRawSqlCommandBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRawSqlCommandBuilder: never;
+
     Build(sql: string, parameters: IEnumerable<unknown>, model: IModel): RawSqlCommand;
     Build(sql: string, parameters: IEnumerable<unknown>): RawSqlCommand;
     Build(sql: string): IRelationalCommand;
@@ -166,6 +190,8 @@ export interface IRawSqlCommandBuilder$instance {
 export type IRawSqlCommandBuilder = IRawSqlCommandBuilder$instance;
 
 export interface IRelationalCommand$instance extends IRelationalCommandTemplate {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommand: never;
+
     readonly CommandText: string;
     readonly LogCommandText: string;
     readonly Parameters: IReadOnlyList<IRelationalParameter>;
@@ -183,6 +209,8 @@ export interface IRelationalCommand$instance extends IRelationalCommandTemplate$
 export type IRelationalCommand = IRelationalCommand$instance;
 
 export interface IRelationalCommandBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandBuilder: never;
+
     readonly Parameters: IReadOnlyList<IRelationalParameter>;
     readonly TypeMappingSource: IRelationalTypeMappingSource;
     readonly CommandTextLength: int;
@@ -198,6 +226,8 @@ export interface IRelationalCommandBuilder$instance {
 export type IRelationalCommandBuilder = IRelationalCommandBuilder$instance;
 
 export interface IRelationalCommandBuilderFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandBuilderFactory: never;
+
     Create(): IRelationalCommandBuilder;
 }
 
@@ -205,6 +235,8 @@ export interface IRelationalCommandBuilderFactory$instance {
 export type IRelationalCommandBuilderFactory = IRelationalCommandBuilderFactory$instance;
 
 export interface IRelationalCommandTemplate$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandTemplate: never;
+
     readonly CommandText: string;
     readonly LogCommandText: string;
     readonly Parameters: IReadOnlyList<IRelationalParameter>;
@@ -215,6 +247,8 @@ export interface IRelationalCommandTemplate$instance {
 export type IRelationalCommandTemplate = IRelationalCommandTemplate$instance;
 
 export interface IRelationalConnection$instance extends IRelationalTransactionManager, IDbContextTransactionManager, IResettableService, IDisposable, IAsyncDisposable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalConnection: never;
+
     get ConnectionString(): string | undefined;
     set ConnectionString(value: string | undefined);
     DbConnection: DbConnection;
@@ -249,6 +283,8 @@ export interface IRelationalConnection$instance extends System_Internal.IAsyncDi
 export type IRelationalConnection = IRelationalConnection$instance;
 
 export interface IRelationalDatabaseCreator$instance extends IDatabaseCreator {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalDatabaseCreator: never;
+
     Create(): void;
     CreateAsync(cancellationToken?: CancellationToken): Task;
     Exists(): boolean;
@@ -264,6 +300,8 @@ export interface IRelationalDatabaseCreator$instance extends IDatabaseCreator$in
 export type IRelationalDatabaseCreator = IRelationalDatabaseCreator$instance;
 
 export interface IRelationalDatabaseFacadeDependencies$instance extends IDatabaseFacadeDependencies {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalDatabaseFacadeDependencies: never;
+
     readonly RelationalConnection: IRelationalConnection;
     readonly RawSqlCommandBuilder: IRawSqlCommandBuilder;
     readonly CommandLogger: IRelationalCommandDiagnosticsLogger;
@@ -283,6 +321,8 @@ export interface IRelationalDatabaseFacadeDependencies$instance extends IDatabas
 export type IRelationalDatabaseFacadeDependencies = IRelationalDatabaseFacadeDependencies$instance;
 
 export interface IRelationalParameter$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
+
     readonly InvariantName: string;
     AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary<System_Internal.String, unknown>): void;
     AddDbParameter(command: DbCommand, value: unknown): void;
@@ -292,6 +332,8 @@ export interface IRelationalParameter$instance {
 export type IRelationalParameter = IRelationalParameter$instance;
 
 export interface IRelationalTransactionFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTransactionFactory: never;
+
     Create(connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, logger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, transactionOwned: boolean): RelationalTransaction;
 }
 
@@ -299,6 +341,8 @@ export interface IRelationalTransactionFactory$instance {
 export type IRelationalTransactionFactory = IRelationalTransactionFactory$instance;
 
 export interface IRelationalTransactionManager$instance extends IDbContextTransactionManager, IResettableService {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTransactionManager: never;
+
     readonly CurrentTransaction: IDbContextTransaction | undefined;
     BeginTransaction(): IDbContextTransaction;
     BeginTransaction(isolationLevel: IsolationLevel): IDbContextTransaction;
@@ -318,6 +362,8 @@ export interface IRelationalTransactionManager$instance extends IDbContextTransa
 export type IRelationalTransactionManager = IRelationalTransactionManager$instance;
 
 export interface IRelationalTypeMappingSource$instance extends ITypeMappingSource {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTypeMappingSource: never;
+
     FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
     FindMapping(property: IProperty): CoreTypeMapping | undefined;
     FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
@@ -336,6 +382,8 @@ export interface IRelationalTypeMappingSource$instance extends ITypeMappingSourc
 export type IRelationalTypeMappingSource = IRelationalTypeMappingSource$instance;
 
 export interface IRelationalTypeMappingSourcePlugin$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTypeMappingSourcePlugin: never;
+
     FindMapping(mappingInfo: RelationalTypeMappingInfo): RelationalTypeMapping | undefined;
 }
 
@@ -343,6 +391,8 @@ export interface IRelationalTypeMappingSourcePlugin$instance {
 export type IRelationalTypeMappingSourcePlugin = IRelationalTypeMappingSourcePlugin$instance;
 
 export interface ISqlGenerationHelper$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ISqlGenerationHelper: never;
+
     readonly StatementTerminator: string;
     readonly BatchTerminator: string;
     readonly StartTransactionStatement: string;
@@ -358,6 +408,8 @@ export interface ISqlGenerationHelper$instance {
 export type ISqlGenerationHelper = ISqlGenerationHelper$instance;
 
 export interface ITransactionEnlistmentManager$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITransactionEnlistmentManager: never;
+
     readonly CurrentAmbientTransaction: Transaction | undefined;
     readonly EnlistedTransaction: Transaction | undefined;
     EnlistTransaction(transaction: Transaction): void;
@@ -367,6 +419,8 @@ export interface ITransactionEnlistmentManager$instance {
 export type ITransactionEnlistmentManager = ITransactionEnlistmentManager$instance;
 
 export interface ITypeMappingSource$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSource: never;
+
     FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
     FindMapping(property: IProperty): CoreTypeMapping | undefined;
     FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
@@ -379,6 +433,8 @@ export interface ITypeMappingSource$instance {
 export type ITypeMappingSource = ITypeMappingSource$instance;
 
 export interface ITypeMappingSourcePlugin$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSourcePlugin: never;
+
     FindMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping | undefined;
 }
 
@@ -400,6 +456,8 @@ export const MaterializationContext: {
 export type MaterializationContext = MaterializationContext$instance;
 
 export interface RelationalCommandParameterObject$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     readonly CommandSource: CommandSource;
     readonly Connection: IRelationalConnection;
     readonly Context: DbContext | undefined;
@@ -425,6 +483,8 @@ export const RelationalCommandParameterObject: {
 export type RelationalCommandParameterObject = RelationalCommandParameterObject$instance;
 
 export interface RelationalTypeMappingInfo$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     get ClrType(): Type | undefined;
     set ClrType(value: Type | undefined);
     readonly CoreTypeMappingInfo: TypeMappingInfo;
@@ -468,6 +528,8 @@ export const RelationalTypeMappingInfo: {
 export type RelationalTypeMappingInfo = RelationalTypeMappingInfo$instance;
 
 export interface TypeMappingInfo$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     get ClrType(): Type | undefined;
     set ClrType(value: Type | undefined);
     get ElementTypeMapping(): CoreTypeMapping | undefined;
@@ -503,6 +565,8 @@ export const TypeMappingInfo: {
 export type TypeMappingInfo = TypeMappingInfo$instance;
 
 export interface ValueBuffer$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     readonly Count: int;
     readonly IsEmpty: boolean;
     [index: number]: unknown | undefined;
@@ -611,6 +675,8 @@ export const CoreTypeMapping: (abstract new(parameters: unknown) => CoreTypeMapp
 export type CoreTypeMapping = CoreTypeMapping$instance;
 
 export interface Database$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabase: never;
+
     readonly Dependencies: DatabaseDependencies;
     CompileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
     CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
@@ -633,6 +699,8 @@ export type Database = Database$instance & __Database$views;
 
 
 export interface DatabaseDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Update>;
     QueryCompilationContextFactory: IQueryCompilationContextFactory;
     UpdateAdapterFactory: IUpdateAdapterFactory;
@@ -652,6 +720,8 @@ export const DatabaseDependencies: {
 export type DatabaseDependencies = DatabaseDependencies$instance;
 
 export interface DatabaseProvider_1$instance<TOptionsExtension extends IDbContextOptionsExtension> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseProvider: never;
+
     readonly Dependencies: DatabaseProviderDependencies;
     readonly Name: string;
     readonly Version: string | undefined;
@@ -674,6 +744,8 @@ export type DatabaseProvider_1<TOptionsExtension extends IDbContextOptionsExtens
 
 
 export interface DatabaseProviderDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): DatabaseProviderDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: DatabaseProviderDependencies): boolean;
@@ -788,6 +860,8 @@ export const ExecutionResult_1: {
 export type ExecutionResult_1<TResult> = ExecutionResult_1$instance<TResult>;
 
 export interface ExecutionStrategy$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategy: never;
+
     readonly Dependencies: ExecutionStrategyDependencies;
     readonly ExceptionsEncountered: List<Exception>;
     readonly MaxRetryCount: int;
@@ -823,6 +897,8 @@ export type ExecutionStrategy = ExecutionStrategy$instance & __ExecutionStrategy
 
 
 export interface ExecutionStrategyDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     CurrentContext: ICurrentDbContext;
     Logger: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>;
     Options: IDbContextOptions;
@@ -929,6 +1005,8 @@ export const LongTypeMapping: {
 export type LongTypeMapping = LongTypeMapping$instance;
 
 export interface NonRetryingExecutionStrategy$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategy: never;
+
     readonly RetriesOnFailure: boolean;
     Execute<TState, TResult>(state: TState, operation: Func<DbContext, TState, TResult>, verifySucceeded: Func<DbContext, TState, ExecutionResult_1<TResult>>): TResult;
     ExecuteAsync<TState, TResult>(state: TState, operation: Func<DbContext, TState, CancellationToken, Task<TResult>>, verifySucceeded: Func<DbContext, TState, CancellationToken, Task<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task<TResult>;
@@ -964,6 +1042,8 @@ export const ParameterNameGenerator: {
 export type ParameterNameGenerator = ParameterNameGenerator$instance;
 
 export interface ParameterNameGeneratorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): ParameterNameGeneratorDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: ParameterNameGeneratorDependencies): boolean;
@@ -980,6 +1060,8 @@ export const ParameterNameGeneratorDependencies: {
 export type ParameterNameGeneratorDependencies = ParameterNameGeneratorDependencies$instance;
 
 export interface ParameterNameGeneratorFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IParameterNameGeneratorFactory: never;
+
     readonly Dependencies: ParameterNameGeneratorDependencies;
     Create(): ParameterNameGenerator;
 }
@@ -1042,6 +1124,9 @@ export const ReaderColumn_1: {
 export type ReaderColumn_1<T> = ReaderColumn_1$instance<T>;
 
 export interface RelationalCommand$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommand: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandTemplate: never;
+
     CommandText: string;
     readonly Dependencies: RelationalCommandBuilderDependencies;
     LogCommandText: string;
@@ -1072,6 +1157,8 @@ export type RelationalCommand = RelationalCommand$instance & __RelationalCommand
 
 
 export interface RelationalCommandBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandBuilder: never;
+
     readonly CommandTextLength: int;
     readonly Dependencies: RelationalCommandBuilderDependencies;
     readonly Parameters: IReadOnlyList<IRelationalParameter>;
@@ -1101,6 +1188,8 @@ export type RelationalCommandBuilder = RelationalCommandBuilder$instance & __Rel
 
 
 export interface RelationalCommandBuilderDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     ExceptionDetector: IExceptionDetector;
     LoggingOptions: ILoggingOptions;
     TypeMappingSource: IRelationalTypeMappingSource;
@@ -1120,6 +1209,8 @@ export const RelationalCommandBuilderDependencies: {
 export type RelationalCommandBuilderDependencies = RelationalCommandBuilderDependencies$instance;
 
 export interface RelationalCommandBuilderFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandBuilderFactory: never;
+
     readonly Dependencies: RelationalCommandBuilderDependencies;
     Create(): IRelationalCommandBuilder;
 }
@@ -1140,6 +1231,14 @@ export type RelationalCommandBuilderFactory = RelationalCommandBuilderFactory$in
 
 
 export interface RelationalConnection$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDbContextTransactionManager: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalConnection: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTransactionManager: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITransactionEnlistmentManager: never;
+    readonly __tsonic_iface_System_IAsyncDisposable: never;
+    readonly __tsonic_iface_System_IDisposable: never;
+
     CommandTimeout: Nullable<System_Internal.Int32>;
     readonly ConnectionId: Guid;
     get ConnectionString(): string | undefined;
@@ -1207,6 +1306,8 @@ export type RelationalConnection = RelationalConnection$instance & __RelationalC
 
 
 export interface RelationalConnectionDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     ConnectionLogger: IRelationalConnectionDiagnosticsLogger;
     ConnectionStringResolver: INamedConnectionStringResolver;
     ContextOptions: IDbContextOptions;
@@ -1231,6 +1332,8 @@ export const RelationalConnectionDependencies: {
 export type RelationalConnectionDependencies = RelationalConnectionDependencies$instance;
 
 export interface RelationalDatabase$instance extends Database$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabase: never;
+
     readonly RelationalDependencies: RelationalDatabaseDependencies;
     CompileQuery<TResult>(query: Expression, async: boolean): Func<QueryContext, TResult>;
     CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression<Func<QueryContext, TResult>>;
@@ -1252,6 +1355,9 @@ export type RelationalDatabase = RelationalDatabase$instance & __RelationalDatab
 
 
 export interface RelationalDatabaseCreator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseCreator: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalDatabaseCreator: never;
+
     readonly Dependencies: RelationalDatabaseCreatorDependencies;
     CanConnect(): boolean;
     CanConnectAsync(cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
@@ -1289,6 +1395,8 @@ export type RelationalDatabaseCreator = RelationalDatabaseCreator$instance & __R
 
 
 export interface RelationalDatabaseCreatorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     CommandLogger: IRelationalCommandDiagnosticsLogger;
     Connection: IRelationalConnection;
     ContextOptions: IDbContextOptions;
@@ -1315,6 +1423,8 @@ export const RelationalDatabaseCreatorDependencies: {
 export type RelationalDatabaseCreatorDependencies = RelationalDatabaseCreatorDependencies$instance;
 
 export interface RelationalDatabaseDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     BatchExecutor: IBatchExecutor;
     BatchPreparer: ICommandBatchPreparer;
     Connection: IRelationalConnection;
@@ -1334,6 +1444,9 @@ export const RelationalDatabaseDependencies: {
 export type RelationalDatabaseDependencies = RelationalDatabaseDependencies$instance;
 
 export interface RelationalDataReader$instance {
+    readonly __tsonic_iface_System_IAsyncDisposable: never;
+    readonly __tsonic_iface_System_IDisposable: never;
+
     readonly CommandId: Guid;
     readonly DbCommand: DbCommand;
     readonly DbDataReader: DbDataReader;
@@ -1356,6 +1469,8 @@ export const RelationalDataReader: {
 export type RelationalDataReader = RelationalDataReader$instance;
 
 export interface RelationalExecutionStrategyFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategyFactory: never;
+
     readonly Dependencies: ExecutionStrategyDependencies;
     Create(): IExecutionStrategy;
     CreateDefaultStrategy(dependencies: ExecutionStrategyDependencies): IExecutionStrategy;
@@ -1395,6 +1510,8 @@ export const RelationalGeometryTypeMapping_2: (abstract new<TGeometry, TProvider
 export type RelationalGeometryTypeMapping_2<TGeometry, TProvider> = RelationalGeometryTypeMapping_2$instance<TGeometry, TProvider>;
 
 export interface RelationalSqlGenerationHelper$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ISqlGenerationHelper: never;
+
     readonly BatchTerminator: string;
     readonly CommitTransactionStatement: string;
     readonly Dependencies: RelationalSqlGenerationHelperDependencies;
@@ -1433,6 +1550,8 @@ export type RelationalSqlGenerationHelper = RelationalSqlGenerationHelper$instan
 
 
 export interface RelationalSqlGenerationHelperDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): RelationalSqlGenerationHelperDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: RelationalSqlGenerationHelperDependencies): boolean;
@@ -1449,6 +1568,11 @@ export const RelationalSqlGenerationHelperDependencies: {
 export type RelationalSqlGenerationHelperDependencies = RelationalSqlGenerationHelperDependencies$instance;
 
 export interface RelationalTransaction$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDbContextTransaction: never;
+    readonly __tsonic_iface_System_IAsyncDisposable: never;
+    readonly __tsonic_iface_System_IDisposable: never;
+
     readonly Connection: IRelationalConnection;
     readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>;
     readonly SupportsSavepoints: boolean;
@@ -1486,6 +1610,8 @@ export type RelationalTransaction = RelationalTransaction$instance & __Relationa
 
 
 export interface RelationalTransactionFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTransactionFactory: never;
+
     readonly Dependencies: RelationalTransactionFactoryDependencies;
     Create(connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, logger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, transactionOwned: boolean): RelationalTransaction;
 }
@@ -1506,6 +1632,8 @@ export type RelationalTransactionFactory = RelationalTransactionFactory$instance
 
 
 export interface RelationalTransactionFactoryDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     SqlGenerationHelper: ISqlGenerationHelper;
     _Clone_$(): RelationalTransactionFactoryDependencies;
     Equals(obj: unknown): boolean;
@@ -1562,6 +1690,9 @@ export const RelationalTypeMapping: (abstract new(parameters: unknown) => Relati
 export type RelationalTypeMapping = RelationalTypeMapping$instance;
 
 export interface RelationalTypeMappingSource$instance extends TypeMappingSourceBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTypeMappingSource: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSource: never;
+
     readonly RelationalDependencies: RelationalTypeMappingSourceDependencies;
     FindCollectionMapping(info: RelationalTypeMappingInfo, modelType: Type, providerType: Type, elementMapping: CoreTypeMapping): RelationalTypeMapping | undefined;
     FindMapping(mappingInfo: RelationalTypeMappingInfo): RelationalTypeMapping | undefined;
@@ -1593,6 +1724,8 @@ export type RelationalTypeMappingSource = RelationalTypeMappingSource$instance &
 
 
 export interface RelationalTypeMappingSourceDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     Plugins: IEnumerable<IRelationalTypeMappingSourcePlugin>;
     _Clone_$(): RelationalTypeMappingSourceDependencies;
     Equals(obj: unknown): boolean;
@@ -1610,6 +1743,8 @@ export const RelationalTypeMappingSourceDependencies: {
 export type RelationalTypeMappingSourceDependencies = RelationalTypeMappingSourceDependencies$instance;
 
 export interface RetryLimitExceededException$instance extends Exception {
+    readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
+
 }
 
 
@@ -1708,6 +1843,8 @@ export const TimeSpanTypeMapping: {
 export type TimeSpanTypeMapping = TimeSpanTypeMapping$instance;
 
 export interface TypeMappingSource$instance extends TypeMappingSourceBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSource: never;
+
     FindCollectionMapping(info: TypeMappingInfo, modelType: Type, providerType: Type, elementMapping: CoreTypeMapping): CoreTypeMapping | undefined;
     FindMapping(property: IProperty): CoreTypeMapping | undefined;
     FindMapping(elementType: IElementType): CoreTypeMapping | undefined;
@@ -1731,6 +1868,8 @@ export type TypeMappingSource = TypeMappingSource$instance & __TypeMappingSource
 
 
 export interface TypeMappingSourceBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSource: never;
+
     readonly Dependencies: TypeMappingSourceDependencies;
     FindMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping | undefined;
     FindMapping(property: IProperty): CoreTypeMapping | undefined;
@@ -1756,6 +1895,8 @@ export type TypeMappingSourceBase = TypeMappingSourceBase$instance & __TypeMappi
 
 
 export interface TypeMappingSourceDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     readonly JsonValueReaderWriterSource: IJsonValueReaderWriterSource;
     Plugins: IEnumerable<ITypeMappingSourcePlugin>;
     ValueConverterSelector: IValueConverterSelector;

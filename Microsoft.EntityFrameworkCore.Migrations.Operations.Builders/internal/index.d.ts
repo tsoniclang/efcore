@@ -18,6 +18,8 @@ import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
 import type { PropertyInfo } from "@tsonic/dotnet/System.Reflection.js";
 
 export interface AlterOperationBuilder_1$instance<TOperation extends MigrationOperation & IAlterMigrationOperation> extends OperationBuilder_1$instance<TOperation> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
     OldAnnotation(name: string, value: unknown): AlterOperationBuilder_1<TOperation>;
 }
@@ -53,6 +55,8 @@ export const ColumnsBuilder: {
 export type ColumnsBuilder = ColumnsBuilder$instance;
 
 export interface CreateTableBuilder_1$instance<TColumns> extends OperationBuilder_1$instance<CreateTableOperation> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     Annotation(name: string, value: unknown): OperationBuilder_1<CreateTableOperation>;
     CheckConstraint(name: string, sql: string): OperationBuilder_1<AddCheckConstraintOperation>;
     ForeignKey(name: string, column: Expression<Func<TColumns, unknown>>, principalTable: string, principalColumn?: string, principalSchema?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
@@ -77,6 +81,8 @@ export type CreateTableBuilder_1<TColumns> = CreateTableBuilder_1$instance<TColu
 
 
 export interface OperationBuilder_1$instance<TOperation extends MigrationOperation> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Operation: TOperation;
     Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
     Equals(obj: unknown): boolean;

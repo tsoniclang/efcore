@@ -19,6 +19,8 @@ import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString, Type } from "@tsonic/dotnet/System.js";
 
 export interface IConventionSetBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IConventionSetBuilder: never;
+
     CreateConventionSet(): ConventionSet;
 }
 
@@ -26,6 +28,8 @@ export interface IConventionSetBuilder$instance {
 export type IConventionSetBuilder = IConventionSetBuilder$instance;
 
 export interface IConventionSetPlugin$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IConventionSetPlugin: never;
+
     ModifyConventions(conventionSet: ConventionSet): ConventionSet;
 }
 
@@ -33,6 +37,8 @@ export interface IConventionSetPlugin$instance {
 export type IConventionSetPlugin = IConventionSetPlugin$instance;
 
 export interface IProviderConventionSetBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IProviderConventionSetBuilder: never;
+
     CreateConventionSet(): ConventionSet;
 }
 
@@ -40,6 +46,8 @@ export interface IProviderConventionSetBuilder$instance {
 export type IProviderConventionSetBuilder = IProviderConventionSetBuilder$instance;
 
 export interface ProviderConventionSetBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IProviderConventionSetBuilder: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     CreateConventionSet(): ConventionSet;
     ReplaceConvention<TConvention, TImplementation extends TConvention>(conventionsList: List<TConvention>, newConvention: TImplementation): boolean;
@@ -61,6 +69,8 @@ export type ProviderConventionSetBuilder = ProviderConventionSetBuilder$instance
 
 
 export interface ProviderConventionSetBuilderDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     ConstructorBindingFactory: IConstructorBindingFactory;
     readonly ContextType: Type;
     Logger: IDiagnosticsLogger_1<DbLoggerCategory_Model>;
@@ -86,6 +96,8 @@ export const ProviderConventionSetBuilderDependencies: {
 export type ProviderConventionSetBuilderDependencies = ProviderConventionSetBuilderDependencies$instance;
 
 export interface RelationalConventionSetBuilder$instance extends ProviderConventionSetBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IProviderConventionSetBuilder: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     CreateConventionSet(): ConventionSet;
 }
@@ -103,6 +115,8 @@ export type RelationalConventionSetBuilder = RelationalConventionSetBuilder$inst
 
 
 export interface RelationalConventionSetBuilderDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     RelationalAnnotationProvider: IRelationalAnnotationProvider;
     UpdateSqlGenerator: IUpdateSqlGenerator;
     _Clone_$(): RelationalConventionSetBuilderDependencies;

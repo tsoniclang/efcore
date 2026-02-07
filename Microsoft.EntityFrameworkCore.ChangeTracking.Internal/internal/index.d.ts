@@ -38,6 +38,8 @@ import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
 export interface IChangeDetector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IChangeDetector: never;
+
     CaptureEvents(): ValueTuple<EventHandler<DetectChangesEventArgs>, EventHandler<DetectedChangesEventArgs>, EventHandler<DetectEntityChangesEventArgs>, EventHandler<DetectedEntityChangesEventArgs>>;
     DetectChanges(entry: InternalComplexEntry): void;
     DetectChanges(entry: InternalEntityEntry): void;
@@ -55,6 +57,8 @@ export interface IChangeDetector$instance {
 export type IChangeDetector = IChangeDetector$instance;
 
 export interface IChangeTrackerFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IChangeTrackerFactory: never;
+
     Create(): ChangeTracker;
 }
 
@@ -62,6 +66,8 @@ export interface IChangeTrackerFactory$instance {
 export type IChangeTrackerFactory = IChangeTrackerFactory$instance;
 
 export interface IDependentsMap$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IDependentsMap: never;
+
     Add(entry: IUpdateEntry): void;
     GetDependents(principalEntry: IUpdateEntry): IEnumerable__System_Collections_Generic<IUpdateEntry>;
     GetDependents(keyValues: IReadOnlyList<unknown>): IEnumerable__System_Collections_Generic<IUpdateEntry>;
@@ -71,6 +77,8 @@ export interface IDependentsMap$instance {
 export type IDependentsMap = IDependentsMap$instance;
 
 export interface IEntityGraphAttacher$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IEntityGraphAttacher: never;
+
     AttachGraph(rootEntry: InternalEntityEntry, targetState: EntityState, storeGeneratedWithKeySetTargetState: EntityState, forceStateWhenUnknownKey: boolean): void;
     AttachGraphAsync(rootEntry: InternalEntityEntry, targetState: EntityState, storeGeneratedWithKeySetTargetState: EntityState, forceStateWhenUnknownKey: boolean, cancellationToken?: CancellationToken): Task;
 }
@@ -79,6 +87,8 @@ export interface IEntityGraphAttacher$instance {
 export type IEntityGraphAttacher = IEntityGraphAttacher$instance;
 
 export interface IIdentityMap$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap: never;
+
     readonly Key: IKey;
     Add(keyValues: IReadOnlyList<unknown>, entry: InternalEntityEntry): void;
     AddOrUpdate(entry: InternalEntityEntry): void;
@@ -95,6 +105,8 @@ export interface IIdentityMap$instance {
 export type IIdentityMap = IIdentityMap$instance;
 
 export interface IIdentityMap_1$instance<TKey> extends IIdentityMap {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap_1: never;
+
     readonly Key: IKey;
     Add(keyValues: IReadOnlyList<unknown>, entry: InternalEntityEntry): void;
     AddOrUpdate(entry: InternalEntityEntry): void;
@@ -112,6 +124,8 @@ export interface IIdentityMap_1$instance<TKey> extends IIdentityMap {
 export type IIdentityMap_1<TKey> = IIdentityMap_1$instance<TKey>;
 
 export interface IInternalEntityEntryNotifier$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IInternalEntityEntryNotifier: never;
+
     FixupResolved(entry: InternalEntityEntry, duplicateEntry: InternalEntityEntry): void;
     KeyPropertyChanged(entry: InternalEntityEntry, property: IProperty, keys: IEnumerable__System_Collections_Generic<IKey>, foreignKeys: IEnumerable__System_Collections_Generic<IForeignKey>, oldValue: unknown, newValue: unknown): void;
     NavigationCollectionChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, added: IEnumerable__System_Collections_Generic<unknown>, removed: IEnumerable__System_Collections_Generic<unknown>): void;
@@ -127,6 +141,8 @@ export interface IInternalEntityEntryNotifier$instance {
 export type IInternalEntityEntryNotifier = IInternalEntityEntryNotifier$instance;
 
 export interface IInternalEntry$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IInternalEntry: never;
+
     get Item(): unknown | undefined;
     set Item(value: unknown | undefined);
     readonly EntityState: EntityState;
@@ -168,6 +184,8 @@ export interface IInternalEntry$instance {
 export type IInternalEntry = IInternalEntry$instance;
 
 export interface IInternalEntrySubscriber$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IInternalEntrySubscriber: never;
+
     SnapshotAndSubscribe(entry: InternalComplexEntry): boolean;
     SnapshotAndSubscribe(entry: InternalEntityEntry): boolean;
     SubscribeCollectionChanged(entry: InternalEntityEntry, navigation: INavigationBase): void;
@@ -180,6 +198,8 @@ export interface IInternalEntrySubscriber$instance {
 export type IInternalEntrySubscriber = IInternalEntrySubscriber$instance;
 
 export interface IKeyPropagator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IKeyPropagator: never;
+
     PropagateValue(entry: InternalEntityEntry, property: IProperty): InternalEntityEntry | undefined;
     PropagateValueAsync(entry: InternalEntityEntry, property: IProperty, cancellationToken?: CancellationToken): Task<InternalEntityEntry | undefined>;
 }
@@ -188,6 +208,8 @@ export interface IKeyPropagator$instance {
 export type IKeyPropagator = IKeyPropagator$instance;
 
 export interface ILocalViewListener$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ILocalViewListener: never;
+
     RegisterView(viewAction: Action<InternalEntityEntry, EntityState>): void;
     StateChanged(entry: InternalEntityEntry, oldState: EntityState, fromQuery: boolean): void;
     StateChanging(entry: InternalEntityEntry, newState: EntityState): void;
@@ -197,6 +219,8 @@ export interface ILocalViewListener$instance {
 export type ILocalViewListener = ILocalViewListener$instance;
 
 export interface INavigationFixer$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_INavigationFixer: never;
+
     BeginDelayedFixup(): boolean;
     CompleteDelayedFixup(): void;
     FixupResolved(entry: InternalEntityEntry, duplicateEntry: InternalEntityEntry): void;
@@ -212,6 +236,8 @@ export interface INavigationFixer$instance {
 export type INavigationFixer = INavigationFixer$instance;
 
 export interface ISnapshot$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     readonly IsEmpty: boolean;
     GetValue<T>(index: int): T;
@@ -221,6 +247,8 @@ export interface ISnapshot$instance {
 export type ISnapshot = ISnapshot$instance;
 
 export interface IStateManager$instance extends IResettableService {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IStateManager: never;
+
     readonly Dependencies: StateManagerDependencies;
     DeleteOrphansTiming: CascadeTiming;
     CascadeDeleteTiming: CascadeTiming;
@@ -283,6 +311,8 @@ export interface IStateManager$instance extends Microsoft_EntityFrameworkCore_In
 export type IStateManager = IStateManager$instance;
 
 export interface IValueGenerationManager$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IValueGenerationManager: never;
+
     Generate(entry: InternalEntityEntry, includePrimaryKey?: boolean): boolean;
     GenerateAsync(entry: InternalEntityEntry, includePrimaryKey?: boolean, cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
     Propagate(entry: InternalEntityEntry): InternalEntityEntry | undefined;
@@ -293,6 +323,8 @@ export interface IValueGenerationManager$instance {
 export type IValueGenerationManager = IValueGenerationManager$instance;
 
 export interface MultiSnapshot$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -337,6 +369,8 @@ export const ArrayPropertyValues: {
 export type ArrayPropertyValues = ArrayPropertyValues$instance;
 
 export interface ChangeDetector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IChangeDetector: never;
+
     CaptureEvents(): ValueTuple<EventHandler<DetectChangesEventArgs>, EventHandler<DetectedChangesEventArgs>, EventHandler<DetectEntityChangesEventArgs>, EventHandler<DetectedEntityChangesEventArgs>>;
     DetectChanges(stateManager: IStateManager): void;
     DetectChanges(entry: InternalEntityEntry): void;
@@ -368,6 +402,8 @@ export type ChangeDetector = ChangeDetector$instance & __ChangeDetector$views;
 
 
 export interface ChangeTrackerFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IChangeTrackerFactory: never;
+
     Create(): ChangeTracker;
 }
 
@@ -387,6 +423,9 @@ export type ChangeTrackerFactory = ChangeTrackerFactory$instance & __ChangeTrack
 
 
 export interface CompositeDependentKeyValueFactory$instance extends CompositeValueFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
+
     CreateDependentEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown | undefined;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: IReadOnlyList<unknown>): boolean;
@@ -408,6 +447,11 @@ export type CompositeDependentKeyValueFactory = CompositeDependentKeyValueFactor
 
 
 export interface CompositePrincipalKeyValueFactory$instance extends CompositeValueFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IPrincipalKeyValueFactory: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IPrincipalKeyValueFactory_1: never;
+
     CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     CreateFromBuffer(valueBuffer: ValueBuffer): unknown | undefined;
     CreateFromCurrentValues(entry: IUpdateEntry): IReadOnlyList<unknown | undefined>;
@@ -438,6 +482,9 @@ export type CompositePrincipalKeyValueFactory = CompositePrincipalKeyValueFactor
 
 
 export interface CompositeValueFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
+
     readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<IReadOnlyList<unknown | undefined>>;
     readonly Properties: IReadOnlyList<IProperty>;
     CreateDependentEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown | undefined;
@@ -466,6 +513,10 @@ export type CompositeValueFactory = CompositeValueFactory$instance & __Composite
 
 
 export interface ConvertingValueComparer_2$instance<TTo, TFrom> extends ValueComparer_1<TTo> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+    readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
+
 }
 
 
@@ -500,6 +551,8 @@ export const CurrentPropertyValues: {
 export type CurrentPropertyValues = CurrentPropertyValues$instance;
 
 export interface CurrentProviderValueComparer_2$instance<TModel, TProvider> {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+
     Compare(x: IUpdateEntry, y: IUpdateEntry): int;
 }
 
@@ -554,6 +607,8 @@ export const DependentKeyValueFactoryFactory: {
 export type DependentKeyValueFactoryFactory = DependentKeyValueFactoryFactory$instance;
 
 export interface DependentsMap_1$instance<TKey> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IDependentsMap: never;
+
     Add(entry: IUpdateEntry): void;
     GetDependents(principalEntry: IUpdateEntry): IEnumerable__System_Collections_Generic<IUpdateEntry>;
     GetDependents(keyValues: IReadOnlyList<unknown>): IEnumerable__System_Collections_Generic<IUpdateEntry>;
@@ -594,6 +649,8 @@ export const EmptyShadowValuesFactoryFactory: {
 export type EmptyShadowValuesFactoryFactory = EmptyShadowValuesFactoryFactory$instance;
 
 export interface EntityEntryGraphIterator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IEntityEntryGraphIterator: never;
+
     TraverseGraph<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
     TraverseGraphAsync<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, CancellationToken, Task<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
 }
@@ -614,6 +671,8 @@ export type EntityEntryGraphIterator = EntityEntryGraphIterator$instance & __Ent
 
 
 export interface EntityGraphAttacher$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IEntityGraphAttacher: never;
+
     AttachGraph(rootEntry: InternalEntityEntry, targetState: EntityState, storeGeneratedWithKeySetTargetState: EntityState, forceStateWhenUnknownKey: boolean): void;
     AttachGraphAsync(rootEntry: InternalEntityEntry, targetState: EntityState, storeGeneratedWithKeySetTargetState: EntityState, forceStateWhenUnknownKey: boolean, cancellationToken?: CancellationToken): Task;
 }
@@ -651,6 +710,9 @@ export const EntityReferenceMap: {
 export type EntityReferenceMap = EntityReferenceMap$instance;
 
 export interface EntryCurrentProviderValueComparer$instance extends EntryCurrentValueComparer {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+
     GetPropertyValue(entry: IUpdateEntry): unknown | undefined;
 }
 
@@ -663,6 +725,9 @@ export const EntryCurrentProviderValueComparer: {
 export type EntryCurrentProviderValueComparer = EntryCurrentProviderValueComparer$instance;
 
 export interface EntryCurrentValueComparer$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+
     Compare(x: IUpdateEntry, y: IUpdateEntry): int;
     ComparePropertyValues(x: unknown, y: unknown): int;
     Equals(x: IUpdateEntry, y: IUpdateEntry): boolean;
@@ -705,6 +770,9 @@ export const EntryPropertyValues: (abstract new(internalEntry: InternalEntryBase
 export type EntryPropertyValues = EntryPropertyValues$instance;
 
 export interface IdentityMap_1$instance<TKey> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap_1: never;
+
     readonly Key: IKey;
     readonly PrincipalKeyValueFactory: IPrincipalKeyValueFactory_1<TKey>;
     Add(entry: InternalEntityEntry): void;
@@ -755,6 +823,8 @@ export const IdentityMapFactoryFactory: {
 export type IdentityMapFactoryFactory = IdentityMapFactoryFactory$instance;
 
 export interface InternalComplexEntry$instance extends InternalEntryBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IInternalEntry: never;
+
     readonly ComplexProperty: IComplexProperty;
     readonly ComplexType: IRuntimeComplexType;
     readonly ContainingEntry: InternalEntryBase;
@@ -815,6 +885,9 @@ export type InternalComplexEntry = InternalComplexEntry$instance & __InternalCom
 
 
 export interface InternalEntityEntry$instance extends InternalEntryBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IInternalEntry: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateEntry: never;
+
     readonly DebugView: DebugView;
     readonly Entity: unknown;
     readonly EntityType: IRuntimeEntityType;
@@ -921,6 +994,8 @@ export const InternalEntityEntryNotifier: {
 export type InternalEntityEntryNotifier = InternalEntityEntryNotifier$instance;
 
 export interface InternalEntryBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IInternalEntry: never;
+
     readonly ContainingEntry: InternalEntryBase;
     readonly Context: DbContext;
     readonly EntityEntry: InternalEntityEntry;
@@ -1027,6 +1102,8 @@ export const InternalEntrySubscriber: {
 export type InternalEntrySubscriber = InternalEntrySubscriber$instance;
 
 export interface KeyPropagator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IKeyPropagator: never;
+
     PropagateValue(entry: InternalEntityEntry, property: IProperty): InternalEntityEntry | undefined;
     PropagateValueAsync(entry: InternalEntityEntry, property: IProperty, cancellationToken?: CancellationToken): Task<InternalEntityEntry | undefined>;
 }
@@ -1062,6 +1139,8 @@ export const KeyValueFactoryFactory: {
 export type KeyValueFactoryFactory = KeyValueFactoryFactory$instance;
 
 export interface LocalViewListener$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ILocalViewListener: never;
+
     RegisterView(viewAction: Action<InternalEntityEntry, EntityState>): void;
     StateChanged(entry: InternalEntityEntry, oldState: EntityState, fromQuery: boolean): void;
     StateChanging(entry: InternalEntityEntry, newState: EntityState): void;
@@ -1083,6 +1162,8 @@ export type LocalViewListener = LocalViewListener$instance & __LocalViewListener
 
 
 export interface NavigationFixer$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_INavigationFixer: never;
+
     AbortDelayedFixup(): void;
     BeginDelayedFixup(): boolean;
     CompleteDelayedFixup(): void;
@@ -1111,6 +1192,8 @@ export type NavigationFixer = NavigationFixer$instance & __NavigationFixer$views
 
 
 export interface NullableClassCurrentProviderValueComparer_2$instance<TModel, TProvider> {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+
     Compare(x: IUpdateEntry, y: IUpdateEntry): int;
 }
 
@@ -1123,6 +1206,9 @@ export const NullableClassCurrentProviderValueComparer_2: {
 export type NullableClassCurrentProviderValueComparer_2<TModel, TProvider> = NullableClassCurrentProviderValueComparer_2$instance<TModel, TProvider>;
 
 export interface NullableKeyIdentityMap_1$instance<TKey> extends IdentityMap_1$instance<TKey> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap_1: never;
+
     Add(entry: InternalEntityEntry): void;
     Add(keyValues: IReadOnlyList<unknown>, entry: InternalEntityEntry): void;
     Add(key: TKey, entry: InternalEntityEntry): void;
@@ -1153,6 +1239,8 @@ export type NullableKeyIdentityMap_1<TKey> = NullableKeyIdentityMap_1$instance<T
 
 
 export interface NullableStructCurrentProviderValueComparer_2$instance<TModel extends unknown, TProvider> {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+
     Compare(x: IUpdateEntry, y: IUpdateEntry): int;
 }
 
@@ -1165,6 +1253,10 @@ export const NullableStructCurrentProviderValueComparer_2: {
 export type NullableStructCurrentProviderValueComparer_2<TModel, TProvider> = NullableStructCurrentProviderValueComparer_2$instance<TModel, TProvider>;
 
 export interface NullableValueComparer_1$instance<T extends unknown> extends ValueComparer_1<Nullable<T>> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+    readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
+
 }
 
 
@@ -1183,6 +1275,18 @@ export type NullableValueComparer_1<T> = NullableValueComparer_1$instance<T> & _
 
 
 export interface ObservableBackedBindingList_1$instance<T> extends SortableBindingList_1<T> {
+    readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IList_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IReadOnlyCollection_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IReadOnlyList_1: never;
+    readonly __tsonic_iface_System_Collections_ICollection: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+    readonly __tsonic_iface_System_Collections_IList: never;
+    readonly __tsonic_iface_System_ComponentModel_IBindingList: never;
+    readonly __tsonic_iface_System_ComponentModel_ICancelAddNew: never;
+    readonly __tsonic_iface_System_ComponentModel_IRaiseItemChangedEvents: never;
+
     AddNewCore(): unknown | undefined;
     CancelNew(itemIndex: int): void;
     ClearItems(): void;
@@ -1280,6 +1384,9 @@ export const SidecarValuesFactoryFactory: (abstract new() => SidecarValuesFactor
 export type SidecarValuesFactoryFactory = SidecarValuesFactoryFactory$instance;
 
 export interface SimpleFullyNullableDependentKeyValueFactory_1$instance<TKey> extends DependentKeyValueFactory_1<TKey> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
+
     readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
@@ -1303,6 +1410,9 @@ export type SimpleFullyNullableDependentKeyValueFactory_1<TKey> = SimpleFullyNul
 
 
 export interface SimpleNonNullableDependentKeyValueFactory_1$instance<TKey> extends DependentKeyValueFactory_1<TKey> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
+
     readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
@@ -1326,6 +1436,9 @@ export type SimpleNonNullableDependentKeyValueFactory_1<TKey> = SimpleNonNullabl
 
 
 export interface SimpleNullableDependentKeyValueFactory_1$instance<TKey extends unknown> extends DependentKeyValueFactory_1<TKey> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
+
     readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
@@ -1349,6 +1462,9 @@ export type SimpleNullableDependentKeyValueFactory_1<TKey> = SimpleNullableDepen
 
 
 export interface SimpleNullablePrincipalDependentKeyValueFactory_2$instance<TKey, TNonNullableKey extends unknown> extends DependentKeyValueFactory_1<TKey> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
+
     readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
@@ -1372,6 +1488,9 @@ export type SimpleNullablePrincipalDependentKeyValueFactory_2<TKey, TNonNullable
 
 
 export interface SimplePrincipalKeyValueFactory_1$instance<TKey> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IPrincipalKeyValueFactory: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IPrincipalKeyValueFactory_1: never;
+
     readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
     CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     CreateFromCurrentValues(entry: IUpdateEntry): TKey;
@@ -1397,6 +1516,8 @@ export type SimplePrincipalKeyValueFactory_1<TKey> = SimplePrincipalKeyValueFact
 
 
 export interface Snapshot$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1421,6 +1542,8 @@ export type Snapshot = Snapshot$instance & __Snapshot$views;
 
 
 export interface Snapshot_1$instance<T0> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1441,6 +1564,8 @@ export type Snapshot_1<T0> = Snapshot_1$instance<T0> & __Snapshot_1$views<T0>;
 
 
 export interface Snapshot_10$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1461,6 +1586,8 @@ export type Snapshot_10<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> = Snapshot_10$in
 
 
 export interface Snapshot_11$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1481,6 +1608,8 @@ export type Snapshot_11<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> = Snapshot_
 
 
 export interface Snapshot_12$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1501,6 +1630,8 @@ export type Snapshot_12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> = Snap
 
 
 export interface Snapshot_13$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1521,6 +1652,8 @@ export type Snapshot_13<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> =
 
 
 export interface Snapshot_14$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1541,6 +1674,8 @@ export type Snapshot_14<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_15$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1561,6 +1696,8 @@ export type Snapshot_15<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_16$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1581,6 +1718,8 @@ export type Snapshot_16<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_17$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1601,6 +1740,8 @@ export type Snapshot_17<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_18$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1621,6 +1762,8 @@ export type Snapshot_18<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_19$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1641,6 +1784,8 @@ export type Snapshot_19<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_2$instance<T0, T1> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1661,6 +1806,8 @@ export type Snapshot_2<T0, T1> = Snapshot_2$instance<T0, T1> & __Snapshot_2$view
 
 
 export interface Snapshot_20$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1681,6 +1828,8 @@ export type Snapshot_20<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_21$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1701,6 +1850,8 @@ export type Snapshot_21<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_22$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1721,6 +1872,8 @@ export type Snapshot_22<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_23$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1741,6 +1894,8 @@ export type Snapshot_23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_24$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1761,6 +1916,8 @@ export type Snapshot_24<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_25$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1781,6 +1938,8 @@ export type Snapshot_25<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_26$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1801,6 +1960,8 @@ export type Snapshot_26<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_27$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1821,6 +1982,8 @@ export type Snapshot_27<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_28$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1841,6 +2004,8 @@ export type Snapshot_28<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_29$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1861,6 +2026,8 @@ export type Snapshot_29<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_3$instance<T0, T1, T2> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1881,6 +2048,8 @@ export type Snapshot_3<T0, T1, T2> = Snapshot_3$instance<T0, T1, T2> & __Snapsho
 
 
 export interface Snapshot_30$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1901,6 +2070,8 @@ export type Snapshot_30<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T
 
 
 export interface Snapshot_4$instance<T0, T1, T2, T3> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1921,6 +2092,8 @@ export type Snapshot_4<T0, T1, T2, T3> = Snapshot_4$instance<T0, T1, T2, T3> & _
 
 
 export interface Snapshot_5$instance<T0, T1, T2, T3, T4> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1941,6 +2114,8 @@ export type Snapshot_5<T0, T1, T2, T3, T4> = Snapshot_5$instance<T0, T1, T2, T3,
 
 
 export interface Snapshot_6$instance<T0, T1, T2, T3, T4, T5> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1961,6 +2136,8 @@ export type Snapshot_6<T0, T1, T2, T3, T4, T5> = Snapshot_6$instance<T0, T1, T2,
 
 
 export interface Snapshot_7$instance<T0, T1, T2, T3, T4, T5, T6> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -1981,6 +2158,8 @@ export type Snapshot_7<T0, T1, T2, T3, T4, T5, T6> = Snapshot_7$instance<T0, T1,
 
 
 export interface Snapshot_8$instance<T0, T1, T2, T3, T4, T5, T6, T7> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -2001,6 +2180,8 @@ export type Snapshot_8<T0, T1, T2, T3, T4, T5, T6, T7> = Snapshot_8$instance<T0,
 
 
 export interface Snapshot_9$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
+
     [index: number]: unknown | undefined;
     GetValue<T>(index: int): T;
 }
@@ -2056,6 +2237,18 @@ export const SnapshotFactoryFactory_1: (abstract new<TInput>() => SnapshotFactor
 export type SnapshotFactoryFactory_1<TInput> = SnapshotFactoryFactory_1$instance<TInput>;
 
 export interface SortableBindingList_1$instance<T> extends BindingList<T> {
+    readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IList_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IReadOnlyCollection_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IReadOnlyList_1: never;
+    readonly __tsonic_iface_System_Collections_ICollection: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+    readonly __tsonic_iface_System_Collections_IList: never;
+    readonly __tsonic_iface_System_ComponentModel_IBindingList: never;
+    readonly __tsonic_iface_System_ComponentModel_ICancelAddNew: never;
+    readonly __tsonic_iface_System_ComponentModel_IRaiseItemChangedEvents: never;
+
     readonly IsSortedCore: boolean;
     readonly SortDirectionCore: ListSortDirection;
     readonly SortPropertyCore: PropertyDescriptor | undefined;
@@ -2073,6 +2266,9 @@ export const SortableBindingList_1: {
 export type SortableBindingList_1<T> = SortableBindingList_1$instance<T>;
 
 export interface StateManager$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IStateManager: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
+
     CascadeDeleteTiming: CascadeTiming;
     ChangedCount: int;
     readonly ChangeDetector: IChangeDetector;
@@ -2160,6 +2356,8 @@ export type StateManager = StateManager$instance & __StateManager$views;
 
 
 export interface StateManagerDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     ChangeTrackingLogger: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>;
     ConcurrencyDetector: IConcurrencyDetector;
     CoreSingletonOptions: ICoreSingletonOptions;
@@ -2206,6 +2404,9 @@ export const StoreGeneratedValuesFactoryFactory: {
 export type StoreGeneratedValuesFactoryFactory = StoreGeneratedValuesFactoryFactory$instance;
 
 export interface StructuralEntryCurrentProviderValueComparer$instance extends StructuralEntryCurrentValueComparer {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+
     GetPropertyValue(entry: IUpdateEntry): unknown | undefined;
 }
 
@@ -2218,6 +2419,9 @@ export const StructuralEntryCurrentProviderValueComparer: {
 export type StructuralEntryCurrentProviderValueComparer = StructuralEntryCurrentProviderValueComparer$instance;
 
 export interface StructuralEntryCurrentValueComparer$instance extends EntryCurrentValueComparer {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+
     Compare(x: IUpdateEntry, y: IUpdateEntry): int;
 }
 
@@ -2242,6 +2446,8 @@ export const TemporaryValuesFactoryFactory: {
 export type TemporaryValuesFactoryFactory = TemporaryValuesFactoryFactory$instance;
 
 export interface ValueGenerationManager$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IValueGenerationManager: never;
+
     Generate(entry: InternalEntityEntry, includePrimaryKey?: boolean): boolean;
     GenerateAsync(entry: InternalEntityEntry, includePrimaryKey?: boolean, cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
     Propagate(entry: InternalEntityEntry): InternalEntityEntry | undefined;

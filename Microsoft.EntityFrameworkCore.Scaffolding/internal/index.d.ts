@@ -14,6 +14,8 @@ import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString } from "@tsonic/dotnet/System.js";
 
 export interface IDatabaseModelFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IDatabaseModelFactory: never;
+
     Create(connection: DbConnection, options: DatabaseModelFactoryOptions): DatabaseModel;
     Create(connectionString: string, options: DatabaseModelFactoryOptions): DatabaseModel;
 }
@@ -22,6 +24,8 @@ export interface IDatabaseModelFactory$instance {
 export type IDatabaseModelFactory = IDatabaseModelFactory$instance;
 
 export interface IProviderCodeGeneratorPlugin$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderCodeGeneratorPlugin: never;
+
     GenerateProviderOptions(): MethodCallCodeFragment | undefined;
 }
 
@@ -29,6 +33,8 @@ export interface IProviderCodeGeneratorPlugin$instance {
 export type IProviderCodeGeneratorPlugin = IProviderCodeGeneratorPlugin$instance;
 
 export interface IProviderConfigurationCodeGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderConfigurationCodeGenerator: never;
+
     GenerateProviderOptions(): MethodCallCodeFragment | undefined;
     GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment): MethodCallCodeFragment;
     GenerateUseProvider(connectionString: string): MethodCallCodeFragment;
@@ -38,6 +44,8 @@ export interface IProviderConfigurationCodeGenerator$instance {
 export type IProviderConfigurationCodeGenerator = IProviderConfigurationCodeGenerator$instance;
 
 export interface DatabaseModelFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IDatabaseModelFactory: never;
+
     Create(connectionString: string, options: DatabaseModelFactoryOptions): DatabaseModel;
     Create(connection: DbConnection, options: DatabaseModelFactoryOptions): DatabaseModel;
 }
@@ -68,6 +76,8 @@ export const DatabaseModelFactoryOptions: {
 export type DatabaseModelFactoryOptions = DatabaseModelFactoryOptions$instance;
 
 export interface ProviderCodeGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderConfigurationCodeGenerator: never;
+
     readonly Dependencies: ProviderCodeGeneratorDependencies;
     GenerateContextOptions(): MethodCallCodeFragment | undefined;
     GenerateProviderOptions(): MethodCallCodeFragment | undefined;
@@ -90,6 +100,8 @@ export type ProviderCodeGenerator = ProviderCodeGenerator$instance & __ProviderC
 
 
 export interface ProviderCodeGeneratorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     Plugins: IEnumerable<IProviderCodeGeneratorPlugin>;
     _Clone_$(): ProviderCodeGeneratorDependencies;
     Equals(obj: unknown): boolean;
@@ -107,6 +119,8 @@ export const ProviderCodeGeneratorDependencies: {
 export type ProviderCodeGeneratorDependencies = ProviderCodeGeneratorDependencies$instance;
 
 export interface ProviderCodeGeneratorPlugin$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderCodeGeneratorPlugin: never;
+
     GenerateContextOptions(): MethodCallCodeFragment | undefined;
     GenerateProviderOptions(): MethodCallCodeFragment | undefined;
 }

@@ -21,6 +21,8 @@ import * as System_Internal from "@tsonic/dotnet/System.js";
 import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString, Type, ValueType, Void } from "@tsonic/dotnet/System.js";
 
 export interface ICSharpRuntimeAnnotationCodeGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
+
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
     Create(typeMapping: CoreTypeMapping, property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
@@ -45,6 +47,8 @@ export interface ICSharpRuntimeAnnotationCodeGenerator$instance {
 export type ICSharpRuntimeAnnotationCodeGenerator = ICSharpRuntimeAnnotationCodeGenerator$instance;
 
 export interface QualifiedName$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     Name: string;
     Namespace: string;
     Deconstruct(Name: string, Namespace: string): void;
@@ -63,6 +67,8 @@ export const QualifiedName: {
 export type QualifiedName = QualifiedName$instance;
 
 export interface CSharpRuntimeAnnotationCodeGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
+
     readonly Dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -105,6 +111,8 @@ export type CSharpRuntimeAnnotationCodeGenerator = CSharpRuntimeAnnotationCodeGe
 
 
 export interface CSharpRuntimeAnnotationCodeGeneratorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     CSharpHelper: ICSharpHelper;
     _Clone_$(): CSharpRuntimeAnnotationCodeGeneratorDependencies;
     Equals(obj: unknown): boolean;
@@ -122,6 +130,8 @@ export const CSharpRuntimeAnnotationCodeGeneratorDependencies: {
 export type CSharpRuntimeAnnotationCodeGeneratorDependencies = CSharpRuntimeAnnotationCodeGeneratorDependencies$instance;
 
 export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     Annotations: IDictionary<System_Internal.String, unknown | undefined>;
     ClassName: string;
     ConfigurationClassNames: IReadOnlyDictionary<ITypeBase, System_Internal.String>;
@@ -151,6 +161,8 @@ export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
 export type CSharpRuntimeAnnotationCodeGeneratorParameters = CSharpRuntimeAnnotationCodeGeneratorParameters$instance;
 
 export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends CSharpRuntimeAnnotationCodeGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
+
     readonly RelationalDependencies: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -218,6 +230,8 @@ export type RelationalCSharpRuntimeAnnotationCodeGenerator = RelationalCSharpRun
 
 
 export interface RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies): boolean;

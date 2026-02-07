@@ -28,6 +28,8 @@ import * as System_Text_Json_Serialization_Internal from "@tsonic/dotnet/System.
 import type { JsonPropertyNameAttribute } from "@tsonic/dotnet/System.Text.Json.Serialization.js";
 
 export interface IComplexPropertyAddedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
 }
 
@@ -37,6 +39,8 @@ export interface IComplexPropertyAddedConvention$instance extends IConvention$in
 export type IComplexPropertyAddedConvention = IComplexPropertyAddedConvention$instance;
 
 export interface IComplexPropertyAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAnnotationChangedConvention: never;
+
     ProcessComplexPropertyAnnotationChanged(propertyBuilder: IConventionComplexPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -46,6 +50,8 @@ export interface IComplexPropertyAnnotationChangedConvention$instance extends IC
 export type IComplexPropertyAnnotationChangedConvention = IComplexPropertyAnnotationChangedConvention$instance;
 
 export interface IComplexPropertyFieldChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyFieldChangedConvention: never;
+
     ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
@@ -55,6 +61,8 @@ export interface IComplexPropertyFieldChangedConvention$instance extends IConven
 export type IComplexPropertyFieldChangedConvention = IComplexPropertyFieldChangedConvention$instance;
 
 export interface IComplexPropertyNullabilityChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyNullabilityChangedConvention: never;
+
     ProcessComplexPropertyNullabilityChanged(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
@@ -64,6 +72,8 @@ export interface IComplexPropertyNullabilityChangedConvention$instance extends I
 export type IComplexPropertyNullabilityChangedConvention = IComplexPropertyNullabilityChangedConvention$instance;
 
 export interface IComplexPropertyRemovedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyRemovedConvention: never;
+
     ProcessComplexPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionComplexProperty, context: IConventionContext_1<IConventionComplexProperty>): void;
 }
 
@@ -73,6 +83,8 @@ export interface IComplexPropertyRemovedConvention$instance extends IConvention$
 export type IComplexPropertyRemovedConvention = IComplexPropertyRemovedConvention$instance;
 
 export interface IComplexTypeAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexTypeAnnotationChangedConvention: never;
+
     ProcessComplexTypeAnnotationChanged(complexTypeBuilder: IConventionComplexTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -82,6 +94,8 @@ export interface IComplexTypeAnnotationChangedConvention$instance extends IConve
 export type IComplexTypeAnnotationChangedConvention = IComplexTypeAnnotationChangedConvention$instance;
 
 export interface IComplexTypeMemberIgnoredConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexTypeMemberIgnoredConvention: never;
+
     ProcessComplexTypeMemberIgnored(complexTypeBuilder: IConventionComplexTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
 }
 
@@ -91,12 +105,16 @@ export interface IComplexTypeMemberIgnoredConvention$instance extends IConventio
 export type IComplexTypeMemberIgnoredConvention = IComplexTypeMemberIgnoredConvention$instance;
 
 export interface IConvention$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+
 }
 
 
 export type IConvention = IConvention$instance;
 
 export interface IConventionBatch$instance extends IDisposable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConventionBatch: never;
+
     Run(foreignKey: IConventionForeignKey): IConventionForeignKey | undefined;
     Track(foreignKey: IConventionForeignKey): IMetadataReference_1<IConventionForeignKey>;
 }
@@ -107,6 +125,8 @@ export interface IConventionBatch$instance extends System_Internal.IDisposable {
 export type IConventionBatch = IConventionBatch$instance;
 
 export interface IConventionContext$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConventionContext: never;
+
     DelayConventions(): IConventionBatch;
     StopProcessing(): void;
 }
@@ -115,6 +135,8 @@ export interface IConventionContext$instance {
 export type IConventionContext = IConventionContext$instance;
 
 export interface IConventionContext_1$instance<TMetadata> extends IConventionContext {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConventionContext_1: never;
+
     DelayConventions(): IConventionBatch;
     StopProcessing(): void;
     StopProcessing(result: TMetadata): void;
@@ -124,6 +146,8 @@ export interface IConventionContext_1$instance<TMetadata> extends IConventionCon
 export type IConventionContext_1<TMetadata> = IConventionContext_1$instance<TMetadata>;
 
 export interface IDiscriminatorPropertySetConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IDiscriminatorPropertySetConvention: never;
+
     ProcessDiscriminatorPropertySet(structuralTypeBuilder: IConventionTypeBaseBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
 }
 
@@ -133,6 +157,8 @@ export interface IDiscriminatorPropertySetConvention$instance extends IConventio
 export type IDiscriminatorPropertySetConvention = IDiscriminatorPropertySetConvention$instance;
 
 export interface IElementTypeAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IElementTypeAnnotationChangedConvention: never;
+
     ProcessElementTypeAnnotationChanged(builder: IConventionElementTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -142,6 +168,8 @@ export interface IElementTypeAnnotationChangedConvention$instance extends IConve
 export type IElementTypeAnnotationChangedConvention = IElementTypeAnnotationChangedConvention$instance;
 
 export interface IElementTypeNullabilityChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IElementTypeNullabilityChangedConvention: never;
+
     ProcessElementTypeNullabilityChanged(builder: IConventionElementTypeBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
@@ -151,6 +179,8 @@ export interface IElementTypeNullabilityChangedConvention$instance extends IConv
 export type IElementTypeNullabilityChangedConvention = IElementTypeNullabilityChangedConvention$instance;
 
 export interface IEntityTypeAddedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
@@ -160,6 +190,8 @@ export interface IEntityTypeAddedConvention$instance extends IConvention$instanc
 export type IEntityTypeAddedConvention = IEntityTypeAddedConvention$instance;
 
 export interface IEntityTypeAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAnnotationChangedConvention: never;
+
     ProcessEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -169,6 +201,8 @@ export interface IEntityTypeAnnotationChangedConvention$instance extends IConven
 export type IEntityTypeAnnotationChangedConvention = IEntityTypeAnnotationChangedConvention$instance;
 
 export interface IEntityTypeBaseTypeChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+
     ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
 }
 
@@ -178,6 +212,8 @@ export interface IEntityTypeBaseTypeChangedConvention$instance extends IConventi
 export type IEntityTypeBaseTypeChangedConvention = IEntityTypeBaseTypeChangedConvention$instance;
 
 export interface IEntityTypeIgnoredConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeIgnoredConvention: never;
+
     ProcessEntityTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
 }
 
@@ -187,6 +223,8 @@ export interface IEntityTypeIgnoredConvention$instance extends IConvention$insta
 export type IEntityTypeIgnoredConvention = IEntityTypeIgnoredConvention$instance;
 
 export interface IEntityTypeMemberIgnoredConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeMemberIgnoredConvention: never;
+
     ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
 }
 
@@ -196,6 +234,8 @@ export interface IEntityTypeMemberIgnoredConvention$instance extends IConvention
 export type IEntityTypeMemberIgnoredConvention = IEntityTypeMemberIgnoredConvention$instance;
 
 export interface IEntityTypePrimaryKeyChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypePrimaryKeyChangedConvention: never;
+
     ProcessEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
 }
 
@@ -205,6 +245,8 @@ export interface IEntityTypePrimaryKeyChangedConvention$instance extends IConven
 export type IEntityTypePrimaryKeyChangedConvention = IEntityTypePrimaryKeyChangedConvention$instance;
 
 export interface IEntityTypeRemovedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeRemovedConvention: never;
+
     ProcessEntityTypeRemoved(modelBuilder: IConventionModelBuilder, entityType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
 }
 
@@ -214,6 +256,8 @@ export interface IEntityTypeRemovedConvention$instance extends IConvention$insta
 export type IEntityTypeRemovedConvention = IEntityTypeRemovedConvention$instance;
 
 export interface IForeignKeyAddedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+
     ProcessForeignKeyAdded(foreignKeyBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
 }
 
@@ -223,6 +267,8 @@ export interface IForeignKeyAddedConvention$instance extends IConvention$instanc
 export type IForeignKeyAddedConvention = IForeignKeyAddedConvention$instance;
 
 export interface IForeignKeyAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAnnotationChangedConvention: never;
+
     ProcessForeignKeyAnnotationChanged(relationshipBuilder: IConventionForeignKeyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -232,6 +278,8 @@ export interface IForeignKeyAnnotationChangedConvention$instance extends IConven
 export type IForeignKeyAnnotationChangedConvention = IForeignKeyAnnotationChangedConvention$instance;
 
 export interface IForeignKeyDependentRequirednessChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyDependentRequirednessChangedConvention: never;
+
     ProcessForeignKeyDependentRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
@@ -241,6 +289,8 @@ export interface IForeignKeyDependentRequirednessChangedConvention$instance exte
 export type IForeignKeyDependentRequirednessChangedConvention = IForeignKeyDependentRequirednessChangedConvention$instance;
 
 export interface IForeignKeyNullNavigationSetConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyNullNavigationSetConvention: never;
+
     ProcessForeignKeyNullNavigationSet(relationshipBuilder: IConventionForeignKeyBuilder, pointsToPrincipal: boolean, context: IConventionContext_1<IConventionNavigation>): void;
 }
 
@@ -250,6 +300,8 @@ export interface IForeignKeyNullNavigationSetConvention$instance extends IConven
 export type IForeignKeyNullNavigationSetConvention = IForeignKeyNullNavigationSetConvention$instance;
 
 export interface IForeignKeyOwnershipChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyOwnershipChangedConvention: never;
+
     ProcessForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
@@ -259,6 +311,8 @@ export interface IForeignKeyOwnershipChangedConvention$instance extends IConvent
 export type IForeignKeyOwnershipChangedConvention = IForeignKeyOwnershipChangedConvention$instance;
 
 export interface IForeignKeyPrincipalEndChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPrincipalEndChangedConvention: never;
+
     ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
 }
 
@@ -268,6 +322,8 @@ export interface IForeignKeyPrincipalEndChangedConvention$instance extends IConv
 export type IForeignKeyPrincipalEndChangedConvention = IForeignKeyPrincipalEndChangedConvention$instance;
 
 export interface IForeignKeyPropertiesChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPropertiesChangedConvention: never;
+
     ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
 }
 
@@ -277,6 +333,8 @@ export interface IForeignKeyPropertiesChangedConvention$instance extends IConven
 export type IForeignKeyPropertiesChangedConvention = IForeignKeyPropertiesChangedConvention$instance;
 
 export interface IForeignKeyRemovedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
+
     ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
 }
 
@@ -286,6 +344,8 @@ export interface IForeignKeyRemovedConvention$instance extends IConvention$insta
 export type IForeignKeyRemovedConvention = IForeignKeyRemovedConvention$instance;
 
 export interface IForeignKeyRequirednessChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRequirednessChangedConvention: never;
+
     ProcessForeignKeyRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
@@ -295,6 +355,8 @@ export interface IForeignKeyRequirednessChangedConvention$instance extends IConv
 export type IForeignKeyRequirednessChangedConvention = IForeignKeyRequirednessChangedConvention$instance;
 
 export interface IForeignKeyUniquenessChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyUniquenessChangedConvention: never;
+
     ProcessForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
@@ -304,6 +366,8 @@ export interface IForeignKeyUniquenessChangedConvention$instance extends IConven
 export type IForeignKeyUniquenessChangedConvention = IForeignKeyUniquenessChangedConvention$instance;
 
 export interface IIndexAddedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IIndexAddedConvention: never;
+
     ProcessIndexAdded(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<IConventionIndexBuilder>): void;
 }
 
@@ -313,6 +377,8 @@ export interface IIndexAddedConvention$instance extends IConvention$instance {}
 export type IIndexAddedConvention = IIndexAddedConvention$instance;
 
 export interface IIndexAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IIndexAnnotationChangedConvention: never;
+
     ProcessIndexAnnotationChanged(indexBuilder: IConventionIndexBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -322,6 +388,8 @@ export interface IIndexAnnotationChangedConvention$instance extends IConvention$
 export type IIndexAnnotationChangedConvention = IIndexAnnotationChangedConvention$instance;
 
 export interface IIndexRemovedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IIndexRemovedConvention: never;
+
     ProcessIndexRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, index: IConventionIndex, context: IConventionContext_1<IConventionIndex>): void;
 }
 
@@ -331,6 +399,8 @@ export interface IIndexRemovedConvention$instance extends IConvention$instance {
 export type IIndexRemovedConvention = IIndexRemovedConvention$instance;
 
 export interface IIndexSortOrderChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IIndexSortOrderChangedConvention: never;
+
     ProcessIndexSortOrderChanged(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<IReadOnlyList<System_Internal.Boolean>>): void;
 }
 
@@ -340,6 +410,8 @@ export interface IIndexSortOrderChangedConvention$instance extends IConvention$i
 export type IIndexSortOrderChangedConvention = IIndexSortOrderChangedConvention$instance;
 
 export interface IIndexUniquenessChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IIndexUniquenessChangedConvention: never;
+
     ProcessIndexUniquenessChanged(indexBuilder: IConventionIndexBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
@@ -349,6 +421,8 @@ export interface IIndexUniquenessChangedConvention$instance extends IConvention$
 export type IIndexUniquenessChangedConvention = IIndexUniquenessChangedConvention$instance;
 
 export interface IKeyAddedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IKeyAddedConvention: never;
+
     ProcessKeyAdded(keyBuilder: IConventionKeyBuilder, context: IConventionContext_1<IConventionKeyBuilder>): void;
 }
 
@@ -358,6 +432,8 @@ export interface IKeyAddedConvention$instance extends IConvention$instance {}
 export type IKeyAddedConvention = IKeyAddedConvention$instance;
 
 export interface IKeyAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IKeyAnnotationChangedConvention: never;
+
     ProcessKeyAnnotationChanged(keyBuilder: IConventionKeyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -367,6 +443,8 @@ export interface IKeyAnnotationChangedConvention$instance extends IConvention$in
 export type IKeyAnnotationChangedConvention = IKeyAnnotationChangedConvention$instance;
 
 export interface IKeyRemovedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IKeyRemovedConvention: never;
+
     ProcessKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
 }
 
@@ -376,6 +454,8 @@ export interface IKeyRemovedConvention$instance extends IConvention$instance {}
 export type IKeyRemovedConvention = IKeyRemovedConvention$instance;
 
 export interface IModelAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelAnnotationChangedConvention: never;
+
     ProcessModelAnnotationChanged(modelBuilder: IConventionModelBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -385,6 +465,8 @@ export interface IModelAnnotationChangedConvention$instance extends IConvention$
 export type IModelAnnotationChangedConvention = IModelAnnotationChangedConvention$instance;
 
 export interface IModelEmbeddedDiscriminatorNameConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelEmbeddedDiscriminatorNameConvention: never;
+
     ProcessEmbeddedDiscriminatorName(modelBuilder: IConventionModelBuilder, newName: string, oldName: string, context: IConventionContext_1<System_Internal.String>): void;
 }
 
@@ -394,6 +476,8 @@ export interface IModelEmbeddedDiscriminatorNameConvention$instance extends ICon
 export type IModelEmbeddedDiscriminatorNameConvention = IModelEmbeddedDiscriminatorNameConvention$instance;
 
 export interface IModelFinalizedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizedConvention: never;
+
     ProcessModelFinalized(model: IModel): IModel;
 }
 
@@ -403,6 +487,8 @@ export interface IModelFinalizedConvention$instance extends IConvention$instance
 export type IModelFinalizedConvention = IModelFinalizedConvention$instance;
 
 export interface IModelFinalizingConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
@@ -412,6 +498,8 @@ export interface IModelFinalizingConvention$instance extends IConvention$instanc
 export type IModelFinalizingConvention = IModelFinalizingConvention$instance;
 
 export interface IModelInitializedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelInitializedConvention: never;
+
     ProcessModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
 
@@ -421,6 +509,8 @@ export interface IModelInitializedConvention$instance extends IConvention$instan
 export type IModelInitializedConvention = IModelInitializedConvention$instance;
 
 export interface INavigationAddedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+
     ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
 }
 
@@ -430,6 +520,8 @@ export interface INavigationAddedConvention$instance extends IConvention$instanc
 export type INavigationAddedConvention = INavigationAddedConvention$instance;
 
 export interface INavigationAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAnnotationChangedConvention: never;
+
     ProcessNavigationAnnotationChanged(relationshipBuilder: IConventionForeignKeyBuilder, navigation: IConventionNavigation, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -439,6 +531,8 @@ export interface INavigationAnnotationChangedConvention$instance extends IConven
 export type INavigationAnnotationChangedConvention = INavigationAnnotationChangedConvention$instance;
 
 export interface INavigationRemovedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationRemovedConvention: never;
+
     ProcessNavigationRemoved(sourceEntityTypeBuilder: IConventionEntityTypeBuilder, targetEntityTypeBuilder: IConventionEntityTypeBuilder, navigationName: string, memberInfo: MemberInfo, context: IConventionContext_1<System_Internal.String>): void;
 }
 
@@ -448,6 +542,8 @@ export interface INavigationRemovedConvention$instance extends IConvention$insta
 export type INavigationRemovedConvention = INavigationRemovedConvention$instance;
 
 export interface IPropertyAddedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
 }
 
@@ -457,6 +553,8 @@ export interface IPropertyAddedConvention$instance extends IConvention$instance 
 export type IPropertyAddedConvention = IPropertyAddedConvention$instance;
 
 export interface IPropertyAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAnnotationChangedConvention: never;
+
     ProcessPropertyAnnotationChanged(propertyBuilder: IConventionPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -466,6 +564,8 @@ export interface IPropertyAnnotationChangedConvention$instance extends IConventi
 export type IPropertyAnnotationChangedConvention = IPropertyAnnotationChangedConvention$instance;
 
 export interface IPropertyElementTypeChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyElementTypeChangedConvention: never;
+
     ProcessPropertyElementTypeChanged(propertyBuilder: IConventionPropertyBuilder, newElementType: IElementType, oldElementType: IElementType, context: IConventionContext_1<IElementType>): void;
 }
 
@@ -475,6 +575,8 @@ export interface IPropertyElementTypeChangedConvention$instance extends IConvent
 export type IPropertyElementTypeChangedConvention = IPropertyElementTypeChangedConvention$instance;
 
 export interface IPropertyFieldChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
 }
 
@@ -484,6 +586,8 @@ export interface IPropertyFieldChangedConvention$instance extends IConvention$in
 export type IPropertyFieldChangedConvention = IPropertyFieldChangedConvention$instance;
 
 export interface IPropertyNullabilityChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyNullabilityChangedConvention: never;
+
     ProcessPropertyNullabilityChanged(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
 
@@ -493,6 +597,8 @@ export interface IPropertyNullabilityChangedConvention$instance extends IConvent
 export type IPropertyNullabilityChangedConvention = IPropertyNullabilityChangedConvention$instance;
 
 export interface IPropertyRemovedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyRemovedConvention: never;
+
     ProcessPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionProperty, context: IConventionContext_1<IConventionProperty>): void;
 }
 
@@ -502,6 +608,8 @@ export interface IPropertyRemovedConvention$instance extends IConvention$instanc
 export type IPropertyRemovedConvention = IPropertyRemovedConvention$instance;
 
 export interface ISkipNavigationAddedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationAddedConvention: never;
+
     ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
 }
 
@@ -511,6 +619,8 @@ export interface ISkipNavigationAddedConvention$instance extends IConvention$ins
 export type ISkipNavigationAddedConvention = ISkipNavigationAddedConvention$instance;
 
 export interface ISkipNavigationAnnotationChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationAnnotationChangedConvention: never;
+
     ProcessSkipNavigationAnnotationChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
 }
 
@@ -520,6 +630,8 @@ export interface ISkipNavigationAnnotationChangedConvention$instance extends ICo
 export type ISkipNavigationAnnotationChangedConvention = ISkipNavigationAnnotationChangedConvention$instance;
 
 export interface ISkipNavigationForeignKeyChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationForeignKeyChangedConvention: never;
+
     ProcessSkipNavigationForeignKeyChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, foreignKey: IConventionForeignKey, oldForeignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
 }
 
@@ -529,6 +641,8 @@ export interface ISkipNavigationForeignKeyChangedConvention$instance extends ICo
 export type ISkipNavigationForeignKeyChangedConvention = ISkipNavigationForeignKeyChangedConvention$instance;
 
 export interface ISkipNavigationInverseChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationInverseChangedConvention: never;
+
     ProcessSkipNavigationInverseChanged(skipNavigationBuilder: IConventionSkipNavigationBuilder, inverse: IConventionSkipNavigation, oldInverse: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
 }
 
@@ -538,6 +652,8 @@ export interface ISkipNavigationInverseChangedConvention$instance extends IConve
 export type ISkipNavigationInverseChangedConvention = ISkipNavigationInverseChangedConvention$instance;
 
 export interface ISkipNavigationRemovedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationRemovedConvention: never;
+
     ProcessSkipNavigationRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, navigation: IConventionSkipNavigation, context: IConventionContext_1<IConventionSkipNavigation>): void;
 }
 
@@ -547,6 +663,8 @@ export interface ISkipNavigationRemovedConvention$instance extends IConvention$i
 export type ISkipNavigationRemovedConvention = ISkipNavigationRemovedConvention$instance;
 
 export interface ITriggerAddedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ITriggerAddedConvention: never;
+
     ProcessTriggerAdded(triggerBuilder: IConventionTriggerBuilder, context: IConventionContext_1<IConventionTriggerBuilder>): void;
 }
 
@@ -556,6 +674,8 @@ export interface ITriggerAddedConvention$instance extends IConvention$instance {
 export type ITriggerAddedConvention = ITriggerAddedConvention$instance;
 
 export interface ITriggerRemovedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ITriggerRemovedConvention: never;
+
     ProcessTriggerRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, trigger: IConventionTrigger, context: IConventionContext_1<IConventionTrigger>): void;
 }
 
@@ -565,6 +685,8 @@ export interface ITriggerRemovedConvention$instance extends IConvention$instance
 export type ITriggerRemovedConvention = ITriggerRemovedConvention$instance;
 
 export interface ITypeIgnoredConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ITypeIgnoredConvention: never;
+
     ProcessTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type, context: IConventionContext_1<System_Internal.String>): void;
 }
 
@@ -574,6 +696,12 @@ export interface ITypeIgnoredConvention$instance extends IConvention$instance {}
 export type ITypeIgnoredConvention = ITypeIgnoredConvention$instance;
 
 export interface BackingFieldAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<BackingFieldAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyFieldChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, attribute: BackingFieldAttribute, clrMember: MemberInfo, context: IConventionContext): void;
@@ -599,6 +727,13 @@ export type BackingFieldAttributeConvention = BackingFieldAttributeConvention$in
 
 
 export interface BackingFieldConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationAddedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -627,6 +762,10 @@ export type BackingFieldConvention = BackingFieldConvention$instance & __Backing
 
 
 export interface BaseTypeDiscoveryConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
     ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
@@ -649,6 +788,10 @@ export type BaseTypeDiscoveryConvention = BaseTypeDiscoveryConvention$instance &
 
 
 export interface CascadeDeleteConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRequirednessChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     GetTargetDeleteBehavior(foreignKey: IConventionForeignKey): DeleteBehavior;
     ProcessForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
@@ -672,6 +815,9 @@ export type CascadeDeleteConvention = CascadeDeleteConvention$instance & __Casca
 
 
 export interface ChangeTrackingStrategyConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
@@ -692,6 +838,10 @@ export type ChangeTrackingStrategyConvention = ChangeTrackingStrategyConvention$
 
 
 export interface CheckConstraintConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -715,6 +865,19 @@ export type CheckConstraintConvention = CheckConstraintConvention$instance & __C
 
 
 export interface ComplexPropertyDiscoveryConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeMemberIgnoredConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationRemovedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly UseAttributes: boolean;
     DiscoverComplexProperties(structuralTypeBuilder: IConventionTypeBaseBuilder, context: IConventionContext): void;
@@ -759,6 +922,10 @@ export type ComplexPropertyDiscoveryConvention = ComplexPropertyDiscoveryConvent
 
 
 export interface ComplexTypeAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<ComplexTypeAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -779,6 +946,10 @@ export type ComplexTypeAttributeConvention = ComplexTypeAttributeConvention$inst
 
 
 export interface ConcurrencyCheckAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<ConcurrencyCheckAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, attribute: ConcurrencyCheckAttribute, clrMember: MemberInfo, context: IConventionContext): void;
     ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
@@ -799,6 +970,9 @@ export type ConcurrencyCheckAttributeConvention = ConcurrencyCheckAttributeConve
 
 
 export interface ConstructorBindingConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
@@ -894,6 +1068,10 @@ export const ConventionSet: {
 export type ConventionSet = ConventionSet$instance;
 
 export interface DatabaseGeneratedAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<DatabaseGeneratedAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, attribute: DatabaseGeneratedAttribute, clrMember: MemberInfo, context: IConventionContext): void;
     ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
@@ -914,6 +1092,9 @@ export type DatabaseGeneratedAttributeConvention = DatabaseGeneratedAttributeCon
 
 
 export interface DbSetFindingConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelInitializedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessModelInitialized(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
@@ -934,6 +1115,14 @@ export type DbSetFindingConvention = DbSetFindingConvention$instance & __DbSetFi
 
 
 export interface DeleteBehaviorAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<DeleteBehaviorAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPrincipalEndChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -965,6 +1154,11 @@ export type DeleteBehaviorAttributeConvention = DeleteBehaviorAttributeConventio
 
 
 export interface DiscriminatorConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IDiscriminatorPropertySetConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeRemovedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessDiscriminatorPropertySet(structuralTypeBuilder: IConventionTypeBaseBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
     ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
@@ -991,6 +1185,9 @@ export type DiscriminatorConvention = DiscriminatorConvention$instance & __Discr
 
 
 export interface DiscriminatorLengthConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -1012,6 +1209,9 @@ export type DiscriminatorLengthConvention = DiscriminatorLengthConvention$instan
 
 
 export interface ElementMappingConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
@@ -1032,6 +1232,11 @@ export type ElementMappingConvention = ElementMappingConvention$instance & __Ele
 
 
 export interface ElementTypeChangedConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPropertiesChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyElementTypeChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessForeignKeyAdded(foreignKeyBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
     ProcessForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey, context: IConventionContext_1<IReadOnlyList<IConventionProperty>>): void;
@@ -1056,6 +1261,10 @@ export type ElementTypeChangedConvention = ElementTypeChangedConvention$instance
 
 
 export interface EntitySplittingConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -1079,6 +1288,10 @@ export type EntitySplittingConvention = EntitySplittingConvention$instance & __E
 
 
 export interface EntityTypeConfigurationAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<EntityTypeConfigurationAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessComplexTypeAdded(complexTypeBuilder: IConventionComplexTypeBuilder, attribute: EntityTypeConfigurationAttribute, context: IConventionContext): void;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -1099,6 +1312,9 @@ export type EntityTypeConfigurationAttributeConvention = EntityTypeConfiguration
 
 
 export interface EntityTypeHierarchyMappingConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -1120,6 +1336,15 @@ export type EntityTypeHierarchyMappingConvention = EntityTypeHierarchyMappingCon
 
 
 export interface ForeignKeyAttributeConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationForeignKeyChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -1152,6 +1377,19 @@ export type ForeignKeyAttributeConvention = ForeignKeyAttributeConvention$instan
 
 
 export interface ForeignKeyIndexConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPropertiesChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyUniquenessChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IIndexAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IIndexRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IIndexUniquenessChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     AreIndexedBy(properties: IReadOnlyList<IConventionProperty>, unique: boolean, coveringIndexProperties: IReadOnlyList<IConventionProperty>, coveringIndexUnique: boolean): boolean;
     CreateIndex(properties: IReadOnlyList<IConventionProperty>, unique: boolean, entityTypeBuilder: IConventionEntityTypeBuilder): IConventionIndex | undefined;
@@ -1194,6 +1432,24 @@ export type ForeignKeyIndexConvention = ForeignKeyIndexConvention$instance & __F
 
 
 export interface ForeignKeyPropertyDiscoveryConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeMemberIgnoredConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypePrimaryKeyChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPrincipalEndChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPropertiesChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRequirednessChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyUniquenessChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyNullabilityChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationForeignKeyChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationInverseChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessEntityTypeMemberIgnored(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, context: IConventionContext_1<System_Internal.String>): void;
     ProcessEntityTypePrimaryKeyChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newPrimaryKey: IConventionKey, previousPrimaryKey: IConventionKey, context: IConventionContext_1<IConventionKey>): void;
@@ -1245,6 +1501,11 @@ export type ForeignKeyPropertyDiscoveryConvention = ForeignKeyPropertyDiscoveryC
 
 
 export interface IndexAttributeConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
     ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
@@ -1269,6 +1530,14 @@ export type IndexAttributeConvention = IndexAttributeConvention$instance & __Ind
 
 
 export interface InversePropertyAttributeConvention$instance extends NavigationAttributeConventionBase_1<InversePropertyAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeMemberIgnoredConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, navigationMemberInfo: MemberInfo, targetClrType: Type, attribute: InversePropertyAttribute, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
     ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
@@ -1307,6 +1576,14 @@ export type InversePropertyAttributeConvention = InversePropertyAttributeConvent
 
 
 export interface KeyAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<KeyAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
     ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
@@ -1338,6 +1615,19 @@ export type KeyAttributeConvention = KeyAttributeConvention$instance & __KeyAttr
 
 
 export interface KeyDiscoveryConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeMemberIgnoredConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyOwnershipChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPropertiesChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyUniquenessChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationForeignKeyChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     DiscoverKeyProperties(entityType: IConventionEntityType): List<IConventionProperty> | undefined;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -1383,6 +1673,9 @@ export type KeyDiscoveryConvention = KeyDiscoveryConvention$instance & __KeyDisc
 
 
 export interface KeylessAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<KeylessAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
@@ -1400,6 +1693,12 @@ export type KeylessAttributeConvention = KeylessAttributeConvention$instance & _
 
 
 export interface ManyToManyJoinEntityTypeConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationForeignKeyChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationInverseChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationRemovedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     CreateJoinEntityType(joinEntityTypeName: string, skipNavigation: IConventionSkipNavigation): void;
     CreateSkipNavigationForeignKey(skipNavigation: IConventionSkipNavigation, joinEntityTypeBuilder: IConventionEntityTypeBuilder): IConventionForeignKey;
@@ -1430,6 +1729,11 @@ export type ManyToManyJoinEntityTypeConvention = ManyToManyJoinEntityTypeConvent
 
 
 export interface MaxLengthAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<MaxLengthAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, attribute: MaxLengthAttribute, clrMember: MemberInfo, context: IConventionContext): void;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
@@ -1453,6 +1757,10 @@ export type MaxLengthAttributeConvention = MaxLengthAttributeConvention$instance
 
 
 export interface ModelCleanupConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey, context: IConventionContext_1<IConventionForeignKey>): void;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -1504,6 +1812,10 @@ export const NavigationAttributeConventionBase_1: (abstract new<TAttribute exten
 export type NavigationAttributeConventionBase_1<TAttribute extends Attribute> = NavigationAttributeConventionBase_1$instance<TAttribute>;
 
 export interface NavigationBackingFieldAttributeConvention$instance extends NavigationAttributeConventionBase_1<BackingFieldAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationAddedConvention: never;
+
     ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
     ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: BackingFieldAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
     ProcessSkipNavigationAdded(skipNavigationBuilder: IConventionSkipNavigationBuilder, context: IConventionContext_1<IConventionSkipNavigationBuilder>): void;
@@ -1525,6 +1837,9 @@ export type NavigationBackingFieldAttributeConvention = NavigationBackingFieldAt
 
 
 export interface NavigationEagerLoadingConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyOwnershipChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<Nullable<System_Internal.Boolean>>): void;
 }
@@ -1557,6 +1872,10 @@ export const NonNullableConventionBase: (abstract new(dependencies: ProviderConv
 export type NonNullableConventionBase = NonNullableConventionBase$instance;
 
 export interface NonNullableNavigationConvention$instance extends NonNullableConventionBase, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPrincipalEndChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+
     ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
     ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
 }
@@ -1578,6 +1897,13 @@ export type NonNullableNavigationConvention = NonNullableNavigationConvention$in
 
 
 export interface NonNullableReferencePropertyConvention$instance extends NonNullableConventionBase, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyFieldChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyElementTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
@@ -1605,6 +1931,10 @@ export type NonNullableReferencePropertyConvention = NonNullableReferencePropert
 
 
 export interface NotMappedMemberAttributeConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -1628,6 +1958,9 @@ export type NotMappedMemberAttributeConvention = NotMappedMemberAttributeConvent
 
 
 export interface NotMappedTypeAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<NotMappedAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
 
@@ -1645,6 +1978,10 @@ export type NotMappedTypeAttributeConvention = NotMappedTypeAttributeConvention$
 
 
 export interface OwnedAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<OwnedAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessComplexTypeAdded(complexTypeBuilder: IConventionComplexTypeBuilder, attribute: OwnedAttribute, context: IConventionContext): void;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -1665,6 +2002,10 @@ export type OwnedAttributeConvention = OwnedAttributeConvention$instance & __Own
 
 
 export interface PrecisionAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<PrecisionAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, attribute: PrecisionAttribute, clrMember: MemberInfo, context: IConventionContext): void;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, attribute: PrecisionAttribute, clrMember: MemberInfo, context: IConventionContext): void;
@@ -1686,6 +2027,10 @@ export type PrecisionAttributeConvention = PrecisionAttributeConvention$instance
 
 
 export interface PropertyAttributeConventionBase_1$instance<TAttribute extends Attribute> extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
@@ -1711,6 +2056,11 @@ export type PropertyAttributeConventionBase_1<TAttribute extends Attribute> = Pr
 
 
 export interface PropertyDiscoveryConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly UseAttributes: boolean;
     DiscoverPrimitiveProperties(structuralTypeBuilder: IConventionTypeBaseBuilder, context: IConventionContext): void;
@@ -1739,6 +2089,9 @@ export type PropertyDiscoveryConvention = PropertyDiscoveryConvention$instance &
 
 
 export interface PropertyOverridesConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
@@ -1760,6 +2113,9 @@ export type PropertyOverridesConvention = PropertyOverridesConvention$instance &
 
 
 export interface QueryFilterRewritingConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     DbSetAccessRewriter: unknown;
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -1781,6 +2137,10 @@ export type QueryFilterRewritingConvention = QueryFilterRewritingConvention$inst
 
 
 export interface RelationalColumnAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<ColumnAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, attribute: ColumnAttribute, clrMember: MemberInfo, context: IConventionContext): void;
@@ -1802,6 +2162,10 @@ export type RelationalColumnAttributeConvention = RelationalColumnAttributeConve
 
 
 export interface RelationalColumnCommentAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<CommentAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, attribute: CommentAttribute, clrMember: MemberInfo, context: IConventionContext): void;
@@ -1823,6 +2187,10 @@ export type RelationalColumnCommentAttributeConvention = RelationalColumnComment
 
 
 export interface RelationalDbFunctionAttributeConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelInitializedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessDbFunctionAdded(dbFunctionBuilder: IConventionDbFunctionBuilder, context: IConventionContext): void;
@@ -1847,6 +2215,20 @@ export type RelationalDbFunctionAttributeConvention = RelationalDbFunctionAttrib
 
 
 export interface RelationalKeyDiscoveryConvention$instance extends KeyDiscoveryConvention$instance, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAnnotationChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeMemberIgnoredConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyOwnershipChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPropertiesChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyUniquenessChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationForeignKeyChangedConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     DiscoverKeyProperties(entityType: IConventionEntityType): List<IConventionProperty> | undefined;
     DiscoverKeyProperties(entityType: IConventionEntityType): List<IConventionProperty> | undefined;
@@ -1895,6 +2277,10 @@ export type RelationalKeyDiscoveryConvention = RelationalKeyDiscoveryConvention$
 
 
 export interface RelationalMapToJsonConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAnnotationChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation, context: IConventionContext_1<IConventionAnnotation>): void;
@@ -1918,6 +2304,9 @@ export type RelationalMapToJsonConvention = RelationalMapToJsonConvention$instan
 
 
 export interface RelationalMaxIdentifierLengthConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelInitializedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly MaxIdentifierLength: int;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
@@ -1940,6 +2329,9 @@ export type RelationalMaxIdentifierLengthConvention = RelationalMaxIdentifierLen
 
 
 export interface RelationalNavigationJsonPropertyNameAttributeConvention$instance extends NavigationAttributeConventionBase_1<JsonPropertyNameAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
     ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, attribute: JsonPropertyNameAttribute, context: IConventionContext_1<IConventionNavigationBuilder>): void;
@@ -1959,6 +2351,10 @@ export type RelationalNavigationJsonPropertyNameAttributeConvention = Relational
 
 
 export interface RelationalPropertyJsonPropertyNameAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<JsonPropertyNameAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, attribute: JsonPropertyNameAttribute, clrMember: MemberInfo, context: IConventionContext): void;
@@ -1980,6 +2376,9 @@ export type RelationalPropertyJsonPropertyNameAttributeConvention = RelationalPr
 
 
 export interface RelationalQueryFilterRewritingConvention$instance extends QueryFilterRewritingConvention$instance, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
 }
@@ -1998,6 +2397,9 @@ export type RelationalQueryFilterRewritingConvention = RelationalQueryFilterRewr
 
 
 export interface RelationalRuntimeModelConvention$instance extends RuntimeModelConvention$instance, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizedConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessComplexTypeAnnotations(annotations: Dictionary<System_Internal.String, unknown>, complexType: IComplexType, runtimeComplexType: RuntimeComplexType, runtime: boolean): void;
     ProcessComplexTypeAnnotations(annotations: Dictionary<System_Internal.String, unknown>, complexType: IComplexType, runtimeComplexType: RuntimeComplexType, runtime: boolean): void;
@@ -2038,6 +2440,9 @@ export type RelationalRuntimeModelConvention = RelationalRuntimeModelConvention$
 
 
 export interface RelationalTableAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<TableAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
@@ -2056,6 +2461,9 @@ export type RelationalTableAttributeConvention = RelationalTableAttributeConvent
 
 
 export interface RelationalTableCommentAttributeConvention$instance extends TypeAttributeConventionBase_1$instance<CommentAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
 }
@@ -2074,6 +2482,16 @@ export type RelationalTableCommentAttributeConvention = RelationalTableCommentAt
 
 
 export interface RelationalValueGenerationConvention$instance extends ValueGenerationConvention$instance, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAnnotationChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypePrimaryKeyChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyOwnershipChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPropertiesChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAnnotationChangedConvention: never;
+
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     GetValueGenerated(property: IConventionProperty): Nullable<ValueGenerated>;
     GetValueGenerated(property: IConventionProperty): Nullable<ValueGenerated>;
@@ -2111,6 +2529,17 @@ export type RelationalValueGenerationConvention = RelationalValueGenerationConve
 
 
 export interface RelationshipDiscoveryConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeMemberIgnoredConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyNullNavigationSetConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyOwnershipChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationRemovedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ITypeIgnoredConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly UseAttributes: boolean;
     DiscoverRelationships(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext, discoverUnmatchedInverses?: boolean): void;
@@ -2151,6 +2580,11 @@ export type RelationshipDiscoveryConvention = RelationshipDiscoveryConvention$in
 
 
 export interface RequiredNavigationAttributeConvention$instance extends NavigationAttributeConventionBase_1<RequiredAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPrincipalEndChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationAddedConvention: never;
+
     ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
     ProcessForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder, dependentToPrincipalAttributes: IEnumerable<RequiredAttribute>, principalToDependentAttributes: IEnumerable<RequiredAttribute>, context: IConventionContext_1<IConventionForeignKeyBuilder>): void;
     ProcessNavigationAdded(navigationBuilder: IConventionNavigationBuilder, context: IConventionContext_1<IConventionNavigationBuilder>): void;
@@ -2175,6 +2609,12 @@ export type RequiredNavigationAttributeConvention = RequiredNavigationAttributeC
 
 
 export interface RequiredPropertyAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<RequiredAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyFieldChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, attribute: RequiredAttribute, clrMember: MemberInfo, context: IConventionContext): void;
@@ -2200,6 +2640,9 @@ export type RequiredPropertyAttributeConvention = RequiredPropertyAttributeConve
 
 
 export interface RuntimeModelConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     Create(model: IModel): RuntimeModel;
     GetForeignKey(foreignKey: IForeignKey, entityType: RuntimeEntityType): RuntimeForeignKey;
@@ -2238,6 +2681,9 @@ export type RuntimeModelConvention = RuntimeModelConvention$instance & __Runtime
 
 
 export interface SequenceUniquificationConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -2259,6 +2705,10 @@ export type SequenceUniquificationConvention = SequenceUniquificationConvention$
 
 
 export interface ServicePropertyDiscoveryConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly UseAttributes: boolean;
     DiscoverServiceProperties(structuralTypeBuilder: IConventionTypeBaseBuilder, context: IConventionContext): void;
@@ -2285,6 +2735,9 @@ export type ServicePropertyDiscoveryConvention = ServicePropertyDiscoveryConvent
 
 
 export interface SharedTableConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly CheckConstraintsUniqueAcrossTables: boolean;
     readonly DefaultConstraintsUniqueAcrossTables: boolean;
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
@@ -2318,6 +2771,9 @@ export type SharedTableConvention = SharedTableConvention$instance & __SharedTab
 
 
 export interface StoredProcedureConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -2339,6 +2795,10 @@ export type StoredProcedureConvention = StoredProcedureConvention$instance & __S
 
 
 export interface StoreGenerationConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAnnotationChangedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -2363,6 +2823,10 @@ export type StoreGenerationConvention = StoreGenerationConvention$instance & __S
 
 
 export interface StringLengthAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<StringLengthAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, attribute: StringLengthAttribute, clrMember: MemberInfo, context: IConventionContext): void;
     ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
@@ -2383,6 +2847,12 @@ export type StringLengthAttributeConvention = StringLengthAttributeConvention$in
 
 
 export interface TableNameFromDbSetConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAnnotationChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder, context: IConventionContext_1<IConventionEntityTypeBuilder>): void;
@@ -2410,6 +2880,9 @@ export type TableNameFromDbSetConvention = TableNameFromDbSetConvention$instance
 
 
 export interface TableSharingConcurrencyTokenConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -2433,6 +2906,9 @@ export type TableSharingConcurrencyTokenConvention = TableSharingConcurrencyToke
 
 
 export interface TableValuedDbFunctionConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     ProcessModelFinalizing(modelBuilder: IConventionModelBuilder, context: IConventionContext_1<IConventionModelBuilder>): void;
@@ -2454,6 +2930,10 @@ export type TableValuedDbFunctionConvention = TableValuedDbFunctionConvention$in
 
 
 export interface TimestampAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<TimestampAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, attribute: TimestampAttribute, clrMember: MemberInfo, context: IConventionContext): void;
     ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
@@ -2474,6 +2954,9 @@ export type TimestampAttributeConvention = TimestampAttributeConvention$instance
 
 
 export interface TypeAttributeConventionBase_1$instance<TAttribute extends Attribute> extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     ProcessComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, context: IConventionContext_1<IConventionComplexPropertyBuilder>): void;
     ProcessComplexTypeAdded(complexTypeBuilder: IConventionComplexTypeBuilder, attribute: TAttribute, context: IConventionContext): void;
@@ -2495,6 +2978,10 @@ export type TypeAttributeConventionBase_1<TAttribute extends Attribute> = TypeAt
 
 
 export interface UnicodeAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<UnicodeAttribute>, IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
+
     ProcessPropertyAdded(propertyBuilder: IConventionPropertyBuilder, context: IConventionContext_1<IConventionPropertyBuilder>): void;
     ProcessPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder, attribute: UnicodeAttribute, clrMember: MemberInfo, context: IConventionContext): void;
     ProcessPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo, context: IConventionContext_1<FieldInfo>): void;
@@ -2515,6 +3002,14 @@ export type UnicodeAttributeConvention = UnicodeAttributeConvention$instance & _
 
 
 export interface ValueGenerationConvention$instance extends IConvention {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypePrimaryKeyChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyOwnershipChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPropertiesChangedConvention: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
+
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     GetValueGenerated(property: IConventionProperty): Nullable<ValueGenerated>;
     ProcessEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, oldBaseType: IConventionEntityType, context: IConventionContext_1<IConventionEntityType>): void;
