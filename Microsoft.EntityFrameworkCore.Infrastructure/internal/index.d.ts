@@ -353,7 +353,7 @@ export type AnnotatableBase = AnnotatableBase$instance & __AnnotatableBase$views
 
 
 export interface AnnotatableBuilder_2$instance<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder> {
-    readonly Metadata: EntityType | TMetadata;
+    readonly Metadata: ComplexType | TMetadata;
     readonly ModelBuilder: InternalModelBuilder | TModelBuilder;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;

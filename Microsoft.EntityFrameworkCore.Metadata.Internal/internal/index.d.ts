@@ -3563,7 +3563,7 @@ export const InternalOwnedEntityTypeBuilder: {
 export type InternalOwnedEntityTypeBuilder = InternalOwnedEntityTypeBuilder$instance;
 
 export interface InternalPropertyBaseBuilder_2$instance<TBuilder extends IConventionPropertyBaseBuilder_1<TBuilder>, TPropertyBase extends PropertyBase> extends AnnotatableBuilder_2<TPropertyBase, InternalModelBuilder> {
-    readonly This: IConventionNavigationBuilder | TBuilder;
+    readonly This: IConventionPropertyBuilder | TBuilder;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
