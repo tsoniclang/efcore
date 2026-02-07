@@ -23,24 +23,24 @@ import * as Microsoft_EntityFrameworkCore_Update_Internal from "../../Microsoft.
 import type { IUpdateEntry } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import type { IValueGeneratorSelector } from "../../Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js";
 import type { DbContext, DbLoggerCategory_ChangeTracking, DbLoggerCategory_Update, EntityState } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { HashSet, ICollection as ICollection__System_Collections_Generic, IComparer as IComparer__System_Collections_Generic, IDictionary, IEnumerable as IEnumerable__System_Collections_Generic, IEqualityComparer as IEqualityComparer__System_Collections_Generic, IList as IList__System_Collections_Generic, IReadOnlyCollection, IReadOnlyList, List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections.js";
-import type { ICollection, IComparer, IEnumerable, IEqualityComparer, IList } from "@tsonic/dotnet/System.Collections.js";
-import type { NotifyCollectionChangedEventArgs } from "@tsonic/dotnet/System.Collections.Specialized.js";
-import * as System_ComponentModel_Internal from "@tsonic/dotnet/System.ComponentModel.js";
-import type { BindingList, IBindingList, ICancelAddNew, IRaiseItemChangedEvents, ListSortDirection, PropertyChangedEventArgs, PropertyChangingEventArgs, PropertyDescriptor } from "@tsonic/dotnet/System.ComponentModel.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Action, Boolean as ClrBoolean, EventHandler, Func, IEquatable, Int32, Nullable, Object as ClrObject, String as ClrString, Tuple, Type, ValueTuple, ValueType, Void } from "@tsonic/dotnet/System.js";
-import type { Expression, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
-import type { FieldInfo, MethodInfo } from "@tsonic/dotnet/System.Reflection.js";
-import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
-import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
+import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { HashSet_1, ICollection_1, IComparer_1, IDictionary_2, IEnumerable_1, IEqualityComparer_1, IList_1, IReadOnlyCollection_1, IReadOnlyList_1, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { NotifyCollectionChangedEventArgs } from "@tsonic/dotnet/System.Collections.Specialized/internal/index.js";
+import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections/internal/index.js";
+import type { ICollection, IComparer, IEnumerable, IEqualityComparer, IList } from "@tsonic/dotnet/System.Collections/internal/index.js";
+import * as System_ComponentModel_Internal from "@tsonic/dotnet/System.ComponentModel/internal/index.js";
+import type { BindingList_1, IBindingList, ICancelAddNew, IRaiseItemChangedEvents, ListSortDirection, PropertyChangedEventArgs, PropertyChangingEventArgs, PropertyDescriptor } from "@tsonic/dotnet/System.ComponentModel/internal/index.js";
+import type { Expression, Expression_1, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
+import type { FieldInfo, MethodInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
+import type { Task, Task_1 } from "@tsonic/dotnet/System.Threading.Tasks/internal/index.js";
+import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Action_2, Boolean as ClrBoolean, EventHandler_1, Func_1, Func_2, Func_3, IEquatable_1, Int32, Nullable_1, Object as ClrObject, String as ClrString, Tuple_2, Type, ValueTuple_2, ValueTuple_4, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IChangeDetector$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IChangeDetector: never;
 
-    CaptureEvents(): ValueTuple<EventHandler<DetectChangesEventArgs>, EventHandler<DetectedChangesEventArgs>, EventHandler<DetectEntityChangesEventArgs>, EventHandler<DetectedEntityChangesEventArgs>>;
+    CaptureEvents(): ValueTuple_4<EventHandler_1<DetectChangesEventArgs>, EventHandler_1<DetectedChangesEventArgs>, EventHandler_1<DetectEntityChangesEventArgs>, EventHandler_1<DetectedEntityChangesEventArgs>>;
     DetectChanges(entry: InternalComplexEntry): void;
     DetectChanges(entry: InternalEntityEntry): void;
     DetectChanges(stateManager: IStateManager): void;
@@ -50,7 +50,7 @@ export interface IChangeDetector$instance {
     PropertyChanged(entry: IInternalEntry, propertyBase: IPropertyBase, setModified: boolean): void;
     PropertyChanging(entry: IInternalEntry, propertyBase: IPropertyBase): void;
     ResetState(): void;
-    SetEvents(detectingAllChanges: EventHandler<DetectChangesEventArgs>, detectedAllChanges: EventHandler<DetectedChangesEventArgs>, detectingEntityChanges: EventHandler<DetectEntityChangesEventArgs>, detectedEntityChanges: EventHandler<DetectedEntityChangesEventArgs>): void;
+    SetEvents(detectingAllChanges: EventHandler_1<DetectChangesEventArgs>, detectedAllChanges: EventHandler_1<DetectedChangesEventArgs>, detectingEntityChanges: EventHandler_1<DetectEntityChangesEventArgs>, detectedEntityChanges: EventHandler_1<DetectedEntityChangesEventArgs>): void;
 }
 
 
@@ -69,8 +69,8 @@ export interface IDependentsMap$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IDependentsMap: never;
 
     Add(entry: IUpdateEntry): void;
-    GetDependents(principalEntry: IUpdateEntry): IEnumerable__System_Collections_Generic<IUpdateEntry>;
-    GetDependents(keyValues: IReadOnlyList<unknown>): IEnumerable__System_Collections_Generic<IUpdateEntry>;
+    GetDependents(principalEntry: IUpdateEntry): IEnumerable_1<IUpdateEntry>;
+    GetDependents(keyValues: IReadOnlyList_1<unknown>): IEnumerable_1<IUpdateEntry>;
 }
 
 
@@ -90,15 +90,15 @@ export interface IIdentityMap$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap: never;
 
     readonly Key: IKey;
-    Add(keyValues: IReadOnlyList<unknown>, entry: InternalEntityEntry): void;
+    Add(keyValues: IReadOnlyList_1<unknown>, entry: InternalEntityEntry): void;
     AddOrUpdate(entry: InternalEntityEntry): void;
-    All(): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
+    All(): IEnumerable_1<InternalEntityEntry>;
     Clear(): void;
     GetDependentsMap(foreignKey: IForeignKey): IDependentsMap;
     TryGetEntry(entry: InternalEntityEntry): InternalEntityEntry | undefined;
     TryGetEntry(foreignKey: IForeignKey, dependentEntry: InternalEntityEntry): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList<unknown>, throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList<unknown>): InternalEntityEntry | undefined;
+    TryGetEntry(keyValues: IReadOnlyList_1<unknown>, throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
+    TryGetEntry(keyValues: IReadOnlyList_1<unknown>): InternalEntityEntry | undefined;
 }
 
 
@@ -108,15 +108,15 @@ export interface IIdentityMap_1$instance<TKey> extends IIdentityMap {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap_1: never;
 
     readonly Key: IKey;
-    Add(keyValues: IReadOnlyList<unknown>, entry: InternalEntityEntry): void;
+    Add(keyValues: IReadOnlyList_1<unknown>, entry: InternalEntityEntry): void;
     AddOrUpdate(entry: InternalEntityEntry): void;
-    All(): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
+    All(): IEnumerable_1<InternalEntityEntry>;
     Clear(): void;
     GetDependentsMap(foreignKey: IForeignKey): IDependentsMap;
     TryGetEntry(entry: InternalEntityEntry): InternalEntityEntry | undefined;
     TryGetEntry(foreignKey: IForeignKey, dependentEntry: InternalEntityEntry): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList<unknown>, throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList<unknown>): InternalEntityEntry | undefined;
+    TryGetEntry(keyValues: IReadOnlyList_1<unknown>, throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
+    TryGetEntry(keyValues: IReadOnlyList_1<unknown>): InternalEntityEntry | undefined;
     TryGetEntryTyped(keyValue: TKey): InternalEntityEntry | undefined;
 }
 
@@ -127,8 +127,8 @@ export interface IInternalEntityEntryNotifier$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IInternalEntityEntryNotifier: never;
 
     FixupResolved(entry: InternalEntityEntry, duplicateEntry: InternalEntityEntry): void;
-    KeyPropertyChanged(entry: InternalEntityEntry, property: IProperty, keys: IEnumerable__System_Collections_Generic<IKey>, foreignKeys: IEnumerable__System_Collections_Generic<IForeignKey>, oldValue: unknown, newValue: unknown): void;
-    NavigationCollectionChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, added: IEnumerable__System_Collections_Generic<unknown>, removed: IEnumerable__System_Collections_Generic<unknown>): void;
+    KeyPropertyChanged(entry: InternalEntityEntry, property: IProperty, keys: IEnumerable_1<IKey>, foreignKeys: IEnumerable_1<IForeignKey>, oldValue: unknown, newValue: unknown): void;
+    NavigationCollectionChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, added: IEnumerable_1<unknown>, removed: IEnumerable_1<unknown>): void;
     NavigationReferenceChanged(entry: InternalEntityEntry, navigation: INavigation, oldValue: unknown, newValue: unknown): void;
     PropertyChanged(entry: IInternalEntry, property: IPropertyBase, setModified: boolean): void;
     PropertyChanging(entry: IInternalEntry, property: IPropertyBase): void;
@@ -155,12 +155,12 @@ export interface IInternalEntry$instance {
     readonly StateManager: IStateManager;
     AcceptChanges(): void;
     FlaggedAsStoreGenerated(propertyIndex: int): boolean;
-    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList<InternalComplexEntry | undefined>;
+    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList_1<InternalComplexEntry | undefined>;
     GetComplexCollectionEntry(property: IComplexProperty, ordinal: int): InternalComplexEntry;
     GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
     GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
-    GetFlattenedComplexEntries(): IEnumerable__System_Collections_Generic<InternalComplexEntry>;
-    GetOrdinals(): IReadOnlyList<System_Internal.Int32>;
+    GetFlattenedComplexEntries(): IEnumerable_1<InternalComplexEntry>;
+    GetOrdinals(): IReadOnlyList_1<System_Internal.Int32>;
     GetOriginalValue<TProperty>(property: IProperty): TProperty;
     HandleConceptualNulls(sensitiveLoggingEnabled: boolean, force: boolean, isCascadeDelete: boolean): void;
     HasExplicitValue(property: IProperty): boolean;
@@ -172,7 +172,7 @@ export interface IInternalEntry$instance {
     PrepareToSave(): IInternalEntry;
     ReadOriginalValue<T>(property: IProperty, originalValueIndex: int): T;
     ReadStoreGeneratedValue<T>(storeGeneratedIndex: int): T;
-    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable<EntityState>, fallbackState?: Nullable<EntityState>): void;
+    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>): void;
     SetOriginalValue(propertyBase: IPropertyBase, value: unknown, index?: int): void;
     SetProperty(propertyBase: IPropertyBase, value: unknown, isMaterialization: boolean, setModified?: boolean, isCascadeDelete?: boolean): void;
     SetPropertyModified(property: IComplexProperty, isModified?: boolean, recurse?: boolean): void;
@@ -201,7 +201,7 @@ export interface IKeyPropagator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IKeyPropagator: never;
 
     PropagateValue(entry: InternalEntityEntry, property: IProperty): InternalEntityEntry | undefined;
-    PropagateValueAsync(entry: InternalEntityEntry, property: IProperty, cancellationToken?: CancellationToken): Task<InternalEntityEntry | undefined>;
+    PropagateValueAsync(entry: InternalEntityEntry, property: IProperty, cancellationToken?: CancellationToken): Task_1<InternalEntityEntry | undefined>;
 }
 
 
@@ -210,7 +210,7 @@ export type IKeyPropagator = IKeyPropagator$instance;
 export interface ILocalViewListener$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ILocalViewListener: never;
 
-    RegisterView(viewAction: Action<InternalEntityEntry, EntityState>): void;
+    RegisterView(viewAction: Action_2<InternalEntityEntry, EntityState>): void;
     StateChanged(entry: InternalEntityEntry, oldState: EntityState, fromQuery: boolean): void;
     StateChanging(entry: InternalEntityEntry, newState: EntityState): void;
 }
@@ -224,8 +224,8 @@ export interface INavigationFixer$instance {
     BeginDelayedFixup(): boolean;
     CompleteDelayedFixup(): void;
     FixupResolved(entry: InternalEntityEntry, duplicateEntry: InternalEntityEntry): void;
-    KeyPropertyChanged(entry: InternalEntityEntry, property: IProperty, containingPrincipalKeys: IEnumerable__System_Collections_Generic<IKey>, containingForeignKeys: IEnumerable__System_Collections_Generic<IForeignKey>, oldValue: unknown, newValue: unknown): void;
-    NavigationCollectionChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, added: IEnumerable__System_Collections_Generic<unknown>, removed: IEnumerable__System_Collections_Generic<unknown>): void;
+    KeyPropertyChanged(entry: InternalEntityEntry, property: IProperty, containingPrincipalKeys: IEnumerable_1<IKey>, containingForeignKeys: IEnumerable_1<IForeignKey>, oldValue: unknown, newValue: unknown): void;
+    NavigationCollectionChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, added: IEnumerable_1<unknown>, removed: IEnumerable_1<unknown>): void;
     NavigationReferenceChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, oldValue: unknown, newValue: unknown): void;
     StateChanged(entry: InternalEntityEntry, oldState: EntityState, fromQuery: boolean): void;
     StateChanging(entry: InternalEntityEntry, newState: EntityState): void;
@@ -253,7 +253,7 @@ export interface IStateManager$instance extends IResettableService {
     DeleteOrphansTiming: CascadeTiming;
     CascadeDeleteTiming: CascadeTiming;
     readonly SavingChanges: boolean;
-    readonly Entries: IEnumerable__System_Collections_Generic<InternalEntityEntry>;
+    readonly Entries: IEnumerable_1<InternalEntityEntry>;
     readonly Count: int;
     ChangedCount: int;
     readonly InternalEntityEntryNotifier: IInternalEntityEntryNotifier;
@@ -264,35 +264,35 @@ export interface IStateManager$instance extends IResettableService {
     readonly SensitiveLoggingEnabled: boolean;
     readonly UpdateLogger: IDiagnosticsLogger_1<DbLoggerCategory_Update>;
     BeginAttachGraph(): void;
-    CaptureEvents(): ValueTuple<EventHandler<EntityTrackingEventArgs>, EventHandler<EntityTrackedEventArgs>, EventHandler<EntityStateChangingEventArgs>, EventHandler<EntityStateChangedEventArgs>>;
-    CascadeDelete(entry: InternalEntityEntry, force: boolean, foreignKeys?: IEnumerable__System_Collections_Generic<IForeignKey>): void;
+    CaptureEvents(): ValueTuple_4<EventHandler_1<EntityTrackingEventArgs>, EventHandler_1<EntityTrackedEventArgs>, EventHandler_1<EntityStateChangingEventArgs>, EventHandler_1<EntityStateChangedEventArgs>>;
+    CascadeDelete(entry: InternalEntityEntry, force: boolean, foreignKeys?: IEnumerable_1<IForeignKey>): void;
     ChangingState(entry: InternalEntityEntry, newState: EntityState): void;
     CreateEntityFinder(entityType: IEntityType): IEntityFinder;
-    CreateEntry(values: IDictionary<System_Internal.String, unknown>, entityType: IEntityType): InternalEntityEntry;
+    CreateEntry(values: IDictionary_2<System_Internal.String, unknown>, entityType: IEntityType): InternalEntityEntry;
     FindPrincipal(dependentEntry: InternalEntityEntry, foreignKey: IForeignKey): InternalEntityEntry | undefined;
     GetCountForState(added?: boolean, modified?: boolean, deleted?: boolean, unchanged?: boolean, returnSharedIdentity?: boolean): int;
-    GetDependents(keyValues: IReadOnlyList<unknown>, foreignKey: IForeignKey): IEnumerable__System_Collections_Generic<IUpdateEntry>;
-    GetDependentsFromNavigation(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable__System_Collections_Generic<IUpdateEntry> | undefined;
-    GetEntries(key: IKey): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
-    GetEntriesForState(added?: boolean, modified?: boolean, deleted?: boolean, unchanged?: boolean, returnSharedIdentity?: boolean): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
-    GetEntriesToSave(cascadeChanges: boolean): IList__System_Collections_Generic<IUpdateEntry>;
-    GetNonDeletedEntities<TEntity>(): IEnumerable__System_Collections_Generic<TEntity>;
+    GetDependents(keyValues: IReadOnlyList_1<unknown>, foreignKey: IForeignKey): IEnumerable_1<IUpdateEntry>;
+    GetDependentsFromNavigation(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable_1<IUpdateEntry> | undefined;
+    GetEntries(key: IKey): IEnumerable_1<InternalEntityEntry>;
+    GetEntriesForState(added?: boolean, modified?: boolean, deleted?: boolean, unchanged?: boolean, returnSharedIdentity?: boolean): IEnumerable_1<InternalEntityEntry>;
+    GetEntriesToSave(cascadeChanges: boolean): IList_1<IUpdateEntry>;
+    GetNonDeletedEntities<TEntity>(): IEnumerable_1<TEntity>;
     GetOrCreateEntry(entity: unknown, entityType: IEntityType): InternalEntityEntry;
     GetOrCreateEntry(entity: unknown): InternalEntityEntry;
-    GetRecordedReferrers(referencedEntity: unknown, clear: boolean): IEnumerable__System_Collections_Generic<Tuple<INavigationBase, InternalEntityEntry>>;
+    GetRecordedReferrers(referencedEntity: unknown, clear: boolean): IEnumerable_1<Tuple_2<INavigationBase, InternalEntityEntry>>;
     OnTracked(internalEntityEntry: InternalEntityEntry, fromQuery: boolean): void;
     OnTracking(internalEntityEntry: InternalEntityEntry, state: EntityState, fromQuery: boolean): void;
     RecordReferencedUntrackedEntity(referencedEntity: unknown, navigation: INavigationBase, referencedFromEntry: InternalEntityEntry): void;
     ResetStateAsync(cancellationToken?: CancellationToken): Task;
     ResolveToExistingEntry(newEntry: InternalEntityEntry, navigation: INavigationBase, referencedFromEntry: InternalEntityEntry): boolean;
     SaveChanges(acceptAllChangesOnSuccess: boolean): int;
-    SaveChangesAsync(acceptAllChangesOnSuccess: boolean, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
-    SetEvents(tracking: EventHandler<EntityTrackingEventArgs>, tracked: EventHandler<EntityTrackedEventArgs>, stateChanging: EventHandler<EntityStateChangingEventArgs>, stateChanged: EventHandler<EntityStateChangedEventArgs>): void;
+    SaveChangesAsync(acceptAllChangesOnSuccess: boolean, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
+    SetEvents(tracking: EventHandler_1<EntityTrackingEventArgs>, tracked: EventHandler_1<EntityTrackedEventArgs>, stateChanging: EventHandler_1<EntityStateChangingEventArgs>, stateChanged: EventHandler_1<EntityStateChangedEventArgs>): void;
     StartTracking(entry: InternalComplexEntry): InternalComplexEntry;
     StartTracking(entry: InternalEntityEntry): InternalEntityEntry;
     StartTrackingFromQuery(baseEntityType: IEntityType, entity: unknown, snapshot: ISnapshot): InternalEntityEntry;
     StopTracking(entry: InternalComplexEntry, oldState: EntityState): void;
-    TryGetEntry(key: IKey, keyValues: IReadOnlyList<unknown>): InternalEntityEntry | undefined;
+    TryGetEntry(key: IKey, keyValues: IReadOnlyList_1<unknown>): InternalEntityEntry | undefined;
     TryGetEntry(key: IKey, keyValues: unknown[], throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
     TryGetEntry(entity: unknown, type: IEntityType, throwOnTypeMismatch?: boolean): InternalEntityEntry | undefined;
     TryGetEntry(entity: unknown, throwOnNonUniqueness?: boolean): InternalEntityEntry | undefined;
@@ -314,9 +314,9 @@ export interface IValueGenerationManager$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IValueGenerationManager: never;
 
     Generate(entry: InternalEntityEntry, includePrimaryKey?: boolean): boolean;
-    GenerateAsync(entry: InternalEntityEntry, includePrimaryKey?: boolean, cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    GenerateAsync(entry: InternalEntityEntry, includePrimaryKey?: boolean, cancellationToken?: CancellationToken): Task_1<System_Internal.Boolean>;
     Propagate(entry: InternalEntityEntry): InternalEntityEntry | undefined;
-    PropagateAsync(entry: InternalEntityEntry, cancellationToken: CancellationToken): Task<InternalEntityEntry | undefined>;
+    PropagateAsync(entry: InternalEntityEntry, cancellationToken: CancellationToken): Task_1<InternalEntityEntry | undefined>;
 }
 
 
@@ -356,7 +356,7 @@ export interface ArrayPropertyValues$instance extends PropertyValues {
     set_Item(complexProperty: IComplexProperty, value: IList | undefined): void;
     SetValues(obj: unknown): void;
     SetValues(propertyValues: PropertyValues): void;
-    SetValues<TProperty>(values: IDictionary<System_Internal.String, TProperty>): void;
+    SetValues<TProperty>(values: IDictionary_2<System_Internal.String, TProperty>): void;
     ToObject(): unknown;
 }
 
@@ -371,7 +371,7 @@ export type ArrayPropertyValues = ArrayPropertyValues$instance;
 export interface ChangeDetector$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IChangeDetector: never;
 
-    CaptureEvents(): ValueTuple<EventHandler<DetectChangesEventArgs>, EventHandler<DetectedChangesEventArgs>, EventHandler<DetectEntityChangesEventArgs>, EventHandler<DetectedEntityChangesEventArgs>>;
+    CaptureEvents(): ValueTuple_4<EventHandler_1<DetectChangesEventArgs>, EventHandler_1<DetectedChangesEventArgs>, EventHandler_1<DetectEntityChangesEventArgs>, EventHandler_1<DetectedEntityChangesEventArgs>>;
     DetectChanges(stateManager: IStateManager): void;
     DetectChanges(entry: InternalEntityEntry): void;
     DetectChanges(entry: InternalComplexEntry): void;
@@ -385,7 +385,7 @@ export interface ChangeDetector$instance {
     PropertyChanged(entry: IInternalEntry, propertyBase: IPropertyBase, setModified: boolean): void;
     PropertyChanging(entry: IInternalEntry, propertyBase: IPropertyBase): void;
     ResetState(): void;
-    SetEvents(detectingAllChanges: EventHandler<DetectChangesEventArgs>, detectedAllChanges: EventHandler<DetectedChangesEventArgs>, detectingEntityChanges: EventHandler<DetectEntityChangesEventArgs>, detectedEntityChanges: EventHandler<DetectedEntityChangesEventArgs>): void;
+    SetEvents(detectingAllChanges: EventHandler_1<DetectChangesEventArgs>, detectedAllChanges: EventHandler_1<DetectedChangesEventArgs>, detectingEntityChanges: EventHandler_1<DetectEntityChangesEventArgs>, detectedEntityChanges: EventHandler_1<DetectedEntityChangesEventArgs>): void;
 }
 
 
@@ -428,19 +428,19 @@ export interface CompositeDependentKeyValueFactory$instance extends CompositeVal
 
     CreateDependentEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown | undefined;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
-    TryCreateFromCurrentValues(entry: IUpdateEntry, key: IReadOnlyList<unknown>): boolean;
+    TryCreateFromCurrentValues(entry: IUpdateEntry, key: IReadOnlyList_1<unknown>): boolean;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: unknown): boolean;
 }
 
 
 export const CompositeDependentKeyValueFactory: {
-    new(foreignKey: IForeignKey, principalKeyValueFactory: IPrincipalKeyValueFactory_1<IReadOnlyList<unknown>>): CompositeDependentKeyValueFactory;
+    new(foreignKey: IForeignKey, principalKeyValueFactory: IPrincipalKeyValueFactory_1<IReadOnlyList_1<unknown>>): CompositeDependentKeyValueFactory;
 };
 
 
 export interface __CompositeDependentKeyValueFactory$views {
     As_IDependentKeyValueFactory(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IDependentKeyValueFactory$instance;
-    As_IDependentKeyValueFactory_1(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IDependentKeyValueFactory_1$instance<IReadOnlyList<unknown>>;
+    As_IDependentKeyValueFactory_1(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IDependentKeyValueFactory_1$instance<IReadOnlyList_1<unknown>>;
 }
 
 export type CompositeDependentKeyValueFactory = CompositeDependentKeyValueFactory$instance & __CompositeDependentKeyValueFactory$views;
@@ -454,14 +454,14 @@ export interface CompositePrincipalKeyValueFactory$instance extends CompositeVal
 
     CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     CreateFromBuffer(valueBuffer: ValueBuffer): unknown | undefined;
-    CreateFromCurrentValues(entry: IUpdateEntry): IReadOnlyList<unknown | undefined>;
-    CreateFromKeyValues(keyValues: IReadOnlyList<unknown>): unknown | undefined;
-    CreateFromOriginalValues(entry: IUpdateEntry): IReadOnlyList<unknown | undefined>;
-    CreateFromRelationshipSnapshot(entry: IUpdateEntry): IReadOnlyList<unknown | undefined>;
+    CreateFromCurrentValues(entry: IUpdateEntry): IReadOnlyList_1<unknown | undefined>;
+    CreateFromKeyValues(keyValues: IReadOnlyList_1<unknown>): unknown | undefined;
+    CreateFromOriginalValues(entry: IUpdateEntry): IReadOnlyList_1<unknown | undefined>;
+    CreateFromRelationshipSnapshot(entry: IUpdateEntry): IReadOnlyList_1<unknown | undefined>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     FindNullPropertyInCurrentValues(entry: IUpdateEntry): IProperty;
-    FindNullPropertyInKeyValues(keyValues: IReadOnlyList<unknown>): IProperty;
-    TryCreateFromCurrentValues(entry: IUpdateEntry, key: IReadOnlyList<unknown>): boolean;
+    FindNullPropertyInKeyValues(keyValues: IReadOnlyList_1<unknown>): IProperty;
+    TryCreateFromCurrentValues(entry: IUpdateEntry, key: IReadOnlyList_1<unknown>): boolean;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: unknown): boolean;
 }
 
@@ -473,9 +473,9 @@ export const CompositePrincipalKeyValueFactory: {
 
 export interface __CompositePrincipalKeyValueFactory$views {
     As_IDependentKeyValueFactory(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IDependentKeyValueFactory$instance;
-    As_IDependentKeyValueFactory_1(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IDependentKeyValueFactory_1$instance<IReadOnlyList<unknown>>;
+    As_IDependentKeyValueFactory_1(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IDependentKeyValueFactory_1$instance<IReadOnlyList_1<unknown>>;
     As_IPrincipalKeyValueFactory(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IPrincipalKeyValueFactory$instance;
-    As_IPrincipalKeyValueFactory_1(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IPrincipalKeyValueFactory_1$instance<IReadOnlyList<unknown>>;
+    As_IPrincipalKeyValueFactory_1(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IPrincipalKeyValueFactory_1$instance<IReadOnlyList_1<unknown>>;
 }
 
 export type CompositePrincipalKeyValueFactory = CompositePrincipalKeyValueFactory$instance & __CompositePrincipalKeyValueFactory$views;
@@ -485,28 +485,28 @@ export interface CompositeValueFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<IReadOnlyList<unknown | undefined>>;
-    readonly Properties: IReadOnlyList<IProperty>;
+    readonly EqualityComparer: IEqualityComparer_1<IReadOnlyList_1<unknown | undefined>>;
+    readonly Properties: IReadOnlyList_1<IProperty>;
     CreateDependentEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown | undefined;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
-    TryCreateFromBuffer(valueBuffer: ValueBuffer, key: IReadOnlyList<unknown>): boolean;
-    TryCreateFromCurrentValues(entry: IUpdateEntry, key: IReadOnlyList<unknown>): boolean;
-    TryCreateFromEntry(entry: IUpdateEntry, getValue: Func<IUpdateEntry, IProperty, unknown>, key: IReadOnlyList<unknown>): boolean;
-    TryCreateFromOriginalValues(entry: IUpdateEntry, key: IReadOnlyList<unknown>): boolean;
-    TryCreateFromPreStoreGeneratedCurrentValues(entry: IUpdateEntry, key: IReadOnlyList<unknown>): boolean;
-    TryCreateFromRelationshipSnapshot(entry: IUpdateEntry, key: IReadOnlyList<unknown>): boolean;
+    TryCreateFromBuffer(valueBuffer: ValueBuffer, key: IReadOnlyList_1<unknown>): boolean;
+    TryCreateFromCurrentValues(entry: IUpdateEntry, key: IReadOnlyList_1<unknown>): boolean;
+    TryCreateFromEntry(entry: IUpdateEntry, getValue: Func_3<IUpdateEntry, IProperty, unknown>, key: IReadOnlyList_1<unknown>): boolean;
+    TryCreateFromOriginalValues(entry: IUpdateEntry, key: IReadOnlyList_1<unknown>): boolean;
+    TryCreateFromPreStoreGeneratedCurrentValues(entry: IUpdateEntry, key: IReadOnlyList_1<unknown>): boolean;
+    TryCreateFromRelationshipSnapshot(entry: IUpdateEntry, key: IReadOnlyList_1<unknown>): boolean;
 }
 
 
 export const CompositeValueFactory: {
-    new(properties: IReadOnlyList<IProperty>): CompositeValueFactory;
-    CreateEqualityComparer(properties: IReadOnlyList<IProperty>): IEqualityComparer__System_Collections_Generic<IReadOnlyList<unknown | undefined>>;
+    new(properties: IReadOnlyList_1<IProperty>): CompositeValueFactory;
+    CreateEqualityComparer(properties: IReadOnlyList_1<IProperty>): IEqualityComparer_1<IReadOnlyList_1<unknown | undefined>>;
 };
 
 
 export interface __CompositeValueFactory$views {
     As_IDependentKeyValueFactory(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IDependentKeyValueFactory$instance;
-    As_IDependentKeyValueFactory_1(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IDependentKeyValueFactory_1$instance<IReadOnlyList<unknown>>;
+    As_IDependentKeyValueFactory_1(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IDependentKeyValueFactory_1$instance<IReadOnlyList_1<unknown>>;
 }
 
 export type CompositeValueFactory = CompositeValueFactory$instance & __CompositeValueFactory$views;
@@ -529,7 +529,7 @@ export interface __ConvertingValueComparer_2$views<TTo, TFrom> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ConvertingValueComparer_2$instance<TTo, TFrom> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown>, System_Collections_Generic_Internal.IEqualityComparer<TTo> {}
+export interface ConvertingValueComparer_2$instance<TTo, TFrom> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<TTo> {}
 
 export type ConvertingValueComparer_2<TTo, TFrom> = ConvertingValueComparer_2$instance<TTo, TFrom> & __ConvertingValueComparer_2$views<TTo, TFrom>;
 
@@ -565,7 +565,7 @@ export const CurrentProviderValueComparer_2: {
 export type CurrentProviderValueComparer_2<TModel, TProvider> = CurrentProviderValueComparer_2$instance<TModel, TProvider>;
 
 export interface CurrentValueComparerFactory$instance {
-    Create(property: IPropertyBase): IComparer__System_Collections_Generic<IUpdateEntry>;
+    Create(property: IPropertyBase): IComparer_1<IUpdateEntry>;
     GetComparerType(propertyBase: IPropertyBase): Type;
 }
 
@@ -578,7 +578,7 @@ export const CurrentValueComparerFactory: {
 export type CurrentValueComparerFactory = CurrentValueComparerFactory$instance;
 
 export interface DependentKeyValueFactory_1$instance<TKey> {
-    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreateDependentEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown | undefined;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
@@ -593,7 +593,7 @@ export const DependentKeyValueFactory_1: (abstract new<TKey>(foreignKey: IForeig
 export type DependentKeyValueFactory_1<TKey> = DependentKeyValueFactory_1$instance<TKey>;
 
 export interface DependentKeyValueFactoryFactory$instance {
-    CreateComposite(foreignKey: IForeignKey, principalKeyValueFactory: IPrincipalKeyValueFactory_1<IReadOnlyList<unknown>>): IDependentKeyValueFactory_1<IReadOnlyList<unknown | undefined>>;
+    CreateComposite(foreignKey: IForeignKey, principalKeyValueFactory: IPrincipalKeyValueFactory_1<IReadOnlyList_1<unknown>>): IDependentKeyValueFactory_1<IReadOnlyList_1<unknown | undefined>>;
     CreateSimpleNonNullable<TKey extends unknown>(foreignKey: IForeignKey, principalKeyValueFactory: IPrincipalKeyValueFactory_1<TKey>): IDependentKeyValueFactory_1<TKey>;
     CreateSimpleNullable<TKey, TNonNullableKey extends unknown>(foreignKey: IForeignKey, principalKeyValueFactory: IPrincipalKeyValueFactory_1<TKey>): IDependentKeyValueFactory_1<TKey>;
 }
@@ -610,9 +610,9 @@ export interface DependentsMap_1$instance<TKey> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IDependentsMap: never;
 
     Add(entry: IUpdateEntry): void;
-    GetDependents(principalEntry: IUpdateEntry): IEnumerable__System_Collections_Generic<IUpdateEntry>;
-    GetDependents(keyValues: IReadOnlyList<unknown>): IEnumerable__System_Collections_Generic<IUpdateEntry>;
-    GetDependentsUsingRelationshipSnapshot(principalEntry: IUpdateEntry): IEnumerable__System_Collections_Generic<IUpdateEntry>;
+    GetDependents(principalEntry: IUpdateEntry): IEnumerable_1<IUpdateEntry>;
+    GetDependents(keyValues: IReadOnlyList_1<unknown>): IEnumerable_1<IUpdateEntry>;
+    GetDependentsUsingRelationshipSnapshot(principalEntry: IUpdateEntry): IEnumerable_1<IUpdateEntry>;
     Remove(entry: IUpdateEntry): void;
     Update(entry: IUpdateEntry): void;
 }
@@ -651,8 +651,8 @@ export type EmptyShadowValuesFactoryFactory = EmptyShadowValuesFactoryFactory$in
 export interface EntityEntryGraphIterator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IEntityEntryGraphIterator: never;
 
-    TraverseGraph<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
-    TraverseGraphAsync<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, CancellationToken, Task<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
+    TraverseGraph<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func_2<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
+    TraverseGraphAsync<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func_3<EntityEntryGraphNode_1<TState>, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
 }
 
 
@@ -695,10 +695,10 @@ export type EntityGraphAttacher = EntityGraphAttacher$instance & __EntityGraphAt
 export interface EntityReferenceMap$instance {
     Clear(): void;
     GetCountForState(added: boolean, modified: boolean, deleted: boolean, unchanged: boolean, countDeletedSharedIdentity: boolean): int;
-    GetEntriesForState(added: boolean, modified: boolean, deleted: boolean, unchanged: boolean, returnDeletedSharedIdentity: boolean): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
-    GetNonDeletedEntities<TEntity>(): IEnumerable__System_Collections_Generic<TEntity>;
+    GetEntriesForState(added: boolean, modified: boolean, deleted: boolean, unchanged: boolean, returnDeletedSharedIdentity: boolean): IEnumerable_1<InternalEntityEntry>;
+    GetNonDeletedEntities<TEntity>(): IEnumerable_1<TEntity>;
     TryGet(entity: unknown, entityType: IEntityType, entry: InternalEntityEntry, throwOnNonUniqueness: boolean): boolean;
-    Update(entry: InternalEntityEntry, state: EntityState, oldState: Nullable<EntityState>): void;
+    Update(entry: InternalEntityEntry, state: EntityState, oldState: Nullable_1<EntityState>): void;
 }
 
 
@@ -757,8 +757,8 @@ export interface EntryPropertyValues$instance extends PropertyValues {
     SetValueInternal(entry: IInternalEntry, property: IPropertyBase, value: unknown): void;
     SetValues(obj: unknown): void;
     SetValues(propertyValues: PropertyValues): void;
-    SetValues<TProperty>(values: IDictionary<System_Internal.String, TProperty>): void;
-    SetValues<TProperty>(values: IDictionary<System_Internal.String, TProperty>): void;
+    SetValues<TProperty>(values: IDictionary_2<System_Internal.String, TProperty>): void;
+    SetValues<TProperty>(values: IDictionary_2<System_Internal.String, TProperty>): void;
     ToObject(): unknown;
 }
 
@@ -776,10 +776,10 @@ export interface IdentityMap_1$instance<TKey> {
     readonly Key: IKey;
     readonly PrincipalKeyValueFactory: IPrincipalKeyValueFactory_1<TKey>;
     Add(entry: InternalEntityEntry): void;
-    Add(keyValues: IReadOnlyList<unknown>, entry: InternalEntityEntry): void;
+    Add(keyValues: IReadOnlyList_1<unknown>, entry: InternalEntityEntry): void;
     Add(key: TKey, entry: InternalEntityEntry): void;
     AddOrUpdate(entry: InternalEntityEntry): void;
-    All(): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
+    All(): IEnumerable_1<InternalEntityEntry>;
     Clear(): void;
     FindDependentsMap(foreignKey: IForeignKey): IDependentsMap | undefined;
     GetDependentsMap(foreignKey: IForeignKey): IDependentsMap;
@@ -787,8 +787,8 @@ export interface IdentityMap_1$instance<TKey> {
     Remove(key: TKey, entry: InternalEntityEntry): void;
     RemoveUsingRelationshipSnapshot(entry: InternalEntityEntry): void;
     TryGetEntry(entry: InternalEntityEntry): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList<unknown>): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList<unknown>, throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
+    TryGetEntry(keyValues: IReadOnlyList_1<unknown>): InternalEntityEntry | undefined;
+    TryGetEntry(keyValues: IReadOnlyList_1<unknown>, throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
     TryGetEntry(foreignKey: IForeignKey, dependentEntry: InternalEntityEntry): InternalEntityEntry | undefined;
     TryGetEntryTyped(keyValue: TKey): InternalEntityEntry | undefined;
     TryGetEntryUsingPreStoreGeneratedValues(foreignKey: IForeignKey, dependentEntry: InternalEntityEntry): InternalEntityEntry | undefined;
@@ -815,8 +815,8 @@ export interface IdentityMapFactoryFactory$instance {
 
 export const IdentityMapFactoryFactory: {
     new(): IdentityMapFactoryFactory;
-    Create(key: IKey): Func<System_Internal.Boolean, IIdentityMap>;
-    CreateFactory<TKey>(key: IKey): Func<System_Internal.Boolean, IIdentityMap>;
+    Create(key: IKey): Func_2<System_Internal.Boolean, IIdentityMap>;
+    CreateFactory<TKey>(key: IKey): Func_2<System_Internal.Boolean, IIdentityMap>;
 };
 
 
@@ -836,13 +836,13 @@ export interface InternalComplexEntry$instance extends InternalEntryBase$instanc
     AcceptChanges(): void;
     DiscardStoreGeneratedValues(): void;
     FlaggedAsStoreGenerated(propertyIndex: int): boolean;
-    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList<InternalComplexEntry | undefined>;
+    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList_1<InternalComplexEntry | undefined>;
     GetComplexCollectionEntry(property: IComplexProperty, ordinal: int): InternalComplexEntry;
     GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
     GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
-    GetFlattenedComplexEntries(): IEnumerable__System_Collections_Generic<InternalComplexEntry>;
-    GetOrdinals(): IReadOnlyList<System_Internal.Int32>;
-    GetOrdinals(): IReadOnlyList<System_Internal.Int32>;
+    GetFlattenedComplexEntries(): IEnumerable_1<InternalComplexEntry>;
+    GetOrdinals(): IReadOnlyList_1<System_Internal.Int32>;
+    GetOrdinals(): IReadOnlyList_1<System_Internal.Int32>;
     GetOriginalValue(propertyBase: IPropertyBase): unknown | undefined;
     GetOriginalValue<TProperty>(property: IProperty): TProperty;
     GetPropertyPath(property: IReadOnlyProperty): string;
@@ -862,7 +862,7 @@ export interface InternalComplexEntry$instance extends InternalEntryBase$instanc
     ReadPropertyValue(propertyBase: IPropertyBase): unknown | undefined;
     ReadStoreGeneratedValue<T>(storeGeneratedIndex: int): T;
     SetEntityState(oldState: EntityState, newState: EntityState, acceptChanges: boolean, modifyProperties: boolean): void;
-    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable<EntityState>, fallbackState?: Nullable<EntityState>): void;
+    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>): void;
     SetOriginalValue(propertyBase: IPropertyBase, value: unknown, index?: int): void;
     SetProperty(propertyBase: IPropertyBase, value: unknown, isMaterialization: boolean, setModified?: boolean, isCascadeDelete?: boolean): void;
     SetPropertyModified(property: IProperty, changeState?: boolean, isModified?: boolean, isConceptualNull?: boolean, acceptChanges?: boolean): void;
@@ -892,13 +892,13 @@ export interface InternalEntityEntry$instance extends InternalEntryBase$instance
     readonly Entity: unknown;
     readonly EntityType: IRuntimeEntityType;
     readonly HasRelationshipSnapshot: boolean;
-    readonly IsKeySet: ValueTuple<System_Internal.Boolean, System_Internal.Boolean>;
+    readonly IsKeySet: ValueTuple_2<System_Internal.Boolean, System_Internal.Boolean>;
     readonly IsKeyUnknown: boolean;
     get SharedIdentityEntry(): InternalEntityEntry | undefined;
     set SharedIdentityEntry(value: InternalEntityEntry | undefined);
     readonly StateManager: IStateManager;
     AcceptChanges(): void;
-    AddRangeToCollectionSnapshot(navigation: INavigationBase, addedEntities: IEnumerable__System_Collections_Generic<unknown>): void;
+    AddRangeToCollectionSnapshot(navigation: INavigationBase, addedEntities: IEnumerable_1<unknown>): void;
     AddToCollection(navigationBase: INavigationBase, value: unknown, forMaterialization: boolean): boolean;
     AddToCollectionSnapshot(navigation: INavigationBase, addedEntity: unknown): void;
     CanHaveOriginalValue(propertyBase: IPropertyBase): boolean;
@@ -906,13 +906,13 @@ export interface InternalEntityEntry$instance extends InternalEntryBase$instance
     DiscardStoreGeneratedValues(): void;
     EnsureRelationshipSnapshot(): void;
     FlaggedAsStoreGenerated(propertyIndex: int): boolean;
-    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList<InternalComplexEntry | undefined>;
+    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList_1<InternalComplexEntry | undefined>;
     GetComplexCollectionEntry(property: IComplexProperty, ordinal: int): InternalComplexEntry;
     GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
     GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
-    GetFlattenedComplexEntries(): IEnumerable__System_Collections_Generic<InternalComplexEntry>;
+    GetFlattenedComplexEntries(): IEnumerable_1<InternalComplexEntry>;
     GetOrCreateCollection(navigationBase: INavigationBase, forMaterialization: boolean): unknown;
-    GetOrdinals(): IReadOnlyList<System_Internal.Int32>;
+    GetOrdinals(): IReadOnlyList_1<System_Internal.Int32>;
     GetOriginalValue<TProperty>(property: IProperty): TProperty;
     GetOriginalValue(propertyBase: IPropertyBase): unknown | undefined;
     GetRelationshipSnapshotValue<TProperty>(propertyBase: IPropertyBase): TProperty;
@@ -940,11 +940,11 @@ export interface InternalEntityEntry$instance extends InternalEntryBase$instance
     ReadStoreGeneratedValue<T>(storeGeneratedIndex: int): T;
     RemoveFromCollection(navigationBase: INavigationBase, value: unknown): boolean;
     RemoveFromCollectionSnapshot(navigation: INavigationBase, removedEntity: unknown): void;
-    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable<EntityState>, fallbackState?: Nullable<EntityState>): void;
-    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable<EntityState>, fallbackState?: Nullable<EntityState>): void;
+    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>): void;
+    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>): void;
     SetEntityState(oldState: EntityState, newState: EntityState, acceptChanges: boolean, modifyProperties: boolean): void;
-    SetEntityStateAsync(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable<EntityState>, fallbackState?: Nullable<EntityState>, cancellationToken?: CancellationToken): Task;
-    SetEntityStateAsync(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable<EntityState>, fallbackState?: Nullable<EntityState>, cancellationToken?: CancellationToken): Task;
+    SetEntityStateAsync(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>, cancellationToken?: CancellationToken): Task;
+    SetEntityStateAsync(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>, cancellationToken?: CancellationToken): Task;
     SetIsLoaded(navigation: INavigationBase, loaded?: boolean): void;
     SetOriginalValue(propertyBase: IPropertyBase, value: unknown, index?: int): void;
     SetProperty(propertyBase: IPropertyBase, value: unknown, isMaterialization: boolean, setModified?: boolean, isCascadeDelete?: boolean): void;
@@ -961,7 +961,7 @@ export interface InternalEntityEntry$instance extends InternalEntryBase$instance
 export const InternalEntityEntry: {
     new(stateManager: IStateManager, entityType: IEntityType, entity: unknown): InternalEntityEntry;
     new(stateManager: IStateManager, entityType: IEntityType, entity: unknown, shadowValues: ISnapshot): InternalEntityEntry;
-    new(stateManager: IStateManager, entityType: IEntityType, values: IDictionary<System_Internal.String, unknown>, entityMaterializerSource: IStructuralTypeMaterializerSource): InternalEntityEntry;
+    new(stateManager: IStateManager, entityType: IEntityType, values: IDictionary_2<System_Internal.String, unknown>, entityMaterializerSource: IStructuralTypeMaterializerSource): InternalEntityEntry;
 };
 
 
@@ -975,8 +975,8 @@ export type InternalEntityEntry = InternalEntityEntry$instance & __InternalEntit
 
 export interface InternalEntityEntryNotifier$instance {
     FixupResolved(entry: InternalEntityEntry, duplicateEntry: InternalEntityEntry): void;
-    KeyPropertyChanged(entry: InternalEntityEntry, property: IProperty, keys: IEnumerable__System_Collections_Generic<IKey>, foreignKeys: IEnumerable__System_Collections_Generic<IForeignKey>, oldValue: unknown, newValue: unknown): void;
-    NavigationCollectionChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, added: IEnumerable__System_Collections_Generic<unknown>, removed: IEnumerable__System_Collections_Generic<unknown>): void;
+    KeyPropertyChanged(entry: InternalEntityEntry, property: IProperty, keys: IEnumerable_1<IKey>, foreignKeys: IEnumerable_1<IForeignKey>, oldValue: unknown, newValue: unknown): void;
+    NavigationCollectionChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, added: IEnumerable_1<unknown>, removed: IEnumerable_1<unknown>): void;
     NavigationReferenceChanged(entry: InternalEntityEntry, navigation: INavigation, oldValue: unknown, newValue: unknown): void;
     PropertyChanged(entry: IInternalEntry, property: IPropertyBase, setModified: boolean): void;
     PropertyChanging(entry: IInternalEntry, property: IPropertyBase): void;
@@ -1016,15 +1016,15 @@ export interface InternalEntryBase$instance {
     EnsureTemporaryValues(): void;
     FlaggedAsStoreGenerated(propertyIndex: int): boolean;
     FlaggedAsTemporary(propertyIndex: int): boolean;
-    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList<InternalComplexEntry | undefined>;
+    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList_1<InternalComplexEntry | undefined>;
     GetComplexCollectionEntry(property: IComplexProperty, ordinal: int): InternalComplexEntry;
-    GetComplexCollectionOriginalEntries(property: IComplexProperty): IReadOnlyList<InternalComplexEntry | undefined>;
+    GetComplexCollectionOriginalEntries(property: IComplexProperty): IReadOnlyList_1<InternalComplexEntry | undefined>;
     GetComplexCollectionOriginalEntry(property: IComplexProperty, ordinal: int): InternalComplexEntry;
     GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
     GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
-    GetFlattenedComplexEntries(): IEnumerable__System_Collections_Generic<InternalComplexEntry>;
+    GetFlattenedComplexEntries(): IEnumerable_1<InternalComplexEntry>;
     GetOrCreateShadowCollection(navigation: INavigationBase): unknown;
-    GetOrdinals(): IReadOnlyList<System_Internal.Int32>;
+    GetOrdinals(): IReadOnlyList_1<System_Internal.Int32>;
     GetOriginalValue<TProperty>(property: IProperty): TProperty;
     GetOriginalValue(propertyBase: IPropertyBase): unknown | undefined;
     GetPreStoreGeneratedCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
@@ -1055,9 +1055,9 @@ export interface InternalEntryBase$instance {
     ReadShadowValue<T>(shadowIndex: int): T;
     ReadStoreGeneratedValue<T>(storeGeneratedIndex: int): T;
     ReadTemporaryValue<T>(storeGeneratedIndex: int): T;
-    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable<EntityState>, fallbackState?: Nullable<EntityState>): void;
+    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>): void;
     SetEntityState(oldState: EntityState, newState: EntityState, acceptChanges: boolean, modifyProperties: boolean): void;
-    SetEntityStateAsync(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable<EntityState>, fallbackState?: Nullable<EntityState>, cancellationToken?: CancellationToken): Task;
+    SetEntityStateAsync(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>, cancellationToken?: CancellationToken): Task;
     SetOriginalValue(propertyBase: IPropertyBase, value: unknown, index?: int): void;
     SetProperty(propertyBase: IPropertyBase, value: unknown, isMaterialization: boolean, setModified?: boolean, isCascadeDelete?: boolean): void;
     SetPropertyModified(property: IProperty, changeState?: boolean, isModified?: boolean, isConceptualNull?: boolean, acceptChanges?: boolean): void;
@@ -1069,7 +1069,7 @@ export interface InternalEntryBase$instance {
 }
 
 
-export const InternalEntryBase: (abstract new(structuralType: IRuntimeTypeBase) => InternalEntryBase) & (abstract new(structuralType: IRuntimeTypeBase, shadowValues: ISnapshot) => InternalEntryBase) & (abstract new(structuralType: IRuntimeTypeBase, shadowValues: IDictionary<System_Internal.String, unknown>) => InternalEntryBase) & {
+export const InternalEntryBase: (abstract new(structuralType: IRuntimeTypeBase) => InternalEntryBase) & (abstract new(structuralType: IRuntimeTypeBase, shadowValues: ISnapshot) => InternalEntryBase) & (abstract new(structuralType: IRuntimeTypeBase, shadowValues: IDictionary_2<System_Internal.String, unknown>) => InternalEntryBase) & {
     readonly FlaggedAsTemporaryMethod: MethodInfo;
     readonly FlaggedAsStoreGeneratedMethod: MethodInfo;
 };
@@ -1105,7 +1105,7 @@ export interface KeyPropagator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IKeyPropagator: never;
 
     PropagateValue(entry: InternalEntityEntry, property: IProperty): InternalEntityEntry | undefined;
-    PropagateValueAsync(entry: InternalEntityEntry, property: IProperty, cancellationToken?: CancellationToken): Task<InternalEntityEntry | undefined>;
+    PropagateValueAsync(entry: InternalEntityEntry, property: IProperty, cancellationToken?: CancellationToken): Task_1<InternalEntityEntry | undefined>;
 }
 
 
@@ -1141,7 +1141,7 @@ export type KeyValueFactoryFactory = KeyValueFactoryFactory$instance;
 export interface LocalViewListener$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ILocalViewListener: never;
 
-    RegisterView(viewAction: Action<InternalEntityEntry, EntityState>): void;
+    RegisterView(viewAction: Action_2<InternalEntityEntry, EntityState>): void;
     StateChanged(entry: InternalEntityEntry, oldState: EntityState, fromQuery: boolean): void;
     StateChanging(entry: InternalEntityEntry, newState: EntityState): void;
 }
@@ -1168,8 +1168,8 @@ export interface NavigationFixer$instance {
     BeginDelayedFixup(): boolean;
     CompleteDelayedFixup(): void;
     FixupResolved(entry: InternalEntityEntry, duplicateEntry: InternalEntityEntry): void;
-    KeyPropertyChanged(entry: InternalEntityEntry, property: IProperty, containingPrincipalKeys: IEnumerable__System_Collections_Generic<IKey>, containingForeignKeys: IEnumerable__System_Collections_Generic<IForeignKey>, oldValue: unknown, newValue: unknown): void;
-    NavigationCollectionChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, added: IEnumerable__System_Collections_Generic<unknown>, removed: IEnumerable__System_Collections_Generic<unknown>): void;
+    KeyPropertyChanged(entry: InternalEntityEntry, property: IProperty, containingPrincipalKeys: IEnumerable_1<IKey>, containingForeignKeys: IEnumerable_1<IForeignKey>, oldValue: unknown, newValue: unknown): void;
+    NavigationCollectionChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, added: IEnumerable_1<unknown>, removed: IEnumerable_1<unknown>): void;
     NavigationReferenceChanged(entry: InternalEntityEntry, navigationBase: INavigationBase, oldValue: unknown, newValue: unknown): void;
     StateChanged(entry: InternalEntityEntry, oldState: EntityState, fromQuery: boolean): void;
     StateChanging(entry: InternalEntityEntry, newState: EntityState): void;
@@ -1210,16 +1210,16 @@ export interface NullableKeyIdentityMap_1$instance<TKey> extends IdentityMap_1$i
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap_1: never;
 
     Add(entry: InternalEntityEntry): void;
-    Add(keyValues: IReadOnlyList<unknown>, entry: InternalEntityEntry): void;
+    Add(keyValues: IReadOnlyList_1<unknown>, entry: InternalEntityEntry): void;
     Add(key: TKey, entry: InternalEntityEntry): void;
     AddOrUpdate(entry: InternalEntityEntry): void;
-    All(): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
+    All(): IEnumerable_1<InternalEntityEntry>;
     Clear(): void;
     GetDependentsMap(foreignKey: IForeignKey): IDependentsMap;
     RemoveUsingRelationshipSnapshot(entry: InternalEntityEntry): void;
     TryGetEntry(entry: InternalEntityEntry): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList<unknown>): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList<unknown>, throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
+    TryGetEntry(keyValues: IReadOnlyList_1<unknown>): InternalEntityEntry | undefined;
+    TryGetEntry(keyValues: IReadOnlyList_1<unknown>, throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
     TryGetEntry(foreignKey: IForeignKey, dependentEntry: InternalEntityEntry): InternalEntityEntry | undefined;
     TryGetEntryTyped(keyValue: TKey): InternalEntityEntry | undefined;
 }
@@ -1252,7 +1252,7 @@ export const NullableStructCurrentProviderValueComparer_2: {
 
 export type NullableStructCurrentProviderValueComparer_2<TModel, TProvider> = NullableStructCurrentProviderValueComparer_2$instance<TModel, TProvider>;
 
-export interface NullableValueComparer_1$instance<T extends unknown> extends ValueComparer_1<Nullable<T>> {
+export interface NullableValueComparer_1$instance<T extends unknown> extends ValueComparer_1<Nullable_1<T>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -1269,7 +1269,7 @@ export interface __NullableValueComparer_1$views<T extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface NullableValueComparer_1$instance<T extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown>, System_Collections_Generic_Internal.IEqualityComparer<Nullable<T>> {}
+export interface NullableValueComparer_1$instance<T extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<Nullable_1<T>> {}
 
 export type NullableValueComparer_1<T> = NullableValueComparer_1$instance<T> & __NullableValueComparer_1$views<T>;
 
@@ -1298,7 +1298,7 @@ export interface ObservableBackedBindingList_1$instance<T> extends SortableBindi
 
 
 export const ObservableBackedBindingList_1: {
-    new<T>(observableCollection: ICollection__System_Collections_Generic<T>): ObservableBackedBindingList_1<T>;
+    new<T>(observableCollection: ICollection_1<T>): ObservableBackedBindingList_1<T>;
 };
 
 
@@ -1350,7 +1350,7 @@ export const RelationshipSnapshotFactoryFactory: {
 
 export type RelationshipSnapshotFactoryFactory = RelationshipSnapshotFactoryFactory$instance;
 
-export interface ShadowValuesFactoryFactory$instance extends SnapshotFactoryFactory_1<IDictionary<System_Internal.String, unknown>> {
+export interface ShadowValuesFactoryFactory$instance extends SnapshotFactoryFactory_1<IDictionary_2<System_Internal.String, unknown>> {
     readonly UseEntityVariable: boolean;
     CreateReadShadowValueExpression(parameter: Expression, property: IPropertyBase): Expression;
     CreateReadValueExpression(parameter: Expression, property: IPropertyBase): Expression;
@@ -1387,7 +1387,7 @@ export interface SimpleFullyNullableDependentKeyValueFactory_1$instance<TKey> ex
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
     TryCreateFromOriginalValues(entry: IUpdateEntry, key: TKey): boolean;
@@ -1413,7 +1413,7 @@ export interface SimpleNonNullableDependentKeyValueFactory_1$instance<TKey> exte
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
     TryCreateFromOriginalValues(entry: IUpdateEntry, key: TKey): boolean;
@@ -1439,7 +1439,7 @@ export interface SimpleNullableDependentKeyValueFactory_1$instance<TKey extends 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
     TryCreateFromOriginalValues(entry: IUpdateEntry, key: TKey): boolean;
@@ -1465,7 +1465,7 @@ export interface SimpleNullablePrincipalDependentKeyValueFactory_2$instance<TKey
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
     TryCreateFromOriginalValues(entry: IUpdateEntry, key: TKey): boolean;
@@ -1491,14 +1491,14 @@ export interface SimplePrincipalKeyValueFactory_1$instance<TKey> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IPrincipalKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IPrincipalKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     CreateFromCurrentValues(entry: IUpdateEntry): TKey;
-    CreateFromKeyValues(keyValues: IReadOnlyList<unknown>): unknown | undefined;
+    CreateFromKeyValues(keyValues: IReadOnlyList_1<unknown>): unknown | undefined;
     CreateFromOriginalValues(entry: IUpdateEntry): TKey;
     CreateFromRelationshipSnapshot(entry: IUpdateEntry): TKey;
     FindNullPropertyInCurrentValues(entry: IUpdateEntry): IProperty;
-    FindNullPropertyInKeyValues(keyValues: IReadOnlyList<unknown>): IProperty;
+    FindNullPropertyInKeyValues(keyValues: IReadOnlyList_1<unknown>): IProperty;
 }
 
 
@@ -2204,11 +2204,11 @@ export type Snapshot_9<T0, T1, T2, T3, T4, T5, T6, T7, T8> = Snapshot_9$instance
 export interface SnapshotFactoryFactory$instance {
     readonly UseEntityVariable: boolean;
     CreateConstructorExpression(structuralType: IRuntimeTypeBase, parameter: Expression): Expression;
-    CreateEmpty(structuralType: IRuntimeTypeBase): Func<ISnapshot>;
-    CreateEmptyExpression(structuralType: IRuntimeTypeBase): Expression<Func<ISnapshot>>;
+    CreateEmpty(structuralType: IRuntimeTypeBase): Func_1<ISnapshot>;
+    CreateEmptyExpression(structuralType: IRuntimeTypeBase): Expression_1<Func_1<ISnapshot>>;
     CreateReadShadowValueExpression(parameter: Expression, property: IPropertyBase): Expression;
     CreateReadValueExpression(parameter: Expression, property: IPropertyBase): Expression;
-    CreateSnapshotExpression(clrType: Type, parameter: Expression, types: Type[], propertyBases: IList__System_Collections_Generic<IPropertyBase>): Expression;
+    CreateSnapshotExpression(clrType: Type, parameter: Expression, types: Type[], propertyBases: IList_1<IPropertyBase>): Expression;
     GetPropertyCount(structuralType: IRuntimeTypeBase): int;
     GetPropertyIndex(propertyBase: IPropertyBase): int;
     GetValueComparer(property: IProperty): ValueComparer | undefined;
@@ -2217,7 +2217,7 @@ export interface SnapshotFactoryFactory$instance {
 
 
 export const SnapshotFactoryFactory: (abstract new() => SnapshotFactoryFactory) & {
-    SnapshotCollection(collection: IEnumerable): HashSet<unknown> | undefined;
+    SnapshotCollection(collection: IEnumerable): HashSet_1<unknown> | undefined;
     SnapshotComplexCollection(list: IList, complexProperty: IRuntimeComplexProperty): IList | undefined;
 };
 
@@ -2225,8 +2225,8 @@ export const SnapshotFactoryFactory: (abstract new() => SnapshotFactoryFactory) 
 export type SnapshotFactoryFactory = SnapshotFactoryFactory$instance;
 
 export interface SnapshotFactoryFactory_1$instance<TInput> extends SnapshotFactoryFactory {
-    Create(structuralType: IRuntimeTypeBase): Func<TInput, ISnapshot>;
-    CreateExpression(structuralType: IRuntimeTypeBase): Expression<Func<TInput, ISnapshot>>;
+    Create(structuralType: IRuntimeTypeBase): Func_2<TInput, ISnapshot>;
+    CreateExpression(structuralType: IRuntimeTypeBase): Expression_1<Func_2<TInput, ISnapshot>>;
 }
 
 
@@ -2236,7 +2236,7 @@ export const SnapshotFactoryFactory_1: (abstract new<TInput>() => SnapshotFactor
 
 export type SnapshotFactoryFactory_1<TInput> = SnapshotFactoryFactory_1$instance<TInput>;
 
-export interface SortableBindingList_1$instance<T> extends BindingList<T> {
+export interface SortableBindingList_1$instance<T> extends BindingList_1<T> {
     readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IList_1: never;
@@ -2259,7 +2259,7 @@ export interface SortableBindingList_1$instance<T> extends BindingList<T> {
 
 
 export const SortableBindingList_1: {
-    new<T>(list: List<T>): SortableBindingList_1<T>;
+    new<T>(list: List_1<T>): SortableBindingList_1<T>;
 };
 
 
@@ -2278,7 +2278,7 @@ export interface StateManager$instance {
     readonly Dependencies: StateManagerDependencies;
     readonly EntityFinderFactory: IEntityFinderFactory;
     readonly EntityMaterializerSource: IStructuralTypeMaterializerSource;
-    readonly Entries: IEnumerable__System_Collections_Generic<InternalEntityEntry>;
+    readonly Entries: IEnumerable_1<InternalEntityEntry>;
     readonly InternalEntityEntryNotifier: IInternalEntityEntryNotifier;
     readonly Model: IModel;
     SavingChanges: boolean;
@@ -2288,29 +2288,29 @@ export interface StateManager$instance {
     AbortAttachGraph(): void;
     AcceptAllChanges(): void;
     BeginAttachGraph(): void;
-    CaptureEvents(): ValueTuple<EventHandler<EntityTrackingEventArgs>, EventHandler<EntityTrackedEventArgs>, EventHandler<EntityStateChangingEventArgs>, EventHandler<EntityStateChangedEventArgs>>;
+    CaptureEvents(): ValueTuple_4<EventHandler_1<EntityTrackingEventArgs>, EventHandler_1<EntityTrackedEventArgs>, EventHandler_1<EntityStateChangingEventArgs>, EventHandler_1<EntityStateChangedEventArgs>>;
     CascadeChanges(force: boolean): void;
-    CascadeDelete(entry: InternalEntityEntry, force: boolean, foreignKeys?: IEnumerable__System_Collections_Generic<IForeignKey>): void;
+    CascadeDelete(entry: InternalEntityEntry, force: boolean, foreignKeys?: IEnumerable_1<IForeignKey>): void;
     ChangingState(entry: InternalEntityEntry, newState: EntityState): void;
     Clear(resetting: boolean): void;
     CompleteAttachGraph(): void;
     CreateEntityFinder(entityType: IEntityType): IEntityFinder;
-    CreateEntry(values: IDictionary<System_Internal.String, unknown>, entityType: IEntityType): InternalEntityEntry;
+    CreateEntry(values: IDictionary_2<System_Internal.String, unknown>, entityType: IEntityType): InternalEntityEntry;
     FindPrincipal(dependentEntry: InternalEntityEntry, foreignKey: IForeignKey): InternalEntityEntry | undefined;
     FindPrincipalUsingPreStoreGeneratedValues(dependentEntry: InternalEntityEntry, foreignKey: IForeignKey): InternalEntityEntry | undefined;
     FindPrincipalUsingRelationshipSnapshot(dependentEntry: InternalEntityEntry, foreignKey: IForeignKey): InternalEntityEntry | undefined;
     GetCountForState(added?: boolean, modified?: boolean, deleted?: boolean, unchanged?: boolean, countDeletedSharedIdentity?: boolean): int;
-    GetDependents(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable__System_Collections_Generic<IUpdateEntry>;
-    GetDependents(keyValues: IReadOnlyList<unknown>, foreignKey: IForeignKey): IEnumerable__System_Collections_Generic<IUpdateEntry>;
-    GetDependentsFromNavigation(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable__System_Collections_Generic<IUpdateEntry> | undefined;
-    GetDependentsUsingRelationshipSnapshot(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable__System_Collections_Generic<IUpdateEntry>;
-    GetEntries(key: IKey): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
-    GetEntriesForState(added?: boolean, modified?: boolean, deleted?: boolean, unchanged?: boolean, returnDeletedSharedIdentity?: boolean): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
-    GetEntriesToSave(cascadeChanges: boolean): IList__System_Collections_Generic<IUpdateEntry>;
-    GetNonDeletedEntities<TEntity>(): IEnumerable__System_Collections_Generic<TEntity>;
+    GetDependents(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable_1<IUpdateEntry>;
+    GetDependents(keyValues: IReadOnlyList_1<unknown>, foreignKey: IForeignKey): IEnumerable_1<IUpdateEntry>;
+    GetDependentsFromNavigation(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable_1<IUpdateEntry> | undefined;
+    GetDependentsUsingRelationshipSnapshot(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable_1<IUpdateEntry>;
+    GetEntries(key: IKey): IEnumerable_1<InternalEntityEntry>;
+    GetEntriesForState(added?: boolean, modified?: boolean, deleted?: boolean, unchanged?: boolean, returnDeletedSharedIdentity?: boolean): IEnumerable_1<InternalEntityEntry>;
+    GetEntriesToSave(cascadeChanges: boolean): IList_1<IUpdateEntry>;
+    GetNonDeletedEntities<TEntity>(): IEnumerable_1<TEntity>;
     GetOrCreateEntry(entity: unknown): InternalEntityEntry;
     GetOrCreateEntry(entity: unknown, entityType: IEntityType): InternalEntityEntry;
-    GetRecordedReferrers(referencedEntity: unknown, clear: boolean): IEnumerable__System_Collections_Generic<Tuple<INavigationBase, InternalEntityEntry>>;
+    GetRecordedReferrers(referencedEntity: unknown, clear: boolean): IEnumerable_1<Tuple_2<INavigationBase, InternalEntityEntry>>;
     OnStateChanged(internalEntityEntry: InternalEntityEntry, oldState: EntityState): void;
     OnStateChanging(internalEntityEntry: InternalEntityEntry, newState: EntityState): void;
     OnTracked(internalEntityEntry: InternalEntityEntry, fromQuery: boolean): void;
@@ -2319,17 +2319,17 @@ export interface StateManager$instance {
     ResetState(): void;
     ResetStateAsync(cancellationToken?: CancellationToken): Task;
     ResolveToExistingEntry(newEntry: InternalEntityEntry, navigation: INavigationBase, referencedFromEntry: InternalEntityEntry): boolean;
-    SaveChanges(entriesToSave: IList__System_Collections_Generic<IUpdateEntry>): int;
+    SaveChanges(entriesToSave: IList_1<IUpdateEntry>): int;
     SaveChanges(acceptAllChangesOnSuccess: boolean): int;
-    SaveChangesAsync(entriesToSave: IList__System_Collections_Generic<IUpdateEntry>, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
-    SaveChangesAsync(acceptAllChangesOnSuccess: boolean, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
-    SetEvents(tracking: EventHandler<EntityTrackingEventArgs>, tracked: EventHandler<EntityTrackedEventArgs>, stateChanging: EventHandler<EntityStateChangingEventArgs>, stateChanged: EventHandler<EntityStateChangedEventArgs>): void;
+    SaveChangesAsync(entriesToSave: IList_1<IUpdateEntry>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
+    SaveChangesAsync(acceptAllChangesOnSuccess: boolean, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
+    SetEvents(tracking: EventHandler_1<EntityTrackingEventArgs>, tracked: EventHandler_1<EntityTrackedEventArgs>, stateChanging: EventHandler_1<EntityStateChangingEventArgs>, stateChanged: EventHandler_1<EntityStateChangedEventArgs>): void;
     StartTracking(entry: InternalEntityEntry): InternalEntityEntry;
     StartTracking(entry: InternalComplexEntry): InternalComplexEntry;
     StartTrackingFromQuery(baseEntityType: IEntityType, entity: unknown, snapshot: ISnapshot): InternalEntityEntry;
     StopTracking(entry: InternalEntityEntry, oldState: EntityState): void;
     StopTracking(entry: InternalComplexEntry, oldState: EntityState): void;
-    TryGetEntry(key: IKey, keyValues: IReadOnlyList<unknown>): InternalEntityEntry | undefined;
+    TryGetEntry(key: IKey, keyValues: IReadOnlyList_1<unknown>): InternalEntityEntry | undefined;
     TryGetEntry(key: IKey, keyValues: unknown[], throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
     TryGetEntry(entity: unknown, throwOnNonUniqueness?: boolean): InternalEntityEntry | undefined;
     TryGetEntry(entity: unknown, entityType: IEntityType, throwOnTypeMismatch?: boolean): InternalEntityEntry | undefined;
@@ -2434,8 +2434,8 @@ export const StructuralEntryCurrentValueComparer: {
 export type StructuralEntryCurrentValueComparer = StructuralEntryCurrentValueComparer$instance;
 
 export interface TemporaryValuesFactoryFactory$instance extends SidecarValuesFactoryFactory {
-    CreateSnapshotExpression(entityType: Type, parameter: Expression, types: Type[], propertyBases: IList__System_Collections_Generic<IPropertyBase>): Expression;
-    CreateSnapshotExpression(clrType: Type, parameter: Expression, types: Type[], propertyBases: IList__System_Collections_Generic<IPropertyBase>): Expression;
+    CreateSnapshotExpression(entityType: Type, parameter: Expression, types: Type[], propertyBases: IList_1<IPropertyBase>): Expression;
+    CreateSnapshotExpression(clrType: Type, parameter: Expression, types: Type[], propertyBases: IList_1<IPropertyBase>): Expression;
 }
 
 
@@ -2449,9 +2449,9 @@ export interface ValueGenerationManager$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IValueGenerationManager: never;
 
     Generate(entry: InternalEntityEntry, includePrimaryKey?: boolean): boolean;
-    GenerateAsync(entry: InternalEntityEntry, includePrimaryKey?: boolean, cancellationToken?: CancellationToken): Task<System_Internal.Boolean>;
+    GenerateAsync(entry: InternalEntityEntry, includePrimaryKey?: boolean, cancellationToken?: CancellationToken): Task_1<System_Internal.Boolean>;
     Propagate(entry: InternalEntityEntry): InternalEntityEntry | undefined;
-    PropagateAsync(entry: InternalEntityEntry, cancellationToken: CancellationToken): Task<InternalEntityEntry | undefined>;
+    PropagateAsync(entry: InternalEntityEntry, cancellationToken: CancellationToken): Task_1<InternalEntityEntry | undefined>;
 }
 
 
@@ -2470,8 +2470,8 @@ export type ValueGenerationManager = ValueGenerationManager$instance & __ValueGe
 
 
 export abstract class StateManagerExtensions$instance {
-    static ToList(stateManager: IStateManager): IReadOnlyList<InternalEntityEntry>;
-    static ToListForState(stateManager: IStateManager, added?: boolean, modified?: boolean, deleted?: boolean, unchanged?: boolean, returnDeletedSharedIdentity?: boolean): IReadOnlyList<InternalEntityEntry>;
+    static ToList(stateManager: IStateManager): IReadOnlyList_1<InternalEntityEntry>;
+    static ToListForState(stateManager: IStateManager, added?: boolean, modified?: boolean, deleted?: boolean, unchanged?: boolean, returnDeletedSharedIdentity?: boolean): IReadOnlyList_1<InternalEntityEntry>;
 }
 
 

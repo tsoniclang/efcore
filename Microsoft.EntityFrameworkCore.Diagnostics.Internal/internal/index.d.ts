@@ -16,21 +16,21 @@ import type { IDbContextOptions, ISingletonOptions } from "../../Microsoft.Entit
 import type { IRelationalConnection } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Internal from "../../Microsoft.EntityFrameworkCore/internal/index.js";
 import type { DbContext, DbLoggerCategory_Database_Command, DbLoggerCategory_Database_Connection, EntityState } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import type { IEnumerable, IReadOnlyList } from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { DbCommand, DbConnection, DbDataReader } from "@tsonic/dotnet/System.Data.Common.js";
-import type { CommandType } from "@tsonic/dotnet/System.Data.js";
-import type { DiagnosticSource } from "@tsonic/dotnet/System.Diagnostics.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Action, Boolean as ClrBoolean, DateTimeOffset, Exception, Func, Guid, IDisposable, Int32, IServiceProvider, Object as ClrObject, String as ClrString, TimeSpan, Type, Void } from "@tsonic/dotnet/System.js";
-import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
-import type { Task, ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
-import * as Microsoft_Extensions_Logging_Internal from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging.js";
-import type { EventId, ILogger, ILoggerFactory, ILoggerProvider, LogLevel } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging.js";
+import type { IEnumerable_1, IReadOnlyList_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { DbCommand, DbConnection, DbDataReader } from "@tsonic/dotnet/System.Data.Common/internal/index.js";
+import type { CommandType } from "@tsonic/dotnet/System.Data/internal/index.js";
+import type { DiagnosticSource } from "@tsonic/dotnet/System.Diagnostics/internal/index.js";
+import type { Task, ValueTask_1 } from "@tsonic/dotnet/System.Threading.Tasks/internal/index.js";
+import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Action_1, Boolean as ClrBoolean, DateTimeOffset, Exception, Func_3, Guid, IDisposable, Int32, IServiceProvider, Object as ClrObject, String as ClrString, TimeSpan, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
+import * as Microsoft_Extensions_Logging_Internal from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging/internal/index.js";
+import type { EventId, ILogger, ILoggerFactory, ILoggerProvider, LogLevel } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging/internal/index.js";
 
 export interface DbCommandInterceptorAggregator$instance extends InterceptorAggregator_1<IDbCommandInterceptor> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
 }
 
 
@@ -49,7 +49,7 @@ export type DbCommandInterceptorAggregator = DbCommandInterceptorAggregator$inst
 export interface DbConnectionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbConnectionInterceptor> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
 }
 
 
@@ -68,7 +68,7 @@ export type DbConnectionInterceptorAggregator = DbConnectionInterceptorAggregato
 export interface DbTransactionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbTransactionInterceptor> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
 }
 
 
@@ -93,7 +93,7 @@ export interface DelegatingDbContextLogger$instance {
 
 
 export const DelegatingDbContextLogger: {
-    new(logger: Action<EventData>, filter: Func<EventId, LogLevel, System_Internal.Boolean>): DelegatingDbContextLogger;
+    new(logger: Action_1<EventData>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>): DelegatingDbContextLogger;
 };
 
 
@@ -141,7 +141,7 @@ export interface FormattingDbContextLogger$instance {
 
 
 export const FormattingDbContextLogger: {
-    new(sink: Action<System_Internal.String>, filter: Func<EventId, LogLevel, System_Internal.Boolean>, options: DbContextLoggerOptions): FormattingDbContextLogger;
+    new(sink: Action_1<System_Internal.String>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, options: DbContextLoggerOptions): FormattingDbContextLogger;
 };
 
 
@@ -157,7 +157,7 @@ export type FormattingDbContextLogger = FormattingDbContextLogger$instance & __F
 export interface IdentityResolutionInterceptorAggregator$instance extends InterceptorAggregator_1<IIdentityResolutionInterceptor> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
 }
 
 
@@ -181,7 +181,7 @@ export interface Interceptors$instance {
 
 
 export const Interceptors: {
-    new(serviceProvider: IServiceProvider, injectedInterceptors: IEnumerable<IInterceptor>, interceptorAggregators: IEnumerable<IInterceptorAggregator>): Interceptors;
+    new(serviceProvider: IServiceProvider, injectedInterceptors: IEnumerable_1<IInterceptor>, interceptorAggregators: IEnumerable_1<IInterceptorAggregator>): Interceptors;
 };
 
 
@@ -224,7 +224,7 @@ export type LoggingOptions = LoggingOptions$instance & __LoggingOptions$views;
 export interface MaterializationInterceptorAggregator$instance extends InterceptorAggregator_1<IMaterializationInterceptor> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
 }
 
 
@@ -265,7 +265,7 @@ export type NullDbContextLogger = NullDbContextLogger$instance & __NullDbContext
 export interface QueryExpressionInterceptorAggregator$instance extends InterceptorAggregator_1<IQueryExpressionInterceptor> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
 }
 
 
@@ -294,19 +294,19 @@ export interface RelationalCommandDiagnosticsLogger$instance extends Diagnostics
     CommandErrorAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
     CommandInitialized(connection: IRelationalConnection, command: DbCommand, commandMethod: DbCommandMethod, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbCommand;
     CommandNonQueryExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): int;
-    CommandNonQueryExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<System_Internal.Int32>;
+    CommandNonQueryExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
     CommandNonQueryExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<System_Internal.Int32>;
-    CommandNonQueryExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<System_Internal.Int32>>;
+    CommandNonQueryExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<System_Internal.Int32>>;
     CommandReaderExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbDataReader;
-    CommandReaderExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<DbDataReader>;
+    CommandReaderExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
     CommandReaderExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbDataReader>;
-    CommandReaderExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<DbDataReader>>;
+    CommandReaderExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
     CommandScalarExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): unknown | undefined;
-    CommandScalarExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    CommandScalarExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     CommandScalarExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<unknown>;
-    CommandScalarExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<unknown>>;
+    CommandScalarExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<unknown>>;
     DataReaderClosing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): InterceptionResult;
-    DataReaderClosingAsync(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): ValueTask<InterceptionResult>;
+    DataReaderClosingAsync(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): ValueTask_1<InterceptionResult>;
     DataReaderDisposing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): InterceptionResult;
     NeedsEventData2(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLogCommandCreate(now: DateTimeOffset): boolean;
@@ -340,19 +340,19 @@ export interface RelationalConnectionDiagnosticsLogger$instance extends Diagnost
     ConnectionClosed(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): void;
     ConnectionClosedAsync(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): Task;
     ConnectionClosing(connection: IRelationalConnection, startTime: DateTimeOffset): InterceptionResult;
-    ConnectionClosingAsync(connection: IRelationalConnection, startTime: DateTimeOffset): ValueTask<InterceptionResult>;
+    ConnectionClosingAsync(connection: IRelationalConnection, startTime: DateTimeOffset): ValueTask_1<InterceptionResult>;
     ConnectionCreated(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): DbConnection;
     ConnectionCreating(connection: IRelationalConnection, startTime: DateTimeOffset): InterceptionResult_1<DbConnection>;
     ConnectionDisposed(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): void;
     ConnectionDisposedAsync(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): Task;
     ConnectionDisposing(connection: IRelationalConnection, startTime: DateTimeOffset): InterceptionResult;
-    ConnectionDisposingAsync(connection: IRelationalConnection, startTime: DateTimeOffset): ValueTask<InterceptionResult>;
+    ConnectionDisposingAsync(connection: IRelationalConnection, startTime: DateTimeOffset): ValueTask_1<InterceptionResult>;
     ConnectionError(connection: IRelationalConnection, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, logErrorAsDebug: boolean): void;
     ConnectionErrorAsync(connection: IRelationalConnection, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, logErrorAsDebug: boolean, cancellationToken?: CancellationToken): Task;
     ConnectionOpened(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): void;
     ConnectionOpenedAsync(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): Task;
     ConnectionOpening(connection: IRelationalConnection, startTime: DateTimeOffset): InterceptionResult;
-    ConnectionOpeningAsync(connection: IRelationalConnection, startTime: DateTimeOffset, cancellationToken: CancellationToken): ValueTask<InterceptionResult>;
+    ConnectionOpeningAsync(connection: IRelationalConnection, startTime: DateTimeOffset, cancellationToken: CancellationToken): ValueTask_1<InterceptionResult>;
     NeedsEventData2(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLogConnectionClose(now: DateTimeOffset): boolean;
     ShouldLogConnectionCreate(now: DateTimeOffset): boolean;
@@ -378,7 +378,7 @@ export type RelationalConnectionDiagnosticsLogger = RelationalConnectionDiagnost
 export interface SaveChangesInterceptorAggregator$instance extends InterceptorAggregator_1<ISaveChangesInterceptor> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
 }
 
 

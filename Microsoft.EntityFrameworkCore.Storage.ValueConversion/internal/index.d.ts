@@ -11,22 +11,22 @@ import type { JsonValueReaderWriter } from "../../Microsoft.EntityFrameworkCore.
 import * as Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal/internal/index.js";
 import type { StringCharConverter_2, StringDateOnlyConverter_2, StringDateTimeConverter_2, StringDateTimeOffsetConverter_2, StringEnumConverter_3, StringGuidConverter_2, StringNumberConverter_3, StringTimeOnlyConverter_2, StringTimeSpanConverter_2, StringUriConverter_2 } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal/internal/index.js";
 import type { ValueGenerator } from "../../Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js";
-import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { IEnumerable } from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { DbType } from "@tsonic/dotnet/System.Data.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, Byte, Char, DateOnly, DateTime, DateTimeOffset, Decimal, Enum, Func, Guid, IEquatable, Int32, Int64, Nullable, Object as ClrObject, String as ClrString, TimeOnly, TimeSpan, Type, Uri, ValueType } from "@tsonic/dotnet/System.js";
-import type { Expression, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
-import * as System_Net_Internal from "@tsonic/dotnet/System.Net.js";
-import type { IPAddress } from "@tsonic/dotnet/System.Net.js";
-import * as System_Net_NetworkInformation_Internal from "@tsonic/dotnet/System.Net.NetworkInformation.js";
-import type { PhysicalAddress } from "@tsonic/dotnet/System.Net.NetworkInformation.js";
-import type { Encoding } from "@tsonic/dotnet/System.Text.js";
+import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { IEnumerable_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { DbType } from "@tsonic/dotnet/System.Data/internal/index.js";
+import type { Expression, Expression_1, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
+import * as System_Net_NetworkInformation_Internal from "@tsonic/dotnet/System.Net.NetworkInformation/internal/index.js";
+import type { PhysicalAddress } from "@tsonic/dotnet/System.Net.NetworkInformation/internal/index.js";
+import * as System_Net_Internal from "@tsonic/dotnet/System.Net/internal/index.js";
+import type { IPAddress } from "@tsonic/dotnet/System.Net/internal/index.js";
+import type { Encoding } from "@tsonic/dotnet/System.Text/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, Byte, Char, DateOnly, DateTime, DateTimeOffset, Decimal, Enum, Func_2, Func_3, Guid, IEquatable_1, Int32, Int64, Nullable_1, Object as ClrObject, String as ClrString, TimeOnly, TimeSpan, Type, Uri, ValueType } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IValueConverterSelector$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ValueConversion_IValueConverterSelector: never;
 
-    Select(modelClrType: Type, providerClrType?: Type): IEnumerable<ValueConverterInfo>;
+    Select(modelClrType: Type, providerClrType?: Type): IEnumerable_1<ValueConverterInfo>;
 }
 
 
@@ -41,7 +41,7 @@ export interface ValueConverterInfo$instance {
 
 
 export const ValueConverterInfo: {
-    new(modelClrType: Type, providerClrType: Type, factory: Func<ValueConverterInfo, ValueConverter>, mappingHints: ConverterMappingHints): ValueConverterInfo;
+    new(modelClrType: Type, providerClrType: Type, factory: Func_2<ValueConverterInfo, ValueConverter>, mappingHints: ConverterMappingHints): ValueConverterInfo;
 };
 
 
@@ -64,7 +64,7 @@ export interface BoolToTwoValuesConverter_1$instance<TProvider> extends ValueCon
 
 
 export const BoolToTwoValuesConverter_1: {
-    new<TProvider>(falseValue: TProvider, trueValue: TProvider, fromProvider: Expression<Func<TProvider, System_Internal.Boolean>>, mappingHints: ConverterMappingHints): BoolToTwoValuesConverter_1<TProvider>;
+    new<TProvider>(falseValue: TProvider, trueValue: TProvider, fromProvider: Expression_1<Func_2<TProvider, System_Internal.Boolean>>, mappingHints: ConverterMappingHints): BoolToTwoValuesConverter_1<TProvider>;
 };
 
 
@@ -122,7 +122,7 @@ export const CharToStringConverter: {
 
 export type CharToStringConverter = CharToStringConverter$instance;
 
-export interface CollectionToJsonStringConverter_1$instance<TElement> extends ValueConverter_2<IEnumerable<TElement>, System_Internal.String> {
+export interface CollectionToJsonStringConverter_1$instance<TElement> extends ValueConverter_2<IEnumerable_1<TElement>, System_Internal.String> {
     readonly JsonReaderWriter: JsonValueReaderWriter;
 }
 
@@ -135,18 +135,18 @@ export const CollectionToJsonStringConverter_1: {
 export type CollectionToJsonStringConverter_1<TElement> = CollectionToJsonStringConverter_1$instance<TElement>;
 
 export interface ConverterMappingHints$instance {
-    readonly IsUnicode: Nullable<System_Internal.Boolean>;
-    readonly Precision: Nullable<System_Internal.Int32>;
-    readonly Scale: Nullable<System_Internal.Int32>;
-    readonly Size: Nullable<System_Internal.Int32>;
-    readonly ValueGeneratorFactory: Func<IProperty, IEntityType, ValueGenerator> | undefined;
+    readonly IsUnicode: Nullable_1<System_Internal.Boolean>;
+    readonly Precision: Nullable_1<System_Internal.Int32>;
+    readonly Scale: Nullable_1<System_Internal.Int32>;
+    readonly Size: Nullable_1<System_Internal.Int32>;
+    readonly ValueGeneratorFactory: Func_3<IProperty, IEntityType, ValueGenerator> | undefined;
     OverrideWith(hints: ConverterMappingHints): ConverterMappingHints;
     With(hints: ConverterMappingHints): ConverterMappingHints;
 }
 
 
 export const ConverterMappingHints: {
-    new(size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>, unicode: Nullable<System_Internal.Boolean>, valueGeneratorFactory: Func<IProperty, IEntityType, ValueGenerator>): ConverterMappingHints;
+    new(size: Nullable_1<System_Internal.Int32>, precision: Nullable_1<System_Internal.Int32>, scale: Nullable_1<System_Internal.Int32>, unicode: Nullable_1<System_Internal.Boolean>, valueGeneratorFactory: Func_3<IProperty, IEntityType, ValueGenerator>): ConverterMappingHints;
 };
 
 
@@ -337,8 +337,8 @@ export const NumberToBytesConverter_1: {
     ReverseInt<TNumber>(bytes: byte[]): byte[];
     ReverseLong<TNumber>(bytes: byte[]): byte[];
     ReverseShort<TNumber>(bytes: byte[]): byte[];
-    ToBytes<TNumber>(): Expression<Func<TNumber, byte[]>>;
-    ToNumber<TNumber>(): Expression<Func<byte[], TNumber>>;
+    ToBytes<TNumber>(): Expression_1<Func_2<TNumber, byte[]>>;
+    ToNumber<TNumber>(): Expression_1<Func_2<byte[], TNumber>>;
 };
 
 
@@ -384,16 +384,16 @@ export const PhysicalAddressToStringConverter: {
 export type PhysicalAddressToStringConverter = PhysicalAddressToStringConverter$instance;
 
 export interface RelationalConverterMappingHints$instance extends ConverterMappingHints {
-    readonly DbType: Nullable<DbType>;
-    readonly IsFixedLength: Nullable<System_Internal.Boolean>;
+    readonly DbType: Nullable_1<DbType>;
+    readonly IsFixedLength: Nullable_1<System_Internal.Boolean>;
     OverrideWith(hints: ConverterMappingHints): ConverterMappingHints;
     With(hints: ConverterMappingHints): ConverterMappingHints;
 }
 
 
 export const RelationalConverterMappingHints: {
-    new(size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>, unicode: Nullable<System_Internal.Boolean>, fixedLength: Nullable<System_Internal.Boolean>, valueGeneratorFactory: Func<IProperty, IEntityType, ValueGenerator>, dbType: Nullable<DbType>): RelationalConverterMappingHints;
-    new(size: Nullable<System_Internal.Int32>, precision: Nullable<System_Internal.Int32>, scale: Nullable<System_Internal.Int32>, unicode: Nullable<System_Internal.Boolean>, fixedLength: Nullable<System_Internal.Boolean>, valueGeneratorFactory: Func<IProperty, ITypeBase, ValueGenerator>): RelationalConverterMappingHints;
+    new(size: Nullable_1<System_Internal.Int32>, precision: Nullable_1<System_Internal.Int32>, scale: Nullable_1<System_Internal.Int32>, unicode: Nullable_1<System_Internal.Boolean>, fixedLength: Nullable_1<System_Internal.Boolean>, valueGeneratorFactory: Func_3<IProperty, IEntityType, ValueGenerator>, dbType: Nullable_1<DbType>): RelationalConverterMappingHints;
+    new(size: Nullable_1<System_Internal.Int32>, precision: Nullable_1<System_Internal.Int32>, scale: Nullable_1<System_Internal.Int32>, unicode: Nullable_1<System_Internal.Boolean>, fixedLength: Nullable_1<System_Internal.Boolean>, valueGeneratorFactory: Func_3<IProperty, ITypeBase, ValueGenerator>): RelationalConverterMappingHints;
 };
 
 
@@ -621,10 +621,10 @@ export type UriToStringConverter = UriToStringConverter$instance;
 
 export interface ValueConverter$instance {
     readonly ConstructorExpression: Expression;
-    readonly ConvertFromProvider: Func<unknown | undefined, unknown | undefined>;
+    readonly ConvertFromProvider: Func_2<unknown | undefined, unknown | undefined>;
     readonly ConvertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>> | LambdaExpression;
     readonly ConvertsNulls: boolean;
-    readonly ConvertToProvider: Func<unknown | undefined, unknown | undefined>;
+    readonly ConvertToProvider: Func_2<unknown | undefined, unknown | undefined>;
     readonly ConvertToProviderExpression: Expression_1<Func_2<TModel, TProvider>> | LambdaExpression;
     readonly MappingHints: ConverterMappingHints | undefined;
     readonly ModelClrType: Type;
@@ -642,20 +642,20 @@ export type ValueConverter = ValueConverter$instance;
 
 export interface ValueConverter_2$instance<TModel, TProvider> extends ValueConverter {
     readonly ConstructorExpression: Expression;
-    readonly ConvertFromProvider: Func<unknown | undefined, unknown | undefined>;
+    readonly ConvertFromProvider: Func_2<unknown | undefined, unknown | undefined>;
     readonly ConvertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>> | LambdaExpression;
-    readonly ConvertFromProviderTyped: Func<TProvider, TModel>;
-    readonly ConvertToProvider: Func<unknown | undefined, unknown | undefined>;
+    readonly ConvertFromProviderTyped: Func_2<TProvider, TModel>;
+    readonly ConvertToProvider: Func_2<unknown | undefined, unknown | undefined>;
     readonly ConvertToProviderExpression: Expression_1<Func_2<TModel, TProvider>> | LambdaExpression;
-    readonly ConvertToProviderTyped: Func<TModel, TProvider>;
+    readonly ConvertToProviderTyped: Func_2<TModel, TProvider>;
     readonly ModelClrType: Type;
     readonly ProviderClrType: Type;
 }
 
 
 export const ValueConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): ValueConverter_2<TModel, TProvider>;
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, convertsNulls: boolean, mappingHints: ConverterMappingHints): ValueConverter_2<TModel, TProvider>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): ValueConverter_2<TModel, TProvider>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, convertsNulls: boolean, mappingHints: ConverterMappingHints): ValueConverter_2<TModel, TProvider>;
 };
 
 
@@ -665,7 +665,7 @@ export interface ValueConverterSelector$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ValueConversion_IValueConverterSelector: never;
 
     readonly Dependencies: ValueConverterSelectorDependencies;
-    Select(modelClrType: Type, providerClrType?: Type): IEnumerable<ValueConverterInfo>;
+    Select(modelClrType: Type, providerClrType?: Type): IEnumerable_1<ValueConverterInfo>;
 }
 
 

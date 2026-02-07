@@ -12,15 +12,15 @@ import type { ptr } from "@tsonic/core/types.js";
 import type { EntityEntry } from "../../Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js";
 import type { IProperty, ITypeBase } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { ValueConverter } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, Byte, Func, Guid, IDisposable, IEquatable, Int32, Int64, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
-import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
-import type { Task, ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
+import type { Task_1, ValueTask_1 } from "@tsonic/dotnet/System.Threading.Tasks/internal/index.js";
+import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, Byte, Func_1, Func_2, Func_3, Guid, IDisposable, IEquatable_1, Int32, Int64, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IValueGeneratorCache$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorCache: never;
 
-    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
+    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func_3<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
 }
 
 
@@ -78,11 +78,11 @@ export type GuidValueGenerator = GuidValueGenerator$instance;
 
 export interface HiLoValueGenerator_1$instance<TValue> extends ValueGenerator_1<TValue> {
     GetNewLowValue(): long;
-    GetNewLowValueAsync(cancellationToken?: CancellationToken): Task<System_Internal.Int64>;
+    GetNewLowValueAsync(cancellationToken?: CancellationToken): Task_1<System_Internal.Int64>;
     Next(entry: EntityEntry): TValue;
     Next(entry: EntityEntry): unknown;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
 }
 
 
@@ -96,8 +96,8 @@ export interface HiLoValueGeneratorState$instance {
     readonly __tsonic_iface_System_IDisposable: never;
 
     Dispose(): void;
-    Next<TValue>(getNewLowValue: Func<System_Internal.Int64>): TValue;
-    NextAsync<TValue>(getNewLowValue: Func<CancellationToken, Task<System_Internal.Int64>>, cancellationToken?: CancellationToken): ValueTask<TValue>;
+    Next<TValue>(getNewLowValue: Func_1<System_Internal.Int64>): TValue;
+    NextAsync<TValue>(getNewLowValue: Func_2<CancellationToken, Task_1<System_Internal.Int64>>, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
 }
 
 
@@ -185,9 +185,9 @@ export interface ValueGenerator$instance {
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): unknown;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     NextValue(entry: EntityEntry): unknown | undefined;
-    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     WithConverter(converter: ValueConverter): ValueGenerator;
 }
 
@@ -201,11 +201,11 @@ export type ValueGenerator = ValueGenerator$instance;
 export interface ValueGenerator_1$instance<TValue> extends ValueGenerator {
     Next(entry: EntityEntry): TValue;
     Next(entry: EntityEntry): unknown;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     NextValue(entry: EntityEntry): unknown | undefined;
-    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
-    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
 }
 
 
@@ -219,7 +219,7 @@ export interface ValueGeneratorCache$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorCache: never;
 
     readonly Dependencies: ValueGeneratorCacheDependencies;
-    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
+    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func_3<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
 }
 
 

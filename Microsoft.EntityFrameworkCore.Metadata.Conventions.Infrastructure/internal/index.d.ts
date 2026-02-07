@@ -14,9 +14,9 @@ import type { IConstructorBindingFactory, IParameterBindingFactories, IRelationa
 import type { ITypeMappingSource } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
 import type { IUpdateSqlGenerator } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import type { DbLoggerCategory_Model, DbLoggerCategory_Model_Validation } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import type { List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString, Type } from "@tsonic/dotnet/System.js";
+import type { List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, IEquatable_1, Int32, Object as ClrObject, String as ClrString, Type } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IConventionSetBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IConventionSetBuilder: never;
@@ -50,7 +50,7 @@ export interface ProviderConventionSetBuilder$instance {
 
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     CreateConventionSet(): ConventionSet;
-    ReplaceConvention<TConvention, TImplementation extends TConvention>(conventionsList: List<TConvention>, newConvention: TImplementation): boolean;
+    ReplaceConvention<TConvention, TImplementation extends TConvention>(conventionsList: List_1<TConvention>, newConvention: TImplementation): boolean;
 }
 
 
