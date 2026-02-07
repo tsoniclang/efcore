@@ -39,14 +39,10 @@ export interface IProviderConventionSetBuilder$instance {
 
 export type IProviderConventionSetBuilder = IProviderConventionSetBuilder$instance;
 
-export abstract class ProviderConventionSetBuilder$protected {
-    protected readonly Dependencies: ProviderConventionSetBuilderDependencies;
-    protected ReplaceConvention<TConvention, TImplementation extends TConvention>(conventionsList: List<TConvention>, newConvention: TImplementation): boolean;
-}
-
-
-export interface ProviderConventionSetBuilder$instance extends ProviderConventionSetBuilder$protected {
+export interface ProviderConventionSetBuilder$instance {
+    readonly Dependencies: ProviderConventionSetBuilderDependencies;
     CreateConventionSet(): ConventionSet;
+    ReplaceConvention<TConvention, TImplementation extends TConvention>(conventionsList: List<TConvention>, newConvention: TImplementation): boolean;
 }
 
 
@@ -89,18 +85,13 @@ export const ProviderConventionSetBuilderDependencies: {
 
 export type ProviderConventionSetBuilderDependencies = ProviderConventionSetBuilderDependencies$instance;
 
-export abstract class RelationalConventionSetBuilder$protected {
-    protected readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
-}
-
-
-export interface RelationalConventionSetBuilder$instance extends RelationalConventionSetBuilder$protected, ProviderConventionSetBuilder$instance {
+export interface RelationalConventionSetBuilder$instance extends ProviderConventionSetBuilder$instance {
+    readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
     CreateConventionSet(): ConventionSet;
 }
 
 
-export const RelationalConventionSetBuilder: {
-    new(dependencies: ProviderConventionSetBuilderDependencies, relationalDependencies: RelationalConventionSetBuilderDependencies): RelationalConventionSetBuilder;
+export const RelationalConventionSetBuilder: (abstract new(dependencies: ProviderConventionSetBuilderDependencies, relationalDependencies: RelationalConventionSetBuilderDependencies) => RelationalConventionSetBuilder) & {
 };
 
 

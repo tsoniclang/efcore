@@ -16,16 +16,12 @@ import type { Boolean as ClrBoolean, Byte, Char, DateTime, DateTimeOffset, Decim
 import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
-export abstract class ConvertedValueGenerator$protected {
-    protected NextValue(entry: EntityEntry): unknown | undefined;
-}
-
-
-export interface ConvertedValueGenerator$instance extends ConvertedValueGenerator$protected, ValueGenerator {
+export interface ConvertedValueGenerator$instance extends ValueGenerator {
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    NextValue(entry: EntityEntry): unknown | undefined;
 }
 
 
@@ -36,14 +32,10 @@ export const ConvertedValueGenerator: {
 
 export type ConvertedValueGenerator = ConvertedValueGenerator$instance;
 
-export abstract class DiscriminatorValueGenerator$protected {
-    protected NextValue(entry: EntityEntry): unknown;
-}
-
-
-export interface DiscriminatorValueGenerator$instance extends DiscriminatorValueGenerator$protected, ValueGenerator {
+export interface DiscriminatorValueGenerator$instance extends ValueGenerator {
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
+    NextValue(entry: EntityEntry): unknown;
 }
 
 
@@ -192,8 +184,7 @@ export interface TemporaryNumberValueGenerator_1$instance<TValue> extends ValueG
 }
 
 
-export const TemporaryNumberValueGenerator_1: {
-    new<TValue>(): TemporaryNumberValueGenerator_1<TValue>;
+export const TemporaryNumberValueGenerator_1: (abstract new<TValue>() => TemporaryNumberValueGenerator_1<TValue>) & {
 };
 
 

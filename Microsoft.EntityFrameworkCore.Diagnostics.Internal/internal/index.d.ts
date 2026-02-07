@@ -27,13 +27,7 @@ import type { Task, ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
 import * as Microsoft_Extensions_Logging_Internal from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging.js";
 import type { EventId, ILogger, ILoggerFactory, ILoggerProvider, LogLevel } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging.js";
 
-export abstract class DbCommandInterceptorAggregator$protected {
-    protected CreateChain2(interceptors: IEnumerable<IDbCommandInterceptor>): IDbCommandInterceptor;
-    protected abstract CreateChain(interceptors: IEnumerable<unknown>): unknown;
-}
-
-
-export interface DbCommandInterceptorAggregator$instance extends DbCommandInterceptorAggregator$protected, InterceptorAggregator_1<IDbCommandInterceptor> {
+export interface DbCommandInterceptorAggregator$instance extends InterceptorAggregator_1<IDbCommandInterceptor> {
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -50,13 +44,7 @@ export interface __DbCommandInterceptorAggregator$views {
 export type DbCommandInterceptorAggregator = DbCommandInterceptorAggregator$instance & __DbCommandInterceptorAggregator$views;
 
 
-export abstract class DbConnectionInterceptorAggregator$protected {
-    protected CreateChain2(interceptors: IEnumerable<IDbConnectionInterceptor>): IDbConnectionInterceptor;
-    protected abstract CreateChain(interceptors: IEnumerable<unknown>): unknown;
-}
-
-
-export interface DbConnectionInterceptorAggregator$instance extends DbConnectionInterceptorAggregator$protected, InterceptorAggregator_1<IDbConnectionInterceptor> {
+export interface DbConnectionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbConnectionInterceptor> {
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -73,13 +61,7 @@ export interface __DbConnectionInterceptorAggregator$views {
 export type DbConnectionInterceptorAggregator = DbConnectionInterceptorAggregator$instance & __DbConnectionInterceptorAggregator$views;
 
 
-export abstract class DbTransactionInterceptorAggregator$protected {
-    protected CreateChain2(interceptors: IEnumerable<IDbTransactionInterceptor>): IDbTransactionInterceptor;
-    protected abstract CreateChain(interceptors: IEnumerable<unknown>): unknown;
-}
-
-
-export interface DbTransactionInterceptorAggregator$instance extends DbTransactionInterceptorAggregator$protected, InterceptorAggregator_1<IDbTransactionInterceptor> {
+export interface DbTransactionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbTransactionInterceptor> {
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -120,7 +102,7 @@ export interface DiagnosticsLogger_1$instance<TLoggerCategory extends LoggerCate
     readonly DbContextLogger: IDbContextLogger;
     readonly Definitions: LoggingDefinitions;
     readonly DiagnosticSource: DiagnosticSource;
-    readonly Interceptors: IInterceptors;
+    readonly Interceptors: IInterceptors | undefined;
     readonly Logger: ILogger;
     readonly Options: ILoggingOptions;
     ShouldLogSensitiveData(): boolean;
@@ -159,13 +141,7 @@ export interface FormattingDbContextLogger$instance extends Microsoft_EntityFram
 export type FormattingDbContextLogger = FormattingDbContextLogger$instance & __FormattingDbContextLogger$views;
 
 
-export abstract class IdentityResolutionInterceptorAggregator$protected {
-    protected CreateChain2(interceptors: IEnumerable<IIdentityResolutionInterceptor>): IIdentityResolutionInterceptor;
-    protected abstract CreateChain(interceptors: IEnumerable<unknown>): unknown;
-}
-
-
-export interface IdentityResolutionInterceptorAggregator$instance extends IdentityResolutionInterceptorAggregator$protected, InterceptorAggregator_1<IIdentityResolutionInterceptor> {
+export interface IdentityResolutionInterceptorAggregator$instance extends InterceptorAggregator_1<IIdentityResolutionInterceptor> {
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -225,13 +201,7 @@ export interface __LoggingOptions$views {
 export type LoggingOptions = LoggingOptions$instance & __LoggingOptions$views;
 
 
-export abstract class MaterializationInterceptorAggregator$protected {
-    protected CreateChain2(interceptors: IEnumerable<IMaterializationInterceptor>): IMaterializationInterceptor;
-    protected abstract CreateChain(interceptors: IEnumerable<unknown>): unknown;
-}
-
-
-export interface MaterializationInterceptorAggregator$instance extends MaterializationInterceptorAggregator$protected, InterceptorAggregator_1<IMaterializationInterceptor> {
+export interface MaterializationInterceptorAggregator$instance extends InterceptorAggregator_1<IMaterializationInterceptor> {
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -268,13 +238,7 @@ export interface NullDbContextLogger$instance extends Microsoft_EntityFrameworkC
 export type NullDbContextLogger = NullDbContextLogger$instance & __NullDbContextLogger$views;
 
 
-export abstract class QueryExpressionInterceptorAggregator$protected {
-    protected CreateChain2(interceptors: IEnumerable<IQueryExpressionInterceptor>): IQueryExpressionInterceptor;
-    protected abstract CreateChain(interceptors: IEnumerable<unknown>): unknown;
-}
-
-
-export interface QueryExpressionInterceptorAggregator$instance extends QueryExpressionInterceptorAggregator$protected, InterceptorAggregator_1<IQueryExpressionInterceptor> {
+export interface QueryExpressionInterceptorAggregator$instance extends InterceptorAggregator_1<IQueryExpressionInterceptor> {
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 
@@ -377,13 +341,7 @@ export interface __RelationalConnectionDiagnosticsLogger$views {
 export type RelationalConnectionDiagnosticsLogger = RelationalConnectionDiagnosticsLogger$instance & __RelationalConnectionDiagnosticsLogger$views;
 
 
-export abstract class SaveChangesInterceptorAggregator$protected {
-    protected CreateChain2(interceptors: IEnumerable<ISaveChangesInterceptor>): ISaveChangesInterceptor;
-    protected abstract CreateChain(interceptors: IEnumerable<unknown>): unknown;
-}
-
-
-export interface SaveChangesInterceptorAggregator$instance extends SaveChangesInterceptorAggregator$protected, InterceptorAggregator_1<ISaveChangesInterceptor> {
+export interface SaveChangesInterceptorAggregator$instance extends InterceptorAggregator_1<ISaveChangesInterceptor> {
     AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
 }
 

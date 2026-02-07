@@ -35,7 +35,7 @@ export interface IReadableConventionContext$instance extends Microsoft_EntityFra
 export type IReadableConventionContext = IReadableConventionContext$instance;
 
 export interface ConventionContext_1$instance<TMetadata> {
-    readonly Result: TMetadata;
+    readonly Result: TMetadata | undefined;
     DelayConventions(): IConventionBatch;
     ResetState(input: TMetadata): void;
     ShouldStopProcessing(): boolean;

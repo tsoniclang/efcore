@@ -328,7 +328,7 @@ export interface EntityMaterializerSourceParameters$instance {
     Equals(obj: unknown): boolean;
     Equals(other: EntityMaterializerSourceParameters): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string;
 }
 
 
@@ -374,7 +374,7 @@ export interface StructuralTypeMaterializerSourceParameters$instance {
     Equals(obj: unknown): boolean;
     Equals(other: StructuralTypeMaterializerSourceParameters): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string;
 }
 
 
@@ -385,14 +385,9 @@ export const StructuralTypeMaterializerSourceParameters: {
 
 export type StructuralTypeMaterializerSourceParameters = StructuralTypeMaterializerSourceParameters$instance;
 
-export abstract class CollectionResultExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface CollectionResultExpression$instance extends CollectionResultExpression$protected, Expression {
+export interface CollectionResultExpression$instance extends Expression {
     readonly ElementType: Type;
-    readonly Navigation: INavigationBase;
+    readonly Navigation: INavigationBase | undefined;
     readonly NodeType: ExpressionType;
     readonly ProjectionBindingExpression: ProjectionBindingExpression;
     readonly QueryExpression: Expression;
@@ -400,6 +395,7 @@ export interface CollectionResultExpression$instance extends CollectionResultExp
     readonly Type: Type;
     Print(expressionPrinter: ExpressionPrinter): void;
     Update(queryExpression: Expression): CollectionResultExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -417,12 +413,8 @@ export interface CollectionResultExpression$instance extends IPrintableExpressio
 export type CollectionResultExpression = CollectionResultExpression$instance & __CollectionResultExpression$views;
 
 
-export abstract class CompiledQueryCacheKeyGenerator$protected {
-    protected readonly Dependencies: CompiledQueryCacheKeyGeneratorDependencies;
-}
-
-
-export interface CompiledQueryCacheKeyGenerator$instance extends CompiledQueryCacheKeyGenerator$protected {
+export interface CompiledQueryCacheKeyGenerator$instance {
+    readonly Dependencies: CompiledQueryCacheKeyGeneratorDependencies;
     GenerateCacheKey(query: Expression, async: boolean): unknown;
 }
 
@@ -460,20 +452,16 @@ export const CompiledQueryCacheKeyGeneratorDependencies: {
 
 export type CompiledQueryCacheKeyGeneratorDependencies = CompiledQueryCacheKeyGeneratorDependencies$instance;
 
-export abstract class EntityQueryRootExpression$protected {
-    protected Print(expressionPrinter: ExpressionPrinter): void;
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface EntityQueryRootExpression$instance extends EntityQueryRootExpression$protected, QueryRootExpression$instance {
+export interface EntityQueryRootExpression$instance extends QueryRootExpression$instance {
     readonly CanReduce: boolean;
     readonly EntityType: IEntityType;
     readonly NodeType: ExpressionType;
     DetachQueryProvider(): Expression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
     UpdateEntityType(entityType: IEntityType): EntityQueryRootExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -490,12 +478,7 @@ export interface __EntityQueryRootExpression$views {
 export type EntityQueryRootExpression = EntityQueryRootExpression$instance & __EntityQueryRootExpression$views;
 
 
-export abstract class EnumerableExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface EnumerableExpression$instance extends EnumerableExpression$protected, Expression {
+export interface EnumerableExpression$instance extends Expression {
     readonly IsDistinct: boolean;
     readonly NodeType: ExpressionType;
     readonly Orderings: IReadOnlyList<OrderingExpression>;
@@ -510,6 +493,7 @@ export interface EnumerableExpression$instance extends EnumerableExpression$prot
     GetHashCode(): int;
     Print(expressionPrinter: ExpressionPrinter): void;
     SetDistinct(value: boolean): EnumerableExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -527,12 +511,8 @@ export interface EnumerableExpression$instance extends IPrintableExpression$inst
 export type EnumerableExpression = EnumerableExpression$instance & __EnumerableExpression$views;
 
 
-export abstract class EvaluatableExpressionFilter$protected {
-    protected readonly Dependencies: EvaluatableExpressionFilterDependencies;
-}
-
-
-export interface EvaluatableExpressionFilter$instance extends EvaluatableExpressionFilter$protected {
+export interface EvaluatableExpressionFilter$instance {
+    readonly Dependencies: EvaluatableExpressionFilterDependencies;
     IsEvaluatableExpression(expression: Expression, model: IModel): boolean;
 }
 
@@ -575,40 +555,13 @@ export interface ExpressionEqualityComparer$instance {
 
 
 export const ExpressionEqualityComparer: {
-    new(): ExpressionEqualityComparer;
     readonly Instance: ExpressionEqualityComparer;
 };
 
 
 export type ExpressionEqualityComparer = ExpressionEqualityComparer$instance;
 
-export abstract class ExpressionPrinter$protected {
-    protected VisitBinary(binaryExpression: BinaryExpression): Expression;
-    protected VisitBlock(blockExpression: BlockExpression): Expression;
-    protected VisitConditional(conditionalExpression: ConditionalExpression): Expression;
-    protected VisitConstant(constantExpression: ConstantExpression): Expression;
-    protected VisitDefault(defaultExpression: DefaultExpression): Expression;
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected VisitGoto(gotoExpression: GotoExpression): Expression;
-    protected VisitIndex(indexExpression: IndexExpression): Expression;
-    protected VisitInvocation(invocationExpression: InvocationExpression): Expression;
-    protected VisitLabel(labelExpression: LabelExpression): Expression;
-    protected VisitLambda<T>(lambdaExpression: Expression<T>): Expression;
-    protected VisitLoop(loopExpression: LoopExpression): Expression;
-    protected VisitMember(memberExpression: MemberExpression): Expression;
-    protected VisitMemberInit(memberInitExpression: MemberInitExpression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    protected VisitNew(newExpression: NewExpression): Expression;
-    protected VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
-    protected VisitParameter(parameterExpression: ParameterExpression): Expression;
-    protected VisitSwitch(switchExpression: SwitchExpression): Expression;
-    protected VisitTry(tryExpression: TryExpression): Expression;
-    protected VisitTypeBinary(typeBinaryExpression: TypeBinaryExpression): Expression;
-    protected VisitUnary(unaryExpression: UnaryExpression): Expression;
-}
-
-
-export interface ExpressionPrinter$instance extends ExpressionPrinter$protected, ExpressionVisitor {
+export interface ExpressionPrinter$instance extends ExpressionVisitor {
     Append(value: string): ExpressionPrinter;
     AppendLine(): ExpressionPrinter;
     AppendLine(value: string): ExpressionPrinter;
@@ -619,7 +572,29 @@ export interface ExpressionPrinter$instance extends ExpressionPrinter$protected,
     PrintExpressionDebug(expression: Expression): string;
     ToString(): string;
     Visit(expression: Expression): Expression | undefined;
+    VisitBinary(binaryExpression: BinaryExpression): Expression;
+    VisitBlock(blockExpression: BlockExpression): Expression;
     VisitCollection<T extends Expression>(items: IReadOnlyCollection<T>, joinAction?: Action<ExpressionPrinter>): void;
+    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
+    VisitConstant(constantExpression: ConstantExpression): Expression;
+    VisitDefault(defaultExpression: DefaultExpression): Expression;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitGoto(gotoExpression: GotoExpression): Expression;
+    VisitIndex(indexExpression: IndexExpression): Expression;
+    VisitInvocation(invocationExpression: InvocationExpression): Expression;
+    VisitLabel(labelExpression: LabelExpression): Expression;
+    VisitLambda<T>(lambdaExpression: Expression<T>): Expression;
+    VisitLoop(loopExpression: LoopExpression): Expression;
+    VisitMember(memberExpression: MemberExpression): Expression;
+    VisitMemberInit(memberInitExpression: MemberInitExpression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitNew(newExpression: NewExpression): Expression;
+    VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
+    VisitParameter(parameterExpression: ParameterExpression): Expression;
+    VisitSwitch(switchExpression: SwitchExpression): Expression;
+    VisitTry(tryExpression: TryExpression): Expression;
+    VisitTypeBinary(typeBinaryExpression: TypeBinaryExpression): Expression;
+    VisitUnary(unaryExpression: UnaryExpression): Expression;
 }
 
 
@@ -632,18 +607,14 @@ export const ExpressionPrinter: {
 
 export type ExpressionPrinter = ExpressionPrinter$instance;
 
-export abstract class GroupByShaperExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface GroupByShaperExpression$instance extends GroupByShaperExpression$protected, Expression {
+export interface GroupByShaperExpression$instance extends Expression {
     readonly GroupingEnumerable: ShapedQueryExpression;
     readonly KeySelector: Expression;
     readonly NodeType: ExpressionType;
     readonly Type: Type;
     Print(expressionPrinter: ExpressionPrinter): void;
     Update(keySelector: Expression, groupingEnumerable: ShapedQueryExpression): GroupByShaperExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -661,12 +632,7 @@ export interface GroupByShaperExpression$instance extends IPrintableExpression$i
 export type GroupByShaperExpression = GroupByShaperExpression$instance & __GroupByShaperExpression$views;
 
 
-export abstract class IncludeExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface IncludeExpression$instance extends IncludeExpression$protected, Expression {
+export interface IncludeExpression$instance extends Expression {
     readonly EntityExpression: Expression;
     readonly Navigation: INavigationBase;
     readonly NavigationExpression: Expression;
@@ -674,6 +640,7 @@ export interface IncludeExpression$instance extends IncludeExpression$protected,
     readonly SetLoaded: boolean;
     readonly Type: Type;
     Update(entityExpression: Expression, navigationExpression: Expression): IncludeExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -692,16 +659,12 @@ export interface IncludeExpression$instance extends IPrintableExpression$instanc
 export type IncludeExpression = IncludeExpression$instance & __IncludeExpression$views;
 
 
-export abstract class InlineQueryRootExpression$protected {
-    protected Print(expressionPrinter: ExpressionPrinter): void;
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface InlineQueryRootExpression$instance extends InlineQueryRootExpression$protected, QueryRootExpression$instance {
+export interface InlineQueryRootExpression$instance extends QueryRootExpression$instance {
     readonly Values: IReadOnlyList<Expression>;
     DetachQueryProvider(): Expression;
+    Print(expressionPrinter: ExpressionPrinter): void;
     Update(values: IReadOnlyList<Expression>): InlineQueryRootExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -718,12 +681,7 @@ export interface __InlineQueryRootExpression$views {
 export type InlineQueryRootExpression = InlineQueryRootExpression$instance & __InlineQueryRootExpression$views;
 
 
-export abstract class JsonQueryExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface JsonQueryExpression$instance extends JsonQueryExpression$protected, Expression {
+export interface JsonQueryExpression$instance extends Expression {
     readonly IsCollection: boolean;
     readonly IsNullable: boolean;
     readonly JsonColumn: ColumnExpression;
@@ -740,6 +698,7 @@ export interface JsonQueryExpression$instance extends JsonQueryExpression$protec
     MakeNullable(): JsonQueryExpression;
     Print(expressionPrinter: ExpressionPrinter): void;
     Update(jsonColumn: ColumnExpression, keyPropertyMap: IReadOnlyDictionary<IProperty, ColumnExpression>): JsonQueryExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -758,12 +717,7 @@ export interface JsonQueryExpression$instance extends IPrintableExpression$insta
 export type JsonQueryExpression = JsonQueryExpression$instance & __JsonQueryExpression$views;
 
 
-export abstract class LiftableConstantExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface LiftableConstantExpression$instance extends LiftableConstantExpression$protected, Expression {
+export interface LiftableConstantExpression$instance extends Expression {
     readonly NodeType: ExpressionType;
     readonly OriginalExpression: ConstantExpression;
     readonly ResolverExpression: LambdaExpression;
@@ -771,6 +725,7 @@ export interface LiftableConstantExpression$instance extends LiftableConstantExp
     readonly VariableName: string;
     Print(expressionPrinter: ExpressionPrinter): void;
     Update(resolverExpression: LambdaExpression): LiftableConstantExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -824,18 +779,14 @@ export interface LiftableConstantFactory$instance extends ILiftableConstantFacto
 export type LiftableConstantFactory = LiftableConstantFactory$instance & __LiftableConstantFactory$views;
 
 
-export abstract class LiftableConstantProcessor$protected {
-    protected InlineConstant(liftableConstant: LiftableConstantExpression): ConstantExpression;
-    protected LiftConstant(liftableConstant: LiftableConstantExpression): ParameterExpression;
-    protected VisitBinary(binaryExpression: BinaryExpression): Expression;
-    protected VisitExtension(node: Expression): Expression;
-}
-
-
-export interface LiftableConstantProcessor$instance extends LiftableConstantProcessor$protected, ExpressionVisitor {
+export interface LiftableConstantProcessor$instance extends ExpressionVisitor {
     LiftedConstants: IReadOnlyList<ValueTuple<ParameterExpression, Expression>>;
+    InlineConstant(liftableConstant: LiftableConstantExpression): ConstantExpression;
     InlineConstants(expression: Expression, supportsPrecompiledQuery: boolean): Expression;
+    LiftConstant(liftableConstant: LiftableConstantExpression): ParameterExpression;
     LiftConstants(expression: Expression, contextParameter: ParameterExpression, variableNames: HashSet<System_Internal.String>): Expression;
+    VisitBinary(binaryExpression: BinaryExpression): Expression;
+    VisitExtension(node: Expression): Expression;
 }
 
 
@@ -851,17 +802,13 @@ export interface __LiftableConstantProcessor$views {
 export type LiftableConstantProcessor = LiftableConstantProcessor$instance & __LiftableConstantProcessor$views;
 
 
-export abstract class MaterializeCollectionNavigationExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface MaterializeCollectionNavigationExpression$instance extends MaterializeCollectionNavigationExpression$protected, Expression {
+export interface MaterializeCollectionNavigationExpression$instance extends Expression {
     readonly Navigation: INavigationBase;
     readonly NodeType: ExpressionType;
     readonly Subquery: Expression;
     readonly Type: Type;
     Update(subquery: Expression): MaterializeCollectionNavigationExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -879,37 +826,28 @@ export interface MaterializeCollectionNavigationExpression$instance extends IPri
 export type MaterializeCollectionNavigationExpression = MaterializeCollectionNavigationExpression$instance & __MaterializeCollectionNavigationExpression$views;
 
 
-export abstract class MaterializerLiftableConstantContext$protected {
-    protected readonly EqualityContract: Type;
-    protected PrintMembers(builder: StringBuilder): boolean;
-}
-
-
-export interface MaterializerLiftableConstantContext$instance extends MaterializerLiftableConstantContext$protected {
+export interface MaterializerLiftableConstantContext$instance {
     Dependencies: ShapedQueryCompilingExpressionVisitorDependencies;
+    readonly EqualityContract: Type;
     _Clone_$(): MaterializerLiftableConstantContext;
     Deconstruct(Dependencies: ShapedQueryCompilingExpressionVisitorDependencies): void;
     Equals(obj: unknown): boolean;
     Equals(other: MaterializerLiftableConstantContext): boolean;
     GetHashCode(): int;
+    PrintMembers(builder: StringBuilder): boolean;
     ToString(): string;
 }
 
 
 export const MaterializerLiftableConstantContext: {
     new(Dependencies: ShapedQueryCompilingExpressionVisitorDependencies): MaterializerLiftableConstantContext;
-    new(original: MaterializerLiftableConstantContext): MaterializerLiftableConstantContext;
 };
 
 
 export type MaterializerLiftableConstantContext = MaterializerLiftableConstantContext$instance;
 
-export abstract class NavigationExpansionExtensibilityHelper$protected {
-    protected readonly Dependencies: NavigationExpansionExtensibilityHelperDependencies;
-}
-
-
-export interface NavigationExpansionExtensibilityHelper$instance extends NavigationExpansionExtensibilityHelper$protected {
+export interface NavigationExpansionExtensibilityHelper$instance {
+    readonly Dependencies: NavigationExpansionExtensibilityHelperDependencies;
     AreQueryRootsCompatible(first: EntityQueryRootExpression, second: EntityQueryRootExpression): boolean;
     CreateQueryRoot(entityType: IEntityType, source: EntityQueryRootExpression): EntityQueryRootExpression;
     ValidateQueryRootCreation(entityType: IEntityType, source: EntityQueryRootExpression): void;
@@ -957,16 +895,12 @@ export const NotParameterizedAttribute: {
 
 export type NotParameterizedAttribute = NotParameterizedAttribute$instance;
 
-export abstract class ParameterQueryRootExpression$protected {
-    protected Print(expressionPrinter: ExpressionPrinter): void;
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface ParameterQueryRootExpression$instance extends ParameterQueryRootExpression$protected, QueryRootExpression$instance {
+export interface ParameterQueryRootExpression$instance extends QueryRootExpression$instance {
     readonly ParameterExpression: ParameterExpression;
     readonly QueryParameterExpression: QueryParameterExpression;
     DetachQueryProvider(): Expression;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -999,12 +933,7 @@ export const ParametersCacheDecorator: {
 
 export type ParametersCacheDecorator = ParametersCacheDecorator$instance;
 
-export abstract class ProjectionBindingExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface ProjectionBindingExpression$instance extends ProjectionBindingExpression$protected, Expression {
+export interface ProjectionBindingExpression$instance extends Expression {
     readonly Index: Nullable<System_Internal.Int32>;
     readonly NodeType: ExpressionType;
     readonly ProjectionMember: ProjectionMember | undefined;
@@ -1012,6 +941,7 @@ export interface ProjectionBindingExpression$instance extends ProjectionBindingE
     readonly Type: Type;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -1047,71 +977,66 @@ export const ProjectionMember: {
 
 export type ProjectionMember = ProjectionMember$instance;
 
-export abstract class QueryableMethodTranslatingExpressionVisitor$protected {
-    protected readonly Dependencies: QueryableMethodTranslatingExpressionVisitorDependencies;
-    protected readonly QueryCompilationContext: QueryCompilationContext;
-    protected AddTranslationErrorDetails(details: string): void;
-    protected abstract CreateShapedQueryExpression(entityType: IEntityType): ShapedQueryExpression | undefined;
-    protected abstract CreateSubqueryVisitor(): QueryableMethodTranslatingExpressionVisitor;
-    protected MarkShaperNullable(shaperExpression: Expression): Expression;
-    protected abstract TranslateAll(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateAny(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateAverage(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected abstract TranslateCast(source: ShapedQueryExpression, castType: Type): ShapedQueryExpression | undefined;
-    protected abstract TranslateConcat(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateContains(source: ShapedQueryExpression, item: Expression): ShapedQueryExpression | undefined;
-    protected abstract TranslateCount(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateDefaultIfEmpty(source: ShapedQueryExpression, defaultValue: Expression): ShapedQueryExpression | undefined;
-    protected abstract TranslateDistinct(source: ShapedQueryExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateElementAtOrDefault(source: ShapedQueryExpression, index: Expression, returnDefault: boolean): ShapedQueryExpression | undefined;
-    protected abstract TranslateExcept(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression | undefined;
-    protected TranslateExecuteDelete(source: ShapedQueryExpression): Expression | undefined;
-    protected TranslateExecuteUpdate(source: ShapedQueryExpression, setters: IReadOnlyList<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>): Expression | undefined;
-    protected abstract TranslateFirstOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
-    protected abstract TranslateGroupBy(source: ShapedQueryExpression, keySelector: LambdaExpression, elementSelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateGroupJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateInlineQueryRoot(inlineQueryRootExpression: InlineQueryRootExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateIntersect(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateLastOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
-    protected abstract TranslateLeftJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateLongCount(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateMax(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected TranslateMemberAccess(source: Expression, member: MemberIdentity): ShapedQueryExpression | undefined;
-    protected abstract TranslateMin(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected abstract TranslateOfType(source: ShapedQueryExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected abstract TranslateOrderBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | undefined;
-    protected TranslateParameterQueryRoot(parameterQueryRootExpression: ParameterQueryRootExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateReverse(source: ShapedQueryExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateRightJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateSelect(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression;
-    protected abstract TranslateSelectMany(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateSelectMany(source: ShapedQueryExpression, collectionSelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateSingleOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
-    protected abstract TranslateSkip(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | undefined;
-    protected abstract TranslateSkipWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateSum(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected abstract TranslateTake(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | undefined;
-    protected abstract TranslateTakeWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateThenBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | undefined;
-    protected abstract TranslateUnion(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression | undefined;
-    protected abstract TranslateWhere(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected VisitMember(memberExpression: MemberExpression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface QueryableMethodTranslatingExpressionVisitor$instance extends QueryableMethodTranslatingExpressionVisitor$protected, ExpressionVisitor {
+export interface QueryableMethodTranslatingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly Dependencies: QueryableMethodTranslatingExpressionVisitorDependencies;
+    readonly QueryCompilationContext: QueryCompilationContext;
     get TranslationErrorDetails(): string | undefined;
-    set TranslationErrorDetails(value: string);
+    set TranslationErrorDetails(value: string | undefined);
+    AddTranslationErrorDetails(details: string): void;
+    CreateShapedQueryExpression(entityType: IEntityType): ShapedQueryExpression | undefined;
+    CreateSubqueryVisitor(): QueryableMethodTranslatingExpressionVisitor;
+    MarkShaperNullable(shaperExpression: Expression): Expression;
     Translate(expression: Expression): Expression;
+    TranslateAll(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateAny(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateAverage(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateCast(source: ShapedQueryExpression, castType: Type): ShapedQueryExpression | undefined;
+    TranslateConcat(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression | undefined;
+    TranslateContains(source: ShapedQueryExpression, item: Expression): ShapedQueryExpression | undefined;
+    TranslateCount(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateDefaultIfEmpty(source: ShapedQueryExpression, defaultValue: Expression): ShapedQueryExpression | undefined;
+    TranslateDistinct(source: ShapedQueryExpression): ShapedQueryExpression | undefined;
+    TranslateElementAtOrDefault(source: ShapedQueryExpression, index: Expression, returnDefault: boolean): ShapedQueryExpression | undefined;
+    TranslateExcept(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression | undefined;
+    TranslateExecuteDelete(source: ShapedQueryExpression): Expression | undefined;
+    TranslateExecuteUpdate(source: ShapedQueryExpression, setters: IReadOnlyList<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>): Expression | undefined;
+    TranslateFirstOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
+    TranslateGroupBy(source: ShapedQueryExpression, keySelector: LambdaExpression, elementSelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateGroupJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateInlineQueryRoot(inlineQueryRootExpression: InlineQueryRootExpression): ShapedQueryExpression | undefined;
+    TranslateIntersect(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression | undefined;
+    TranslateJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateLastOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
+    TranslateLeftJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateLongCount(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateMax(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateMemberAccess(source: Expression, member: MemberIdentity): ShapedQueryExpression | undefined;
+    TranslateMin(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateOfType(source: ShapedQueryExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateOrderBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | undefined;
+    TranslateParameterQueryRoot(parameterQueryRootExpression: ParameterQueryRootExpression): ShapedQueryExpression | undefined;
+    TranslateReverse(source: ShapedQueryExpression): ShapedQueryExpression | undefined;
+    TranslateRightJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateSelect(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression;
+    TranslateSelectMany(source: ShapedQueryExpression, collectionSelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateSelectMany(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateSingleOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
+    TranslateSkip(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | undefined;
+    TranslateSkipWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
     TranslateSubquery(expression: Expression): ShapedQueryExpression | undefined;
+    TranslateSum(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateTake(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | undefined;
+    TranslateTakeWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateThenBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | undefined;
+    TranslateUnion(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression | undefined;
+    TranslateWhere(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitMember(memberExpression: MemberExpression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
-export const QueryableMethodTranslatingExpressionVisitor: {
-    new(dependencies: QueryableMethodTranslatingExpressionVisitorDependencies, queryCompilationContext: QueryCompilationContext, subquery: boolean): QueryableMethodTranslatingExpressionVisitor;
+export const QueryableMethodTranslatingExpressionVisitor: (abstract new(dependencies: QueryableMethodTranslatingExpressionVisitorDependencies, queryCompilationContext: QueryCompilationContext, subquery: boolean) => QueryableMethodTranslatingExpressionVisitor) & {
 };
 
 
@@ -1152,17 +1077,13 @@ export const QueryableMethodTranslatingExpressionVisitorDependencies: {
 
 export type QueryableMethodTranslatingExpressionVisitorDependencies = QueryableMethodTranslatingExpressionVisitorDependencies$instance;
 
-export abstract class QueryCompilationContext$protected {
-    protected readonly Dependencies: QueryCompilationContextDependencies;
-}
-
-
-export interface QueryCompilationContext$instance extends QueryCompilationContext$protected {
+export interface QueryCompilationContext$instance {
     readonly ContextOptions: IDbContextOptions;
     readonly ContextType: Type;
+    readonly Dependencies: QueryCompilationContextDependencies;
     IgnoreAutoIncludes: boolean;
     get IgnoredQueryFilters(): HashSet<System_Internal.String> | undefined;
-    set IgnoredQueryFilters(value: HashSet<System_Internal.String>);
+    set IgnoredQueryFilters(value: HashSet<System_Internal.String> | undefined);
     IgnoreQueryFilters: boolean;
     readonly IsAsync: boolean;
     readonly IsBuffering: boolean;
@@ -1219,16 +1140,12 @@ export const QueryCompilationContextDependencies: {
 
 export type QueryCompilationContextDependencies = QueryCompilationContextDependencies$instance;
 
-export abstract class QueryContext$protected {
-    protected readonly Dependencies: QueryContextDependencies;
-}
-
-
-export interface QueryContext$instance extends QueryContext$protected {
+export interface QueryContext$instance {
     CancellationToken: CancellationToken;
     readonly CommandLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Command> | IRelationalCommandDiagnosticsLogger;
     readonly ConcurrencyDetector: IConcurrencyDetector;
     readonly Context: DbContext;
+    readonly Dependencies: QueryContextDependencies;
     readonly ExceptionDetector: IExceptionDetector;
     readonly ExecutionStrategy: IExecutionStrategy;
     readonly Parameters: Dictionary<System_Internal.String, unknown | undefined>;
@@ -1240,8 +1157,7 @@ export interface QueryContext$instance extends QueryContext$protected {
 }
 
 
-export const QueryContext: {
-    new(dependencies: QueryContextDependencies): QueryContext;
+export const QueryContext: (abstract new(dependencies: QueryContextDependencies) => QueryContext) & {
 };
 
 
@@ -1270,12 +1186,7 @@ export const QueryContextDependencies: {
 
 export type QueryContextDependencies = QueryContextDependencies$instance;
 
-export abstract class QueryParameterExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface QueryParameterExpression$instance extends QueryParameterExpression$protected, Expression {
+export interface QueryParameterExpression$instance extends Expression {
     readonly IsNonNullableReferenceType: boolean;
     readonly Name: string;
     readonly NodeType: ExpressionType;
@@ -1284,6 +1195,7 @@ export interface QueryParameterExpression$instance extends QueryParameterExpress
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     Print(expressionPrinter: ExpressionPrinter): void;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -1303,13 +1215,7 @@ export interface QueryParameterExpression$instance extends IPrintableExpression$
 export type QueryParameterExpression = QueryParameterExpression$instance & __QueryParameterExpression$views;
 
 
-export abstract class QueryRootExpression$protected {
-    protected abstract Print(expressionPrinter: ExpressionPrinter): void;
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface QueryRootExpression$instance extends QueryRootExpression$protected, Expression {
+export interface QueryRootExpression$instance extends Expression {
     readonly CanReduce: boolean;
     readonly ElementType: Type;
     readonly NodeType: ExpressionType;
@@ -1318,12 +1224,12 @@ export interface QueryRootExpression$instance extends QueryRootExpression$protec
     DetachQueryProvider(): Expression;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
+    Print(expressionPrinter: ExpressionPrinter): void;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
-export const QueryRootExpression: {
-    new(asyncQueryProvider: IAsyncQueryProvider, elementType: Type): QueryRootExpression;
-    new(elementType: Type): QueryRootExpression;
+export const QueryRootExpression: (abstract new(asyncQueryProvider: IAsyncQueryProvider, elementType: Type) => QueryRootExpression) & (abstract new(elementType: Type) => QueryRootExpression) & {
 };
 
 
@@ -1336,14 +1242,10 @@ export interface QueryRootExpression$instance extends IPrintableExpression$insta
 export type QueryRootExpression = QueryRootExpression$instance & __QueryRootExpression$views;
 
 
-export abstract class QueryRootProcessor$protected {
-    protected ShouldConvertToInlineQueryRoot(expression: Expression): boolean;
-    protected ShouldConvertToParameterQueryRoot(queryParameterExpression: QueryParameterExpression): boolean;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface QueryRootProcessor$instance extends QueryRootProcessor$protected, ExpressionVisitor {
+export interface QueryRootProcessor$instance extends ExpressionVisitor {
+    ShouldConvertToInlineQueryRoot(expression: Expression): boolean;
+    ShouldConvertToParameterQueryRoot(queryParameterExpression: QueryParameterExpression): boolean;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
@@ -1354,73 +1256,69 @@ export const QueryRootProcessor: {
 
 export type QueryRootProcessor = QueryRootProcessor$instance;
 
-export abstract class QuerySqlGenerator$protected {
-    protected readonly AliasSeparator: string;
-    protected readonly Dependencies: QuerySqlGeneratorDependencies;
-    protected readonly Sql: IRelationalCommandBuilder;
-    protected CheckComposableSql(sql: string): void;
-    protected CheckComposableSqlTrimmed(sql: ReadOnlySpan<System_Internal.Char>): void;
-    protected GenerateEmptyProjection(selectExpression: SelectExpression): void;
-    protected GenerateExists(existsExpression: ExistsExpression, negated: boolean): void;
-    protected GenerateFrom(selectExpression: SelectExpression): void;
-    protected GenerateIn(inExpression: InExpression, negated: boolean): void;
-    protected GenerateLike(likeExpression: LikeExpression, negated: boolean): void;
-    protected GenerateLimitOffset(selectExpression: SelectExpression): void;
-    protected GenerateOrderings(selectExpression: SelectExpression): void;
-    protected GenerateProjection(selectExpression: SelectExpression): void;
-    protected GeneratePseudoFromClause(): void;
-    protected GenerateRootCommand(queryExpression: Expression): void;
-    protected GenerateSetOperation(setOperation: SetOperationBase): void;
-    protected GenerateSetOperationOperand(setOperation: SetOperationBase, operand: SelectExpression): void;
-    protected GenerateTagsHeaderComment(selectExpression: SelectExpression): void;
-    protected GenerateTagsHeaderComment(tags: ISet<System_Internal.String>): void;
-    protected GenerateTop(selectExpression: SelectExpression): void;
-    protected GenerateValues(valuesExpression: ValuesExpression): void;
-    protected GetOperator(binaryExpression: SqlBinaryExpression): string;
-    protected RequiresParentheses(outerExpression: SqlExpression, innerExpression: SqlExpression): boolean;
-    protected TryGenerateWithoutWrappingSelect(selectExpression: SelectExpression): boolean;
-    protected TryGetOperatorInfo(expression: SqlExpression, precedence: int, isAssociative: boolean): boolean;
-    protected VisitAtTimeZone(atTimeZoneExpression: AtTimeZoneExpression): Expression;
-    protected VisitCase(caseExpression: CaseExpression): Expression;
-    protected VisitCollate(collateExpression: CollateExpression): Expression;
-    protected VisitColumn(columnExpression: ColumnExpression): Expression;
-    protected VisitCrossApply(crossApplyExpression: CrossApplyExpression): Expression;
-    protected VisitCrossJoin(crossJoinExpression: CrossJoinExpression): Expression;
-    protected VisitDelete(deleteExpression: DeleteExpression): Expression;
-    protected VisitDistinct(distinctExpression: DistinctExpression): Expression;
-    protected VisitExcept(exceptExpression: ExceptExpression): Expression;
-    protected VisitExists(existsExpression: ExistsExpression): Expression;
-    protected VisitFromSql(fromSqlExpression: FromSqlExpression): Expression;
-    protected VisitIn(inExpression: InExpression): Expression;
-    protected VisitInnerJoin(innerJoinExpression: InnerJoinExpression): Expression;
-    protected VisitIntersect(intersectExpression: IntersectExpression): Expression;
-    protected VisitJsonScalar(jsonScalarExpression: JsonScalarExpression): Expression;
-    protected VisitLeftJoin(leftJoinExpression: LeftJoinExpression): Expression;
-    protected VisitLike(likeExpression: LikeExpression): Expression;
-    protected VisitOrdering(orderingExpression: OrderingExpression): Expression;
-    protected VisitOuterApply(outerApplyExpression: OuterApplyExpression): Expression;
-    protected VisitProjection(projectionExpression: ProjectionExpression): Expression;
-    protected VisitRightJoin(rightJoinExpression: RightJoinExpression): Expression;
-    protected VisitRowNumber(rowNumberExpression: RowNumberExpression): Expression;
-    protected VisitRowValue(rowValueExpression: RowValueExpression): Expression;
-    protected VisitScalarSubquery(scalarSubqueryExpression: ScalarSubqueryExpression): Expression;
-    protected VisitSelect(selectExpression: SelectExpression): Expression;
-    protected VisitSqlBinary(sqlBinaryExpression: SqlBinaryExpression): Expression;
-    protected VisitSqlConstant(sqlConstantExpression: SqlConstantExpression): Expression;
-    protected VisitSqlFragment(sqlFragmentExpression: SqlFragmentExpression): Expression;
-    protected VisitSqlFunction(sqlFunctionExpression: SqlFunctionExpression): Expression;
-    protected VisitSqlParameter(sqlParameterExpression: SqlParameterExpression): Expression;
-    protected VisitSqlUnary(sqlUnaryExpression: SqlUnaryExpression): Expression;
-    protected VisitTable(tableExpression: TableExpression): Expression;
-    protected VisitTableValuedFunction(tableValuedFunctionExpression: TableValuedFunctionExpression): Expression;
-    protected VisitUnion(unionExpression: UnionExpression): Expression;
-    protected VisitUpdate(updateExpression: UpdateExpression): Expression;
-    protected VisitValues(valuesExpression: ValuesExpression): Expression;
-}
-
-
-export interface QuerySqlGenerator$instance extends QuerySqlGenerator$protected, SqlExpressionVisitor {
+export interface QuerySqlGenerator$instance extends SqlExpressionVisitor {
+    readonly AliasSeparator: string;
+    readonly Dependencies: QuerySqlGeneratorDependencies;
+    readonly Sql: IRelationalCommandBuilder;
+    CheckComposableSql(sql: string): void;
+    CheckComposableSqlTrimmed(sql: ReadOnlySpan<System_Internal.Char>): void;
+    GenerateEmptyProjection(selectExpression: SelectExpression): void;
+    GenerateExists(existsExpression: ExistsExpression, negated: boolean): void;
+    GenerateFrom(selectExpression: SelectExpression): void;
+    GenerateIn(inExpression: InExpression, negated: boolean): void;
+    GenerateLike(likeExpression: LikeExpression, negated: boolean): void;
+    GenerateLimitOffset(selectExpression: SelectExpression): void;
+    GenerateOrderings(selectExpression: SelectExpression): void;
+    GenerateProjection(selectExpression: SelectExpression): void;
+    GeneratePseudoFromClause(): void;
+    GenerateRootCommand(queryExpression: Expression): void;
+    GenerateSetOperation(setOperation: SetOperationBase): void;
+    GenerateSetOperationOperand(setOperation: SetOperationBase, operand: SelectExpression): void;
+    GenerateTagsHeaderComment(selectExpression: SelectExpression): void;
+    GenerateTagsHeaderComment(tags: ISet<System_Internal.String>): void;
+    GenerateTop(selectExpression: SelectExpression): void;
+    GenerateValues(valuesExpression: ValuesExpression): void;
     GetCommand(queryExpression: Expression): IRelationalCommand;
+    GetOperator(binaryExpression: SqlBinaryExpression): string;
+    RequiresParentheses(outerExpression: SqlExpression, innerExpression: SqlExpression): boolean;
+    TryGenerateWithoutWrappingSelect(selectExpression: SelectExpression): boolean;
+    TryGetOperatorInfo(expression: SqlExpression, precedence: int, isAssociative: boolean): boolean;
+    VisitAtTimeZone(atTimeZoneExpression: AtTimeZoneExpression): Expression;
+    VisitCase(caseExpression: CaseExpression): Expression;
+    VisitCollate(collateExpression: CollateExpression): Expression;
+    VisitColumn(columnExpression: ColumnExpression): Expression;
+    VisitCrossApply(crossApplyExpression: CrossApplyExpression): Expression;
+    VisitCrossJoin(crossJoinExpression: CrossJoinExpression): Expression;
+    VisitDelete(deleteExpression: DeleteExpression): Expression;
+    VisitDistinct(distinctExpression: DistinctExpression): Expression;
+    VisitExcept(exceptExpression: ExceptExpression): Expression;
+    VisitExists(existsExpression: ExistsExpression): Expression;
+    VisitFromSql(fromSqlExpression: FromSqlExpression): Expression;
+    VisitIn(inExpression: InExpression): Expression;
+    VisitInnerJoin(innerJoinExpression: InnerJoinExpression): Expression;
+    VisitIntersect(intersectExpression: IntersectExpression): Expression;
+    VisitJsonScalar(jsonScalarExpression: JsonScalarExpression): Expression;
+    VisitLeftJoin(leftJoinExpression: LeftJoinExpression): Expression;
+    VisitLike(likeExpression: LikeExpression): Expression;
+    VisitOrdering(orderingExpression: OrderingExpression): Expression;
+    VisitOuterApply(outerApplyExpression: OuterApplyExpression): Expression;
+    VisitProjection(projectionExpression: ProjectionExpression): Expression;
+    VisitRightJoin(rightJoinExpression: RightJoinExpression): Expression;
+    VisitRowNumber(rowNumberExpression: RowNumberExpression): Expression;
+    VisitRowValue(rowValueExpression: RowValueExpression): Expression;
+    VisitScalarSubquery(scalarSubqueryExpression: ScalarSubqueryExpression): Expression;
+    VisitSelect(selectExpression: SelectExpression): Expression;
+    VisitSqlBinary(sqlBinaryExpression: SqlBinaryExpression): Expression;
+    VisitSqlConstant(sqlConstantExpression: SqlConstantExpression): Expression;
+    VisitSqlFragment(sqlFragmentExpression: SqlFragmentExpression): Expression;
+    VisitSqlFunction(sqlFunctionExpression: SqlFunctionExpression): Expression;
+    VisitSqlParameter(sqlParameterExpression: SqlParameterExpression): Expression;
+    VisitSqlUnary(sqlUnaryExpression: SqlUnaryExpression): Expression;
+    VisitTable(tableExpression: TableExpression): Expression;
+    VisitTableValuedFunction(tableValuedFunctionExpression: TableValuedFunctionExpression): Expression;
+    VisitUnion(unionExpression: UnionExpression): Expression;
+    VisitUpdate(updateExpression: UpdateExpression): Expression;
+    VisitValues(valuesExpression: ValuesExpression): Expression;
 }
 
 
@@ -1449,13 +1347,9 @@ export const QuerySqlGeneratorDependencies: {
 
 export type QuerySqlGeneratorDependencies = QuerySqlGeneratorDependencies$instance;
 
-export abstract class QueryTranslationPostprocessor$protected {
-    protected readonly Dependencies: QueryTranslationPostprocessorDependencies;
-    protected readonly QueryCompilationContext: QueryCompilationContext;
-}
-
-
-export interface QueryTranslationPostprocessor$instance extends QueryTranslationPostprocessor$protected {
+export interface QueryTranslationPostprocessor$instance {
+    readonly Dependencies: QueryTranslationPostprocessorDependencies;
+    readonly QueryCompilationContext: QueryCompilationContext;
     Process(query: Expression): Expression;
 }
 
@@ -1483,17 +1377,13 @@ export const QueryTranslationPostprocessorDependencies: {
 
 export type QueryTranslationPostprocessorDependencies = QueryTranslationPostprocessorDependencies$instance;
 
-export abstract class QueryTranslationPreprocessor$protected {
-    protected readonly Dependencies: QueryTranslationPreprocessorDependencies;
-    protected readonly IsEfConstantSupported: boolean;
-    protected readonly QueryCompilationContext: QueryCompilationContext;
-    protected ProcessQueryRoots(expression: Expression): Expression;
-}
-
-
-export interface QueryTranslationPreprocessor$instance extends QueryTranslationPreprocessor$protected {
+export interface QueryTranslationPreprocessor$instance {
+    readonly Dependencies: QueryTranslationPreprocessorDependencies;
+    readonly IsEfConstantSupported: boolean;
+    readonly QueryCompilationContext: QueryCompilationContext;
     NormalizeQueryableMethod(expression: Expression): Expression;
     Process(query: Expression): Expression;
+    ProcessQueryRoots(expression: Expression): Expression;
 }
 
 
@@ -1523,13 +1413,9 @@ export const QueryTranslationPreprocessorDependencies: {
 
 export type QueryTranslationPreprocessorDependencies = QueryTranslationPreprocessorDependencies$instance;
 
-export abstract class RelationalAggregateMethodCallTranslatorProvider$protected {
-    protected readonly Dependencies: RelationalAggregateMethodCallTranslatorProviderDependencies;
-    protected AddTranslators(translators: IEnumerable__System_Collections_Generic<IAggregateMethodCallTranslator>): void;
-}
-
-
-export interface RelationalAggregateMethodCallTranslatorProvider$instance extends RelationalAggregateMethodCallTranslatorProvider$protected {
+export interface RelationalAggregateMethodCallTranslatorProvider$instance {
+    readonly Dependencies: RelationalAggregateMethodCallTranslatorProviderDependencies;
+    AddTranslators(translators: IEnumerable__System_Collections_Generic<IAggregateMethodCallTranslator>): void;
     Translate(model: IModel, method: MethodInfo, source: EnumerableExpression, arguments: IReadOnlyList<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
 }
 
@@ -1567,15 +1453,10 @@ export const RelationalAggregateMethodCallTranslatorProviderDependencies: {
 
 export type RelationalAggregateMethodCallTranslatorProviderDependencies = RelationalAggregateMethodCallTranslatorProviderDependencies$instance;
 
-export abstract class RelationalCollectionShaperExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface RelationalCollectionShaperExpression$instance extends RelationalCollectionShaperExpression$protected, Expression {
+export interface RelationalCollectionShaperExpression$instance extends Expression {
     readonly ElementType: Type;
     readonly InnerShaper: Expression;
-    readonly Navigation: INavigationBase;
+    readonly Navigation: INavigationBase | undefined;
     readonly NodeType: ExpressionType;
     readonly OuterIdentifier: Expression;
     readonly OuterIdentifierValueComparers: IReadOnlyList<ValueComparer>;
@@ -1585,6 +1466,7 @@ export interface RelationalCollectionShaperExpression$instance extends Relationa
     readonly SelfIdentifierValueComparers: IReadOnlyList<ValueComparer>;
     readonly Type: Type;
     Update(parentIdentifier: Expression, outerIdentifier: Expression, selfIdentifier: Expression, innerShaper: Expression): RelationalCollectionShaperExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -1602,12 +1484,8 @@ export interface RelationalCollectionShaperExpression$instance extends IPrintabl
 export type RelationalCollectionShaperExpression = RelationalCollectionShaperExpression$instance & __RelationalCollectionShaperExpression$views;
 
 
-export abstract class RelationalCompiledQueryCacheKeyGenerator$protected {
-    protected readonly RelationalDependencies: RelationalCompiledQueryCacheKeyGeneratorDependencies;
-}
-
-
-export interface RelationalCompiledQueryCacheKeyGenerator$instance extends RelationalCompiledQueryCacheKeyGenerator$protected, CompiledQueryCacheKeyGenerator$instance {
+export interface RelationalCompiledQueryCacheKeyGenerator$instance extends CompiledQueryCacheKeyGenerator$instance {
+    readonly RelationalDependencies: RelationalCompiledQueryCacheKeyGeneratorDependencies;
     GenerateCacheKey(query: Expression, async: boolean): unknown;
 }
 
@@ -1641,12 +1519,8 @@ export const RelationalCompiledQueryCacheKeyGeneratorDependencies: {
 
 export type RelationalCompiledQueryCacheKeyGeneratorDependencies = RelationalCompiledQueryCacheKeyGeneratorDependencies$instance;
 
-export abstract class RelationalEvaluatableExpressionFilter$protected {
-    protected readonly RelationalDependencies: RelationalEvaluatableExpressionFilterDependencies;
-}
-
-
-export interface RelationalEvaluatableExpressionFilter$instance extends RelationalEvaluatableExpressionFilter$protected, EvaluatableExpressionFilter$instance {
+export interface RelationalEvaluatableExpressionFilter$instance extends EvaluatableExpressionFilter$instance {
+    readonly RelationalDependencies: RelationalEvaluatableExpressionFilterDependencies;
     IsEvaluatableExpression(expression: Expression, model: IModel): boolean;
 }
 
@@ -1679,12 +1553,7 @@ export const RelationalEvaluatableExpressionFilterDependencies: {
 
 export type RelationalEvaluatableExpressionFilterDependencies = RelationalEvaluatableExpressionFilterDependencies$instance;
 
-export abstract class RelationalGroupByResultExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface RelationalGroupByResultExpression$instance extends RelationalGroupByResultExpression$protected, Expression {
+export interface RelationalGroupByResultExpression$instance extends Expression {
     readonly ElementShaper: Expression;
     readonly KeyIdentifier: Expression;
     readonly KeyIdentifierValueComparers: IReadOnlyList<ValueComparer>;
@@ -1692,6 +1561,7 @@ export interface RelationalGroupByResultExpression$instance extends RelationalGr
     readonly NodeType: ExpressionType;
     readonly Type: Type;
     Update(keyIdentifier: Expression, keyShaper: Expression, elementShaper: Expression): RelationalGroupByResultExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -1709,14 +1579,10 @@ export interface RelationalGroupByResultExpression$instance extends IPrintableEx
 export type RelationalGroupByResultExpression = RelationalGroupByResultExpression$instance & __RelationalGroupByResultExpression$views;
 
 
-export abstract class RelationalGroupByShaperExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface RelationalGroupByShaperExpression$instance extends RelationalGroupByShaperExpression$protected, GroupByShaperExpression$instance {
+export interface RelationalGroupByShaperExpression$instance extends GroupByShaperExpression$instance {
     readonly ElementSelector: Expression;
     Print(expressionPrinter: ExpressionPrinter): void;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -1767,12 +1633,8 @@ export interface __RelationalLiftableConstantFactory$views {
 export type RelationalLiftableConstantFactory = RelationalLiftableConstantFactory$instance & __RelationalLiftableConstantFactory$views;
 
 
-export abstract class RelationalLiftableConstantProcessor$protected {
-    protected InlineConstant(liftableConstant: LiftableConstantExpression): ConstantExpression;
-}
-
-
-export interface RelationalLiftableConstantProcessor$instance extends RelationalLiftableConstantProcessor$protected, LiftableConstantProcessor$instance {
+export interface RelationalLiftableConstantProcessor$instance extends LiftableConstantProcessor$instance {
+    InlineConstant(liftableConstant: LiftableConstantExpression): ConstantExpression;
     InlineConstants(expression: Expression, supportsPrecompiledQuery: boolean): Expression;
     LiftConstants(expression: Expression, contextParameter: ParameterExpression, variableNames: HashSet<System_Internal.String>): Expression;
 }
@@ -1790,14 +1652,9 @@ export interface __RelationalLiftableConstantProcessor$views {
 export type RelationalLiftableConstantProcessor = RelationalLiftableConstantProcessor$instance & __RelationalLiftableConstantProcessor$views;
 
 
-export abstract class RelationalMaterializerLiftableConstantContext$protected {
-    protected readonly EqualityContract: Type;
-    protected PrintMembers(builder: StringBuilder): boolean;
-}
-
-
-export interface RelationalMaterializerLiftableConstantContext$instance extends RelationalMaterializerLiftableConstantContext$protected, MaterializerLiftableConstantContext {
+export interface RelationalMaterializerLiftableConstantContext$instance extends MaterializerLiftableConstantContext {
     CommandBuilderDependencies: RelationalCommandBuilderDependencies;
+    readonly EqualityContract: Type;
     RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies;
     _Clone_$(): RelationalMaterializerLiftableConstantContext;
     _Clone_$(): MaterializerLiftableConstantContext;
@@ -1807,25 +1664,21 @@ export interface RelationalMaterializerLiftableConstantContext$instance extends 
     Equals(other: MaterializerLiftableConstantContext): boolean;
     Equals(other: RelationalMaterializerLiftableConstantContext): boolean;
     GetHashCode(): int;
+    PrintMembers(builder: StringBuilder): boolean;
     ToString(): string;
 }
 
 
 export const RelationalMaterializerLiftableConstantContext: {
     new(Dependencies: ShapedQueryCompilingExpressionVisitorDependencies, RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies, CommandBuilderDependencies: RelationalCommandBuilderDependencies): RelationalMaterializerLiftableConstantContext;
-    new(original: RelationalMaterializerLiftableConstantContext): RelationalMaterializerLiftableConstantContext;
 };
 
 
 export type RelationalMaterializerLiftableConstantContext = RelationalMaterializerLiftableConstantContext$instance;
 
-export abstract class RelationalMemberTranslatorProvider$protected {
-    protected readonly Dependencies: RelationalMemberTranslatorProviderDependencies;
-    protected AddTranslators(translators: IEnumerable__System_Collections_Generic<IMemberTranslator>): void;
-}
-
-
-export interface RelationalMemberTranslatorProvider$instance extends RelationalMemberTranslatorProvider$protected {
+export interface RelationalMemberTranslatorProvider$instance {
+    readonly Dependencies: RelationalMemberTranslatorProviderDependencies;
+    AddTranslators(translators: IEnumerable__System_Collections_Generic<IMemberTranslator>): void;
     Translate(instance: SqlExpression, member: MemberInfo, returnType: Type, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
 }
 
@@ -1862,13 +1715,9 @@ export const RelationalMemberTranslatorProviderDependencies: {
 
 export type RelationalMemberTranslatorProviderDependencies = RelationalMemberTranslatorProviderDependencies$instance;
 
-export abstract class RelationalMethodCallTranslatorProvider$protected {
-    protected readonly Dependencies: RelationalMethodCallTranslatorProviderDependencies;
-    protected AddTranslators(translators: IEnumerable__System_Collections_Generic<IMethodCallTranslator>): void;
-}
-
-
-export interface RelationalMethodCallTranslatorProvider$instance extends RelationalMethodCallTranslatorProvider$protected {
+export interface RelationalMethodCallTranslatorProvider$instance {
+    readonly Dependencies: RelationalMethodCallTranslatorProviderDependencies;
+    AddTranslators(translators: IEnumerable__System_Collections_Generic<IMethodCallTranslator>): void;
     Translate(model: IModel, instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
 }
 
@@ -1906,18 +1755,14 @@ export const RelationalMethodCallTranslatorProviderDependencies: {
 
 export type RelationalMethodCallTranslatorProviderDependencies = RelationalMethodCallTranslatorProviderDependencies$instance;
 
-export abstract class RelationalParameterBasedSqlProcessor$protected {
-    protected readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
-    protected readonly Parameters: RelationalParameterBasedSqlProcessorParameters;
-    protected ExpandFromSqlParameter(queryExpression: Expression, Decorator: ParametersCacheDecorator): Expression;
-    protected ProcessSqlNullability(queryExpression: Expression, Decorator: ParametersCacheDecorator): Expression;
-}
-
-
-export interface RelationalParameterBasedSqlProcessor$instance extends RelationalParameterBasedSqlProcessor$protected {
+export interface RelationalParameterBasedSqlProcessor$instance {
+    readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
+    readonly Parameters: RelationalParameterBasedSqlProcessorParameters;
+    ExpandFromSqlParameter(queryExpression: Expression, Decorator: ParametersCacheDecorator): Expression;
     Optimize(queryExpression: Expression, parametersValues: IReadOnlyDictionary<System_Internal.String, unknown>, canCache: boolean): Expression;
     Process(queryExpression: Expression, parameters: Dictionary<System_Internal.String, unknown>, canCache: boolean): Expression;
     Process(queryExpression: Expression, parametersDecorator: ParametersCacheDecorator): Expression;
+    ProcessSqlNullability(queryExpression: Expression, Decorator: ParametersCacheDecorator): Expression;
 }
 
 
@@ -1966,80 +1811,75 @@ export const RelationalParameterBasedSqlProcessorParameters: {
 
 export type RelationalParameterBasedSqlProcessorParameters = RelationalParameterBasedSqlProcessorParameters$instance;
 
-export abstract class RelationalQueryableMethodTranslatingExpressionVisitor$protected {
-    protected readonly RelationalDependencies: RelationalQueryableMethodTranslatingExpressionVisitorDependencies;
-    protected CreateSelect(entityType: IEntityType): SelectExpression;
-    protected CreateSelect(jsonQueryExpression: JsonQueryExpression, tableExpressionBase: TableExpressionBase, identifierColumnName: string, identifierColumnType: Type, identifierColumnTypeMapping: RelationalTypeMapping): SelectExpression;
-    protected CreateShapedQueryExpression(entityType: IEntityType): ShapedQueryExpression;
-    protected CreateSubqueryVisitor(): QueryableMethodTranslatingExpressionVisitor;
-    protected GenerateJsonPartialUpdateSetter(target: Expression, value: SqlExpression, existingSetterValue: SqlExpression): SqlExpression | undefined;
-    protected IsNaturallyOrdered(selectExpression: SelectExpression): boolean;
-    protected IsOrdered(selectExpression: SelectExpression): boolean;
-    protected IsValidSelectExpressionForExecuteDelete(selectExpression: SelectExpression): boolean;
-    protected IsValidSelectExpressionForExecuteDelete(selectExpression: SelectExpression, shaper: StructuralTypeShaperExpression, tableExpression: TableExpression): boolean;
-    protected IsValidSelectExpressionForExecuteUpdate(selectExpression: SelectExpression, targetTable: TableExpressionBase, tableExpression: TableExpression): boolean;
-    protected TransformJsonQueryToTable(jsonQueryExpression: JsonQueryExpression): ShapedQueryExpression | undefined;
-    protected TranslateAll(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateAny(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateAverage(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected TranslateCast(source: ShapedQueryExpression, resultType: Type): ShapedQueryExpression;
-    protected TranslateConcat(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
-    protected TranslateContains(source: ShapedQueryExpression, item: Expression): ShapedQueryExpression | undefined;
-    protected TranslateCount(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateDefaultIfEmpty(source: ShapedQueryExpression, defaultValue: Expression): ShapedQueryExpression | undefined;
-    protected TranslateDistinct(source: ShapedQueryExpression): ShapedQueryExpression;
-    protected TranslateElementAtOrDefault(source: ShapedQueryExpression, index: Expression, returnDefault: boolean): ShapedQueryExpression | undefined;
-    protected TranslateExcept(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
-    protected TranslateExecuteDelete2(source: ShapedQueryExpression): DeleteExpression | undefined;
-    protected TranslateExecuteDelete(source: ShapedQueryExpression): Expression | undefined;
-    protected TranslateExecuteUpdate2(source: ShapedQueryExpression, setters: IReadOnlyList<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>): UpdateExpression | undefined;
-    protected TranslateExecuteUpdate(source: ShapedQueryExpression, setters: IReadOnlyList<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>): Expression | undefined;
-    protected TranslateExpression(expression: Expression, applyDefaultTypeMapping?: boolean): SqlExpression | undefined;
-    protected TranslateFirstOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
-    protected TranslateGroupBy(source: ShapedQueryExpression, keySelector: LambdaExpression, elementSelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateGroupJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateInlineQueryRoot(inlineQueryRootExpression: InlineQueryRootExpression): ShapedQueryExpression | undefined;
-    protected TranslateIntersect(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
-    protected TranslateJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateLambdaExpression(shapedQueryExpression: ShapedQueryExpression, lambdaExpression: LambdaExpression): SqlExpression | undefined;
-    protected TranslateLastOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
-    protected TranslateLeftJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateLongCount(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateMax(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected TranslateMemberAccess(source: Expression, member: MemberIdentity): ShapedQueryExpression | undefined;
-    protected TranslateMin(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected TranslateOfType(source: ShapedQueryExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected TranslateOrderBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | undefined;
-    protected TranslateParameterQueryRoot(parameterQueryRootExpression: ParameterQueryRootExpression): ShapedQueryExpression | undefined;
-    protected TranslatePrimitiveCollection(sqlExpression: SqlExpression, property: IProperty, tableAlias: string): ShapedQueryExpression | undefined;
-    protected TranslateReverse(source: ShapedQueryExpression): ShapedQueryExpression | undefined;
-    protected TranslateRightJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateSelect(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression;
-    protected TranslateSelectMany(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateSelectMany(source: ShapedQueryExpression, collectionSelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateSingleOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
-    protected TranslateSkip(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | undefined;
-    protected TranslateSkipWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateSum(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
-    protected TranslateTake(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | undefined;
-    protected TranslateTakeWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TranslateThenBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | undefined;
-    protected TranslateUnion(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
-    protected TranslateWhere(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
-    protected TrySerializeScalarToJson(target: JsonScalarExpression, value: SqlExpression, jsonValue: SqlExpression): boolean;
-    protected TryTranslateSetters(source: ShapedQueryExpression, setters: IReadOnlyList<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>, columnSetters: IReadOnlyList<ColumnValueSetter>, targetTable: TableExpressionBase): boolean;
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface RelationalQueryableMethodTranslatingExpressionVisitor$instance extends RelationalQueryableMethodTranslatingExpressionVisitor$protected, QueryableMethodTranslatingExpressionVisitor {
+export interface RelationalQueryableMethodTranslatingExpressionVisitor$instance extends QueryableMethodTranslatingExpressionVisitor {
+    readonly RelationalDependencies: RelationalQueryableMethodTranslatingExpressionVisitorDependencies;
+    CreateSelect(entityType: IEntityType): SelectExpression;
+    CreateSelect(jsonQueryExpression: JsonQueryExpression, tableExpressionBase: TableExpressionBase, identifierColumnName: string, identifierColumnType: Type, identifierColumnTypeMapping: RelationalTypeMapping): SelectExpression;
+    CreateShapedQueryExpression(entityType: IEntityType): ShapedQueryExpression;
+    CreateSubqueryVisitor(): QueryableMethodTranslatingExpressionVisitor;
+    GenerateJsonPartialUpdateSetter(target: Expression, value: SqlExpression, existingSetterValue: SqlExpression): SqlExpression | undefined;
+    IsNaturallyOrdered(selectExpression: SelectExpression): boolean;
+    IsOrdered(selectExpression: SelectExpression): boolean;
+    IsValidSelectExpressionForExecuteDelete(selectExpression: SelectExpression): boolean;
+    IsValidSelectExpressionForExecuteDelete(selectExpression: SelectExpression, shaper: StructuralTypeShaperExpression, tableExpression: TableExpression): boolean;
+    IsValidSelectExpressionForExecuteUpdate(selectExpression: SelectExpression, targetTable: TableExpressionBase, tableExpression: TableExpression): boolean;
+    TransformJsonQueryToTable(jsonQueryExpression: JsonQueryExpression): ShapedQueryExpression | undefined;
+    TranslateAll(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateAny(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateAverage(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateCast(source: ShapedQueryExpression, resultType: Type): ShapedQueryExpression;
+    TranslateConcat(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
+    TranslateContains(source: ShapedQueryExpression, item: Expression): ShapedQueryExpression | undefined;
+    TranslateCount(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateDefaultIfEmpty(source: ShapedQueryExpression, defaultValue: Expression): ShapedQueryExpression | undefined;
+    TranslateDistinct(source: ShapedQueryExpression): ShapedQueryExpression;
+    TranslateElementAtOrDefault(source: ShapedQueryExpression, index: Expression, returnDefault: boolean): ShapedQueryExpression | undefined;
+    TranslateExcept(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
+    TranslateExecuteDelete(source: ShapedQueryExpression): DeleteExpression | undefined;
+    TranslateExecuteDelete(source: ShapedQueryExpression): Expression | undefined;
+    TranslateExecuteUpdate(source: ShapedQueryExpression, setters: IReadOnlyList<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>): UpdateExpression | undefined;
+    TranslateExecuteUpdate(source: ShapedQueryExpression, setters: IReadOnlyList<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>): Expression | undefined;
+    TranslateExpression(expression: Expression, applyDefaultTypeMapping?: boolean): SqlExpression | undefined;
+    TranslateFirstOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
+    TranslateGroupBy(source: ShapedQueryExpression, keySelector: LambdaExpression, elementSelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateGroupJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateInlineQueryRoot(inlineQueryRootExpression: InlineQueryRootExpression): ShapedQueryExpression | undefined;
+    TranslateIntersect(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
+    TranslateJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateLambdaExpression(shapedQueryExpression: ShapedQueryExpression, lambdaExpression: LambdaExpression): SqlExpression | undefined;
+    TranslateLastOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
+    TranslateLeftJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateLongCount(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateMax(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateMemberAccess(source: Expression, member: MemberIdentity): ShapedQueryExpression | undefined;
+    TranslateMin(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateOfType(source: ShapedQueryExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateOrderBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | undefined;
+    TranslateParameterQueryRoot(parameterQueryRootExpression: ParameterQueryRootExpression): ShapedQueryExpression | undefined;
+    TranslatePrimitiveCollection(sqlExpression: SqlExpression, property: IProperty, tableAlias: string): ShapedQueryExpression | undefined;
+    TranslateReverse(source: ShapedQueryExpression): ShapedQueryExpression | undefined;
+    TranslateRightJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateSelect(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression;
+    TranslateSelectMany(source: ShapedQueryExpression, collectionSelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateSelectMany(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateSingleOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression, returnType: Type, returnDefault: boolean): ShapedQueryExpression | undefined;
+    TranslateSkip(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | undefined;
+    TranslateSkipWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateSum(source: ShapedQueryExpression, selector: LambdaExpression, resultType: Type): ShapedQueryExpression | undefined;
+    TranslateTake(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | undefined;
+    TranslateTakeWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TranslateThenBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | undefined;
+    TranslateUnion(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
+    TranslateWhere(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | undefined;
+    TrySerializeScalarToJson(target: JsonScalarExpression, value: SqlExpression, jsonValue: SqlExpression): boolean;
+    TryTranslateSetters(source: ShapedQueryExpression, setters: IReadOnlyList<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>, columnSetters: IReadOnlyList<ColumnValueSetter>, targetTable: TableExpressionBase): boolean;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
 export const RelationalQueryableMethodTranslatingExpressionVisitor: {
     new(dependencies: QueryableMethodTranslatingExpressionVisitorDependencies, relationalDependencies: RelationalQueryableMethodTranslatingExpressionVisitorDependencies, queryCompilationContext: RelationalQueryCompilationContext): RelationalQueryableMethodTranslatingExpressionVisitor;
-    new(parentVisitor: RelationalQueryableMethodTranslatingExpressionVisitor): RelationalQueryableMethodTranslatingExpressionVisitor;
     readonly ValuesOrderingColumnName: string;
     readonly ValuesValueColumnName: string;
 };
@@ -2067,13 +1907,9 @@ export const RelationalQueryableMethodTranslatingExpressionVisitorDependencies: 
 
 export type RelationalQueryableMethodTranslatingExpressionVisitorDependencies = RelationalQueryableMethodTranslatingExpressionVisitorDependencies$instance;
 
-export abstract class RelationalQueryCompilationContext$protected {
-    protected readonly RelationalDependencies: RelationalQueryCompilationContextDependencies;
-}
-
-
-export interface RelationalQueryCompilationContext$instance extends RelationalQueryCompilationContext$protected, QueryCompilationContext {
+export interface RelationalQueryCompilationContext$instance extends QueryCompilationContext {
     QuerySplittingBehavior: Nullable<QuerySplittingBehavior>;
+    readonly RelationalDependencies: RelationalQueryCompilationContextDependencies;
     readonly SqlAliasManager: SqlAliasManager;
 }
 
@@ -2103,14 +1939,10 @@ export const RelationalQueryCompilationContextDependencies: {
 
 export type RelationalQueryCompilationContextDependencies = RelationalQueryCompilationContextDependencies$instance;
 
-export abstract class RelationalQueryContext$protected {
-    protected readonly RelationalDependencies: RelationalQueryContextDependencies;
-}
-
-
-export interface RelationalQueryContext$instance extends RelationalQueryContext$protected, QueryContext {
+export interface RelationalQueryContext$instance extends QueryContext {
     readonly CommandLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Command> | IRelationalCommandDiagnosticsLogger;
     readonly Connection: IRelationalConnection;
+    readonly RelationalDependencies: RelationalQueryContextDependencies;
     readonly RelationalQueryStringFactory: IRelationalQueryStringFactory;
 }
 
@@ -2140,15 +1972,11 @@ export const RelationalQueryContextDependencies: {
 
 export type RelationalQueryContextDependencies = RelationalQueryContextDependencies$instance;
 
-export abstract class RelationalQueryRootProcessor$protected {
-    protected ShouldConvertToInlineQueryRoot(expression: Expression): boolean;
-    protected ShouldConvertToParameterQueryRoot(queryParameterExpression: QueryParameterExpression): boolean;
-    protected VisitExtension(node: Expression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface RelationalQueryRootProcessor$instance extends RelationalQueryRootProcessor$protected, QueryRootProcessor {
+export interface RelationalQueryRootProcessor$instance extends QueryRootProcessor {
+    ShouldConvertToInlineQueryRoot(expression: Expression): boolean;
+    ShouldConvertToParameterQueryRoot(queryParameterExpression: QueryParameterExpression): boolean;
+    VisitExtension(node: Expression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
@@ -2159,16 +1987,12 @@ export const RelationalQueryRootProcessor: {
 
 export type RelationalQueryRootProcessor = RelationalQueryRootProcessor$instance;
 
-export abstract class RelationalQueryTranslationPostprocessor$protected {
-    protected readonly RelationalDependencies: RelationalQueryTranslationPostprocessorDependencies;
-    protected readonly RelationalQueryCompilationContext: RelationalQueryCompilationContext;
-    protected ProcessTypeMappings(expression: Expression): Expression;
-    protected Prune(query: Expression): Expression;
-}
-
-
-export interface RelationalQueryTranslationPostprocessor$instance extends RelationalQueryTranslationPostprocessor$protected, QueryTranslationPostprocessor {
+export interface RelationalQueryTranslationPostprocessor$instance extends QueryTranslationPostprocessor {
+    readonly RelationalDependencies: RelationalQueryTranslationPostprocessorDependencies;
+    readonly RelationalQueryCompilationContext: RelationalQueryCompilationContext;
     Process(query: Expression): Expression;
+    ProcessTypeMappings(expression: Expression): Expression;
+    Prune(query: Expression): Expression;
 }
 
 
@@ -2197,15 +2021,11 @@ export const RelationalQueryTranslationPostprocessorDependencies: {
 
 export type RelationalQueryTranslationPostprocessorDependencies = RelationalQueryTranslationPostprocessorDependencies$instance;
 
-export abstract class RelationalQueryTranslationPreprocessor$protected {
-    protected readonly IsEfConstantSupported: boolean;
-    protected readonly RelationalDependencies: RelationalQueryTranslationPreprocessorDependencies;
-    protected ProcessQueryRoots(expression: Expression): Expression;
-}
-
-
-export interface RelationalQueryTranslationPreprocessor$instance extends RelationalQueryTranslationPreprocessor$protected, QueryTranslationPreprocessor {
+export interface RelationalQueryTranslationPreprocessor$instance extends QueryTranslationPreprocessor {
+    readonly IsEfConstantSupported: boolean;
+    readonly RelationalDependencies: RelationalQueryTranslationPreprocessorDependencies;
     NormalizeQueryableMethod(expression: Expression): Expression;
+    ProcessQueryRoots(expression: Expression): Expression;
 }
 
 
@@ -2233,17 +2053,13 @@ export const RelationalQueryTranslationPreprocessorDependencies: {
 
 export type RelationalQueryTranslationPreprocessorDependencies = RelationalQueryTranslationPreprocessorDependencies$instance;
 
-export abstract class RelationalShapedQueryCompilingExpressionVisitor$protected {
-    protected readonly MaxNullableParametersForPregeneratedSql: int;
-    protected readonly RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies;
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected VisitShapedQuery(shapedQueryExpression: ShapedQueryExpression): Expression;
-}
-
-
-export interface RelationalShapedQueryCompilingExpressionVisitor$instance extends RelationalShapedQueryCompilingExpressionVisitor$protected, ShapedQueryCompilingExpressionVisitor {
+export interface RelationalShapedQueryCompilingExpressionVisitor$instance extends ShapedQueryCompilingExpressionVisitor {
+    readonly MaxNullableParametersForPregeneratedSql: int;
+    readonly RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies;
     AddStructuralTypeInitialization(shaper: StructuralTypeShaperExpression, instanceVariable: ParameterExpression, variables: List<ParameterExpression>, expressions: List<Expression>): void;
     AddStructuralTypeInitialization(shaper: StructuralTypeShaperExpression, instanceVariable: ParameterExpression, variables: List<ParameterExpression>, expressions: List<Expression>): void;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitShapedQuery(shapedQueryExpression: ShapedQueryExpression): Expression;
 }
 
 
@@ -2256,16 +2072,12 @@ export const RelationalShapedQueryCompilingExpressionVisitor: {
 
 export type RelationalShapedQueryCompilingExpressionVisitor = RelationalShapedQueryCompilingExpressionVisitor$instance;
 
-export abstract class RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor$protected {
-    protected VisitBinary(binaryExpression: BinaryExpression): Expression;
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor$instance extends RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor$protected, ExpressionVisitor {
+export interface RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor$instance extends ExpressionVisitor {
     ProcessRelationalGroupingResult(relationalGroupByResultExpression: RelationalGroupByResultExpression, relationalCommandResolver: Expression, readerColumns: IReadOnlyList<ReaderColumn>, keySelector: LambdaExpression, keyIdentifier: LambdaExpression, relatedDataLoaders: LambdaExpression, collectionId: int): LambdaExpression;
     ProcessShaper(shaperExpression: Expression, relationalCommandResolver: Expression, readerColumns: IReadOnlyList<ReaderColumn>, relatedDataLoaders: LambdaExpression, collectionId: int): LambdaExpression;
+    VisitBinary(binaryExpression: BinaryExpression): Expression;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
@@ -2316,22 +2128,18 @@ export const RelationalShapedQueryCompilingExpressionVisitorDependencies: {
 
 export type RelationalShapedQueryCompilingExpressionVisitorDependencies = RelationalShapedQueryCompilingExpressionVisitorDependencies$instance;
 
-export abstract class RelationalSplitCollectionShaperExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface RelationalSplitCollectionShaperExpression$instance extends RelationalSplitCollectionShaperExpression$protected, Expression {
+export interface RelationalSplitCollectionShaperExpression$instance extends Expression {
     readonly ChildIdentifier: Expression;
     readonly ElementType: Type;
     readonly IdentifierValueComparers: IReadOnlyList<ValueComparer>;
     readonly InnerShaper: Expression;
-    readonly Navigation: INavigationBase;
+    readonly Navigation: INavigationBase | undefined;
     readonly NodeType: ExpressionType;
     readonly ParentIdentifier: Expression;
     readonly SelectExpression: SelectExpression;
     readonly Type: Type;
     Update(parentIdentifier: Expression, childIdentifier: Expression, selectExpression: SelectExpression, innerShaper: Expression): RelationalSplitCollectionShaperExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -2349,36 +2157,32 @@ export interface RelationalSplitCollectionShaperExpression$instance extends IPri
 export type RelationalSplitCollectionShaperExpression = RelationalSplitCollectionShaperExpression$instance & __RelationalSplitCollectionShaperExpression$views;
 
 
-export abstract class RelationalSqlTranslatingExpressionVisitor$protected {
-    protected readonly Dependencies: RelationalSqlTranslatingExpressionVisitorDependencies;
-    protected AddTranslationErrorDetails(details: string): void;
-    protected TryTranslateAggregateMethodCall(methodCallExpression: MethodCallExpression, translation: SqlExpression): boolean;
-    protected VisitBinary(binaryExpression: BinaryExpression): Expression;
-    protected VisitConditional(conditionalExpression: ConditionalExpression): Expression;
-    protected VisitConstant(constantExpression: ConstantExpression): Expression;
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected VisitInvocation(invocationExpression: InvocationExpression): Expression;
-    protected VisitLambda<T>(lambdaExpression: Expression<T>): Expression;
-    protected VisitListInit(listInitExpression: ListInitExpression): Expression;
-    protected VisitMember(memberExpression: MemberExpression): Expression;
-    protected VisitMemberInit(memberInitExpression: MemberInitExpression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    protected VisitNew(newExpression: NewExpression): Expression;
-    protected VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
-    protected VisitParameter(parameterExpression: ParameterExpression): Expression;
-    protected VisitTypeBinary(typeBinaryExpression: TypeBinaryExpression): Expression;
-    protected VisitUnary(unaryExpression: UnaryExpression): Expression;
-}
-
-
-export interface RelationalSqlTranslatingExpressionVisitor$instance extends RelationalSqlTranslatingExpressionVisitor$protected, ExpressionVisitor {
+export interface RelationalSqlTranslatingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly Dependencies: RelationalSqlTranslatingExpressionVisitorDependencies;
     get TranslationErrorDetails(): string | undefined;
-    set TranslationErrorDetails(value: string);
+    set TranslationErrorDetails(value: string | undefined);
+    AddTranslationErrorDetails(details: string): void;
     GenerateGreatest(expressions: IReadOnlyList<SqlExpression>, resultType: Type): SqlExpression | undefined;
     GenerateLeast(expressions: IReadOnlyList<SqlExpression>, resultType: Type): SqlExpression | undefined;
     Translate(expression: Expression, applyDefaultTypeMapping?: boolean): SqlExpression | undefined;
     TranslateProjection(expression: Expression, applyDefaultTypeMapping?: boolean): Expression | undefined;
     TryBindMember(source: Expression, member: MemberIdentity, expression: Expression, property: IPropertyBase): boolean;
+    TryTranslateAggregateMethodCall(methodCallExpression: MethodCallExpression, translation: SqlExpression): boolean;
+    VisitBinary(binaryExpression: BinaryExpression): Expression;
+    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
+    VisitConstant(constantExpression: ConstantExpression): Expression;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitInvocation(invocationExpression: InvocationExpression): Expression;
+    VisitLambda<T>(lambdaExpression: Expression<T>): Expression;
+    VisitListInit(listInitExpression: ListInitExpression): Expression;
+    VisitMember(memberExpression: MemberExpression): Expression;
+    VisitMemberInit(memberInitExpression: MemberInitExpression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitNew(newExpression: NewExpression): Expression;
+    VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
+    VisitParameter(parameterExpression: ParameterExpression): Expression;
+    VisitTypeBinary(typeBinaryExpression: TypeBinaryExpression): Expression;
+    VisitUnary(unaryExpression: UnaryExpression): Expression;
 }
 
 
@@ -2413,12 +2217,8 @@ export const RelationalSqlTranslatingExpressionVisitorDependencies: {
 
 export type RelationalSqlTranslatingExpressionVisitorDependencies = RelationalSqlTranslatingExpressionVisitorDependencies$instance;
 
-export abstract class RelationalSqlTranslatingExpressionVisitorFactory$protected {
-    protected readonly Dependencies: RelationalSqlTranslatingExpressionVisitorDependencies;
-}
-
-
-export interface RelationalSqlTranslatingExpressionVisitorFactory$instance extends RelationalSqlTranslatingExpressionVisitorFactory$protected {
+export interface RelationalSqlTranslatingExpressionVisitorFactory$instance {
+    readonly Dependencies: RelationalSqlTranslatingExpressionVisitorDependencies;
     Create(queryCompilationContext: QueryCompilationContext, queryableMethodTranslatingExpressionVisitor: QueryableMethodTranslatingExpressionVisitor): RelationalSqlTranslatingExpressionVisitor;
 }
 
@@ -2437,12 +2237,8 @@ export interface RelationalSqlTranslatingExpressionVisitorFactory$instance exten
 export type RelationalSqlTranslatingExpressionVisitorFactory = RelationalSqlTranslatingExpressionVisitorFactory$instance & __RelationalSqlTranslatingExpressionVisitorFactory$views;
 
 
-export abstract class RelationalStructuralTypeShaperExpression$protected {
-    protected GenerateMaterializationCondition(type: ITypeBase, nullable: boolean): LambdaExpression;
-}
-
-
-export interface RelationalStructuralTypeShaperExpression$instance extends RelationalStructuralTypeShaperExpression$protected, StructuralTypeShaperExpression$instance {
+export interface RelationalStructuralTypeShaperExpression$instance extends StructuralTypeShaperExpression$instance {
+    GenerateMaterializationCondition(type: ITypeBase, nullable: boolean): LambdaExpression;
     MakeClrTypeNonNullable(): StructuralTypeShaperExpression;
     MakeClrTypeNullable(): StructuralTypeShaperExpression;
     MakeNullable(nullable?: boolean): StructuralTypeShaperExpression;
@@ -2454,7 +2250,6 @@ export interface RelationalStructuralTypeShaperExpression$instance extends Relat
 
 export const RelationalStructuralTypeShaperExpression: {
     new(structuralType: ITypeBase, valueBufferExpression: Expression, nullable: boolean): RelationalStructuralTypeShaperExpression;
-    new(type: ITypeBase, valueBufferExpression: Expression, nullable: boolean, materializationCondition: LambdaExpression, clrType: Type): RelationalStructuralTypeShaperExpression;
 };
 
 
@@ -2467,18 +2262,14 @@ export interface RelationalStructuralTypeShaperExpression$instance extends IPrin
 export type RelationalStructuralTypeShaperExpression = RelationalStructuralTypeShaperExpression$instance & __RelationalStructuralTypeShaperExpression$views;
 
 
-export abstract class RelationalTypeMappingPostprocessor$protected {
-    protected readonly Dependencies: QueryTranslationPostprocessorDependencies;
-    protected readonly QueryCompilationContext: RelationalQueryCompilationContext;
-    protected readonly RelationalDependencies: RelationalQueryTranslationPostprocessorDependencies;
-    protected ApplyTypeMappingsOnValuesExpression(valuesExpression: ValuesExpression): ValuesExpression;
-    protected TryGetInferredTypeMapping(tableAlias: string, columnName: string, inferredTypeMapping: RelationalTypeMapping): boolean;
-    protected VisitExtension(expression: Expression): Expression;
-}
-
-
-export interface RelationalTypeMappingPostprocessor$instance extends RelationalTypeMappingPostprocessor$protected, ExpressionVisitor {
+export interface RelationalTypeMappingPostprocessor$instance extends ExpressionVisitor {
+    readonly Dependencies: QueryTranslationPostprocessorDependencies;
+    readonly QueryCompilationContext: RelationalQueryCompilationContext;
+    readonly RelationalDependencies: RelationalQueryTranslationPostprocessorDependencies;
+    ApplyTypeMappingsOnValuesExpression(valuesExpression: ValuesExpression): ValuesExpression;
     Process(expression: Expression): Expression;
+    TryGetInferredTypeMapping(tableAlias: string, columnName: string, inferredTypeMapping: RelationalTypeMapping): boolean;
+    VisitExtension(expression: Expression): Expression;
 }
 
 
@@ -2489,14 +2280,10 @@ export const RelationalTypeMappingPostprocessor: {
 
 export type RelationalTypeMappingPostprocessor = RelationalTypeMappingPostprocessor$instance;
 
-export abstract class ReplacingExpressionVisitor$protected {
-    protected VisitMember(memberExpression: MemberExpression): Expression;
-    protected VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-}
-
-
-export interface ReplacingExpressionVisitor$instance extends ReplacingExpressionVisitor$protected, ExpressionVisitor {
+export interface ReplacingExpressionVisitor$instance extends ExpressionVisitor {
     Visit(expression: Expression): Expression | undefined;
+    VisitMember(memberExpression: MemberExpression): Expression;
+    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
 
@@ -2509,24 +2296,19 @@ export const ReplacingExpressionVisitor: {
 
 export type ReplacingExpressionVisitor = ReplacingExpressionVisitor$instance;
 
-export abstract class ShapedQueryCompilingExpressionVisitor$protected {
-    protected readonly Dependencies: ShapedQueryCompilingExpressionVisitorDependencies;
-    protected readonly QueryCompilationContext: QueryCompilationContext;
-    protected InjectEntityMaterializers(expression: Expression): Expression;
-    protected InjectStructuralTypeMaterializers(expression: Expression): Expression;
-    protected VerifyNoClientConstant(expression: Expression): void;
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected abstract VisitShapedQuery(shapedQueryExpression: ShapedQueryExpression): Expression;
-}
-
-
-export interface ShapedQueryCompilingExpressionVisitor$instance extends ShapedQueryCompilingExpressionVisitor$protected, ExpressionVisitor {
+export interface ShapedQueryCompilingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly Dependencies: ShapedQueryCompilingExpressionVisitorDependencies;
+    readonly QueryCompilationContext: QueryCompilationContext;
     AddStructuralTypeInitialization(shaper: StructuralTypeShaperExpression, instanceVariable: ParameterExpression, variables: List<ParameterExpression>, expressions: List<Expression>): void;
+    InjectEntityMaterializers(expression: Expression): Expression;
+    InjectStructuralTypeMaterializers(expression: Expression): Expression;
+    VerifyNoClientConstant(expression: Expression): void;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitShapedQuery(shapedQueryExpression: ShapedQueryExpression): Expression;
 }
 
 
-export const ShapedQueryCompilingExpressionVisitor: {
-    new(dependencies: ShapedQueryCompilingExpressionVisitorDependencies, queryCompilationContext: QueryCompilationContext): ShapedQueryCompilingExpressionVisitor;
+export const ShapedQueryCompilingExpressionVisitor: (abstract new(dependencies: ShapedQueryCompilingExpressionVisitorDependencies, queryCompilationContext: QueryCompilationContext) => ShapedQueryCompilingExpressionVisitor) & {
     CreateNullKeyValueInNoTrackingQuery(entityType: IEntityType, properties: IReadOnlyList<IProperty>, keyValues: unknown[]): Exception;
     SingleAsync<TSource>(asyncEnumerable: IAsyncEnumerable<TSource>, cancellationToken?: CancellationToken): Task<TSource>;
     SingleOrDefaultAsync<TSource>(asyncEnumerable: IAsyncEnumerable<TSource>, cancellationToken?: CancellationToken): Task<TSource | undefined>;
@@ -2560,12 +2342,7 @@ export const ShapedQueryCompilingExpressionVisitorDependencies: {
 
 export type ShapedQueryCompilingExpressionVisitorDependencies = ShapedQueryCompilingExpressionVisitorDependencies$instance;
 
-export abstract class ShapedQueryExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface ShapedQueryExpression$instance extends ShapedQueryExpression$protected, Expression {
+export interface ShapedQueryExpression$instance extends Expression {
     readonly NodeType: ExpressionType;
     readonly QueryExpression: Expression;
     readonly ResultCardinality: ResultCardinality;
@@ -2575,6 +2352,7 @@ export interface ShapedQueryExpression$instance extends ShapedQueryExpression$pr
     UpdateQueryExpression(queryExpression: Expression): ShapedQueryExpression;
     UpdateResultCardinality(resultCardinality: ResultCardinality): ShapedQueryExpression;
     UpdateShaperExpression(shaperExpression: Expression): ShapedQueryExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -2592,15 +2370,11 @@ export interface ShapedQueryExpression$instance extends IPrintableExpression$ins
 export type ShapedQueryExpression = ShapedQueryExpression$instance & __ShapedQueryExpression$views;
 
 
-export abstract class SqlAliasManager$protected {
-    protected RemapTableAliases(usedAliases: IReadOnlySet<System_Internal.String>): Dictionary<System_Internal.String, System_Internal.String> | undefined;
-}
-
-
-export interface SqlAliasManager$instance extends SqlAliasManager$protected {
+export interface SqlAliasManager$instance {
     GenerateTableAlias(name: string): string;
     GenerateTableAlias(modelTable: ITableBase): string;
     PostprocessAliases(expression: Expression): Expression;
+    RemapTableAliases(usedAliases: IReadOnlySet<System_Internal.String>): Dictionary<System_Internal.String, System_Internal.String> | undefined;
 }
 
 
@@ -2630,12 +2404,8 @@ export interface SqlAliasManagerFactory$instance extends ISqlAliasManagerFactory
 export type SqlAliasManagerFactory = SqlAliasManagerFactory$instance & __SqlAliasManagerFactory$views;
 
 
-export abstract class SqlExpressionFactory$protected {
-    protected readonly Dependencies: SqlExpressionFactoryDependencies;
-}
-
-
-export interface SqlExpressionFactory$instance extends SqlExpressionFactory$protected {
+export interface SqlExpressionFactory$instance {
+    readonly Dependencies: SqlExpressionFactoryDependencies;
     Add(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping): SqlExpression;
     And(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping): SqlExpression;
     AndAlso(left: SqlExpression, right: SqlExpression): SqlExpression;
@@ -2712,99 +2482,90 @@ export const SqlExpressionFactoryDependencies: {
 
 export type SqlExpressionFactoryDependencies = SqlExpressionFactoryDependencies$instance;
 
-export abstract class SqlExpressionVisitor$protected {
-    protected abstract VisitAtTimeZone(atTimeZoneExpression: AtTimeZoneExpression): Expression;
-    protected abstract VisitCase(caseExpression: CaseExpression): Expression;
-    protected abstract VisitCollate(collateExpression: CollateExpression): Expression;
-    protected abstract VisitColumn(columnExpression: ColumnExpression): Expression;
-    protected abstract VisitCrossApply(crossApplyExpression: CrossApplyExpression): Expression;
-    protected abstract VisitCrossJoin(crossJoinExpression: CrossJoinExpression): Expression;
-    protected abstract VisitDelete(deleteExpression: DeleteExpression): Expression;
-    protected abstract VisitDistinct(distinctExpression: DistinctExpression): Expression;
-    protected abstract VisitExcept(exceptExpression: ExceptExpression): Expression;
-    protected abstract VisitExists(existsExpression: ExistsExpression): Expression;
-    protected VisitExtension(extensionExpression: Expression): Expression;
-    protected abstract VisitFromSql(fromSqlExpression: FromSqlExpression): Expression;
-    protected abstract VisitIn(inExpression: InExpression): Expression;
-    protected abstract VisitInnerJoin(innerJoinExpression: InnerJoinExpression): Expression;
-    protected abstract VisitIntersect(intersectExpression: IntersectExpression): Expression;
-    protected abstract VisitJsonScalar(jsonScalarExpression: JsonScalarExpression): Expression;
-    protected abstract VisitLeftJoin(leftJoinExpression: LeftJoinExpression): Expression;
-    protected abstract VisitLike(likeExpression: LikeExpression): Expression;
-    protected abstract VisitOrdering(orderingExpression: OrderingExpression): Expression;
-    protected abstract VisitOuterApply(outerApplyExpression: OuterApplyExpression): Expression;
-    protected abstract VisitProjection(projectionExpression: ProjectionExpression): Expression;
-    protected abstract VisitRightJoin(rightJoinExpression: RightJoinExpression): Expression;
-    protected abstract VisitRowNumber(rowNumberExpression: RowNumberExpression): Expression;
-    protected abstract VisitRowValue(rowValueExpression: RowValueExpression): Expression;
-    protected abstract VisitScalarSubquery(scalarSubqueryExpression: ScalarSubqueryExpression): Expression;
-    protected abstract VisitSelect(selectExpression: SelectExpression): Expression;
-    protected abstract VisitSqlBinary(sqlBinaryExpression: SqlBinaryExpression): Expression;
-    protected abstract VisitSqlConstant(sqlConstantExpression: SqlConstantExpression): Expression;
-    protected abstract VisitSqlFragment(sqlFragmentExpression: SqlFragmentExpression): Expression;
-    protected abstract VisitSqlFunction(sqlFunctionExpression: SqlFunctionExpression): Expression;
-    protected abstract VisitSqlParameter(sqlParameterExpression: SqlParameterExpression): Expression;
-    protected abstract VisitSqlUnary(sqlUnaryExpression: SqlUnaryExpression): Expression;
-    protected abstract VisitTable(tableExpression: TableExpression): Expression;
-    protected abstract VisitTableValuedFunction(tableValuedFunctionExpression: TableValuedFunctionExpression): Expression;
-    protected abstract VisitUnion(unionExpression: UnionExpression): Expression;
-    protected abstract VisitUpdate(updateExpression: UpdateExpression): Expression;
-    protected abstract VisitValues(valuesExpression: ValuesExpression): Expression;
+export interface SqlExpressionVisitor$instance extends ExpressionVisitor {
+    VisitAtTimeZone(atTimeZoneExpression: AtTimeZoneExpression): Expression;
+    VisitCase(caseExpression: CaseExpression): Expression;
+    VisitCollate(collateExpression: CollateExpression): Expression;
+    VisitColumn(columnExpression: ColumnExpression): Expression;
+    VisitCrossApply(crossApplyExpression: CrossApplyExpression): Expression;
+    VisitCrossJoin(crossJoinExpression: CrossJoinExpression): Expression;
+    VisitDelete(deleteExpression: DeleteExpression): Expression;
+    VisitDistinct(distinctExpression: DistinctExpression): Expression;
+    VisitExcept(exceptExpression: ExceptExpression): Expression;
+    VisitExists(existsExpression: ExistsExpression): Expression;
+    VisitExtension(extensionExpression: Expression): Expression;
+    VisitFromSql(fromSqlExpression: FromSqlExpression): Expression;
+    VisitIn(inExpression: InExpression): Expression;
+    VisitInnerJoin(innerJoinExpression: InnerJoinExpression): Expression;
+    VisitIntersect(intersectExpression: IntersectExpression): Expression;
+    VisitJsonScalar(jsonScalarExpression: JsonScalarExpression): Expression;
+    VisitLeftJoin(leftJoinExpression: LeftJoinExpression): Expression;
+    VisitLike(likeExpression: LikeExpression): Expression;
+    VisitOrdering(orderingExpression: OrderingExpression): Expression;
+    VisitOuterApply(outerApplyExpression: OuterApplyExpression): Expression;
+    VisitProjection(projectionExpression: ProjectionExpression): Expression;
+    VisitRightJoin(rightJoinExpression: RightJoinExpression): Expression;
+    VisitRowNumber(rowNumberExpression: RowNumberExpression): Expression;
+    VisitRowValue(rowValueExpression: RowValueExpression): Expression;
+    VisitScalarSubquery(scalarSubqueryExpression: ScalarSubqueryExpression): Expression;
+    VisitSelect(selectExpression: SelectExpression): Expression;
+    VisitSqlBinary(sqlBinaryExpression: SqlBinaryExpression): Expression;
+    VisitSqlConstant(sqlConstantExpression: SqlConstantExpression): Expression;
+    VisitSqlFragment(sqlFragmentExpression: SqlFragmentExpression): Expression;
+    VisitSqlFunction(sqlFunctionExpression: SqlFunctionExpression): Expression;
+    VisitSqlParameter(sqlParameterExpression: SqlParameterExpression): Expression;
+    VisitSqlUnary(sqlUnaryExpression: SqlUnaryExpression): Expression;
+    VisitTable(tableExpression: TableExpression): Expression;
+    VisitTableValuedFunction(tableValuedFunctionExpression: TableValuedFunctionExpression): Expression;
+    VisitUnion(unionExpression: UnionExpression): Expression;
+    VisitUpdate(updateExpression: UpdateExpression): Expression;
+    VisitValues(valuesExpression: ValuesExpression): Expression;
 }
 
 
-export interface SqlExpressionVisitor$instance extends SqlExpressionVisitor$protected, ExpressionVisitor {
-}
-
-
-export const SqlExpressionVisitor: {
-    new(): SqlExpressionVisitor;
+export const SqlExpressionVisitor: (abstract new() => SqlExpressionVisitor) & {
 };
 
 
 export type SqlExpressionVisitor = SqlExpressionVisitor$instance;
 
-export abstract class SqlNullabilityProcessor$protected {
-    protected readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
-    protected ParametersDecorator: ParametersCacheDecorator;
-    protected readonly PreferExistsToInWithCoalesce: boolean;
-    protected readonly UseRelationalNulls: boolean;
-    protected AddNonNullableColumn(columnExpression: ColumnExpression): void;
-    protected CalculateParameterBucketSize(count: int, elementTypeMapping: RelationalTypeMapping): int;
-    protected IsCollectionTable(table: TableExpressionBase, collection: Expression): boolean;
-    protected OptimizeNotExpression(expression: SqlExpression): SqlExpression;
-    protected ProcessValuesOrderingColumn(valuesExpression: ValuesExpression, expressions: IReadOnlyList<SqlExpression>, intTypeMapping: IntTypeMapping, counter: int): IReadOnlyList<SqlExpression>;
-    protected TryMakeNonNullable(selectExpression: SelectExpression, rewrittenSelectExpression: SelectExpression, foundNull: Nullable<System_Internal.Boolean>): boolean;
-    protected UpdateParameterCollection(table: TableExpressionBase, newCollectionParameter: SqlParameterExpression): TableExpressionBase;
-    protected Visit(selectExpression: SelectExpression, visitProjection?: boolean): SelectExpression;
-    protected Visit(sqlExpression: SqlExpression, nullable: boolean): SqlExpression | undefined;
-    protected Visit(sqlExpression: SqlExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression | undefined;
-    protected VisitAtTimeZone(atTimeZoneExpression: AtTimeZoneExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitCase(caseExpression: CaseExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitCollate(collateExpression: CollateExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitColumn(columnExpression: ColumnExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitCustomSqlExpression(sqlExpression: SqlExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitDistinct(distinctExpression: DistinctExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitExists(existsExpression: ExistsExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitExtension(node: Expression): Expression;
-    protected VisitIn(inExpression: InExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitJsonScalar(jsonScalarExpression: JsonScalarExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitLike(likeExpression: LikeExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitRowNumber(rowNumberExpression: RowNumberExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitRowValue(rowValueExpression: RowValueExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitScalarSubquery(scalarSubqueryExpression: ScalarSubqueryExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitSqlBinary(sqlBinaryExpression: SqlBinaryExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitSqlConstant(sqlConstantExpression: SqlConstantExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitSqlFragment(sqlFragmentExpression: SqlFragmentExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitSqlFunction(sqlFunctionExpression: SqlFunctionExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitSqlParameter(sqlParameterExpression: SqlParameterExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    protected VisitSqlUnary(sqlUnaryExpression: SqlUnaryExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-}
-
-
-export interface SqlNullabilityProcessor$instance extends SqlNullabilityProcessor$protected, ExpressionVisitor {
+export interface SqlNullabilityProcessor$instance extends ExpressionVisitor {
     readonly CollectionParameterTranslationMode: ParameterTranslationMode;
+    readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
+    ParametersDecorator: ParametersCacheDecorator;
+    readonly PreferExistsToInWithCoalesce: boolean;
+    readonly UseRelationalNulls: boolean;
+    AddNonNullableColumn(columnExpression: ColumnExpression): void;
+    CalculateParameterBucketSize(count: int, elementTypeMapping: RelationalTypeMapping): int;
+    IsCollectionTable(table: TableExpressionBase, collection: Expression): boolean;
+    OptimizeNotExpression(expression: SqlExpression): SqlExpression;
     Process(queryExpression: Expression, parametersDecorator: ParametersCacheDecorator): Expression;
+    ProcessValuesOrderingColumn(valuesExpression: ValuesExpression, expressions: IReadOnlyList<SqlExpression>, intTypeMapping: IntTypeMapping, counter: int): IReadOnlyList<SqlExpression>;
+    TryMakeNonNullable(selectExpression: SelectExpression, rewrittenSelectExpression: SelectExpression, foundNull: Nullable<System_Internal.Boolean>): boolean;
+    UpdateParameterCollection(table: TableExpressionBase, newCollectionParameter: SqlParameterExpression): TableExpressionBase;
+    Visit(selectExpression: SelectExpression, visitProjection?: boolean): SelectExpression;
+    Visit(sqlExpression: SqlExpression, nullable: boolean): SqlExpression | undefined;
+    Visit(sqlExpression: SqlExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression | undefined;
+    VisitAtTimeZone(atTimeZoneExpression: AtTimeZoneExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitCase(caseExpression: CaseExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitCollate(collateExpression: CollateExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitColumn(columnExpression: ColumnExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitCustomSqlExpression(sqlExpression: SqlExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitDistinct(distinctExpression: DistinctExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitExists(existsExpression: ExistsExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitExtension(node: Expression): Expression;
+    VisitIn(inExpression: InExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitJsonScalar(jsonScalarExpression: JsonScalarExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitLike(likeExpression: LikeExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitRowNumber(rowNumberExpression: RowNumberExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitRowValue(rowValueExpression: RowValueExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitScalarSubquery(scalarSubqueryExpression: ScalarSubqueryExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitSqlBinary(sqlBinaryExpression: SqlBinaryExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitSqlConstant(sqlConstantExpression: SqlConstantExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitSqlFragment(sqlFragmentExpression: SqlFragmentExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitSqlFunction(sqlFunctionExpression: SqlFunctionExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitSqlParameter(sqlParameterExpression: SqlParameterExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
+    VisitSqlUnary(sqlUnaryExpression: SqlUnaryExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
 }
 
 
@@ -2815,18 +2576,15 @@ export const SqlNullabilityProcessor: {
 
 export type SqlNullabilityProcessor = SqlNullabilityProcessor$instance;
 
-export abstract class SqlTreePruner$protected {
-    protected CurrentTableAlias: string | undefined;
-    protected readonly ReferencedColumnMap: IReadOnlyDictionary<System_Internal.String, HashSet<System_Internal.String>>;
-    protected PruneSelect(select: SelectExpression, preserveProjection: boolean): SelectExpression;
-    protected PruneTopLevelSelect(select: SelectExpression): SelectExpression;
-    protected PruneValues(values: ValuesExpression): ValuesExpression;
-    protected VisitExtension(node: Expression): Expression;
-}
-
-
-export interface SqlTreePruner$instance extends SqlTreePruner$protected, ExpressionVisitor {
+export interface SqlTreePruner$instance extends ExpressionVisitor {
+    get CurrentTableAlias(): string | undefined;
+    set CurrentTableAlias(value: string | undefined);
+    readonly ReferencedColumnMap: IReadOnlyDictionary<System_Internal.String, HashSet<System_Internal.String>>;
     Prune(expression: Expression): Expression;
+    PruneSelect(select: SelectExpression, preserveProjection: boolean): SelectExpression;
+    PruneTopLevelSelect(select: SelectExpression): SelectExpression;
+    PruneValues(values: ValuesExpression): ValuesExpression;
+    VisitExtension(node: Expression): Expression;
 }
 
 
@@ -2837,12 +2595,7 @@ export const SqlTreePruner: {
 
 export type SqlTreePruner = SqlTreePruner$instance;
 
-export abstract class StructuralTypeProjectionExpression$protected {
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface StructuralTypeProjectionExpression$instance extends StructuralTypeProjectionExpression$protected, Expression {
+export interface StructuralTypeProjectionExpression$instance extends Expression {
     readonly DiscriminatorExpression: SqlExpression | undefined;
     readonly IsNullable: boolean;
     readonly NodeType: ExpressionType;
@@ -2857,6 +2610,7 @@ export interface StructuralTypeProjectionExpression$instance extends StructuralT
     ToString(): string;
     UpdateEntityType(derivedType: IEntityType): StructuralTypeProjectionExpression;
     UpdateTableMap(newTableMap: IReadOnlyDictionary<ITableBase, System_Internal.String>): StructuralTypeProjectionExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
 }
 
 
@@ -2868,13 +2622,7 @@ export const StructuralTypeProjectionExpression: {
 
 export type StructuralTypeProjectionExpression = StructuralTypeProjectionExpression$instance;
 
-export abstract class StructuralTypeShaperExpression$protected {
-    protected GenerateMaterializationCondition(type: ITypeBase, nullable: boolean): LambdaExpression;
-    protected VisitChildren(visitor: ExpressionVisitor): Expression;
-}
-
-
-export interface StructuralTypeShaperExpression$instance extends StructuralTypeShaperExpression$protected, Expression {
+export interface StructuralTypeShaperExpression$instance extends Expression {
     readonly IsNullable: boolean;
     readonly MaterializationCondition: LambdaExpression;
     readonly NodeType: ExpressionType;
@@ -2882,17 +2630,18 @@ export interface StructuralTypeShaperExpression$instance extends StructuralTypeS
     readonly Type: Type;
     readonly ValueBufferExpression: Expression;
     DebuggerDisplay(): string;
+    GenerateMaterializationCondition(type: ITypeBase, nullable: boolean): LambdaExpression;
     MakeClrTypeNonNullable(): StructuralTypeShaperExpression;
     MakeClrTypeNullable(): StructuralTypeShaperExpression;
     MakeNullable(nullable?: boolean): StructuralTypeShaperExpression;
     Update(valueBufferExpression: Expression): StructuralTypeShaperExpression;
+    VisitChildren(visitor: ExpressionVisitor): Expression;
     WithType(type: ITypeBase): StructuralTypeShaperExpression;
 }
 
 
 export const StructuralTypeShaperExpression: {
     new(type: ITypeBase, valueBufferExpression: Expression, nullable: boolean): StructuralTypeShaperExpression;
-    new(type: ITypeBase, valueBufferExpression: Expression, nullable: boolean, materializationCondition: LambdaExpression, clrType: Type): StructuralTypeShaperExpression;
     CreateUnableToDiscriminateException(type: ITypeBase, discriminator: unknown): Exception;
     CreateUnableToDiscriminateExceptionExpression(type: ITypeBase, discriminatorValue: Expression): Expression;
 };

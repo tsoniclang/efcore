@@ -614,7 +614,6 @@ export interface ManyToManyLoaderFactory$instance {
 
 
 export const ManyToManyLoaderFactory: {
-    new(): ManyToManyLoaderFactory;
     readonly Instance: ManyToManyLoaderFactory;
 };
 
@@ -628,7 +627,6 @@ export interface NullableComparerAdapter_1$instance<TNullableKey> {
 
 
 export const NullableComparerAdapter_1: {
-    new<TNullableKey>(): NullableComparerAdapter_1<TNullableKey>;
     Wrap<TNullableKey>(comparer: IEqualityComparer, valueConverter?: ValueConverter): IEqualityComparer__System_Collections_Generic<TNullableKey>;
 };
 
@@ -725,7 +723,6 @@ export interface TypeFullNameComparer$instance {
 
 
 export const TypeFullNameComparer: {
-    new(): TypeFullNameComparer;
     readonly Instance: TypeFullNameComparer;
 };
 

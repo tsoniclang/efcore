@@ -178,14 +178,7 @@ export const CommentAttribute: {
 
 export type CommentAttribute = CommentAttribute$instance;
 
-export abstract class DbContext$protected {
-    protected ConfigureConventions(configurationBuilder: ModelConfigurationBuilder): void;
-    protected OnConfiguring(optionsBuilder: DbContextOptionsBuilder): void;
-    protected OnModelCreating(modelBuilder: ModelBuilder): void;
-}
-
-
-export interface DbContext$instance extends DbContext$protected {
+export interface DbContext$instance {
     readonly ChangeTracker: ChangeTracker;
     readonly ContextId: DbContextId;
     readonly Database: DatabaseFacade;
@@ -202,6 +195,7 @@ export interface DbContext$instance extends DbContext$protected {
     Attach(entity: unknown): EntityEntry;
     AttachRange(...entities: unknown[]): void;
     AttachRange(entities: IEnumerable__System_Collections_Generic<unknown>): void;
+    ConfigureConventions(configurationBuilder: ModelConfigurationBuilder): void;
     Dispose(): void;
     DisposeAsync(): ValueTask;
     Entry<TEntity>(entity: TEntity): EntityEntry_1<TEntity>;
@@ -215,6 +209,8 @@ export interface DbContext$instance extends DbContext$protected {
     FindAsync<TEntity>(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask<TEntity>;
     FromExpression<TResult>(expression: Expression<Func<IQueryable<TResult>>>): IQueryable<TResult>;
     GetHashCode(): int;
+    OnConfiguring(optionsBuilder: DbContextOptionsBuilder): void;
+    OnModelCreating(modelBuilder: ModelBuilder): void;
     Remove<TEntity>(entity: TEntity): EntityEntry_1<TEntity>;
     Remove(entity: unknown): EntityEntry;
     RemoveRange(...entities: unknown[]): void;
@@ -234,7 +230,6 @@ export interface DbContext$instance extends DbContext$protected {
 
 
 export const DbContext: {
-    new(): DbContext;
     new(options: DbContextOptions): DbContext;
 };
 
@@ -252,17 +247,13 @@ export interface DbContext$instance extends Microsoft_EntityFrameworkCore_Infras
 export type DbContext = DbContext$instance & __DbContext$views;
 
 
-export abstract class DbContextOptions$protected {
-    protected readonly ExtensionsMap: ImmutableSortedDictionary<Type, ValueTuple<IDbContextOptionsExtension, System_Internal.Int32>>;
-    protected Equals(other: DbContextOptions): boolean;
-}
-
-
-export interface DbContextOptions$instance extends DbContextOptions$protected {
+export interface DbContextOptions$instance {
     readonly ContextType: Type;
     readonly Extensions: IEnumerable__System_Collections_Generic<IDbContextOptionsExtension>;
+    readonly ExtensionsMap: ImmutableSortedDictionary<Type, ValueTuple<IDbContextOptionsExtension, System_Internal.Int32>>;
     IsFrozen: boolean;
     Equals(obj: unknown): boolean;
+    Equals(other: DbContextOptions): boolean;
     FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | undefined;
     Freeze(): void;
     GetExtension<TExtension extends IDbContextOptionsExtension>(): TExtension;
@@ -271,10 +262,7 @@ export interface DbContextOptions$instance extends DbContextOptions$protected {
 }
 
 
-export const DbContextOptions: {
-    new(): DbContextOptions;
-    new(extensions: IReadOnlyDictionary<Type, IDbContextOptionsExtension>): DbContextOptions;
-    new(extensions: ImmutableSortedDictionary<Type, ValueTuple<IDbContextOptionsExtension, System_Internal.Int32>>): DbContextOptions;
+export const DbContextOptions: (abstract new() => DbContextOptions) & (abstract new(extensions: IReadOnlyDictionary<Type, IDbContextOptionsExtension>) => DbContextOptions) & (abstract new(extensions: ImmutableSortedDictionary<Type, ValueTuple<IDbContextOptionsExtension, System_Internal.Int32>>) => DbContextOptions) & {
 };
 
 
@@ -407,9 +395,10 @@ export interface DbFunctionAttribute$instance extends Attribute {
     IsBuiltIn: boolean;
     IsNullable: boolean;
     readonly IsNullableHasValue: boolean;
-    Name: string;
+    get Name(): string | undefined;
+    set Name(value: string | undefined);
     get Schema(): string | undefined;
-    set Schema(value: string);
+    set Schema(value: string | undefined);
 }
 
 
@@ -429,7 +418,6 @@ export interface DbFunctions$instance {
 
 
 export const DbFunctions: {
-    new(): DbFunctions;
 };
 
 
@@ -598,8 +586,7 @@ export interface DbSet_1$instance<TEntity> {
 }
 
 
-export const DbSet_1: {
-    new<TEntity>(): DbSet_1<TEntity>;
+export const DbSet_1: (abstract new<TEntity>() => DbSet_1<TEntity>) & {
 };
 
 
@@ -685,10 +672,11 @@ export type EntityTypeConfigurationAttribute_2<TConfiguration extends IEntityTyp
 export interface IndexAttribute$instance extends Attribute {
     AllDescending: boolean;
     get IsDescending(): boolean[] | undefined;
-    set IsDescending(value: boolean[]);
+    set IsDescending(value: boolean[] | undefined);
     IsUnique: boolean;
     readonly IsUniqueHasValue: boolean;
-    Name: string;
+    get Name(): string | undefined;
+    set Name(value: string | undefined);
     readonly PropertyNames: IReadOnlyList<System_Internal.String>;
 }
 
@@ -760,13 +748,9 @@ export interface ModelBuilder$instance extends Microsoft_EntityFrameworkCore_Inf
 export type ModelBuilder = ModelBuilder$instance & __ModelBuilder$views;
 
 
-export abstract class ModelConfigurationBuilder$protected {
-    protected readonly ModelConfiguration: ModelConfiguration;
-}
-
-
-export interface ModelConfigurationBuilder$instance extends ModelConfigurationBuilder$protected {
+export interface ModelConfigurationBuilder$instance {
     readonly Conventions: ConventionSetBuilder;
+    readonly ModelConfiguration: ModelConfiguration;
     ComplexProperties<TProperty>(): ComplexPropertiesConfigurationBuilder_1<TProperty>;
     ComplexProperties(propertyType: Type): ComplexPropertiesConfigurationBuilder;
     CreateModelBuilder(modelDependencies: ModelDependencies): ModelBuilder;
@@ -856,8 +840,7 @@ export interface SaveChangesEventArgs$instance extends EventArgs {
 }
 
 
-export const SaveChangesEventArgs: {
-    new(acceptAllChangesOnSuccess: boolean): SaveChangesEventArgs;
+export const SaveChangesEventArgs: (abstract new(acceptAllChangesOnSuccess: boolean) => SaveChangesEventArgs) & {
 };
 
 

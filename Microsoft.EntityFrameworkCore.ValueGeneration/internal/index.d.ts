@@ -72,13 +72,9 @@ export const GuidValueGenerator: {
 
 export type GuidValueGenerator = GuidValueGenerator$instance;
 
-export abstract class HiLoValueGenerator_1$protected<TValue> {
-    protected abstract GetNewLowValue(): long;
-    protected GetNewLowValueAsync(cancellationToken?: CancellationToken): Task<System_Internal.Int64>;
-}
-
-
-export interface HiLoValueGenerator_1$instance<TValue> extends HiLoValueGenerator_1$protected<TValue>, ValueGenerator_1<TValue> {
+export interface HiLoValueGenerator_1$instance<TValue> extends ValueGenerator_1<TValue> {
+    GetNewLowValue(): long;
+    GetNewLowValueAsync(cancellationToken?: CancellationToken): Task<System_Internal.Int64>;
     Next(entry: EntityEntry): TValue;
     Next(entry: EntityEntry): unknown;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
@@ -86,8 +82,7 @@ export interface HiLoValueGenerator_1$instance<TValue> extends HiLoValueGenerato
 }
 
 
-export const HiLoValueGenerator_1: {
-    new<TValue>(generatorState: HiLoValueGeneratorState): HiLoValueGenerator_1<TValue>;
+export const HiLoValueGenerator_1: (abstract new<TValue>(generatorState: HiLoValueGeneratorState) => HiLoValueGenerator_1<TValue>) & {
 };
 
 
@@ -107,12 +102,8 @@ export const HiLoValueGeneratorState: {
 
 export type HiLoValueGeneratorState = HiLoValueGeneratorState$instance;
 
-export abstract class RelationalValueGeneratorSelector$protected {
-    protected FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
-}
-
-
-export interface RelationalValueGeneratorSelector$instance extends RelationalValueGeneratorSelector$protected, ValueGeneratorSelector$instance {
+export interface RelationalValueGeneratorSelector$instance extends ValueGeneratorSelector$instance {
+    FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
     Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
     TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
 }
@@ -182,56 +173,42 @@ export const TemporaryNumberValueGeneratorFactory: {
 
 export type TemporaryNumberValueGeneratorFactory = TemporaryNumberValueGeneratorFactory$instance;
 
-export abstract class ValueGenerator$protected {
-    protected abstract NextValue(entry: EntityEntry): unknown | undefined;
-    protected NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
-}
-
-
-export interface ValueGenerator$instance extends ValueGenerator$protected {
+export interface ValueGenerator$instance {
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): unknown;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    NextValue(entry: EntityEntry): unknown | undefined;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
     WithConverter(converter: ValueConverter): ValueGenerator;
 }
 
 
-export const ValueGenerator: {
-    new(): ValueGenerator;
+export const ValueGenerator: (abstract new() => ValueGenerator) & {
 };
 
 
 export type ValueGenerator = ValueGenerator$instance;
 
-export abstract class ValueGenerator_1$protected<TValue> {
-    protected NextValue(entry: EntityEntry): unknown | undefined;
-    protected NextValueAsync2(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
-    protected NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
-}
-
-
-export interface ValueGenerator_1$instance<TValue> extends ValueGenerator_1$protected<TValue>, ValueGenerator {
+export interface ValueGenerator_1$instance<TValue> extends ValueGenerator {
     Next(entry: EntityEntry): TValue;
     Next(entry: EntityEntry): unknown;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<TValue>;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    NextValue(entry: EntityEntry): unknown | undefined;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
 }
 
 
-export const ValueGenerator_1: {
-    new<TValue>(): ValueGenerator_1<TValue>;
+export const ValueGenerator_1: (abstract new<TValue>() => ValueGenerator_1<TValue>) & {
 };
 
 
 export type ValueGenerator_1<TValue> = ValueGenerator_1$instance<TValue>;
 
-export abstract class ValueGeneratorCache$protected {
-    protected readonly Dependencies: ValueGeneratorCacheDependencies;
-}
-
-
-export interface ValueGeneratorCache$instance extends ValueGeneratorCache$protected {
+export interface ValueGeneratorCache$instance {
+    readonly Dependencies: ValueGeneratorCacheDependencies;
     GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
 }
 
@@ -271,22 +248,17 @@ export interface ValueGeneratorFactory$instance {
 }
 
 
-export const ValueGeneratorFactory: {
-    new(): ValueGeneratorFactory;
+export const ValueGeneratorFactory: (abstract new() => ValueGeneratorFactory) & {
 };
 
 
 export type ValueGeneratorFactory = ValueGeneratorFactory$instance;
 
-export abstract class ValueGeneratorSelector$protected {
-    protected readonly Dependencies: ValueGeneratorSelectorDependencies;
-    protected FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
-}
-
-
-export interface ValueGeneratorSelector$instance extends ValueGeneratorSelector$protected {
+export interface ValueGeneratorSelector$instance {
     readonly Cache: IValueGeneratorCache;
+    readonly Dependencies: ValueGeneratorSelectorDependencies;
     Create(property: IProperty, typeBase: ITypeBase): ValueGenerator;
+    FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
     Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
     TryCreate(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
     TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;

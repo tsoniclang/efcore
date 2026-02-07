@@ -163,15 +163,11 @@ export interface ChangeTracker$instance extends Microsoft_EntityFrameworkCore_In
 export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 
 
-export abstract class CollectionEntry$protected {
-    protected GetInternalTargetEntry(entity: unknown): InternalEntityEntry | undefined;
-}
-
-
-export interface CollectionEntry$instance extends CollectionEntry$protected, NavigationEntry$instance {
+export interface CollectionEntry$instance extends NavigationEntry$instance {
     CurrentValue: IEnumerable | unknown;
     IsModified: boolean;
     FindEntry(entity: unknown): EntityEntry | undefined;
+    GetInternalTargetEntry(entity: unknown): InternalEntityEntry | undefined;
     Load(): void;
     Load(options: LoadOptions): void;
     LoadAsync(cancellationToken?: CancellationToken): Task;
@@ -219,7 +215,7 @@ export type CollectionEntry_2<TEntity, TRelatedEntity> = CollectionEntry_2$insta
 
 export interface ComplexCollectionEntry$instance extends MemberEntry$instance {
     IsModified: boolean;
-    readonly Item: ComplexElementEntry;
+    readonly [ordinal: number]: ComplexElementEntry;
     GetEnumerator(): IEnumerator<ComplexElementEntry>;
     GetOriginalEntry(ordinal: int): ComplexElementEntry;
 }
@@ -259,16 +255,12 @@ export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends Mi
 export type ComplexCollectionEntry_2<TEntity, TElement> = ComplexCollectionEntry_2$instance<TEntity, TElement> & __ComplexCollectionEntry_2$views<TEntity, TElement>;
 
 
-export abstract class ComplexElementEntry$protected {
-    protected readonly InternalEntry: InternalComplexEntry;
-}
-
-
-export interface ComplexElementEntry$instance extends ComplexElementEntry$protected {
+export interface ComplexElementEntry$instance {
     readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
     readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
     readonly CurrentValue: TComplexProperty | unknown;
     readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    readonly InternalEntry: InternalComplexEntry;
     IsModified: boolean;
     readonly Metadata: IComplexProperty;
     readonly Properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
@@ -433,12 +425,7 @@ export const DetectEntityChangesEventArgs: {
 
 export type DetectEntityChangesEventArgs = DetectEntityChangesEventArgs$instance;
 
-export abstract class EntityEntry$protected {
-    protected readonly InternalEntry: InternalEntityEntry;
-}
-
-
-export interface EntityEntry$instance extends EntityEntry$protected {
+export interface EntityEntry$instance {
     readonly Collections: IEnumerable__System_Collections_Generic<CollectionEntry>;
     readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
     readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
@@ -446,6 +433,7 @@ export interface EntityEntry$instance extends EntityEntry$protected {
     readonly CurrentValues: PropertyValues;
     readonly DebugView: DebugView;
     readonly Entity: TEntity | unknown;
+    readonly InternalEntry: InternalEntityEntry;
     readonly IsKeySet: boolean;
     readonly Members: IEnumerable__System_Collections_Generic<MemberEntry>;
     readonly Metadata: IEntityType;
@@ -719,14 +707,7 @@ export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement ext
 export type ListOfValueTypesComparer_2<TConcreteList, TElement> = ListOfValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfValueTypesComparer_2$views<TConcreteList, TElement>;
 
 
-export abstract class LocalView_1$protected<TEntity> {
-    protected OnCollectionChanged(e: NotifyCollectionChangedEventArgs): void;
-    protected OnPropertyChanged(e: PropertyChangedEventArgs): void;
-    protected OnPropertyChanging(e: PropertyChangingEventArgs): void;
-}
-
-
-export interface LocalView_1$instance<TEntity> extends LocalView_1$protected<TEntity> {
+export interface LocalView_1$instance<TEntity> {
     readonly Count: int;
     readonly IsReadOnly: boolean;
     Add(item: TEntity): void;
@@ -744,6 +725,9 @@ export interface LocalView_1$instance<TEntity> extends LocalView_1$protected<TEn
     GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
     GetEntries(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
     GetEnumerator(): IEnumerator<TEntity>;
+    OnCollectionChanged(e: NotifyCollectionChangedEventArgs): void;
+    OnPropertyChanged(e: PropertyChangedEventArgs): void;
+    OnPropertyChanging(e: PropertyChangingEventArgs): void;
     Remove(item: TEntity): boolean;
     Reset(): void;
     ToBindingList(): BindingList<TEntity>;
@@ -758,24 +742,19 @@ export const LocalView_1: {
 
 export type LocalView_1<TEntity> = LocalView_1$instance<TEntity>;
 
-export abstract class MemberEntry$protected {
-    protected readonly InternalEntry: IInternalEntry;
-}
-
-
-export interface MemberEntry$instance extends MemberEntry$protected {
+export interface MemberEntry$instance {
     CurrentValue: TProperty | unknown;
     readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
-    readonly Metadata: INavigationBase | IPropertyBase;
+    readonly Metadata: IProperty | IPropertyBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
 }
 
 
-export const MemberEntry: {
-    new(internalEntry: IInternalEntry, metadata: IPropertyBase): MemberEntry;
+export const MemberEntry: (abstract new(internalEntry: IInternalEntry, metadata: IPropertyBase) => MemberEntry) & {
 };
 
 
@@ -788,12 +767,8 @@ export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infr
 export type MemberEntry = MemberEntry$instance & __MemberEntry$views;
 
 
-export abstract class NavigationEntry$protected {
-    protected readonly InternalEntityEntry: InternalEntityEntry;
-}
-
-
-export interface NavigationEntry$instance extends NavigationEntry$protected, MemberEntry$instance {
+export interface NavigationEntry$instance extends MemberEntry$instance {
+    readonly InternalEntityEntry: InternalEntityEntry;
     IsLoaded: boolean;
     Load(): void;
     Load(options: LoadOptions): void;
@@ -803,9 +778,7 @@ export interface NavigationEntry$instance extends NavigationEntry$protected, Mem
 }
 
 
-export const NavigationEntry: {
-    new(internalEntry: InternalEntityEntry, name: string, collection: boolean): NavigationEntry;
-    new(internalEntry: InternalEntityEntry, navigationBase: INavigationBase, collection: boolean): NavigationEntry;
+export const NavigationEntry: (abstract new(internalEntry: InternalEntityEntry, name: string, collection: boolean) => NavigationEntry) & (abstract new(internalEntry: InternalEntityEntry, navigationBase: INavigationBase, collection: boolean) => NavigationEntry) & {
 };
 
 
@@ -831,14 +804,7 @@ export const ObservableCollectionListSource_1: {
 
 export type ObservableCollectionListSource_1<T> = ObservableCollectionListSource_1$instance<T>;
 
-export abstract class ObservableHashSet_1$protected<T> {
-    protected OnCollectionChanged(e: NotifyCollectionChangedEventArgs): void;
-    protected OnPropertyChanged(e: PropertyChangedEventArgs): void;
-    protected OnPropertyChanging(e: PropertyChangingEventArgs): void;
-}
-
-
-export interface ObservableHashSet_1$instance<T> extends ObservableHashSet_1$protected<T> {
+export interface ObservableHashSet_1$instance<T> {
     readonly Comparer: IEqualityComparer__System_Collections_Generic<T>;
     readonly Count: int;
     readonly IsReadOnly: boolean;
@@ -855,6 +821,9 @@ export interface ObservableHashSet_1$instance<T> extends ObservableHashSet_1$pro
     IsProperSupersetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
     IsSubsetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
     IsSupersetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
+    OnCollectionChanged(e: NotifyCollectionChangedEventArgs): void;
+    OnPropertyChanged(e: PropertyChangedEventArgs): void;
+    OnPropertyChanging(e: PropertyChangingEventArgs): void;
     Overlaps(other: IEnumerable__System_Collections_Generic<T>): boolean;
     Remove(item: T): boolean;
     RemoveWhere(match: Predicate<T>): int;
@@ -916,13 +885,9 @@ export interface PropertyEntry_2$instance<TEntity, TProperty> extends Microsoft_
 export type PropertyEntry_2<TEntity, TProperty> = PropertyEntry_2$instance<TEntity, TProperty> & __PropertyEntry_2$views<TEntity, TProperty>;
 
 
-export abstract class PropertyValues$protected {
-    protected readonly InternalEntry: InternalEntryBase;
-}
-
-
-export interface PropertyValues$instance extends PropertyValues$protected {
+export interface PropertyValues$instance {
     readonly ComplexCollectionProperties: IReadOnlyList<IComplexProperty>;
+    readonly InternalEntry: InternalEntryBase;
     readonly Properties: IReadOnlyList<IProperty>;
     readonly StructuralType: ITypeBase;
     Clone(): PropertyValues;
@@ -945,21 +910,16 @@ export interface PropertyValues$instance extends PropertyValues$protected {
 }
 
 
-export const PropertyValues: {
-    new(internalEntry: InternalEntryBase): PropertyValues;
+export const PropertyValues: (abstract new(internalEntry: InternalEntryBase) => PropertyValues) & {
 };
 
 
 export type PropertyValues = PropertyValues$instance;
 
-export abstract class ReferenceEntry$protected {
-    protected GetTargetEntry(): InternalEntityEntry | undefined;
-}
-
-
-export interface ReferenceEntry$instance extends ReferenceEntry$protected, NavigationEntry$instance {
+export interface ReferenceEntry$instance extends NavigationEntry$instance {
     IsModified: boolean;
     readonly TargetEntry: EntityEntry | undefined | EntityEntry_1<TProperty> | undefined;
+    GetTargetEntry(): InternalEntityEntry | undefined;
     Load(): void;
     Load(options: LoadOptions): void;
     LoadAsync(cancellationToken?: CancellationToken): Task;
@@ -1020,8 +980,7 @@ export interface ValueComparer$instance {
 }
 
 
-export const ValueComparer: {
-    new(equalsExpression: LambdaExpression, hashCodeExpression: LambdaExpression, snapshotExpression: LambdaExpression): ValueComparer;
+export const ValueComparer: (abstract new(equalsExpression: LambdaExpression, hashCodeExpression: LambdaExpression, snapshotExpression: LambdaExpression) => ValueComparer) & {
     readonly HashCodeAddMethod: MethodInfo;
     readonly ToHashCodeMethod: MethodInfo;
     readonly BoolIdentity: Expression<Func<System_Internal.Boolean, System_Internal.Boolean>>;
