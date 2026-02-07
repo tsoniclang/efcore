@@ -48,6 +48,8 @@ export enum MetadataDebugStringOptions {
 
 
 export interface IAnnotatable$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+
     readonly [name: string]: unknown | undefined;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
@@ -65,6 +67,8 @@ export interface IAnnotatable$instance extends IReadOnlyAnnotatable$instance {}
 export type IAnnotatable = IAnnotatable$instance;
 
 export interface IAnnotation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotation: never;
+
     readonly Name: string;
     readonly Value: unknown | undefined;
 }
@@ -73,6 +77,8 @@ export interface IAnnotation$instance {
 export type IAnnotation = IAnnotation$instance;
 
 export interface IConcurrencyDetector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IConcurrencyDetector: never;
+
     EnterCriticalSection(): ConcurrencyDetectorCriticalSectionDisposer;
     ExitCriticalSection(): void;
 }
@@ -81,6 +87,8 @@ export interface IConcurrencyDetector$instance {
 export type IConcurrencyDetector = IConcurrencyDetector$instance;
 
 export interface ICoreSingletonOptions$instance extends ISingletonOptions {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ICoreSingletonOptions: never;
+
     readonly AreDetailedErrorsEnabled: boolean;
     readonly AreThreadSafetyChecksEnabled: boolean;
     readonly RootApplicationServiceProvider: IServiceProvider | undefined;
@@ -93,6 +101,8 @@ export interface ICoreSingletonOptions$instance extends ISingletonOptions$instan
 export type ICoreSingletonOptions = ICoreSingletonOptions$instance;
 
 export interface ICurrentDbContext$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ICurrentDbContext: never;
+
     readonly Context: DbContext;
 }
 
@@ -100,6 +110,8 @@ export interface ICurrentDbContext$instance {
 export type ICurrentDbContext = ICurrentDbContext$instance;
 
 export interface IDbContextOptions$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
+
     readonly Extensions: IEnumerable<IDbContextOptionsExtension>;
     FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | undefined;
 }
@@ -108,6 +120,8 @@ export interface IDbContextOptions$instance {
 export type IDbContextOptions = IDbContextOptions$instance;
 
 export interface IDbContextOptionsBuilderInfrastructure$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
+
     AddOrUpdateExtension<TExtension extends IDbContextOptionsExtension>(extension: TExtension): void;
 }
 
@@ -115,6 +129,8 @@ export interface IDbContextOptionsBuilderInfrastructure$instance {
 export type IDbContextOptionsBuilderInfrastructure = IDbContextOptionsBuilderInfrastructure$instance;
 
 export interface IDbContextOptionsConfiguration_1$instance<TContext extends DbContext> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsConfiguration_1: never;
+
     Configure(serviceProvider: IServiceProvider, optionsBuilder: DbContextOptionsBuilder): void;
 }
 
@@ -122,6 +138,8 @@ export interface IDbContextOptionsConfiguration_1$instance<TContext extends DbCo
 export type IDbContextOptionsConfiguration_1<TContext extends DbContext> = IDbContextOptionsConfiguration_1$instance<TContext>;
 
 export interface IDbContextOptionsExtension$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never;
+
     readonly Info: DbContextOptionsExtensionInfo;
     ApplyDefaults(options: IDbContextOptions): IDbContextOptionsExtension;
     ApplyServices(services: IServiceCollection): void;
@@ -132,6 +150,8 @@ export interface IDbContextOptionsExtension$instance {
 export type IDbContextOptionsExtension = IDbContextOptionsExtension$instance;
 
 export interface IDbSetFinder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbSetFinder: never;
+
     FindSets(contextType: Type): IReadOnlyList<DbSetProperty>;
 }
 
@@ -139,6 +159,8 @@ export interface IDbSetFinder$instance {
 export type IDbSetFinder = IDbSetFinder$instance;
 
 export interface IInfrastructure_1$instance<T> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Instance: T;
 }
 
@@ -146,6 +168,8 @@ export interface IInfrastructure_1$instance<T> {
 export type IInfrastructure_1<T> = IInfrastructure_1$instance<T>;
 
 export interface IInternalServiceCollectionMap$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInternalServiceCollectionMap: never;
+
     AddDependencySingleton<TDependencies>(): IInternalServiceCollectionMap;
 }
 
@@ -153,6 +177,8 @@ export interface IInternalServiceCollectionMap$instance {
 export type IInternalServiceCollectionMap = IInternalServiceCollectionMap$instance;
 
 export interface ILazyLoader$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ILazyLoader: never;
+
     Dispose(): void;
     IsLoaded(entity: unknown, navigationName?: string): boolean;
     Load(entity: unknown, navigationName?: string): void;
@@ -164,6 +190,8 @@ export interface ILazyLoader$instance {
 export type ILazyLoader = ILazyLoader$instance;
 
 export interface IModelCacheKeyFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCacheKeyFactory: never;
+
     Create(context: DbContext, designTime: boolean): unknown;
 }
 
@@ -171,6 +199,8 @@ export interface IModelCacheKeyFactory$instance {
 export type IModelCacheKeyFactory = IModelCacheKeyFactory$instance;
 
 export interface IModelCustomizer$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCustomizer: never;
+
     Customize(modelBuilder: ModelBuilder, context: DbContext): void;
 }
 
@@ -178,6 +208,8 @@ export interface IModelCustomizer$instance {
 export type IModelCustomizer = IModelCustomizer$instance;
 
 export interface IModelRuntimeInitializer$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelRuntimeInitializer: never;
+
     Initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
 }
 
@@ -185,6 +217,8 @@ export interface IModelRuntimeInitializer$instance {
 export type IModelRuntimeInitializer = IModelRuntimeInitializer$instance;
 
 export interface IModelSource$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelSource: never;
+
     GetModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
 }
 
@@ -192,6 +226,8 @@ export interface IModelSource$instance {
 export type IModelSource = IModelSource$instance;
 
 export interface IModelValidator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelValidator: never;
+
     Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
 }
 
@@ -199,6 +235,8 @@ export interface IModelValidator$instance {
 export type IModelValidator = IModelValidator$instance;
 
 export interface IReadOnlyAnnotatable$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+
     readonly [name: string]: unknown | undefined;
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
@@ -209,6 +247,8 @@ export interface IReadOnlyAnnotatable$instance {
 export type IReadOnlyAnnotatable = IReadOnlyAnnotatable$instance;
 
 export interface IRelationalDbContextOptionsBuilderInfrastructure$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IRelationalDbContextOptionsBuilderInfrastructure: never;
+
     readonly OptionsBuilder: DbContextOptionsBuilder;
 }
 
@@ -216,6 +256,8 @@ export interface IRelationalDbContextOptionsBuilderInfrastructure$instance {
 export type IRelationalDbContextOptionsBuilderInfrastructure = IRelationalDbContextOptionsBuilderInfrastructure$instance;
 
 export interface IResettableService$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
+
     ResetState(): void;
     ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
@@ -224,6 +266,8 @@ export interface IResettableService$instance {
 export type IResettableService = IResettableService$instance;
 
 export interface ISingletonOptions$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ISingletonOptions: never;
+
     Initialize(options: IDbContextOptions): void;
 }
 
@@ -231,6 +275,8 @@ export interface ISingletonOptions$instance {
 export type ISingletonOptions = ISingletonOptions$instance;
 
 export interface ConcurrencyDetectorCriticalSectionDisposer$instance {
+    readonly __tsonic_iface_System_IDisposable: never;
+
     Dispose(): void;
 }
 
@@ -270,6 +316,10 @@ export const ServiceCharacteristics: {
 export type ServiceCharacteristics = ServiceCharacteristics$instance;
 
 export interface Annotatable$instance extends AnnotatableBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
@@ -309,6 +359,9 @@ export type Annotatable = Annotatable$instance & __Annotatable$views;
 
 
 export interface AnnotatableBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+
     readonly IsReadOnly: boolean;
     [name: string]: unknown | undefined;
     AddAnnotation(name: string, value: unknown): Annotation;
@@ -353,7 +406,9 @@ export type AnnotatableBase = AnnotatableBase$instance & __AnnotatableBase$views
 
 
 export interface AnnotatableBuilder_2$instance<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder> {
-    readonly Metadata: ComplexType | TMetadata;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
+
+    readonly Metadata: EntityType | TMetadata;
     readonly ModelBuilder: InternalModelBuilder | TModelBuilder;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
@@ -378,6 +433,8 @@ export type AnnotatableBuilder_2<TMetadata extends ConventionAnnotatable, TModel
 
 
 export interface Annotation$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotation: never;
+
     readonly Name: string;
     readonly Value: unknown | undefined;
 }
@@ -398,6 +455,11 @@ export type Annotation = Annotation$instance & __Annotation$views;
 
 
 export interface ConventionAnnotatable$instance extends Annotatable$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
@@ -441,6 +503,8 @@ export type ConventionAnnotatable = ConventionAnnotatable$instance & __Conventio
 
 
 export interface CoreOptionsExtension$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never;
+
     readonly ApplicationServiceProvider: IServiceProvider | undefined;
     readonly AsyncSeeder: Func<DbContext, System_Internal.Boolean, CancellationToken, Task> | undefined;
     readonly AutoResolveRootProvider: boolean;
@@ -505,6 +569,10 @@ export type CoreOptionsExtension = CoreOptionsExtension$instance & __CoreOptions
 
 
 export interface DatabaseFacade$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseFacadeDependenciesAccessor: never;
+
     AutoSavepointsEnabled: boolean;
     AutoTransactionBehavior: AutoTransactionBehavior;
     AutoTransactionsEnabled: boolean;
@@ -600,6 +668,8 @@ export const DebugView: {
 export type DebugView = DebugView$instance;
 
 export interface EntityFrameworkEventSource$instance extends EventSource {
+    readonly __tsonic_iface_System_IDisposable: never;
+
     CompiledQueryCacheHit(): void;
     CompiledQueryCacheMiss(): void;
     DbContextDisposing(): void;
@@ -715,6 +785,8 @@ export const ModelCacheKey: {
 export type ModelCacheKey = ModelCacheKey$instance;
 
 export interface ModelCacheKeyFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCacheKeyFactory: never;
+
     readonly Dependencies: ModelCacheKeyFactoryDependencies;
     Create(context: DbContext): unknown;
     Create(context: DbContext, designTime: boolean): unknown;
@@ -734,6 +806,8 @@ export type ModelCacheKeyFactory = ModelCacheKeyFactory$instance & __ModelCacheK
 
 
 export interface ModelCacheKeyFactoryDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): ModelCacheKeyFactoryDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: ModelCacheKeyFactoryDependencies): boolean;
@@ -750,6 +824,8 @@ export const ModelCacheKeyFactoryDependencies: {
 export type ModelCacheKeyFactoryDependencies = ModelCacheKeyFactoryDependencies$instance;
 
 export interface ModelCustomizer$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCustomizer: never;
+
     readonly Dependencies: ModelCustomizerDependencies;
     Customize(modelBuilder: ModelBuilder, context: DbContext): void;
 }
@@ -770,6 +846,8 @@ export type ModelCustomizer = ModelCustomizer$instance & __ModelCustomizer$views
 
 
 export interface ModelCustomizerDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): ModelCustomizerDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: ModelCustomizerDependencies): boolean;
@@ -786,6 +864,8 @@ export const ModelCustomizerDependencies: {
 export type ModelCustomizerDependencies = ModelCustomizerDependencies$instance;
 
 export interface ModelDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     Logger: IDiagnosticsLogger_1<DbLoggerCategory_Model>;
     _Clone_$(): ModelDependencies;
     Equals(obj: unknown): boolean;
@@ -817,6 +897,8 @@ export const ModelRuntimeInitializer: {
 export type ModelRuntimeInitializer = ModelRuntimeInitializer$instance;
 
 export interface ModelRuntimeInitializerDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     ModelDependencies: RuntimeModelDependencies;
     ModelValidator: IModelValidator;
     _Clone_$(): ModelRuntimeInitializerDependencies;
@@ -847,6 +929,8 @@ export const ModelSnapshot: (abstract new() => ModelSnapshot) & {
 export type ModelSnapshot = ModelSnapshot$instance;
 
 export interface ModelSource$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelSource: never;
+
     readonly Dependencies: ModelSourceDependencies;
     CreateModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
     CreateModel(context: DbContext, conventionSetBuilder: IConventionSetBuilder, modelDependencies: ModelDependencies): IModel;
@@ -869,6 +953,8 @@ export type ModelSource = ModelSource$instance & __ModelSource$views;
 
 
 export interface ModelSourceDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     MemoryCache: IMemoryCache;
     ModelCacheKeyFactory: IModelCacheKeyFactory;
     ModelCustomizer: IModelCustomizer;
@@ -888,6 +974,8 @@ export const ModelSourceDependencies: {
 export type ModelSourceDependencies = ModelSourceDependencies$instance;
 
 export interface ModelValidator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelValidator: never;
+
     readonly Dependencies: ModelValidatorDependencies;
     IsOwned(targetType: Type, conventionModel: IConventionModel): boolean;
     IsRedundant(foreignKey: IForeignKey): boolean;
@@ -935,6 +1023,8 @@ export type ModelValidator = ModelValidator$instance & __ModelValidator$views;
 
 
 export interface ModelValidatorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     MemberClassifier: IMemberClassifier;
     _Clone_$(): ModelValidatorDependencies;
     Equals(obj: unknown): boolean;
@@ -952,6 +1042,8 @@ export const ModelValidatorDependencies: {
 export type ModelValidatorDependencies = ModelValidatorDependencies$instance;
 
 export interface PooledDbContextFactory_1$instance<TContext extends DbContext> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IDbContextFactory_1: never;
+
     CreateDbContext(): TContext;
     CreateDbContextAsync(cancellationToken?: CancellationToken): Task<TContext>;
 }
@@ -973,6 +1065,8 @@ export type PooledDbContextFactory_1<TContext extends DbContext> = PooledDbConte
 
 
 export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IRelationalDbContextOptionsBuilderInfrastructure: never;
+
     readonly OptionsBuilder: DbContextOptionsBuilder;
     CommandTimeout(commandTimeout: Nullable<System_Internal.Int32>): TBuilder;
     Equals(obj: unknown): boolean;
@@ -1007,6 +1101,8 @@ export type RelationalDbContextOptionsBuilder_2<TBuilder extends RelationalDbCon
 
 
 export interface RelationalModelCustomizer$instance extends ModelCustomizer$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCustomizer: never;
+
     Customize(modelBuilder: ModelBuilder, context: DbContext): void;
 }
 
@@ -1024,6 +1120,8 @@ export type RelationalModelCustomizer = RelationalModelCustomizer$instance & __R
 
 
 export interface RelationalModelDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     RowForeignKeyValueFactoryFactory: IRowForeignKeyValueFactoryFactory;
     RowIndexValueFactoryFactory: IRowIndexValueFactoryFactory;
     RowKeyValueFactoryFactory: IRowKeyValueFactoryFactory;
@@ -1044,6 +1142,8 @@ export const RelationalModelDependencies: {
 export type RelationalModelDependencies = RelationalModelDependencies$instance;
 
 export interface RelationalModelRuntimeInitializer$instance extends ModelRuntimeInitializer {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelRuntimeInitializer: never;
+
     readonly RelationalDependencies: RelationalModelRuntimeInitializerDependencies;
     Initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
     InitializeModel(model: IModel, designTime: boolean, prevalidation: boolean): void;
@@ -1063,6 +1163,8 @@ export type RelationalModelRuntimeInitializer = RelationalModelRuntimeInitialize
 
 
 export interface RelationalModelRuntimeInitializerDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     RelationalAnnotationProvider: IRelationalAnnotationProvider;
     RelationalModelDependencies: RelationalModelDependencies;
     _Clone_$(): RelationalModelRuntimeInitializerDependencies;
@@ -1081,6 +1183,8 @@ export const RelationalModelRuntimeInitializerDependencies: {
 export type RelationalModelRuntimeInitializerDependencies = RelationalModelRuntimeInitializerDependencies$instance;
 
 export interface RelationalModelValidator$instance extends ModelValidator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelValidator: never;
+
     readonly RelationalDependencies: RelationalModelValidatorDependencies;
     GetDefaultColumnValue(property: IProperty, storeObject: StoreObjectIdentifier): unknown | undefined;
     IsRedundant(foreignKey: IForeignKey): boolean;
@@ -1148,6 +1252,8 @@ export type RelationalModelValidator = RelationalModelValidator$instance & __Rel
 
 
 export interface RelationalModelValidatorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     TypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): RelationalModelValidatorDependencies;
     Equals(obj: unknown): boolean;
@@ -1165,6 +1271,8 @@ export const RelationalModelValidatorDependencies: {
 export type RelationalModelValidatorDependencies = RelationalModelValidatorDependencies$instance;
 
 export interface RelationalOptionsExtension$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never;
+
     readonly CommandTimeout: Nullable<System_Internal.Int32>;
     readonly Connection: DbConnection | undefined;
     readonly ConnectionString: string | undefined;
@@ -1216,6 +1324,9 @@ export type RelationalOptionsExtension = RelationalOptionsExtension$instance & _
 
 
 export interface RuntimeAnnotatableBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+
     [name: string]: unknown | undefined;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
@@ -1253,6 +1364,8 @@ export type RuntimeAnnotatableBase = RuntimeAnnotatableBase$instance & __Runtime
 
 
 export interface RuntimeModelDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     ConstructorBindingFactory: IConstructorBindingFactory;
     ParameterBindingFactories: IParameterBindingFactories;
     TypeMappingSource: ITypeMappingSource;
@@ -1272,6 +1385,8 @@ export const RuntimeModelDependencies: {
 export type RuntimeModelDependencies = RuntimeModelDependencies$instance;
 
 export interface ServiceCollectionMap$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly ServiceCollection: IServiceCollection;
     TryAdd(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
     TryAdd(serviceType: Type, factory: Func<IServiceProvider, unknown>, lifetime: ServiceLifetime): ServiceCollectionMap;

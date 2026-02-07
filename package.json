@@ -1,6 +1,6 @@
 {
   "name": "@tsonic/efcore",
-  "version": "10.0.3",
+  "version": "10.0.5",
   "description": "TypeScript type definitions for Microsoft.EntityFrameworkCore.* for .NET 10",
   "type": "module",
   "keywords": [

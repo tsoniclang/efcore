@@ -27,6 +27,8 @@ import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
 import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 
 export interface MigrationCommandExecutor$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationCommandExecutor: never;
+
     ExecuteNonQuery(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection): void;
     ExecuteNonQuery(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>): int;
     ExecuteNonQueryAsync(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task;
@@ -49,6 +51,8 @@ export type MigrationCommandExecutor = MigrationCommandExecutor$instance & __Mig
 
 
 export interface MigrationsAssembly$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsAssembly: never;
+
     readonly Assembly: Assembly;
     readonly Migrations: IReadOnlyDictionary<System_Internal.String, TypeInfo>;
     readonly ModelSnapshot: ModelSnapshot | undefined;
@@ -72,6 +76,8 @@ export type MigrationsAssembly = MigrationsAssembly$instance & __MigrationsAssem
 
 
 export interface MigrationsIdGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsIdGenerator: never;
+
     GenerateId(name: string): string;
     GetName(id: string): string;
     IsValidId(value: string): boolean;
@@ -93,6 +99,8 @@ export type MigrationsIdGenerator = MigrationsIdGenerator$instance & __Migration
 
 
 export interface MigrationsModelDiffer$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsModelDiffer: never;
+
     readonly CommandBatchPreparerDependencies: CommandBatchPreparerDependencies;
     readonly MigrationsAnnotationProvider: IMigrationsAnnotationProvider;
     readonly RelationalAnnotationProvider: IRelationalAnnotationProvider;
@@ -161,6 +169,8 @@ export type MigrationsModelDiffer = MigrationsModelDiffer$instance & __Migration
 
 
 export interface Migrator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrator: never;
+
     readonly MigrationTransactionIsolationLevel: Nullable<IsolationLevel>;
     GenerateDownSql(migration: Migration, previousMigration: Migration, options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
     GenerateScript(fromMigration?: string, toMigration?: string, options?: MigrationsSqlGenerationOptions): string;

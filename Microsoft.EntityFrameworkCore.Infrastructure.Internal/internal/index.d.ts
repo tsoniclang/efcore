@@ -24,17 +24,21 @@ import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
 import type { IServiceCollection, ServiceDescriptor, ServiceLifetime } from "@tsonic/microsoft-extensions/Microsoft.Extensions.DependencyInjection.js";
 
 export interface ILazyLoaderFactory$instance extends IDisposable, IResettableService {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_Internal_ILazyLoaderFactory: never;
+
     Create(): ILazyLoader;
     ResetState(): void;
     ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
 
 
-export interface ILazyLoaderFactory$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {}
+export interface ILazyLoaderFactory$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance, System_Internal.IDisposable {}
 
 export type ILazyLoaderFactory = ILazyLoaderFactory$instance;
 
 export interface ConcurrencyDetector$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IConcurrencyDetector: never;
+
     EnterCriticalSection(): ConcurrencyDetectorCriticalSectionDisposer;
     ExitCriticalSection(): void;
 }
@@ -55,6 +59,9 @@ export type ConcurrencyDetector = ConcurrencyDetector$instance & __ConcurrencyDe
 
 
 export interface CoreSingletonOptions$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ICoreSingletonOptions: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ISingletonOptions: never;
+
     AreDetailedErrorsEnabled: boolean;
     AreThreadSafetyChecksEnabled: boolean;
     get RootApplicationServiceProvider(): IServiceProvider | undefined;
@@ -78,6 +85,8 @@ export type CoreSingletonOptions = CoreSingletonOptions$instance & __CoreSinglet
 
 
 export interface CurrentDbContext$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ICurrentDbContext: never;
+
     readonly Context: DbContext;
 }
 
@@ -97,6 +106,8 @@ export type CurrentDbContext = CurrentDbContext$instance & __CurrentDbContext$vi
 
 
 export interface DbContextOptionsConfiguration_1$instance<TContext extends DbContext> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsConfiguration_1: never;
+
     Configure(serviceProvider: IServiceProvider, optionsBuilder: DbContextOptionsBuilder): void;
 }
 
@@ -116,6 +127,8 @@ export type DbContextOptionsConfiguration_1<TContext extends DbContext> = DbCont
 
 
 export interface DbSetFinder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbSetFinder: never;
+
     FindSets(contextType: Type): IReadOnlyList<DbSetProperty>;
 }
 
@@ -172,6 +185,9 @@ export const InternalServiceCollectionMap: {
 export type InternalServiceCollectionMap = InternalServiceCollectionMap$instance;
 
 export interface LazyLoader$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ILazyLoader: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IInjectableService: never;
+
     get Context(): DbContext | undefined;
     set Context(value: DbContext | undefined);
     readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>;
@@ -202,6 +218,10 @@ export type LazyLoader = LazyLoader$instance & __LazyLoader$views;
 
 
 export interface LazyLoaderFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_Internal_ILazyLoaderFactory: never;
+    readonly __tsonic_iface_System_IDisposable: never;
+
     Create(): ILazyLoader;
     Dispose(): void;
     ResetState(): void;
@@ -223,6 +243,8 @@ export type LazyLoaderFactory = LazyLoaderFactory$instance & __LazyLoaderFactory
 
 
 export interface MemberInfoNameComparer$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+
     Compare(x: MemberInfo, y: MemberInfo): int;
 }
 

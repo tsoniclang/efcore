@@ -28,6 +28,8 @@ import type { Expression, LambdaExpression } from "@tsonic/dotnet/System.Linq.Ex
 import type { FieldInfo, MemberInfo } from "@tsonic/dotnet/System.Reflection.js";
 
 export interface IConventionAnnotatableBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
+
     readonly Metadata: IConventionAnnotatable;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -40,6 +42,8 @@ export interface IConventionAnnotatableBuilder$instance {
 export type IConventionAnnotatableBuilder = IConventionAnnotatableBuilder$instance;
 
 export interface IConventionCheckConstraintBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionCheckConstraintBuilder: never;
+
     readonly Metadata: IConventionCheckConstraint;
     readonly ModelBuilder: IConventionModelBuilder;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -55,6 +59,8 @@ export interface IConventionCheckConstraintBuilder$instance extends IConventionA
 export type IConventionCheckConstraintBuilder = IConventionCheckConstraintBuilder$instance;
 
 export interface IConventionComplexPropertyBuilder$instance extends IConventionPropertyBaseBuilder_1<IConventionComplexPropertyBuilder>, IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionComplexPropertyBuilder: never;
+
     readonly Metadata: IConventionComplexProperty;
     readonly ModelBuilder: IConventionModelBuilder;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -79,6 +85,8 @@ export interface IConventionComplexPropertyBuilder$instance extends IConventionP
 export type IConventionComplexPropertyBuilder = IConventionComplexPropertyBuilder$instance;
 
 export interface IConventionComplexTypeBuilder$instance extends IConventionTypeBaseBuilder, IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionComplexTypeBuilder: never;
+
     readonly Metadata: IConventionComplexType;
     readonly ModelBuilder: IConventionModelBuilder;
     CanHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): boolean;
@@ -129,6 +137,8 @@ export interface IConventionComplexTypeBuilder$instance extends IConventionTypeB
 export type IConventionComplexTypeBuilder = IConventionComplexTypeBuilder$instance;
 
 export interface IConventionComplexTypeDiscriminatorBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionComplexTypeDiscriminatorBuilder: never;
+
     readonly ComplexType: IConventionComplexType;
     CanSetValue(value: unknown, fromDataAnnotation?: boolean): boolean;
     HasValue(value: unknown, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
@@ -138,6 +148,8 @@ export interface IConventionComplexTypeDiscriminatorBuilder$instance {
 export type IConventionComplexTypeDiscriminatorBuilder = IConventionComplexTypeDiscriminatorBuilder$instance;
 
 export interface IConventionDbFunctionBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionDbFunctionBuilder: never;
+
     readonly Metadata: IConventionDbFunction;
     readonly ModelBuilder: IConventionModelBuilder;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -160,6 +172,8 @@ export interface IConventionDbFunctionBuilder$instance extends IConventionAnnota
 export type IConventionDbFunctionBuilder = IConventionDbFunctionBuilder$instance;
 
 export interface IConventionDbFunctionParameterBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionDbFunctionParameterBuilder: never;
+
     readonly Metadata: IConventionDbFunctionParameter;
     readonly ModelBuilder: IConventionModelBuilder;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -177,6 +191,8 @@ export interface IConventionDbFunctionParameterBuilder$instance extends IConvent
 export type IConventionDbFunctionParameterBuilder = IConventionDbFunctionParameterBuilder$instance;
 
 export interface IConventionDiscriminatorBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionDiscriminatorBuilder: never;
+
     readonly EntityType: IConventionEntityType;
     CanSetIsComplete(complete: boolean, fromDataAnnotation?: boolean): boolean;
     CanSetValue(entityType: IConventionEntityType, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -190,6 +206,8 @@ export interface IConventionDiscriminatorBuilder$instance {
 export type IConventionDiscriminatorBuilder = IConventionDiscriminatorBuilder$instance;
 
 export interface IConventionElementTypeBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionElementTypeBuilder: never;
+
     readonly Metadata: IConventionElementType;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -214,6 +232,8 @@ export interface IConventionElementTypeBuilder$instance extends IConventionAnnot
 export type IConventionElementTypeBuilder = IConventionElementTypeBuilder$instance;
 
 export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBaseBuilder, IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionEntityTypeBuilder: never;
+
     readonly Metadata: IConventionEntityType;
     readonly ModelBuilder: IConventionModelBuilder;
     CanHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): boolean;
@@ -315,6 +335,8 @@ export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBa
 export type IConventionEntityTypeBuilder = IConventionEntityTypeBuilder$instance;
 
 export interface IConventionEntityTypeMappingFragmentBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionEntityTypeMappingFragmentBuilder: never;
+
     readonly Metadata: IConventionEntityTypeMappingFragment;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -327,6 +349,8 @@ export interface IConventionEntityTypeMappingFragmentBuilder$instance extends IC
 export type IConventionEntityTypeMappingFragmentBuilder = IConventionEntityTypeMappingFragmentBuilder$instance;
 
 export interface IConventionForeignKeyBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionForeignKeyBuilder: never;
+
     readonly Metadata: IConventionForeignKey;
     readonly ModelBuilder: IConventionModelBuilder;
     CanInvert(newForeignKeyProperties: IReadOnlyList<IConventionProperty>, fromDataAnnotation?: boolean): boolean;
@@ -355,6 +379,8 @@ export interface IConventionForeignKeyBuilder$instance extends IConventionAnnota
 export type IConventionForeignKeyBuilder = IConventionForeignKeyBuilder$instance;
 
 export interface IConventionIndexBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionIndexBuilder: never;
+
     readonly Metadata: IConventionIndex;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -373,6 +399,8 @@ export interface IConventionIndexBuilder$instance extends IConventionAnnotatable
 export type IConventionIndexBuilder = IConventionIndexBuilder$instance;
 
 export interface IConventionKeyBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionKeyBuilder: never;
+
     readonly Metadata: IConventionKey;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -387,6 +415,8 @@ export interface IConventionKeyBuilder$instance extends IConventionAnnotatableBu
 export type IConventionKeyBuilder = IConventionKeyBuilder$instance;
 
 export interface IConventionModelBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionModelBuilder: never;
+
     readonly Metadata: IConventionModel;
     readonly ModelBuilder: IConventionModelBuilder;
     CanHaveSharedTypeEntity(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
@@ -415,6 +445,8 @@ export interface IConventionModelBuilder$instance extends IConventionAnnotatable
 export type IConventionModelBuilder = IConventionModelBuilder$instance;
 
 export interface IConventionNavigationBuilder$instance extends IConventionPropertyBaseBuilder_1<IConventionNavigationBuilder>, IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionNavigationBuilder: never;
+
     readonly Metadata: IConventionNavigation;
     readonly ModelBuilder: IConventionModelBuilder;
     AutoInclude(autoInclude: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionNavigationBuilder | undefined;
@@ -439,12 +471,16 @@ export interface IConventionNavigationBuilder$instance extends IConventionProper
 export type IConventionNavigationBuilder = IConventionNavigationBuilder$instance;
 
 export interface IConventionOwnedEntityTypeBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionOwnedEntityTypeBuilder: never;
+
 }
 
 
 export type IConventionOwnedEntityTypeBuilder = IConventionOwnedEntityTypeBuilder$instance;
 
 export interface IConventionPropertyBaseBuilder_1$instance<TBuilder extends IConventionPropertyBaseBuilder_1<TBuilder>> extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionPropertyBaseBuilder_1: never;
+
     readonly Metadata: IConventionPropertyBase;
     readonly ModelBuilder: IConventionModelBuilder;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -464,6 +500,8 @@ export interface IConventionPropertyBaseBuilder_1$instance<TBuilder extends ICon
 export type IConventionPropertyBaseBuilder_1<TBuilder extends IConventionPropertyBaseBuilder_1<TBuilder>> = IConventionPropertyBaseBuilder_1$instance<TBuilder>;
 
 export interface IConventionPropertyBuilder$instance extends IConventionPropertyBaseBuilder_1<IConventionPropertyBuilder>, IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionPropertyBuilder: never;
+
     readonly Metadata: IConventionProperty;
     readonly ModelBuilder: IConventionModelBuilder;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -501,6 +539,8 @@ export interface IConventionPropertyBuilder$instance extends IConventionProperty
 export type IConventionPropertyBuilder = IConventionPropertyBuilder$instance;
 
 export interface IConventionRelationalPropertyOverridesBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionRelationalPropertyOverridesBuilder: never;
+
     readonly Metadata: IConventionRelationalPropertyOverrides;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -513,6 +553,8 @@ export interface IConventionRelationalPropertyOverridesBuilder$instance extends 
 export type IConventionRelationalPropertyOverridesBuilder = IConventionRelationalPropertyOverridesBuilder$instance;
 
 export interface IConventionSequenceBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionSequenceBuilder: never;
+
     readonly Metadata: IConventionSequence;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -531,6 +573,8 @@ export interface IConventionSequenceBuilder$instance extends IConventionAnnotata
 export type IConventionSequenceBuilder = IConventionSequenceBuilder$instance;
 
 export interface IConventionServicePropertyBuilder$instance extends IConventionPropertyBaseBuilder_1<IConventionServicePropertyBuilder>, IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionServicePropertyBuilder: never;
+
     readonly Metadata: IConventionServiceProperty;
     readonly ModelBuilder: IConventionModelBuilder;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -556,6 +600,8 @@ export interface IConventionServicePropertyBuilder$instance extends IConventionP
 export type IConventionServicePropertyBuilder = IConventionServicePropertyBuilder$instance;
 
 export interface IConventionSkipNavigationBuilder$instance extends IConventionPropertyBaseBuilder_1<IConventionSkipNavigationBuilder>, IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionSkipNavigationBuilder: never;
+
     readonly Metadata: IConventionSkipNavigation;
     readonly ModelBuilder: IConventionModelBuilder;
     AutoInclude(autoInclude: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
@@ -584,6 +630,8 @@ export interface IConventionSkipNavigationBuilder$instance extends IConventionPr
 export type IConventionSkipNavigationBuilder = IConventionSkipNavigationBuilder$instance;
 
 export interface IConventionStoredProcedureBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionStoredProcedureBuilder: never;
+
     readonly Metadata: IConventionStoredProcedure;
     readonly ModelBuilder: IConventionModelBuilder;
     CanHaveRowsAffectedParameter(fromDataAnnotation?: boolean): boolean;
@@ -605,6 +653,8 @@ export interface IConventionStoredProcedureBuilder$instance extends IConventionA
 export type IConventionStoredProcedureBuilder = IConventionStoredProcedureBuilder$instance;
 
 export interface IConventionStoredProcedureParameterBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionStoredProcedureParameterBuilder: never;
+
     readonly Metadata: IConventionStoredProcedureParameter;
     readonly ModelBuilder: IConventionModelBuilder;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -622,6 +672,8 @@ export interface IConventionStoredProcedureParameterBuilder$instance extends ICo
 export type IConventionStoredProcedureParameterBuilder = IConventionStoredProcedureParameterBuilder$instance;
 
 export interface IConventionStoredProcedureResultColumnBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionStoredProcedureResultColumnBuilder: never;
+
     readonly Metadata: IConventionStoredProcedureResultColumn;
     readonly ModelBuilder: IConventionModelBuilder;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
@@ -637,6 +689,8 @@ export interface IConventionStoredProcedureResultColumnBuilder$instance extends 
 export type IConventionStoredProcedureResultColumnBuilder = IConventionStoredProcedureResultColumnBuilder$instance;
 
 export interface IConventionTriggerBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionTriggerBuilder: never;
+
     readonly Metadata: IConventionTrigger;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -651,6 +705,8 @@ export interface IConventionTriggerBuilder$instance extends IConventionAnnotatab
 export type IConventionTriggerBuilder = IConventionTriggerBuilder$instance;
 
 export interface IConventionTypeBaseBuilder$instance extends IConventionAnnotatableBuilder {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionTypeBaseBuilder: never;
+
     readonly Metadata: IConventionTypeBase;
     readonly ModelBuilder: IConventionModelBuilder;
     CanHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): boolean;
@@ -687,6 +743,8 @@ export interface IConventionTypeBaseBuilder$instance extends IConventionAnnotata
 export type IConventionTypeBaseBuilder = IConventionTypeBaseBuilder$instance;
 
 export interface CheckConstraintBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Builder: InternalCheckConstraintBuilder;
     readonly Metadata: IMutableCheckConstraint;
     Equals(obj: unknown): boolean;
@@ -790,6 +848,8 @@ export const CollectionCollectionBuilder_2: {
 export type CollectionCollectionBuilder_2<TLeftEntity, TRightEntity> = CollectionCollectionBuilder_2$instance<TLeftEntity, TRightEntity>;
 
 export interface CollectionNavigationBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     get Builder(): InternalForeignKeyBuilder | undefined;
     set Builder(value: InternalForeignKeyBuilder | undefined);
     readonly CollectionMember: MemberInfo | undefined;
@@ -825,6 +885,8 @@ export type CollectionNavigationBuilder = CollectionNavigationBuilder$instance &
 
 
 export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends CollectionNavigationBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     WithMany(navigationName?: string): CollectionCollectionBuilder_2<TRelatedEntity, TEntity>;
     WithMany(navigationName?: string): CollectionCollectionBuilder;
     WithOne(navigationName?: string): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
@@ -847,6 +909,8 @@ export type CollectionNavigationBuilder_2<TEntity, TRelatedEntity> = CollectionN
 
 
 export interface ColumnBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly InternalOverrides: RelationalPropertyOverrides;
     readonly Overrides: IMutableRelationalPropertyOverrides;
     Equals(obj: unknown): boolean;
@@ -872,6 +936,8 @@ export type ColumnBuilder = ColumnBuilder$instance & __ColumnBuilder$views;
 
 
 export interface ColumnBuilder_1$instance<TProperty> extends ColumnBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): ColumnBuilder;
     HasColumnName(name: string): ColumnBuilder;
 }
@@ -892,6 +958,8 @@ export type ColumnBuilder_1<TProperty> = ColumnBuilder_1$instance<TProperty> & _
 
 
 export interface ComplexCollectionBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableComplexProperty;
     readonly PropertyBuilder: InternalComplexPropertyBuilder;
     readonly TypeBuilder: InternalComplexTypeBuilder;
@@ -952,6 +1020,8 @@ export type ComplexCollectionBuilder = ComplexCollectionBuilder$instance & __Com
 
 
 export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCollectionBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     ComplexCollection<TElement>(propertyExpression: Expression<Func<TComplex, IEnumerable<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1007,6 +1077,8 @@ export type ComplexCollectionBuilder_1<TComplex> = ComplexCollectionBuilder_1$in
 
 
 export interface ComplexCollectionTypePropertyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableProperty;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1050,6 +1122,8 @@ export type ComplexCollectionTypePropertyBuilder = ComplexCollectionTypeProperty
 
 
 export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> extends ComplexCollectionTypePropertyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): ComplexCollectionTypePropertyBuilder;
     HasConversion(providerClrType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>): ComplexCollectionTypePropertyBuilder_1<TProperty>;
@@ -1125,6 +1199,8 @@ export const ComplexPropertiesConfigurationBuilder_1: {
 export type ComplexPropertiesConfigurationBuilder_1<TProperty> = ComplexPropertiesConfigurationBuilder_1$instance<TProperty>;
 
 export interface ComplexPropertyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableComplexProperty;
     readonly PropertyBuilder: InternalComplexPropertyBuilder;
     readonly TypeBuilder: InternalComplexTypeBuilder;
@@ -1189,6 +1265,8 @@ export type ComplexPropertyBuilder = ComplexPropertyBuilder$instance & __Complex
 
 
 export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexPropertyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     ComplexCollection<TElement>(propertyExpression: Expression<Func<TComplex, IEnumerable<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1248,6 +1326,8 @@ export type ComplexPropertyBuilder_1<TComplex> = ComplexPropertyBuilder_1$instan
 
 
 export interface ComplexTypeDiscriminatorBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionComplexTypeDiscriminatorBuilder: never;
+
     readonly ComplexTypeBuilder: InternalComplexTypeBuilder;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1281,6 +1361,8 @@ export const ComplexTypeDiscriminatorBuilder_1: {
 export type ComplexTypeDiscriminatorBuilder_1<TDiscriminator> = ComplexTypeDiscriminatorBuilder_1$instance<TDiscriminator>;
 
 export interface ComplexTypePrimitiveCollectionBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableProperty;
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder;
@@ -1322,6 +1404,8 @@ export type ComplexTypePrimitiveCollectionBuilder = ComplexTypePrimitiveCollecti
 
 
 export interface ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> extends ComplexTypePrimitiveCollectionBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder;
     HasAnnotation(annotation: string, value: unknown): ComplexTypePrimitiveCollectionBuilder;
@@ -1360,6 +1444,8 @@ export type ComplexTypePrimitiveCollectionBuilder_1<TProperty> = ComplexTypePrim
 
 
 export interface ComplexTypePropertyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableProperty;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1413,6 +1499,8 @@ export type ComplexTypePropertyBuilder = ComplexTypePropertyBuilder$instance & _
 
 
 export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends ComplexTypePropertyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): ComplexTypePropertyBuilder;
     HasConversion(providerClrType: Type): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>): ComplexTypePropertyBuilder_1<TProperty>;
@@ -1515,6 +1603,8 @@ export const DataBuilder_1: {
 export type DataBuilder_1<TEntity> = DataBuilder_1$instance<TEntity>;
 
 export interface DbFunctionBuilder$instance extends DbFunctionBuilderBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): DbFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string): DbFunctionParameterBuilder;
@@ -1542,6 +1632,8 @@ export type DbFunctionBuilder = DbFunctionBuilder$instance & __DbFunctionBuilder
 
 
 export interface DbFunctionBuilderBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Builder: InternalDbFunctionBuilder;
     readonly Metadata: IMutableDbFunction;
     Equals(obj: unknown): boolean;
@@ -1569,6 +1661,8 @@ export type DbFunctionBuilderBase = DbFunctionBuilderBase$instance & __DbFunctio
 
 
 export interface DbFunctionParameterBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableDbFunctionParameter;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1593,6 +1687,8 @@ export type DbFunctionParameterBuilder = DbFunctionParameterBuilder$instance & _
 
 
 export interface DiscriminatorBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionDiscriminatorBuilder: never;
+
     readonly EntityTypeBuilder: InternalEntityTypeBuilder;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1632,6 +1728,8 @@ export const DiscriminatorBuilder_1: {
 export type DiscriminatorBuilder_1<TDiscriminator> = DiscriminatorBuilder_1$instance<TDiscriminator>;
 
 export interface ElementTypeBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableElementType;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1667,6 +1765,8 @@ export type ElementTypeBuilder = ElementTypeBuilder$instance & __ElementTypeBuil
 
 
 export interface EntityTypeBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Builder: InternalEntityTypeBuilder;
     readonly Metadata: IMutableEntityType;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
@@ -1760,6 +1860,8 @@ export type EntityTypeBuilder = EntityTypeBuilder$instance & __EntityTypeBuilder
 
 
 export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     ComplexCollection<TElement>(propertyExpression: Expression<Func<TEntity, IEnumerable<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1869,6 +1971,8 @@ export type EntityTypeBuilder_1<TEntity> = EntityTypeBuilder_1$instance<TEntity>
 
 
 export interface IndexBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableIndex;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1894,6 +1998,8 @@ export type IndexBuilder = IndexBuilder$instance & __IndexBuilder$views;
 
 
 export interface IndexBuilder_1$instance<T> extends IndexBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): IndexBuilder;
     IsDescending(...descending: boolean[]): IndexBuilder;
     IsUnique(unique?: boolean): IndexBuilder;
@@ -1915,6 +2021,8 @@ export type IndexBuilder_1<T> = IndexBuilder_1$instance<T> & __IndexBuilder_1$vi
 
 
 export interface InvertibleRelationshipBuilderBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     Builder: InternalForeignKeyBuilder;
     readonly DeclaringEntityType: IMutableEntityType;
     readonly Metadata: IMutableForeignKey;
@@ -1939,6 +2047,8 @@ export type InvertibleRelationshipBuilderBase = InvertibleRelationshipBuilderBas
 
 
 export interface KeyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableKey;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -1962,6 +2072,8 @@ export type KeyBuilder = KeyBuilder$instance & __KeyBuilder$views;
 
 
 export interface KeyBuilder_1$instance<T> extends KeyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): KeyBuilder;
 }
 
@@ -1981,6 +2093,8 @@ export type KeyBuilder_1<T> = KeyBuilder_1$instance<T> & __KeyBuilder_1$views<T>
 
 
 export interface NavigationBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableNavigationBase;
     AutoInclude(autoInclude?: boolean): NavigationBuilder;
     EnableLazyLoading(lazyLoadingEnabled?: boolean): NavigationBuilder;
@@ -2009,6 +2123,8 @@ export type NavigationBuilder = NavigationBuilder$instance & __NavigationBuilder
 
 
 export interface NavigationBuilder_2$instance<TSource, TTarget> extends NavigationBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     AutoInclude(autoInclude?: boolean): NavigationBuilder;
     EnableLazyLoading(lazyLoadingEnabled?: boolean): NavigationBuilder;
     Equals(obj: unknown): boolean;
@@ -2061,6 +2177,8 @@ export const OwnedEntityTypeBuilder_1: {
 export type OwnedEntityTypeBuilder_1<T> = OwnedEntityTypeBuilder_1$instance<T>;
 
 export interface OwnedNavigationBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     Builder: InternalForeignKeyBuilder;
     readonly DependentEntityType: EntityType;
     readonly Metadata: IMutableForeignKey;
@@ -2122,6 +2240,8 @@ export type OwnedNavigationBuilder = OwnedNavigationBuilder$instance & __OwnedNa
 
 
 export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): OwnedNavigationBuilder;
     HasData(...data: TDependentEntity[]): DataBuilder_1<TDependentEntity>;
@@ -2193,6 +2313,8 @@ export type OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavi
 
 
 export interface OwnedNavigationSplitTableBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly InternalMappingFragment: EntityTypeMappingFragment;
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Metadata: IMutableEntityType;
@@ -2224,6 +2346,8 @@ export type OwnedNavigationSplitTableBuilder = OwnedNavigationSplitTableBuilder$
 
 
 export interface OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitTableBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationSplitTableBuilder;
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitTableBuilder;
     Property(propertyName: string): ColumnBuilder;
@@ -2246,6 +2370,8 @@ export type OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity> =
 
 
 export interface OwnedNavigationSplitViewBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Name: string;
     readonly Schema: string | undefined;
@@ -2273,6 +2399,8 @@ export type OwnedNavigationSplitViewBuilder = OwnedNavigationSplitViewBuilder$in
 
 
 export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitViewBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitViewBuilder;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
@@ -2294,6 +2422,8 @@ export type OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity> = 
 
 
 export interface OwnedNavigationStoredProcedureBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Builder: InternalStoredProcedureBuilder;
     readonly Metadata: IMutableStoredProcedure;
     CreatePropertyBuilder(propertyName: string): PropertyBuilder;
@@ -2328,6 +2458,8 @@ export type OwnedNavigationStoredProcedureBuilder = OwnedNavigationStoredProcedu
 
 
 export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationStoredProcedureBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
@@ -2358,6 +2490,8 @@ export type OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEnti
 
 
 export interface OwnedNavigationTableBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableEntityType;
     readonly Name: string | undefined;
     readonly Schema: string | undefined;
@@ -2390,6 +2524,8 @@ export type OwnedNavigationTableBuilder = OwnedNavigationTableBuilder$instance &
 
 
 export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationTableBuilder;
     HasComment(comment: string): OwnedNavigationTableBuilder;
     Property(propertyName: string): ColumnBuilder;
@@ -2412,6 +2548,8 @@ export type OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity> = Owne
 
 
 export interface OwnedNavigationTableValuedFunctionBuilder$instance extends DbFunctionBuilderBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string): DbFunctionParameterBuilder;
@@ -2436,6 +2574,8 @@ export type OwnedNavigationTableValuedFunctionBuilder = OwnedNavigationTableValu
 
 
 export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableValuedFunctionBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
@@ -2464,6 +2604,8 @@ export type OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependent
 
 
 export interface OwnedNavigationViewBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Name: string;
     readonly Schema: string | undefined;
     readonly StoreObject: StoreObjectIdentifier;
@@ -2490,6 +2632,8 @@ export type OwnedNavigationViewBuilder = OwnedNavigationViewBuilder$instance & _
 
 
 export interface OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationViewBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
 }
@@ -2510,6 +2654,8 @@ export type OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity> = Owned
 
 
 export interface OwnershipBuilder$instance extends RelationshipBuilderBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): OwnershipBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): OwnershipBuilder;
     HasPrincipalKey(...keyPropertyNames: string[]): OwnershipBuilder;
@@ -2531,6 +2677,8 @@ export type OwnershipBuilder = OwnershipBuilder$instance & __OwnershipBuilder$vi
 
 
 export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends OwnershipBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): OwnershipBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): OwnershipBuilder_2<TEntity, TDependentEntity>;
     HasForeignKey(...foreignKeyPropertyNames: string[]): OwnershipBuilder;
@@ -2554,6 +2702,8 @@ export type OwnershipBuilder_2<TEntity, TDependentEntity> = OwnershipBuilder_2$i
 
 
 export interface PrimitiveCollectionBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableProperty;
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action<ElementTypeBuilder>): PrimitiveCollectionBuilder;
@@ -2595,6 +2745,8 @@ export type PrimitiveCollectionBuilder = PrimitiveCollectionBuilder$instance & _
 
 
 export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends PrimitiveCollectionBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action<ElementTypeBuilder>): PrimitiveCollectionBuilder;
     HasAnnotation(annotation: string, value: unknown): PrimitiveCollectionBuilder;
@@ -2686,6 +2838,8 @@ export const PropertiesConfigurationBuilder_1: {
 export type PropertiesConfigurationBuilder_1<TProperty> = PropertiesConfigurationBuilder_1$instance<TProperty>;
 
 export interface PropertyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableProperty;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -2740,6 +2894,8 @@ export type PropertyBuilder = PropertyBuilder$instance & __PropertyBuilder$views
 
 
 export interface PropertyBuilder_1$instance<TProperty> extends PropertyBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): PropertyBuilder;
     HasConversion(providerClrType: Type): PropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>): PropertyBuilder_1<TProperty>;
@@ -2801,6 +2957,8 @@ export type PropertyBuilder_1<TProperty> = PropertyBuilder_1$instance<TProperty>
 
 
 export interface ReferenceCollectionBuilder$instance extends RelationshipBuilderBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder;
     HasForeignKeyBuilder(foreignKeyPropertyNames: IReadOnlyList<System_Internal.String>): InternalForeignKeyBuilder;
@@ -2828,6 +2986,8 @@ export type ReferenceCollectionBuilder = ReferenceCollectionBuilder$instance & _
 
 
 export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> extends ReferenceCollectionBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder;
@@ -2853,6 +3013,8 @@ export type ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity> = R
 
 
 export interface ReferenceNavigationBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Builder: InternalForeignKeyBuilder;
     readonly DeclaringEntityType: IMutableEntityType;
     readonly ReferenceMember: MemberInfo | undefined;
@@ -2886,6 +3048,8 @@ export type ReferenceNavigationBuilder = ReferenceNavigationBuilder$instance & _
 
 
 export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceNavigationBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     WithMany(navigationName?: string): ReferenceCollectionBuilder_2<TRelatedEntity, TEntity>;
     WithMany(collection?: string): ReferenceCollectionBuilder;
     WithOne(navigationName?: string): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
@@ -2909,6 +3073,8 @@ export type ReferenceNavigationBuilder_2<TEntity, TRelatedEntity> = ReferenceNav
 
 
 export interface ReferenceReferenceBuilder$instance extends InvertibleRelationshipBuilderBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityTypeName: string, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityType: Type, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
@@ -2940,6 +3106,8 @@ export type ReferenceReferenceBuilder = ReferenceReferenceBuilder$instance & __R
 
 
 export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceReferenceBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityType: Type, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasForeignKey<TDependentEntity>(...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
@@ -2969,6 +3137,8 @@ export type ReferenceReferenceBuilder_2<TEntity, TRelatedEntity> = ReferenceRefe
 
 
 export interface RelationshipBuilderBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     Builder: InternalForeignKeyBuilder;
     readonly DependentEntityType: IMutableEntityType;
     readonly Metadata: IMutableForeignKey;
@@ -2993,6 +3163,8 @@ export type RelationshipBuilderBase = RelationshipBuilderBase$instance & __Relat
 
 
 export interface SequenceBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableSequence;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -3021,6 +3193,8 @@ export type SequenceBuilder = SequenceBuilder$instance & __SequenceBuilder$views
 
 
 export interface SplitTableBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly InternalMappingFragment: EntityTypeMappingFragment;
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Metadata: IMutableEntityType;
@@ -3052,6 +3226,8 @@ export type SplitTableBuilder = SplitTableBuilder$instance & __SplitTableBuilder
 
 
 export interface SplitTableBuilder_1$instance<TEntity> extends SplitTableBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     ExcludeFromMigrations(excluded?: boolean): SplitTableBuilder;
     HasAnnotation(annotation: string, value: unknown): SplitTableBuilder;
     Property(propertyName: string): ColumnBuilder;
@@ -3074,6 +3250,8 @@ export type SplitTableBuilder_1<TEntity> = SplitTableBuilder_1$instance<TEntity>
 
 
 export interface SplitViewBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Name: string;
     readonly Schema: string | undefined;
@@ -3101,6 +3279,8 @@ export type SplitViewBuilder = SplitViewBuilder$instance & __SplitViewBuilder$vi
 
 
 export interface SplitViewBuilder_1$instance<TEntity> extends SplitViewBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): SplitViewBuilder;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
@@ -3122,6 +3302,8 @@ export type SplitViewBuilder_1<TEntity> = SplitViewBuilder_1$instance<TEntity> &
 
 
 export interface StoredProcedureBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Builder: InternalStoredProcedureBuilder;
     readonly Metadata: IMutableStoredProcedure;
     CreatePropertyBuilder(propertyName: string): PropertyBuilder;
@@ -3156,6 +3338,8 @@ export type StoredProcedureBuilder = StoredProcedureBuilder$instance & __StoredP
 
 
 export interface StoredProcedureBuilder_1$instance<TEntity> extends StoredProcedureBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
@@ -3186,6 +3370,8 @@ export type StoredProcedureBuilder_1<TEntity> = StoredProcedureBuilder_1$instanc
 
 
 export interface StoredProcedureParameterBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Builder: InternalStoredProcedureParameterBuilder;
     readonly Metadata: IMutableStoredProcedureParameter;
     Equals(obj: unknown): boolean;
@@ -3213,6 +3399,8 @@ export type StoredProcedureParameterBuilder = StoredProcedureParameterBuilder$in
 
 
 export interface StoredProcedureResultColumnBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Builder: InternalStoredProcedureResultColumnBuilder;
     readonly Metadata: IMutableStoredProcedureResultColumn;
     Equals(obj: unknown): boolean;
@@ -3238,6 +3426,8 @@ export type StoredProcedureResultColumnBuilder = StoredProcedureResultColumnBuil
 
 
 export interface TableBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Metadata: IMutableEntityType;
     readonly Name: string | undefined;
     readonly Schema: string | undefined;
@@ -3270,6 +3460,8 @@ export type TableBuilder = TableBuilder$instance & __TableBuilder$views;
 
 
 export interface TableBuilder_1$instance<TEntity> extends TableBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     ExcludeFromMigrations(excluded?: boolean): TableBuilder;
     HasComment(comment: string): TableBuilder;
     Property(propertyName: string): ColumnBuilder;
@@ -3292,6 +3484,8 @@ export type TableBuilder_1<TEntity> = TableBuilder_1$instance<TEntity> & __Table
 
 
 export interface TableTriggerBuilder$instance extends TriggerBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     HasAnnotation(annotation: string, value: unknown): TriggerBuilder;
@@ -3315,6 +3509,8 @@ export type TableTriggerBuilder = TableTriggerBuilder$instance & __TableTriggerB
 
 
 export interface TableValuedFunctionBuilder$instance extends DbFunctionBuilderBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string): DbFunctionParameterBuilder;
@@ -3339,6 +3535,8 @@ export type TableValuedFunctionBuilder = TableValuedFunctionBuilder$instance & _
 
 
 export interface TableValuedFunctionBuilder_1$instance<TEntity> extends TableValuedFunctionBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder;
     HasName(name: string): TableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
@@ -3367,6 +3565,8 @@ export type TableValuedFunctionBuilder_1<TEntity> = TableValuedFunctionBuilder_1
 
 
 export interface TriggerBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Builder: IConventionTriggerBuilder;
     readonly InternalBuilder: InternalTriggerBuilder;
     readonly Metadata: IMutableTrigger;
@@ -3443,6 +3643,8 @@ export const TypeMappingConfigurationBuilder_1: {
 export type TypeMappingConfigurationBuilder_1<TProperty> = TypeMappingConfigurationBuilder_1$instance<TProperty>;
 
 export interface ViewBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Name: string;
     readonly Schema: string | undefined;
     readonly StoreObject: StoreObjectIdentifier;
@@ -3469,6 +3671,8 @@ export type ViewBuilder = ViewBuilder$instance & __ViewBuilder$views;
 
 
 export interface ViewBuilder_1$instance<TEntity> extends ViewBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
 }
@@ -3489,6 +3693,8 @@ export type ViewBuilder_1<TEntity> = ViewBuilder_1$instance<TEntity> & __ViewBui
 
 
 export interface ViewColumnBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly InternalOverrides: RelationalPropertyOverrides;
     readonly Overrides: IMutableRelationalPropertyOverrides;
     Equals(obj: unknown): boolean;
@@ -3514,6 +3720,8 @@ export type ViewColumnBuilder = ViewColumnBuilder$instance & __ViewColumnBuilder
 
 
 export interface ViewColumnBuilder_1$instance<TProperty> extends ViewColumnBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     HasAnnotation(annotation: string, value: unknown): ViewColumnBuilder;
     HasColumnName(name: string): ViewColumnBuilder;
 }

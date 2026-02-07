@@ -21,6 +21,8 @@ import type { MemberInfo, MethodInfo } from "@tsonic/dotnet/System.Reflection.js
 import type { IServiceCollection } from "@tsonic/microsoft-extensions/Microsoft.Extensions.DependencyInjection.js";
 
 export interface IAnnotationCodeGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IAnnotationCodeGenerator: never;
+
     FilterIgnoredAnnotations(annotations: IEnumerable<IAnnotation>): IEnumerable<IAnnotation>;
     GenerateFluentApiCalls(annotatable: IAnnotatable, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
     GenerateFluentApiCalls(checkConstraint: ICheckConstraint, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
@@ -60,6 +62,8 @@ export interface IAnnotationCodeGenerator$instance {
 export type IAnnotationCodeGenerator = IAnnotationCodeGenerator$instance;
 
 export interface ICSharpHelper$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_ICSharpHelper: never;
+
     Arguments(values: IEnumerable<unknown>): string;
     Fragment(fragment: AttributeCodeFragment): string;
     Fragment(fragment: IMethodCallCodeFragment, indent?: int): string;
@@ -109,6 +113,8 @@ export interface ICSharpHelper$instance {
 export type ICSharpHelper = ICSharpHelper$instance;
 
 export interface IDesignTimeDbContextFactory_1$instance<TContext extends DbContext> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IDesignTimeDbContextFactory_1: never;
+
     CreateDbContext(args: string[]): TContext;
 }
 
@@ -116,6 +122,8 @@ export interface IDesignTimeDbContextFactory_1$instance<TContext extends DbConte
 export type IDesignTimeDbContextFactory_1<TContext extends DbContext> = IDesignTimeDbContextFactory_1$instance<TContext>;
 
 export interface IDesignTimeServices$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IDesignTimeServices: never;
+
     ConfigureDesignTimeServices(serviceCollection: IServiceCollection): void;
 }
 
@@ -123,6 +131,8 @@ export interface IDesignTimeServices$instance {
 export type IDesignTimeServices = IDesignTimeServices$instance;
 
 export interface IMethodCallCodeFragment$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IMethodCallCodeFragment: never;
+
     readonly DeclaringType: string | undefined;
     readonly Method: string;
     readonly TypeArguments: IEnumerable<System_Internal.String>;
@@ -134,6 +144,8 @@ export interface IMethodCallCodeFragment$instance {
 export type IMethodCallCodeFragment = IMethodCallCodeFragment$instance;
 
 export interface AnnotationCodeGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IAnnotationCodeGenerator: never;
+
     readonly Dependencies: AnnotationCodeGeneratorDependencies;
     FilterIgnoredAnnotations(annotations: IEnumerable<IAnnotation>): IEnumerable<IAnnotation>;
     GenerateDataAnnotation(entityType: IEntityType, annotation: IAnnotation): AttributeCodeFragment | undefined;
@@ -219,6 +231,8 @@ export type AnnotationCodeGenerator = AnnotationCodeGenerator$instance & __Annot
 
 
 export interface AnnotationCodeGeneratorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     RelationalTypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): AnnotationCodeGeneratorDependencies;
     Equals(obj: unknown): boolean;
@@ -307,6 +321,8 @@ export const EntityFrameworkRelationalDesignServicesBuilder: {
 export type EntityFrameworkRelationalDesignServicesBuilder = EntityFrameworkRelationalDesignServicesBuilder$instance;
 
 export interface MethodCallCodeFragment$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IMethodCallCodeFragment: never;
+
     readonly Arguments: IReadOnlyList<unknown | undefined>;
     readonly ChainedCall: MethodCallCodeFragment | undefined;
     readonly DeclaringType: string | undefined;

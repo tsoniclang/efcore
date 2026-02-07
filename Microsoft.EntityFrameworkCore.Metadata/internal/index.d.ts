@@ -70,6 +70,8 @@ export enum ValueGenerated {
 
 
 export interface IAdHocMapper$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IAdHocMapper: never;
+
     GetOrAddEntityType(clrType: Type): RuntimeEntityType;
 }
 
@@ -77,6 +79,8 @@ export interface IAdHocMapper$instance {
 export type IAdHocMapper = IAdHocMapper$instance;
 
 export interface ICheckConstraint$instance extends IReadOnlyCheckConstraint, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ICheckConstraint: never;
+
     readonly EntityType: IEntityType;
     readonly ModelName: string;
     readonly Name: string | undefined;
@@ -99,6 +103,8 @@ export interface ICheckConstraint$instance extends IReadOnlyCheckConstraint, IRe
 export type ICheckConstraint = ICheckConstraint$instance;
 
 export interface IClrCollectionAccessor$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrCollectionAccessor: never;
+
     readonly CollectionType: Type;
     Add(entity: unknown, value: unknown, forMaterialization: boolean): boolean;
     Contains(entity: unknown, value: unknown): boolean;
@@ -110,6 +116,8 @@ export interface IClrCollectionAccessor$instance {
 export type IClrCollectionAccessor = IClrCollectionAccessor$instance;
 
 export interface IClrIndexedCollectionAccessor$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrIndexedCollectionAccessor: never;
+
     Create(capacity: int): unknown;
     Get(entity: unknown, index: int): unknown | undefined;
     Set(entity: unknown, index: int, value: unknown, forMaterialization: boolean): void;
@@ -119,6 +127,8 @@ export interface IClrIndexedCollectionAccessor$instance {
 export type IClrIndexedCollectionAccessor = IClrIndexedCollectionAccessor$instance;
 
 export interface IClrPropertyGetter$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrPropertyGetter: never;
+
     GetClrValueUsingContainingEntity(entity: unknown, indices: IReadOnlyList<System_Internal.Int32>): unknown | undefined;
     GetClrValueUsingContainingEntity(entity: unknown): unknown | undefined;
     HasSentinelValueUsingContainingEntity(entity: unknown, indices: IReadOnlyList<System_Internal.Int32>): boolean;
@@ -129,6 +139,8 @@ export interface IClrPropertyGetter$instance {
 export type IClrPropertyGetter = IClrPropertyGetter$instance;
 
 export interface IClrPropertySetter$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrPropertySetter: never;
+
     SetClrValue(instance: unknown, value: unknown): unknown;
     SetClrValueUsingContainingEntity(instance: unknown, indices: IReadOnlyList<System_Internal.Int32>, value: unknown): void;
     SetClrValueUsingContainingEntity(instance: unknown, value: unknown): void;
@@ -138,6 +150,8 @@ export interface IClrPropertySetter$instance {
 export type IClrPropertySetter = IClrPropertySetter$instance;
 
 export interface IColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IColumn: never;
+
     readonly Table: ITable;
     readonly PropertyMappings: IReadOnlyList<IColumnMapping>;
     readonly MaxLength: Nullable<System_Internal.Int32>;
@@ -178,6 +192,8 @@ export interface IColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAn
 export type IColumn = IColumn$instance;
 
 export interface IColumnBase$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IColumnBase: never;
+
     readonly Name: string;
     readonly StoreType: string;
     readonly ProviderClrType: Type;
@@ -203,6 +219,8 @@ export interface IColumnBase$instance extends IAnnotatable, IReadOnlyAnnotatable
 export type IColumnBase = IColumnBase$instance;
 
 export interface IColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IColumnMapping: never;
+
     readonly Column: IColumn;
     readonly TableMapping: ITableMapping;
     readonly Property: IProperty;
@@ -223,6 +241,8 @@ export interface IColumnMapping$instance extends IColumnMappingBase, IAnnotatabl
 export type IColumnMapping = IColumnMapping$instance;
 
 export interface IColumnMappingBase$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IColumnMappingBase: never;
+
     readonly Property: IProperty;
     readonly Column: IColumnBase;
     readonly TypeMapping: RelationalTypeMapping;
@@ -242,6 +262,8 @@ export interface IColumnMappingBase$instance extends IAnnotatable, IReadOnlyAnno
 export type IColumnMappingBase = IColumnMappingBase$instance;
 
 export interface IComplexProperty$instance extends IReadOnlyComplexProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IComplexProperty: never;
+
     readonly ComplexType: IComplexType;
     readonly IsNullable: boolean;
     readonly Name: string;
@@ -275,6 +297,8 @@ export interface IComplexProperty$instance extends IReadOnlyComplexProperty, IRe
 export type IComplexProperty = IComplexProperty$instance;
 
 export interface IComplexType$instance extends IReadOnlyComplexType, IReadOnlyTypeBase, IReadOnlyAnnotatable, ITypeBase, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IComplexType: never;
+
     readonly ComplexProperty: IComplexProperty;
     readonly BaseType: IComplexType | undefined;
     readonly Model: IReadOnlyModel;
@@ -339,6 +363,8 @@ export interface IComplexType$instance extends IReadOnlyComplexType, IReadOnlyTy
 export type IComplexType = IComplexType$instance;
 
 export interface IConstructorBindingFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConstructorBindingFactory: never;
+
     GetBindings(entityType: IConventionEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
     GetBindings(entityType: IMutableEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
     GetBindings(complexType: IReadOnlyComplexType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
@@ -351,6 +377,8 @@ export interface IConstructorBindingFactory$instance {
 export type IConstructorBindingFactory = IConstructorBindingFactory$instance;
 
 export interface IConventionAnnotatable$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionAnnotatable: never;
+
     readonly Builder: IConventionAnnotatableBuilder;
     readonly IsInModel: boolean;
     readonly [name: string]: unknown | undefined;
@@ -367,6 +395,8 @@ export interface IConventionAnnotatable$instance extends IReadOnlyAnnotatable {
 export type IConventionAnnotatable = IConventionAnnotatable$instance;
 
 export interface IConventionAnnotation$instance extends IAnnotation {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionAnnotation: never;
+
     readonly Name: string;
     readonly Value: unknown | undefined;
     GetConfigurationSource(): ConfigurationSource;
@@ -378,6 +408,8 @@ export interface IConventionAnnotation$instance extends Microsoft_EntityFramewor
 export type IConventionAnnotation = IConventionAnnotation$instance;
 
 export interface IConventionCheckConstraint$instance extends IReadOnlyCheckConstraint, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionCheckConstraint: never;
+
     readonly Builder: IConventionCheckConstraintBuilder;
     readonly EntityType: IConventionEntityType;
     readonly ModelName: string;
@@ -405,6 +437,8 @@ export interface IConventionCheckConstraint$instance extends IReadOnlyCheckConst
 export type IConventionCheckConstraint = IConventionCheckConstraint$instance;
 
 export interface IConventionComplexProperty$instance extends IReadOnlyComplexProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionPropertyBase, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionComplexProperty: never;
+
     readonly Builder: IConventionComplexPropertyBuilder;
     readonly ComplexType: IConventionComplexType;
     readonly IsNullable: boolean;
@@ -442,6 +476,8 @@ export interface IConventionComplexProperty$instance extends IReadOnlyComplexPro
 export type IConventionComplexProperty = IConventionComplexProperty$instance;
 
 export interface IConventionComplexType$instance extends IReadOnlyComplexType, IReadOnlyTypeBase, IReadOnlyAnnotatable, IConventionTypeBase, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionComplexType: never;
+
     readonly Builder: IConventionComplexTypeBuilder;
     readonly ComplexProperty: IConventionComplexProperty;
     readonly BaseType: IConventionComplexType | undefined;
@@ -529,6 +565,8 @@ export interface IConventionComplexType$instance extends IReadOnlyComplexType, I
 export type IConventionComplexType = IConventionComplexType$instance;
 
 export interface IConventionDbFunction$instance extends IReadOnlyDbFunction, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionDbFunction: never;
+
     readonly Model: IConventionModel;
     readonly Builder: IConventionDbFunctionBuilder;
     readonly Parameters: IReadOnlyList<IConventionDbFunctionParameter>;
@@ -567,6 +605,8 @@ export interface IConventionDbFunction$instance extends IReadOnlyDbFunction, IRe
 export type IConventionDbFunction = IConventionDbFunction$instance;
 
 export interface IConventionDbFunctionParameter$instance extends IReadOnlyDbFunctionParameter, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionDbFunctionParameter: never;
+
     readonly Function: IConventionDbFunction;
     readonly Builder: IConventionDbFunctionParameterBuilder;
     readonly Name: string;
@@ -595,6 +635,8 @@ export interface IConventionDbFunctionParameter$instance extends IReadOnlyDbFunc
 export type IConventionDbFunctionParameter = IConventionDbFunctionParameter$instance;
 
 export interface IConventionElementType$instance extends IReadOnlyElementType, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionElementType: never;
+
     readonly CollectionProperty: IConventionProperty;
     readonly Builder: IConventionElementTypeBuilder;
     readonly ClrType: Type;
@@ -629,6 +671,8 @@ export interface IConventionElementType$instance extends IReadOnlyElementType, I
 export type IConventionElementType = IConventionElementType$instance;
 
 export interface IConventionEntityType$instance extends IReadOnlyEntityType, IReadOnlyTypeBase, IReadOnlyAnnotatable, IConventionTypeBase, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionEntityType: never;
+
     readonly Builder: IConventionEntityTypeBuilder;
     readonly BaseType: IConventionEntityType | undefined;
     readonly IsKeyless: boolean;
@@ -782,6 +826,8 @@ export interface IConventionEntityType$instance extends IReadOnlyEntityType, IRe
 export type IConventionEntityType = IConventionEntityType$instance;
 
 export interface IConventionEntityTypeMappingFragment$instance extends IReadOnlyEntityTypeMappingFragment, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionEntityTypeMappingFragment: never;
+
     readonly EntityType: IConventionEntityType;
     readonly Builder: IConventionEntityTypeMappingFragmentBuilder;
     readonly StoreObject: StoreObjectIdentifier;
@@ -806,6 +852,8 @@ export interface IConventionEntityTypeMappingFragment$instance extends IReadOnly
 export type IConventionEntityTypeMappingFragment = IConventionEntityTypeMappingFragment$instance;
 
 export interface IConventionForeignKey$instance extends IReadOnlyForeignKey, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionForeignKey: never;
+
     readonly Builder: IConventionForeignKeyBuilder;
     readonly Properties: IReadOnlyList<IConventionProperty>;
     readonly PrincipalKey: IConventionKey;
@@ -848,6 +896,8 @@ export interface IConventionForeignKey$instance extends IReadOnlyForeignKey, IRe
 export type IConventionForeignKey = IConventionForeignKey$instance;
 
 export interface IConventionIndex$instance extends IReadOnlyIndex, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionIndex: never;
+
     readonly Builder: IConventionIndexBuilder;
     readonly Properties: IReadOnlyList<IConventionProperty>;
     readonly DeclaringEntityType: IConventionEntityType;
@@ -876,6 +926,8 @@ export interface IConventionIndex$instance extends IReadOnlyIndex, IReadOnlyAnno
 export type IConventionIndex = IConventionIndex$instance;
 
 export interface IConventionKey$instance extends IReadOnlyKey, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionKey: never;
+
     readonly Builder: IConventionKeyBuilder;
     readonly Properties: IReadOnlyList<IConventionProperty>;
     readonly DeclaringEntityType: IConventionEntityType;
@@ -900,6 +952,8 @@ export interface IConventionKey$instance extends IReadOnlyKey, IReadOnlyAnnotata
 export type IConventionKey = IConventionKey$instance;
 
 export interface IConventionModel$instance extends IReadOnlyModel, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionModel: never;
+
     readonly Builder: IConventionModelBuilder;
     readonly ModelId: Guid;
     readonly [name: string]: unknown | undefined;
@@ -957,6 +1011,8 @@ export interface IConventionModel$instance extends IReadOnlyModel, IReadOnlyAnno
 export type IConventionModel = IConventionModel$instance;
 
 export interface IConventionNavigation$instance extends IReadOnlyNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionNavigationBase, IConventionPropertyBase, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionNavigation: never;
+
     readonly Builder: IConventionNavigationBuilder;
     readonly DeclaringEntityType: IConventionEntityType;
     readonly TargetEntityType: IConventionEntityType;
@@ -1002,6 +1058,8 @@ export interface IConventionNavigation$instance extends IReadOnlyNavigation, IRe
 export type IConventionNavigation = IConventionNavigation$instance;
 
 export interface IConventionNavigationBase$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionPropertyBase, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionNavigationBase: never;
+
     readonly TargetEntityType: IConventionEntityType;
     readonly DeclaringEntityType: IReadOnlyEntityType;
     readonly Inverse: IReadOnlyNavigationBase;
@@ -1041,6 +1099,8 @@ export interface IConventionNavigationBase$instance extends IReadOnlyNavigationB
 export type IConventionNavigationBase = IConventionNavigationBase$instance;
 
 export interface IConventionProperty$instance extends IReadOnlyProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionPropertyBase, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionProperty: never;
+
     readonly Builder: IConventionPropertyBuilder;
     readonly DeclaringEntityType: IConventionEntityType;
     readonly IsNullable: boolean;
@@ -1108,6 +1168,8 @@ export interface IConventionProperty$instance extends IReadOnlyProperty, IReadOn
 export type IConventionProperty = IConventionProperty$instance;
 
 export interface IConventionPropertyBase$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionPropertyBase: never;
+
     readonly DeclaringType: IConventionTypeBase;
     readonly Name: string;
     readonly ClrType: Type;
@@ -1140,6 +1202,8 @@ export interface IConventionPropertyBase$instance extends IReadOnlyPropertyBase,
 export type IConventionPropertyBase = IConventionPropertyBase$instance;
 
 export interface IConventionRelationalPropertyOverrides$instance extends IReadOnlyRelationalPropertyOverrides, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionRelationalPropertyOverrides: never;
+
     readonly Property: IConventionProperty;
     readonly Builder: IConventionRelationalPropertyOverridesBuilder;
     readonly StoreObject: StoreObjectIdentifier;
@@ -1166,6 +1230,8 @@ export interface IConventionRelationalPropertyOverrides$instance extends IReadOn
 export type IConventionRelationalPropertyOverrides = IConventionRelationalPropertyOverrides$instance;
 
 export interface IConventionSequence$instance extends IReadOnlySequence, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionSequence: never;
+
     readonly Model: IConventionModel;
     readonly Builder: IConventionSequenceBuilder;
     readonly Name: string;
@@ -1198,6 +1264,8 @@ export interface IConventionSequence$instance extends IReadOnlySequence, IReadOn
 export type IConventionSequence = IConventionSequence$instance;
 
 export interface IConventionServiceProperty$instance extends IReadOnlyServiceProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionPropertyBase, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionServiceProperty: never;
+
     readonly Builder: IConventionServicePropertyBuilder;
     readonly DeclaringEntityType: IConventionEntityType;
     readonly ParameterBinding: ServiceParameterBinding;
@@ -1235,6 +1303,8 @@ export interface IConventionServiceProperty$instance extends IReadOnlyServicePro
 export type IConventionServiceProperty = IConventionServiceProperty$instance;
 
 export interface IConventionSkipNavigation$instance extends IReadOnlySkipNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IConventionNavigationBase, IConventionPropertyBase, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionSkipNavigation: never;
+
     readonly Builder: IConventionSkipNavigationBuilder;
     readonly DeclaringEntityType: IConventionEntityType;
     readonly TargetEntityType: IConventionEntityType;
@@ -1281,6 +1351,8 @@ export interface IConventionSkipNavigation$instance extends IReadOnlySkipNavigat
 export type IConventionSkipNavigation = IConventionSkipNavigation$instance;
 
 export interface IConventionStoredProcedure$instance extends IReadOnlyStoredProcedure, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionStoredProcedure: never;
+
     readonly EntityType: IConventionEntityType;
     readonly Builder: IConventionStoredProcedureBuilder;
     readonly Parameters: IReadOnlyList<IConventionStoredProcedureParameter>;
@@ -1323,6 +1395,8 @@ export interface IConventionStoredProcedure$instance extends IReadOnlyStoredProc
 export type IConventionStoredProcedure = IConventionStoredProcedure$instance;
 
 export interface IConventionStoredProcedureParameter$instance extends IReadOnlyStoredProcedureParameter, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionStoredProcedureParameter: never;
+
     readonly StoredProcedure: IConventionStoredProcedure;
     readonly Builder: IConventionStoredProcedureParameterBuilder;
     readonly Name: string;
@@ -1350,6 +1424,8 @@ export interface IConventionStoredProcedureParameter$instance extends IReadOnlyS
 export type IConventionStoredProcedureParameter = IConventionStoredProcedureParameter$instance;
 
 export interface IConventionStoredProcedureResultColumn$instance extends IReadOnlyStoredProcedureResultColumn, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionStoredProcedureResultColumn: never;
+
     readonly StoredProcedure: IConventionStoredProcedure;
     readonly Builder: IConventionStoredProcedureResultColumnBuilder;
     readonly Name: string;
@@ -1374,6 +1450,8 @@ export interface IConventionStoredProcedureResultColumn$instance extends IReadOn
 export type IConventionStoredProcedureResultColumn = IConventionStoredProcedureResultColumn$instance;
 
 export interface IConventionTrigger$instance extends IReadOnlyTrigger, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionTrigger: never;
+
     readonly Builder: IConventionTriggerBuilder;
     readonly EntityType: IConventionEntityType;
     readonly ModelName: string;
@@ -1395,6 +1473,8 @@ export interface IConventionTrigger$instance extends IReadOnlyTrigger, IReadOnly
 export type IConventionTrigger = IConventionTrigger$instance;
 
 export interface IConventionTypeBase$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable, IConventionAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionTypeBase: never;
+
     readonly Model: IConventionModel;
     readonly Builder: IConventionTypeBaseBuilder;
     readonly ContainingEntityType: IConventionEntityType;
@@ -1468,6 +1548,8 @@ export interface IConventionTypeBase$instance extends IReadOnlyTypeBase, IReadOn
 export type IConventionTypeBase = IConventionTypeBase$instance;
 
 export interface IDbFunction$instance extends IReadOnlyDbFunction, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IDbFunction: never;
+
     readonly Model: IModel;
     readonly Parameters: IReadOnlyList<IDbFunctionParameter>;
     readonly StoreFunction: IStoreFunction;
@@ -1499,6 +1581,8 @@ export interface IDbFunction$instance extends IReadOnlyDbFunction, IReadOnlyAnno
 export type IDbFunction = IDbFunction$instance;
 
 export interface IDbFunctionParameter$instance extends IReadOnlyDbFunctionParameter, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IDbFunctionParameter: never;
+
     readonly StoreType: string;
     readonly Function: IDbFunction;
     readonly StoreFunctionParameter: IStoreFunctionParameter;
@@ -1522,6 +1606,8 @@ export interface IDbFunctionParameter$instance extends IReadOnlyDbFunctionParame
 export type IDbFunctionParameter = IDbFunctionParameter$instance;
 
 export interface IDesignTimeModel$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IDesignTimeModel: never;
+
     readonly Model: IModel;
 }
 
@@ -1529,6 +1615,8 @@ export interface IDesignTimeModel$instance {
 export type IDesignTimeModel = IDesignTimeModel$instance;
 
 export interface IElementType$instance extends IReadOnlyElementType, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IElementType: never;
+
     readonly CollectionProperty: IProperty;
     readonly ClrType: Type;
     readonly IsNullable: boolean;
@@ -1554,6 +1642,8 @@ export interface IElementType$instance extends IReadOnlyElementType, IReadOnlyAn
 export type IElementType = IElementType$instance;
 
 export interface IEntityType$instance extends IReadOnlyEntityType, IReadOnlyTypeBase, IReadOnlyAnnotatable, ITypeBase, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IEntityType: never;
+
     readonly BaseType: IEntityType | undefined;
     readonly ServiceOnlyConstructorBinding: InstantiationBinding | undefined;
     readonly Model: IReadOnlyModel;
@@ -1661,6 +1751,8 @@ export interface IEntityType$instance extends IReadOnlyEntityType, IReadOnlyType
 export type IEntityType = IEntityType$instance;
 
 export interface IEntityTypeMappingFragment$instance extends IReadOnlyEntityTypeMappingFragment, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IEntityTypeMappingFragment: never;
+
     readonly EntityType: IEntityType;
     readonly StoreObject: StoreObjectIdentifier;
     readonly IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
@@ -1680,6 +1772,8 @@ export interface IEntityTypeMappingFragment$instance extends IReadOnlyEntityType
 export type IEntityTypeMappingFragment = IEntityTypeMappingFragment$instance;
 
 export interface IForeignKey$instance extends IReadOnlyForeignKey, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IForeignKey: never;
+
     readonly Properties: IReadOnlyList<IProperty>;
     readonly PrincipalKey: IKey;
     readonly DeclaringEntityType: IEntityType;
@@ -1716,6 +1810,8 @@ export interface IForeignKey$instance extends IReadOnlyForeignKey, IReadOnlyAnno
 export type IForeignKey = IForeignKey$instance;
 
 export interface IForeignKeyConstraint$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IForeignKeyConstraint: never;
+
     readonly Name: string;
     readonly MappedForeignKeys: IEnumerable<IForeignKey>;
     readonly Table: ITable;
@@ -1740,6 +1836,8 @@ export interface IForeignKeyConstraint$instance extends IAnnotatable, IReadOnlyA
 export type IForeignKeyConstraint = IForeignKeyConstraint$instance;
 
 export interface IFunctionColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IFunctionColumn: never;
+
     readonly Function: IStoreFunction;
     readonly PropertyMappings: IReadOnlyList<IFunctionColumnMapping>;
     readonly Name: string;
@@ -1767,6 +1865,8 @@ export interface IFunctionColumn$instance extends IColumnBase, IAnnotatable, IRe
 export type IFunctionColumn = IFunctionColumn$instance;
 
 export interface IFunctionColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IFunctionColumnMapping: never;
+
     readonly Column: IFunctionColumn;
     readonly FunctionMapping: IFunctionMapping;
     readonly Property: IProperty;
@@ -1788,6 +1888,8 @@ export interface IFunctionColumnMapping$instance extends IColumnMappingBase, IAn
 export type IFunctionColumnMapping = IFunctionColumnMapping$instance;
 
 export interface IFunctionMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IFunctionMapping: never;
+
     readonly IsDefaultFunctionMapping: boolean;
     readonly StoreFunction: IStoreFunction;
     readonly DbFunction: IDbFunction;
@@ -1813,6 +1915,8 @@ export interface IFunctionMapping$instance extends ITableMappingBase, IAnnotatab
 export type IFunctionMapping = IFunctionMapping$instance;
 
 export interface IIndex$instance extends IReadOnlyIndex, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IIndex: never;
+
     readonly Properties: IReadOnlyList<IProperty>;
     readonly DeclaringEntityType: IEntityType;
     readonly Name: string | undefined;
@@ -1836,6 +1940,8 @@ export interface IIndex$instance extends IReadOnlyIndex, IReadOnlyAnnotatable, I
 export type IIndex = IIndex$instance;
 
 export interface IKey$instance extends IReadOnlyKey, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IKey: never;
+
     readonly Properties: IReadOnlyList<IProperty>;
     readonly DeclaringEntityType: IEntityType;
     readonly [name: string]: unknown | undefined;
@@ -1860,13 +1966,19 @@ export interface IKey$instance extends IReadOnlyKey, IReadOnlyAnnotatable, IAnno
 export type IKey = IKey$instance;
 
 export interface IMetadataReference_1$instance<T> extends IDisposable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMetadataReference_1: never;
+
     readonly Object: T;
 }
 
 
+export interface IMetadataReference_1$instance<T> extends System_Internal.IDisposable {}
+
 export type IMetadataReference_1<T> = IMetadataReference_1$instance<T>;
 
 export interface IModel$instance extends IReadOnlyModel, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IModel: never;
+
     get ModelDependencies(): RuntimeModelDependencies | undefined;
     set ModelDependencies(value: RuntimeModelDependencies | undefined);
     readonly ModelId: Guid;
@@ -1907,6 +2019,8 @@ export interface IModel$instance extends IReadOnlyModel, IReadOnlyAnnotatable, I
 export type IModel = IModel$instance;
 
 export interface IMutableAnnotatable$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
+
     [name: string]: unknown | undefined;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
@@ -1921,6 +2035,8 @@ export interface IMutableAnnotatable$instance extends IReadOnlyAnnotatable {
 export type IMutableAnnotatable = IMutableAnnotatable$instance;
 
 export interface IMutableCheckConstraint$instance extends IReadOnlyCheckConstraint, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableCheckConstraint: never;
+
     readonly EntityType: IMutableEntityType;
     get Name(): string | undefined;
     set Name(value: string | undefined);
@@ -1943,6 +2059,8 @@ export interface IMutableCheckConstraint$instance extends IReadOnlyCheckConstrai
 export type IMutableCheckConstraint = IMutableCheckConstraint$instance;
 
 export interface IMutableComplexProperty$instance extends IReadOnlyComplexProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutablePropertyBase, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableComplexProperty: never;
+
     readonly ComplexType: IMutableComplexType;
     IsNullable: boolean;
     readonly Name: string;
@@ -1972,6 +2090,8 @@ export interface IMutableComplexProperty$instance extends IReadOnlyComplexProper
 export type IMutableComplexProperty = IMutableComplexProperty$instance;
 
 export interface IMutableComplexType$instance extends IReadOnlyComplexType, IReadOnlyTypeBase, IReadOnlyAnnotatable, IMutableTypeBase, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableComplexType: never;
+
     readonly ComplexProperty: IMutableComplexProperty;
     readonly BaseType: IMutableComplexType | undefined;
     readonly Model: IReadOnlyModel;
@@ -2048,6 +2168,8 @@ export interface IMutableComplexType$instance extends IReadOnlyComplexType, IRea
 export type IMutableComplexType = IMutableComplexType$instance;
 
 export interface IMutableDbFunction$instance extends IReadOnlyDbFunction, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableDbFunction: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -2081,6 +2203,8 @@ export interface IMutableDbFunction$instance extends IReadOnlyDbFunction, IReadO
 export type IMutableDbFunction = IMutableDbFunction$instance;
 
 export interface IMutableDbFunctionParameter$instance extends IReadOnlyDbFunctionParameter, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableDbFunctionParameter: never;
+
     readonly Function: IMutableDbFunction;
     StoreType: string;
     get TypeMapping(): RelationalTypeMapping | undefined;
@@ -2103,6 +2227,8 @@ export interface IMutableDbFunctionParameter$instance extends IReadOnlyDbFunctio
 export type IMutableDbFunctionParameter = IMutableDbFunctionParameter$instance;
 
 export interface IMutableElementType$instance extends IReadOnlyElementType, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableElementType: never;
+
     readonly CollectionProperty: IMutableProperty;
     IsNullable: boolean;
     readonly ClrType: Type;
@@ -2132,6 +2258,8 @@ export interface IMutableElementType$instance extends IReadOnlyElementType, IRea
 export type IMutableElementType = IMutableElementType$instance;
 
 export interface IMutableEntityType$instance extends IReadOnlyEntityType, IReadOnlyTypeBase, IReadOnlyAnnotatable, IMutableTypeBase, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableEntityType: never;
+
     get BaseType(): IMutableEntityType | undefined;
     set BaseType(value: IMutableEntityType | undefined);
     IsKeyless: boolean;
@@ -2269,6 +2397,8 @@ export interface IMutableEntityType$instance extends IReadOnlyEntityType, IReadO
 export type IMutableEntityType = IMutableEntityType$instance;
 
 export interface IMutableEntityTypeMappingFragment$instance extends IReadOnlyEntityTypeMappingFragment, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableEntityTypeMappingFragment: never;
+
     readonly EntityType: IMutableEntityType;
     IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
     readonly StoreObject: StoreObjectIdentifier;
@@ -2287,6 +2417,8 @@ export interface IMutableEntityTypeMappingFragment$instance extends IReadOnlyEnt
 export type IMutableEntityTypeMappingFragment = IMutableEntityTypeMappingFragment$instance;
 
 export interface IMutableForeignKey$instance extends IReadOnlyForeignKey, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableForeignKey: never;
+
     readonly Properties: IReadOnlyList<IMutableProperty>;
     readonly PrincipalKey: IMutableKey;
     readonly DeclaringEntityType: IMutableEntityType;
@@ -2323,6 +2455,8 @@ export interface IMutableForeignKey$instance extends IReadOnlyForeignKey, IReadO
 export type IMutableForeignKey = IMutableForeignKey$instance;
 
 export interface IMutableIndex$instance extends IReadOnlyIndex, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableIndex: never;
+
     IsUnique: boolean;
     get IsDescending(): IReadOnlyList<System_Internal.Boolean> | undefined;
     set IsDescending(value: IReadOnlyList<System_Internal.Boolean> | undefined);
@@ -2345,6 +2479,8 @@ export interface IMutableIndex$instance extends IReadOnlyIndex, IReadOnlyAnnotat
 export type IMutableIndex = IMutableIndex$instance;
 
 export interface IMutableKey$instance extends IReadOnlyKey, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableKey: never;
+
     readonly Properties: IReadOnlyList<IMutableProperty>;
     readonly DeclaringEntityType: IMutableEntityType;
     readonly [name: string]: unknown | undefined;
@@ -2365,6 +2501,8 @@ export interface IMutableKey$instance extends IReadOnlyKey, IReadOnlyAnnotatable
 export type IMutableKey = IMutableKey$instance;
 
 export interface IMutableModel$instance extends IReadOnlyModel, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableModel: never;
+
     readonly ModelId: Guid;
     readonly [name: string]: unknown | undefined;
     AddAnnotation(name: string, value: unknown): IAnnotation;
@@ -2411,6 +2549,8 @@ export interface IMutableModel$instance extends IReadOnlyModel, IReadOnlyAnnotat
 export type IMutableModel = IMutableModel$instance;
 
 export interface IMutableNavigation$instance extends IReadOnlyNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutableNavigationBase, IMutablePropertyBase, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableNavigation: never;
+
     readonly DeclaringEntityType: IMutableEntityType;
     readonly TargetEntityType: IMutableEntityType;
     readonly ForeignKey: IMutableForeignKey;
@@ -2448,6 +2588,8 @@ export interface IMutableNavigation$instance extends IReadOnlyNavigation, IReadO
 export type IMutableNavigation = IMutableNavigation$instance;
 
 export interface IMutableNavigationBase$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutablePropertyBase, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableNavigationBase: never;
+
     readonly DeclaringEntityType: IReadOnlyEntityType;
     readonly TargetEntityType: IReadOnlyEntityType;
     readonly Inverse: IReadOnlyNavigationBase;
@@ -2480,6 +2622,8 @@ export interface IMutableNavigationBase$instance extends IReadOnlyNavigationBase
 export type IMutableNavigationBase = IMutableNavigationBase$instance;
 
 export interface IMutableProperty$instance extends IReadOnlyProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutablePropertyBase, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableProperty: never;
+
     readonly DeclaringEntityType: IMutableEntityType;
     IsNullable: boolean;
     ValueGenerated: ValueGenerated;
@@ -2538,6 +2682,8 @@ export interface IMutableProperty$instance extends IReadOnlyProperty, IReadOnlyP
 export type IMutableProperty = IMutableProperty$instance;
 
 export interface IMutablePropertyBase$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutablePropertyBase: never;
+
     readonly DeclaringType: IMutableTypeBase;
     get FieldInfo(): FieldInfo | undefined;
     set FieldInfo(value: FieldInfo | undefined);
@@ -2565,6 +2711,8 @@ export interface IMutablePropertyBase$instance extends IReadOnlyPropertyBase, IR
 export type IMutablePropertyBase = IMutablePropertyBase$instance;
 
 export interface IMutableRelationalPropertyOverrides$instance extends IReadOnlyRelationalPropertyOverrides, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableRelationalPropertyOverrides: never;
+
     readonly Property: IMutableProperty;
     get ColumnName(): string | undefined;
     set ColumnName(value: string | undefined);
@@ -2586,6 +2734,8 @@ export interface IMutableRelationalPropertyOverrides$instance extends IReadOnlyR
 export type IMutableRelationalPropertyOverrides = IMutableRelationalPropertyOverrides$instance;
 
 export interface IMutableSequence$instance extends IReadOnlySequence, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableSequence: never;
+
     readonly Model: IMutableModel;
     StartValue: long;
     IncrementBy: int;
@@ -2611,6 +2761,8 @@ export interface IMutableSequence$instance extends IReadOnlySequence, IReadOnlyA
 export type IMutableSequence = IMutableSequence$instance;
 
 export interface IMutableServiceProperty$instance extends IReadOnlyServiceProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutablePropertyBase, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableServiceProperty: never;
+
     readonly DeclaringEntityType: IMutableEntityType;
     ParameterBinding: ServiceParameterBinding;
     readonly Name: string;
@@ -2640,6 +2792,8 @@ export interface IMutableServiceProperty$instance extends IReadOnlyServiceProper
 export type IMutableServiceProperty = IMutableServiceProperty$instance;
 
 export interface IMutableSkipNavigation$instance extends IReadOnlySkipNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IMutableNavigationBase, IMutablePropertyBase, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableSkipNavigation: never;
+
     readonly DeclaringEntityType: IMutableEntityType;
     readonly TargetEntityType: IMutableEntityType;
     readonly JoinEntityType: IMutableEntityType;
@@ -2678,6 +2832,8 @@ export interface IMutableSkipNavigation$instance extends IReadOnlySkipNavigation
 export type IMutableSkipNavigation = IMutableSkipNavigation$instance;
 
 export interface IMutableStoredProcedure$instance extends IReadOnlyStoredProcedure, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableStoredProcedure: never;
+
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
@@ -2710,6 +2866,8 @@ export interface IMutableStoredProcedure$instance extends IReadOnlyStoredProcedu
 export type IMutableStoredProcedure = IMutableStoredProcedure$instance;
 
 export interface IMutableStoredProcedureParameter$instance extends IReadOnlyStoredProcedureParameter, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableStoredProcedureParameter: never;
+
     readonly StoredProcedure: IMutableStoredProcedure;
     Name: string;
     Direction: ParameterDirection;
@@ -2731,6 +2889,8 @@ export interface IMutableStoredProcedureParameter$instance extends IReadOnlyStor
 export type IMutableStoredProcedureParameter = IMutableStoredProcedureParameter$instance;
 
 export interface IMutableStoredProcedureResultColumn$instance extends IReadOnlyStoredProcedureResultColumn, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableStoredProcedureResultColumn: never;
+
     readonly StoredProcedure: IMutableStoredProcedure;
     Name: string;
     readonly PropertyName: string | undefined;
@@ -2750,6 +2910,8 @@ export interface IMutableStoredProcedureResultColumn$instance extends IReadOnlyS
 export type IMutableStoredProcedureResultColumn = IMutableStoredProcedureResultColumn$instance;
 
 export interface IMutableTrigger$instance extends IReadOnlyTrigger, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableTrigger: never;
+
     readonly EntityType: IMutableEntityType;
     readonly ModelName: string;
     readonly [name: string]: unknown | undefined;
@@ -2767,6 +2929,8 @@ export interface IMutableTrigger$instance extends IReadOnlyTrigger, IReadOnlyAnn
 export type IMutableTrigger = IMutableTrigger$instance;
 
 export interface IMutableTypeBase$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable, IMutableAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableTypeBase: never;
+
     readonly Model: IMutableModel;
     readonly ContainingEntityType: IMutableEntityType;
     get BaseType(): IMutableTypeBase | undefined;
@@ -2832,6 +2996,8 @@ export interface IMutableTypeBase$instance extends IReadOnlyTypeBase, IReadOnlyA
 export type IMutableTypeBase = IMutableTypeBase$instance;
 
 export interface INavigation$instance extends IReadOnlyNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, INavigationBase, IPropertyBase, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_INavigation: never;
+
     readonly DeclaringEntityType: IEntityType;
     readonly TargetEntityType: IEntityType;
     readonly ForeignKey: IForeignKey;
@@ -2871,6 +3037,8 @@ export interface INavigation$instance extends IReadOnlyNavigation, IReadOnlyNavi
 export type INavigation = INavigation$instance;
 
 export interface INavigationBase$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_INavigationBase: never;
+
     readonly DeclaringEntityType: IEntityType;
     readonly TargetEntityType: IEntityType;
     readonly Inverse: INavigationBase;
@@ -2907,6 +3075,8 @@ export interface INavigationBase$instance extends IReadOnlyNavigationBase, IRead
 export type INavigationBase = INavigationBase$instance;
 
 export interface IParameterBindingFactories$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IParameterBindingFactories: never;
+
     FindFactory(parameterType: Type, parameterName: string): IParameterBindingFactory | undefined;
 }
 
@@ -2914,6 +3084,8 @@ export interface IParameterBindingFactories$instance {
 export type IParameterBindingFactories = IParameterBindingFactories$instance;
 
 export interface IParameterBindingFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IParameterBindingFactory: never;
+
     Bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
     Bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
     Bind(entityType: IReadOnlyEntityType, parameterType: Type, parameterName: string): ParameterBinding;
@@ -2924,6 +3096,8 @@ export interface IParameterBindingFactory$instance {
 export type IParameterBindingFactory = IParameterBindingFactory$instance;
 
 export interface IPrimaryKeyConstraint$instance extends IUniqueConstraint, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPrimaryKeyConstraint: never;
+
     readonly Name: string;
     readonly MappedKeys: IEnumerable<IKey>;
     readonly Table: ITable;
@@ -2945,6 +3119,8 @@ export interface IPrimaryKeyConstraint$instance extends IUniqueConstraint, IAnno
 export type IPrimaryKeyConstraint = IPrimaryKeyConstraint$instance;
 
 export interface IProperty$instance extends IReadOnlyProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IProperty: never;
+
     readonly DeclaringEntityType: IEntityType;
     readonly IsNullable: boolean;
     readonly ValueGenerated: ValueGenerated;
@@ -3001,6 +3177,8 @@ export interface IProperty$instance extends IReadOnlyProperty, IReadOnlyProperty
 export type IProperty = IProperty$instance;
 
 export interface IPropertyBase$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPropertyBase: never;
+
     readonly DeclaringType: ITypeBase;
     readonly Name: string;
     readonly ClrType: Type;
@@ -3031,6 +3209,8 @@ export interface IPropertyBase$instance extends IReadOnlyPropertyBase, IReadOnly
 export type IPropertyBase = IPropertyBase$instance;
 
 export interface IPropertyParameterBindingFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPropertyParameterBindingFactory: never;
+
     FindParameter(complexType: IComplexType, parameterType: Type, parameterName: string): ParameterBinding | undefined;
     FindParameter(entityType: IEntityType, parameterType: Type, parameterName: string): ParameterBinding | undefined;
 }
@@ -3039,6 +3219,8 @@ export interface IPropertyParameterBindingFactory$instance {
 export type IPropertyParameterBindingFactory = IPropertyParameterBindingFactory$instance;
 
 export interface IQueryFilter$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IQueryFilter: never;
+
     readonly Expression: LambdaExpression;
     readonly Key: string | undefined;
     readonly IsAnonymous: boolean;
@@ -3048,6 +3230,8 @@ export interface IQueryFilter$instance {
 export type IQueryFilter = IQueryFilter$instance;
 
 export interface IReadOnlyCheckConstraint$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyCheckConstraint: never;
+
     readonly ModelName: string;
     readonly Name: string | undefined;
     readonly EntityType: IReadOnlyEntityType;
@@ -3067,6 +3251,8 @@ export interface IReadOnlyCheckConstraint$instance extends Microsoft_EntityFrame
 export type IReadOnlyCheckConstraint = IReadOnlyCheckConstraint$instance;
 
 export interface IReadOnlyComplexProperty$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyComplexProperty: never;
+
     readonly ComplexType: IReadOnlyComplexType;
     readonly IsNullable: boolean;
     readonly Name: string;
@@ -3090,6 +3276,8 @@ export interface IReadOnlyComplexProperty$instance extends IReadOnlyPropertyBase
 export type IReadOnlyComplexProperty = IReadOnlyComplexProperty$instance;
 
 export interface IReadOnlyComplexType$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyComplexType: never;
+
     readonly ComplexProperty: IReadOnlyComplexProperty;
     readonly BaseType: IReadOnlyComplexType | undefined;
     readonly Model: IReadOnlyModel;
@@ -3131,6 +3319,8 @@ export interface IReadOnlyComplexType$instance extends IReadOnlyTypeBase, IReadO
 export type IReadOnlyComplexType = IReadOnlyComplexType$instance;
 
 export interface IReadOnlyDbFunction$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyDbFunction: never;
+
     readonly Name: string;
     readonly Schema: string | undefined;
     readonly ModelName: string;
@@ -3158,6 +3348,8 @@ export interface IReadOnlyDbFunction$instance extends Microsoft_EntityFrameworkC
 export type IReadOnlyDbFunction = IReadOnlyDbFunction$instance;
 
 export interface IReadOnlyDbFunctionParameter$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyDbFunctionParameter: never;
+
     readonly Function: IReadOnlyDbFunction;
     readonly Name: string;
     readonly ClrType: Type;
@@ -3177,6 +3369,8 @@ export interface IReadOnlyDbFunctionParameter$instance extends Microsoft_EntityF
 export type IReadOnlyDbFunctionParameter = IReadOnlyDbFunctionParameter$instance;
 
 export interface IReadOnlyElementType$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyElementType: never;
+
     readonly CollectionProperty: IReadOnlyProperty;
     readonly ClrType: Type;
     readonly IsNullable: boolean;
@@ -3199,6 +3393,8 @@ export interface IReadOnlyElementType$instance extends Microsoft_EntityFramework
 export type IReadOnlyElementType = IReadOnlyElementType$instance;
 
 export interface IReadOnlyEntityType$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyEntityType: never;
+
     readonly BaseType: IReadOnlyEntityType | undefined;
     readonly Model: IReadOnlyModel;
     readonly ContainingEntityType: IReadOnlyEntityType;
@@ -3263,6 +3459,8 @@ export interface IReadOnlyEntityType$instance extends IReadOnlyTypeBase, IReadOn
 export type IReadOnlyEntityType = IReadOnlyEntityType$instance;
 
 export interface IReadOnlyEntityTypeMappingFragment$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyEntityTypeMappingFragment: never;
+
     readonly EntityType: IReadOnlyEntityType;
     readonly StoreObject: StoreObjectIdentifier;
     readonly IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
@@ -3279,6 +3477,8 @@ export interface IReadOnlyEntityTypeMappingFragment$instance extends Microsoft_E
 export type IReadOnlyEntityTypeMappingFragment = IReadOnlyEntityTypeMappingFragment$instance;
 
 export interface IReadOnlyForeignKey$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyForeignKey: never;
+
     readonly DeclaringEntityType: IReadOnlyEntityType;
     readonly Properties: IReadOnlyList<IReadOnlyProperty>;
     readonly PrincipalEntityType: IReadOnlyEntityType;
@@ -3307,6 +3507,8 @@ export interface IReadOnlyForeignKey$instance extends Microsoft_EntityFrameworkC
 export type IReadOnlyForeignKey = IReadOnlyForeignKey$instance;
 
 export interface IReadOnlyIndex$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyIndex: never;
+
     readonly Properties: IReadOnlyList<IReadOnlyProperty>;
     readonly Name: string | undefined;
     readonly IsUnique: boolean;
@@ -3326,6 +3528,8 @@ export interface IReadOnlyIndex$instance extends Microsoft_EntityFrameworkCore_I
 export type IReadOnlyIndex = IReadOnlyIndex$instance;
 
 export interface IReadOnlyKey$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyKey: never;
+
     readonly Properties: IReadOnlyList<IReadOnlyProperty>;
     readonly DeclaringEntityType: IReadOnlyEntityType;
     readonly [name: string]: unknown | undefined;
@@ -3343,6 +3547,8 @@ export interface IReadOnlyKey$instance extends Microsoft_EntityFrameworkCore_Inf
 export type IReadOnlyKey = IReadOnlyKey$instance;
 
 export interface IReadOnlyModel$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyModel: never;
+
     readonly ModelId: Guid;
     readonly [name: string]: unknown | undefined;
     AnnotationsToDebugString(indent?: int): string;
@@ -3368,6 +3574,8 @@ export interface IReadOnlyModel$instance extends Microsoft_EntityFrameworkCore_I
 export type IReadOnlyModel = IReadOnlyModel$instance;
 
 export interface IReadOnlyNavigation$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyNavigation: never;
+
     readonly DeclaringEntityType: IReadOnlyEntityType;
     readonly TargetEntityType: IReadOnlyEntityType;
     readonly Inverse: IReadOnlyNavigation;
@@ -3396,6 +3604,8 @@ export interface IReadOnlyNavigation$instance extends IReadOnlyNavigationBase, I
 export type IReadOnlyNavigation = IReadOnlyNavigation$instance;
 
 export interface IReadOnlyNavigationBase$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyNavigationBase: never;
+
     readonly DeclaringEntityType: IReadOnlyEntityType;
     readonly TargetEntityType: IReadOnlyEntityType;
     readonly Inverse: IReadOnlyNavigationBase;
@@ -3421,6 +3631,8 @@ export interface IReadOnlyNavigationBase$instance extends IReadOnlyPropertyBase,
 export type IReadOnlyNavigationBase = IReadOnlyNavigationBase$instance;
 
 export interface IReadOnlyProperty$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyProperty: never;
+
     readonly DeclaringEntityType: IReadOnlyEntityType;
     readonly IsNullable: boolean;
     readonly ValueGenerated: ValueGenerated;
@@ -3461,6 +3673,8 @@ export interface IReadOnlyProperty$instance extends IReadOnlyPropertyBase, IRead
 export type IReadOnlyProperty = IReadOnlyProperty$instance;
 
 export interface IReadOnlyPropertyBase$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyPropertyBase: never;
+
     readonly Name: string;
     readonly DeclaringType: IReadOnlyTypeBase;
     readonly ClrType: Type;
@@ -3483,6 +3697,8 @@ export interface IReadOnlyPropertyBase$instance extends Microsoft_EntityFramewor
 export type IReadOnlyPropertyBase = IReadOnlyPropertyBase$instance;
 
 export interface IReadOnlyRelationalPropertyOverrides$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyRelationalPropertyOverrides: never;
+
     readonly Property: IReadOnlyProperty;
     readonly StoreObject: StoreObjectIdentifier;
     readonly ColumnName: string | undefined;
@@ -3500,6 +3716,8 @@ export interface IReadOnlyRelationalPropertyOverrides$instance extends Microsoft
 export type IReadOnlyRelationalPropertyOverrides = IReadOnlyRelationalPropertyOverrides$instance;
 
 export interface IReadOnlySequence$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlySequence: never;
+
     readonly Name: string;
     readonly ModelSchema: string | undefined;
     readonly Schema: string | undefined;
@@ -3523,6 +3741,8 @@ export interface IReadOnlySequence$instance extends Microsoft_EntityFrameworkCor
 export type IReadOnlySequence = IReadOnlySequence$instance;
 
 export interface IReadOnlyServiceProperty$instance extends IReadOnlyPropertyBase, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyServiceProperty: never;
+
     readonly DeclaringEntityType: IReadOnlyEntityType;
     readonly ParameterBinding: ServiceParameterBinding;
     readonly Name: string;
@@ -3546,6 +3766,8 @@ export interface IReadOnlyServiceProperty$instance extends IReadOnlyPropertyBase
 export type IReadOnlyServiceProperty = IReadOnlyServiceProperty$instance;
 
 export interface IReadOnlySkipNavigation$instance extends IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlySkipNavigation: never;
+
     readonly JoinEntityType: IReadOnlyEntityType;
     readonly Inverse: IReadOnlySkipNavigation;
     readonly ForeignKey: IReadOnlyForeignKey;
@@ -3575,6 +3797,8 @@ export interface IReadOnlySkipNavigation$instance extends IReadOnlyNavigationBas
 export type IReadOnlySkipNavigation = IReadOnlySkipNavigation$instance;
 
 export interface IReadOnlyStoredProcedure$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyStoredProcedure: never;
+
     readonly Name: string;
     readonly Schema: string | undefined;
     readonly EntityType: IReadOnlyEntityType;
@@ -3600,6 +3824,8 @@ export interface IReadOnlyStoredProcedure$instance extends Microsoft_EntityFrame
 export type IReadOnlyStoredProcedure = IReadOnlyStoredProcedure$instance;
 
 export interface IReadOnlyStoredProcedureParameter$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyStoredProcedureParameter: never;
+
     readonly StoredProcedure: IReadOnlyStoredProcedure;
     readonly Name: string;
     readonly PropertyName: string | undefined;
@@ -3619,6 +3845,8 @@ export interface IReadOnlyStoredProcedureParameter$instance extends Microsoft_En
 export type IReadOnlyStoredProcedureParameter = IReadOnlyStoredProcedureParameter$instance;
 
 export interface IReadOnlyStoredProcedureResultColumn$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyStoredProcedureResultColumn: never;
+
     readonly StoredProcedure: IReadOnlyStoredProcedure;
     readonly Name: string;
     readonly PropertyName: string | undefined;
@@ -3636,6 +3864,8 @@ export interface IReadOnlyStoredProcedureResultColumn$instance extends Microsoft
 export type IReadOnlyStoredProcedureResultColumn = IReadOnlyStoredProcedureResultColumn$instance;
 
 export interface IReadOnlyStoreObjectDictionary_1$instance<T> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyStoreObjectDictionary_1: never;
+
     Find(storeObject: StoreObjectIdentifier): T | undefined;
     GetValues(): IEnumerable<T>;
 }
@@ -3644,6 +3874,8 @@ export interface IReadOnlyStoreObjectDictionary_1$instance<T> {
 export type IReadOnlyStoreObjectDictionary_1<T> = IReadOnlyStoreObjectDictionary_1$instance<T>;
 
 export interface IReadOnlyTrigger$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyTrigger: never;
+
     readonly ModelName: string;
     readonly EntityType: IReadOnlyEntityType;
     readonly [name: string]: unknown | undefined;
@@ -3659,6 +3891,8 @@ export interface IReadOnlyTrigger$instance extends Microsoft_EntityFrameworkCore
 export type IReadOnlyTrigger = IReadOnlyTrigger$instance;
 
 export interface IReadOnlyTypeBase$instance extends IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyTypeBase: never;
+
     readonly Model: IReadOnlyModel;
     readonly ContainingEntityType: IReadOnlyEntityType;
     readonly BaseType: IReadOnlyTypeBase | undefined;
@@ -3697,6 +3931,8 @@ export interface IReadOnlyTypeBase$instance extends Microsoft_EntityFrameworkCor
 export type IReadOnlyTypeBase = IReadOnlyTypeBase$instance;
 
 export interface IRelationalAnnotationProvider$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IRelationalAnnotationProvider: never;
+
     For(checkConstraint: ICheckConstraint, designTime: boolean): IEnumerable<IAnnotation>;
     For(column: IColumn, designTime: boolean): IEnumerable<IAnnotation>;
     For(foreignKey: IForeignKeyConstraint, designTime: boolean): IEnumerable<IAnnotation>;
@@ -3722,6 +3958,8 @@ export interface IRelationalAnnotationProvider$instance {
 export type IRelationalAnnotationProvider = IRelationalAnnotationProvider$instance;
 
 export interface IRelationalModel$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IRelationalModel: never;
+
     readonly Model: IModel;
     readonly Tables: IEnumerable<ITable>;
     readonly Views: IEnumerable<IView>;
@@ -3753,6 +3991,8 @@ export interface IRelationalModel$instance extends IAnnotatable, IReadOnlyAnnota
 export type IRelationalModel = IRelationalModel$instance;
 
 export interface IRelationalPropertyOverrides$instance extends IReadOnlyRelationalPropertyOverrides, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IRelationalPropertyOverrides: never;
+
     readonly Property: IProperty;
     readonly StoreObject: StoreObjectIdentifier;
     readonly ColumnName: string | undefined;
@@ -3773,6 +4013,8 @@ export interface IRelationalPropertyOverrides$instance extends IReadOnlyRelation
 export type IRelationalPropertyOverrides = IRelationalPropertyOverrides$instance;
 
 export interface ISequence$instance extends IReadOnlySequence, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ISequence: never;
+
     readonly Model: IModel;
     readonly Name: string;
     readonly ModelSchema: string | undefined;
@@ -3799,6 +4041,8 @@ export interface ISequence$instance extends IReadOnlySequence, IReadOnlyAnnotata
 export type ISequence = ISequence$instance;
 
 export interface IServiceProperty$instance extends IReadOnlyServiceProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IServiceProperty: never;
+
     readonly DeclaringEntityType: IEntityType;
     readonly ParameterBinding: ServiceParameterBinding;
     readonly Name: string;
@@ -3832,6 +4076,8 @@ export interface IServiceProperty$instance extends IReadOnlyServiceProperty, IRe
 export type IServiceProperty = IServiceProperty$instance;
 
 export interface ISkipNavigation$instance extends IReadOnlySkipNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, INavigationBase, IPropertyBase, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ISkipNavigation: never;
+
     readonly DeclaringEntityType: IEntityType;
     readonly TargetEntityType: IEntityType;
     readonly JoinEntityType: IEntityType;
@@ -3872,6 +4118,8 @@ export interface ISkipNavigation$instance extends IReadOnlySkipNavigation, IRead
 export type ISkipNavigation = ISkipNavigation$instance;
 
 export interface ISqlQuery$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ISqlQuery: never;
+
     readonly EntityTypeMappings: IEnumerable<ISqlQueryMapping>;
     readonly Columns: IEnumerable<ISqlQueryColumn>;
     readonly Sql: string;
@@ -3903,6 +4151,8 @@ export interface ISqlQuery$instance extends ITableBase, IAnnotatable, IReadOnlyA
 export type ISqlQuery = ISqlQuery$instance;
 
 export interface ISqlQueryColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ISqlQueryColumn: never;
+
     readonly SqlQuery: ISqlQuery;
     readonly PropertyMappings: IReadOnlyList<ISqlQueryColumnMapping>;
     readonly Name: string;
@@ -3930,6 +4180,8 @@ export interface ISqlQueryColumn$instance extends IColumnBase, IAnnotatable, IRe
 export type ISqlQueryColumn = ISqlQueryColumn$instance;
 
 export interface ISqlQueryColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ISqlQueryColumnMapping: never;
+
     readonly Column: ISqlQueryColumn;
     readonly SqlQueryMapping: ISqlQueryMapping;
     readonly Property: IProperty;
@@ -3951,6 +4203,8 @@ export interface ISqlQueryColumnMapping$instance extends IColumnMappingBase, IAn
 export type ISqlQueryColumnMapping = ISqlQueryColumnMapping$instance;
 
 export interface ISqlQueryMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ISqlQueryMapping: never;
+
     IsDefaultSqlQueryMapping: boolean;
     readonly SqlQuery: ISqlQuery;
     readonly ColumnMappings: IEnumerable<ISqlQueryColumnMapping>;
@@ -3975,6 +4229,8 @@ export interface ISqlQueryMapping$instance extends ITableMappingBase, IAnnotatab
 export type ISqlQueryMapping = ISqlQueryMapping$instance;
 
 export interface IStoredProcedure$instance extends IReadOnlyStoredProcedure, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoredProcedure: never;
+
     readonly Name: string;
     readonly EntityType: IEntityType;
     readonly StoreStoredProcedure: IStoreStoredProcedure;
@@ -4009,6 +4265,8 @@ export interface IStoredProcedure$instance extends IReadOnlyStoredProcedure, IRe
 export type IStoredProcedure = IStoredProcedure$instance;
 
 export interface IStoredProcedureMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoredProcedureMapping: never;
+
     readonly StoreStoredProcedure: IStoreStoredProcedure;
     readonly StoredProcedure: IStoredProcedure;
     readonly StoredProcedureIdentifier: StoreObjectIdentifier;
@@ -4037,6 +4295,8 @@ export interface IStoredProcedureMapping$instance extends ITableMappingBase, IAn
 export type IStoredProcedureMapping = IStoredProcedureMapping$instance;
 
 export interface IStoredProcedureParameter$instance extends IReadOnlyStoredProcedureParameter, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoredProcedureParameter: never;
+
     readonly StoredProcedure: IStoredProcedure;
     readonly StoreParameter: IStoreStoredProcedureParameter;
     readonly Name: string;
@@ -4060,6 +4320,8 @@ export interface IStoredProcedureParameter$instance extends IReadOnlyStoredProce
 export type IStoredProcedureParameter = IStoredProcedureParameter$instance;
 
 export interface IStoredProcedureParameterMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoredProcedureParameterMapping: never;
+
     readonly StoreParameter: IStoreStoredProcedureParameter;
     readonly Parameter: IStoredProcedureParameter;
     readonly StoredProcedureMapping: IStoredProcedureMapping;
@@ -4083,6 +4345,8 @@ export interface IStoredProcedureParameterMapping$instance extends IColumnMappin
 export type IStoredProcedureParameterMapping = IStoredProcedureParameterMapping$instance;
 
 export interface IStoredProcedureResultColumn$instance extends IReadOnlyStoredProcedureResultColumn, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoredProcedureResultColumn: never;
+
     readonly StoredProcedure: IStoredProcedure;
     readonly StoreResultColumn: IStoreStoredProcedureResultColumn;
     readonly Name: string;
@@ -4104,6 +4368,8 @@ export interface IStoredProcedureResultColumn$instance extends IReadOnlyStoredPr
 export type IStoredProcedureResultColumn = IStoredProcedureResultColumn$instance;
 
 export interface IStoredProcedureResultColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoredProcedureResultColumnMapping: never;
+
     readonly StoreResultColumn: IStoreStoredProcedureResultColumn;
     readonly ResultColumn: IStoredProcedureResultColumn;
     readonly StoredProcedureMapping: IStoredProcedureMapping;
@@ -4127,6 +4393,8 @@ export interface IStoredProcedureResultColumnMapping$instance extends IColumnMap
 export type IStoredProcedureResultColumnMapping = IStoredProcedureResultColumnMapping$instance;
 
 export interface IStoreFunction$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoreFunction: never;
+
     readonly DbFunctions: IEnumerable<IDbFunction>;
     readonly IsBuiltIn: boolean;
     readonly Parameters: IEnumerable<IStoreFunctionParameter>;
@@ -4161,6 +4429,8 @@ export interface IStoreFunction$instance extends ITableBase, IAnnotatable, IRead
 export type IStoreFunction = IStoreFunction$instance;
 
 export interface IStoreFunctionParameter$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoreFunctionParameter: never;
+
     readonly Function: IStoreFunction;
     readonly DbFunctionParameters: IEnumerable<IDbFunctionParameter>;
     readonly Name: string;
@@ -4182,6 +4452,8 @@ export interface IStoreFunctionParameter$instance extends IAnnotatable, IReadOnl
 export type IStoreFunctionParameter = IStoreFunctionParameter$instance;
 
 export interface IStoreStoredProcedure$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoreStoredProcedure: never;
+
     readonly StoredProcedures: IEnumerable<IStoredProcedure>;
     readonly EntityTypeMappings: IEnumerable<IStoredProcedureMapping>;
     readonly ReturnValue: IStoreStoredProcedureReturnValue | undefined;
@@ -4218,6 +4490,8 @@ export interface IStoreStoredProcedure$instance extends ITableBase, IAnnotatable
 export type IStoreStoredProcedure = IStoreStoredProcedure$instance;
 
 export interface IStoreStoredProcedureParameter$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoreStoredProcedureParameter: never;
+
     readonly StoredProcedure: IStoreStoredProcedure;
     readonly PropertyMappings: IReadOnlyList<IStoredProcedureParameterMapping>;
     readonly Direction: ParameterDirection;
@@ -4247,6 +4521,8 @@ export interface IStoreStoredProcedureParameter$instance extends IColumnBase, IA
 export type IStoreStoredProcedureParameter = IStoreStoredProcedureParameter$instance;
 
 export interface IStoreStoredProcedureResultColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoreStoredProcedureResultColumn: never;
+
     readonly StoredProcedure: IStoreStoredProcedure;
     readonly PropertyMappings: IReadOnlyList<IStoredProcedureResultColumnMapping>;
     readonly Position: int;
@@ -4275,6 +4551,8 @@ export interface IStoreStoredProcedureResultColumn$instance extends IColumnBase,
 export type IStoreStoredProcedureResultColumn = IStoreStoredProcedureResultColumn$instance;
 
 export interface IStoreStoredProcedureReturnValue$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoreStoredProcedureReturnValue: never;
+
     readonly StoredProcedure: IStoreStoredProcedure;
     readonly Name: string;
     readonly StoreType: string;
@@ -4301,6 +4579,8 @@ export interface IStoreStoredProcedureReturnValue$instance extends IColumnBase, 
 export type IStoreStoredProcedureReturnValue = IStoreStoredProcedureReturnValue$instance;
 
 export interface ITable$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITable: never;
+
     readonly EntityTypeMappings: IEnumerable<ITableMapping>;
     readonly Columns: IEnumerable<IColumn>;
     readonly IsExcludedFromMigrations: boolean;
@@ -4340,6 +4620,8 @@ export interface ITable$instance extends ITableBase, IAnnotatable, IReadOnlyAnno
 export type ITable = ITable$instance;
 
 export interface ITableBase$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITableBase: never;
+
     readonly Name: string;
     readonly Schema: string | undefined;
     readonly SchemaQualifiedName: string;
@@ -4368,6 +4650,8 @@ export interface ITableBase$instance extends IAnnotatable, IReadOnlyAnnotatable 
 export type ITableBase = ITableBase$instance;
 
 export interface ITableIndex$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITableIndex: never;
+
     readonly Name: string;
     readonly MappedIndexes: IEnumerable<IIndex>;
     readonly Table: ITable;
@@ -4391,6 +4675,8 @@ export interface ITableIndex$instance extends IAnnotatable, IReadOnlyAnnotatable
 export type ITableIndex = ITableIndex$instance;
 
 export interface ITableMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITableMapping: never;
+
     readonly Table: ITable;
     readonly ColumnMappings: IEnumerable<IColumnMapping>;
     readonly InsertStoredProcedureMapping: IStoredProcedureMapping | undefined;
@@ -4416,6 +4702,8 @@ export interface ITableMapping$instance extends ITableMappingBase, IAnnotatable,
 export type ITableMapping = ITableMapping$instance;
 
 export interface ITableMappingBase$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITableMappingBase: never;
+
     readonly TypeBase: ITypeBase;
     readonly Table: ITableBase;
     readonly ColumnMappings: IEnumerable<IColumnMappingBase>;
@@ -4438,6 +4726,8 @@ export interface ITableMappingBase$instance extends IAnnotatable, IReadOnlyAnnot
 export type ITableMappingBase = ITableMappingBase$instance;
 
 export interface ITrigger$instance extends IReadOnlyTrigger, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITrigger: never;
+
     readonly EntityType: IEntityType;
     readonly ModelName: string;
     readonly [name: string]: unknown | undefined;
@@ -4456,6 +4746,8 @@ export interface ITrigger$instance extends IReadOnlyTrigger, IReadOnlyAnnotatabl
 export type ITrigger = ITrigger$instance;
 
 export interface ITypeBase$instance extends IReadOnlyTypeBase, IReadOnlyAnnotatable, IAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITypeBase: never;
+
     readonly Model: IModel;
     readonly ContainingEntityType: IEntityType;
     readonly BaseType: ITypeBase | undefined;
@@ -4507,6 +4799,8 @@ export interface ITypeBase$instance extends IReadOnlyTypeBase, IReadOnlyAnnotata
 export type ITypeBase = ITypeBase$instance;
 
 export interface ITypeMappingConfiguration$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITypeMappingConfiguration: never;
+
     readonly ClrType: Type;
     readonly [name: string]: unknown | undefined;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
@@ -4526,6 +4820,8 @@ export interface ITypeMappingConfiguration$instance extends IAnnotatable, IReadO
 export type ITypeMappingConfiguration = ITypeMappingConfiguration$instance;
 
 export interface IUniqueConstraint$instance extends IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IUniqueConstraint: never;
+
     readonly Name: string;
     readonly MappedKeys: IEnumerable<IKey>;
     readonly Table: ITable;
@@ -4547,6 +4843,8 @@ export interface IUniqueConstraint$instance extends IAnnotatable, IReadOnlyAnnot
 export type IUniqueConstraint = IUniqueConstraint$instance;
 
 export interface IView$instance extends ITableBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IView: never;
+
     readonly EntityTypeMappings: IEnumerable<IViewMapping>;
     readonly Columns: IEnumerable<IViewColumn>;
     readonly ViewDefinitionSql: string | undefined;
@@ -4578,6 +4876,8 @@ export interface IView$instance extends ITableBase, IAnnotatable, IReadOnlyAnnot
 export type IView = IView$instance;
 
 export interface IViewColumn$instance extends IColumnBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IViewColumn: never;
+
     readonly View: IView;
     readonly PropertyMappings: IReadOnlyList<IViewColumnMapping>;
     readonly Name: string;
@@ -4605,6 +4905,8 @@ export interface IViewColumn$instance extends IColumnBase, IAnnotatable, IReadOn
 export type IViewColumn = IViewColumn$instance;
 
 export interface IViewColumnMapping$instance extends IColumnMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IViewColumnMapping: never;
+
     readonly Column: IViewColumn;
     readonly ViewMapping: IViewMapping;
     readonly Property: IProperty;
@@ -4626,6 +4928,8 @@ export interface IViewColumnMapping$instance extends IColumnMappingBase, IAnnota
 export type IViewColumnMapping = IViewColumnMapping$instance;
 
 export interface IViewMapping$instance extends ITableMappingBase, IAnnotatable, IReadOnlyAnnotatable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IViewMapping: never;
+
     readonly View: IView;
     readonly ColumnMappings: IEnumerable<IViewColumnMapping>;
     readonly TypeBase: ITypeBase;
@@ -4649,6 +4953,8 @@ export interface IViewMapping$instance extends ITableMappingBase, IAnnotatable, 
 export type IViewMapping = IViewMapping$instance;
 
 export interface MemberIdentity$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     readonly MemberInfo: MemberInfo | undefined;
     readonly Name: string | undefined;
     Equals(obj: unknown): boolean;
@@ -4687,6 +4993,9 @@ export const ParameterBindingInfo: {
 export type ParameterBindingInfo = ParameterBindingInfo$instance;
 
 export interface StoreObjectIdentifier$instance {
+    readonly __tsonic_iface_System_IComparable_1: never;
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     readonly Name: string;
     readonly Schema: string | undefined;
     readonly StoreObjectType: StoreObjectType;
@@ -4716,6 +5025,8 @@ export const StoreObjectIdentifier: {
 export type StoreObjectIdentifier = StoreObjectIdentifier$instance;
 
 export interface AdHocMapper$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IAdHocMapper: never;
+
     readonly Dependencies: AdHocMapperDependencies;
     BuildConventionSet(): ConventionSet;
     GetOrAddEntityType(clrType: Type): RuntimeEntityType;
@@ -4737,6 +5048,8 @@ export type AdHocMapper = AdHocMapper$instance & __AdHocMapper$views;
 
 
 export interface AdHocMapperDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     Model: IModel;
     ModelCreationDependencies: ModelCreationDependencies;
     _Clone_$(): AdHocMapperDependencies;
@@ -4829,6 +5142,9 @@ export const DependencyInjectionParameterBinding: {
 export type DependencyInjectionParameterBinding = DependencyInjectionParameterBinding$instance;
 
 export interface EntityTypeFullNameComparer$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+
     Compare(x: IReadOnlyEntityType, y: IReadOnlyEntityType): int;
     Equals(x: IReadOnlyEntityType, y: IReadOnlyEntityType): boolean;
     GetHashCode(obj: IReadOnlyEntityType): int;
@@ -4872,6 +5188,9 @@ export const FactoryMethodBinding: {
 export type FactoryMethodBinding = FactoryMethodBinding$instance;
 
 export interface ForeignKeyComparer$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+
     Compare(x: IReadOnlyForeignKey, y: IReadOnlyForeignKey): int;
     Equals(x: IReadOnlyForeignKey, y: IReadOnlyForeignKey): boolean;
     GetHashCode(obj: IReadOnlyForeignKey): int;
@@ -4886,6 +5205,9 @@ export const ForeignKeyComparer: {
 export type ForeignKeyComparer = ForeignKeyComparer$instance;
 
 export interface IndexComparer$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+
     Compare(x: IReadOnlyIndex, y: IReadOnlyIndex): int;
     Equals(x: IReadOnlyIndex, y: IReadOnlyIndex): boolean;
     GetHashCode(obj: IReadOnlyIndex): int;
@@ -4914,6 +5236,9 @@ export const InstantiationBinding: (abstract new(parameterBindings: IReadOnlyLis
 export type InstantiationBinding = InstantiationBinding$instance;
 
 export interface KeyComparer$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+
     Compare(x: IReadOnlyKey, y: IReadOnlyKey): int;
     Equals(x: IReadOnlyKey, y: IReadOnlyKey): boolean;
     GetHashCode(obj: IReadOnlyKey): int;
@@ -4928,6 +5253,8 @@ export const KeyComparer: {
 export type KeyComparer = KeyComparer$instance;
 
 export interface LazyLoaderParameterBindingFactory$instance extends ServiceParameterBindingFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IParameterBindingFactory: never;
+
     readonly Dependencies: LazyLoaderParameterBindingFactoryDependencies;
     Bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
     Bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
@@ -4949,6 +5276,8 @@ export type LazyLoaderParameterBindingFactory = LazyLoaderParameterBindingFactor
 
 
 export interface LazyLoaderParameterBindingFactoryDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): LazyLoaderParameterBindingFactoryDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: LazyLoaderParameterBindingFactoryDependencies): boolean;
@@ -5005,6 +5334,8 @@ export const PropertyParameterBinding: {
 export type PropertyParameterBinding = PropertyParameterBinding$instance;
 
 export interface RelationalAdHocMapper$instance extends AdHocMapper$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IAdHocMapper: never;
+
     readonly RelationalDependencies: RelationalAdHocMapperDependencies;
     BuildConventionSet(): ConventionSet;
     GetOrAddEntityType(clrType: Type): RuntimeEntityType;
@@ -5024,6 +5355,8 @@ export type RelationalAdHocMapper = RelationalAdHocMapper$instance & __Relationa
 
 
 export interface RelationalAdHocMapperDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): RelationalAdHocMapperDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: RelationalAdHocMapperDependencies): boolean;
@@ -5040,6 +5373,8 @@ export const RelationalAdHocMapperDependencies: {
 export type RelationalAdHocMapperDependencies = RelationalAdHocMapperDependencies$instance;
 
 export interface RelationalAnnotationProvider$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IRelationalAnnotationProvider: never;
+
     readonly Dependencies: RelationalAnnotationProviderDependencies;
     For(model: IRelationalModel, designTime: boolean): IEnumerable<IAnnotation>;
     For(table: ITable, designTime: boolean): IEnumerable<IAnnotation>;
@@ -5076,6 +5411,8 @@ export type RelationalAnnotationProvider = RelationalAnnotationProvider$instance
 
 
 export interface RelationalAnnotationProviderDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): RelationalAnnotationProviderDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: RelationalAnnotationProviderDependencies): boolean;
@@ -5092,6 +5429,14 @@ export const RelationalAnnotationProviderDependencies: {
 export type RelationalAnnotationProviderDependencies = RelationalAnnotationProviderDependencies$instance;
 
 export interface RuntimeComplexProperty$instance extends RuntimePropertyBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IComplexProperty: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyComplexProperty: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimePropertyBase: never;
+
     readonly ClrType: Type;
     readonly ComplexType: RuntimeComplexType;
     readonly DebugView: DebugView;
@@ -5144,6 +5489,14 @@ export type RuntimeComplexProperty = RuntimeComplexProperty$instance & __Runtime
 
 
 export interface RuntimeComplexType$instance extends RuntimeTypeBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IComplexType: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyComplexType: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyTypeBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITypeBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeTypeBase: never;
+
     readonly ComplexProperty: RuntimeComplexProperty;
     get ConstructorBinding(): InstantiationBinding | undefined;
     set ConstructorBinding(value: InstantiationBinding | undefined);
@@ -5220,6 +5573,11 @@ export type RuntimeComplexType = RuntimeComplexType$instance & __RuntimeComplexT
 
 
 export interface RuntimeDbFunction$instance extends AnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IDbFunction: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyDbFunction: never;
+
     readonly DebugView: DebugView;
     readonly Model: RuntimeModel;
     readonly ModelName: string;
@@ -5259,6 +5617,11 @@ export type RuntimeDbFunction = RuntimeDbFunction$instance & __RuntimeDbFunction
 
 
 export interface RuntimeDbFunctionParameter$instance extends AnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IDbFunctionParameter: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyDbFunctionParameter: never;
+
     readonly DebugView: DebugView;
     readonly Function: RuntimeDbFunction;
     readonly Name: string;
@@ -5296,6 +5659,11 @@ export type RuntimeDbFunctionParameter = RuntimeDbFunctionParameter$instance & _
 
 
 export interface RuntimeElementType$instance extends RuntimeAnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IElementType: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyElementType: never;
+
     readonly ClrType: Type;
     readonly CollectionProperty: IProperty;
     readonly DebugView: DebugView;
@@ -5344,6 +5712,15 @@ export type RuntimeElementType = RuntimeElementType$instance & __RuntimeElementT
 
 
 export interface RuntimeEntityType$instance extends RuntimeTypeBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IEntityType: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyEntityType: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyTypeBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITypeBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeEntityType: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeTypeBase: never;
+
     get ConstructorBinding(): InstantiationBinding | undefined;
     set ConstructorBinding(value: InstantiationBinding | undefined);
     readonly DebugView: DebugView;
@@ -5450,6 +5827,11 @@ export type RuntimeEntityType = RuntimeEntityType$instance & __RuntimeEntityType
 
 
 export interface RuntimeEntityTypeMappingFragment$instance extends AnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IEntityTypeMappingFragment: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyEntityTypeMappingFragment: never;
+
     readonly DebugView: DebugView;
     readonly EntityType: RuntimeEntityType;
     readonly IsTableExcludedFromMigrations: Nullable<System_Internal.Boolean>;
@@ -5486,6 +5868,12 @@ export type RuntimeEntityTypeMappingFragment = RuntimeEntityTypeMappingFragment$
 
 
 export interface RuntimeForeignKey$instance extends RuntimeAnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IForeignKey: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyForeignKey: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeForeignKey: never;
+
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
     readonly PrincipalEntityType: RuntimeEntityType;
@@ -5527,6 +5915,11 @@ export type RuntimeForeignKey = RuntimeForeignKey$instance & __RuntimeForeignKey
 
 
 export interface RuntimeIndex$instance extends RuntimeAnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IIndex: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyIndex: never;
+
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
     readonly Name: string | undefined;
@@ -5563,6 +5956,12 @@ export type RuntimeIndex = RuntimeIndex$instance & __RuntimeIndex$views;
 
 
 export interface RuntimeKey$instance extends RuntimeAnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IKey: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyKey: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeKey: never;
+
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
     readonly Properties: IReadOnlyList<RuntimeProperty>;
@@ -5603,6 +6002,12 @@ export type RuntimeKey = RuntimeKey$instance & __RuntimeKey$views;
 
 
 export interface RuntimeModel$instance extends RuntimeAnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IModel: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyModel: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeModel: never;
+
     readonly DebugView: DebugView;
     ModelId: Guid;
     AddEntityType(name: string, type: Type, baseType?: RuntimeEntityType, sharedClrType?: boolean, changeTrackingStrategy?: ChangeTrackingStrategy, indexerPropertyInfo?: PropertyInfo, propertyBag?: boolean, discriminatorProperty?: string, discriminatorValue?: unknown, derivedTypesCount?: int, propertyCount?: int, complexPropertyCount?: int, navigationCount?: int, skipNavigationCount?: int, servicePropertyCount?: int, foreignKeyCount?: int, unnamedIndexCount?: int, namedIndexCount?: int, keyCount?: int, triggerCount?: int): RuntimeEntityType;
@@ -5646,6 +6051,16 @@ export type RuntimeModel = RuntimeModel$instance & __RuntimeModel$views;
 
 
 export interface RuntimeNavigation$instance extends RuntimePropertyBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_INavigation: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_INavigationBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyNavigation: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyNavigationBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimePropertyBase: never;
+
     readonly ClrType: Type;
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
@@ -5702,6 +6117,14 @@ export type RuntimeNavigation = RuntimeNavigation$instance & __RuntimeNavigation
 
 
 export interface RuntimeProperty$instance extends RuntimePropertyBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IProperty: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyProperty: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimePropertyBase: never;
+
     readonly ClrType: Type;
     readonly DebugView: DebugView;
     readonly DeclaringType: RuntimeTypeBase;
@@ -5773,6 +6196,12 @@ export type RuntimeProperty = RuntimeProperty$instance & __RuntimeProperty$views
 
 
 export interface RuntimePropertyBase$instance extends RuntimeAnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimePropertyBase: never;
+
     readonly ClrType: Type;
     readonly DeclaringType: RuntimeTypeBase;
     readonly IsCollection: boolean;
@@ -5819,6 +6248,11 @@ export type RuntimePropertyBase = RuntimePropertyBase$instance & __RuntimeProper
 
 
 export interface RuntimeRelationalPropertyOverrides$instance extends AnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyRelationalPropertyOverrides: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IRelationalPropertyOverrides: never;
+
     readonly DebugView: DebugView;
     readonly Property: RuntimeProperty;
     readonly StoreObject: StoreObjectIdentifier;
@@ -5854,6 +6288,11 @@ export type RuntimeRelationalPropertyOverrides = RuntimeRelationalPropertyOverri
 
 
 export interface RuntimeSequence$instance extends AnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlySequence: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ISequence: never;
+
     readonly DebugView: DebugView;
     readonly Model: RuntimeModel;
     readonly ModelSchema: string | undefined;
@@ -5891,6 +6330,14 @@ export type RuntimeSequence = RuntimeSequence$instance & __RuntimeSequence$views
 
 
 export interface RuntimeServiceProperty$instance extends RuntimePropertyBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyServiceProperty: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IServiceProperty: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimePropertyBase: never;
+
     readonly ClrType: Type;
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
@@ -5944,6 +6391,17 @@ export type RuntimeServiceProperty = RuntimeServiceProperty$instance & __Runtime
 
 
 export interface RuntimeSkipNavigation$instance extends RuntimePropertyBase$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_INavigationBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyNavigationBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyPropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlySkipNavigation: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ISkipNavigation: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimePropertyBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeSkipNavigation: never;
+
     readonly ClrType: Type;
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: RuntimeEntityType;
@@ -6002,6 +6460,11 @@ export type RuntimeSkipNavigation = RuntimeSkipNavigation$instance & __RuntimeSk
 
 
 export interface RuntimeStoredProcedure$instance extends AnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyStoredProcedure: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IStoredProcedure: never;
+
     readonly DebugView: DebugView;
     EntityType: RuntimeEntityType;
     AddParameter(name: string, direction: ParameterDirection, forRowsAffected: boolean, propertyName: string, forOriginalValue: Nullable<System_Internal.Boolean>): RuntimeStoredProcedureParameter;
@@ -6038,6 +6501,11 @@ export type RuntimeStoredProcedure = RuntimeStoredProcedure$instance & __Runtime
 
 
 export interface RuntimeTrigger$instance extends RuntimeAnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyTrigger: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITrigger: never;
+
     readonly DebugView: DebugView;
     readonly EntityType: IEntityType;
     readonly ModelName: string;
@@ -6073,6 +6541,12 @@ export type RuntimeTrigger = RuntimeTrigger$instance & __RuntimeTrigger$views;
 
 
 export interface RuntimeTypeBase$instance extends RuntimeAnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyTypeBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITypeBase: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeTypeBase: never;
+
     readonly BaseType: RuntimeTypeBase | undefined;
     readonly ClrType: Type;
     get ConstructorBinding(): InstantiationBinding | undefined;
@@ -6152,6 +6626,10 @@ export type RuntimeTypeBase = RuntimeTypeBase$instance & __RuntimeTypeBase$views
 
 
 export interface RuntimeTypeMappingConfiguration$instance extends RuntimeAnnotatableBase {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITypeMappingConfiguration: never;
+
     readonly ClrType: Type;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -6197,6 +6675,8 @@ export const ServiceParameterBinding: (abstract new(parameterType: Type, service
 export type ServiceParameterBinding = ServiceParameterBinding$instance;
 
 export interface ServiceParameterBindingFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IParameterBindingFactory: never;
+
     Bind(entityType: IMutableEntityType, parameterType: Type, parameterName: string): ParameterBinding;
     Bind(entityType: IConventionEntityType, parameterType: Type, parameterName: string): ParameterBinding;
     Bind(entityType: IReadOnlyEntityType, parameterType: Type, parameterName: string): ParameterBinding;
@@ -6229,6 +6709,8 @@ export const SimpleModelFactory: {
 export type SimpleModelFactory = SimpleModelFactory$instance;
 
 export interface StoreObjectDictionary_1$instance<T> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyStoreObjectDictionary_1: never;
+
     Add(storeObject: StoreObjectIdentifier, value: T): void;
     Find(storeObject: StoreObjectIdentifier): T | undefined;
     GetValues(): IEnumerable<T>;
@@ -6249,6 +6731,9 @@ export type StoreObjectDictionary_1<T> = StoreObjectDictionary_1$instance<T> & _
 
 
 export interface TypeBaseNameComparer$instance {
+    readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
+
     Compare(x: IReadOnlyTypeBase, y: IReadOnlyTypeBase): int;
     Equals(x: IReadOnlyTypeBase, y: IReadOnlyTypeBase): boolean;
     GetHashCode(obj: IReadOnlyTypeBase): int;

@@ -52,6 +52,8 @@ export enum ReferentialAction {
 
 
 export interface IHistoryRepository$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IHistoryRepository: never;
+
     readonly LockReleaseBehavior: LockReleaseBehavior;
     AcquireDatabaseLock(): IMigrationsDatabaseLock;
     Create(): void;
@@ -68,6 +70,8 @@ export interface IHistoryRepository$instance {
 export type IHistoryRepository = IHistoryRepository$instance;
 
 export interface IMigrationCommandExecutor$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationCommandExecutor: never;
+
     ExecuteNonQuery(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection): void;
     ExecuteNonQuery(migrationCommands: IReadOnlyList<MigrationCommand>, connection: IRelationalConnection, executionState: MigrationExecutionState, commitTransaction: boolean, isolationLevel?: Nullable<IsolationLevel>): int;
     ExecuteNonQueryAsync(migrationCommands: IEnumerable<MigrationCommand>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task;
@@ -78,6 +82,8 @@ export interface IMigrationCommandExecutor$instance {
 export type IMigrationCommandExecutor = IMigrationCommandExecutor$instance;
 
 export interface IMigrationsAnnotationProvider$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsAnnotationProvider: never;
+
     ForRemove(checkConstraint: ICheckConstraint): IEnumerable<IAnnotation>;
     ForRemove(column: IColumn): IEnumerable<IAnnotation>;
     ForRemove(foreignKey: IForeignKeyConstraint): IEnumerable<IAnnotation>;
@@ -94,6 +100,8 @@ export interface IMigrationsAnnotationProvider$instance {
 export type IMigrationsAnnotationProvider = IMigrationsAnnotationProvider$instance;
 
 export interface IMigrationsAssembly$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsAssembly: never;
+
     readonly Migrations: IReadOnlyDictionary<System_Internal.String, TypeInfo>;
     readonly ModelSnapshot: ModelSnapshot | undefined;
     readonly Assembly: Assembly;
@@ -105,15 +113,21 @@ export interface IMigrationsAssembly$instance {
 export type IMigrationsAssembly = IMigrationsAssembly$instance;
 
 export interface IMigrationsDatabaseLock$instance extends IDisposable, IAsyncDisposable {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsDatabaseLock: never;
+
     readonly HistoryRepository: IHistoryRepository;
     ReacquireIfNeeded(connectionReopened: boolean, transactionRestarted: Nullable<System_Internal.Boolean>): IMigrationsDatabaseLock;
     ReacquireIfNeededAsync(connectionReopened: boolean, transactionRestarted: Nullable<System_Internal.Boolean>, cancellationToken?: CancellationToken): Task<IMigrationsDatabaseLock>;
 }
 
 
+export interface IMigrationsDatabaseLock$instance extends System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
+
 export type IMigrationsDatabaseLock = IMigrationsDatabaseLock$instance;
 
 export interface IMigrationsIdGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsIdGenerator: never;
+
     GenerateId(name: string): string;
     IsValidId(value: string): boolean;
 }
@@ -122,6 +136,8 @@ export interface IMigrationsIdGenerator$instance {
 export type IMigrationsIdGenerator = IMigrationsIdGenerator$instance;
 
 export interface IMigrationsModelDiffer$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsModelDiffer: never;
+
     GetDifferences(source: IRelationalModel, target: IRelationalModel): IReadOnlyList<MigrationOperation>;
     HasDifferences(source: IRelationalModel, target: IRelationalModel): boolean;
 }
@@ -130,6 +146,8 @@ export interface IMigrationsModelDiffer$instance {
 export type IMigrationsModelDiffer = IMigrationsModelDiffer$instance;
 
 export interface IMigrationsSqlGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsSqlGenerator: never;
+
     Generate(operations: IReadOnlyList<MigrationOperation>, model?: IModel, options?: MigrationsSqlGenerationOptions): IReadOnlyList<MigrationCommand>;
 }
 
@@ -137,6 +155,8 @@ export interface IMigrationsSqlGenerator$instance {
 export type IMigrationsSqlGenerator = IMigrationsSqlGenerator$instance;
 
 export interface IMigrator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrator: never;
+
     GenerateScript(fromMigration?: string, toMigration?: string, options?: MigrationsSqlGenerationOptions): string;
     HasPendingModelChanges(): boolean;
     Migrate(targetMigration?: string): void;
@@ -147,6 +167,8 @@ export interface IMigrator$instance {
 export type IMigrator = IMigrator$instance;
 
 export interface HistoryRepository$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IHistoryRepository: never;
+
     readonly Dependencies: HistoryRepositoryDependencies;
     readonly ExistsSql: string;
     readonly GetAppliedMigrationsSql: string;
@@ -192,6 +214,8 @@ export type HistoryRepository = HistoryRepository$instance & __HistoryRepository
 
 
 export interface HistoryRepositoryDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     CommandLogger: IRelationalCommandDiagnosticsLogger;
     Connection: IRelationalConnection;
     ConventionSetBuilder: IConventionSetBuilder;
@@ -399,6 +423,8 @@ export const MigrationExecutionState: {
 export type MigrationExecutionState = MigrationExecutionState$instance;
 
 export interface MigrationsAnnotationProvider$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsAnnotationProvider: never;
+
     readonly Dependencies: MigrationsAnnotationProviderDependencies;
     ForRemove(model: IRelationalModel): IEnumerable<IAnnotation>;
     ForRemove(table: ITable): IEnumerable<IAnnotation>;
@@ -430,6 +456,8 @@ export type MigrationsAnnotationProvider = MigrationsAnnotationProvider$instance
 
 
 export interface MigrationsAnnotationProviderDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     _Clone_$(): MigrationsAnnotationProviderDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: MigrationsAnnotationProviderDependencies): boolean;
@@ -446,6 +474,8 @@ export const MigrationsAnnotationProviderDependencies: {
 export type MigrationsAnnotationProviderDependencies = MigrationsAnnotationProviderDependencies$instance;
 
 export interface MigrationsSqlGenerator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsSqlGenerator: never;
+
     readonly Dependencies: MigrationsSqlGeneratorDependencies;
     Options: MigrationsSqlGenerationOptions;
     readonly SqlGenerator: IUpdateSqlGenerator;
@@ -530,6 +560,8 @@ export type MigrationsSqlGenerator = MigrationsSqlGenerator$instance & __Migrati
 
 
 export interface MigrationsSqlGeneratorDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     CommandBuilderFactory: IRelationalCommandBuilderFactory;
     CurrentContext: ICurrentDbContext;
     Logger: IRelationalCommandDiagnosticsLogger;

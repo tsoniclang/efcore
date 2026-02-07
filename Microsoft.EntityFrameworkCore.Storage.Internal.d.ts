@@ -42,3 +42,6 @@ export { RawSqlCommandBuilder as RawSqlCommandBuilder } from './Microsoft.Entity
 export { RelationalDatabaseFacadeDependencies as RelationalDatabaseFacadeDependencies } from './Microsoft.EntityFrameworkCore.Storage.Internal/internal/index.js';
 export { RelationalParameterBase as RelationalParameterBase } from './Microsoft.EntityFrameworkCore.Storage.Internal/internal/index.js';
 export { TypeMappedRelationalParameter as TypeMappedRelationalParameter } from './Microsoft.EntityFrameworkCore.Storage.Internal/internal/index.js';
+// Extension methods (C# using semantics)
+export type { ExtensionMethods_Microsoft_EntityFrameworkCore_Storage_Internal as ExtensionMethods } from './__internal/extensions/index.js';
+

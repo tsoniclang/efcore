@@ -123,6 +123,8 @@ export enum WarningBehavior {
 
 
 export interface IDbContextFactory_1$instance<TContext extends DbContext> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IDbContextFactory_1: never;
+
     CreateDbContext(): TContext;
     CreateDbContextAsync(cancellationToken?: CancellationToken): Task<TContext>;
 }
@@ -131,6 +133,8 @@ export interface IDbContextFactory_1$instance<TContext extends DbContext> {
 export type IDbContextFactory_1<TContext extends DbContext> = IDbContextFactory_1$instance<TContext>;
 
 export interface IEntityTypeConfiguration_1$instance<TEntity> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IEntityTypeConfiguration_1: never;
+
     Configure(builder: EntityTypeBuilder_1<TEntity>): void;
 }
 
@@ -179,6 +183,14 @@ export const CommentAttribute: {
 export type CommentAttribute = CommentAttribute$instance;
 
 export interface DbContext$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextDependencies: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextPoolable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbSetCache: never;
+    readonly __tsonic_iface_System_IAsyncDisposable: never;
+    readonly __tsonic_iface_System_IDisposable: never;
+
     readonly ChangeTracker: ChangeTracker;
     readonly ContextId: DbContextId;
     readonly Database: DatabaseFacade;
@@ -248,6 +260,8 @@ export type DbContext = DbContext$instance & __DbContext$views;
 
 
 export interface DbContextOptions$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
+
     readonly ContextType: Type;
     readonly Extensions: IEnumerable__System_Collections_Generic<IDbContextOptionsExtension>;
     readonly ExtensionsMap: ImmutableSortedDictionary<Type, ValueTuple<IDbContextOptionsExtension, System_Internal.Int32>>;
@@ -276,6 +290,8 @@ export type DbContextOptions = DbContextOptions$instance & __DbContextOptions$vi
 
 
 export interface DbContextOptions_1$instance<TContext extends DbContext> extends DbContextOptions$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
+
     readonly ContextType: Type;
     FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | undefined;
     WithExtension<TExtension extends IDbContextOptionsExtension>(extension: TExtension): DbContextOptions;
@@ -296,6 +312,8 @@ export type DbContextOptions_1<TContext extends DbContext> = DbContextOptions_1$
 
 
 export interface DbContextOptionsBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
+
     readonly IsConfigured: boolean;
     readonly Options: DbContextOptions | DbContextOptions_1<TContext>;
     AddInterceptors(interceptors: IEnumerable__System_Collections_Generic<IInterceptor>): DbContextOptionsBuilder;
@@ -344,6 +362,8 @@ export type DbContextOptionsBuilder = DbContextOptionsBuilder$instance & __DbCon
 
 
 export interface DbContextOptionsBuilder_1$instance<TContext extends DbContext> extends DbContextOptionsBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
+
     AddInterceptors(interceptors: IEnumerable__System_Collections_Generic<IInterceptor>): DbContextOptionsBuilder_1<TContext>;
     AddInterceptors(interceptors: IEnumerable__System_Collections_Generic<IInterceptor>): DbContextOptionsBuilder;
     AddInterceptors(...interceptors: IInterceptor[]): DbContextOptionsBuilder;
@@ -556,6 +576,13 @@ export const DbLoggerCategory_Update: {
 export type DbLoggerCategory_Update = DbLoggerCategory_Update$instance;
 
 export interface DbSet_1$instance<TEntity> {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+    readonly __tsonic_iface_System_ComponentModel_IListSource: never;
+    readonly __tsonic_iface_System_Linq_IQueryable: never;
+    readonly __tsonic_iface_System_Linq_IQueryable_1: never;
+
     readonly EntityType: IEntityType;
     readonly Local: LocalView_1<TEntity>;
     Add(entity: TEntity): EntityEntry_1<TEntity>;
@@ -594,12 +621,14 @@ export interface __DbSet_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>;
 }
 
-export interface DbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider> {}
+export interface DbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, System_Collections_Generic_Internal.IEnumerable<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable<TEntity> {}
 
 export type DbSet_1<TEntity> = DbSet_1$instance<TEntity> & __DbSet_1$views<TEntity>;
 
 
 export interface DbUpdateConcurrencyException$instance extends DbUpdateException {
+    readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
+
 }
 
 
@@ -616,6 +645,8 @@ export const DbUpdateConcurrencyException: {
 export type DbUpdateConcurrencyException = DbUpdateConcurrencyException$instance;
 
 export interface DbUpdateException$instance extends Exception {
+    readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
+
     readonly Entries: IReadOnlyList<EntityEntry>;
 }
 
@@ -701,6 +732,8 @@ export const KeylessAttribute: {
 export type KeylessAttribute = KeylessAttribute$instance;
 
 export interface ModelBuilder$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
     readonly Model: IMutableModel;
     ApplyConfiguration<TEntity>(configuration: IEntityTypeConfiguration_1<TEntity>): ModelBuilder;
     ApplyConfigurationsFromAssembly(assembly: Assembly, predicate?: Func<Type, System_Internal.Boolean>): ModelBuilder;
@@ -778,6 +811,8 @@ export const ModelConfigurationBuilder: {
 export type ModelConfigurationBuilder = ModelConfigurationBuilder$instance;
 
 export interface ModelCreationDependencies$instance {
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
     ConventionSetBuilder: IConventionSetBuilder;
     ModelDependencies: ModelDependencies;
     ModelRuntimeInitializer: IModelRuntimeInitializer;
