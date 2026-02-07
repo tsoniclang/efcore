@@ -111,6 +111,8 @@ export interface IMigrationsDatabaseLock$instance extends IDisposable, IAsyncDis
 }
 
 
+export interface IMigrationsDatabaseLock$instance extends System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
+
 export type IMigrationsDatabaseLock = IMigrationsDatabaseLock$instance;
 
 export interface IMigrationsIdGenerator$instance {

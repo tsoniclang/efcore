@@ -106,7 +106,7 @@ export interface IDbContextPoolable$instance extends IResettableService, IDispos
 }
 
 
-export interface IDbContextPoolable$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {}
+export interface IDbContextPoolable$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance, System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
 
 export type IDbContextPoolable = IDbContextPoolable$instance;
 
@@ -284,7 +284,7 @@ export interface __DbContextDependencies$views {
     As_IDbContextDependencies(): IDbContextDependencies$instance;
 }
 
-export interface DbContextDependencies$instance extends IDbContextDependencies$instance {}
+export interface DbContextDependencies$instance extends IDbContextDependencies$instance, System_Internal.IEquatable<DbContextDependencies> {}
 
 export type DbContextDependencies = DbContextDependencies$instance & __DbContextDependencies$views;
 
@@ -346,6 +346,8 @@ export const DbContextPool_1: {
 export interface __DbContextPool_1$views<TContext extends DbContext> {
     As_IDbContextPool(): IDbContextPool$instance;
 }
+
+export interface DbContextPool_1$instance<TContext extends DbContext> extends System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
 
 export type DbContextPool_1<TContext extends DbContext> = DbContextPool_1$instance<TContext> & __DbContextPool_1$views<TContext>;
 
@@ -583,7 +585,7 @@ export interface __InternalDbSet_1$views<TEntity> {
     As_IResettableService(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance;
 }
 
-export interface InternalDbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {}
+export interface InternalDbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance, System_Collections_Generic_Internal.IAsyncEnumerable<TEntity>, System_Collections_Generic_Internal.IEnumerable<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable<TEntity> {}
 
 export type InternalDbSet_1<TEntity> = InternalDbSet_1$instance<TEntity> & __InternalDbSet_1$views<TEntity>;
 
@@ -666,7 +668,7 @@ export interface __ScopedDbContextLease_1$views<TContext extends DbContext> {
     As_IScopedDbContextLease_1(): IScopedDbContextLease_1$instance<TContext>;
 }
 
-export interface ScopedDbContextLease_1$instance<TContext extends DbContext> extends IScopedDbContextLease_1$instance<TContext> {}
+export interface ScopedDbContextLease_1$instance<TContext extends DbContext> extends IScopedDbContextLease_1$instance<TContext>, System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
 
 export type ScopedDbContextLease_1<TContext extends DbContext> = ScopedDbContextLease_1$instance<TContext> & __ScopedDbContextLease_1$views<TContext>;
 

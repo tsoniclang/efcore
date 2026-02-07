@@ -70,6 +70,8 @@ export interface IAsyncQueryProvider$instance extends IQueryProvider {
 }
 
 
+export interface IAsyncQueryProvider$instance extends System_Linq_Internal.IQueryProvider {}
+
 export type IAsyncQueryProvider = IAsyncQueryProvider$instance;
 
 export interface ICompiledQueryCacheKeyGenerator$instance {
@@ -102,6 +104,8 @@ export type IEvaluatableExpressionFilterPlugin = IEvaluatableExpressionFilterPlu
 export interface IIncludableQueryable_2$instance<TEntity, TProperty> extends IQueryable<TEntity>, IEnumerable__System_Collections_Generic<TEntity>, IEnumerable, IQueryable {
 }
 
+
+export interface IIncludableQueryable_2$instance<TEntity, TProperty> extends System_Collections_Generic_Internal.IEnumerable<TEntity>, System_Linq_Internal.IQueryable<TEntity> {}
 
 export type IIncludableQueryable_2<TEntity, TProperty> = IIncludableQueryable_2$instance<TEntity, TProperty>;
 

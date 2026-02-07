@@ -107,6 +107,8 @@ export interface IDbContextTransaction$instance extends IDisposable, IAsyncDispo
 }
 
 
+export interface IDbContextTransaction$instance extends System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
+
 export type IDbContextTransaction = IDbContextTransaction$instance;
 
 export interface IDbContextTransactionManager$instance extends IResettableService {
@@ -241,6 +243,8 @@ export interface IRelationalConnection$instance extends IRelationalTransactionMa
     ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
 
+
+export interface IRelationalConnection$instance extends System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
 
 export type IRelationalConnection = IRelationalConnection$instance;
 

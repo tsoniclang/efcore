@@ -104,7 +104,7 @@ export interface __DatabaseFacadeDependencies$views {
     As_IDatabaseFacadeDependencies(): Microsoft_EntityFrameworkCore_Storage_Internal.IDatabaseFacadeDependencies$instance;
 }
 
-export interface DatabaseFacadeDependencies$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IDatabaseFacadeDependencies$instance {}
+export interface DatabaseFacadeDependencies$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IDatabaseFacadeDependencies$instance, System_Internal.IEquatable<DatabaseFacadeDependencies> {}
 
 export type DatabaseFacadeDependencies = DatabaseFacadeDependencies$instance & __DatabaseFacadeDependencies$views;
 
@@ -266,7 +266,7 @@ export interface __RelationalDatabaseFacadeDependencies$views {
     As_IRelationalDatabaseFacadeDependencies(): Microsoft_EntityFrameworkCore_Storage_Internal.IRelationalDatabaseFacadeDependencies$instance;
 }
 
-export interface RelationalDatabaseFacadeDependencies$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IRelationalDatabaseFacadeDependencies$instance {}
+export interface RelationalDatabaseFacadeDependencies$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IRelationalDatabaseFacadeDependencies$instance, System_Internal.IEquatable<RelationalDatabaseFacadeDependencies> {}
 
 export type RelationalDatabaseFacadeDependencies = RelationalDatabaseFacadeDependencies$instance & __RelationalDatabaseFacadeDependencies$views;
 

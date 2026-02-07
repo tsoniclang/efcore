@@ -594,7 +594,7 @@ export interface __DbSet_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>;
 }
 
-export interface DbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider> {}
+export interface DbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, System_Collections_Generic_Internal.IEnumerable<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable<TEntity> {}
 
 export type DbSet_1<TEntity> = DbSet_1$instance<TEntity> & __DbSet_1$views<TEntity>;
 

@@ -1864,6 +1864,8 @@ export interface IMetadataReference_1$instance<T> extends IDisposable {
 }
 
 
+export interface IMetadataReference_1$instance<T> extends System_Internal.IDisposable {}
+
 export type IMetadataReference_1<T> = IMetadataReference_1$instance<T>;
 
 export interface IModel$instance extends IReadOnlyModel, IReadOnlyAnnotatable, IAnnotatable {

@@ -164,7 +164,7 @@ export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 
 
 export interface CollectionEntry$instance extends NavigationEntry$instance {
-    CurrentValue: IEnumerable | unknown;
+    CurrentValue: IEnumerable | IEnumerable_1<TRelatedEntity> | unknown;
     IsModified: boolean;
     FindEntry(entity: unknown): EntityEntry | undefined;
     GetInternalTargetEntry(entity: unknown): InternalEntityEntry | undefined;
@@ -664,7 +664,7 @@ export interface __ListOfNullableValueTypesComparer_2$views<TConcreteList, TElem
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer> {}
+export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown>, System_Collections_Generic_Internal.IEqualityComparer<IEnumerable__System_Collections_Generic<Nullable<TElement>>> {}
 
 export type ListOfNullableValueTypesComparer_2<TConcreteList, TElement> = ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfNullableValueTypesComparer_2$views<TConcreteList, TElement>;
 
@@ -683,7 +683,7 @@ export interface __ListOfReferenceTypesComparer_2$views<TConcreteList, TElement>
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer> {}
+export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown> {}
 
 export type ListOfReferenceTypesComparer_2<TConcreteList, TElement> = ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> & __ListOfReferenceTypesComparer_2$views<TConcreteList, TElement>;
 
@@ -702,7 +702,7 @@ export interface __ListOfValueTypesComparer_2$views<TConcreteList, TElement exte
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer> {}
+export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown>, System_Collections_Generic_Internal.IEqualityComparer<IEnumerable__System_Collections_Generic<TElement>> {}
 
 export type ListOfValueTypesComparer_2<TConcreteList, TElement> = ListOfValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfValueTypesComparer_2$views<TConcreteList, TElement>;
 
@@ -747,7 +747,7 @@ export interface MemberEntry$instance {
     readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
     readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
-    readonly Metadata: IProperty | IPropertyBase;
+    readonly Metadata: IComplexProperty | IPropertyBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;

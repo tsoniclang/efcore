@@ -30,7 +30,7 @@ export interface ILazyLoaderFactory$instance extends IDisposable, IResettableSer
 }
 
 
-export interface ILazyLoaderFactory$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {}
+export interface ILazyLoaderFactory$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance, System_Internal.IDisposable {}
 
 export type ILazyLoaderFactory = ILazyLoaderFactory$instance;
 

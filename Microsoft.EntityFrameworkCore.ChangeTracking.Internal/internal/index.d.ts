@@ -478,7 +478,7 @@ export interface __ConvertingValueComparer_2$views<TTo, TFrom> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ConvertingValueComparer_2$instance<TTo, TFrom> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer> {}
+export interface ConvertingValueComparer_2$instance<TTo, TFrom> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown>, System_Collections_Generic_Internal.IEqualityComparer<TTo> {}
 
 export type ConvertingValueComparer_2<TTo, TFrom> = ConvertingValueComparer_2$instance<TTo, TFrom> & __ConvertingValueComparer_2$views<TTo, TFrom>;
 
@@ -1177,7 +1177,7 @@ export interface __NullableValueComparer_1$views<T extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface NullableValueComparer_1$instance<T extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer> {}
+export interface NullableValueComparer_1$instance<T extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown>, System_Collections_Generic_Internal.IEqualityComparer<Nullable<T>> {}
 
 export type NullableValueComparer_1<T> = NullableValueComparer_1$instance<T> & __NullableValueComparer_1$views<T>;
 

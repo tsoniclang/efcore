@@ -543,6 +543,8 @@ export interface __FromSqlQueryingEnumerable_1$views<T> {
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
 
+export interface FromSqlQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable<T>, System_Collections_Generic_Internal.IEnumerable<T> {}
+
 export type FromSqlQueryingEnumerable_1<T> = FromSqlQueryingEnumerable_1$instance<T> & __FromSqlQueryingEnumerable_1$views<T>;
 
 
@@ -608,6 +610,8 @@ export interface __GroupBySingleQueryingEnumerable_2$views<TKey, TElement> {
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
 
+export interface GroupBySingleQueryingEnumerable_2$instance<TKey, TElement> extends System_Collections_Generic_Internal.IAsyncEnumerable<IGrouping<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable<IGrouping<TKey, TElement>> {}
+
 export type GroupBySingleQueryingEnumerable_2<TKey, TElement> = GroupBySingleQueryingEnumerable_2$instance<TKey, TElement> & __GroupBySingleQueryingEnumerable_2$views<TKey, TElement>;
 
 
@@ -628,6 +632,8 @@ export interface __GroupBySplitQueryingEnumerable_2$views<TKey, TElement> {
     As_IQueryingEnumerable(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryingEnumerable$instance;
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
+
+export interface GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> extends System_Collections_Generic_Internal.IAsyncEnumerable<IGrouping<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable<IGrouping<TKey, TElement>> {}
 
 export type GroupBySplitQueryingEnumerable_2<TKey, TElement> = GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> & __GroupBySplitQueryingEnumerable_2$views<TKey, TElement>;
 
@@ -1303,6 +1309,8 @@ export interface __SingleQueryingEnumerable_1$views<T> {
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
 
+export interface SingleQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable<T>, System_Collections_Generic_Internal.IEnumerable<T> {}
+
 export type SingleQueryingEnumerable_1<T> = SingleQueryingEnumerable_1$instance<T> & __SingleQueryingEnumerable_1$views<T>;
 
 
@@ -1367,6 +1375,8 @@ export interface __SplitQueryingEnumerable_1$views<T> {
     As_IQueryingEnumerable(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryingEnumerable$instance;
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
+
+export interface SplitQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable<T>, System_Collections_Generic_Internal.IEnumerable<T> {}
 
 export type SplitQueryingEnumerable_1<T> = SplitQueryingEnumerable_1$instance<T> & __SplitQueryingEnumerable_1$views<T>;
 

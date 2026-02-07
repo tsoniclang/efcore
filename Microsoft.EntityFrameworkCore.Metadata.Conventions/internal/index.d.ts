@@ -102,6 +102,8 @@ export interface IConventionBatch$instance extends IDisposable {
 }
 
 
+export interface IConventionBatch$instance extends System_Internal.IDisposable {}
+
 export type IConventionBatch = IConventionBatch$instance;
 
 export interface IConventionContext$instance {

@@ -12,3 +12,6 @@ import type { IServiceCollection, ServiceLifetime } from '@tsonic/microsoft-exte
 
 // Public API exports (curated - no internal $instance/$views leakage)
 export { EntityFrameworkServiceCollectionExtensions$instance as EntityFrameworkServiceCollectionExtensions } from './Microsoft.Extensions.DependencyInjection/internal/index.js';
+// Extension methods (C# using semantics)
+export type { ExtensionMethods_Microsoft_Extensions_DependencyInjection as ExtensionMethods } from './__internal/extensions/index.js';
+
