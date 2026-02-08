@@ -7422,8 +7422,8 @@ export interface TypeBase$instance extends ConventionAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeTypeBase: never;
 
     readonly BaseBuilder: InternalTypeBaseBuilder;
-    get BaseType(): EntityType | undefined | TypeBase | undefined;
-    set BaseType(value: EntityType | undefined | TypeBase | undefined);
+    get BaseType(): ComplexType | undefined | TypeBase | undefined;
+    set BaseType(value: ComplexType | undefined | TypeBase | undefined);
     readonly ClrType: Type;
     get ConstructorBinding(): InstantiationBinding | undefined;
     set ConstructorBinding(value: InstantiationBinding | undefined);

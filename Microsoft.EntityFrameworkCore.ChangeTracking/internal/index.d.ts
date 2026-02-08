@@ -785,7 +785,7 @@ export interface MemberEntry$instance {
     readonly EntityEntry: EntityEntry;
     readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
-    readonly Metadata: IComplexProperty | IPropertyBase;
+    readonly Metadata: INavigationBase | IPropertyBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
