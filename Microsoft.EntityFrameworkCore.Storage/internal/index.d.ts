@@ -136,7 +136,7 @@ export interface IDbContextTransactionManager$instance extends IResettableServic
 }
 
 
-export interface IDbContextTransactionManager$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService {}
+export interface IDbContextTransactionManager$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {}
 
 export type IDbContextTransactionManager = IDbContextTransactionManager$instance;
 
@@ -674,7 +674,7 @@ export const CoreTypeMapping: (abstract new(parameters: unknown) => CoreTypeMapp
 
 export type CoreTypeMapping = CoreTypeMapping$instance;
 
-export interface Database$instance {
+export interface Database$instance extends IDatabase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabase: never;
 
     readonly Dependencies: DatabaseDependencies;
@@ -692,8 +692,6 @@ export const Database: (abstract new(dependencies: DatabaseDependencies) => Data
 export interface __Database$views {
     As_IDatabase(): IDatabase$instance;
 }
-
-export interface Database$instance extends IDatabase$instance {}
 
 export type Database = Database$instance & __Database$views;
 
@@ -719,7 +717,7 @@ export const DatabaseDependencies: {
 
 export type DatabaseDependencies = DatabaseDependencies$instance;
 
-export interface DatabaseProvider_1$instance<TOptionsExtension extends IDbContextOptionsExtension> {
+export interface DatabaseProvider_1$instance<TOptionsExtension extends IDbContextOptionsExtension> extends IDatabaseProvider$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseProvider: never;
 
     readonly Dependencies: DatabaseProviderDependencies;
@@ -737,8 +735,6 @@ export const DatabaseProvider_1: {
 export interface __DatabaseProvider_1$views<TOptionsExtension extends IDbContextOptionsExtension> {
     As_IDatabaseProvider(): IDatabaseProvider$instance;
 }
-
-export interface DatabaseProvider_1$instance<TOptionsExtension extends IDbContextOptionsExtension> extends IDatabaseProvider$instance {}
 
 export type DatabaseProvider_1<TOptionsExtension extends IDbContextOptionsExtension> = DatabaseProvider_1$instance<TOptionsExtension> & __DatabaseProvider_1$views<TOptionsExtension>;
 
@@ -859,7 +855,7 @@ export const ExecutionResult_1: {
 
 export type ExecutionResult_1<TResult> = ExecutionResult_1$instance<TResult>;
 
-export interface ExecutionStrategy$instance {
+export interface ExecutionStrategy$instance extends IExecutionStrategy$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategy: never;
 
     readonly Dependencies: ExecutionStrategyDependencies;
@@ -890,8 +886,6 @@ export const ExecutionStrategy: (abstract new(context: DbContext, maxRetryCount:
 export interface __ExecutionStrategy$views {
     As_IExecutionStrategy(): IExecutionStrategy$instance;
 }
-
-export interface ExecutionStrategy$instance extends IExecutionStrategy$instance {}
 
 export type ExecutionStrategy = ExecutionStrategy$instance & __ExecutionStrategy$views;
 
@@ -1004,7 +998,7 @@ export const LongTypeMapping: {
 
 export type LongTypeMapping = LongTypeMapping$instance;
 
-export interface NonRetryingExecutionStrategy$instance {
+export interface NonRetryingExecutionStrategy$instance extends IExecutionStrategy$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategy: never;
 
     readonly RetriesOnFailure: boolean;
@@ -1022,8 +1016,6 @@ export const NonRetryingExecutionStrategy: {
 export interface __NonRetryingExecutionStrategy$views {
     As_IExecutionStrategy(): IExecutionStrategy$instance;
 }
-
-export interface NonRetryingExecutionStrategy$instance extends IExecutionStrategy$instance {}
 
 export type NonRetryingExecutionStrategy = NonRetryingExecutionStrategy$instance & __NonRetryingExecutionStrategy$views;
 
@@ -1059,7 +1051,7 @@ export const ParameterNameGeneratorDependencies: {
 
 export type ParameterNameGeneratorDependencies = ParameterNameGeneratorDependencies$instance;
 
-export interface ParameterNameGeneratorFactory$instance {
+export interface ParameterNameGeneratorFactory$instance extends IParameterNameGeneratorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IParameterNameGeneratorFactory: never;
 
     readonly Dependencies: ParameterNameGeneratorDependencies;
@@ -1075,8 +1067,6 @@ export const ParameterNameGeneratorFactory: {
 export interface __ParameterNameGeneratorFactory$views {
     As_IParameterNameGeneratorFactory(): IParameterNameGeneratorFactory$instance;
 }
-
-export interface ParameterNameGeneratorFactory$instance extends IParameterNameGeneratorFactory$instance {}
 
 export type ParameterNameGeneratorFactory = ParameterNameGeneratorFactory$instance & __ParameterNameGeneratorFactory$views;
 
@@ -1208,7 +1198,7 @@ export const RelationalCommandBuilderDependencies: {
 
 export type RelationalCommandBuilderDependencies = RelationalCommandBuilderDependencies$instance;
 
-export interface RelationalCommandBuilderFactory$instance {
+export interface RelationalCommandBuilderFactory$instance extends IRelationalCommandBuilderFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandBuilderFactory: never;
 
     readonly Dependencies: RelationalCommandBuilderDependencies;
@@ -1224,8 +1214,6 @@ export const RelationalCommandBuilderFactory: {
 export interface __RelationalCommandBuilderFactory$views {
     As_IRelationalCommandBuilderFactory(): IRelationalCommandBuilderFactory$instance;
 }
-
-export interface RelationalCommandBuilderFactory$instance extends IRelationalCommandBuilderFactory$instance {}
 
 export type RelationalCommandBuilderFactory = RelationalCommandBuilderFactory$instance & __RelationalCommandBuilderFactory$views;
 
@@ -1354,7 +1342,7 @@ export interface __RelationalDatabase$views {
 export type RelationalDatabase = RelationalDatabase$instance & __RelationalDatabase$views;
 
 
-export interface RelationalDatabaseCreator$instance {
+export interface RelationalDatabaseCreator$instance extends IRelationalDatabaseCreator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseCreator: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalDatabaseCreator: never;
 
@@ -1388,8 +1376,6 @@ export interface __RelationalDatabaseCreator$views {
     As_IDatabaseCreator(): IDatabaseCreator$instance;
     As_IRelationalDatabaseCreator(): IRelationalDatabaseCreator$instance;
 }
-
-export interface RelationalDatabaseCreator$instance extends IRelationalDatabaseCreator$instance {}
 
 export type RelationalDatabaseCreator = RelationalDatabaseCreator$instance & __RelationalDatabaseCreator$views;
 
@@ -1468,7 +1454,7 @@ export const RelationalDataReader: {
 
 export type RelationalDataReader = RelationalDataReader$instance;
 
-export interface RelationalExecutionStrategyFactory$instance {
+export interface RelationalExecutionStrategyFactory$instance extends IExecutionStrategyFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategyFactory: never;
 
     readonly Dependencies: ExecutionStrategyDependencies;
@@ -1485,8 +1471,6 @@ export const RelationalExecutionStrategyFactory: {
 export interface __RelationalExecutionStrategyFactory$views {
     As_IExecutionStrategyFactory(): IExecutionStrategyFactory$instance;
 }
-
-export interface RelationalExecutionStrategyFactory$instance extends IExecutionStrategyFactory$instance {}
 
 export type RelationalExecutionStrategyFactory = RelationalExecutionStrategyFactory$instance & __RelationalExecutionStrategyFactory$views;
 
@@ -1604,12 +1588,10 @@ export interface __RelationalTransaction$views {
     As_IDbContextTransaction(): IDbContextTransaction$instance;
 }
 
-export interface RelationalTransaction$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<DbTransaction>, IDbContextTransaction$instance {}
-
 export type RelationalTransaction = RelationalTransaction$instance & __RelationalTransaction$views;
 
 
-export interface RelationalTransactionFactory$instance {
+export interface RelationalTransactionFactory$instance extends IRelationalTransactionFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTransactionFactory: never;
 
     readonly Dependencies: RelationalTransactionFactoryDependencies;
@@ -1625,8 +1607,6 @@ export const RelationalTransactionFactory: {
 export interface __RelationalTransactionFactory$views {
     As_IRelationalTransactionFactory(): IRelationalTransactionFactory$instance;
 }
-
-export interface RelationalTransactionFactory$instance extends IRelationalTransactionFactory$instance {}
 
 export type RelationalTransactionFactory = RelationalTransactionFactory$instance & __RelationalTransactionFactory$views;
 

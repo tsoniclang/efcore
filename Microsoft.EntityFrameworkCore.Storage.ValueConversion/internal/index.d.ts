@@ -622,10 +622,10 @@ export type UriToStringConverter = UriToStringConverter$instance;
 export interface ValueConverter$instance {
     readonly ConstructorExpression: Expression;
     readonly ConvertFromProvider: Func_2<unknown | undefined, unknown | undefined>;
-    readonly ConvertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>> | LambdaExpression;
+    readonly ConvertFromProviderExpression: LambdaExpression;
     readonly ConvertsNulls: boolean;
     readonly ConvertToProvider: Func_2<unknown | undefined, unknown | undefined>;
-    readonly ConvertToProviderExpression: Expression_1<Func_2<TModel, TProvider>> | LambdaExpression;
+    readonly ConvertToProviderExpression: LambdaExpression;
     readonly MappingHints: ConverterMappingHints | undefined;
     readonly ModelClrType: Type;
     readonly ProviderClrType: Type;
@@ -643,10 +643,10 @@ export type ValueConverter = ValueConverter$instance;
 export interface ValueConverter_2$instance<TModel, TProvider> extends ValueConverter {
     readonly ConstructorExpression: Expression;
     readonly ConvertFromProvider: Func_2<unknown | undefined, unknown | undefined>;
-    readonly ConvertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>> | LambdaExpression;
+    readonly ConvertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>;
     readonly ConvertFromProviderTyped: Func_2<TProvider, TModel>;
     readonly ConvertToProvider: Func_2<unknown | undefined, unknown | undefined>;
-    readonly ConvertToProviderExpression: Expression_1<Func_2<TModel, TProvider>> | LambdaExpression;
+    readonly ConvertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>;
     readonly ConvertToProviderTyped: Func_2<TModel, TProvider>;
     readonly ModelClrType: Type;
     readonly ProviderClrType: Type;
@@ -661,7 +661,7 @@ export const ValueConverter_2: {
 
 export type ValueConverter_2<TModel, TProvider> = ValueConverter_2$instance<TModel, TProvider>;
 
-export interface ValueConverterSelector$instance {
+export interface ValueConverterSelector$instance extends IValueConverterSelector$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ValueConversion_IValueConverterSelector: never;
 
     readonly Dependencies: ValueConverterSelectorDependencies;
@@ -677,8 +677,6 @@ export const ValueConverterSelector: {
 export interface __ValueConverterSelector$views {
     As_IValueConverterSelector(): IValueConverterSelector$instance;
 }
-
-export interface ValueConverterSelector$instance extends IValueConverterSelector$instance {}
 
 export type ValueConverterSelector = ValueConverterSelector$instance & __ValueConverterSelector$views;
 

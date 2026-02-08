@@ -75,7 +75,7 @@ export const DatabaseModelFactoryOptions: {
 
 export type DatabaseModelFactoryOptions = DatabaseModelFactoryOptions$instance;
 
-export interface ProviderCodeGenerator$instance {
+export interface ProviderCodeGenerator$instance extends IProviderConfigurationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderConfigurationCodeGenerator: never;
 
     readonly Dependencies: ProviderCodeGeneratorDependencies;
@@ -93,8 +93,6 @@ export const ProviderCodeGenerator: (abstract new(dependencies: ProviderCodeGene
 export interface __ProviderCodeGenerator$views {
     As_IProviderConfigurationCodeGenerator(): IProviderConfigurationCodeGenerator$instance;
 }
-
-export interface ProviderCodeGenerator$instance extends IProviderConfigurationCodeGenerator$instance {}
 
 export type ProviderCodeGenerator = ProviderCodeGenerator$instance & __ProviderCodeGenerator$views;
 
@@ -118,7 +116,7 @@ export const ProviderCodeGeneratorDependencies: {
 
 export type ProviderCodeGeneratorDependencies = ProviderCodeGeneratorDependencies$instance;
 
-export interface ProviderCodeGeneratorPlugin$instance {
+export interface ProviderCodeGeneratorPlugin$instance extends IProviderCodeGeneratorPlugin$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderCodeGeneratorPlugin: never;
 
     GenerateContextOptions(): MethodCallCodeFragment | undefined;
@@ -134,8 +132,6 @@ export const ProviderCodeGeneratorPlugin: {
 export interface __ProviderCodeGeneratorPlugin$views {
     As_IProviderCodeGeneratorPlugin(): IProviderCodeGeneratorPlugin$instance;
 }
-
-export interface ProviderCodeGeneratorPlugin$instance extends IProviderCodeGeneratorPlugin$instance {}
 
 export type ProviderCodeGeneratorPlugin = ProviderCodeGeneratorPlugin$instance & __ProviderCodeGeneratorPlugin$views;
 

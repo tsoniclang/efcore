@@ -415,7 +415,7 @@ export const EntityMaterializerSourceParameters: {
 
 export type EntityMaterializerSourceParameters = EntityMaterializerSourceParameters$instance;
 
-export interface PathSegment$instance {
+export interface PathSegment$instance extends IRelationalQuotableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
     readonly ArrayIndex: SqlExpression | undefined;
@@ -436,8 +436,6 @@ export const PathSegment: {
 export interface __PathSegment$views {
     As_IRelationalQuotableExpression(): IRelationalQuotableExpression$instance;
 }
-
-export interface PathSegment$instance extends IRelationalQuotableExpression$instance {}
 
 export type PathSegment = PathSegment$instance & __PathSegment$views;
 
@@ -465,7 +463,7 @@ export const StructuralTypeMaterializerSourceParameters: {
 
 export type StructuralTypeMaterializerSourceParameters = StructuralTypeMaterializerSourceParameters$instance;
 
-export interface CollectionResultExpression$instance extends Expression {
+export interface CollectionResultExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly ElementType: Type;
@@ -490,12 +488,10 @@ export interface __CollectionResultExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
 
-export interface CollectionResultExpression$instance extends IPrintableExpression$instance {}
-
 export type CollectionResultExpression = CollectionResultExpression$instance & __CollectionResultExpression$views;
 
 
-export interface CompiledQueryCacheKeyGenerator$instance {
+export interface CompiledQueryCacheKeyGenerator$instance extends ICompiledQueryCacheKeyGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ICompiledQueryCacheKeyGenerator: never;
 
     readonly Dependencies: CompiledQueryCacheKeyGeneratorDependencies;
@@ -511,8 +507,6 @@ export const CompiledQueryCacheKeyGenerator: {
 export interface __CompiledQueryCacheKeyGenerator$views {
     As_ICompiledQueryCacheKeyGenerator(): ICompiledQueryCacheKeyGenerator$instance;
 }
-
-export interface CompiledQueryCacheKeyGenerator$instance extends ICompiledQueryCacheKeyGenerator$instance {}
 
 export type CompiledQueryCacheKeyGenerator = CompiledQueryCacheKeyGenerator$instance & __CompiledQueryCacheKeyGenerator$views;
 
@@ -566,7 +560,7 @@ export interface __EntityQueryRootExpression$views {
 export type EntityQueryRootExpression = EntityQueryRootExpression$instance & __EntityQueryRootExpression$views;
 
 
-export interface EnumerableExpression$instance extends Expression {
+export interface EnumerableExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly IsDistinct: boolean;
@@ -596,12 +590,10 @@ export interface __EnumerableExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
 
-export interface EnumerableExpression$instance extends IPrintableExpression$instance {}
-
 export type EnumerableExpression = EnumerableExpression$instance & __EnumerableExpression$views;
 
 
-export interface EvaluatableExpressionFilter$instance {
+export interface EvaluatableExpressionFilter$instance extends IEvaluatableExpressionFilter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IEvaluatableExpressionFilter: never;
 
     readonly Dependencies: EvaluatableExpressionFilterDependencies;
@@ -617,8 +609,6 @@ export const EvaluatableExpressionFilter: {
 export interface __EvaluatableExpressionFilter$views {
     As_IEvaluatableExpressionFilter(): IEvaluatableExpressionFilter$instance;
 }
-
-export interface EvaluatableExpressionFilter$instance extends IEvaluatableExpressionFilter$instance {}
 
 export type EvaluatableExpressionFilter = EvaluatableExpressionFilter$instance & __EvaluatableExpressionFilter$views;
 
@@ -703,7 +693,7 @@ export const ExpressionPrinter: {
 
 export type ExpressionPrinter = ExpressionPrinter$instance;
 
-export interface GroupByShaperExpression$instance extends Expression {
+export interface GroupByShaperExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly GroupingEnumerable: ShapedQueryExpression;
@@ -725,12 +715,10 @@ export interface __GroupByShaperExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
 
-export interface GroupByShaperExpression$instance extends IPrintableExpression$instance {}
-
 export type GroupByShaperExpression = GroupByShaperExpression$instance & __GroupByShaperExpression$views;
 
 
-export interface IncludeExpression$instance extends Expression {
+export interface IncludeExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly EntityExpression: Expression;
@@ -753,8 +741,6 @@ export const IncludeExpression: {
 export interface __IncludeExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
-
-export interface IncludeExpression$instance extends IPrintableExpression$instance {}
 
 export type IncludeExpression = IncludeExpression$instance & __IncludeExpression$views;
 
@@ -783,7 +769,7 @@ export interface __InlineQueryRootExpression$views {
 export type InlineQueryRootExpression = InlineQueryRootExpression$instance & __InlineQueryRootExpression$views;
 
 
-export interface JsonQueryExpression$instance extends Expression {
+export interface JsonQueryExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly IsCollection: boolean;
@@ -816,12 +802,10 @@ export interface __JsonQueryExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
 
-export interface JsonQueryExpression$instance extends IPrintableExpression$instance {}
-
 export type JsonQueryExpression = JsonQueryExpression$instance & __JsonQueryExpression$views;
 
 
-export interface LiftableConstantExpression$instance extends Expression {
+export interface LiftableConstantExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly NodeType: ExpressionType;
@@ -844,8 +828,6 @@ export interface __LiftableConstantExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
 
-export interface LiftableConstantExpression$instance extends IPrintableExpression$instance {}
-
 export type LiftableConstantExpression = LiftableConstantExpression$instance & __LiftableConstantExpression$views;
 
 
@@ -867,7 +849,7 @@ export const LiftableConstantExpressionDependencies: {
 
 export type LiftableConstantExpressionDependencies = LiftableConstantExpressionDependencies$instance;
 
-export interface LiftableConstantFactory$instance {
+export interface LiftableConstantFactory$instance extends ILiftableConstantFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ILiftableConstantFactory: never;
 
     readonly Dependencies: LiftableConstantExpressionDependencies;
@@ -883,8 +865,6 @@ export const LiftableConstantFactory: {
 export interface __LiftableConstantFactory$views {
     As_ILiftableConstantFactory(): ILiftableConstantFactory$instance;
 }
-
-export interface LiftableConstantFactory$instance extends ILiftableConstantFactory$instance {}
 
 export type LiftableConstantFactory = LiftableConstantFactory$instance & __LiftableConstantFactory$views;
 
@@ -914,7 +894,7 @@ export interface __LiftableConstantProcessor$views {
 export type LiftableConstantProcessor = LiftableConstantProcessor$instance & __LiftableConstantProcessor$views;
 
 
-export interface MaterializeCollectionNavigationExpression$instance extends Expression {
+export interface MaterializeCollectionNavigationExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Navigation: INavigationBase;
@@ -934,8 +914,6 @@ export const MaterializeCollectionNavigationExpression: {
 export interface __MaterializeCollectionNavigationExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
-
-export interface MaterializeCollectionNavigationExpression$instance extends IPrintableExpression$instance {}
 
 export type MaterializeCollectionNavigationExpression = MaterializeCollectionNavigationExpression$instance & __MaterializeCollectionNavigationExpression$views;
 
@@ -962,7 +940,7 @@ export const MaterializerLiftableConstantContext: {
 
 export type MaterializerLiftableConstantContext = MaterializerLiftableConstantContext$instance;
 
-export interface NavigationExpansionExtensibilityHelper$instance {
+export interface NavigationExpansionExtensibilityHelper$instance extends INavigationExpansionExtensibilityHelper$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_INavigationExpansionExtensibilityHelper: never;
 
     readonly Dependencies: NavigationExpansionExtensibilityHelperDependencies;
@@ -980,8 +958,6 @@ export const NavigationExpansionExtensibilityHelper: {
 export interface __NavigationExpansionExtensibilityHelper$views {
     As_INavigationExpansionExtensibilityHelper(): INavigationExpansionExtensibilityHelper$instance;
 }
-
-export interface NavigationExpansionExtensibilityHelper$instance extends INavigationExpansionExtensibilityHelper$instance {}
 
 export type NavigationExpansionExtensibilityHelper = NavigationExpansionExtensibilityHelper$instance & __NavigationExpansionExtensibilityHelper$views;
 
@@ -1055,7 +1031,7 @@ export const ParametersCacheDecorator: {
 
 export type ParametersCacheDecorator = ParametersCacheDecorator$instance;
 
-export interface ProjectionBindingExpression$instance extends Expression {
+export interface ProjectionBindingExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Index: Nullable_1<System_Internal.Int32>;
@@ -1078,8 +1054,6 @@ export const ProjectionBindingExpression: {
 export interface __ProjectionBindingExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
-
-export interface ProjectionBindingExpression$instance extends IPrintableExpression$instance {}
 
 export type ProjectionBindingExpression = ProjectionBindingExpression$instance & __ProjectionBindingExpression$views;
 
@@ -1318,7 +1292,7 @@ export const QueryContextDependencies: {
 
 export type QueryContextDependencies = QueryContextDependencies$instance;
 
-export interface QueryParameterExpression$instance extends Expression {
+export interface QueryParameterExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly IsNonNullableReferenceType: boolean;
@@ -1344,12 +1318,10 @@ export interface __QueryParameterExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
 
-export interface QueryParameterExpression$instance extends IPrintableExpression$instance {}
-
 export type QueryParameterExpression = QueryParameterExpression$instance & __QueryParameterExpression$views;
 
 
-export interface QueryRootExpression$instance extends Expression {
+export interface QueryRootExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly CanReduce: boolean;
@@ -1372,8 +1344,6 @@ export const QueryRootExpression: (abstract new(asyncQueryProvider: IAsyncQueryP
 export interface __QueryRootExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
-
-export interface QueryRootExpression$instance extends IPrintableExpression$instance {}
 
 export type QueryRootExpression = QueryRootExpression$instance & __QueryRootExpression$views;
 
@@ -1555,7 +1525,7 @@ export const QueryTranslationPreprocessorDependencies: {
 
 export type QueryTranslationPreprocessorDependencies = QueryTranslationPreprocessorDependencies$instance;
 
-export interface RelationalAggregateMethodCallTranslatorProvider$instance {
+export interface RelationalAggregateMethodCallTranslatorProvider$instance extends IAggregateMethodCallTranslatorProvider$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAggregateMethodCallTranslatorProvider: never;
 
     readonly Dependencies: RelationalAggregateMethodCallTranslatorProviderDependencies;
@@ -1572,8 +1542,6 @@ export const RelationalAggregateMethodCallTranslatorProvider: {
 export interface __RelationalAggregateMethodCallTranslatorProvider$views {
     As_IAggregateMethodCallTranslatorProvider(): IAggregateMethodCallTranslatorProvider$instance;
 }
-
-export interface RelationalAggregateMethodCallTranslatorProvider$instance extends IAggregateMethodCallTranslatorProvider$instance {}
 
 export type RelationalAggregateMethodCallTranslatorProvider = RelationalAggregateMethodCallTranslatorProvider$instance & __RelationalAggregateMethodCallTranslatorProvider$views;
 
@@ -1599,7 +1567,7 @@ export const RelationalAggregateMethodCallTranslatorProviderDependencies: {
 
 export type RelationalAggregateMethodCallTranslatorProviderDependencies = RelationalAggregateMethodCallTranslatorProviderDependencies$instance;
 
-export interface RelationalCollectionShaperExpression$instance extends Expression {
+export interface RelationalCollectionShaperExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly ElementType: Type;
@@ -1626,8 +1594,6 @@ export const RelationalCollectionShaperExpression: {
 export interface __RelationalCollectionShaperExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
-
-export interface RelationalCollectionShaperExpression$instance extends IPrintableExpression$instance {}
 
 export type RelationalCollectionShaperExpression = RelationalCollectionShaperExpression$instance & __RelationalCollectionShaperExpression$views;
 
@@ -1709,7 +1675,7 @@ export const RelationalEvaluatableExpressionFilterDependencies: {
 
 export type RelationalEvaluatableExpressionFilterDependencies = RelationalEvaluatableExpressionFilterDependencies$instance;
 
-export interface RelationalGroupByResultExpression$instance extends Expression {
+export interface RelationalGroupByResultExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly ElementShaper: Expression;
@@ -1731,8 +1697,6 @@ export const RelationalGroupByResultExpression: {
 export interface __RelationalGroupByResultExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
-
-export interface RelationalGroupByResultExpression$instance extends IPrintableExpression$instance {}
 
 export type RelationalGroupByResultExpression = RelationalGroupByResultExpression$instance & __RelationalGroupByResultExpression$views;
 
@@ -1845,7 +1809,7 @@ export const RelationalMaterializerLiftableConstantContext: {
 
 export type RelationalMaterializerLiftableConstantContext = RelationalMaterializerLiftableConstantContext$instance;
 
-export interface RelationalMemberTranslatorProvider$instance {
+export interface RelationalMemberTranslatorProvider$instance extends IMemberTranslatorProvider$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMemberTranslatorProvider: never;
 
     readonly Dependencies: RelationalMemberTranslatorProviderDependencies;
@@ -1862,8 +1826,6 @@ export const RelationalMemberTranslatorProvider: {
 export interface __RelationalMemberTranslatorProvider$views {
     As_IMemberTranslatorProvider(): IMemberTranslatorProvider$instance;
 }
-
-export interface RelationalMemberTranslatorProvider$instance extends IMemberTranslatorProvider$instance {}
 
 export type RelationalMemberTranslatorProvider = RelationalMemberTranslatorProvider$instance & __RelationalMemberTranslatorProvider$views;
 
@@ -1888,7 +1850,7 @@ export const RelationalMemberTranslatorProviderDependencies: {
 
 export type RelationalMemberTranslatorProviderDependencies = RelationalMemberTranslatorProviderDependencies$instance;
 
-export interface RelationalMethodCallTranslatorProvider$instance {
+export interface RelationalMethodCallTranslatorProvider$instance extends IMethodCallTranslatorProvider$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslatorProvider: never;
 
     readonly Dependencies: RelationalMethodCallTranslatorProviderDependencies;
@@ -1905,8 +1867,6 @@ export const RelationalMethodCallTranslatorProvider: {
 export interface __RelationalMethodCallTranslatorProvider$views {
     As_IMethodCallTranslatorProvider(): IMethodCallTranslatorProvider$instance;
 }
-
-export interface RelationalMethodCallTranslatorProvider$instance extends IMethodCallTranslatorProvider$instance {}
 
 export type RelationalMethodCallTranslatorProvider = RelationalMethodCallTranslatorProvider$instance & __RelationalMethodCallTranslatorProvider$views;
 
@@ -2321,7 +2281,7 @@ export const RelationalShapedQueryCompilingExpressionVisitorDependencies: {
 
 export type RelationalShapedQueryCompilingExpressionVisitorDependencies = RelationalShapedQueryCompilingExpressionVisitorDependencies$instance;
 
-export interface RelationalSplitCollectionShaperExpression$instance extends Expression {
+export interface RelationalSplitCollectionShaperExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly ChildIdentifier: Expression;
@@ -2346,8 +2306,6 @@ export const RelationalSplitCollectionShaperExpression: {
 export interface __RelationalSplitCollectionShaperExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
-
-export interface RelationalSplitCollectionShaperExpression$instance extends IPrintableExpression$instance {}
 
 export type RelationalSplitCollectionShaperExpression = RelationalSplitCollectionShaperExpression$instance & __RelationalSplitCollectionShaperExpression$views;
 
@@ -2414,7 +2372,7 @@ export const RelationalSqlTranslatingExpressionVisitorDependencies: {
 
 export type RelationalSqlTranslatingExpressionVisitorDependencies = RelationalSqlTranslatingExpressionVisitorDependencies$instance;
 
-export interface RelationalSqlTranslatingExpressionVisitorFactory$instance {
+export interface RelationalSqlTranslatingExpressionVisitorFactory$instance extends IRelationalSqlTranslatingExpressionVisitorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalSqlTranslatingExpressionVisitorFactory: never;
 
     readonly Dependencies: RelationalSqlTranslatingExpressionVisitorDependencies;
@@ -2431,12 +2389,10 @@ export interface __RelationalSqlTranslatingExpressionVisitorFactory$views {
     As_IRelationalSqlTranslatingExpressionVisitorFactory(): IRelationalSqlTranslatingExpressionVisitorFactory$instance;
 }
 
-export interface RelationalSqlTranslatingExpressionVisitorFactory$instance extends IRelationalSqlTranslatingExpressionVisitorFactory$instance {}
-
 export type RelationalSqlTranslatingExpressionVisitorFactory = RelationalSqlTranslatingExpressionVisitorFactory$instance & __RelationalSqlTranslatingExpressionVisitorFactory$views;
 
 
-export interface RelationalStructuralTypeShaperExpression$instance extends StructuralTypeShaperExpression$instance {
+export interface RelationalStructuralTypeShaperExpression$instance extends StructuralTypeShaperExpression$instance, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     GenerateMaterializationCondition(type: ITypeBase, nullable: boolean): LambdaExpression;
@@ -2457,8 +2413,6 @@ export const RelationalStructuralTypeShaperExpression: {
 export interface __RelationalStructuralTypeShaperExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
-
-export interface RelationalStructuralTypeShaperExpression$instance extends IPrintableExpression$instance {}
 
 export type RelationalStructuralTypeShaperExpression = RelationalStructuralTypeShaperExpression$instance & __RelationalStructuralTypeShaperExpression$views;
 
@@ -2545,7 +2499,7 @@ export const ShapedQueryCompilingExpressionVisitorDependencies: {
 
 export type ShapedQueryCompilingExpressionVisitorDependencies = ShapedQueryCompilingExpressionVisitorDependencies$instance;
 
-export interface ShapedQueryExpression$instance extends Expression {
+export interface ShapedQueryExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly NodeType: ExpressionType;
@@ -2570,8 +2524,6 @@ export interface __ShapedQueryExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
 
-export interface ShapedQueryExpression$instance extends IPrintableExpression$instance {}
-
 export type ShapedQueryExpression = ShapedQueryExpression$instance & __ShapedQueryExpression$views;
 
 
@@ -2590,7 +2542,7 @@ export const SqlAliasManager: {
 
 export type SqlAliasManager = SqlAliasManager$instance;
 
-export interface SqlAliasManagerFactory$instance {
+export interface SqlAliasManagerFactory$instance extends ISqlAliasManagerFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ISqlAliasManagerFactory: never;
 
     Create(): SqlAliasManager;
@@ -2605,8 +2557,6 @@ export const SqlAliasManagerFactory: {
 export interface __SqlAliasManagerFactory$views {
     As_ISqlAliasManagerFactory(): ISqlAliasManagerFactory$instance;
 }
-
-export interface SqlAliasManagerFactory$instance extends ISqlAliasManagerFactory$instance {}
 
 export type SqlAliasManagerFactory = SqlAliasManagerFactory$instance & __SqlAliasManagerFactory$views;
 
@@ -2833,7 +2783,7 @@ export const StructuralTypeProjectionExpression: {
 
 export type StructuralTypeProjectionExpression = StructuralTypeProjectionExpression$instance;
 
-export interface StructuralTypeShaperExpression$instance extends Expression {
+export interface StructuralTypeShaperExpression$instance extends Expression, IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly IsNullable: boolean;
@@ -2863,8 +2813,6 @@ export const StructuralTypeShaperExpression: {
 export interface __StructuralTypeShaperExpression$views {
     As_IPrintableExpression(): IPrintableExpression$instance;
 }
-
-export interface StructuralTypeShaperExpression$instance extends IPrintableExpression$instance {}
 
 export type StructuralTypeShaperExpression = StructuralTypeShaperExpression$instance & __StructuralTypeShaperExpression$views;
 

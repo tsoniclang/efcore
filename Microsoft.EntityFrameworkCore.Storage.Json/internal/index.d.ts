@@ -91,7 +91,7 @@ export const JsonByteReaderWriter: {
 
 export type JsonByteReaderWriter = JsonByteReaderWriter$instance;
 
-export interface JsonCastValueReaderWriter_1$instance<TConverted> extends JsonValueReaderWriter_1<TConverted> {
+export interface JsonCastValueReaderWriter_1$instance<TConverted> extends JsonValueReaderWriter_1<TConverted>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
@@ -106,8 +106,6 @@ export const JsonCastValueReaderWriter_1: {
 export interface __JsonCastValueReaderWriter_1$views<TConverted> {
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
-
-export interface JsonCastValueReaderWriter_1$instance<TConverted> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter {}
 
 export type JsonCastValueReaderWriter_1<TConverted> = JsonCastValueReaderWriter_1$instance<TConverted> & __JsonCastValueReaderWriter_1$views<TConverted>;
 
@@ -126,7 +124,7 @@ export const JsonCharReaderWriter: {
 
 export type JsonCharReaderWriter = JsonCharReaderWriter$instance;
 
-export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable_1<Nullable_1<TElement>>> {
+export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable_1<Nullable_1<TElement>>>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
@@ -142,12 +140,10 @@ export interface __JsonCollectionOfNullableStructsReaderWriter_2$views<TConcrete
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter {}
-
 export type JsonCollectionOfNullableStructsReaderWriter_2<TConcreteCollection, TElement> = JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfNullableStructsReaderWriter_2$views<TConcreteCollection, TElement>;
 
 
-export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> extends JsonValueReaderWriter_1<unknown> {
+export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> extends JsonValueReaderWriter_1<unknown>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
@@ -163,12 +159,10 @@ export interface __JsonCollectionOfReferencesReaderWriter_2$views<TConcreteColle
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter {}
-
 export type JsonCollectionOfReferencesReaderWriter_2<TConcreteCollection, TElement> = JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfReferencesReaderWriter_2$views<TConcreteCollection, TElement>;
 
 
-export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable_1<TElement>> {
+export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable_1<TElement>>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
@@ -184,12 +178,10 @@ export interface __JsonCollectionOfStructsReaderWriter_2$views<TConcreteCollecti
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter {}
-
 export type JsonCollectionOfStructsReaderWriter_2<TConcreteCollection, TElement> = JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfStructsReaderWriter_2$views<TConcreteCollection, TElement>;
 
 
-export interface JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> extends JsonValueReaderWriter_1<TModel> {
+export interface JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> extends JsonValueReaderWriter_1<TModel>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.IJsonConvertedValueReaderWriter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_IJsonConvertedValueReaderWriter: never;
 
@@ -206,8 +198,6 @@ export interface __JsonConvertedValueReaderWriter_2$views<TModel, TProvider> {
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
     As_IJsonConvertedValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.IJsonConvertedValueReaderWriter$instance;
 }
-
-export interface JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.IJsonConvertedValueReaderWriter {}
 
 export type JsonConvertedValueReaderWriter_2<TModel, TProvider> = JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> & __JsonConvertedValueReaderWriter_2$views<TModel, TProvider>;
 
@@ -540,7 +530,7 @@ export const JsonValueReaderWriter_1: (abstract new<TValue>() => JsonValueReader
 
 export type JsonValueReaderWriter_1<TValue> = JsonValueReaderWriter_1$instance<TValue>;
 
-export interface JsonValueReaderWriterSource$instance {
+export interface JsonValueReaderWriterSource$instance extends IJsonValueReaderWriterSource$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Json_IJsonValueReaderWriterSource: never;
 
     readonly Dependencies: JsonValueReaderWriterSourceDependencies;
@@ -556,8 +546,6 @@ export const JsonValueReaderWriterSource: {
 export interface __JsonValueReaderWriterSource$views {
     As_IJsonValueReaderWriterSource(): IJsonValueReaderWriterSource$instance;
 }
-
-export interface JsonValueReaderWriterSource$instance extends IJsonValueReaderWriterSource$instance {}
 
 export type JsonValueReaderWriterSource = JsonValueReaderWriterSource$instance & __JsonValueReaderWriterSource$views;
 

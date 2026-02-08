@@ -84,7 +84,7 @@ export interface __DbTransactionInterceptorAggregator$views {
 export type DbTransactionInterceptorAggregator = DbTransactionInterceptorAggregator$instance & __DbTransactionInterceptorAggregator$views;
 
 
-export interface DelegatingDbContextLogger$instance {
+export interface DelegatingDbContextLogger$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.IDbContextLogger$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbContextLogger: never;
 
     Log(eventData: EventData): void;
@@ -100,8 +100,6 @@ export const DelegatingDbContextLogger: {
 export interface __DelegatingDbContextLogger$views {
     As_IDbContextLogger(): Microsoft_EntityFrameworkCore_Diagnostics_Internal.IDbContextLogger$instance;
 }
-
-export interface DelegatingDbContextLogger$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.IDbContextLogger {}
 
 export type DelegatingDbContextLogger = DelegatingDbContextLogger$instance & __DelegatingDbContextLogger$views;
 
@@ -132,7 +130,7 @@ export interface __DiagnosticsLogger_1$views<TLoggerCategory extends LoggerCateg
 export type DiagnosticsLogger_1<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>> = DiagnosticsLogger_1$instance<TLoggerCategory> & __DiagnosticsLogger_1$views<TLoggerCategory>;
 
 
-export interface FormattingDbContextLogger$instance {
+export interface FormattingDbContextLogger$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.IDbContextLogger$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbContextLogger: never;
 
     Log(eventData: EventData): void;
@@ -148,8 +146,6 @@ export const FormattingDbContextLogger: {
 export interface __FormattingDbContextLogger$views {
     As_IDbContextLogger(): Microsoft_EntityFrameworkCore_Diagnostics_Internal.IDbContextLogger$instance;
 }
-
-export interface FormattingDbContextLogger$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.IDbContextLogger {}
 
 export type FormattingDbContextLogger = FormattingDbContextLogger$instance & __FormattingDbContextLogger$views;
 
@@ -173,7 +169,7 @@ export interface __IdentityResolutionInterceptorAggregator$views {
 export type IdentityResolutionInterceptorAggregator = IdentityResolutionInterceptorAggregator$instance & __IdentityResolutionInterceptorAggregator$views;
 
 
-export interface Interceptors$instance {
+export interface Interceptors$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptors$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptors: never;
 
     Aggregate<TInterceptor extends IInterceptor>(): TInterceptor | undefined;
@@ -188,8 +184,6 @@ export const Interceptors: {
 export interface __Interceptors$views {
     As_IInterceptors(): Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptors$instance;
 }
-
-export interface Interceptors$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptors {}
 
 export type Interceptors = Interceptors$instance & __Interceptors$views;
 
@@ -240,7 +234,7 @@ export interface __MaterializationInterceptorAggregator$views {
 export type MaterializationInterceptorAggregator = MaterializationInterceptorAggregator$instance & __MaterializationInterceptorAggregator$views;
 
 
-export interface NullDbContextLogger$instance {
+export interface NullDbContextLogger$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.IDbContextLogger$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbContextLogger: never;
 
     Log(eventData: EventData): void;
@@ -256,8 +250,6 @@ export const NullDbContextLogger: {
 export interface __NullDbContextLogger$views {
     As_IDbContextLogger(): Microsoft_EntityFrameworkCore_Diagnostics_Internal.IDbContextLogger$instance;
 }
-
-export interface NullDbContextLogger$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.IDbContextLogger {}
 
 export type NullDbContextLogger = NullDbContextLogger$instance & __NullDbContextLogger$views;
 

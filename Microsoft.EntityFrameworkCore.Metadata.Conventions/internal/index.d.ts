@@ -726,7 +726,7 @@ export interface __BackingFieldAttributeConvention$views {
 export type BackingFieldAttributeConvention = BackingFieldAttributeConvention$instance & __BackingFieldAttributeConvention$views;
 
 
-export interface BackingFieldConvention$instance extends IConvention {
+export interface BackingFieldConvention$instance extends IConvention, IComplexPropertyAddedConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance, IPropertyAddedConvention$instance, ISkipNavigationAddedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
@@ -756,12 +756,10 @@ export interface __BackingFieldConvention$views {
     As_ISkipNavigationAddedConvention(): ISkipNavigationAddedConvention$instance;
 }
 
-export interface BackingFieldConvention$instance extends IComplexPropertyAddedConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance, IPropertyAddedConvention$instance, ISkipNavigationAddedConvention$instance {}
-
 export type BackingFieldConvention = BackingFieldConvention$instance & __BackingFieldConvention$views;
 
 
-export interface BaseTypeDiscoveryConvention$instance extends IConvention {
+export interface BaseTypeDiscoveryConvention$instance extends IConvention, IEntityTypeAddedConvention$instance, IForeignKeyRemovedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
@@ -782,12 +780,10 @@ export interface __BaseTypeDiscoveryConvention$views {
     As_IForeignKeyRemovedConvention(): IForeignKeyRemovedConvention$instance;
 }
 
-export interface BaseTypeDiscoveryConvention$instance extends IEntityTypeAddedConvention$instance, IForeignKeyRemovedConvention$instance {}
-
 export type BaseTypeDiscoveryConvention = BaseTypeDiscoveryConvention$instance & __BaseTypeDiscoveryConvention$views;
 
 
-export interface CascadeDeleteConvention$instance extends IConvention {
+export interface CascadeDeleteConvention$instance extends IConvention, IForeignKeyAddedConvention$instance, IForeignKeyRequirednessChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRequirednessChangedConvention: never;
@@ -809,12 +805,10 @@ export interface __CascadeDeleteConvention$views {
     As_IForeignKeyRequirednessChangedConvention(): IForeignKeyRequirednessChangedConvention$instance;
 }
 
-export interface CascadeDeleteConvention$instance extends IForeignKeyAddedConvention$instance, IForeignKeyRequirednessChangedConvention$instance {}
-
 export type CascadeDeleteConvention = CascadeDeleteConvention$instance & __CascadeDeleteConvention$views;
 
 
-export interface ChangeTrackingStrategyConvention$instance extends IConvention {
+export interface ChangeTrackingStrategyConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -832,12 +826,10 @@ export interface __ChangeTrackingStrategyConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface ChangeTrackingStrategyConvention$instance extends IModelFinalizingConvention$instance {}
-
 export type ChangeTrackingStrategyConvention = ChangeTrackingStrategyConvention$instance & __ChangeTrackingStrategyConvention$views;
 
 
-export interface CheckConstraintConvention$instance extends IConvention {
+export interface CheckConstraintConvention$instance extends IConvention, IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
@@ -859,12 +851,10 @@ export interface __CheckConstraintConvention$views {
     As_IEntityTypeBaseTypeChangedConvention(): IEntityTypeBaseTypeChangedConvention$instance;
 }
 
-export interface CheckConstraintConvention$instance extends IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance {}
-
 export type CheckConstraintConvention = CheckConstraintConvention$instance & __CheckConstraintConvention$views;
 
 
-export interface ComplexPropertyDiscoveryConvention$instance extends IConvention {
+export interface ComplexPropertyDiscoveryConvention$instance extends IConvention, IComplexPropertyAddedConvention$instance, IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IEntityTypeMemberIgnoredConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance, INavigationRemovedConvention$instance, IPropertyAddedConvention$instance, IPropertyRemovedConvention$instance, ISkipNavigationAddedConvention$instance, ISkipNavigationRemovedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
@@ -915,8 +905,6 @@ export interface __ComplexPropertyDiscoveryConvention$views {
     As_ISkipNavigationAddedConvention(): ISkipNavigationAddedConvention$instance;
     As_ISkipNavigationRemovedConvention(): ISkipNavigationRemovedConvention$instance;
 }
-
-export interface ComplexPropertyDiscoveryConvention$instance extends IComplexPropertyAddedConvention$instance, IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IEntityTypeMemberIgnoredConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance, INavigationRemovedConvention$instance, IPropertyAddedConvention$instance, IPropertyRemovedConvention$instance, ISkipNavigationAddedConvention$instance, ISkipNavigationRemovedConvention$instance {}
 
 export type ComplexPropertyDiscoveryConvention = ComplexPropertyDiscoveryConvention$instance & __ComplexPropertyDiscoveryConvention$views;
 
@@ -969,7 +957,7 @@ export interface __ConcurrencyCheckAttributeConvention$views {
 export type ConcurrencyCheckAttributeConvention = ConcurrencyCheckAttributeConvention$instance & __ConcurrencyCheckAttributeConvention$views;
 
 
-export interface ConstructorBindingConvention$instance extends IConvention {
+export interface ConstructorBindingConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -986,8 +974,6 @@ export const ConstructorBindingConvention: {
 export interface __ConstructorBindingConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
-
-export interface ConstructorBindingConvention$instance extends IModelFinalizingConvention$instance {}
 
 export type ConstructorBindingConvention = ConstructorBindingConvention$instance & __ConstructorBindingConvention$views;
 
@@ -1091,7 +1077,7 @@ export interface __DatabaseGeneratedAttributeConvention$views {
 export type DatabaseGeneratedAttributeConvention = DatabaseGeneratedAttributeConvention$instance & __DatabaseGeneratedAttributeConvention$views;
 
 
-export interface DbSetFindingConvention$instance extends IConvention {
+export interface DbSetFindingConvention$instance extends IConvention, IModelInitializedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelInitializedConvention: never;
 
@@ -1109,12 +1095,10 @@ export interface __DbSetFindingConvention$views {
     As_IModelInitializedConvention(): IModelInitializedConvention$instance;
 }
 
-export interface DbSetFindingConvention$instance extends IModelInitializedConvention$instance {}
-
 export type DbSetFindingConvention = DbSetFindingConvention$instance & __DbSetFindingConvention$views;
 
 
-export interface DeleteBehaviorAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<DeleteBehaviorAttribute>, IConvention {
+export interface DeleteBehaviorAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<DeleteBehaviorAttribute>, IConvention extends IForeignKeyPrincipalEndChangedConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPrincipalEndChangedConvention: never;
@@ -1148,12 +1132,10 @@ export interface __DeleteBehaviorAttributeConvention$views {
     As_IPropertyFieldChangedConvention(): IPropertyFieldChangedConvention$instance;
 }
 
-export interface DeleteBehaviorAttributeConvention$instance extends IForeignKeyPrincipalEndChangedConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance {}
-
 export type DeleteBehaviorAttributeConvention = DeleteBehaviorAttributeConvention$instance & __DeleteBehaviorAttributeConvention$views;
 
 
-export interface DiscriminatorConvention$instance extends IConvention {
+export interface DiscriminatorConvention$instance extends IConvention, IDiscriminatorPropertySetConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IEntityTypeRemovedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IDiscriminatorPropertySetConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
@@ -1179,12 +1161,10 @@ export interface __DiscriminatorConvention$views {
     As_IEntityTypeRemovedConvention(): IEntityTypeRemovedConvention$instance;
 }
 
-export interface DiscriminatorConvention$instance extends IDiscriminatorPropertySetConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IEntityTypeRemovedConvention$instance {}
-
 export type DiscriminatorConvention = DiscriminatorConvention$instance & __DiscriminatorConvention$views;
 
 
-export interface DiscriminatorLengthConvention$instance extends IConvention {
+export interface DiscriminatorLengthConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -1203,12 +1183,10 @@ export interface __DiscriminatorLengthConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface DiscriminatorLengthConvention$instance extends IModelFinalizingConvention$instance {}
-
 export type DiscriminatorLengthConvention = DiscriminatorLengthConvention$instance & __DiscriminatorLengthConvention$views;
 
 
-export interface ElementMappingConvention$instance extends IConvention {
+export interface ElementMappingConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -1226,12 +1204,10 @@ export interface __ElementMappingConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface ElementMappingConvention$instance extends IModelFinalizingConvention$instance {}
-
 export type ElementMappingConvention = ElementMappingConvention$instance & __ElementMappingConvention$views;
 
 
-export interface ElementTypeChangedConvention$instance extends IConvention {
+export interface ElementTypeChangedConvention$instance extends IConvention, IForeignKeyAddedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IPropertyElementTypeChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPropertiesChangedConvention: never;
@@ -1255,12 +1231,10 @@ export interface __ElementTypeChangedConvention$views {
     As_IPropertyElementTypeChangedConvention(): IPropertyElementTypeChangedConvention$instance;
 }
 
-export interface ElementTypeChangedConvention$instance extends IForeignKeyAddedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IPropertyElementTypeChangedConvention$instance {}
-
 export type ElementTypeChangedConvention = ElementTypeChangedConvention$instance & __ElementTypeChangedConvention$views;
 
 
-export interface EntitySplittingConvention$instance extends IConvention {
+export interface EntitySplittingConvention$instance extends IConvention, IEntityTypeAddedConvention$instance, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
@@ -1281,8 +1255,6 @@ export interface __EntitySplittingConvention$views {
     As_IEntityTypeAddedConvention(): IEntityTypeAddedConvention$instance;
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
-
-export interface EntitySplittingConvention$instance extends IEntityTypeAddedConvention$instance, IModelFinalizingConvention$instance {}
 
 export type EntitySplittingConvention = EntitySplittingConvention$instance & __EntitySplittingConvention$views;
 
@@ -1311,7 +1283,7 @@ export interface __EntityTypeConfigurationAttributeConvention$views {
 export type EntityTypeConfigurationAttributeConvention = EntityTypeConfigurationAttributeConvention$instance & __EntityTypeConfigurationAttributeConvention$views;
 
 
-export interface EntityTypeHierarchyMappingConvention$instance extends IConvention {
+export interface EntityTypeHierarchyMappingConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -1330,12 +1302,10 @@ export interface __EntityTypeHierarchyMappingConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface EntityTypeHierarchyMappingConvention$instance extends IModelFinalizingConvention$instance {}
-
 export type EntityTypeHierarchyMappingConvention = EntityTypeHierarchyMappingConvention$instance & __EntityTypeHierarchyMappingConvention$views;
 
 
-export interface ForeignKeyAttributeConvention$instance extends IConvention {
+export interface ForeignKeyAttributeConvention$instance extends IConvention, IComplexPropertyAddedConvention$instance, IEntityTypeAddedConvention$instance, IForeignKeyAddedConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance, IPropertyAddedConvention$instance, ISkipNavigationForeignKeyChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
@@ -1371,12 +1341,10 @@ export interface __ForeignKeyAttributeConvention$views {
     As_ISkipNavigationForeignKeyChangedConvention(): ISkipNavigationForeignKeyChangedConvention$instance;
 }
 
-export interface ForeignKeyAttributeConvention$instance extends IComplexPropertyAddedConvention$instance, IEntityTypeAddedConvention$instance, IForeignKeyAddedConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance, IPropertyAddedConvention$instance, ISkipNavigationForeignKeyChangedConvention$instance {}
-
 export type ForeignKeyAttributeConvention = ForeignKeyAttributeConvention$instance & __ForeignKeyAttributeConvention$views;
 
 
-export interface ForeignKeyIndexConvention$instance extends IConvention {
+export interface ForeignKeyIndexConvention$instance extends IConvention, IEntityTypeBaseTypeChangedConvention$instance, IForeignKeyAddedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IForeignKeyRemovedConvention$instance, IForeignKeyUniquenessChangedConvention$instance, IIndexAddedConvention$instance, IIndexRemovedConvention$instance, IIndexUniquenessChangedConvention$instance, IKeyAddedConvention$instance, IKeyRemovedConvention$instance, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyAddedConvention: never;
@@ -1426,12 +1394,10 @@ export interface __ForeignKeyIndexConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface ForeignKeyIndexConvention$instance extends IEntityTypeBaseTypeChangedConvention$instance, IForeignKeyAddedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IForeignKeyRemovedConvention$instance, IForeignKeyUniquenessChangedConvention$instance, IIndexAddedConvention$instance, IIndexRemovedConvention$instance, IIndexUniquenessChangedConvention$instance, IKeyAddedConvention$instance, IKeyRemovedConvention$instance, IModelFinalizingConvention$instance {}
-
 export type ForeignKeyIndexConvention = ForeignKeyIndexConvention$instance & __ForeignKeyIndexConvention$views;
 
 
-export interface ForeignKeyPropertyDiscoveryConvention$instance extends IConvention {
+export interface ForeignKeyPropertyDiscoveryConvention$instance extends IConvention, IEntityTypeMemberIgnoredConvention$instance, IEntityTypePrimaryKeyChangedConvention$instance, IForeignKeyAddedConvention$instance, IForeignKeyPrincipalEndChangedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IForeignKeyRequirednessChangedConvention$instance, IForeignKeyUniquenessChangedConvention$instance, IKeyAddedConvention$instance, IKeyRemovedConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance, IPropertyAddedConvention$instance, IPropertyFieldChangedConvention$instance, IPropertyNullabilityChangedConvention$instance, ISkipNavigationForeignKeyChangedConvention$instance, ISkipNavigationInverseChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeMemberIgnoredConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypePrimaryKeyChangedConvention: never;
@@ -1495,12 +1461,10 @@ export interface __ForeignKeyPropertyDiscoveryConvention$views {
     As_ISkipNavigationInverseChangedConvention(): ISkipNavigationInverseChangedConvention$instance;
 }
 
-export interface ForeignKeyPropertyDiscoveryConvention$instance extends IEntityTypeMemberIgnoredConvention$instance, IEntityTypePrimaryKeyChangedConvention$instance, IForeignKeyAddedConvention$instance, IForeignKeyPrincipalEndChangedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IForeignKeyRequirednessChangedConvention$instance, IForeignKeyUniquenessChangedConvention$instance, IKeyAddedConvention$instance, IKeyRemovedConvention$instance, IModelFinalizingConvention$instance, INavigationAddedConvention$instance, IPropertyAddedConvention$instance, IPropertyFieldChangedConvention$instance, IPropertyNullabilityChangedConvention$instance, ISkipNavigationForeignKeyChangedConvention$instance, ISkipNavigationInverseChangedConvention$instance {}
-
 export type ForeignKeyPropertyDiscoveryConvention = ForeignKeyPropertyDiscoveryConvention$instance & __ForeignKeyPropertyDiscoveryConvention$views;
 
 
-export interface IndexAttributeConvention$instance extends IConvention {
+export interface IndexAttributeConvention$instance extends IConvention, IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
@@ -1524,12 +1488,10 @@ export interface __IndexAttributeConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface IndexAttributeConvention$instance extends IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IModelFinalizingConvention$instance {}
-
 export type IndexAttributeConvention = IndexAttributeConvention$instance & __IndexAttributeConvention$views;
 
 
-export interface InversePropertyAttributeConvention$instance extends NavigationAttributeConventionBase_1<InversePropertyAttribute>, IConvention {
+export interface InversePropertyAttributeConvention$instance extends NavigationAttributeConventionBase_1<InversePropertyAttribute>, IConvention extends IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
@@ -1570,12 +1532,10 @@ export interface __InversePropertyAttributeConvention$views {
     As_INavigationAddedConvention(): INavigationAddedConvention$instance;
 }
 
-export interface InversePropertyAttributeConvention$instance extends IModelFinalizingConvention$instance {}
-
 export type InversePropertyAttributeConvention = InversePropertyAttributeConvention$instance & __InversePropertyAttributeConvention$views;
 
 
-export interface KeyAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<KeyAttribute>, IConvention {
+export interface KeyAttributeConvention$instance extends PropertyAttributeConventionBase_1$instance<KeyAttribute>, IConvention extends IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
@@ -1609,12 +1569,10 @@ export interface __KeyAttributeConvention$views {
     As_IPropertyFieldChangedConvention(): IPropertyFieldChangedConvention$instance;
 }
 
-export interface KeyAttributeConvention$instance extends IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IModelFinalizingConvention$instance {}
-
 export type KeyAttributeConvention = KeyAttributeConvention$instance & __KeyAttributeConvention$views;
 
 
-export interface KeyDiscoveryConvention$instance extends IConvention {
+export interface KeyDiscoveryConvention$instance extends IConvention, IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IEntityTypeMemberIgnoredConvention$instance, IForeignKeyAddedConvention$instance, IForeignKeyOwnershipChangedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IForeignKeyRemovedConvention$instance, IForeignKeyUniquenessChangedConvention$instance, IKeyRemovedConvention$instance, IPropertyAddedConvention$instance, ISkipNavigationForeignKeyChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
@@ -1667,8 +1625,6 @@ export interface __KeyDiscoveryConvention$views {
     As_ISkipNavigationForeignKeyChangedConvention(): ISkipNavigationForeignKeyChangedConvention$instance;
 }
 
-export interface KeyDiscoveryConvention$instance extends IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IEntityTypeMemberIgnoredConvention$instance, IForeignKeyAddedConvention$instance, IForeignKeyOwnershipChangedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IForeignKeyRemovedConvention$instance, IForeignKeyUniquenessChangedConvention$instance, IKeyRemovedConvention$instance, IPropertyAddedConvention$instance, ISkipNavigationForeignKeyChangedConvention$instance {}
-
 export type KeyDiscoveryConvention = KeyDiscoveryConvention$instance & __KeyDiscoveryConvention$views;
 
 
@@ -1692,7 +1648,7 @@ export interface __KeylessAttributeConvention$views {
 export type KeylessAttributeConvention = KeylessAttributeConvention$instance & __KeylessAttributeConvention$views;
 
 
-export interface ManyToManyJoinEntityTypeConvention$instance extends IConvention {
+export interface ManyToManyJoinEntityTypeConvention$instance extends IConvention, ISkipNavigationAddedConvention$instance, ISkipNavigationForeignKeyChangedConvention$instance, ISkipNavigationInverseChangedConvention$instance, ISkipNavigationRemovedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_ISkipNavigationForeignKeyChangedConvention: never;
@@ -1722,8 +1678,6 @@ export interface __ManyToManyJoinEntityTypeConvention$views {
     As_ISkipNavigationInverseChangedConvention(): ISkipNavigationInverseChangedConvention$instance;
     As_ISkipNavigationRemovedConvention(): ISkipNavigationRemovedConvention$instance;
 }
-
-export interface ManyToManyJoinEntityTypeConvention$instance extends ISkipNavigationAddedConvention$instance, ISkipNavigationForeignKeyChangedConvention$instance, ISkipNavigationInverseChangedConvention$instance, ISkipNavigationRemovedConvention$instance {}
 
 export type ManyToManyJoinEntityTypeConvention = ManyToManyJoinEntityTypeConvention$instance & __ManyToManyJoinEntityTypeConvention$views;
 
@@ -1756,7 +1710,7 @@ export interface __MaxLengthAttributeConvention$views {
 export type MaxLengthAttributeConvention = MaxLengthAttributeConvention$instance & __MaxLengthAttributeConvention$views;
 
 
-export interface ModelCleanupConvention$instance extends IConvention {
+export interface ModelCleanupConvention$instance extends IConvention, IForeignKeyRemovedConvention$instance, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyRemovedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
@@ -1776,8 +1730,6 @@ export interface __ModelCleanupConvention$views {
     As_IForeignKeyRemovedConvention(): IForeignKeyRemovedConvention$instance;
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
-
-export interface ModelCleanupConvention$instance extends IForeignKeyRemovedConvention$instance, IModelFinalizingConvention$instance {}
 
 export type ModelCleanupConvention = ModelCleanupConvention$instance & __ModelCleanupConvention$views;
 
@@ -1836,7 +1788,7 @@ export interface __NavigationBackingFieldAttributeConvention$views {
 export type NavigationBackingFieldAttributeConvention = NavigationBackingFieldAttributeConvention$instance & __NavigationBackingFieldAttributeConvention$views;
 
 
-export interface NavigationEagerLoadingConvention$instance extends IConvention {
+export interface NavigationEagerLoadingConvention$instance extends IConvention, IForeignKeyOwnershipChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyOwnershipChangedConvention: never;
 
@@ -1854,8 +1806,6 @@ export interface __NavigationEagerLoadingConvention$views {
     As_IForeignKeyOwnershipChangedConvention(): IForeignKeyOwnershipChangedConvention$instance;
 }
 
-export interface NavigationEagerLoadingConvention$instance extends IForeignKeyOwnershipChangedConvention$instance {}
-
 export type NavigationEagerLoadingConvention = NavigationEagerLoadingConvention$instance & __NavigationEagerLoadingConvention$views;
 
 
@@ -1871,7 +1821,7 @@ export const NonNullableConventionBase: (abstract new(dependencies: ProviderConv
 
 export type NonNullableConventionBase = NonNullableConventionBase$instance;
 
-export interface NonNullableNavigationConvention$instance extends NonNullableConventionBase, IConvention {
+export interface NonNullableNavigationConvention$instance extends NonNullableConventionBase, IConvention, IForeignKeyPrincipalEndChangedConvention$instance, INavigationAddedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IForeignKeyPrincipalEndChangedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_INavigationAddedConvention: never;
@@ -1891,12 +1841,10 @@ export interface __NonNullableNavigationConvention$views {
     As_INavigationAddedConvention(): INavigationAddedConvention$instance;
 }
 
-export interface NonNullableNavigationConvention$instance extends IForeignKeyPrincipalEndChangedConvention$instance, INavigationAddedConvention$instance {}
-
 export type NonNullableNavigationConvention = NonNullableNavigationConvention$instance & __NonNullableNavigationConvention$views;
 
 
-export interface NonNullableReferencePropertyConvention$instance extends NonNullableConventionBase, IConvention {
+export interface NonNullableReferencePropertyConvention$instance extends NonNullableConventionBase, IConvention, IComplexPropertyAddedConvention$instance, IComplexPropertyFieldChangedConvention$instance, IPropertyAddedConvention$instance, IPropertyElementTypeChangedConvention$instance, IPropertyFieldChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyFieldChangedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
@@ -1925,12 +1873,10 @@ export interface __NonNullableReferencePropertyConvention$views {
     As_IPropertyFieldChangedConvention(): IPropertyFieldChangedConvention$instance;
 }
 
-export interface NonNullableReferencePropertyConvention$instance extends IComplexPropertyAddedConvention$instance, IComplexPropertyFieldChangedConvention$instance, IPropertyAddedConvention$instance, IPropertyElementTypeChangedConvention$instance, IPropertyFieldChangedConvention$instance {}
-
 export type NonNullableReferencePropertyConvention = NonNullableReferencePropertyConvention$instance & __NonNullableReferencePropertyConvention$views;
 
 
-export interface NotMappedMemberAttributeConvention$instance extends IConvention {
+export interface NotMappedMemberAttributeConvention$instance extends IConvention, IComplexPropertyAddedConvention$instance, IEntityTypeAddedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
@@ -1951,8 +1897,6 @@ export interface __NotMappedMemberAttributeConvention$views {
     As_IComplexPropertyAddedConvention(): IComplexPropertyAddedConvention$instance;
     As_IEntityTypeAddedConvention(): IEntityTypeAddedConvention$instance;
 }
-
-export interface NotMappedMemberAttributeConvention$instance extends IComplexPropertyAddedConvention$instance, IEntityTypeAddedConvention$instance {}
 
 export type NotMappedMemberAttributeConvention = NotMappedMemberAttributeConvention$instance & __NotMappedMemberAttributeConvention$views;
 
@@ -2026,7 +1970,7 @@ export interface __PrecisionAttributeConvention$views {
 export type PrecisionAttributeConvention = PrecisionAttributeConvention$instance & __PrecisionAttributeConvention$views;
 
 
-export interface PropertyAttributeConventionBase_1$instance<TAttribute extends Attribute> extends IConvention {
+export interface PropertyAttributeConventionBase_1$instance<TAttribute extends Attribute> extends IConvention, IPropertyFieldChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyFieldChangedConvention: never;
@@ -2050,12 +1994,10 @@ export interface __PropertyAttributeConventionBase_1$views<TAttribute extends At
     As_IPropertyFieldChangedConvention(): IPropertyFieldChangedConvention$instance;
 }
 
-export interface PropertyAttributeConventionBase_1$instance<TAttribute extends Attribute> extends IPropertyFieldChangedConvention$instance {}
-
 export type PropertyAttributeConventionBase_1<TAttribute extends Attribute> = PropertyAttributeConventionBase_1$instance<TAttribute> & __PropertyAttributeConventionBase_1$views<TAttribute>;
 
 
-export interface PropertyDiscoveryConvention$instance extends IConvention {
+export interface PropertyDiscoveryConvention$instance extends IConvention, IComplexPropertyAddedConvention$instance, IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IComplexPropertyAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
@@ -2083,12 +2025,10 @@ export interface __PropertyDiscoveryConvention$views {
     As_IEntityTypeBaseTypeChangedConvention(): IEntityTypeBaseTypeChangedConvention$instance;
 }
 
-export interface PropertyDiscoveryConvention$instance extends IComplexPropertyAddedConvention$instance, IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance {}
-
 export type PropertyDiscoveryConvention = PropertyDiscoveryConvention$instance & __PropertyDiscoveryConvention$views;
 
 
-export interface PropertyOverridesConvention$instance extends IConvention {
+export interface PropertyOverridesConvention$instance extends IConvention, IPropertyAddedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAddedConvention: never;
 
@@ -2107,12 +2047,10 @@ export interface __PropertyOverridesConvention$views {
     As_IPropertyAddedConvention(): IPropertyAddedConvention$instance;
 }
 
-export interface PropertyOverridesConvention$instance extends IPropertyAddedConvention$instance {}
-
 export type PropertyOverridesConvention = PropertyOverridesConvention$instance & __PropertyOverridesConvention$views;
 
 
-export interface QueryFilterRewritingConvention$instance extends IConvention {
+export interface QueryFilterRewritingConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -2130,8 +2068,6 @@ export const QueryFilterRewritingConvention: {
 export interface __QueryFilterRewritingConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
-
-export interface QueryFilterRewritingConvention$instance extends IModelFinalizingConvention$instance {}
 
 export type QueryFilterRewritingConvention = QueryFilterRewritingConvention$instance & __QueryFilterRewritingConvention$views;
 
@@ -2186,7 +2122,7 @@ export interface __RelationalColumnCommentAttributeConvention$views {
 export type RelationalColumnCommentAttributeConvention = RelationalColumnCommentAttributeConvention$instance & __RelationalColumnCommentAttributeConvention$views;
 
 
-export interface RelationalDbFunctionAttributeConvention$instance extends IConvention {
+export interface RelationalDbFunctionAttributeConvention$instance extends IConvention, IModelFinalizingConvention$instance, IModelInitializedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelInitializedConvention: never;
@@ -2209,12 +2145,10 @@ export interface __RelationalDbFunctionAttributeConvention$views {
     As_IModelInitializedConvention(): IModelInitializedConvention$instance;
 }
 
-export interface RelationalDbFunctionAttributeConvention$instance extends IModelFinalizingConvention$instance, IModelInitializedConvention$instance {}
-
 export type RelationalDbFunctionAttributeConvention = RelationalDbFunctionAttributeConvention$instance & __RelationalDbFunctionAttributeConvention$views;
 
 
-export interface RelationalKeyDiscoveryConvention$instance extends KeyDiscoveryConvention$instance, IConvention {
+export interface RelationalKeyDiscoveryConvention$instance extends KeyDiscoveryConvention$instance, IConvention, IEntityTypeAnnotationChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAnnotationChangedConvention: never;
@@ -2271,12 +2205,10 @@ export interface __RelationalKeyDiscoveryConvention$views {
     As_ISkipNavigationForeignKeyChangedConvention(): ISkipNavigationForeignKeyChangedConvention$instance;
 }
 
-export interface RelationalKeyDiscoveryConvention$instance extends IEntityTypeAnnotationChangedConvention$instance {}
-
 export type RelationalKeyDiscoveryConvention = RelationalKeyDiscoveryConvention$instance & __RelationalKeyDiscoveryConvention$views;
 
 
-export interface RelationalMapToJsonConvention$instance extends IConvention {
+export interface RelationalMapToJsonConvention$instance extends IConvention, IEntityTypeAnnotationChangedConvention$instance, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAnnotationChangedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
@@ -2298,12 +2230,10 @@ export interface __RelationalMapToJsonConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface RelationalMapToJsonConvention$instance extends IEntityTypeAnnotationChangedConvention$instance, IModelFinalizingConvention$instance {}
-
 export type RelationalMapToJsonConvention = RelationalMapToJsonConvention$instance & __RelationalMapToJsonConvention$views;
 
 
-export interface RelationalMaxIdentifierLengthConvention$instance extends IConvention {
+export interface RelationalMaxIdentifierLengthConvention$instance extends IConvention, IModelInitializedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelInitializedConvention: never;
 
@@ -2322,8 +2252,6 @@ export const RelationalMaxIdentifierLengthConvention: {
 export interface __RelationalMaxIdentifierLengthConvention$views {
     As_IModelInitializedConvention(): IModelInitializedConvention$instance;
 }
-
-export interface RelationalMaxIdentifierLengthConvention$instance extends IModelInitializedConvention$instance {}
 
 export type RelationalMaxIdentifierLengthConvention = RelationalMaxIdentifierLengthConvention$instance & __RelationalMaxIdentifierLengthConvention$views;
 
@@ -2481,7 +2409,7 @@ export interface __RelationalTableCommentAttributeConvention$views {
 export type RelationalTableCommentAttributeConvention = RelationalTableCommentAttributeConvention$instance & __RelationalTableCommentAttributeConvention$views;
 
 
-export interface RelationalValueGenerationConvention$instance extends ValueGenerationConvention$instance, IConvention {
+export interface RelationalValueGenerationConvention$instance extends ValueGenerationConvention$instance, IConvention, IEntityTypeAnnotationChangedConvention$instance, IPropertyAnnotationChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAnnotationChangedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
@@ -2523,12 +2451,10 @@ export interface __RelationalValueGenerationConvention$views {
     As_IPropertyAnnotationChangedConvention(): IPropertyAnnotationChangedConvention$instance;
 }
 
-export interface RelationalValueGenerationConvention$instance extends IEntityTypeAnnotationChangedConvention$instance, IPropertyAnnotationChangedConvention$instance {}
-
 export type RelationalValueGenerationConvention = RelationalValueGenerationConvention$instance & __RelationalValueGenerationConvention$views;
 
 
-export interface RelationshipDiscoveryConvention$instance extends IConvention {
+export interface RelationshipDiscoveryConvention$instance extends IConvention, IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IEntityTypeMemberIgnoredConvention$instance, IForeignKeyNullNavigationSetConvention$instance, IForeignKeyOwnershipChangedConvention$instance, IForeignKeyRemovedConvention$instance, INavigationAddedConvention$instance, INavigationRemovedConvention$instance, ITypeIgnoredConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
@@ -2573,8 +2499,6 @@ export interface __RelationshipDiscoveryConvention$views {
     As_INavigationRemovedConvention(): INavigationRemovedConvention$instance;
     As_ITypeIgnoredConvention(): ITypeIgnoredConvention$instance;
 }
-
-export interface RelationshipDiscoveryConvention$instance extends IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IEntityTypeMemberIgnoredConvention$instance, IForeignKeyNullNavigationSetConvention$instance, IForeignKeyOwnershipChangedConvention$instance, IForeignKeyRemovedConvention$instance, INavigationAddedConvention$instance, INavigationRemovedConvention$instance, ITypeIgnoredConvention$instance {}
 
 export type RelationshipDiscoveryConvention = RelationshipDiscoveryConvention$instance & __RelationshipDiscoveryConvention$views;
 
@@ -2639,7 +2563,7 @@ export interface __RequiredPropertyAttributeConvention$views {
 export type RequiredPropertyAttributeConvention = RequiredPropertyAttributeConvention$instance & __RequiredPropertyAttributeConvention$views;
 
 
-export interface RuntimeModelConvention$instance extends IConvention {
+export interface RuntimeModelConvention$instance extends IConvention, IModelFinalizedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizedConvention: never;
 
@@ -2675,12 +2599,10 @@ export interface __RuntimeModelConvention$views {
     As_IModelFinalizedConvention(): IModelFinalizedConvention$instance;
 }
 
-export interface RuntimeModelConvention$instance extends IModelFinalizedConvention$instance {}
-
 export type RuntimeModelConvention = RuntimeModelConvention$instance & __RuntimeModelConvention$views;
 
 
-export interface SequenceUniquificationConvention$instance extends IConvention {
+export interface SequenceUniquificationConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -2699,12 +2621,10 @@ export interface __SequenceUniquificationConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface SequenceUniquificationConvention$instance extends IModelFinalizingConvention$instance {}
-
 export type SequenceUniquificationConvention = SequenceUniquificationConvention$instance & __SequenceUniquificationConvention$views;
 
 
-export interface ServicePropertyDiscoveryConvention$instance extends IConvention {
+export interface ServicePropertyDiscoveryConvention$instance extends IConvention, IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
@@ -2729,12 +2649,10 @@ export interface __ServicePropertyDiscoveryConvention$views {
     As_IEntityTypeBaseTypeChangedConvention(): IEntityTypeBaseTypeChangedConvention$instance;
 }
 
-export interface ServicePropertyDiscoveryConvention$instance extends IEntityTypeAddedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance {}
-
 export type ServicePropertyDiscoveryConvention = ServicePropertyDiscoveryConvention$instance & __ServicePropertyDiscoveryConvention$views;
 
 
-export interface SharedTableConvention$instance extends IConvention {
+export interface SharedTableConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -2765,12 +2683,10 @@ export interface __SharedTableConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface SharedTableConvention$instance extends IModelFinalizingConvention$instance {}
-
 export type SharedTableConvention = SharedTableConvention$instance & __SharedTableConvention$views;
 
 
-export interface StoredProcedureConvention$instance extends IConvention {
+export interface StoredProcedureConvention$instance extends IConvention, IEntityTypeAddedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
 
@@ -2789,12 +2705,10 @@ export interface __StoredProcedureConvention$views {
     As_IEntityTypeAddedConvention(): IEntityTypeAddedConvention$instance;
 }
 
-export interface StoredProcedureConvention$instance extends IEntityTypeAddedConvention$instance {}
-
 export type StoredProcedureConvention = StoredProcedureConvention$instance & __StoredProcedureConvention$views;
 
 
-export interface StoreGenerationConvention$instance extends IConvention {
+export interface StoreGenerationConvention$instance extends IConvention, IModelFinalizingConvention$instance, IPropertyAnnotationChangedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IPropertyAnnotationChangedConvention: never;
@@ -2816,8 +2730,6 @@ export interface __StoreGenerationConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
     As_IPropertyAnnotationChangedConvention(): IPropertyAnnotationChangedConvention$instance;
 }
-
-export interface StoreGenerationConvention$instance extends IModelFinalizingConvention$instance, IPropertyAnnotationChangedConvention$instance {}
 
 export type StoreGenerationConvention = StoreGenerationConvention$instance & __StoreGenerationConvention$views;
 
@@ -2846,7 +2758,7 @@ export interface __StringLengthAttributeConvention$views {
 export type StringLengthAttributeConvention = StringLengthAttributeConvention$instance & __StringLengthAttributeConvention$views;
 
 
-export interface TableNameFromDbSetConvention$instance extends IConvention {
+export interface TableNameFromDbSetConvention$instance extends IConvention, IEntityTypeAddedConvention$instance, IEntityTypeAnnotationChangedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAddedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeAnnotationChangedConvention: never;
@@ -2874,12 +2786,10 @@ export interface __TableNameFromDbSetConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface TableNameFromDbSetConvention$instance extends IEntityTypeAddedConvention$instance, IEntityTypeAnnotationChangedConvention$instance, IEntityTypeBaseTypeChangedConvention$instance, IModelFinalizingConvention$instance {}
-
 export type TableNameFromDbSetConvention = TableNameFromDbSetConvention$instance & __TableNameFromDbSetConvention$views;
 
 
-export interface TableSharingConcurrencyTokenConvention$instance extends IConvention {
+export interface TableSharingConcurrencyTokenConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -2900,12 +2810,10 @@ export interface __TableSharingConcurrencyTokenConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
 
-export interface TableSharingConcurrencyTokenConvention$instance extends IModelFinalizingConvention$instance {}
-
 export type TableSharingConcurrencyTokenConvention = TableSharingConcurrencyTokenConvention$instance & __TableSharingConcurrencyTokenConvention$views;
 
 
-export interface TableValuedDbFunctionConvention$instance extends IConvention {
+export interface TableValuedDbFunctionConvention$instance extends IConvention, IModelFinalizingConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IModelFinalizingConvention: never;
 
@@ -2923,8 +2831,6 @@ export const TableValuedDbFunctionConvention: {
 export interface __TableValuedDbFunctionConvention$views {
     As_IModelFinalizingConvention(): IModelFinalizingConvention$instance;
 }
-
-export interface TableValuedDbFunctionConvention$instance extends IModelFinalizingConvention$instance {}
 
 export type TableValuedDbFunctionConvention = TableValuedDbFunctionConvention$instance & __TableValuedDbFunctionConvention$views;
 
@@ -3001,7 +2907,7 @@ export interface __UnicodeAttributeConvention$views {
 export type UnicodeAttributeConvention = UnicodeAttributeConvention$instance & __UnicodeAttributeConvention$views;
 
 
-export interface ValueGenerationConvention$instance extends IConvention {
+export interface ValueGenerationConvention$instance extends IConvention, IEntityTypeBaseTypeChangedConvention$instance, IEntityTypePrimaryKeyChangedConvention$instance, IForeignKeyAddedConvention$instance, IForeignKeyOwnershipChangedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IForeignKeyRemovedConvention$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypeBaseTypeChangedConvention: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IEntityTypePrimaryKeyChangedConvention: never;
@@ -3035,8 +2941,6 @@ export interface __ValueGenerationConvention$views {
     As_IForeignKeyPropertiesChangedConvention(): IForeignKeyPropertiesChangedConvention$instance;
     As_IForeignKeyRemovedConvention(): IForeignKeyRemovedConvention$instance;
 }
-
-export interface ValueGenerationConvention$instance extends IEntityTypeBaseTypeChangedConvention$instance, IEntityTypePrimaryKeyChangedConvention$instance, IForeignKeyAddedConvention$instance, IForeignKeyOwnershipChangedConvention$instance, IForeignKeyPropertiesChangedConvention$instance, IForeignKeyRemovedConvention$instance {}
 
 export type ValueGenerationConvention = ValueGenerationConvention$instance & __ValueGenerationConvention$views;
 

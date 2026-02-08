@@ -80,7 +80,7 @@ export interface IRelationalQueryingEnumerable$instance extends IQueryingEnumera
 }
 
 
-export interface IRelationalQueryingEnumerable$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryingEnumerable {}
+export interface IRelationalQueryingEnumerable$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryingEnumerable$instance {}
 
 export type IRelationalQueryingEnumerable = IRelationalQueryingEnumerable$instance;
 
@@ -169,7 +169,7 @@ export const BufferedDataReader: {
 
 export type BufferedDataReader = BufferedDataReader$instance;
 
-export interface ByteArraySequenceEqualTranslator$instance {
+export interface ByteArraySequenceEqualTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -184,8 +184,6 @@ export const ByteArraySequenceEqualTranslator: {
 export interface __ByteArraySequenceEqualTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
-
-export interface ByteArraySequenceEqualTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
 
 export type ByteArraySequenceEqualTranslator = ByteArraySequenceEqualTranslator$instance & __ByteArraySequenceEqualTranslator$views;
 
@@ -202,7 +200,7 @@ export const CallForwardingExpressionVisitor: {
 
 export type CallForwardingExpressionVisitor = CallForwardingExpressionVisitor$instance;
 
-export interface CollateTranslator$instance {
+export interface CollateTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -218,12 +216,10 @@ export interface __CollateTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
 
-export interface CollateTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
-
 export type CollateTranslator = CollateTranslator$instance & __CollateTranslator$views;
 
 
-export interface ComparisonTranslator$instance {
+export interface ComparisonTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -238,8 +234,6 @@ export const ComparisonTranslator: {
 export interface __ComparisonTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
-
-export interface ComparisonTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
 
 export type ComparisonTranslator = ComparisonTranslator$instance & __ComparisonTranslator$views;
 
@@ -356,7 +350,7 @@ export const CompiledQueryBase_2: (abstract new<TContext extends DbContext, TRes
 
 export type CompiledQueryBase_2<TContext extends DbContext, TResult> = CompiledQueryBase_2$instance<TContext, TResult>;
 
-export interface CompiledQueryCache$instance {
+export interface CompiledQueryCache$instance extends ICompiledQueryCache$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_ICompiledQueryCache: never;
 
     GetOrAddQuery<TResult>(cacheKey: unknown, compiler: Func_1<Func_2<QueryContext, TResult>>): Func_2<QueryContext, TResult>;
@@ -372,12 +366,10 @@ export interface __CompiledQueryCache$views {
     As_ICompiledQueryCache(): ICompiledQueryCache$instance;
 }
 
-export interface CompiledQueryCache$instance extends ICompiledQueryCache$instance {}
-
 export type CompiledQueryCache = CompiledQueryCache$instance & __CompiledQueryCache$views;
 
 
-export interface ContainsTranslator$instance {
+export interface ContainsTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -392,8 +384,6 @@ export const ContainsTranslator: {
 export interface __ContainsTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
-
-export interface ContainsTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
 
 export type ContainsTranslator = ContainsTranslator$instance & __ContainsTranslator$views;
 
@@ -425,7 +415,7 @@ export const EntityQueryable_1: {
 
 export type EntityQueryable_1<TResult> = EntityQueryable_1$instance<TResult>;
 
-export interface EntityQueryProvider$instance {
+export interface EntityQueryProvider$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAsyncQueryProvider: never;
     readonly __tsonic_iface_System_Linq_IQueryProvider: never;
 
@@ -446,12 +436,10 @@ export interface __EntityQueryProvider$views {
     As_IAsyncQueryProvider(): Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider$instance;
 }
 
-export interface EntityQueryProvider$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider {}
-
 export type EntityQueryProvider = EntityQueryProvider$instance & __EntityQueryProvider$views;
 
 
-export interface EnumMethodTranslator$instance {
+export interface EnumMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -467,12 +455,10 @@ export interface __EnumMethodTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
 
-export interface EnumMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
-
 export type EnumMethodTranslator = EnumMethodTranslator$instance & __EnumMethodTranslator$views;
 
 
-export interface EqualsTranslator$instance {
+export interface EqualsTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -487,8 +473,6 @@ export const EqualsTranslator: {
 export interface __EqualsTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
-
-export interface EqualsTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
 
 export type EqualsTranslator = EqualsTranslator$instance & __EqualsTranslator$views;
 
@@ -567,7 +551,7 @@ export const ExpressionTreeFuncletizer_PathNode: {
 
 export type ExpressionTreeFuncletizer_PathNode = ExpressionTreeFuncletizer_PathNode$instance;
 
-export interface FromSqlQueryingEnumerable_1$instance<T> {
+export interface FromSqlQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -591,8 +575,6 @@ export interface __FromSqlQueryingEnumerable_1$views<T> {
     As_IQueryingEnumerable(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryingEnumerable$instance;
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
-
-export interface FromSqlQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {}
 
 export type FromSqlQueryingEnumerable_1<T> = FromSqlQueryingEnumerable_1$instance<T> & __FromSqlQueryingEnumerable_1$views<T>;
 
@@ -624,7 +606,7 @@ export interface __FromSqlQueryRootExpression$views {
 export type FromSqlQueryRootExpression = FromSqlQueryRootExpression$instance & __FromSqlQueryRootExpression$views;
 
 
-export interface GetValueOrDefaultTranslator$instance {
+export interface GetValueOrDefaultTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -640,12 +622,10 @@ export interface __GetValueOrDefaultTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
 
-export interface GetValueOrDefaultTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
-
 export type GetValueOrDefaultTranslator = GetValueOrDefaultTranslator$instance & __GetValueOrDefaultTranslator$views;
 
 
-export interface GroupBySingleQueryingEnumerable_2$instance<TKey, TElement> {
+export interface GroupBySingleQueryingEnumerable_2$instance<TKey, TElement> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<IGrouping_2<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable_1<IGrouping_2<TKey, TElement>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -669,12 +649,10 @@ export interface __GroupBySingleQueryingEnumerable_2$views<TKey, TElement> {
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
 
-export interface GroupBySingleQueryingEnumerable_2$instance<TKey, TElement> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<IGrouping_2<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable_1<IGrouping_2<TKey, TElement>> {}
-
 export type GroupBySingleQueryingEnumerable_2<TKey, TElement> = GroupBySingleQueryingEnumerable_2$instance<TKey, TElement> & __GroupBySingleQueryingEnumerable_2$views<TKey, TElement>;
 
 
-export interface GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> {
+export interface GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<IGrouping_2<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable_1<IGrouping_2<TKey, TElement>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -698,8 +676,6 @@ export interface __GroupBySplitQueryingEnumerable_2$views<TKey, TElement> {
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
 
-export interface GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<IGrouping_2<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable_1<IGrouping_2<TKey, TElement>> {}
-
 export type GroupBySplitQueryingEnumerable_2<TKey, TElement> = GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> & __GroupBySplitQueryingEnumerable_2$views<TKey, TElement>;
 
 
@@ -715,7 +691,7 @@ export const InvocationExpressionRemovingExpressionVisitor: {
 
 export type InvocationExpressionRemovingExpressionVisitor = InvocationExpressionRemovingExpressionVisitor$instance;
 
-export interface LikeTranslator$instance {
+export interface LikeTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -730,8 +706,6 @@ export const LikeTranslator: {
 export interface __LikeTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
-
-export interface LikeTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
 
 export type LikeTranslator = LikeTranslator$instance & __LikeTranslator$views;
 
@@ -753,7 +727,7 @@ export const NavigationExpandingExpressionVisitor: {
 
 export type NavigationExpandingExpressionVisitor = NavigationExpandingExpressionVisitor$instance;
 
-export interface NullAsyncQueryProvider$instance {
+export interface NullAsyncQueryProvider$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAsyncQueryProvider: never;
     readonly __tsonic_iface_System_Linq_IQueryProvider: never;
 
@@ -768,8 +742,6 @@ export const NullAsyncQueryProvider: {
 export interface __NullAsyncQueryProvider$views {
     As_IAsyncQueryProvider(): Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider$instance;
 }
-
-export interface NullAsyncQueryProvider$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider {}
 
 export type NullAsyncQueryProvider = NullAsyncQueryProvider$instance & __NullAsyncQueryProvider$views;
 
@@ -854,7 +826,7 @@ export const PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2: {
 
 export type PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2<T, TEntity, TProperty> = PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2$instance<T, TEntity, TProperty>;
 
-export interface QueryableAggregateMethodTranslator$instance {
+export interface QueryableAggregateMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAggregateMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAggregateMethodCallTranslator: never;
 
     Translate(method: MethodInfo, source: EnumerableExpression, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -869,8 +841,6 @@ export const QueryableAggregateMethodTranslator: {
 export interface __QueryableAggregateMethodTranslator$views {
     As_IAggregateMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IAggregateMethodCallTranslator$instance;
 }
-
-export interface QueryableAggregateMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAggregateMethodCallTranslator {}
 
 export type QueryableAggregateMethodTranslator = QueryableAggregateMethodTranslator$instance & __QueryableAggregateMethodTranslator$views;
 
@@ -889,7 +859,7 @@ export const QueryableMethodNormalizingExpressionVisitor: {
 
 export type QueryableMethodNormalizingExpressionVisitor = QueryableMethodNormalizingExpressionVisitor$instance;
 
-export interface QueryCompilationContextFactory$instance {
+export interface QueryCompilationContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryCompilationContextFactory: never;
 
     readonly Dependencies: QueryCompilationContextDependencies;
@@ -906,8 +876,6 @@ export const QueryCompilationContextFactory: {
 export interface __QueryCompilationContextFactory$views {
     As_IQueryCompilationContextFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory$instance;
 }
-
-export interface QueryCompilationContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory {}
 
 export type QueryCompilationContextFactory = QueryCompilationContextFactory$instance & __QueryCompilationContextFactory$views;
 
@@ -999,7 +967,7 @@ export const QueryOptimizingExpressionVisitor: {
 
 export type QueryOptimizingExpressionVisitor = QueryOptimizingExpressionVisitor$instance;
 
-export interface QuerySqlGeneratorFactory$instance {
+export interface QuerySqlGeneratorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQuerySqlGeneratorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQuerySqlGeneratorFactory: never;
 
     readonly Dependencies: QuerySqlGeneratorDependencies;
@@ -1016,12 +984,10 @@ export interface __QuerySqlGeneratorFactory$views {
     As_IQuerySqlGeneratorFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IQuerySqlGeneratorFactory$instance;
 }
 
-export interface QuerySqlGeneratorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQuerySqlGeneratorFactory {}
-
 export type QuerySqlGeneratorFactory = QuerySqlGeneratorFactory$instance & __QuerySqlGeneratorFactory$views;
 
 
-export interface QueryTranslationPostprocessorFactory$instance {
+export interface QueryTranslationPostprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPostprocessorFactory: never;
 
     readonly Dependencies: QueryTranslationPostprocessorDependencies;
@@ -1038,12 +1004,10 @@ export interface __QueryTranslationPostprocessorFactory$views {
     As_IQueryTranslationPostprocessorFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory$instance;
 }
 
-export interface QueryTranslationPostprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory {}
-
 export type QueryTranslationPostprocessorFactory = QueryTranslationPostprocessorFactory$instance & __QueryTranslationPostprocessorFactory$views;
 
 
-export interface QueryTranslationPreprocessorFactory$instance {
+export interface QueryTranslationPreprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPreprocessorFactory: never;
 
     readonly Dependencies: QueryTranslationPreprocessorDependencies;
@@ -1060,12 +1024,10 @@ export interface __QueryTranslationPreprocessorFactory$views {
     As_IQueryTranslationPreprocessorFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory$instance;
 }
 
-export interface QueryTranslationPreprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory {}
-
 export type QueryTranslationPreprocessorFactory = QueryTranslationPreprocessorFactory$instance & __QueryTranslationPreprocessorFactory$views;
 
 
-export interface RandomTranslator$instance {
+export interface RandomTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -1081,12 +1043,10 @@ export interface __RandomTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
 
-export interface RandomTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
-
 export type RandomTranslator = RandomTranslator$instance & __RandomTranslator$views;
 
 
-export interface RelationalCommandCache$instance {
+export interface RelationalCommandCache$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     GetRelationalCommandTemplate(parameters: Dictionary_2<System_Internal.String, unknown>): IRelationalCommandTemplate;
@@ -1102,12 +1062,10 @@ export interface __RelationalCommandCache$views {
     As_IPrintableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance;
 }
 
-export interface RelationalCommandCache$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression {}
-
 export type RelationalCommandCache = RelationalCommandCache$instance & __RelationalCommandCache$views;
 
 
-export interface RelationalParameterBasedSqlProcessorFactory$instance {
+export interface RelationalParameterBasedSqlProcessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IRelationalParameterBasedSqlProcessorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalParameterBasedSqlProcessorFactory: never;
 
     readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
@@ -1123,8 +1081,6 @@ export const RelationalParameterBasedSqlProcessorFactory: {
 export interface __RelationalParameterBasedSqlProcessorFactory$views {
     As_IRelationalParameterBasedSqlProcessorFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalParameterBasedSqlProcessorFactory$instance;
 }
-
-export interface RelationalParameterBasedSqlProcessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IRelationalParameterBasedSqlProcessorFactory {}
 
 export type RelationalParameterBasedSqlProcessorFactory = RelationalParameterBasedSqlProcessorFactory$instance & __RelationalParameterBasedSqlProcessorFactory$views;
 
@@ -1168,7 +1124,7 @@ export const RelationalProjectionBindingExpressionVisitor: {
 
 export type RelationalProjectionBindingExpressionVisitor = RelationalProjectionBindingExpressionVisitor$instance;
 
-export interface RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance {
+export interface RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryableMethodTranslatingExpressionVisitorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryableMethodTranslatingExpressionVisitorFactory: never;
 
     readonly Dependencies: QueryableMethodTranslatingExpressionVisitorDependencies;
@@ -1186,12 +1142,10 @@ export interface __RelationalQueryableMethodTranslatingExpressionVisitorFactory$
     As_IQueryableMethodTranslatingExpressionVisitorFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryableMethodTranslatingExpressionVisitorFactory$instance;
 }
 
-export interface RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryableMethodTranslatingExpressionVisitorFactory {}
-
 export type RelationalQueryableMethodTranslatingExpressionVisitorFactory = RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance & __RelationalQueryableMethodTranslatingExpressionVisitorFactory$views;
 
 
-export interface RelationalQueryCompilationContextFactory$instance {
+export interface RelationalQueryCompilationContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryCompilationContextFactory: never;
 
     readonly Dependencies: QueryCompilationContextDependencies;
@@ -1210,12 +1164,10 @@ export interface __RelationalQueryCompilationContextFactory$views {
     As_IQueryCompilationContextFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory$instance;
 }
 
-export interface RelationalQueryCompilationContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory {}
-
 export type RelationalQueryCompilationContextFactory = RelationalQueryCompilationContextFactory$instance & __RelationalQueryCompilationContextFactory$views;
 
 
-export interface RelationalQueryContextFactory$instance {
+export interface RelationalQueryContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryContextFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryContextFactory: never;
 
     readonly Dependencies: QueryContextDependencies;
@@ -1233,8 +1185,6 @@ export interface __RelationalQueryContextFactory$views {
     As_IQueryContextFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryContextFactory$instance;
 }
 
-export interface RelationalQueryContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryContextFactory {}
-
 export type RelationalQueryContextFactory = RelationalQueryContextFactory$instance & __RelationalQueryContextFactory$views;
 
 
@@ -1250,7 +1200,7 @@ export const RelationalQueryMetadataExtractingExpressionVisitor: {
 
 export type RelationalQueryMetadataExtractingExpressionVisitor = RelationalQueryMetadataExtractingExpressionVisitor$instance;
 
-export interface RelationalQueryStringFactory$instance {
+export interface RelationalQueryStringFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQueryStringFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQueryStringFactory: never;
 
     Create(command: DbCommand): string;
@@ -1266,12 +1216,10 @@ export interface __RelationalQueryStringFactory$views {
     As_IRelationalQueryStringFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQueryStringFactory$instance;
 }
 
-export interface RelationalQueryStringFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQueryStringFactory {}
-
 export type RelationalQueryStringFactory = RelationalQueryStringFactory$instance & __RelationalQueryStringFactory$views;
 
 
-export interface RelationalQueryTranslationPostprocessorFactory$instance {
+export interface RelationalQueryTranslationPostprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPostprocessorFactory: never;
 
     readonly Dependencies: QueryTranslationPostprocessorDependencies;
@@ -1289,12 +1237,10 @@ export interface __RelationalQueryTranslationPostprocessorFactory$views {
     As_IQueryTranslationPostprocessorFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory$instance;
 }
 
-export interface RelationalQueryTranslationPostprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory {}
-
 export type RelationalQueryTranslationPostprocessorFactory = RelationalQueryTranslationPostprocessorFactory$instance & __RelationalQueryTranslationPostprocessorFactory$views;
 
 
-export interface RelationalQueryTranslationPreprocessorFactory$instance {
+export interface RelationalQueryTranslationPreprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPreprocessorFactory: never;
 
     readonly Dependencies: QueryTranslationPreprocessorDependencies;
@@ -1312,12 +1258,10 @@ export interface __RelationalQueryTranslationPreprocessorFactory$views {
     As_IQueryTranslationPreprocessorFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory$instance;
 }
 
-export interface RelationalQueryTranslationPreprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory {}
-
 export type RelationalQueryTranslationPreprocessorFactory = RelationalQueryTranslationPreprocessorFactory$instance & __RelationalQueryTranslationPreprocessorFactory$views;
 
 
-export interface RelationalShapedQueryCompilingExpressionVisitorFactory$instance {
+export interface RelationalShapedQueryCompilingExpressionVisitorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IShapedQueryCompilingExpressionVisitorFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IShapedQueryCompilingExpressionVisitorFactory: never;
 
     readonly Dependencies: ShapedQueryCompilingExpressionVisitorDependencies;
@@ -1334,8 +1278,6 @@ export const RelationalShapedQueryCompilingExpressionVisitorFactory: {
 export interface __RelationalShapedQueryCompilingExpressionVisitorFactory$views {
     As_IShapedQueryCompilingExpressionVisitorFactory(): Microsoft_EntityFrameworkCore_Query_Internal.IShapedQueryCompilingExpressionVisitorFactory$instance;
 }
-
-export interface RelationalShapedQueryCompilingExpressionVisitorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IShapedQueryCompilingExpressionVisitorFactory {}
 
 export type RelationalShapedQueryCompilingExpressionVisitorFactory = RelationalShapedQueryCompilingExpressionVisitorFactory$instance & __RelationalShapedQueryCompilingExpressionVisitorFactory$views;
 
@@ -1418,7 +1360,7 @@ export const SingleQueryCollectionContext: {
 
 export type SingleQueryCollectionContext = SingleQueryCollectionContext$instance;
 
-export interface SingleQueryingEnumerable_1$instance<T> {
+export interface SingleQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -1441,8 +1383,6 @@ export interface __SingleQueryingEnumerable_1$views<T> {
     As_IQueryingEnumerable(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryingEnumerable$instance;
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
-
-export interface SingleQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {}
 
 export type SingleQueryingEnumerable_1<T> = SingleQueryingEnumerable_1$instance<T> & __SingleQueryingEnumerable_1$views<T>;
 
@@ -1491,7 +1431,7 @@ export const SplitQueryDataReaderContext: {
 
 export type SplitQueryDataReaderContext = SplitQueryDataReaderContext$instance;
 
-export interface SplitQueryingEnumerable_1$instance<T> {
+export interface SplitQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -1514,8 +1454,6 @@ export interface __SplitQueryingEnumerable_1$views<T> {
     As_IQueryingEnumerable(): Microsoft_EntityFrameworkCore_Query_Internal.IQueryingEnumerable$instance;
     As_IRelationalQueryingEnumerable(): IRelationalQueryingEnumerable$instance;
 }
-
-export interface SplitQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {}
 
 export type SplitQueryingEnumerable_1<T> = SplitQueryingEnumerable_1$instance<T> & __SplitQueryingEnumerable_1$views<T>;
 
@@ -1575,7 +1513,7 @@ export interface __SqlQueryRootExpression$views {
 export type SqlQueryRootExpression = SqlQueryRootExpression$instance & __SqlQueryRootExpression$views;
 
 
-export interface StringMethodTranslator$instance {
+export interface StringMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -1590,8 +1528,6 @@ export const StringMethodTranslator: {
 export interface __StringMethodTranslator$views {
     As_IMethodCallTranslator(): Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance;
 }
-
-export interface StringMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator {}
 
 export type StringMethodTranslator = StringMethodTranslator$instance & __StringMethodTranslator$views;
 

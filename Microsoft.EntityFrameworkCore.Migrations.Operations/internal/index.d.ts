@@ -6,7 +6,7 @@
 import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 // Import types from other namespaces
-import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System.js";
 import * as Microsoft_EntityFrameworkCore_Infrastructure_Internal from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
 import type { Annotatable, Annotation, IAnnotatable, IAnnotation, IReadOnlyAnnotatable } from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Metadata_Internal from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
@@ -290,7 +290,7 @@ export interface __AddUniqueConstraintOperation$views {
 export type AddUniqueConstraintOperation = AddUniqueConstraintOperation$instance & __AddUniqueConstraintOperation$views;
 
 
-export interface AlterColumnOperation$instance extends ColumnOperation$instance {
+export interface AlterColumnOperation$instance extends ColumnOperation$instance, IAlterMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -335,12 +335,10 @@ export interface __AlterColumnOperation$views {
     As_ITableMigrationOperation(): ITableMigrationOperation$instance;
 }
 
-export interface AlterColumnOperation$instance extends IAlterMigrationOperation$instance {}
-
 export type AlterColumnOperation = AlterColumnOperation$instance & __AlterColumnOperation$views;
 
 
-export interface AlterDatabaseOperation$instance extends DatabaseOperation$instance {
+export interface AlterDatabaseOperation$instance extends DatabaseOperation$instance, IAlterMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -383,12 +381,10 @@ export interface __AlterDatabaseOperation$views {
     As_IAlterMigrationOperation(): IAlterMigrationOperation$instance;
 }
 
-export interface AlterDatabaseOperation$instance extends IAlterMigrationOperation$instance {}
-
 export type AlterDatabaseOperation = AlterDatabaseOperation$instance & __AlterDatabaseOperation$views;
 
 
-export interface AlterSequenceOperation$instance extends SequenceOperation$instance {
+export interface AlterSequenceOperation$instance extends SequenceOperation$instance, IAlterMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -434,12 +430,10 @@ export interface __AlterSequenceOperation$views {
     As_IAlterMigrationOperation(): IAlterMigrationOperation$instance;
 }
 
-export interface AlterSequenceOperation$instance extends IAlterMigrationOperation$instance {}
-
 export type AlterSequenceOperation = AlterSequenceOperation$instance & __AlterSequenceOperation$views;
 
 
-export interface AlterTableOperation$instance extends TableOperation$instance {
+export interface AlterTableOperation$instance extends TableOperation$instance, IAlterMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -483,8 +477,6 @@ export interface __AlterTableOperation$views {
     As_IAlterMigrationOperation(): IAlterMigrationOperation$instance;
     As_ITableMigrationOperation(): ITableMigrationOperation$instance;
 }
-
-export interface AlterTableOperation$instance extends IAlterMigrationOperation$instance {}
 
 export type AlterTableOperation = AlterTableOperation$instance & __AlterTableOperation$views;
 

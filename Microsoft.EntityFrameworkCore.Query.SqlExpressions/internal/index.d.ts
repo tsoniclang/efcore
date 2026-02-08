@@ -237,7 +237,7 @@ export interface __CrossJoinExpression$views {
 export type CrossJoinExpression = CrossJoinExpression$instance & __CrossJoinExpression$views;
 
 
-export interface DeleteExpression$instance extends Expression {
+export interface DeleteExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -266,8 +266,6 @@ export interface __DeleteExpression$views {
     As_IPrintableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance;
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
-
-export interface DeleteExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression {}
 
 export type DeleteExpression = DeleteExpression$instance & __DeleteExpression$views;
 
@@ -355,7 +353,7 @@ export interface __ExistsExpression$views {
 export type ExistsExpression = ExistsExpression$instance & __ExistsExpression$views;
 
 
-export interface FromSqlExpression$instance extends TableExpressionBase$instance {
+export interface FromSqlExpression$instance extends TableExpressionBase$instance, ITableBasedExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ITableBasedExpression: never;
@@ -386,8 +384,6 @@ export interface __FromSqlExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
     As_ITableBasedExpression(): ITableBasedExpression$instance;
 }
-
-export interface FromSqlExpression$instance extends ITableBasedExpression$instance {}
 
 export type FromSqlExpression = FromSqlExpression$instance & __FromSqlExpression$views;
 
@@ -597,7 +593,7 @@ export interface __LikeExpression$views {
 export type LikeExpression = LikeExpression$instance & __LikeExpression$views;
 
 
-export interface OrderingExpression$instance extends Expression {
+export interface OrderingExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -622,8 +618,6 @@ export interface __OrderingExpression$views {
     As_IPrintableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance;
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
-
-export interface OrderingExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression {}
 
 export type OrderingExpression = OrderingExpression$instance & __OrderingExpression$views;
 
@@ -681,7 +675,7 @@ export interface __PredicateJoinExpressionBase$views {
 export type PredicateJoinExpressionBase = PredicateJoinExpressionBase$instance & __PredicateJoinExpressionBase$views;
 
 
-export interface ProjectionExpression$instance extends Expression {
+export interface ProjectionExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -706,8 +700,6 @@ export interface __ProjectionExpression$views {
     As_IPrintableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance;
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
-
-export interface ProjectionExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression {}
 
 export type ProjectionExpression = ProjectionExpression$instance & __ProjectionExpression$views;
 
@@ -1000,7 +992,7 @@ export interface __SqlConstantExpression$views {
 export type SqlConstantExpression = SqlConstantExpression$instance & __SqlConstantExpression$views;
 
 
-export interface SqlExpression$instance extends Expression {
+export interface SqlExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1023,8 +1015,6 @@ export interface __SqlExpression$views {
     As_IPrintableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance;
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
-
-export interface SqlExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression {}
 
 export type SqlExpression = SqlExpression$instance & __SqlExpression$views;
 
@@ -1157,7 +1147,7 @@ export interface __SqlUnaryExpression$views {
 export type SqlUnaryExpression = SqlUnaryExpression$instance & __SqlUnaryExpression$views;
 
 
-export interface TableExpression$instance extends TableExpressionBase$instance {
+export interface TableExpression$instance extends TableExpressionBase$instance, ITableBasedExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ITableBasedExpression: never;
@@ -1186,12 +1176,10 @@ export interface __TableExpression$views {
     As_ITableBasedExpression(): ITableBasedExpression$instance;
 }
 
-export interface TableExpression$instance extends ITableBasedExpression$instance {}
-
 export type TableExpression = TableExpression$instance & __TableExpression$views;
 
 
-export interface TableExpressionBase$instance extends Expression {
+export interface TableExpressionBase$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1224,12 +1212,10 @@ export interface __TableExpressionBase$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
 
-export interface TableExpressionBase$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression {}
-
 export type TableExpressionBase = TableExpressionBase$instance & __TableExpressionBase$views;
 
 
-export interface TableValuedFunctionExpression$instance extends TableExpressionBase$instance {
+export interface TableValuedFunctionExpression$instance extends TableExpressionBase$instance, ITableBasedExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ITableBasedExpression: never;
@@ -1261,8 +1247,6 @@ export interface __TableValuedFunctionExpression$views {
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
     As_ITableBasedExpression(): ITableBasedExpression$instance;
 }
-
-export interface TableValuedFunctionExpression$instance extends ITableBasedExpression$instance {}
 
 export type TableValuedFunctionExpression = TableValuedFunctionExpression$instance & __TableValuedFunctionExpression$views;
 
@@ -1296,7 +1280,7 @@ export interface __UnionExpression$views {
 export type UnionExpression = UnionExpression$instance & __UnionExpression$views;
 
 
-export interface UpdateExpression$instance extends Expression {
+export interface UpdateExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1326,8 +1310,6 @@ export interface __UpdateExpression$views {
     As_IPrintableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance;
     As_IRelationalQuotableExpression(): Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance;
 }
-
-export interface UpdateExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression {}
 
 export type UpdateExpression = UpdateExpression$instance & __UpdateExpression$views;
 

@@ -403,7 +403,7 @@ export interface IConventionAnnotation$instance extends IAnnotation {
 }
 
 
-export interface IConventionAnnotation$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IAnnotation {}
+export interface IConventionAnnotation$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IAnnotation$instance {}
 
 export type IConventionAnnotation = IConventionAnnotation$instance;
 
@@ -3246,7 +3246,7 @@ export interface IReadOnlyCheckConstraint$instance extends IReadOnlyAnnotatable 
 }
 
 
-export interface IReadOnlyCheckConstraint$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyCheckConstraint$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyCheckConstraint = IReadOnlyCheckConstraint$instance;
 
@@ -3343,7 +3343,7 @@ export interface IReadOnlyDbFunction$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlyDbFunction$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyDbFunction$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyDbFunction = IReadOnlyDbFunction$instance;
 
@@ -3364,7 +3364,7 @@ export interface IReadOnlyDbFunctionParameter$instance extends IReadOnlyAnnotata
 }
 
 
-export interface IReadOnlyDbFunctionParameter$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyDbFunctionParameter$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyDbFunctionParameter = IReadOnlyDbFunctionParameter$instance;
 
@@ -3388,7 +3388,7 @@ export interface IReadOnlyElementType$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlyElementType$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyElementType$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyElementType = IReadOnlyElementType$instance;
 
@@ -3472,7 +3472,7 @@ export interface IReadOnlyEntityTypeMappingFragment$instance extends IReadOnlyAn
 }
 
 
-export interface IReadOnlyEntityTypeMappingFragment$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyEntityTypeMappingFragment$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyEntityTypeMappingFragment = IReadOnlyEntityTypeMappingFragment$instance;
 
@@ -3502,7 +3502,7 @@ export interface IReadOnlyForeignKey$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlyForeignKey$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyForeignKey$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyForeignKey = IReadOnlyForeignKey$instance;
 
@@ -3523,7 +3523,7 @@ export interface IReadOnlyIndex$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlyIndex$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyIndex$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyIndex = IReadOnlyIndex$instance;
 
@@ -3542,7 +3542,7 @@ export interface IReadOnlyKey$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlyKey$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyKey$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyKey = IReadOnlyKey$instance;
 
@@ -3569,7 +3569,7 @@ export interface IReadOnlyModel$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlyModel$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyModel$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyModel = IReadOnlyModel$instance;
 
@@ -3692,7 +3692,7 @@ export interface IReadOnlyPropertyBase$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlyPropertyBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyPropertyBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyPropertyBase = IReadOnlyPropertyBase$instance;
 
@@ -3711,7 +3711,7 @@ export interface IReadOnlyRelationalPropertyOverrides$instance extends IReadOnly
 }
 
 
-export interface IReadOnlyRelationalPropertyOverrides$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyRelationalPropertyOverrides$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyRelationalPropertyOverrides = IReadOnlyRelationalPropertyOverrides$instance;
 
@@ -3736,7 +3736,7 @@ export interface IReadOnlySequence$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlySequence$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlySequence$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlySequence = IReadOnlySequence$instance;
 
@@ -3819,7 +3819,7 @@ export interface IReadOnlyStoredProcedure$instance extends IReadOnlyAnnotatable 
 }
 
 
-export interface IReadOnlyStoredProcedure$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyStoredProcedure$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyStoredProcedure = IReadOnlyStoredProcedure$instance;
 
@@ -3840,7 +3840,7 @@ export interface IReadOnlyStoredProcedureParameter$instance extends IReadOnlyAnn
 }
 
 
-export interface IReadOnlyStoredProcedureParameter$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyStoredProcedureParameter$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyStoredProcedureParameter = IReadOnlyStoredProcedureParameter$instance;
 
@@ -3859,7 +3859,7 @@ export interface IReadOnlyStoredProcedureResultColumn$instance extends IReadOnly
 }
 
 
-export interface IReadOnlyStoredProcedureResultColumn$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyStoredProcedureResultColumn$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyStoredProcedureResultColumn = IReadOnlyStoredProcedureResultColumn$instance;
 
@@ -3886,7 +3886,7 @@ export interface IReadOnlyTrigger$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlyTrigger$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyTrigger$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyTrigger = IReadOnlyTrigger$instance;
 
@@ -3926,7 +3926,7 @@ export interface IReadOnlyTypeBase$instance extends IReadOnlyAnnotatable {
 }
 
 
-export interface IReadOnlyTypeBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable {}
+export interface IReadOnlyTypeBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IReadOnlyAnnotatable$instance {}
 
 export type IReadOnlyTypeBase = IReadOnlyTypeBase$instance;
 
@@ -5024,7 +5024,7 @@ export const StoreObjectIdentifier: {
 
 export type StoreObjectIdentifier = StoreObjectIdentifier$instance;
 
-export interface AdHocMapper$instance {
+export interface AdHocMapper$instance extends IAdHocMapper$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IAdHocMapper: never;
 
     readonly Dependencies: AdHocMapperDependencies;
@@ -5041,8 +5041,6 @@ export const AdHocMapper: {
 export interface __AdHocMapper$views {
     As_IAdHocMapper(): IAdHocMapper$instance;
 }
-
-export interface AdHocMapper$instance extends IAdHocMapper$instance {}
 
 export type AdHocMapper = AdHocMapper$instance & __AdHocMapper$views;
 

@@ -254,12 +254,10 @@ export interface __DbContext$views {
     As_IDbSetCache(): Microsoft_EntityFrameworkCore_Internal_Internal.IDbSetCache$instance;
 }
 
-export interface DbContext$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IServiceProvider>, Microsoft_EntityFrameworkCore_Internal_Internal.IDbContextDependencies, Microsoft_EntityFrameworkCore_Internal_Internal.IDbContextPoolable, Microsoft_EntityFrameworkCore_Internal_Internal.IDbSetCache {}
-
 export type DbContext = DbContext$instance & __DbContext$views;
 
 
-export interface DbContextOptions$instance {
+export interface DbContextOptions$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptions$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
 
     readonly ContextType: Type;
@@ -283,8 +281,6 @@ export const DbContextOptions: (abstract new() => DbContextOptions) & (abstract 
 export interface __DbContextOptions$views {
     As_IDbContextOptions(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptions$instance;
 }
-
-export interface DbContextOptions$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptions {}
 
 export type DbContextOptions = DbContextOptions$instance & __DbContextOptions$views;
 
@@ -311,11 +307,11 @@ export interface __DbContextOptions_1$views<TContext extends DbContext> {
 export type DbContextOptions_1<TContext extends DbContext> = DbContextOptions_1$instance<TContext> & __DbContextOptions_1$views<TContext>;
 
 
-export interface DbContextOptionsBuilder$instance {
+export interface DbContextOptionsBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
     readonly IsConfigured: boolean;
-    readonly Options: DbContextOptions | DbContextOptions_1<TContext>;
+    readonly Options: DbContextOptions;
     AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder;
     AddInterceptors(...interceptors: IInterceptor[]): DbContextOptionsBuilder;
     ConfigureLoggingCacheTime(timeSpan: TimeSpan): DbContextOptionsBuilder;
@@ -356,12 +352,10 @@ export interface __DbContextOptionsBuilder$views {
     As_IDbContextOptionsBuilderInfrastructure(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure$instance;
 }
 
-export interface DbContextOptionsBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure {}
-
 export type DbContextOptionsBuilder = DbContextOptionsBuilder$instance & __DbContextOptionsBuilder$views;
 
 
-export interface DbContextOptionsBuilder_1$instance<TContext extends DbContext> extends DbContextOptionsBuilder$instance {
+export interface DbContextOptionsBuilder_1$instance<TContext extends DbContext> extends DbContextOptionsBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
     AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder_1<TContext>;
@@ -405,8 +399,6 @@ export const DbContextOptionsBuilder_1: {
 export interface __DbContextOptionsBuilder_1$views<TContext extends DbContext> {
     As_IDbContextOptionsBuilderInfrastructure(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure$instance;
 }
-
-export interface DbContextOptionsBuilder_1$instance<TContext extends DbContext> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure {}
 
 export type DbContextOptionsBuilder_1<TContext extends DbContext> = DbContextOptionsBuilder_1$instance<TContext> & __DbContextOptionsBuilder_1$views<TContext>;
 
@@ -575,7 +567,7 @@ export const DbLoggerCategory_Update: {
 
 export type DbLoggerCategory_Update = DbLoggerCategory_Update$instance;
 
-export interface DbSet_1$instance<TEntity> {
+export interface DbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, System_Collections_Generic_Internal.IEnumerable_1<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable_1<TEntity> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
@@ -620,8 +612,6 @@ export const DbSet_1: (abstract new<TEntity>() => DbSet_1<TEntity>) & {
 export interface __DbSet_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>;
 }
-
-export interface DbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IServiceProvider>, System_Collections_Generic_Internal.IEnumerable_1<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable_1<TEntity> {}
 
 export type DbSet_1<TEntity> = DbSet_1$instance<TEntity> & __DbSet_1$views<TEntity>;
 
@@ -775,8 +765,6 @@ export const ModelBuilder: {
 export interface __ModelBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionModelBuilder>;
 }
-
-export interface ModelBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionModelBuilder> {}
 
 export type ModelBuilder = ModelBuilder$instance & __ModelBuilder$views;
 

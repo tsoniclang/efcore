@@ -32,7 +32,7 @@ export interface IReadableConventionContext$instance extends IConventionContext 
 }
 
 
-export interface IReadableConventionContext$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal.IConventionContext {}
+export interface IReadableConventionContext$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal.IConventionContext$instance {}
 
 export type IReadableConventionContext = IReadableConventionContext$instance;
 
@@ -151,12 +151,10 @@ export interface __MetadataTracker$views {
     As_IReferenceRoot_1(): Microsoft_EntityFrameworkCore_Metadata_Internal_Internal.IReferenceRoot_1$instance<IConventionForeignKey>;
 }
 
-export interface MetadataTracker$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal_Internal.IReferenceRoot_1<IConventionForeignKey> {}
-
 export type MetadataTracker = MetadataTracker$instance & __MetadataTracker$views;
 
 
-export interface RuntimeConventionSetBuilder$instance {
+export interface RuntimeConventionSetBuilder$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_Internal.IConventionSetBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IConventionSetBuilder: never;
 
     CreateConventionSet(): ConventionSet;
@@ -171,8 +169,6 @@ export const RuntimeConventionSetBuilder: {
 export interface __RuntimeConventionSetBuilder$views {
     As_IConventionSetBuilder(): Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_Internal.IConventionSetBuilder$instance;
 }
-
-export interface RuntimeConventionSetBuilder$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_Internal.IConventionSetBuilder {}
 
 export type RuntimeConventionSetBuilder = RuntimeConventionSetBuilder$instance & __RuntimeConventionSetBuilder$views;
 

@@ -160,7 +160,7 @@ export interface IRowKeyValueFactoryFactory$instance {
 
 export type IRowKeyValueFactoryFactory = IRowKeyValueFactoryFactory$instance;
 
-export interface BatchExecutor$instance {
+export interface BatchExecutor$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IBatchExecutor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IBatchExecutor: never;
 
     readonly CurrentContext: ICurrentDbContext;
@@ -179,8 +179,6 @@ export interface __BatchExecutor$views {
     As_IBatchExecutor(): Microsoft_EntityFrameworkCore_Update_Internal.IBatchExecutor$instance;
 }
 
-export interface BatchExecutor$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IBatchExecutor {}
-
 export type BatchExecutor = BatchExecutor$instance & __BatchExecutor$views;
 
 
@@ -197,7 +195,7 @@ export const ColumnAccessors: {
 
 export type ColumnAccessors = ColumnAccessors$instance;
 
-export interface CommandBatchPreparer$instance {
+export interface CommandBatchPreparer$instance extends Microsoft_EntityFrameworkCore_Update_Internal.ICommandBatchPreparer$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_ICommandBatchPreparer: never;
 
@@ -218,8 +216,6 @@ export interface __CommandBatchPreparer$views {
     As_IResettableService(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance;
     As_ICommandBatchPreparer(): Microsoft_EntityFrameworkCore_Update_Internal.ICommandBatchPreparer$instance;
 }
-
-export interface CommandBatchPreparer$instance extends Microsoft_EntityFrameworkCore_Update_Internal.ICommandBatchPreparer {}
 
 export type CommandBatchPreparer = CommandBatchPreparer$instance & __CommandBatchPreparer$views;
 
@@ -364,7 +360,7 @@ export const ModificationCommandComparer: {
 
 export type ModificationCommandComparer = ModificationCommandComparer$instance;
 
-export interface ModificationCommandFactory$instance {
+export interface ModificationCommandFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IModificationCommandFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IModificationCommandFactory: never;
 
     CreateModificationCommand(modificationCommandParameters: ModificationCommandParameters): IModificationCommand;
@@ -380,8 +376,6 @@ export const ModificationCommandFactory: {
 export interface __ModificationCommandFactory$views {
     As_IModificationCommandFactory(): Microsoft_EntityFrameworkCore_Update_Internal.IModificationCommandFactory$instance;
 }
-
-export interface ModificationCommandFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IModificationCommandFactory {}
 
 export type ModificationCommandFactory = ModificationCommandFactory$instance & __ModificationCommandFactory$views;
 
@@ -416,7 +410,7 @@ export interface __RowForeignKeyValueFactory_2$views<TKey, TForeignKey> {
 export type RowForeignKeyValueFactory_2<TKey, TForeignKey> = RowForeignKeyValueFactory_2$instance<TKey, TForeignKey> & __RowForeignKeyValueFactory_2$views<TKey, TForeignKey>;
 
 
-export interface RowForeignKeyValueFactoryFactory$instance {
+export interface RowForeignKeyValueFactoryFactory$instance extends IRowForeignKeyValueFactoryFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactoryFactory: never;
 
     Create(foreignKey: IForeignKeyConstraint): IRowForeignKeyValueFactory;
@@ -434,12 +428,10 @@ export interface __RowForeignKeyValueFactoryFactory$views {
     As_IRowForeignKeyValueFactoryFactory(): IRowForeignKeyValueFactoryFactory$instance;
 }
 
-export interface RowForeignKeyValueFactoryFactory$instance extends IRowForeignKeyValueFactoryFactory$instance {}
-
 export type RowForeignKeyValueFactoryFactory = RowForeignKeyValueFactoryFactory$instance & __RowForeignKeyValueFactoryFactory$views;
 
 
-export interface RowIdentityMap_1$instance<TKey> {
+export interface RowIdentityMap_1$instance<TKey> extends IRowIdentityMap$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIdentityMap: never;
 
     readonly Rows: IEnumerable_1<INonTrackedModificationCommand>;
@@ -460,12 +452,10 @@ export interface __RowIdentityMap_1$views<TKey> {
     As_IRowIdentityMap(): IRowIdentityMap$instance;
 }
 
-export interface RowIdentityMap_1$instance<TKey> extends IRowIdentityMap$instance {}
-
 export type RowIdentityMap_1<TKey> = RowIdentityMap_1$instance<TKey> & __RowIdentityMap_1$views<TKey>;
 
 
-export interface RowIdentityMapFactory$instance {
+export interface RowIdentityMapFactory$instance extends IRowIdentityMapFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIdentityMapFactory: never;
 
     Create(key: IUniqueConstraint): IRowIdentityMap;
@@ -481,12 +471,10 @@ export interface __RowIdentityMapFactory$views {
     As_IRowIdentityMapFactory(): IRowIdentityMapFactory$instance;
 }
 
-export interface RowIdentityMapFactory$instance extends IRowIdentityMapFactory$instance {}
-
 export type RowIdentityMapFactory = RowIdentityMapFactory$instance & __RowIdentityMapFactory$views;
 
 
-export interface RowIndexValueFactoryFactory$instance {
+export interface RowIndexValueFactoryFactory$instance extends IRowIndexValueFactoryFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactoryFactory: never;
 
     Create(index: ITableIndex): IRowIndexValueFactory;
@@ -502,12 +490,10 @@ export interface __RowIndexValueFactoryFactory$views {
     As_IRowIndexValueFactoryFactory(): IRowIndexValueFactoryFactory$instance;
 }
 
-export interface RowIndexValueFactoryFactory$instance extends IRowIndexValueFactoryFactory$instance {}
-
 export type RowIndexValueFactoryFactory = RowIndexValueFactoryFactory$instance & __RowIndexValueFactoryFactory$views;
 
 
-export interface RowKeyValueFactoryFactory$instance {
+export interface RowKeyValueFactoryFactory$instance extends IRowKeyValueFactoryFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactoryFactory: never;
 
     Create(key: IUniqueConstraint): IRowKeyValueFactory;
@@ -522,8 +508,6 @@ export const RowKeyValueFactoryFactory: {
 export interface __RowKeyValueFactoryFactory$views {
     As_IRowKeyValueFactoryFactory(): IRowKeyValueFactoryFactory$instance;
 }
-
-export interface RowKeyValueFactoryFactory$instance extends IRowKeyValueFactoryFactory$instance {}
 
 export type RowKeyValueFactoryFactory = RowKeyValueFactoryFactory$instance & __RowKeyValueFactoryFactory$views;
 
@@ -698,7 +682,7 @@ export interface __SimpleRowKeyValueFactory_1$views<TKey> {
 export type SimpleRowKeyValueFactory_1<TKey> = SimpleRowKeyValueFactory_1$instance<TKey> & __SimpleRowKeyValueFactory_1$views<TKey>;
 
 
-export interface UpdateAdapter$instance {
+export interface UpdateAdapter$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateAdapter: never;
 
     CascadeDeleteTiming: CascadeTiming;
@@ -725,12 +709,10 @@ export interface __UpdateAdapter$views {
     As_IUpdateAdapter(): Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapter$instance;
 }
 
-export interface UpdateAdapter$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapter {}
-
 export type UpdateAdapter = UpdateAdapter$instance & __UpdateAdapter$views;
 
 
-export interface UpdateAdapterFactory$instance {
+export interface UpdateAdapterFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapterFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateAdapterFactory: never;
 
     Create(): IUpdateAdapter;
@@ -746,8 +728,6 @@ export const UpdateAdapterFactory: {
 export interface __UpdateAdapterFactory$views {
     As_IUpdateAdapterFactory(): Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapterFactory$instance;
 }
-
-export interface UpdateAdapterFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapterFactory {}
 
 export type UpdateAdapterFactory = UpdateAdapterFactory$instance & __UpdateAdapterFactory$views;
 

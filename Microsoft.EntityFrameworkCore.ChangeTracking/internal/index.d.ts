@@ -142,7 +142,7 @@ export const CaseInsensitiveValueComparer: {
 
 export type CaseInsensitiveValueComparer = CaseInsensitiveValueComparer$instance;
 
-export interface ChangeTracker$instance {
+export interface ChangeTracker$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
 
     AutoDetectChangesEnabled: boolean;
@@ -176,8 +176,6 @@ export interface __ChangeTracker$views {
     As_IResettableService(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance;
 }
 
-export interface ChangeTracker$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService {}
-
 export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 
 
@@ -206,15 +204,13 @@ export interface __CollectionEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface CollectionEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
-
 export type CollectionEntry = CollectionEntry$instance & __CollectionEntry$views;
 
 
-export interface CollectionEntry_2$instance<TEntity, TRelatedEntity> extends CollectionEntry$instance {
+export interface CollectionEntry_2$instance<TEntity, TRelatedEntity> extends CollectionEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    readonly EntityEntry: EntityEntry_1<TEntity>;
     FindEntry(entity: unknown): EntityEntry | undefined;
     Query(): IQueryable;
 }
@@ -229,8 +225,6 @@ export const CollectionEntry_2: {
 export interface __CollectionEntry_2$views<TEntity, TRelatedEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
-
-export interface CollectionEntry_2$instance<TEntity, TRelatedEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type CollectionEntry_2<TEntity, TRelatedEntity> = CollectionEntry_2$instance<TEntity, TRelatedEntity> & __CollectionEntry_2$views<TEntity, TRelatedEntity>;
 
@@ -254,15 +248,13 @@ export interface __ComplexCollectionEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ComplexCollectionEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
-
 export type ComplexCollectionEntry = ComplexCollectionEntry$instance & __ComplexCollectionEntry$views;
 
 
-export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends ComplexCollectionEntry$instance {
+export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends ComplexCollectionEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    readonly EntityEntry: EntityEntry_1<TEntity>;
     GetOriginalEntry(ordinal: int): ComplexElementEntry;
 }
 
@@ -276,8 +268,6 @@ export interface __ComplexCollectionEntry_2$views<TEntity, TElement> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
-
 export type ComplexCollectionEntry_2<TEntity, TElement> = ComplexCollectionEntry_2$instance<TEntity, TElement> & __ComplexCollectionEntry_2$views<TEntity, TElement>;
 
 
@@ -286,8 +276,8 @@ export interface ComplexElementEntry$instance {
 
     readonly ComplexCollections: IEnumerable_1<ComplexCollectionEntry>;
     readonly ComplexProperties: IEnumerable_1<ComplexPropertyEntry>;
-    readonly CurrentValue: TComplexProperty | unknown;
-    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    readonly CurrentValue: unknown;
+    readonly EntityEntry: EntityEntry;
     readonly InternalEntry: InternalComplexEntry;
     IsModified: boolean;
     readonly Metadata: IComplexProperty;
@@ -311,12 +301,10 @@ export interface __ComplexElementEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry>;
 }
 
-export interface ComplexElementEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalComplexEntry> {}
-
 export type ComplexElementEntry = ComplexElementEntry$instance & __ComplexElementEntry$views;
 
 
-export interface ComplexElementEntry_2$instance<TEntity, TComplexProperty> extends ComplexElementEntry$instance {
+export interface ComplexElementEntry_2$instance<TEntity, TComplexProperty> extends ComplexElementEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ComplexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
@@ -342,8 +330,6 @@ export const ComplexElementEntry_2: {
 export interface __ComplexElementEntry_2$views<TEntity, TComplexProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry>;
 }
-
-export interface ComplexElementEntry_2$instance<TEntity, TComplexProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalComplexEntry> {}
 
 export type ComplexElementEntry_2<TEntity, TComplexProperty> = ComplexElementEntry_2$instance<TEntity, TComplexProperty> & __ComplexElementEntry_2$views<TEntity, TComplexProperty>;
 
@@ -373,16 +359,14 @@ export interface __ComplexPropertyEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ComplexPropertyEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
-
 export type ComplexPropertyEntry = ComplexPropertyEntry$instance & __ComplexPropertyEntry$views;
 
 
-export interface ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> extends ComplexPropertyEntry$instance {
+export interface ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> extends ComplexPropertyEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    CurrentValue: TComplexProperty | unknown;
-    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    CurrentValue: TComplexProperty;
+    readonly EntityEntry: EntityEntry_1<TEntity>;
     ComplexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
@@ -406,8 +390,6 @@ export const ComplexPropertyEntry_2: {
 export interface __ComplexPropertyEntry_2$views<TEntity, TComplexProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
-
-export interface ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type ComplexPropertyEntry_2<TEntity, TComplexProperty> = ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> & __ComplexPropertyEntry_2$views<TEntity, TComplexProperty>;
 
@@ -468,7 +450,7 @@ export interface EntityEntry$instance {
     readonly Context: DbContext;
     readonly CurrentValues: PropertyValues;
     readonly DebugView: DebugView;
-    readonly Entity: TEntity | unknown;
+    readonly Entity: unknown;
     readonly InternalEntry: InternalEntityEntry;
     readonly IsKeySet: boolean;
     readonly Members: IEnumerable_1<MemberEntry>;
@@ -512,12 +494,10 @@ export interface __EntityEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
 
-export interface EntityEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalEntityEntry> {}
-
 export type EntityEntry = EntityEntry$instance & __EntityEntry$views;
 
 
-export interface EntityEntry_1$instance<TEntity> extends EntityEntry$instance {
+export interface EntityEntry_1$instance<TEntity> extends EntityEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Collection<TProperty>(navigation: INavigationBase): CollectionEntry_2<TEntity, TProperty>;
@@ -551,8 +531,6 @@ export const EntityEntry_1: {
 export interface __EntityEntry_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
-
-export interface EntityEntry_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalEntityEntry> {}
 
 export type EntityEntry_1<TEntity> = EntityEntry_1$instance<TEntity> & __EntityEntry_1$views<TEntity>;
 
@@ -588,12 +566,10 @@ export interface __EntityEntryGraphNode$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
 
-export interface EntityEntryGraphNode$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalEntityEntry> {}
-
 export type EntityEntryGraphNode = EntityEntryGraphNode$instance & __EntityEntryGraphNode$views;
 
 
-export interface EntityEntryGraphNode_1$instance<TState> extends EntityEntryGraphNode$instance {
+export interface EntityEntryGraphNode_1$instance<TState> extends EntityEntryGraphNode$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     NodeState: TState;
@@ -610,8 +586,6 @@ export const EntityEntryGraphNode_1: {
 export interface __EntityEntryGraphNode_1$views<TState> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
-
-export interface EntityEntryGraphNode_1$instance<TState> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalEntityEntry> {}
 
 export type EntityEntryGraphNode_1<TState> = EntityEntryGraphNode_1$instance<TState> & __EntityEntryGraphNode_1$views<TState>;
 
@@ -698,7 +672,7 @@ export const GeometryValueComparer_1: {
 
 export type GeometryValueComparer_1<TGeometry> = GeometryValueComparer_1$instance<TGeometry>;
 
-export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable_1<Nullable_1<TElement>>> {
+export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable_1<Nullable_1<TElement>>>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<Nullable_1<TElement>>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -716,12 +690,10 @@ export interface __ListOfNullableValueTypesComparer_2$views<TConcreteList, TElem
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<Nullable_1<TElement>>> {}
-
 export type ListOfNullableValueTypesComparer_2<TConcreteList, TElement> = ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfNullableValueTypesComparer_2$views<TConcreteList, TElement>;
 
 
-export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends ValueComparer_1<unknown> {
+export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends ValueComparer_1<unknown>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -739,12 +711,10 @@ export interface __ListOfReferenceTypesComparer_2$views<TConcreteList, TElement>
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown> {}
-
 export type ListOfReferenceTypesComparer_2<TConcreteList, TElement> = ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> & __ListOfReferenceTypesComparer_2$views<TConcreteList, TElement>;
 
 
-export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable_1<TElement>> {
+export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable_1<TElement>>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<TElement>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -761,8 +731,6 @@ export const ListOfValueTypesComparer_2: {
 export interface __ListOfValueTypesComparer_2$views<TConcreteList, TElement extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
-
-export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<TElement>> {}
 
 export type ListOfValueTypesComparer_2<TConcreteList, TElement> = ListOfValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfValueTypesComparer_2$views<TConcreteList, TElement>;
 
@@ -814,10 +782,10 @@ export interface MemberEntry$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     CurrentValue: IEnumerable | unknown;
-    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    readonly EntityEntry: EntityEntry;
     readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
-    readonly Metadata: INavigationBase | IPropertyBase;
+    readonly Metadata: IComplexProperty | IPropertyBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
@@ -831,8 +799,6 @@ export const MemberEntry: (abstract new(internalEntry: IInternalEntry, metadata:
 export interface __MemberEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
-
-export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type MemberEntry = MemberEntry$instance & __MemberEntry$views;
 
@@ -857,8 +823,6 @@ export const NavigationEntry: (abstract new(internalEntry: InternalEntityEntry, 
 export interface __NavigationEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
-
-export interface NavigationEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type NavigationEntry = NavigationEntry$instance & __NavigationEntry$views;
 
@@ -942,7 +906,7 @@ export interface PropertyEntry$instance extends MemberEntry$instance {
 
     IsModified: boolean;
     IsTemporary: boolean;
-    OriginalValue: TProperty | unknown;
+    OriginalValue: unknown;
 }
 
 
@@ -955,16 +919,14 @@ export interface __PropertyEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface PropertyEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
-
 export type PropertyEntry = PropertyEntry$instance & __PropertyEntry$views;
 
 
-export interface PropertyEntry_2$instance<TEntity, TProperty> extends PropertyEntry$instance {
+export interface PropertyEntry_2$instance<TEntity, TProperty> extends PropertyEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    CurrentValue: TProperty | unknown;
-    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    CurrentValue: TProperty;
+    readonly EntityEntry: EntityEntry_1<TEntity>;
 }
 
 
@@ -976,8 +938,6 @@ export const PropertyEntry_2: {
 export interface __PropertyEntry_2$views<TEntity, TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
-
-export interface PropertyEntry_2$instance<TEntity, TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type PropertyEntry_2<TEntity, TProperty> = PropertyEntry_2$instance<TEntity, TProperty> & __PropertyEntry_2$views<TEntity, TProperty>;
 
@@ -1017,7 +977,7 @@ export interface ReferenceEntry$instance extends NavigationEntry$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     IsModified: boolean;
-    readonly TargetEntry: EntityEntry | undefined | EntityEntry_1<TProperty> | undefined;
+    readonly TargetEntry: EntityEntry | undefined;
     GetTargetEntry(): InternalEntityEntry | undefined;
     Load(): void;
     Load(options: LoadOptions): void;
@@ -1037,16 +997,14 @@ export interface __ReferenceEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ReferenceEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
-
 export type ReferenceEntry = ReferenceEntry$instance & __ReferenceEntry$views;
 
 
-export interface ReferenceEntry_2$instance<TEntity, TProperty> extends ReferenceEntry$instance {
+export interface ReferenceEntry_2$instance<TEntity, TProperty> extends ReferenceEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    CurrentValue: TProperty | unknown;
-    readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
+    CurrentValue: TProperty;
+    readonly EntityEntry: EntityEntry_1<TEntity>;
     Query(): IQueryable;
 }
 
@@ -1060,8 +1018,6 @@ export const ReferenceEntry_2: {
 export interface __ReferenceEntry_2$views<TEntity, TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
-
-export interface ReferenceEntry_2$instance<TEntity, TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type ReferenceEntry_2<TEntity, TProperty> = ReferenceEntry_2$instance<TEntity, TProperty> & __ReferenceEntry_2$views<TEntity, TProperty>;
 

@@ -26,7 +26,7 @@ import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Boolean as ClrBoolean, Func_3, Func_4, Int32, Nullable_1, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
 
-export interface MigrationCommandExecutor$instance {
+export interface MigrationCommandExecutor$instance extends Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationCommandExecutor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationCommandExecutor: never;
 
     ExecuteNonQuery(migrationCommands: IEnumerable_1<MigrationCommand>, connection: IRelationalConnection): void;
@@ -45,12 +45,10 @@ export interface __MigrationCommandExecutor$views {
     As_IMigrationCommandExecutor(): Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationCommandExecutor$instance;
 }
 
-export interface MigrationCommandExecutor$instance extends Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationCommandExecutor {}
-
 export type MigrationCommandExecutor = MigrationCommandExecutor$instance & __MigrationCommandExecutor$views;
 
 
-export interface MigrationsAssembly$instance {
+export interface MigrationsAssembly$instance extends Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationsAssembly$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsAssembly: never;
 
     readonly Assembly: Assembly;
@@ -70,12 +68,10 @@ export interface __MigrationsAssembly$views {
     As_IMigrationsAssembly(): Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationsAssembly$instance;
 }
 
-export interface MigrationsAssembly$instance extends Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationsAssembly {}
-
 export type MigrationsAssembly = MigrationsAssembly$instance & __MigrationsAssembly$views;
 
 
-export interface MigrationsIdGenerator$instance {
+export interface MigrationsIdGenerator$instance extends Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationsIdGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsIdGenerator: never;
 
     GenerateId(name: string): string;
@@ -93,12 +89,10 @@ export interface __MigrationsIdGenerator$views {
     As_IMigrationsIdGenerator(): Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationsIdGenerator$instance;
 }
 
-export interface MigrationsIdGenerator$instance extends Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationsIdGenerator {}
-
 export type MigrationsIdGenerator = MigrationsIdGenerator$instance & __MigrationsIdGenerator$views;
 
 
-export interface MigrationsModelDiffer$instance {
+export interface MigrationsModelDiffer$instance extends Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationsModelDiffer$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsModelDiffer: never;
 
     readonly CommandBatchPreparerDependencies: CommandBatchPreparerDependencies;
@@ -162,8 +156,6 @@ export const MigrationsModelDiffer: {
 export interface __MigrationsModelDiffer$views {
     As_IMigrationsModelDiffer(): Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationsModelDiffer$instance;
 }
-
-export interface MigrationsModelDiffer$instance extends Microsoft_EntityFrameworkCore_Migrations_Internal.IMigrationsModelDiffer {}
 
 export type MigrationsModelDiffer = MigrationsModelDiffer$instance & __MigrationsModelDiffer$views;
 

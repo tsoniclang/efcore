@@ -45,7 +45,7 @@ export interface IProviderConventionSetBuilder$instance {
 
 export type IProviderConventionSetBuilder = IProviderConventionSetBuilder$instance;
 
-export interface ProviderConventionSetBuilder$instance {
+export interface ProviderConventionSetBuilder$instance extends IProviderConventionSetBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IProviderConventionSetBuilder: never;
 
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
@@ -62,8 +62,6 @@ export const ProviderConventionSetBuilder: {
 export interface __ProviderConventionSetBuilder$views {
     As_IProviderConventionSetBuilder(): IProviderConventionSetBuilder$instance;
 }
-
-export interface ProviderConventionSetBuilder$instance extends IProviderConventionSetBuilder$instance {}
 
 export type ProviderConventionSetBuilder = ProviderConventionSetBuilder$instance & __ProviderConventionSetBuilder$views;
 

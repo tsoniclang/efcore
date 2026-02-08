@@ -88,7 +88,7 @@ export interface ICommandBatchPreparer$instance extends IResettableService {
 }
 
 
-export interface ICommandBatchPreparer$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService {}
+export interface ICommandBatchPreparer$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {}
 
 export type ICommandBatchPreparer = ICommandBatchPreparer$instance;
 
@@ -352,7 +352,7 @@ export const AffectedCountModificationCommandBatch: (abstract new(dependencies: 
 
 export type AffectedCountModificationCommandBatch = AffectedCountModificationCommandBatch$instance;
 
-export interface ColumnModification$instance {
+export interface ColumnModification$instance extends IColumnModification$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IColumnModification: never;
 
     readonly Column: IColumnBase | undefined;
@@ -398,8 +398,6 @@ export const ColumnModification: {
 export interface __ColumnModification$views {
     As_IColumnModification(): IColumnModification$instance;
 }
-
-export interface ColumnModification$instance extends IColumnModification$instance {}
 
 export type ColumnModification = ColumnModification$instance & __ColumnModification$views;
 
@@ -582,7 +580,7 @@ export interface __UpdateAndSelectSqlGenerator$views {
 export type UpdateAndSelectSqlGenerator = UpdateAndSelectSqlGenerator$instance & __UpdateAndSelectSqlGenerator$views;
 
 
-export interface UpdateSqlGenerator$instance {
+export interface UpdateSqlGenerator$instance extends IUpdateSqlGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateSqlGenerator: never;
 
     readonly Dependencies: UpdateSqlGeneratorDependencies;
@@ -626,8 +624,6 @@ export const UpdateSqlGenerator: (abstract new(dependencies: UpdateSqlGeneratorD
 export interface __UpdateSqlGenerator$views {
     As_IUpdateSqlGenerator(): IUpdateSqlGenerator$instance;
 }
-
-export interface UpdateSqlGenerator$instance extends IUpdateSqlGenerator$instance {}
 
 export type UpdateSqlGenerator = UpdateSqlGenerator$instance & __UpdateSqlGenerator$views;
 

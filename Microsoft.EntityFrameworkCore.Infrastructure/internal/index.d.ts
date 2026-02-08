@@ -408,8 +408,8 @@ export type AnnotatableBase = AnnotatableBase$instance & __AnnotatableBase$views
 export interface AnnotatableBuilder_2$instance<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
 
-    readonly Metadata: EntityType | TMetadata;
-    readonly ModelBuilder: InternalModelBuilder | TModelBuilder;
+    readonly Metadata: TMetadata;
+    readonly ModelBuilder: TModelBuilder;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
     HasAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | undefined;
@@ -432,7 +432,7 @@ export interface __AnnotatableBuilder_2$views<TMetadata extends ConventionAnnota
 export type AnnotatableBuilder_2<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder> = AnnotatableBuilder_2$instance<TMetadata, TModelBuilder> & __AnnotatableBuilder_2$views<TMetadata, TModelBuilder>;
 
 
-export interface Annotation$instance {
+export interface Annotation$instance extends IAnnotation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotation: never;
 
     readonly Name: string;
@@ -448,8 +448,6 @@ export const Annotation: {
 export interface __Annotation$views {
     As_IAnnotation(): IAnnotation$instance;
 }
-
-export interface Annotation$instance extends IAnnotation$instance {}
 
 export type Annotation = Annotation$instance & __Annotation$views;
 
@@ -502,7 +500,7 @@ export interface __ConventionAnnotatable$views {
 export type ConventionAnnotatable = ConventionAnnotatable$instance & __ConventionAnnotatable$views;
 
 
-export interface CoreOptionsExtension$instance {
+export interface CoreOptionsExtension$instance extends IDbContextOptionsExtension$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never;
 
     readonly ApplicationServiceProvider: IServiceProvider | undefined;
@@ -563,8 +561,6 @@ export interface __CoreOptionsExtension$views {
     As_IDbContextOptionsExtension(): IDbContextOptionsExtension$instance;
 }
 
-export interface CoreOptionsExtension$instance extends IDbContextOptionsExtension$instance {}
-
 export type CoreOptionsExtension = CoreOptionsExtension$instance & __CoreOptionsExtension$views;
 
 
@@ -607,8 +603,6 @@ export interface __DatabaseFacade$views {
     As_IResettableService(): IResettableService$instance;
     As_IDatabaseFacadeDependenciesAccessor(): Microsoft_EntityFrameworkCore_Storage_Internal.IDatabaseFacadeDependenciesAccessor$instance;
 }
-
-export interface DatabaseFacade$instance extends IInfrastructure_1$instance<IServiceProvider>, IResettableService$instance, Microsoft_EntityFrameworkCore_Storage_Internal.IDatabaseFacadeDependenciesAccessor {}
 
 export type DatabaseFacade = DatabaseFacade$instance & __DatabaseFacade$views;
 
@@ -823,7 +817,7 @@ export const ModelCacheKeyFactoryDependencies: {
 
 export type ModelCacheKeyFactoryDependencies = ModelCacheKeyFactoryDependencies$instance;
 
-export interface ModelCustomizer$instance {
+export interface ModelCustomizer$instance extends IModelCustomizer$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCustomizer: never;
 
     readonly Dependencies: ModelCustomizerDependencies;
@@ -839,8 +833,6 @@ export const ModelCustomizer: {
 export interface __ModelCustomizer$views {
     As_IModelCustomizer(): IModelCustomizer$instance;
 }
-
-export interface ModelCustomizer$instance extends IModelCustomizer$instance {}
 
 export type ModelCustomizer = ModelCustomizer$instance & __ModelCustomizer$views;
 
@@ -928,7 +920,7 @@ export const ModelSnapshot: (abstract new() => ModelSnapshot) & {
 
 export type ModelSnapshot = ModelSnapshot$instance;
 
-export interface ModelSource$instance {
+export interface ModelSource$instance extends IModelSource$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelSource: never;
 
     readonly Dependencies: ModelSourceDependencies;
@@ -946,8 +938,6 @@ export const ModelSource: {
 export interface __ModelSource$views {
     As_IModelSource(): IModelSource$instance;
 }
-
-export interface ModelSource$instance extends IModelSource$instance {}
 
 export type ModelSource = ModelSource$instance & __ModelSource$views;
 
@@ -973,7 +963,7 @@ export const ModelSourceDependencies: {
 
 export type ModelSourceDependencies = ModelSourceDependencies$instance;
 
-export interface ModelValidator$instance {
+export interface ModelValidator$instance extends IModelValidator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelValidator: never;
 
     readonly Dependencies: ModelValidatorDependencies;
@@ -1017,8 +1007,6 @@ export interface __ModelValidator$views {
     As_IModelValidator(): IModelValidator$instance;
 }
 
-export interface ModelValidator$instance extends IModelValidator$instance {}
-
 export type ModelValidator = ModelValidator$instance & __ModelValidator$views;
 
 
@@ -1041,7 +1029,7 @@ export const ModelValidatorDependencies: {
 
 export type ModelValidatorDependencies = ModelValidatorDependencies$instance;
 
-export interface PooledDbContextFactory_1$instance<TContext extends DbContext> {
+export interface PooledDbContextFactory_1$instance<TContext extends DbContext> extends Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IDbContextFactory_1: never;
 
     CreateDbContext(): TContext;
@@ -1059,12 +1047,10 @@ export interface __PooledDbContextFactory_1$views<TContext extends DbContext> {
     As_IDbContextFactory_1(): Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext>;
 }
 
-export interface PooledDbContextFactory_1$instance<TContext extends DbContext> extends Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1<TContext> {}
-
 export type PooledDbContextFactory_1<TContext extends DbContext> = PooledDbContextFactory_1$instance<TContext> & __PooledDbContextFactory_1$views<TContext>;
 
 
-export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> {
+export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> extends IRelationalDbContextOptionsBuilderInfrastructure$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IRelationalDbContextOptionsBuilderInfrastructure: never;
 
     readonly OptionsBuilder: DbContextOptionsBuilder;
@@ -1094,8 +1080,6 @@ export const RelationalDbContextOptionsBuilder_2: (abstract new<TBuilder extends
 export interface __RelationalDbContextOptionsBuilder_2$views<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> {
     As_IRelationalDbContextOptionsBuilderInfrastructure(): IRelationalDbContextOptionsBuilderInfrastructure$instance;
 }
-
-export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> extends IRelationalDbContextOptionsBuilderInfrastructure$instance {}
 
 export type RelationalDbContextOptionsBuilder_2<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> = RelationalDbContextOptionsBuilder_2$instance<TBuilder, TExtension> & __RelationalDbContextOptionsBuilder_2$views<TBuilder, TExtension>;
 
@@ -1270,7 +1254,7 @@ export const RelationalModelValidatorDependencies: {
 
 export type RelationalModelValidatorDependencies = RelationalModelValidatorDependencies$instance;
 
-export interface RelationalOptionsExtension$instance {
+export interface RelationalOptionsExtension$instance extends IDbContextOptionsExtension$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never;
 
     readonly CommandTimeout: Nullable_1<System_Internal.Int32>;
@@ -1317,8 +1301,6 @@ export const RelationalOptionsExtension: (abstract new() => RelationalOptionsExt
 export interface __RelationalOptionsExtension$views {
     As_IDbContextOptionsExtension(): IDbContextOptionsExtension$instance;
 }
-
-export interface RelationalOptionsExtension$instance extends IDbContextOptionsExtension$instance {}
 
 export type RelationalOptionsExtension = RelationalOptionsExtension$instance & __RelationalOptionsExtension$views;
 
@@ -1428,8 +1410,6 @@ export const ServiceCollectionMap: {
 export interface __ServiceCollectionMap$views {
     As_IInfrastructure_1(): IInfrastructure_1$instance<IInternalServiceCollectionMap>;
 }
-
-export interface ServiceCollectionMap$instance extends IInfrastructure_1$instance<IInternalServiceCollectionMap> {}
 
 export type ServiceCollectionMap = ServiceCollectionMap$instance & __ServiceCollectionMap$views;
 

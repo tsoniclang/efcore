@@ -1083,7 +1083,7 @@ export const ClrAccessorFactory_1: (abstract new<TAccessor>() => ClrAccessorFact
 
 export type ClrAccessorFactory_1<TAccessor> = ClrAccessorFactory_1$instance<TAccessor>;
 
-export interface ClrCollectionAccessor_3$instance<TStructural, TCollection extends IEnumerable_1<TElement>, TElement> {
+export interface ClrCollectionAccessor_3$instance<TStructural, TCollection extends IEnumerable_1<TElement>, TElement> extends Microsoft_EntityFrameworkCore_Metadata_Internal.IClrCollectionAccessor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrCollectionAccessor: never;
 
     readonly CollectionType: Type;
@@ -1107,8 +1107,6 @@ export interface __ClrCollectionAccessor_3$views<TStructural, TCollection extend
     As_IClrCollectionAccessor(): Microsoft_EntityFrameworkCore_Metadata_Internal.IClrCollectionAccessor$instance;
 }
 
-export interface ClrCollectionAccessor_3$instance<TStructural, TCollection extends IEnumerable_1<TElement>, TElement> extends Microsoft_EntityFrameworkCore_Metadata_Internal.IClrCollectionAccessor {}
-
 export type ClrCollectionAccessor_3<TStructural, TCollection extends IEnumerable_1<TElement>, TElement> = ClrCollectionAccessor_3$instance<TStructural, TCollection, TElement> & __ClrCollectionAccessor_3$views<TStructural, TCollection, TElement>;
 
 
@@ -1128,7 +1126,7 @@ export const ClrCollectionAccessorFactory: {
 
 export type ClrCollectionAccessorFactory = ClrCollectionAccessorFactory$instance;
 
-export interface ClrIndexedCollectionAccessor_3$instance<TStructural, TCollection extends IList_1<TElement>, TElement> {
+export interface ClrIndexedCollectionAccessor_3$instance<TStructural, TCollection extends IList_1<TElement>, TElement> extends Microsoft_EntityFrameworkCore_Metadata_Internal.IClrIndexedCollectionAccessor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrIndexedCollectionAccessor: never;
 
     Create(capacity: int): unknown;
@@ -1147,8 +1145,6 @@ export const ClrIndexedCollectionAccessor_3: {
 export interface __ClrIndexedCollectionAccessor_3$views<TStructural, TCollection extends IList_1<TElement>, TElement> {
     As_IClrIndexedCollectionAccessor(): Microsoft_EntityFrameworkCore_Metadata_Internal.IClrIndexedCollectionAccessor$instance;
 }
-
-export interface ClrIndexedCollectionAccessor_3$instance<TStructural, TCollection extends IList_1<TElement>, TElement> extends Microsoft_EntityFrameworkCore_Metadata_Internal.IClrIndexedCollectionAccessor {}
 
 export type ClrIndexedCollectionAccessor_3<TStructural, TCollection extends IList_1<TElement>, TElement> = ClrIndexedCollectionAccessor_3$instance<TStructural, TCollection, TElement> & __ClrIndexedCollectionAccessor_3$views<TStructural, TCollection, TElement>;
 
@@ -1904,7 +1900,7 @@ export interface __ContextParameterBindingFactory$views {
 export type ContextParameterBindingFactory = ContextParameterBindingFactory$instance & __ContextParameterBindingFactory$views;
 
 
-export interface ConventionAnnotation$instance extends Annotation {
+export interface ConventionAnnotation$instance extends Annotation, Microsoft_EntityFrameworkCore_Metadata_Internal.IConventionAnnotation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotation: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionAnnotation: never;
 
@@ -1922,8 +1918,6 @@ export interface __ConventionAnnotation$views {
     As_IAnnotation(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IAnnotation$instance;
     As_IConventionAnnotation(): Microsoft_EntityFrameworkCore_Metadata_Internal.IConventionAnnotation$instance;
 }
-
-export interface ConventionAnnotation$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal.IConventionAnnotation {}
 
 export type ConventionAnnotation = ConventionAnnotation$instance & __ConventionAnnotation$views;
 
@@ -2114,7 +2108,7 @@ export interface __DbFunctionParameter$views {
 export type DbFunctionParameter = DbFunctionParameter$instance & __DbFunctionParameter$views;
 
 
-export interface DesignTimeModel$instance {
+export interface DesignTimeModel$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal.IDesignTimeModel$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IDesignTimeModel: never;
 
     readonly Model: IModel;
@@ -2129,8 +2123,6 @@ export const DesignTimeModel: {
 export interface __DesignTimeModel$views {
     As_IDesignTimeModel(): Microsoft_EntityFrameworkCore_Metadata_Internal.IDesignTimeModel$instance;
 }
-
-export interface DesignTimeModel$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal.IDesignTimeModel {}
 
 export type DesignTimeModel = DesignTimeModel$instance & __DesignTimeModel$views;
 
@@ -3837,7 +3829,7 @@ export type InternalOwnedEntityTypeBuilder = InternalOwnedEntityTypeBuilder$inst
 export interface InternalPropertyBaseBuilder_2$instance<TBuilder extends IConventionPropertyBaseBuilder_1<TBuilder>, TPropertyBase extends PropertyBase> extends AnnotatableBuilder_2<TPropertyBase, InternalModelBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
 
-    readonly This: InternalSkipNavigationBuilder | TBuilder;
+    readonly This: TBuilder;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): boolean;
@@ -4548,7 +4540,7 @@ export interface __Key$views {
 export type Key = Key$instance & __Key$views;
 
 
-export interface MemberClassifier$instance {
+export interface MemberClassifier$instance extends IMemberClassifier$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IMemberClassifier: never;
 
     FindCandidateNavigationPropertyType(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, shouldBeOwned: Nullable_1<System_Internal.Boolean>): Type | undefined;
@@ -4568,8 +4560,6 @@ export const MemberClassifier: {
 export interface __MemberClassifier$views {
     As_IMemberClassifier(): IMemberClassifier$instance;
 }
-
-export interface MemberClassifier$instance extends IMemberClassifier$instance {}
 
 export type MemberClassifier = MemberClassifier$instance & __MemberClassifier$views;
 
@@ -4877,7 +4867,7 @@ export interface __Navigation$views {
 export type Navigation = Navigation$instance & __Navigation$views;
 
 
-export interface ParameterBindingFactories$instance {
+export interface ParameterBindingFactories$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal.IParameterBindingFactories$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IParameterBindingFactories: never;
 
     FindFactory(parameterType: Type, parameterName: string): IParameterBindingFactory | undefined;
@@ -4892,8 +4882,6 @@ export const ParameterBindingFactories: {
 export interface __ParameterBindingFactories$views {
     As_IParameterBindingFactories(): Microsoft_EntityFrameworkCore_Metadata_Internal.IParameterBindingFactories$instance;
 }
-
-export interface ParameterBindingFactories$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal.IParameterBindingFactories {}
 
 export type ParameterBindingFactories = ParameterBindingFactories$instance & __ParameterBindingFactories$views;
 
@@ -5363,7 +5351,7 @@ export interface __PropertyParameterBindingFactory$views {
 export type PropertyParameterBindingFactory = PropertyParameterBindingFactory$instance & __PropertyParameterBindingFactory$views;
 
 
-export interface QueryFilter$instance {
+export interface QueryFilter$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal.IQueryFilter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IQueryFilter: never;
 
     ConfigurationSource: Nullable_1<ConfigurationSource>;
@@ -5385,8 +5373,6 @@ export const QueryFilter: {
 export interface __QueryFilter$views {
     As_IQueryFilter(): Microsoft_EntityFrameworkCore_Metadata_Internal.IQueryFilter$instance;
 }
-
-export interface QueryFilter$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal.IQueryFilter {}
 
 export type QueryFilter = QueryFilter$instance & __QueryFilter$views;
 
@@ -5607,7 +5593,7 @@ export const RelationshipSnapshot: {
 
 export type RelationshipSnapshot = RelationshipSnapshot$instance;
 
-export interface RuntimeQueryFilter$instance {
+export interface RuntimeQueryFilter$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal.IQueryFilter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IQueryFilter: never;
 
     readonly Expression: LambdaExpression;
@@ -5623,8 +5609,6 @@ export const RuntimeQueryFilter: {
 export interface __RuntimeQueryFilter$views {
     As_IQueryFilter(): Microsoft_EntityFrameworkCore_Metadata_Internal.IQueryFilter$instance;
 }
-
-export interface RuntimeQueryFilter$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal.IQueryFilter {}
 
 export type RuntimeQueryFilter = RuntimeQueryFilter$instance & __RuntimeQueryFilter$views;
 
@@ -7438,8 +7422,8 @@ export interface TypeBase$instance extends ConventionAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeTypeBase: never;
 
     readonly BaseBuilder: InternalTypeBaseBuilder;
-    get BaseType(): ComplexType | undefined | TypeBase | undefined;
-    set BaseType(value: ComplexType | undefined | TypeBase | undefined);
+    get BaseType(): EntityType | undefined | TypeBase | undefined;
+    set BaseType(value: EntityType | undefined | TypeBase | undefined);
     readonly ClrType: Type;
     get ConstructorBinding(): InstantiationBinding | undefined;
     set ConstructorBinding(value: InstantiationBinding | undefined);

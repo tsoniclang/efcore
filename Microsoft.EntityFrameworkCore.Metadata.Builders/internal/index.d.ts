@@ -764,8 +764,6 @@ export interface __CheckConstraintBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionCheckConstraintBuilder>;
 }
 
-export interface CheckConstraintBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionCheckConstraintBuilder> {}
-
 export type CheckConstraintBuilder = CheckConstraintBuilder$instance & __CheckConstraintBuilder$views;
 
 
@@ -879,12 +877,10 @@ export interface __CollectionNavigationBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface CollectionNavigationBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
-
 export type CollectionNavigationBuilder = CollectionNavigationBuilder$instance & __CollectionNavigationBuilder$views;
 
 
-export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends CollectionNavigationBuilder$instance {
+export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends CollectionNavigationBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     WithMany(navigationName?: string): CollectionCollectionBuilder_2<TRelatedEntity, TEntity>;
@@ -902,8 +898,6 @@ export const CollectionNavigationBuilder_2: {
 export interface __CollectionNavigationBuilder_2$views<TEntity, TRelatedEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
-
-export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
 
 export type CollectionNavigationBuilder_2<TEntity, TRelatedEntity> = CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> & __CollectionNavigationBuilder_2$views<TEntity, TRelatedEntity>;
 
@@ -930,12 +924,10 @@ export interface __ColumnBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
 
-export interface ColumnBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<PropertyBuilder> {}
-
 export type ColumnBuilder = ColumnBuilder$instance & __ColumnBuilder$views;
 
 
-export interface ColumnBuilder_1$instance<TProperty> extends ColumnBuilder$instance {
+export interface ColumnBuilder_1$instance<TProperty> extends ColumnBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ColumnBuilder;
@@ -951,8 +943,6 @@ export const ColumnBuilder_1: {
 export interface __ColumnBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
-
-export interface ColumnBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<PropertyBuilder> {}
 
 export type ColumnBuilder_1<TProperty> = ColumnBuilder_1$instance<TProperty> & __ColumnBuilder_1$views<TProperty>;
 
@@ -1014,12 +1004,10 @@ export interface __ComplexCollectionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder>;
 }
 
-export interface ComplexCollectionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionComplexPropertyBuilder> {}
-
 export type ComplexCollectionBuilder = ComplexCollectionBuilder$instance & __ComplexCollectionBuilder$views;
 
 
-export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCollectionBuilder$instance {
+export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCollectionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1071,8 +1059,6 @@ export interface __ComplexCollectionBuilder_1$views<TComplex> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder>;
 }
 
-export interface ComplexCollectionBuilder_1$instance<TComplex> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionComplexPropertyBuilder> {}
-
 export type ComplexCollectionBuilder_1<TComplex> = ComplexCollectionBuilder_1$instance<TComplex> & __ComplexCollectionBuilder_1$views<TComplex>;
 
 
@@ -1116,12 +1102,10 @@ export interface __ComplexCollectionTypePropertyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface ComplexCollectionTypePropertyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
-
 export type ComplexCollectionTypePropertyBuilder = ComplexCollectionTypePropertyBuilder$instance & __ComplexCollectionTypePropertyBuilder$views;
 
 
-export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> extends ComplexCollectionTypePropertyBuilder$instance {
+export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> extends ComplexCollectionTypePropertyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ComplexCollectionTypePropertyBuilder;
@@ -1166,8 +1150,6 @@ export const ComplexCollectionTypePropertyBuilder_1: {
 export interface __ComplexCollectionTypePropertyBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
-
-export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
 
 export type ComplexCollectionTypePropertyBuilder_1<TProperty> = ComplexCollectionTypePropertyBuilder_1$instance<TProperty> & __ComplexCollectionTypePropertyBuilder_1$views<TProperty>;
 
@@ -1259,12 +1241,10 @@ export interface __ComplexPropertyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder>;
 }
 
-export interface ComplexPropertyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionComplexPropertyBuilder> {}
-
 export type ComplexPropertyBuilder = ComplexPropertyBuilder$instance & __ComplexPropertyBuilder$views;
 
 
-export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexPropertyBuilder$instance {
+export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexPropertyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1319,8 +1299,6 @@ export const ComplexPropertyBuilder_1: {
 export interface __ComplexPropertyBuilder_1$views<TComplex> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder>;
 }
-
-export interface ComplexPropertyBuilder_1$instance<TComplex> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionComplexPropertyBuilder> {}
 
 export type ComplexPropertyBuilder_1<TComplex> = ComplexPropertyBuilder_1$instance<TComplex> & __ComplexPropertyBuilder_1$views<TComplex>;
 
@@ -1398,12 +1376,10 @@ export interface __ComplexTypePrimitiveCollectionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface ComplexTypePrimitiveCollectionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
-
 export type ComplexTypePrimitiveCollectionBuilder = ComplexTypePrimitiveCollectionBuilder$instance & __ComplexTypePrimitiveCollectionBuilder$views;
 
 
-export interface ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> extends ComplexTypePrimitiveCollectionBuilder$instance {
+export interface ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> extends ComplexTypePrimitiveCollectionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ElementType(): ElementTypeBuilder;
@@ -1437,8 +1413,6 @@ export const ComplexTypePrimitiveCollectionBuilder_1: {
 export interface __ComplexTypePrimitiveCollectionBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
-
-export interface ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
 
 export type ComplexTypePrimitiveCollectionBuilder_1<TProperty> = ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> & __ComplexTypePrimitiveCollectionBuilder_1$views<TProperty>;
 
@@ -1493,12 +1467,10 @@ export interface __ComplexTypePropertyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface ComplexTypePropertyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
-
 export type ComplexTypePropertyBuilder = ComplexTypePropertyBuilder$instance & __ComplexTypePropertyBuilder$views;
 
 
-export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends ComplexTypePropertyBuilder$instance {
+export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends ComplexTypePropertyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ComplexTypePropertyBuilder;
@@ -1553,8 +1525,6 @@ export const ComplexTypePropertyBuilder_1: {
 export interface __ComplexTypePropertyBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
-
-export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
 
 export type ComplexTypePropertyBuilder_1<TProperty> = ComplexTypePropertyBuilder_1$instance<TProperty> & __ComplexTypePropertyBuilder_1$views<TProperty>;
 
@@ -1626,8 +1596,6 @@ export interface __DbFunctionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
 
-export interface DbFunctionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionDbFunctionBuilder> {}
-
 export type DbFunctionBuilder = DbFunctionBuilder$instance & __DbFunctionBuilder$views;
 
 
@@ -1655,8 +1623,6 @@ export interface __DbFunctionBuilderBase$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
 
-export interface DbFunctionBuilderBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionDbFunctionBuilder> {}
-
 export type DbFunctionBuilderBase = DbFunctionBuilderBase$instance & __DbFunctionBuilderBase$views;
 
 
@@ -1680,8 +1646,6 @@ export const DbFunctionParameterBuilder: {
 export interface __DbFunctionParameterBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionParameterBuilder>;
 }
-
-export interface DbFunctionParameterBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionDbFunctionParameterBuilder> {}
 
 export type DbFunctionParameterBuilder = DbFunctionParameterBuilder$instance & __DbFunctionParameterBuilder$views;
 
@@ -1758,8 +1722,6 @@ export const ElementTypeBuilder: {
 export interface __ElementTypeBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionElementTypeBuilder>;
 }
-
-export interface ElementTypeBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionElementTypeBuilder> {}
 
 export type ElementTypeBuilder = ElementTypeBuilder$instance & __ElementTypeBuilder$views;
 
@@ -1854,12 +1816,10 @@ export interface __EntityTypeBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder>;
 }
 
-export interface EntityTypeBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionEntityTypeBuilder> {}
-
 export type EntityTypeBuilder = EntityTypeBuilder$instance & __EntityTypeBuilder$views;
 
 
-export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder$instance {
+export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1965,8 +1925,6 @@ export interface __EntityTypeBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder>;
 }
 
-export interface EntityTypeBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionEntityTypeBuilder> {}
-
 export type EntityTypeBuilder_1<TEntity> = EntityTypeBuilder_1$instance<TEntity> & __EntityTypeBuilder_1$views<TEntity>;
 
 
@@ -1992,12 +1950,10 @@ export interface __IndexBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionIndexBuilder>;
 }
 
-export interface IndexBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionIndexBuilder> {}
-
 export type IndexBuilder = IndexBuilder$instance & __IndexBuilder$views;
 
 
-export interface IndexBuilder_1$instance<T> extends IndexBuilder$instance {
+export interface IndexBuilder_1$instance<T> extends IndexBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionIndexBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): IndexBuilder;
@@ -2014,8 +1970,6 @@ export const IndexBuilder_1: {
 export interface __IndexBuilder_1$views<T> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionIndexBuilder>;
 }
-
-export interface IndexBuilder_1$instance<T> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionIndexBuilder> {}
 
 export type IndexBuilder_1<T> = IndexBuilder_1$instance<T> & __IndexBuilder_1$views<T>;
 
@@ -2041,8 +1995,6 @@ export interface __InvertibleRelationshipBuilderBase$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface InvertibleRelationshipBuilderBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
-
 export type InvertibleRelationshipBuilderBase = InvertibleRelationshipBuilderBase$instance & __InvertibleRelationshipBuilderBase$views;
 
 
@@ -2066,12 +2018,10 @@ export interface __KeyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionKeyBuilder>;
 }
 
-export interface KeyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionKeyBuilder> {}
-
 export type KeyBuilder = KeyBuilder$instance & __KeyBuilder$views;
 
 
-export interface KeyBuilder_1$instance<T> extends KeyBuilder$instance {
+export interface KeyBuilder_1$instance<T> extends KeyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): KeyBuilder;
@@ -2086,8 +2036,6 @@ export const KeyBuilder_1: {
 export interface __KeyBuilder_1$views<T> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionKeyBuilder>;
 }
-
-export interface KeyBuilder_1$instance<T> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionKeyBuilder> {}
 
 export type KeyBuilder_1<T> = KeyBuilder_1$instance<T> & __KeyBuilder_1$views<T>;
 
@@ -2117,12 +2065,10 @@ export interface __NavigationBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSkipNavigationBuilder>;
 }
 
-export interface NavigationBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionSkipNavigationBuilder> {}
-
 export type NavigationBuilder = NavigationBuilder$instance & __NavigationBuilder$views;
 
 
-export interface NavigationBuilder_2$instance<TSource, TTarget> extends NavigationBuilder$instance {
+export interface NavigationBuilder_2$instance<TSource, TTarget> extends NavigationBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSkipNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     AutoInclude(autoInclude?: boolean): NavigationBuilder;
@@ -2145,8 +2091,6 @@ export const NavigationBuilder_2: {
 export interface __NavigationBuilder_2$views<TSource, TTarget> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSkipNavigationBuilder>;
 }
-
-export interface NavigationBuilder_2$instance<TSource, TTarget> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionSkipNavigationBuilder> {}
 
 export type NavigationBuilder_2<TSource, TTarget> = NavigationBuilder_2$instance<TSource, TTarget> & __NavigationBuilder_2$views<TSource, TTarget>;
 
@@ -2234,12 +2178,10 @@ export interface __OwnedNavigationBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder>;
 }
 
-export interface OwnedNavigationBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionEntityTypeBuilder> {}
-
 export type OwnedNavigationBuilder = OwnedNavigationBuilder$instance & __OwnedNavigationBuilder$views;
 
 
-export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationBuilder$instance {
+export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder;
@@ -2307,8 +2249,6 @@ export interface __OwnedNavigationBuilder_2$views<TOwnerEntity, TDependentEntity
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder>;
 }
 
-export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionEntityTypeBuilder> {}
-
 export type OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
 
@@ -2340,12 +2280,10 @@ export interface __OwnedNavigationSplitTableBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationSplitTableBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationSplitTableBuilder = OwnedNavigationSplitTableBuilder$instance & __OwnedNavigationSplitTableBuilder$views;
 
 
-export interface OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitTableBuilder$instance {
+export interface OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitTableBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationSplitTableBuilder;
@@ -2363,8 +2301,6 @@ export const OwnedNavigationSplitTableBuilder_2: {
 export interface __OwnedNavigationSplitTableBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
-
-export interface OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
 
 export type OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationSplitTableBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2393,12 +2329,10 @@ export interface __OwnedNavigationSplitViewBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationSplitViewBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationSplitViewBuilder = OwnedNavigationSplitViewBuilder$instance & __OwnedNavigationSplitViewBuilder$views;
 
 
-export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitViewBuilder$instance {
+export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitViewBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitViewBuilder;
@@ -2415,8 +2349,6 @@ export const OwnedNavigationSplitViewBuilder_2: {
 export interface __OwnedNavigationSplitViewBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
-
-export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
 
 export type OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationSplitViewBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2452,12 +2384,10 @@ export interface __OwnedNavigationStoredProcedureBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationStoredProcedureBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationStoredProcedureBuilder = OwnedNavigationStoredProcedureBuilder$instance & __OwnedNavigationStoredProcedureBuilder$views;
 
 
-export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationStoredProcedureBuilder$instance {
+export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationStoredProcedureBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder;
@@ -2483,8 +2413,6 @@ export const OwnedNavigationStoredProcedureBuilder_2: {
 export interface __OwnedNavigationStoredProcedureBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
-
-export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
 
 export type OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationStoredProcedureBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2518,12 +2446,10 @@ export interface __OwnedNavigationTableBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationTableBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationTableBuilder = OwnedNavigationTableBuilder$instance & __OwnedNavigationTableBuilder$views;
 
 
-export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableBuilder$instance {
+export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationTableBuilder;
@@ -2541,8 +2467,6 @@ export const OwnedNavigationTableBuilder_2: {
 export interface __OwnedNavigationTableBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
-
-export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
 
 export type OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationTableBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2568,12 +2492,10 @@ export interface __OwnedNavigationTableValuedFunctionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
 
-export interface OwnedNavigationTableValuedFunctionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionDbFunctionBuilder> {}
-
 export type OwnedNavigationTableValuedFunctionBuilder = OwnedNavigationTableValuedFunctionBuilder$instance & __OwnedNavigationTableValuedFunctionBuilder$views;
 
 
-export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableValuedFunctionBuilder$instance {
+export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableValuedFunctionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder;
@@ -2597,8 +2519,6 @@ export const OwnedNavigationTableValuedFunctionBuilder_2: {
 export interface __OwnedNavigationTableValuedFunctionBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
-
-export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionDbFunctionBuilder> {}
 
 export type OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationTableValuedFunctionBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2626,12 +2546,10 @@ export interface __OwnedNavigationViewBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationViewBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationViewBuilder = OwnedNavigationViewBuilder$instance & __OwnedNavigationViewBuilder$views;
 
 
-export interface OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationViewBuilder$instance {
+export interface OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationViewBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Property(propertyName: string): ViewColumnBuilder;
@@ -2647,8 +2565,6 @@ export const OwnedNavigationViewBuilder_2: {
 export interface __OwnedNavigationViewBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
-
-export interface OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<OwnedNavigationBuilder> {}
 
 export type OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationViewBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2671,12 +2587,10 @@ export interface __OwnershipBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface OwnershipBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
-
 export type OwnershipBuilder = OwnershipBuilder$instance & __OwnershipBuilder$views;
 
 
-export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends OwnershipBuilder$instance {
+export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends OwnershipBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnershipBuilder;
@@ -2695,8 +2609,6 @@ export const OwnershipBuilder_2: {
 export interface __OwnershipBuilder_2$views<TEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
-
-export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
 
 export type OwnershipBuilder_2<TEntity, TDependentEntity> = OwnershipBuilder_2$instance<TEntity, TDependentEntity> & __OwnershipBuilder_2$views<TEntity, TDependentEntity>;
 
@@ -2739,12 +2651,10 @@ export interface __PrimitiveCollectionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface PrimitiveCollectionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
-
 export type PrimitiveCollectionBuilder = PrimitiveCollectionBuilder$instance & __PrimitiveCollectionBuilder$views;
 
 
-export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends PrimitiveCollectionBuilder$instance {
+export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends PrimitiveCollectionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ElementType(): ElementTypeBuilder;
@@ -2778,8 +2688,6 @@ export const PrimitiveCollectionBuilder_1: {
 export interface __PrimitiveCollectionBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
-
-export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
 
 export type PrimitiveCollectionBuilder_1<TProperty> = PrimitiveCollectionBuilder_1$instance<TProperty> & __PrimitiveCollectionBuilder_1$views<TProperty>;
 
@@ -2888,12 +2796,10 @@ export interface __PropertyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface PropertyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
-
 export type PropertyBuilder = PropertyBuilder$instance & __PropertyBuilder$views;
 
 
-export interface PropertyBuilder_1$instance<TProperty> extends PropertyBuilder$instance {
+export interface PropertyBuilder_1$instance<TProperty> extends PropertyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): PropertyBuilder;
@@ -2951,8 +2857,6 @@ export interface __PropertyBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface PropertyBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionPropertyBuilder> {}
-
 export type PropertyBuilder_1<TProperty> = PropertyBuilder_1$instance<TProperty> & __PropertyBuilder_1$views<TProperty>;
 
 
@@ -2980,12 +2884,10 @@ export interface __ReferenceCollectionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface ReferenceCollectionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
-
 export type ReferenceCollectionBuilder = ReferenceCollectionBuilder$instance & __ReferenceCollectionBuilder$views;
 
 
-export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> extends ReferenceCollectionBuilder$instance {
+export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> extends ReferenceCollectionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder;
@@ -3006,8 +2908,6 @@ export const ReferenceCollectionBuilder_2: {
 export interface __ReferenceCollectionBuilder_2$views<TPrincipalEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
-
-export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
 
 export type ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity> = ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> & __ReferenceCollectionBuilder_2$views<TPrincipalEntity, TDependentEntity>;
 
@@ -3042,12 +2942,10 @@ export interface __ReferenceNavigationBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface ReferenceNavigationBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
-
 export type ReferenceNavigationBuilder = ReferenceNavigationBuilder$instance & __ReferenceNavigationBuilder$views;
 
 
-export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceNavigationBuilder$instance {
+export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceNavigationBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     WithMany(navigationName?: string): ReferenceCollectionBuilder_2<TRelatedEntity, TEntity>;
@@ -3066,8 +2964,6 @@ export const ReferenceNavigationBuilder_2: {
 export interface __ReferenceNavigationBuilder_2$views<TEntity, TRelatedEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
-
-export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
 
 export type ReferenceNavigationBuilder_2<TEntity, TRelatedEntity> = ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> & __ReferenceNavigationBuilder_2$views<TEntity, TRelatedEntity>;
 
@@ -3100,12 +2996,10 @@ export interface __ReferenceReferenceBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface ReferenceReferenceBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
-
 export type ReferenceReferenceBuilder = ReferenceReferenceBuilder$instance & __ReferenceReferenceBuilder$views;
 
 
-export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceReferenceBuilder$instance {
+export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceReferenceBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder;
@@ -3131,8 +3025,6 @@ export interface __ReferenceReferenceBuilder_2$views<TEntity, TRelatedEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
-
 export type ReferenceReferenceBuilder_2<TEntity, TRelatedEntity> = ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> & __ReferenceReferenceBuilder_2$views<TEntity, TRelatedEntity>;
 
 
@@ -3156,8 +3048,6 @@ export const RelationshipBuilderBase: (abstract new(principalEntityType: IMutabl
 export interface __RelationshipBuilderBase$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
-
-export interface RelationshipBuilderBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionForeignKeyBuilder> {}
 
 export type RelationshipBuilderBase = RelationshipBuilderBase$instance & __RelationshipBuilderBase$views;
 
@@ -3186,8 +3076,6 @@ export const SequenceBuilder: {
 export interface __SequenceBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSequenceBuilder>;
 }
-
-export interface SequenceBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionSequenceBuilder> {}
 
 export type SequenceBuilder = SequenceBuilder$instance & __SequenceBuilder$views;
 
@@ -3220,12 +3108,10 @@ export interface __SplitTableBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface SplitTableBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
-
 export type SplitTableBuilder = SplitTableBuilder$instance & __SplitTableBuilder$views;
 
 
-export interface SplitTableBuilder_1$instance<TEntity> extends SplitTableBuilder$instance {
+export interface SplitTableBuilder_1$instance<TEntity> extends SplitTableBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ExcludeFromMigrations(excluded?: boolean): SplitTableBuilder;
@@ -3243,8 +3129,6 @@ export const SplitTableBuilder_1: {
 export interface __SplitTableBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
-
-export interface SplitTableBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
 
 export type SplitTableBuilder_1<TEntity> = SplitTableBuilder_1$instance<TEntity> & __SplitTableBuilder_1$views<TEntity>;
 
@@ -3273,12 +3157,10 @@ export interface __SplitViewBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface SplitViewBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
-
 export type SplitViewBuilder = SplitViewBuilder$instance & __SplitViewBuilder$views;
 
 
-export interface SplitViewBuilder_1$instance<TEntity> extends SplitViewBuilder$instance {
+export interface SplitViewBuilder_1$instance<TEntity> extends SplitViewBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): SplitViewBuilder;
@@ -3295,8 +3177,6 @@ export const SplitViewBuilder_1: {
 export interface __SplitViewBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
-
-export interface SplitViewBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
 
 export type SplitViewBuilder_1<TEntity> = SplitViewBuilder_1$instance<TEntity> & __SplitViewBuilder_1$views<TEntity>;
 
@@ -3332,12 +3212,10 @@ export interface __StoredProcedureBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface StoredProcedureBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
-
 export type StoredProcedureBuilder = StoredProcedureBuilder$instance & __StoredProcedureBuilder$views;
 
 
-export interface StoredProcedureBuilder_1$instance<TEntity> extends StoredProcedureBuilder$instance {
+export interface StoredProcedureBuilder_1$instance<TEntity> extends StoredProcedureBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder;
@@ -3363,8 +3241,6 @@ export const StoredProcedureBuilder_1: {
 export interface __StoredProcedureBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
-
-export interface StoredProcedureBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
 
 export type StoredProcedureBuilder_1<TEntity> = StoredProcedureBuilder_1$instance<TEntity> & __StoredProcedureBuilder_1$views<TEntity>;
 
@@ -3393,8 +3269,6 @@ export interface __StoredProcedureParameterBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
 
-export interface StoredProcedureParameterBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<PropertyBuilder> {}
-
 export type StoredProcedureParameterBuilder = StoredProcedureParameterBuilder$instance & __StoredProcedureParameterBuilder$views;
 
 
@@ -3419,8 +3293,6 @@ export const StoredProcedureResultColumnBuilder: {
 export interface __StoredProcedureResultColumnBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
-
-export interface StoredProcedureResultColumnBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<PropertyBuilder> {}
 
 export type StoredProcedureResultColumnBuilder = StoredProcedureResultColumnBuilder$instance & __StoredProcedureResultColumnBuilder$views;
 
@@ -3454,12 +3326,10 @@ export interface __TableBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface TableBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
-
 export type TableBuilder = TableBuilder$instance & __TableBuilder$views;
 
 
-export interface TableBuilder_1$instance<TEntity> extends TableBuilder$instance {
+export interface TableBuilder_1$instance<TEntity> extends TableBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ExcludeFromMigrations(excluded?: boolean): TableBuilder;
@@ -3477,8 +3347,6 @@ export const TableBuilder_1: {
 export interface __TableBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
-
-export interface TableBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
 
 export type TableBuilder_1<TEntity> = TableBuilder_1$instance<TEntity> & __TableBuilder_1$views<TEntity>;
 
@@ -3502,8 +3370,6 @@ export const TableTriggerBuilder: {
 export interface __TableTriggerBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionTriggerBuilder>;
 }
-
-export interface TableTriggerBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionTriggerBuilder> {}
 
 export type TableTriggerBuilder = TableTriggerBuilder$instance & __TableTriggerBuilder$views;
 
@@ -3529,12 +3395,10 @@ export interface __TableValuedFunctionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
 
-export interface TableValuedFunctionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionDbFunctionBuilder> {}
-
 export type TableValuedFunctionBuilder = TableValuedFunctionBuilder$instance & __TableValuedFunctionBuilder$views;
 
 
-export interface TableValuedFunctionBuilder_1$instance<TEntity> extends TableValuedFunctionBuilder$instance {
+export interface TableValuedFunctionBuilder_1$instance<TEntity> extends TableValuedFunctionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder;
@@ -3558,8 +3422,6 @@ export const TableValuedFunctionBuilder_1: {
 export interface __TableValuedFunctionBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
-
-export interface TableValuedFunctionBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionDbFunctionBuilder> {}
 
 export type TableValuedFunctionBuilder_1<TEntity> = TableValuedFunctionBuilder_1$instance<TEntity> & __TableValuedFunctionBuilder_1$views<TEntity>;
 
@@ -3585,8 +3447,6 @@ export const TriggerBuilder: {
 export interface __TriggerBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionTriggerBuilder>;
 }
-
-export interface TriggerBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IConventionTriggerBuilder> {}
 
 export type TriggerBuilder = TriggerBuilder$instance & __TriggerBuilder$views;
 
@@ -3665,12 +3525,10 @@ export interface __ViewBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface ViewBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
-
 export type ViewBuilder = ViewBuilder$instance & __ViewBuilder$views;
 
 
-export interface ViewBuilder_1$instance<TEntity> extends ViewBuilder$instance {
+export interface ViewBuilder_1$instance<TEntity> extends ViewBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Property(propertyName: string): ViewColumnBuilder;
@@ -3686,8 +3544,6 @@ export const ViewBuilder_1: {
 export interface __ViewBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
-
-export interface ViewBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<EntityTypeBuilder> {}
 
 export type ViewBuilder_1<TEntity> = ViewBuilder_1$instance<TEntity> & __ViewBuilder_1$views<TEntity>;
 
@@ -3714,12 +3570,10 @@ export interface __ViewColumnBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
 
-export interface ViewColumnBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<PropertyBuilder> {}
-
 export type ViewColumnBuilder = ViewColumnBuilder$instance & __ViewColumnBuilder$views;
 
 
-export interface ViewColumnBuilder_1$instance<TProperty> extends ViewColumnBuilder$instance {
+export interface ViewColumnBuilder_1$instance<TProperty> extends ViewColumnBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ViewColumnBuilder;
@@ -3735,8 +3589,6 @@ export const ViewColumnBuilder_1: {
 export interface __ViewColumnBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
-
-export interface ViewColumnBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<PropertyBuilder> {}
 
 export type ViewColumnBuilder_1<TProperty> = ViewColumnBuilder_1$instance<TProperty> & __ViewColumnBuilder_1$views<TProperty>;
 

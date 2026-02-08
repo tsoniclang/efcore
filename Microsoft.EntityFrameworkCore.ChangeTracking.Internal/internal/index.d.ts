@@ -306,7 +306,7 @@ export interface IStateManager$instance extends IResettableService {
 }
 
 
-export interface IStateManager$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService {}
+export interface IStateManager$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {}
 
 export type IStateManager = IStateManager$instance;
 
@@ -322,7 +322,7 @@ export interface IValueGenerationManager$instance {
 
 export type IValueGenerationManager = IValueGenerationManager$instance;
 
-export interface MultiSnapshot$instance {
+export interface MultiSnapshot$instance extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -338,8 +338,6 @@ export const MultiSnapshot: {
 export interface __MultiSnapshot$views {
     As_ISnapshot(): ISnapshot$instance;
 }
-
-export interface MultiSnapshot$instance extends ISnapshot$instance {}
 
 export type MultiSnapshot = MultiSnapshot$instance & __MultiSnapshot$views;
 
@@ -401,7 +399,7 @@ export interface __ChangeDetector$views {
 export type ChangeDetector = ChangeDetector$instance & __ChangeDetector$views;
 
 
-export interface ChangeTrackerFactory$instance {
+export interface ChangeTrackerFactory$instance extends IChangeTrackerFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IChangeTrackerFactory: never;
 
     Create(): ChangeTracker;
@@ -416,8 +414,6 @@ export const ChangeTrackerFactory: {
 export interface __ChangeTrackerFactory$views {
     As_IChangeTrackerFactory(): IChangeTrackerFactory$instance;
 }
-
-export interface ChangeTrackerFactory$instance extends IChangeTrackerFactory$instance {}
 
 export type ChangeTrackerFactory = ChangeTrackerFactory$instance & __ChangeTrackerFactory$views;
 
@@ -512,7 +508,7 @@ export interface __CompositeValueFactory$views {
 export type CompositeValueFactory = CompositeValueFactory$instance & __CompositeValueFactory$views;
 
 
-export interface ConvertingValueComparer_2$instance<TTo, TFrom> extends ValueComparer_1<TTo> {
+export interface ConvertingValueComparer_2$instance<TTo, TFrom> extends ValueComparer_1<TTo>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<TTo> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -528,8 +524,6 @@ export const ConvertingValueComparer_2: {
 export interface __ConvertingValueComparer_2$views<TTo, TFrom> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
-
-export interface ConvertingValueComparer_2$instance<TTo, TFrom> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<TTo> {}
 
 export type ConvertingValueComparer_2<TTo, TFrom> = ConvertingValueComparer_2$instance<TTo, TFrom> & __ConvertingValueComparer_2$views<TTo, TFrom>;
 
@@ -648,7 +642,7 @@ export const EmptyShadowValuesFactoryFactory: {
 
 export type EmptyShadowValuesFactoryFactory = EmptyShadowValuesFactoryFactory$instance;
 
-export interface EntityEntryGraphIterator$instance {
+export interface EntityEntryGraphIterator$instance extends Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IEntityEntryGraphIterator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IEntityEntryGraphIterator: never;
 
     TraverseGraph<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func_2<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
@@ -665,12 +659,10 @@ export interface __EntityEntryGraphIterator$views {
     As_IEntityEntryGraphIterator(): Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IEntityEntryGraphIterator$instance;
 }
 
-export interface EntityEntryGraphIterator$instance extends Microsoft_EntityFrameworkCore_ChangeTracking_Internal.IEntityEntryGraphIterator {}
-
 export type EntityEntryGraphIterator = EntityEntryGraphIterator$instance & __EntityEntryGraphIterator$views;
 
 
-export interface EntityGraphAttacher$instance {
+export interface EntityGraphAttacher$instance extends IEntityGraphAttacher$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IEntityGraphAttacher: never;
 
     AttachGraph(rootEntry: InternalEntityEntry, targetState: EntityState, storeGeneratedWithKeySetTargetState: EntityState, forceStateWhenUnknownKey: boolean): void;
@@ -686,8 +678,6 @@ export const EntityGraphAttacher: {
 export interface __EntityGraphAttacher$views {
     As_IEntityGraphAttacher(): IEntityGraphAttacher$instance;
 }
-
-export interface EntityGraphAttacher$instance extends IEntityGraphAttacher$instance {}
 
 export type EntityGraphAttacher = EntityGraphAttacher$instance & __EntityGraphAttacher$views;
 
@@ -1101,7 +1091,7 @@ export const InternalEntrySubscriber: {
 
 export type InternalEntrySubscriber = InternalEntrySubscriber$instance;
 
-export interface KeyPropagator$instance {
+export interface KeyPropagator$instance extends IKeyPropagator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IKeyPropagator: never;
 
     PropagateValue(entry: InternalEntityEntry, property: IProperty): InternalEntityEntry | undefined;
@@ -1117,8 +1107,6 @@ export const KeyPropagator: {
 export interface __KeyPropagator$views {
     As_IKeyPropagator(): IKeyPropagator$instance;
 }
-
-export interface KeyPropagator$instance extends IKeyPropagator$instance {}
 
 export type KeyPropagator = KeyPropagator$instance & __KeyPropagator$views;
 
@@ -1138,7 +1126,7 @@ export const KeyValueFactoryFactory: {
 
 export type KeyValueFactoryFactory = KeyValueFactoryFactory$instance;
 
-export interface LocalViewListener$instance {
+export interface LocalViewListener$instance extends ILocalViewListener$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ILocalViewListener: never;
 
     RegisterView(viewAction: Action_2<InternalEntityEntry, EntityState>): void;
@@ -1156,12 +1144,10 @@ export interface __LocalViewListener$views {
     As_ILocalViewListener(): ILocalViewListener$instance;
 }
 
-export interface LocalViewListener$instance extends ILocalViewListener$instance {}
-
 export type LocalViewListener = LocalViewListener$instance & __LocalViewListener$views;
 
 
-export interface NavigationFixer$instance {
+export interface NavigationFixer$instance extends INavigationFixer$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_INavigationFixer: never;
 
     AbortDelayedFixup(): void;
@@ -1185,8 +1171,6 @@ export const NavigationFixer: {
 export interface __NavigationFixer$views {
     As_INavigationFixer(): INavigationFixer$instance;
 }
-
-export interface NavigationFixer$instance extends INavigationFixer$instance {}
 
 export type NavigationFixer = NavigationFixer$instance & __NavigationFixer$views;
 
@@ -1252,7 +1236,7 @@ export const NullableStructCurrentProviderValueComparer_2: {
 
 export type NullableStructCurrentProviderValueComparer_2<TModel, TProvider> = NullableStructCurrentProviderValueComparer_2$instance<TModel, TProvider>;
 
-export interface NullableValueComparer_1$instance<T extends unknown> extends ValueComparer_1<Nullable_1<T>> {
+export interface NullableValueComparer_1$instance<T extends unknown> extends ValueComparer_1<Nullable_1<T>>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<Nullable_1<T>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -1268,8 +1252,6 @@ export const NullableValueComparer_1: {
 export interface __NullableValueComparer_1$views<T extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
-
-export interface NullableValueComparer_1$instance<T extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<Nullable_1<T>> {}
 
 export type NullableValueComparer_1<T> = NullableValueComparer_1$instance<T> & __NullableValueComparer_1$views<T>;
 
@@ -1515,7 +1497,7 @@ export interface __SimplePrincipalKeyValueFactory_1$views<TKey> {
 export type SimplePrincipalKeyValueFactory_1<TKey> = SimplePrincipalKeyValueFactory_1$instance<TKey> & __SimplePrincipalKeyValueFactory_1$views<TKey>;
 
 
-export interface Snapshot$instance {
+export interface Snapshot$instance extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1536,12 +1518,10 @@ export interface __Snapshot$views {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot$instance extends ISnapshot$instance {}
-
 export type Snapshot = Snapshot$instance & __Snapshot$views;
 
 
-export interface Snapshot_1$instance<T0> {
+export interface Snapshot_1$instance<T0> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1558,12 +1538,10 @@ export interface __Snapshot_1$views<T0> {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_1$instance<T0> extends ISnapshot$instance {}
-
 export type Snapshot_1<T0> = Snapshot_1$instance<T0> & __Snapshot_1$views<T0>;
 
 
-export interface Snapshot_10$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> {
+export interface Snapshot_10$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1580,12 +1558,10 @@ export interface __Snapshot_10$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_10$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> extends ISnapshot$instance {}
-
 export type Snapshot_10<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> = Snapshot_10$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> & __Snapshot_10$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>;
 
 
-export interface Snapshot_11$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> {
+export interface Snapshot_11$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1602,12 +1578,10 @@ export interface __Snapshot_11$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_11$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> extends ISnapshot$instance {}
-
 export type Snapshot_11<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> = Snapshot_11$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> & __Snapshot_11$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>;
 
 
-export interface Snapshot_12$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> {
+export interface Snapshot_12$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1624,12 +1598,10 @@ export interface __Snapshot_12$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_12$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends ISnapshot$instance {}
-
 export type Snapshot_12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> = Snapshot_12$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> & __Snapshot_12$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>;
 
 
-export interface Snapshot_13$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> {
+export interface Snapshot_13$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1646,12 +1618,10 @@ export interface __Snapshot_13$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_13$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> extends ISnapshot$instance {}
-
 export type Snapshot_13<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> = Snapshot_13$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> & __Snapshot_13$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>;
 
 
-export interface Snapshot_14$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> {
+export interface Snapshot_14$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1668,12 +1638,10 @@ export interface __Snapshot_14$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_14$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> extends ISnapshot$instance {}
-
 export type Snapshot_14<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> = Snapshot_14$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> & __Snapshot_14$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>;
 
 
-export interface Snapshot_15$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> {
+export interface Snapshot_15$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1690,12 +1658,10 @@ export interface __Snapshot_15$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_15$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> extends ISnapshot$instance {}
-
 export type Snapshot_15<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> = Snapshot_15$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> & __Snapshot_15$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>;
 
 
-export interface Snapshot_16$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> {
+export interface Snapshot_16$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1712,12 +1678,10 @@ export interface __Snapshot_16$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_16$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> extends ISnapshot$instance {}
-
 export type Snapshot_16<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> = Snapshot_16$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> & __Snapshot_16$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>;
 
 
-export interface Snapshot_17$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> {
+export interface Snapshot_17$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1734,12 +1698,10 @@ export interface __Snapshot_17$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_17$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> extends ISnapshot$instance {}
-
 export type Snapshot_17<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> = Snapshot_17$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> & __Snapshot_17$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>;
 
 
-export interface Snapshot_18$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> {
+export interface Snapshot_18$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1756,12 +1718,10 @@ export interface __Snapshot_18$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_18$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> extends ISnapshot$instance {}
-
 export type Snapshot_18<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> = Snapshot_18$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> & __Snapshot_18$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>;
 
 
-export interface Snapshot_19$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> {
+export interface Snapshot_19$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1778,12 +1738,10 @@ export interface __Snapshot_19$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_19$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> extends ISnapshot$instance {}
-
 export type Snapshot_19<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> = Snapshot_19$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> & __Snapshot_19$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>;
 
 
-export interface Snapshot_2$instance<T0, T1> {
+export interface Snapshot_2$instance<T0, T1> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1800,12 +1758,10 @@ export interface __Snapshot_2$views<T0, T1> {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_2$instance<T0, T1> extends ISnapshot$instance {}
-
 export type Snapshot_2<T0, T1> = Snapshot_2$instance<T0, T1> & __Snapshot_2$views<T0, T1>;
 
 
-export interface Snapshot_20$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> {
+export interface Snapshot_20$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1822,12 +1778,10 @@ export interface __Snapshot_20$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_20$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> extends ISnapshot$instance {}
-
 export type Snapshot_20<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> = Snapshot_20$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> & __Snapshot_20$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>;
 
 
-export interface Snapshot_21$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> {
+export interface Snapshot_21$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1844,12 +1798,10 @@ export interface __Snapshot_21$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_21$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> extends ISnapshot$instance {}
-
 export type Snapshot_21<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> = Snapshot_21$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> & __Snapshot_21$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>;
 
 
-export interface Snapshot_22$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> {
+export interface Snapshot_22$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1866,12 +1818,10 @@ export interface __Snapshot_22$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_22$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> extends ISnapshot$instance {}
-
 export type Snapshot_22<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> = Snapshot_22$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> & __Snapshot_22$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>;
 
 
-export interface Snapshot_23$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> {
+export interface Snapshot_23$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1888,12 +1838,10 @@ export interface __Snapshot_23$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_23$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> extends ISnapshot$instance {}
-
 export type Snapshot_23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> = Snapshot_23$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> & __Snapshot_23$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>;
 
 
-export interface Snapshot_24$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> {
+export interface Snapshot_24$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1910,12 +1858,10 @@ export interface __Snapshot_24$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_24$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> extends ISnapshot$instance {}
-
 export type Snapshot_24<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> = Snapshot_24$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> & __Snapshot_24$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>;
 
 
-export interface Snapshot_25$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> {
+export interface Snapshot_25$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1932,12 +1878,10 @@ export interface __Snapshot_25$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_25$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> extends ISnapshot$instance {}
-
 export type Snapshot_25<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> = Snapshot_25$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> & __Snapshot_25$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>;
 
 
-export interface Snapshot_26$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> {
+export interface Snapshot_26$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1954,12 +1898,10 @@ export interface __Snapshot_26$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_26$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> extends ISnapshot$instance {}
-
 export type Snapshot_26<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> = Snapshot_26$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> & __Snapshot_26$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>;
 
 
-export interface Snapshot_27$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> {
+export interface Snapshot_27$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1976,12 +1918,10 @@ export interface __Snapshot_27$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_27$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> extends ISnapshot$instance {}
-
 export type Snapshot_27<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> = Snapshot_27$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> & __Snapshot_27$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>;
 
 
-export interface Snapshot_28$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> {
+export interface Snapshot_28$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -1998,12 +1938,10 @@ export interface __Snapshot_28$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_28$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> extends ISnapshot$instance {}
-
 export type Snapshot_28<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> = Snapshot_28$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> & __Snapshot_28$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>;
 
 
-export interface Snapshot_29$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> {
+export interface Snapshot_29$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -2020,12 +1958,10 @@ export interface __Snapshot_29$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_29$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> extends ISnapshot$instance {}
-
 export type Snapshot_29<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> = Snapshot_29$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> & __Snapshot_29$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>;
 
 
-export interface Snapshot_3$instance<T0, T1, T2> {
+export interface Snapshot_3$instance<T0, T1, T2> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -2042,12 +1978,10 @@ export interface __Snapshot_3$views<T0, T1, T2> {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_3$instance<T0, T1, T2> extends ISnapshot$instance {}
-
 export type Snapshot_3<T0, T1, T2> = Snapshot_3$instance<T0, T1, T2> & __Snapshot_3$views<T0, T1, T2>;
 
 
-export interface Snapshot_30$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> {
+export interface Snapshot_30$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -2064,12 +1998,10 @@ export interface __Snapshot_30$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_30$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> extends ISnapshot$instance {}
-
 export type Snapshot_30<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> = Snapshot_30$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> & __Snapshot_30$views<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>;
 
 
-export interface Snapshot_4$instance<T0, T1, T2, T3> {
+export interface Snapshot_4$instance<T0, T1, T2, T3> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -2086,12 +2018,10 @@ export interface __Snapshot_4$views<T0, T1, T2, T3> {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_4$instance<T0, T1, T2, T3> extends ISnapshot$instance {}
-
 export type Snapshot_4<T0, T1, T2, T3> = Snapshot_4$instance<T0, T1, T2, T3> & __Snapshot_4$views<T0, T1, T2, T3>;
 
 
-export interface Snapshot_5$instance<T0, T1, T2, T3, T4> {
+export interface Snapshot_5$instance<T0, T1, T2, T3, T4> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -2108,12 +2038,10 @@ export interface __Snapshot_5$views<T0, T1, T2, T3, T4> {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_5$instance<T0, T1, T2, T3, T4> extends ISnapshot$instance {}
-
 export type Snapshot_5<T0, T1, T2, T3, T4> = Snapshot_5$instance<T0, T1, T2, T3, T4> & __Snapshot_5$views<T0, T1, T2, T3, T4>;
 
 
-export interface Snapshot_6$instance<T0, T1, T2, T3, T4, T5> {
+export interface Snapshot_6$instance<T0, T1, T2, T3, T4, T5> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -2130,12 +2058,10 @@ export interface __Snapshot_6$views<T0, T1, T2, T3, T4, T5> {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_6$instance<T0, T1, T2, T3, T4, T5> extends ISnapshot$instance {}
-
 export type Snapshot_6<T0, T1, T2, T3, T4, T5> = Snapshot_6$instance<T0, T1, T2, T3, T4, T5> & __Snapshot_6$views<T0, T1, T2, T3, T4, T5>;
 
 
-export interface Snapshot_7$instance<T0, T1, T2, T3, T4, T5, T6> {
+export interface Snapshot_7$instance<T0, T1, T2, T3, T4, T5, T6> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -2152,12 +2078,10 @@ export interface __Snapshot_7$views<T0, T1, T2, T3, T4, T5, T6> {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_7$instance<T0, T1, T2, T3, T4, T5, T6> extends ISnapshot$instance {}
-
 export type Snapshot_7<T0, T1, T2, T3, T4, T5, T6> = Snapshot_7$instance<T0, T1, T2, T3, T4, T5, T6> & __Snapshot_7$views<T0, T1, T2, T3, T4, T5, T6>;
 
 
-export interface Snapshot_8$instance<T0, T1, T2, T3, T4, T5, T6, T7> {
+export interface Snapshot_8$instance<T0, T1, T2, T3, T4, T5, T6, T7> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -2174,12 +2098,10 @@ export interface __Snapshot_8$views<T0, T1, T2, T3, T4, T5, T6, T7> {
     As_ISnapshot(): ISnapshot$instance;
 }
 
-export interface Snapshot_8$instance<T0, T1, T2, T3, T4, T5, T6, T7> extends ISnapshot$instance {}
-
 export type Snapshot_8<T0, T1, T2, T3, T4, T5, T6, T7> = Snapshot_8$instance<T0, T1, T2, T3, T4, T5, T6, T7> & __Snapshot_8$views<T0, T1, T2, T3, T4, T5, T6, T7>;
 
 
-export interface Snapshot_9$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8> {
+export interface Snapshot_9$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8> extends ISnapshot$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_ISnapshot: never;
 
     [index: number]: unknown | undefined;
@@ -2195,8 +2117,6 @@ export const Snapshot_9: {
 export interface __Snapshot_9$views<T0, T1, T2, T3, T4, T5, T6, T7, T8> {
     As_ISnapshot(): ISnapshot$instance;
 }
-
-export interface Snapshot_9$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8> extends ISnapshot$instance {}
 
 export type Snapshot_9<T0, T1, T2, T3, T4, T5, T6, T7, T8> = Snapshot_9$instance<T0, T1, T2, T3, T4, T5, T6, T7, T8> & __Snapshot_9$views<T0, T1, T2, T3, T4, T5, T6, T7, T8>;
 
@@ -2445,7 +2365,7 @@ export const TemporaryValuesFactoryFactory: {
 
 export type TemporaryValuesFactoryFactory = TemporaryValuesFactoryFactory$instance;
 
-export interface ValueGenerationManager$instance {
+export interface ValueGenerationManager$instance extends IValueGenerationManager$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IValueGenerationManager: never;
 
     Generate(entry: InternalEntityEntry, includePrimaryKey?: boolean): boolean;
@@ -2463,8 +2383,6 @@ export const ValueGenerationManager: {
 export interface __ValueGenerationManager$views {
     As_IValueGenerationManager(): IValueGenerationManager$instance;
 }
-
-export interface ValueGenerationManager$instance extends IValueGenerationManager$instance {}
 
 export type ValueGenerationManager = ValueGenerationManager$instance & __ValueGenerationManager$views;
 

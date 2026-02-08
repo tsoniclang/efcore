@@ -115,8 +115,6 @@ export interface __DatabaseFacadeDependencies$views {
     As_IDatabaseFacadeDependencies(): Microsoft_EntityFrameworkCore_Storage_Internal.IDatabaseFacadeDependencies$instance;
 }
 
-export interface DatabaseFacadeDependencies$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IDatabaseFacadeDependencies, System_Internal.IEquatable_1<DatabaseFacadeDependencies> {}
-
 export type DatabaseFacadeDependencies = DatabaseFacadeDependencies$instance & __DatabaseFacadeDependencies$views;
 
 
@@ -139,7 +137,7 @@ export interface __ExceptionDetector$views {
 export type ExceptionDetector = ExceptionDetector$instance & __ExceptionDetector$views;
 
 
-export interface ExecutionStrategyFactory$instance {
+export interface ExecutionStrategyFactory$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IExecutionStrategyFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategyFactory: never;
 
     readonly Dependencies: ExecutionStrategyDependencies;
@@ -155,8 +153,6 @@ export const ExecutionStrategyFactory: {
 export interface __ExecutionStrategyFactory$views {
     As_IExecutionStrategyFactory(): Microsoft_EntityFrameworkCore_Storage_Internal.IExecutionStrategyFactory$instance;
 }
-
-export interface ExecutionStrategyFactory$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IExecutionStrategyFactory {}
 
 export type ExecutionStrategyFactory = ExecutionStrategyFactory$instance & __ExecutionStrategyFactory$views;
 
@@ -230,7 +226,7 @@ export interface __RawRelationalParameter$views {
 export type RawRelationalParameter = RawRelationalParameter$instance & __RawRelationalParameter$views;
 
 
-export interface RawSqlCommandBuilder$instance {
+export interface RawSqlCommandBuilder$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IRawSqlCommandBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRawSqlCommandBuilder: never;
 
     Build(sql: string): IRelationalCommand;
@@ -247,8 +243,6 @@ export const RawSqlCommandBuilder: {
 export interface __RawSqlCommandBuilder$views {
     As_IRawSqlCommandBuilder(): Microsoft_EntityFrameworkCore_Storage_Internal.IRawSqlCommandBuilder$instance;
 }
-
-export interface RawSqlCommandBuilder$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IRawSqlCommandBuilder {}
 
 export type RawSqlCommandBuilder = RawSqlCommandBuilder$instance & __RawSqlCommandBuilder$views;
 
@@ -290,8 +284,6 @@ export interface __RelationalDatabaseFacadeDependencies$views {
     As_IDatabaseFacadeDependencies(): Microsoft_EntityFrameworkCore_Storage_Internal.IDatabaseFacadeDependencies$instance;
     As_IRelationalDatabaseFacadeDependencies(): Microsoft_EntityFrameworkCore_Storage_Internal.IRelationalDatabaseFacadeDependencies$instance;
 }
-
-export interface RelationalDatabaseFacadeDependencies$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IRelationalDatabaseFacadeDependencies, System_Internal.IEquatable_1<RelationalDatabaseFacadeDependencies> {}
 
 export type RelationalDatabaseFacadeDependencies = RelationalDatabaseFacadeDependencies$instance & __RelationalDatabaseFacadeDependencies$views;
 

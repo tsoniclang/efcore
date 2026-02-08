@@ -17,7 +17,7 @@ import type { PropertyInfo } from "@tsonic/dotnet/System.Reflection/internal/ind
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Boolean as ClrBoolean, Func_2, Int32, Nullable_1, Object as ClrObject, String as ClrString } from "@tsonic/dotnet/System/internal/index.js";
 
-export interface AlterOperationBuilder_1$instance<TOperation extends MigrationOperation & IAlterMigrationOperation> extends OperationBuilder_1$instance<TOperation> {
+export interface AlterOperationBuilder_1$instance<TOperation extends MigrationOperation & IAlterMigrationOperation> extends OperationBuilder_1$instance<TOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
@@ -33,8 +33,6 @@ export const AlterOperationBuilder_1: {
 export interface __AlterOperationBuilder_1$views<TOperation extends MigrationOperation & IAlterMigrationOperation> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation>;
 }
-
-export interface AlterOperationBuilder_1$instance<TOperation extends MigrationOperation & IAlterMigrationOperation> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<TOperation> {}
 
 export type AlterOperationBuilder_1<TOperation extends MigrationOperation & IAlterMigrationOperation> = AlterOperationBuilder_1$instance<TOperation> & __AlterOperationBuilder_1$views<TOperation>;
 
@@ -54,7 +52,7 @@ export const ColumnsBuilder: {
 
 export type ColumnsBuilder = ColumnsBuilder$instance;
 
-export interface CreateTableBuilder_1$instance<TColumns> extends OperationBuilder_1$instance<CreateTableOperation> {
+export interface CreateTableBuilder_1$instance<TColumns> extends OperationBuilder_1$instance<CreateTableOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<CreateTableOperation> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Annotation(name: string, value: unknown): OperationBuilder_1<CreateTableOperation>;
@@ -75,12 +73,10 @@ export interface __CreateTableBuilder_1$views<TColumns> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<CreateTableOperation>;
 }
 
-export interface CreateTableBuilder_1$instance<TColumns> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<CreateTableOperation> {}
-
 export type CreateTableBuilder_1<TColumns> = CreateTableBuilder_1$instance<TColumns> & __CreateTableBuilder_1$views<TColumns>;
 
 
-export interface OperationBuilder_1$instance<TOperation extends MigrationOperation> {
+export interface OperationBuilder_1$instance<TOperation extends MigrationOperation> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Operation: TOperation;
@@ -99,8 +95,6 @@ export const OperationBuilder_1: {
 export interface __OperationBuilder_1$views<TOperation extends MigrationOperation> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation>;
 }
-
-export interface OperationBuilder_1$instance<TOperation extends MigrationOperation> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<TOperation> {}
 
 export type OperationBuilder_1<TOperation extends MigrationOperation> = OperationBuilder_1$instance<TOperation> & __OperationBuilder_1$views<TOperation>;
 

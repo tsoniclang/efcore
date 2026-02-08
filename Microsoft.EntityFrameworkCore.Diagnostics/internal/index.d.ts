@@ -274,7 +274,7 @@ export interface ILoggingOptions$instance extends ISingletonOptions {
 }
 
 
-export interface ILoggingOptions$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.ISingletonOptions {}
+export interface ILoggingOptions$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.ISingletonOptions$instance {}
 
 export type ILoggingOptions = ILoggingOptions$instance;
 
@@ -543,7 +543,7 @@ export const CascadeDeleteOrphanEventData: {
 
 export type CascadeDeleteOrphanEventData = CascadeDeleteOrphanEventData$instance;
 
-export interface CollectionChangedEventData$instance extends NavigationEventData$instance {
+export interface CollectionChangedEventData$instance extends NavigationEventData$instance, ICollectionChangedEventData$instance, INavigationBaseEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
@@ -562,8 +562,6 @@ export interface __CollectionChangedEventData$views {
     As_ICollectionChangedEventData(): ICollectionChangedEventData$instance;
     As_INavigationBaseEventData(): INavigationBaseEventData$instance;
 }
-
-export interface CollectionChangedEventData$instance extends ICollectionChangedEventData$instance, INavigationBaseEventData$instance {}
 
 export type CollectionChangedEventData = CollectionChangedEventData$instance & __CollectionChangedEventData$views;
 
@@ -611,7 +609,7 @@ export const CommandEndEventData: {
 
 export type CommandEndEventData = CommandEndEventData$instance;
 
-export interface CommandErrorEventData$instance extends CommandEndEventData {
+export interface CommandErrorEventData$instance extends CommandEndEventData, IErrorEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: Exception;
@@ -626,8 +624,6 @@ export const CommandErrorEventData: {
 export interface __CommandErrorEventData$views {
     As_IErrorEventData(): IErrorEventData$instance;
 }
-
-export interface CommandErrorEventData$instance extends IErrorEventData$instance {}
 
 export type CommandErrorEventData = CommandErrorEventData$instance & __CommandErrorEventData$views;
 
@@ -745,7 +741,7 @@ export const ConnectionEndEventData: {
 
 export type ConnectionEndEventData = ConnectionEndEventData$instance;
 
-export interface ConnectionErrorEventData$instance extends ConnectionEndEventData {
+export interface ConnectionErrorEventData$instance extends ConnectionEndEventData, IErrorEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: Exception;
@@ -760,8 +756,6 @@ export const ConnectionErrorEventData: {
 export interface __ConnectionErrorEventData$views {
     As_IErrorEventData(): IErrorEventData$instance;
 }
-
-export interface ConnectionErrorEventData$instance extends IErrorEventData$instance {}
 
 export type ConnectionErrorEventData = ConnectionErrorEventData$instance & __ConnectionErrorEventData$views;
 
@@ -836,7 +830,7 @@ export const DataReaderEventData: {
 
 export type DataReaderEventData = DataReaderEventData$instance;
 
-export interface DbCommandInterceptor$instance extends IInterceptor {
+export interface DbCommandInterceptor$instance extends IInterceptor, IDbCommandInterceptor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbCommandInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -873,12 +867,10 @@ export interface __DbCommandInterceptor$views {
     As_IDbCommandInterceptor(): IDbCommandInterceptor$instance;
 }
 
-export interface DbCommandInterceptor$instance extends IDbCommandInterceptor$instance {}
-
 export type DbCommandInterceptor = DbCommandInterceptor$instance & __DbCommandInterceptor$views;
 
 
-export interface DbConnectionInterceptor$instance extends IInterceptor {
+export interface DbConnectionInterceptor$instance extends IInterceptor, IDbConnectionInterceptor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbConnectionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -911,12 +903,10 @@ export interface __DbConnectionInterceptor$views {
     As_IDbConnectionInterceptor(): IDbConnectionInterceptor$instance;
 }
 
-export interface DbConnectionInterceptor$instance extends IDbConnectionInterceptor$instance {}
-
 export type DbConnectionInterceptor = DbConnectionInterceptor$instance & __DbConnectionInterceptor$views;
 
 
-export interface DbContextErrorEventData$instance extends DbContextEventData {
+export interface DbContextErrorEventData$instance extends DbContextEventData, IErrorEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: DbUpdateConcurrencyException | Exception;
@@ -931,8 +921,6 @@ export const DbContextErrorEventData: {
 export interface __DbContextErrorEventData$views {
     As_IErrorEventData(): IErrorEventData$instance;
 }
-
-export interface DbContextErrorEventData$instance extends IErrorEventData$instance {}
 
 export type DbContextErrorEventData = DbContextErrorEventData$instance & __DbContextErrorEventData$views;
 
@@ -949,7 +937,7 @@ export const DbContextEventData: {
 
 export type DbContextEventData = DbContextEventData$instance;
 
-export interface DbContextTypeErrorEventData$instance extends DbContextTypeEventData {
+export interface DbContextTypeErrorEventData$instance extends DbContextTypeEventData, IErrorEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: Exception;
@@ -964,8 +952,6 @@ export const DbContextTypeErrorEventData: {
 export interface __DbContextTypeErrorEventData$views {
     As_IErrorEventData(): IErrorEventData$instance;
 }
-
-export interface DbContextTypeErrorEventData$instance extends IErrorEventData$instance {}
 
 export type DbContextTypeErrorEventData = DbContextTypeErrorEventData$instance & __DbContextTypeErrorEventData$views;
 
@@ -982,7 +968,7 @@ export const DbContextTypeEventData: {
 
 export type DbContextTypeEventData = DbContextTypeEventData$instance;
 
-export interface DbTransactionInterceptor$instance extends IInterceptor {
+export interface DbTransactionInterceptor$instance extends IInterceptor, IDbTransactionInterceptor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbTransactionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -1024,8 +1010,6 @@ export const DbTransactionInterceptor: (abstract new() => DbTransactionIntercept
 export interface __DbTransactionInterceptor$views {
     As_IDbTransactionInterceptor(): IDbTransactionInterceptor$instance;
 }
-
-export interface DbTransactionInterceptor$instance extends IDbTransactionInterceptor$instance {}
 
 export type DbTransactionInterceptor = DbTransactionInterceptor$instance & __DbTransactionInterceptor$views;
 
@@ -1253,7 +1237,7 @@ export const ForeignKeyEventData: {
 
 export type ForeignKeyEventData = ForeignKeyEventData$instance;
 
-export interface IgnoringIdentityResolutionInterceptor$instance extends IInterceptor {
+export interface IgnoringIdentityResolutionInterceptor$instance extends IInterceptor, IIdentityResolutionInterceptor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -1269,8 +1253,6 @@ export const IgnoringIdentityResolutionInterceptor: {
 export interface __IgnoringIdentityResolutionInterceptor$views {
     As_IIdentityResolutionInterceptor(): IIdentityResolutionInterceptor$instance;
 }
-
-export interface IgnoringIdentityResolutionInterceptor$instance extends IIdentityResolutionInterceptor$instance {}
 
 export type IgnoringIdentityResolutionInterceptor = IgnoringIdentityResolutionInterceptor$instance & __IgnoringIdentityResolutionInterceptor$views;
 
@@ -1322,7 +1304,7 @@ export const IndexWithPropertyEventData: {
 
 export type IndexWithPropertyEventData = IndexWithPropertyEventData$instance;
 
-export interface InterceptorAggregator_1$instance<TInterceptor extends IInterceptor> {
+export interface InterceptorAggregator_1$instance<TInterceptor extends IInterceptor> extends IInterceptorAggregator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
     readonly InterceptorType: Type;
@@ -1338,8 +1320,6 @@ export const InterceptorAggregator_1: (abstract new<TInterceptor extends IInterc
 export interface __InterceptorAggregator_1$views<TInterceptor extends IInterceptor> {
     As_IInterceptorAggregator(): IInterceptorAggregator$instance;
 }
-
-export interface InterceptorAggregator_1$instance<TInterceptor extends IInterceptor> extends IInterceptorAggregator$instance {}
 
 export type InterceptorAggregator_1<TInterceptor extends IInterceptor> = InterceptorAggregator_1$instance<TInterceptor> & __InterceptorAggregator_1$views<TInterceptor>;
 
@@ -1622,7 +1602,7 @@ export interface __NavigationBaseEventData$views {
 export type NavigationBaseEventData = NavigationBaseEventData$instance & __NavigationBaseEventData$views;
 
 
-export interface NavigationEventData$instance extends EventData {
+export interface NavigationEventData$instance extends EventData, INavigationBaseEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
     readonly Navigation: INavigation | IReadOnlyNavigation;
@@ -1637,8 +1617,6 @@ export const NavigationEventData: {
 export interface __NavigationEventData$views {
     As_INavigationBaseEventData(): INavigationBaseEventData$instance;
 }
-
-export interface NavigationEventData$instance extends INavigationBaseEventData$instance {}
 
 export type NavigationEventData = NavigationEventData$instance & __NavigationEventData$views;
 
@@ -1697,7 +1675,7 @@ export const QueryExpressionEventData: {
 
 export type QueryExpressionEventData = QueryExpressionEventData$instance;
 
-export interface ReferenceChangedEventData$instance extends NavigationEventData$instance {
+export interface ReferenceChangedEventData$instance extends NavigationEventData$instance, INavigationBaseEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
     readonly EntityEntry: EntityEntry;
@@ -1714,8 +1692,6 @@ export const ReferenceChangedEventData: {
 export interface __ReferenceChangedEventData$views {
     As_INavigationBaseEventData(): INavigationBaseEventData$instance;
 }
-
-export interface ReferenceChangedEventData$instance extends INavigationBaseEventData$instance {}
 
 export type ReferenceChangedEventData = ReferenceChangedEventData$instance & __ReferenceChangedEventData$views;
 
@@ -1859,7 +1835,7 @@ export const SaveChangesEventData: {
 
 export type SaveChangesEventData = SaveChangesEventData$instance;
 
-export interface SaveChangesInterceptor$instance extends IInterceptor {
+export interface SaveChangesInterceptor$instance extends IInterceptor, ISaveChangesInterceptor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ISaveChangesInterceptor: never;
 
@@ -1883,8 +1859,6 @@ export const SaveChangesInterceptor: (abstract new() => SaveChangesInterceptor) 
 export interface __SaveChangesInterceptor$views {
     As_ISaveChangesInterceptor(): ISaveChangesInterceptor$instance;
 }
-
-export interface SaveChangesInterceptor$instance extends ISaveChangesInterceptor$instance {}
 
 export type SaveChangesInterceptor = SaveChangesInterceptor$instance & __SaveChangesInterceptor$views;
 
@@ -1951,7 +1925,7 @@ export const SharedDependentEntityEventData: {
 
 export type SharedDependentEntityEventData = SharedDependentEntityEventData$instance;
 
-export interface SkipCollectionChangedEventData$instance extends SkipNavigationEventData$instance {
+export interface SkipCollectionChangedEventData$instance extends SkipNavigationEventData$instance, ICollectionChangedEventData$instance, INavigationBaseEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
@@ -1971,12 +1945,10 @@ export interface __SkipCollectionChangedEventData$views {
     As_INavigationBaseEventData(): INavigationBaseEventData$instance;
 }
 
-export interface SkipCollectionChangedEventData$instance extends ICollectionChangedEventData$instance, INavigationBaseEventData$instance {}
-
 export type SkipCollectionChangedEventData = SkipCollectionChangedEventData$instance & __SkipCollectionChangedEventData$views;
 
 
-export interface SkipNavigationEventData$instance extends EventData {
+export interface SkipNavigationEventData$instance extends EventData, INavigationBaseEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
     readonly Navigation: IReadOnlySkipNavigation | ISkipNavigation;
@@ -1991,8 +1963,6 @@ export const SkipNavigationEventData: {
 export interface __SkipNavigationEventData$views {
     As_INavigationBaseEventData(): INavigationBaseEventData$instance;
 }
-
-export interface SkipNavigationEventData$instance extends INavigationBaseEventData$instance {}
 
 export type SkipNavigationEventData = SkipNavigationEventData$instance & __SkipNavigationEventData$views;
 
@@ -2049,7 +2019,7 @@ export const TransactionEnlistedEventData: {
 
 export type TransactionEnlistedEventData = TransactionEnlistedEventData$instance;
 
-export interface TransactionErrorEventData$instance extends TransactionEndEventData {
+export interface TransactionErrorEventData$instance extends TransactionEndEventData, IErrorEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Action: string;
@@ -2065,8 +2035,6 @@ export const TransactionErrorEventData: {
 export interface __TransactionErrorEventData$views {
     As_IErrorEventData(): IErrorEventData$instance;
 }
-
-export interface TransactionErrorEventData$instance extends IErrorEventData$instance {}
 
 export type TransactionErrorEventData = TransactionErrorEventData$instance & __TransactionErrorEventData$views;
 
@@ -2154,7 +2122,7 @@ export const TypeEventData: {
 
 export type TypeEventData = TypeEventData$instance;
 
-export interface TypeLoadingEventData$instance extends AssemblyEventData {
+export interface TypeLoadingEventData$instance extends AssemblyEventData, IErrorEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: Exception;
@@ -2169,8 +2137,6 @@ export const TypeLoadingEventData: {
 export interface __TypeLoadingEventData$views {
     As_IErrorEventData(): IErrorEventData$instance;
 }
-
-export interface TypeLoadingEventData$instance extends IErrorEventData$instance {}
 
 export type TypeLoadingEventData = TypeLoadingEventData$instance & __TypeLoadingEventData$views;
 
@@ -2199,7 +2165,7 @@ export const UpdateEntryEventData: {
 
 export type UpdateEntryEventData = UpdateEntryEventData$instance;
 
-export interface UpdatingIdentityResolutionInterceptor$instance extends IInterceptor {
+export interface UpdatingIdentityResolutionInterceptor$instance extends IInterceptor, IIdentityResolutionInterceptor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -2215,8 +2181,6 @@ export const UpdatingIdentityResolutionInterceptor: {
 export interface __UpdatingIdentityResolutionInterceptor$views {
     As_IIdentityResolutionInterceptor(): IIdentityResolutionInterceptor$instance;
 }
-
-export interface UpdatingIdentityResolutionInterceptor$instance extends IIdentityResolutionInterceptor$instance {}
 
 export type UpdatingIdentityResolutionInterceptor = UpdatingIdentityResolutionInterceptor$instance & __UpdatingIdentityResolutionInterceptor$views;
 

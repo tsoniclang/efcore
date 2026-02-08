@@ -166,7 +166,7 @@ export interface IMigrator$instance {
 
 export type IMigrator = IMigrator$instance;
 
-export interface HistoryRepository$instance {
+export interface HistoryRepository$instance extends IHistoryRepository$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IHistoryRepository: never;
 
     readonly Dependencies: HistoryRepositoryDependencies;
@@ -207,8 +207,6 @@ export const HistoryRepository: (abstract new(dependencies: HistoryRepositoryDep
 export interface __HistoryRepository$views {
     As_IHistoryRepository(): IHistoryRepository$instance;
 }
-
-export interface HistoryRepository$instance extends IHistoryRepository$instance {}
 
 export type HistoryRepository = HistoryRepository$instance & __HistoryRepository$views;
 

@@ -215,7 +215,7 @@ export const ValueGenerator_1: (abstract new<TValue>() => ValueGenerator_1<TValu
 
 export type ValueGenerator_1<TValue> = ValueGenerator_1$instance<TValue>;
 
-export interface ValueGeneratorCache$instance {
+export interface ValueGeneratorCache$instance extends IValueGeneratorCache$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorCache: never;
 
     readonly Dependencies: ValueGeneratorCacheDependencies;
@@ -231,8 +231,6 @@ export const ValueGeneratorCache: {
 export interface __ValueGeneratorCache$views {
     As_IValueGeneratorCache(): IValueGeneratorCache$instance;
 }
-
-export interface ValueGeneratorCache$instance extends IValueGeneratorCache$instance {}
 
 export type ValueGeneratorCache = ValueGeneratorCache$instance & __ValueGeneratorCache$views;
 
@@ -266,7 +264,7 @@ export const ValueGeneratorFactory: (abstract new() => ValueGeneratorFactory) & 
 
 export type ValueGeneratorFactory = ValueGeneratorFactory$instance;
 
-export interface ValueGeneratorSelector$instance {
+export interface ValueGeneratorSelector$instance extends IValueGeneratorSelector$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorSelector: never;
 
     readonly Cache: IValueGeneratorCache;
@@ -287,8 +285,6 @@ export const ValueGeneratorSelector: {
 export interface __ValueGeneratorSelector$views {
     As_IValueGeneratorSelector(): IValueGeneratorSelector$instance;
 }
-
-export interface ValueGeneratorSelector$instance extends IValueGeneratorSelector$instance {}
 
 export type ValueGeneratorSelector = ValueGeneratorSelector$instance & __ValueGeneratorSelector$views;
 
