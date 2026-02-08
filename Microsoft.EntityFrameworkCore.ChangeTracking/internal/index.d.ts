@@ -17,23 +17,23 @@ import type { IComplexProperty, IEntityType, IModel, INavigation, INavigationBas
 import * as Microsoft_EntityFrameworkCore_Update_Internal from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import type { IUpdateEntry } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import type { DbContext, DbSet_1, EntityState, QueryTrackingBehavior } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { HashSet_1$Enumerator, ICollection as ICollection__System_Collections_Generic, IComparer, IDictionary, IEnumerable as IEnumerable__System_Collections_Generic, IEnumerator, IEqualityComparer as IEqualityComparer__System_Collections_Generic, IList as IList__System_Collections_Generic, IReadOnlyCollection, IReadOnlyList, ISet, List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections.js";
-import type { ICollection, IEnumerable, IEqualityComparer, IList } from "@tsonic/dotnet/System.Collections.js";
-import * as System_Collections_ObjectModel_Internal from "@tsonic/dotnet/System.Collections.ObjectModel.js";
-import type { ObservableCollection } from "@tsonic/dotnet/System.Collections.ObjectModel.js";
-import * as System_Collections_Specialized_Internal from "@tsonic/dotnet/System.Collections.Specialized.js";
-import type { INotifyCollectionChanged, NotifyCollectionChangedEventArgs, NotifyCollectionChangedEventHandler } from "@tsonic/dotnet/System.Collections.Specialized.js";
-import * as System_ComponentModel_Internal from "@tsonic/dotnet/System.ComponentModel.js";
-import type { BindingList, IListSource, INotifyPropertyChanged, INotifyPropertyChanging, PropertyChangedEventArgs, PropertyChangedEventHandler, PropertyChangingEventArgs, PropertyChangingEventHandler } from "@tsonic/dotnet/System.ComponentModel.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Action, Boolean as ClrBoolean, Enum, EventArgs, EventHandler, Func, HashCode, IComparable, IConvertible, IFormattable, Int32, ISpanFormattable, Nullable, Object as ClrObject, Predicate, String as ClrString, Type, ValueType, Void } from "@tsonic/dotnet/System.js";
-import type { Expression, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
-import type { IQueryable } from "@tsonic/dotnet/System.Linq.js";
-import type { MethodInfo } from "@tsonic/dotnet/System.Reflection.js";
-import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
-import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
+import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { HashSet_1$Enumerator, ICollection_1, IComparer_1, IDictionary_2, IEnumerable_1, IEnumerator_1, IEqualityComparer_1, IList_1, IReadOnlyCollection_1, IReadOnlyList_1, ISet_1, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import * as System_Collections_ObjectModel_Internal from "@tsonic/dotnet/System.Collections.ObjectModel/internal/index.js";
+import type { ObservableCollection_1 } from "@tsonic/dotnet/System.Collections.ObjectModel/internal/index.js";
+import * as System_Collections_Specialized_Internal from "@tsonic/dotnet/System.Collections.Specialized/internal/index.js";
+import type { INotifyCollectionChanged, NotifyCollectionChangedEventArgs, NotifyCollectionChangedEventHandler } from "@tsonic/dotnet/System.Collections.Specialized/internal/index.js";
+import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections/internal/index.js";
+import type { ICollection, IEnumerable, IEqualityComparer, IList } from "@tsonic/dotnet/System.Collections/internal/index.js";
+import * as System_ComponentModel_Internal from "@tsonic/dotnet/System.ComponentModel/internal/index.js";
+import type { BindingList_1, IListSource, INotifyPropertyChanged, INotifyPropertyChanging, PropertyChangedEventArgs, PropertyChangedEventHandler, PropertyChangingEventArgs, PropertyChangingEventHandler } from "@tsonic/dotnet/System.ComponentModel/internal/index.js";
+import type { Expression, Expression_1, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
+import type { IQueryable, IQueryable_1 } from "@tsonic/dotnet/System.Linq/internal/index.js";
+import type { MethodInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
+import type { Task, Task_1 } from "@tsonic/dotnet/System.Threading.Tasks/internal/index.js";
+import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Action_1, Boolean as ClrBoolean, Enum, EventArgs, EventHandler_1, Func_2, Func_3, HashCode, IComparable, IConvertible, IFormattable, Int32, ISpanFormattable, Nullable_1, Object as ClrObject, Predicate_1, String as ClrString, Type, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export enum CascadeTiming {
     Immediate = 0,
@@ -68,7 +68,7 @@ export type IDependentKeyValueFactory = IDependentKeyValueFactory$instance;
 export interface IDependentKeyValueFactory_1$instance<TKey> extends IDependentKeyValueFactory {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey): boolean;
 }
@@ -81,8 +81,8 @@ export type IDependentKeyValueFactory_1<TKey> = IDependentKeyValueFactory_1$inst
 export interface IEntityEntryGraphIterator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IEntityEntryGraphIterator: never;
 
-    TraverseGraph<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
-    TraverseGraphAsync<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func<EntityEntryGraphNode_1<TState>, CancellationToken, Task<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
+    TraverseGraph<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func_2<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
+    TraverseGraphAsync<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func_3<EntityEntryGraphNode_1<TState>, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
 }
 
 
@@ -100,13 +100,13 @@ export type IPrincipalKeyValueFactory = IPrincipalKeyValueFactory$instance;
 export interface IPrincipalKeyValueFactory_1$instance<TKey> extends IPrincipalKeyValueFactory {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IPrincipalKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer__System_Collections_Generic<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
     CreateFromCurrentValues(entry: IUpdateEntry): TKey;
-    CreateFromKeyValues(keyValues: IReadOnlyList<unknown>): unknown | undefined;
+    CreateFromKeyValues(keyValues: IReadOnlyList_1<unknown>): unknown | undefined;
     CreateFromRelationshipSnapshot(entry: IUpdateEntry): TKey;
     FindNullPropertyInCurrentValues(entry: IUpdateEntry): IProperty;
-    FindNullPropertyInKeyValues(keyValues: IReadOnlyList<unknown>): IProperty;
+    FindNullPropertyInKeyValues(keyValues: IReadOnlyList_1<unknown>): IProperty;
 }
 
 
@@ -156,14 +156,14 @@ export interface ChangeTracker$instance {
     CascadeChanges(): void;
     Clear(): void;
     DetectChanges(): void;
-    Entries(): IEnumerable__System_Collections_Generic<EntityEntry>;
-    Entries<TEntity>(): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
+    Entries(): IEnumerable_1<EntityEntry>;
+    Entries<TEntity>(): IEnumerable_1<EntityEntry_1<TEntity>>;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     HasChanges(): boolean;
     ToString(): string | undefined;
-    TrackGraph(rootEntity: unknown, callback: Action<EntityEntryGraphNode>): void;
-    TrackGraph<TState>(rootEntity: unknown, state: TState, callback: Func<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
+    TrackGraph(rootEntity: unknown, callback: Action_1<EntityEntryGraphNode>): void;
+    TrackGraph<TState>(rootEntity: unknown, state: TState, callback: Func_2<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
 }
 
 
@@ -176,7 +176,7 @@ export interface __ChangeTracker$views {
     As_IResettableService(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance;
 }
 
-export interface ChangeTracker$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {}
+export interface ChangeTracker$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService {}
 
 export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 
@@ -184,7 +184,7 @@ export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 export interface CollectionEntry$instance extends NavigationEntry$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    CurrentValue: IEnumerable | IEnumerable_1<TRelatedEntity> | unknown;
+    CurrentValue: IEnumerable | unknown;
     IsModified: boolean;
     FindEntry(entity: unknown): EntityEntry | undefined;
     GetInternalTargetEntry(entity: unknown): InternalEntityEntry | undefined;
@@ -206,7 +206,7 @@ export interface __CollectionEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface CollectionEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface CollectionEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type CollectionEntry = CollectionEntry$instance & __CollectionEntry$views;
 
@@ -230,7 +230,7 @@ export interface __CollectionEntry_2$views<TEntity, TRelatedEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface CollectionEntry_2$instance<TEntity, TRelatedEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface CollectionEntry_2$instance<TEntity, TRelatedEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type CollectionEntry_2<TEntity, TRelatedEntity> = CollectionEntry_2$instance<TEntity, TRelatedEntity> & __CollectionEntry_2$views<TEntity, TRelatedEntity>;
 
@@ -240,7 +240,7 @@ export interface ComplexCollectionEntry$instance extends MemberEntry$instance {
 
     IsModified: boolean;
     readonly [ordinal: number]: ComplexElementEntry;
-    GetEnumerator(): IEnumerator<ComplexElementEntry>;
+    GetEnumerator(): IEnumerator_1<ComplexElementEntry>;
     GetOriginalEntry(ordinal: int): ComplexElementEntry;
 }
 
@@ -254,7 +254,7 @@ export interface __ComplexCollectionEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ComplexCollectionEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface ComplexCollectionEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type ComplexCollectionEntry = ComplexCollectionEntry$instance & __ComplexCollectionEntry$views;
 
@@ -276,7 +276,7 @@ export interface __ComplexCollectionEntry_2$views<TEntity, TElement> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type ComplexCollectionEntry_2<TEntity, TElement> = ComplexCollectionEntry_2$instance<TEntity, TElement> & __ComplexCollectionEntry_2$views<TEntity, TElement>;
 
@@ -284,14 +284,14 @@ export type ComplexCollectionEntry_2<TEntity, TElement> = ComplexCollectionEntry
 export interface ComplexElementEntry$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
-    readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
+    readonly ComplexCollections: IEnumerable_1<ComplexCollectionEntry>;
+    readonly ComplexProperties: IEnumerable_1<ComplexPropertyEntry>;
     readonly CurrentValue: TComplexProperty | unknown;
     readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
     readonly InternalEntry: InternalComplexEntry;
     IsModified: boolean;
     readonly Metadata: IComplexProperty;
-    readonly Properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
+    readonly Properties: IEnumerable_1<PropertyEntry>;
     State: EntityState;
     ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
     ComplexCollection(propertyName: string): ComplexCollectionEntry;
@@ -311,7 +311,7 @@ export interface __ComplexElementEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry>;
 }
 
-export interface ComplexElementEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry> {}
+export interface ComplexElementEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalComplexEntry> {}
 
 export type ComplexElementEntry = ComplexElementEntry$instance & __ComplexElementEntry$views;
 
@@ -343,7 +343,7 @@ export interface __ComplexElementEntry_2$views<TEntity, TComplexProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry>;
 }
 
-export interface ComplexElementEntry_2$instance<TEntity, TComplexProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry> {}
+export interface ComplexElementEntry_2$instance<TEntity, TComplexProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalComplexEntry> {}
 
 export type ComplexElementEntry_2<TEntity, TComplexProperty> = ComplexElementEntry_2$instance<TEntity, TComplexProperty> & __ComplexElementEntry_2$views<TEntity, TComplexProperty>;
 
@@ -351,10 +351,10 @@ export type ComplexElementEntry_2<TEntity, TComplexProperty> = ComplexElementEnt
 export interface ComplexPropertyEntry$instance extends MemberEntry$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
-    readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
+    readonly ComplexCollections: IEnumerable_1<ComplexCollectionEntry>;
+    readonly ComplexProperties: IEnumerable_1<ComplexPropertyEntry>;
     IsModified: boolean;
-    readonly Properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
+    readonly Properties: IEnumerable_1<PropertyEntry>;
     ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
     ComplexCollection(propertyName: string): ComplexCollectionEntry;
     ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
@@ -373,7 +373,7 @@ export interface __ComplexPropertyEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ComplexPropertyEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface ComplexPropertyEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type ComplexPropertyEntry = ComplexPropertyEntry$instance & __ComplexPropertyEntry$views;
 
@@ -407,7 +407,7 @@ export interface __ComplexPropertyEntry_2$views<TEntity, TComplexProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type ComplexPropertyEntry_2<TEntity, TComplexProperty> = ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> & __ComplexPropertyEntry_2$views<TEntity, TComplexProperty>;
 
@@ -462,21 +462,21 @@ export type DetectEntityChangesEventArgs = DetectEntityChangesEventArgs$instance
 export interface EntityEntry$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    readonly Collections: IEnumerable__System_Collections_Generic<CollectionEntry>;
-    readonly ComplexCollections: IEnumerable__System_Collections_Generic<ComplexCollectionEntry>;
-    readonly ComplexProperties: IEnumerable__System_Collections_Generic<ComplexPropertyEntry>;
+    readonly Collections: IEnumerable_1<CollectionEntry>;
+    readonly ComplexCollections: IEnumerable_1<ComplexCollectionEntry>;
+    readonly ComplexProperties: IEnumerable_1<ComplexPropertyEntry>;
     readonly Context: DbContext;
     readonly CurrentValues: PropertyValues;
     readonly DebugView: DebugView;
     readonly Entity: TEntity | unknown;
     readonly InternalEntry: InternalEntityEntry;
     readonly IsKeySet: boolean;
-    readonly Members: IEnumerable__System_Collections_Generic<MemberEntry>;
+    readonly Members: IEnumerable_1<MemberEntry>;
     readonly Metadata: IEntityType;
-    readonly Navigations: IEnumerable__System_Collections_Generic<NavigationEntry>;
+    readonly Navigations: IEnumerable_1<NavigationEntry>;
     readonly OriginalValues: PropertyValues;
-    readonly Properties: IEnumerable__System_Collections_Generic<PropertyEntry>;
-    readonly References: IEnumerable__System_Collections_Generic<ReferenceEntry>;
+    readonly Properties: IEnumerable_1<PropertyEntry>;
+    readonly References: IEnumerable_1<ReferenceEntry>;
     State: EntityState;
     Collection(navigation: INavigationBase): CollectionEntry;
     Collection(propertyName: string): CollectionEntry;
@@ -487,7 +487,7 @@ export interface EntityEntry$instance {
     DetectChanges(): void;
     Equals(obj: unknown): boolean;
     GetDatabaseValues(): PropertyValues | undefined;
-    GetDatabaseValuesAsync(cancellationToken?: CancellationToken): Task<PropertyValues | undefined>;
+    GetDatabaseValuesAsync(cancellationToken?: CancellationToken): Task_1<PropertyValues | undefined>;
     GetHashCode(): int;
     Member(propertyBase: IPropertyBase): MemberEntry;
     Member(propertyName: string): MemberEntry;
@@ -512,7 +512,7 @@ export interface __EntityEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
 
-export interface EntityEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {}
+export interface EntityEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalEntityEntry> {}
 
 export type EntityEntry = EntityEntry$instance & __EntityEntry$views;
 
@@ -552,7 +552,7 @@ export interface __EntityEntry_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
 
-export interface EntityEntry_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {}
+export interface EntityEntry_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalEntityEntry> {}
 
 export type EntityEntry_1<TEntity> = EntityEntry_1$instance<TEntity> & __EntityEntry_1$views<TEntity>;
 
@@ -588,7 +588,7 @@ export interface __EntityEntryGraphNode$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
 
-export interface EntityEntryGraphNode$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {}
+export interface EntityEntryGraphNode$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalEntityEntry> {}
 
 export type EntityEntryGraphNode = EntityEntryGraphNode$instance & __EntityEntryGraphNode$views;
 
@@ -611,7 +611,7 @@ export interface __EntityEntryGraphNode_1$views<TState> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
 
-export interface EntityEntryGraphNode_1$instance<TState> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {}
+export interface EntityEntryGraphNode_1$instance<TState> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<InternalEntityEntry> {}
 
 export type EntityEntryGraphNode_1<TState> = EntityEntryGraphNode_1$instance<TState> & __EntityEntryGraphNode_1$views<TState>;
 
@@ -698,7 +698,7 @@ export const GeometryValueComparer_1: {
 
 export type GeometryValueComparer_1<TGeometry> = GeometryValueComparer_1$instance<TGeometry>;
 
-export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable__System_Collections_Generic<Nullable<TElement>>> {
+export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable_1<Nullable_1<TElement>>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -716,7 +716,7 @@ export interface __ListOfNullableValueTypesComparer_2$views<TConcreteList, TElem
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown>, System_Collections_Generic_Internal.IEqualityComparer<IEnumerable__System_Collections_Generic<Nullable<TElement>>> {}
+export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<Nullable_1<TElement>>> {}
 
 export type ListOfNullableValueTypesComparer_2<TConcreteList, TElement> = ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfNullableValueTypesComparer_2$views<TConcreteList, TElement>;
 
@@ -739,12 +739,12 @@ export interface __ListOfReferenceTypesComparer_2$views<TConcreteList, TElement>
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown> {}
+export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown> {}
 
 export type ListOfReferenceTypesComparer_2<TConcreteList, TElement> = ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> & __ListOfReferenceTypesComparer_2$views<TConcreteList, TElement>;
 
 
-export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable__System_Collections_Generic<TElement>> {
+export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable_1<TElement>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -762,7 +762,7 @@ export interface __ListOfValueTypesComparer_2$views<TConcreteList, TElement exte
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer<unknown>, System_Collections_Generic_Internal.IEqualityComparer<IEnumerable__System_Collections_Generic<TElement>> {}
+export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<TElement>> {}
 
 export type ListOfValueTypesComparer_2<TConcreteList, TElement> = ListOfValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfValueTypesComparer_2$views<TConcreteList, TElement>;
 
@@ -784,22 +784,22 @@ export interface LocalView_1$instance<TEntity> {
     CopyTo(array: TEntity[], arrayIndex: int): void;
     FindEntry<TKey>(keyValue: TKey): EntityEntry_1<TEntity> | undefined;
     FindEntry<TProperty>(propertyName: string, propertyValue: TProperty): EntityEntry_1<TEntity> | undefined;
-    FindEntry(propertyNames: IEnumerable__System_Collections_Generic<System_Internal.String>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): EntityEntry_1<TEntity> | undefined;
+    FindEntry(propertyNames: IEnumerable_1<System_Internal.String>, propertyValues: IEnumerable_1<unknown>): EntityEntry_1<TEntity> | undefined;
     FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): EntityEntry_1<TEntity> | undefined;
-    FindEntry(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): EntityEntry_1<TEntity> | undefined;
-    FindEntryUntyped(keyValues: IEnumerable__System_Collections_Generic<unknown>): EntityEntry_1<TEntity> | undefined;
-    GetEntries<TProperty>(propertyName: string, propertyValue: TProperty): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
-    GetEntries(propertyNames: IEnumerable__System_Collections_Generic<System_Internal.String>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
-    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
-    GetEntries(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<EntityEntry_1<TEntity>>;
-    GetEnumerator(): IEnumerator<TEntity>;
+    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): EntityEntry_1<TEntity> | undefined;
+    FindEntryUntyped(keyValues: IEnumerable_1<unknown>): EntityEntry_1<TEntity> | undefined;
+    GetEntries<TProperty>(propertyName: string, propertyValue: TProperty): IEnumerable_1<EntityEntry_1<TEntity>>;
+    GetEntries(propertyNames: IEnumerable_1<System_Internal.String>, propertyValues: IEnumerable_1<unknown>): IEnumerable_1<EntityEntry_1<TEntity>>;
+    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<EntityEntry_1<TEntity>>;
+    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): IEnumerable_1<EntityEntry_1<TEntity>>;
+    GetEnumerator(): IEnumerator_1<TEntity>;
     OnCollectionChanged(e: NotifyCollectionChangedEventArgs): void;
     OnPropertyChanged(e: PropertyChangedEventArgs): void;
     OnPropertyChanging(e: PropertyChangingEventArgs): void;
     Remove(item: TEntity): boolean;
     Reset(): void;
-    ToBindingList(): BindingList<TEntity>;
-    ToObservableCollection(): ObservableCollection<TEntity>;
+    ToBindingList(): BindingList_1<TEntity>;
+    ToObservableCollection(): ObservableCollection_1<TEntity>;
 }
 
 
@@ -813,7 +813,7 @@ export type LocalView_1<TEntity> = LocalView_1$instance<TEntity>;
 export interface MemberEntry$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    CurrentValue: IEnumerable | IEnumerable_1<TRelatedEntity> | unknown;
+    CurrentValue: IEnumerable | unknown;
     readonly EntityEntry: EntityEntry | EntityEntry_1<TEntity>;
     readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
@@ -832,7 +832,7 @@ export interface __MemberEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type MemberEntry = MemberEntry$instance & __MemberEntry$views;
 
@@ -858,12 +858,12 @@ export interface __NavigationEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface NavigationEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface NavigationEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type NavigationEntry = NavigationEntry$instance & __NavigationEntry$views;
 
 
-export interface ObservableCollectionListSource_1$instance<T> extends ObservableCollection<T> {
+export interface ObservableCollectionListSource_1$instance<T> extends ObservableCollection_1<T> {
     readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IList_1: never;
@@ -881,8 +881,8 @@ export interface ObservableCollectionListSource_1$instance<T> extends Observable
 
 export const ObservableCollectionListSource_1: {
     new<T>(): ObservableCollectionListSource_1<T>;
-    new<T>(collection: IEnumerable__System_Collections_Generic<T>): ObservableCollectionListSource_1<T>;
-    new<T>(list: List<T>): ObservableCollectionListSource_1<T>;
+    new<T>(collection: IEnumerable_1<T>): ObservableCollectionListSource_1<T>;
+    new<T>(list: List_1<T>): ObservableCollectionListSource_1<T>;
 };
 
 
@@ -898,7 +898,7 @@ export interface ObservableHashSet_1$instance<T> {
     readonly __tsonic_iface_System_ComponentModel_INotifyPropertyChanged: never;
     readonly __tsonic_iface_System_ComponentModel_INotifyPropertyChanging: never;
 
-    readonly Comparer: IEqualityComparer__System_Collections_Generic<T>;
+    readonly Comparer: IEqualityComparer_1<T>;
     readonly Count: int;
     readonly IsReadOnly: boolean;
     Add(item: T): boolean;
@@ -907,31 +907,31 @@ export interface ObservableHashSet_1$instance<T> {
     CopyTo(array: T[], arrayIndex: int): void;
     CopyTo(array: T[]): void;
     CopyTo(array: T[], arrayIndex: int, count: int): void;
-    ExceptWith(other: IEnumerable__System_Collections_Generic<T>): void;
+    ExceptWith(other: IEnumerable_1<T>): void;
     GetEnumerator(): HashSet_1$Enumerator<T>;
-    IntersectWith(other: IEnumerable__System_Collections_Generic<T>): void;
-    IsProperSubsetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    IsProperSupersetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    IsSubsetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    IsSupersetOf(other: IEnumerable__System_Collections_Generic<T>): boolean;
+    IntersectWith(other: IEnumerable_1<T>): void;
+    IsProperSubsetOf(other: IEnumerable_1<T>): boolean;
+    IsProperSupersetOf(other: IEnumerable_1<T>): boolean;
+    IsSubsetOf(other: IEnumerable_1<T>): boolean;
+    IsSupersetOf(other: IEnumerable_1<T>): boolean;
     OnCollectionChanged(e: NotifyCollectionChangedEventArgs): void;
     OnPropertyChanged(e: PropertyChangedEventArgs): void;
     OnPropertyChanging(e: PropertyChangingEventArgs): void;
-    Overlaps(other: IEnumerable__System_Collections_Generic<T>): boolean;
+    Overlaps(other: IEnumerable_1<T>): boolean;
     Remove(item: T): boolean;
-    RemoveWhere(match: Predicate<T>): int;
-    SetEquals(other: IEnumerable__System_Collections_Generic<T>): boolean;
-    SymmetricExceptWith(other: IEnumerable__System_Collections_Generic<T>): void;
+    RemoveWhere(match: Predicate_1<T>): int;
+    SetEquals(other: IEnumerable_1<T>): boolean;
+    SymmetricExceptWith(other: IEnumerable_1<T>): void;
     TrimExcess(): void;
-    UnionWith(other: IEnumerable__System_Collections_Generic<T>): void;
+    UnionWith(other: IEnumerable_1<T>): void;
 }
 
 
 export const ObservableHashSet_1: {
     new<T>(): ObservableHashSet_1<T>;
-    new<T>(comparer: IEqualityComparer__System_Collections_Generic<T>): ObservableHashSet_1<T>;
-    new<T>(collection: IEnumerable__System_Collections_Generic<T>): ObservableHashSet_1<T>;
-    new<T>(collection: IEnumerable__System_Collections_Generic<T>, comparer: IEqualityComparer__System_Collections_Generic<T>): ObservableHashSet_1<T>;
+    new<T>(comparer: IEqualityComparer_1<T>): ObservableHashSet_1<T>;
+    new<T>(collection: IEnumerable_1<T>): ObservableHashSet_1<T>;
+    new<T>(collection: IEnumerable_1<T>, comparer: IEqualityComparer_1<T>): ObservableHashSet_1<T>;
 };
 
 
@@ -955,7 +955,7 @@ export interface __PropertyEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface PropertyEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface PropertyEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type PropertyEntry = PropertyEntry$instance & __PropertyEntry$views;
 
@@ -977,15 +977,15 @@ export interface __PropertyEntry_2$views<TEntity, TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface PropertyEntry_2$instance<TEntity, TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface PropertyEntry_2$instance<TEntity, TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type PropertyEntry_2<TEntity, TProperty> = PropertyEntry_2$instance<TEntity, TProperty> & __PropertyEntry_2$views<TEntity, TProperty>;
 
 
 export interface PropertyValues$instance {
-    readonly ComplexCollectionProperties: IReadOnlyList<IComplexProperty>;
+    readonly ComplexCollectionProperties: IReadOnlyList_1<IComplexProperty>;
     readonly InternalEntry: InternalEntryBase;
-    readonly Properties: IReadOnlyList<IProperty>;
+    readonly Properties: IReadOnlyList_1<IProperty>;
     readonly StructuralType: ITypeBase;
     Clone(): PropertyValues;
     Equals(obj: unknown): boolean;
@@ -1000,7 +1000,7 @@ export interface PropertyValues$instance {
     set_Item(complexProperty: IComplexProperty, value: IList | undefined): void;
     SetValues(obj: unknown): void;
     SetValues(propertyValues: PropertyValues): void;
-    SetValues<TProperty>(values: IDictionary<System_Internal.String, TProperty>): void;
+    SetValues<TProperty>(values: IDictionary_2<System_Internal.String, TProperty>): void;
     ToObject(): unknown;
     ToString(): string | undefined;
     TryGetValue<TValue>(propertyName: string, value: TValue): boolean;
@@ -1037,7 +1037,7 @@ export interface __ReferenceEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ReferenceEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface ReferenceEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type ReferenceEntry = ReferenceEntry$instance & __ReferenceEntry$views;
 
@@ -1061,7 +1061,7 @@ export interface __ReferenceEntry_2$views<TEntity, TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export interface ReferenceEntry_2$instance<TEntity, TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {}
+export interface ReferenceEntry_2$instance<TEntity, TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1<IInternalEntry> {}
 
 export type ReferenceEntry_2<TEntity, TProperty> = ReferenceEntry_2$instance<TEntity, TProperty> & __ReferenceEntry_2$views<TEntity, TProperty>;
 
@@ -1087,7 +1087,7 @@ export interface ValueComparer$instance {
 export const ValueComparer: (abstract new(equalsExpression: LambdaExpression, hashCodeExpression: LambdaExpression, snapshotExpression: LambdaExpression) => ValueComparer) & {
     readonly HashCodeAddMethod: MethodInfo;
     readonly ToHashCodeMethod: MethodInfo;
-    readonly BoolIdentity: Expression<Func<System_Internal.Boolean, System_Internal.Boolean>>;
+    readonly BoolIdentity: Expression_1<Func_2<System_Internal.Boolean, System_Internal.Boolean>>;
     Add(hash: HashCode, code: int): HashCode;
     CreateDefault<T>(favorStructuralComparisons: boolean): ValueComparer;
     CreateDefault(type: Type, favorStructuralComparisons: boolean): ValueComparer;
@@ -1101,10 +1101,10 @@ export interface ValueComparer_1$instance<T> extends ValueComparer {
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
 
-    readonly EqualsExpression: Expression<Func<T | undefined, T | undefined, System_Internal.Boolean>>;
-    readonly HashCodeExpression: Expression<Func<T, System_Internal.Int32>>;
+    readonly EqualsExpression: Expression_1<Func_3<T | undefined, T | undefined, System_Internal.Boolean>>;
+    readonly HashCodeExpression: Expression_1<Func_2<T, System_Internal.Int32>>;
     readonly ObjectEqualsExpression: LambdaExpression;
-    readonly SnapshotExpression: Expression<Func<T, T>>;
+    readonly SnapshotExpression: Expression_1<Func_2<T, T>>;
     readonly Type: Type;
     Equals(left: unknown, right: unknown): boolean;
     Equals(left: T, right: T): boolean;
@@ -1117,11 +1117,11 @@ export interface ValueComparer_1$instance<T> extends ValueComparer {
 
 export const ValueComparer_1: {
     new<T>(favorStructuralComparisons: boolean): ValueComparer_1<T>;
-    new<T>(equalsExpression: Expression<Func<T, T, System_Internal.Boolean>>, hashCodeExpression: Expression<Func<T, System_Internal.Int32>>): ValueComparer_1<T>;
-    new<T>(equalsExpression: Expression<Func<T, T, System_Internal.Boolean>>, hashCodeExpression: Expression<Func<T, System_Internal.Int32>>, snapshotExpression: Expression<Func<T, T>>): ValueComparer_1<T>;
-    CreateDefaultEqualsExpression<T>(): Expression<Func<T | undefined, T | undefined, System_Internal.Boolean>>;
-    CreateDefaultHashCodeExpression<T>(favorStructuralComparisons: boolean): Expression<Func<T, System_Internal.Int32>>;
-    CreateDefaultSnapshotExpression<T>(favorStructuralComparisons: boolean): Expression<Func<T, T>>;
+    new<T>(equalsExpression: Expression_1<Func_3<T, T, System_Internal.Boolean>>, hashCodeExpression: Expression_1<Func_2<T, System_Internal.Int32>>): ValueComparer_1<T>;
+    new<T>(equalsExpression: Expression_1<Func_3<T, T, System_Internal.Boolean>>, hashCodeExpression: Expression_1<Func_2<T, System_Internal.Int32>>, snapshotExpression: Expression_1<Func_2<T, T>>): ValueComparer_1<T>;
+    CreateDefaultEqualsExpression<T>(): Expression_1<Func_3<T | undefined, T | undefined, System_Internal.Boolean>>;
+    CreateDefaultHashCodeExpression<T>(favorStructuralComparisons: boolean): Expression_1<Func_2<T, System_Internal.Int32>>;
+    CreateDefaultSnapshotExpression<T>(favorStructuralComparisons: boolean): Expression_1<Func_2<T, T>>;
 };
 
 

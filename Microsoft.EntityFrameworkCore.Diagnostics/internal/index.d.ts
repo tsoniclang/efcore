@@ -23,18 +23,18 @@ import type { IRelationalConnection, MaterializationContext } from "../../Micros
 import type { IUpdateEntry } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Internal from "../../Microsoft.EntityFrameworkCore/internal/index.js";
 import type { DbContext, DbContextOptions, DbContextOptionsBuilder, DbLoggerCategory_ChangeTracking, DbLoggerCategory_Database_Command, DbLoggerCategory_Database_Connection, DbLoggerCategory_Database_Transaction, DbLoggerCategory_Infrastructure, DbLoggerCategory_Migrations, DbLoggerCategory_Model, DbLoggerCategory_Model_Validation, DbLoggerCategory_Query, DbLoggerCategory_Update, DbUpdateConcurrencyException, EntityState, QueryTrackingBehavior, WarningBehavior } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import type { Dictionary, ICollection, IDictionary, IEnumerable, IList, IReadOnlyList, ISet, List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { DbCommand, DbConnection, DbDataReader, DbTransaction } from "@tsonic/dotnet/System.Data.Common.js";
-import type { IsolationLevel } from "@tsonic/dotnet/System.Data.js";
-import type { DiagnosticSource } from "@tsonic/dotnet/System.Diagnostics.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Action, Boolean as ClrBoolean, DateTimeOffset, Enum, Exception, Func, Guid, IComparable, IConvertible, IFormattable, Int32, IServiceProvider, ISpanFormattable, Nullable, Object as ClrObject, String as ClrString, TimeSpan, Tuple, Type, ValueTuple, ValueType, Void } from "@tsonic/dotnet/System.js";
-import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
-import type { Assembly, MemberInfo, TypeInfo } from "@tsonic/dotnet/System.Reflection.js";
-import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
-import type { Task, ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
-import type { Transaction } from "@tsonic/dotnet/System.Transactions.js";
-import type { EventId, ILogger, LogLevel } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging.js";
+import type { Dictionary_2, ICollection_1, IDictionary_2, IEnumerable_1, IList_1, IReadOnlyList_1, ISet_1, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { DbCommand, DbConnection, DbDataReader, DbTransaction } from "@tsonic/dotnet/System.Data.Common/internal/index.js";
+import type { IsolationLevel } from "@tsonic/dotnet/System.Data/internal/index.js";
+import type { DiagnosticSource } from "@tsonic/dotnet/System.Diagnostics/internal/index.js";
+import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
+import type { Assembly, MemberInfo, TypeInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
+import type { Task, ValueTask_1 } from "@tsonic/dotnet/System.Threading.Tasks/internal/index.js";
+import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal/index.js";
+import type { Transaction } from "@tsonic/dotnet/System.Transactions/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Action_1, Action_2, Action_3, Action_4, Action_5, Action_6, Action_7, Action_8, Boolean as ClrBoolean, DateTimeOffset, Enum, Exception, Func_2, Func_3, Func_5, Guid, IComparable, IConvertible, IFormattable, Int32, IServiceProvider, ISpanFormattable, Nullable_1, Object as ClrObject, String as ClrString, TimeSpan, Tuple_2, Type, ValueTuple_2, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
+import type { EventId, ILogger, LogLevel } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging/internal/index.js";
 
 export enum CommandSource {
     Unknown = 0,
@@ -75,8 +75,8 @@ export interface ICollectionChangedEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
 
     readonly EntityEntry: EntityEntry;
-    readonly Added: IEnumerable<unknown>;
-    readonly Removed: IEnumerable<unknown>;
+    readonly Added: IEnumerable_1<unknown>;
+    readonly Removed: IEnumerable_1<unknown>;
 }
 
 
@@ -92,16 +92,16 @@ export interface IDbCommandInterceptor$instance extends IInterceptor {
     CommandFailed(command: DbCommand, eventData: CommandErrorEventData): void;
     CommandFailedAsync(command: DbCommand, eventData: CommandErrorEventData, cancellationToken?: CancellationToken): Task;
     DataReaderClosing(command: DbCommand, eventData: DataReaderClosingEventData, result: InterceptionResult): InterceptionResult;
-    DataReaderClosingAsync(command: DbCommand, eventData: DataReaderClosingEventData, result: InterceptionResult): ValueTask<InterceptionResult>;
+    DataReaderClosingAsync(command: DbCommand, eventData: DataReaderClosingEventData, result: InterceptionResult): ValueTask_1<InterceptionResult>;
     DataReaderDisposing(command: DbCommand, eventData: DataReaderDisposingEventData, result: InterceptionResult): InterceptionResult;
     NonQueryExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: int): int;
-    NonQueryExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: int, cancellationToken?: CancellationToken): ValueTask<System_Internal.Int32>;
+    NonQueryExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: int, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
     ReaderExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: DbDataReader): DbDataReader;
-    ReaderExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: DbDataReader, cancellationToken?: CancellationToken): ValueTask<DbDataReader>;
+    ReaderExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: DbDataReader, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
     ReaderExecuting(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>): InterceptionResult_1<DbDataReader>;
-    ReaderExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<DbDataReader>>;
+    ReaderExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
     ScalarExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: unknown): unknown | undefined;
-    ScalarExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: unknown, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    ScalarExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: unknown, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
 }
 
 
@@ -113,7 +113,7 @@ export interface IDbConnectionInterceptor$instance extends IInterceptor {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbConnectionInterceptor: never;
 
     ConnectionClosedAsync(connection: DbConnection, eventData: ConnectionEndEventData): Task;
-    ConnectionClosingAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): ValueTask<InterceptionResult>;
+    ConnectionClosingAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): ValueTask_1<InterceptionResult>;
     ConnectionCreated(eventData: ConnectionCreatedEventData, result: DbConnection): DbConnection;
     ConnectionCreating(eventData: ConnectionCreatingEventData, result: InterceptionResult_1<DbConnection>): InterceptionResult_1<DbConnection>;
     ConnectionFailed(connection: DbConnection, eventData: ConnectionErrorEventData): void;
@@ -121,7 +121,7 @@ export interface IDbConnectionInterceptor$instance extends IInterceptor {
     ConnectionOpened(connection: DbConnection, eventData: ConnectionEndEventData): void;
     ConnectionOpenedAsync(connection: DbConnection, eventData: ConnectionEndEventData, cancellationToken?: CancellationToken): Task;
     ConnectionOpening(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): InterceptionResult;
-    ConnectionOpeningAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    ConnectionOpeningAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
 }
 
 
@@ -147,15 +147,15 @@ export interface IDbTransactionInterceptor$instance extends IInterceptor {
     TransactionCommitted(transaction: DbTransaction, eventData: TransactionEndEventData): void;
     TransactionCommittedAsync(transaction: DbTransaction, eventData: TransactionEndEventData, cancellationToken?: CancellationToken): Task;
     TransactionCommitting(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult): InterceptionResult;
-    TransactionCommittingAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    TransactionCommittingAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     TransactionFailed(transaction: DbTransaction, eventData: TransactionErrorEventData): void;
     TransactionFailedAsync(transaction: DbTransaction, eventData: TransactionErrorEventData, cancellationToken?: CancellationToken): Task;
     TransactionStarted(connection: DbConnection, eventData: TransactionEndEventData, result: DbTransaction): DbTransaction;
-    TransactionStartedAsync(connection: DbConnection, eventData: TransactionEndEventData, result: DbTransaction, cancellationToken?: CancellationToken): ValueTask<DbTransaction>;
+    TransactionStartedAsync(connection: DbConnection, eventData: TransactionEndEventData, result: DbTransaction, cancellationToken?: CancellationToken): ValueTask_1<DbTransaction>;
     TransactionStarting(connection: DbConnection, eventData: TransactionStartingEventData, result: InterceptionResult_1<DbTransaction>): InterceptionResult_1<DbTransaction>;
-    TransactionStartingAsync(connection: DbConnection, eventData: TransactionStartingEventData, result: InterceptionResult_1<DbTransaction>, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<DbTransaction>>;
+    TransactionStartingAsync(connection: DbConnection, eventData: TransactionStartingEventData, result: InterceptionResult_1<DbTransaction>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbTransaction>>;
     TransactionUsed(connection: DbConnection, eventData: TransactionEventData, result: DbTransaction): DbTransaction;
-    TransactionUsedAsync(connection: DbConnection, eventData: TransactionEventData, result: DbTransaction, cancellationToken?: CancellationToken): ValueTask<DbTransaction>;
+    TransactionUsedAsync(connection: DbConnection, eventData: TransactionEventData, result: DbTransaction, cancellationToken?: CancellationToken): ValueTask_1<DbTransaction>;
 }
 
 
@@ -247,7 +247,7 @@ export interface IInterceptorAggregator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
     readonly InterceptorType: Type;
-    AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
 }
 
 
@@ -274,7 +274,7 @@ export interface ILoggingOptions$instance extends ISingletonOptions {
 }
 
 
-export interface ILoggingOptions$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.ISingletonOptions$instance {}
+export interface ILoggingOptions$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.ISingletonOptions {}
 
 export type ILoggingOptions = ILoggingOptions$instance;
 
@@ -327,15 +327,15 @@ export interface IRelationalCommandDiagnosticsLogger$instance extends IDiagnosti
     CommandError(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
     CommandErrorAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
     CommandNonQueryExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): int;
-    CommandNonQueryExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<System_Internal.Int32>;
+    CommandNonQueryExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
     CommandReaderExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbDataReader;
-    CommandReaderExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<DbDataReader>;
+    CommandReaderExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
     CommandReaderExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbDataReader>;
-    CommandReaderExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<DbDataReader>>;
+    CommandReaderExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
     CommandScalarExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): unknown | undefined;
-    CommandScalarExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    CommandScalarExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     DataReaderClosing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): InterceptionResult;
-    DataReaderClosingAsync(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): ValueTask<InterceptionResult>;
+    DataReaderClosingAsync(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): ValueTask_1<InterceptionResult>;
     DataReaderDisposing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): InterceptionResult;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
     NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
@@ -363,11 +363,11 @@ export interface IRelationalConnectionDiagnosticsLogger$instance extends IDiagno
     ConnectionDisposed(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): void;
     ConnectionDisposedAsync(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): Task;
     ConnectionDisposing(connection: IRelationalConnection, startTime: DateTimeOffset): InterceptionResult;
-    ConnectionDisposingAsync(connection: IRelationalConnection, startTime: DateTimeOffset): ValueTask<InterceptionResult>;
+    ConnectionDisposingAsync(connection: IRelationalConnection, startTime: DateTimeOffset): ValueTask_1<InterceptionResult>;
     ConnectionError(connection: IRelationalConnection, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, logErrorAsDebug: boolean): void;
     ConnectionErrorAsync(connection: IRelationalConnection, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, logErrorAsDebug: boolean, cancellationToken?: CancellationToken): Task;
     ConnectionOpenedAsync(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): Task;
-    ConnectionOpeningAsync(connection: IRelationalConnection, startTime: DateTimeOffset, cancellationToken: CancellationToken): ValueTask<InterceptionResult>;
+    ConnectionOpeningAsync(connection: IRelationalConnection, startTime: DateTimeOffset, cancellationToken: CancellationToken): ValueTask_1<InterceptionResult>;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
     NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
@@ -388,11 +388,11 @@ export interface ISaveChangesInterceptor$instance extends IInterceptor {
     SaveChangesFailed(eventData: DbContextErrorEventData): void;
     SaveChangesFailedAsync(eventData: DbContextErrorEventData, cancellationToken?: CancellationToken): Task;
     SavedChanges(eventData: SaveChangesCompletedEventData, result: int): int;
-    SavedChangesAsync(eventData: SaveChangesCompletedEventData, result: int, cancellationToken?: CancellationToken): ValueTask<System_Internal.Int32>;
+    SavedChangesAsync(eventData: SaveChangesCompletedEventData, result: int, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
     SavingChanges(eventData: DbContextEventData, result: InterceptionResult_1<System_Internal.Int32>): InterceptionResult_1<System_Internal.Int32>;
-    SavingChangesAsync(eventData: DbContextEventData, result: InterceptionResult_1<System_Internal.Int32>, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<System_Internal.Int32>>;
+    SavingChangesAsync(eventData: DbContextEventData, result: InterceptionResult_1<System_Internal.Int32>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<System_Internal.Int32>>;
     ThrowingConcurrencyException(eventData: ConcurrencyExceptionEventData, result: InterceptionResult): InterceptionResult;
-    ThrowingConcurrencyExceptionAsync(eventData: ConcurrencyExceptionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    ThrowingConcurrencyExceptionAsync(eventData: ConcurrencyExceptionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
 }
 
 
@@ -464,7 +464,7 @@ export type InterceptionResult_1<TResult> = InterceptionResult_1$instance<TResul
 export interface MaterializationInterceptionData$instance {
     readonly Context: DbContext;
     readonly EntityType: IEntityType;
-    readonly QueryTrackingBehavior: Nullable<QueryTrackingBehavior>;
+    readonly QueryTrackingBehavior: Nullable_1<QueryTrackingBehavior>;
     GetPropertyValue<T>(propertyName: string): T;
     GetPropertyValue(propertyName: string): unknown | undefined;
     GetPropertyValue<T>(property: IPropertyBase): T;
@@ -473,7 +473,7 @@ export interface MaterializationInterceptionData$instance {
 
 
 export const MaterializationInterceptionData: {
-    new(materializationContext: MaterializationContext, entityType: IEntityType, queryTrackingBehavior: Nullable<QueryTrackingBehavior>, valueAccessor: Dictionary<IPropertyBase, ValueTuple<unknown, Func<MaterializationContext, unknown>>>): MaterializationInterceptionData;
+    new(materializationContext: MaterializationContext, entityType: IEntityType, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, valueAccessor: Dictionary_2<IPropertyBase, ValueTuple_2<unknown, Func_2<MaterializationContext, unknown>>>): MaterializationInterceptionData;
 };
 
 
@@ -485,7 +485,7 @@ export interface AssemblyEventData$instance extends EventData {
 
 
 export const AssemblyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, assembly: Assembly): AssemblyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, assembly: Assembly): AssemblyEventData;
 };
 
 
@@ -493,12 +493,12 @@ export type AssemblyEventData = AssemblyEventData$instance;
 
 export interface BatchEventData$instance extends EventData {
     readonly CommandCount: int;
-    readonly Entries: IEnumerable<IUpdateEntry>;
+    readonly Entries: IEnumerable_1<IUpdateEntry>;
 }
 
 
 export const BatchEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entries: IEnumerable<IUpdateEntry>, commandCount: int): BatchEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entries: IEnumerable_1<IUpdateEntry>, commandCount: int): BatchEventData;
 };
 
 
@@ -511,7 +511,7 @@ export interface BinaryExpressionEventData$instance extends EventData {
 
 
 export const BinaryExpressionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, left: Expression, right: Expression): BinaryExpressionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, left: Expression, right: Expression): BinaryExpressionEventData;
 };
 
 
@@ -524,7 +524,7 @@ export interface CascadeDeleteEventData$instance extends EntityEntryEventData {
 
 
 export const CascadeDeleteEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, parentEntry: EntityEntry, state: EntityState): CascadeDeleteEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, parentEntry: EntityEntry, state: EntityState): CascadeDeleteEventData;
 };
 
 
@@ -537,7 +537,7 @@ export interface CascadeDeleteOrphanEventData$instance extends EntityEntryEventD
 
 
 export const CascadeDeleteOrphanEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, parentEntityTypes: IEntityType, state: EntityState): CascadeDeleteOrphanEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, parentEntityTypes: IEntityType, state: EntityState): CascadeDeleteOrphanEventData;
 };
 
 
@@ -547,14 +547,14 @@ export interface CollectionChangedEventData$instance extends NavigationEventData
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
-    readonly Added: IEnumerable<unknown>;
+    readonly Added: IEnumerable_1<unknown>;
     readonly EntityEntry: EntityEntry;
-    readonly Removed: IEnumerable<unknown>;
+    readonly Removed: IEnumerable_1<unknown>;
 }
 
 
 export const CollectionChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: INavigation, added: IEnumerable<unknown>, removed: IEnumerable<unknown>): CollectionChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: INavigation, added: IEnumerable_1<unknown>, removed: IEnumerable_1<unknown>): CollectionChangedEventData;
 };
 
 
@@ -569,13 +569,13 @@ export type CollectionChangedEventData = CollectionChangedEventData$instance & _
 
 
 export interface ColumnsEventData$instance extends EventData {
-    readonly Columns: IReadOnlyList<System_Internal.String>;
+    readonly Columns: IReadOnlyList_1<System_Internal.String>;
     readonly StoreObject: StoreObjectIdentifier;
 }
 
 
 export const ColumnsEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, storeObject: StoreObjectIdentifier, columns: IReadOnlyList<System_Internal.String>): ColumnsEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, storeObject: StoreObjectIdentifier, columns: IReadOnlyList_1<System_Internal.String>): ColumnsEventData;
 };
 
 
@@ -593,7 +593,7 @@ export interface CommandCorrelatedEventData$instance extends DbContextEventData 
 
 
 export const CommandCorrelatedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandCorrelatedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandCorrelatedEventData;
 };
 
 
@@ -605,7 +605,7 @@ export interface CommandEndEventData$instance extends CommandEventData {
 
 
 export const CommandEndEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandEndEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandEndEventData;
 };
 
 
@@ -619,7 +619,7 @@ export interface CommandErrorEventData$instance extends CommandEndEventData {
 
 
 export const CommandErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandErrorEventData;
 };
 
 
@@ -640,7 +640,7 @@ export interface CommandEventData$instance extends CommandCorrelatedEventData {
 
 
 export const CommandEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandEventData;
 };
 
 
@@ -652,7 +652,7 @@ export interface CommandExecutedEventData$instance extends CommandEndEventData {
 
 
 export const CommandExecutedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, result: unknown, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandExecutedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, result: unknown, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandExecutedEventData;
 };
 
 
@@ -664,7 +664,7 @@ export interface ComplexPropertyEventData$instance extends EventData {
 
 
 export const ComplexPropertyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, property: IReadOnlyComplexProperty): ComplexPropertyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, property: IReadOnlyComplexProperty): ComplexPropertyEventData;
 };
 
 
@@ -679,7 +679,7 @@ export interface ComplexTypePropertyChangedEventData$instance extends PropertyEv
 
 
 export const ComplexTypePropertyChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, complexEntry: ComplexElementEntry, property: IProperty, oldValue: unknown, newValue: unknown): ComplexTypePropertyChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, complexEntry: ComplexElementEntry, property: IProperty, oldValue: unknown, newValue: unknown): ComplexTypePropertyChangedEventData;
 };
 
 
@@ -688,12 +688,12 @@ export type ComplexTypePropertyChangedEventData = ComplexTypePropertyChangedEven
 export interface ConcurrencyExceptionEventData$instance extends DbContextErrorEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
-    readonly Entries: IReadOnlyList<EntityEntry>;
+    readonly Entries: IReadOnlyList_1<EntityEntry>;
 }
 
 
 export const ConcurrencyExceptionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, entries: IReadOnlyList<IUpdateEntry>, exception: DbUpdateConcurrencyException): ConcurrencyExceptionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, entries: IReadOnlyList_1<IUpdateEntry>, exception: DbUpdateConcurrencyException): ConcurrencyExceptionEventData;
 };
 
 
@@ -713,7 +713,7 @@ export interface ConnectionCreatedEventData$instance extends DbContextEventData 
 
 
 export const ConnectionCreatedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ConnectionCreatedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ConnectionCreatedEventData;
 };
 
 
@@ -727,7 +727,7 @@ export interface ConnectionCreatingEventData$instance extends DbContextEventData
 
 
 export const ConnectionCreatingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, connectionString: string, connectionId: Guid, startTime: DateTimeOffset): ConnectionCreatingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, connectionString: string, connectionId: Guid, startTime: DateTimeOffset): ConnectionCreatingEventData;
 };
 
 
@@ -739,7 +739,7 @@ export interface ConnectionEndEventData$instance extends ConnectionEventData {
 
 
 export const ConnectionEndEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionEndEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionEndEventData;
 };
 
 
@@ -753,7 +753,7 @@ export interface ConnectionErrorEventData$instance extends ConnectionEndEventDat
 
 
 export const ConnectionErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, exception: Exception, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, exception: Exception, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionErrorEventData;
 };
 
 
@@ -775,7 +775,7 @@ export interface ConnectionEventData$instance extends DbContextEventData {
 
 
 export const ConnectionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async: boolean, startTime: DateTimeOffset): ConnectionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async: boolean, startTime: DateTimeOffset): ConnectionEventData;
 };
 
 
@@ -788,7 +788,7 @@ export interface ContextInitializedEventData$instance extends EventData {
 
 
 export const ContextInitializedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, contextOptions: DbContextOptions): ContextInitializedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, contextOptions: DbContextOptions): ContextInitializedEventData;
 };
 
 
@@ -800,7 +800,7 @@ export interface DataReaderClosingEventData$instance extends DataReaderEventData
 
 
 export const DataReaderClosingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, async: boolean, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderClosingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, async: boolean, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderClosingEventData;
 };
 
 
@@ -812,7 +812,7 @@ export interface DataReaderDisposingEventData$instance extends DataReaderEventDa
 
 
 export const DataReaderDisposingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): DataReaderDisposingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): DataReaderDisposingEventData;
 };
 
 
@@ -830,7 +830,7 @@ export interface DataReaderEventData$instance extends DbContextEventData {
 
 
 export const DataReaderEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderEventData;
 };
 
 
@@ -848,20 +848,20 @@ export interface DbCommandInterceptor$instance extends IInterceptor {
     CommandFailedAsync(command: DbCommand, eventData: CommandErrorEventData, cancellationToken?: CancellationToken): Task;
     CommandInitialized(eventData: CommandEndEventData, result: DbCommand): DbCommand;
     DataReaderClosing(command: DbCommand, eventData: DataReaderClosingEventData, result: InterceptionResult): InterceptionResult;
-    DataReaderClosingAsync(command: DbCommand, eventData: DataReaderClosingEventData, result: InterceptionResult): ValueTask<InterceptionResult>;
+    DataReaderClosingAsync(command: DbCommand, eventData: DataReaderClosingEventData, result: InterceptionResult): ValueTask_1<InterceptionResult>;
     DataReaderDisposing(command: DbCommand, eventData: DataReaderDisposingEventData, result: InterceptionResult): InterceptionResult;
     NonQueryExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: int): int;
-    NonQueryExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: int, cancellationToken?: CancellationToken): ValueTask<System_Internal.Int32>;
+    NonQueryExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: int, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
     NonQueryExecuting(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<System_Internal.Int32>): InterceptionResult_1<System_Internal.Int32>;
-    NonQueryExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<System_Internal.Int32>, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<System_Internal.Int32>>;
+    NonQueryExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<System_Internal.Int32>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<System_Internal.Int32>>;
     ReaderExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: DbDataReader): DbDataReader;
-    ReaderExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: DbDataReader, cancellationToken?: CancellationToken): ValueTask<DbDataReader>;
+    ReaderExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: DbDataReader, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
     ReaderExecuting(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>): InterceptionResult_1<DbDataReader>;
-    ReaderExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<DbDataReader>>;
+    ReaderExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
     ScalarExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: unknown): unknown | undefined;
-    ScalarExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: unknown, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    ScalarExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: unknown, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     ScalarExecuting(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<unknown>): InterceptionResult_1<unknown>;
-    ScalarExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<unknown>, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<unknown>>;
+    ScalarExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<unknown>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<unknown>>;
 }
 
 
@@ -887,19 +887,19 @@ export interface DbConnectionInterceptor$instance extends IInterceptor {
     ConnectionClosed(connection: DbConnection, eventData: ConnectionEndEventData): void;
     ConnectionClosedAsync(connection: DbConnection, eventData: ConnectionEndEventData): Task;
     ConnectionClosing(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): InterceptionResult;
-    ConnectionClosingAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): ValueTask<InterceptionResult>;
+    ConnectionClosingAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): ValueTask_1<InterceptionResult>;
     ConnectionCreated(eventData: ConnectionCreatedEventData, result: DbConnection): DbConnection;
     ConnectionCreating(eventData: ConnectionCreatingEventData, result: InterceptionResult_1<DbConnection>): InterceptionResult_1<DbConnection>;
     ConnectionDisposed(connection: DbConnection, eventData: ConnectionEndEventData): void;
     ConnectionDisposedAsync(connection: DbConnection, eventData: ConnectionEndEventData): Task;
     ConnectionDisposing(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): InterceptionResult;
-    ConnectionDisposingAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): ValueTask<InterceptionResult>;
+    ConnectionDisposingAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): ValueTask_1<InterceptionResult>;
     ConnectionFailed(connection: DbConnection, eventData: ConnectionErrorEventData): void;
     ConnectionFailedAsync(connection: DbConnection, eventData: ConnectionErrorEventData, cancellationToken?: CancellationToken): Task;
     ConnectionOpened(connection: DbConnection, eventData: ConnectionEndEventData): void;
     ConnectionOpenedAsync(connection: DbConnection, eventData: ConnectionEndEventData, cancellationToken?: CancellationToken): Task;
     ConnectionOpening(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult): InterceptionResult;
-    ConnectionOpeningAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    ConnectionOpeningAsync(connection: DbConnection, eventData: ConnectionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
 }
 
 
@@ -924,7 +924,7 @@ export interface DbContextErrorEventData$instance extends DbContextEventData {
 
 
 export const DbContextErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, exception: Exception): DbContextErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, exception: Exception): DbContextErrorEventData;
 };
 
 
@@ -943,7 +943,7 @@ export interface DbContextEventData$instance extends EventData {
 
 
 export const DbContextEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext): DbContextEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext): DbContextEventData;
 };
 
 
@@ -957,7 +957,7 @@ export interface DbContextTypeErrorEventData$instance extends DbContextTypeEvent
 
 
 export const DbContextTypeErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, contextType: Type, exception: Exception): DbContextTypeErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, contextType: Type, exception: Exception): DbContextTypeErrorEventData;
 };
 
 
@@ -976,7 +976,7 @@ export interface DbContextTypeEventData$instance extends EventData {
 
 
 export const DbContextTypeEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, contextType: Type): DbContextTypeEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, contextType: Type): DbContextTypeEventData;
 };
 
 
@@ -989,31 +989,31 @@ export interface DbTransactionInterceptor$instance extends IInterceptor {
     CreatedSavepoint(transaction: DbTransaction, eventData: TransactionEventData): void;
     CreatedSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, cancellationToken?: CancellationToken): Task;
     CreatingSavepoint(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult): InterceptionResult;
-    CreatingSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    CreatingSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     ReleasedSavepoint(transaction: DbTransaction, eventData: TransactionEventData): void;
     ReleasedSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, cancellationToken?: CancellationToken): Task;
     ReleasingSavepoint(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult): InterceptionResult;
-    ReleasingSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    ReleasingSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     RolledBackToSavepoint(transaction: DbTransaction, eventData: TransactionEventData): void;
     RolledBackToSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, cancellationToken?: CancellationToken): Task;
     RollingBackToSavepoint(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult): InterceptionResult;
-    RollingBackToSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    RollingBackToSavepointAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     TransactionCommitted(transaction: DbTransaction, eventData: TransactionEndEventData): void;
     TransactionCommittedAsync(transaction: DbTransaction, eventData: TransactionEndEventData, cancellationToken?: CancellationToken): Task;
     TransactionCommitting(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult): InterceptionResult;
-    TransactionCommittingAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    TransactionCommittingAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     TransactionFailed(transaction: DbTransaction, eventData: TransactionErrorEventData): void;
     TransactionFailedAsync(transaction: DbTransaction, eventData: TransactionErrorEventData, cancellationToken?: CancellationToken): Task;
     TransactionRolledBack(transaction: DbTransaction, eventData: TransactionEndEventData): void;
     TransactionRolledBackAsync(transaction: DbTransaction, eventData: TransactionEndEventData, cancellationToken?: CancellationToken): Task;
     TransactionRollingBack(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult): InterceptionResult;
-    TransactionRollingBackAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    TransactionRollingBackAsync(transaction: DbTransaction, eventData: TransactionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     TransactionStarted(connection: DbConnection, eventData: TransactionEndEventData, result: DbTransaction): DbTransaction;
-    TransactionStartedAsync(connection: DbConnection, eventData: TransactionEndEventData, result: DbTransaction, cancellationToken?: CancellationToken): ValueTask<DbTransaction>;
+    TransactionStartedAsync(connection: DbConnection, eventData: TransactionEndEventData, result: DbTransaction, cancellationToken?: CancellationToken): ValueTask_1<DbTransaction>;
     TransactionStarting(connection: DbConnection, eventData: TransactionStartingEventData, result: InterceptionResult_1<DbTransaction>): InterceptionResult_1<DbTransaction>;
-    TransactionStartingAsync(connection: DbConnection, eventData: TransactionStartingEventData, result: InterceptionResult_1<DbTransaction>, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<DbTransaction>>;
+    TransactionStartingAsync(connection: DbConnection, eventData: TransactionStartingEventData, result: InterceptionResult_1<DbTransaction>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbTransaction>>;
     TransactionUsed(connection: DbConnection, eventData: TransactionEventData, result: DbTransaction): DbTransaction;
-    TransactionUsedAsync(connection: DbConnection, eventData: TransactionEventData, result: DbTransaction, cancellationToken?: CancellationToken): ValueTask<DbTransaction>;
+    TransactionUsedAsync(connection: DbConnection, eventData: TransactionEventData, result: DbTransaction, cancellationToken?: CancellationToken): ValueTask_1<DbTransaction>;
 }
 
 
@@ -1036,7 +1036,7 @@ export interface EntityEntryEventData$instance extends EventData {
 
 
 export const EntityEntryEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry): EntityEntryEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry): EntityEntryEventData;
 };
 
 
@@ -1048,7 +1048,7 @@ export interface EntityTypeEventData$instance extends EventData {
 
 
 export const EntityTypeEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityType: IReadOnlyEntityType): EntityTypeEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IReadOnlyEntityType): EntityTypeEventData;
 };
 
 
@@ -1061,7 +1061,7 @@ export interface EntityTypeSchemaEventData$instance extends EventData {
 
 
 export const EntityTypeSchemaEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, schema: string): EntityTypeSchemaEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, schema: string): EntityTypeSchemaEventData;
 };
 
 
@@ -1076,7 +1076,7 @@ export interface EventData$instance {
 
 
 export const EventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>): EventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>): EventData;
 };
 
 
@@ -1089,7 +1089,7 @@ export interface EventDefinition$instance extends EventDefinitionBase {
 
 
 export const EventDefinition: {
-    new(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func<LogLevel, Action<ILogger, Exception>>): EventDefinition;
+    new(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_2<ILogger, Exception>>): EventDefinition;
 };
 
 
@@ -1102,7 +1102,7 @@ export interface EventDefinition_1$instance<TParam> extends EventDefinitionBase 
 
 
 export const EventDefinition_1: {
-    new<TParam>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func<LogLevel, Action<ILogger, TParam, Exception>>): EventDefinition_1<TParam>;
+    new<TParam>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_3<ILogger, TParam, Exception>>): EventDefinition_1<TParam>;
 };
 
 
@@ -1115,7 +1115,7 @@ export interface EventDefinition_2$instance<TParam1, TParam2> extends EventDefin
 
 
 export const EventDefinition_2: {
-    new<TParam1, TParam2>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func<LogLevel, Action<ILogger, TParam1, TParam2, Exception>>): EventDefinition_2<TParam1, TParam2>;
+    new<TParam1, TParam2>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_4<ILogger, TParam1, TParam2, Exception>>): EventDefinition_2<TParam1, TParam2>;
 };
 
 
@@ -1128,7 +1128,7 @@ export interface EventDefinition_3$instance<TParam1, TParam2, TParam3> extends E
 
 
 export const EventDefinition_3: {
-    new<TParam1, TParam2, TParam3>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func<LogLevel, Action<ILogger, TParam1, TParam2, TParam3, Exception>>): EventDefinition_3<TParam1, TParam2, TParam3>;
+    new<TParam1, TParam2, TParam3>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_5<ILogger, TParam1, TParam2, TParam3, Exception>>): EventDefinition_3<TParam1, TParam2, TParam3>;
 };
 
 
@@ -1141,7 +1141,7 @@ export interface EventDefinition_4$instance<TParam1, TParam2, TParam3, TParam4> 
 
 
 export const EventDefinition_4: {
-    new<TParam1, TParam2, TParam3, TParam4>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func<LogLevel, Action<ILogger, TParam1, TParam2, TParam3, TParam4, Exception>>): EventDefinition_4<TParam1, TParam2, TParam3, TParam4>;
+    new<TParam1, TParam2, TParam3, TParam4>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_6<ILogger, TParam1, TParam2, TParam3, TParam4, Exception>>): EventDefinition_4<TParam1, TParam2, TParam3, TParam4>;
 };
 
 
@@ -1154,7 +1154,7 @@ export interface EventDefinition_5$instance<TParam1, TParam2, TParam3, TParam4, 
 
 
 export const EventDefinition_5: {
-    new<TParam1, TParam2, TParam3, TParam4, TParam5>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func<LogLevel, Action<ILogger, TParam1, TParam2, TParam3, TParam4, TParam5, Exception>>): EventDefinition_5<TParam1, TParam2, TParam3, TParam4, TParam5>;
+    new<TParam1, TParam2, TParam3, TParam4, TParam5>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_7<ILogger, TParam1, TParam2, TParam3, TParam4, TParam5, Exception>>): EventDefinition_5<TParam1, TParam2, TParam3, TParam4, TParam5>;
 };
 
 
@@ -1167,7 +1167,7 @@ export interface EventDefinition_6$instance<TParam1, TParam2, TParam3, TParam4, 
 
 
 export const EventDefinition_6: {
-    new<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func<LogLevel, Action<ILogger, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, Exception>>): EventDefinition_6<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>;
+    new<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_8<ILogger, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, Exception>>): EventDefinition_6<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>;
 };
 
 
@@ -1190,13 +1190,13 @@ export type EventDefinitionBase = EventDefinitionBase$instance;
 
 export interface ExecutionStrategyEventData$instance extends EventData {
     readonly Delay: TimeSpan;
-    readonly ExceptionsEncountered: IReadOnlyList<Exception>;
+    readonly ExceptionsEncountered: IReadOnlyList_1<Exception>;
     readonly IsAsync: boolean;
 }
 
 
 export const ExecutionStrategyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, exceptionsEncountered: IReadOnlyList<Exception>, delay: TimeSpan, async: boolean): ExecutionStrategyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, exceptionsEncountered: IReadOnlyList_1<Exception>, delay: TimeSpan, async: boolean): ExecutionStrategyEventData;
 };
 
 
@@ -1208,7 +1208,7 @@ export interface ExpressionEventData$instance extends EventData {
 
 
 export const ExpressionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, expression: Expression): ExpressionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, expression: Expression): ExpressionEventData;
 };
 
 
@@ -1216,8 +1216,8 @@ export type ExpressionEventData = ExpressionEventData$instance;
 
 export interface FallbackEventDefinition$instance extends EventDefinitionBase {
     readonly MessageFormat: string;
-    GenerateMessage(logAction: Action<ILogger>): string;
-    Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, logAction: Action<ILogger>): void;
+    GenerateMessage(logAction: Action_1<ILogger>): string;
+    Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, logAction: Action_1<ILogger>): void;
 }
 
 
@@ -1235,7 +1235,7 @@ export interface ForeignKeyCandidateEventData$instance extends TwoPropertyBaseCo
 
 
 export const ForeignKeyCandidateEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, dependentToPrincipalNavigationSpecification: string, principalToDependentNavigationSpecification: string, firstPropertyCollection: IReadOnlyList<IReadOnlyPropertyBase>, secondPropertyCollection: IReadOnlyList<IReadOnlyPropertyBase>): ForeignKeyCandidateEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, dependentToPrincipalNavigationSpecification: string, principalToDependentNavigationSpecification: string, firstPropertyCollection: IReadOnlyList_1<IReadOnlyPropertyBase>, secondPropertyCollection: IReadOnlyList_1<IReadOnlyPropertyBase>): ForeignKeyCandidateEventData;
 };
 
 
@@ -1247,7 +1247,7 @@ export interface ForeignKeyEventData$instance extends EventData {
 
 
 export const ForeignKeyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, foreignKey: IReadOnlyForeignKey): ForeignKeyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, foreignKey: IReadOnlyForeignKey): ForeignKeyEventData;
 };
 
 
@@ -1278,12 +1278,12 @@ export type IgnoringIdentityResolutionInterceptor = IgnoringIdentityResolutionIn
 export interface IndexEventData$instance extends EventData {
     readonly EntityType: IEntityType;
     readonly Name: string | undefined;
-    readonly PropertyNames: List<System_Internal.String>;
+    readonly PropertyNames: List_1<System_Internal.String>;
 }
 
 
 export const IndexEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string, indexPropertyNames: List<System_Internal.String>): IndexEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string, indexPropertyNames: List_1<System_Internal.String>): IndexEventData;
 };
 
 
@@ -1294,14 +1294,14 @@ export interface IndexWithPropertiesEventData$instance extends EventData {
     readonly Name: string | undefined;
     readonly Property1Name: string;
     readonly Property2Name: string;
-    readonly PropertyNames: List<System_Internal.String>;
-    readonly TablesMappedToProperty1: List<ValueTuple<System_Internal.String, System_Internal.String>>;
-    readonly TablesMappedToProperty2: List<ValueTuple<System_Internal.String, System_Internal.String>>;
+    readonly PropertyNames: List_1<System_Internal.String>;
+    readonly TablesMappedToProperty1: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>;
+    readonly TablesMappedToProperty2: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>;
 }
 
 
 export const IndexWithPropertiesEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string, indexPropertyNames: List<System_Internal.String>, property1Name: string, tablesMappedToProperty1: List<ValueTuple<System_Internal.String, System_Internal.String>>, property2Name: string, tablesMappedToProperty2: List<ValueTuple<System_Internal.String, System_Internal.String>>): IndexWithPropertiesEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string, indexPropertyNames: List_1<System_Internal.String>, property1Name: string, tablesMappedToProperty1: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>, property2Name: string, tablesMappedToProperty2: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>): IndexWithPropertiesEventData;
 };
 
 
@@ -1311,12 +1311,12 @@ export interface IndexWithPropertyEventData$instance extends EventData {
     readonly EntityType: IEntityType;
     readonly Name: string | undefined;
     readonly PropertyName: string;
-    readonly PropertyNames: List<System_Internal.String>;
+    readonly PropertyNames: List_1<System_Internal.String>;
 }
 
 
 export const IndexWithPropertyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string, indexPropertyNames: List<System_Internal.String>, invalidPropertyName: string): IndexWithPropertyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string, indexPropertyNames: List_1<System_Internal.String>, invalidPropertyName: string): IndexWithPropertyEventData;
 };
 
 
@@ -1326,8 +1326,8 @@ export interface InterceptorAggregator_1$instance<TInterceptor extends IIntercep
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
     readonly InterceptorType: Type;
-    AggregateInterceptors(interceptors: IReadOnlyList<IInterceptor>): IInterceptor | undefined;
-    CreateChain(interceptors: IEnumerable<TInterceptor>): TInterceptor;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    CreateChain(interceptors: IEnumerable_1<TInterceptor>): TInterceptor;
 }
 
 
@@ -1351,7 +1351,7 @@ export interface InvalidIncludePathEventData$instance extends EventData {
 
 
 export const InvalidIncludePathEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, navigationChain: string, navigationName: string): InvalidIncludePathEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, navigationChain: string, navigationName: string): InvalidIncludePathEventData;
 };
 
 
@@ -1363,7 +1363,7 @@ export interface KeyEventData$instance extends EventData {
 
 
 export const KeyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, key: IReadOnlyKey): KeyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, key: IReadOnlyKey): KeyEventData;
 };
 
 
@@ -1376,7 +1376,7 @@ export interface LazyLoadingEventData$instance extends DbContextEventData {
 
 
 export const LazyLoadingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, entity: unknown, navigationPropertyName: string): LazyLoadingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, entity: unknown, navigationPropertyName: string): LazyLoadingEventData;
 };
 
 
@@ -1497,7 +1497,7 @@ export interface MigrationAssemblyEventData$instance extends MigratorEventData {
 
 
 export const MigrationAssemblyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migrationsAssembly: IMigrationsAssembly): MigrationAssemblyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migrationsAssembly: IMigrationsAssembly): MigrationAssemblyEventData;
 };
 
 
@@ -1509,7 +1509,7 @@ export interface MigrationColumnOperationEventData$instance extends EventData {
 
 
 export const MigrationColumnOperationEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, columnOperation: ColumnOperation): MigrationColumnOperationEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, columnOperation: ColumnOperation): MigrationColumnOperationEventData;
 };
 
 
@@ -1522,7 +1522,7 @@ export interface MigrationCommandEventData$instance extends MigratorEventData {
 
 
 export const MigrationCommandEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migration: Migration, command: MigrationCommand): MigrationCommandEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migration: Migration, command: MigrationCommand): MigrationCommandEventData;
 };
 
 
@@ -1534,7 +1534,7 @@ export interface MigrationEventData$instance extends MigratorEventData {
 
 
 export const MigrationEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migration: Migration): MigrationEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migration: Migration): MigrationEventData;
 };
 
 
@@ -1548,7 +1548,7 @@ export interface MigrationScriptingEventData$instance extends MigrationEventData
 
 
 export const MigrationScriptingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migration: Migration, fromMigration: string, toMigration: string, idempotent: boolean): MigrationScriptingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migration: Migration, fromMigration: string, toMigration: string, idempotent: boolean): MigrationScriptingEventData;
 };
 
 
@@ -1560,7 +1560,7 @@ export interface MigrationTypeEventData$instance extends EventData {
 
 
 export const MigrationTypeEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, migrationType: TypeInfo): MigrationTypeEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, migrationType: TypeInfo): MigrationTypeEventData;
 };
 
 
@@ -1573,7 +1573,7 @@ export interface MigratorConnectionEventData$instance extends MigratorEventData 
 
 
 export const MigratorConnectionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, connection: DbConnection, connectionId: Guid): MigratorConnectionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, connection: DbConnection, connectionId: Guid): MigratorConnectionEventData;
 };
 
 
@@ -1585,7 +1585,7 @@ export interface MigratorEventData$instance extends EventData {
 
 
 export const MigratorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator): MigratorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator): MigratorEventData;
 };
 
 
@@ -1597,7 +1597,7 @@ export interface MinBatchSizeEventData$instance extends BatchEventData {
 
 
 export const MinBatchSizeEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entries: IEnumerable<IUpdateEntry>, commandCount: int, minBatchSize: int): MinBatchSizeEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entries: IEnumerable_1<IUpdateEntry>, commandCount: int, minBatchSize: int): MinBatchSizeEventData;
 };
 
 
@@ -1611,7 +1611,7 @@ export interface NavigationBaseEventData$instance extends EventData {
 
 
 export const NavigationBaseEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, navigationBase: IReadOnlyNavigationBase): NavigationBaseEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, navigationBase: IReadOnlyNavigationBase): NavigationBaseEventData;
 };
 
 
@@ -1630,7 +1630,7 @@ export interface NavigationEventData$instance extends EventData {
 
 
 export const NavigationEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, navigation: IReadOnlyNavigation): NavigationEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, navigation: IReadOnlyNavigation): NavigationEventData;
 };
 
 
@@ -1652,7 +1652,7 @@ export interface PropertyChangedEventData$instance extends PropertyEventData {
 
 
 export const PropertyChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): PropertyChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): PropertyChangedEventData;
 };
 
 
@@ -1664,7 +1664,7 @@ export interface PropertyEventData$instance extends EventData {
 
 
 export const PropertyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, property: IReadOnlyProperty): PropertyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, property: IReadOnlyProperty): PropertyEventData;
 };
 
 
@@ -1678,7 +1678,7 @@ export interface PropertyValueEventData$instance extends PropertyEventData {
 
 
 export const PropertyValueEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, property: IProperty, value: unknown): PropertyValueEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, property: IProperty, value: unknown): PropertyValueEventData;
 };
 
 
@@ -1691,7 +1691,7 @@ export interface QueryExpressionEventData$instance extends DbContextEventData {
 
 
 export const QueryExpressionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, queryExpression: Expression, expressionPrinter: ExpressionPrinter): QueryExpressionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, queryExpression: Expression, expressionPrinter: ExpressionPrinter): QueryExpressionEventData;
 };
 
 
@@ -1707,7 +1707,7 @@ export interface ReferenceChangedEventData$instance extends NavigationEventData$
 
 
 export const ReferenceChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: INavigation, oldReferencedEntity: unknown, newReferencedEntity: unknown): ReferenceChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: INavigation, oldReferencedEntity: unknown, newReferencedEntity: unknown): ReferenceChangedEventData;
 };
 
 
@@ -1732,7 +1732,7 @@ export interface RelationalConcurrencyExceptionEventData$instance extends Concur
 
 
 export const RelationalConcurrencyExceptionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, connection: DbConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, connectionId: Guid, entries: IReadOnlyList<IUpdateEntry>, exception: DbUpdateConcurrencyException): RelationalConcurrencyExceptionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, connection: DbConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, connectionId: Guid, entries: IReadOnlyList_1<IUpdateEntry>, exception: DbUpdateConcurrencyException): RelationalConcurrencyExceptionEventData;
 };
 
 
@@ -1840,20 +1840,20 @@ export interface SaveChangesCompletedEventData$instance extends DbContextEventDa
 
 
 export const SaveChangesCompletedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, entitiesSavedCount: int): SaveChangesCompletedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, entitiesSavedCount: int): SaveChangesCompletedEventData;
 };
 
 
 export type SaveChangesCompletedEventData = SaveChangesCompletedEventData$instance;
 
 export interface SaveChangesEventData$instance extends EventData {
-    readonly Entries: IEnumerable<IUpdateEntry>;
+    readonly Entries: IEnumerable_1<IUpdateEntry>;
     readonly RowsAffected: int;
 }
 
 
 export const SaveChangesEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entries: IEnumerable<IUpdateEntry>, rowsAffected: int): SaveChangesEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entries: IEnumerable_1<IUpdateEntry>, rowsAffected: int): SaveChangesEventData;
 };
 
 
@@ -1868,11 +1868,11 @@ export interface SaveChangesInterceptor$instance extends IInterceptor {
     SaveChangesFailed(eventData: DbContextErrorEventData): void;
     SaveChangesFailedAsync(eventData: DbContextErrorEventData, cancellationToken?: CancellationToken): Task;
     SavedChanges(eventData: SaveChangesCompletedEventData, result: int): int;
-    SavedChangesAsync(eventData: SaveChangesCompletedEventData, result: int, cancellationToken?: CancellationToken): ValueTask<System_Internal.Int32>;
+    SavedChangesAsync(eventData: SaveChangesCompletedEventData, result: int, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
     SavingChanges(eventData: DbContextEventData, result: InterceptionResult_1<System_Internal.Int32>): InterceptionResult_1<System_Internal.Int32>;
-    SavingChangesAsync(eventData: DbContextEventData, result: InterceptionResult_1<System_Internal.Int32>, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<System_Internal.Int32>>;
+    SavingChangesAsync(eventData: DbContextEventData, result: InterceptionResult_1<System_Internal.Int32>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<System_Internal.Int32>>;
     ThrowingConcurrencyException(eventData: ConcurrencyExceptionEventData, result: InterceptionResult): InterceptionResult;
-    ThrowingConcurrencyExceptionAsync(eventData: ConcurrencyExceptionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    ThrowingConcurrencyExceptionAsync(eventData: ConcurrencyExceptionEventData, result: InterceptionResult, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
 }
 
 
@@ -1895,20 +1895,20 @@ export interface SequenceEventData$instance extends EventData {
 
 
 export const SequenceEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, sequence: IReadOnlySequence): SequenceEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, sequence: IReadOnlySequence): SequenceEventData;
 };
 
 
 export type SequenceEventData = SequenceEventData$instance;
 
 export interface ServiceProviderDebugInfoEventData$instance extends EventData {
-    readonly CachedDebugInfos: IList<IDictionary<System_Internal.String, System_Internal.String>>;
-    readonly NewDebugInfo: IDictionary<System_Internal.String, System_Internal.String>;
+    readonly CachedDebugInfos: IList_1<IDictionary_2<System_Internal.String, System_Internal.String>>;
+    readonly NewDebugInfo: IDictionary_2<System_Internal.String, System_Internal.String>;
 }
 
 
 export const ServiceProviderDebugInfoEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, newDebugInfo: IDictionary<System_Internal.String, System_Internal.String>, cachedDebugInfos: IList<IDictionary<System_Internal.String, System_Internal.String>>): ServiceProviderDebugInfoEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, newDebugInfo: IDictionary_2<System_Internal.String, System_Internal.String>, cachedDebugInfos: IList_1<IDictionary_2<System_Internal.String, System_Internal.String>>): ServiceProviderDebugInfoEventData;
 };
 
 
@@ -1920,19 +1920,19 @@ export interface ServiceProviderEventData$instance extends EventData {
 
 
 export const ServiceProviderEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, serviceProvider: IServiceProvider): ServiceProviderEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, serviceProvider: IServiceProvider): ServiceProviderEventData;
 };
 
 
 export type ServiceProviderEventData = ServiceProviderEventData$instance;
 
 export interface ServiceProvidersEventData$instance extends EventData {
-    readonly ServiceProviders: ICollection<IServiceProvider>;
+    readonly ServiceProviders: ICollection_1<IServiceProvider>;
 }
 
 
 export const ServiceProvidersEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, serviceProviders: ICollection<IServiceProvider>): ServiceProvidersEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, serviceProviders: ICollection_1<IServiceProvider>): ServiceProvidersEventData;
 };
 
 
@@ -1945,7 +1945,7 @@ export interface SharedDependentEntityEventData$instance extends EventData {
 
 
 export const SharedDependentEntityEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, firstEntityType: IEntityType, secondEntityType: IEntityType): SharedDependentEntityEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, firstEntityType: IEntityType, secondEntityType: IEntityType): SharedDependentEntityEventData;
 };
 
 
@@ -1955,14 +1955,14 @@ export interface SkipCollectionChangedEventData$instance extends SkipNavigationE
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
-    readonly Added: IEnumerable<unknown>;
+    readonly Added: IEnumerable_1<unknown>;
     readonly EntityEntry: EntityEntry;
-    readonly Removed: IEnumerable<unknown>;
+    readonly Removed: IEnumerable_1<unknown>;
 }
 
 
 export const SkipCollectionChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: ISkipNavigation, added: IEnumerable<unknown>, removed: IEnumerable<unknown>): SkipCollectionChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: ISkipNavigation, added: IEnumerable_1<unknown>, removed: IEnumerable_1<unknown>): SkipCollectionChangedEventData;
 };
 
 
@@ -1984,7 +1984,7 @@ export interface SkipNavigationEventData$instance extends EventData {
 
 
 export const SkipNavigationEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, navigation: IReadOnlySkipNavigation): SkipNavigationEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, navigation: IReadOnlySkipNavigation): SkipNavigationEventData;
 };
 
 
@@ -2004,7 +2004,7 @@ export interface StateChangedEventData$instance extends EntityEntryEventData {
 
 
 export const StateChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, oldState: EntityState, newState: EntityState): StateChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, oldState: EntityState, newState: EntityState): StateChangedEventData;
 };
 
 
@@ -2017,7 +2017,7 @@ export interface StoredProcedurePropertyEventData$instance extends PropertyEvent
 
 
 export const StoredProcedurePropertyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, property: IProperty, storedProcedureName: string): StoredProcedurePropertyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, property: IProperty, storedProcedureName: string): StoredProcedurePropertyEventData;
 };
 
 
@@ -2029,7 +2029,7 @@ export interface TransactionEndEventData$instance extends TransactionEventData {
 
 
 export const TransactionEndEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): TransactionEndEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): TransactionEndEventData;
 };
 
 
@@ -2043,7 +2043,7 @@ export interface TransactionEnlistedEventData$instance extends EventData {
 
 
 export const TransactionEnlistedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: Transaction, connection: DbConnection, connectionId: Guid): TransactionEnlistedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: Transaction, connection: DbConnection, connectionId: Guid): TransactionEnlistedEventData;
 };
 
 
@@ -2058,7 +2058,7 @@ export interface TransactionErrorEventData$instance extends TransactionEndEventD
 
 
 export const TransactionErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan): TransactionErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan): TransactionErrorEventData;
 };
 
 
@@ -2081,7 +2081,7 @@ export interface TransactionEventData$instance extends DbContextEventData {
 
 
 export const TransactionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionEventData;
 };
 
 
@@ -2097,20 +2097,20 @@ export interface TransactionStartingEventData$instance extends DbContextEventDat
 
 
 export const TransactionStartingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, isolationLevel: IsolationLevel, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionStartingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, isolationLevel: IsolationLevel, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionStartingEventData;
 };
 
 
 export type TransactionStartingEventData = TransactionStartingEventData$instance;
 
 export interface TwoPropertyBaseCollectionsEventData$instance extends EventData {
-    readonly FirstPropertyCollection: IReadOnlyList<IReadOnlyPropertyBase>;
-    readonly SecondPropertyCollection: IReadOnlyList<IReadOnlyPropertyBase>;
+    readonly FirstPropertyCollection: IReadOnlyList_1<IReadOnlyPropertyBase>;
+    readonly SecondPropertyCollection: IReadOnlyList_1<IReadOnlyPropertyBase>;
 }
 
 
 export const TwoPropertyBaseCollectionsEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, firstPropertyCollection: IReadOnlyList<IReadOnlyPropertyBase>, secondPropertyCollection: IReadOnlyList<IReadOnlyPropertyBase>): TwoPropertyBaseCollectionsEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, firstPropertyCollection: IReadOnlyList_1<IReadOnlyPropertyBase>, secondPropertyCollection: IReadOnlyList_1<IReadOnlyPropertyBase>): TwoPropertyBaseCollectionsEventData;
 };
 
 
@@ -2123,20 +2123,20 @@ export interface TwoSqlExpressionsEventData$instance extends EventData {
 
 
 export const TwoSqlExpressionsEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, left: SqlExpression, right: SqlExpression): TwoSqlExpressionsEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, left: SqlExpression, right: SqlExpression): TwoSqlExpressionsEventData;
 };
 
 
 export type TwoSqlExpressionsEventData = TwoSqlExpressionsEventData$instance;
 
 export interface TwoUnmappedPropertyCollectionsEventData$instance extends EventData {
-    readonly FirstPropertyCollection: IEnumerable<Tuple<MemberInfo | undefined, Type>>;
-    readonly SecondPropertyCollection: IEnumerable<Tuple<MemberInfo | undefined, Type>>;
+    readonly FirstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | undefined, Type>>;
+    readonly SecondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | undefined, Type>>;
 }
 
 
 export const TwoUnmappedPropertyCollectionsEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, firstPropertyCollection: IEnumerable<Tuple<MemberInfo, Type>>, secondPropertyCollection: IEnumerable<Tuple<MemberInfo, Type>>): TwoUnmappedPropertyCollectionsEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, firstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>, secondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>): TwoUnmappedPropertyCollectionsEventData;
 };
 
 
@@ -2148,7 +2148,7 @@ export interface TypeEventData$instance extends EventData {
 
 
 export const TypeEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, clrType: Type): TypeEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, clrType: Type): TypeEventData;
 };
 
 
@@ -2162,7 +2162,7 @@ export interface TypeLoadingEventData$instance extends AssemblyEventData {
 
 
 export const TypeLoadingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, assembly: Assembly, exception: Exception): TypeLoadingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, assembly: Assembly, exception: Exception): TypeLoadingEventData;
 };
 
 
@@ -2181,7 +2181,7 @@ export interface UniquifiedPropertyEventData$instance extends PropertyEventData 
 
 
 export const UniquifiedPropertyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, property: IReadOnlyProperty, basePropertyName: string): UniquifiedPropertyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, property: IReadOnlyProperty, basePropertyName: string): UniquifiedPropertyEventData;
 };
 
 
@@ -2193,7 +2193,7 @@ export interface UpdateEntryEventData$instance extends DbContextEventData {
 
 
 export const UpdateEntryEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: IUpdateEntry): UpdateEntryEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: IUpdateEntry): UpdateEntryEventData;
 };
 
 
@@ -2228,7 +2228,7 @@ export interface ValueConverterEventData$instance extends EventData {
 
 
 export const ValueConverterEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func<EventDefinitionBase, EventData, System_Internal.String>, mappingClrType: Type, valueConverter: ValueConverter): ValueConverterEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, mappingClrType: Type, valueConverter: ValueConverter): ValueConverterEventData;
 };
 
 
@@ -2237,14 +2237,14 @@ export type ValueConverterEventData = ValueConverterEventData$instance;
 export interface WarningsConfiguration$instance {
     readonly DefaultBehavior: WarningBehavior;
     Clone(): WarningsConfiguration;
-    GetBehavior(eventId: EventId): Nullable<WarningBehavior>;
-    GetLevel(eventId: EventId): Nullable<LogLevel>;
+    GetBehavior(eventId: EventId): Nullable_1<WarningBehavior>;
+    GetLevel(eventId: EventId): Nullable_1<LogLevel>;
     GetServiceProviderHashCode(): int;
     ShouldUseSameServiceProvider(other: WarningsConfiguration): boolean;
     TryWithExplicit(eventId: EventId, warningBehavior: WarningBehavior): WarningsConfiguration;
     WithDefaultBehavior(warningBehavior: WarningBehavior): WarningsConfiguration;
-    WithExplicit(eventIds: IEnumerable<EventId>, warningBehavior: WarningBehavior): WarningsConfiguration;
-    WithExplicit(eventsAndLevels: IEnumerable<ValueTuple<EventId, LogLevel>>): WarningsConfiguration;
+    WithExplicit(eventIds: IEnumerable_1<EventId>, warningBehavior: WarningBehavior): WarningsConfiguration;
+    WithExplicit(eventsAndLevels: IEnumerable_1<ValueTuple_2<EventId, LogLevel>>): WarningsConfiguration;
 }
 
 
@@ -2259,7 +2259,7 @@ export interface WarningsConfigurationBuilder$instance {
     Default(warningBehavior: WarningBehavior): WarningsConfigurationBuilder;
     Ignore(...eventIds: EventId[]): WarningsConfigurationBuilder;
     Log(...eventIds: EventId[]): WarningsConfigurationBuilder;
-    Log(...eventsAndLevels: ValueTuple<EventId, LogLevel>[]): WarningsConfigurationBuilder;
+    Log(...eventsAndLevels: ValueTuple_2<EventId, LogLevel>[]): WarningsConfigurationBuilder;
     Throw(...eventIds: EventId[]): WarningsConfigurationBuilder;
 }
 
@@ -2374,8 +2374,8 @@ export abstract class CoreLoggerExtensions$instance {
     static CascadeDeleteOrphan(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, internalChildEntry: InternalEntityEntry, parentEntityType: IEntityType, state: EntityState): void;
     static CascadeDeleteOrphanSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, internalChildEntry: InternalEntityEntry, parentEntityType: IEntityType, state: EntityState): void;
     static CascadeDeleteSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, internalChildEntry: InternalEntityEntry, internalParentEntry: InternalEntityEntry, state: EntityState): void;
-    static CollectionChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, added: ISet<unknown>, removed: ISet<unknown>): void;
-    static CollectionChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, added: ISet<unknown>, removed: ISet<unknown>): void;
+    static CollectionChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): void;
+    static CollectionChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): void;
     static CollectionWithoutComparer(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, property: IProperty): void;
     static ComplexElementPropertyChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalComplexEntry: InternalComplexEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
     static ComplexElementPropertyChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalComplexEntry: InternalComplexEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
@@ -2389,22 +2389,22 @@ export abstract class CoreLoggerExtensions$instance {
     static DetectChangesStarting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, context: DbContext): void;
     static DistinctAfterOrderByWithoutRowLimitingOperatorWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>): void;
     static DuplicateDependentEntityTypeInstanceWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, dependent1: IEntityType, dependent2: IEntityType): void;
-    static ExecutionStrategyRetrying(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, exceptionsEncountered: IReadOnlyList<Exception>, delay: TimeSpan, async: boolean): void;
+    static ExecutionStrategyRetrying(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, exceptionsEncountered: IReadOnlyList_1<Exception>, delay: TimeSpan, async: boolean): void;
     static FirstWithoutOrderByAndFilterWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>): void;
     static ForeignKeyAttributesOnBothNavigationsWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstNavigation: IReadOnlyNavigation, secondNavigation: IReadOnlyNavigation): void;
     static ForeignKeyAttributesOnBothPropertiesWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstNavigation: IReadOnlyNavigation, secondNavigation: IReadOnlyNavigation, firstProperty: MemberInfo, secondProperty: MemberInfo): void;
     static ForeignKeyChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
     static ForeignKeyChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
-    static IncompatibleMatchingForeignKeyProperties(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, dependentToPrincipalNavigationSpecification: string, principalToDependentNavigationSpecification: string, foreignKeyProperties: IReadOnlyList<IReadOnlyPropertyBase>, principalKeyProperties: IReadOnlyList<IReadOnlyPropertyBase>): void;
+    static IncompatibleMatchingForeignKeyProperties(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, dependentToPrincipalNavigationSpecification: string, principalToDependentNavigationSpecification: string, foreignKeyProperties: IReadOnlyList_1<IReadOnlyPropertyBase>, principalKeyProperties: IReadOnlyList_1<IReadOnlyPropertyBase>): void;
     static InvalidIncludePathError(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, navigationChain: string, navigationName: string): void;
     static LazyLoadOnDisposedContextWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext, entityType: unknown, navigationName: string): void;
-    static ManyServiceProvidersCreatedWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, serviceProviders: ICollection<IServiceProvider>): void;
+    static ManyServiceProvidersCreatedWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, serviceProviders: ICollection_1<IServiceProvider>): void;
     static MappedComplexPropertyIgnoredWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, property: IComplexProperty): void;
     static MappedEntityTypeIgnoredWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, entityType: IEntityType): void;
     static MappedNavigationIgnoredWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, navigation: INavigationBase): void;
     static MappedPropertyIgnoredWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, property: IProperty): void;
-    static MultipleInversePropertiesSameTargetWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, conflictingNavigations: IEnumerable<Tuple<MemberInfo, Type>>, inverseNavigation: MemberInfo, targetType: Type): void;
-    static MultipleNavigationProperties(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstPropertyCollection: IEnumerable<Tuple<MemberInfo, Type>>, secondPropertyCollection: IEnumerable<Tuple<MemberInfo, Type>>): void;
+    static MultipleInversePropertiesSameTargetWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, conflictingNavigations: IEnumerable_1<Tuple_2<MemberInfo, Type>>, inverseNavigation: MemberInfo, targetType: Type): void;
+    static MultipleNavigationProperties(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>, secondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>): void;
     static MultiplePrimaryKeyCandidates(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstProperty: IReadOnlyProperty, secondProperty: IReadOnlyProperty): void;
     static NavigationBaseIncluded(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, navigation: INavigationBase): void;
     static NavigationBaseIncludeIgnored(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, navigation: INavigationBase): void;
@@ -2412,20 +2412,20 @@ export abstract class CoreLoggerExtensions$instance {
     static NoEntityTypeConfigurationsWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, assembly: Assembly): void;
     static NonOwnershipInverseNavigationWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, declaringType: IReadOnlyEntityType, navigation: MemberInfo, targetType: IReadOnlyEntityType, inverseNavigation: MemberInfo, ownershipNavigation: MemberInfo): void;
     static OldModelVersionWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext, contextOptions: DbContextOptions): void;
-    static OptimisticConcurrencyException(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entries: IReadOnlyList<IUpdateEntry>, exception: DbUpdateConcurrencyException, createEventData: Func<DbContext, DbUpdateConcurrencyException, IReadOnlyList<IUpdateEntry>, EventDefinition_1<Exception>, ConcurrencyExceptionEventData>): InterceptionResult;
-    static OptimisticConcurrencyExceptionAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entries: IReadOnlyList<IUpdateEntry>, exception: DbUpdateConcurrencyException, createEventData: Func<DbContext, DbUpdateConcurrencyException, IReadOnlyList<IUpdateEntry>, EventDefinition_1<Exception>, ConcurrencyExceptionEventData>, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    static OptimisticConcurrencyException(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entries: IReadOnlyList_1<IUpdateEntry>, exception: DbUpdateConcurrencyException, createEventData: Func_5<DbContext, DbUpdateConcurrencyException, IReadOnlyList_1<IUpdateEntry>, EventDefinition_1<Exception>, ConcurrencyExceptionEventData>): InterceptionResult;
+    static OptimisticConcurrencyExceptionAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entries: IReadOnlyList_1<IUpdateEntry>, exception: DbUpdateConcurrencyException, createEventData: Func_5<DbContext, DbUpdateConcurrencyException, IReadOnlyList_1<IUpdateEntry>, EventDefinition_1<Exception>, ConcurrencyExceptionEventData>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     static PossibleIncorrectRequiredNavigationWithQueryFilterInteractionWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, foreignKey: IForeignKey): void;
     static PossibleUnintendedCollectionNavigationNullComparisonWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, navigation: INavigation): void;
     static PossibleUnintendedReferenceComparisonWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, left: Expression, right: Expression): void;
     static PropertyChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
     static PropertyChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
     static QueryCanceled(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, contextType: Type): void;
-    static QueryCompilationStarting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, context: DbContext, expressionPrinter: ExpressionPrinter, queryExpression: Expression): ValueTuple<Expression, QueryExpressionEventData>;
+    static QueryCompilationStarting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, context: DbContext, expressionPrinter: ExpressionPrinter, queryExpression: Expression): ValueTuple_2<Expression, QueryExpressionEventData>;
     static QueryExecutionPlanned(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, context: DbContext, expressionPrinter: ExpressionPrinter, queryExecutorExpression: Expression): void;
     static QueryIterationFailed(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, contextType: Type, exception: Exception): void;
     static RedundantAddServicesCallWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, serviceProvider: IServiceProvider): void;
     static RedundantForeignKeyWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, redundantForeignKey: IForeignKey): void;
-    static RedundantIndexRemoved(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, redundantIndex: IReadOnlyList<IReadOnlyPropertyBase>, otherIndex: IReadOnlyList<IReadOnlyPropertyBase>): void;
+    static RedundantIndexRemoved(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, redundantIndex: IReadOnlyList_1<IReadOnlyPropertyBase>, otherIndex: IReadOnlyList_1<IReadOnlyPropertyBase>): void;
     static ReferenceChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, oldValue: unknown, newValue: unknown): void;
     static ReferenceChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, oldValue: unknown, newValue: unknown): void;
     static RequiredAttributeOnCollection(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, navigation: IReadOnlyNavigation): void;
@@ -2434,18 +2434,18 @@ export abstract class CoreLoggerExtensions$instance {
     static SaveChangesCanceled(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext): void;
     static SaveChangesCanceledAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, cancellationToken?: CancellationToken): Task;
     static SaveChangesCompleted(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entitiesSavedCount: int): int;
-    static SaveChangesCompletedAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entitiesSavedCount: int, cancellationToken?: CancellationToken): ValueTask<System_Internal.Int32>;
+    static SaveChangesCompletedAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entitiesSavedCount: int, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
     static SaveChangesFailed(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, exception: Exception): void;
     static SaveChangesFailedAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, exception: Exception, cancellationToken?: CancellationToken): Task;
     static SaveChangesStarting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext): InterceptionResult_1<System_Internal.Int32>;
-    static SaveChangesStartingAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<System_Internal.Int32>>;
+    static SaveChangesStartingAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<System_Internal.Int32>>;
     static SensitiveDataLoggingEnabledWarning<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(diagnostics: IDiagnosticsLogger_1<TLoggerCategory>): void;
     static ServiceProviderCreated(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, serviceProvider: IServiceProvider): void;
-    static ServiceProviderDebugInfo(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, newDebugInfo: IDictionary<System_Internal.String, System_Internal.String>, cachedDebugInfos: IList<IDictionary<System_Internal.String, System_Internal.String>>): void;
+    static ServiceProviderDebugInfo(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, newDebugInfo: IDictionary_2<System_Internal.String, System_Internal.String>, cachedDebugInfos: IList_1<IDictionary_2<System_Internal.String, System_Internal.String>>): void;
     static ShadowForeignKeyPropertyCreated(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, property: IProperty, basePropertyName: string): void;
     static ShadowPropertyCreated(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, property: IProperty): void;
-    static SkipCollectionChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet<unknown>, removed: ISet<unknown>): void;
-    static SkipCollectionChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet<unknown>, removed: ISet<unknown>): void;
+    static SkipCollectionChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): void;
+    static SkipCollectionChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): void;
     static SkippedEntityTypeConfigurationWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, type: Type): void;
     static StartedTracking(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry): void;
     static StartedTrackingSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry): void;
@@ -2998,22 +2998,22 @@ export abstract class RelationalLoggerExtensions$instance {
     static AmbientTransactionWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, startTime: DateTimeOffset): void;
     static BatchExecutorFailedToReleaseSavepoint(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, contextType: Type, exception: Exception): void;
     static BatchExecutorFailedToRollbackToSavepoint(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, contextType: Type, exception: Exception): void;
-    static BatchReadyForExecution(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, entries: IEnumerable<IUpdateEntry>, commandCount: int): void;
-    static BatchSmallerThanMinBatchSize(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, entries: IEnumerable<IUpdateEntry>, commandCount: int, minBatchSize: int): void;
+    static BatchReadyForExecution(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, entries: IEnumerable_1<IUpdateEntry>, commandCount: int): void;
+    static BatchSmallerThanMinBatchSize(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, entries: IEnumerable_1<IUpdateEntry>, commandCount: int, minBatchSize: int): void;
     static BoolWithDefaultWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, property: IProperty): void;
     static ColumnOrderIgnoredWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, operation: ColumnOperation): void;
     static CreatedTransactionSavepoint(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): void;
     static CreatedTransactionSavepointAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): Task;
     static CreatingTransactionSavepoint(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): InterceptionResult;
-    static CreatingTransactionSavepointAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
-    static DuplicateColumnOrders(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, storeObject: StoreObjectIdentifier, columns: IReadOnlyList<System_Internal.String>): void;
+    static CreatingTransactionSavepointAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
+    static DuplicateColumnOrders(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, storeObject: StoreObjectIdentifier, columns: IReadOnlyList_1<System_Internal.String>): void;
     static ExecuteDeleteFailed(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, contextType: Type, exception: Exception): void;
     static ExecuteUpdateFailed(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, contextType: Type, exception: Exception): void;
     static ExplicitTransactionEnlisted(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: Transaction): void;
     static ForeignKeyPropertiesMappedToUnrelatedTables(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, foreignKey: IForeignKey): void;
     static ForeignKeyTpcPrincipalWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, foreignKey: IForeignKey): void;
     static IndexPropertiesBothMappedAndNotMappedToTable(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, entityType: IEntityType, index: IIndex, unmappedPropertyName: string): void;
-    static IndexPropertiesMappedToNonOverlappingTables(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, entityType: IEntityType, index: IIndex, property1Name: string, tablesMappedToProperty1: List<ValueTuple<System_Internal.String, System_Internal.String>>, property2Name: string, tablesMappedToProperty2: List<ValueTuple<System_Internal.String, System_Internal.String>>): void;
+    static IndexPropertiesMappedToNonOverlappingTables(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, entityType: IEntityType, index: IIndex, property1Name: string, tablesMappedToProperty1: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>, property2Name: string, tablesMappedToProperty2: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>): void;
     static KeyPropertiesNotMappedToTable(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, key: IKey): void;
     static MigrateUsingConnection(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, connection: IRelationalConnection): void;
     static MigrationApplying(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, migration: Migration): void;
@@ -3038,30 +3038,30 @@ export abstract class RelationalLoggerExtensions$instance {
     static ReleasedTransactionSavepoint(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): void;
     static ReleasedTransactionSavepointAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): Task;
     static ReleasingTransactionSavepoint(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): InterceptionResult;
-    static ReleasingTransactionSavepointAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    static ReleasingTransactionSavepointAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     static RolledBackToTransactionSavepoint(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): void;
     static RolledBackToTransactionSavepointAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): Task;
     static RollingBackToTransactionSavepoint(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): InterceptionResult;
-    static RollingBackToTransactionSavepointAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    static RollingBackToTransactionSavepointAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     static StoredProcedureConcurrencyTokenNotMapped(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, entityType: IEntityType, concurrencyProperty: IProperty, storedProcedureName: string): void;
     static TpcStoreGeneratedIdentityWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, property: IProperty): void;
     static TransactionCommitted(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): void;
     static TransactionCommittedAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): Task;
     static TransactionCommitting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): InterceptionResult;
-    static TransactionCommittingAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    static TransactionCommittingAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     static TransactionDisposed(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): void;
     static TransactionError(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan): void;
     static TransactionErrorAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): Task;
     static TransactionRolledBack(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): void;
     static TransactionRolledBackAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): Task;
     static TransactionRollingBack(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): InterceptionResult;
-    static TransactionRollingBackAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask<InterceptionResult>;
+    static TransactionRollingBackAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     static TransactionStarted(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): DbTransaction;
-    static TransactionStartedAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): ValueTask<DbTransaction>;
+    static TransactionStartedAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): ValueTask_1<DbTransaction>;
     static TransactionStarting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, isolationLevel: IsolationLevel, transactionId: Guid, startTime: DateTimeOffset): InterceptionResult_1<DbTransaction>;
-    static TransactionStartingAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, isolationLevel: IsolationLevel, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask<InterceptionResult_1<DbTransaction>>;
+    static TransactionStartingAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, isolationLevel: IsolationLevel, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbTransaction>>;
     static TransactionUsed(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset): DbTransaction;
-    static TransactionUsedAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask<DbTransaction>;
+    static TransactionUsedAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Database_Transaction>, connection: IRelationalConnection, transaction: DbTransaction, transactionId: Guid, startTime: DateTimeOffset, cancellationToken?: CancellationToken): ValueTask_1<DbTransaction>;
     static TriggerOnNonRootTphEntity(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, entityType: IEntityType): void;
     static UnexpectedTrailingResultSetWhenSaving(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>): void;
 }

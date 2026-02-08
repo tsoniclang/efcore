@@ -14,13 +14,13 @@ import * as Microsoft_EntityFrameworkCore_Storage_Internal_Internal from "../../
 import type { ICompositeJsonValueReaderWriter, IJsonConvertedValueReaderWriter } from "../../Microsoft.EntityFrameworkCore.Storage.Internal/internal/index.js";
 import type { ValueConverter } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
 import type { DbLoggerCategory_Query } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { IEnumerable } from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { Stream } from "@tsonic/dotnet/System.IO.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, Byte, Char, DateOnly, DateTime, DateTimeOffset, Decimal, Double, Enum, Guid, IEquatable, Int16, Int32, Int64, Nullable, Object as ClrObject, SByte, Single, String as ClrString, TimeOnly, TimeSpan, Type, UInt16, UInt32, UInt64, ValueType, Void } from "@tsonic/dotnet/System.js";
-import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
-import type { JsonReaderState, JsonTokenType, Utf8JsonReader, Utf8JsonWriter } from "@tsonic/dotnet/System.Text.Json.js";
+import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { IEnumerable_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { Stream } from "@tsonic/dotnet/System.IO/internal/index.js";
+import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
+import type { JsonReaderState, JsonTokenType, Utf8JsonReader, Utf8JsonWriter } from "@tsonic/dotnet/System.Text.Json/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, Byte, Char, DateOnly, DateTime, DateTimeOffset, Decimal, Double, Enum, Guid, IEquatable_1, Int16, Int32, Int64, Nullable_1, Object as ClrObject, SByte, Single, String as ClrString, TimeOnly, TimeSpan, Type, UInt16, UInt32, UInt64, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IJsonValueReaderWriterSource$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Json_IJsonValueReaderWriterSource: never;
@@ -107,7 +107,7 @@ export interface __JsonCastValueReaderWriter_1$views<TConverted> {
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export interface JsonCastValueReaderWriter_1$instance<TConverted> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {}
+export interface JsonCastValueReaderWriter_1$instance<TConverted> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter {}
 
 export type JsonCastValueReaderWriter_1<TConverted> = JsonCastValueReaderWriter_1$instance<TConverted> & __JsonCastValueReaderWriter_1$views<TConverted>;
 
@@ -126,7 +126,7 @@ export const JsonCharReaderWriter: {
 
 export type JsonCharReaderWriter = JsonCharReaderWriter$instance;
 
-export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable<Nullable<TElement>>> {
+export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable_1<Nullable_1<TElement>>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
@@ -142,7 +142,7 @@ export interface __JsonCollectionOfNullableStructsReaderWriter_2$views<TConcrete
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {}
+export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter {}
 
 export type JsonCollectionOfNullableStructsReaderWriter_2<TConcreteCollection, TElement> = JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfNullableStructsReaderWriter_2$views<TConcreteCollection, TElement>;
 
@@ -163,12 +163,12 @@ export interface __JsonCollectionOfReferencesReaderWriter_2$views<TConcreteColle
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {}
+export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter {}
 
 export type JsonCollectionOfReferencesReaderWriter_2<TConcreteCollection, TElement> = JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfReferencesReaderWriter_2$views<TConcreteCollection, TElement>;
 
 
-export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable<TElement>> {
+export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends JsonValueReaderWriter_1<IEnumerable_1<TElement>> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
@@ -184,7 +184,7 @@ export interface __JsonCollectionOfStructsReaderWriter_2$views<TConcreteCollecti
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {}
+export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends unknown> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter {}
 
 export type JsonCollectionOfStructsReaderWriter_2<TConcreteCollection, TElement> = JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfStructsReaderWriter_2$views<TConcreteCollection, TElement>;
 
@@ -207,7 +207,7 @@ export interface __JsonConvertedValueReaderWriter_2$views<TModel, TProvider> {
     As_IJsonConvertedValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.IJsonConvertedValueReaderWriter$instance;
 }
 
-export interface JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.IJsonConvertedValueReaderWriter$instance {}
+export interface JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> extends Microsoft_EntityFrameworkCore_Storage_Internal_Internal.IJsonConvertedValueReaderWriter {}
 
 export type JsonConvertedValueReaderWriter_2<TModel, TProvider> = JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> & __JsonConvertedValueReaderWriter_2$views<TModel, TProvider>;
 

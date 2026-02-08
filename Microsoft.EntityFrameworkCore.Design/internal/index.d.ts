@@ -12,50 +12,50 @@ import type { EntityFrameworkServicesBuilder, IAnnotatable, IAnnotation, Service
 import type { ICheckConstraint, IComplexProperty, IComplexType, IEntityType, IEntityTypeMappingFragment, IForeignKey, IIndex, IKey, IModel, INavigation, IProperty, IRelationalPropertyOverrides, ISequence, ISkipNavigation, ITrigger } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { IRelationalTypeMappingSource } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
 import type { DbContext } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import type { Dictionary, ICollection, IDictionary, IEnumerable, IReadOnlyDictionary, IReadOnlyList, ISet, List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Action, Attribute, Boolean as ClrBoolean, Byte, Char, DateOnly, DateTime, DateTimeOffset, Decimal, Double, Enum, Func, Guid, IEquatable, Int16, Int32, Int64, IServiceProvider, Nullable, Object as ClrObject, SByte, Single, String as ClrString, TimeOnly, TimeSpan, Type, UInt16, UInt32, UInt64, ValueType, Void } from "@tsonic/dotnet/System.js";
-import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions.js";
-import type { BigInteger } from "@tsonic/dotnet/System.Numerics.js";
-import type { MemberInfo, MethodInfo } from "@tsonic/dotnet/System.Reflection.js";
-import type { IServiceCollection } from "@tsonic/microsoft-extensions/Microsoft.Extensions.DependencyInjection.js";
+import type { Dictionary_2, ICollection_1, IDictionary_2, IEnumerable_1, IReadOnlyDictionary_2, IReadOnlyList_1, ISet_1, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { Expression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
+import type { BigInteger } from "@tsonic/dotnet/System.Numerics/internal/index.js";
+import type { MemberInfo, MethodInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Action_1, Attribute, Boolean as ClrBoolean, Byte, Char, DateOnly, DateTime, DateTimeOffset, Decimal, Double, Enum, Func_2, Guid, IEquatable_1, Int16, Int32, Int64, IServiceProvider, Nullable_1, Object as ClrObject, SByte, Single, String as ClrString, TimeOnly, TimeSpan, Type, UInt16, UInt32, UInt64, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
+import type { IServiceCollection } from "@tsonic/microsoft-extensions/Microsoft.Extensions.DependencyInjection/internal/index.js";
 
 export interface IAnnotationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IAnnotationCodeGenerator: never;
 
-    FilterIgnoredAnnotations(annotations: IEnumerable<IAnnotation>): IEnumerable<IAnnotation>;
-    GenerateFluentApiCalls(annotatable: IAnnotatable, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(checkConstraint: ICheckConstraint, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(complexProperty: IComplexProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(complexType: IComplexType, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(entityType: IEntityType, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(fragment: IEntityTypeMappingFragment, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(foreignKey: IForeignKey, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(index: IIndex, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(key: IKey, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(model: IModel, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(navigation: INavigation, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(property: IProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(overrides: IRelationalPropertyOverrides, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(sequence: ISequence, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(navigation: ISkipNavigation, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(trigger: ITrigger, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    RemoveAnnotationsHandledByConventions(annotatable: IAnnotatable, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(checkConstraint: ICheckConstraint, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(complexProperty: IComplexProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(complexType: IComplexType, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(entityType: IEntityType, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(fragment: IEntityTypeMappingFragment, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(foreignKey: IForeignKey, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(index: IIndex, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(key: IKey, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(model: IModel, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(navigation: INavigation, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(property: IProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(overrides: IRelationalPropertyOverrides, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(sequence: ISequence, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(navigation: ISkipNavigation, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(trigger: ITrigger, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
+    FilterIgnoredAnnotations(annotations: IEnumerable_1<IAnnotation>): IEnumerable_1<IAnnotation>;
+    GenerateFluentApiCalls(annotatable: IAnnotatable, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(checkConstraint: ICheckConstraint, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(complexProperty: IComplexProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(complexType: IComplexType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(entityType: IEntityType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(fragment: IEntityTypeMappingFragment, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(foreignKey: IForeignKey, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(index: IIndex, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(key: IKey, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(model: IModel, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(navigation: INavigation, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(property: IProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(overrides: IRelationalPropertyOverrides, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(sequence: ISequence, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(navigation: ISkipNavigation, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(trigger: ITrigger, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    RemoveAnnotationsHandledByConventions(annotatable: IAnnotatable, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(checkConstraint: ICheckConstraint, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(complexProperty: IComplexProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(complexType: IComplexType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(entityType: IEntityType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(fragment: IEntityTypeMappingFragment, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(foreignKey: IForeignKey, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(index: IIndex, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(key: IKey, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(model: IModel, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(navigation: INavigation, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(property: IProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(overrides: IRelationalPropertyOverrides, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(sequence: ISequence, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(navigation: ISkipNavigation, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(trigger: ITrigger, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
 }
 
 
@@ -64,20 +64,20 @@ export type IAnnotationCodeGenerator = IAnnotationCodeGenerator$instance;
 export interface ICSharpHelper$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_ICSharpHelper: never;
 
-    Arguments(values: IEnumerable<unknown>): string;
+    Arguments(values: IEnumerable_1<unknown>): string;
     Fragment(fragment: AttributeCodeFragment): string;
     Fragment(fragment: IMethodCallCodeFragment, indent?: int): string;
     Fragment(fragment: IMethodCallCodeFragment, instanceIdentifier: string, typeQualified: boolean): string;
     Fragment(fragment: NestedClosureCodeFragment, indent?: int): string;
     Fragment(fragment: PropertyAccessorCodeFragment): string;
-    GetRequiredUsings(type: Type): IEnumerable<System_Internal.String>;
-    Identifier(name: string, scope?: ICollection<System_Internal.String>, capitalize?: Nullable<System_Internal.Boolean>): string;
-    Identifier<T>(name: string, value: T, scope: IDictionary<System_Internal.String, T>, capitalize?: Nullable<System_Internal.Boolean>): string;
-    Lambda(properties: IEnumerable<IProperty>, lambdaIdentifier?: string): string;
-    Lambda(properties: IReadOnlyList<System_Internal.String>, lambdaIdentifier?: string): string;
-    Literal<TKey, TValue>(values: Dictionary<TKey, TValue>, vertical?: boolean): string;
-    Literal<T>(values: List<T>, vertical?: boolean): string;
-    Literal<T extends unknown>(value: Nullable<T>): string;
+    GetRequiredUsings(type: Type): IEnumerable_1<System_Internal.String>;
+    Identifier(name: string, scope?: ICollection_1<System_Internal.String>, capitalize?: Nullable_1<System_Internal.Boolean>): string;
+    Identifier<T>(name: string, value: T, scope: IDictionary_2<System_Internal.String, T>, capitalize?: Nullable_1<System_Internal.Boolean>): string;
+    Lambda(properties: IEnumerable_1<IProperty>, lambdaIdentifier?: string): string;
+    Lambda(properties: IReadOnlyList_1<System_Internal.String>, lambdaIdentifier?: string): string;
+    Literal<TKey, TValue>(values: Dictionary_2<TKey, TValue>, vertical?: boolean): string;
+    Literal<T>(values: List_1<T>, vertical?: boolean): string;
+    Literal<T extends unknown>(value: Nullable_1<T>): string;
     Literal(value: boolean): string;
     Literal(value: byte): string;
     Literal(value: char): string;
@@ -98,13 +98,13 @@ export interface ICSharpHelper$instance {
     Literal(value: string): string;
     Literal(value: TimeOnly): string;
     Literal(value: TimeSpan): string;
-    Literal(value: Type, fullName?: Nullable<System_Internal.Boolean>): string;
+    Literal(value: Type, fullName?: Nullable_1<System_Internal.Boolean>): string;
     Literal(value: ushort): string;
     Literal(value: uint): string;
     Literal(value: ulong): string;
     Literal<T>(values: T[], vertical?: boolean): string;
     Namespace(...name: string[]): string;
-    Statement(node: Expression, collectedNamespaces: ISet<System_Internal.String>, unsafeAccessors: ISet<System_Internal.String>, constantReplacements?: IReadOnlyDictionary<unknown, System_Internal.String>, memberAccessReplacements?: IReadOnlyDictionary<MemberInfo, QualifiedName>): string;
+    Statement(node: Expression, collectedNamespaces: ISet_1<System_Internal.String>, unsafeAccessors: ISet_1<System_Internal.String>, constantReplacements?: IReadOnlyDictionary_2<unknown, System_Internal.String>, memberAccessReplacements?: IReadOnlyDictionary_2<MemberInfo, QualifiedName>): string;
     UnknownLiteral(value: unknown): string;
     XmlComment(comment: string, indent?: int): string;
 }
@@ -135,8 +135,8 @@ export interface IMethodCallCodeFragment$instance {
 
     readonly DeclaringType: string | undefined;
     readonly Method: string;
-    readonly TypeArguments: IEnumerable<System_Internal.String>;
-    readonly Arguments: IEnumerable<unknown | undefined>;
+    readonly TypeArguments: IEnumerable_1<System_Internal.String>;
+    readonly Arguments: IEnumerable_1<unknown | undefined>;
     readonly ChainedCall: IMethodCallCodeFragment | undefined;
 }
 
@@ -147,12 +147,12 @@ export interface AnnotationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IAnnotationCodeGenerator: never;
 
     readonly Dependencies: AnnotationCodeGeneratorDependencies;
-    FilterIgnoredAnnotations(annotations: IEnumerable<IAnnotation>): IEnumerable<IAnnotation>;
+    FilterIgnoredAnnotations(annotations: IEnumerable_1<IAnnotation>): IEnumerable_1<IAnnotation>;
     GenerateDataAnnotation(entityType: IEntityType, annotation: IAnnotation): AttributeCodeFragment | undefined;
     GenerateDataAnnotation(property: IProperty, annotation: IAnnotation): AttributeCodeFragment | undefined;
-    GenerateDataAnnotationAttributes(entityType: IEntityType, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<AttributeCodeFragment>;
-    GenerateDataAnnotationAttributes(property: IProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<AttributeCodeFragment>;
-    GenerateDataAnnotationAttributes(annotatable: IAnnotatable, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<AttributeCodeFragment>;
+    GenerateDataAnnotationAttributes(entityType: IEntityType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<AttributeCodeFragment>;
+    GenerateDataAnnotationAttributes(property: IProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<AttributeCodeFragment>;
+    GenerateDataAnnotationAttributes(annotatable: IAnnotatable, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<AttributeCodeFragment>;
     GenerateFluentApi(model: IModel, annotation: IAnnotation): MethodCallCodeFragment | undefined;
     GenerateFluentApi(entityType: IEntityType, annotation: IAnnotation): MethodCallCodeFragment | undefined;
     GenerateFluentApi(complexType: IComplexType, annotation: IAnnotation): MethodCallCodeFragment | undefined;
@@ -168,22 +168,22 @@ export interface AnnotationCodeGenerator$instance {
     GenerateFluentApi(trigger: ITrigger, annotation: IAnnotation): MethodCallCodeFragment | undefined;
     GenerateFluentApi(overrides: IRelationalPropertyOverrides, annotation: IAnnotation): MethodCallCodeFragment | undefined;
     GenerateFluentApi(sequence: ISequence, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApiCalls(model: IModel, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(entityType: IEntityType, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(complexType: IComplexType, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(fragment: IEntityTypeMappingFragment, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(property: IProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(complexProperty: IComplexProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(key: IKey, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(foreignKey: IForeignKey, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(navigation: INavigation, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(navigation: ISkipNavigation, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(index: IIndex, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(checkConstraint: ICheckConstraint, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(trigger: ITrigger, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(overrides: IRelationalPropertyOverrides, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(sequence: ISequence, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
-    GenerateFluentApiCalls(annotatable: IAnnotatable, annotations: IDictionary<System_Internal.String, IAnnotation>): IReadOnlyList<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(model: IModel, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(entityType: IEntityType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(complexType: IComplexType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(fragment: IEntityTypeMappingFragment, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(property: IProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(complexProperty: IComplexProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(key: IKey, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(foreignKey: IForeignKey, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(navigation: INavigation, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(navigation: ISkipNavigation, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(index: IIndex, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(checkConstraint: ICheckConstraint, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(trigger: ITrigger, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(overrides: IRelationalPropertyOverrides, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(sequence: ISequence, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
+    GenerateFluentApiCalls(annotatable: IAnnotatable, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
     IsHandledByConvention(model: IModel, annotation: IAnnotation): boolean;
     IsHandledByConvention(entityType: IEntityType, annotation: IAnnotation): boolean;
     IsHandledByConvention(complexType: IComplexType, annotation: IAnnotation): boolean;
@@ -199,22 +199,22 @@ export interface AnnotationCodeGenerator$instance {
     IsHandledByConvention(trigger: ITrigger, annotation: IAnnotation): boolean;
     IsHandledByConvention(overrides: IRelationalPropertyOverrides, annotation: IAnnotation): boolean;
     IsHandledByConvention(sequence: ISequence, annotation: IAnnotation): boolean;
-    RemoveAnnotationsHandledByConventions(model: IModel, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(entityType: IEntityType, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(complexType: IComplexType, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(fragment: IEntityTypeMappingFragment, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(property: IProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(complexProperty: IComplexProperty, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(key: IKey, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(foreignKey: IForeignKey, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(navigation: INavigation, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(navigation: ISkipNavigation, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(index: IIndex, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(checkConstraint: ICheckConstraint, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(trigger: ITrigger, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(overrides: IRelationalPropertyOverrides, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(sequence: ISequence, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
-    RemoveAnnotationsHandledByConventions(annotatable: IAnnotatable, annotations: IDictionary<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(model: IModel, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(entityType: IEntityType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(complexType: IComplexType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(fragment: IEntityTypeMappingFragment, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(property: IProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(complexProperty: IComplexProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(key: IKey, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(foreignKey: IForeignKey, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(navigation: INavigation, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(navigation: ISkipNavigation, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(index: IIndex, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(checkConstraint: ICheckConstraint, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(trigger: ITrigger, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(overrides: IRelationalPropertyOverrides, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(sequence: ISequence, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
+    RemoveAnnotationsHandledByConventions(annotatable: IAnnotatable, annotations: IDictionary_2<System_Internal.String, IAnnotation>): void;
 }
 
 
@@ -250,15 +250,15 @@ export const AnnotationCodeGeneratorDependencies: {
 export type AnnotationCodeGeneratorDependencies = AnnotationCodeGeneratorDependencies$instance;
 
 export interface AttributeCodeFragment$instance {
-    readonly Arguments: IReadOnlyList<unknown | undefined>;
-    readonly NamedArguments: IReadOnlyDictionary<System_Internal.String, unknown | undefined>;
+    readonly Arguments: IReadOnlyList_1<unknown | undefined>;
+    readonly NamedArguments: IReadOnlyDictionary_2<System_Internal.String, unknown | undefined>;
     readonly Type: Type;
 }
 
 
 export const AttributeCodeFragment: {
     new(type: Type, arguments: unknown[]): AttributeCodeFragment;
-    new(type: Type, arguments: IEnumerable<unknown>, namedArguments: IDictionary<System_Internal.String, unknown>): AttributeCodeFragment;
+    new(type: Type, arguments: IEnumerable_1<unknown>, namedArguments: IDictionary_2<System_Internal.String, unknown>): AttributeCodeFragment;
 };
 
 
@@ -292,14 +292,14 @@ export type DesignTimeServicesReferenceAttribute = DesignTimeServicesReferenceAt
 
 export interface EntityFrameworkDesignServicesBuilder$instance extends EntityFrameworkServicesBuilder {
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
+    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
+    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
 }
 
 
 export const EntityFrameworkDesignServicesBuilder: {
     new(serviceCollection: IServiceCollection): EntityFrameworkDesignServicesBuilder;
-    readonly Services: IDictionary<Type, ServiceCharacteristics>;
+    readonly Services: IDictionary_2<Type, ServiceCharacteristics>;
 };
 
 
@@ -307,14 +307,14 @@ export type EntityFrameworkDesignServicesBuilder = EntityFrameworkDesignServices
 
 export interface EntityFrameworkRelationalDesignServicesBuilder$instance extends EntityFrameworkDesignServicesBuilder {
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable<ServiceCharacteristics>;
+    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
+    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
 }
 
 
 export const EntityFrameworkRelationalDesignServicesBuilder: {
     new(serviceCollection: IServiceCollection): EntityFrameworkRelationalDesignServicesBuilder;
-    readonly RelationalServices: IDictionary<Type, ServiceCharacteristics>;
+    readonly RelationalServices: IDictionary_2<Type, ServiceCharacteristics>;
 };
 
 
@@ -323,7 +323,7 @@ export type EntityFrameworkRelationalDesignServicesBuilder = EntityFrameworkRela
 export interface MethodCallCodeFragment$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IMethodCallCodeFragment: never;
 
-    readonly Arguments: IReadOnlyList<unknown | undefined>;
+    readonly Arguments: IReadOnlyList_1<unknown | undefined>;
     readonly ChainedCall: MethodCallCodeFragment | undefined;
     readonly DeclaringType: string | undefined;
     readonly Method: string;
@@ -349,14 +349,14 @@ export type MethodCallCodeFragment = MethodCallCodeFragment$instance & __MethodC
 
 
 export interface NestedClosureCodeFragment$instance {
-    readonly MethodCalls: IReadOnlyList<MethodCallCodeFragment>;
+    readonly MethodCalls: IReadOnlyList_1<MethodCallCodeFragment>;
     readonly Parameter: string;
 }
 
 
 export const NestedClosureCodeFragment: {
     new(parameter: string, methodCall: MethodCallCodeFragment): NestedClosureCodeFragment;
-    new(parameter: string, methodCalls: IReadOnlyList<MethodCallCodeFragment>): NestedClosureCodeFragment;
+    new(parameter: string, methodCalls: IReadOnlyList_1<MethodCallCodeFragment>): NestedClosureCodeFragment;
 };
 
 
@@ -364,12 +364,12 @@ export type NestedClosureCodeFragment = NestedClosureCodeFragment$instance;
 
 export interface PropertyAccessorCodeFragment$instance {
     readonly Parameter: string;
-    readonly Properties: IReadOnlyList<System_Internal.String>;
+    readonly Properties: IReadOnlyList_1<System_Internal.String>;
 }
 
 
 export const PropertyAccessorCodeFragment: {
-    new(parameter: string, properties: IReadOnlyList<System_Internal.String>): PropertyAccessorCodeFragment;
+    new(parameter: string, properties: IReadOnlyList_1<System_Internal.String>): PropertyAccessorCodeFragment;
 };
 
 

@@ -18,10 +18,10 @@ import * as Microsoft_EntityFrameworkCore_Metadata_Internal_Internal from "../..
 import type { InternalForeignKeyBuilder, IReferenceRoot_1, Reference_1 } from "../../Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Metadata_Internal from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { IConventionAnnotation, IConventionComplexProperty, IConventionEntityType, IConventionForeignKey, IConventionIndex, IConventionKey, IConventionNavigation, IConventionProperty, IConventionSkipNavigation, IConventionTrigger, IElementType } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
-import type { IEnumerable, IReadOnlyList } from "@tsonic/dotnet/System.Collections.Generic.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, Func, Nullable, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
-import type { FieldInfo, MemberInfo } from "@tsonic/dotnet/System.Reflection.js";
+import type { IEnumerable_1, IReadOnlyList_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { FieldInfo, MemberInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, Func_1, Nullable_1, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IReadableConventionContext$instance extends IConventionContext {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_IReadableConventionContext: never;
@@ -32,7 +32,7 @@ export interface IReadableConventionContext$instance extends IConventionContext 
 }
 
 
-export interface IReadableConventionContext$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal.IConventionContext$instance {}
+export interface IReadableConventionContext$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal.IConventionContext {}
 
 export type IReadableConventionContext = IReadableConventionContext$instance;
 
@@ -72,13 +72,13 @@ export interface ConventionDispatcher$instance {
     OnComplexPropertyAdded(propertyBuilder: IConventionComplexPropertyBuilder): IConventionComplexPropertyBuilder | undefined;
     OnComplexPropertyAnnotationChanged(propertyBuilder: IConventionComplexPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
     OnComplexPropertyFieldChanged(propertyBuilder: IConventionComplexPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo): FieldInfo | undefined;
-    OnComplexPropertyNullabilityChanged(propertyBuilder: IConventionComplexPropertyBuilder): Nullable<System_Internal.Boolean>;
+    OnComplexPropertyNullabilityChanged(propertyBuilder: IConventionComplexPropertyBuilder): Nullable_1<System_Internal.Boolean>;
     OnComplexPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionComplexProperty): IConventionComplexProperty | undefined;
     OnComplexTypeAnnotationChanged(complexTypeBuilder: IConventionComplexTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
     OnComplexTypeMemberIgnored(propertyBuilder: IConventionComplexTypeBuilder, name: string): string | undefined;
     OnDiscriminatorPropertySet(structuralTypeBuilder: IConventionTypeBaseBuilder, name: string): string | undefined;
     OnElementTypeAnnotationChanged(builder: IConventionElementTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnElementTypeNullabilityChanged(builder: IConventionElementTypeBuilder): Nullable<System_Internal.Boolean>;
+    OnElementTypeNullabilityChanged(builder: IConventionElementTypeBuilder): Nullable_1<System_Internal.Boolean>;
     OnEntityTypeAdded(entityTypeBuilder: IConventionEntityTypeBuilder): IConventionEntityTypeBuilder | undefined;
     OnEntityTypeAnnotationChanged(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
     OnEntityTypeBaseTypeChanged(entityTypeBuilder: IConventionEntityTypeBuilder, newBaseType: IConventionEntityType, previousBaseType: IConventionEntityType): IConventionEntityType | undefined;
@@ -86,19 +86,19 @@ export interface ConventionDispatcher$instance {
     OnEntityTypeRemoved(modelBuilder: IConventionModelBuilder, type: IConventionEntityType): IConventionEntityType | undefined;
     OnForeignKeyAdded(relationshipBuilder: IConventionForeignKeyBuilder): IConventionForeignKeyBuilder | undefined;
     OnForeignKeyAnnotationChanged(relationshipBuilder: IConventionForeignKeyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnForeignKeyDependentRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder): Nullable<System_Internal.Boolean>;
+    OnForeignKeyDependentRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder): Nullable_1<System_Internal.Boolean>;
     OnForeignKeyNullNavigationSet(relationshipBuilder: IConventionForeignKeyBuilder, pointsToPrincipal: boolean): IConventionNavigation | undefined;
-    OnForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder): Nullable<System_Internal.Boolean>;
+    OnForeignKeyOwnershipChanged(relationshipBuilder: IConventionForeignKeyBuilder): Nullable_1<System_Internal.Boolean>;
     OnForeignKeyPrincipalEndChanged(relationshipBuilder: IConventionForeignKeyBuilder): IConventionForeignKeyBuilder | undefined;
-    OnForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList<IConventionProperty>, oldPrincipalKey: IConventionKey): IReadOnlyList<IConventionProperty> | undefined;
+    OnForeignKeyPropertiesChanged(relationshipBuilder: IConventionForeignKeyBuilder, oldDependentProperties: IReadOnlyList_1<IConventionProperty>, oldPrincipalKey: IConventionKey): IReadOnlyList_1<IConventionProperty> | undefined;
     OnForeignKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, foreignKey: IConventionForeignKey): IConventionForeignKey | undefined;
-    OnForeignKeyRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder): Nullable<System_Internal.Boolean>;
-    OnForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder): Nullable<System_Internal.Boolean>;
+    OnForeignKeyRequirednessChanged(relationshipBuilder: IConventionForeignKeyBuilder): Nullable_1<System_Internal.Boolean>;
+    OnForeignKeyUniquenessChanged(relationshipBuilder: IConventionForeignKeyBuilder): Nullable_1<System_Internal.Boolean>;
     OnIndexAdded(indexBuilder: IConventionIndexBuilder): IConventionIndexBuilder | undefined;
     OnIndexAnnotationChanged(indexBuilder: IConventionIndexBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
     OnIndexRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, index: IConventionIndex): IConventionIndex | undefined;
-    OnIndexSortOrderChanged(indexBuilder: IConventionIndexBuilder): IReadOnlyList<System_Internal.Boolean> | undefined;
-    OnIndexUniquenessChanged(indexBuilder: IConventionIndexBuilder): Nullable<System_Internal.Boolean>;
+    OnIndexSortOrderChanged(indexBuilder: IConventionIndexBuilder): IReadOnlyList_1<System_Internal.Boolean> | undefined;
+    OnIndexUniquenessChanged(indexBuilder: IConventionIndexBuilder): Nullable_1<System_Internal.Boolean>;
     OnKeyAdded(keyBuilder: IConventionKeyBuilder): IConventionKeyBuilder | undefined;
     OnKeyAnnotationChanged(keyBuilder: IConventionKeyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
     OnKeyRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, key: IConventionKey): IConventionKey | undefined;
@@ -113,7 +113,7 @@ export interface ConventionDispatcher$instance {
     OnPropertyAnnotationChanged(propertyBuilder: IConventionPropertyBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
     OnPropertyElementTypeChanged(propertyBuilder: IConventionPropertyBuilder, newElementType: IElementType, oldElementType: IElementType): IElementType | undefined;
     OnPropertyFieldChanged(propertyBuilder: IConventionPropertyBuilder, newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo): FieldInfo | undefined;
-    OnPropertyNullabilityChanged(propertyBuilder: IConventionPropertyBuilder): Nullable<System_Internal.Boolean>;
+    OnPropertyNullabilityChanged(propertyBuilder: IConventionPropertyBuilder): Nullable_1<System_Internal.Boolean>;
     OnPropertyRemoved(typeBaseBuilder: IConventionTypeBaseBuilder, property: IConventionProperty): IConventionProperty | undefined;
     OnSkipNavigationAdded(navigationBuilder: IConventionSkipNavigationBuilder): IConventionSkipNavigationBuilder | undefined;
     OnSkipNavigationAnnotationChanged(navigationBuilder: IConventionSkipNavigationBuilder, name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
@@ -123,7 +123,7 @@ export interface ConventionDispatcher$instance {
     OnTriggerAdded(triggerBuilder: IConventionTriggerBuilder): IConventionTriggerBuilder | undefined;
     OnTriggerRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, trigger: IConventionTrigger): IConventionTrigger | undefined;
     OnTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type): string | undefined;
-    Track<T>(func: Func<T>, foreignKey: IConventionForeignKey): T;
+    Track<T>(func: Func_1<T>, foreignKey: IConventionForeignKey): T;
 }
 
 
@@ -151,7 +151,7 @@ export interface __MetadataTracker$views {
     As_IReferenceRoot_1(): Microsoft_EntityFrameworkCore_Metadata_Internal_Internal.IReferenceRoot_1$instance<IConventionForeignKey>;
 }
 
-export interface MetadataTracker$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal_Internal.IReferenceRoot_1$instance<IConventionForeignKey> {}
+export interface MetadataTracker$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal_Internal.IReferenceRoot_1<IConventionForeignKey> {}
 
 export type MetadataTracker = MetadataTracker$instance & __MetadataTracker$views;
 
@@ -164,7 +164,7 @@ export interface RuntimeConventionSetBuilder$instance {
 
 
 export const RuntimeConventionSetBuilder: {
-    new(providerConventionSetBuilder: IProviderConventionSetBuilder, plugins: IEnumerable<IConventionSetPlugin>): RuntimeConventionSetBuilder;
+    new(providerConventionSetBuilder: IProviderConventionSetBuilder, plugins: IEnumerable_1<IConventionSetPlugin>): RuntimeConventionSetBuilder;
 };
 
 
@@ -172,7 +172,7 @@ export interface __RuntimeConventionSetBuilder$views {
     As_IConventionSetBuilder(): Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_Internal.IConventionSetBuilder$instance;
 }
 
-export interface RuntimeConventionSetBuilder$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_Internal.IConventionSetBuilder$instance {}
+export interface RuntimeConventionSetBuilder$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_Internal.IConventionSetBuilder {}
 
 export type RuntimeConventionSetBuilder = RuntimeConventionSetBuilder$instance & __RuntimeConventionSetBuilder$views;
 
