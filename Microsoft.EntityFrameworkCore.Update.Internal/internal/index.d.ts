@@ -20,19 +20,19 @@ import type { IParameterNameGeneratorFactory, IRelationalConnection } from "../.
 import * as Microsoft_EntityFrameworkCore_Update_Internal from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import type { IBatchExecutor, ICommandBatchPreparer, IModificationCommand, IModificationCommandBatchFactory, IModificationCommandFactory, INonTrackedModificationCommand, IReadOnlyModificationCommand, IUpdateAdapter, IUpdateAdapterFactory, IUpdateEntry, ModificationCommandBatch, ModificationCommandParameters, NonTrackedModificationCommandParameters } from "../../Microsoft.EntityFrameworkCore.Update/internal/index.js";
 import type { DbLoggerCategory_Update } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { IComparer, IDictionary, IEnumerable, IEqualityComparer, IList, IReadOnlyList, List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { AsyncCallback, Boolean as ClrBoolean, Delegate, Func, IAsyncResult, ICloneable, IEquatable, Int32, IntPtr, MulticastDelegate, Object as ClrObject, String as ClrString, ValueTuple, ValueType, Void } from "@tsonic/dotnet/System.js";
-import * as System_Runtime_Serialization_Internal from "@tsonic/dotnet/System.Runtime.Serialization.js";
-import type { ISerializable } from "@tsonic/dotnet/System.Runtime.Serialization.js";
-import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
-import type { Task } from "@tsonic/dotnet/System.Threading.Tasks.js";
+import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { IComparer_1, IDictionary_2, IEnumerable_1, IEqualityComparer_1, IList_1, IReadOnlyList_1, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import * as System_Runtime_Serialization_Internal from "@tsonic/dotnet/System.Runtime.Serialization/internal/index.js";
+import type { ISerializable } from "@tsonic/dotnet/System.Runtime.Serialization/internal/index.js";
+import type { Task, Task_1 } from "@tsonic/dotnet/System.Threading.Tasks/internal/index.js";
+import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { AsyncCallback, Boolean as ClrBoolean, Delegate, Func_1, IAsyncResult, ICloneable, IEquatable_1, Int32, IntPtr, MulticastDelegate, Object as ClrObject, String as ClrString, ValueTuple_2, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export type SharedTableEntryMapFactory_1<TValue> = (valueFactory: SharedTableEntryValueFactory_1<TValue>) => SharedTableEntryMap_1<TValue>;
 
 
-export type SharedTableEntryValueFactory_1<TValue> = (table: ITable, comparer: IComparer<IUpdateEntry>) => TValue;
+export type SharedTableEntryValueFactory_1<TValue> = (table: ITable, comparer: IComparer_1<IUpdateEntry>) => TValue;
 
 
 export interface IRowForeignKeyValueFactory$instance {
@@ -49,12 +49,12 @@ export type IRowForeignKeyValueFactory = IRowForeignKeyValueFactory$instance;
 export interface IRowForeignKeyValueFactory_1$instance<TKey> extends IRowForeignKeyValueFactory {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[] | undefined;
     CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;
-    TryCreateDependentKeyValue(keyValues: IDictionary<System_Internal.String, unknown>, key: TKey): boolean;
+    TryCreateDependentKeyValue(keyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
 }
 
@@ -75,7 +75,7 @@ export type IRowForeignKeyValueFactoryFactory = IRowForeignKeyValueFactoryFactor
 export interface IRowIdentityMap$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIdentityMap: never;
 
-    readonly Rows: IEnumerable<INonTrackedModificationCommand>;
+    readonly Rows: IEnumerable_1<INonTrackedModificationCommand>;
     Add(keyValues: unknown[], command: INonTrackedModificationCommand): void;
     Clear(): void;
     FindCommand(keyValues: unknown[]): INonTrackedModificationCommand | undefined;
@@ -97,7 +97,7 @@ export type IRowIdentityMapFactory = IRowIdentityMapFactory$instance;
 export interface IRowIndexValueFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory: never;
 
-    CreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple<unknown[], System_Internal.Boolean>;
+    CreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple_2<unknown[], System_Internal.Boolean>;
 }
 
 
@@ -106,10 +106,10 @@ export type IRowIndexValueFactory = IRowIndexValueFactory$instance;
 export interface IRowIndexValueFactory_1$instance<TKey> extends IRowIndexValueFactory {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer<TKey>;
-    CreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple<unknown[], System_Internal.Boolean>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
+    CreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple_2<unknown[], System_Internal.Boolean>;
     TryCreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey, hasNullValue: boolean): boolean;
-    TryCreateIndexValue(keyValues: IDictionary<System_Internal.String, unknown>, key: TKey, hasNullValue: boolean): boolean;
+    TryCreateIndexValue(keyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey, hasNullValue: boolean): boolean;
     TryCreateIndexValue(keyValues: unknown[], key: TKey, hasNullValue: boolean): boolean;
 }
 
@@ -140,11 +140,11 @@ export type IRowKeyValueFactory = IRowKeyValueFactory$instance;
 export interface IRowKeyValueFactory_1$instance<TKey> extends IRowKeyValueFactory {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreateEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreateKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     CreateKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): TKey;
-    CreateKeyValue(keyValues: IDictionary<System_Internal.String, unknown>): TKey;
+    CreateKeyValue(keyValues: IDictionary_2<System_Internal.String, unknown>): TKey;
     CreateKeyValue(keyValues: unknown[]): TKey;
 }
 
@@ -160,13 +160,13 @@ export interface IRowKeyValueFactoryFactory$instance {
 
 export type IRowKeyValueFactoryFactory = IRowKeyValueFactoryFactory$instance;
 
-export interface BatchExecutor$instance {
+export interface BatchExecutor$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IBatchExecutor$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IBatchExecutor: never;
 
     readonly CurrentContext: ICurrentDbContext;
     readonly UpdateLogger: IDiagnosticsLogger_1<DbLoggerCategory_Update>;
-    Execute(commandBatches: IEnumerable<ModificationCommandBatch>, connection: IRelationalConnection): int;
-    ExecuteAsync(commandBatches: IEnumerable<ModificationCommandBatch>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task<System_Internal.Int32>;
+    Execute(commandBatches: IEnumerable_1<ModificationCommandBatch>, connection: IRelationalConnection): int;
+    ExecuteAsync(commandBatches: IEnumerable_1<ModificationCommandBatch>, connection: IRelationalConnection, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
 }
 
 
@@ -178,8 +178,6 @@ export const BatchExecutor: {
 export interface __BatchExecutor$views {
     As_IBatchExecutor(): Microsoft_EntityFrameworkCore_Update_Internal.IBatchExecutor$instance;
 }
-
-export interface BatchExecutor$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IBatchExecutor$instance {}
 
 export type BatchExecutor = BatchExecutor$instance & __BatchExecutor$views;
 
@@ -197,15 +195,15 @@ export const ColumnAccessors: {
 
 export type ColumnAccessors = ColumnAccessors$instance;
 
-export interface CommandBatchPreparer$instance {
+export interface CommandBatchPreparer$instance extends Microsoft_EntityFrameworkCore_Update_Internal.ICommandBatchPreparer$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_ICommandBatchPreparer: never;
 
     readonly Dependencies: CommandBatchPreparerDependencies;
-    BatchCommands(entries: IList<IUpdateEntry>, updateAdapter: IUpdateAdapter): IEnumerable<ModificationCommandBatch>;
-    CreateCommandBatches(commandSet: IEnumerable<IReadOnlyModificationCommand>, moreCommandSets: boolean): IEnumerable<ModificationCommandBatch>;
-    CreateModificationCommands(entries: IList<IUpdateEntry>, updateAdapter: IUpdateAdapter, generateParameterName: Func<System_Internal.String>): IEnumerable<IReadOnlyModificationCommand>;
-    TopologicalSort(commands: IEnumerable<IReadOnlyModificationCommand>): IReadOnlyList<List<IReadOnlyModificationCommand>>;
+    BatchCommands(entries: IList_1<IUpdateEntry>, updateAdapter: IUpdateAdapter): IEnumerable_1<ModificationCommandBatch>;
+    CreateCommandBatches(commandSet: IEnumerable_1<IReadOnlyModificationCommand>, moreCommandSets: boolean): IEnumerable_1<ModificationCommandBatch>;
+    CreateModificationCommands(entries: IList_1<IUpdateEntry>, updateAdapter: IUpdateAdapter, generateParameterName: Func_1<System_Internal.String>): IEnumerable_1<IReadOnlyModificationCommand>;
+    TopologicalSort(commands: IEnumerable_1<IReadOnlyModificationCommand>): IReadOnlyList_1<List_1<IReadOnlyModificationCommand>>;
 }
 
 
@@ -219,8 +217,6 @@ export interface __CommandBatchPreparer$views {
     As_ICommandBatchPreparer(): Microsoft_EntityFrameworkCore_Update_Internal.ICommandBatchPreparer$instance;
 }
 
-export interface CommandBatchPreparer$instance extends Microsoft_EntityFrameworkCore_Update_Internal.ICommandBatchPreparer$instance {}
-
 export type CommandBatchPreparer = CommandBatchPreparer$instance & __CommandBatchPreparer$views;
 
 
@@ -229,7 +225,7 @@ export interface CommandBatchPreparerDependencies$instance {
 
     LoggingOptions: ILoggingOptions;
     ModificationCommandBatchFactory: IModificationCommandBatchFactory;
-    ModificationCommandComparer: IComparer<IReadOnlyModificationCommand>;
+    ModificationCommandComparer: IComparer_1<IReadOnlyModificationCommand>;
     ModificationCommandFactory: IModificationCommandFactory;
     Options: IDbContextOptions;
     ParameterNameGeneratorFactory: IParameterNameGeneratorFactory;
@@ -243,7 +239,7 @@ export interface CommandBatchPreparerDependencies$instance {
 
 
 export const CommandBatchPreparerDependencies: {
-    new(modificationCommandBatchFactory: IModificationCommandBatchFactory, parameterNameGeneratorFactory: IParameterNameGeneratorFactory, modificationCommandComparer: IComparer<IReadOnlyModificationCommand>, modificationCommandFactory: IModificationCommandFactory, loggingOptions: ILoggingOptions, updateLogger: IDiagnosticsLogger_1<DbLoggerCategory_Update>, options: IDbContextOptions): CommandBatchPreparerDependencies;
+    new(modificationCommandBatchFactory: IModificationCommandBatchFactory, parameterNameGeneratorFactory: IParameterNameGeneratorFactory, modificationCommandComparer: IComparer_1<IReadOnlyModificationCommand>, modificationCommandFactory: IModificationCommandFactory, loggingOptions: ILoggingOptions, updateLogger: IDiagnosticsLogger_1<DbLoggerCategory_Update>, options: IDbContextOptions): CommandBatchPreparerDependencies;
 };
 
 
@@ -253,16 +249,16 @@ export interface CompositeRowForeignKeyValueFactory$instance extends CompositeRo
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
-    EqualityComparer: IEqualityComparer<(unknown | undefined)[]>;
-    readonly ValueConverters: List<ValueConverter | undefined> | undefined;
+    EqualityComparer: IEqualityComparer_1<(unknown | undefined)[]>;
+    readonly ValueConverters: List_1<ValueConverter | undefined> | undefined;
     CreateDependentEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown | undefined;
     CreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[] | undefined;
     CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: unknown[]): boolean;
     TryCreateDependentKeyValue(keyValues: unknown[], key: unknown[], hasNullValue: boolean): boolean;
-    TryCreateDependentKeyValue(keyValues: IDictionary<System_Internal.String, unknown>, key: unknown[]): boolean;
-    TryCreateDependentKeyValue(keyValues: IDictionary<System_Internal.String, unknown>, key: unknown[], hasNullValue: boolean): boolean;
+    TryCreateDependentKeyValue(keyValues: IDictionary_2<System_Internal.String, unknown>, key: unknown[]): boolean;
+    TryCreateDependentKeyValue(keyValues: IDictionary_2<System_Internal.String, unknown>, key: unknown[], hasNullValue: boolean): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: unknown[]): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: unknown[], hasNullValue: boolean): boolean;
 }
@@ -285,10 +281,10 @@ export interface CompositeRowIndexValueFactory$instance extends CompositeRowValu
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory_1: never;
 
-    CreateEquatableIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple<unknown, System_Internal.Boolean>;
-    CreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple<unknown[], System_Internal.Boolean>;
+    CreateEquatableIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple_2<unknown, System_Internal.Boolean>;
+    CreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple_2<unknown[], System_Internal.Boolean>;
     TryCreateIndexValue(keyValues: unknown[], key: unknown[], hasNullValue: boolean): boolean;
-    TryCreateIndexValue(keyValues: IDictionary<System_Internal.String, unknown>, key: unknown[], hasNullValue: boolean): boolean;
+    TryCreateIndexValue(keyValues: IDictionary_2<System_Internal.String, unknown>, key: unknown[], hasNullValue: boolean): boolean;
     TryCreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, keyValue: unknown[], hasNullValue: boolean): boolean;
 }
 
@@ -312,7 +308,7 @@ export interface CompositeRowKeyValueFactory$instance extends CompositeRowValueF
 
     CreateEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreateKeyValue(keyValues: unknown[]): (unknown | undefined)[];
-    CreateKeyValue(keyValues: IDictionary<System_Internal.String, unknown>): (unknown | undefined)[];
+    CreateKeyValue(keyValues: IDictionary_2<System_Internal.String, unknown>): (unknown | undefined)[];
     CreateKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): (unknown | undefined)[];
 }
 
@@ -331,20 +327,20 @@ export type CompositeRowKeyValueFactory = CompositeRowKeyValueFactory$instance &
 
 
 export interface CompositeRowValueFactory$instance {
-    readonly Columns: IReadOnlyList<IColumn>;
-    EqualityComparer: IEqualityComparer<(unknown | undefined)[]>;
-    readonly ValueConverters: List<ValueConverter | undefined> | undefined;
+    readonly Columns: IReadOnlyList_1<IColumn>;
+    EqualityComparer: IEqualityComparer_1<(unknown | undefined)[]>;
+    readonly ValueConverters: List_1<ValueConverter | undefined> | undefined;
     TryCreateDependentKeyValue(keyValues: unknown[], key: unknown[]): boolean;
     TryCreateDependentKeyValue(keyValues: unknown[], key: unknown[], hasNullValue: boolean): boolean;
-    TryCreateDependentKeyValue(keyValues: IDictionary<System_Internal.String, unknown>, key: unknown[]): boolean;
-    TryCreateDependentKeyValue(keyValues: IDictionary<System_Internal.String, unknown>, key: unknown[], hasNullValue: boolean): boolean;
+    TryCreateDependentKeyValue(keyValues: IDictionary_2<System_Internal.String, unknown>, key: unknown[]): boolean;
+    TryCreateDependentKeyValue(keyValues: IDictionary_2<System_Internal.String, unknown>, key: unknown[], hasNullValue: boolean): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: unknown[]): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: unknown[], hasNullValue: boolean): boolean;
 }
 
 
-export const CompositeRowValueFactory: (abstract new(columns: IReadOnlyList<IColumn>) => CompositeRowValueFactory) & {
-    CreateEqualityComparer(columns: IReadOnlyList<IColumn>, valueConverters: List<ValueConverter>): IEqualityComparer<(unknown | undefined)[]>;
+export const CompositeRowValueFactory: (abstract new(columns: IReadOnlyList_1<IColumn>) => CompositeRowValueFactory) & {
+    CreateEqualityComparer(columns: IReadOnlyList_1<IColumn>, valueConverters: List_1<ValueConverter>): IEqualityComparer_1<(unknown | undefined)[]>;
 };
 
 
@@ -364,7 +360,7 @@ export const ModificationCommandComparer: {
 
 export type ModificationCommandComparer = ModificationCommandComparer$instance;
 
-export interface ModificationCommandFactory$instance {
+export interface ModificationCommandFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IModificationCommandFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IModificationCommandFactory: never;
 
     CreateModificationCommand(modificationCommandParameters: ModificationCommandParameters): IModificationCommand;
@@ -381,8 +377,6 @@ export interface __ModificationCommandFactory$views {
     As_IModificationCommandFactory(): Microsoft_EntityFrameworkCore_Update_Internal.IModificationCommandFactory$instance;
 }
 
-export interface ModificationCommandFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IModificationCommandFactory$instance {}
-
 export type ModificationCommandFactory = ModificationCommandFactory$instance & __ModificationCommandFactory$views;
 
 
@@ -392,14 +386,14 @@ export interface RowForeignKeyValueFactory_2$instance<TKey, TForeignKey> {
 
     readonly Column: IColumn;
     readonly ColumnAccessors: ColumnAccessors;
-    readonly EqualityComparer: IEqualityComparer<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     readonly ValueConverter: ValueConverter | undefined;
     CreateDependentEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown | undefined;
     CreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[] | undefined;
     CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
-    TryCreateDependentKeyValue(keyPropertyValues: IDictionary<System_Internal.String, unknown>, key: TKey): boolean;
+    TryCreateDependentKeyValue(keyPropertyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;
 }
 
@@ -416,7 +410,7 @@ export interface __RowForeignKeyValueFactory_2$views<TKey, TForeignKey> {
 export type RowForeignKeyValueFactory_2<TKey, TForeignKey> = RowForeignKeyValueFactory_2$instance<TKey, TForeignKey> & __RowForeignKeyValueFactory_2$views<TKey, TForeignKey>;
 
 
-export interface RowForeignKeyValueFactoryFactory$instance {
+export interface RowForeignKeyValueFactoryFactory$instance extends IRowForeignKeyValueFactoryFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactoryFactory: never;
 
     Create(foreignKey: IForeignKeyConstraint): IRowForeignKeyValueFactory;
@@ -434,15 +428,13 @@ export interface __RowForeignKeyValueFactoryFactory$views {
     As_IRowForeignKeyValueFactoryFactory(): IRowForeignKeyValueFactoryFactory$instance;
 }
 
-export interface RowForeignKeyValueFactoryFactory$instance extends IRowForeignKeyValueFactoryFactory$instance {}
-
 export type RowForeignKeyValueFactoryFactory = RowForeignKeyValueFactoryFactory$instance & __RowForeignKeyValueFactoryFactory$views;
 
 
-export interface RowIdentityMap_1$instance<TKey> {
+export interface RowIdentityMap_1$instance<TKey> extends IRowIdentityMap$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIdentityMap: never;
 
-    readonly Rows: IEnumerable<INonTrackedModificationCommand>;
+    readonly Rows: IEnumerable_1<INonTrackedModificationCommand>;
     Add(keyValues: unknown[], command: INonTrackedModificationCommand): void;
     Add(key: TKey, command: INonTrackedModificationCommand): void;
     Clear(): void;
@@ -460,12 +452,10 @@ export interface __RowIdentityMap_1$views<TKey> {
     As_IRowIdentityMap(): IRowIdentityMap$instance;
 }
 
-export interface RowIdentityMap_1$instance<TKey> extends IRowIdentityMap$instance {}
-
 export type RowIdentityMap_1<TKey> = RowIdentityMap_1$instance<TKey> & __RowIdentityMap_1$views<TKey>;
 
 
-export interface RowIdentityMapFactory$instance {
+export interface RowIdentityMapFactory$instance extends IRowIdentityMapFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIdentityMapFactory: never;
 
     Create(key: IUniqueConstraint): IRowIdentityMap;
@@ -481,12 +471,10 @@ export interface __RowIdentityMapFactory$views {
     As_IRowIdentityMapFactory(): IRowIdentityMapFactory$instance;
 }
 
-export interface RowIdentityMapFactory$instance extends IRowIdentityMapFactory$instance {}
-
 export type RowIdentityMapFactory = RowIdentityMapFactory$instance & __RowIdentityMapFactory$views;
 
 
-export interface RowIndexValueFactoryFactory$instance {
+export interface RowIndexValueFactoryFactory$instance extends IRowIndexValueFactoryFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactoryFactory: never;
 
     Create(index: ITableIndex): IRowIndexValueFactory;
@@ -502,12 +490,10 @@ export interface __RowIndexValueFactoryFactory$views {
     As_IRowIndexValueFactoryFactory(): IRowIndexValueFactoryFactory$instance;
 }
 
-export interface RowIndexValueFactoryFactory$instance extends IRowIndexValueFactoryFactory$instance {}
-
 export type RowIndexValueFactoryFactory = RowIndexValueFactoryFactory$instance & __RowIndexValueFactoryFactory$views;
 
 
-export interface RowKeyValueFactoryFactory$instance {
+export interface RowKeyValueFactoryFactory$instance extends IRowKeyValueFactoryFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactoryFactory: never;
 
     Create(key: IUniqueConstraint): IRowKeyValueFactory;
@@ -523,14 +509,12 @@ export interface __RowKeyValueFactoryFactory$views {
     As_IRowKeyValueFactoryFactory(): IRowKeyValueFactoryFactory$instance;
 }
 
-export interface RowKeyValueFactoryFactory$instance extends IRowKeyValueFactoryFactory$instance {}
-
 export type RowKeyValueFactoryFactory = RowKeyValueFactoryFactory$instance & __RowKeyValueFactoryFactory$views;
 
 
 export interface SharedTableEntryMap_1$instance<TValue> {
-    readonly Values: IEnumerable<TValue>;
-    GetAllEntries(entry: IUpdateEntry): IReadOnlyList<IUpdateEntry>;
+    readonly Values: IEnumerable_1<TValue>;
+    GetAllEntries(entry: IUpdateEntry): IReadOnlyList_1<IUpdateEntry>;
     GetOrAddValue(entry: IUpdateEntry, createElement: SharedTableEntryValueFactory_1<TValue>): TValue;
     IsMainEntry(entry: IUpdateEntry): boolean;
 }
@@ -551,7 +535,7 @@ export interface SimpleFullyNullableRowForeignKeyValueFactory_2$instance<TKey, T
     CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
-    TryCreateDependentKeyValue(keyPropertyValues: IDictionary<System_Internal.String, unknown>, key: TKey): boolean;
+    TryCreateDependentKeyValue(keyPropertyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;
 }
 
@@ -577,7 +561,7 @@ export interface SimpleNonNullableRowForeignKeyValueFactory_2$instance<TKey, TFo
     CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
-    TryCreateDependentKeyValue(keyPropertyValues: IDictionary<System_Internal.String, unknown>, key: TKey): boolean;
+    TryCreateDependentKeyValue(keyPropertyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;
 }
 
@@ -603,7 +587,7 @@ export interface SimpleNullablePrincipalRowForeignKeyValueFactory_2$instance<TKe
     CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
-    TryCreateDependentKeyValue(keyPropertyValues: IDictionary<System_Internal.String, unknown>, key: TKey): boolean;
+    TryCreateDependentKeyValue(keyPropertyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;
 }
 
@@ -629,7 +613,7 @@ export interface SimpleNullableRowForeignKeyValueFactory_2$instance<TKey extends
     CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
-    TryCreateDependentKeyValue(keyPropertyValues: IDictionary<System_Internal.String, unknown>, key: TKey): boolean;
+    TryCreateDependentKeyValue(keyPropertyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;
 }
 
@@ -651,11 +635,11 @@ export interface SimpleRowIndexValueFactory_1$instance<TKey> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer<TKey>;
-    CreateEquatableIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple<unknown, System_Internal.Boolean>;
-    CreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple<unknown[], System_Internal.Boolean>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
+    CreateEquatableIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple_2<unknown, System_Internal.Boolean>;
+    CreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): ValueTuple_2<unknown[], System_Internal.Boolean>;
     TryCreateIndexValue(keyValues: unknown[], key: TKey, hasNullValue: boolean): boolean;
-    TryCreateIndexValue(keyValues: IDictionary<System_Internal.String, unknown>, key: TKey, hasNullValue: boolean): boolean;
+    TryCreateIndexValue(keyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey, hasNullValue: boolean): boolean;
     TryCreateIndexValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey, hasNullValue: boolean): boolean;
 }
 
@@ -677,10 +661,10 @@ export interface SimpleRowKeyValueFactory_1$instance<TKey> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactory_1: never;
 
-    readonly EqualityComparer: IEqualityComparer<TKey>;
+    readonly EqualityComparer: IEqualityComparer_1<TKey>;
     CreateEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
     CreateKeyValue(keyValues: unknown[]): TKey;
-    CreateKeyValue(keyValues: IDictionary<System_Internal.String, unknown>): TKey;
+    CreateKeyValue(keyValues: IDictionary_2<System_Internal.String, unknown>): TKey;
     CreateKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): TKey;
 }
 
@@ -698,20 +682,20 @@ export interface __SimpleRowKeyValueFactory_1$views<TKey> {
 export type SimpleRowKeyValueFactory_1<TKey> = SimpleRowKeyValueFactory_1$instance<TKey> & __SimpleRowKeyValueFactory_1$views<TKey>;
 
 
-export interface UpdateAdapter$instance {
+export interface UpdateAdapter$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapter$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateAdapter: never;
 
     CascadeDeleteTiming: CascadeTiming;
     DeleteOrphansTiming: CascadeTiming;
-    readonly Entries: IEnumerable<IUpdateEntry>;
+    readonly Entries: IEnumerable_1<IUpdateEntry>;
     readonly Model: IModel;
     CascadeChanges(): void;
-    CascadeDelete(entry: IUpdateEntry, foreignKeys?: IEnumerable<IForeignKey>): void;
-    CreateEntry(values: IDictionary<System_Internal.String, unknown>, entityType: IEntityType): IUpdateEntry;
+    CascadeDelete(entry: IUpdateEntry, foreignKeys?: IEnumerable_1<IForeignKey>): void;
+    CreateEntry(values: IDictionary_2<System_Internal.String, unknown>, entityType: IEntityType): IUpdateEntry;
     DetectChanges(): void;
     FindPrincipal(dependentEntry: IUpdateEntry, foreignKey: IForeignKey): IUpdateEntry | undefined;
-    GetDependents(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable<IUpdateEntry>;
-    GetEntriesToSave(): IList<IUpdateEntry>;
+    GetDependents(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable_1<IUpdateEntry>;
+    GetEntriesToSave(): IList_1<IUpdateEntry>;
     TryGetEntry(key: IKey, keyValues: unknown[]): IUpdateEntry | undefined;
 }
 
@@ -725,12 +709,10 @@ export interface __UpdateAdapter$views {
     As_IUpdateAdapter(): Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapter$instance;
 }
 
-export interface UpdateAdapter$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapter$instance {}
-
 export type UpdateAdapter = UpdateAdapter$instance & __UpdateAdapter$views;
 
 
-export interface UpdateAdapterFactory$instance {
+export interface UpdateAdapterFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapterFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateAdapterFactory: never;
 
     Create(): IUpdateAdapter;
@@ -746,8 +728,6 @@ export const UpdateAdapterFactory: {
 export interface __UpdateAdapterFactory$views {
     As_IUpdateAdapterFactory(): Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapterFactory$instance;
 }
-
-export interface UpdateAdapterFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapterFactory$instance {}
 
 export type UpdateAdapterFactory = UpdateAdapterFactory$instance & __UpdateAdapterFactory$views;
 

@@ -16,9 +16,9 @@ import type { ICheckConstraint, IColumn, IColumnBase, IComplexProperty, IComplex
 import type { JsonValueReaderWriter } from "../../Microsoft.EntityFrameworkCore.Storage.Json/internal/index.js";
 import type { ValueConverter } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
 import type { CoreTypeMapping } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
-import type { Dictionary, IDictionary, IReadOnlyDictionary, ISet } from "@tsonic/dotnet/System.Collections.Generic.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString, Type, ValueType, Void } from "@tsonic/dotnet/System.js";
+import type { Dictionary_2, IDictionary_2, IReadOnlyDictionary_2, ISet_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, IEquatable_1, Int32, Object as ClrObject, String as ClrString, Type, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface ICSharpRuntimeAnnotationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
@@ -95,7 +95,7 @@ export interface CSharpRuntimeAnnotationCodeGenerator$instance {
 
 export const CSharpRuntimeAnnotationCodeGenerator: {
     new(dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies): CSharpRuntimeAnnotationCodeGenerator;
-    AddNamespace(type: Type, namespaces: ISet<System_Internal.String>): void;
+    AddNamespace(type: Type, namespaces: ISet_1<System_Internal.String>): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
     CreateJsonValueReaderWriter(jsonValueReaderWriter: JsonValueReaderWriter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, codeHelper: ICSharpHelper): void;
@@ -132,17 +132,17 @@ export type CSharpRuntimeAnnotationCodeGeneratorDependencies = CSharpRuntimeAnno
 export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    Annotations: IDictionary<System_Internal.String, unknown | undefined>;
+    Annotations: IDictionary_2<System_Internal.String, unknown | undefined>;
     ClassName: string;
-    ConfigurationClassNames: IReadOnlyDictionary<ITypeBase, System_Internal.String>;
+    ConfigurationClassNames: IReadOnlyDictionary_2<ITypeBase, System_Internal.String>;
     ForNativeAot: boolean;
     IsRuntime: boolean;
     MainBuilder: IndentedStringBuilder;
     MethodBuilder: IndentedStringBuilder;
     Namespace: string;
-    Namespaces: ISet<System_Internal.String>;
-    ScopeObjects: IDictionary<System_Internal.String, unknown>;
-    ScopeVariables: IDictionary<unknown, System_Internal.String>;
+    Namespaces: ISet_1<System_Internal.String>;
+    ScopeObjects: IDictionary_2<System_Internal.String, unknown>;
+    ScopeVariables: IDictionary_2<unknown, System_Internal.String>;
     TargetName: string;
     UseNullableReferenceTypes: boolean;
     _Clone_$(): CSharpRuntimeAnnotationCodeGeneratorParameters;
@@ -154,7 +154,7 @@ export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
 
 
 export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
-    new(targetName: string, className: string, namespace: string, mainBuilder: IndentedStringBuilder, methodBuilder: IndentedStringBuilder, namespaces: ISet<System_Internal.String>, scopeObjects: IDictionary<System_Internal.String, unknown>, scopeVariables: IDictionary<unknown, System_Internal.String>, configurationClassNames: Dictionary<ITypeBase, System_Internal.String>, nullable: boolean, nativeAot: boolean): CSharpRuntimeAnnotationCodeGeneratorParameters;
+    new(targetName: string, className: string, namespace: string, mainBuilder: IndentedStringBuilder, methodBuilder: IndentedStringBuilder, namespaces: ISet_1<System_Internal.String>, scopeObjects: IDictionary_2<System_Internal.String, unknown>, scopeVariables: IDictionary_2<unknown, System_Internal.String>, configurationClassNames: Dictionary_2<ITypeBase, System_Internal.String>, nullable: boolean, nativeAot: boolean): CSharpRuntimeAnnotationCodeGeneratorParameters;
 };
 
 

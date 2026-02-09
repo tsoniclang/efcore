@@ -11,16 +11,16 @@ import type { IProperty } from "../../Microsoft.EntityFrameworkCore.Metadata/int
 import type { ValueConverter } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_ValueGeneration_Internal from "../../Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js";
 import type { ValueGenerator, ValueGenerator_1 } from "../../Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, Byte, Char, DateTime, DateTimeOffset, Decimal, Double, Int16, Int32, Int64, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, UInt64 } from "@tsonic/dotnet/System.js";
-import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
-import type { ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
+import type { ValueTask_1 } from "@tsonic/dotnet/System.Threading.Tasks/internal/index.js";
+import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, Byte, Char, DateTime, DateTimeOffset, Decimal, Double, Int16, Int32, Int64, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, UInt64 } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface ConvertedValueGenerator$instance extends ValueGenerator {
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask<unknown>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     NextValue(entry: EntityEntry): unknown | undefined;
 }
 

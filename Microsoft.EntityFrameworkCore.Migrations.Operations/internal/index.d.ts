@@ -12,8 +12,8 @@ import type { Annotatable, Annotation, IAnnotatable, IAnnotation, IReadOnlyAnnot
 import * as Microsoft_EntityFrameworkCore_Metadata_Internal from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { ICheckConstraint, IForeignKeyConstraint, IMutableAnnotatable, IPrimaryKeyConstraint, ITableIndex, IUniqueConstraint } from "../../Microsoft.EntityFrameworkCore.Metadata/internal/index.js";
 import type { ReferentialAction } from "../../Microsoft.EntityFrameworkCore.Migrations/internal/index.js";
-import type { IEnumerable, IReadOnlyDictionary, List } from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { Boolean as ClrBoolean, Func, Int32, Int64, Nullable, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
+import type { IEnumerable_1, IReadOnlyDictionary_2, List_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { Boolean as ClrBoolean, Func_2, Int32, Int64, Nullable_1, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IAlterMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never;
@@ -48,8 +48,8 @@ export interface AddCheckConstraintOperation$instance extends MigrationOperation
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -59,9 +59,9 @@ export interface AddCheckConstraintOperation$instance extends MigrationOperation
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -94,8 +94,8 @@ export interface AddColumnOperation$instance extends ColumnOperation$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -105,9 +105,9 @@ export interface AddColumnOperation$instance extends ColumnOperation$instance {
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -151,8 +151,8 @@ export interface AddForeignKeyOperation$instance extends MigrationOperation$inst
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -162,9 +162,9 @@ export interface AddForeignKeyOperation$instance extends MigrationOperation$inst
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -202,8 +202,8 @@ export interface AddPrimaryKeyOperation$instance extends MigrationOperation$inst
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -213,9 +213,9 @@ export interface AddPrimaryKeyOperation$instance extends MigrationOperation$inst
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -253,8 +253,8 @@ export interface AddUniqueConstraintOperation$instance extends MigrationOperatio
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -264,9 +264,9 @@ export interface AddUniqueConstraintOperation$instance extends MigrationOperatio
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -290,7 +290,7 @@ export interface __AddUniqueConstraintOperation$views {
 export type AddUniqueConstraintOperation = AddUniqueConstraintOperation$instance & __AddUniqueConstraintOperation$views;
 
 
-export interface AlterColumnOperation$instance extends ColumnOperation$instance {
+export interface AlterColumnOperation$instance extends ColumnOperation$instance, IAlterMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -301,8 +301,8 @@ export interface AlterColumnOperation$instance extends ColumnOperation$instance 
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -312,9 +312,9 @@ export interface AlterColumnOperation$instance extends ColumnOperation$instance 
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -335,12 +335,10 @@ export interface __AlterColumnOperation$views {
     As_ITableMigrationOperation(): ITableMigrationOperation$instance;
 }
 
-export interface AlterColumnOperation$instance extends IAlterMigrationOperation$instance {}
-
 export type AlterColumnOperation = AlterColumnOperation$instance & __AlterColumnOperation$views;
 
 
-export interface AlterDatabaseOperation$instance extends DatabaseOperation$instance {
+export interface AlterDatabaseOperation$instance extends DatabaseOperation$instance, IAlterMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -350,8 +348,8 @@ export interface AlterDatabaseOperation$instance extends DatabaseOperation$insta
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -361,9 +359,9 @@ export interface AlterDatabaseOperation$instance extends DatabaseOperation$insta
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -383,12 +381,10 @@ export interface __AlterDatabaseOperation$views {
     As_IAlterMigrationOperation(): IAlterMigrationOperation$instance;
 }
 
-export interface AlterDatabaseOperation$instance extends IAlterMigrationOperation$instance {}
-
 export type AlterDatabaseOperation = AlterDatabaseOperation$instance & __AlterDatabaseOperation$views;
 
 
-export interface AlterSequenceOperation$instance extends SequenceOperation$instance {
+export interface AlterSequenceOperation$instance extends SequenceOperation$instance, IAlterMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -401,8 +397,8 @@ export interface AlterSequenceOperation$instance extends SequenceOperation$insta
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -412,9 +408,9 @@ export interface AlterSequenceOperation$instance extends SequenceOperation$insta
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -434,12 +430,10 @@ export interface __AlterSequenceOperation$views {
     As_IAlterMigrationOperation(): IAlterMigrationOperation$instance;
 }
 
-export interface AlterSequenceOperation$instance extends IAlterMigrationOperation$instance {}
-
 export type AlterSequenceOperation = AlterSequenceOperation$instance & __AlterSequenceOperation$views;
 
 
-export interface AlterTableOperation$instance extends TableOperation$instance {
+export interface AlterTableOperation$instance extends TableOperation$instance, IAlterMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -450,8 +444,8 @@ export interface AlterTableOperation$instance extends TableOperation$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -461,9 +455,9 @@ export interface AlterTableOperation$instance extends TableOperation$instance {
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -483,8 +477,6 @@ export interface __AlterTableOperation$views {
     As_IAlterMigrationOperation(): IAlterMigrationOperation$instance;
     As_ITableMigrationOperation(): ITableMigrationOperation$instance;
 }
-
-export interface AlterTableOperation$instance extends IAlterMigrationOperation$instance {}
 
 export type AlterTableOperation = AlterTableOperation$instance & __AlterTableOperation$views;
 
@@ -508,23 +500,23 @@ export interface ColumnOperation$instance extends MigrationOperation$instance {
     set DefaultValue(value: unknown | undefined);
     get DefaultValueSql(): string | undefined;
     set DefaultValueSql(value: string | undefined);
-    IsFixedLength: Nullable<System_Internal.Boolean>;
+    IsFixedLength: Nullable_1<System_Internal.Boolean>;
     IsNullable: boolean;
     IsRowVersion: boolean;
-    IsStored: Nullable<System_Internal.Boolean>;
-    IsUnicode: Nullable<System_Internal.Boolean>;
-    MaxLength: Nullable<System_Internal.Int32>;
+    IsStored: Nullable_1<System_Internal.Boolean>;
+    IsUnicode: Nullable_1<System_Internal.Boolean>;
+    MaxLength: Nullable_1<System_Internal.Int32>;
     Name: string;
-    Precision: Nullable<System_Internal.Int32>;
-    Scale: Nullable<System_Internal.Int32>;
+    Precision: Nullable_1<System_Internal.Int32>;
+    Scale: Nullable_1<System_Internal.Int32>;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
     Table: string;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -534,9 +526,9 @@ export interface ColumnOperation$instance extends MigrationOperation$instance {
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -577,8 +569,8 @@ export interface CreateIndexOperation$instance extends MigrationOperation$instan
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -588,9 +580,9 @@ export interface CreateIndexOperation$instance extends MigrationOperation$instan
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -627,8 +619,8 @@ export interface CreateSequenceOperation$instance extends SequenceOperation$inst
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -638,9 +630,9 @@ export interface CreateSequenceOperation$instance extends SequenceOperation$inst
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -668,17 +660,17 @@ export interface CreateTableOperation$instance extends TableOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
-    readonly CheckConstraints: List<AddCheckConstraintOperation>;
-    readonly Columns: List<AddColumnOperation>;
-    readonly ForeignKeys: List<AddForeignKeyOperation>;
+    readonly CheckConstraints: List_1<AddCheckConstraintOperation>;
+    readonly Columns: List_1<AddColumnOperation>;
+    readonly ForeignKeys: List_1<AddForeignKeyOperation>;
     get PrimaryKey(): AddPrimaryKeyOperation | undefined;
     set PrimaryKey(value: AddPrimaryKeyOperation | undefined);
-    readonly UniqueConstraints: List<AddUniqueConstraintOperation>;
+    readonly UniqueConstraints: List_1<AddUniqueConstraintOperation>;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -688,9 +680,9 @@ export interface CreateTableOperation$instance extends TableOperation$instance {
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -723,8 +715,8 @@ export interface DatabaseOperation$instance extends MigrationOperation$instance 
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -734,9 +726,9 @@ export interface DatabaseOperation$instance extends MigrationOperation$instance 
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -773,8 +765,8 @@ export interface DeleteDataOperation$instance extends MigrationOperation$instanc
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -784,9 +776,9 @@ export interface DeleteDataOperation$instance extends MigrationOperation$instanc
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -822,8 +814,8 @@ export interface DropCheckConstraintOperation$instance extends MigrationOperatio
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -833,9 +825,9 @@ export interface DropCheckConstraintOperation$instance extends MigrationOperatio
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -871,8 +863,8 @@ export interface DropColumnOperation$instance extends MigrationOperation$instanc
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -882,9 +874,9 @@ export interface DropColumnOperation$instance extends MigrationOperation$instanc
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -920,8 +912,8 @@ export interface DropForeignKeyOperation$instance extends MigrationOperation$ins
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -931,9 +923,9 @@ export interface DropForeignKeyOperation$instance extends MigrationOperation$ins
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -969,8 +961,8 @@ export interface DropIndexOperation$instance extends MigrationOperation$instance
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -980,9 +972,9 @@ export interface DropIndexOperation$instance extends MigrationOperation$instance
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1017,8 +1009,8 @@ export interface DropPrimaryKeyOperation$instance extends MigrationOperation$ins
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1028,9 +1020,9 @@ export interface DropPrimaryKeyOperation$instance extends MigrationOperation$ins
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1062,8 +1054,8 @@ export interface DropSchemaOperation$instance extends MigrationOperation$instanc
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1073,9 +1065,9 @@ export interface DropSchemaOperation$instance extends MigrationOperation$instanc
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1108,8 +1100,8 @@ export interface DropSequenceOperation$instance extends MigrationOperation$insta
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1119,9 +1111,9 @@ export interface DropSequenceOperation$instance extends MigrationOperation$insta
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1155,8 +1147,8 @@ export interface DropTableOperation$instance extends MigrationOperation$instance
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1166,9 +1158,9 @@ export interface DropTableOperation$instance extends MigrationOperation$instance
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1204,8 +1196,8 @@ export interface DropUniqueConstraintOperation$instance extends MigrationOperati
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1215,9 +1207,9 @@ export interface DropUniqueConstraintOperation$instance extends MigrationOperati
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1249,8 +1241,8 @@ export interface EnsureSchemaOperation$instance extends MigrationOperation$insta
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1260,9 +1252,9 @@ export interface EnsureSchemaOperation$instance extends MigrationOperation$insta
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1300,8 +1292,8 @@ export interface InsertDataOperation$instance extends MigrationOperation$instanc
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1311,9 +1303,9 @@ export interface InsertDataOperation$instance extends MigrationOperation$instanc
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1345,8 +1337,8 @@ export interface MigrationOperation$instance extends Annotatable {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1356,9 +1348,9 @@ export interface MigrationOperation$instance extends Annotatable {
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1393,8 +1385,8 @@ export interface RenameColumnOperation$instance extends MigrationOperation$insta
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1404,9 +1396,9 @@ export interface RenameColumnOperation$instance extends MigrationOperation$insta
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1443,8 +1435,8 @@ export interface RenameIndexOperation$instance extends MigrationOperation$instan
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1454,9 +1446,9 @@ export interface RenameIndexOperation$instance extends MigrationOperation$instan
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1493,8 +1485,8 @@ export interface RenameSequenceOperation$instance extends MigrationOperation$ins
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1504,9 +1496,9 @@ export interface RenameSequenceOperation$instance extends MigrationOperation$ins
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1544,8 +1536,8 @@ export interface RenameTableOperation$instance extends MigrationOperation$instan
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1555,9 +1547,9 @@ export interface RenameTableOperation$instance extends MigrationOperation$instan
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1588,12 +1580,12 @@ export interface RestartSequenceOperation$instance extends MigrationOperation$in
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
-    StartValue: Nullable<System_Internal.Int64>;
+    StartValue: Nullable_1<System_Internal.Int64>;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1603,9 +1595,9 @@ export interface RestartSequenceOperation$instance extends MigrationOperation$in
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1634,13 +1626,13 @@ export interface SequenceOperation$instance extends MigrationOperation$instance 
 
     IncrementBy: int;
     IsCyclic: boolean;
-    MaxValue: Nullable<System_Internal.Int64>;
-    MinValue: Nullable<System_Internal.Int64>;
+    MaxValue: Nullable_1<System_Internal.Int64>;
+    MinValue: Nullable_1<System_Internal.Int64>;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1650,9 +1642,9 @@ export interface SequenceOperation$instance extends MigrationOperation$instance 
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1683,8 +1675,8 @@ export interface SqlOperation$instance extends MigrationOperation$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1694,9 +1686,9 @@ export interface SqlOperation$instance extends MigrationOperation$instance {
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1732,8 +1724,8 @@ export interface TableOperation$instance extends MigrationOperation$instance {
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1743,9 +1735,9 @@ export interface TableOperation$instance extends MigrationOperation$instance {
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
@@ -1787,8 +1779,8 @@ export interface UpdateDataOperation$instance extends MigrationOperation$instanc
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary<System_Internal.String, unknown>): void;
+    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
     AddRuntimeAnnotation(name: string, value: unknown): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
@@ -1798,9 +1790,9 @@ export interface UpdateDataOperation$instance extends MigrationOperation$instanc
     FindRuntimeAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotation(name: string): Annotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<IAnnotation>;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     RemoveAnnotation(name: string): IAnnotation | undefined;
     RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;

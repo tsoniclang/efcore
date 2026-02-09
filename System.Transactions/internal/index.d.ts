@@ -7,9 +7,9 @@ import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint12
 
 // Import types from other namespaces
 import type { DatabaseFacade } from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Object as ClrObject, Void } from "@tsonic/dotnet/System.js";
-import type { Transaction } from "@tsonic/dotnet/System.Transactions.js";
+import type { Transaction } from "@tsonic/dotnet/System.Transactions/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Object as ClrObject, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export abstract class TransactionsDatabaseFacadeExtensions$instance {
     static EnlistTransaction(databaseFacade: DatabaseFacade, transaction: Transaction): void;

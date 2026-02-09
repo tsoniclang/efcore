@@ -9,8 +9,8 @@ import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint12
 import * as System_Internal from "@tsonic/dotnet/System.js";
 import * as Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
 import type { ConverterMappingHints, ValueConverter, ValueConverter_2 } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
-import type { Boolean as ClrBoolean, Char, DateOnly, DateTime, DateTimeOffset, Enum, Func, Guid, Object as ClrObject, String as ClrString, TimeOnly, TimeSpan, Type, Uri, ValueType } from "@tsonic/dotnet/System.js";
-import type { Expression, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
+import type { Expression, Expression_1, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
+import type { Boolean as ClrBoolean, Char, DateOnly, DateTime, DateTimeOffset, Enum, Func_2, Guid, Object as ClrObject, String as ClrString, TimeOnly, TimeSpan, Type, Uri, ValueType } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface CompositeValueConverter_3$instance<TModel, TMiddle, TProvider> extends ValueConverter_2<TModel, TProvider> {
 }
@@ -28,9 +28,9 @@ export interface StringCharConverter_2$instance<TModel, TProvider> extends Value
 
 
 export const StringCharConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringCharConverter_2<TModel, TProvider>;
-    ToChar<TModel, TProvider>(): Expression<Func<System_Internal.String, System_Internal.Char>>;
-    ToString<TModel, TProvider>(): Expression<Func<System_Internal.Char, System_Internal.String>>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringCharConverter_2<TModel, TProvider>;
+    ToChar<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, System_Internal.Char>>;
+    ToString<TModel, TProvider>(): Expression_1<Func_2<System_Internal.Char, System_Internal.String>>;
 };
 
 
@@ -41,10 +41,10 @@ export interface StringDateOnlyConverter_2$instance<TModel, TProvider> extends V
 
 
 export const StringDateOnlyConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringDateOnlyConverter_2<TModel, TProvider>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringDateOnlyConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToDateOnly<TModel, TProvider>(): Expression<Func<System_Internal.String, DateOnly>>;
-    ToString<TModel, TProvider>(): Expression<Func<DateOnly, System_Internal.String>>;
+    ToDateOnly<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, DateOnly>>;
+    ToString<TModel, TProvider>(): Expression_1<Func_2<DateOnly, System_Internal.String>>;
 };
 
 
@@ -55,10 +55,10 @@ export interface StringDateTimeConverter_2$instance<TModel, TProvider> extends V
 
 
 export const StringDateTimeConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringDateTimeConverter_2<TModel, TProvider>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringDateTimeConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToDateTime<TModel, TProvider>(): Expression<Func<System_Internal.String, DateTime>>;
-    ToString<TModel, TProvider>(): Expression<Func<DateTime, System_Internal.String>>;
+    ToDateTime<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, DateTime>>;
+    ToString<TModel, TProvider>(): Expression_1<Func_2<DateTime, System_Internal.String>>;
 };
 
 
@@ -69,10 +69,10 @@ export interface StringDateTimeOffsetConverter_2$instance<TModel, TProvider> ext
 
 
 export const StringDateTimeOffsetConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringDateTimeOffsetConverter_2<TModel, TProvider>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringDateTimeOffsetConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToDateTimeOffset<TModel, TProvider>(): Expression<Func<System_Internal.String, DateTimeOffset>>;
-    ToString<TModel, TProvider>(): Expression<Func<DateTimeOffset, System_Internal.String>>;
+    ToDateTimeOffset<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, DateTimeOffset>>;
+    ToString<TModel, TProvider>(): Expression_1<Func_2<DateTimeOffset, System_Internal.String>>;
 };
 
 
@@ -83,10 +83,10 @@ export interface StringEnumConverter_3$instance<TModel, TProvider, TEnum extends
 
 
 export const StringEnumConverter_3: {
-    new<TModel, TProvider, TEnum extends number>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringEnumConverter_3<TModel, TProvider, TEnum>;
+    new<TModel, TProvider, TEnum extends number>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringEnumConverter_3<TModel, TProvider, TEnum>;
     ConvertToEnum<TModel, TProvider, TEnum extends number>(value: string): TEnum;
-    ToEnum<TModel, TProvider, TEnum extends number>(): Expression<Func<System_Internal.String, TEnum>>;
-    ToString<TModel, TProvider, TEnum extends number>(): Expression<Func<TEnum, System_Internal.String>>;
+    ToEnum<TModel, TProvider, TEnum extends number>(): Expression_1<Func_2<System_Internal.String, TEnum>>;
+    ToString<TModel, TProvider, TEnum extends number>(): Expression_1<Func_2<TEnum, System_Internal.String>>;
 };
 
 
@@ -97,10 +97,10 @@ export interface StringGuidConverter_2$instance<TModel, TProvider> extends Value
 
 
 export const StringGuidConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringGuidConverter_2<TModel, TProvider>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringGuidConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToGuid<TModel, TProvider>(): Expression<Func<System_Internal.String, Guid>>;
-    ToString<TModel, TProvider>(): Expression<Func<Guid, System_Internal.String>>;
+    ToGuid<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, Guid>>;
+    ToString<TModel, TProvider>(): Expression_1<Func_2<Guid, System_Internal.String>>;
 };
 
 
@@ -111,10 +111,10 @@ export interface StringNumberConverter_3$instance<TModel, TProvider, TNumber> ex
 
 
 export const StringNumberConverter_3: {
-    new<TModel, TProvider, TNumber>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringNumberConverter_3<TModel, TProvider, TNumber>;
+    new<TModel, TProvider, TNumber>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringNumberConverter_3<TModel, TProvider, TNumber>;
     readonly DefaultHints: ConverterMappingHints;
-    ToNumber<TModel, TProvider, TNumber>(): Expression<Func<System_Internal.String, TNumber>>;
-    ToString<TModel, TProvider, TNumber>(): Expression<Func<TNumber, System_Internal.String>>;
+    ToNumber<TModel, TProvider, TNumber>(): Expression_1<Func_2<System_Internal.String, TNumber>>;
+    ToString<TModel, TProvider, TNumber>(): Expression_1<Func_2<TNumber, System_Internal.String>>;
 };
 
 
@@ -125,10 +125,10 @@ export interface StringTimeOnlyConverter_2$instance<TModel, TProvider> extends V
 
 
 export const StringTimeOnlyConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringTimeOnlyConverter_2<TModel, TProvider>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringTimeOnlyConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToString<TModel, TProvider>(): Expression<Func<TimeOnly, System_Internal.String>>;
-    ToTimeOnly<TModel, TProvider>(): Expression<Func<System_Internal.String, TimeOnly>>;
+    ToString<TModel, TProvider>(): Expression_1<Func_2<TimeOnly, System_Internal.String>>;
+    ToTimeOnly<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, TimeOnly>>;
 };
 
 
@@ -139,10 +139,10 @@ export interface StringTimeSpanConverter_2$instance<TModel, TProvider> extends V
 
 
 export const StringTimeSpanConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringTimeSpanConverter_2<TModel, TProvider>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringTimeSpanConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToString<TModel, TProvider>(): Expression<Func<TimeSpan, System_Internal.String>>;
-    ToTimeSpan<TModel, TProvider>(): Expression<Func<System_Internal.String, TimeSpan>>;
+    ToString<TModel, TProvider>(): Expression_1<Func_2<TimeSpan, System_Internal.String>>;
+    ToTimeSpan<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, TimeSpan>>;
 };
 
 
@@ -153,9 +153,9 @@ export interface StringUriConverter_2$instance<TModel, TProvider> extends ValueC
 
 
 export const StringUriConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression<Func<TModel, TProvider>>, convertFromProviderExpression: Expression<Func<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringUriConverter_2<TModel, TProvider>;
-    ToString<TModel, TProvider>(): Expression<Func<Uri | undefined, string | undefined>>;
-    ToUri<TModel, TProvider>(): Expression<Func<string | undefined, Uri | undefined>>;
+    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints): StringUriConverter_2<TModel, TProvider>;
+    ToString<TModel, TProvider>(): Expression_1<Func_2<Uri | undefined, string | undefined>>;
+    ToUri<TModel, TProvider>(): Expression_1<Func_2<string | undefined, Uri | undefined>>;
 };
 
 

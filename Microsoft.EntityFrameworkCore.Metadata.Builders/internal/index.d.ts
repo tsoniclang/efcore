@@ -20,12 +20,12 @@ import type { ValueConverter, ValueConverter_2 } from "../../Microsoft.EntityFra
 import type { CoreTypeMapping, RelationalTypeMapping } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
 import type { ValueGenerator, ValueGeneratorFactory } from "../../Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js";
 import type { ChangeTrackingStrategy, DeleteBehavior, PropertyAccessMode } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import type { IEnumerable, IReadOnlyList } from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { ParameterDirection } from "@tsonic/dotnet/System.Data.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Action, Boolean as ClrBoolean, Func, Int32, Int64, IServiceProvider, Nullable, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System.js";
-import type { Expression, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
-import type { FieldInfo, MemberInfo } from "@tsonic/dotnet/System.Reflection.js";
+import type { IEnumerable_1, IReadOnlyList_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { ParameterDirection } from "@tsonic/dotnet/System.Data/internal/index.js";
+import type { Expression_1, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
+import type { FieldInfo, MemberInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Action_1, Boolean as ClrBoolean, Func_1, Func_2, Func_3, Int32, Int64, IServiceProvider, Nullable_1, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IConventionAnnotatableBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
@@ -66,19 +66,19 @@ export interface IConventionComplexPropertyBuilder$instance extends IConventionP
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
-    CanSetIsRequired(required: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
+    CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    IsRequired(required: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
+    CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
     HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
-    UsePropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
 }
 
 
@@ -97,18 +97,18 @@ export interface IConventionComplexTypeBuilder$instance extends IConventionTypeB
     CanRemoveDiscriminator(fromDataAnnotation?: boolean): boolean;
     CanRemoveProperty(property: IConventionProperty, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
+    CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
     ComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     ComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    GetOrCreateProperties(memberInfos: IEnumerable<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty> | undefined;
-    GetOrCreateProperties(propertyNames: IReadOnlyList<System_Internal.String>, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty> | undefined;
+    GetOrCreateProperties(memberInfos: IEnumerable_1<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
+    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
     HasDiscriminator(fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
     HasDiscriminator(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
     HasDiscriminator(name: string, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
@@ -126,8 +126,8 @@ export interface IConventionComplexTypeBuilder$instance extends IConventionTypeB
     IsIgnored(memberName: string, fromDataAnnotation?: boolean): boolean;
     Property(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
     Property(propertyType: Type, propertyName: string, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    RemoveUnusedImplicitProperties(properties: IReadOnlyList<IConventionProperty>): IConventionComplexTypeBuilder;
-    RemoveUnusedImplicitProperties(properties: IReadOnlyList<IConventionProperty>): IConventionTypeBaseBuilder;
+    RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionComplexTypeBuilder;
+    RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionTypeBaseBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
@@ -155,14 +155,14 @@ export interface IConventionDbFunctionBuilder$instance extends IConventionAnnota
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     CanSetIsBuiltIn(builtIn: boolean, fromDataAnnotation?: boolean): boolean;
     CanSetName(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetTranslation(translation: Func<IReadOnlyList<SqlExpression>, SqlExpression>, fromDataAnnotation?: boolean): boolean;
+    CanSetTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>, fromDataAnnotation?: boolean): boolean;
     CanSetTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): boolean;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
     HasParameter(name: string, fromDataAnnotation?: boolean): IConventionDbFunctionParameterBuilder;
-    HasTranslation(translation: Func<IReadOnlyList<SqlExpression>, SqlExpression>, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
+    HasTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
     HasTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
     IsBuiltIn(builtIn: boolean, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -214,7 +214,7 @@ export interface IConventionElementTypeBuilder$instance extends IConventionAnnot
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     CanSetConversion(converter: ValueConverter, fromDataAnnotation?: boolean): boolean;
     CanSetConversion(providerClrType: Type, fromDataAnnotation?: boolean): boolean;
-    CanSetIsRequired(required: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
+    CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
     CanSetTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): boolean;
     CanSetValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): boolean;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
@@ -225,7 +225,7 @@ export interface IConventionElementTypeBuilder$instance extends IConventionAnnot
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
     HasTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
     HasValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
-    IsRequired(required: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
 }
 
 
@@ -254,30 +254,30 @@ export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBa
     CanRemoveSkipNavigation(skipNavigation: IConventionSkipNavigation, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     CanSetBaseType(baseEntityType: IConventionEntityType, fromDataAnnotation?: boolean): boolean;
-    CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
+    CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
-    CanSetPrimaryKey(propertyNames: IReadOnlyList<System_Internal.String>, fromDataAnnotation?: boolean): boolean;
+    CanSetPrimaryKey(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): boolean;
     CanSetQueryFilter(filter: LambdaExpression, fromDataAnnotation?: boolean): boolean;
     CanSetQueryFilter(filterKey: string, filter: LambdaExpression, fromDataAnnotation?: boolean): boolean;
     ComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     ComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    GetOrCreateProperties(memberInfos: IEnumerable<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty> | undefined;
-    GetOrCreateProperties(propertyNames: IReadOnlyList<System_Internal.String>, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty> | undefined;
-    GetTargetEntityTypeBuilder(targetClrType: Type, navigationInfo: MemberInfo, createIfMissing?: boolean, targetShouldBeOwned?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    GetOrCreateProperties(memberInfos: IEnumerable_1<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
+    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
+    GetTargetEntityTypeBuilder(targetClrType: Type, navigationInfo: MemberInfo, createIfMissing?: boolean, targetShouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
     HasBaseType(baseEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
     HasDiscriminator(fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
     HasDiscriminator(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
     HasDiscriminator(name: string, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
     HasDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
     HasDiscriminator(type: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    HasIndex(propertyNames: IReadOnlyList<System_Internal.String>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    HasIndex(propertyNames: IReadOnlyList<System_Internal.String>, name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
+    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
+    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
@@ -286,12 +286,12 @@ export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBa
     HasNoIndex(index: IConventionIndex, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasNoKey(key: IConventionKey, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasNoKey(fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoKey(properties: IReadOnlyList<IConventionProperty>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    HasNoKey(properties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasNoNavigation(navigation: IConventionNavigation, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
     HasNoRelationship(foreignKey: IConventionForeignKey, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoRelationship(properties: IReadOnlyList<IConventionProperty>, principalKey: IConventionKey, principalEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    HasNoRelationship(properties: IReadOnlyList_1<IConventionProperty>, principalKey: IConventionKey, principalEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasNoServiceProperty(serviceProperty: IConventionServiceProperty, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasNoSkipNavigation(skipNavigation: IConventionSkipNavigation, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasOwnership(targetEntityType: IConventionEntityType, navigation: MemberInfo, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
@@ -306,22 +306,22 @@ export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBa
     HasQueryFilter(filterKey: string, filter: LambdaExpression, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasRelationship(principalEntityType: IConventionEntityType, principalKey: IConventionKey, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasRelationship(targetEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasRelationship(principalEntityType: IConventionEntityType, dependentProperties: IReadOnlyList<IConventionProperty>, principalKey: IConventionKey, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasRelationship(principalEntityType: IConventionEntityType, dependentProperties: IReadOnlyList<IConventionProperty>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
+    HasRelationship(principalEntityType: IConventionEntityType, dependentProperties: IReadOnlyList_1<IConventionProperty>, principalKey: IConventionKey, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
+    HasRelationship(principalEntityType: IConventionEntityType, dependentProperties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasRelationship(targetEntityType: IConventionEntityType, navigation: MemberInfo, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasRelationship(targetEntityType: IConventionEntityType, navigation: MemberInfo, inverseNavigation: MemberInfo, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasRelationship(targetEntityType: IConventionEntityType, navigationName: string, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasRelationship(targetEntityType: IConventionEntityType, navigationName: string, inverseNavigationName: string, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasSkipNavigation(navigation: MemberInfo, targetEntityType: IConventionEntityType, collection?: Nullable<System_Internal.Boolean>, onDependent?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    HasSkipNavigation(navigation: MemberInfo, targetEntityType: IConventionEntityType, inverseNavigation: MemberInfo, collections?: Nullable<System_Internal.Boolean>, onDependent?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    HasSkipNavigation(navigationName: string, targetEntityType: IConventionEntityType, navigationType?: Type, collection?: Nullable<System_Internal.Boolean>, onDependent?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
+    HasSkipNavigation(navigation: MemberInfo, targetEntityType: IConventionEntityType, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
+    HasSkipNavigation(navigation: MemberInfo, targetEntityType: IConventionEntityType, inverseNavigation: MemberInfo, collections?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
+    HasSkipNavigation(navigationName: string, targetEntityType: IConventionEntityType, navigationType?: Type, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
     HasTrigger(modelName: string, fromDataAnnotation?: boolean): IConventionTriggerBuilder | undefined;
     IndexerProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    PrimaryKey(properties: IReadOnlyList<IConventionProperty>, fromDataAnnotation?: boolean): IConventionKeyBuilder | undefined;
+    PrimaryKey(properties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): IConventionKeyBuilder | undefined;
     Property(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
     Property(propertyType: Type, propertyName: string, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    RemoveUnusedImplicitProperties(properties: IReadOnlyList<IConventionProperty>): IConventionEntityTypeBuilder;
-    RemoveUnusedImplicitProperties(properties: IReadOnlyList<IConventionProperty>): IConventionTypeBaseBuilder;
+    RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionEntityTypeBuilder;
+    RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionTypeBaseBuilder;
     ServiceProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
     ServiceProperty(serviceType: Type, memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
@@ -353,11 +353,11 @@ export interface IConventionForeignKeyBuilder$instance extends IConventionAnnota
 
     readonly Metadata: IConventionForeignKey;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanInvert(newForeignKeyProperties: IReadOnlyList<IConventionProperty>, fromDataAnnotation?: boolean): boolean;
+    CanInvert(newForeignKeyProperties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): boolean;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     CanSetEntityTypes(principalEntityType: IConventionEntityType, dependentEntityType: IConventionEntityType, fromDataAnnotation?: boolean): boolean;
-    CanSetIsRequired(required: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
+    CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
     CanSetNavigation(property: MemberInfo, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): boolean;
     CanSetNavigation(name: string, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): boolean;
     CanSetNavigations(navigationToPrincipal: MemberInfo, navigationToDependent: MemberInfo, fromDataAnnotation?: boolean): boolean;
@@ -365,14 +365,14 @@ export interface IConventionForeignKeyBuilder$instance extends IConventionAnnota
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasEntityTypes(principalEntityType: IConventionEntityType, dependentEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasForeignKey(propertyNames: IReadOnlyList<System_Internal.String>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
+    HasForeignKey(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasNavigation(property: MemberInfo, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasNavigation(name: string, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasNavigations(navigationToPrincipal: MemberInfo, navigationToDependent: MemberInfo, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasNavigations(navigationToPrincipalName: string, navigationToDependentName: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    IsRequired(required: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
 }
 
 
@@ -385,14 +385,14 @@ export interface IConventionIndexBuilder$instance extends IConventionAnnotatable
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetIsDescending(descending: IReadOnlyList<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    CanSetIsUnique(unique: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
+    CanSetIsDescending(descending: IReadOnlyList_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
+    CanSetIsUnique(unique: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    IsDescending(descending: IReadOnlyList<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    IsUnique(unique: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
+    IsDescending(descending: IReadOnlyList_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
+    IsUnique(unique: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
 }
 
 
@@ -422,22 +422,22 @@ export interface IConventionModelBuilder$instance extends IConventionAnnotatable
     CanHaveSharedTypeEntity(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     CanRemoveEntity(entityType: IConventionEntityType, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
+    CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
     ComplexType(type: Type, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
-    Entity(name: string, shouldBeOwned?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    Entity(name: string, shouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     Entity(name: string, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    Entity(type: Type, shouldBeOwned?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    Entity(type: Type, shouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     Entity(type: Type, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
     HasNoEntityType(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
     IsIgnored(typeName: string, fromDataAnnotation?: boolean): boolean;
     IsIgnored(type: Type, fromDataAnnotation?: boolean): boolean;
     Owned(type: Type, fromDataAnnotation?: boolean): IConventionOwnedEntityTypeBuilder | undefined;
-    SharedTypeEntity(name: string, type: Type, shouldBeOwned?: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    SharedTypeEntity(name: string, type: Type, shouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -449,9 +449,9 @@ export interface IConventionNavigationBuilder$instance extends IConventionProper
 
     readonly Metadata: IConventionNavigation;
     readonly ModelBuilder: IConventionModelBuilder;
-    AutoInclude(autoInclude: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionNavigationBuilder | undefined;
+    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionNavigationBuilder | undefined;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetAutoInclude(autoInclude: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
+    CanSetAutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
@@ -461,10 +461,10 @@ export interface IConventionNavigationBuilder$instance extends IConventionProper
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionNavigationBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
+    CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
     HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
-    UsePropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
 }
 
 
@@ -486,13 +486,13 @@ export interface IConventionPropertyBaseBuilder_1$instance<TBuilder extends ICon
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
-    CanSetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
+    CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): TBuilder | undefined;
     HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): TBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): TBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): TBuilder | undefined;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): TBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -508,11 +508,11 @@ export interface IConventionPropertyBuilder$instance extends IConventionProperty
     CanSetConversion(converter: ValueConverter, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
-    CanSetIsRequired(required: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
+    CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
     CanSetSentinel(sentinel: unknown, fromDataAnnotation?: boolean): boolean;
     CanSetTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): boolean;
     CanSetValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): boolean;
-    CanSetValueGenerator(factory: Func<IProperty, ITypeBase, ValueGenerator>, fromDataAnnotation?: boolean): boolean;
+    CanSetValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>, fromDataAnnotation?: boolean): boolean;
     CanSetValueGeneratorFactory(valueGeneratorFactoryType: Type, fromDataAnnotation?: boolean): boolean;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
@@ -524,15 +524,15 @@ export interface IConventionPropertyBuilder$instance extends IConventionProperty
     HasSentinel(sentinel: unknown, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
     HasTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
     HasValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    HasValueGenerator(factory: Func<IProperty, ITypeBase, ValueGenerator>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
+    HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
     HasValueGenerator(valueGeneratorType: Type, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    IsRequired(required: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
     SetElementType(elementType: Type, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
+    CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
     HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
-    UsePropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
 }
 
 
@@ -559,14 +559,14 @@ export interface IConventionSequenceBuilder$instance extends IConventionAnnotata
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetIncrementsBy(increment: Nullable<System_Internal.Int32>, fromDataAnnotation?: boolean): boolean;
+    CanSetIncrementsBy(increment: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): boolean;
     CanSetType(type: Type, fromDataAnnotation?: boolean): boolean;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
     HasType(type: Type, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
-    IncrementsBy(increment: Nullable<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
+    IncrementsBy(increment: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
 }
 
 
@@ -581,7 +581,7 @@ export interface IConventionServicePropertyBuilder$instance extends IConventionP
     CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
     CanSetParameterBinding(parameterBinding: ServiceParameterBinding, fromDataAnnotation?: boolean): boolean;
-    CanSetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
+    CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
     HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
@@ -589,8 +589,8 @@ export interface IConventionServicePropertyBuilder$instance extends IConventionP
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
     HasParameterBinding(parameterBinding: ServiceParameterBinding, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
@@ -604,9 +604,9 @@ export interface IConventionSkipNavigationBuilder$instance extends IConventionPr
 
     readonly Metadata: IConventionSkipNavigation;
     readonly ModelBuilder: IConventionModelBuilder;
-    AutoInclude(autoInclude: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
+    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetAutoInclude(autoInclude: Nullable<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
+    CanSetAutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
     CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
     CanSetForeignKey(foreignKey: IConventionForeignKey, fromDataAnnotation?: boolean): boolean;
@@ -620,10 +620,10 @@ export interface IConventionSkipNavigationBuilder$instance extends IConventionPr
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetPropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
+    CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
     HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
-    UsePropertyAccessMode(propertyAccessMode: Nullable<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
 }
 
 
@@ -717,16 +717,16 @@ export interface IConventionTypeBaseBuilder$instance extends IConventionAnnotata
     CanRemoveDiscriminator(fromDataAnnotation?: boolean): boolean;
     CanRemoveProperty(property: IConventionProperty, fromDataAnnotation?: boolean): boolean;
     CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
+    CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
     ComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
     ComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    GetOrCreateProperties(memberInfos: IEnumerable<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty> | undefined;
-    GetOrCreateProperties(propertyNames: IReadOnlyList<System_Internal.String>, fromDataAnnotation?: boolean): IReadOnlyList<IConventionProperty> | undefined;
+    GetOrCreateProperties(memberInfos: IEnumerable_1<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
+    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
     HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
     HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
@@ -735,7 +735,7 @@ export interface IConventionTypeBaseBuilder$instance extends IConventionAnnotata
     IsIgnored(memberName: string, fromDataAnnotation?: boolean): boolean;
     Property(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
     Property(propertyType: Type, propertyName: string, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    RemoveUnusedImplicitProperties(properties: IReadOnlyList<IConventionProperty>): IConventionTypeBaseBuilder;
+    RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionTypeBaseBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -764,8 +764,6 @@ export interface __CheckConstraintBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionCheckConstraintBuilder>;
 }
 
-export interface CheckConstraintBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionCheckConstraintBuilder> {}
-
 export type CheckConstraintBuilder = CheckConstraintBuilder$instance & __CheckConstraintBuilder$views;
 
 
@@ -781,19 +779,19 @@ export interface CollectionCollectionBuilder$instance {
     UsingEntity(joinEntityType: Type): EntityTypeBuilder;
     UsingEntity(joinEntityName: string): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, joinEntityType: Type): EntityTypeBuilder;
-    UsingEntity(configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityType: Type, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func<IMutableEntityType, IMutableForeignKey>, configureLeft: Func<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
+    UsingEntity(configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityType: Type, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
+    UsingEntity(configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<IMutableEntityType, IMutableForeignKey>, configureLeft: Func_2<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
 }
 
 
@@ -807,36 +805,36 @@ export type CollectionCollectionBuilder = CollectionCollectionBuilder$instance;
 export interface CollectionCollectionBuilder_2$instance<TLeftEntity, TRightEntity> extends CollectionCollectionBuilder {
     UsingEntity<TJoinEntity>(): EntityTypeBuilder_1<TJoinEntity>;
     UsingEntity<TJoinEntity>(joinEntityName: string): EntityTypeBuilder_1<TJoinEntity>;
-    UsingEntity(configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity(joinEntityType: Type, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity(joinEntityName: string, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity<TJoinEntity>(configureJoinEntityType: Action<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity<TJoinEntity>(joinEntityName: string, configureJoinEntityType: Action<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity<TJoinEntity>(configureRight: Func<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>): EntityTypeBuilder_1<TJoinEntity>;
-    UsingEntity<TJoinEntity>(joinEntityName: string, configureRight: Func<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>): EntityTypeBuilder_1<TJoinEntity>;
-    UsingEntity(configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity(joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity(joinEntityName: string, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity<TJoinEntity>(configureRight: Func<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>, configureJoinEntityType: Action<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
-    UsingEntity<TJoinEntity>(joinEntityName: string, configureRight: Func<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>, configureJoinEntityType: Action<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity(configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity(joinEntityType: Type, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity(joinEntityName: string, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity<TJoinEntity>(configureJoinEntityType: Action_1<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity<TJoinEntity>(joinEntityName: string, configureJoinEntityType: Action_1<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity<TJoinEntity>(configureRight: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>): EntityTypeBuilder_1<TJoinEntity>;
+    UsingEntity<TJoinEntity>(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>): EntityTypeBuilder_1<TJoinEntity>;
+    UsingEntity(configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity(joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity<TJoinEntity>(configureRight: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>, configureJoinEntityType: Action_1<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
+    UsingEntity<TJoinEntity>(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>, configureJoinEntityType: Action_1<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
     UsingEntity(joinEntityType: Type): EntityTypeBuilder;
     UsingEntity(joinEntityName: string): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, joinEntityType: Type): EntityTypeBuilder;
-    UsingEntity(configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityType: Type, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func<IMutableEntityType, IMutableForeignKey>, configureLeft: Func<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
+    UsingEntity(configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityType: Type, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
+    UsingEntity(configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<IMutableEntityType, IMutableForeignKey>, configureLeft: Func_2<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
 }
 
 
@@ -879,12 +877,10 @@ export interface __CollectionNavigationBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface CollectionNavigationBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
-
 export type CollectionNavigationBuilder = CollectionNavigationBuilder$instance & __CollectionNavigationBuilder$views;
 
 
-export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends CollectionNavigationBuilder$instance {
+export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends CollectionNavigationBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     WithMany(navigationName?: string): CollectionCollectionBuilder_2<TRelatedEntity, TEntity>;
@@ -902,8 +898,6 @@ export const CollectionNavigationBuilder_2: {
 export interface __CollectionNavigationBuilder_2$views<TEntity, TRelatedEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
-
-export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
 
 export type CollectionNavigationBuilder_2<TEntity, TRelatedEntity> = CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity> & __CollectionNavigationBuilder_2$views<TEntity, TRelatedEntity>;
 
@@ -930,12 +924,10 @@ export interface __ColumnBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
 
-export interface ColumnBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {}
-
 export type ColumnBuilder = ColumnBuilder$instance & __ColumnBuilder$views;
 
 
-export interface ColumnBuilder_1$instance<TProperty> extends ColumnBuilder$instance {
+export interface ColumnBuilder_1$instance<TProperty> extends ColumnBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ColumnBuilder;
@@ -952,8 +944,6 @@ export interface __ColumnBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
 
-export interface ColumnBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {}
-
 export type ColumnBuilder_1<TProperty> = ColumnBuilder_1$instance<TProperty> & __ColumnBuilder_1$views<TProperty>;
 
 
@@ -964,25 +954,25 @@ export interface ComplexCollectionBuilder$instance {
     readonly PropertyBuilder: InternalComplexPropertyBuilder;
     readonly TypeBuilder: InternalComplexTypeBuilder;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyType: Type, propertyName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string): ComplexCollectionBuilder;
-    ComplexCollection(propertyName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexCollectionBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, buildAction: Action<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexCollectionBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexCollectionBuilder;
+    ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyType: Type, propertyName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string): ComplexPropertyBuilder;
-    ComplexProperty(propertyName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexCollectionBuilder;
-    ComplexProperty<TProperty>(propertyName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder;
-    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexCollectionBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexCollectionBuilder;
+    ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
+    ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder;
+    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexCollectionBuilder;
@@ -1014,36 +1004,34 @@ export interface __ComplexCollectionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder>;
 }
 
-export interface ComplexCollectionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder> {}
-
 export type ComplexCollectionBuilder = ComplexCollectionBuilder$instance & __ComplexCollectionBuilder$views;
 
 
-export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCollectionBuilder$instance {
+export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCollectionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    ComplexCollection<TElement>(propertyExpression: Expression<Func<TComplex, IEnumerable<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyType: Type, propertyName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string): ComplexCollectionBuilder;
-    ComplexCollection(propertyName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexCollectionBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexCollectionBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexCollectionBuilder;
-    ComplexProperty<TProperty>(propertyName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexProperty<TProperty>(propertyExpression: Expression<Func<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder;
+    ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyType: Type, propertyName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string): ComplexPropertyBuilder;
-    ComplexProperty(propertyName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexCollectionBuilder;
-    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexCollectionBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexCollectionBuilder;
+    ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
+    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexCollectionBuilder;
     HasField(fieldName: string): ComplexCollectionBuilder;
     HasPropertyAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder;
@@ -1070,8 +1058,6 @@ export const ComplexCollectionBuilder_1: {
 export interface __ComplexCollectionBuilder_1$views<TComplex> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder>;
 }
-
-export interface ComplexCollectionBuilder_1$instance<TComplex> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder> {}
 
 export type ComplexCollectionBuilder_1<TComplex> = ComplexCollectionBuilder_1$instance<TComplex> & __ComplexCollectionBuilder_1$views<TComplex>;
 
@@ -1116,12 +1102,10 @@ export interface __ComplexCollectionTypePropertyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface ComplexCollectionTypePropertyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
-
 export type ComplexCollectionTypePropertyBuilder = ComplexCollectionTypePropertyBuilder$instance & __ComplexCollectionTypePropertyBuilder$views;
 
 
-export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> extends ComplexCollectionTypePropertyBuilder$instance {
+export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> extends ComplexCollectionTypePropertyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ComplexCollectionTypePropertyBuilder;
@@ -1167,8 +1151,6 @@ export interface __ComplexCollectionTypePropertyBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
-
 export type ComplexCollectionTypePropertyBuilder_1<TProperty> = ComplexCollectionTypePropertyBuilder_1$instance<TProperty> & __ComplexCollectionTypePropertyBuilder_1$views<TProperty>;
 
 
@@ -1205,25 +1187,25 @@ export interface ComplexPropertyBuilder$instance {
     readonly PropertyBuilder: InternalComplexPropertyBuilder;
     readonly TypeBuilder: InternalComplexTypeBuilder;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyType: Type, propertyName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string): ComplexCollectionBuilder;
-    ComplexCollection(propertyName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexPropertyBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, buildAction: Action<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexPropertyBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexPropertyBuilder;
+    ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyType: Type, propertyName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string): ComplexPropertyBuilder;
-    ComplexProperty(propertyName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexPropertyBuilder;
-    ComplexProperty<TProperty>(propertyName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder;
-    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexPropertyBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexPropertyBuilder;
+    ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
+    ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder;
+    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexPropertyBuilder;
@@ -1259,36 +1241,34 @@ export interface __ComplexPropertyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder>;
 }
 
-export interface ComplexPropertyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder> {}
-
 export type ComplexPropertyBuilder = ComplexPropertyBuilder$instance & __ComplexPropertyBuilder$views;
 
 
-export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexPropertyBuilder$instance {
+export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexPropertyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    ComplexCollection<TElement>(propertyExpression: Expression<Func<TComplex, IEnumerable<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyType: Type, propertyName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string): ComplexCollectionBuilder;
-    ComplexCollection(propertyName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexPropertyBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexPropertyBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder>): ComplexPropertyBuilder;
-    ComplexProperty<TProperty>(propertyName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexProperty<TProperty>(propertyExpression: Expression<Func<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder;
+    ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyType: Type, propertyName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string): ComplexPropertyBuilder;
-    ComplexProperty(propertyName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexPropertyBuilder;
-    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexPropertyBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder>): ComplexPropertyBuilder;
+    ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
+    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexPropertyBuilder;
     HasDiscriminator(): ComplexTypeDiscriminatorBuilder;
     HasDiscriminator(name: string, type: Type): ComplexTypeDiscriminatorBuilder;
@@ -1319,8 +1299,6 @@ export const ComplexPropertyBuilder_1: {
 export interface __ComplexPropertyBuilder_1$views<TComplex> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder>;
 }
-
-export interface ComplexPropertyBuilder_1$instance<TComplex> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionComplexPropertyBuilder> {}
 
 export type ComplexPropertyBuilder_1<TComplex> = ComplexPropertyBuilder_1$instance<TComplex> & __ComplexPropertyBuilder_1$views<TComplex>;
 
@@ -1365,7 +1343,7 @@ export interface ComplexTypePrimitiveCollectionBuilder$instance {
 
     readonly Metadata: IMutableProperty;
     ElementType(): ElementTypeBuilder;
-    ElementType(builderAction: Action<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder;
+    ElementType(builderAction: Action_1<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     HasAnnotation(annotation: string, value: unknown): ComplexTypePrimitiveCollectionBuilder;
@@ -1398,16 +1376,14 @@ export interface __ComplexTypePrimitiveCollectionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface ComplexTypePrimitiveCollectionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
-
 export type ComplexTypePrimitiveCollectionBuilder = ComplexTypePrimitiveCollectionBuilder$instance & __ComplexTypePrimitiveCollectionBuilder$views;
 
 
-export interface ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> extends ComplexTypePrimitiveCollectionBuilder$instance {
+export interface ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> extends ComplexTypePrimitiveCollectionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ElementType(): ElementTypeBuilder;
-    ElementType(builderAction: Action<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder;
+    ElementType(builderAction: Action_1<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder;
     HasAnnotation(annotation: string, value: unknown): ComplexTypePrimitiveCollectionBuilder;
     HasField(fieldName: string): ComplexTypePrimitiveCollectionBuilder;
     HasMaxLength(maxLength: int): ComplexTypePrimitiveCollectionBuilder;
@@ -1437,8 +1413,6 @@ export const ComplexTypePrimitiveCollectionBuilder_1: {
 export interface __ComplexTypePrimitiveCollectionBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
-
-export interface ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
 
 export type ComplexTypePrimitiveCollectionBuilder_1<TProperty> = ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> & __ComplexTypePrimitiveCollectionBuilder_1$views<TProperty>;
 
@@ -1493,12 +1467,10 @@ export interface __ComplexTypePropertyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface ComplexTypePropertyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
-
 export type ComplexTypePropertyBuilder = ComplexTypePropertyBuilder$instance & __ComplexTypePropertyBuilder$views;
 
 
-export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends ComplexTypePropertyBuilder$instance {
+export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends ComplexTypePropertyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ComplexTypePropertyBuilder;
@@ -1554,18 +1526,16 @@ export interface __ComplexTypePropertyBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
-
 export type ComplexTypePropertyBuilder_1<TProperty> = ComplexTypePropertyBuilder_1$instance<TProperty> & __ComplexTypePropertyBuilder_1$views<TProperty>;
 
 
 export interface ConventionSetBuilder$instance {
-    Add(conventionFactory: Func<IServiceProvider, IConvention>): void;
+    Add(conventionFactory: Func_2<IServiceProvider, IConvention>): void;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     Remove(conventionType: Type): void;
     Remove<TImplementation extends IConvention>(): void;
-    Replace<TImplementation extends IConvention>(conventionFactory: Func<IServiceProvider, TImplementation>): void;
+    Replace<TImplementation extends IConvention>(conventionFactory: Func_2<IServiceProvider, TImplementation>): void;
     ToString(): string | undefined;
 }
 
@@ -1608,10 +1578,10 @@ export interface DbFunctionBuilder$instance extends DbFunctionBuilderBase$instan
     HasAnnotation(annotation: string, value: unknown): DbFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string): DbFunctionParameterBuilder;
-    HasParameter(name: string, buildAction: Action<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
     HasSchema(schema: string): DbFunctionBuilderBase;
     HasStoreType(storeType: string): DbFunctionBuilder;
-    HasTranslation(translation: Func<IReadOnlyList<SqlExpression>, SqlExpression>): DbFunctionBuilder;
+    HasTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>): DbFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
     IsNullable(nullable?: boolean): DbFunctionBuilderBase;
 }
@@ -1626,8 +1596,6 @@ export interface __DbFunctionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
 
-export interface DbFunctionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {}
-
 export type DbFunctionBuilder = DbFunctionBuilder$instance & __DbFunctionBuilder$views;
 
 
@@ -1640,7 +1608,7 @@ export interface DbFunctionBuilderBase$instance {
     GetHashCode(): int;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string): DbFunctionParameterBuilder;
-    HasParameter(name: string, buildAction: Action<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
     HasSchema(schema: string): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
     ToString(): string | undefined;
@@ -1654,8 +1622,6 @@ export const DbFunctionBuilderBase: (abstract new(function_: IMutableDbFunction)
 export interface __DbFunctionBuilderBase$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
-
-export interface DbFunctionBuilderBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {}
 
 export type DbFunctionBuilderBase = DbFunctionBuilderBase$instance & __DbFunctionBuilderBase$views;
 
@@ -1680,8 +1646,6 @@ export const DbFunctionParameterBuilder: {
 export interface __DbFunctionParameterBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionParameterBuilder>;
 }
-
-export interface DbFunctionParameterBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionParameterBuilder> {}
 
 export type DbFunctionParameterBuilder = DbFunctionParameterBuilder$instance & __DbFunctionParameterBuilder$views;
 
@@ -1759,8 +1723,6 @@ export interface __ElementTypeBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionElementTypeBuilder>;
 }
 
-export interface ElementTypeBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionElementTypeBuilder> {}
-
 export type ElementTypeBuilder = ElementTypeBuilder$instance & __ElementTypeBuilder$views;
 
 
@@ -1770,25 +1732,25 @@ export interface EntityTypeBuilder$instance {
     readonly Builder: InternalEntityTypeBuilder;
     readonly Metadata: IMutableEntityType;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyType: Type, propertyName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string): ComplexCollectionBuilder;
-    ComplexCollection(propertyName: string, buildAction: Action<ComplexCollectionBuilder>): EntityTypeBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, buildAction: Action<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action<ComplexCollectionBuilder>): EntityTypeBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder>): EntityTypeBuilder;
+    ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyType: Type, propertyName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string): ComplexPropertyBuilder;
-    ComplexProperty(propertyName: string, buildAction: Action<ComplexPropertyBuilder>): EntityTypeBuilder;
-    ComplexProperty<TProperty>(propertyName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder;
-    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action<ComplexPropertyBuilder>): EntityTypeBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder>): EntityTypeBuilder;
+    ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
+    ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder;
+    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
     Equals(obj: unknown): boolean;
     FindRelatedEntityType(relatedTypeName: string, navigationName: string): EntityType;
     FindRelatedEntityType(relatedType: Type, navigationName: string): EntityType;
@@ -1799,7 +1761,7 @@ export interface EntityTypeBuilder$instance {
     HasBaseType(entityType: Type): EntityTypeBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): EntityTypeBuilder;
     HasData(...data: unknown[]): DataBuilder;
-    HasData(data: IEnumerable<unknown>): DataBuilder;
+    HasData(data: IEnumerable_1<unknown>): DataBuilder;
     HasDiscriminator(): DiscriminatorBuilder;
     HasDiscriminator(name: string, type: Type): DiscriminatorBuilder;
     HasDiscriminator<TDiscriminator>(name: string): DiscriminatorBuilder_1<TDiscriminator>;
@@ -1824,15 +1786,15 @@ export interface EntityTypeBuilder$instance {
     OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
-    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
     OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
-    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
     PrimitiveCollection(propertyName: string): PrimitiveCollectionBuilder;
     PrimitiveCollection<TProperty>(propertyName: string): PrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyType: Type, propertyName: string): PrimitiveCollectionBuilder;
@@ -1854,36 +1816,34 @@ export interface __EntityTypeBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder>;
 }
 
-export interface EntityTypeBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder> {}
-
 export type EntityTypeBuilder = EntityTypeBuilder$instance & __EntityTypeBuilder$views;
 
 
-export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder$instance {
+export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    ComplexCollection<TElement>(propertyExpression: Expression<Func<TEntity, IEnumerable<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyType: Type, propertyName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string): ComplexCollectionBuilder;
-    ComplexCollection(propertyName: string, buildAction: Action<ComplexCollectionBuilder>): EntityTypeBuilder;
-    ComplexCollection<TProperty extends IEnumerable<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action<ComplexCollectionBuilder>): EntityTypeBuilder;
-    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexCollectionBuilder>): EntityTypeBuilder;
-    ComplexProperty<TProperty>(propertyName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
-    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
-    ComplexProperty<TProperty>(propertyExpression: Expression<Func<TEntity, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder;
+    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder;
+    ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyType: Type, propertyName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string): ComplexPropertyBuilder;
-    ComplexProperty(propertyName: string, buildAction: Action<ComplexPropertyBuilder>): EntityTypeBuilder;
-    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action<ComplexPropertyBuilder>): EntityTypeBuilder;
-    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action<ComplexPropertyBuilder>): EntityTypeBuilder;
+    ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
+    ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
+    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
     HasAlternateKey(...propertyNames: string[]): KeyBuilder_1<TEntity>;
     HasAlternateKey(...propertyNames: string[]): KeyBuilder;
     HasAnnotation(annotation: string, value: unknown): EntityTypeBuilder;
@@ -1893,9 +1853,9 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): EntityTypeBuilder;
     HasData(...data: TEntity[]): DataBuilder_1<TEntity>;
     HasData(...data: unknown[]): DataBuilder_1<TEntity>;
-    HasData(data: IEnumerable<unknown>): DataBuilder_1<TEntity>;
+    HasData(data: IEnumerable_1<unknown>): DataBuilder_1<TEntity>;
     HasData(...data: unknown[]): DataBuilder;
-    HasData(data: IEnumerable<unknown>): DataBuilder;
+    HasData(data: IEnumerable_1<unknown>): DataBuilder;
     HasDiscriminator(): DiscriminatorBuilder;
     HasDiscriminator(name: string, type: Type): DiscriminatorBuilder;
     HasDiscriminator<TDiscriminator>(name: string): DiscriminatorBuilder_1<TDiscriminator>;
@@ -1924,28 +1884,28 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     Navigation(navigationName: string): NavigationBuilder;
     OwnsMany<TRelatedEntity>(navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
-    OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression<Func<TEntity, IEnumerable<TRelatedEntity>>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
-    OwnsMany<TRelatedEntity>(navigationName: string, buildAction: Action<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
-    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
-    OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
+    OwnsMany<TRelatedEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
+    OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
     OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
-    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
     OwnsOne<TRelatedEntity>(navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
-    OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression<Func<TEntity, TRelatedEntity>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
-    OwnsOne<TRelatedEntity>(navigationName: string, buildAction: Action<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
-    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
-    OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
+    OwnsOne<TRelatedEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
+    OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
     OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
-    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
+    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
     PrimitiveCollection(propertyName: string): PrimitiveCollectionBuilder;
     PrimitiveCollection<TProperty>(propertyName: string): PrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyType: Type, propertyName: string): PrimitiveCollectionBuilder;
@@ -1964,8 +1924,6 @@ export const EntityTypeBuilder_1: {
 export interface __EntityTypeBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder>;
 }
-
-export interface EntityTypeBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder> {}
 
 export type EntityTypeBuilder_1<TEntity> = EntityTypeBuilder_1$instance<TEntity> & __EntityTypeBuilder_1$views<TEntity>;
 
@@ -1992,12 +1950,10 @@ export interface __IndexBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionIndexBuilder>;
 }
 
-export interface IndexBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionIndexBuilder> {}
-
 export type IndexBuilder = IndexBuilder$instance & __IndexBuilder$views;
 
 
-export interface IndexBuilder_1$instance<T> extends IndexBuilder$instance {
+export interface IndexBuilder_1$instance<T> extends IndexBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionIndexBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): IndexBuilder;
@@ -2014,8 +1970,6 @@ export const IndexBuilder_1: {
 export interface __IndexBuilder_1$views<T> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionIndexBuilder>;
 }
-
-export interface IndexBuilder_1$instance<T> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionIndexBuilder> {}
 
 export type IndexBuilder_1<T> = IndexBuilder_1$instance<T> & __IndexBuilder_1$views<T>;
 
@@ -2041,8 +1995,6 @@ export interface __InvertibleRelationshipBuilderBase$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface InvertibleRelationshipBuilderBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
-
 export type InvertibleRelationshipBuilderBase = InvertibleRelationshipBuilderBase$instance & __InvertibleRelationshipBuilderBase$views;
 
 
@@ -2066,12 +2018,10 @@ export interface __KeyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionKeyBuilder>;
 }
 
-export interface KeyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionKeyBuilder> {}
-
 export type KeyBuilder = KeyBuilder$instance & __KeyBuilder$views;
 
 
-export interface KeyBuilder_1$instance<T> extends KeyBuilder$instance {
+export interface KeyBuilder_1$instance<T> extends KeyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): KeyBuilder;
@@ -2086,8 +2036,6 @@ export const KeyBuilder_1: {
 export interface __KeyBuilder_1$views<T> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionKeyBuilder>;
 }
-
-export interface KeyBuilder_1$instance<T> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionKeyBuilder> {}
 
 export type KeyBuilder_1<T> = KeyBuilder_1$instance<T> & __KeyBuilder_1$views<T>;
 
@@ -2117,12 +2065,10 @@ export interface __NavigationBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSkipNavigationBuilder>;
 }
 
-export interface NavigationBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSkipNavigationBuilder> {}
-
 export type NavigationBuilder = NavigationBuilder$instance & __NavigationBuilder$views;
 
 
-export interface NavigationBuilder_2$instance<TSource, TTarget> extends NavigationBuilder$instance {
+export interface NavigationBuilder_2$instance<TSource, TTarget> extends NavigationBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSkipNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     AutoInclude(autoInclude?: boolean): NavigationBuilder;
@@ -2145,8 +2091,6 @@ export const NavigationBuilder_2: {
 export interface __NavigationBuilder_2$views<TSource, TTarget> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSkipNavigationBuilder>;
 }
-
-export interface NavigationBuilder_2$instance<TSource, TTarget> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSkipNavigationBuilder> {}
 
 export type NavigationBuilder_2<TSource, TTarget> = NavigationBuilder_2$instance<TSource, TTarget> & __NavigationBuilder_2$views<TSource, TTarget>;
 
@@ -2189,7 +2133,7 @@ export interface OwnedNavigationBuilder$instance {
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): OwnedNavigationBuilder;
     HasData(...data: unknown[]): DataBuilder;
-    HasData(data: IEnumerable<unknown>): DataBuilder;
+    HasData(data: IEnumerable_1<unknown>): DataBuilder;
     HasIndex(...propertyNames: string[]): IndexBuilder;
     HasIndex(propertyNames: string[], name: string): IndexBuilder;
     HasKey(...propertyNames: string[]): KeyBuilder;
@@ -2204,22 +2148,22 @@ export interface OwnedNavigationBuilder$instance {
     OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
-    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
-    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
     PrimitiveCollection(propertyName: string): PrimitiveCollectionBuilder;
     PrimitiveCollection<TProperty>(propertyName: string): PrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyType: Type, propertyName: string): PrimitiveCollectionBuilder;
     Property(propertyName: string): PropertyBuilder;
     Property<TProperty>(propertyName: string): PropertyBuilder_1<TProperty>;
     Property(propertyType: Type, propertyName: string): PropertyBuilder;
-    UpdateBuilder<T>(configure: Func<T>): T;
+    UpdateBuilder<T>(configure: Func_1<T>): T;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): OwnedNavigationBuilder;
     WithOwner(ownerReference?: string): OwnershipBuilder;
 }
@@ -2234,21 +2178,19 @@ export interface __OwnedNavigationBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder>;
 }
 
-export interface OwnedNavigationBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder> {}
-
 export type OwnedNavigationBuilder = OwnedNavigationBuilder$instance & __OwnedNavigationBuilder$views;
 
 
-export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationBuilder$instance {
+export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): OwnedNavigationBuilder;
     HasData(...data: TDependentEntity[]): DataBuilder_1<TDependentEntity>;
     HasData(...data: unknown[]): DataBuilder_1<TDependentEntity>;
-    HasData(data: IEnumerable<unknown>): DataBuilder_1<TDependentEntity>;
+    HasData(data: IEnumerable_1<unknown>): DataBuilder_1<TDependentEntity>;
     HasData(...data: unknown[]): DataBuilder;
-    HasData(data: IEnumerable<unknown>): DataBuilder;
+    HasData(data: IEnumerable_1<unknown>): DataBuilder;
     HasIndex(...propertyNames: string[]): IndexBuilder_1<TDependentEntity>;
     HasIndex(propertyNames: string[], name: string): IndexBuilder_1<TDependentEntity>;
     HasIndex(...propertyNames: string[]): IndexBuilder;
@@ -2264,28 +2206,28 @@ export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntit
     Navigation(navigationName: string): NavigationBuilder;
     OwnsMany<TNewDependentEntity>(navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
-    OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression<Func<TDependentEntity, IEnumerable<TNewDependentEntity>>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
-    OwnsMany<TNewDependentEntity>(navigationName: string, buildAction: Action<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity>>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
+    OwnsMany<TNewDependentEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
-    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
     OwnsOne<TNewDependentEntity>(navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
-    OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression<Func<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
-    OwnsOne<TNewDependentEntity>(navigationName: string, buildAction: Action<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
+    OwnsOne<TNewDependentEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
-    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
     PrimitiveCollection(propertyName: string): PrimitiveCollectionBuilder;
     PrimitiveCollection<TProperty>(propertyName: string): PrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyType: Type, propertyName: string): PrimitiveCollectionBuilder;
@@ -2306,8 +2248,6 @@ export const OwnedNavigationBuilder_2: {
 export interface __OwnedNavigationBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder>;
 }
-
-export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionEntityTypeBuilder> {}
 
 export type OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2340,12 +2280,10 @@ export interface __OwnedNavigationSplitTableBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationSplitTableBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationSplitTableBuilder = OwnedNavigationSplitTableBuilder$instance & __OwnedNavigationSplitTableBuilder$views;
 
 
-export interface OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitTableBuilder$instance {
+export interface OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitTableBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationSplitTableBuilder;
@@ -2363,8 +2301,6 @@ export const OwnedNavigationSplitTableBuilder_2: {
 export interface __OwnedNavigationSplitTableBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
-
-export interface OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
 
 export type OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationSplitTableBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2393,12 +2329,10 @@ export interface __OwnedNavigationSplitViewBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationSplitViewBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationSplitViewBuilder = OwnedNavigationSplitViewBuilder$instance & __OwnedNavigationSplitViewBuilder$views;
 
 
-export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitViewBuilder$instance {
+export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationSplitViewBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitViewBuilder;
@@ -2416,8 +2350,6 @@ export interface __OwnedNavigationSplitViewBuilder_2$views<TOwnerEntity, TDepend
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationSplitViewBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
 
@@ -2427,18 +2359,18 @@ export interface OwnedNavigationStoredProcedureBuilder$instance {
     readonly Builder: InternalStoredProcedureBuilder;
     readonly Metadata: IMutableStoredProcedure;
     CreatePropertyBuilder(propertyName: string): PropertyBuilder;
-    CreatePropertyBuilder<TDependentEntity, TProperty>(propertyExpression: Expression<Func<TDependentEntity, TProperty>>): PropertyBuilder;
+    CreatePropertyBuilder<TDependentEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): PropertyBuilder;
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
-    HasOriginalValueParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
-    HasParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasResultColumn(propertyName: string): OwnedNavigationStoredProcedureBuilder;
-    HasResultColumn(propertyName: string, buildAction: Action<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasRowsAffectedParameter(): OwnedNavigationStoredProcedureBuilder;
-    HasRowsAffectedParameter(buildAction: Action<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasRowsAffectedParameter(buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasRowsAffectedResultColumn(): OwnedNavigationStoredProcedureBuilder;
-    HasRowsAffectedResultColumn(buildAction: Action<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasRowsAffectedResultColumn(buildAction: Action_1<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasRowsAffectedReturnValue(rowsAffectedReturned?: boolean): OwnedNavigationStoredProcedureBuilder;
 }
 
@@ -2452,25 +2384,23 @@ export interface __OwnedNavigationStoredProcedureBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationStoredProcedureBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationStoredProcedureBuilder = OwnedNavigationStoredProcedureBuilder$instance & __OwnedNavigationStoredProcedureBuilder$views;
 
 
-export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationStoredProcedureBuilder$instance {
+export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationStoredProcedureBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
-    HasOriginalValueParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
-    HasParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasResultColumn(propertyName: string): OwnedNavigationStoredProcedureBuilder;
-    HasResultColumn(propertyName: string, buildAction: Action<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasRowsAffectedParameter(): OwnedNavigationStoredProcedureBuilder;
-    HasRowsAffectedParameter(buildAction: Action<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasRowsAffectedParameter(buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasRowsAffectedResultColumn(): OwnedNavigationStoredProcedureBuilder;
-    HasRowsAffectedResultColumn(buildAction: Action<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasRowsAffectedResultColumn(buildAction: Action_1<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasRowsAffectedReturnValue(rowsAffectedReturned?: boolean): OwnedNavigationStoredProcedureBuilder;
 }
 
@@ -2484,8 +2414,6 @@ export interface __OwnedNavigationStoredProcedureBuilder_2$views<TOwnerEntity, T
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationStoredProcedureBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
 
@@ -2495,7 +2423,7 @@ export interface OwnedNavigationTableBuilder$instance {
     readonly Metadata: IMutableEntityType;
     readonly Name: string | undefined;
     readonly Schema: string | undefined;
-    readonly StoreObject: Nullable<StoreObjectIdentifier>;
+    readonly StoreObject: Nullable_1<StoreObjectIdentifier>;
     Equals(obj: unknown): boolean;
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationTableBuilder;
     GetHashCode(): int;
@@ -2510,7 +2438,7 @@ export interface OwnedNavigationTableBuilder$instance {
 
 
 export const OwnedNavigationTableBuilder: {
-    new(storeObject: Nullable<StoreObjectIdentifier>, ownedNavigationBuilder: OwnedNavigationBuilder): OwnedNavigationTableBuilder;
+    new(storeObject: Nullable_1<StoreObjectIdentifier>, ownedNavigationBuilder: OwnedNavigationBuilder): OwnedNavigationTableBuilder;
 };
 
 
@@ -2518,12 +2446,10 @@ export interface __OwnedNavigationTableBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationTableBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationTableBuilder = OwnedNavigationTableBuilder$instance & __OwnedNavigationTableBuilder$views;
 
 
-export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableBuilder$instance {
+export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationTableBuilder;
@@ -2534,15 +2460,13 @@ export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependent
 
 
 export const OwnedNavigationTableBuilder_2: {
-    new<TOwnerEntity, TDependentEntity>(storeObject: Nullable<StoreObjectIdentifier>, ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>): OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>;
+    new<TOwnerEntity, TDependentEntity>(storeObject: Nullable_1<StoreObjectIdentifier>, ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>): OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>;
 };
 
 
 export interface __OwnedNavigationTableBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
-
-export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
 
 export type OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationTableBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2553,7 +2477,7 @@ export interface OwnedNavigationTableValuedFunctionBuilder$instance extends DbFu
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string): DbFunctionParameterBuilder;
-    HasParameter(name: string, buildAction: Action<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
     HasSchema(schema: string): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
 }
@@ -2568,20 +2492,18 @@ export interface __OwnedNavigationTableValuedFunctionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
 
-export interface OwnedNavigationTableValuedFunctionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {}
-
 export type OwnedNavigationTableValuedFunctionBuilder = OwnedNavigationTableValuedFunctionBuilder$instance & __OwnedNavigationTableValuedFunctionBuilder$views;
 
 
-export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableValuedFunctionBuilder$instance {
+export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationTableValuedFunctionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
-    HasParameter(name: string, buildAction: Action<DbFunctionParameterBuilder>): OwnedNavigationTableValuedFunctionBuilder;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): OwnedNavigationTableValuedFunctionBuilder;
     HasParameter(name: string): DbFunctionParameterBuilder;
-    HasParameter(name: string, buildAction: Action<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
     HasSchema(schema: string): OwnedNavigationTableValuedFunctionBuilder;
     HasSchema(schema: string): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): OwnedNavigationTableValuedFunctionBuilder;
@@ -2597,8 +2519,6 @@ export const OwnedNavigationTableValuedFunctionBuilder_2: {
 export interface __OwnedNavigationTableValuedFunctionBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
-
-export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {}
 
 export type OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationTableValuedFunctionBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2626,12 +2546,10 @@ export interface __OwnedNavigationViewBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
 
-export interface OwnedNavigationViewBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
-
 export type OwnedNavigationViewBuilder = OwnedNavigationViewBuilder$instance & __OwnedNavigationViewBuilder$views;
 
 
-export interface OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationViewBuilder$instance {
+export interface OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends OwnedNavigationViewBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Property(propertyName: string): ViewColumnBuilder;
@@ -2647,8 +2565,6 @@ export const OwnedNavigationViewBuilder_2: {
 export interface __OwnedNavigationViewBuilder_2$views<TOwnerEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder>;
 }
-
-export interface OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<OwnedNavigationBuilder> {}
 
 export type OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity> = OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentEntity> & __OwnedNavigationViewBuilder_2$views<TOwnerEntity, TDependentEntity>;
 
@@ -2671,12 +2587,10 @@ export interface __OwnershipBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface OwnershipBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
-
 export type OwnershipBuilder = OwnershipBuilder$instance & __OwnershipBuilder$views;
 
 
-export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends OwnershipBuilder$instance {
+export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends OwnershipBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnershipBuilder;
@@ -2696,8 +2610,6 @@ export interface __OwnershipBuilder_2$views<TEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
-
 export type OwnershipBuilder_2<TEntity, TDependentEntity> = OwnershipBuilder_2$instance<TEntity, TDependentEntity> & __OwnershipBuilder_2$views<TEntity, TDependentEntity>;
 
 
@@ -2706,7 +2618,7 @@ export interface PrimitiveCollectionBuilder$instance {
 
     readonly Metadata: IMutableProperty;
     ElementType(): ElementTypeBuilder;
-    ElementType(builderAction: Action<ElementTypeBuilder>): PrimitiveCollectionBuilder;
+    ElementType(builderAction: Action_1<ElementTypeBuilder>): PrimitiveCollectionBuilder;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     HasAnnotation(annotation: string, value: unknown): PrimitiveCollectionBuilder;
@@ -2739,16 +2651,14 @@ export interface __PrimitiveCollectionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface PrimitiveCollectionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
-
 export type PrimitiveCollectionBuilder = PrimitiveCollectionBuilder$instance & __PrimitiveCollectionBuilder$views;
 
 
-export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends PrimitiveCollectionBuilder$instance {
+export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends PrimitiveCollectionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ElementType(): ElementTypeBuilder;
-    ElementType(builderAction: Action<ElementTypeBuilder>): PrimitiveCollectionBuilder;
+    ElementType(builderAction: Action_1<ElementTypeBuilder>): PrimitiveCollectionBuilder;
     HasAnnotation(annotation: string, value: unknown): PrimitiveCollectionBuilder;
     HasField(fieldName: string): PrimitiveCollectionBuilder;
     HasMaxLength(maxLength: int): PrimitiveCollectionBuilder;
@@ -2778,8 +2688,6 @@ export const PrimitiveCollectionBuilder_1: {
 export interface __PrimitiveCollectionBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
-
-export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
 
 export type PrimitiveCollectionBuilder_1<TProperty> = PrimitiveCollectionBuilder_1$instance<TProperty> & __PrimitiveCollectionBuilder_1$views<TProperty>;
 
@@ -2862,7 +2770,7 @@ export interface PropertyBuilder$instance {
     HasSentinel(sentinel: unknown): PropertyBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PropertyBuilder;
     HasValueGenerator(valueGeneratorType: Type): PropertyBuilder;
-    HasValueGenerator(factory: Func<IProperty, ITypeBase, ValueGenerator>): PropertyBuilder;
+    HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>): PropertyBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PropertyBuilder;
     HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PropertyBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): PropertyBuilder;
@@ -2888,12 +2796,10 @@ export interface __PropertyBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface PropertyBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
-
 export type PropertyBuilder = PropertyBuilder$instance & __PropertyBuilder$views;
 
 
-export interface PropertyBuilder_1$instance<TProperty> extends PropertyBuilder$instance {
+export interface PropertyBuilder_1$instance<TProperty> extends PropertyBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): PropertyBuilder;
@@ -2926,7 +2832,7 @@ export interface PropertyBuilder_1$instance<TProperty> extends PropertyBuilder$i
     HasValueGenerator(valueGeneratorType: Type): PropertyBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PropertyBuilder;
     HasValueGenerator(valueGeneratorType: Type): PropertyBuilder;
-    HasValueGenerator(factory: Func<IProperty, ITypeBase, ValueGenerator>): PropertyBuilder;
+    HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>): PropertyBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PropertyBuilder;
     HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PropertyBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): PropertyBuilder;
@@ -2951,8 +2857,6 @@ export interface __PropertyBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder>;
 }
 
-export interface PropertyBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionPropertyBuilder> {}
-
 export type PropertyBuilder_1<TProperty> = PropertyBuilder_1$instance<TProperty> & __PropertyBuilder_1$views<TProperty>;
 
 
@@ -2961,11 +2865,11 @@ export interface ReferenceCollectionBuilder$instance extends RelationshipBuilder
 
     HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder;
-    HasForeignKeyBuilder(foreignKeyPropertyNames: IReadOnlyList<System_Internal.String>): InternalForeignKeyBuilder;
-    HasForeignKeyBuilder(foreignKeyMembers: IReadOnlyList<MemberInfo>): InternalForeignKeyBuilder;
+    HasForeignKeyBuilder(foreignKeyPropertyNames: IReadOnlyList_1<System_Internal.String>): InternalForeignKeyBuilder;
+    HasForeignKeyBuilder(foreignKeyMembers: IReadOnlyList_1<MemberInfo>): InternalForeignKeyBuilder;
     HasPrincipalKey(...keyPropertyNames: string[]): ReferenceCollectionBuilder;
-    HasPrincipalKeyBuilder(keyPropertyNames: IReadOnlyList<System_Internal.String>): InternalForeignKeyBuilder;
-    HasPrincipalKeyBuilder(keyMembers: IReadOnlyList<MemberInfo>): InternalForeignKeyBuilder;
+    HasPrincipalKeyBuilder(keyPropertyNames: IReadOnlyList_1<System_Internal.String>): InternalForeignKeyBuilder;
+    HasPrincipalKeyBuilder(keyMembers: IReadOnlyList_1<MemberInfo>): InternalForeignKeyBuilder;
     IsRequired(required?: boolean): ReferenceCollectionBuilder;
     OnDelete(deleteBehavior: DeleteBehavior): ReferenceCollectionBuilder;
 }
@@ -2980,12 +2884,10 @@ export interface __ReferenceCollectionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface ReferenceCollectionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
-
 export type ReferenceCollectionBuilder = ReferenceCollectionBuilder$instance & __ReferenceCollectionBuilder$views;
 
 
-export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> extends ReferenceCollectionBuilder$instance {
+export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> extends ReferenceCollectionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder;
@@ -3006,8 +2908,6 @@ export const ReferenceCollectionBuilder_2: {
 export interface __ReferenceCollectionBuilder_2$views<TPrincipalEntity, TDependentEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
-
-export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
 
 export type ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity> = ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDependentEntity> & __ReferenceCollectionBuilder_2$views<TPrincipalEntity, TDependentEntity>;
 
@@ -3042,12 +2942,10 @@ export interface __ReferenceNavigationBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface ReferenceNavigationBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
-
 export type ReferenceNavigationBuilder = ReferenceNavigationBuilder$instance & __ReferenceNavigationBuilder$views;
 
 
-export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceNavigationBuilder$instance {
+export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceNavigationBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     WithMany(navigationName?: string): ReferenceCollectionBuilder_2<TRelatedEntity, TEntity>;
@@ -3067,8 +2965,6 @@ export interface __ReferenceNavigationBuilder_2$views<TEntity, TRelatedEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
-
 export type ReferenceNavigationBuilder_2<TEntity, TRelatedEntity> = ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> & __ReferenceNavigationBuilder_2$views<TEntity, TRelatedEntity>;
 
 
@@ -3078,12 +2974,12 @@ export interface ReferenceReferenceBuilder$instance extends InvertibleRelationsh
     HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityTypeName: string, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityType: Type, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
-    HasForeignKeyBuilder(dependentEntityType: EntityType, dependentEntityTypeName: string, foreignKeyPropertyNames: IReadOnlyList<System_Internal.String>): InternalForeignKeyBuilder;
-    HasForeignKeyBuilder(dependentEntityType: EntityType, dependentEntityTypeName: string, foreignKeyMembers: IReadOnlyList<MemberInfo>): InternalForeignKeyBuilder;
+    HasForeignKeyBuilder(dependentEntityType: EntityType, dependentEntityTypeName: string, foreignKeyPropertyNames: IReadOnlyList_1<System_Internal.String>): InternalForeignKeyBuilder;
+    HasForeignKeyBuilder(dependentEntityType: EntityType, dependentEntityTypeName: string, foreignKeyMembers: IReadOnlyList_1<MemberInfo>): InternalForeignKeyBuilder;
     HasPrincipalKey(principalEntityTypeName: string, ...keyPropertyNames: string[]): ReferenceReferenceBuilder;
     HasPrincipalKey(principalEntityType: Type, ...keyPropertyNames: string[]): ReferenceReferenceBuilder;
-    HasPrincipalKeyBuilder(principalEntityType: EntityType, principalEntityTypeName: string, foreignKeyPropertyNames: IReadOnlyList<System_Internal.String>): InternalForeignKeyBuilder;
-    HasPrincipalKeyBuilder(principalEntityType: EntityType, principalEntityTypeName: string, foreignKeyMembers: IReadOnlyList<MemberInfo>): InternalForeignKeyBuilder;
+    HasPrincipalKeyBuilder(principalEntityType: EntityType, principalEntityTypeName: string, foreignKeyPropertyNames: IReadOnlyList_1<System_Internal.String>): InternalForeignKeyBuilder;
+    HasPrincipalKeyBuilder(principalEntityType: EntityType, principalEntityTypeName: string, foreignKeyMembers: IReadOnlyList_1<MemberInfo>): InternalForeignKeyBuilder;
     IsRequired(required?: boolean): ReferenceReferenceBuilder;
     OnDelete(deleteBehavior: DeleteBehavior): ReferenceReferenceBuilder;
     ResolveEntityType(entityTypeName: string): EntityType | undefined;
@@ -3100,12 +2996,10 @@ export interface __ReferenceReferenceBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface ReferenceReferenceBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
-
 export type ReferenceReferenceBuilder = ReferenceReferenceBuilder$instance & __ReferenceReferenceBuilder$views;
 
 
-export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceReferenceBuilder$instance {
+export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> extends ReferenceReferenceBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder;
@@ -3131,8 +3025,6 @@ export interface __ReferenceReferenceBuilder_2$views<TEntity, TRelatedEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
 
-export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
-
 export type ReferenceReferenceBuilder_2<TEntity, TRelatedEntity> = ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> & __ReferenceReferenceBuilder_2$views<TEntity, TRelatedEntity>;
 
 
@@ -3156,8 +3048,6 @@ export const RelationshipBuilderBase: (abstract new(principalEntityType: IMutabl
 export interface __RelationshipBuilderBase$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder>;
 }
-
-export interface RelationshipBuilderBase$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionForeignKeyBuilder> {}
 
 export type RelationshipBuilderBase = RelationshipBuilderBase$instance & __RelationshipBuilderBase$views;
 
@@ -3186,8 +3076,6 @@ export const SequenceBuilder: {
 export interface __SequenceBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSequenceBuilder>;
 }
-
-export interface SequenceBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionSequenceBuilder> {}
 
 export type SequenceBuilder = SequenceBuilder$instance & __SequenceBuilder$views;
 
@@ -3220,12 +3108,10 @@ export interface __SplitTableBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface SplitTableBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
-
 export type SplitTableBuilder = SplitTableBuilder$instance & __SplitTableBuilder$views;
 
 
-export interface SplitTableBuilder_1$instance<TEntity> extends SplitTableBuilder$instance {
+export interface SplitTableBuilder_1$instance<TEntity> extends SplitTableBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ExcludeFromMigrations(excluded?: boolean): SplitTableBuilder;
@@ -3243,8 +3129,6 @@ export const SplitTableBuilder_1: {
 export interface __SplitTableBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
-
-export interface SplitTableBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
 
 export type SplitTableBuilder_1<TEntity> = SplitTableBuilder_1$instance<TEntity> & __SplitTableBuilder_1$views<TEntity>;
 
@@ -3273,12 +3157,10 @@ export interface __SplitViewBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface SplitViewBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
-
 export type SplitViewBuilder = SplitViewBuilder$instance & __SplitViewBuilder$views;
 
 
-export interface SplitViewBuilder_1$instance<TEntity> extends SplitViewBuilder$instance {
+export interface SplitViewBuilder_1$instance<TEntity> extends SplitViewBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): SplitViewBuilder;
@@ -3296,8 +3178,6 @@ export interface __SplitViewBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface SplitViewBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
-
 export type SplitViewBuilder_1<TEntity> = SplitViewBuilder_1$instance<TEntity> & __SplitViewBuilder_1$views<TEntity>;
 
 
@@ -3307,18 +3187,18 @@ export interface StoredProcedureBuilder$instance {
     readonly Builder: InternalStoredProcedureBuilder;
     readonly Metadata: IMutableStoredProcedure;
     CreatePropertyBuilder(propertyName: string): PropertyBuilder;
-    CreatePropertyBuilder<TDerivedEntity, TProperty>(propertyExpression: Expression<Func<TDerivedEntity, TProperty>>): PropertyBuilder;
+    CreatePropertyBuilder<TDerivedEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>): PropertyBuilder;
     HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder;
-    HasOriginalValueParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
+    HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
     HasParameter(propertyName: string): StoredProcedureBuilder;
-    HasParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
+    HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
     HasResultColumn(propertyName: string): StoredProcedureBuilder;
-    HasResultColumn(propertyName: string, buildAction: Action<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
+    HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
     HasRowsAffectedParameter(): StoredProcedureBuilder;
-    HasRowsAffectedParameter(buildAction: Action<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
+    HasRowsAffectedParameter(buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
     HasRowsAffectedResultColumn(): StoredProcedureBuilder;
-    HasRowsAffectedResultColumn(buildAction: Action<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
+    HasRowsAffectedResultColumn(buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
     HasRowsAffectedReturnValue(rowsAffectedReturned?: boolean): StoredProcedureBuilder;
 }
 
@@ -3332,25 +3212,23 @@ export interface __StoredProcedureBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface StoredProcedureBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
-
 export type StoredProcedureBuilder = StoredProcedureBuilder$instance & __StoredProcedureBuilder$views;
 
 
-export interface StoredProcedureBuilder_1$instance<TEntity> extends StoredProcedureBuilder$instance {
+export interface StoredProcedureBuilder_1$instance<TEntity> extends StoredProcedureBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder;
-    HasOriginalValueParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
+    HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
     HasParameter(propertyName: string): StoredProcedureBuilder;
-    HasParameter(propertyName: string, buildAction: Action<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
+    HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
     HasResultColumn(propertyName: string): StoredProcedureBuilder;
-    HasResultColumn(propertyName: string, buildAction: Action<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
+    HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
     HasRowsAffectedParameter(): StoredProcedureBuilder;
-    HasRowsAffectedParameter(buildAction: Action<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
+    HasRowsAffectedParameter(buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
     HasRowsAffectedResultColumn(): StoredProcedureBuilder;
-    HasRowsAffectedResultColumn(buildAction: Action<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
+    HasRowsAffectedResultColumn(buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
     HasRowsAffectedReturnValue(rowsAffectedReturned?: boolean): StoredProcedureBuilder;
 }
 
@@ -3363,8 +3241,6 @@ export const StoredProcedureBuilder_1: {
 export interface __StoredProcedureBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
-
-export interface StoredProcedureBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
 
 export type StoredProcedureBuilder_1<TEntity> = StoredProcedureBuilder_1$instance<TEntity> & __StoredProcedureBuilder_1$views<TEntity>;
 
@@ -3393,8 +3269,6 @@ export interface __StoredProcedureParameterBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
 
-export interface StoredProcedureParameterBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {}
-
 export type StoredProcedureParameterBuilder = StoredProcedureParameterBuilder$instance & __StoredProcedureParameterBuilder$views;
 
 
@@ -3420,8 +3294,6 @@ export interface __StoredProcedureResultColumnBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
 
-export interface StoredProcedureResultColumnBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {}
-
 export type StoredProcedureResultColumnBuilder = StoredProcedureResultColumnBuilder$instance & __StoredProcedureResultColumnBuilder$views;
 
 
@@ -3431,7 +3303,7 @@ export interface TableBuilder$instance {
     readonly Metadata: IMutableEntityType;
     readonly Name: string | undefined;
     readonly Schema: string | undefined;
-    readonly StoreObject: Nullable<StoreObjectIdentifier>;
+    readonly StoreObject: Nullable_1<StoreObjectIdentifier>;
     Equals(obj: unknown): boolean;
     ExcludeFromMigrations(excluded?: boolean): TableBuilder;
     GetHashCode(): int;
@@ -3446,7 +3318,7 @@ export interface TableBuilder$instance {
 
 
 export const TableBuilder: {
-    new(storeObject: Nullable<StoreObjectIdentifier>, entityTypeBuilder: EntityTypeBuilder): TableBuilder;
+    new(storeObject: Nullable_1<StoreObjectIdentifier>, entityTypeBuilder: EntityTypeBuilder): TableBuilder;
 };
 
 
@@ -3454,12 +3326,10 @@ export interface __TableBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface TableBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
-
 export type TableBuilder = TableBuilder$instance & __TableBuilder$views;
 
 
-export interface TableBuilder_1$instance<TEntity> extends TableBuilder$instance {
+export interface TableBuilder_1$instance<TEntity> extends TableBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ExcludeFromMigrations(excluded?: boolean): TableBuilder;
@@ -3470,15 +3340,13 @@ export interface TableBuilder_1$instance<TEntity> extends TableBuilder$instance 
 
 
 export const TableBuilder_1: {
-    new<TEntity>(storeObject: Nullable<StoreObjectIdentifier>, entityTypeBuilder: EntityTypeBuilder_1<TEntity>): TableBuilder_1<TEntity>;
+    new<TEntity>(storeObject: Nullable_1<StoreObjectIdentifier>, entityTypeBuilder: EntityTypeBuilder_1<TEntity>): TableBuilder_1<TEntity>;
 };
 
 
 export interface __TableBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
-
-export interface TableBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
 
 export type TableBuilder_1<TEntity> = TableBuilder_1$instance<TEntity> & __TableBuilder_1$views<TEntity>;
 
@@ -3503,8 +3371,6 @@ export interface __TableTriggerBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionTriggerBuilder>;
 }
 
-export interface TableTriggerBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionTriggerBuilder> {}
-
 export type TableTriggerBuilder = TableTriggerBuilder$instance & __TableTriggerBuilder$views;
 
 
@@ -3514,7 +3380,7 @@ export interface TableValuedFunctionBuilder$instance extends DbFunctionBuilderBa
     HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string): DbFunctionParameterBuilder;
-    HasParameter(name: string, buildAction: Action<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
     HasSchema(schema: string): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
 }
@@ -3529,20 +3395,18 @@ export interface __TableValuedFunctionBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
 
-export interface TableValuedFunctionBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {}
-
 export type TableValuedFunctionBuilder = TableValuedFunctionBuilder$instance & __TableValuedFunctionBuilder$views;
 
 
-export interface TableValuedFunctionBuilder_1$instance<TEntity> extends TableValuedFunctionBuilder$instance {
+export interface TableValuedFunctionBuilder_1$instance<TEntity> extends TableValuedFunctionBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder;
     HasName(name: string): TableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
-    HasParameter(name: string, buildAction: Action<DbFunctionParameterBuilder>): TableValuedFunctionBuilder;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): TableValuedFunctionBuilder;
     HasParameter(name: string): DbFunctionParameterBuilder;
-    HasParameter(name: string, buildAction: Action<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
     HasSchema(schema: string): TableValuedFunctionBuilder;
     HasSchema(schema: string): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): TableValuedFunctionBuilder;
@@ -3558,8 +3422,6 @@ export const TableValuedFunctionBuilder_1: {
 export interface __TableValuedFunctionBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder>;
 }
-
-export interface TableValuedFunctionBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionDbFunctionBuilder> {}
 
 export type TableValuedFunctionBuilder_1<TEntity> = TableValuedFunctionBuilder_1$instance<TEntity> & __TableValuedFunctionBuilder_1$views<TEntity>;
 
@@ -3585,8 +3447,6 @@ export const TriggerBuilder: {
 export interface __TriggerBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionTriggerBuilder>;
 }
-
-export interface TriggerBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionTriggerBuilder> {}
 
 export type TriggerBuilder = TriggerBuilder$instance & __TriggerBuilder$views;
 
@@ -3665,12 +3525,10 @@ export interface __ViewBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
 
-export interface ViewBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
-
 export type ViewBuilder = ViewBuilder$instance & __ViewBuilder$views;
 
 
-export interface ViewBuilder_1$instance<TEntity> extends ViewBuilder$instance {
+export interface ViewBuilder_1$instance<TEntity> extends ViewBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Property(propertyName: string): ViewColumnBuilder;
@@ -3686,8 +3544,6 @@ export const ViewBuilder_1: {
 export interface __ViewBuilder_1$views<TEntity> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder>;
 }
-
-export interface ViewBuilder_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<EntityTypeBuilder> {}
 
 export type ViewBuilder_1<TEntity> = ViewBuilder_1$instance<TEntity> & __ViewBuilder_1$views<TEntity>;
 
@@ -3714,12 +3570,10 @@ export interface __ViewColumnBuilder$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
 
-export interface ViewColumnBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {}
-
 export type ViewColumnBuilder = ViewColumnBuilder$instance & __ViewColumnBuilder$views;
 
 
-export interface ViewColumnBuilder_1$instance<TProperty> extends ViewColumnBuilder$instance {
+export interface ViewColumnBuilder_1$instance<TProperty> extends ViewColumnBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): ViewColumnBuilder;
@@ -3735,8 +3589,6 @@ export const ViewColumnBuilder_1: {
 export interface __ViewColumnBuilder_1$views<TProperty> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder>;
 }
-
-export interface ViewColumnBuilder_1$instance<TProperty> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<PropertyBuilder> {}
 
 export type ViewColumnBuilder_1<TProperty> = ViewColumnBuilder_1$instance<TProperty> & __ViewColumnBuilder_1$views<TProperty>;
 

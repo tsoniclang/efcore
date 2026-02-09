@@ -19,20 +19,20 @@ import type { ValueConverter } from "../../Microsoft.EntityFrameworkCore.Storage
 import type { IExceptionDetector, IRelationalCommand, ValueBuffer } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Internal from "../../Microsoft.EntityFrameworkCore/internal/index.js";
 import type { AutoTransactionBehavior, DbContext, DbContextOptions, DbContextOptions_1, DbLoggerCategory_Infrastructure, DbLoggerCategory_Update, DbSet_1, IDbContextFactory_1, ModelConfigurationBuilder, QueryTrackingBehavior, SaveChangesFailedEventArgs, SavedChangesEventArgs, SavingChangesEventArgs } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
-import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { IAsyncEnumerable, IAsyncEnumerator, IComparer, IEnumerable as IEnumerable__System_Collections_Generic, IEqualityComparer as IEqualityComparer__System_Collections_Generic, IReadOnlyDictionary, IReadOnlyList, ISet } from "@tsonic/dotnet/System.Collections.Generic.js";
-import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections.js";
-import type { IEnumerable, IEqualityComparer } from "@tsonic/dotnet/System.Collections.js";
-import * as System_ComponentModel_Internal from "@tsonic/dotnet/System.ComponentModel.js";
-import type { IListSource } from "@tsonic/dotnet/System.ComponentModel.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, EventHandler, Func, IAsyncDisposable, IDisposable, IEquatable, Int32, IServiceProvider, Nullable, Object as ClrObject, String as ClrString, Type, ValueTuple, ValueType, Void } from "@tsonic/dotnet/System.js";
-import type { Expression, LambdaExpression, ParameterExpression, UnaryExpression } from "@tsonic/dotnet/System.Linq.Expressions.js";
-import * as System_Linq_Internal from "@tsonic/dotnet/System.Linq.js";
-import type { IQueryable } from "@tsonic/dotnet/System.Linq.js";
-import type { FieldInfo, MemberInfo, MethodInfo, PropertyInfo } from "@tsonic/dotnet/System.Reflection.js";
-import type { CancellationToken } from "@tsonic/dotnet/System.Threading.js";
-import type { Task, ValueTask } from "@tsonic/dotnet/System.Threading.Tasks.js";
+import * as System_Collections_Generic_Internal from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { IAsyncEnumerable_1, IAsyncEnumerator_1, IComparer_1, IEnumerable_1, IEqualityComparer_1, IReadOnlyDictionary_2, IReadOnlyList_1, ISet_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import * as System_Collections_Internal from "@tsonic/dotnet/System.Collections/internal/index.js";
+import type { IEnumerable, IEqualityComparer } from "@tsonic/dotnet/System.Collections/internal/index.js";
+import * as System_ComponentModel_Internal from "@tsonic/dotnet/System.ComponentModel/internal/index.js";
+import type { IListSource } from "@tsonic/dotnet/System.ComponentModel/internal/index.js";
+import type { Expression, LambdaExpression, ParameterExpression, UnaryExpression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
+import * as System_Linq_Internal from "@tsonic/dotnet/System.Linq/internal/index.js";
+import type { IQueryable, IQueryable_1 } from "@tsonic/dotnet/System.Linq/internal/index.js";
+import type { FieldInfo, MemberInfo, MethodInfo, PropertyInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
+import type { Task, Task_1, ValueTask, ValueTask_1 } from "@tsonic/dotnet/System.Threading.Tasks/internal/index.js";
+import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, EventHandler_1, Func_3, IAsyncDisposable, IDisposable, IEquatable_1, Int32, IServiceProvider, Nullable_1, Object as ClrObject, String as ClrString, Type, ValueTuple_2, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface ICollectionLoader$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_ICollectionLoader: never;
@@ -51,7 +51,7 @@ export interface ICollectionLoader_1$instance<TEntity> extends ICollectionLoader
     Load(entry: InternalEntityEntry, options: LoadOptions): void;
     LoadAsync(entry: InternalEntityEntry, options: LoadOptions, cancellationToken?: CancellationToken): Task;
     Query(entry: InternalEntityEntry): IQueryable;
-    Query(entry: InternalEntityEntry): IQueryable<TEntity>;
+    Query(entry: InternalEntityEntry): IQueryable_1<TEntity>;
 }
 
 
@@ -79,7 +79,7 @@ export type IDbContextDependencies = IDbContextDependencies$instance;
 export interface IDbContextFactorySource_1$instance<TContext extends DbContext> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextFactorySource_1: never;
 
-    readonly Factory: Func<IServiceProvider, DbContextOptions_1<TContext>, TContext>;
+    readonly Factory: Func_3<IServiceProvider, DbContextOptions_1<TContext>, TContext>;
 }
 
 
@@ -143,7 +143,7 @@ export interface IDbSetCache$instance {
 
     GetOrAddSet(source: IDbSetSource, entityTypeName: string, type: Type): unknown;
     GetOrAddSet(source: IDbSetSource, type: Type): unknown;
-    GetSets(): IEnumerable__System_Collections_Generic<unknown>;
+    GetSets(): IEnumerable_1<unknown>;
 }
 
 
@@ -172,15 +172,15 @@ export interface IEntityFinder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinder: never;
 
     Find(keyValues: unknown[]): unknown | undefined;
-    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask<unknown>;
+    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
-    FindEntry(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): InternalEntityEntry | undefined;
-    FindEntry(keyValues: IEnumerable__System_Collections_Generic<unknown>): InternalEntityEntry | undefined;
+    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
+    FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
     FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
-    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task<unknown[] | undefined>;
-    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
-    GetEntries(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
+    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
+    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;
+    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): IEnumerable_1<InternalEntityEntry>;
     Load(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions): void;
     LoadAsync(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions, cancellationToken?: CancellationToken): Task;
     Query(navigation: INavigation, entry: InternalEntityEntry): IQueryable;
@@ -194,20 +194,20 @@ export interface IEntityFinder_1$instance<TEntity> extends IEntityFinder {
 
     Find(keyValues: unknown[]): unknown | undefined;
     Find(keyValues: unknown[]): TEntity | undefined;
-    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask<TEntity>;
-    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask<unknown>;
+    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<TEntity>;
+    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
-    FindEntry(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): InternalEntityEntry | undefined;
-    FindEntry(keyValues: IEnumerable__System_Collections_Generic<unknown>): InternalEntityEntry | undefined;
+    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
+    FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
     FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
-    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task<unknown[] | undefined>;
-    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
-    GetEntries(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
+    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
+    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;
+    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): IEnumerable_1<InternalEntityEntry>;
     Load(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions): void;
     LoadAsync(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions, cancellationToken?: CancellationToken): Task;
     Query(navigation: INavigation, entry: InternalEntityEntry): IQueryable;
-    Query(navigation: INavigation, entry: InternalEntityEntry): IQueryable<TEntity>;
+    Query(navigation: INavigation, entry: InternalEntityEntry): IQueryable_1<TEntity>;
 }
 
 
@@ -236,7 +236,7 @@ export interface IInjectableService$instance {
 
     Attaching(context: DbContext, entityType: IEntityType, entity: unknown): void;
     Detaching(context: DbContext, entity: unknown): boolean;
-    Injected(context: DbContext, entity: unknown, queryTrackingBehavior: Nullable<QueryTrackingBehavior>, structuralType: ITypeBase): void;
+    Injected(context: DbContext, entity: unknown, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, structuralType: ITypeBase): void;
 }
 
 
@@ -254,7 +254,7 @@ export type IPatchServiceInjectionSite = IPatchServiceInjectionSite$instance;
 export interface IRegisteredServices$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IRegisteredServices: never;
 
-    readonly Services: ISet<Type>;
+    readonly Services: ISet_1<Type>;
 }
 
 
@@ -327,16 +327,14 @@ export interface __DbContextDependencies$views {
     As_IDbContextDependencies(): IDbContextDependencies$instance;
 }
 
-export interface DbContextDependencies$instance extends IDbContextDependencies$instance, System_Internal.IEquatable<DbContextDependencies> {}
-
 export type DbContextDependencies = DbContextDependencies$instance & __DbContextDependencies$views;
 
 
-export interface DbContextFactory_1$instance<TContext extends DbContext> {
+export interface DbContextFactory_1$instance<TContext extends DbContext> extends Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IDbContextFactory_1: never;
 
     CreateDbContext(): TContext;
-    CreateDbContextAsync(cancellationToken?: CancellationToken): Task<TContext>;
+    CreateDbContextAsync(cancellationToken?: CancellationToken): Task_1<TContext>;
 }
 
 
@@ -349,15 +347,13 @@ export interface __DbContextFactory_1$views<TContext extends DbContext> {
     As_IDbContextFactory_1(): Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext>;
 }
 
-export interface DbContextFactory_1$instance<TContext extends DbContext> extends Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext> {}
-
 export type DbContextFactory_1<TContext extends DbContext> = DbContextFactory_1$instance<TContext> & __DbContextFactory_1$views<TContext>;
 
 
-export interface DbContextFactorySource_1$instance<TContext extends DbContext> {
+export interface DbContextFactorySource_1$instance<TContext extends DbContext> extends IDbContextFactorySource_1$instance<TContext> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextFactorySource_1: never;
 
-    readonly Factory: Func<IServiceProvider, DbContextOptions_1<TContext>, TContext>;
+    readonly Factory: Func_3<IServiceProvider, DbContextOptions_1<TContext>, TContext>;
 }
 
 
@@ -370,12 +366,10 @@ export interface __DbContextFactorySource_1$views<TContext extends DbContext> {
     As_IDbContextFactorySource_1(): IDbContextFactorySource_1$instance<TContext>;
 }
 
-export interface DbContextFactorySource_1$instance<TContext extends DbContext> extends IDbContextFactorySource_1$instance<TContext> {}
-
 export type DbContextFactorySource_1<TContext extends DbContext> = DbContextFactorySource_1$instance<TContext> & __DbContextFactorySource_1$views<TContext>;
 
 
-export interface DbContextPool_1$instance<TContext extends DbContext> extends IDbContextPool_1<TContext> {
+export interface DbContextPool_1$instance<TContext extends DbContext> extends IDbContextPool_1<TContext>, System_Internal.IAsyncDisposable, System_Internal.IDisposable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextPool: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextPool_1: never;
     readonly __tsonic_iface_System_IAsyncDisposable: never;
@@ -399,8 +393,6 @@ export interface __DbContextPool_1$views<TContext extends DbContext> {
     As_IDbContextPool(): IDbContextPool$instance;
 }
 
-export interface DbContextPool_1$instance<TContext extends DbContext> extends System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
-
 export type DbContextPool_1<TContext extends DbContext> = DbContextPool_1$instance<TContext> & __DbContextPool_1$views<TContext>;
 
 
@@ -410,34 +402,34 @@ export interface DbContextPoolConfigurationSnapshot$instance {
     readonly AutoTransactionBehavior: AutoTransactionBehavior;
     readonly CascadeDeleteTiming: CascadeTiming;
     readonly DeleteOrphansTiming: CascadeTiming;
-    readonly DetectedAllChanges: EventHandler<DetectedChangesEventArgs> | undefined;
-    readonly DetectedEntityChanges: EventHandler<DetectedEntityChangesEventArgs> | undefined;
-    readonly DetectingAllChanges: EventHandler<DetectChangesEventArgs> | undefined;
-    readonly DetectingEntityChanges: EventHandler<DetectEntityChangesEventArgs> | undefined;
+    readonly DetectedAllChanges: EventHandler_1<DetectedChangesEventArgs> | undefined;
+    readonly DetectedEntityChanges: EventHandler_1<DetectedEntityChangesEventArgs> | undefined;
+    readonly DetectingAllChanges: EventHandler_1<DetectChangesEventArgs> | undefined;
+    readonly DetectingEntityChanges: EventHandler_1<DetectEntityChangesEventArgs> | undefined;
     readonly HasChangeDetectorConfiguration: boolean;
     readonly HasChangeTrackerConfiguration: boolean;
     readonly HasDatabaseConfiguration: boolean;
     readonly HasStateManagerConfiguration: boolean;
     readonly LazyLoadingEnabled: boolean;
-    readonly QueryTrackingBehavior: Nullable<QueryTrackingBehavior>;
-    readonly SaveChangesFailed: EventHandler<SaveChangesFailedEventArgs> | undefined;
-    readonly SavedChanges: EventHandler<SavedChangesEventArgs> | undefined;
-    readonly SavingChanges: EventHandler<SavingChangesEventArgs> | undefined;
-    readonly StateChanged: EventHandler<EntityStateChangedEventArgs> | undefined;
-    readonly StateChanging: EventHandler<EntityStateChangingEventArgs> | undefined;
-    readonly Tracked: EventHandler<EntityTrackedEventArgs> | undefined;
-    readonly Tracking: EventHandler<EntityTrackingEventArgs> | undefined;
+    readonly QueryTrackingBehavior: Nullable_1<QueryTrackingBehavior>;
+    readonly SaveChangesFailed: EventHandler_1<SaveChangesFailedEventArgs> | undefined;
+    readonly SavedChanges: EventHandler_1<SavedChangesEventArgs> | undefined;
+    readonly SavingChanges: EventHandler_1<SavingChangesEventArgs> | undefined;
+    readonly StateChanged: EventHandler_1<EntityStateChangedEventArgs> | undefined;
+    readonly StateChanging: EventHandler_1<EntityStateChangingEventArgs> | undefined;
+    readonly Tracked: EventHandler_1<EntityTrackedEventArgs> | undefined;
+    readonly Tracking: EventHandler_1<EntityTrackingEventArgs> | undefined;
 }
 
 
 export const DbContextPoolConfigurationSnapshot: {
-    new(hasDatabaseConfiguration: boolean, hasStateManagerConfiguration: boolean, hasChangeTrackerConfiguration: boolean, hasChangeDetectorConfiguration: boolean, autoDetectChangesEnabled: boolean, queryTrackingBehavior: Nullable<QueryTrackingBehavior>, autoTransactionBehavior: AutoTransactionBehavior, autoSavepointsEnabled: boolean, lazyLoadingEnabled: boolean, cascadeDeleteTiming: CascadeTiming, deleteOrphansTiming: CascadeTiming, savingChanges: EventHandler<SavingChangesEventArgs>, savedChanges: EventHandler<SavedChangesEventArgs>, saveChangesFailed: EventHandler<SaveChangesFailedEventArgs>, tracking: EventHandler<EntityTrackingEventArgs>, tracked: EventHandler<EntityTrackedEventArgs>, stateChanging: EventHandler<EntityStateChangingEventArgs>, stateChanged: EventHandler<EntityStateChangedEventArgs>, detectingAllChanges: EventHandler<DetectChangesEventArgs>, detectedAllChanges: EventHandler<DetectedChangesEventArgs>, detectingEntityChanges: EventHandler<DetectEntityChangesEventArgs>, detectedEntityChanges: EventHandler<DetectedEntityChangesEventArgs>): DbContextPoolConfigurationSnapshot;
+    new(hasDatabaseConfiguration: boolean, hasStateManagerConfiguration: boolean, hasChangeTrackerConfiguration: boolean, hasChangeDetectorConfiguration: boolean, autoDetectChangesEnabled: boolean, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, autoTransactionBehavior: AutoTransactionBehavior, autoSavepointsEnabled: boolean, lazyLoadingEnabled: boolean, cascadeDeleteTiming: CascadeTiming, deleteOrphansTiming: CascadeTiming, savingChanges: EventHandler_1<SavingChangesEventArgs>, savedChanges: EventHandler_1<SavedChangesEventArgs>, saveChangesFailed: EventHandler_1<SaveChangesFailedEventArgs>, tracking: EventHandler_1<EntityTrackingEventArgs>, tracked: EventHandler_1<EntityTrackedEventArgs>, stateChanging: EventHandler_1<EntityStateChangingEventArgs>, stateChanged: EventHandler_1<EntityStateChangedEventArgs>, detectingAllChanges: EventHandler_1<DetectChangesEventArgs>, detectedAllChanges: EventHandler_1<DetectedChangesEventArgs>, detectingEntityChanges: EventHandler_1<DetectEntityChangesEventArgs>, detectedEntityChanges: EventHandler_1<DetectedEntityChangesEventArgs>): DbContextPoolConfigurationSnapshot;
 };
 
 
 export type DbContextPoolConfigurationSnapshot = DbContextPoolConfigurationSnapshot$instance;
 
-export interface DbContextServices$instance {
+export interface DbContextServices$instance extends IDbContextServices$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextServices: never;
 
     readonly ContextOptions: DbContextOptions;
@@ -458,12 +450,10 @@ export interface __DbContextServices$views {
     As_IDbContextServices(): IDbContextServices$instance;
 }
 
-export interface DbContextServices$instance extends IDbContextServices$instance {}
-
 export type DbContextServices = DbContextServices$instance & __DbContextServices$views;
 
 
-export interface DbSetInitializer$instance {
+export interface DbSetInitializer$instance extends IDbSetInitializer$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbSetInitializer: never;
 
     InitializeSets(context: DbContext): void;
@@ -479,12 +469,10 @@ export interface __DbSetInitializer$views {
     As_IDbSetInitializer(): IDbSetInitializer$instance;
 }
 
-export interface DbSetInitializer$instance extends IDbSetInitializer$instance {}
-
 export type DbSetInitializer = DbSetInitializer$instance & __DbSetInitializer$views;
 
 
-export interface DbSetSource$instance {
+export interface DbSetSource$instance extends IDbSetSource$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbSetSource: never;
 
     Create(context: DbContext, type: Type): unknown;
@@ -501,8 +489,6 @@ export interface __DbSetSource$views {
     As_IDbSetSource(): IDbSetSource$instance;
 }
 
-export interface DbSetSource$instance extends IDbSetSource$instance {}
-
 export type DbSetSource = DbSetSource$instance & __DbSetSource$views;
 
 
@@ -511,18 +497,18 @@ export interface EntityFinder_1$instance<TEntity> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinder_1: never;
 
     Find(keyValues: unknown[]): TEntity | undefined;
-    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask<TEntity>;
+    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<TEntity>;
     FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
-    FindEntry(keyValues: IEnumerable__System_Collections_Generic<unknown>): InternalEntityEntry | undefined;
-    FindEntry(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): InternalEntityEntry | undefined;
+    FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
+    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
     GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
-    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task<unknown[] | undefined>;
-    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
-    GetEntries(properties: IEnumerable__System_Collections_Generic<IProperty>, propertyValues: IEnumerable__System_Collections_Generic<unknown>): IEnumerable__System_Collections_Generic<InternalEntityEntry>;
+    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
+    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;
+    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): IEnumerable_1<InternalEntityEntry>;
     Load(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions): void;
     LoadAsync(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions, cancellationToken?: CancellationToken): Task;
-    Query(navigation: INavigation, entry: InternalEntityEntry): IQueryable<TEntity>;
+    Query(navigation: INavigation, entry: InternalEntityEntry): IQueryable_1<TEntity>;
 }
 
 
@@ -539,7 +525,7 @@ export interface __EntityFinder_1$views<TEntity> {
 export type EntityFinder_1<TEntity> = EntityFinder_1$instance<TEntity> & __EntityFinder_1$views<TEntity>;
 
 
-export interface EntityFinderCollectionLoaderAdapter$instance {
+export interface EntityFinderCollectionLoaderAdapter$instance extends ICollectionLoader$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_ICollectionLoader: never;
 
     Load(entry: InternalEntityEntry, options: LoadOptions): void;
@@ -557,12 +543,10 @@ export interface __EntityFinderCollectionLoaderAdapter$views {
     As_ICollectionLoader(): ICollectionLoader$instance;
 }
 
-export interface EntityFinderCollectionLoaderAdapter$instance extends ICollectionLoader$instance {}
-
 export type EntityFinderCollectionLoaderAdapter = EntityFinderCollectionLoaderAdapter$instance & __EntityFinderCollectionLoaderAdapter$views;
 
 
-export interface EntityFinderFactory$instance {
+export interface EntityFinderFactory$instance extends IEntityFinderFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinderFactory: never;
 
     Create(type: IEntityType): IEntityFinder;
@@ -578,12 +562,10 @@ export interface __EntityFinderFactory$views {
     As_IEntityFinderFactory(): IEntityFinderFactory$instance;
 }
 
-export interface EntityFinderFactory$instance extends IEntityFinderFactory$instance {}
-
 export type EntityFinderFactory = EntityFinderFactory$instance & __EntityFinderFactory$views;
 
 
-export interface EntityFinderSource$instance {
+export interface EntityFinderSource$instance extends IEntityFinderSource$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinderSource: never;
 
     Create(stateManager: IStateManager, setSource: IDbSetSource, setCache: IDbSetCache, type: IEntityType): IEntityFinder;
@@ -599,12 +581,10 @@ export interface __EntityFinderSource$views {
     As_IEntityFinderSource(): IEntityFinderSource$instance;
 }
 
-export interface EntityFinderSource$instance extends IEntityFinderSource$instance {}
-
 export type EntityFinderSource = EntityFinderSource$instance & __EntityFinderSource$views;
 
 
-export interface InternalDbSet_1$instance<TEntity> extends DbSet_1<TEntity> {
+export interface InternalDbSet_1$instance<TEntity> extends DbSet_1<TEntity>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance, System_Collections_Generic_Internal.IAsyncEnumerable_1<TEntity>, System_Collections_Generic_Internal.IEnumerable_1<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable_1<TEntity> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -618,36 +598,36 @@ export interface InternalDbSet_1$instance<TEntity> extends DbSet_1<TEntity> {
     readonly Local: LocalView_1<TEntity>;
     Add(entity: TEntity): EntityEntry_1<TEntity>;
     Add(entity: TEntity): EntityEntry_1<TEntity>;
-    AddAsync(entity: TEntity, cancellationToken?: CancellationToken): ValueTask<EntityEntry_1<TEntity>>;
-    AddAsync(entity: TEntity, cancellationToken?: CancellationToken): ValueTask<EntityEntry_1<TEntity>>;
+    AddAsync(entity: TEntity, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry_1<TEntity>>;
+    AddAsync(entity: TEntity, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry_1<TEntity>>;
     AddRange(...entities: TEntity[]): void;
-    AddRange(entities: IEnumerable__System_Collections_Generic<TEntity>): void;
-    AddRange(entities: IEnumerable__System_Collections_Generic<TEntity>): void;
+    AddRange(entities: IEnumerable_1<TEntity>): void;
+    AddRange(entities: IEnumerable_1<TEntity>): void;
     AddRangeAsync(...entities: TEntity[]): Task;
-    AddRangeAsync(entities: IEnumerable__System_Collections_Generic<TEntity>, cancellationToken?: CancellationToken): Task;
-    AddRangeAsync(entities: IEnumerable__System_Collections_Generic<TEntity>, cancellationToken?: CancellationToken): Task;
+    AddRangeAsync(entities: IEnumerable_1<TEntity>, cancellationToken?: CancellationToken): Task;
+    AddRangeAsync(entities: IEnumerable_1<TEntity>, cancellationToken?: CancellationToken): Task;
     Attach(entity: TEntity): EntityEntry_1<TEntity>;
     Attach(entity: TEntity): EntityEntry_1<TEntity>;
     AttachRange(...entities: TEntity[]): void;
-    AttachRange(entities: IEnumerable__System_Collections_Generic<TEntity>): void;
-    AttachRange(entities: IEnumerable__System_Collections_Generic<TEntity>): void;
+    AttachRange(entities: IEnumerable_1<TEntity>): void;
+    AttachRange(entities: IEnumerable_1<TEntity>): void;
     Entry(entity: TEntity): EntityEntry_1<TEntity>;
     Entry(entity: TEntity): EntityEntry_1<TEntity>;
     Find(...keyValues: unknown[]): TEntity | undefined;
-    FindAsync(...keyValues: unknown[]): ValueTask<TEntity>;
-    FindAsync(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask<TEntity>;
-    FindAsync(...keyValues: unknown[]): ValueTask<TEntity>;
-    FindAsync(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask<TEntity>;
+    FindAsync(...keyValues: unknown[]): ValueTask_1<TEntity>;
+    FindAsync(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask_1<TEntity>;
+    FindAsync(...keyValues: unknown[]): ValueTask_1<TEntity>;
+    FindAsync(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask_1<TEntity>;
     Remove(entity: TEntity): EntityEntry_1<TEntity>;
     Remove(entity: TEntity): EntityEntry_1<TEntity>;
     RemoveRange(...entities: TEntity[]): void;
-    RemoveRange(entities: IEnumerable__System_Collections_Generic<TEntity>): void;
-    RemoveRange(entities: IEnumerable__System_Collections_Generic<TEntity>): void;
+    RemoveRange(entities: IEnumerable_1<TEntity>): void;
+    RemoveRange(entities: IEnumerable_1<TEntity>): void;
     Update(entity: TEntity): EntityEntry_1<TEntity>;
     Update(entity: TEntity): EntityEntry_1<TEntity>;
     UpdateRange(...entities: TEntity[]): void;
-    UpdateRange(entities: IEnumerable__System_Collections_Generic<TEntity>): void;
-    UpdateRange(entities: IEnumerable__System_Collections_Generic<TEntity>): void;
+    UpdateRange(entities: IEnumerable_1<TEntity>): void;
+    UpdateRange(entities: IEnumerable_1<TEntity>): void;
 }
 
 
@@ -661,8 +641,6 @@ export interface __InternalDbSet_1$views<TEntity> {
     As_IResettableService(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance;
 }
 
-export interface InternalDbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance, System_Collections_Generic_Internal.IAsyncEnumerable<TEntity>, System_Collections_Generic_Internal.IEnumerable<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable<TEntity> {}
-
 export type InternalDbSet_1<TEntity> = InternalDbSet_1$instance<TEntity> & __InternalDbSet_1$views<TEntity>;
 
 
@@ -672,7 +650,7 @@ export interface ManyToManyLoader_2$instance<TEntity, TSourceEntity> {
 
     Load(entry: InternalEntityEntry, options: LoadOptions): void;
     LoadAsync(entry: InternalEntityEntry, options: LoadOptions, cancellationToken?: CancellationToken): Task;
-    Query(entry: InternalEntityEntry): IQueryable<TEntity>;
+    Query(entry: InternalEntityEntry): IQueryable_1<TEntity>;
 }
 
 
@@ -710,21 +688,21 @@ export interface NullableComparerAdapter_1$instance<TNullableKey> {
 
 
 export const NullableComparerAdapter_1: {
-    Wrap<TNullableKey>(comparer: IEqualityComparer, valueConverter?: ValueConverter): IEqualityComparer__System_Collections_Generic<TNullableKey>;
+    Wrap<TNullableKey>(comparer: IEqualityComparer, valueConverter?: ValueConverter): IEqualityComparer_1<TNullableKey>;
 };
 
 
 export type NullableComparerAdapter_1<TNullableKey> = NullableComparerAdapter_1$instance<TNullableKey>;
 
-export interface RegisteredServices$instance {
+export interface RegisteredServices$instance extends IRegisteredServices$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IRegisteredServices: never;
 
-    readonly Services: ISet<Type>;
+    readonly Services: ISet_1<Type>;
 }
 
 
 export const RegisteredServices: {
-    new(services: IEnumerable__System_Collections_Generic<Type>): RegisteredServices;
+    new(services: IEnumerable_1<Type>): RegisteredServices;
 };
 
 
@@ -732,12 +710,10 @@ export interface __RegisteredServices$views {
     As_IRegisteredServices(): IRegisteredServices$instance;
 }
 
-export interface RegisteredServices$instance extends IRegisteredServices$instance {}
-
 export type RegisteredServices = RegisteredServices$instance & __RegisteredServices$views;
 
 
-export interface ScopedDbContextLease_1$instance<TContext extends DbContext> {
+export interface ScopedDbContextLease_1$instance<TContext extends DbContext> extends IScopedDbContextLease_1$instance<TContext>, System_Internal.IAsyncDisposable, System_Internal.IDisposable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IScopedDbContextLease_1: never;
     readonly __tsonic_iface_System_IAsyncDisposable: never;
     readonly __tsonic_iface_System_IDisposable: never;
@@ -754,8 +730,6 @@ export const ScopedDbContextLease_1: {
 export interface __ScopedDbContextLease_1$views<TContext extends DbContext> {
     As_IScopedDbContextLease_1(): IScopedDbContextLease_1$instance<TContext>;
 }
-
-export interface ScopedDbContextLease_1$instance<TContext extends DbContext> extends IScopedDbContextLease_1$instance<TContext>, System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
 
 export type ScopedDbContextLease_1<TContext extends DbContext> = ScopedDbContextLease_1$instance<TContext> & __ScopedDbContextLease_1$views<TContext>;
 
@@ -787,7 +761,7 @@ export const ServiceProviderCache: {
 
 export type ServiceProviderCache = ServiceProviderCache$instance;
 
-export interface SingletonOptionsInitializer$instance {
+export interface SingletonOptionsInitializer$instance extends ISingletonOptionsInitializer$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_ISingletonOptionsInitializer: never;
 
     EnsureInitialized(serviceProvider: IServiceProvider, options: IDbContextOptions): void;
@@ -802,8 +776,6 @@ export const SingletonOptionsInitializer: {
 export interface __SingletonOptionsInitializer$views {
     As_ISingletonOptionsInitializer(): ISingletonOptionsInitializer$instance;
 }
-
-export interface SingletonOptionsInitializer$instance extends ISingletonOptionsInitializer$instance {}
 
 export type SingletonOptionsInitializer = SingletonOptionsInitializer$instance & __SingletonOptionsInitializer$views;
 
@@ -848,12 +820,12 @@ export abstract class EntityTypeExtensions$instance {
 export type EntityTypeExtensions = EntityTypeExtensions$instance;
 
 export abstract class ExpressionExtensions$instance {
-    static BuildPredicate(keyProperties: IReadOnlyList<IReadOnlyProperty>, keyValues: ValueBuffer, entityParameter: ParameterExpression): Expression;
+    static BuildPredicate(keyProperties: IReadOnlyList_1<IReadOnlyProperty>, keyValues: ValueBuffer, entityParameter: ParameterExpression): Expression;
     static GetLambdaOrNull(expression: Expression): LambdaExpression | undefined;
     static IsLogicalNot(sqlUnaryExpression: UnaryExpression): boolean;
     static IsLogicalOperation(expression: Expression): boolean;
     static MakeHasSentinel(currentValueExpression: Expression, propertyBase: IReadOnlyPropertyBase): Expression;
-    static MatchMemberAccessList<TMemberInfo extends MemberInfo>(lambdaExpression: LambdaExpression, memberMatcher: Func<Expression, Expression, TMemberInfo>): IReadOnlyList<TMemberInfo> | undefined;
+    static MatchMemberAccessList<TMemberInfo extends MemberInfo>(lambdaExpression: LambdaExpression, memberMatcher: Func_3<Expression, Expression, TMemberInfo>): IReadOnlyList_1<TMemberInfo> | undefined;
     static MatchSimpleMemberAccess<TMemberInfo extends MemberInfo>(parameterExpression: Expression, memberAccessExpression: Expression): TMemberInfo | undefined;
     static RemoveTypeAs(expression: Expression): Expression | undefined;
 }
@@ -890,8 +862,8 @@ export abstract class RelationalModelExtensions$instance {
 export type RelationalModelExtensions = RelationalModelExtensions$instance;
 
 export abstract class TupleExtensions$instance {
-    static FormatTable(table: ValueTuple<System_Internal.String, System_Internal.String>): string;
-    static FormatTables(tables: IEnumerable__System_Collections_Generic<ValueTuple<System_Internal.String, System_Internal.String>>): string;
+    static FormatTable(table: ValueTuple_2<System_Internal.String, System_Internal.String>): string;
+    static FormatTables(tables: IEnumerable_1<ValueTuple_2<System_Internal.String, System_Internal.String>>): string;
 }
 
 
@@ -901,8 +873,8 @@ export abstract class TypeBaseExtensions$instance {
     static DisplayName(entityType: TypeBase): string;
     static GetComplexProperty(type: ITypeBase, name: string): IComplexProperty;
     static GetOwnedName(type: IReadOnlyTypeBase, simpleName: string, ownershipNavigation: string): string;
-    static GetRuntimeFields(type: IReadOnlyTypeBase): IReadOnlyDictionary<System_Internal.String, FieldInfo>;
-    static GetRuntimeProperties(type: IReadOnlyTypeBase): IReadOnlyDictionary<System_Internal.String, PropertyInfo>;
+    static GetRuntimeFields(type: IReadOnlyTypeBase): IReadOnlyDictionary_2<System_Internal.String, FieldInfo>;
+    static GetRuntimeProperties(type: IReadOnlyTypeBase): IReadOnlyDictionary_2<System_Internal.String, PropertyInfo>;
     static ShortName(entityType: TypeBase): string;
 }
 

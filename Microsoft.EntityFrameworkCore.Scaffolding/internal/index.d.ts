@@ -8,10 +8,10 @@ import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint12
 // Import types from other namespaces
 import type { MethodCallCodeFragment } from "../../Microsoft.EntityFrameworkCore.Design/internal/index.js";
 import type { DatabaseModel } from "../../Microsoft.EntityFrameworkCore.Scaffolding.Metadata/internal/index.js";
-import type { IEnumerable } from "@tsonic/dotnet/System.Collections.Generic.js";
-import type { DbConnection } from "@tsonic/dotnet/System.Data.Common.js";
-import * as System_Internal from "@tsonic/dotnet/System.js";
-import type { Boolean as ClrBoolean, IEquatable, Int32, Object as ClrObject, String as ClrString } from "@tsonic/dotnet/System.js";
+import type { IEnumerable_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
+import type { DbConnection } from "@tsonic/dotnet/System.Data.Common/internal/index.js";
+import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, IEquatable_1, Int32, Object as ClrObject, String as ClrString } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IDatabaseModelFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IDatabaseModelFactory: never;
@@ -63,19 +63,19 @@ export type DatabaseModelFactory = DatabaseModelFactory$instance & __DatabaseMod
 
 
 export interface DatabaseModelFactoryOptions$instance {
-    readonly Schemas: IEnumerable<System_Internal.String>;
-    readonly Tables: IEnumerable<System_Internal.String>;
+    readonly Schemas: IEnumerable_1<System_Internal.String>;
+    readonly Tables: IEnumerable_1<System_Internal.String>;
 }
 
 
 export const DatabaseModelFactoryOptions: {
-    new(tables: IEnumerable<System_Internal.String>, schemas: IEnumerable<System_Internal.String>): DatabaseModelFactoryOptions;
+    new(tables: IEnumerable_1<System_Internal.String>, schemas: IEnumerable_1<System_Internal.String>): DatabaseModelFactoryOptions;
 };
 
 
 export type DatabaseModelFactoryOptions = DatabaseModelFactoryOptions$instance;
 
-export interface ProviderCodeGenerator$instance {
+export interface ProviderCodeGenerator$instance extends IProviderConfigurationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderConfigurationCodeGenerator: never;
 
     readonly Dependencies: ProviderCodeGeneratorDependencies;
@@ -94,15 +94,13 @@ export interface __ProviderCodeGenerator$views {
     As_IProviderConfigurationCodeGenerator(): IProviderConfigurationCodeGenerator$instance;
 }
 
-export interface ProviderCodeGenerator$instance extends IProviderConfigurationCodeGenerator$instance {}
-
 export type ProviderCodeGenerator = ProviderCodeGenerator$instance & __ProviderCodeGenerator$views;
 
 
 export interface ProviderCodeGeneratorDependencies$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    Plugins: IEnumerable<IProviderCodeGeneratorPlugin>;
+    Plugins: IEnumerable_1<IProviderCodeGeneratorPlugin>;
     _Clone_$(): ProviderCodeGeneratorDependencies;
     Equals(obj: unknown): boolean;
     Equals(other: ProviderCodeGeneratorDependencies): boolean;
@@ -112,13 +110,13 @@ export interface ProviderCodeGeneratorDependencies$instance {
 
 
 export const ProviderCodeGeneratorDependencies: {
-    new(plugins: IEnumerable<IProviderCodeGeneratorPlugin>): ProviderCodeGeneratorDependencies;
+    new(plugins: IEnumerable_1<IProviderCodeGeneratorPlugin>): ProviderCodeGeneratorDependencies;
 };
 
 
 export type ProviderCodeGeneratorDependencies = ProviderCodeGeneratorDependencies$instance;
 
-export interface ProviderCodeGeneratorPlugin$instance {
+export interface ProviderCodeGeneratorPlugin$instance extends IProviderCodeGeneratorPlugin$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderCodeGeneratorPlugin: never;
 
     GenerateContextOptions(): MethodCallCodeFragment | undefined;
@@ -134,8 +132,6 @@ export const ProviderCodeGeneratorPlugin: {
 export interface __ProviderCodeGeneratorPlugin$views {
     As_IProviderCodeGeneratorPlugin(): IProviderCodeGeneratorPlugin$instance;
 }
-
-export interface ProviderCodeGeneratorPlugin$instance extends IProviderCodeGeneratorPlugin$instance {}
 
 export type ProviderCodeGeneratorPlugin = ProviderCodeGeneratorPlugin$instance & __ProviderCodeGeneratorPlugin$views;
 
