@@ -61,6 +61,8 @@ export interface INamedConnectionStringResolver$instance {
 export type INamedConnectionStringResolver = INamedConnectionStringResolver$instance;
 
 export interface CompositeRelationalParameter$instance extends RelationalParameterBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_CompositeRelationalParameter: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
     readonly RelationalParameters: IReadOnlyList_1<IRelationalParameter>;
@@ -82,6 +84,8 @@ export type CompositeRelationalParameter = CompositeRelationalParameter$instance
 
 
 export interface DatabaseFacadeDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_DatabaseFacadeDependencies: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseFacadeDependencies: never;
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -119,6 +123,8 @@ export type DatabaseFacadeDependencies = DatabaseFacadeDependencies$instance & _
 
 
 export interface ExceptionDetector$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_ExceptionDetector: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExceptionDetector: never;
 
     IsCancellation(exception: Exception, cancellationToken: CancellationToken): boolean;
@@ -138,6 +144,8 @@ export type ExceptionDetector = ExceptionDetector$instance & __ExceptionDetector
 
 
 export interface ExecutionStrategyFactory$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IExecutionStrategyFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_ExecutionStrategyFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategyFactory: never;
 
     readonly Dependencies: ExecutionStrategyDependencies;
@@ -158,6 +166,8 @@ export type ExecutionStrategyFactory = ExecutionStrategyFactory$instance & __Exe
 
 
 export interface NamedConnectionStringResolver$instance extends NamedConnectionStringResolverBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_NamedConnectionStringResolver: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_INamedConnectionStringResolver: never;
 
     readonly ApplicationServiceProvider: IServiceProvider | undefined;
@@ -178,6 +188,8 @@ export type NamedConnectionStringResolver = NamedConnectionStringResolver$instan
 
 
 export interface NamedConnectionStringResolverBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_NamedConnectionStringResolverBase: never;
+
     readonly ApplicationServiceProvider: IServiceProvider | undefined;
     ResolveConnectionString(connectionString: string): string;
 }
@@ -190,6 +202,8 @@ export const NamedConnectionStringResolverBase: (abstract new() => NamedConnecti
 export type NamedConnectionStringResolverBase = NamedConnectionStringResolverBase$instance;
 
 export interface NullTypeMapping$instance extends RelationalTypeMapping {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_NullTypeMapping: never;
+
     Clone(parameters: unknown): RelationalTypeMapping;
     Clone(parameters: unknown): CoreTypeMapping;
     Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
@@ -206,6 +220,8 @@ export const NullTypeMapping: {
 export type NullTypeMapping = NullTypeMapping$instance;
 
 export interface RawRelationalParameter$instance extends RelationalParameterBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_RawRelationalParameter: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
     AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
@@ -227,6 +243,8 @@ export type RawRelationalParameter = RawRelationalParameter$instance & __RawRela
 
 
 export interface RawSqlCommandBuilder$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IRawSqlCommandBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_RawSqlCommandBuilder: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRawSqlCommandBuilder: never;
 
     Build(sql: string): IRelationalCommand;
@@ -248,6 +266,8 @@ export type RawSqlCommandBuilder = RawSqlCommandBuilder$instance & __RawSqlComma
 
 
 export interface RelationalDatabaseFacadeDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_RelationalDatabaseFacadeDependencies: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseFacadeDependencies: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalDatabaseFacadeDependencies: never;
     readonly __tsonic_iface_System_IEquatable_1: never;
@@ -289,6 +309,8 @@ export type RelationalDatabaseFacadeDependencies = RelationalDatabaseFacadeDepen
 
 
 export interface RelationalParameterBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_RelationalParameterBase: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
     readonly InvariantName: string;
@@ -309,6 +331,8 @@ export type RelationalParameterBase = RelationalParameterBase$instance & __Relat
 
 
 export interface TypeMappedRelationalParameter$instance extends RelationalParameterBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_TypeMappedRelationalParameter: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
     readonly Direction: ParameterDirection;

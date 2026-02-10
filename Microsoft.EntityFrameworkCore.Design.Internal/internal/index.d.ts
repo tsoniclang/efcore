@@ -47,6 +47,8 @@ export interface ICSharpRuntimeAnnotationCodeGenerator$instance {
 export type ICSharpRuntimeAnnotationCodeGenerator = ICSharpRuntimeAnnotationCodeGenerator$instance;
 
 export interface QualifiedName$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_Internal_QualifiedName: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     Name: string;
@@ -67,6 +69,8 @@ export const QualifiedName: {
 export type QualifiedName = QualifiedName$instance;
 
 export interface CSharpRuntimeAnnotationCodeGenerator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_Internal_CSharpRuntimeAnnotationCodeGenerator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
 
     readonly Dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies;
@@ -111,6 +115,8 @@ export type CSharpRuntimeAnnotationCodeGenerator = CSharpRuntimeAnnotationCodeGe
 
 
 export interface CSharpRuntimeAnnotationCodeGeneratorDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_Internal_CSharpRuntimeAnnotationCodeGeneratorDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     CSharpHelper: ICSharpHelper;
@@ -130,6 +136,8 @@ export const CSharpRuntimeAnnotationCodeGeneratorDependencies: {
 export type CSharpRuntimeAnnotationCodeGeneratorDependencies = CSharpRuntimeAnnotationCodeGeneratorDependencies$instance;
 
 export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_Internal_CSharpRuntimeAnnotationCodeGeneratorParameters: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     Annotations: IDictionary_2<System_Internal.String, unknown | undefined>;
@@ -161,6 +169,8 @@ export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
 export type CSharpRuntimeAnnotationCodeGeneratorParameters = CSharpRuntimeAnnotationCodeGeneratorParameters$instance;
 
 export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends CSharpRuntimeAnnotationCodeGenerator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_Internal_RelationalCSharpRuntimeAnnotationCodeGenerator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
 
     readonly RelationalDependencies: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
@@ -230,6 +240,8 @@ export type RelationalCSharpRuntimeAnnotationCodeGenerator = RelationalCSharpRun
 
 
 export interface RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_Internal_RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;

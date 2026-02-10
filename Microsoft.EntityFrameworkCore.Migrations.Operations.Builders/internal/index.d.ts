@@ -18,6 +18,8 @@ import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Boolean as ClrBoolean, Func_2, Int32, Nullable_1, Object as ClrObject, String as ClrString } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface AlterOperationBuilder_1$instance<TOperation extends MigrationOperation & IAlterMigrationOperation> extends OperationBuilder_1$instance<TOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_AlterOperationBuilder_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
@@ -38,6 +40,8 @@ export type AlterOperationBuilder_1<TOperation extends MigrationOperation & IAlt
 
 
 export interface ColumnsBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_ColumnsBuilder: never;
+
     Column<T>(type?: string, unicode?: Nullable_1<System_Internal.Boolean>, maxLength?: Nullable_1<System_Internal.Int32>, rowVersion?: boolean, name?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, fixedLength?: Nullable_1<System_Internal.Boolean>, comment?: string, collation?: string, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>, stored?: Nullable_1<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
@@ -53,6 +57,8 @@ export const ColumnsBuilder: {
 export type ColumnsBuilder = ColumnsBuilder$instance;
 
 export interface CreateTableBuilder_1$instance<TColumns> extends OperationBuilder_1$instance<CreateTableOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<CreateTableOperation> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_CreateTableBuilder_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Annotation(name: string, value: unknown): OperationBuilder_1<CreateTableOperation>;
@@ -77,6 +83,8 @@ export type CreateTableBuilder_1<TColumns> = CreateTableBuilder_1$instance<TColu
 
 
 export interface OperationBuilder_1$instance<TOperation extends MigrationOperation> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_OperationBuilder_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Operation: TOperation;

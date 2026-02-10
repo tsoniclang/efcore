@@ -142,6 +142,8 @@ export interface IEntityTypeConfiguration_1$instance<TEntity> {
 export type IEntityTypeConfiguration_1<TEntity> = IEntityTypeConfiguration_1$instance<TEntity>;
 
 export interface DbContextId$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextId: never;
+
     readonly InstanceId: Guid;
     readonly Lease: int;
     Equals(other: DbContextId): boolean;
@@ -159,6 +161,8 @@ export const DbContextId: {
 export type DbContextId = DbContextId$instance;
 
 export interface BackingFieldAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_BackingFieldAttribute: never;
+
     readonly Name: string;
 }
 
@@ -171,6 +175,8 @@ export const BackingFieldAttribute: {
 export type BackingFieldAttribute = BackingFieldAttribute$instance;
 
 export interface CommentAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_CommentAttribute: never;
+
     readonly Comment: string;
 }
 
@@ -183,6 +189,8 @@ export const CommentAttribute: {
 export type CommentAttribute = CommentAttribute$instance;
 
 export interface DbContext$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextDependencies: never;
@@ -258,6 +266,8 @@ export type DbContext = DbContext$instance & __DbContext$views;
 
 
 export interface DbContextOptions$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptions$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptions: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
 
     readonly ContextType: Type;
@@ -286,6 +296,8 @@ export type DbContextOptions = DbContextOptions$instance & __DbContextOptions$vi
 
 
 export interface DbContextOptions_1$instance<TContext extends DbContext> extends DbContextOptions$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptions_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
 
     readonly ContextType: Type;
@@ -308,6 +320,8 @@ export type DbContextOptions_1<TContext extends DbContext> = DbContextOptions_1$
 
 
 export interface DbContextOptionsBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptionsBuilder: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
     readonly IsConfigured: boolean;
@@ -356,6 +370,8 @@ export type DbContextOptionsBuilder = DbContextOptionsBuilder$instance & __DbCon
 
 
 export interface DbContextOptionsBuilder_1$instance<TContext extends DbContext> extends DbContextOptionsBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptionsBuilder_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
     AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder_1<TContext>;
@@ -404,6 +420,8 @@ export type DbContextOptionsBuilder_1<TContext extends DbContext> = DbContextOpt
 
 
 export interface DbFunctionAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbFunctionAttribute: never;
+
     IsBuiltIn: boolean;
     IsNullable: boolean;
     readonly IsNullableHasValue: boolean;
@@ -423,6 +441,8 @@ export const DbFunctionAttribute: {
 export type DbFunctionAttribute = DbFunctionAttribute$instance;
 
 export interface DbFunctions$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbFunctions: never;
+
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
@@ -436,6 +456,8 @@ export const DbFunctions: {
 export type DbFunctions = DbFunctions$instance;
 
 export interface DbLoggerCategory_ChangeTracking$instance extends LoggerCategory_1<DbLoggerCategory_ChangeTracking> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_ChangeTracking: never;
+
 }
 
 
@@ -447,6 +469,8 @@ export const DbLoggerCategory_ChangeTracking: {
 export type DbLoggerCategory_ChangeTracking = DbLoggerCategory_ChangeTracking$instance;
 
 export interface DbLoggerCategory_Database$instance extends LoggerCategory_1<DbLoggerCategory_Database> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Database: never;
+
 }
 
 
@@ -458,6 +482,8 @@ export const DbLoggerCategory_Database: {
 export type DbLoggerCategory_Database = DbLoggerCategory_Database$instance;
 
 export interface DbLoggerCategory_Database_Command$instance extends LoggerCategory_1<DbLoggerCategory_Database_Command> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Database_Command: never;
+
 }
 
 
@@ -469,6 +495,8 @@ export const DbLoggerCategory_Database_Command: {
 export type DbLoggerCategory_Database_Command = DbLoggerCategory_Database_Command$instance;
 
 export interface DbLoggerCategory_Database_Connection$instance extends LoggerCategory_1<DbLoggerCategory_Database_Connection> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Database_Connection: never;
+
 }
 
 
@@ -480,6 +508,8 @@ export const DbLoggerCategory_Database_Connection: {
 export type DbLoggerCategory_Database_Connection = DbLoggerCategory_Database_Connection$instance;
 
 export interface DbLoggerCategory_Database_Transaction$instance extends LoggerCategory_1<DbLoggerCategory_Database_Transaction> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Database_Transaction: never;
+
 }
 
 
@@ -491,6 +521,8 @@ export const DbLoggerCategory_Database_Transaction: {
 export type DbLoggerCategory_Database_Transaction = DbLoggerCategory_Database_Transaction$instance;
 
 export interface DbLoggerCategory_Infrastructure$instance extends LoggerCategory_1<DbLoggerCategory_Infrastructure> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Infrastructure: never;
+
 }
 
 
@@ -502,6 +534,8 @@ export const DbLoggerCategory_Infrastructure: {
 export type DbLoggerCategory_Infrastructure = DbLoggerCategory_Infrastructure$instance;
 
 export interface DbLoggerCategory_Migrations$instance extends LoggerCategory_1<DbLoggerCategory_Migrations> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Migrations: never;
+
 }
 
 
@@ -513,6 +547,8 @@ export const DbLoggerCategory_Migrations: {
 export type DbLoggerCategory_Migrations = DbLoggerCategory_Migrations$instance;
 
 export interface DbLoggerCategory_Model$instance extends LoggerCategory_1<DbLoggerCategory_Model> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Model: never;
+
 }
 
 
@@ -524,6 +560,8 @@ export const DbLoggerCategory_Model: {
 export type DbLoggerCategory_Model = DbLoggerCategory_Model$instance;
 
 export interface DbLoggerCategory_Model_Validation$instance extends LoggerCategory_1<DbLoggerCategory_Model_Validation> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Model_Validation: never;
+
 }
 
 
@@ -535,6 +573,8 @@ export const DbLoggerCategory_Model_Validation: {
 export type DbLoggerCategory_Model_Validation = DbLoggerCategory_Model_Validation$instance;
 
 export interface DbLoggerCategory_Query$instance extends LoggerCategory_1<DbLoggerCategory_Query> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Query: never;
+
 }
 
 
@@ -546,6 +586,8 @@ export const DbLoggerCategory_Query: {
 export type DbLoggerCategory_Query = DbLoggerCategory_Query$instance;
 
 export interface DbLoggerCategory_Scaffolding$instance extends LoggerCategory_1<DbLoggerCategory_Scaffolding> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Scaffolding: never;
+
 }
 
 
@@ -557,6 +599,8 @@ export const DbLoggerCategory_Scaffolding: {
 export type DbLoggerCategory_Scaffolding = DbLoggerCategory_Scaffolding$instance;
 
 export interface DbLoggerCategory_Update$instance extends LoggerCategory_1<DbLoggerCategory_Update> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Update: never;
+
 }
 
 
@@ -568,6 +612,8 @@ export const DbLoggerCategory_Update: {
 export type DbLoggerCategory_Update = DbLoggerCategory_Update$instance;
 
 export interface DbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, System_Collections_Generic_Internal.IEnumerable_1<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable_1<TEntity> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbSet_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
@@ -617,6 +663,8 @@ export type DbSet_1<TEntity> = DbSet_1$instance<TEntity> & __DbSet_1$views<TEnti
 
 
 export interface DbUpdateConcurrencyException$instance extends DbUpdateException {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbUpdateConcurrencyException: never;
+
     readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
 
 }
@@ -635,6 +683,8 @@ export const DbUpdateConcurrencyException: {
 export type DbUpdateConcurrencyException = DbUpdateConcurrencyException$instance;
 
 export interface DbUpdateException$instance extends Exception {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbUpdateException: never;
+
     readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
 
     readonly Entries: IReadOnlyList_1<EntityEntry>;
@@ -656,6 +706,8 @@ export const DbUpdateException: {
 export type DbUpdateException = DbUpdateException$instance;
 
 export interface DeleteBehaviorAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DeleteBehaviorAttribute: never;
+
     readonly Behavior: DeleteBehavior;
 }
 
@@ -668,6 +720,8 @@ export const DeleteBehaviorAttribute: {
 export type DeleteBehaviorAttribute = DeleteBehaviorAttribute$instance;
 
 export interface EntityTypeConfigurationAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityTypeConfigurationAttribute: never;
+
     readonly EntityTypeConfigurationType: Type;
 }
 
@@ -680,6 +734,8 @@ export const EntityTypeConfigurationAttribute: {
 export type EntityTypeConfigurationAttribute = EntityTypeConfigurationAttribute$instance;
 
 export interface EntityTypeConfigurationAttribute_2$instance<TConfiguration extends IEntityTypeConfiguration_1<TEntity>, TEntity> extends EntityTypeConfigurationAttribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityTypeConfigurationAttribute_2: never;
+
 }
 
 
@@ -691,6 +747,8 @@ export const EntityTypeConfigurationAttribute_2: {
 export type EntityTypeConfigurationAttribute_2<TConfiguration extends IEntityTypeConfiguration_1<TEntity>, TEntity> = EntityTypeConfigurationAttribute_2$instance<TConfiguration, TEntity>;
 
 export interface IndexAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_IndexAttribute: never;
+
     AllDescending: boolean;
     get IsDescending(): boolean[] | undefined;
     set IsDescending(value: boolean[] | undefined);
@@ -711,6 +769,8 @@ export const IndexAttribute: {
 export type IndexAttribute = IndexAttribute$instance;
 
 export interface KeylessAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_KeylessAttribute: never;
+
 }
 
 
@@ -722,6 +782,8 @@ export const KeylessAttribute: {
 export type KeylessAttribute = KeylessAttribute$instance;
 
 export interface ModelBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelBuilder: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Model: IMutableModel;
@@ -770,6 +832,8 @@ export type ModelBuilder = ModelBuilder$instance & __ModelBuilder$views;
 
 
 export interface ModelConfigurationBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelConfigurationBuilder: never;
+
     readonly Conventions: ConventionSetBuilder;
     readonly ModelConfiguration: ModelConfiguration;
     ComplexProperties<TProperty>(): ComplexPropertiesConfigurationBuilder_1<TProperty>;
@@ -799,6 +863,8 @@ export const ModelConfigurationBuilder: {
 export type ModelConfigurationBuilder = ModelConfigurationBuilder$instance;
 
 export interface ModelCreationDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelCreationDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     ConventionSetBuilder: IConventionSetBuilder;
@@ -822,6 +888,8 @@ export const ModelCreationDependencies: {
 export type ModelCreationDependencies = ModelCreationDependencies$instance;
 
 export interface OwnedAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_OwnedAttribute: never;
+
 }
 
 
@@ -833,6 +901,8 @@ export const OwnedAttribute: {
 export type OwnedAttribute = OwnedAttribute$instance;
 
 export interface PrecisionAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_PrecisionAttribute: never;
+
     readonly Precision: int;
     readonly Scale: Nullable_1<System_Internal.Int32>;
 }
@@ -847,6 +917,8 @@ export const PrecisionAttribute: {
 export type PrecisionAttribute = PrecisionAttribute$instance;
 
 export interface PrimaryKeyAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_PrimaryKeyAttribute: never;
+
     readonly PropertyNames: IReadOnlyList_1<System_Internal.String>;
 }
 
@@ -859,6 +931,8 @@ export const PrimaryKeyAttribute: {
 export type PrimaryKeyAttribute = PrimaryKeyAttribute$instance;
 
 export interface SaveChangesEventArgs$instance extends EventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesEventArgs: never;
+
     readonly AcceptAllChangesOnSuccess: boolean;
 }
 
@@ -870,6 +944,8 @@ export const SaveChangesEventArgs: (abstract new(acceptAllChangesOnSuccess: bool
 export type SaveChangesEventArgs = SaveChangesEventArgs$instance;
 
 export interface SaveChangesFailedEventArgs$instance extends SaveChangesEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesFailedEventArgs: never;
+
     readonly Exception: Exception;
 }
 
@@ -882,6 +958,8 @@ export const SaveChangesFailedEventArgs: {
 export type SaveChangesFailedEventArgs = SaveChangesFailedEventArgs$instance;
 
 export interface SavedChangesEventArgs$instance extends SaveChangesEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SavedChangesEventArgs: never;
+
     readonly EntitiesSavedCount: int;
 }
 
@@ -894,6 +972,8 @@ export const SavedChangesEventArgs: {
 export type SavedChangesEventArgs = SavedChangesEventArgs$instance;
 
 export interface SavingChangesEventArgs$instance extends SaveChangesEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SavingChangesEventArgs: never;
+
 }
 
 
@@ -905,6 +985,8 @@ export const SavingChangesEventArgs: {
 export type SavingChangesEventArgs = SavingChangesEventArgs$instance;
 
 export interface UnicodeAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_UnicodeAttribute: never;
+
     readonly IsUnicode: boolean;
 }
 

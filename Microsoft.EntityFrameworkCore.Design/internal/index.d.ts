@@ -144,6 +144,8 @@ export interface IMethodCallCodeFragment$instance {
 export type IMethodCallCodeFragment = IMethodCallCodeFragment$instance;
 
 export interface AnnotationCodeGenerator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_AnnotationCodeGenerator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IAnnotationCodeGenerator: never;
 
     readonly Dependencies: AnnotationCodeGeneratorDependencies;
@@ -231,6 +233,8 @@ export type AnnotationCodeGenerator = AnnotationCodeGenerator$instance & __Annot
 
 
 export interface AnnotationCodeGeneratorDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_AnnotationCodeGeneratorDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     RelationalTypeMappingSource: IRelationalTypeMappingSource;
@@ -250,6 +254,8 @@ export const AnnotationCodeGeneratorDependencies: {
 export type AnnotationCodeGeneratorDependencies = AnnotationCodeGeneratorDependencies$instance;
 
 export interface AttributeCodeFragment$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_AttributeCodeFragment: never;
+
     readonly Arguments: IReadOnlyList_1<unknown | undefined>;
     readonly NamedArguments: IReadOnlyDictionary_2<System_Internal.String, unknown | undefined>;
     readonly Type: Type;
@@ -265,6 +271,8 @@ export const AttributeCodeFragment: {
 export type AttributeCodeFragment = AttributeCodeFragment$instance;
 
 export interface DesignTimeProviderServicesAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_DesignTimeProviderServicesAttribute: never;
+
     readonly TypeName: string;
 }
 
@@ -277,6 +285,8 @@ export const DesignTimeProviderServicesAttribute: {
 export type DesignTimeProviderServicesAttribute = DesignTimeProviderServicesAttribute$instance;
 
 export interface DesignTimeServicesReferenceAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_DesignTimeServicesReferenceAttribute: never;
+
     readonly ForProvider: string | undefined;
     readonly TypeName: string;
 }
@@ -291,6 +301,8 @@ export const DesignTimeServicesReferenceAttribute: {
 export type DesignTimeServicesReferenceAttribute = DesignTimeServicesReferenceAttribute$instance;
 
 export interface EntityFrameworkDesignServicesBuilder$instance extends EntityFrameworkServicesBuilder {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_EntityFrameworkDesignServicesBuilder: never;
+
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
@@ -306,6 +318,8 @@ export const EntityFrameworkDesignServicesBuilder: {
 export type EntityFrameworkDesignServicesBuilder = EntityFrameworkDesignServicesBuilder$instance;
 
 export interface EntityFrameworkRelationalDesignServicesBuilder$instance extends EntityFrameworkDesignServicesBuilder {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_EntityFrameworkRelationalDesignServicesBuilder: never;
+
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
@@ -321,6 +335,8 @@ export const EntityFrameworkRelationalDesignServicesBuilder: {
 export type EntityFrameworkRelationalDesignServicesBuilder = EntityFrameworkRelationalDesignServicesBuilder$instance;
 
 export interface MethodCallCodeFragment$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_MethodCallCodeFragment: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IMethodCallCodeFragment: never;
 
     readonly Arguments: IReadOnlyList_1<unknown | undefined>;
@@ -349,6 +365,8 @@ export type MethodCallCodeFragment = MethodCallCodeFragment$instance & __MethodC
 
 
 export interface NestedClosureCodeFragment$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_NestedClosureCodeFragment: never;
+
     readonly MethodCalls: IReadOnlyList_1<MethodCallCodeFragment>;
     readonly Parameter: string;
 }
@@ -363,6 +381,8 @@ export const NestedClosureCodeFragment: {
 export type NestedClosureCodeFragment = NestedClosureCodeFragment$instance;
 
 export interface PropertyAccessorCodeFragment$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_PropertyAccessorCodeFragment: never;
+
     readonly Parameter: string;
     readonly Properties: IReadOnlyList_1<System_Internal.String>;
 }

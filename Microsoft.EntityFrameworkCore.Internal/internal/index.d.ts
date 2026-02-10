@@ -279,6 +279,8 @@ export interface ISingletonOptionsInitializer$instance {
 export type ISingletonOptionsInitializer = ISingletonOptionsInitializer$instance;
 
 export interface DbContextLease$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_DbContextLease: never;
+
     Context: IDbContextPoolable;
     readonly IsActive: boolean;
     readonly IsStandalone: boolean;
@@ -298,6 +300,8 @@ export const DbContextLease: {
 export type DbContextLease = DbContextLease$instance;
 
 export interface DbContextDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_DbContextDependencies: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextDependencies: never;
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -331,6 +335,8 @@ export type DbContextDependencies = DbContextDependencies$instance & __DbContext
 
 
 export interface DbContextFactory_1$instance<TContext extends DbContext> extends Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_DbContextFactory_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IDbContextFactory_1: never;
 
     CreateDbContext(): TContext;
@@ -351,6 +357,8 @@ export type DbContextFactory_1<TContext extends DbContext> = DbContextFactory_1$
 
 
 export interface DbContextFactorySource_1$instance<TContext extends DbContext> extends IDbContextFactorySource_1$instance<TContext> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_DbContextFactorySource_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextFactorySource_1: never;
 
     readonly Factory: Func_3<IServiceProvider, DbContextOptions_1<TContext>, TContext>;
@@ -370,6 +378,8 @@ export type DbContextFactorySource_1<TContext extends DbContext> = DbContextFact
 
 
 export interface DbContextPool_1$instance<TContext extends DbContext> extends IDbContextPool_1<TContext>, System_Internal.IAsyncDisposable, System_Internal.IDisposable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_DbContextPool_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextPool: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextPool_1: never;
     readonly __tsonic_iface_System_IAsyncDisposable: never;
@@ -397,6 +407,8 @@ export type DbContextPool_1<TContext extends DbContext> = DbContextPool_1$instan
 
 
 export interface DbContextPoolConfigurationSnapshot$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_DbContextPoolConfigurationSnapshot: never;
+
     readonly AutoDetectChangesEnabled: boolean;
     readonly AutoSavepointsEnabled: boolean;
     readonly AutoTransactionBehavior: AutoTransactionBehavior;
@@ -430,6 +442,8 @@ export const DbContextPoolConfigurationSnapshot: {
 export type DbContextPoolConfigurationSnapshot = DbContextPoolConfigurationSnapshot$instance;
 
 export interface DbContextServices$instance extends IDbContextServices$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_DbContextServices: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbContextServices: never;
 
     readonly ContextOptions: DbContextOptions;
@@ -454,6 +468,8 @@ export type DbContextServices = DbContextServices$instance & __DbContextServices
 
 
 export interface DbSetInitializer$instance extends IDbSetInitializer$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_DbSetInitializer: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbSetInitializer: never;
 
     InitializeSets(context: DbContext): void;
@@ -473,6 +489,8 @@ export type DbSetInitializer = DbSetInitializer$instance & __DbSetInitializer$vi
 
 
 export interface DbSetSource$instance extends IDbSetSource$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_DbSetSource: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbSetSource: never;
 
     Create(context: DbContext, type: Type): unknown;
@@ -493,6 +511,8 @@ export type DbSetSource = DbSetSource$instance & __DbSetSource$views;
 
 
 export interface EntityFinder_1$instance<TEntity> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_EntityFinder_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinder_1: never;
 
@@ -526,6 +546,8 @@ export type EntityFinder_1<TEntity> = EntityFinder_1$instance<TEntity> & __Entit
 
 
 export interface EntityFinderCollectionLoaderAdapter$instance extends ICollectionLoader$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_EntityFinderCollectionLoaderAdapter: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_ICollectionLoader: never;
 
     Load(entry: InternalEntityEntry, options: LoadOptions): void;
@@ -547,6 +569,8 @@ export type EntityFinderCollectionLoaderAdapter = EntityFinderCollectionLoaderAd
 
 
 export interface EntityFinderFactory$instance extends IEntityFinderFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_EntityFinderFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinderFactory: never;
 
     Create(type: IEntityType): IEntityFinder;
@@ -566,6 +590,8 @@ export type EntityFinderFactory = EntityFinderFactory$instance & __EntityFinderF
 
 
 export interface EntityFinderSource$instance extends IEntityFinderSource$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_EntityFinderSource: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinderSource: never;
 
     Create(stateManager: IStateManager, setSource: IDbSetSource, setCache: IDbSetCache, type: IEntityType): IEntityFinder;
@@ -585,6 +611,8 @@ export type EntityFinderSource = EntityFinderSource$instance & __EntityFinderSou
 
 
 export interface InternalDbSet_1$instance<TEntity> extends DbSet_1<TEntity>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance, System_Collections_Generic_Internal.IAsyncEnumerable_1<TEntity>, System_Collections_Generic_Internal.IEnumerable_1<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable_1<TEntity> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_InternalDbSet_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -645,6 +673,8 @@ export type InternalDbSet_1<TEntity> = InternalDbSet_1$instance<TEntity> & __Int
 
 
 export interface ManyToManyLoader_2$instance<TEntity, TSourceEntity> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_ManyToManyLoader_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_ICollectionLoader: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_ICollectionLoader_1: never;
 
@@ -668,6 +698,8 @@ export type ManyToManyLoader_2<TEntity, TSourceEntity> = ManyToManyLoader_2$inst
 
 
 export interface ManyToManyLoaderFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_ManyToManyLoaderFactory: never;
+
     Create(skipNavigation: ISkipNavigation): ICollectionLoader;
 }
 
@@ -680,6 +712,8 @@ export const ManyToManyLoaderFactory: {
 export type ManyToManyLoaderFactory = ManyToManyLoaderFactory$instance;
 
 export interface NullableComparerAdapter_1$instance<TNullableKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_NullableComparerAdapter_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
     Equals(x: TNullableKey, y: TNullableKey): boolean;
@@ -695,6 +729,8 @@ export const NullableComparerAdapter_1: {
 export type NullableComparerAdapter_1<TNullableKey> = NullableComparerAdapter_1$instance<TNullableKey>;
 
 export interface RegisteredServices$instance extends IRegisteredServices$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_RegisteredServices: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IRegisteredServices: never;
 
     readonly Services: ISet_1<Type>;
@@ -714,6 +750,8 @@ export type RegisteredServices = RegisteredServices$instance & __RegisteredServi
 
 
 export interface ScopedDbContextLease_1$instance<TContext extends DbContext> extends IScopedDbContextLease_1$instance<TContext>, System_Internal.IAsyncDisposable, System_Internal.IDisposable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_ScopedDbContextLease_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IScopedDbContextLease_1: never;
     readonly __tsonic_iface_System_IAsyncDisposable: never;
     readonly __tsonic_iface_System_IDisposable: never;
@@ -735,6 +773,8 @@ export type ScopedDbContextLease_1<TContext extends DbContext> = ScopedDbContext
 
 
 export interface SemanticVersionComparer$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_SemanticVersionComparer: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
 
     Compare(x: string, y: string): int;
@@ -749,6 +789,8 @@ export const SemanticVersionComparer: {
 export type SemanticVersionComparer = SemanticVersionComparer$instance;
 
 export interface ServiceProviderCache$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_ServiceProviderCache: never;
+
     GetOrAdd(options: IDbContextOptions, providerRequired: boolean): IServiceProvider;
 }
 
@@ -762,6 +804,8 @@ export const ServiceProviderCache: {
 export type ServiceProviderCache = ServiceProviderCache$instance;
 
 export interface SingletonOptionsInitializer$instance extends ISingletonOptionsInitializer$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_SingletonOptionsInitializer: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_ISingletonOptionsInitializer: never;
 
     EnsureInitialized(serviceProvider: IServiceProvider, options: IDbContextOptions): void;
@@ -781,6 +825,8 @@ export type SingletonOptionsInitializer = SingletonOptionsInitializer$instance &
 
 
 export interface TypeFullNameComparer$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Internal_TypeFullNameComparer: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 

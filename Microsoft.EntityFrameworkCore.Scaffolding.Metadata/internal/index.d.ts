@@ -16,6 +16,8 @@ import type { IEnumerable_1, IList_1, IReadOnlyDictionary_2 } from "@tsonic/dotn
 import type { Boolean as ClrBoolean, Func_2, Int32, Int64, Nullable_1, Object as ClrObject, String as ClrString, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface DatabaseColumn$instance extends Annotatable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabaseColumn: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -77,6 +79,8 @@ export type DatabaseColumn = DatabaseColumn$instance & __DatabaseColumn$views;
 
 
 export interface DatabaseForeignKey$instance extends Annotatable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabaseForeignKey: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -128,6 +132,8 @@ export type DatabaseForeignKey = DatabaseForeignKey$instance & __DatabaseForeign
 
 
 export interface DatabaseIndex$instance extends Annotatable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabaseIndex: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -181,6 +187,8 @@ export type DatabaseIndex = DatabaseIndex$instance & __DatabaseIndex$views;
 
 
 export interface DatabaseModel$instance extends Annotatable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabaseModel: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -232,6 +240,8 @@ export type DatabaseModel = DatabaseModel$instance & __DatabaseModel$views;
 
 
 export interface DatabasePrimaryKey$instance extends Annotatable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabasePrimaryKey: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -281,6 +291,8 @@ export type DatabasePrimaryKey = DatabasePrimaryKey$instance & __DatabasePrimary
 
 
 export interface DatabaseSequence$instance extends Annotatable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabaseSequence: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -336,6 +348,8 @@ export type DatabaseSequence = DatabaseSequence$instance & __DatabaseSequence$vi
 
 
 export interface DatabaseTable$instance extends Annotatable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabaseTable: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -394,6 +408,8 @@ export type DatabaseTable = DatabaseTable$instance & __DatabaseTable$views;
 
 
 export interface DatabaseTrigger$instance extends Annotatable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabaseTrigger: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -438,6 +454,8 @@ export type DatabaseTrigger = DatabaseTrigger$instance & __DatabaseTrigger$views
 
 
 export interface DatabaseUniqueConstraint$instance extends Annotatable {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabaseUniqueConstraint: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
@@ -486,6 +504,8 @@ export type DatabaseUniqueConstraint = DatabaseUniqueConstraint$instance & __Dat
 
 
 export interface DatabaseView$instance extends DatabaseTable$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_Metadata_DatabaseView: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;

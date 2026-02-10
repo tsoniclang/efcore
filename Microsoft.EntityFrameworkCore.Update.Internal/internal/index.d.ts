@@ -161,6 +161,8 @@ export interface IRowKeyValueFactoryFactory$instance {
 export type IRowKeyValueFactoryFactory = IRowKeyValueFactoryFactory$instance;
 
 export interface BatchExecutor$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IBatchExecutor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_BatchExecutor: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IBatchExecutor: never;
 
     readonly CurrentContext: ICurrentDbContext;
@@ -183,6 +185,8 @@ export type BatchExecutor = BatchExecutor$instance & __BatchExecutor$views;
 
 
 export interface ColumnAccessors$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_ColumnAccessors: never;
+
     readonly CurrentValueGetter: Function;
     readonly OriginalValueGetter: Function;
 }
@@ -196,6 +200,8 @@ export const ColumnAccessors: {
 export type ColumnAccessors = ColumnAccessors$instance;
 
 export interface CommandBatchPreparer$instance extends Microsoft_EntityFrameworkCore_Update_Internal.ICommandBatchPreparer$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_CommandBatchPreparer: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_ICommandBatchPreparer: never;
 
@@ -221,6 +227,8 @@ export type CommandBatchPreparer = CommandBatchPreparer$instance & __CommandBatc
 
 
 export interface CommandBatchPreparerDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_CommandBatchPreparerDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     LoggingOptions: ILoggingOptions;
@@ -246,6 +254,8 @@ export const CommandBatchPreparerDependencies: {
 export type CommandBatchPreparerDependencies = CommandBatchPreparerDependencies$instance;
 
 export interface CompositeRowForeignKeyValueFactory$instance extends CompositeRowValueFactory {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_CompositeRowForeignKeyValueFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
@@ -278,6 +288,8 @@ export type CompositeRowForeignKeyValueFactory = CompositeRowForeignKeyValueFact
 
 
 export interface CompositeRowIndexValueFactory$instance extends CompositeRowValueFactory {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_CompositeRowIndexValueFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory_1: never;
 
@@ -303,6 +315,8 @@ export type CompositeRowIndexValueFactory = CompositeRowIndexValueFactory$instan
 
 
 export interface CompositeRowKeyValueFactory$instance extends CompositeRowValueFactory {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_CompositeRowKeyValueFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactory_1: never;
 
@@ -327,6 +341,8 @@ export type CompositeRowKeyValueFactory = CompositeRowKeyValueFactory$instance &
 
 
 export interface CompositeRowValueFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_CompositeRowValueFactory: never;
+
     readonly Columns: IReadOnlyList_1<IColumn>;
     EqualityComparer: IEqualityComparer_1<(unknown | undefined)[]>;
     readonly ValueConverters: List_1<ValueConverter | undefined> | undefined;
@@ -347,6 +363,8 @@ export const CompositeRowValueFactory: (abstract new(columns: IReadOnlyList_1<IC
 export type CompositeRowValueFactory = CompositeRowValueFactory$instance;
 
 export interface ModificationCommandComparer$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_ModificationCommandComparer: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
 
     Compare(x: IReadOnlyModificationCommand, y: IReadOnlyModificationCommand): int;
@@ -361,6 +379,8 @@ export const ModificationCommandComparer: {
 export type ModificationCommandComparer = ModificationCommandComparer$instance;
 
 export interface ModificationCommandFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IModificationCommandFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_ModificationCommandFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IModificationCommandFactory: never;
 
     CreateModificationCommand(modificationCommandParameters: ModificationCommandParameters): IModificationCommand;
@@ -381,6 +401,8 @@ export type ModificationCommandFactory = ModificationCommandFactory$instance & _
 
 
 export interface RowForeignKeyValueFactory_2$instance<TKey, TForeignKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_RowForeignKeyValueFactory_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
@@ -411,6 +433,8 @@ export type RowForeignKeyValueFactory_2<TKey, TForeignKey> = RowForeignKeyValueF
 
 
 export interface RowForeignKeyValueFactoryFactory$instance extends IRowForeignKeyValueFactoryFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_RowForeignKeyValueFactoryFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactoryFactory: never;
 
     Create(foreignKey: IForeignKeyConstraint): IRowForeignKeyValueFactory;
@@ -432,6 +456,8 @@ export type RowForeignKeyValueFactoryFactory = RowForeignKeyValueFactoryFactory$
 
 
 export interface RowIdentityMap_1$instance<TKey> extends IRowIdentityMap$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_RowIdentityMap_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIdentityMap: never;
 
     readonly Rows: IEnumerable_1<INonTrackedModificationCommand>;
@@ -456,6 +482,8 @@ export type RowIdentityMap_1<TKey> = RowIdentityMap_1$instance<TKey> & __RowIden
 
 
 export interface RowIdentityMapFactory$instance extends IRowIdentityMapFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_RowIdentityMapFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIdentityMapFactory: never;
 
     Create(key: IUniqueConstraint): IRowIdentityMap;
@@ -475,6 +503,8 @@ export type RowIdentityMapFactory = RowIdentityMapFactory$instance & __RowIdenti
 
 
 export interface RowIndexValueFactoryFactory$instance extends IRowIndexValueFactoryFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_RowIndexValueFactoryFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactoryFactory: never;
 
     Create(index: ITableIndex): IRowIndexValueFactory;
@@ -494,6 +524,8 @@ export type RowIndexValueFactoryFactory = RowIndexValueFactoryFactory$instance &
 
 
 export interface RowKeyValueFactoryFactory$instance extends IRowKeyValueFactoryFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_RowKeyValueFactoryFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactoryFactory: never;
 
     Create(key: IUniqueConstraint): IRowKeyValueFactory;
@@ -513,6 +545,8 @@ export type RowKeyValueFactoryFactory = RowKeyValueFactoryFactory$instance & __R
 
 
 export interface SharedTableEntryMap_1$instance<TValue> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_SharedTableEntryMap_1: never;
+
     readonly Values: IEnumerable_1<TValue>;
     GetAllEntries(entry: IUpdateEntry): IReadOnlyList_1<IUpdateEntry>;
     GetOrAddValue(entry: IUpdateEntry, createElement: SharedTableEntryValueFactory_1<TValue>): TValue;
@@ -528,6 +562,8 @@ export const SharedTableEntryMap_1: {
 export type SharedTableEntryMap_1<TValue> = SharedTableEntryMap_1$instance<TValue>;
 
 export interface SimpleFullyNullableRowForeignKeyValueFactory_2$instance<TKey, TForeignKey> extends RowForeignKeyValueFactory_2$instance<TKey, TForeignKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_SimpleFullyNullableRowForeignKeyValueFactory_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
@@ -554,6 +590,8 @@ export type SimpleFullyNullableRowForeignKeyValueFactory_2<TKey, TForeignKey> = 
 
 
 export interface SimpleNonNullableRowForeignKeyValueFactory_2$instance<TKey, TForeignKey> extends RowForeignKeyValueFactory_2$instance<TKey, TForeignKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_SimpleNonNullableRowForeignKeyValueFactory_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
@@ -580,6 +618,8 @@ export type SimpleNonNullableRowForeignKeyValueFactory_2<TKey, TForeignKey> = Si
 
 
 export interface SimpleNullablePrincipalRowForeignKeyValueFactory_2$instance<TKey, TForeignKey> extends RowForeignKeyValueFactory_2$instance<TKey, TForeignKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_SimpleNullablePrincipalRowForeignKeyValueFactory_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
@@ -606,6 +646,8 @@ export type SimpleNullablePrincipalRowForeignKeyValueFactory_2<TKey, TForeignKey
 
 
 export interface SimpleNullableRowForeignKeyValueFactory_2$instance<TKey extends unknown, TForeignKey> extends RowForeignKeyValueFactory_2$instance<TKey, TForeignKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_SimpleNullableRowForeignKeyValueFactory_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
@@ -632,6 +674,8 @@ export type SimpleNullableRowForeignKeyValueFactory_2<TKey, TForeignKey> = Simpl
 
 
 export interface SimpleRowIndexValueFactory_1$instance<TKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_SimpleRowIndexValueFactory_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIndexValueFactory_1: never;
 
@@ -658,6 +702,8 @@ export type SimpleRowIndexValueFactory_1<TKey> = SimpleRowIndexValueFactory_1$in
 
 
 export interface SimpleRowKeyValueFactory_1$instance<TKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_SimpleRowKeyValueFactory_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowKeyValueFactory_1: never;
 
@@ -683,6 +729,8 @@ export type SimpleRowKeyValueFactory_1<TKey> = SimpleRowKeyValueFactory_1$instan
 
 
 export interface UpdateAdapter$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapter$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_UpdateAdapter: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateAdapter: never;
 
     CascadeDeleteTiming: CascadeTiming;
@@ -713,6 +761,8 @@ export type UpdateAdapter = UpdateAdapter$instance & __UpdateAdapter$views;
 
 
 export interface UpdateAdapterFactory$instance extends Microsoft_EntityFrameworkCore_Update_Internal.IUpdateAdapterFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_UpdateAdapterFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateAdapterFactory: never;
 
     Create(): IUpdateAdapter;
