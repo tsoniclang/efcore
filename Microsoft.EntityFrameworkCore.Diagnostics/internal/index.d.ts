@@ -411,6 +411,8 @@ export interface ISingletonInterceptor$instance extends IInterceptor$instance {}
 export type ISingletonInterceptor = ISingletonInterceptor$instance;
 
 export interface IdentityResolutionInterceptionData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_IdentityResolutionInterceptionData: never;
+
     readonly Context: DbContext;
 }
 
@@ -423,6 +425,8 @@ export const IdentityResolutionInterceptionData: {
 export type IdentityResolutionInterceptionData = IdentityResolutionInterceptionData$instance;
 
 export interface InstantiationBindingInterceptionData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_InstantiationBindingInterceptionData: never;
+
     readonly TypeBase: ITypeBase;
 }
 
@@ -435,6 +439,8 @@ export const InstantiationBindingInterceptionData: {
 export type InstantiationBindingInterceptionData = InstantiationBindingInterceptionData$instance;
 
 export interface InterceptionResult$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult: never;
+
     readonly IsSuppressed: boolean;
 }
 
@@ -448,6 +454,8 @@ export const InterceptionResult: {
 export type InterceptionResult = InterceptionResult$instance;
 
 export interface InterceptionResult_1$instance<TResult> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_1: never;
+
     readonly HasResult: boolean;
     readonly Result: TResult;
 }
@@ -462,6 +470,8 @@ export const InterceptionResult_1: {
 export type InterceptionResult_1<TResult> = InterceptionResult_1$instance<TResult>;
 
 export interface MaterializationInterceptionData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MaterializationInterceptionData: never;
+
     readonly Context: DbContext;
     readonly EntityType: IEntityType;
     readonly QueryTrackingBehavior: Nullable_1<QueryTrackingBehavior>;
@@ -480,6 +490,8 @@ export const MaterializationInterceptionData: {
 export type MaterializationInterceptionData = MaterializationInterceptionData$instance;
 
 export interface AssemblyEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_AssemblyEventData: never;
+
     readonly Assembly: Assembly;
 }
 
@@ -492,6 +504,8 @@ export const AssemblyEventData: {
 export type AssemblyEventData = AssemblyEventData$instance;
 
 export interface BatchEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_BatchEventData: never;
+
     readonly CommandCount: int;
     readonly Entries: IEnumerable_1<IUpdateEntry>;
 }
@@ -505,6 +519,8 @@ export const BatchEventData: {
 export type BatchEventData = BatchEventData$instance;
 
 export interface BinaryExpressionEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_BinaryExpressionEventData: never;
+
     readonly Left: Expression;
     readonly Right: Expression;
 }
@@ -518,6 +534,8 @@ export const BinaryExpressionEventData: {
 export type BinaryExpressionEventData = BinaryExpressionEventData$instance;
 
 export interface CascadeDeleteEventData$instance extends EntityEntryEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_CascadeDeleteEventData: never;
+
     readonly ParentEntityEntry: EntityEntry;
     readonly State: EntityState;
 }
@@ -531,6 +549,8 @@ export const CascadeDeleteEventData: {
 export type CascadeDeleteEventData = CascadeDeleteEventData$instance;
 
 export interface CascadeDeleteOrphanEventData$instance extends EntityEntryEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_CascadeDeleteOrphanEventData: never;
+
     readonly ParentEntityType: IEntityType;
     readonly State: EntityState;
 }
@@ -544,6 +564,8 @@ export const CascadeDeleteOrphanEventData: {
 export type CascadeDeleteOrphanEventData = CascadeDeleteOrphanEventData$instance;
 
 export interface CollectionChangedEventData$instance extends NavigationEventData$instance, ICollectionChangedEventData$instance, INavigationBaseEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_CollectionChangedEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
@@ -567,6 +589,8 @@ export type CollectionChangedEventData = CollectionChangedEventData$instance & _
 
 
 export interface ColumnsEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ColumnsEventData: never;
+
     readonly Columns: IReadOnlyList_1<System_Internal.String>;
     readonly StoreObject: StoreObjectIdentifier;
 }
@@ -580,6 +604,8 @@ export const ColumnsEventData: {
 export type ColumnsEventData = ColumnsEventData$instance;
 
 export interface CommandCorrelatedEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_CommandCorrelatedEventData: never;
+
     readonly CommandId: Guid;
     readonly CommandSource: CommandSource;
     readonly Connection: DbConnection;
@@ -598,6 +624,8 @@ export const CommandCorrelatedEventData: {
 export type CommandCorrelatedEventData = CommandCorrelatedEventData$instance;
 
 export interface CommandEndEventData$instance extends CommandEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_CommandEndEventData: never;
+
     readonly Duration: TimeSpan;
 }
 
@@ -610,6 +638,8 @@ export const CommandEndEventData: {
 export type CommandEndEventData = CommandEndEventData$instance;
 
 export interface CommandErrorEventData$instance extends CommandEndEventData, IErrorEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_CommandErrorEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: Exception;
@@ -629,6 +659,8 @@ export type CommandErrorEventData = CommandErrorEventData$instance & __CommandEr
 
 
 export interface CommandEventData$instance extends CommandCorrelatedEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_CommandEventData: never;
+
     readonly Command: DbCommand;
     readonly LogCommandText: string;
     readonly LogParameterValues: boolean;
@@ -643,6 +675,8 @@ export const CommandEventData: {
 export type CommandEventData = CommandEventData$instance;
 
 export interface CommandExecutedEventData$instance extends CommandEndEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_CommandExecutedEventData: never;
+
     readonly Result: unknown | undefined;
 }
 
@@ -655,6 +689,8 @@ export const CommandExecutedEventData: {
 export type CommandExecutedEventData = CommandExecutedEventData$instance;
 
 export interface ComplexPropertyEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ComplexPropertyEventData: never;
+
     readonly Property: IReadOnlyComplexProperty;
 }
 
@@ -667,6 +703,8 @@ export const ComplexPropertyEventData: {
 export type ComplexPropertyEventData = ComplexPropertyEventData$instance;
 
 export interface ComplexTypePropertyChangedEventData$instance extends PropertyEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ComplexTypePropertyChangedEventData: never;
+
     readonly ComplexEntry: ComplexElementEntry;
     readonly NewValue: unknown | undefined;
     readonly OldValue: unknown | undefined;
@@ -682,6 +720,8 @@ export const ComplexTypePropertyChangedEventData: {
 export type ComplexTypePropertyChangedEventData = ComplexTypePropertyChangedEventData$instance;
 
 export interface ConcurrencyExceptionEventData$instance extends DbContextErrorEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ConcurrencyExceptionEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Entries: IReadOnlyList_1<EntityEntry>;
@@ -701,6 +741,8 @@ export type ConcurrencyExceptionEventData = ConcurrencyExceptionEventData$instan
 
 
 export interface ConnectionCreatedEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ConnectionCreatedEventData: never;
+
     readonly Connection: DbConnection;
     readonly ConnectionId: Guid;
     readonly Duration: TimeSpan;
@@ -716,6 +758,8 @@ export const ConnectionCreatedEventData: {
 export type ConnectionCreatedEventData = ConnectionCreatedEventData$instance;
 
 export interface ConnectionCreatingEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ConnectionCreatingEventData: never;
+
     readonly ConnectionId: Guid;
     readonly ConnectionString: string | undefined;
     readonly StartTime: DateTimeOffset;
@@ -730,6 +774,8 @@ export const ConnectionCreatingEventData: {
 export type ConnectionCreatingEventData = ConnectionCreatingEventData$instance;
 
 export interface ConnectionEndEventData$instance extends ConnectionEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ConnectionEndEventData: never;
+
     readonly Duration: TimeSpan;
 }
 
@@ -742,6 +788,8 @@ export const ConnectionEndEventData: {
 export type ConnectionEndEventData = ConnectionEndEventData$instance;
 
 export interface ConnectionErrorEventData$instance extends ConnectionEndEventData, IErrorEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ConnectionErrorEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: Exception;
@@ -761,6 +809,8 @@ export type ConnectionErrorEventData = ConnectionErrorEventData$instance & __Con
 
 
 export interface ConnectionEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ConnectionEventData: never;
+
     readonly Connection: DbConnection;
     readonly ConnectionId: Guid;
     readonly IsAsync: boolean;
@@ -776,6 +826,8 @@ export const ConnectionEventData: {
 export type ConnectionEventData = ConnectionEventData$instance;
 
 export interface ContextInitializedEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ContextInitializedEventData: never;
+
     readonly Context: DbContext;
     readonly ContextOptions: DbContextOptions;
 }
@@ -789,6 +841,8 @@ export const ContextInitializedEventData: {
 export type ContextInitializedEventData = ContextInitializedEventData$instance;
 
 export interface DataReaderClosingEventData$instance extends DataReaderEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DataReaderClosingEventData: never;
+
     readonly IsAsync: boolean;
 }
 
@@ -801,6 +855,8 @@ export const DataReaderClosingEventData: {
 export type DataReaderClosingEventData = DataReaderClosingEventData$instance;
 
 export interface DataReaderDisposingEventData$instance extends DataReaderEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DataReaderDisposingEventData: never;
+
     readonly Duration: TimeSpan;
 }
 
@@ -813,6 +869,8 @@ export const DataReaderDisposingEventData: {
 export type DataReaderDisposingEventData = DataReaderDisposingEventData$instance;
 
 export interface DataReaderEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DataReaderEventData: never;
+
     readonly Command: DbCommand;
     readonly CommandId: Guid;
     readonly ConnectionId: Guid;
@@ -831,6 +889,8 @@ export const DataReaderEventData: {
 export type DataReaderEventData = DataReaderEventData$instance;
 
 export interface DbCommandInterceptor$instance extends IInterceptor, IDbCommandInterceptor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DbCommandInterceptor: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbCommandInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -871,6 +931,8 @@ export type DbCommandInterceptor = DbCommandInterceptor$instance & __DbCommandIn
 
 
 export interface DbConnectionInterceptor$instance extends IInterceptor, IDbConnectionInterceptor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DbConnectionInterceptor: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbConnectionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -907,6 +969,8 @@ export type DbConnectionInterceptor = DbConnectionInterceptor$instance & __DbCon
 
 
 export interface DbContextErrorEventData$instance extends DbContextEventData, IErrorEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DbContextErrorEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: DbUpdateConcurrencyException | Exception;
@@ -926,6 +990,8 @@ export type DbContextErrorEventData = DbContextErrorEventData$instance & __DbCon
 
 
 export interface DbContextEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData: never;
+
     readonly Context: DbContext | undefined;
 }
 
@@ -938,6 +1004,8 @@ export const DbContextEventData: {
 export type DbContextEventData = DbContextEventData$instance;
 
 export interface DbContextTypeErrorEventData$instance extends DbContextTypeEventData, IErrorEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DbContextTypeErrorEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: Exception;
@@ -957,6 +1025,8 @@ export type DbContextTypeErrorEventData = DbContextTypeErrorEventData$instance &
 
 
 export interface DbContextTypeEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DbContextTypeEventData: never;
+
     readonly ContextType: Type;
 }
 
@@ -969,6 +1039,8 @@ export const DbContextTypeEventData: {
 export type DbContextTypeEventData = DbContextTypeEventData$instance;
 
 export interface DbTransactionInterceptor$instance extends IInterceptor, IDbTransactionInterceptor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DbTransactionInterceptor: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDbTransactionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -1015,6 +1087,8 @@ export type DbTransactionInterceptor = DbTransactionInterceptor$instance & __DbT
 
 
 export interface EntityEntryEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EntityEntryEventData: never;
+
     readonly EntityEntry: EntityEntry;
 }
 
@@ -1027,6 +1101,8 @@ export const EntityEntryEventData: {
 export type EntityEntryEventData = EntityEntryEventData$instance;
 
 export interface EntityTypeEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EntityTypeEventData: never;
+
     readonly EntityType: IReadOnlyEntityType;
 }
 
@@ -1039,6 +1115,8 @@ export const EntityTypeEventData: {
 export type EntityTypeEventData = EntityTypeEventData$instance;
 
 export interface EntityTypeSchemaEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EntityTypeSchemaEventData: never;
+
     readonly EntityType: IEntityType;
     readonly Schema: string;
 }
@@ -1052,6 +1130,8 @@ export const EntityTypeSchemaEventData: {
 export type EntityTypeSchemaEventData = EntityTypeSchemaEventData$instance;
 
 export interface EventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventData: never;
+
     readonly EventId: EventId;
     readonly EventIdCode: string;
     readonly LogLevel: LogLevel;
@@ -1067,6 +1147,8 @@ export const EventData: {
 export type EventData = EventData$instance;
 
 export interface EventDefinition$instance extends EventDefinitionBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinition: never;
+
     GenerateMessage(): string;
     Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, exception?: Exception): void;
 }
@@ -1080,6 +1162,8 @@ export const EventDefinition: {
 export type EventDefinition = EventDefinition$instance;
 
 export interface EventDefinition_1$instance<TParam> extends EventDefinitionBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinition_1: never;
+
     GenerateMessage(arg: TParam): string;
     Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, arg: TParam): void;
 }
@@ -1093,6 +1177,8 @@ export const EventDefinition_1: {
 export type EventDefinition_1<TParam> = EventDefinition_1$instance<TParam>;
 
 export interface EventDefinition_2$instance<TParam1, TParam2> extends EventDefinitionBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinition_2: never;
+
     GenerateMessage(arg1: TParam1, arg2: TParam2): string;
     Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, arg1: TParam1, arg2: TParam2): void;
 }
@@ -1106,6 +1192,8 @@ export const EventDefinition_2: {
 export type EventDefinition_2<TParam1, TParam2> = EventDefinition_2$instance<TParam1, TParam2>;
 
 export interface EventDefinition_3$instance<TParam1, TParam2, TParam3> extends EventDefinitionBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinition_3: never;
+
     GenerateMessage(arg1: TParam1, arg2: TParam2, arg3: TParam3, exception?: Exception): string;
     Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, arg1: TParam1, arg2: TParam2, arg3: TParam3, exception?: Exception): void;
 }
@@ -1119,6 +1207,8 @@ export const EventDefinition_3: {
 export type EventDefinition_3<TParam1, TParam2, TParam3> = EventDefinition_3$instance<TParam1, TParam2, TParam3>;
 
 export interface EventDefinition_4$instance<TParam1, TParam2, TParam3, TParam4> extends EventDefinitionBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinition_4: never;
+
     GenerateMessage(arg1: TParam1, arg2: TParam2, arg3: TParam3, arg4: TParam4): string;
     Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, arg1: TParam1, arg2: TParam2, arg3: TParam3, arg4: TParam4): void;
 }
@@ -1132,6 +1222,8 @@ export const EventDefinition_4: {
 export type EventDefinition_4<TParam1, TParam2, TParam3, TParam4> = EventDefinition_4$instance<TParam1, TParam2, TParam3, TParam4>;
 
 export interface EventDefinition_5$instance<TParam1, TParam2, TParam3, TParam4, TParam5> extends EventDefinitionBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinition_5: never;
+
     GenerateMessage(arg1: TParam1, arg2: TParam2, arg3: TParam3, arg4: TParam4, arg5: TParam5): string;
     Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, arg1: TParam1, arg2: TParam2, arg3: TParam3, arg4: TParam4, arg5: TParam5): void;
 }
@@ -1145,6 +1237,8 @@ export const EventDefinition_5: {
 export type EventDefinition_5<TParam1, TParam2, TParam3, TParam4, TParam5> = EventDefinition_5$instance<TParam1, TParam2, TParam3, TParam4, TParam5>;
 
 export interface EventDefinition_6$instance<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6> extends EventDefinitionBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinition_6: never;
+
     GenerateMessage(arg1: TParam1, arg2: TParam2, arg3: TParam3, arg4: TParam4, arg5: TParam5, arg6: TParam6): string;
     Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, arg1: TParam1, arg2: TParam2, arg3: TParam3, arg4: TParam4, arg5: TParam5, arg6: TParam6): void;
 }
@@ -1158,6 +1252,8 @@ export const EventDefinition_6: {
 export type EventDefinition_6<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6> = EventDefinition_6$instance<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>;
 
 export interface EventDefinitionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinitionBase: never;
+
     readonly EventId: EventId;
     readonly EventIdCode: string;
     readonly Level: LogLevel;
@@ -1173,6 +1269,8 @@ export const EventDefinitionBase: (abstract new(loggingOptions: ILoggingOptions,
 export type EventDefinitionBase = EventDefinitionBase$instance;
 
 export interface ExecutionStrategyEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ExecutionStrategyEventData: never;
+
     readonly Delay: TimeSpan;
     readonly ExceptionsEncountered: IReadOnlyList_1<Exception>;
     readonly IsAsync: boolean;
@@ -1187,6 +1285,8 @@ export const ExecutionStrategyEventData: {
 export type ExecutionStrategyEventData = ExecutionStrategyEventData$instance;
 
 export interface ExpressionEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ExpressionEventData: never;
+
     readonly Expression: Expression;
 }
 
@@ -1199,6 +1299,8 @@ export const ExpressionEventData: {
 export type ExpressionEventData = ExpressionEventData$instance;
 
 export interface FallbackEventDefinition$instance extends EventDefinitionBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_FallbackEventDefinition: never;
+
     readonly MessageFormat: string;
     GenerateMessage(logAction: Action_1<ILogger>): string;
     Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, logAction: Action_1<ILogger>): void;
@@ -1213,6 +1315,8 @@ export const FallbackEventDefinition: {
 export type FallbackEventDefinition = FallbackEventDefinition$instance;
 
 export interface ForeignKeyCandidateEventData$instance extends TwoPropertyBaseCollectionsEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ForeignKeyCandidateEventData: never;
+
     readonly DependentToPrincipalNavigationSpecification: string;
     readonly PrincipalToDependentNavigationSpecification: string;
 }
@@ -1226,6 +1330,8 @@ export const ForeignKeyCandidateEventData: {
 export type ForeignKeyCandidateEventData = ForeignKeyCandidateEventData$instance;
 
 export interface ForeignKeyEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ForeignKeyEventData: never;
+
     readonly ForeignKey: IReadOnlyForeignKey;
 }
 
@@ -1238,6 +1344,8 @@ export const ForeignKeyEventData: {
 export type ForeignKeyEventData = ForeignKeyEventData$instance;
 
 export interface IgnoringIdentityResolutionInterceptor$instance extends IInterceptor, IIdentityResolutionInterceptor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_IgnoringIdentityResolutionInterceptor: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -1258,6 +1366,8 @@ export type IgnoringIdentityResolutionInterceptor = IgnoringIdentityResolutionIn
 
 
 export interface IndexEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_IndexEventData: never;
+
     readonly EntityType: IEntityType;
     readonly Name: string | undefined;
     readonly PropertyNames: List_1<System_Internal.String>;
@@ -1272,6 +1382,8 @@ export const IndexEventData: {
 export type IndexEventData = IndexEventData$instance;
 
 export interface IndexWithPropertiesEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_IndexWithPropertiesEventData: never;
+
     readonly EntityType: IEntityType;
     readonly Name: string | undefined;
     readonly Property1Name: string;
@@ -1290,6 +1402,8 @@ export const IndexWithPropertiesEventData: {
 export type IndexWithPropertiesEventData = IndexWithPropertiesEventData$instance;
 
 export interface IndexWithPropertyEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_IndexWithPropertyEventData: never;
+
     readonly EntityType: IEntityType;
     readonly Name: string | undefined;
     readonly PropertyName: string;
@@ -1305,6 +1419,8 @@ export const IndexWithPropertyEventData: {
 export type IndexWithPropertyEventData = IndexWithPropertyEventData$instance;
 
 export interface InterceptorAggregator_1$instance<TInterceptor extends IInterceptor> extends IInterceptorAggregator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_InterceptorAggregator_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
     readonly InterceptorType: Type;
@@ -1325,6 +1441,8 @@ export type InterceptorAggregator_1<TInterceptor extends IInterceptor> = Interce
 
 
 export interface InvalidIncludePathEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_InvalidIncludePathEventData: never;
+
     readonly NavigationChain: string;
     readonly NavigationName: string;
 }
@@ -1338,6 +1456,8 @@ export const InvalidIncludePathEventData: {
 export type InvalidIncludePathEventData = InvalidIncludePathEventData$instance;
 
 export interface KeyEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_KeyEventData: never;
+
     readonly Key: IReadOnlyKey;
 }
 
@@ -1350,6 +1470,8 @@ export const KeyEventData: {
 export type KeyEventData = KeyEventData$instance;
 
 export interface LazyLoadingEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LazyLoadingEventData: never;
+
     readonly Entity: unknown;
     readonly NavigationPropertyName: string;
 }
@@ -1363,6 +1485,8 @@ export const LazyLoadingEventData: {
 export type LazyLoadingEventData = LazyLoadingEventData$instance;
 
 export interface LoggerCategory_1$instance<T> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
+
     ToString(): string;
 }
 
@@ -1375,6 +1499,8 @@ export const LoggerCategory_1: (abstract new<T>() => LoggerCategory_1<T>) & {
 export type LoggerCategory_1<T> = LoggerCategory_1$instance<T>;
 
 export interface LoggingDefinitions$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggingDefinitions: never;
+
     LogServiceProviderCreated: EventDefinitionBase | undefined;
     LogManyServiceProvidersCreated: EventDefinitionBase | undefined;
     LogMappedEntityTypeIgnored: EventDefinitionBase | undefined;
@@ -1472,6 +1598,8 @@ export const LoggingDefinitions: (abstract new() => LoggingDefinitions) & {
 export type LoggingDefinitions = LoggingDefinitions$instance;
 
 export interface MigrationAssemblyEventData$instance extends MigratorEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MigrationAssemblyEventData: never;
+
     readonly MigrationsAssembly: IMigrationsAssembly;
 }
 
@@ -1484,6 +1612,8 @@ export const MigrationAssemblyEventData: {
 export type MigrationAssemblyEventData = MigrationAssemblyEventData$instance;
 
 export interface MigrationColumnOperationEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MigrationColumnOperationEventData: never;
+
     readonly ColumnOperation: ColumnOperation;
 }
 
@@ -1496,6 +1626,8 @@ export const MigrationColumnOperationEventData: {
 export type MigrationColumnOperationEventData = MigrationColumnOperationEventData$instance;
 
 export interface MigrationCommandEventData$instance extends MigratorEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MigrationCommandEventData: never;
+
     readonly Migration: Migration;
     readonly MigrationCommand: MigrationCommand;
 }
@@ -1509,6 +1641,8 @@ export const MigrationCommandEventData: {
 export type MigrationCommandEventData = MigrationCommandEventData$instance;
 
 export interface MigrationEventData$instance extends MigratorEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MigrationEventData: never;
+
     readonly Migration: Migration;
 }
 
@@ -1521,6 +1655,8 @@ export const MigrationEventData: {
 export type MigrationEventData = MigrationEventData$instance;
 
 export interface MigrationScriptingEventData$instance extends MigrationEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MigrationScriptingEventData: never;
+
     readonly FromMigration: string | undefined;
     readonly IsIdempotent: boolean;
     readonly ToMigration: string | undefined;
@@ -1535,6 +1671,8 @@ export const MigrationScriptingEventData: {
 export type MigrationScriptingEventData = MigrationScriptingEventData$instance;
 
 export interface MigrationTypeEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MigrationTypeEventData: never;
+
     readonly MigrationType: TypeInfo;
 }
 
@@ -1547,6 +1685,8 @@ export const MigrationTypeEventData: {
 export type MigrationTypeEventData = MigrationTypeEventData$instance;
 
 export interface MigratorConnectionEventData$instance extends MigratorEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MigratorConnectionEventData: never;
+
     readonly Connection: DbConnection;
     readonly ConnectionId: Guid;
 }
@@ -1560,6 +1700,8 @@ export const MigratorConnectionEventData: {
 export type MigratorConnectionEventData = MigratorConnectionEventData$instance;
 
 export interface MigratorEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MigratorEventData: never;
+
     readonly Migrator: IMigrator;
 }
 
@@ -1572,6 +1714,8 @@ export const MigratorEventData: {
 export type MigratorEventData = MigratorEventData$instance;
 
 export interface MinBatchSizeEventData$instance extends BatchEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MinBatchSizeEventData: never;
+
     readonly MinBatchSize: int;
 }
 
@@ -1584,6 +1728,8 @@ export const MinBatchSizeEventData: {
 export type MinBatchSizeEventData = MinBatchSizeEventData$instance;
 
 export interface NavigationBaseEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_NavigationBaseEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
     readonly NavigationBase: IReadOnlyNavigationBase;
@@ -1603,6 +1749,8 @@ export type NavigationBaseEventData = NavigationBaseEventData$instance & __Navig
 
 
 export interface NavigationEventData$instance extends EventData, INavigationBaseEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_NavigationEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
     readonly Navigation: INavigation | IReadOnlyNavigation;
@@ -1622,6 +1770,8 @@ export type NavigationEventData = NavigationEventData$instance & __NavigationEve
 
 
 export interface PropertyChangedEventData$instance extends PropertyEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_PropertyChangedEventData: never;
+
     readonly EntityEntry: EntityEntry;
     readonly NewValue: unknown | undefined;
     readonly OldValue: unknown | undefined;
@@ -1637,6 +1787,8 @@ export const PropertyChangedEventData: {
 export type PropertyChangedEventData = PropertyChangedEventData$instance;
 
 export interface PropertyEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_PropertyEventData: never;
+
     readonly Property: IProperty | IReadOnlyProperty;
 }
 
@@ -1649,6 +1801,8 @@ export const PropertyEventData: {
 export type PropertyEventData = PropertyEventData$instance;
 
 export interface PropertyValueEventData$instance extends PropertyEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_PropertyValueEventData: never;
+
     readonly EntityEntry: EntityEntry;
     readonly Property: IProperty | IReadOnlyProperty;
     readonly Value: unknown | undefined;
@@ -1663,6 +1817,8 @@ export const PropertyValueEventData: {
 export type PropertyValueEventData = PropertyValueEventData$instance;
 
 export interface QueryExpressionEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_QueryExpressionEventData: never;
+
     readonly Expression: Expression;
     readonly ExpressionPrinter: ExpressionPrinter;
 }
@@ -1676,6 +1832,8 @@ export const QueryExpressionEventData: {
 export type QueryExpressionEventData = QueryExpressionEventData$instance;
 
 export interface ReferenceChangedEventData$instance extends NavigationEventData$instance, INavigationBaseEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ReferenceChangedEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
     readonly EntityEntry: EntityEntry;
@@ -1697,6 +1855,8 @@ export type ReferenceChangedEventData = ReferenceChangedEventData$instance & __R
 
 
 export interface RelationalConcurrencyExceptionEventData$instance extends ConcurrencyExceptionEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_RelationalConcurrencyExceptionEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Command: DbCommand;
@@ -1720,6 +1880,8 @@ export type RelationalConcurrencyExceptionEventData = RelationalConcurrencyExcep
 
 
 export interface RelationalLoggingDefinitions$instance extends LoggingDefinitions {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_RelationalLoggingDefinitions: never;
+
     LogTransactionError: EventDefinitionBase | undefined;
     LogBoolWithDefaultWarning: EventDefinitionBase | undefined;
     LogConnectionCreating: EventDefinitionBase | undefined;
@@ -1811,6 +1973,8 @@ export const RelationalLoggingDefinitions: (abstract new() => RelationalLoggingD
 export type RelationalLoggingDefinitions = RelationalLoggingDefinitions$instance;
 
 export interface SaveChangesCompletedEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_SaveChangesCompletedEventData: never;
+
     readonly EntitiesSavedCount: int;
 }
 
@@ -1823,6 +1987,8 @@ export const SaveChangesCompletedEventData: {
 export type SaveChangesCompletedEventData = SaveChangesCompletedEventData$instance;
 
 export interface SaveChangesEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_SaveChangesEventData: never;
+
     readonly Entries: IEnumerable_1<IUpdateEntry>;
     readonly RowsAffected: int;
 }
@@ -1836,6 +2002,8 @@ export const SaveChangesEventData: {
 export type SaveChangesEventData = SaveChangesEventData$instance;
 
 export interface SaveChangesInterceptor$instance extends IInterceptor, ISaveChangesInterceptor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_SaveChangesInterceptor: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ISaveChangesInterceptor: never;
 
@@ -1864,6 +2032,8 @@ export type SaveChangesInterceptor = SaveChangesInterceptor$instance & __SaveCha
 
 
 export interface SequenceEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_SequenceEventData: never;
+
     readonly Sequence: IReadOnlySequence;
 }
 
@@ -1876,6 +2046,8 @@ export const SequenceEventData: {
 export type SequenceEventData = SequenceEventData$instance;
 
 export interface ServiceProviderDebugInfoEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ServiceProviderDebugInfoEventData: never;
+
     readonly CachedDebugInfos: IList_1<IDictionary_2<System_Internal.String, System_Internal.String>>;
     readonly NewDebugInfo: IDictionary_2<System_Internal.String, System_Internal.String>;
 }
@@ -1889,6 +2061,8 @@ export const ServiceProviderDebugInfoEventData: {
 export type ServiceProviderDebugInfoEventData = ServiceProviderDebugInfoEventData$instance;
 
 export interface ServiceProviderEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ServiceProviderEventData: never;
+
     readonly ServiceProvider: IServiceProvider;
 }
 
@@ -1901,6 +2075,8 @@ export const ServiceProviderEventData: {
 export type ServiceProviderEventData = ServiceProviderEventData$instance;
 
 export interface ServiceProvidersEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ServiceProvidersEventData: never;
+
     readonly ServiceProviders: ICollection_1<IServiceProvider>;
 }
 
@@ -1913,6 +2089,8 @@ export const ServiceProvidersEventData: {
 export type ServiceProvidersEventData = ServiceProvidersEventData$instance;
 
 export interface SharedDependentEntityEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_SharedDependentEntityEventData: never;
+
     readonly FirstEntityType: IEntityType;
     readonly SecondEntityType: IEntityType;
 }
@@ -1926,6 +2104,8 @@ export const SharedDependentEntityEventData: {
 export type SharedDependentEntityEventData = SharedDependentEntityEventData$instance;
 
 export interface SkipCollectionChangedEventData$instance extends SkipNavigationEventData$instance, ICollectionChangedEventData$instance, INavigationBaseEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_SkipCollectionChangedEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
@@ -1949,6 +2129,8 @@ export type SkipCollectionChangedEventData = SkipCollectionChangedEventData$inst
 
 
 export interface SkipNavigationEventData$instance extends EventData, INavigationBaseEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_SkipNavigationEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
     readonly Navigation: IReadOnlySkipNavigation | ISkipNavigation;
@@ -1968,6 +2150,8 @@ export type SkipNavigationEventData = SkipNavigationEventData$instance & __SkipN
 
 
 export interface StateChangedEventData$instance extends EntityEntryEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_StateChangedEventData: never;
+
     readonly NewState: EntityState;
     readonly OldState: EntityState;
 }
@@ -1981,6 +2165,8 @@ export const StateChangedEventData: {
 export type StateChangedEventData = StateChangedEventData$instance;
 
 export interface StoredProcedurePropertyEventData$instance extends PropertyEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_StoredProcedurePropertyEventData: never;
+
     readonly EntityType: IEntityType;
     readonly StoredProcedureName: string;
 }
@@ -1994,6 +2180,8 @@ export const StoredProcedurePropertyEventData: {
 export type StoredProcedurePropertyEventData = StoredProcedurePropertyEventData$instance;
 
 export interface TransactionEndEventData$instance extends TransactionEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TransactionEndEventData: never;
+
     readonly Duration: TimeSpan;
 }
 
@@ -2006,6 +2194,8 @@ export const TransactionEndEventData: {
 export type TransactionEndEventData = TransactionEndEventData$instance;
 
 export interface TransactionEnlistedEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TransactionEnlistedEventData: never;
+
     readonly Connection: DbConnection;
     readonly ConnectionId: Guid;
     readonly Transaction: Transaction;
@@ -2020,6 +2210,8 @@ export const TransactionEnlistedEventData: {
 export type TransactionEnlistedEventData = TransactionEnlistedEventData$instance;
 
 export interface TransactionErrorEventData$instance extends TransactionEndEventData, IErrorEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TransactionErrorEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Action: string;
@@ -2040,6 +2232,8 @@ export type TransactionErrorEventData = TransactionErrorEventData$instance & __T
 
 
 export interface TransactionEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TransactionEventData: never;
+
     readonly ConnectionId: Guid;
     readonly IsAsync: boolean;
     readonly StartTime: DateTimeOffset;
@@ -2056,6 +2250,8 @@ export const TransactionEventData: {
 export type TransactionEventData = TransactionEventData$instance;
 
 export interface TransactionStartingEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TransactionStartingEventData: never;
+
     readonly ConnectionId: Guid;
     readonly IsAsync: boolean;
     readonly IsolationLevel: IsolationLevel;
@@ -2072,6 +2268,8 @@ export const TransactionStartingEventData: {
 export type TransactionStartingEventData = TransactionStartingEventData$instance;
 
 export interface TwoPropertyBaseCollectionsEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TwoPropertyBaseCollectionsEventData: never;
+
     readonly FirstPropertyCollection: IReadOnlyList_1<IReadOnlyPropertyBase>;
     readonly SecondPropertyCollection: IReadOnlyList_1<IReadOnlyPropertyBase>;
 }
@@ -2085,6 +2283,8 @@ export const TwoPropertyBaseCollectionsEventData: {
 export type TwoPropertyBaseCollectionsEventData = TwoPropertyBaseCollectionsEventData$instance;
 
 export interface TwoSqlExpressionsEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TwoSqlExpressionsEventData: never;
+
     readonly Left: SqlExpression;
     readonly Right: SqlExpression;
 }
@@ -2098,6 +2298,8 @@ export const TwoSqlExpressionsEventData: {
 export type TwoSqlExpressionsEventData = TwoSqlExpressionsEventData$instance;
 
 export interface TwoUnmappedPropertyCollectionsEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TwoUnmappedPropertyCollectionsEventData: never;
+
     readonly FirstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | undefined, Type>>;
     readonly SecondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | undefined, Type>>;
 }
@@ -2111,6 +2313,8 @@ export const TwoUnmappedPropertyCollectionsEventData: {
 export type TwoUnmappedPropertyCollectionsEventData = TwoUnmappedPropertyCollectionsEventData$instance;
 
 export interface TypeEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TypeEventData: never;
+
     readonly ClrType: Type;
 }
 
@@ -2123,6 +2327,8 @@ export const TypeEventData: {
 export type TypeEventData = TypeEventData$instance;
 
 export interface TypeLoadingEventData$instance extends AssemblyEventData, IErrorEventData$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TypeLoadingEventData: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IErrorEventData: never;
 
     readonly Exception: Exception;
@@ -2142,6 +2348,8 @@ export type TypeLoadingEventData = TypeLoadingEventData$instance & __TypeLoading
 
 
 export interface UniquifiedPropertyEventData$instance extends PropertyEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_UniquifiedPropertyEventData: never;
+
     readonly BasePropertyName: string;
 }
 
@@ -2154,6 +2362,8 @@ export const UniquifiedPropertyEventData: {
 export type UniquifiedPropertyEventData = UniquifiedPropertyEventData$instance;
 
 export interface UpdateEntryEventData$instance extends DbContextEventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_UpdateEntryEventData: never;
+
     readonly EntityEntry: IUpdateEntry;
 }
 
@@ -2166,6 +2376,8 @@ export const UpdateEntryEventData: {
 export type UpdateEntryEventData = UpdateEntryEventData$instance;
 
 export interface UpdatingIdentityResolutionInterceptor$instance extends IInterceptor, IIdentityResolutionInterceptor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_UpdatingIdentityResolutionInterceptor: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
@@ -2186,6 +2398,8 @@ export type UpdatingIdentityResolutionInterceptor = UpdatingIdentityResolutionIn
 
 
 export interface ValueConverterEventData$instance extends EventData {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ValueConverterEventData: never;
+
     readonly MappingClrType: Type;
     readonly ValueConverter: ValueConverter;
 }
@@ -2199,6 +2413,8 @@ export const ValueConverterEventData: {
 export type ValueConverterEventData = ValueConverterEventData$instance;
 
 export interface WarningsConfiguration$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_WarningsConfiguration: never;
+
     readonly DefaultBehavior: WarningBehavior;
     Clone(): WarningsConfiguration;
     GetBehavior(eventId: EventId): Nullable_1<WarningBehavior>;
@@ -2220,6 +2436,8 @@ export const WarningsConfiguration: {
 export type WarningsConfiguration = WarningsConfiguration$instance;
 
 export interface WarningsConfigurationBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_WarningsConfigurationBuilder: never;
+
     Default(warningBehavior: WarningBehavior): WarningsConfigurationBuilder;
     Ignore(...eventIds: EventId[]): WarningsConfigurationBuilder;
     Log(...eventIds: EventId[]): WarningsConfigurationBuilder;

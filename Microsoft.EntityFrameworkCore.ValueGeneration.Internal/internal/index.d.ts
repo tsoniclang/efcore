@@ -17,6 +17,8 @@ import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Boolean as ClrBoolean, Byte, Char, DateTime, DateTimeOffset, Decimal, Double, Int16, Int32, Int64, Object as ClrObject, SByte, Single, String as ClrString, UInt16, UInt32, UInt64 } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface ConvertedValueGenerator$instance extends ValueGenerator {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_ConvertedValueGenerator: never;
+
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
@@ -33,6 +35,8 @@ export const ConvertedValueGenerator: {
 export type ConvertedValueGenerator = ConvertedValueGenerator$instance;
 
 export interface DiscriminatorValueGenerator$instance extends ValueGenerator {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_DiscriminatorValueGenerator: never;
+
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
     NextValue(entry: EntityEntry): unknown;
@@ -47,6 +51,8 @@ export const DiscriminatorValueGenerator: {
 export type DiscriminatorValueGenerator = DiscriminatorValueGenerator$instance;
 
 export interface TemporaryBinaryValueGenerator$instance extends ValueGenerator_1<byte[]> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryBinaryValueGenerator: never;
+
     readonly GeneratesTemporaryValues: boolean;
     Next4(entry: EntityEntry): byte[];
     Next4(entry: EntityEntry): unknown;
@@ -61,6 +67,8 @@ export const TemporaryBinaryValueGenerator: {
 export type TemporaryBinaryValueGenerator = TemporaryBinaryValueGenerator$instance;
 
 export interface TemporaryByteValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.Byte> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryByteValueGenerator: never;
+
     Next4(entry: EntityEntry): byte;
     Next4(entry: EntityEntry): unknown;
 }
@@ -74,6 +82,8 @@ export const TemporaryByteValueGenerator: {
 export type TemporaryByteValueGenerator = TemporaryByteValueGenerator$instance;
 
 export interface TemporaryCharValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.Char> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryCharValueGenerator: never;
+
     Next4(entry: EntityEntry): char;
     Next4(entry: EntityEntry): unknown;
 }
@@ -87,6 +97,8 @@ export const TemporaryCharValueGenerator: {
 export type TemporaryCharValueGenerator = TemporaryCharValueGenerator$instance;
 
 export interface TemporaryDateTimeOffsetValueGenerator$instance extends ValueGenerator_1<DateTimeOffset> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryDateTimeOffsetValueGenerator: never;
+
     readonly GeneratesTemporaryValues: boolean;
     Next4(entry: EntityEntry): DateTimeOffset;
     Next4(entry: EntityEntry): unknown;
@@ -101,6 +113,8 @@ export const TemporaryDateTimeOffsetValueGenerator: {
 export type TemporaryDateTimeOffsetValueGenerator = TemporaryDateTimeOffsetValueGenerator$instance;
 
 export interface TemporaryDateTimeValueGenerator$instance extends ValueGenerator_1<DateTime> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryDateTimeValueGenerator: never;
+
     readonly GeneratesTemporaryValues: boolean;
     Next4(entry: EntityEntry): DateTime;
     Next4(entry: EntityEntry): unknown;
@@ -115,6 +129,8 @@ export const TemporaryDateTimeValueGenerator: {
 export type TemporaryDateTimeValueGenerator = TemporaryDateTimeValueGenerator$instance;
 
 export interface TemporaryDecimalValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.Decimal> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryDecimalValueGenerator: never;
+
     Next4(entry: EntityEntry): decimal;
     Next4(entry: EntityEntry): unknown;
 }
@@ -128,6 +144,8 @@ export const TemporaryDecimalValueGenerator: {
 export type TemporaryDecimalValueGenerator = TemporaryDecimalValueGenerator$instance;
 
 export interface TemporaryDoubleValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.Double> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryDoubleValueGenerator: never;
+
     Next4(entry: EntityEntry): double;
     Next4(entry: EntityEntry): unknown;
 }
@@ -141,6 +159,8 @@ export const TemporaryDoubleValueGenerator: {
 export type TemporaryDoubleValueGenerator = TemporaryDoubleValueGenerator$instance;
 
 export interface TemporaryFloatValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.Single> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryFloatValueGenerator: never;
+
     Next4(entry: EntityEntry): float;
     Next4(entry: EntityEntry): unknown;
 }
@@ -154,6 +174,8 @@ export const TemporaryFloatValueGenerator: {
 export type TemporaryFloatValueGenerator = TemporaryFloatValueGenerator$instance;
 
 export interface TemporaryIntValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.Int32> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryIntValueGenerator: never;
+
     Next4(entry: EntityEntry): int;
     Next4(entry: EntityEntry): unknown;
 }
@@ -167,6 +189,8 @@ export const TemporaryIntValueGenerator: {
 export type TemporaryIntValueGenerator = TemporaryIntValueGenerator$instance;
 
 export interface TemporaryLongValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.Int64> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryLongValueGenerator: never;
+
     Next4(entry: EntityEntry): long;
     Next4(entry: EntityEntry): unknown;
 }
@@ -180,6 +204,8 @@ export const TemporaryLongValueGenerator: {
 export type TemporaryLongValueGenerator = TemporaryLongValueGenerator$instance;
 
 export interface TemporaryNumberValueGenerator_1$instance<TValue> extends ValueGenerator_1<TValue> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryNumberValueGenerator_1: never;
+
     readonly GeneratesTemporaryValues: boolean;
 }
 
@@ -191,6 +217,8 @@ export const TemporaryNumberValueGenerator_1: (abstract new<TValue>() => Tempora
 export type TemporaryNumberValueGenerator_1<TValue> = TemporaryNumberValueGenerator_1$instance<TValue>;
 
 export interface TemporarySByteValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.SByte> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporarySByteValueGenerator: never;
+
     Next4(entry: EntityEntry): sbyte;
     Next4(entry: EntityEntry): unknown;
 }
@@ -204,6 +232,8 @@ export const TemporarySByteValueGenerator: {
 export type TemporarySByteValueGenerator = TemporarySByteValueGenerator$instance;
 
 export interface TemporaryShortValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.Int16> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryShortValueGenerator: never;
+
     Next4(entry: EntityEntry): short;
     Next4(entry: EntityEntry): unknown;
 }
@@ -217,6 +247,8 @@ export const TemporaryShortValueGenerator: {
 export type TemporaryShortValueGenerator = TemporaryShortValueGenerator$instance;
 
 export interface TemporaryStringValueGenerator$instance extends ValueGenerator_1<System_Internal.String> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryStringValueGenerator: never;
+
     readonly GeneratesTemporaryValues: boolean;
     Next4(entry: EntityEntry): string;
     Next4(entry: EntityEntry): unknown;
@@ -231,6 +263,8 @@ export const TemporaryStringValueGenerator: {
 export type TemporaryStringValueGenerator = TemporaryStringValueGenerator$instance;
 
 export interface TemporaryUIntValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.UInt32> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryUIntValueGenerator: never;
+
     Next4(entry: EntityEntry): uint;
     Next4(entry: EntityEntry): unknown;
 }
@@ -244,6 +278,8 @@ export const TemporaryUIntValueGenerator: {
 export type TemporaryUIntValueGenerator = TemporaryUIntValueGenerator$instance;
 
 export interface TemporaryULongValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.UInt64> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryULongValueGenerator: never;
+
     Next4(entry: EntityEntry): ulong;
     Next4(entry: EntityEntry): unknown;
 }
@@ -257,6 +293,8 @@ export const TemporaryULongValueGenerator: {
 export type TemporaryULongValueGenerator = TemporaryULongValueGenerator$instance;
 
 export interface TemporaryUShortValueGenerator$instance extends TemporaryNumberValueGenerator_1<System_Internal.UInt16> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryUShortValueGenerator: never;
+
     Next4(entry: EntityEntry): ushort;
     Next4(entry: EntityEntry): unknown;
 }

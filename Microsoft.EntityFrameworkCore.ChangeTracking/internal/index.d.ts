@@ -115,6 +115,8 @@ export interface IPrincipalKeyValueFactory_1$instance<TKey> extends IPrincipalKe
 export type IPrincipalKeyValueFactory_1<TKey> = IPrincipalKeyValueFactory_1$instance<TKey>;
 
 export interface ArrayStructuralComparer_1$instance<TElement> extends ValueComparer_1<TElement[]> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ArrayStructuralComparer_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
 
@@ -129,6 +131,8 @@ export const ArrayStructuralComparer_1: {
 export type ArrayStructuralComparer_1<TElement> = ArrayStructuralComparer_1$instance<TElement>;
 
 export interface CaseInsensitiveValueComparer$instance extends ValueComparer_1<System_Internal.String> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_CaseInsensitiveValueComparer: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
 
@@ -143,6 +147,8 @@ export const CaseInsensitiveValueComparer: {
 export type CaseInsensitiveValueComparer = CaseInsensitiveValueComparer$instance;
 
 export interface ChangeTracker$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ChangeTracker: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
 
     AutoDetectChangesEnabled: boolean;
@@ -179,7 +185,9 @@ export interface __ChangeTracker$views {
 export type ChangeTracker = ChangeTracker$instance & __ChangeTracker$views;
 
 
-export interface CollectionEntry$instance extends NavigationEntry$instance {
+export interface CollectionEntry$instance extends NavigationEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_CollectionEntry: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     CurrentValue: IEnumerable | unknown;
@@ -208,6 +216,8 @@ export type CollectionEntry = CollectionEntry$instance & __CollectionEntry$views
 
 
 export interface CollectionEntry_2$instance<TEntity, TRelatedEntity> extends CollectionEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_CollectionEntry_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly EntityEntry: EntityEntry_1<TEntity>;
@@ -229,11 +239,12 @@ export interface __CollectionEntry_2$views<TEntity, TRelatedEntity> {
 export type CollectionEntry_2<TEntity, TRelatedEntity> = CollectionEntry_2$instance<TEntity, TRelatedEntity> & __CollectionEntry_2$views<TEntity, TRelatedEntity>;
 
 
-export interface ComplexCollectionEntry$instance extends MemberEntry$instance {
+export interface ComplexCollectionEntry$instance extends MemberEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ComplexCollectionEntry: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     IsModified: boolean;
-    readonly [ordinal: number]: ComplexElementEntry;
     GetEnumerator(): IEnumerator_1<ComplexElementEntry>;
     GetOriginalEntry(ordinal: int): ComplexElementEntry;
 }
@@ -248,10 +259,12 @@ export interface __ComplexCollectionEntry$views {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export type ComplexCollectionEntry = ComplexCollectionEntry$instance & __ComplexCollectionEntry$views;
+export type ComplexCollectionEntry = ComplexCollectionEntry$instance & __ComplexCollectionEntry$views & { readonly [ordinal: number]: ComplexElementEntry; };
 
 
 export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends ComplexCollectionEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ComplexCollectionEntry_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly EntityEntry: EntityEntry_1<TEntity>;
@@ -268,10 +281,12 @@ export interface __ComplexCollectionEntry_2$views<TEntity, TElement> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export type ComplexCollectionEntry_2<TEntity, TElement> = ComplexCollectionEntry_2$instance<TEntity, TElement> & __ComplexCollectionEntry_2$views<TEntity, TElement>;
+export type ComplexCollectionEntry_2<TEntity, TElement> = ComplexCollectionEntry_2$instance<TEntity, TElement> & __ComplexCollectionEntry_2$views<TEntity, TElement> & { readonly [ordinal: number]: ComplexElementEntry_2<TEntity, TElement>; };
 
 
-export interface ComplexElementEntry$instance {
+export interface ComplexElementEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ComplexElementEntry: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly ComplexCollections: IEnumerable_1<ComplexCollectionEntry>;
@@ -305,6 +320,8 @@ export type ComplexElementEntry = ComplexElementEntry$instance & __ComplexElemen
 
 
 export interface ComplexElementEntry_2$instance<TEntity, TComplexProperty> extends ComplexElementEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ComplexElementEntry_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     ComplexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
@@ -334,7 +351,9 @@ export interface __ComplexElementEntry_2$views<TEntity, TComplexProperty> {
 export type ComplexElementEntry_2<TEntity, TComplexProperty> = ComplexElementEntry_2$instance<TEntity, TComplexProperty> & __ComplexElementEntry_2$views<TEntity, TComplexProperty>;
 
 
-export interface ComplexPropertyEntry$instance extends MemberEntry$instance {
+export interface ComplexPropertyEntry$instance extends MemberEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ComplexPropertyEntry: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly ComplexCollections: IEnumerable_1<ComplexCollectionEntry>;
@@ -363,6 +382,8 @@ export type ComplexPropertyEntry = ComplexPropertyEntry$instance & __ComplexProp
 
 
 export interface ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> extends ComplexPropertyEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ComplexPropertyEntry_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     CurrentValue: TComplexProperty;
@@ -395,6 +416,8 @@ export type ComplexPropertyEntry_2<TEntity, TComplexProperty> = ComplexPropertyE
 
 
 export interface DetectChangesEventArgs$instance extends EventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_DetectChangesEventArgs: never;
+
 }
 
 
@@ -406,6 +429,8 @@ export const DetectChangesEventArgs: {
 export type DetectChangesEventArgs = DetectChangesEventArgs$instance;
 
 export interface DetectedChangesEventArgs$instance extends EventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_DetectedChangesEventArgs: never;
+
     readonly ChangesFound: boolean;
 }
 
@@ -418,6 +443,8 @@ export const DetectedChangesEventArgs: {
 export type DetectedChangesEventArgs = DetectedChangesEventArgs$instance;
 
 export interface DetectedEntityChangesEventArgs$instance extends DetectedChangesEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_DetectedEntityChangesEventArgs: never;
+
     readonly Entry: EntityEntry;
 }
 
@@ -430,6 +457,8 @@ export const DetectedEntityChangesEventArgs: {
 export type DetectedEntityChangesEventArgs = DetectedEntityChangesEventArgs$instance;
 
 export interface DetectEntityChangesEventArgs$instance extends DetectChangesEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_DetectEntityChangesEventArgs: never;
+
     readonly Entry: EntityEntry;
 }
 
@@ -441,7 +470,9 @@ export const DetectEntityChangesEventArgs: {
 
 export type DetectEntityChangesEventArgs = DetectEntityChangesEventArgs$instance;
 
-export interface EntityEntry$instance {
+export interface EntityEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityEntry: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Collections: IEnumerable_1<CollectionEntry>;
@@ -498,6 +529,8 @@ export type EntityEntry = EntityEntry$instance & __EntityEntry$views;
 
 
 export interface EntityEntry_1$instance<TEntity> extends EntityEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityEntry_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     Collection<TProperty>(navigation: INavigationBase): CollectionEntry_2<TEntity, TProperty>;
@@ -536,6 +569,8 @@ export type EntityEntry_1<TEntity> = EntityEntry_1$instance<TEntity> & __EntityE
 
 
 export interface EntityEntryEventArgs$instance extends EventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityEntryEventArgs: never;
+
     readonly Entry: EntityEntry;
 }
 
@@ -547,7 +582,9 @@ export const EntityEntryEventArgs: {
 
 export type EntityEntryEventArgs = EntityEntryEventArgs$instance;
 
-export interface EntityEntryGraphNode$instance {
+export interface EntityEntryGraphNode$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityEntryGraphNode: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Entry: EntityEntry;
@@ -570,6 +607,8 @@ export type EntityEntryGraphNode = EntityEntryGraphNode$instance & __EntityEntry
 
 
 export interface EntityEntryGraphNode_1$instance<TState> extends EntityEntryGraphNode$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityEntryGraphNode_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     NodeState: TState;
@@ -591,6 +630,8 @@ export type EntityEntryGraphNode_1<TState> = EntityEntryGraphNode_1$instance<TSt
 
 
 export interface EntityStateChangedEventArgs$instance extends EntityEntryEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityStateChangedEventArgs: never;
+
     readonly NewState: EntityState;
     readonly OldState: EntityState;
 }
@@ -604,6 +645,8 @@ export const EntityStateChangedEventArgs: {
 export type EntityStateChangedEventArgs = EntityStateChangedEventArgs$instance;
 
 export interface EntityStateChangingEventArgs$instance extends EntityEntryEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityStateChangingEventArgs: never;
+
     readonly NewState: EntityState;
     readonly OldState: EntityState;
 }
@@ -617,6 +660,8 @@ export const EntityStateChangingEventArgs: {
 export type EntityStateChangingEventArgs = EntityStateChangingEventArgs$instance;
 
 export interface EntityTrackedEventArgs$instance extends EntityEntryEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityTrackedEventArgs: never;
+
     readonly FromQuery: boolean;
 }
 
@@ -629,6 +674,8 @@ export const EntityTrackedEventArgs: {
 export type EntityTrackedEventArgs = EntityTrackedEventArgs$instance;
 
 export interface EntityTrackingEventArgs$instance extends EntityEntryEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityTrackingEventArgs: never;
+
     readonly FromQuery: boolean;
     readonly State: EntityState;
 }
@@ -642,6 +689,8 @@ export const EntityTrackingEventArgs: {
 export type EntityTrackingEventArgs = EntityTrackingEventArgs$instance;
 
 export interface EntryCurrentValueComparer_1$instance<TProperty> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntryCurrentValueComparer_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
@@ -659,6 +708,8 @@ export const EntryCurrentValueComparer_1: {
 export type EntryCurrentValueComparer_1<TProperty> = EntryCurrentValueComparer_1$instance<TProperty>;
 
 export interface GeometryValueComparer_1$instance<TGeometry> extends ValueComparer_1<TGeometry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_GeometryValueComparer_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
 
@@ -673,6 +724,8 @@ export const GeometryValueComparer_1: {
 export type GeometryValueComparer_1<TGeometry> = GeometryValueComparer_1$instance<TGeometry>;
 
 export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable_1<Nullable_1<TElement>>>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<Nullable_1<TElement>>> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ListOfNullableValueTypesComparer_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -694,6 +747,8 @@ export type ListOfNullableValueTypesComparer_2<TConcreteList, TElement> = ListOf
 
 
 export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends ValueComparer_1<unknown>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ListOfReferenceTypesComparer_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -715,6 +770,8 @@ export type ListOfReferenceTypesComparer_2<TConcreteList, TElement> = ListOfRefe
 
 
 export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends unknown> extends ValueComparer_1<IEnumerable_1<TElement>>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<TElement>> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ListOfValueTypesComparer_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
@@ -736,6 +793,8 @@ export type ListOfValueTypesComparer_2<TConcreteList, TElement> = ListOfValueTyp
 
 
 export interface LocalView_1$instance<TEntity> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_LocalView_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
@@ -778,14 +837,16 @@ export const LocalView_1: {
 
 export type LocalView_1<TEntity> = LocalView_1$instance<TEntity>;
 
-export interface MemberEntry$instance {
+export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_MemberEntry: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     CurrentValue: IEnumerable | unknown;
     readonly EntityEntry: EntityEntry;
     readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
-    readonly Metadata: INavigationBase | IPropertyBase;
+    readonly Metadata: IProperty | IPropertyBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
@@ -803,7 +864,9 @@ export interface __MemberEntry$views {
 export type MemberEntry = MemberEntry$instance & __MemberEntry$views;
 
 
-export interface NavigationEntry$instance extends MemberEntry$instance {
+export interface NavigationEntry$instance extends MemberEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_NavigationEntry: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly InternalEntityEntry: InternalEntityEntry;
@@ -828,6 +891,8 @@ export type NavigationEntry = NavigationEntry$instance & __NavigationEntry$views
 
 
 export interface ObservableCollectionListSource_1$instance<T> extends ObservableCollection_1<T> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ObservableCollectionListSource_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IList_1: never;
@@ -853,6 +918,8 @@ export const ObservableCollectionListSource_1: {
 export type ObservableCollectionListSource_1<T> = ObservableCollectionListSource_1$instance<T>;
 
 export interface ObservableHashSet_1$instance<T> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ObservableHashSet_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IReadOnlyCollection_1: never;
@@ -901,7 +968,9 @@ export const ObservableHashSet_1: {
 
 export type ObservableHashSet_1<T> = ObservableHashSet_1$instance<T>;
 
-export interface PropertyEntry$instance extends MemberEntry$instance {
+export interface PropertyEntry$instance extends MemberEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     IsModified: boolean;
@@ -923,6 +992,8 @@ export type PropertyEntry = PropertyEntry$instance & __PropertyEntry$views;
 
 
 export interface PropertyEntry_2$instance<TEntity, TProperty> extends PropertyEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     CurrentValue: TProperty;
@@ -943,6 +1014,8 @@ export type PropertyEntry_2<TEntity, TProperty> = PropertyEntry_2$instance<TEnti
 
 
 export interface PropertyValues$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_PropertyValues: never;
+
     readonly ComplexCollectionProperties: IReadOnlyList_1<IComplexProperty>;
     readonly InternalEntry: InternalEntryBase;
     readonly Properties: IReadOnlyList_1<IProperty>;
@@ -973,7 +1046,9 @@ export const PropertyValues: (abstract new(internalEntry: InternalEntryBase) => 
 
 export type PropertyValues = PropertyValues$instance;
 
-export interface ReferenceEntry$instance extends NavigationEntry$instance {
+export interface ReferenceEntry$instance extends NavigationEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ReferenceEntry: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     IsModified: boolean;
@@ -1001,6 +1076,8 @@ export type ReferenceEntry = ReferenceEntry$instance & __ReferenceEntry$views;
 
 
 export interface ReferenceEntry_2$instance<TEntity, TProperty> extends ReferenceEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ReferenceEntry_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     CurrentValue: TProperty;
@@ -1023,6 +1100,8 @@ export type ReferenceEntry_2<TEntity, TProperty> = ReferenceEntry_2$instance<TEn
 
 
 export interface ValueComparer$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ValueComparer: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
 
@@ -1054,6 +1133,8 @@ export const ValueComparer: (abstract new(equalsExpression: LambdaExpression, ha
 export type ValueComparer = ValueComparer$instance;
 
 export interface ValueComparer_1$instance<T> extends ValueComparer {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ValueComparer_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
     readonly __tsonic_iface_System_Collections_IEqualityComparer: never;
 

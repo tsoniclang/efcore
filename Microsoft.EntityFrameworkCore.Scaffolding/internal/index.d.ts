@@ -44,6 +44,8 @@ export interface IProviderConfigurationCodeGenerator$instance {
 export type IProviderConfigurationCodeGenerator = IProviderConfigurationCodeGenerator$instance;
 
 export interface DatabaseModelFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_DatabaseModelFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IDatabaseModelFactory: never;
 
     Create(connectionString: string, options: DatabaseModelFactoryOptions): DatabaseModel;
@@ -63,6 +65,8 @@ export type DatabaseModelFactory = DatabaseModelFactory$instance & __DatabaseMod
 
 
 export interface DatabaseModelFactoryOptions$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_DatabaseModelFactoryOptions: never;
+
     readonly Schemas: IEnumerable_1<System_Internal.String>;
     readonly Tables: IEnumerable_1<System_Internal.String>;
 }
@@ -76,6 +80,8 @@ export const DatabaseModelFactoryOptions: {
 export type DatabaseModelFactoryOptions = DatabaseModelFactoryOptions$instance;
 
 export interface ProviderCodeGenerator$instance extends IProviderConfigurationCodeGenerator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_ProviderCodeGenerator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderConfigurationCodeGenerator: never;
 
     readonly Dependencies: ProviderCodeGeneratorDependencies;
@@ -98,6 +104,8 @@ export type ProviderCodeGenerator = ProviderCodeGenerator$instance & __ProviderC
 
 
 export interface ProviderCodeGeneratorDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_ProviderCodeGeneratorDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     Plugins: IEnumerable_1<IProviderCodeGeneratorPlugin>;
@@ -117,6 +125,8 @@ export const ProviderCodeGeneratorDependencies: {
 export type ProviderCodeGeneratorDependencies = ProviderCodeGeneratorDependencies$instance;
 
 export interface ProviderCodeGeneratorPlugin$instance extends IProviderCodeGeneratorPlugin$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_ProviderCodeGeneratorPlugin: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderCodeGeneratorPlugin: never;
 
     GenerateContextOptions(): MethodCallCodeFragment | undefined;
