@@ -37,6 +37,8 @@ export interface IReadableConventionContext$instance extends Microsoft_EntityFra
 export type IReadableConventionContext = IReadableConventionContext$instance;
 
 export interface ConventionContext_1$instance<TMetadata> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_ConventionContext_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConventionContext: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConventionContext_1: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_IReadableConventionContext: never;
@@ -66,6 +68,8 @@ export type ConventionContext_1<TMetadata> = ConventionContext_1$instance<TMetad
 
 
 export interface ConventionDispatcher$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_ConventionDispatcher: never;
+
     readonly Tracker: MetadataTracker;
     AssertNoScope(): void;
     DelayConventions(): IConventionBatch;
@@ -134,7 +138,9 @@ export const ConventionDispatcher: {
 
 export type ConventionDispatcher = ConventionDispatcher$instance;
 
-export interface MetadataTracker$instance {
+export interface MetadataTracker$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal_Internal.IReferenceRoot_1$instance<IConventionForeignKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_MetadataTracker: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IReferenceRoot_1: never;
 
     Track(foreignKey: IConventionForeignKey): Reference_1<IConventionForeignKey>;
@@ -155,6 +161,8 @@ export type MetadataTracker = MetadataTracker$instance & __MetadataTracker$views
 
 
 export interface RuntimeConventionSetBuilder$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_Internal.IConventionSetBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_RuntimeConventionSetBuilder: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IConventionSetBuilder: never;
 
     CreateConventionSet(): ConventionSet;

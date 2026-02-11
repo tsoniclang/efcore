@@ -13,6 +13,8 @@ import type { Expression, Expression_1, LambdaExpression } from "@tsonic/dotnet/
 import type { Boolean as ClrBoolean, Char, DateOnly, DateTime, DateTimeOffset, Enum, Func_2, Guid, Object as ClrObject, String as ClrString, TimeOnly, TimeSpan, Type, Uri, ValueType } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface CompositeValueConverter_3$instance<TModel, TMiddle, TProvider> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_CompositeValueConverter_3: never;
+
 }
 
 
@@ -24,6 +26,8 @@ export const CompositeValueConverter_3: {
 export type CompositeValueConverter_3<TModel, TMiddle, TProvider> = CompositeValueConverter_3$instance<TModel, TMiddle, TProvider>;
 
 export interface StringCharConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringCharConverter_2: never;
+
 }
 
 
@@ -37,6 +41,8 @@ export const StringCharConverter_2: {
 export type StringCharConverter_2<TModel, TProvider> = StringCharConverter_2$instance<TModel, TProvider>;
 
 export interface StringDateOnlyConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateOnlyConverter_2: never;
+
 }
 
 
@@ -51,6 +57,8 @@ export const StringDateOnlyConverter_2: {
 export type StringDateOnlyConverter_2<TModel, TProvider> = StringDateOnlyConverter_2$instance<TModel, TProvider>;
 
 export interface StringDateTimeConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateTimeConverter_2: never;
+
 }
 
 
@@ -65,6 +73,8 @@ export const StringDateTimeConverter_2: {
 export type StringDateTimeConverter_2<TModel, TProvider> = StringDateTimeConverter_2$instance<TModel, TProvider>;
 
 export interface StringDateTimeOffsetConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateTimeOffsetConverter_2: never;
+
 }
 
 
@@ -79,6 +89,8 @@ export const StringDateTimeOffsetConverter_2: {
 export type StringDateTimeOffsetConverter_2<TModel, TProvider> = StringDateTimeOffsetConverter_2$instance<TModel, TProvider>;
 
 export interface StringEnumConverter_3$instance<TModel, TProvider, TEnum extends number> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringEnumConverter_3: never;
+
 }
 
 
@@ -93,6 +105,8 @@ export const StringEnumConverter_3: {
 export type StringEnumConverter_3<TModel, TProvider, TEnum extends number> = StringEnumConverter_3$instance<TModel, TProvider, TEnum>;
 
 export interface StringGuidConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringGuidConverter_2: never;
+
 }
 
 
@@ -107,6 +121,8 @@ export const StringGuidConverter_2: {
 export type StringGuidConverter_2<TModel, TProvider> = StringGuidConverter_2$instance<TModel, TProvider>;
 
 export interface StringNumberConverter_3$instance<TModel, TProvider, TNumber> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringNumberConverter_3: never;
+
 }
 
 
@@ -121,6 +137,8 @@ export const StringNumberConverter_3: {
 export type StringNumberConverter_3<TModel, TProvider, TNumber> = StringNumberConverter_3$instance<TModel, TProvider, TNumber>;
 
 export interface StringTimeOnlyConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringTimeOnlyConverter_2: never;
+
 }
 
 
@@ -135,6 +153,8 @@ export const StringTimeOnlyConverter_2: {
 export type StringTimeOnlyConverter_2<TModel, TProvider> = StringTimeOnlyConverter_2$instance<TModel, TProvider>;
 
 export interface StringTimeSpanConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringTimeSpanConverter_2: never;
+
 }
 
 
@@ -149,6 +169,8 @@ export const StringTimeSpanConverter_2: {
 export type StringTimeSpanConverter_2<TModel, TProvider> = StringTimeSpanConverter_2$instance<TModel, TProvider>;
 
 export interface StringUriConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringUriConverter_2: never;
+
 }
 
 

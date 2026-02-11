@@ -167,6 +167,8 @@ export interface IMigrator$instance {
 export type IMigrator = IMigrator$instance;
 
 export interface HistoryRepository$instance extends IHistoryRepository$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_HistoryRepository: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IHistoryRepository: never;
 
     readonly Dependencies: HistoryRepositoryDependencies;
@@ -212,6 +214,8 @@ export type HistoryRepository = HistoryRepository$instance & __HistoryRepository
 
 
 export interface HistoryRepositoryDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_HistoryRepositoryDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     CommandLogger: IRelationalCommandDiagnosticsLogger;
@@ -245,6 +249,8 @@ export const HistoryRepositoryDependencies: {
 export type HistoryRepositoryDependencies = HistoryRepositoryDependencies$instance;
 
 export interface HistoryRow$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_HistoryRow: never;
+
     readonly MigrationId: string;
     readonly ProductVersion: string;
 }
@@ -258,6 +264,8 @@ export const HistoryRow: {
 export type HistoryRow = HistoryRow$instance;
 
 export interface Migration$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Migration: never;
+
     get ActiveProvider(): string | undefined;
     set ActiveProvider(value: string | undefined);
     readonly DownOperations: IReadOnlyList_1<MigrationOperation>;
@@ -277,6 +285,8 @@ export const Migration: (abstract new() => Migration) & {
 export type Migration = Migration$instance;
 
 export interface MigrationAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_MigrationAttribute: never;
+
     readonly Id: string;
 }
 
@@ -289,6 +299,8 @@ export const MigrationAttribute: {
 export type MigrationAttribute = MigrationAttribute$instance;
 
 export interface MigrationBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder: never;
+
     readonly ActiveProvider: string | undefined;
     readonly Operations: List_1<MigrationOperation>;
     AddCheckConstraint(name: string, table: string, sql: string, schema?: string): OperationBuilder_1<AddCheckConstraintOperation>;
@@ -364,6 +376,8 @@ export const MigrationBuilder: {
 export type MigrationBuilder = MigrationBuilder$instance;
 
 export interface MigrationCommand$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_MigrationCommand: never;
+
     readonly CommandLogger: IRelationalCommandDiagnosticsLogger;
     readonly CommandText: string;
     readonly TransactionSuppressed: boolean;
@@ -380,6 +394,8 @@ export const MigrationCommand: {
 export type MigrationCommand = MigrationCommand$instance;
 
 export interface MigrationCommandListBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_MigrationCommandListBuilder: never;
+
     readonly Dependencies: MigrationsSqlGeneratorDependencies;
     Append(o: string): MigrationCommandListBuilder;
     AppendLine(): MigrationCommandListBuilder;
@@ -402,6 +418,8 @@ export const MigrationCommandListBuilder: {
 export type MigrationCommandListBuilder = MigrationCommandListBuilder$instance;
 
 export interface MigrationExecutionState$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_MigrationExecutionState: never;
+
     AnyOperationPerformed: boolean;
     get CurrentMigrationId(): string | undefined;
     set CurrentMigrationId(value: string | undefined);
@@ -421,6 +439,8 @@ export const MigrationExecutionState: {
 export type MigrationExecutionState = MigrationExecutionState$instance;
 
 export interface MigrationsAnnotationProvider$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_MigrationsAnnotationProvider: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsAnnotationProvider: never;
 
     readonly Dependencies: MigrationsAnnotationProviderDependencies;
@@ -454,6 +474,8 @@ export type MigrationsAnnotationProvider = MigrationsAnnotationProvider$instance
 
 
 export interface MigrationsAnnotationProviderDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_MigrationsAnnotationProviderDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): MigrationsAnnotationProviderDependencies;
@@ -472,6 +494,8 @@ export const MigrationsAnnotationProviderDependencies: {
 export type MigrationsAnnotationProviderDependencies = MigrationsAnnotationProviderDependencies$instance;
 
 export interface MigrationsSqlGenerator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_MigrationsSqlGenerator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_IMigrationsSqlGenerator: never;
 
     readonly Dependencies: MigrationsSqlGeneratorDependencies;
@@ -558,6 +582,8 @@ export type MigrationsSqlGenerator = MigrationsSqlGenerator$instance & __Migrati
 
 
 export interface MigrationsSqlGeneratorDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_MigrationsSqlGeneratorDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     CommandBuilderFactory: IRelationalCommandBuilderFactory;

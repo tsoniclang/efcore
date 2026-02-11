@@ -46,6 +46,8 @@ export interface IProviderConventionSetBuilder$instance {
 export type IProviderConventionSetBuilder = IProviderConventionSetBuilder$instance;
 
 export interface ProviderConventionSetBuilder$instance extends IProviderConventionSetBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_ProviderConventionSetBuilder: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IProviderConventionSetBuilder: never;
 
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
@@ -67,6 +69,8 @@ export type ProviderConventionSetBuilder = ProviderConventionSetBuilder$instance
 
 
 export interface ProviderConventionSetBuilderDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_ProviderConventionSetBuilderDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     ConstructorBindingFactory: IConstructorBindingFactory;
@@ -94,6 +98,8 @@ export const ProviderConventionSetBuilderDependencies: {
 export type ProviderConventionSetBuilderDependencies = ProviderConventionSetBuilderDependencies$instance;
 
 export interface RelationalConventionSetBuilder$instance extends ProviderConventionSetBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_RelationalConventionSetBuilder: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IProviderConventionSetBuilder: never;
 
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
@@ -113,6 +119,8 @@ export type RelationalConventionSetBuilder = RelationalConventionSetBuilder$inst
 
 
 export interface RelationalConventionSetBuilderDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_RelationalConventionSetBuilderDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     RelationalAnnotationProvider: IRelationalAnnotationProvider;

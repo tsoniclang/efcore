@@ -234,6 +234,8 @@ export interface IUpdateSqlGenerator$instance {
 export type IUpdateSqlGenerator = IUpdateSqlGenerator$instance;
 
 export interface ColumnModificationParameters$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_ColumnModificationParameters: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     get Column(): IColumnBase | undefined;
@@ -279,6 +281,8 @@ export const ColumnModificationParameters: {
 export type ColumnModificationParameters = ColumnModificationParameters$instance;
 
 export interface ModificationCommandParameters$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_ModificationCommandParameters: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     get Comparer(): IComparer_1<IUpdateEntry> | undefined;
@@ -311,6 +315,8 @@ export const ModificationCommandParameters: {
 export type ModificationCommandParameters = ModificationCommandParameters$instance;
 
 export interface NonTrackedModificationCommandParameters$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_NonTrackedModificationCommandParameters: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     get Schema(): string | undefined;
@@ -335,6 +341,8 @@ export const NonTrackedModificationCommandParameters: {
 export type NonTrackedModificationCommandParameters = NonTrackedModificationCommandParameters$instance;
 
 export interface AffectedCountModificationCommandBatch$instance extends ReaderModificationCommandBatch {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_AffectedCountModificationCommandBatch: never;
+
     Consume(reader: RelationalDataReader): void;
     ConsumeAsync(reader: RelationalDataReader, cancellationToken?: CancellationToken): Task;
     ConsumeResultSet(startCommandIndex: int, reader: RelationalDataReader): int;
@@ -353,6 +361,8 @@ export const AffectedCountModificationCommandBatch: (abstract new(dependencies: 
 export type AffectedCountModificationCommandBatch = AffectedCountModificationCommandBatch$instance;
 
 export interface ColumnModification$instance extends IColumnModification$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_ColumnModification: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IColumnModification: never;
 
     readonly Column: IColumnBase | undefined;
@@ -403,6 +413,8 @@ export type ColumnModification = ColumnModification$instance & __ColumnModificat
 
 
 export interface EquatableKeyValue_1$instance<TKey> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_EquatableKeyValue_1: never;
+
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
 }
@@ -416,6 +428,8 @@ export const EquatableKeyValue_1: {
 export type EquatableKeyValue_1<TKey> = EquatableKeyValue_1$instance<TKey>;
 
 export interface ModificationCommand$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_ModificationCommand: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IModificationCommand: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_INonTrackedModificationCommand: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IReadOnlyModificationCommand: never;
@@ -456,6 +470,8 @@ export type ModificationCommand = ModificationCommand$instance & __ModificationC
 
 
 export interface ModificationCommandBatch$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_ModificationCommandBatch: never;
+
     readonly AreMoreBatchesExpected: boolean;
     readonly ModificationCommands: IReadOnlyList_1<IReadOnlyModificationCommand>;
     readonly RequiresTransaction: boolean;
@@ -473,6 +489,8 @@ export const ModificationCommandBatch: (abstract new() => ModificationCommandBat
 export type ModificationCommandBatch = ModificationCommandBatch$instance;
 
 export interface ModificationCommandBatchFactoryDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_ModificationCommandBatchFactoryDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     CommandBuilderFactory: IRelationalCommandBuilderFactory;
@@ -497,6 +515,8 @@ export const ModificationCommandBatchFactoryDependencies: {
 export type ModificationCommandBatchFactoryDependencies = ModificationCommandBatchFactoryDependencies$instance;
 
 export interface ReaderModificationCommandBatch$instance extends ModificationCommandBatch {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_ReaderModificationCommandBatch: never;
+
     readonly AreMoreBatchesExpected: boolean;
     readonly Dependencies: ModificationCommandBatchFactoryDependencies;
     readonly IsCommandTextEmpty: boolean;
@@ -532,6 +552,8 @@ export const ReaderModificationCommandBatch: (abstract new(dependencies: Modific
 export type ReaderModificationCommandBatch = ReaderModificationCommandBatch$instance;
 
 export interface SingularModificationCommandBatch$instance extends AffectedCountModificationCommandBatch {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_SingularModificationCommandBatch: never;
+
 }
 
 
@@ -543,6 +565,8 @@ export const SingularModificationCommandBatch: {
 export type SingularModificationCommandBatch = SingularModificationCommandBatch$instance;
 
 export interface UpdateAndSelectSqlGenerator$instance extends UpdateSqlGenerator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_UpdateAndSelectSqlGenerator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateSqlGenerator: never;
 
     AppendBatchHeader(commandStringBuilder: StringBuilder): void;
@@ -581,6 +605,8 @@ export type UpdateAndSelectSqlGenerator = UpdateAndSelectSqlGenerator$instance &
 
 
 export interface UpdateSqlGenerator$instance extends IUpdateSqlGenerator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_UpdateSqlGenerator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateSqlGenerator: never;
 
     readonly Dependencies: UpdateSqlGeneratorDependencies;
@@ -629,6 +655,8 @@ export type UpdateSqlGenerator = UpdateSqlGenerator$instance & __UpdateSqlGenera
 
 
 export interface UpdateSqlGeneratorDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_UpdateSqlGeneratorDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     SqlGenerationHelper: ISqlGenerationHelper;

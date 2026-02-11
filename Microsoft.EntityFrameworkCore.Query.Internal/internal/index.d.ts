@@ -85,6 +85,8 @@ export interface IRelationalQueryingEnumerable$instance extends Microsoft_Entity
 export type IRelationalQueryingEnumerable = IRelationalQueryingEnumerable$instance;
 
 export interface JsonProjectionInfo$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_JsonProjectionInfo: never;
+
     readonly JsonColumnIndex: int;
     readonly KeyAccessInfo: List_1<ValueTuple_3<IProperty, Nullable_1<System_Internal.Int32>, Nullable_1<System_Internal.Int32>>>;
 }
@@ -98,6 +100,8 @@ export const JsonProjectionInfo: {
 export type JsonProjectionInfo = JsonProjectionInfo$instance;
 
 export interface QueryableJsonProjectionInfo$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryableJsonProjectionInfo: never;
+
     readonly ChildrenProjectionInfo: IList_1<ValueTuple_2<JsonProjectionInfo, INavigation>>;
     readonly PropertyIndexMap: IDictionary_2<IPropertyBase, System_Internal.Int32>;
 }
@@ -111,6 +115,8 @@ export const QueryableJsonProjectionInfo: {
 export type QueryableJsonProjectionInfo = QueryableJsonProjectionInfo$instance;
 
 export interface BufferedDataReader$instance extends DbDataReader {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_BufferedDataReader: never;
+
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
     readonly __tsonic_iface_System_Data_IDataReader: never;
     readonly __tsonic_iface_System_Data_IDataRecord: never;
@@ -170,6 +176,8 @@ export const BufferedDataReader: {
 export type BufferedDataReader = BufferedDataReader$instance;
 
 export interface ByteArraySequenceEqualTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ByteArraySequenceEqualTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -189,6 +197,8 @@ export type ByteArraySequenceEqualTranslator = ByteArraySequenceEqualTranslator$
 
 
 export interface CallForwardingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CallForwardingExpressionVisitor: never;
+
     VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
@@ -201,6 +211,8 @@ export const CallForwardingExpressionVisitor: {
 export type CallForwardingExpressionVisitor = CallForwardingExpressionVisitor$instance;
 
 export interface CollateTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CollateTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -220,6 +232,8 @@ export type CollateTranslator = CollateTranslator$instance & __CollateTranslator
 
 
 export interface ComparisonTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ComparisonTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -239,6 +253,8 @@ export type ComparisonTranslator = ComparisonTranslator$instance & __ComparisonT
 
 
 export interface CompiledAsyncEnumerableQuery_2$instance<TContext extends DbContext, TResult> extends CompiledQueryBase_2<TContext, IAsyncEnumerable_1<TResult>> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledAsyncEnumerableQuery_2: never;
+
     CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func_2<QueryContext, IAsyncEnumerable_1<TResult>>;
     Execute(context: TContext): IAsyncEnumerable_1<TResult>;
     Execute<TParam1>(context: TContext, param1: TParam1): IAsyncEnumerable_1<TResult>;
@@ -267,6 +283,8 @@ export const CompiledAsyncEnumerableQuery_2: {
 export type CompiledAsyncEnumerableQuery_2<TContext extends DbContext, TResult> = CompiledAsyncEnumerableQuery_2$instance<TContext, TResult>;
 
 export interface CompiledAsyncTaskQuery_2$instance<TContext extends DbContext, TResult> extends CompiledQueryBase_2<TContext, Task_1<TResult>> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledAsyncTaskQuery_2: never;
+
     CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func_2<QueryContext, Task_1<TResult>>;
     ExecuteAsync(context: TContext): Task_1<TResult>;
     ExecuteAsync(context: TContext, cancellationToken: CancellationToken): Task_1<TResult>;
@@ -310,6 +328,8 @@ export const CompiledAsyncTaskQuery_2: {
 export type CompiledAsyncTaskQuery_2<TContext extends DbContext, TResult> = CompiledAsyncTaskQuery_2$instance<TContext, TResult>;
 
 export interface CompiledQuery_2$instance<TContext extends DbContext, TResult> extends CompiledQueryBase_2<TContext, TResult> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQuery_2: never;
+
     CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func_2<QueryContext, TResult>;
     Execute(context: TContext): TResult;
     Execute<TParam1>(context: TContext, param1: TParam1): TResult;
@@ -338,6 +358,8 @@ export const CompiledQuery_2: {
 export type CompiledQuery_2<TContext extends DbContext, TResult> = CompiledQuery_2$instance<TContext, TResult>;
 
 export interface CompiledQueryBase_2$instance<TContext extends DbContext, TResult> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQueryBase_2: never;
+
     CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func_2<QueryContext, TResult>;
     ExecuteCore(context: TContext, ...parameters: unknown[]): TResult;
     ExecuteCore(context: TContext, cancellationToken: CancellationToken, ...parameters: unknown[]): TResult;
@@ -351,6 +373,8 @@ export const CompiledQueryBase_2: (abstract new<TContext extends DbContext, TRes
 export type CompiledQueryBase_2<TContext extends DbContext, TResult> = CompiledQueryBase_2$instance<TContext, TResult>;
 
 export interface CompiledQueryCache$instance extends ICompiledQueryCache$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQueryCache: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_ICompiledQueryCache: never;
 
     GetOrAddQuery<TResult>(cacheKey: unknown, compiler: Func_1<Func_2<QueryContext, TResult>>): Func_2<QueryContext, TResult>;
@@ -370,6 +394,8 @@ export type CompiledQueryCache = CompiledQueryCache$instance & __CompiledQueryCa
 
 
 export interface ContainsTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ContainsTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -389,6 +415,8 @@ export type ContainsTranslator = ContainsTranslator$instance & __ContainsTransla
 
 
 export interface EntityQueryable_1$instance<TResult> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_EntityQueryable_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
@@ -416,6 +444,8 @@ export const EntityQueryable_1: {
 export type EntityQueryable_1<TResult> = EntityQueryable_1$instance<TResult>;
 
 export interface EntityQueryProvider$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_EntityQueryProvider: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAsyncQueryProvider: never;
     readonly __tsonic_iface_System_Linq_IQueryProvider: never;
 
@@ -440,6 +470,8 @@ export type EntityQueryProvider = EntityQueryProvider$instance & __EntityQueryPr
 
 
 export interface EnumMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_EnumMethodTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -459,6 +491,8 @@ export type EnumMethodTranslator = EnumMethodTranslator$instance & __EnumMethodT
 
 
 export interface EqualsTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_EqualsTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -478,6 +512,8 @@ export type EqualsTranslator = EqualsTranslator$instance & __EqualsTranslator$vi
 
 
 export interface ExpressionTreeFuncletizer$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ExpressionTreeFuncletizer: never;
+
     CalculatePathsToEvaluatableRoots(linqOperatorMethodCall: MethodCallExpression, argumentIndex: int): ExpressionTreeFuncletizer_PathNode | undefined;
     CalculatePathsToEvaluatableRoots(expression: Expression): ExpressionTreeFuncletizer_PathNode | undefined;
     ExtractParameters(expression: Expression, parameters: Dictionary_2<System_Internal.String, unknown>, parameterize: boolean, clearParameterizedValues: boolean): Expression;
@@ -527,6 +563,8 @@ export const ExpressionTreeFuncletizer: {
 export type ExpressionTreeFuncletizer = ExpressionTreeFuncletizer$instance;
 
 export interface ExpressionTreeFuncletizer_PathNode$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ExpressionTreeFuncletizer_PathNode: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     get Children(): IReadOnlyList_1<ExpressionTreeFuncletizer_PathNode> | undefined;
@@ -552,6 +590,8 @@ export const ExpressionTreeFuncletizer_PathNode: {
 export type ExpressionTreeFuncletizer_PathNode = ExpressionTreeFuncletizer_PathNode$instance;
 
 export interface FromSqlQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_FromSqlQueryingEnumerable_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -580,6 +620,8 @@ export type FromSqlQueryingEnumerable_1<T> = FromSqlQueryingEnumerable_1$instanc
 
 
 export interface FromSqlQueryRootExpression$instance extends EntityQueryRootExpression {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_FromSqlQueryRootExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Argument: Expression;
@@ -607,6 +649,8 @@ export type FromSqlQueryRootExpression = FromSqlQueryRootExpression$instance & _
 
 
 export interface GetValueOrDefaultTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_GetValueOrDefaultTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -626,6 +670,8 @@ export type GetValueOrDefaultTranslator = GetValueOrDefaultTranslator$instance &
 
 
 export interface GroupBySingleQueryingEnumerable_2$instance<TKey, TElement> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<IGrouping_2<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable_1<IGrouping_2<TKey, TElement>> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_GroupBySingleQueryingEnumerable_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -653,6 +699,8 @@ export type GroupBySingleQueryingEnumerable_2<TKey, TElement> = GroupBySingleQue
 
 
 export interface GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<IGrouping_2<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable_1<IGrouping_2<TKey, TElement>> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_GroupBySplitQueryingEnumerable_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -680,6 +728,8 @@ export type GroupBySplitQueryingEnumerable_2<TKey, TElement> = GroupBySplitQuery
 
 
 export interface InvocationExpressionRemovingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_InvocationExpressionRemovingExpressionVisitor: never;
+
     VisitInvocation(invocationExpression: InvocationExpression): Expression;
 }
 
@@ -692,6 +742,8 @@ export const InvocationExpressionRemovingExpressionVisitor: {
 export type InvocationExpressionRemovingExpressionVisitor = InvocationExpressionRemovingExpressionVisitor$instance;
 
 export interface LikeTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_LikeTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -711,6 +763,8 @@ export type LikeTranslator = LikeTranslator$instance & __LikeTranslator$views;
 
 
 export interface NavigationExpandingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_NavigationExpandingExpressionVisitor: never;
+
     Expand(query: Expression): Expression;
     VisitExtension(extensionExpression: Expression): Expression;
     VisitMember(memberExpression: MemberExpression): Expression;
@@ -728,6 +782,8 @@ export const NavigationExpandingExpressionVisitor: {
 export type NavigationExpandingExpressionVisitor = NavigationExpandingExpressionVisitor$instance;
 
 export interface NullAsyncQueryProvider$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_NullAsyncQueryProvider: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAsyncQueryProvider: never;
     readonly __tsonic_iface_System_Linq_IQueryProvider: never;
 
@@ -747,6 +803,8 @@ export type NullAsyncQueryProvider = NullAsyncQueryProvider$instance & __NullAsy
 
 
 export interface NullCheckRemovingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_NullCheckRemovingExpressionVisitor: never;
+
     VisitBinary(binaryExpression: BinaryExpression): Expression;
     VisitConditional(conditionalExpression: ConditionalExpression): Expression;
 }
@@ -760,6 +818,8 @@ export const NullCheckRemovingExpressionVisitor: {
 export type NullCheckRemovingExpressionVisitor = NullCheckRemovingExpressionVisitor$instance;
 
 export interface PrecompiledQueryableAsyncEnumerableAdapter_1$instance<T> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_PrecompiledQueryableAsyncEnumerableAdapter_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
@@ -782,6 +842,8 @@ export const PrecompiledQueryableAsyncEnumerableAdapter_1: {
 export type PrecompiledQueryableAsyncEnumerableAdapter_1<T> = PrecompiledQueryableAsyncEnumerableAdapter_1$instance<T>;
 
 export interface PrecompiledQueryContext_1$instance<T> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_PrecompiledQueryContext_1: never;
+
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
     readonly __tsonic_iface_System_Linq_IOrderedQueryable: never;
@@ -808,6 +870,8 @@ export const PrecompiledQueryContext_1: {
 export type PrecompiledQueryContext_1<T> = PrecompiledQueryContext_1$instance<T>;
 
 export interface PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2$instance<T, TEntity, TProperty> extends PrecompiledQueryContext_1<TEntity>, IIncludableQueryable_2<TEntity, TProperty> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IIncludableQueryable_2: never;
     readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
@@ -827,6 +891,8 @@ export const PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2: {
 export type PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2<T, TEntity, TProperty> = PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2$instance<T, TEntity, TProperty>;
 
 export interface QueryableAggregateMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAggregateMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryableAggregateMethodTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAggregateMethodCallTranslator: never;
 
     Translate(method: MethodInfo, source: EnumerableExpression, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -846,6 +912,8 @@ export type QueryableAggregateMethodTranslator = QueryableAggregateMethodTransla
 
 
 export interface QueryableMethodNormalizingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryableMethodNormalizingExpressionVisitor: never;
+
     Normalize(expression: Expression): Expression;
     VisitBinary(binaryExpression: BinaryExpression): Expression;
     VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
@@ -860,6 +928,8 @@ export const QueryableMethodNormalizingExpressionVisitor: {
 export type QueryableMethodNormalizingExpressionVisitor = QueryableMethodNormalizingExpressionVisitor$instance;
 
 export interface QueryCompilationContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryCompilationContextFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryCompilationContextFactory: never;
 
     readonly Dependencies: QueryCompilationContextDependencies;
@@ -881,6 +951,8 @@ export type QueryCompilationContextFactory = QueryCompilationContextFactory$inst
 
 
 export interface QueryCompiler$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryCompiler: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IQueryCompiler: never;
 
     CompileQueryCore<TResult>(database: IDatabase, query: Expression, model: IModel, async: boolean): Func_2<QueryContext, TResult>;
@@ -906,6 +978,8 @@ export type QueryCompiler = QueryCompiler$instance & __QueryCompiler$views;
 
 
 export interface QueryDebugView$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryDebugView: never;
+
     readonly Expression: string;
     readonly Query: string;
 }
@@ -919,6 +993,8 @@ export const QueryDebugView: {
 export type QueryDebugView = QueryDebugView$instance;
 
 export interface QueryExpressionReplacingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryExpressionReplacingExpressionVisitor: never;
+
     Visit(expression: Expression): Expression | undefined;
 }
 
@@ -931,6 +1007,8 @@ export const QueryExpressionReplacingExpressionVisitor: {
 export type QueryExpressionReplacingExpressionVisitor = QueryExpressionReplacingExpressionVisitor$instance;
 
 export interface QueryFiltersCacheKey$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryFiltersCacheKey: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     Equals(other: QueryFiltersCacheKey): boolean;
@@ -947,6 +1025,8 @@ export const QueryFiltersCacheKey: {
 export type QueryFiltersCacheKey = QueryFiltersCacheKey$instance;
 
 export interface QueryOptimizingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryOptimizingExpressionVisitor: never;
+
     VisitBinary(binaryExpression: BinaryExpression): Expression;
     VisitConditional(conditionalExpression: ConditionalExpression): Expression;
     VisitElementInit(elementInit: ElementInit): ElementInit;
@@ -968,6 +1048,8 @@ export const QueryOptimizingExpressionVisitor: {
 export type QueryOptimizingExpressionVisitor = QueryOptimizingExpressionVisitor$instance;
 
 export interface QuerySqlGeneratorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQuerySqlGeneratorFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QuerySqlGeneratorFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQuerySqlGeneratorFactory: never;
 
     readonly Dependencies: QuerySqlGeneratorDependencies;
@@ -988,6 +1070,8 @@ export type QuerySqlGeneratorFactory = QuerySqlGeneratorFactory$instance & __Que
 
 
 export interface QueryTranslationPostprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryTranslationPostprocessorFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPostprocessorFactory: never;
 
     readonly Dependencies: QueryTranslationPostprocessorDependencies;
@@ -1008,6 +1092,8 @@ export type QueryTranslationPostprocessorFactory = QueryTranslationPostprocessor
 
 
 export interface QueryTranslationPreprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryTranslationPreprocessorFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPreprocessorFactory: never;
 
     readonly Dependencies: QueryTranslationPreprocessorDependencies;
@@ -1028,6 +1114,8 @@ export type QueryTranslationPreprocessorFactory = QueryTranslationPreprocessorFa
 
 
 export interface RandomTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RandomTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -1047,6 +1135,8 @@ export type RandomTranslator = RandomTranslator$instance & __RandomTranslator$vi
 
 
 export interface RelationalCommandCache$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalCommandCache: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     GetRelationalCommandTemplate(parameters: Dictionary_2<System_Internal.String, unknown>): IRelationalCommandTemplate;
@@ -1066,6 +1156,8 @@ export type RelationalCommandCache = RelationalCommandCache$instance & __Relatio
 
 
 export interface RelationalParameterBasedSqlProcessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IRelationalParameterBasedSqlProcessorFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalParameterBasedSqlProcessorFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalParameterBasedSqlProcessorFactory: never;
 
     readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
@@ -1086,6 +1178,8 @@ export type RelationalParameterBasedSqlProcessorFactory = RelationalParameterBas
 
 
 export interface RelationalParameterProcessor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalParameterProcessor: never;
+
     readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
     Expand(queryExpression: Expression, parametersDecorator: ParametersCacheDecorator): Expression;
     VisitExtension(expression: Expression): Expression;
@@ -1100,6 +1194,8 @@ export const RelationalParameterProcessor: {
 export type RelationalParameterProcessor = RelationalParameterProcessor$instance;
 
 export interface RelationalProjectionBindingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalProjectionBindingExpressionVisitor: never;
+
     Translate(selectExpression: SelectExpression, expression: Expression): Expression;
     Visit(expression: Expression): Expression | undefined;
     VisitBinary(binaryExpression: BinaryExpression): Expression;
@@ -1125,6 +1221,8 @@ export const RelationalProjectionBindingExpressionVisitor: {
 export type RelationalProjectionBindingExpressionVisitor = RelationalProjectionBindingExpressionVisitor$instance;
 
 export interface RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryableMethodTranslatingExpressionVisitorFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryableMethodTranslatingExpressionVisitorFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryableMethodTranslatingExpressionVisitorFactory: never;
 
     readonly Dependencies: QueryableMethodTranslatingExpressionVisitorDependencies;
@@ -1146,6 +1244,8 @@ export type RelationalQueryableMethodTranslatingExpressionVisitorFactory = Relat
 
 
 export interface RelationalQueryCompilationContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryCompilationContextFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryCompilationContextFactory: never;
 
     readonly Dependencies: QueryCompilationContextDependencies;
@@ -1168,6 +1268,8 @@ export type RelationalQueryCompilationContextFactory = RelationalQueryCompilatio
 
 
 export interface RelationalQueryContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryContextFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryContextFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryContextFactory: never;
 
     readonly Dependencies: QueryContextDependencies;
@@ -1189,6 +1291,8 @@ export type RelationalQueryContextFactory = RelationalQueryContextFactory$instan
 
 
 export interface RelationalQueryMetadataExtractingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryMetadataExtractingExpressionVisitor: never;
+
     VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
 
@@ -1201,6 +1305,8 @@ export const RelationalQueryMetadataExtractingExpressionVisitor: {
 export type RelationalQueryMetadataExtractingExpressionVisitor = RelationalQueryMetadataExtractingExpressionVisitor$instance;
 
 export interface RelationalQueryStringFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQueryStringFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryStringFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQueryStringFactory: never;
 
     Create(command: DbCommand): string;
@@ -1220,6 +1326,8 @@ export type RelationalQueryStringFactory = RelationalQueryStringFactory$instance
 
 
 export interface RelationalQueryTranslationPostprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryTranslationPostprocessorFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPostprocessorFactory: never;
 
     readonly Dependencies: QueryTranslationPostprocessorDependencies;
@@ -1241,6 +1349,8 @@ export type RelationalQueryTranslationPostprocessorFactory = RelationalQueryTran
 
 
 export interface RelationalQueryTranslationPreprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryTranslationPreprocessorFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPreprocessorFactory: never;
 
     readonly Dependencies: QueryTranslationPreprocessorDependencies;
@@ -1262,6 +1372,8 @@ export type RelationalQueryTranslationPreprocessorFactory = RelationalQueryTrans
 
 
 export interface RelationalShapedQueryCompilingExpressionVisitorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IShapedQueryCompilingExpressionVisitorFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalShapedQueryCompilingExpressionVisitorFactory: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IShapedQueryCompilingExpressionVisitorFactory: never;
 
     readonly Dependencies: ShapedQueryCompilingExpressionVisitorDependencies;
@@ -1283,6 +1395,8 @@ export type RelationalShapedQueryCompilingExpressionVisitorFactory = RelationalS
 
 
 export interface RelationalStructuralTypeMaterializerSource$instance extends StructuralTypeMaterializerSource$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalStructuralTypeMaterializerSource: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IStructuralTypeMaterializerSource: never;
 
     CreateMaterializeExpression(parameters: StructuralTypeMaterializerSourceParameters, materializationContextExpression: Expression): Expression;
@@ -1305,6 +1419,8 @@ export type RelationalStructuralTypeMaterializerSource = RelationalStructuralTyp
 
 
 export interface RelationalValueConverterCompensatingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalValueConverterCompensatingExpressionVisitor: never;
+
     VisitExtension(extensionExpression: Expression): Expression;
 }
 
@@ -1317,6 +1433,8 @@ export const RelationalValueConverterCompensatingExpressionVisitor: {
 export type RelationalValueConverterCompensatingExpressionVisitor = RelationalValueConverterCompensatingExpressionVisitor$instance;
 
 export interface ResultContext$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ResultContext: never;
+
     get Values(): unknown[] | undefined;
     set Values(value: unknown[] | undefined);
 }
@@ -1330,6 +1448,8 @@ export const ResultContext: {
 export type ResultContext = ResultContext$instance;
 
 export interface SelectExpressionProjectionApplyingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SelectExpressionProjectionApplyingExpressionVisitor: never;
+
     VisitExtension(extensionExpression: Expression): Expression;
 }
 
@@ -1342,6 +1462,8 @@ export const SelectExpressionProjectionApplyingExpressionVisitor: {
 export type SelectExpressionProjectionApplyingExpressionVisitor = SelectExpressionProjectionApplyingExpressionVisitor$instance;
 
 export interface SingleQueryCollectionContext$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SingleQueryCollectionContext: never;
+
     readonly Collection: unknown | undefined;
     readonly OuterIdentifier: unknown[];
     readonly Parent: unknown | undefined;
@@ -1361,6 +1483,8 @@ export const SingleQueryCollectionContext: {
 export type SingleQueryCollectionContext = SingleQueryCollectionContext$instance;
 
 export interface SingleQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SingleQueryingEnumerable_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -1388,6 +1512,8 @@ export type SingleQueryingEnumerable_1<T> = SingleQueryingEnumerable_1$instance<
 
 
 export interface SingleQueryResultCoordinator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SingleQueryResultCoordinator: never;
+
     readonly Collections: IList_1<SingleQueryCollectionContext | undefined>;
     HasNext: Nullable_1<System_Internal.Boolean>;
     readonly ResultContext: ResultContext;
@@ -1404,6 +1530,8 @@ export const SingleQueryResultCoordinator: {
 export type SingleQueryResultCoordinator = SingleQueryResultCoordinator$instance;
 
 export interface SplitQueryCollectionContext$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SplitQueryCollectionContext: never;
+
     readonly Collection: unknown | undefined;
     readonly Parent: unknown | undefined;
     readonly ParentIdentifier: unknown[];
@@ -1419,6 +1547,8 @@ export const SplitQueryCollectionContext: {
 export type SplitQueryCollectionContext = SplitQueryCollectionContext$instance;
 
 export interface SplitQueryDataReaderContext$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SplitQueryDataReaderContext: never;
+
     readonly DataReader: RelationalDataReader;
     HasNext: Nullable_1<System_Internal.Boolean>;
 }
@@ -1432,6 +1562,8 @@ export const SplitQueryDataReaderContext: {
 export type SplitQueryDataReaderContext = SplitQueryDataReaderContext$instance;
 
 export interface SplitQueryingEnumerable_1$instance<T> extends System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SplitQueryingEnumerable_1: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
     readonly __tsonic_iface_System_Collections_Generic_IAsyncEnumerable_1: never;
@@ -1459,6 +1591,8 @@ export type SplitQueryingEnumerable_1<T> = SplitQueryingEnumerable_1$instance<T>
 
 
 export interface SplitQueryResultCoordinator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SplitQueryResultCoordinator: never;
+
     readonly Collections: IList_1<SplitQueryCollectionContext | undefined>;
     readonly DataReaders: IList_1<SplitQueryDataReaderContext | undefined>;
     HasNext: Nullable_1<System_Internal.Boolean>;
@@ -1476,6 +1610,8 @@ export const SplitQueryResultCoordinator: {
 export type SplitQueryResultCoordinator = SplitQueryResultCoordinator$instance;
 
 export interface SqlExpressionSimplifyingExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SqlExpressionSimplifyingExpressionVisitor: never;
+
     VisitExtension(extensionExpression: Expression): Expression;
 }
 
@@ -1488,6 +1624,8 @@ export const SqlExpressionSimplifyingExpressionVisitor: {
 export type SqlExpressionSimplifyingExpressionVisitor = SqlExpressionSimplifyingExpressionVisitor$instance;
 
 export interface SqlQueryRootExpression$instance extends QueryRootExpression {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SqlQueryRootExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Argument: Expression;
@@ -1514,6 +1652,8 @@ export type SqlQueryRootExpression = SqlQueryRootExpression$instance & __SqlQuer
 
 
 export interface StringMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_StringMethodTranslator: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
     Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
@@ -1533,6 +1673,8 @@ export type StringMethodTranslator = StringMethodTranslator$instance & __StringM
 
 
 export interface StructuralTypeMaterializerSource$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_StructuralTypeMaterializerSource: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IStructuralTypeMaterializerSource: never;
 
     readonly Dependencies: StructuralTypeMaterializerSourceDependencies;
@@ -1562,6 +1704,8 @@ export type StructuralTypeMaterializerSource = StructuralTypeMaterializerSource$
 
 
 export interface StructuralTypeMaterializerSourceDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_StructuralTypeMaterializerSourceDependencies: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     SingletonInterceptors: IEnumerable_1<ISingletonInterceptor>;
@@ -1581,6 +1725,8 @@ export const StructuralTypeMaterializerSourceDependencies: {
 export type StructuralTypeMaterializerSourceDependencies = StructuralTypeMaterializerSourceDependencies$instance;
 
 export interface SubqueryMemberPushdownExpressionVisitor$instance extends ExpressionVisitor {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SubqueryMemberPushdownExpressionVisitor: never;
+
     VisitMember(memberExpression: MemberExpression): Expression;
     VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
 }
@@ -1594,6 +1740,8 @@ export const SubqueryMemberPushdownExpressionVisitor: {
 export type SubqueryMemberPushdownExpressionVisitor = SubqueryMemberPushdownExpressionVisitor$instance;
 
 export interface TableValuedFunctionQueryRootExpression$instance extends EntityQueryRootExpression {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_TableValuedFunctionQueryRootExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Arguments: IReadOnlyCollection_1<Expression>;
@@ -1619,6 +1767,8 @@ export type TableValuedFunctionQueryRootExpression = TableValuedFunctionQueryRoo
 
 
 export interface TpcTablesExpression$instance extends TableExpressionBase {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_TpcTablesExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 

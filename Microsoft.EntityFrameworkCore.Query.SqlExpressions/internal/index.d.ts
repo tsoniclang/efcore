@@ -32,6 +32,8 @@ export interface ITableBasedExpression$instance {
 export type ITableBasedExpression = ITableBasedExpression$instance;
 
 export interface ColumnValueSetter$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ColumnValueSetter: never;
+
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     Column: ColumnExpression;
@@ -52,6 +54,8 @@ export const ColumnValueSetter: {
 export type ColumnValueSetter = ColumnValueSetter$instance;
 
 export interface AtTimeZoneExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_AtTimeZoneExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -80,6 +84,8 @@ export type AtTimeZoneExpression = AtTimeZoneExpression$instance & __AtTimeZoneE
 
 
 export interface CaseExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_CaseExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -110,6 +116,8 @@ export type CaseExpression = CaseExpression$instance & __CaseExpression$views;
 
 
 export interface CaseWhenClause$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_CaseWhenClause: never;
+
     readonly Result: SqlExpression;
     readonly Test: SqlExpression;
     Equals(obj: unknown): boolean;
@@ -125,6 +133,8 @@ export const CaseWhenClause: {
 export type CaseWhenClause = CaseWhenClause$instance;
 
 export interface CollateExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_CollateExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -153,6 +163,8 @@ export type CollateExpression = CollateExpression$instance & __CollateExpression
 
 
 export interface ColumnExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ColumnExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -186,6 +198,8 @@ export type ColumnExpression = ColumnExpression$instance & __ColumnExpression$vi
 
 
 export interface CrossApplyExpression$instance extends JoinExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_CrossApplyExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -212,6 +226,8 @@ export type CrossApplyExpression = CrossApplyExpression$instance & __CrossApplyE
 
 
 export interface CrossJoinExpression$instance extends JoinExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_CrossJoinExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -238,6 +254,8 @@ export type CrossJoinExpression = CrossJoinExpression$instance & __CrossJoinExpr
 
 
 export interface DeleteExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_DeleteExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -271,6 +289,8 @@ export type DeleteExpression = DeleteExpression$instance & __DeleteExpression$vi
 
 
 export interface DistinctExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_DistinctExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -298,6 +318,8 @@ export type DistinctExpression = DistinctExpression$instance & __DistinctExpress
 
 
 export interface ExceptExpression$instance extends SetOperationBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ExceptExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -327,6 +349,8 @@ export type ExceptExpression = ExceptExpression$instance & __ExceptExpression$vi
 
 
 export interface ExistsExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ExistsExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -354,6 +378,8 @@ export type ExistsExpression = ExistsExpression$instance & __ExistsExpression$vi
 
 
 export interface FromSqlExpression$instance extends TableExpressionBase$instance, ITableBasedExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_FromSqlExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ITableBasedExpression: never;
@@ -389,6 +415,8 @@ export type FromSqlExpression = FromSqlExpression$instance & __FromSqlExpression
 
 
 export interface InExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_InExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -425,6 +453,8 @@ export type InExpression = InExpression$instance & __InExpression$views;
 
 
 export interface InnerJoinExpression$instance extends PredicateJoinExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_InnerJoinExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -452,6 +482,8 @@ export type InnerJoinExpression = InnerJoinExpression$instance & __InnerJoinExpr
 
 
 export interface IntersectExpression$instance extends SetOperationBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_IntersectExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -481,6 +513,8 @@ export type IntersectExpression = IntersectExpression$instance & __IntersectExpr
 
 
 export interface JoinExpressionBase$instance extends TableExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_JoinExpressionBase: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -510,6 +544,8 @@ export type JoinExpressionBase = JoinExpressionBase$instance & __JoinExpressionB
 
 
 export interface JsonScalarExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_JsonScalarExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -539,6 +575,8 @@ export type JsonScalarExpression = JsonScalarExpression$instance & __JsonScalarE
 
 
 export interface LeftJoinExpression$instance extends PredicateJoinExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_LeftJoinExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -565,6 +603,8 @@ export type LeftJoinExpression = LeftJoinExpression$instance & __LeftJoinExpress
 
 
 export interface LikeExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_LikeExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -594,6 +634,8 @@ export type LikeExpression = LikeExpression$instance & __LikeExpression$views;
 
 
 export interface OrderingExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_OrderingExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -623,6 +665,8 @@ export type OrderingExpression = OrderingExpression$instance & __OrderingExpress
 
 
 export interface OuterApplyExpression$instance extends JoinExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_OuterApplyExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -650,6 +694,8 @@ export type OuterApplyExpression = OuterApplyExpression$instance & __OuterApplyE
 
 
 export interface PredicateJoinExpressionBase$instance extends JoinExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_PredicateJoinExpressionBase: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -676,6 +722,8 @@ export type PredicateJoinExpressionBase = PredicateJoinExpressionBase$instance &
 
 
 export interface ProjectionExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ProjectionExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -705,6 +753,8 @@ export type ProjectionExpression = ProjectionExpression$instance & __ProjectionE
 
 
 export interface RightJoinExpression$instance extends PredicateJoinExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_RightJoinExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -731,6 +781,8 @@ export type RightJoinExpression = RightJoinExpression$instance & __RightJoinExpr
 
 
 export interface RowNumberExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_RowNumberExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -759,6 +811,8 @@ export type RowNumberExpression = RowNumberExpression$instance & __RowNumberExpr
 
 
 export interface RowValueExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_RowValueExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -786,6 +840,8 @@ export type RowValueExpression = RowValueExpression$instance & __RowValueExpress
 
 
 export interface ScalarSubqueryExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ScalarSubqueryExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -814,6 +870,8 @@ export type ScalarSubqueryExpression = ScalarSubqueryExpression$instance & __Sca
 
 
 export interface SelectExpression$instance extends TableExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_SelectExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -904,6 +962,8 @@ export type SelectExpression = SelectExpression$instance & __SelectExpression$vi
 
 
 export interface SetOperationBase$instance extends TableExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_SetOperationBase: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -932,6 +992,8 @@ export type SetOperationBase = SetOperationBase$instance & __SetOperationBase$vi
 
 
 export interface SqlBinaryExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_SqlBinaryExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -961,6 +1023,8 @@ export type SqlBinaryExpression = SqlBinaryExpression$instance & __SqlBinaryExpr
 
 
 export interface SqlConstantExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_SqlConstantExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -993,6 +1057,8 @@ export type SqlConstantExpression = SqlConstantExpression$instance & __SqlConsta
 
 
 export interface SqlExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_SqlExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1020,6 +1086,8 @@ export type SqlExpression = SqlExpression$instance & __SqlExpression$views;
 
 
 export interface SqlFragmentExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_SqlFragmentExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1046,6 +1114,8 @@ export type SqlFragmentExpression = SqlFragmentExpression$instance & __SqlFragme
 
 
 export interface SqlFunctionExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_SqlFunctionExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1089,6 +1159,8 @@ export type SqlFunctionExpression = SqlFunctionExpression$instance & __SqlFuncti
 
 
 export interface SqlParameterExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_SqlParameterExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1120,6 +1192,8 @@ export type SqlParameterExpression = SqlParameterExpression$instance & __SqlPara
 
 
 export interface SqlUnaryExpression$instance extends SqlExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_SqlUnaryExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1148,6 +1222,8 @@ export type SqlUnaryExpression = SqlUnaryExpression$instance & __SqlUnaryExpress
 
 
 export interface TableExpression$instance extends TableExpressionBase$instance, ITableBasedExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_TableExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ITableBasedExpression: never;
@@ -1180,6 +1256,8 @@ export type TableExpression = TableExpression$instance & __TableExpression$views
 
 
 export interface TableExpressionBase$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_TableExpressionBase: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1216,6 +1294,8 @@ export type TableExpressionBase = TableExpressionBase$instance & __TableExpressi
 
 
 export interface TableValuedFunctionExpression$instance extends TableExpressionBase$instance, ITableBasedExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_TableValuedFunctionExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ITableBasedExpression: never;
@@ -1252,6 +1332,8 @@ export type TableValuedFunctionExpression = TableValuedFunctionExpression$instan
 
 
 export interface UnionExpression$instance extends SetOperationBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_UnionExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1281,6 +1363,8 @@ export type UnionExpression = UnionExpression$instance & __UnionExpression$views
 
 
 export interface UpdateExpression$instance extends Expression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_UpdateExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -1315,6 +1399,8 @@ export type UpdateExpression = UpdateExpression$instance & __UpdateExpression$vi
 
 
 export interface ValuesExpression$instance extends TableExpressionBase$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_ValuesExpression: never;
+
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
