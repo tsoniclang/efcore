@@ -22,7 +22,6 @@ export interface AlterOperationBuilder_1$instance<TOperation extends MigrationOp
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
     OldAnnotation(name: string, value: unknown): AlterOperationBuilder_1<TOperation>;
 }
 
@@ -61,7 +60,6 @@ export interface CreateTableBuilder_1$instance<TColumns> extends OperationBuilde
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Annotation(name: string, value: unknown): OperationBuilder_1<CreateTableOperation>;
     CheckConstraint(name: string, sql: string): OperationBuilder_1<AddCheckConstraintOperation>;
     ForeignKey(name: string, column: Expression_1<Func_2<TColumns, unknown>>, principalTable: string, principalColumn?: string, principalSchema?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
     ForeignKey(name: string, columns: Expression_1<Func_2<TColumns, unknown>>, principalTable: string, principalColumns: string[], principalSchema?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;

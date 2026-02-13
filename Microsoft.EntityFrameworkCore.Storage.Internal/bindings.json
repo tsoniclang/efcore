@@ -225,26 +225,6 @@
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
-        },
-        {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.CompositeRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "clrName": "AddDbParameter",
-          "metadataToken": 0,
-          "canonicalSignature": "(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "normalizedSignature": "AddDbParameter|(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void|static=false",
-          "emitScope": "ClassSurface",
-          "provenance": "BaseOverload",
-          "arity": 0,
-          "parameterCount": 2,
-          "isStatic": false,
-          "isAbstract": false,
-          "isVirtual": true,
-          "isOverride": false,
-          "isSealed": false,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.CompositeRelationalParameter",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
         }
       ],
       "properties": [
@@ -1155,26 +1135,6 @@
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.Internal.INamedConnectionStringResolver"
-        },
-        {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolver::ResolveConnectionString(System.String):System.String",
-          "clrName": "ResolveConnectionString",
-          "metadataToken": 0,
-          "canonicalSignature": "(System.String):System.String",
-          "normalizedSignature": "ResolveConnectionString|(System.String):System.String|static=false",
-          "emitScope": "ClassSurface",
-          "provenance": "BaseOverload",
-          "arity": 0,
-          "parameterCount": 1,
-          "isStatic": false,
-          "isAbstract": false,
-          "isVirtual": true,
-          "isOverride": false,
-          "isSealed": false,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolver",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
         }
       ],
       "properties": [
@@ -1537,26 +1497,6 @@
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
-        },
-        {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RawRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "clrName": "AddDbParameter",
-          "metadataToken": 0,
-          "canonicalSignature": "(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "normalizedSignature": "AddDbParameter|(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void|static=false",
-          "emitScope": "ClassSurface",
-          "provenance": "BaseOverload",
-          "arity": 0,
-          "parameterCount": 2,
-          "isStatic": false,
-          "isAbstract": false,
-          "isVirtual": true,
-          "isOverride": false,
-          "isSealed": false,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawRelationalParameter",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
         }
       ],
       "properties": [
@@ -2734,26 +2674,6 @@
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
-        },
-        {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "clrName": "AddDbParameter",
-          "metadataToken": 0,
-          "canonicalSignature": "(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "normalizedSignature": "AddDbParameter|(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void|static=false",
-          "emitScope": "ClassSurface",
-          "provenance": "BaseOverload",
-          "arity": 0,
-          "parameterCount": 2,
-          "isStatic": false,
-          "isAbstract": false,
-          "isVirtual": true,
-          "isOverride": false,
-          "isSealed": false,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
         }
       ],
       "properties": [

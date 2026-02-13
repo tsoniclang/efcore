@@ -433,7 +433,6 @@ export interface CompositeDependentKeyValueFactory$instance extends CompositeVal
     CreateDependentEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown | undefined;
     CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: IReadOnlyList_1<unknown>): boolean;
-    TryCreateFromCurrentValues(entry: IUpdateEntry, key: unknown): boolean;
 }
 
 
@@ -468,7 +467,6 @@ export interface CompositePrincipalKeyValueFactory$instance extends CompositeVal
     FindNullPropertyInCurrentValues(entry: IUpdateEntry): IProperty;
     FindNullPropertyInKeyValues(keyValues: IReadOnlyList_1<unknown>): IProperty;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: IReadOnlyList_1<unknown>): boolean;
-    TryCreateFromCurrentValues(entry: IUpdateEntry, key: unknown): boolean;
 }
 
 
@@ -788,7 +786,6 @@ export interface EntryPropertyValues$instance extends PropertyValues {
     SetValues(obj: unknown): void;
     SetValues(propertyValues: PropertyValues): void;
     SetValues<TProperty>(values: IDictionary_2<System_Internal.String, TProperty>): void;
-    SetValues<TProperty>(values: IDictionary_2<System_Internal.String, TProperty>): void;
     ToObject(): unknown;
 }
 
@@ -870,40 +867,16 @@ export interface InternalComplexEntry$instance extends InternalEntryBase$instanc
     OriginalOrdinal: int;
     readonly StateManager: IStateManager;
     AcceptChanges(): void;
-    DiscardStoreGeneratedValues(): void;
-    FlaggedAsStoreGenerated(propertyIndex: int): boolean;
-    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList_1<InternalComplexEntry | undefined>;
-    GetComplexCollectionEntry(property: IComplexProperty, ordinal: int): InternalComplexEntry;
-    GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
-    GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
-    GetFlattenedComplexEntries(): IEnumerable_1<InternalComplexEntry>;
-    GetOrdinals(): IReadOnlyList_1<System_Internal.Int32>;
     GetOrdinals(): IReadOnlyList_1<System_Internal.Int32>;
     GetOriginalValue(propertyBase: IPropertyBase): unknown | undefined;
-    GetOriginalValue<TProperty>(property: IProperty): TProperty;
     GetPropertyPath(property: IReadOnlyProperty): string;
     GetPropertyPath(withElement?: boolean): string;
-    HandleConceptualNulls(sensitiveLoggingEnabled: boolean, force: boolean, isCascadeDelete: boolean): void;
-    HasExplicitValue(property: IProperty): boolean;
     IsModified(property: IProperty): boolean;
-    IsModified(property: IComplexProperty): boolean;
-    MarkAsTemporary(property: IProperty, temporary: boolean): void;
-    MarkUnknown(property: IProperty): void;
-    OnComplexElementStateChange(entry: InternalComplexEntry, oldState: EntityState, newState: EntityState): void;
-    OnComplexPropertyModified(property: IComplexProperty, isModified?: boolean): void;
     OnStateChanged(oldState: EntityState): void;
     OnStateChanging(newState: EntityState): void;
-    PrepareToSave(): IInternalEntry;
     ReadOriginalValue<T>(property: IProperty, originalValueIndex: int): T;
     ReadPropertyValue(propertyBase: IPropertyBase): unknown | undefined;
-    ReadStoreGeneratedValue<T>(storeGeneratedIndex: int): T;
     SetEntityState(oldState: EntityState, newState: EntityState, acceptChanges: boolean, modifyProperties: boolean): void;
-    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>): void;
-    SetOriginalValue(propertyBase: IPropertyBase, value: unknown, index?: int): void;
-    SetProperty(propertyBase: IPropertyBase, value: unknown, isMaterialization: boolean, setModified?: boolean, isCascadeDelete?: boolean): void;
-    SetPropertyModified(property: IProperty, changeState?: boolean, isModified?: boolean, isConceptualNull?: boolean, acceptChanges?: boolean): void;
-    SetPropertyModified(property: IComplexProperty, isModified?: boolean, recurse?: boolean): void;
-    SetStoreGeneratedValue(property: IProperty, value: unknown, setModified?: boolean): void;
     ToString(): string;
 }
 
@@ -939,19 +912,9 @@ export interface InternalEntityEntry$instance extends InternalEntryBase$instance
     AddRangeToCollectionSnapshot(navigation: INavigationBase, addedEntities: IEnumerable_1<unknown>): void;
     AddToCollection(navigationBase: INavigationBase, value: unknown, forMaterialization: boolean): boolean;
     AddToCollectionSnapshot(navigation: INavigationBase, addedEntity: unknown): void;
-    CanHaveOriginalValue(propertyBase: IPropertyBase): boolean;
     CollectionContains(navigationBase: INavigationBase, value: unknown): boolean;
-    DiscardStoreGeneratedValues(): void;
     EnsureRelationshipSnapshot(): void;
-    FlaggedAsStoreGenerated(propertyIndex: int): boolean;
-    GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList_1<InternalComplexEntry | undefined>;
-    GetComplexCollectionEntry(property: IComplexProperty, ordinal: int): InternalComplexEntry;
-    GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
-    GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
-    GetFlattenedComplexEntries(): IEnumerable_1<InternalComplexEntry>;
     GetOrCreateCollection(navigationBase: INavigationBase, forMaterialization: boolean): unknown;
-    GetOrdinals(): IReadOnlyList_1<System_Internal.Int32>;
-    GetOriginalValue<TProperty>(property: IProperty): TProperty;
     GetOriginalValue(propertyBase: IPropertyBase): unknown | undefined;
     GetRelationshipSnapshotValue<TProperty>(propertyBase: IPropertyBase): TProperty;
     GetRelationshipSnapshotValue(propertyBase: IPropertyBase): unknown | undefined;
@@ -959,38 +922,21 @@ export interface InternalEntityEntry$instance extends InternalEntryBase$instance
     HandleINotifyCollectionChanged(sender: unknown, eventArgs: NotifyCollectionChangedEventArgs): void;
     HandleINotifyPropertyChanged(sender: unknown, eventArgs: PropertyChangedEventArgs): void;
     HandleINotifyPropertyChanging(sender: unknown, eventArgs: PropertyChangingEventArgs): void;
-    HasExplicitValue(property: IProperty): boolean;
     IsLoaded(navigation: INavigationBase): boolean;
-    IsModified(property: IProperty): boolean;
-    IsModified(property: IComplexProperty): boolean;
-    MarkAsTemporary(property: IProperty, temporary: boolean): void;
     MarkUnchangedFromQuery(): void;
-    MarkUnknown(property: IProperty): void;
-    OnComplexElementStateChange(entry: InternalComplexEntry, oldState: EntityState, newState: EntityState): void;
-    OnComplexPropertyModified(property: IComplexProperty, isModified?: boolean): void;
     OnPropertyChanged(propertyBase: IPropertyBase, value: unknown, setModified: boolean): void;
     OnStateChanged(oldState: EntityState): void;
     OnStateChanging(newState: EntityState): void;
-    PrepareToSave(): IInternalEntry;
     PropagateValue(principalEntry: InternalEntityEntry, principalProperty: IProperty, dependentProperty: IProperty, isMaterialization?: boolean, setModified?: boolean): void;
-    ReadOriginalValue<T>(property: IProperty, originalValueIndex: int): T;
     ReadRelationshipSnapshotValue<T>(propertyBase: IPropertyBase, relationshipSnapshotIndex: int): T;
-    ReadStoreGeneratedValue<T>(storeGeneratedIndex: int): T;
     RemoveFromCollection(navigationBase: INavigationBase, value: unknown): boolean;
     RemoveFromCollectionSnapshot(navigation: INavigationBase, removedEntity: unknown): void;
     SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>): void;
-    SetEntityState(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>): void;
     SetEntityState(oldState: EntityState, newState: EntityState, acceptChanges: boolean, modifyProperties: boolean): void;
     SetEntityStateAsync(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>, cancellationToken?: CancellationToken): Task;
-    SetEntityStateAsync(entityState: EntityState, acceptChanges?: boolean, modifyProperties?: boolean, forceStateWhenUnknownKey?: Nullable_1<EntityState>, fallbackState?: Nullable_1<EntityState>, cancellationToken?: CancellationToken): Task;
     SetIsLoaded(navigation: INavigationBase, loaded?: boolean): void;
-    SetOriginalValue(propertyBase: IPropertyBase, value: unknown, index?: int): void;
-    SetProperty(propertyBase: IPropertyBase, value: unknown, isMaterialization: boolean, setModified?: boolean, isCascadeDelete?: boolean): void;
-    SetPropertyModified(property: IProperty, changeState?: boolean, isModified?: boolean, isConceptualNull?: boolean, acceptChanges?: boolean): void;
-    SetPropertyModified(property: IComplexProperty, isModified?: boolean, recurse?: boolean): void;
     SetRelationshipSnapshotValue(propertyBase: IPropertyBase, value: unknown): void;
     SetServiceProperties(oldState: EntityState, newState: EntityState): void;
-    SetStoreGeneratedValue(property: IProperty, value: unknown, setModified?: boolean): void;
     ToEntityEntry(): EntityEntry;
     ToString(): string;
 }
@@ -1260,18 +1206,8 @@ export interface NullableKeyIdentityMap_1$instance<TKey> extends IdentityMap_1$i
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_IIdentityMap_1: never;
 
     Add(entry: InternalEntityEntry): void;
-    Add(keyValues: IReadOnlyList_1<unknown>, entry: InternalEntityEntry): void;
     Add(key: TKey, entry: InternalEntityEntry): void;
-    AddOrUpdate(entry: InternalEntityEntry): void;
-    All(): IEnumerable_1<InternalEntityEntry>;
-    Clear(): void;
-    GetDependentsMap(foreignKey: IForeignKey): IDependentsMap;
     RemoveUsingRelationshipSnapshot(entry: InternalEntityEntry): void;
-    TryGetEntry(entry: InternalEntityEntry): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList_1<unknown>): InternalEntityEntry | undefined;
-    TryGetEntry(keyValues: IReadOnlyList_1<unknown>, throwOnNullKey: boolean, hasNullKey: boolean): InternalEntityEntry | undefined;
-    TryGetEntry(foreignKey: IForeignKey, dependentEntry: InternalEntityEntry): InternalEntityEntry | undefined;
-    TryGetEntryTyped(keyValue: TKey): InternalEntityEntry | undefined;
 }
 
 
@@ -2496,7 +2432,6 @@ export interface TemporaryValuesFactoryFactory$instance extends SidecarValuesFac
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_Internal_TemporaryValuesFactoryFactory: never;
 
     CreateSnapshotExpression(entityType: Type, parameter: Expression, types: Type[], propertyBases: IList_1<IPropertyBase>): Expression;
-    CreateSnapshotExpression(clrType: Type, parameter: Expression, types: Type[], propertyBases: IList_1<IPropertyBase>): Expression;
 }
 
 

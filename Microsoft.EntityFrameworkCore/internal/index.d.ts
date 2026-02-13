@@ -295,13 +295,12 @@ export interface __DbContextOptions$views {
 export type DbContextOptions = DbContextOptions$instance & __DbContextOptions$views;
 
 
-export interface DbContextOptions_1$instance<TContext extends DbContext> extends DbContextOptions$instance {
+export interface DbContextOptions_1$instance<TContext extends DbContext> extends DbContextOptions$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptions$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptions_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
 
     readonly ContextType: Type;
-    FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | undefined;
     WithExtension<TExtension extends IDbContextOptionsExtension>(extension: TExtension): DbContextOptions;
 }
 
@@ -375,34 +374,10 @@ export interface DbContextOptionsBuilder_1$instance<TContext extends DbContext> 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
     AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder_1<TContext>;
-    AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder;
-    AddInterceptors(...interceptors: IInterceptor[]): DbContextOptionsBuilder;
-    AddOrUpdateExtension<TExtension extends IDbContextOptionsExtension>(extension: TExtension): void;
-    ConfigureLoggingCacheTime(timeSpan: TimeSpan): DbContextOptionsBuilder;
-    ConfigureWarnings(warningsConfigurationBuilderAction: Action_1<WarningsConfigurationBuilder>): DbContextOptionsBuilder;
-    EnableDetailedErrors(detailedErrorsEnabled?: boolean): DbContextOptionsBuilder;
-    EnableSensitiveDataLogging(sensitiveDataLoggingEnabled?: boolean): DbContextOptionsBuilder;
-    EnableServiceProviderCaching(cacheServiceProvider?: boolean): DbContextOptionsBuilder;
-    EnableThreadSafetyChecks(enableChecks?: boolean): DbContextOptionsBuilder;
     LogTo(action: Action_1<System_Internal.String>, categories: IEnumerable_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
     LogTo(action: Action_1<System_Internal.String>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
-    LogTo(action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
-    LogTo(action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
-    LogTo(action: Action_1<System_Internal.String>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
-    LogTo(filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>): DbContextOptionsBuilder;
-    ReplaceService<TService, TImplementation extends TService>(): DbContextOptionsBuilder;
-    UseApplicationServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder;
     UseAsyncSeeding(seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder_1<TContext>;
-    UseAsyncSeeding(seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder;
-    UseInternalServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder;
-    UseLoggerFactory(loggerFactory: ILoggerFactory): DbContextOptionsBuilder;
-    UseMemoryCache(memoryCache: IMemoryCache): DbContextOptionsBuilder;
-    UseModel(model: IModel): DbContextOptionsBuilder;
-    UseQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): DbContextOptionsBuilder;
-    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider): DbContextOptionsBuilder;
-    UseRootApplicationServiceProvider(): DbContextOptionsBuilder;
     UseSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): DbContextOptionsBuilder_1<TContext>;
-    UseSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): DbContextOptionsBuilder;
 }
 
 

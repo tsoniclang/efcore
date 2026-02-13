@@ -1399,9 +1399,6 @@ export interface RelationalStructuralTypeMaterializerSource$instance extends Str
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IStructuralTypeMaterializerSource: never;
 
-    CreateMaterializeExpression(parameters: StructuralTypeMaterializerSourceParameters, materializationContextExpression: Expression): Expression;
-    GetMaterializer(entityType: IEntityType): Func_2<MaterializationContext, unknown>;
-    GetMaterializer(complexType: IComplexType): Func_2<MaterializationContext, unknown>;
     ReadComplexTypeDirectly(complexType: IComplexType): boolean;
 }
 

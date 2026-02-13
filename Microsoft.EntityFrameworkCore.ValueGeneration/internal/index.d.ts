@@ -40,8 +40,7 @@ export interface BinaryValueGenerator$instance extends ValueGenerator_1<byte[]> 
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_BinaryValueGenerator: never;
 
     readonly GeneratesTemporaryValues: boolean;
-    Next4(entry: EntityEntry): byte[];
-    Next4(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): byte[];
 }
 
 
@@ -70,8 +69,7 @@ export interface GuidValueGenerator$instance extends ValueGenerator_1<Guid> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_GuidValueGenerator: never;
 
     readonly GeneratesTemporaryValues: boolean;
-    Next4(entry: EntityEntry): Guid;
-    Next4(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): Guid;
 }
 
 
@@ -88,8 +86,6 @@ export interface HiLoValueGenerator_1$instance<TValue> extends ValueGenerator_1<
     GetNewLowValue(): long;
     GetNewLowValueAsync(cancellationToken?: CancellationToken): Task_1<System_Internal.Int64>;
     Next(entry: EntityEntry): TValue;
-    Next(entry: EntityEntry): unknown;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
 }
 
@@ -118,14 +114,12 @@ export const HiLoValueGeneratorState: {
 
 export type HiLoValueGeneratorState = HiLoValueGeneratorState$instance;
 
-export interface RelationalValueGeneratorSelector$instance extends ValueGeneratorSelector$instance {
+export interface RelationalValueGeneratorSelector$instance extends ValueGeneratorSelector$instance, IValueGeneratorSelector$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_RelationalValueGeneratorSelector: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorSelector: never;
 
     FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
-    Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
-    TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
 }
 
 
@@ -145,8 +139,7 @@ export interface SequentialGuidValueGenerator$instance extends ValueGenerator_1<
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_SequentialGuidValueGenerator: never;
 
     readonly GeneratesTemporaryValues: boolean;
-    Next4(entry: EntityEntry): Guid;
-    Next4(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): Guid;
 }
 
 
@@ -161,8 +154,7 @@ export interface StringValueGenerator$instance extends ValueGenerator_1<System_I
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_StringValueGenerator: never;
 
     readonly GeneratesTemporaryValues: boolean;
-    Next4(entry: EntityEntry): string;
-    Next4(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): string;
 }
 
 
@@ -224,11 +216,8 @@ export interface ValueGenerator_1$instance<TValue> extends ValueGenerator {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_ValueGenerator_1: never;
 
     Next(entry: EntityEntry): TValue;
-    Next(entry: EntityEntry): unknown;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     NextValue(entry: EntityEntry): unknown | undefined;
-    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
 }
 

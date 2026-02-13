@@ -1406,8 +1406,6 @@ export interface RelationalDatabase$instance extends Database$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabase: never;
 
     readonly RelationalDependencies: RelationalDatabaseDependencies;
-    CompileQuery<TResult>(query: Expression, async: boolean): Func_2<QueryContext, TResult>;
-    CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression_1<Func_2<QueryContext, TResult>>;
     SaveChanges(entries: IList_1<IUpdateEntry>): int;
     SaveChangesAsync(entries: IList_1<IUpdateEntry>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
 }
@@ -1574,7 +1572,6 @@ export interface RelationalGeometryTypeMapping_2$instance<TGeometry, TProvider> 
     readonly SpatialConverter: ValueConverter_2<TGeometry, TProvider> | undefined;
     readonly WktReaderType: Type;
     AsText(value: unknown): string;
-    CreateParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable_1<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
     CreateParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable_1<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
     CustomizeDataReaderExpression(expression: Expression): Expression;
     GenerateCodeLiteral(value: unknown): Expression;
@@ -1792,10 +1789,6 @@ export interface RelationalTypeMappingSource$instance extends TypeMappingSourceB
     FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
     FindMapping(member: MemberInfo): RelationalTypeMapping | undefined;
     FindMapping(storeTypeName: string): RelationalTypeMapping | undefined;
-    FindMapping(type: Type): CoreTypeMapping | undefined;
-    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
-    FindMapping(member: MemberInfo): CoreTypeMapping | undefined;
-    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
     ParseStoreTypeName(storeTypeName: string, unicode: Nullable_1<System_Internal.Boolean>, size: Nullable_1<System_Internal.Int32>, precision: Nullable_1<System_Internal.Int32>, scale: Nullable_1<System_Internal.Int32>): string | undefined;
 }
 

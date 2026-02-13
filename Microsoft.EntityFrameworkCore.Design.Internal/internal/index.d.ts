@@ -175,9 +175,6 @@ export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends
 
     readonly RelationalDependencies: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
-    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Create(typeMapping: CoreTypeMapping, property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
     Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(model: IRelationalModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(table: ITableBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -217,13 +214,6 @@ export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends
     Generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
 }
 
 

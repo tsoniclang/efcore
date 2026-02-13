@@ -567,9 +567,6 @@ export interface SimpleFullyNullableRowForeignKeyValueFactory_2$instance<TKey, T
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
-    CreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[] | undefined;
-    CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
-    CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
     TryCreateDependentKeyValue(keyPropertyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;
@@ -595,9 +592,6 @@ export interface SimpleNonNullableRowForeignKeyValueFactory_2$instance<TKey, TFo
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
-    CreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[] | undefined;
-    CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
-    CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
     TryCreateDependentKeyValue(keyPropertyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;
@@ -623,9 +617,6 @@ export interface SimpleNullablePrincipalRowForeignKeyValueFactory_2$instance<TKe
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
-    CreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[] | undefined;
-    CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
-    CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
     TryCreateDependentKeyValue(keyPropertyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;
@@ -651,9 +642,6 @@ export interface SimpleNullableRowForeignKeyValueFactory_2$instance<TKey extends
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowForeignKeyValueFactory_1: never;
 
-    CreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[] | undefined;
-    CreatePrincipalEquatableKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown;
-    CreatePrincipalKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues?: boolean): unknown[];
     TryCreateDependentKeyValue(keyValues: unknown[], key: TKey): boolean;
     TryCreateDependentKeyValue(keyPropertyValues: IDictionary_2<System_Internal.String, unknown>, key: TKey): boolean;
     TryCreateDependentKeyValue(command: IReadOnlyModificationCommand, fromOriginalValues: boolean, key: TKey): boolean;

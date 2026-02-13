@@ -60,14 +60,13 @@ export interface INamedConnectionStringResolver$instance {
 
 export type INamedConnectionStringResolver = INamedConnectionStringResolver$instance;
 
-export interface CompositeRelationalParameter$instance extends RelationalParameterBase$instance {
+export interface CompositeRelationalParameter$instance extends RelationalParameterBase$instance, Microsoft_EntityFrameworkCore_Storage_Internal.IRelationalParameter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_CompositeRelationalParameter: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
     readonly RelationalParameters: IReadOnlyList_1<IRelationalParameter>;
     AddDbParameter(command: DbCommand, value: unknown): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
 }
 
 
@@ -165,13 +164,12 @@ export interface __ExecutionStrategyFactory$views {
 export type ExecutionStrategyFactory = ExecutionStrategyFactory$instance & __ExecutionStrategyFactory$views;
 
 
-export interface NamedConnectionStringResolver$instance extends NamedConnectionStringResolverBase {
+export interface NamedConnectionStringResolver$instance extends NamedConnectionStringResolverBase, INamedConnectionStringResolver$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_NamedConnectionStringResolver: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_INamedConnectionStringResolver: never;
 
     readonly ApplicationServiceProvider: IServiceProvider | undefined;
-    ResolveConnectionString(connectionString: string): string;
 }
 
 
@@ -226,7 +224,6 @@ export interface RawRelationalParameter$instance extends RelationalParameterBase
 
     AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddDbParameter(command: DbCommand, value: unknown): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
 }
 
 
@@ -330,7 +327,7 @@ export interface __RelationalParameterBase$views {
 export type RelationalParameterBase = RelationalParameterBase$instance & __RelationalParameterBase$views;
 
 
-export interface TypeMappedRelationalParameter$instance extends RelationalParameterBase$instance {
+export interface TypeMappedRelationalParameter$instance extends RelationalParameterBase$instance, Microsoft_EntityFrameworkCore_Storage_Internal.IRelationalParameter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_TypeMappedRelationalParameter: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
@@ -338,7 +335,6 @@ export interface TypeMappedRelationalParameter$instance extends RelationalParame
     readonly Direction: ParameterDirection;
     readonly Name: string;
     AddDbParameter(command: DbCommand, value: unknown): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
 }
 
 
