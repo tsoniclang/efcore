@@ -39,27 +39,6 @@ export interface DatabaseColumn$instance extends Annotatable {
     set StoreType(value: string | undefined);
     Table: DatabaseTable;
     ValueGenerated: Nullable_1<ValueGenerated>;
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
     ToString(): string;
 }
 
@@ -92,27 +71,6 @@ export interface DatabaseForeignKey$instance extends Annotatable {
     readonly PrincipalColumns: IList_1<DatabaseColumn>;
     PrincipalTable: DatabaseTable;
     Table: DatabaseTable;
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
     ToString(): string;
 }
 
@@ -147,27 +105,6 @@ export interface DatabaseIndex$instance extends Annotatable {
     set Name(value: string | undefined);
     get Table(): DatabaseTable | undefined;
     set Table(value: DatabaseTable | undefined);
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
     ToString(): string;
 }
 
@@ -201,27 +138,6 @@ export interface DatabaseModel$instance extends Annotatable {
     set DefaultSchema(value: string | undefined);
     readonly Sequences: IList_1<DatabaseSequence>;
     readonly Tables: IList_1<DatabaseTable>;
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -251,27 +167,6 @@ export interface DatabasePrimaryKey$instance extends Annotatable {
     set Name(value: string | undefined);
     get Table(): DatabaseTable | undefined;
     set Table(value: DatabaseTable | undefined);
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
     ToString(): string;
 }
 
@@ -308,27 +203,6 @@ export interface DatabaseSequence$instance extends Annotatable {
     StartValue: Nullable_1<System_Internal.Int64>;
     get StoreType(): string | undefined;
     set StoreType(value: string | undefined);
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
     ToString(): string;
 }
 
@@ -368,27 +242,6 @@ export interface DatabaseTable$instance extends Annotatable {
     set Schema(value: string | undefined);
     readonly Triggers: IList_1<DatabaseTrigger>;
     readonly UniqueConstraints: IList_1<DatabaseUniqueConstraint>;
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
     ToString(): string;
 }
 
@@ -415,27 +268,6 @@ export interface DatabaseTrigger$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     Name: string;
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -464,27 +296,6 @@ export interface DatabaseUniqueConstraint$instance extends Annotatable {
     get Name(): string | undefined;
     set Name(value: string | undefined);
     Table: DatabaseTable;
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
     ToString(): string;
 }
 
@@ -510,27 +321,6 @@ export interface DatabaseView$instance extends DatabaseTable$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
-    AddAnnotation(name: string, value: unknown): IAnnotation;
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 

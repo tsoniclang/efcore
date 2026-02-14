@@ -221,7 +221,9 @@ export interface CollectionEntry_2$instance<TEntity, TRelatedEntity> extends Col
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly EntityEntry: EntityEntry_1<TEntity>;
+    FindEntry(entity: unknown): EntityEntry_1<TRelatedEntity> | undefined;
     FindEntry(entity: unknown): EntityEntry | undefined;
+    Query(): IQueryable_1<TRelatedEntity>;
     Query(): IQueryable;
 }
 
@@ -268,6 +270,7 @@ export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends Co
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly EntityEntry: EntityEntry_1<TEntity>;
+    GetOriginalEntry(ordinal: int): ComplexElementEntry_2<TEntity, TElement>;
     GetOriginalEntry(ordinal: int): ComplexElementEntry;
 }
 
@@ -324,18 +327,18 @@ export interface ComplexElementEntry_2$instance<TEntity, TComplexProperty> exten
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplexProperty, IEnumerable_1<TElement>>>): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    ComplexCollection(propertyName: string): ComplexCollectionEntry;
+    ComplexProperty<TNestedComplexProperty>(propertyExpression: Expression_1<Func_2<TComplexProperty, TNestedComplexProperty>>): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
     ComplexProperty<TNestedComplexProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
     ComplexProperty<TNestedComplexProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
     ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    ComplexProperty(propertyName: string): ComplexPropertyEntry;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TComplexProperty, TProperty>>): PropertyEntry_2<TEntity, TProperty>;
     Property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
     Property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
     Property(property: IProperty): PropertyEntry;
-    Property(propertyName: string): PropertyEntry;
 }
 
 
@@ -388,18 +391,18 @@ export interface ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> exte
 
     CurrentValue: TComplexProperty;
     readonly EntityEntry: EntityEntry_1<TEntity>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplexProperty, IEnumerable_1<TElement>>>): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    ComplexCollection(propertyName: string): ComplexCollectionEntry;
+    ComplexProperty<TNestedComplexProperty>(propertyExpression: Expression_1<Func_2<TComplexProperty, TNestedComplexProperty>>): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
     ComplexProperty<TNestedComplexProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
     ComplexProperty<TNestedComplexProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
     ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    ComplexProperty(propertyName: string): ComplexPropertyEntry;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TComplexProperty, TProperty>>): PropertyEntry_2<TEntity, TProperty>;
     Property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
     Property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
     Property(property: IProperty): PropertyEntry;
-    Property(propertyName: string): PropertyEntry;
 }
 
 
@@ -533,26 +536,26 @@ export interface EntityEntry_1$instance<TEntity> extends EntityEntry$instance, M
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    Collection<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TProperty>>>): CollectionEntry_2<TEntity, TProperty>;
     Collection<TProperty>(navigation: INavigationBase): CollectionEntry_2<TEntity, TProperty>;
     Collection<TProperty>(propertyName: string): CollectionEntry_2<TEntity, TProperty>;
     Collection(navigation: INavigationBase): CollectionEntry;
-    Collection(propertyName: string): CollectionEntry;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection<TElement>(complexProperty: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    ComplexCollection(propertyName: string): ComplexCollectionEntry;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ComplexPropertyEntry_2<TEntity, TProperty>;
     ComplexProperty<TProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TProperty>;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TProperty>;
     ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    ComplexProperty(propertyName: string): ComplexPropertyEntry;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): PropertyEntry_2<TEntity, TProperty>;
     Property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
     Property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
     Property(property: IProperty): PropertyEntry;
-    Property(propertyName: string): PropertyEntry;
+    Reference<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ReferenceEntry_2<TEntity, TProperty>;
     Reference<TProperty>(navigation: INavigationBase): ReferenceEntry_2<TEntity, TProperty>;
     Reference<TProperty>(propertyName: string): ReferenceEntry_2<TEntity, TProperty>;
     Reference(navigation: INavigationBase): ReferenceEntry;
-    Reference(propertyName: string): ReferenceEntry;
 }
 
 
@@ -846,7 +849,7 @@ export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infr
     readonly EntityEntry: EntityEntry;
     readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
-    readonly Metadata: IComplexProperty | IPropertyBase;
+    readonly Metadata: INavigationBase | IPropertyBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
@@ -1082,6 +1085,7 @@ export interface ReferenceEntry_2$instance<TEntity, TProperty> extends Reference
 
     CurrentValue: TProperty;
     readonly EntityEntry: EntityEntry_1<TEntity>;
+    Query(): IQueryable_1<TProperty>;
     Query(): IQueryable;
 }
 

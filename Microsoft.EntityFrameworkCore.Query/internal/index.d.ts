@@ -1857,6 +1857,7 @@ export interface RelationalLiftableConstantFactory$instance extends LiftableCons
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalLiftableConstantFactory: never;
 
     readonly RelationalDependencies: RelationalLiftableConstantExpressionDependencies;
+    CreateLiftableConstant(originalValue: unknown, resolverExpression: Expression_1<Func_2<RelationalMaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): LiftableConstantExpression;
     CreateLiftableConstant(originalValue: unknown, resolverExpression: Expression_1<Func_2<MaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): Expression;
 }
 
@@ -1880,8 +1881,6 @@ export interface RelationalLiftableConstantProcessor$instance extends LiftableCo
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ILiftableConstantProcessor: never;
 
     InlineConstant(liftableConstant: LiftableConstantExpression): ConstantExpression;
-    InlineConstants(expression: Expression, supportsPrecompiledQuery: boolean): Expression;
-    LiftConstants(expression: Expression, contextParameter: ParameterExpression, variableNames: HashSet_1<System_Internal.String>): Expression;
 }
 
 
@@ -2362,7 +2361,6 @@ export interface RelationalShapedQueryCompilingExpressionVisitor$instance extend
     readonly MaxNullableParametersForPregeneratedSql: int;
     readonly RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies;
     AddStructuralTypeInitialization(shaper: StructuralTypeShaperExpression, instanceVariable: ParameterExpression, variables: List_1<ParameterExpression>, expressions: List_1<Expression>): void;
-    AddStructuralTypeInitialization(shaper: StructuralTypeShaperExpression, instanceVariable: ParameterExpression, variables: List_1<ParameterExpression>, expressions: List_1<Expression>): void;
     VisitExtension(extensionExpression: Expression): Expression;
     VisitShapedQuery(shapedQueryExpression: ShapedQueryExpression): Expression;
 }
@@ -2564,10 +2562,11 @@ export interface RelationalStructuralTypeShaperExpression$instance extends Struc
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     GenerateMaterializationCondition(type: ITypeBase, nullable: boolean): LambdaExpression;
+    MakeClrTypeNonNullable(): RelationalStructuralTypeShaperExpression;
     MakeClrTypeNonNullable(): StructuralTypeShaperExpression;
+    MakeClrTypeNullable(): RelationalStructuralTypeShaperExpression;
     MakeClrTypeNullable(): StructuralTypeShaperExpression;
     MakeNullable(nullable?: boolean): StructuralTypeShaperExpression;
-    Print(expressionPrinter: ExpressionPrinter): void;
     Update(valueBufferExpression: Expression): StructuralTypeShaperExpression;
     WithType(type: ITypeBase): StructuralTypeShaperExpression;
 }
