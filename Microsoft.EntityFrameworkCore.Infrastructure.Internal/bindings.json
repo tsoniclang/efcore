@@ -1713,11 +1713,11 @@
       },
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions::GetService(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions::GetService(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):!!0",
           "clrName": "GetService",
           "metadataToken": 100673474,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService",
-          "normalizedSignature": "GetService|(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService|static=true",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):!!0",
+          "normalizedSignature": "GetService|(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):!!0|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,

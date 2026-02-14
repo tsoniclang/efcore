@@ -162,11 +162,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder::ReplaceConvention(List_1,TImplementation):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder::ReplaceConvention(System.Collections.Generic.List_1[[!!0]],!!1):System.Boolean",
           "clrName": "ReplaceConvention",
           "metadataToken": 100671393,
-          "canonicalSignature": "(List_1,TImplementation):System.Boolean",
-          "normalizedSignature": "ReplaceConvention|(List_1,TImplementation):System.Boolean|static=false",
+          "canonicalSignature": "(System.Collections.Generic.List_1[[!!0]],!!1):System.Boolean",
+          "normalizedSignature": "ReplaceConvention|(System.Collections.Generic.List_1[[!!0]],!!1):System.Boolean|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 2,

@@ -71,16 +71,16 @@ export interface ICSharpHelper$instance {
     Fragment(fragment: NestedClosureCodeFragment, indent?: int): string;
     Fragment(fragment: PropertyAccessorCodeFragment): string;
     GetRequiredUsings(type: Type): IEnumerable_1<System_Internal.String>;
-    Identifier(name: string, scope?: ICollection_1<System_Internal.String>, capitalize?: Nullable_1<System_Internal.Boolean>): string;
     Identifier<T>(name: string, value: T, scope: IDictionary_2<System_Internal.String, T>, capitalize?: Nullable_1<System_Internal.Boolean>): string;
+    Identifier(name: string, scope?: ICollection_1<System_Internal.String>, capitalize?: Nullable_1<System_Internal.Boolean>): string;
     Lambda(properties: IEnumerable_1<IProperty>, lambdaIdentifier?: string): string;
     Lambda(properties: IReadOnlyList_1<System_Internal.String>, lambdaIdentifier?: string): string;
-    Literal<TKey, TValue>(values: Dictionary_2<TKey, TValue>, vertical?: boolean): string;
-    Literal<T>(values: List_1<T>, vertical?: boolean): string;
-    Literal<T extends unknown>(value: Nullable_1<T>): string;
+    Literal<T>(values: T[], vertical?: boolean): string;
     Literal(value: boolean): string;
     Literal(value: byte): string;
     Literal(value: char): string;
+    Literal<TKey, TValue>(values: Dictionary_2<TKey, TValue>, vertical?: boolean): string;
+    Literal<T>(values: List_1<T>, vertical?: boolean): string;
     Literal(value: DateOnly): string;
     Literal(value: DateTime): string;
     Literal(value: DateTimeOffset): string;
@@ -91,6 +91,7 @@ export interface ICSharpHelper$instance {
     Literal(value: short): string;
     Literal(value: int): string;
     Literal(value: long): string;
+    Literal<T extends unknown>(value: Nullable_1<T>): string;
     Literal(value: BigInteger): string;
     Literal(values: Array<Array<unknown>>): string;
     Literal(value: sbyte): string;
@@ -102,7 +103,6 @@ export interface ICSharpHelper$instance {
     Literal(value: ushort): string;
     Literal(value: uint): string;
     Literal(value: ulong): string;
-    Literal<T>(values: T[], vertical?: boolean): string;
     Namespace(...name: string[]): string;
     Statement(node: Expression, collectedNamespaces: ISet_1<System_Internal.String>, unsafeAccessors: ISet_1<System_Internal.String>, constantReplacements?: IReadOnlyDictionary_2<unknown, System_Internal.String>, memberAccessReplacements?: IReadOnlyDictionary_2<MemberInfo, QualifiedName>): string;
     UnknownLiteral(value: unknown): string;
@@ -305,7 +305,6 @@ export interface EntityFrameworkDesignServicesBuilder$instance extends EntityFra
 
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
 }
 
 
@@ -321,7 +320,6 @@ export interface EntityFrameworkRelationalDesignServicesBuilder$instance extends
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_EntityFrameworkRelationalDesignServicesBuilder: never;
 
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
 }
 

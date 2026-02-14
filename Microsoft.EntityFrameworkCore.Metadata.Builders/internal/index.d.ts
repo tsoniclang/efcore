@@ -25,7 +25,7 @@ import type { ParameterDirection } from "@tsonic/dotnet/System.Data/internal/ind
 import type { Expression_1, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
 import type { FieldInfo, MemberInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
-import type { Action_1, Boolean as ClrBoolean, Func_1, Func_2, Func_3, Int32, Int64, IServiceProvider, Nullable_1, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
+import type { Action_1, Boolean as ClrBoolean, Func_1, Func_2, Func_3, Int32, Int64, IServiceProvider, Nullable_1, Object as ClrObject, String as ClrString, Type, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IConventionAnnotatableBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
@@ -826,21 +826,15 @@ export interface CollectionCollectionBuilder_2$instance<TLeftEntity, TRightEntit
     UsingEntity<TJoinEntity>(configureRight: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>, configureJoinEntityType: Action_1<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
     UsingEntity<TJoinEntity>(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TLeftEntity, TJoinEntity>>, configureLeft: Func_2<EntityTypeBuilder_1<TJoinEntity>, ReferenceCollectionBuilder_2<TRightEntity, TJoinEntity>>, configureJoinEntityType: Action_1<EntityTypeBuilder_1<TJoinEntity>>): EntityTypeBuilder_1<TRightEntity>;
     UsingEntity(joinEntityType: Type): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, joinEntityType: Type): EntityTypeBuilder;
-    UsingEntity(configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityType: Type, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
     UsingEntity(joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
+    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<IMutableEntityType, IMutableForeignKey>, configureLeft: Func_2<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
+    UsingEntity(configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
+    UsingEntity(configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
     UsingEntity(configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<IMutableEntityType, IMutableForeignKey>, configureLeft: Func_2<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
 }
 
 
@@ -894,8 +888,10 @@ export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity>
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     WithMany(navigationName?: string): CollectionCollectionBuilder_2<TRelatedEntity, TEntity>;
+    WithMany(navigationExpression: Expression_1<Func_2<TRelatedEntity, IEnumerable_1<TEntity>>>): CollectionCollectionBuilder_2<TRelatedEntity, TEntity>;
     WithMany(navigationName?: string): CollectionCollectionBuilder;
     WithOne(navigationName?: string): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
+    WithOne(navigationExpression: Expression_1<Func_2<TRelatedEntity, TEntity>>): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
     WithOne(navigationName?: string): ReferenceCollectionBuilder;
 }
 
@@ -944,7 +940,9 @@ export interface ColumnBuilder_1$instance<TProperty> extends ColumnBuilder$insta
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): ColumnBuilder_1<TProperty>;
     HasAnnotation(annotation: string, value: unknown): ColumnBuilder;
+    HasColumnName(name: string): ColumnBuilder_1<TProperty>;
     HasColumnName(name: string): ColumnBuilder;
 }
 
@@ -1028,42 +1026,76 @@ export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCo
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyType: Type, propertyName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder;
+    ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder_1<TComplex>;
     ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyType: Type, propertyName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
+    ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
+    HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexCollectionBuilder_1<TComplex>;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexCollectionBuilder;
+    HasField(fieldName: string): ComplexCollectionBuilder_1<TComplex>;
     HasField(fieldName: string): ComplexCollectionBuilder;
+    HasPropertyAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder_1<TComplex>;
     HasPropertyAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder;
+    HasTypeAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder_1<TComplex>;
     HasTypeAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder;
+    Ignore(propertyExpression: Expression_1<Func_2<TComplex, unknown>>): ComplexCollectionBuilder_1<TComplex>;
     Ignore(propertyName: string): ComplexCollectionBuilder_1<TComplex>;
     Ignore(propertyName: string): ComplexCollectionBuilder;
+    IsRequired(required?: boolean): ComplexCollectionBuilder_1<TComplex>;
     IsRequired(required?: boolean): ComplexCollectionBuilder;
+    PrimitiveCollection<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyName: string): ComplexTypePrimitiveCollectionBuilder;
     PrimitiveCollection<TProperty>(propertyName: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyType: Type, propertyName: string): ComplexTypePrimitiveCollectionBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     Property(propertyName: string): ComplexCollectionTypePropertyBuilder;
     Property<TProperty>(propertyName: string): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     Property(propertyType: Type, propertyName: string): ComplexCollectionTypePropertyBuilder;
+    UseDefaultPropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexCollectionBuilder_1<TComplex>;
     UseDefaultPropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexCollectionBuilder;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexCollectionBuilder_1<TComplex>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexCollectionBuilder;
 }
 
@@ -1130,36 +1162,49 @@ export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> exte
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasAnnotation(annotation: string, value: unknown): ComplexCollectionTypePropertyBuilder;
+    HasConversion<TConversion>(): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion(providerClrType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TConversion>(valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, comparerType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion<TConversion>(): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type): ComplexCollectionTypePropertyBuilder;
     HasConversion(converter: ValueConverter): ComplexCollectionTypePropertyBuilder;
     HasConversion<TConversion>(valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
     HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
     HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
     HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): ComplexCollectionTypePropertyBuilder;
+    HasField(fieldName: string): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasField(fieldName: string): ComplexCollectionTypePropertyBuilder;
+    HasSentinel(sentinel: unknown): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasSentinel(sentinel: TProperty): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasSentinel(sentinel: unknown): ComplexCollectionTypePropertyBuilder;
+    HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasValueGenerator(valueGeneratorType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexCollectionTypePropertyBuilder;
     HasValueGenerator(valueGeneratorType: Type): ComplexCollectionTypePropertyBuilder;
+    HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexCollectionTypePropertyBuilder;
     HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexCollectionTypePropertyBuilder;
+    IsRequired(required?: boolean): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     IsRequired(required?: boolean): ComplexCollectionTypePropertyBuilder;
+    IsUnicode(unicode?: boolean): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     IsUnicode(unicode?: boolean): ComplexCollectionTypePropertyBuilder;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexCollectionTypePropertyBuilder;
 }
 
@@ -1277,46 +1322,82 @@ export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexProp
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyType: Type, propertyName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder;
+    ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder_1<TComplex>;
     ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyType: Type, propertyName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
+    ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
+    HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexPropertyBuilder_1<TComplex>;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexPropertyBuilder;
+    HasDiscriminator<TDiscriminator>(propertyExpression: Expression_1<Func_2<TComplex, TDiscriminator>>): ComplexTypeDiscriminatorBuilder_1<TDiscriminator>;
     HasDiscriminator(): ComplexTypeDiscriminatorBuilder;
     HasDiscriminator(name: string, type: Type): ComplexTypeDiscriminatorBuilder;
     HasDiscriminator<TDiscriminator>(name: string): ComplexTypeDiscriminatorBuilder_1<TDiscriminator>;
+    HasField(fieldName: string): ComplexPropertyBuilder_1<TComplex>;
     HasField(fieldName: string): ComplexPropertyBuilder;
+    HasNoDiscriminator(): ComplexPropertyBuilder_1<TComplex>;
     HasNoDiscriminator(): ComplexPropertyBuilder;
+    HasPropertyAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder_1<TComplex>;
     HasPropertyAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder;
+    HasTypeAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder_1<TComplex>;
     HasTypeAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder;
+    Ignore(propertyExpression: Expression_1<Func_2<TComplex, unknown>>): ComplexPropertyBuilder_1<TComplex>;
     Ignore(propertyName: string): ComplexPropertyBuilder_1<TComplex>;
     Ignore(propertyName: string): ComplexPropertyBuilder;
+    IsRequired(required?: boolean): ComplexPropertyBuilder_1<TComplex>;
     IsRequired(required?: boolean): ComplexPropertyBuilder;
+    PrimitiveCollection<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyName: string): ComplexTypePrimitiveCollectionBuilder;
     PrimitiveCollection<TProperty>(propertyName: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyType: Type, propertyName: string): ComplexTypePrimitiveCollectionBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>): ComplexTypePropertyBuilder_1<TProperty>;
     Property(propertyName: string): ComplexTypePropertyBuilder;
     Property<TProperty>(propertyName: string): ComplexTypePropertyBuilder_1<TProperty>;
     Property(propertyType: Type, propertyName: string): ComplexTypePropertyBuilder;
+    UseDefaultPropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexPropertyBuilder_1<TComplex>;
     UseDefaultPropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexPropertyBuilder;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexPropertyBuilder_1<TComplex>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexPropertyBuilder;
 }
 
@@ -1420,25 +1501,43 @@ export interface ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> ext
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ElementType(builderAction: Action_1<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action_1<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder;
+    HasAnnotation(annotation: string, value: unknown): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasAnnotation(annotation: string, value: unknown): ComplexTypePrimitiveCollectionBuilder;
+    HasField(fieldName: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasField(fieldName: string): ComplexTypePrimitiveCollectionBuilder;
+    HasMaxLength(maxLength: int): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasMaxLength(maxLength: int): ComplexTypePrimitiveCollectionBuilder;
+    HasSentinel(sentinel: unknown): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasSentinel(sentinel: TProperty): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasSentinel(sentinel: unknown): ComplexTypePrimitiveCollectionBuilder;
+    HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    HasValueGenerator(valueGeneratorType: Type): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePrimitiveCollectionBuilder;
     HasValueGenerator(valueGeneratorType: Type): ComplexTypePrimitiveCollectionBuilder;
+    HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePrimitiveCollectionBuilder;
     HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePrimitiveCollectionBuilder;
+    IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePrimitiveCollectionBuilder;
+    IsRequired(required?: boolean): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     IsRequired(required?: boolean): ComplexTypePrimitiveCollectionBuilder;
+    IsUnicode(unicode?: boolean): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     IsUnicode(unicode?: boolean): ComplexTypePrimitiveCollectionBuilder;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexTypePrimitiveCollectionBuilder;
+    ValueGeneratedNever(): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedNever(): ComplexTypePrimitiveCollectionBuilder;
+    ValueGeneratedOnAdd(): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedOnAdd(): ComplexTypePrimitiveCollectionBuilder;
+    ValueGeneratedOnAddOrUpdate(): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedOnAddOrUpdate(): ComplexTypePrimitiveCollectionBuilder;
+    ValueGeneratedOnUpdate(): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedOnUpdate(): ComplexTypePrimitiveCollectionBuilder;
+    ValueGeneratedOnUpdateSometimes(): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedOnUpdateSometimes(): ComplexTypePrimitiveCollectionBuilder;
 }
 
@@ -1515,46 +1614,69 @@ export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends Comple
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): ComplexTypePropertyBuilder_1<TProperty>;
     HasAnnotation(annotation: string, value: unknown): ComplexTypePropertyBuilder;
+    HasConversion<TConversion>(): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion(providerClrType: Type): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TConversion>(valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, comparerType: Type): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion<TConversion>(): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type): ComplexTypePropertyBuilder;
     HasConversion(converter: ValueConverter): ComplexTypePropertyBuilder;
     HasConversion<TConversion>(valueComparer: ValueComparer): ComplexTypePropertyBuilder;
     HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder;
     HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexTypePropertyBuilder;
     HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): ComplexTypePropertyBuilder;
+    HasField(fieldName: string): ComplexTypePropertyBuilder_1<TProperty>;
     HasField(fieldName: string): ComplexTypePropertyBuilder;
+    HasMaxLength(maxLength: int): ComplexTypePropertyBuilder_1<TProperty>;
     HasMaxLength(maxLength: int): ComplexTypePropertyBuilder;
+    HasPrecision(precision: int, scale: int): ComplexTypePropertyBuilder_1<TProperty>;
+    HasPrecision(precision: int): ComplexTypePropertyBuilder_1<TProperty>;
     HasPrecision(precision: int, scale: int): ComplexTypePropertyBuilder;
     HasPrecision(precision: int): ComplexTypePropertyBuilder;
+    HasSentinel(sentinel: unknown): ComplexTypePropertyBuilder_1<TProperty>;
     HasSentinel(sentinel: TProperty): ComplexTypePropertyBuilder_1<TProperty>;
     HasSentinel(sentinel: unknown): ComplexTypePropertyBuilder;
+    HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePropertyBuilder_1<TProperty>;
+    HasValueGenerator(valueGeneratorType: Type): ComplexTypePropertyBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePropertyBuilder;
     HasValueGenerator(valueGeneratorType: Type): ComplexTypePropertyBuilder;
+    HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePropertyBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePropertyBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePropertyBuilder;
     HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePropertyBuilder;
+    IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePropertyBuilder_1<TProperty>;
     IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePropertyBuilder;
+    IsRequired(required?: boolean): ComplexTypePropertyBuilder_1<TProperty>;
     IsRequired(required?: boolean): ComplexTypePropertyBuilder;
+    IsRowVersion(): ComplexTypePropertyBuilder_1<TProperty>;
     IsRowVersion(): ComplexTypePropertyBuilder;
+    IsUnicode(unicode?: boolean): ComplexTypePropertyBuilder_1<TProperty>;
     IsUnicode(unicode?: boolean): ComplexTypePropertyBuilder;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexTypePropertyBuilder_1<TProperty>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexTypePropertyBuilder;
+    ValueGeneratedNever(): ComplexTypePropertyBuilder_1<TProperty>;
     ValueGeneratedNever(): ComplexTypePropertyBuilder;
+    ValueGeneratedOnAdd(): ComplexTypePropertyBuilder_1<TProperty>;
     ValueGeneratedOnAdd(): ComplexTypePropertyBuilder;
+    ValueGeneratedOnAddOrUpdate(): ComplexTypePropertyBuilder_1<TProperty>;
     ValueGeneratedOnAddOrUpdate(): ComplexTypePropertyBuilder;
+    ValueGeneratedOnUpdate(): ComplexTypePropertyBuilder_1<TProperty>;
     ValueGeneratedOnUpdate(): ComplexTypePropertyBuilder;
+    ValueGeneratedOnUpdateSometimes(): ComplexTypePropertyBuilder_1<TProperty>;
     ValueGeneratedOnUpdateSometimes(): ComplexTypePropertyBuilder;
 }
 
@@ -1626,12 +1748,16 @@ export interface DbFunctionBuilder$instance extends DbFunctionBuilderBase$instan
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): DbFunctionBuilder;
+    HasName(name: string): DbFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilder;
     HasParameter(name: string): DbFunctionParameterBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasSchema(schema: string): DbFunctionBuilder;
     HasSchema(schema: string): DbFunctionBuilderBase;
     HasStoreType(storeType: string): DbFunctionBuilder;
     HasTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>): DbFunctionBuilder;
+    IsBuiltIn(builtIn?: boolean): DbFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
     IsNullable(nullable?: boolean): DbFunctionBuilderBase;
 }
@@ -1886,96 +2012,148 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<Nullable_1<TElement>>>>): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<Nullable_1<TElement>>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection(propertyType: Type, propertyName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string): ComplexCollectionBuilder;
     ComplexCollection(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder;
+    ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder;
+    ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder_1<TEntity>;
     ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, Nullable_1<TProperty>>>): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, Nullable_1<TProperty>>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, Nullable_1<TProperty>>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, Nullable_1<TProperty>>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty(propertyType: Type, propertyName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string): ComplexPropertyBuilder;
     ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
+    ComplexProperty<TProperty>(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
+    HasAlternateKey(keyExpression: Expression_1<Func_2<TEntity, unknown>>): KeyBuilder_1<TEntity>;
     HasAlternateKey(...propertyNames: string[]): KeyBuilder_1<TEntity>;
     HasAlternateKey(...propertyNames: string[]): KeyBuilder;
+    HasAnnotation(annotation: string, value: unknown): EntityTypeBuilder_1<TEntity>;
     HasAnnotation(annotation: string, value: unknown): EntityTypeBuilder;
+    HasBaseType(name: string): EntityTypeBuilder_1<TEntity>;
     HasBaseType(entityType: Type): EntityTypeBuilder_1<TEntity>;
+    HasBaseType<TBaseType>(): EntityTypeBuilder_1<TEntity>;
     HasBaseType(name: string): EntityTypeBuilder;
-    HasBaseType(entityType: Type): EntityTypeBuilder;
+    HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): EntityTypeBuilder_1<TEntity>;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): EntityTypeBuilder;
     HasData(...data: TEntity[]): DataBuilder_1<TEntity>;
+    HasData(data: IEnumerable_1<TEntity>): DataBuilder_1<TEntity>;
     HasData(...data: unknown[]): DataBuilder_1<TEntity>;
     HasData(data: IEnumerable_1<unknown>): DataBuilder_1<TEntity>;
-    HasData(...data: unknown[]): DataBuilder;
     HasData(data: IEnumerable_1<unknown>): DataBuilder;
+    HasDiscriminator<TDiscriminator>(propertyExpression: Expression_1<Func_2<TEntity, TDiscriminator>>): DiscriminatorBuilder_1<TDiscriminator>;
     HasDiscriminator(): DiscriminatorBuilder;
     HasDiscriminator(name: string, type: Type): DiscriminatorBuilder;
     HasDiscriminator<TDiscriminator>(name: string): DiscriminatorBuilder_1<TDiscriminator>;
+    HasIndex(indexExpression: Expression_1<Func_2<TEntity, unknown>>): IndexBuilder_1<TEntity>;
+    HasIndex(indexExpression: Expression_1<Func_2<TEntity, unknown>>, name: string): IndexBuilder_1<TEntity>;
     HasIndex(...propertyNames: string[]): IndexBuilder_1<TEntity>;
     HasIndex(propertyNames: string[], name: string): IndexBuilder_1<TEntity>;
     HasIndex(...propertyNames: string[]): IndexBuilder;
     HasIndex(propertyNames: string[], name: string): IndexBuilder;
+    HasKey(keyExpression: Expression_1<Func_2<TEntity, unknown>>): KeyBuilder;
     HasKey(...propertyNames: string[]): KeyBuilder_1<TEntity>;
     HasKey(...propertyNames: string[]): KeyBuilder;
     HasMany<TRelatedEntity>(navigationName: string): CollectionNavigationBuilder_2<TEntity, TRelatedEntity>;
+    HasMany<TRelatedEntity>(navigationExpression?: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>): CollectionNavigationBuilder_2<TEntity, TRelatedEntity>;
     HasMany(relatedTypeName: string, navigationName: string): CollectionNavigationBuilder;
-    HasMany(navigationName: string): CollectionNavigationBuilder;
     HasMany(relatedType: Type, navigationName?: string): CollectionNavigationBuilder;
+    HasMany(navigationName: string): CollectionNavigationBuilder;
+    HasNoDiscriminator(): EntityTypeBuilder_1<TEntity>;
     HasNoDiscriminator(): EntityTypeBuilder;
+    HasNoKey(): EntityTypeBuilder_1<TEntity>;
     HasNoKey(): EntityTypeBuilder;
     HasOne<TRelatedEntity>(navigationName: string): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
+    HasOne<TRelatedEntity>(navigationExpression?: Expression_1<Func_2<TEntity, TRelatedEntity>>): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
     HasOne(relatedTypeName: string, navigationName: string): ReferenceNavigationBuilder;
     HasOne(relatedType: Type, navigationName?: string): ReferenceNavigationBuilder;
     HasOne(navigationName: string): ReferenceNavigationBuilder;
     HasQueryFilter(filter: LambdaExpression): EntityTypeBuilder_1<TEntity>;
     HasQueryFilter(filterKey: string, filter: LambdaExpression): EntityTypeBuilder_1<TEntity>;
+    HasQueryFilter(filter: Expression_1<Func_2<TEntity, System_Internal.Boolean>>): EntityTypeBuilder_1<TEntity>;
+    HasQueryFilter(filterKey: string, filter: Expression_1<Func_2<TEntity, System_Internal.Boolean>>): EntityTypeBuilder_1<TEntity>;
     HasQueryFilter(filter: LambdaExpression): EntityTypeBuilder;
     HasQueryFilter(filterKey: string, filter: LambdaExpression): EntityTypeBuilder;
+    Ignore(propertyExpression: Expression_1<Func_2<TEntity, unknown>>): EntityTypeBuilder_1<TEntity>;
     Ignore(propertyName: string): EntityTypeBuilder_1<TEntity>;
     Ignore(propertyName: string): EntityTypeBuilder;
+    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TEntity, TNavigation>>): NavigationBuilder_2<TEntity, TNavigation>;
+    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TNavigation>>>): NavigationBuilder_2<TEntity, TNavigation>;
     Navigation(navigationName: string): NavigationBuilder;
     OwnsMany<TRelatedEntity>(navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
+    OwnsMany<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsMany<TRelatedEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
+    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
-    OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
+    OwnsMany<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
+    OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
     OwnsOne<TRelatedEntity>(navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
+    OwnsOne<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsOne<TRelatedEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
+    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
-    OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
+    OwnsOne<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
+    OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
-    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
+    PrimitiveCollection<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): PrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyName: string): PrimitiveCollectionBuilder;
     PrimitiveCollection<TProperty>(propertyName: string): PrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyType: Type, propertyName: string): PrimitiveCollectionBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): PropertyBuilder_1<TProperty>;
     Property(propertyName: string): PropertyBuilder;
     Property<TProperty>(propertyName: string): PropertyBuilder_1<TProperty>;
     Property(propertyType: Type, propertyName: string): PropertyBuilder;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): EntityTypeBuilder_1<TEntity>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): EntityTypeBuilder;
 }
 
@@ -2024,8 +2202,11 @@ export interface IndexBuilder_1$instance<T> extends IndexBuilder$instance, Micro
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): IndexBuilder_1<T>;
     HasAnnotation(annotation: string, value: unknown): IndexBuilder;
+    IsDescending(...descending: boolean[]): IndexBuilder_1<T>;
     IsDescending(...descending: boolean[]): IndexBuilder;
+    IsUnique(unique?: boolean): IndexBuilder_1<T>;
     IsUnique(unique?: boolean): IndexBuilder;
 }
 
@@ -2098,6 +2279,7 @@ export interface KeyBuilder_1$instance<T> extends KeyBuilder$instance, Microsoft
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): KeyBuilder_1<T>;
     HasAnnotation(annotation: string, value: unknown): KeyBuilder;
 }
 
@@ -2149,14 +2331,20 @@ export interface NavigationBuilder_2$instance<TSource, TTarget> extends Navigati
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    AutoInclude(autoInclude?: boolean): NavigationBuilder_2<TSource, TTarget>;
     AutoInclude(autoInclude?: boolean): NavigationBuilder;
+    EnableLazyLoading(lazyLoadingEnabled?: boolean): NavigationBuilder_2<TSource, TTarget>;
     EnableLazyLoading(lazyLoadingEnabled?: boolean): NavigationBuilder;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
+    HasAnnotation(annotation: string, value: unknown): NavigationBuilder_2<TSource, TTarget>;
     HasAnnotation(annotation: string, value: unknown): NavigationBuilder;
+    HasField(fieldName: string): NavigationBuilder_2<TSource, TTarget>;
     HasField(fieldName: string): NavigationBuilder;
+    IsRequired(required?: boolean): NavigationBuilder_2<TSource, TTarget>;
     IsRequired(required?: boolean): NavigationBuilder;
     ToString(): string | undefined;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): NavigationBuilder_2<TSource, TTarget>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): NavigationBuilder;
 }
 
@@ -2270,58 +2458,79 @@ export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntit
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder;
+    HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): OwnedNavigationBuilder;
     HasData(...data: TDependentEntity[]): DataBuilder_1<TDependentEntity>;
+    HasData(data: IEnumerable_1<TDependentEntity>): DataBuilder_1<TDependentEntity>;
     HasData(...data: unknown[]): DataBuilder_1<TDependentEntity>;
     HasData(data: IEnumerable_1<unknown>): DataBuilder_1<TDependentEntity>;
-    HasData(...data: unknown[]): DataBuilder;
     HasData(data: IEnumerable_1<unknown>): DataBuilder;
+    HasIndex(indexExpression: Expression_1<Func_2<TDependentEntity, unknown>>): IndexBuilder_1<TDependentEntity>;
+    HasIndex(indexExpression: Expression_1<Func_2<TDependentEntity, unknown>>, name: string): IndexBuilder_1<TDependentEntity>;
     HasIndex(...propertyNames: string[]): IndexBuilder_1<TDependentEntity>;
     HasIndex(propertyNames: string[], name: string): IndexBuilder_1<TDependentEntity>;
     HasIndex(...propertyNames: string[]): IndexBuilder;
     HasIndex(propertyNames: string[], name: string): IndexBuilder;
+    HasKey(keyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): KeyBuilder_1<TDependentEntity>;
     HasKey(...propertyNames: string[]): KeyBuilder_1<TDependentEntity>;
     HasKey(...propertyNames: string[]): KeyBuilder;
     HasOne<TNewRelatedEntity>(navigationName: string): ReferenceNavigationBuilder_2<TDependentEntity, TNewRelatedEntity>;
+    HasOne<TNewRelatedEntity>(navigationExpression?: Expression_1<Func_2<TDependentEntity, TNewRelatedEntity>>): ReferenceNavigationBuilder_2<TDependentEntity, TNewRelatedEntity>;
     HasOne(relatedTypeName: string, navigationName: string): ReferenceNavigationBuilder;
-    HasOne(navigationName: string): ReferenceNavigationBuilder;
     HasOne(relatedType: Type, navigationName?: string): ReferenceNavigationBuilder;
+    HasOne(navigationName: string): ReferenceNavigationBuilder;
     Ignore(propertyName: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    Ignore(propertyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     Ignore(propertyName: string): OwnedNavigationBuilder;
+    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNavigation>>): NavigationBuilder_2<TDependentEntity, TNavigation>;
+    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNavigation>>>): NavigationBuilder_2<TDependentEntity, TNavigation>;
     Navigation(navigationName: string): NavigationBuilder;
     OwnsMany<TNewDependentEntity>(navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
+    OwnsMany<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity>>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity>>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsMany<TNewDependentEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
+    OwnsMany<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity>>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity>>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
+    OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
     OwnsOne<TNewDependentEntity>(navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
+    OwnsOne<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsOne<TNewDependentEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
+    OwnsOne<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
+    OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
-    OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
+    PrimitiveCollection<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): PrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyName: string): PrimitiveCollectionBuilder;
     PrimitiveCollection<TProperty>(propertyName: string): PrimitiveCollectionBuilder_1<TProperty>;
     PrimitiveCollection(propertyType: Type, propertyName: string): PrimitiveCollectionBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): PropertyBuilder_1<TProperty>;
     Property(propertyName: string): PropertyBuilder;
     Property<TProperty>(propertyName: string): PropertyBuilder_1<TProperty>;
     Property(propertyType: Type, propertyName: string): PropertyBuilder;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): OwnedNavigationBuilder;
     WithOwner(ownerReference?: string): OwnershipBuilder_2<TOwnerEntity, TDependentEntity>;
+    WithOwner(referenceExpression: Expression_1<Func_2<TDependentEntity, TOwnerEntity>>): OwnershipBuilder_2<TOwnerEntity, TDependentEntity>;
     WithOwner(ownerReference?: string): OwnershipBuilder;
 }
 
@@ -2376,8 +2585,11 @@ export interface OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDepe
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ExcludeFromMigrations(excluded?: boolean): OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>;
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationSplitTableBuilder;
+    HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>;
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitTableBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): ColumnBuilder_1<TProperty>;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
 }
@@ -2429,7 +2641,9 @@ export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDepen
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>;
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitViewBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): ViewColumnBuilder_1<TProperty>;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
 }
@@ -2488,17 +2702,35 @@ export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, 
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder;
+    HasOriginalValueParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasOriginalValueParameter<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasOriginalValueParameter<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
     HasOriginalValueParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasParameter<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasParameter<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
     HasParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
     HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasResultColumn(propertyName: string): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasResultColumn<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasResultColumn<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>, buildAction: Action_1<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
     HasResultColumn(propertyName: string): OwnedNavigationStoredProcedureBuilder;
     HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasRowsAffectedParameter(): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasRowsAffectedParameter(buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
     HasRowsAffectedParameter(): OwnedNavigationStoredProcedureBuilder;
     HasRowsAffectedParameter(buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasRowsAffectedResultColumn(): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasRowsAffectedResultColumn(buildAction: Action_1<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
     HasRowsAffectedResultColumn(): OwnedNavigationStoredProcedureBuilder;
     HasRowsAffectedResultColumn(buildAction: Action_1<StoredProcedureResultColumnBuilder>): OwnedNavigationStoredProcedureBuilder;
+    HasRowsAffectedReturnValue(rowsAffectedReturned?: boolean): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
     HasRowsAffectedReturnValue(rowsAffectedReturned?: boolean): OwnedNavigationStoredProcedureBuilder;
 }
 
@@ -2554,8 +2786,11 @@ export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependent
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ExcludeFromMigrations(excluded?: boolean): OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>;
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationTableBuilder;
+    HasComment(comment: string): OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>;
     HasComment(comment: string): OwnedNavigationTableBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): ColumnBuilder_1<TProperty>;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
 }
@@ -2579,10 +2814,14 @@ export interface OwnedNavigationTableValuedFunctionBuilder$instance extends DbFu
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder;
+    HasName(name: string): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): OwnedNavigationTableValuedFunctionBuilder;
     HasParameter(name: string): DbFunctionParameterBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasSchema(schema: string): OwnedNavigationTableValuedFunctionBuilder;
     HasSchema(schema: string): DbFunctionBuilderBase;
+    IsBuiltIn(builtIn?: boolean): OwnedNavigationTableValuedFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
 }
 
@@ -2604,14 +2843,19 @@ export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEnti
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
     HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder;
+    HasName(name: string): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
     HasName(name: string): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
-    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): OwnedNavigationTableValuedFunctionBuilder;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
     HasParameter(name: string): DbFunctionParameterBuilder;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): OwnedNavigationTableValuedFunctionBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasSchema(schema: string): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
     HasSchema(schema: string): OwnedNavigationTableValuedFunctionBuilder;
     HasSchema(schema: string): DbFunctionBuilderBase;
+    IsBuiltIn(builtIn?: boolean): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
     IsBuiltIn(builtIn?: boolean): OwnedNavigationTableValuedFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
 }
@@ -2662,6 +2906,7 @@ export interface OwnedNavigationViewBuilder_2$instance<TOwnerEntity, TDependentE
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): ViewColumnBuilder_1<TProperty>;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
 }
@@ -2707,10 +2952,13 @@ export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends 
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): OwnershipBuilder_2<TEntity, TDependentEntity>;
     HasAnnotation(annotation: string, value: unknown): OwnershipBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): OwnershipBuilder_2<TEntity, TDependentEntity>;
+    HasForeignKey(foreignKeyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): OwnershipBuilder_2<TEntity, TDependentEntity>;
     HasForeignKey(...foreignKeyPropertyNames: string[]): OwnershipBuilder;
     HasPrincipalKey(...keyPropertyNames: string[]): OwnershipBuilder_2<TEntity, TDependentEntity>;
+    HasPrincipalKey(keyExpression: Expression_1<Func_2<TEntity, unknown>>): OwnershipBuilder_2<TEntity, TDependentEntity>;
     HasPrincipalKey(...keyPropertyNames: string[]): OwnershipBuilder;
 }
 
@@ -2775,25 +3023,43 @@ export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends Primit
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ElementType(builderAction: Action_1<ElementTypeBuilder>): PrimitiveCollectionBuilder_1<TProperty>;
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action_1<ElementTypeBuilder>): PrimitiveCollectionBuilder;
+    HasAnnotation(annotation: string, value: unknown): PrimitiveCollectionBuilder_1<TProperty>;
     HasAnnotation(annotation: string, value: unknown): PrimitiveCollectionBuilder;
+    HasField(fieldName: string): PrimitiveCollectionBuilder_1<TProperty>;
     HasField(fieldName: string): PrimitiveCollectionBuilder;
+    HasMaxLength(maxLength: int): PrimitiveCollectionBuilder_1<TProperty>;
     HasMaxLength(maxLength: int): PrimitiveCollectionBuilder;
+    HasSentinel(sentinel: unknown): PrimitiveCollectionBuilder_1<TProperty>;
     HasSentinel(sentinel: TProperty): PrimitiveCollectionBuilder_1<TProperty>;
     HasSentinel(sentinel: unknown): PrimitiveCollectionBuilder;
+    HasValueGenerator<TGenerator extends ValueGenerator>(): PrimitiveCollectionBuilder_1<TProperty>;
+    HasValueGenerator(valueGeneratorType: Type): PrimitiveCollectionBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PrimitiveCollectionBuilder;
     HasValueGenerator(valueGeneratorType: Type): PrimitiveCollectionBuilder;
+    HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PrimitiveCollectionBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PrimitiveCollectionBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PrimitiveCollectionBuilder;
     HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PrimitiveCollectionBuilder;
+    IsConcurrencyToken(concurrencyToken?: boolean): PrimitiveCollectionBuilder_1<TProperty>;
     IsConcurrencyToken(concurrencyToken?: boolean): PrimitiveCollectionBuilder;
+    IsRequired(required?: boolean): PrimitiveCollectionBuilder_1<TProperty>;
     IsRequired(required?: boolean): PrimitiveCollectionBuilder;
+    IsUnicode(unicode?: boolean): PrimitiveCollectionBuilder_1<TProperty>;
     IsUnicode(unicode?: boolean): PrimitiveCollectionBuilder;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): PrimitiveCollectionBuilder_1<TProperty>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): PrimitiveCollectionBuilder;
+    ValueGeneratedNever(): PrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedNever(): PrimitiveCollectionBuilder;
+    ValueGeneratedOnAdd(): PrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedOnAdd(): PrimitiveCollectionBuilder;
+    ValueGeneratedOnAddOrUpdate(): PrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedOnAddOrUpdate(): PrimitiveCollectionBuilder;
+    ValueGeneratedOnUpdate(): PrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedOnUpdate(): PrimitiveCollectionBuilder;
+    ValueGeneratedOnUpdateSometimes(): PrimitiveCollectionBuilder_1<TProperty>;
     ValueGeneratedOnUpdateSometimes(): PrimitiveCollectionBuilder;
 }
 
@@ -2847,10 +3113,10 @@ export interface PropertiesConfigurationBuilder_1$instance<TProperty> extends Pr
     HaveConversion<TConversion>(): PropertiesConfigurationBuilder_1<TProperty>;
     HaveConversion(conversionType: Type): PropertiesConfigurationBuilder_1<TProperty>;
     HaveConversion(conversionType: Type, comparerType: Type): PropertiesConfigurationBuilder_1<TProperty>;
+    HaveConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): PropertiesConfigurationBuilder;
     HaveConversion<TConversion>(): PropertiesConfigurationBuilder;
     HaveConversion(conversionType: Type): PropertiesConfigurationBuilder;
     HaveConversion(conversionType: Type, comparerType: Type): PropertiesConfigurationBuilder;
-    HaveConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): PropertiesConfigurationBuilder;
     HaveMaxLength(maxLength: int): PropertiesConfigurationBuilder_1<TProperty>;
     HaveMaxLength(maxLength: int): PropertiesConfigurationBuilder;
     HavePrecision(precision: int, scale: int): PropertiesConfigurationBuilder_1<TProperty>;
@@ -2928,48 +3194,70 @@ export interface PropertyBuilder_1$instance<TProperty> extends PropertyBuilder$i
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): PropertyBuilder_1<TProperty>;
     HasAnnotation(annotation: string, value: unknown): PropertyBuilder;
+    HasConversion<TConversion>(): PropertyBuilder_1<TProperty>;
     HasConversion(providerClrType: Type): PropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>): PropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>): PropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter): PropertyBuilder_1<TProperty>;
+    HasConversion<TConversion>(valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
     HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, comparerType: Type): PropertyBuilder_1<TProperty>;
     HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): PropertyBuilder_1<TProperty>;
     HasConversion<TConversion>(): PropertyBuilder;
-    HasConversion(conversionType: Type): PropertyBuilder;
     HasConversion(converter: ValueConverter): PropertyBuilder;
     HasConversion<TConversion>(valueComparer: ValueComparer): PropertyBuilder;
     HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): PropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder;
     HasConversion(converter: ValueConverter, valueComparer: ValueComparer): PropertyBuilder;
     HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type): PropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): PropertyBuilder;
+    HasField(fieldName: string): PropertyBuilder_1<TProperty>;
     HasField(fieldName: string): PropertyBuilder;
+    HasMaxLength(maxLength: int): PropertyBuilder_1<TProperty>;
     HasMaxLength(maxLength: int): PropertyBuilder;
+    HasPrecision(precision: int, scale: int): PropertyBuilder_1<TProperty>;
+    HasPrecision(precision: int): PropertyBuilder_1<TProperty>;
     HasPrecision(precision: int, scale: int): PropertyBuilder;
     HasPrecision(precision: int): PropertyBuilder;
+    HasSentinel(sentinel: unknown): PropertyBuilder_1<TProperty>;
     HasSentinel(sentinel: TProperty): PropertyBuilder_1<TProperty>;
     HasSentinel(sentinel: unknown): PropertyBuilder;
+    HasValueGenerator<TGenerator extends ValueGenerator>(): PropertyBuilder_1<TProperty>;
     HasValueGenerator(valueGeneratorType: Type): PropertyBuilder_1<TProperty>;
+    HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>): PropertyBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PropertyBuilder;
-    HasValueGenerator(valueGeneratorType: Type): PropertyBuilder;
     HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>): PropertyBuilder;
+    HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PropertyBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PropertyBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PropertyBuilder;
     HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PropertyBuilder;
+    IsConcurrencyToken(concurrencyToken?: boolean): PropertyBuilder_1<TProperty>;
     IsConcurrencyToken(concurrencyToken?: boolean): PropertyBuilder;
+    IsRequired(required?: boolean): PropertyBuilder_1<TProperty>;
     IsRequired(required?: boolean): PropertyBuilder;
+    IsRowVersion(): PropertyBuilder_1<TProperty>;
     IsRowVersion(): PropertyBuilder;
+    IsUnicode(unicode?: boolean): PropertyBuilder_1<TProperty>;
     IsUnicode(unicode?: boolean): PropertyBuilder;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): PropertyBuilder_1<TProperty>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): PropertyBuilder;
+    ValueGeneratedNever(): PropertyBuilder_1<TProperty>;
     ValueGeneratedNever(): PropertyBuilder;
+    ValueGeneratedOnAdd(): PropertyBuilder_1<TProperty>;
     ValueGeneratedOnAdd(): PropertyBuilder;
+    ValueGeneratedOnAddOrUpdate(): PropertyBuilder_1<TProperty>;
     ValueGeneratedOnAddOrUpdate(): PropertyBuilder;
+    ValueGeneratedOnUpdate(): PropertyBuilder_1<TProperty>;
     ValueGeneratedOnUpdate(): PropertyBuilder;
+    ValueGeneratedOnUpdateSometimes(): PropertyBuilder_1<TProperty>;
     ValueGeneratedOnUpdateSometimes(): PropertyBuilder;
 }
 
@@ -3020,12 +3308,17 @@ export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDepend
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
     HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
+    HasForeignKey(foreignKeyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder;
     HasPrincipalKey(...keyPropertyNames: string[]): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
+    HasPrincipalKey(keyExpression: Expression_1<Func_2<TPrincipalEntity, unknown>>): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
     HasPrincipalKey(...keyPropertyNames: string[]): ReferenceCollectionBuilder;
+    IsRequired(required?: boolean): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
     IsRequired(required?: boolean): ReferenceCollectionBuilder;
+    OnDelete(deleteBehavior: DeleteBehavior): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
     OnDelete(deleteBehavior: DeleteBehavior): ReferenceCollectionBuilder;
 }
 
@@ -3083,8 +3376,10 @@ export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     WithMany(navigationName?: string): ReferenceCollectionBuilder_2<TRelatedEntity, TEntity>;
+    WithMany(navigationExpression: Expression_1<Func_2<TRelatedEntity, IEnumerable_1<TEntity>>>): ReferenceCollectionBuilder_2<TRelatedEntity, TEntity>;
     WithMany(collection?: string): ReferenceCollectionBuilder;
     WithOne(navigationName?: string): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    WithOne(navigationExpression: Expression_1<Func_2<TRelatedEntity, TEntity>>): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     WithOne(reference?: string): ReferenceReferenceBuilder;
 }
 
@@ -3140,16 +3435,21 @@ export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> e
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder;
+    HasForeignKey(dependentEntityTypeName: string, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasForeignKey(dependentEntityType: Type, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasForeignKey<TDependentEntity>(...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    HasForeignKey<TDependentEntity>(foreignKeyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasForeignKey(dependentEntityTypeName: string, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
-    HasForeignKey(dependentEntityType: Type, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
+    HasPrincipalKey(principalEntityTypeName: string, ...keyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasPrincipalKey(principalEntityType: Type, ...keyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasPrincipalKey<TPrincipalEntity>(...keyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    HasPrincipalKey<TPrincipalEntity>(keyExpression: Expression_1<Func_2<TPrincipalEntity, unknown>>): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasPrincipalKey(principalEntityTypeName: string, ...keyPropertyNames: string[]): ReferenceReferenceBuilder;
-    HasPrincipalKey(principalEntityType: Type, ...keyPropertyNames: string[]): ReferenceReferenceBuilder;
+    IsRequired(required?: boolean): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     IsRequired(required?: boolean): ReferenceReferenceBuilder;
+    OnDelete(deleteBehavior: DeleteBehavior): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     OnDelete(deleteBehavior: DeleteBehavior): ReferenceReferenceBuilder;
 }
 
@@ -3260,8 +3560,11 @@ export interface SplitTableBuilder_1$instance<TEntity> extends SplitTableBuilder
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ExcludeFromMigrations(excluded?: boolean): SplitTableBuilder_1<TEntity>;
     ExcludeFromMigrations(excluded?: boolean): SplitTableBuilder;
+    HasAnnotation(annotation: string, value: unknown): SplitTableBuilder_1<TEntity>;
     HasAnnotation(annotation: string, value: unknown): SplitTableBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ColumnBuilder_1<TProperty>;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
 }
@@ -3313,7 +3616,9 @@ export interface SplitViewBuilder_1$instance<TEntity> extends SplitViewBuilder$i
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): SplitViewBuilder_1<TEntity>;
     HasAnnotation(annotation: string, value: unknown): SplitViewBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ViewColumnBuilder_1<TProperty>;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
 }
@@ -3372,17 +3677,41 @@ export interface StoredProcedureBuilder_1$instance<TEntity> extends StoredProced
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder_1<TEntity>;
     HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder;
+    HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder_1<TEntity>;
+    HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
+    HasOriginalValueParameter<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
+    HasOriginalValueParameter<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
+    HasOriginalValueParameter<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
+    HasOriginalValueParameter<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
+    HasParameter(propertyName: string): StoredProcedureBuilder_1<TEntity>;
+    HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
+    HasParameter<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
+    HasParameter<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
+    HasParameter<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
+    HasParameter<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasParameter(propertyName: string): StoredProcedureBuilder;
     HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
+    HasResultColumn(propertyName: string): StoredProcedureBuilder_1<TEntity>;
+    HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder_1<TEntity>;
+    HasResultColumn<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
+    HasResultColumn<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
+    HasResultColumn<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder_1<TEntity>;
+    HasResultColumn<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasResultColumn(propertyName: string): StoredProcedureBuilder;
     HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
+    HasRowsAffectedParameter(): StoredProcedureBuilder_1<TEntity>;
+    HasRowsAffectedParameter(buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasRowsAffectedParameter(): StoredProcedureBuilder;
     HasRowsAffectedParameter(buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
+    HasRowsAffectedResultColumn(): StoredProcedureBuilder_1<TEntity>;
+    HasRowsAffectedResultColumn(buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasRowsAffectedResultColumn(): StoredProcedureBuilder;
     HasRowsAffectedResultColumn(buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
+    HasRowsAffectedReturnValue(rowsAffectedReturned?: boolean): StoredProcedureBuilder_1<TEntity>;
     HasRowsAffectedReturnValue(rowsAffectedReturned?: boolean): StoredProcedureBuilder;
 }
 
@@ -3494,8 +3823,11 @@ export interface TableBuilder_1$instance<TEntity> extends TableBuilder$instance,
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    ExcludeFromMigrations(excluded?: boolean): TableBuilder_1<TEntity>;
     ExcludeFromMigrations(excluded?: boolean): TableBuilder;
+    HasComment(comment: string): TableBuilder_1<TEntity>;
     HasComment(comment: string): TableBuilder;
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ColumnBuilder_1<TProperty>;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
 }
@@ -3520,6 +3852,7 @@ export interface TableTriggerBuilder$instance extends TriggerBuilder$instance, M
 
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
+    HasAnnotation(annotation: string, value: unknown): TableTriggerBuilder;
     HasAnnotation(annotation: string, value: unknown): TriggerBuilder;
     HasDatabaseName(name: string): TableTriggerBuilder;
     ToString(): string | undefined;
@@ -3544,10 +3877,14 @@ export interface TableValuedFunctionBuilder$instance extends DbFunctionBuilderBa
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder;
+    HasName(name: string): TableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): TableValuedFunctionBuilder;
     HasParameter(name: string): DbFunctionParameterBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasSchema(schema: string): TableValuedFunctionBuilder;
     HasSchema(schema: string): DbFunctionBuilderBase;
+    IsBuiltIn(builtIn?: boolean): TableValuedFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
 }
 
@@ -3569,14 +3906,19 @@ export interface TableValuedFunctionBuilder_1$instance<TEntity> extends TableVal
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder_1<TEntity>;
     HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder;
+    HasName(name: string): TableValuedFunctionBuilder_1<TEntity>;
     HasName(name: string): TableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
-    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): TableValuedFunctionBuilder;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): TableValuedFunctionBuilder_1<TEntity>;
     HasParameter(name: string): DbFunctionParameterBuilder;
+    HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): TableValuedFunctionBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
+    HasSchema(schema: string): TableValuedFunctionBuilder_1<TEntity>;
     HasSchema(schema: string): TableValuedFunctionBuilder;
     HasSchema(schema: string): DbFunctionBuilderBase;
+    IsBuiltIn(builtIn?: boolean): TableValuedFunctionBuilder_1<TEntity>;
     IsBuiltIn(builtIn?: boolean): TableValuedFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
 }
@@ -3709,6 +4051,7 @@ export interface ViewBuilder_1$instance<TEntity> extends ViewBuilder$instance, M
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ViewColumnBuilder_1<TProperty>;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
 }
@@ -3758,7 +4101,9 @@ export interface ViewColumnBuilder_1$instance<TProperty> extends ViewColumnBuild
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
+    HasAnnotation(annotation: string, value: unknown): ViewColumnBuilder_1<TProperty>;
     HasAnnotation(annotation: string, value: unknown): ViewColumnBuilder;
+    HasColumnName(name: string): ViewColumnBuilder_1<TProperty>;
     HasColumnName(name: string): ViewColumnBuilder;
 }
 

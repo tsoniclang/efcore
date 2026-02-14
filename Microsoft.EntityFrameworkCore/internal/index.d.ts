@@ -295,13 +295,12 @@ export interface __DbContextOptions$views {
 export type DbContextOptions = DbContextOptions$instance & __DbContextOptions$views;
 
 
-export interface DbContextOptions_1$instance<TContext extends DbContext> extends DbContextOptions$instance {
+export interface DbContextOptions_1$instance<TContext extends DbContext> extends DbContextOptions$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptions$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptions_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
 
     readonly ContextType: Type;
-    FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | undefined;
     WithExtension<TExtension extends IDbContextOptionsExtension>(extension: TExtension): DbContextOptions;
 }
 
@@ -375,33 +374,51 @@ export interface DbContextOptionsBuilder_1$instance<TContext extends DbContext> 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
     AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder_1<TContext>;
-    AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder;
+    AddInterceptors(...interceptors: IInterceptor[]): DbContextOptionsBuilder_1<TContext>;
     AddInterceptors(...interceptors: IInterceptor[]): DbContextOptionsBuilder;
-    AddOrUpdateExtension<TExtension extends IDbContextOptionsExtension>(extension: TExtension): void;
+    ConfigureLoggingCacheTime(timeSpan: TimeSpan): DbContextOptionsBuilder_1<TContext>;
     ConfigureLoggingCacheTime(timeSpan: TimeSpan): DbContextOptionsBuilder;
+    ConfigureWarnings(warningsConfigurationBuilderAction: Action_1<WarningsConfigurationBuilder>): DbContextOptionsBuilder_1<TContext>;
     ConfigureWarnings(warningsConfigurationBuilderAction: Action_1<WarningsConfigurationBuilder>): DbContextOptionsBuilder;
+    EnableDetailedErrors(detailedErrorsEnabled?: boolean): DbContextOptionsBuilder_1<TContext>;
     EnableDetailedErrors(detailedErrorsEnabled?: boolean): DbContextOptionsBuilder;
+    EnableSensitiveDataLogging(sensitiveDataLoggingEnabled?: boolean): DbContextOptionsBuilder_1<TContext>;
     EnableSensitiveDataLogging(sensitiveDataLoggingEnabled?: boolean): DbContextOptionsBuilder;
+    EnableServiceProviderCaching(cacheServiceProvider?: boolean): DbContextOptionsBuilder_1<TContext>;
     EnableServiceProviderCaching(cacheServiceProvider?: boolean): DbContextOptionsBuilder;
+    EnableThreadSafetyChecks(checksEnabled?: boolean): DbContextOptionsBuilder_1<TContext>;
     EnableThreadSafetyChecks(enableChecks?: boolean): DbContextOptionsBuilder;
+    LogTo(action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
+    LogTo(action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
     LogTo(action: Action_1<System_Internal.String>, categories: IEnumerable_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
     LogTo(action: Action_1<System_Internal.String>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
+    LogTo(filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>): DbContextOptionsBuilder_1<TContext>;
     LogTo(action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
     LogTo(action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
-    LogTo(action: Action_1<System_Internal.String>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
     LogTo(filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>): DbContextOptionsBuilder;
+    ReplaceService<TService, TImplementation extends TService>(): DbContextOptionsBuilder_1<TContext>;
     ReplaceService<TService, TImplementation extends TService>(): DbContextOptionsBuilder;
+    UseApplicationServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder_1<TContext>;
     UseApplicationServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder;
     UseAsyncSeeding(seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder_1<TContext>;
+    UseAsyncSeeding(seedAsync: Func_4<TContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder_1<TContext>;
     UseAsyncSeeding(seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder;
+    UseInternalServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder_1<TContext>;
     UseInternalServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder;
+    UseLoggerFactory(loggerFactory: ILoggerFactory): DbContextOptionsBuilder_1<TContext>;
     UseLoggerFactory(loggerFactory: ILoggerFactory): DbContextOptionsBuilder;
+    UseMemoryCache(memoryCache: IMemoryCache): DbContextOptionsBuilder_1<TContext>;
     UseMemoryCache(memoryCache: IMemoryCache): DbContextOptionsBuilder;
+    UseModel(model: IModel): DbContextOptionsBuilder_1<TContext>;
     UseModel(model: IModel): DbContextOptionsBuilder;
+    UseQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): DbContextOptionsBuilder_1<TContext>;
     UseQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): DbContextOptionsBuilder;
+    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider): DbContextOptionsBuilder_1<TContext>;
+    UseRootApplicationServiceProvider(): DbContextOptionsBuilder_1<TContext>;
     UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider): DbContextOptionsBuilder;
     UseRootApplicationServiceProvider(): DbContextOptionsBuilder;
     UseSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): DbContextOptionsBuilder_1<TContext>;
+    UseSeeding(seed: Action_2<TContext, System_Internal.Boolean>): DbContextOptionsBuilder_1<TContext>;
     UseSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): DbContextOptionsBuilder;
 }
 
@@ -1024,38 +1041,119 @@ export type DbLoggerCategory = DbLoggerCategory$instance;
 export abstract class EF$instance {
     static IsDesignTime: boolean;
     static readonly Functions: DbFunctions;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult, TProperty>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IIncludableQueryable_2<TResult, TProperty>>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IQueryable_1<TResult>>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, CancellationToken, TResult>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult, TProperty>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IIncludableQueryable_2<TResult, TProperty>>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IQueryable_1<TResult>>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, CancellationToken, TResult>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult, TProperty>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IIncludableQueryable_2<TResult, TProperty>>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IQueryable_1<TResult>>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, CancellationToken, TResult>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult, TProperty>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IIncludableQueryable_2<TResult, TProperty>>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IQueryable_1<TResult>>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, CancellationToken, TResult>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult, TProperty>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IIncludableQueryable_2<TResult, TProperty>>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IQueryable_1<TResult>>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, CancellationToken, TResult>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult, TProperty>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IIncludableQueryable_2<TResult, TProperty>>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IQueryable_1<TResult>>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, CancellationToken, TResult>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult, TProperty>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IIncludableQueryable_2<TResult, TProperty>>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IQueryable_1<TResult>>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, CancellationToken, TResult>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, TResult>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, TResult>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, TResult, TProperty>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IIncludableQueryable_2<TResult, TProperty>>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, TResult>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IQueryable_1<TResult>>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, CancellationToken, TResult>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TResult>(queryExpression: Expression_1<Func_2<TContext, TResult>>): Func_2<TContext, Task_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TResult>(queryExpression: Expression_1<Func_2<TContext, DbSet_1<TResult>>>): Func_2<TContext, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TResult, TProperty>(queryExpression: Expression_1<Func_2<TContext, IIncludableQueryable_2<TResult, TProperty>>>): Func_2<TContext, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TResult>(queryExpression: Expression_1<Func_2<TContext, IQueryable_1<TResult>>>): Func_2<TContext, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TResult>(queryExpression: Expression_1<Func_3<TContext, TParam1, TResult>>): Func_3<TContext, TParam1, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TResult, TProperty>(queryExpression: Expression_1<Func_3<TContext, TParam1, IIncludableQueryable_2<TResult, TProperty>>>): Func_3<TContext, TParam1, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TResult>(queryExpression: Expression_1<Func_3<TContext, TParam1, IQueryable_1<TResult>>>): Func_3<TContext, TParam1, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TResult>(queryExpression: Expression_1<Func_3<TContext, CancellationToken, TResult>>): Func_3<TContext, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TResult>(queryExpression: Expression_1<Func_4<TContext, TParam1, TParam2, TResult>>): Func_4<TContext, TParam1, TParam2, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TResult, TProperty>(queryExpression: Expression_1<Func_4<TContext, TParam1, TParam2, IIncludableQueryable_2<TResult, TProperty>>>): Func_4<TContext, TParam1, TParam2, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TResult>(queryExpression: Expression_1<Func_4<TContext, TParam1, TParam2, IQueryable_1<TResult>>>): Func_4<TContext, TParam1, TParam2, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TResult>(queryExpression: Expression_1<Func_4<TContext, TParam1, CancellationToken, TResult>>): Func_4<TContext, TParam1, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TResult>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, TParam3, TResult>>): Func_5<TContext, TParam1, TParam2, TParam3, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TResult, TProperty>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, TParam3, IIncludableQueryable_2<TResult, TProperty>>>): Func_5<TContext, TParam1, TParam2, TParam3, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TResult>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, TParam3, IQueryable_1<TResult>>>): Func_5<TContext, TParam1, TParam2, TParam3, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TResult>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, CancellationToken, TResult>>): Func_5<TContext, TParam1, TParam2, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TResult>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, TParam4, TResult>>): Func_6<TContext, TParam1, TParam2, TParam3, TParam4, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TResult, TProperty>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IIncludableQueryable_2<TResult, TProperty>>>): Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TResult>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IQueryable_1<TResult>>>): Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TResult>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, CancellationToken, TResult>>): Func_6<TContext, TParam1, TParam2, TParam3, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult, TProperty>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IIncludableQueryable_2<TResult, TProperty>>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IQueryable_1<TResult>>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TResult>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, CancellationToken, TResult>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult, TProperty>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IIncludableQueryable_2<TResult, TProperty>>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IQueryable_1<TResult>>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, CancellationToken, TResult>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult, TProperty>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IIncludableQueryable_2<TResult, TProperty>>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IQueryable_1<TResult>>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IAsyncEnumerable_1<TResult>>;
     static CompileAsyncQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, CancellationToken, TResult>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, CancellationToken, Task_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult, TProperty>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IIncludableQueryable_2<TResult, TProperty>>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TResult>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IQueryable_1<TResult>>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult, TProperty>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IIncludableQueryable_2<TResult, TProperty>>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TResult>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IQueryable_1<TResult>>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult, TProperty>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IIncludableQueryable_2<TResult, TProperty>>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TResult>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IQueryable_1<TResult>>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult, TProperty>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IIncludableQueryable_2<TResult, TProperty>>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TResult>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IQueryable_1<TResult>>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult, TProperty>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IIncludableQueryable_2<TResult, TProperty>>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TResult>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IQueryable_1<TResult>>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult, TProperty>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IIncludableQueryable_2<TResult, TProperty>>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TResult>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IQueryable_1<TResult>>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult, TProperty>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IIncludableQueryable_2<TResult, TProperty>>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TResult>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IQueryable_1<TResult>>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, TResult>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, TResult>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, TResult, TProperty>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IIncludableQueryable_2<TResult, TProperty>>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, TResult>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IQueryable_1<TResult>>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TResult>(queryExpression: Expression_1<Func_2<TContext, TResult>>): Func_2<TContext, TResult>;
     static CompileQuery<TContext extends DbContext, TResult>(queryExpression: Expression_1<Func_2<TContext, DbSet_1<TResult>>>): Func_2<TContext, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TResult, TProperty>(queryExpression: Expression_1<Func_2<TContext, IIncludableQueryable_2<TResult, TProperty>>>): Func_2<TContext, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TResult>(queryExpression: Expression_1<Func_2<TContext, IQueryable_1<TResult>>>): Func_2<TContext, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TResult>(queryExpression: Expression_1<Func_3<TContext, TParam1, TResult>>): Func_3<TContext, TParam1, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TResult, TProperty>(queryExpression: Expression_1<Func_3<TContext, TParam1, IIncludableQueryable_2<TResult, TProperty>>>): Func_3<TContext, TParam1, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TResult>(queryExpression: Expression_1<Func_3<TContext, TParam1, IQueryable_1<TResult>>>): Func_3<TContext, TParam1, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TResult>(queryExpression: Expression_1<Func_4<TContext, TParam1, TParam2, TResult>>): Func_4<TContext, TParam1, TParam2, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TResult, TProperty>(queryExpression: Expression_1<Func_4<TContext, TParam1, TParam2, IIncludableQueryable_2<TResult, TProperty>>>): Func_4<TContext, TParam1, TParam2, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TResult>(queryExpression: Expression_1<Func_4<TContext, TParam1, TParam2, IQueryable_1<TResult>>>): Func_4<TContext, TParam1, TParam2, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TResult>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, TParam3, TResult>>): Func_5<TContext, TParam1, TParam2, TParam3, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TResult, TProperty>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, TParam3, IIncludableQueryable_2<TResult, TProperty>>>): Func_5<TContext, TParam1, TParam2, TParam3, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TResult>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, TParam3, IQueryable_1<TResult>>>): Func_5<TContext, TParam1, TParam2, TParam3, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TResult>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, TParam4, TResult>>): Func_6<TContext, TParam1, TParam2, TParam3, TParam4, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TResult, TProperty>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IIncludableQueryable_2<TResult, TProperty>>>): Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TResult>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IQueryable_1<TResult>>>): Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult, TProperty>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IIncludableQueryable_2<TResult, TProperty>>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TResult>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IQueryable_1<TResult>>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult, TProperty>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IIncludableQueryable_2<TResult, TProperty>>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TResult>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IQueryable_1<TResult>>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult>;
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult, TProperty>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IIncludableQueryable_2<TResult, TProperty>>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IQueryable_1<TResult>>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IEnumerable_1<TResult>>;
     static Constant<T>(argument: T): T;
     static Parameter<T>(argument: T): T;
     static Property<TProperty>(instance: unknown, propertyName: string): TProperty;
@@ -1082,9 +1180,13 @@ export abstract class EntityFrameworkQueryableExtensions$instance {
     static AsTracking<TEntity>(source: IQueryable_1<TEntity>, track: QueryTrackingBehavior): IQueryable_1<TEntity>;
     static AsTracking<TEntity>(source: IQueryable_1<TEntity>): IQueryable_1<TEntity>;
     static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, System_Internal.Decimal>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Decimal>;
+    static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, System_Internal.Double>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Double>;
     static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, System_Internal.Int32>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Double>;
+    static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, System_Internal.Int64>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Double>;
     static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, Nullable_1<System_Internal.Decimal>>>, cancellationToken?: CancellationToken): Task_1<Nullable_1<System_Internal.Decimal>>;
+    static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, Nullable_1<System_Internal.Double>>>, cancellationToken?: CancellationToken): Task_1<Nullable_1<System_Internal.Double>>;
     static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, Nullable_1<System_Internal.Int32>>>, cancellationToken?: CancellationToken): Task_1<Nullable_1<System_Internal.Double>>;
+    static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, Nullable_1<System_Internal.Int64>>>, cancellationToken?: CancellationToken): Task_1<Nullable_1<System_Internal.Double>>;
     static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, Nullable_1<System_Internal.Single>>>, cancellationToken?: CancellationToken): Task_1<Nullable_1<System_Internal.Single>>;
     static AverageAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, System_Internal.Single>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Single>;
     static AverageAsync(source: IQueryable_1<System_Internal.Decimal>, cancellationToken?: CancellationToken): Task_1<System_Internal.Decimal>;
@@ -1154,11 +1256,12 @@ export abstract class EntityFrameworkQueryableExtensions$instance {
     static SumAsync(source: IQueryable_1<System_Internal.Single>, cancellationToken?: CancellationToken): Task_1<System_Internal.Single>;
     static TagWith<T>(source: IQueryable_1<T>, tag: string): IQueryable_1<T>;
     static TagWithCallSite<T>(source: IQueryable_1<T>, filePath?: string, lineNumber?: int): IQueryable_1<T>;
+    static ThenInclude<TEntity, TPreviousProperty, TProperty>(source: IIncludableQueryable_2<TEntity, TPreviousProperty>, navigationPropertyPath: Expression_1<Func_2<TPreviousProperty, TProperty>>): IIncludableQueryable_2<TEntity, TProperty>;
     static ThenInclude<TEntity, TPreviousProperty, TProperty>(source: IIncludableQueryable_2<TEntity, IEnumerable_1<TPreviousProperty>>, navigationPropertyPath: Expression_1<Func_2<TPreviousProperty, TProperty>>): IIncludableQueryable_2<TEntity, TProperty>;
     static ToArrayAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource[]>;
+    static ToDictionaryAsync<TSource, TKey>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, comparer: IEqualityComparer_1<TKey>, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TSource>>;
     static ToDictionaryAsync<TSource, TKey, TElement>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, elementSelector: Func_2<TSource, TElement>, comparer: IEqualityComparer_1<TKey>, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TElement>>;
     static ToDictionaryAsync<TSource, TKey, TElement>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, elementSelector: Func_2<TSource, TElement>, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TElement>>;
-    static ToDictionaryAsync<TSource, TKey>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, comparer: IEqualityComparer_1<TKey>, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TSource>>;
     static ToDictionaryAsync<TSource, TKey>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TSource>>;
     static ToHashSetAsync<TSource>(source: IQueryable_1<TSource>, comparer: IEqualityComparer_1<TSource>, cancellationToken?: CancellationToken): Task_1<HashSet_1<TSource>>;
     static ToHashSetAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<HashSet_1<TSource>>;
@@ -1170,31 +1273,31 @@ export abstract class EntityFrameworkQueryableExtensions$instance {
 export type EntityFrameworkQueryableExtensions = EntityFrameworkQueryableExtensions$instance;
 
 export abstract class ExecutionStrategyExtensions$instance {
-    static Execute<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>): TResult;
-    static Execute(strategy: IExecutionStrategy, operation: Action): void;
     static Execute<TState>(strategy: IExecutionStrategy, state: TState, operation: Action_1<TState>): void;
     static Execute<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, ExecutionResult_1<TResult>>): TResult;
     static Execute<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, TResult>): TResult;
-    static ExecuteAsync<TResult>(strategy: IExecutionStrategy, operation: Func_1<Task_1<TResult>>): Task_1<TResult>;
-    static ExecuteAsync<TResult>(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task_1<TResult>>, cancellationToken: CancellationToken): Task_1<TResult>;
-    static ExecuteAsync(strategy: IExecutionStrategy, operation: Func_1<Task>): Task;
-    static ExecuteAsync(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task>, cancellationToken: CancellationToken): Task;
-    static ExecuteAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, Task>): Task;
+    static Execute(strategy: IExecutionStrategy, operation: Action): void;
+    static Execute<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>): TResult;
     static ExecuteAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, Task_1<TResult>>): Task_1<TResult>;
+    static ExecuteAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, Task>): Task;
     static ExecuteAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task_1<TResult>;
-    static ExecuteAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task>, cancellationToken: CancellationToken): Task;
     static ExecuteAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, cancellationToken: CancellationToken): Task_1<TResult>;
-    static ExecuteInTransaction<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>): TResult;
-    static ExecuteInTransaction(strategy: IExecutionStrategy, operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>): void;
+    static ExecuteAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task>, cancellationToken: CancellationToken): Task;
+    static ExecuteAsync<TResult>(strategy: IExecutionStrategy, operation: Func_1<Task_1<TResult>>): Task_1<TResult>;
+    static ExecuteAsync(strategy: IExecutionStrategy, operation: Func_1<Task>): Task;
+    static ExecuteAsync<TResult>(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task_1<TResult>>, cancellationToken: CancellationToken): Task_1<TResult>;
+    static ExecuteAsync(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task>, cancellationToken: CancellationToken): Task;
     static ExecuteInTransaction<TState>(strategy: IExecutionStrategy, state: TState, operation: Action_1<TState>, verifySucceeded: Func_2<TState, System_Internal.Boolean>): void;
     static ExecuteInTransaction<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, System_Internal.Boolean>, beginTransaction: Func_2<DbContext, IDbContextTransaction>): TResult;
     static ExecuteInTransaction<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, System_Internal.Boolean>): TResult;
-    static ExecuteInTransactionAsync<TResult>(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task_1<TResult>>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TResult>;
-    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>): Task;
-    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
+    static ExecuteInTransaction(strategy: IExecutionStrategy, operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>): void;
+    static ExecuteInTransaction<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>): TResult;
     static ExecuteInTransactionAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, beginTransaction: Func_3<DbContext, CancellationToken, Task_1<IDbContextTransaction>>, cancellationToken?: CancellationToken): Task_1<TResult>;
-    static ExecuteInTransactionAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
     static ExecuteInTransactionAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TResult>;
+    static ExecuteInTransactionAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
+    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>): Task;
+    static ExecuteInTransactionAsync<TResult>(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task_1<TResult>>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TResult>;
+    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
 }
 
 
@@ -1429,22 +1532,22 @@ export abstract class RelationalEntityTypeBuilderExtensions$instance {
     static DeleteUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
     static DeleteUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
     static DeleteUsingStoredProcedure(entityTypeBuilder: IConventionEntityTypeBuilder, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | undefined;
-    static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
-    static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
-    static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static DeleteUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static DeleteUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static DeleteUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
+    static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
+    static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static ExcludeTableFromMigrations(entityTypeBuilder: IConventionEntityTypeBuilder, excludedFromMigrations: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     static HasCheckConstraint<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, sql: string, buildAction: Action_1<CheckConstraintBuilder>): EntityTypeBuilder_1<TEntity>;
     static HasCheckConstraint<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, sql: string): EntityTypeBuilder_1<TEntity>;
     static HasCheckConstraint(entityTypeBuilder: EntityTypeBuilder, name: string, sql: string, buildAction: Action_1<CheckConstraintBuilder>): EntityTypeBuilder;
     static HasCheckConstraint(entityTypeBuilder: EntityTypeBuilder, name: string, sql: string): EntityTypeBuilder;
     static HasCheckConstraint(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, sql: string, fromDataAnnotation?: boolean): IConventionCheckConstraintBuilder | undefined;
-    static HasCheckConstraint(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, sql: string, buildAction: Action_1<CheckConstraintBuilder>): OwnedNavigationBuilder;
-    static HasCheckConstraint(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, sql: string): OwnedNavigationBuilder;
     static HasCheckConstraint<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, sql: string, buildAction: Action_1<CheckConstraintBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static HasCheckConstraint<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, sql: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static HasCheckConstraint(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, sql: string, buildAction: Action_1<CheckConstraintBuilder>): OwnedNavigationBuilder;
+    static HasCheckConstraint(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, sql: string): OwnedNavigationBuilder;
     static HasComment<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, comment: string): EntityTypeBuilder_1<TEntity>;
     static HasComment(entityTypeBuilder: EntityTypeBuilder, comment: string): EntityTypeBuilder;
     static HasComment(entityTypeBuilder: IConventionEntityTypeBuilder, comment: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
@@ -1456,28 +1559,28 @@ export abstract class RelationalEntityTypeBuilderExtensions$instance {
     static InsertUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
     static InsertUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
     static InsertUsingStoredProcedure(entityTypeBuilder: IConventionEntityTypeBuilder, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | undefined;
-    static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
-    static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
-    static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static InsertUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static InsertUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static InsertUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
+    static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
+    static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static SplitToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<SplitTableBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static SplitToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<SplitTableBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static SplitToTable(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<SplitTableBuilder>): EntityTypeBuilder;
     static SplitToTable(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<SplitTableBuilder>): EntityTypeBuilder;
-    static SplitToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder>): OwnedNavigationBuilder;
-    static SplitToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder>): OwnedNavigationBuilder;
     static SplitToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static SplitToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static SplitToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder>): OwnedNavigationBuilder;
+    static SplitToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder>): OwnedNavigationBuilder;
     static SplitToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<SplitViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static SplitToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<SplitViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static SplitToView(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<SplitViewBuilder>): EntityTypeBuilder;
     static SplitToView(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<SplitViewBuilder>): EntityTypeBuilder;
-    static SplitToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder>): OwnedNavigationBuilder;
-    static SplitToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder>): OwnedNavigationBuilder;
     static SplitToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static SplitToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static SplitToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder>): OwnedNavigationBuilder;
+    static SplitToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder>): OwnedNavigationBuilder;
     static ToFunction<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, function_: MethodInfo, configureFunction: Action_1<TableValuedFunctionBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static ToFunction<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, function_: MethodInfo): EntityTypeBuilder_1<TEntity>;
     static ToFunction<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, configureFunction: Action_1<TableValuedFunctionBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
@@ -1488,14 +1591,14 @@ export abstract class RelationalEntityTypeBuilderExtensions$instance {
     static ToFunction(entityTypeBuilder: EntityTypeBuilder, name: string): EntityTypeBuilder;
     static ToFunction(entityTypeBuilder: IConventionEntityTypeBuilder, function_: MethodInfo, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     static ToFunction(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, function_: MethodInfo, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder>): OwnedNavigationBuilder;
-    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, function_: MethodInfo): OwnedNavigationBuilder;
-    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder>): OwnedNavigationBuilder;
-    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
     static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, function_: MethodInfo, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, function_: MethodInfo): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, function_: MethodInfo, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder>): OwnedNavigationBuilder;
+    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, function_: MethodInfo): OwnedNavigationBuilder;
+    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder>): OwnedNavigationBuilder;
+    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
     static ToSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     static ToSqlQuery<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, query: string): EntityTypeBuilder_1<TEntity>;
     static ToSqlQuery(entityTypeBuilder: EntityTypeBuilder, query: string): EntityTypeBuilder;
@@ -1512,16 +1615,16 @@ export abstract class RelationalEntityTypeBuilderExtensions$instance {
     static ToTable(entityTypeBuilder: EntityTypeBuilder, name: string): EntityTypeBuilder;
     static ToTable(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     static ToTable(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, schema: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
-    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
-    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
-    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string): OwnedNavigationBuilder;
-    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
     static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, buildAction: Action_1<OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
+    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
+    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
+    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string): OwnedNavigationBuilder;
+    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
     static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<ViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<ViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string): EntityTypeBuilder_1<TEntity>;
@@ -1532,14 +1635,14 @@ export abstract class RelationalEntityTypeBuilderExtensions$instance {
     static ToView(entityTypeBuilder: EntityTypeBuilder, name: string): EntityTypeBuilder;
     static ToView(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     static ToView(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, schema: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationViewBuilder>): OwnedNavigationBuilder;
-    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationViewBuilder>): OwnedNavigationBuilder;
-    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string): OwnedNavigationBuilder;
-    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
     static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationViewBuilder>): OwnedNavigationBuilder;
+    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationViewBuilder>): OwnedNavigationBuilder;
+    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string): OwnedNavigationBuilder;
+    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
     static ToViewSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     static UpdateUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static UpdateUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
@@ -1548,12 +1651,12 @@ export abstract class RelationalEntityTypeBuilderExtensions$instance {
     static UpdateUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
     static UpdateUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
     static UpdateUsingStoredProcedure(entityTypeBuilder: IConventionEntityTypeBuilder, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | undefined;
-    static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
-    static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
-    static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static UpdateUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static UpdateUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static UpdateUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
+    static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
+    static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static UseMappingStrategy(entityTypeBuilder: IConventionEntityTypeBuilder, strategy: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
     static UseTpcMappingStrategy<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>): EntityTypeBuilder_1<TEntity>;
     static UseTpcMappingStrategy(entityTypeBuilder: EntityTypeBuilder): EntityTypeBuilder;
@@ -1695,12 +1798,12 @@ export type RelationalEntityTypeExtensions = RelationalEntityTypeExtensions$inst
 export abstract class RelationalForeignKeyBuilderExtensions$instance {
     static CanSetConstraintName(relationship: IConventionForeignKeyBuilder, name: string, fromDataAnnotation?: boolean): boolean;
     static HasConstraintName(relationship: IConventionForeignKeyBuilder, name: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    static HasConstraintName(ownershipBuilder: OwnershipBuilder, name: string): OwnershipBuilder;
-    static HasConstraintName(referenceCollectionBuilder: ReferenceCollectionBuilder, name: string): ReferenceCollectionBuilder;
-    static HasConstraintName(referenceReferenceBuilder: ReferenceReferenceBuilder, name: string): ReferenceReferenceBuilder;
     static HasConstraintName<TEntity, TDependentEntity>(ownershipBuilder: OwnershipBuilder_2<TEntity, TDependentEntity>, name: string): OwnershipBuilder_2<TEntity, TDependentEntity>;
+    static HasConstraintName(ownershipBuilder: OwnershipBuilder, name: string): OwnershipBuilder;
     static HasConstraintName<TEntity, TRelatedEntity>(referenceCollectionBuilder: ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>, name: string): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
+    static HasConstraintName(referenceCollectionBuilder: ReferenceCollectionBuilder, name: string): ReferenceCollectionBuilder;
     static HasConstraintName<TEntity, TRelatedEntity>(referenceReferenceBuilder: ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>, name: string): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    static HasConstraintName(referenceReferenceBuilder: ReferenceReferenceBuilder, name: string): ReferenceReferenceBuilder;
 }
 
 
@@ -1728,11 +1831,11 @@ export type RelationalForeignKeyExtensions = RelationalForeignKeyExtensions$inst
 export abstract class RelationalIndexBuilderExtensions$instance {
     static CanSetDatabaseName(indexBuilder: IConventionIndexBuilder, name: string, fromDataAnnotation?: boolean): boolean;
     static CanSetFilter(indexBuilder: IConventionIndexBuilder, sql: string, fromDataAnnotation?: boolean): boolean;
-    static HasDatabaseName<TEntity>(indexBuilder: IndexBuilder_1<TEntity>, name: string): IndexBuilder_1<TEntity>;
     static HasDatabaseName(indexBuilder: IConventionIndexBuilder, name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
+    static HasDatabaseName<TEntity>(indexBuilder: IndexBuilder_1<TEntity>, name: string): IndexBuilder_1<TEntity>;
     static HasDatabaseName(indexBuilder: IndexBuilder, name: string): IndexBuilder;
-    static HasFilter<TEntity>(indexBuilder: IndexBuilder_1<TEntity>, sql: string): IndexBuilder_1<TEntity>;
     static HasFilter(indexBuilder: IConventionIndexBuilder, sql: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
+    static HasFilter<TEntity>(indexBuilder: IndexBuilder_1<TEntity>, sql: string): IndexBuilder_1<TEntity>;
     static HasFilter(indexBuilder: IndexBuilder, sql: string): IndexBuilder;
     static HasName(indexBuilder: IndexBuilder, name: string): IndexBuilder;
 }
@@ -1765,8 +1868,8 @@ export type RelationalIndexExtensions = RelationalIndexExtensions$instance;
 
 export abstract class RelationalKeyBuilderExtensions$instance {
     static CanSetName(keyBuilder: IConventionKeyBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static HasName<TEntity>(keyBuilder: KeyBuilder_1<TEntity>, name: string): KeyBuilder_1<TEntity>;
     static HasName(keyBuilder: IConventionKeyBuilder, name: string, fromDataAnnotation?: boolean): IConventionKeyBuilder | undefined;
+    static HasName<TEntity>(keyBuilder: KeyBuilder_1<TEntity>, name: string): KeyBuilder_1<TEntity>;
     static HasName(keyBuilder: KeyBuilder, name: string): KeyBuilder;
 }
 
@@ -1873,60 +1976,60 @@ export abstract class RelationalModelExtensions$instance {
 export type RelationalModelExtensions = RelationalModelExtensions$instance;
 
 export abstract class RelationalOwnedNavigationBuilderExtensions$instance {
-    static HasColumnType(builder: OwnedNavigationBuilder, columnType: string): OwnedNavigationBuilder;
     static HasColumnType<TOwnerEntity, TDependentEntity>(builder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, columnType: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static HasJsonPropertyName(navigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
+    static HasColumnType(builder: OwnedNavigationBuilder, columnType: string): OwnedNavigationBuilder;
     static HasJsonPropertyName<TSource, TTarget>(navigationBuilder: OwnedNavigationBuilder_2<TSource, TTarget>, name: string): OwnedNavigationBuilder_2<TSource, TTarget>;
-    static ToJson(builder: OwnedNavigationBuilder, jsonColumnName: string): OwnedNavigationBuilder;
-    static ToJson(builder: OwnedNavigationBuilder): OwnedNavigationBuilder;
+    static HasJsonPropertyName(navigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
     static ToJson<TOwnerEntity, TDependentEntity>(builder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, jsonColumnName: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToJson<TOwnerEntity, TDependentEntity>(builder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToJson(builder: OwnedNavigationBuilder, jsonColumnName: string): OwnedNavigationBuilder;
+    static ToJson(builder: OwnedNavigationBuilder): OwnedNavigationBuilder;
 }
 
 
 export type RelationalOwnedNavigationBuilderExtensions = RelationalOwnedNavigationBuilderExtensions$instance;
 
 export abstract class RelationalPrimitiveCollectionBuilderExtensions$instance {
-    static HasColumnName(primitiveCollectionBuilder: PrimitiveCollectionBuilder, name: string): PrimitiveCollectionBuilder;
     static HasColumnName<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, name: string): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasColumnOrder(primitiveCollectionBuilder: PrimitiveCollectionBuilder, order: Nullable_1<System_Internal.Int32>): PrimitiveCollectionBuilder;
+    static HasColumnName(primitiveCollectionBuilder: PrimitiveCollectionBuilder, name: string): PrimitiveCollectionBuilder;
     static HasColumnOrder<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, order: Nullable_1<System_Internal.Int32>): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasColumnType(primitiveCollectionBuilder: PrimitiveCollectionBuilder, typeName: string): PrimitiveCollectionBuilder;
+    static HasColumnOrder(primitiveCollectionBuilder: PrimitiveCollectionBuilder, order: Nullable_1<System_Internal.Int32>): PrimitiveCollectionBuilder;
     static HasColumnType<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, typeName: string): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasComment(primitiveCollectionBuilder: PrimitiveCollectionBuilder, comment: string): PrimitiveCollectionBuilder;
+    static HasColumnType(primitiveCollectionBuilder: PrimitiveCollectionBuilder, typeName: string): PrimitiveCollectionBuilder;
     static HasComment<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, comment: string): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string, stored: Nullable_1<System_Internal.Boolean>): PrimitiveCollectionBuilder;
-    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string): PrimitiveCollectionBuilder;
-    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder): PrimitiveCollectionBuilder;
+    static HasComment(primitiveCollectionBuilder: PrimitiveCollectionBuilder, comment: string): PrimitiveCollectionBuilder;
     static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, sql: string, stored: Nullable_1<System_Internal.Boolean>): PrimitiveCollectionBuilder_1<TProperty>;
     static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, sql: string): PrimitiveCollectionBuilder_1<TProperty>;
     static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasDefaultValue(primitiveCollectionBuilder: PrimitiveCollectionBuilder, value: unknown): PrimitiveCollectionBuilder;
-    static HasDefaultValue(primitiveCollectionBuilder: PrimitiveCollectionBuilder): PrimitiveCollectionBuilder;
+    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string, stored: Nullable_1<System_Internal.Boolean>): PrimitiveCollectionBuilder;
+    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string): PrimitiveCollectionBuilder;
+    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder): PrimitiveCollectionBuilder;
     static HasDefaultValue<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, value: unknown): PrimitiveCollectionBuilder_1<TProperty>;
     static HasDefaultValue<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasDefaultValueSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string): PrimitiveCollectionBuilder;
-    static HasDefaultValueSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder): PrimitiveCollectionBuilder;
+    static HasDefaultValue(primitiveCollectionBuilder: PrimitiveCollectionBuilder, value: unknown): PrimitiveCollectionBuilder;
+    static HasDefaultValue(primitiveCollectionBuilder: PrimitiveCollectionBuilder): PrimitiveCollectionBuilder;
     static HasDefaultValueSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, sql: string): PrimitiveCollectionBuilder_1<TProperty>;
     static HasDefaultValueSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasJsonPropertyName(primitiveCollectionBuilder: PrimitiveCollectionBuilder, name: string): PrimitiveCollectionBuilder;
+    static HasDefaultValueSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string): PrimitiveCollectionBuilder;
+    static HasDefaultValueSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder): PrimitiveCollectionBuilder;
     static HasJsonPropertyName<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, name: string): PrimitiveCollectionBuilder_1<TProperty>;
-    static IsFixedLength(primitiveCollectionBuilder: PrimitiveCollectionBuilder, fixedLength?: boolean): PrimitiveCollectionBuilder;
+    static HasJsonPropertyName(primitiveCollectionBuilder: PrimitiveCollectionBuilder, name: string): PrimitiveCollectionBuilder;
     static IsFixedLength<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, fixedLength?: boolean): PrimitiveCollectionBuilder_1<TProperty>;
-    static UseCollation(primitiveCollectionBuilder: PrimitiveCollectionBuilder, collation: string): PrimitiveCollectionBuilder;
+    static IsFixedLength(primitiveCollectionBuilder: PrimitiveCollectionBuilder, fixedLength?: boolean): PrimitiveCollectionBuilder;
     static UseCollation<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, collation: string): PrimitiveCollectionBuilder_1<TProperty>;
+    static UseCollation(primitiveCollectionBuilder: PrimitiveCollectionBuilder, collation: string): PrimitiveCollectionBuilder;
 }
 
 
 export type RelationalPrimitiveCollectionBuilderExtensions = RelationalPrimitiveCollectionBuilderExtensions$instance;
 
 export abstract class RelationalPropertiesConfigurationBuilderExtensions$instance {
-    static AreFixedLength(propertyBuilder: PropertiesConfigurationBuilder, fixedLength?: boolean): PropertiesConfigurationBuilder;
     static AreFixedLength<TProperty>(propertyBuilder: PropertiesConfigurationBuilder_1<TProperty>, fixedLength?: boolean): PropertiesConfigurationBuilder_1<TProperty>;
-    static HaveColumnType(propertyBuilder: PropertiesConfigurationBuilder, typeName: string): PropertiesConfigurationBuilder;
+    static AreFixedLength(propertyBuilder: PropertiesConfigurationBuilder, fixedLength?: boolean): PropertiesConfigurationBuilder;
     static HaveColumnType<TProperty>(propertyBuilder: PropertiesConfigurationBuilder_1<TProperty>, typeName: string): PropertiesConfigurationBuilder_1<TProperty>;
-    static UseCollation(propertyBuilder: PropertiesConfigurationBuilder, collation: string): PropertiesConfigurationBuilder;
+    static HaveColumnType(propertyBuilder: PropertiesConfigurationBuilder, typeName: string): PropertiesConfigurationBuilder;
     static UseCollation<TProperty>(propertyBuilder: PropertiesConfigurationBuilder_1<TProperty>, collation: string): PropertiesConfigurationBuilder_1<TProperty>;
+    static UseCollation(propertyBuilder: PropertiesConfigurationBuilder, collation: string): PropertiesConfigurationBuilder;
 }
 
 
@@ -1947,44 +2050,44 @@ export abstract class RelationalPropertyBuilderExtensions$instance {
     static CanSetJsonPropertyName(propertyBuilder: IConventionPropertyBuilder, name: string, fromDataAnnotation?: boolean): boolean;
     static HasColumnName(propertyBuilder: IConventionPropertyBuilder, name: string, storeObject: StoreObjectIdentifier, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
     static HasColumnName(propertyBuilder: IConventionPropertyBuilder, name: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasColumnName(propertyBuilder: PropertyBuilder, name: string): PropertyBuilder;
     static HasColumnName<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, name: string): PropertyBuilder_1<TProperty>;
+    static HasColumnName(propertyBuilder: PropertyBuilder, name: string): PropertyBuilder;
     static HasColumnOrder(propertyBuilder: IConventionPropertyBuilder, order: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasColumnOrder(propertyBuilder: PropertyBuilder, order: Nullable_1<System_Internal.Int32>): PropertyBuilder;
     static HasColumnOrder<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, order: Nullable_1<System_Internal.Int32>): PropertyBuilder_1<TProperty>;
+    static HasColumnOrder(propertyBuilder: PropertyBuilder, order: Nullable_1<System_Internal.Int32>): PropertyBuilder;
     static HasColumnType(propertyBuilder: IConventionPropertyBuilder, typeName: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasColumnType(propertyBuilder: PropertyBuilder, typeName: string): PropertyBuilder;
     static HasColumnType<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, typeName: string): PropertyBuilder_1<TProperty>;
+    static HasColumnType(propertyBuilder: PropertyBuilder, typeName: string): PropertyBuilder;
     static HasComment(propertyBuilder: IConventionPropertyBuilder, comment: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasComment(propertyBuilder: PropertyBuilder, comment: string): PropertyBuilder;
     static HasComment<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, comment: string): PropertyBuilder_1<TProperty>;
+    static HasComment(propertyBuilder: PropertyBuilder, comment: string): PropertyBuilder;
     static HasComputedColumnSql(propertyBuilder: IConventionPropertyBuilder, sql: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasComputedColumnSql(propertyBuilder: PropertyBuilder, sql: string, stored: Nullable_1<System_Internal.Boolean>): PropertyBuilder;
-    static HasComputedColumnSql(propertyBuilder: PropertyBuilder, sql: string): PropertyBuilder;
-    static HasComputedColumnSql(propertyBuilder: PropertyBuilder): PropertyBuilder;
     static HasComputedColumnSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, sql: string, stored: Nullable_1<System_Internal.Boolean>): PropertyBuilder_1<TProperty>;
     static HasComputedColumnSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, sql: string): PropertyBuilder_1<TProperty>;
     static HasComputedColumnSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>): PropertyBuilder_1<TProperty>;
+    static HasComputedColumnSql(propertyBuilder: PropertyBuilder, sql: string, stored: Nullable_1<System_Internal.Boolean>): PropertyBuilder;
+    static HasComputedColumnSql(propertyBuilder: PropertyBuilder, sql: string): PropertyBuilder;
+    static HasComputedColumnSql(propertyBuilder: PropertyBuilder): PropertyBuilder;
     static HasDefaultValue(propertyBuilder: IConventionPropertyBuilder, value: unknown, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasDefaultValue(propertyBuilder: PropertyBuilder, value: unknown): PropertyBuilder;
-    static HasDefaultValue(propertyBuilder: PropertyBuilder): PropertyBuilder;
     static HasDefaultValue<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, value: unknown): PropertyBuilder_1<TProperty>;
     static HasDefaultValue<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>): PropertyBuilder_1<TProperty>;
+    static HasDefaultValue(propertyBuilder: PropertyBuilder, value: unknown): PropertyBuilder;
+    static HasDefaultValue(propertyBuilder: PropertyBuilder): PropertyBuilder;
     static HasDefaultValueSql(propertyBuilder: IConventionPropertyBuilder, sql: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasDefaultValueSql(propertyBuilder: PropertyBuilder, sql: string): PropertyBuilder;
-    static HasDefaultValueSql(propertyBuilder: PropertyBuilder): PropertyBuilder;
     static HasDefaultValueSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, sql: string): PropertyBuilder_1<TProperty>;
     static HasDefaultValueSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>): PropertyBuilder_1<TProperty>;
+    static HasDefaultValueSql(propertyBuilder: PropertyBuilder, sql: string): PropertyBuilder;
+    static HasDefaultValueSql(propertyBuilder: PropertyBuilder): PropertyBuilder;
     static HasJsonPropertyName(propertyBuilder: IConventionPropertyBuilder, name: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasJsonPropertyName(propertyBuilder: PropertyBuilder, name: string): PropertyBuilder;
     static HasJsonPropertyName<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, name: string): PropertyBuilder_1<TProperty>;
+    static HasJsonPropertyName(propertyBuilder: PropertyBuilder, name: string): PropertyBuilder;
     static IsFixedLength(propertyBuilder: IConventionPropertyBuilder, fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static IsFixedLength(propertyBuilder: PropertyBuilder, fixedLength?: boolean): PropertyBuilder;
     static IsFixedLength<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, fixedLength?: boolean): PropertyBuilder_1<TProperty>;
+    static IsFixedLength(propertyBuilder: PropertyBuilder, fixedLength?: boolean): PropertyBuilder;
     static IsStoredComputedColumn(propertyBuilder: IConventionPropertyBuilder, stored: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
     static UseCollation(propertyBuilder: IConventionPropertyBuilder, collation: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static UseCollation(propertyBuilder: PropertyBuilder, collation: string): PropertyBuilder;
     static UseCollation<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, collation: string): PropertyBuilder_1<TProperty>;
+    static UseCollation(propertyBuilder: PropertyBuilder, collation: string): PropertyBuilder;
 }
 
 
@@ -2194,10 +2297,10 @@ export abstract class RelationalTypeBaseExtensions$instance {
 export type RelationalTypeBaseExtensions = RelationalTypeBaseExtensions$instance;
 
 export abstract class RelationalTypeMappingConfigurationBuilderExtensions$instance {
-    static HasColumnType(scalarBuilder: TypeMappingConfigurationBuilder, typeName: string): TypeMappingConfigurationBuilder;
     static HasColumnType<TScalar>(scalarBuilder: TypeMappingConfigurationBuilder_1<TScalar>, typeName: string): TypeMappingConfigurationBuilder_1<TScalar>;
-    static IsFixedLength(scalarBuilder: TypeMappingConfigurationBuilder, fixedLength?: boolean): TypeMappingConfigurationBuilder;
+    static HasColumnType(scalarBuilder: TypeMappingConfigurationBuilder, typeName: string): TypeMappingConfigurationBuilder;
     static IsFixedLength<TScalar>(scalarBuilder: TypeMappingConfigurationBuilder_1<TScalar>, fixedLength?: boolean): TypeMappingConfigurationBuilder_1<TScalar>;
+    static IsFixedLength(scalarBuilder: TypeMappingConfigurationBuilder, fixedLength?: boolean): TypeMappingConfigurationBuilder;
 }
 
 

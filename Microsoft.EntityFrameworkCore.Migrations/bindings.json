@@ -3225,11 +3225,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder::CreateTable(System.String,Func_2,System.String,Action_1,System.String):CreateTableBuilder_1",
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder::CreateTable(System.String,System.Func_2[[Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!!0]],System.String,System.Action_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder_1[[!!0]],Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.String):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder_1[[!!0]]",
           "clrName": "CreateTable",
           "metadataToken": 100668127,
-          "canonicalSignature": "(System.String,Func_2,System.String,Action_1,System.String):CreateTableBuilder_1",
-          "normalizedSignature": "CreateTable|(System.String,Func_2,System.String,Action_1,System.String):CreateTableBuilder_1|static=false",
+          "canonicalSignature": "(System.String,System.Func_2[[Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!!0]],System.String,System.Action_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder_1[[!!0]],Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.String):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder_1[[!!0]]",
+          "normalizedSignature": "CreateTable|(System.String,System.Func_2[[Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!!0]],System.String,System.Action_1[[Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder_1[[!!0]],Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.String):Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder_1[[!!0]]|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,

@@ -1406,8 +1406,6 @@ export interface RelationalDatabase$instance extends Database$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabase: never;
 
     readonly RelationalDependencies: RelationalDatabaseDependencies;
-    CompileQuery<TResult>(query: Expression, async: boolean): Func_2<QueryContext, TResult>;
-    CompileQueryExpression<TResult>(query: Expression, async: boolean): Expression_1<Func_2<QueryContext, TResult>>;
     SaveChanges(entries: IList_1<IUpdateEntry>): int;
     SaveChangesAsync(entries: IList_1<IUpdateEntry>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
 }
@@ -1574,7 +1572,6 @@ export interface RelationalGeometryTypeMapping_2$instance<TGeometry, TProvider> 
     readonly SpatialConverter: ValueConverter_2<TGeometry, TProvider> | undefined;
     readonly WktReaderType: Type;
     AsText(value: unknown): string;
-    CreateParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable_1<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
     CreateParameter(command: DbCommand, name: string, value: unknown, nullable?: Nullable_1<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
     CustomizeDataReaderExpression(expression: Expression): Expression;
     GenerateCodeLiteral(value: unknown): Expression;
@@ -1791,10 +1788,9 @@ export interface RelationalTypeMappingSource$instance extends TypeMappingSourceB
     FindMapping(type: Type): RelationalTypeMapping | undefined;
     FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): RelationalTypeMapping | undefined;
     FindMapping(member: MemberInfo): RelationalTypeMapping | undefined;
+    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): RelationalTypeMapping | undefined;
     FindMapping(storeTypeName: string): RelationalTypeMapping | undefined;
-    FindMapping(type: Type): CoreTypeMapping | undefined;
-    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping): CoreTypeMapping | undefined;
-    FindMapping(member: MemberInfo): CoreTypeMapping | undefined;
+    FindMapping(type: Type, storeTypeName: string, keyOrIndex?: boolean, unicode?: Nullable_1<System_Internal.Boolean>, size?: Nullable_1<System_Internal.Int32>, rowVersion?: Nullable_1<System_Internal.Boolean>, fixedLength?: Nullable_1<System_Internal.Boolean>, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>): RelationalTypeMapping | undefined;
     FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | undefined;
     ParseStoreTypeName(storeTypeName: string, unicode: Nullable_1<System_Internal.Boolean>, size: Nullable_1<System_Internal.Int32>, precision: Nullable_1<System_Internal.Int32>, scale: Nullable_1<System_Internal.Int32>): string | undefined;
 }
@@ -2121,15 +2117,15 @@ export abstract class RelationalCommandBuilderExtensions$instance {
 export type RelationalCommandBuilderExtensions = RelationalCommandBuilderExtensions$instance;
 
 export abstract class RelationalExecutionStrategyExtensions$instance {
-    static ExecuteInTransaction<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
-    static ExecuteInTransaction(strategy: IExecutionStrategy, operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
     static ExecuteInTransaction<TState>(strategy: IExecutionStrategy, state: TState, operation: Action_1<TState>, verifySucceeded: Func_2<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
     static ExecuteInTransaction<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
-    static ExecuteInTransactionAsync<TResult>(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task_1<TResult>>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task_1<TResult>;
-    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel): Task;
-    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
-    static ExecuteInTransactionAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
+    static ExecuteInTransaction(strategy: IExecutionStrategy, operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
+    static ExecuteInTransaction<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
     static ExecuteInTransactionAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task_1<TResult>;
+    static ExecuteInTransactionAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
+    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel): Task;
+    static ExecuteInTransactionAsync<TResult>(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task_1<TResult>>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task_1<TResult>;
+    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
 }
 
 

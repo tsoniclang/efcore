@@ -326,27 +326,8 @@ export interface Annotatable$instance extends AnnotatableBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
-    AddAnnotation(name: string, value: unknown): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AnnotationsToDebugString(indent?: int): string;
     EnsureMutable(): void;
     EnsureReadOnly(): void;
-    FindAnnotation(name: string): Annotation | undefined;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<Annotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<Annotation>;
-    RemoveAnnotation(name: string): Annotation | undefined;
-    SetAnnotation(name: string, value: unknown): void;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
 }
 
 
@@ -471,29 +452,18 @@ export interface ConventionAnnotatable$instance extends Annotatable$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
-    AddAnnotation(name: string, value: unknown): IAnnotation;
+    AddAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation;
     AddAnnotation(name: string, value: unknown): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
-    AddRuntimeAnnotation(name: string, value: unknown): Annotation;
-    AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
-    AnnotationsToDebugString(indent?: int): string;
     CreateAnnotation(name: string, value: unknown): Annotation;
-    FindAnnotation(name: string): IAnnotation | undefined;
+    FindAnnotation(name: string): ConventionAnnotation | undefined;
     FindAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotation(name: string): Annotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
+    GetAnnotations(): IEnumerable_1<ConventionAnnotation>;
+    GetAnnotations(): IEnumerable_1<Annotation>;
     OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
     OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    RemoveAnnotation(name: string): IAnnotation | undefined;
-    RemoveAnnotation(name: string): Annotation | undefined;
     SetAnnotation(name: string, value: unknown): void;
+    SetAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation | undefined;
     SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
     SetOrRemoveAnnotation(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation | undefined;
 }
@@ -728,7 +698,6 @@ export interface EntityFrameworkRelationalServicesBuilder$instance extends Entit
 
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
 }
 
 
@@ -748,6 +717,7 @@ export interface EntityFrameworkServicesBuilder$instance {
     TryAdd<TService, TImplementation extends TService>(): EntityFrameworkServicesBuilder;
     TryAdd(serviceType: Type, implementationType: Type): EntityFrameworkServicesBuilder;
     TryAdd<TService>(factory: Func_2<IServiceProvider, TService>): EntityFrameworkServicesBuilder;
+    TryAdd<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): EntityFrameworkServicesBuilder;
     TryAdd(serviceType: Type, implementationType: Type, factory: Func_2<IServiceProvider, unknown>): EntityFrameworkServicesBuilder;
     TryAdd<TService>(implementation: TService): EntityFrameworkServicesBuilder;
     TryAdd(serviceType: Type, implementation: unknown): EntityFrameworkServicesBuilder;
@@ -1149,12 +1119,11 @@ export interface __RelationalDbContextOptionsBuilder_2$views<TBuilder extends Re
 export type RelationalDbContextOptionsBuilder_2<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> = RelationalDbContextOptionsBuilder_2$instance<TBuilder, TExtension> & __RelationalDbContextOptionsBuilder_2$views<TBuilder, TExtension>;
 
 
-export interface RelationalModelCustomizer$instance extends ModelCustomizer$instance {
+export interface RelationalModelCustomizer$instance extends ModelCustomizer$instance, IModelCustomizer$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalModelCustomizer: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCustomizer: never;
 
-    Customize(modelBuilder: ModelBuilder, context: DbContext): void;
 }
 
 
@@ -1200,7 +1169,6 @@ export interface RelationalModelRuntimeInitializer$instance extends ModelRuntime
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelRuntimeInitializer: never;
 
     readonly RelationalDependencies: RelationalModelRuntimeInitializerDependencies;
-    Initialize(model: IModel, designTime?: boolean, validationLogger?: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): IModel;
     InitializeModel(model: IModel, designTime: boolean, prevalidation: boolean): void;
 }
 
@@ -1249,7 +1217,6 @@ export interface RelationalModelValidator$instance extends ModelValidator$instan
     IsRedundant(foreignKey: IForeignKey): boolean;
     ThrowPropertyNotMappedException(propertyType: string, typeBase: IConventionTypeBase, unmappedProperty: IConventionProperty): void;
     Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateBoolsWithDefaults(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateCompatible(property: IProperty, duplicateProperty: IProperty, columnName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateCompatible(foreignKey: IForeignKey, duplicateForeignKey: IForeignKey, foreignKeyName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
@@ -1258,11 +1225,9 @@ export interface RelationalModelValidator$instance extends ModelValidator$instan
     ValidateCompatible(checkConstraint: ICheckConstraint, duplicateCheckConstraint: ICheckConstraint, indexName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateCompatible(trigger: ITrigger, duplicateTrigger: ITrigger, indexName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateData(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateData(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateDbFunctions(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateDefaultValuesOnKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateIndexProperties(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateInheritanceMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateInheritanceMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateJsonEntities(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateJsonEntityKey(storeObject: StoreObjectIdentifier, jsonEntityType: IEntityType): void;
@@ -1272,13 +1237,10 @@ export interface RelationalModelValidator$instance extends ModelValidator$instan
     ValidateMappingFragments(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateMappingStrategy(entityType: IEntityType, mappingStrategy: string): void;
     ValidateNoMutableKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateNoMutableKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidatePrimitiveCollections(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidatePrimitiveCollections(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidatePropertyMapping(complexProperty: IConventionComplexProperty, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidatePropertyMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidatePropertyMapping(structuralType: IConventionTypeBase, model: IConventionModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidatePropertyMapping(complexProperty: IConventionComplexProperty, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidatePropertyOverrides(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedCheckConstraintCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedColumnsCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
@@ -1292,7 +1254,6 @@ export interface RelationalModelValidator$instance extends ModelValidator$instan
     ValidateSharedViewCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, viewName: string, schema: string, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSqlQueries(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateStoredProcedures(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateTriggers(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateTriggers(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateValueGeneration(entityType: IEntityType, key: IKey, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
 }
@@ -1461,6 +1422,7 @@ export interface ServiceCollectionMap$instance extends IInfrastructure_1$instanc
     TryAddScoped<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddScoped(serviceType: Type, implementationType: Type): ServiceCollectionMap;
     TryAddScoped<TService>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddScoped<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
     TryAddScoped(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
     TryAddScopedEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddScopedEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
@@ -1468,6 +1430,7 @@ export interface ServiceCollectionMap$instance extends IInfrastructure_1$instanc
     TryAddSingleton<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddSingleton(serviceType: Type, implementationType: Type): ServiceCollectionMap;
     TryAddSingleton<TService>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddSingleton<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
     TryAddSingleton(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
     TryAddSingleton<TService>(implementation: TService): ServiceCollectionMap;
     TryAddSingleton(serviceType: Type, implementation: unknown): ServiceCollectionMap;
@@ -1479,6 +1442,7 @@ export interface ServiceCollectionMap$instance extends IInfrastructure_1$instanc
     TryAddTransient<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddTransient(serviceType: Type, implementationType: Type): ServiceCollectionMap;
     TryAddTransient<TService>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddTransient<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
     TryAddTransient(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
     TryAddTransientEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddTransientEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;

@@ -105,6 +105,8 @@ export interface JsonCastValueReaderWriter_1$instance<TConverted> extends JsonVa
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TConverted;
+    ToJsonTyped(writer: Utf8JsonWriter, value: TConverted): void;
 }
 
 
@@ -142,6 +144,8 @@ export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcret
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): IEnumerable_1<Nullable_1<TElement>>;
+    ToJsonTyped(writer: Utf8JsonWriter, value: IEnumerable_1<Nullable_1<TElement>>): void;
 }
 
 
@@ -163,6 +167,8 @@ export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteColl
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): unknown;
+    ToJsonTyped(writer: Utf8JsonWriter, value: unknown): void;
 }
 
 
@@ -184,6 +190,8 @@ export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollect
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): IEnumerable_1<TElement>;
+    ToJsonTyped(writer: Utf8JsonWriter, value: IEnumerable_1<TElement>): void;
 }
 
 
@@ -206,6 +214,8 @@ export interface JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> ex
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_IJsonConvertedValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown): TModel;
+    ToJsonTyped(writer: Utf8JsonWriter, value: TModel): void;
 }
 
 

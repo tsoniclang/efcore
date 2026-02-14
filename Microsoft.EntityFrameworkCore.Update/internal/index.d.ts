@@ -206,8 +206,8 @@ export interface IUpdateEntry$instance {
     EntityState: EntityState;
     readonly SharedIdentityEntry: IUpdateEntry | undefined;
     CanHaveOriginalValue(propertyBase: IPropertyBase): boolean;
-    GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
     GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
+    GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
     GetOriginalValue<TProperty>(property: IProperty): TProperty;
     IsModified(property: IComplexProperty): boolean;
     IsModified(property: IProperty): boolean;
@@ -569,7 +569,6 @@ export interface UpdateAndSelectSqlGenerator$instance extends UpdateSqlGenerator
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateSqlGenerator: never;
 
-    AppendBatchHeader(commandStringBuilder: StringBuilder): void;
     AppendDeleteAndSelectOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
@@ -578,17 +577,14 @@ export interface UpdateAndSelectSqlGenerator$instance extends UpdateSqlGenerator
     AppendInsertAndSelectOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendInsertOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendInsertOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
-    AppendNextSequenceValueOperation(commandStringBuilder: StringBuilder, name: string, schema: string): void;
     AppendRowsAffectedWhereCondition(commandStringBuilder: StringBuilder, expectedRowsAffected: int): void;
     AppendSelectAffectedCommand(commandStringBuilder: StringBuilder, name: string, schema: string, readOperations: IReadOnlyList_1<IColumnModification>, conditionOperations: IReadOnlyList_1<IColumnModification>, commandPosition: int): ResultSetMapping;
     AppendSelectAffectedCountCommand(commandStringBuilder: StringBuilder, name: string, schema: string, commandPosition: int): ResultSetMapping;
     AppendSelectCommandHeader(commandStringBuilder: StringBuilder, operations: IReadOnlyList_1<IColumnModification>): void;
-    AppendStoredProcedureCall(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendUpdateAndSelectOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendUpdateOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendUpdateOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
     AppendWhereAffectedClause(commandStringBuilder: StringBuilder, operations: IReadOnlyList_1<IColumnModification>): void;
-    GenerateNextSequenceValueOperation(name: string, schema: string): string;
     IsIdentityOperation(modification: IColumnModification): boolean;
 }
 

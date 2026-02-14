@@ -173,8 +173,8 @@ export interface IDiagnosticsLogger$instance {
     readonly DbContextLogger: IDbContextLogger;
     readonly Interceptors: IInterceptors | undefined;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
-    NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLog(definition: EventDefinitionBase): boolean;
     ShouldLogSensitiveData(): boolean;
 }
@@ -192,8 +192,8 @@ export interface IDiagnosticsLogger_1$instance<TLoggerCategory extends LoggerCat
     readonly DbContextLogger: IDbContextLogger;
     readonly Interceptors: IInterceptors | undefined;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
-    NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLog(definition: EventDefinitionBase): boolean;
     ShouldLogSensitiveData(): boolean;
@@ -338,8 +338,8 @@ export interface IRelationalCommandDiagnosticsLogger$instance extends IDiagnosti
     DataReaderClosingAsync(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): ValueTask_1<InterceptionResult>;
     DataReaderDisposing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): InterceptionResult;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
-    NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLog(definition: EventDefinitionBase): boolean;
     ShouldLogCommandCreate(now: DateTimeOffset): boolean;
@@ -369,8 +369,8 @@ export interface IRelationalConnectionDiagnosticsLogger$instance extends IDiagno
     ConnectionOpenedAsync(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): Task;
     ConnectionOpeningAsync(connection: IRelationalConnection, startTime: DateTimeOffset, cancellationToken: CancellationToken): ValueTask_1<InterceptionResult>;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
-    NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     NeedsEventData<TInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLog(definition: EventDefinitionBase): boolean;
     ShouldLogConnectionCreate(now: DateTimeOffset): boolean;

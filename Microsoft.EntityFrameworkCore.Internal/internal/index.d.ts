@@ -173,10 +173,10 @@ export interface IEntityFinder$instance {
 
     Find(keyValues: unknown[]): unknown | undefined;
     FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
     FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
     FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
-    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
     GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
     GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;
@@ -196,10 +196,10 @@ export interface IEntityFinder_1$instance<TEntity> extends IEntityFinder {
     Find(keyValues: unknown[]): TEntity | undefined;
     FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<TEntity>;
     FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
     FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
     FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
-    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
     GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
     GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;
@@ -625,36 +625,23 @@ export interface InternalDbSet_1$instance<TEntity> extends DbSet_1<TEntity>, Mic
     readonly EntityType: IEntityType;
     readonly Local: LocalView_1<TEntity>;
     Add(entity: TEntity): EntityEntry_1<TEntity>;
-    Add(entity: TEntity): EntityEntry_1<TEntity>;
-    AddAsync(entity: TEntity, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry_1<TEntity>>;
     AddAsync(entity: TEntity, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry_1<TEntity>>;
     AddRange(...entities: TEntity[]): void;
     AddRange(entities: IEnumerable_1<TEntity>): void;
-    AddRange(entities: IEnumerable_1<TEntity>): void;
     AddRangeAsync(...entities: TEntity[]): Task;
     AddRangeAsync(entities: IEnumerable_1<TEntity>, cancellationToken?: CancellationToken): Task;
-    AddRangeAsync(entities: IEnumerable_1<TEntity>, cancellationToken?: CancellationToken): Task;
-    Attach(entity: TEntity): EntityEntry_1<TEntity>;
     Attach(entity: TEntity): EntityEntry_1<TEntity>;
     AttachRange(...entities: TEntity[]): void;
     AttachRange(entities: IEnumerable_1<TEntity>): void;
-    AttachRange(entities: IEnumerable_1<TEntity>): void;
-    Entry(entity: TEntity): EntityEntry_1<TEntity>;
     Entry(entity: TEntity): EntityEntry_1<TEntity>;
     Find(...keyValues: unknown[]): TEntity | undefined;
     FindAsync(...keyValues: unknown[]): ValueTask_1<TEntity>;
     FindAsync(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask_1<TEntity>;
-    FindAsync(...keyValues: unknown[]): ValueTask_1<TEntity>;
-    FindAsync(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask_1<TEntity>;
-    Remove(entity: TEntity): EntityEntry_1<TEntity>;
     Remove(entity: TEntity): EntityEntry_1<TEntity>;
     RemoveRange(...entities: TEntity[]): void;
     RemoveRange(entities: IEnumerable_1<TEntity>): void;
-    RemoveRange(entities: IEnumerable_1<TEntity>): void;
-    Update(entity: TEntity): EntityEntry_1<TEntity>;
     Update(entity: TEntity): EntityEntry_1<TEntity>;
     UpdateRange(...entities: TEntity[]): void;
-    UpdateRange(entities: IEnumerable_1<TEntity>): void;
     UpdateRange(entities: IEnumerable_1<TEntity>): void;
 }
 
