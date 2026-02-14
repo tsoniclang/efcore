@@ -27,12 +27,12 @@ import type { Action_1, Boolean as ClrBoolean, DateTimeOffset, Exception, Func_3
 import * as Microsoft_Extensions_Logging_Internal from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging/internal/index.js";
 import type { EventId, ILogger, ILoggerFactory, ILoggerProvider, LogLevel } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging/internal/index.js";
 
-export interface DbCommandInterceptorAggregator$instance extends InterceptorAggregator_1<IDbCommandInterceptor> {
+export interface DbCommandInterceptorAggregator$instance extends InterceptorAggregator_1<IDbCommandInterceptor>, Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptorAggregator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_Internal_DbCommandInterceptorAggregator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    CreateChain(interceptors: IEnumerable_1<IDbCommandInterceptor>): IDbCommandInterceptor;
 }
 
 
@@ -48,12 +48,12 @@ export interface __DbCommandInterceptorAggregator$views {
 export type DbCommandInterceptorAggregator = DbCommandInterceptorAggregator$instance & __DbCommandInterceptorAggregator$views;
 
 
-export interface DbConnectionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbConnectionInterceptor> {
+export interface DbConnectionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbConnectionInterceptor>, Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptorAggregator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_Internal_DbConnectionInterceptorAggregator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    CreateChain(interceptors: IEnumerable_1<IDbConnectionInterceptor>): IDbConnectionInterceptor;
 }
 
 
@@ -69,12 +69,12 @@ export interface __DbConnectionInterceptorAggregator$views {
 export type DbConnectionInterceptorAggregator = DbConnectionInterceptorAggregator$instance & __DbConnectionInterceptorAggregator$views;
 
 
-export interface DbTransactionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbTransactionInterceptor> {
+export interface DbTransactionInterceptorAggregator$instance extends InterceptorAggregator_1<IDbTransactionInterceptor>, Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptorAggregator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_Internal_DbTransactionInterceptorAggregator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    CreateChain(interceptors: IEnumerable_1<IDbTransactionInterceptor>): IDbTransactionInterceptor;
 }
 
 
@@ -162,12 +162,12 @@ export interface __FormattingDbContextLogger$views {
 export type FormattingDbContextLogger = FormattingDbContextLogger$instance & __FormattingDbContextLogger$views;
 
 
-export interface IdentityResolutionInterceptorAggregator$instance extends InterceptorAggregator_1<IIdentityResolutionInterceptor> {
+export interface IdentityResolutionInterceptorAggregator$instance extends InterceptorAggregator_1<IIdentityResolutionInterceptor>, Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptorAggregator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_Internal_IdentityResolutionInterceptorAggregator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    CreateChain(interceptors: IEnumerable_1<IIdentityResolutionInterceptor>): IIdentityResolutionInterceptor;
 }
 
 
@@ -233,12 +233,12 @@ export interface __LoggingOptions$views {
 export type LoggingOptions = LoggingOptions$instance & __LoggingOptions$views;
 
 
-export interface MaterializationInterceptorAggregator$instance extends InterceptorAggregator_1<IMaterializationInterceptor> {
+export interface MaterializationInterceptorAggregator$instance extends InterceptorAggregator_1<IMaterializationInterceptor>, Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptorAggregator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_Internal_MaterializationInterceptorAggregator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    CreateChain(interceptors: IEnumerable_1<IMaterializationInterceptor>): IMaterializationInterceptor;
 }
 
 
@@ -276,12 +276,12 @@ export interface __NullDbContextLogger$views {
 export type NullDbContextLogger = NullDbContextLogger$instance & __NullDbContextLogger$views;
 
 
-export interface QueryExpressionInterceptorAggregator$instance extends InterceptorAggregator_1<IQueryExpressionInterceptor> {
+export interface QueryExpressionInterceptorAggregator$instance extends InterceptorAggregator_1<IQueryExpressionInterceptor>, Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptorAggregator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_Internal_QueryExpressionInterceptorAggregator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    CreateChain(interceptors: IEnumerable_1<IQueryExpressionInterceptor>): IQueryExpressionInterceptor;
 }
 
 
@@ -326,12 +326,10 @@ export interface RelationalCommandDiagnosticsLogger$instance extends Diagnostics
     DataReaderClosing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): InterceptionResult;
     DataReaderClosingAsync(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): ValueTask_1<InterceptionResult>;
     DataReaderDisposing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): InterceptionResult;
-    NeedsEventData2(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLogCommandCreate(now: DateTimeOffset): boolean;
     ShouldLogCommandExecute(now: DateTimeOffset): boolean;
     ShouldLogDataReaderClose(now: DateTimeOffset): boolean;
     ShouldLogDataReaderDispose(now: DateTimeOffset): boolean;
-    ShouldLogSensitiveData(): boolean;
 }
 
 
@@ -373,12 +371,10 @@ export interface RelationalConnectionDiagnosticsLogger$instance extends Diagnost
     ConnectionOpenedAsync(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan, cancellationToken?: CancellationToken): Task;
     ConnectionOpening(connection: IRelationalConnection, startTime: DateTimeOffset): InterceptionResult;
     ConnectionOpeningAsync(connection: IRelationalConnection, startTime: DateTimeOffset, cancellationToken: CancellationToken): ValueTask_1<InterceptionResult>;
-    NeedsEventData2(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLogConnectionClose(now: DateTimeOffset): boolean;
     ShouldLogConnectionCreate(now: DateTimeOffset): boolean;
     ShouldLogConnectionDispose(now: DateTimeOffset): boolean;
     ShouldLogConnectionOpen(now: DateTimeOffset): boolean;
-    ShouldLogSensitiveData(): boolean;
 }
 
 
@@ -395,12 +391,12 @@ export interface __RelationalConnectionDiagnosticsLogger$views {
 export type RelationalConnectionDiagnosticsLogger = RelationalConnectionDiagnosticsLogger$instance & __RelationalConnectionDiagnosticsLogger$views;
 
 
-export interface SaveChangesInterceptorAggregator$instance extends InterceptorAggregator_1<ISaveChangesInterceptor> {
+export interface SaveChangesInterceptorAggregator$instance extends InterceptorAggregator_1<ISaveChangesInterceptor>, Microsoft_EntityFrameworkCore_Diagnostics_Internal.IInterceptorAggregator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_Internal_SaveChangesInterceptorAggregator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
-    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    CreateChain(interceptors: IEnumerable_1<ISaveChangesInterceptor>): ISaveChangesInterceptor;
 }
 
 

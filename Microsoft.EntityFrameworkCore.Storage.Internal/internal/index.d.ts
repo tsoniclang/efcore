@@ -165,13 +165,12 @@ export interface __ExecutionStrategyFactory$views {
 export type ExecutionStrategyFactory = ExecutionStrategyFactory$instance & __ExecutionStrategyFactory$views;
 
 
-export interface NamedConnectionStringResolver$instance extends NamedConnectionStringResolverBase {
+export interface NamedConnectionStringResolver$instance extends NamedConnectionStringResolverBase, INamedConnectionStringResolver$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_NamedConnectionStringResolver: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_INamedConnectionStringResolver: never;
 
     readonly ApplicationServiceProvider: IServiceProvider | undefined;
-    ResolveConnectionString(connectionString: string): string;
 }
 
 
@@ -226,7 +225,6 @@ export interface RawRelationalParameter$instance extends RelationalParameterBase
 
     AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
     AddDbParameter(command: DbCommand, value: unknown): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
 }
 
 

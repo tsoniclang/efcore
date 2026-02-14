@@ -227,11 +227,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.CompositeRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.CompositeRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2\u003CSystem.String,System.Object\u003E):System.Void",
           "clrName": "AddDbParameter",
           "metadataToken": 0,
-          "canonicalSignature": "(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "normalizedSignature": "AddDbParameter|(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void|static=false",
+          "canonicalSignature": "(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2\u003CSystem.String,System.Object\u003E):System.Void",
+          "normalizedSignature": "AddDbParameter|(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2\u003CSystem.String,System.Object\u003E):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "BaseOverload",
           "arity": 0,
@@ -1155,26 +1155,6 @@
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.Internal.INamedConnectionStringResolver"
-        },
-        {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolver::ResolveConnectionString(System.String):System.String",
-          "clrName": "ResolveConnectionString",
-          "metadataToken": 0,
-          "canonicalSignature": "(System.String):System.String",
-          "normalizedSignature": "ResolveConnectionString|(System.String):System.String|static=false",
-          "emitScope": "ClassSurface",
-          "provenance": "BaseOverload",
-          "arity": 0,
-          "parameterCount": 1,
-          "isStatic": false,
-          "isAbstract": false,
-          "isVirtual": true,
-          "isOverride": false,
-          "isSealed": false,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolver",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
         }
       ],
       "properties": [
@@ -1345,11 +1325,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Clone(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter,System.Nullable_1):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping",
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Clone(System.Nullable_1\u003CMicrosoft.EntityFrameworkCore.Storage.RelationalTypeMappingInfo\u003E\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter,System.Nullable_1\u003CMicrosoft.EntityFrameworkCore.Storage.StoreTypePostfix\u003E):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping",
           "clrName": "Clone",
           "metadataToken": 0,
-          "canonicalSignature": "(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter,System.Nullable_1):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping",
-          "normalizedSignature": "Clone|(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter,System.Nullable_1):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping|static=false",
+          "canonicalSignature": "(System.Nullable_1\u003CMicrosoft.EntityFrameworkCore.Storage.RelationalTypeMappingInfo\u003E\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter,System.Nullable_1\u003CMicrosoft.EntityFrameworkCore.Storage.StoreTypePostfix\u003E):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping",
+          "normalizedSignature": "Clone|(System.Nullable_1\u003CMicrosoft.EntityFrameworkCore.Storage.RelationalTypeMappingInfo\u003E\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter,System.Nullable_1\u003CMicrosoft.EntityFrameworkCore.Storage.StoreTypePostfix\u003E):Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping|static=false",
           "emitScope": "ClassSurface",
           "provenance": "BaseOverload",
           "arity": 0,
@@ -1371,11 +1351,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Clone(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping",
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping::Clone(System.Nullable_1\u003CMicrosoft.EntityFrameworkCore.Storage.TypeMappingInfo\u003E\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping",
           "clrName": "Clone",
           "metadataToken": 0,
-          "canonicalSignature": "(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping",
-          "normalizedSignature": "Clone|(System.Nullable_1\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping|static=false",
+          "canonicalSignature": "(System.Nullable_1\u003CMicrosoft.EntityFrameworkCore.Storage.TypeMappingInfo\u003E\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping",
+          "normalizedSignature": "Clone|(System.Nullable_1\u003CMicrosoft.EntityFrameworkCore.Storage.TypeMappingInfo\u003E\u0026,System.Type,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer,Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter):Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping|static=false",
           "emitScope": "ClassSurface",
           "provenance": "BaseOverload",
           "arity": 0,
@@ -1537,26 +1517,6 @@
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
-        },
-        {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RawRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "clrName": "AddDbParameter",
-          "metadataToken": 0,
-          "canonicalSignature": "(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "normalizedSignature": "AddDbParameter|(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void|static=false",
-          "emitScope": "ClassSurface",
-          "provenance": "BaseOverload",
-          "arity": 0,
-          "parameterCount": 2,
-          "isStatic": false,
-          "isAbstract": false,
-          "isVirtual": true,
-          "isOverride": false,
-          "isSealed": false,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Internal.RawRelationalParameter",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
-          "isExtensionMethod": false
         }
       ],
       "properties": [
@@ -2736,11 +2696,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Storage.IRelationalParameter"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter::AddDbParameter(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2\u003CSystem.String,System.Object\u003E):System.Void",
           "clrName": "AddDbParameter",
           "metadataToken": 0,
-          "canonicalSignature": "(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void",
-          "normalizedSignature": "AddDbParameter|(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2):System.Void|static=false",
+          "canonicalSignature": "(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2\u003CSystem.String,System.Object\u003E):System.Void",
+          "normalizedSignature": "AddDbParameter|(System.Data.Common.DbCommand,System.Collections.Generic.IReadOnlyDictionary_2\u003CSystem.String,System.Object\u003E):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "BaseOverload",
           "arity": 0,

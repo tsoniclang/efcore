@@ -177,7 +177,6 @@ export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Create(typeMapping: CoreTypeMapping, property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
     Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(model: IRelationalModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(table: ITableBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -212,6 +211,7 @@ export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends
     Generate(storedProcedure: IStoredProcedure, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(storedProcedure: IStoredProcedureParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(storedProcedure: IStoredProcedureResultColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(constraint: ICheckConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(overrides: IRelationalPropertyOverrides, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;

@@ -305,7 +305,6 @@ export interface EntityFrameworkDesignServicesBuilder$instance extends EntityFra
 
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
 }
 
 
@@ -321,7 +320,6 @@ export interface EntityFrameworkRelationalDesignServicesBuilder$instance extends
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_EntityFrameworkRelationalDesignServicesBuilder: never;
 
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
 }
 
