@@ -449,7 +449,7 @@ export interface __RowForeignKeyValueFactoryFactory$views {
 export type RowForeignKeyValueFactoryFactory = RowForeignKeyValueFactoryFactory$instance & __RowForeignKeyValueFactoryFactory$views;
 
 
-export interface RowIdentityMap_1$instance<TKey> {
+export interface RowIdentityMap_1$instance<TKey> extends IRowIdentityMap$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_Internal_RowIdentityMap_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_Internal_IRowIdentityMap: never;

@@ -2117,15 +2117,15 @@ export abstract class RelationalCommandBuilderExtensions$instance {
 export type RelationalCommandBuilderExtensions = RelationalCommandBuilderExtensions$instance;
 
 export abstract class RelationalExecutionStrategyExtensions$instance {
+    static ExecuteInTransaction<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
+    static ExecuteInTransaction(strategy: IExecutionStrategy, operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
     static ExecuteInTransaction<TState>(strategy: IExecutionStrategy, state: TState, operation: Action_1<TState>, verifySucceeded: Func_2<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
     static ExecuteInTransaction<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
-    static ExecuteInTransaction(strategy: IExecutionStrategy, operation: Action, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): void;
-    static ExecuteInTransaction<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>, isolationLevel: IsolationLevel): TResult;
-    static ExecuteInTransactionAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task_1<TResult>;
-    static ExecuteInTransactionAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
-    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel): Task;
     static ExecuteInTransactionAsync<TResult>(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task_1<TResult>>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task_1<TResult>;
+    static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_1<Task>, verifySucceeded: Func_1<Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel): Task;
     static ExecuteInTransactionAsync(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task>, verifySucceeded: Func_2<CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
+    static ExecuteInTransactionAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task;
+    static ExecuteInTransactionAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<System_Internal.Boolean>>, isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task_1<TResult>;
 }
 
 

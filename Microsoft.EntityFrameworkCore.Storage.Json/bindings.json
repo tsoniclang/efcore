@@ -552,11 +552,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TConverted",
           "clrName": "FromJsonTyped",
           "metadataToken": 100664989,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
-          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TConverted",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TConverted|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -578,11 +578,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCastValueReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TConverted):System.Void",
           "clrName": "ToJsonTyped",
           "metadataToken": 100664990,
-          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,!0):System.Void",
-          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,!0):System.Void|static=false",
+          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,TConverted):System.Void",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TConverted):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -795,11 +795,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Collections.Generic.IEnumerable_1[[System.Nullable_1[[!1]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1",
           "clrName": "FromJsonTyped",
           "metadataToken": 100665000,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Collections.Generic.IEnumerable_1[[System.Nullable_1[[!1]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Collections.Generic.IEnumerable_1[[System.Nullable_1[[!1]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -821,11 +821,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Collections.Generic.IEnumerable_1[[System.Nullable_1[[!1]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void",
           "clrName": "ToJsonTyped",
           "metadataToken": 100665001,
-          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,System.Collections.Generic.IEnumerable_1[[System.Nullable_1[[!1]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
-          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Collections.Generic.IEnumerable_1[[System.Nullable_1[[!1]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void|static=false",
+          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -886,10 +886,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::.ctor(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter_1[[!1]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfNullableStructsReaderWriter\u00602::.ctor(JsonValueReaderWriter_1):void",
           "metadataToken": 100664999,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter_1[[!1]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter_1[[!1]]):void|static=false",
+          "canonicalSignature": "(JsonValueReaderWriter_1):void",
+          "normalizedSignature": "constructor|(JsonValueReaderWriter_1):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
           "visibility": "Public",
@@ -1061,11 +1061,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Collections.Generic.IEnumerable_1[[!1]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1",
           "clrName": "FromJsonTyped",
           "metadataToken": 100665012,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Collections.Generic.IEnumerable_1[[!1]]",
-          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):System.Collections.Generic.IEnumerable_1[[!1]]|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):IEnumerable_1|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -1087,11 +1087,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,System.Collections.Generic.IEnumerable_1[[!1]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void",
           "clrName": "ToJsonTyped",
           "metadataToken": 100665013,
-          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,System.Collections.Generic.IEnumerable_1[[!1]]):System.Void",
-          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,System.Collections.Generic.IEnumerable_1[[!1]]):System.Void|static=false",
+          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,IEnumerable_1):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -1152,10 +1152,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::.ctor(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter_1[[!1]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonCollectionOfStructsReaderWriter\u00602::.ctor(JsonValueReaderWriter_1):void",
           "metadataToken": 100665011,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter_1[[!1]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter_1[[!1]]):void|static=false",
+          "canonicalSignature": "(JsonValueReaderWriter_1):void",
+          "normalizedSignature": "constructor|(JsonValueReaderWriter_1):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
           "visibility": "Public",
@@ -1198,11 +1198,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TModel",
           "clrName": "FromJsonTyped",
           "metadataToken": 100665018,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
-          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TModel",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TModel|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -1224,11 +1224,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TModel):System.Void",
           "clrName": "ToJsonTyped",
           "metadataToken": 100665019,
-          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,!0):System.Void",
-          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,!0):System.Void|static=false",
+          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,TModel):System.Void",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TModel):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -1309,10 +1309,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::.ctor(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter_1[[!1]],Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonConvertedValueReaderWriter\u00602::.ctor(JsonValueReaderWriter_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):void",
           "metadataToken": 100665017,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter_1[[!1]],Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter_1[[!1]],Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):void|static=false",
+          "canonicalSignature": "(JsonValueReaderWriter_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):void",
+          "normalizedSignature": "constructor|(JsonValueReaderWriter_1,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
           "visibility": "Public",
@@ -2775,11 +2775,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum",
           "clrName": "FromJsonTyped",
           "metadataToken": 100665103,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
-          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -2801,11 +2801,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TEnum):System.Void",
           "clrName": "ToJsonTyped",
           "metadataToken": 100665104,
-          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,!0):System.Void",
-          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,!0):System.Void|static=false",
+          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,TEnum):System.Void",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TEnum):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -2823,11 +2823,11 @@
       ],
       "properties": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter_1[[!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::Instance:JsonSignedEnumReaderWriter_1",
           "clrName": "Instance",
           "metadataToken": 385876341,
-          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter_1[[!0]]",
-          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter_1[[!0]]|static=true|accessor=get",
+          "canonicalSignature": ":JsonSignedEnumReaderWriter_1",
+          "normalizedSignature": "Instance|:JsonSignedEnumReaderWriter_1|static=true|accessor=get",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
@@ -3548,11 +3548,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum",
           "clrName": "FromJsonTyped",
           "metadataToken": 100665145,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
-          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -3574,11 +3574,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TEnum):System.Void",
           "clrName": "ToJsonTyped",
           "metadataToken": 100665146,
-          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,!0):System.Void",
-          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,!0):System.Void|static=false",
+          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,TEnum):System.Void",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TEnum):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -3596,11 +3596,11 @@
       ],
       "properties": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter_1[[!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::Instance:JsonUnsignedEnumReaderWriter_1",
           "clrName": "Instance",
           "metadataToken": 385876355,
-          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter_1[[!0]]",
-          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter_1[[!0]]|static=true|accessor=get",
+          "canonicalSignature": ":JsonUnsignedEnumReaderWriter_1",
+          "normalizedSignature": "Instance|:JsonUnsignedEnumReaderWriter_1|static=true|accessor=get",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
@@ -3891,11 +3891,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
           "clrName": "FromJsonTyped",
           "metadataToken": 100665175,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
-          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TValue|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -3917,11 +3917,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
           "clrName": "ToJsonTyped",
           "metadataToken": 100665176,
-          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,!0):System.Void",
-          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,!0):System.Void|static=false",
+          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,TValue):System.Void",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TValue):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -4241,11 +4241,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::FromJsonTyped(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum",
           "clrName": "FromJsonTyped",
           "metadataToken": 100665180,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0",
-          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum",
+          "normalizedSignature": "FromJsonTyped|(Microsoft.EntityFrameworkCore.Storage.Json.Utf8JsonReaderManager\u0026,System.Object):TEnum|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -4267,11 +4267,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::ToJsonTyped(System.Text.Json.Utf8JsonWriter,TEnum):System.Void",
           "clrName": "ToJsonTyped",
           "metadataToken": 100665181,
-          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,!0):System.Void",
-          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,!0):System.Void|static=false",
+          "canonicalSignature": "(System.Text.Json.Utf8JsonWriter,TEnum):System.Void",
+          "normalizedSignature": "ToJsonTyped|(System.Text.Json.Utf8JsonWriter,TEnum):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -4289,11 +4289,11 @@
       ],
       "properties": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::Instance:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter_1[[!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::Instance:JsonWarningEnumReaderWriter_1",
           "clrName": "Instance",
           "metadataToken": 385876362,
-          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter_1[[!0]]",
-          "normalizedSignature": "Instance|:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter_1[[!0]]|static=true|accessor=get",
+          "canonicalSignature": ":JsonWarningEnumReaderWriter_1",
+          "normalizedSignature": "Instance|:JsonWarningEnumReaderWriter_1|static=true|accessor=get",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,

@@ -157,8 +157,8 @@ export interface IInternalEntry$instance {
     FlaggedAsStoreGenerated(propertyIndex: int): boolean;
     GetComplexCollectionEntries(property: IComplexProperty): IReadOnlyList_1<InternalComplexEntry | undefined>;
     GetComplexCollectionEntry(property: IComplexProperty, ordinal: int): InternalComplexEntry;
-    GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
     GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
+    GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
     GetFlattenedComplexEntries(): IEnumerable_1<InternalComplexEntry>;
     GetOrdinals(): IReadOnlyList_1<System_Internal.Int32>;
     GetOriginalValue<TProperty>(property: IProperty): TProperty;

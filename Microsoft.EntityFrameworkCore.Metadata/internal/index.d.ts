@@ -1751,8 +1751,8 @@ export interface IForeignKey$instance extends IReadOnlyForeignKey, IReadOnlyAnno
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetDependentKeyValueFactory(): IDependentKeyValueFactory;
     GetDependentKeyValueFactory<TKey>(): IDependentKeyValueFactory_1<TKey>;
+    GetDependentKeyValueFactory(): IDependentKeyValueFactory;
     GetNavigation(pointsToPrincipal: boolean): INavigation | undefined;
     GetNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
     GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
@@ -1906,8 +1906,8 @@ export interface IKey$instance extends IReadOnlyKey, IReadOnlyAnnotatable, IAnno
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
     GetKeyType(): Type;
     GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetPrincipalKeyValueFactory(): IPrincipalKeyValueFactory;
     GetPrincipalKeyValueFactory<TKey>(): IPrincipalKeyValueFactory_1<TKey>;
+    GetPrincipalKeyValueFactory(): IPrincipalKeyValueFactory;
     GetReferencingForeignKeys(): IEnumerable_1<IForeignKey>;
     GetReferencingForeignKeys(): IEnumerable_1<IReadOnlyForeignKey>;
     IsPrimaryKey(): boolean;

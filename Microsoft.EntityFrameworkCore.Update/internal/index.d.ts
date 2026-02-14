@@ -206,8 +206,8 @@ export interface IUpdateEntry$instance {
     EntityState: EntityState;
     readonly SharedIdentityEntry: IUpdateEntry | undefined;
     CanHaveOriginalValue(propertyBase: IPropertyBase): boolean;
-    GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
     GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
+    GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
     GetOriginalValue<TProperty>(property: IProperty): TProperty;
     IsModified(property: IComplexProperty): boolean;
     IsModified(property: IProperty): boolean;

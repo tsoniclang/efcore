@@ -1566,11 +1566,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
           "clrName": "NeedsEventData",
           "metadataToken": 100674110,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
-          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -1832,11 +1832,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
           "clrName": "NeedsEventData",
           "metadataToken": 100674110,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
-          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -2203,11 +2203,11 @@
       "arity": 0,
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IInterceptors::Aggregate():!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IInterceptors::Aggregate():TInterceptor",
           "clrName": "Aggregate",
           "metadataToken": 100674118,
-          "canonicalSignature": "():!!0",
-          "normalizedSignature": "Aggregate|():!!0|static=false",
+          "canonicalSignature": "():TInterceptor",
+          "normalizedSignature": "Aggregate|():TInterceptor|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -3018,11 +3018,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
           "clrName": "NeedsEventData",
           "metadataToken": 100674110,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
-          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -3508,11 +3508,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
           "clrName": "NeedsEventData",
           "metadataToken": 100674110,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
-          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -4097,11 +4097,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult\u00601::SuppressWithResult(!0):Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult_1[[!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult\u00601::SuppressWithResult(TResult):InterceptionResult_1",
           "clrName": "SuppressWithResult",
           "metadataToken": 100674135,
-          "canonicalSignature": "(!0):Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult_1[[!0]]",
-          "normalizedSignature": "SuppressWithResult|(!0):Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult_1[[!0]]|static=true",
+          "canonicalSignature": "(TResult):InterceptionResult_1",
+          "normalizedSignature": "SuppressWithResult|(TResult):InterceptionResult_1|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -4119,11 +4119,11 @@
       ],
       "properties": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult\u00601::Result:!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult\u00601::Result:TResult",
           "clrName": "Result",
           "metadataToken": 385877877,
-          "canonicalSignature": ":!0",
-          "normalizedSignature": "Result|:!0|static=false|accessor=get",
+          "canonicalSignature": ":TResult",
+          "normalizedSignature": "Result|:TResult|static=false|accessor=get",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
@@ -4178,11 +4178,11 @@
       },
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.MaterializationInterceptionData::GetPropertyValue(System.String):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.MaterializationInterceptionData::GetPropertyValue(System.String):T",
           "clrName": "GetPropertyValue",
           "metadataToken": 100674173,
-          "canonicalSignature": "(System.String):!!0",
-          "normalizedSignature": "GetPropertyValue|(System.String):!!0|static=false",
+          "canonicalSignature": "(System.String):T",
+          "normalizedSignature": "GetPropertyValue|(System.String):T|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -4218,11 +4218,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.MaterializationInterceptionData::GetPropertyValue(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.MaterializationInterceptionData::GetPropertyValue(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):T",
           "clrName": "GetPropertyValue",
           "metadataToken": 100674176,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):!!0",
-          "normalizedSignature": "GetPropertyValue|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):!!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):T",
+          "normalizedSignature": "GetPropertyValue|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):T|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -9382,11 +9382,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition::Log(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],System.Exception):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition::Log(IDiagnosticsLogger_1,System.Exception):System.Void",
           "clrName": "Log",
           "metadataToken": 100674053,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],System.Exception):System.Void",
-          "normalizedSignature": "Log|(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],System.Exception):System.Void|static=false",
+          "canonicalSignature": "(IDiagnosticsLogger_1,System.Exception):System.Void",
+          "normalizedSignature": "Log|(IDiagnosticsLogger_1,System.Exception):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -9439,11 +9439,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00601::GenerateMessage(!0):System.String",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00601::GenerateMessage(TParam):System.String",
           "clrName": "GenerateMessage",
           "metadataToken": 100674061,
-          "canonicalSignature": "(!0):System.String",
-          "normalizedSignature": "GenerateMessage|(!0):System.String|static=false",
+          "canonicalSignature": "(TParam):System.String",
+          "normalizedSignature": "GenerateMessage|(TParam):System.String|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -9459,11 +9459,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00601::Log(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00601::Log(IDiagnosticsLogger_1,TParam):System.Void",
           "clrName": "Log",
           "metadataToken": 100674062,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0):System.Void",
-          "normalizedSignature": "Log|(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0):System.Void|static=false",
+          "canonicalSignature": "(IDiagnosticsLogger_1,TParam):System.Void",
+          "normalizedSignature": "Log|(IDiagnosticsLogger_1,TParam):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -9484,10 +9484,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00601::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_3[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00601::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
           "metadataToken": 100674060,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_3[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_3[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void|static=false",
           "isStatic": false,
           "parameterCount": 5,
           "visibility": "Public",
@@ -9517,11 +9517,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00602::GenerateMessage(!0,!1):System.String",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00602::GenerateMessage(TParam1,TParam2):System.String",
           "clrName": "GenerateMessage",
           "metadataToken": 100674064,
-          "canonicalSignature": "(!0,!1):System.String",
-          "normalizedSignature": "GenerateMessage|(!0,!1):System.String|static=false",
+          "canonicalSignature": "(TParam1,TParam2):System.String",
+          "normalizedSignature": "GenerateMessage|(TParam1,TParam2):System.String|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -9537,11 +9537,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00602::Log(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00602::Log(IDiagnosticsLogger_1,TParam1,TParam2):System.Void",
           "clrName": "Log",
           "metadataToken": 100674065,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1):System.Void",
-          "normalizedSignature": "Log|(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1):System.Void|static=false",
+          "canonicalSignature": "(IDiagnosticsLogger_1,TParam1,TParam2):System.Void",
+          "normalizedSignature": "Log|(IDiagnosticsLogger_1,TParam1,TParam2):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -9562,10 +9562,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00602::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_4[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00602::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
           "metadataToken": 100674063,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_4[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_4[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void|static=false",
           "isStatic": false,
           "parameterCount": 5,
           "visibility": "Public",
@@ -9596,11 +9596,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00603::GenerateMessage(!0,!1,!2,System.Exception):System.String",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00603::GenerateMessage(TParam1,TParam2,TParam3,System.Exception):System.String",
           "clrName": "GenerateMessage",
           "metadataToken": 100674067,
-          "canonicalSignature": "(!0,!1,!2,System.Exception):System.String",
-          "normalizedSignature": "GenerateMessage|(!0,!1,!2,System.Exception):System.String|static=false",
+          "canonicalSignature": "(TParam1,TParam2,TParam3,System.Exception):System.String",
+          "normalizedSignature": "GenerateMessage|(TParam1,TParam2,TParam3,System.Exception):System.String|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -9616,11 +9616,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00603::Log(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,System.Exception):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00603::Log(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,System.Exception):System.Void",
           "clrName": "Log",
           "metadataToken": 100674068,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,System.Exception):System.Void",
-          "normalizedSignature": "Log|(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,System.Exception):System.Void|static=false",
+          "canonicalSignature": "(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,System.Exception):System.Void",
+          "normalizedSignature": "Log|(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,System.Exception):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -9641,10 +9641,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00603::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_5[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00603::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
           "metadataToken": 100674066,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_5[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_5[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void|static=false",
           "isStatic": false,
           "parameterCount": 5,
           "visibility": "Public",
@@ -9676,11 +9676,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00604::GenerateMessage(!0,!1,!2,!3):System.String",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00604::GenerateMessage(TParam1,TParam2,TParam3,TParam4):System.String",
           "clrName": "GenerateMessage",
           "metadataToken": 100674070,
-          "canonicalSignature": "(!0,!1,!2,!3):System.String",
-          "normalizedSignature": "GenerateMessage|(!0,!1,!2,!3):System.String|static=false",
+          "canonicalSignature": "(TParam1,TParam2,TParam3,TParam4):System.String",
+          "normalizedSignature": "GenerateMessage|(TParam1,TParam2,TParam3,TParam4):System.String|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -9696,11 +9696,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00604::Log(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,!3):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00604::Log(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,TParam4):System.Void",
           "clrName": "Log",
           "metadataToken": 100674071,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,!3):System.Void",
-          "normalizedSignature": "Log|(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,!3):System.Void|static=false",
+          "canonicalSignature": "(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,TParam4):System.Void",
+          "normalizedSignature": "Log|(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,TParam4):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -9721,10 +9721,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00604::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_6[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[!3],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00604::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
           "metadataToken": 100674069,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_6[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[!3],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_6[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[!3],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void|static=false",
           "isStatic": false,
           "parameterCount": 5,
           "visibility": "Public",
@@ -9757,11 +9757,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00605::GenerateMessage(!0,!1,!2,!3,!4):System.String",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00605::GenerateMessage(TParam1,TParam2,TParam3,TParam4,TParam5):System.String",
           "clrName": "GenerateMessage",
           "metadataToken": 100674073,
-          "canonicalSignature": "(!0,!1,!2,!3,!4):System.String",
-          "normalizedSignature": "GenerateMessage|(!0,!1,!2,!3,!4):System.String|static=false",
+          "canonicalSignature": "(TParam1,TParam2,TParam3,TParam4,TParam5):System.String",
+          "normalizedSignature": "GenerateMessage|(TParam1,TParam2,TParam3,TParam4,TParam5):System.String|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -9777,11 +9777,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00605::Log(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,!3,!4):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00605::Log(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,TParam4,TParam5):System.Void",
           "clrName": "Log",
           "metadataToken": 100674074,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,!3,!4):System.Void",
-          "normalizedSignature": "Log|(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,!3,!4):System.Void|static=false",
+          "canonicalSignature": "(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,TParam4,TParam5):System.Void",
+          "normalizedSignature": "Log|(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,TParam4,TParam5):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -9802,10 +9802,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00605::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_7[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[!3],[!4],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00605::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
           "metadataToken": 100674072,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_7[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[!3],[!4],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_7[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[!3],[!4],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void|static=false",
           "isStatic": false,
           "parameterCount": 5,
           "visibility": "Public",
@@ -9839,11 +9839,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00606::GenerateMessage(!0,!1,!2,!3,!4,!5):System.String",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00606::GenerateMessage(TParam1,TParam2,TParam3,TParam4,TParam5,TParam6):System.String",
           "clrName": "GenerateMessage",
           "metadataToken": 100674076,
-          "canonicalSignature": "(!0,!1,!2,!3,!4,!5):System.String",
-          "normalizedSignature": "GenerateMessage|(!0,!1,!2,!3,!4,!5):System.String|static=false",
+          "canonicalSignature": "(TParam1,TParam2,TParam3,TParam4,TParam5,TParam6):System.String",
+          "normalizedSignature": "GenerateMessage|(TParam1,TParam2,TParam3,TParam4,TParam5,TParam6):System.String|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -9859,11 +9859,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00606::Log(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,!3,!4,!5):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00606::Log(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,TParam4,TParam5,TParam6):System.Void",
           "clrName": "Log",
           "metadataToken": 100674077,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,!3,!4,!5):System.Void",
-          "normalizedSignature": "Log|(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],!0,!1,!2,!3,!4,!5):System.Void|static=false",
+          "canonicalSignature": "(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,TParam4,TParam5,TParam6):System.Void",
+          "normalizedSignature": "Log|(IDiagnosticsLogger_1,TParam1,TParam2,TParam3,TParam4,TParam5,TParam6):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -9884,10 +9884,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00606::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_8[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[!3],[!4],[!5],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition\u00606::.ctor(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
           "metadataToken": 100674075,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_8[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[!3],[!4],[!5],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,System.Func_2[[Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Action_8[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[!0],[!1],[!2],[!3],[!4],[!5],[System.Exception,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Diagnostics.ILoggingOptions,Microsoft.Extensions.Logging.EventId,Microsoft.Extensions.Logging.LogLevel,System.String,Func_2):void|static=false",
           "isStatic": false,
           "parameterCount": 5,
           "visibility": "Public",
@@ -10208,11 +10208,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.FallbackEventDefinition::Log(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],System.Action_1[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.FallbackEventDefinition::Log(IDiagnosticsLogger_1,System.Action_1[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
           "clrName": "Log",
           "metadataToken": 100674086,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],System.Action_1[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
-          "normalizedSignature": "Log|(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]],System.Action_1[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
+          "canonicalSignature": "(IDiagnosticsLogger_1,System.Action_1[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "normalizedSignature": "Log|(IDiagnosticsLogger_1,System.Action_1[[Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.Abstractions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -10889,11 +10889,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.InterceptorAggregator\u00601::CreateChain(System.Collections.Generic.IEnumerable_1[[!0]]):!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.InterceptorAggregator\u00601::CreateChain(IEnumerable_1):TInterceptor",
           "clrName": "CreateChain",
           "metadataToken": 100674141,
-          "canonicalSignature": "(System.Collections.Generic.IEnumerable_1[[!0]]):!0",
-          "normalizedSignature": "CreateChain|(System.Collections.Generic.IEnumerable_1[[!0]]):!0|static=false",
+          "canonicalSignature": "(IEnumerable_1):TInterceptor",
+          "normalizedSignature": "CreateChain|(IEnumerable_1):TInterceptor|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -18909,11 +18909,11 @@
           "isExtensionMethod": true
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions::SensitiveDataLoggingEnabledWarning(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions::SensitiveDataLoggingEnabledWarning(IDiagnosticsLogger_1):System.Void",
           "clrName": "SensitiveDataLoggingEnabledWarning",
           "metadataToken": 100673894,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]]):System.Void",
-          "normalizedSignature": "SensitiveDataLoggingEnabledWarning|(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[!!0]]):System.Void|static=true",
+          "canonicalSignature": "(IDiagnosticsLogger_1):System.Void",
+          "normalizedSignature": "SensitiveDataLoggingEnabledWarning|(IDiagnosticsLogger_1):System.Void|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,

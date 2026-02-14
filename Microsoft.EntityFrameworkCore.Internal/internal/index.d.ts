@@ -173,10 +173,10 @@ export interface IEntityFinder$instance {
 
     Find(keyValues: unknown[]): unknown | undefined;
     FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<unknown>;
-    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
     FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
     FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
+    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
     GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
     GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;
@@ -196,10 +196,10 @@ export interface IEntityFinder_1$instance<TEntity> extends IEntityFinder {
     Find(keyValues: unknown[]): TEntity | undefined;
     FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<TEntity>;
     FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<unknown>;
-    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
     FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
     FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
+    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
     GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
     GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
     GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;

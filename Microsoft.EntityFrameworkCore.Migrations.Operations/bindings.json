@@ -236,11 +236,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -657,11 +657,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -1022,11 +1022,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -1558,11 +1558,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -1999,11 +1999,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -2424,11 +2424,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -2808,11 +2808,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -3152,11 +3152,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -3538,11 +3538,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -3922,11 +3922,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -4629,11 +4629,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -5103,11 +5103,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -5484,11 +5484,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -5920,11 +5920,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -6244,11 +6244,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -6684,11 +6684,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -7086,11 +7086,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -7488,11 +7488,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -7886,11 +7886,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -8248,11 +8248,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -8646,11 +8646,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -8966,11 +8966,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -9309,11 +9309,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -9692,11 +9692,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -10090,11 +10090,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -10414,11 +10414,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -10850,11 +10850,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -11174,11 +11174,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -11591,11 +11591,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -11968,11 +11968,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -12349,11 +12349,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -12766,11 +12766,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -13124,11 +13124,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -13501,11 +13501,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -13844,11 +13844,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,
@@ -14246,11 +14246,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::GetOrAddRuntimeAnnotationValue(System.String,Func_2,TArg):TValue",
           "clrName": "GetOrAddRuntimeAnnotationValue",
           "metadataToken": 100673146,
-          "canonicalSignature": "(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0",
-          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,System.Func_2[[!!1],[!!0]],!!1):!!0|static=false",
+          "canonicalSignature": "(System.String,Func_2,TArg):TValue",
+          "normalizedSignature": "GetOrAddRuntimeAnnotationValue|(System.String,Func_2,TArg):TValue|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 2,

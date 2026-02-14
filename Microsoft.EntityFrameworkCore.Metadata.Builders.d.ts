@@ -18,7 +18,7 @@ import type { ValueGenerator, ValueGeneratorFactory } from './Microsoft.EntityFr
 import type { ChangeTrackingStrategy, DeleteBehavior, PropertyAccessMode } from './Microsoft.EntityFrameworkCore/internal/index.js';
 import type { IEnumerable, IReadOnlyList } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { ParameterDirection } from '@tsonic/dotnet/System.Data.js';
-import type { Action, Boolean as ClrBoolean, Func, Int32, Int64, IServiceProvider, Nullable, Object as ClrObject, String as ClrString, Type, ValueType, Void } from '@tsonic/dotnet/System.js';
+import type { Action, Boolean as ClrBoolean, Func, Int32, Int64, IServiceProvider, Nullable, Object as ClrObject, String as ClrString, Type, Void } from '@tsonic/dotnet/System.js';
 import type { Expression, LambdaExpression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { FieldInfo, MemberInfo } from '@tsonic/dotnet/System.Reflection.js';
 

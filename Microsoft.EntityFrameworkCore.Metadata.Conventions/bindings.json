@@ -474,11 +474,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext\u00601::StopProcessing(!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext\u00601::StopProcessing(TMetadata):System.Void",
           "clrName": "StopProcessing",
           "metadataToken": 100670976,
-          "canonicalSignature": "(!0):System.Void",
-          "normalizedSignature": "StopProcessing|(!0):System.Void|static=false",
+          "canonicalSignature": "(TMetadata):System.Void",
+          "normalizedSignature": "StopProcessing|(TMetadata):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -4893,11 +4893,11 @@
       },
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::Replace(!!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::Replace(TImplementation):System.Void",
           "clrName": "Replace",
           "metadataToken": 100670859,
-          "canonicalSignature": "(!!0):System.Void",
-          "normalizedSignature": "Replace|(!!0):System.Void|static=false",
+          "canonicalSignature": "(TImplementation):System.Void",
+          "normalizedSignature": "Replace|(TImplementation):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -4913,11 +4913,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::Replace(System.Collections.Generic.List_1[[!!0]],!!1):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::Replace(List_1,TImplementation):System.Boolean",
           "clrName": "Replace",
           "metadataToken": 100670860,
-          "canonicalSignature": "(System.Collections.Generic.List_1[[!!0]],!!1):System.Boolean",
-          "normalizedSignature": "Replace|(System.Collections.Generic.List_1[[!!0]],!!1):System.Boolean|static=true",
+          "canonicalSignature": "(List_1,TImplementation):System.Boolean",
+          "normalizedSignature": "Replace|(List_1,TImplementation):System.Boolean|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 2,
@@ -4953,11 +4953,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::AddBefore(System.Collections.Generic.List_1[[!!0]],!!0,System.Type):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::AddBefore(List_1,TConvention,System.Type):System.Boolean",
           "clrName": "AddBefore",
           "metadataToken": 100670863,
-          "canonicalSignature": "(System.Collections.Generic.List_1[[!!0]],!!0,System.Type):System.Boolean",
-          "normalizedSignature": "AddBefore|(System.Collections.Generic.List_1[[!!0]],!!0,System.Type):System.Boolean|static=true",
+          "canonicalSignature": "(List_1,TConvention,System.Type):System.Boolean",
+          "normalizedSignature": "AddBefore|(List_1,TConvention,System.Type):System.Boolean|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -4973,11 +4973,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::AddAfter(System.Collections.Generic.List_1[[!!0]],!!0,System.Type):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::AddAfter(List_1,TConvention,System.Type):System.Boolean",
           "clrName": "AddAfter",
           "metadataToken": 100670864,
-          "canonicalSignature": "(System.Collections.Generic.List_1[[!!0]],!!0,System.Type):System.Boolean",
-          "normalizedSignature": "AddAfter|(System.Collections.Generic.List_1[[!!0]],!!0,System.Type):System.Boolean|static=true",
+          "canonicalSignature": "(List_1,TConvention,System.Type):System.Boolean",
+          "normalizedSignature": "AddAfter|(List_1,TConvention,System.Type):System.Boolean|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -5013,11 +5013,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::Remove(System.Collections.Generic.List_1[[!!0]],System.Type):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet::Remove(List_1,System.Type):System.Boolean",
           "clrName": "Remove",
           "metadataToken": 100670866,
-          "canonicalSignature": "(System.Collections.Generic.List_1[[!!0]],System.Type):System.Boolean",
-          "normalizedSignature": "Remove|(System.Collections.Generic.List_1[[!!0]],System.Type):System.Boolean|static=true",
+          "canonicalSignature": "(List_1,System.Type):System.Boolean",
+          "normalizedSignature": "Remove|(List_1,System.Type):System.Boolean|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -12133,11 +12133,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::GetAttributes(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionNavigation):System.Collections.Generic.IEnumerable_1[[!!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::GetAttributes(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionNavigation):IEnumerable_1",
           "clrName": "GetAttributes",
           "metadataToken": 100671123,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionNavigation):System.Collections.Generic.IEnumerable_1[[!!0]]",
-          "normalizedSignature": "GetAttributes|(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionNavigation):System.Collections.Generic.IEnumerable_1[[!!0]]|static=true",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionNavigation):IEnumerable_1",
+          "normalizedSignature": "GetAttributes|(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionNavigation):IEnumerable_1|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -12153,11 +12153,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::GetAttributes(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionSkipNavigation):System.Collections.Generic.IEnumerable_1[[!!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::GetAttributes(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionSkipNavigation):IEnumerable_1",
           "clrName": "GetAttributes",
           "metadataToken": 100671124,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionSkipNavigation):System.Collections.Generic.IEnumerable_1[[!!0]]",
-          "normalizedSignature": "GetAttributes|(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionSkipNavigation):System.Collections.Generic.IEnumerable_1[[!!0]]|static=true",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionSkipNavigation):IEnumerable_1",
+          "normalizedSignature": "GetAttributes|(Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionSkipNavigation):IEnumerable_1|static=true",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -12173,11 +12173,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessTypeIgnored(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,System.Type,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessTypeIgnored(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,System.Type,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
           "clrName": "ProcessTypeIgnored",
           "metadataToken": 100671126,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,System.Type,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
-          "normalizedSignature": "ProcessTypeIgnored|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,System.Type,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,System.Type,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
+          "normalizedSignature": "ProcessTypeIgnored|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,System.Type,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -12193,11 +12193,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessEntityTypeAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessEntityTypeAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
           "clrName": "ProcessEntityTypeAdded",
           "metadataToken": 100671127,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
-          "normalizedSignature": "ProcessEntityTypeAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "normalizedSignature": "ProcessEntityTypeAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -12213,11 +12213,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessEntityTypeRemoved(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessEntityTypeRemoved(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
           "clrName": "ProcessEntityTypeRemoved",
           "metadataToken": 100671128,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
-          "normalizedSignature": "ProcessEntityTypeRemoved|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "normalizedSignature": "ProcessEntityTypeRemoved|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionModelBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -12233,11 +12233,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessEntityTypeBaseTypeChanged(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessEntityTypeBaseTypeChanged(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
           "clrName": "ProcessEntityTypeBaseTypeChanged",
           "metadataToken": 100671129,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
-          "normalizedSignature": "ProcessEntityTypeBaseTypeChanged|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "normalizedSignature": "ProcessEntityTypeBaseTypeChanged|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -12253,11 +12253,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessNavigationAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessNavigationAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
           "clrName": "ProcessNavigationAdded",
           "metadataToken": 100671130,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
-          "normalizedSignature": "ProcessNavigationAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "normalizedSignature": "ProcessNavigationAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -12273,11 +12273,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessSkipNavigationAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessSkipNavigationAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
           "clrName": "ProcessSkipNavigationAdded",
           "metadataToken": 100671131,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
-          "normalizedSignature": "ProcessSkipNavigationAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "normalizedSignature": "ProcessSkipNavigationAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionSkipNavigationBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -12293,11 +12293,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessEntityTypeMemberIgnored(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessEntityTypeMemberIgnored(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
           "clrName": "ProcessEntityTypeMemberIgnored",
           "metadataToken": 100671132,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
-          "normalizedSignature": "ProcessEntityTypeMemberIgnored|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void",
+          "normalizedSignature": "ProcessEntityTypeMemberIgnored|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,System.Reflection.MemberInfo,System.Type,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -12313,11 +12313,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessForeignKeyPrincipalEndChanged(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,System.Collections.Generic.IEnumerable_1[[!0]],System.Collections.Generic.IEnumerable_1[[!0]],Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.NavigationAttributeConventionBase\u00601::ProcessForeignKeyPrincipalEndChanged(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,IEnumerable_1,IEnumerable_1,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
           "clrName": "ProcessForeignKeyPrincipalEndChanged",
           "metadataToken": 100671133,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,System.Collections.Generic.IEnumerable_1[[!0]],System.Collections.Generic.IEnumerable_1[[!0]],Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
-          "normalizedSignature": "ProcessForeignKeyPrincipalEndChanged|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,System.Collections.Generic.IEnumerable_1[[!0]],System.Collections.Generic.IEnumerable_1[[!0]],Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,IEnumerable_1,IEnumerable_1,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "normalizedSignature": "ProcessForeignKeyPrincipalEndChanged|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,IEnumerable_1,IEnumerable_1,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionForeignKeyBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -13821,11 +13821,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyAttributeConventionBase\u00601::ProcessPropertyAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionPropertyBuilder,!0,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyAttributeConventionBase\u00601::ProcessPropertyAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionPropertyBuilder,TAttribute,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
           "clrName": "ProcessPropertyAdded",
           "metadataToken": 100671177,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionPropertyBuilder,!0,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
-          "normalizedSignature": "ProcessPropertyAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionPropertyBuilder,!0,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionPropertyBuilder,TAttribute,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
+          "normalizedSignature": "ProcessPropertyAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionPropertyBuilder,TAttribute,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -13841,11 +13841,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyAttributeConventionBase\u00601::ProcessPropertyAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexPropertyBuilder,!0,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyAttributeConventionBase\u00601::ProcessPropertyAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexPropertyBuilder,TAttribute,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
           "clrName": "ProcessPropertyAdded",
           "metadataToken": 100671178,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexPropertyBuilder,!0,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
-          "normalizedSignature": "ProcessPropertyAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexPropertyBuilder,!0,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexPropertyBuilder,TAttribute,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
+          "normalizedSignature": "ProcessPropertyAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexPropertyBuilder,TAttribute,System.Reflection.MemberInfo,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -20612,11 +20612,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.TypeAttributeConventionBase\u00601::ProcessEntityTypeAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.TypeAttributeConventionBase\u00601::ProcessEntityTypeAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
           "clrName": "ProcessEntityTypeAdded",
           "metadataToken": 100671294,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
-          "normalizedSignature": "ProcessEntityTypeAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void",
+          "normalizedSignature": "ProcessEntityTypeAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext_1[[Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionEntityTypeBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -20632,11 +20632,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.TypeAttributeConventionBase\u00601::ProcessComplexTypeAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexTypeBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.TypeAttributeConventionBase\u00601::ProcessComplexTypeAdded(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexTypeBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
           "clrName": "ProcessComplexTypeAdded",
           "metadataToken": 100671295,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexTypeBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
-          "normalizedSignature": "ProcessComplexTypeAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexTypeBuilder,!0,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexTypeBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void",
+          "normalizedSignature": "ProcessComplexTypeAdded|(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionComplexTypeBuilder,TAttribute,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,

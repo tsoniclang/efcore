@@ -338,11 +338,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):TValue",
           "clrName": "Next",
           "metadataToken": 100664246,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):!0",
-          "normalizedSignature": "Next|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):TValue",
+          "normalizedSignature": "Next|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):TValue|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -358,11 +358,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601::NextAsync(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGenerator\u00601::NextAsync(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):ValueTask_1",
           "clrName": "NextAsync",
           "metadataToken": 100664247,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[!0]]",
-          "normalizedSignature": "NextAsync|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[!0]]|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):ValueTask_1",
+          "normalizedSignature": "NextAsync|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):ValueTask_1|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -458,11 +458,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState::Next(System.Func_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState::Next(System.Func_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):TValue",
           "clrName": "Next",
           "metadataToken": 100664251,
-          "canonicalSignature": "(System.Func_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):!!0",
-          "normalizedSignature": "Next|(System.Func_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):!!0|static=false",
+          "canonicalSignature": "(System.Func_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):TValue",
+          "normalizedSignature": "Next|(System.Func_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):TValue|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -478,11 +478,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState::NextAsync(System.Func_2[[System.Threading.CancellationToken,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[!!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.HiLoValueGeneratorState::NextAsync(System.Func_2[[System.Threading.CancellationToken,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):ValueTask_1",
           "clrName": "NextAsync",
           "metadataToken": 100664252,
-          "canonicalSignature": "(System.Func_2[[System.Threading.CancellationToken,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[!!0]]",
-          "normalizedSignature": "NextAsync|(System.Func_2[[System.Threading.CancellationToken,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[!!0]]|static=false",
+          "canonicalSignature": "(System.Func_2[[System.Threading.CancellationToken,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):ValueTask_1",
+          "normalizedSignature": "NextAsync|(System.Func_2[[System.Threading.CancellationToken,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):ValueTask_1|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -1097,11 +1097,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601::Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):TValue",
           "clrName": "Next",
           "metadataToken": 100664318,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):!0",
-          "normalizedSignature": "Next|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):TValue",
+          "normalizedSignature": "Next|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry):TValue|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -1117,11 +1117,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601::NextAsync(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ValueGeneration.ValueGenerator\u00601::NextAsync(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):ValueTask_1",
           "clrName": "NextAsync",
           "metadataToken": 100664319,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[!0]]",
-          "normalizedSignature": "NextAsync|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):System.Threading.Tasks.ValueTask_1[[!0]]|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):ValueTask_1",
+          "normalizedSignature": "NextAsync|(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry,System.Threading.CancellationToken):ValueTask_1|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,

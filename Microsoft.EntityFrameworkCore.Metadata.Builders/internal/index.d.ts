@@ -25,7 +25,7 @@ import type { ParameterDirection } from "@tsonic/dotnet/System.Data/internal/ind
 import type { Expression_1, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
 import type { FieldInfo, MemberInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
-import type { Action_1, Boolean as ClrBoolean, Func_1, Func_2, Func_3, Int32, Int64, IServiceProvider, Nullable_1, Object as ClrObject, String as ClrString, Type, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
+import type { Action_1, Boolean as ClrBoolean, Func_1, Func_2, Func_3, Int32, Int64, IServiceProvider, Nullable_1, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export interface IConventionAnnotatableBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
@@ -1035,10 +1035,6 @@ export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCo
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1058,10 +1054,6 @@ export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCo
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
@@ -1331,10 +1323,6 @@ export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexProp
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1354,10 +1342,6 @@ export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexProp
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplex, Nullable_1<TProperty>>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
@@ -2021,10 +2005,6 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
     ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<Nullable_1<TElement>>>>): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<Nullable_1<TElement>>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
-    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<Nullable_1<TElement>>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
@@ -2044,10 +2024,6 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
     ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, Nullable_1<TProperty>>>): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, Nullable_1<TProperty>>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, Nullable_1<TProperty>>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
-    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, Nullable_1<TProperty>>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
@@ -2111,7 +2087,6 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     Ignore(propertyName: string): EntityTypeBuilder_1<TEntity>;
     Ignore(propertyName: string): EntityTypeBuilder;
     Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TEntity, TNavigation>>): NavigationBuilder_2<TEntity, TNavigation>;
-    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TNavigation>>>): NavigationBuilder_2<TEntity, TNavigation>;
     Navigation(navigationName: string): NavigationBuilder;
     OwnsMany<TRelatedEntity>(navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
@@ -2485,7 +2460,6 @@ export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntit
     Ignore(propertyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     Ignore(propertyName: string): OwnedNavigationBuilder;
     Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNavigation>>): NavigationBuilder_2<TDependentEntity, TNavigation>;
-    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNavigation>>>): NavigationBuilder_2<TDependentEntity, TNavigation>;
     Navigation(navigationName: string): NavigationBuilder;
     OwnsMany<TNewDependentEntity>(navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
@@ -3682,25 +3656,19 @@ export interface StoredProcedureBuilder_1$instance<TEntity> extends StoredProced
     HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder_1<TEntity>;
     HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasOriginalValueParameter<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
-    HasOriginalValueParameter<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
     HasOriginalValueParameter<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
-    HasOriginalValueParameter<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
     HasParameter(propertyName: string): StoredProcedureBuilder_1<TEntity>;
     HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasParameter<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
-    HasParameter<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
     HasParameter<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
-    HasParameter<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasParameter(propertyName: string): StoredProcedureBuilder;
     HasParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
     HasResultColumn(propertyName: string): StoredProcedureBuilder_1<TEntity>;
     HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasResultColumn<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
-    HasResultColumn<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
     HasResultColumn<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder_1<TEntity>;
-    HasResultColumn<TDerivedEntity extends TEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasResultColumn(propertyName: string): StoredProcedureBuilder;
     HasResultColumn(propertyName: string, buildAction: Action_1<StoredProcedureResultColumnBuilder>): StoredProcedureBuilder;
     HasRowsAffectedParameter(): StoredProcedureBuilder_1<TEntity>;

@@ -717,7 +717,6 @@ export interface EntityFrameworkServicesBuilder$instance {
     TryAdd<TService, TImplementation extends TService>(): EntityFrameworkServicesBuilder;
     TryAdd(serviceType: Type, implementationType: Type): EntityFrameworkServicesBuilder;
     TryAdd<TService>(factory: Func_2<IServiceProvider, TService>): EntityFrameworkServicesBuilder;
-    TryAdd<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): EntityFrameworkServicesBuilder;
     TryAdd(serviceType: Type, implementationType: Type, factory: Func_2<IServiceProvider, unknown>): EntityFrameworkServicesBuilder;
     TryAdd<TService>(implementation: TService): EntityFrameworkServicesBuilder;
     TryAdd(serviceType: Type, implementation: unknown): EntityFrameworkServicesBuilder;
@@ -1422,7 +1421,6 @@ export interface ServiceCollectionMap$instance extends IInfrastructure_1$instanc
     TryAddScoped<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddScoped(serviceType: Type, implementationType: Type): ServiceCollectionMap;
     TryAddScoped<TService>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
-    TryAddScoped<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
     TryAddScoped(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
     TryAddScopedEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddScopedEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
@@ -1430,7 +1428,6 @@ export interface ServiceCollectionMap$instance extends IInfrastructure_1$instanc
     TryAddSingleton<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddSingleton(serviceType: Type, implementationType: Type): ServiceCollectionMap;
     TryAddSingleton<TService>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
-    TryAddSingleton<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
     TryAddSingleton(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
     TryAddSingleton<TService>(implementation: TService): ServiceCollectionMap;
     TryAddSingleton(serviceType: Type, implementation: unknown): ServiceCollectionMap;
@@ -1442,7 +1439,6 @@ export interface ServiceCollectionMap$instance extends IInfrastructure_1$instanc
     TryAddTransient<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddTransient(serviceType: Type, implementationType: Type): ServiceCollectionMap;
     TryAddTransient<TService>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
-    TryAddTransient<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
     TryAddTransient(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
     TryAddTransientEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
     TryAddTransientEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;

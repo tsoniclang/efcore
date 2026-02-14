@@ -145,11 +145,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionContext\u00601::StopProcessing(!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionContext\u00601::StopProcessing(TMetadata):System.Void",
           "clrName": "StopProcessing",
           "metadataToken": 100671316,
-          "canonicalSignature": "(!0):System.Void",
-          "normalizedSignature": "StopProcessing|(!0):System.Void|static=false",
+          "canonicalSignature": "(TMetadata):System.Void",
+          "normalizedSignature": "StopProcessing|(TMetadata):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -165,11 +165,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionContext\u00601::StopProcessingIfChanged(!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionContext\u00601::StopProcessingIfChanged(TMetadata):System.Void",
           "clrName": "StopProcessingIfChanged",
           "metadataToken": 100671317,
-          "canonicalSignature": "(!0):System.Void",
-          "normalizedSignature": "StopProcessingIfChanged|(!0):System.Void|static=false",
+          "canonicalSignature": "(TMetadata):System.Void",
+          "normalizedSignature": "StopProcessingIfChanged|(TMetadata):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -225,11 +225,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionContext\u00601::ResetState(!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionContext\u00601::ResetState(TMetadata):System.Void",
           "clrName": "ResetState",
           "metadataToken": 100671320,
-          "canonicalSignature": "(!0):System.Void",
-          "normalizedSignature": "ResetState|(!0):System.Void|static=false",
+          "canonicalSignature": "(TMetadata):System.Void",
+          "normalizedSignature": "ResetState|(TMetadata):System.Void|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -245,11 +245,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext\u00601::StopProcessing(!0):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext\u00601::StopProcessing(TMetadata):System.Void",
           "clrName": "StopProcessing",
           "metadataToken": 100670976,
-          "canonicalSignature": "(!0):System.Void",
-          "normalizedSignature": "StopProcessing|(!0):System.Void|static=false",
+          "canonicalSignature": "(TMetadata):System.Void",
+          "normalizedSignature": "StopProcessing|(TMetadata):System.Void|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 0,
@@ -331,11 +331,11 @@
       ],
       "properties": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionContext\u00601::Result:!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionContext\u00601::Result:TMetadata",
           "clrName": "Result",
           "metadataToken": 385877522,
-          "canonicalSignature": ":!0",
-          "normalizedSignature": "Result|:!0|static=false|accessor=get",
+          "canonicalSignature": ":TMetadata",
+          "normalizedSignature": "Result|:TMetadata|static=false|accessor=get",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
@@ -1483,11 +1483,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher::Track(System.Func_1[[!!0]],Microsoft.EntityFrameworkCore.Metadata.IConventionForeignKey\u0026):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher::Track(Func_1,Microsoft.EntityFrameworkCore.Metadata.IConventionForeignKey\u0026):T",
           "clrName": "Track",
           "metadataToken": 100671378,
-          "canonicalSignature": "(System.Func_1[[!!0]],Microsoft.EntityFrameworkCore.Metadata.IConventionForeignKey\u0026):!!0",
-          "normalizedSignature": "Track|(System.Func_1[[!!0]],Microsoft.EntityFrameworkCore.Metadata.IConventionForeignKey\u0026):!!0|static=false",
+          "canonicalSignature": "(Func_1,Microsoft.EntityFrameworkCore.Metadata.IConventionForeignKey\u0026):T",
+          "normalizedSignature": "Track|(Func_1,Microsoft.EntityFrameworkCore.Metadata.IConventionForeignKey\u0026):T|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -1632,11 +1632,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.IReferenceRoot\u00601::Track(!0):Microsoft.EntityFrameworkCore.Metadata.Internal.Reference_1[[!0]]",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.IReferenceRoot\u00601::Track(T):Reference_1",
           "clrName": "Track",
           "metadataToken": 100669799,
-          "canonicalSignature": "(!0):Microsoft.EntityFrameworkCore.Metadata.Internal.Reference_1[[!0]]",
-          "normalizedSignature": "Track|(!0):Microsoft.EntityFrameworkCore.Metadata.Internal.Reference_1[[!0]]|static=false",
+          "canonicalSignature": "(T):Reference_1",
+          "normalizedSignature": "Track|(T):Reference_1|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 0,
@@ -1653,11 +1653,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Metadata.Internal.IReferenceRoot\u00601"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.IReferenceRoot\u00601::Release(Microsoft.EntityFrameworkCore.Metadata.Internal.Reference_1[[!0]]):System.Void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.IReferenceRoot\u00601::Release(Reference_1):System.Void",
           "clrName": "Release",
           "metadataToken": 100669800,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Internal.Reference_1[[!0]]):System.Void",
-          "normalizedSignature": "Release|(Microsoft.EntityFrameworkCore.Metadata.Internal.Reference_1[[!0]]):System.Void|static=false",
+          "canonicalSignature": "(Reference_1):System.Void",
+          "normalizedSignature": "Release|(Reference_1):System.Void|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 0,

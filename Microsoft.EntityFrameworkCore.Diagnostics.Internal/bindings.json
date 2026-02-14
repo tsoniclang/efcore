@@ -535,11 +535,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.Internal.DiagnosticsLogger\u00601::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.Internal.DiagnosticsLogger\u00601::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
           "clrName": "NeedsEventData",
           "metadataToken": 100674740,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
-          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -663,11 +663,11 @@
           "sourceInterface": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
           "clrName": "NeedsEventData",
           "metadataToken": 100674110,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
-          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 1,
@@ -1200,11 +1200,11 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.Internal.Interceptors::Aggregate():!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.Internal.Interceptors::Aggregate():TInterceptor",
           "clrName": "Aggregate",
           "metadataToken": 100674749,
-          "canonicalSignature": "():!!0",
-          "normalizedSignature": "Aggregate|():!!0|static=false",
+          "canonicalSignature": "():TInterceptor",
+          "normalizedSignature": "Aggregate|():TInterceptor|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -1220,11 +1220,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IInterceptors::Aggregate():!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IInterceptors::Aggregate():TInterceptor",
           "clrName": "Aggregate",
           "metadataToken": 100674118,
-          "canonicalSignature": "():!!0",
-          "normalizedSignature": "Aggregate|():!!0|static=false",
+          "canonicalSignature": "():TInterceptor",
+          "normalizedSignature": "Aggregate|():TInterceptor|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 1,
@@ -2544,11 +2544,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
           "clrName": "NeedsEventData",
           "metadataToken": 100674110,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
-          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 1,
@@ -3666,11 +3666,11 @@
           ]
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
           "clrName": "NeedsEventData",
           "metadataToken": 100674110,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
-          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,!!0\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean",
+          "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor\u0026,System.Boolean\u0026,System.Boolean\u0026):System.Boolean|static=false",
           "emitScope": "ViewOnly",
           "provenance": "ExplicitView",
           "arity": 1,

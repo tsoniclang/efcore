@@ -1986,11 +1986,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.IUpdateEntry::GetCurrentValue(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.IUpdateEntry::GetCurrentValue(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):TProperty",
           "clrName": "GetCurrentValue",
           "metadataToken": 100664394,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):!!0",
-          "normalizedSignature": "GetCurrentValue|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):!!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):TProperty",
+          "normalizedSignature": "GetCurrentValue|(Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):TProperty|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -2006,11 +2006,11 @@
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.IUpdateEntry::GetOriginalValue(Microsoft.EntityFrameworkCore.Metadata.IProperty):!!0",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.IUpdateEntry::GetOriginalValue(Microsoft.EntityFrameworkCore.Metadata.IProperty):TProperty",
           "clrName": "GetOriginalValue",
           "metadataToken": 100664395,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IProperty):!!0",
-          "normalizedSignature": "GetOriginalValue|(Microsoft.EntityFrameworkCore.Metadata.IProperty):!!0|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IProperty):TProperty",
+          "normalizedSignature": "GetOriginalValue|(Microsoft.EntityFrameworkCore.Metadata.IProperty):TProperty|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 1,
@@ -4597,10 +4597,10 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.EquatableKeyValue\u00601::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable,!0,System.Collections.Generic.IEqualityComparer_1[[!0]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Update.EquatableKeyValue\u00601::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable,TKey,IEqualityComparer_1):void",
           "metadataToken": 100664358,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable,!0,System.Collections.Generic.IEqualityComparer_1[[!0]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable,!0,System.Collections.Generic.IEqualityComparer_1[[!0]]):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable,TKey,IEqualityComparer_1):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable,TKey,IEqualityComparer_1):void|static=false",
           "isStatic": false,
           "parameterCount": 3,
           "visibility": "Public",

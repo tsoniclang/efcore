@@ -419,8 +419,8 @@ export interface IRuntimeForeignKey$instance extends IForeignKey, IReadOnlyForei
     AnnotationsToDebugString(indent?: int): string;
     FindAnnotation(name: string): IAnnotation | undefined;
     FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    GetDependentKeyValueFactory(): IDependentKeyValueFactory;
     GetDependentKeyValueFactory<TKey>(): IDependentKeyValueFactory_1<TKey>;
+    GetDependentKeyValueFactory(): IDependentKeyValueFactory;
     GetNavigation(pointsToPrincipal: boolean): INavigation | undefined;
     GetNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
     GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
@@ -452,8 +452,8 @@ export interface IRuntimeKey$instance extends IKey, IReadOnlyKey, IReadOnlyAnnot
     GetIdentityMapFactory(): Func_2<System_Internal.Boolean, IIdentityMap>;
     GetKeyType(): Type;
     GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetPrincipalKeyValueFactory(): IPrincipalKeyValueFactory;
     GetPrincipalKeyValueFactory<TKey>(): IPrincipalKeyValueFactory_1<TKey>;
+    GetPrincipalKeyValueFactory(): IPrincipalKeyValueFactory;
     GetReferencingForeignKeys(): IEnumerable_1<IForeignKey>;
     GetReferencingForeignKeys(): IEnumerable_1<IReadOnlyForeignKey>;
     IsPrimaryKey(): boolean;
@@ -1091,7 +1091,7 @@ export const ClrCollectionAccessorFactory: {
 
 export type ClrCollectionAccessorFactory = ClrCollectionAccessorFactory$instance;
 
-export interface ClrIndexedCollectionAccessor_3$instance<TStructural, TCollection extends IList_1<TElement>, TElement> {
+export interface ClrIndexedCollectionAccessor_3$instance<TStructural, TCollection extends IList_1<TElement>, TElement> extends Microsoft_EntityFrameworkCore_Metadata_Internal.IClrIndexedCollectionAccessor$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Internal_ClrIndexedCollectionAccessor_3: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrIndexedCollectionAccessor: never;

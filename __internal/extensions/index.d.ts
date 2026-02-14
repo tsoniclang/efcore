@@ -1110,7 +1110,6 @@ export interface __Ext_Microsoft_EntityFrameworkCore_ModelBuilder {
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IIncludableQueryable_2<TEntity, TProperty> {
   ThenInclude<TPreviousProperty, TProperty>(navigationPropertyPath: System_Linq_Expressions.Expression_1<System.Func_2<TPreviousProperty, TProperty>>): Rewrap<this, Microsoft_EntityFrameworkCore_Query.IIncludableQueryable_2<TEntity, TProperty>>;
-  ThenInclude<TProperty>(navigationPropertyPath: System_Linq_Expressions.Expression_1<System.Func_2<TProperty, TProperty>>): Rewrap<this, Microsoft_EntityFrameworkCore_Query.IIncludableQueryable_2<TEntity, TProperty>>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_TableExpressionBase {
@@ -1212,12 +1211,8 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IQueryable_1<T> {
   AverageAsync(selector: System_Linq_Expressions.Expression_1<System.Func_2<T, System.Nullable_1<System_Internal.Int32>>>, cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System.Nullable_1<System_Internal.Double>>>;
   AverageAsync(cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System_Internal.Double>>;
   AverageAsync(cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System.Nullable_1<System_Internal.Double>>>;
-  AverageAsync(selector: System_Linq_Expressions.Expression_1<System.Func_2<T, System_Internal.Int64>>, cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System_Internal.Double>>;
-  AverageAsync(selector: System_Linq_Expressions.Expression_1<System.Func_2<T, System.Nullable_1<System_Internal.Int64>>>, cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System.Nullable_1<System_Internal.Double>>>;
   AverageAsync(cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System_Internal.Double>>;
   AverageAsync(cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System.Nullable_1<System_Internal.Double>>>;
-  AverageAsync(selector: System_Linq_Expressions.Expression_1<System.Func_2<T, System_Internal.Double>>, cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System_Internal.Double>>;
-  AverageAsync(selector: System_Linq_Expressions.Expression_1<System.Func_2<T, System.Nullable_1<System_Internal.Double>>>, cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System.Nullable_1<System_Internal.Double>>>;
   AverageAsync(cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System_Internal.Single>>;
   AverageAsync(cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System.Nullable_1<System_Internal.Single>>>;
   AverageAsync(selector: System_Linq_Expressions.Expression_1<System.Func_2<T, System_Internal.Single>>, cancellationToken?: System_Threading.CancellationToken): Rewrap<this, System_Threading_Tasks.Task_1<System_Internal.Single>>;
