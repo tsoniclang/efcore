@@ -1,6 +1,6 @@
 {
   "name": "@tsonic/efcore",
-  "version": "10.0.26",
+  "version": "10.0.27",
   "description": "TypeScript type definitions for Microsoft.EntityFrameworkCore.* for .NET 10",
   "type": "module",
   "keywords": [
@@ -21,6 +21,6 @@
   "peerDependencies": {
     "@tsonic/core": "10.0.26",
     "@tsonic/dotnet": "10.0.26",
-    "@tsonic/microsoft-extensions": "10.0.26"
+    "@tsonic/microsoft-extensions": "10.0.27"
   }
 }
