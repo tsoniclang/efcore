@@ -190,7 +190,7 @@ export interface CollectionEntry$instance extends NavigationEntry$instance, Micr
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    CurrentValue: IEnumerable | unknown;
+    CurrentValue: unknown;
     IsModified: boolean;
     FindEntry(entity: unknown): EntityEntry | undefined;
     GetInternalTargetEntry(entity: unknown): InternalEntityEntry | undefined;
@@ -845,11 +845,11 @@ export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infr
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    CurrentValue: IEnumerable | unknown;
+    CurrentValue: unknown;
     readonly EntityEntry: EntityEntry;
     readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
-    readonly Metadata: IComplexProperty | IPropertyBase;
+    readonly Metadata: INavigationBase | IPropertyBase;
     Equals(obj: unknown): boolean;
     GetHashCode(): int;
     ToString(): string | undefined;
