@@ -397,6 +397,7 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IndexBuilder {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IndexBuilder_1<T> {
+  HasName(name: string): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder>;
   HasDatabaseName(name: string): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<T>>;
   HasFilter(sql: string): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<T>>;
 }
@@ -606,6 +607,28 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IConventionElementType {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionEntityType {
+  GetContainerColumnName(): Rewrap<this, string | undefined>;
+  GetContainerColumnType(): Rewrap<this, string | undefined>;
+  GetTableName(): Rewrap<this, string | undefined>;
+  GetDefaultTableName(truncate?: boolean): Rewrap<this, string | undefined>;
+  GetSchema(): Rewrap<this, string | undefined>;
+  GetDefaultSchema(): Rewrap<this, string | undefined>;
+  GetSchemaQualifiedTableName(): Rewrap<this, string | undefined>;
+  GetSchemaQualifiedViewName(): Rewrap<this, string | undefined>;
+  GetViewName(): Rewrap<this, string | undefined>;
+  GetDefaultViewName(): Rewrap<this, string | undefined>;
+  GetViewSchema(): Rewrap<this, string | undefined>;
+  GetDefaultViewSchema(): Rewrap<this, string | undefined>;
+  GetDefaultSqlQueryName(): Rewrap<this, string>;
+  GetSqlQuery(): Rewrap<this, string | undefined>;
+  GetFunctionName(): Rewrap<this, string | undefined>;
+  GetComment(): Rewrap<this, string | undefined>;
+  IsTableExcludedFromMigrations(): Rewrap<this, boolean>;
+  IsTableExcludedFromMigrations(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, boolean>;
+  GetMappingStrategy(): Rewrap<this, string | undefined>;
+  IsMappedToJson(): Rewrap<this, boolean>;
+  GetContainerColumnTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  GetJsonPropertyName(): Rewrap<this, string | undefined>;
   SetTableName(name: string, fromDataAnnotation?: boolean): Rewrap<this, string | undefined>;
   GetTableNameConfigurationSource(): Rewrap<this, System.Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
   SetSchema(value: string, fromDataAnnotation?: boolean): Rewrap<this, string | undefined>;
@@ -656,12 +679,23 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IConventionEntityType {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionForeignKey {
+  GetConstraintName(): Rewrap<this, string | undefined>;
+  GetConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultName(): Rewrap<this, string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  IsRowInternal(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, boolean>;
   SetConstraintName(value: string, fromDataAnnotation?: boolean): Rewrap<this, string | undefined>;
   GetConstraintNameConfigurationSource(): Rewrap<this, System.Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
   FindSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionIndex {
+  GetDatabaseName(): Rewrap<this, string | undefined>;
+  GetDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultDatabaseName(): Rewrap<this, string | undefined>;
+  GetDefaultDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetFilter(): Rewrap<this, string | undefined>;
+  GetFilter(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
   SetDatabaseName(name: string, fromDataAnnotation?: boolean): Rewrap<this, string | undefined>;
   GetDatabaseNameConfigurationSource(): Rewrap<this, System.Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
   SetFilter(value: string, fromDataAnnotation?: boolean): Rewrap<this, string | undefined>;
@@ -670,12 +704,20 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IConventionIndex {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionKey {
+  GetName(): Rewrap<this, string | undefined>;
+  GetName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultName(): Rewrap<this, string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
   SetName(name: string, fromDataAnnotation?: boolean): Rewrap<this, string | undefined>;
   GetNameConfigurationSource(): Rewrap<this, System.Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
   FindSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IConventionKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionModel {
+  GetDefaultSchema(): Rewrap<this, string | undefined>;
+  GetMaxIdentifierLength(): Rewrap<this, int>;
+  GetCollation(): Rewrap<this, string | undefined>;
+  AreNamedDefaultConstraintsUsed(): Rewrap<this, boolean>;
   SetDefaultSchema(value: string, fromDataAnnotation?: boolean): Rewrap<this, string | undefined>;
   GetDefaultSchemaConfigurationSource(): Rewrap<this, System.Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
   SetMaxIdentifierLength(length: System.Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
@@ -698,6 +740,46 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IConventionModel {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IConventionProperty {
+  GetColumnBaseName(): Rewrap<this, string>;
+  GetColumnName(): Rewrap<this, string>;
+  GetColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultColumnBaseName(): Rewrap<this, string>;
+  GetDefaultColumnName(): Rewrap<this, string>;
+  GetDefaultColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetColumnOrder(): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetColumnOrder(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetColumnType(): Rewrap<this, string | undefined>;
+  GetColumnType(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultValueSql(): Rewrap<this, string | undefined>;
+  GetDefaultValueSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetComputedColumnSql(): Rewrap<this, string | undefined>;
+  GetComputedColumnSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetIsStored(): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  GetIsStored(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  GetDefaultValue(): Rewrap<this, unknown | undefined>;
+  TryGetDefaultValue(defaultValue: unknown): Rewrap<this, boolean>;
+  GetDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, unknown | undefined>;
+  TryGetDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, defaultValue: unknown): Rewrap<this, boolean>;
+  GetMaxLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetPrecision(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetScale(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  IsUnicode(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsColumnNullable(): Rewrap<this, boolean>;
+  IsColumnNullable(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, boolean>;
+  GetComment(): Rewrap<this, string | undefined>;
+  GetComment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetCollation(): Rewrap<this, string | undefined>;
+  GetCollation(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetRelationalTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  FindRelationalTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  FindRelationalTypeMapping(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  GetMappedStoreObjects(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier>>;
+  GetJsonPropertyName(): Rewrap<this, string | undefined>;
+  GetDefaultConstraintName(): Rewrap<this, string | undefined>;
+  GetDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string>;
   SetColumnName(name: string, fromDataAnnotation?: boolean): Rewrap<this, string | undefined>;
   SetColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, fromDataAnnotation?: boolean): Rewrap<this, string | undefined>;
   GetColumnNameConfigurationSource(): Rewrap<this, System.Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
@@ -748,10 +830,36 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IConventionTypeBase {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IElementType {
+  IsFixedLength(): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  GetRelationalTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  FindRelationalTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
   GetStoreType(): Rewrap<this, string>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IEntityType {
+  GetContainerColumnName(): Rewrap<this, string | undefined>;
+  GetContainerColumnType(): Rewrap<this, string | undefined>;
+  GetTableName(): Rewrap<this, string | undefined>;
+  GetDefaultTableName(truncate?: boolean): Rewrap<this, string | undefined>;
+  GetSchema(): Rewrap<this, string | undefined>;
+  GetDefaultSchema(): Rewrap<this, string | undefined>;
+  GetSchemaQualifiedTableName(): Rewrap<this, string | undefined>;
+  GetSchemaQualifiedViewName(): Rewrap<this, string | undefined>;
+  GetViewName(): Rewrap<this, string | undefined>;
+  GetDefaultViewName(): Rewrap<this, string | undefined>;
+  GetViewSchema(): Rewrap<this, string | undefined>;
+  GetDefaultViewSchema(): Rewrap<this, string | undefined>;
+  GetDefaultSqlQueryName(): Rewrap<this, string>;
+  GetSqlQuery(): Rewrap<this, string | undefined>;
+  GetFunctionName(): Rewrap<this, string | undefined>;
+  GetComment(): Rewrap<this, string | undefined>;
+  IsTableExcludedFromMigrations(): Rewrap<this, boolean>;
+  IsTableExcludedFromMigrations(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, boolean>;
+  GetMappingStrategy(): Rewrap<this, string | undefined>;
+  IsMappedToJson(): Rewrap<this, boolean>;
+  GetContainerColumnTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  GetJsonPropertyName(): Rewrap<this, string | undefined>;
   GetDeleteStoredProcedure(): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
   GetInsertStoredProcedure(): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
   GetUpdateStoredProcedure(): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IStoredProcedure | undefined>;
@@ -765,21 +873,40 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IEntityType {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IForeignKey {
+  GetConstraintName(): Rewrap<this, string | undefined>;
+  GetConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultName(): Rewrap<this, string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  IsRowInternal(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, boolean>;
   GetMappedConstraints(): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IForeignKeyConstraint>>;
   FindSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IForeignKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IIndex {
+  GetDatabaseName(): Rewrap<this, string | undefined>;
+  GetDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultDatabaseName(): Rewrap<this, string | undefined>;
+  GetDefaultDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetFilter(): Rewrap<this, string | undefined>;
+  GetFilter(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
   GetMappedTableIndexes(): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableIndex>>;
   FindSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IIndex | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IKey {
+  GetName(): Rewrap<this, string | undefined>;
+  GetName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultName(): Rewrap<this, string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
   GetMappedConstraints(): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IUniqueConstraint>>;
   FindSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IModel {
+  GetDefaultSchema(): Rewrap<this, string | undefined>;
+  GetMaxIdentifierLength(): Rewrap<this, int>;
+  GetCollation(): Rewrap<this, string | undefined>;
+  AreNamedDefaultConstraintsUsed(): Rewrap<this, boolean>;
   GetRelationalModel(): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IRelationalModel>;
   FindSequence(name: string, schema?: string): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.ISequence | undefined>;
   GetSequences(): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ISequence>>;
@@ -798,6 +925,28 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IMutableElementType {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableEntityType {
+  GetContainerColumnName(): Rewrap<this, string | undefined>;
+  GetContainerColumnType(): Rewrap<this, string | undefined>;
+  GetTableName(): Rewrap<this, string | undefined>;
+  GetDefaultTableName(truncate?: boolean): Rewrap<this, string | undefined>;
+  GetSchema(): Rewrap<this, string | undefined>;
+  GetDefaultSchema(): Rewrap<this, string | undefined>;
+  GetSchemaQualifiedTableName(): Rewrap<this, string | undefined>;
+  GetSchemaQualifiedViewName(): Rewrap<this, string | undefined>;
+  GetViewName(): Rewrap<this, string | undefined>;
+  GetDefaultViewName(): Rewrap<this, string | undefined>;
+  GetViewSchema(): Rewrap<this, string | undefined>;
+  GetDefaultViewSchema(): Rewrap<this, string | undefined>;
+  GetDefaultSqlQueryName(): Rewrap<this, string>;
+  GetSqlQuery(): Rewrap<this, string | undefined>;
+  GetFunctionName(): Rewrap<this, string | undefined>;
+  GetComment(): Rewrap<this, string | undefined>;
+  IsTableExcludedFromMigrations(): Rewrap<this, boolean>;
+  IsTableExcludedFromMigrations(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, boolean>;
+  GetMappingStrategy(): Rewrap<this, string | undefined>;
+  IsMappedToJson(): Rewrap<this, boolean>;
+  GetContainerColumnTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  GetJsonPropertyName(): Rewrap<this, string | undefined>;
   SetTableName(name: string): Rewrap<this, void>;
   SetSchema(value: string): Rewrap<this, void>;
   SetViewName(name: string): Rewrap<this, void>;
@@ -833,22 +982,41 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IMutableEntityType {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableForeignKey {
+  GetConstraintName(): Rewrap<this, string | undefined>;
+  GetConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultName(): Rewrap<this, string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, principalStoreObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  IsRowInternal(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, boolean>;
   SetConstraintName(value: string): Rewrap<this, void>;
   FindSharedObjectRootForeignKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IMutableForeignKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableIndex {
+  GetDatabaseName(): Rewrap<this, string | undefined>;
+  GetDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultDatabaseName(): Rewrap<this, string | undefined>;
+  GetDefaultDatabaseName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetFilter(): Rewrap<this, string | undefined>;
+  GetFilter(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
   SetDatabaseName(name: string): Rewrap<this, void>;
   SetFilter(value: string): Rewrap<this, void>;
   FindSharedObjectRootIndex(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IMutableIndex | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableKey {
+  GetName(): Rewrap<this, string | undefined>;
+  GetName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultName(): Rewrap<this, string | undefined>;
+  GetDefaultName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
   SetName(name: string): Rewrap<this, void>;
   FindSharedObjectRootKey(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IMutableKey | undefined>;
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableModel {
+  GetDefaultSchema(): Rewrap<this, string | undefined>;
+  GetMaxIdentifierLength(): Rewrap<this, int>;
+  GetCollation(): Rewrap<this, string | undefined>;
+  AreNamedDefaultConstraintsUsed(): Rewrap<this, boolean>;
   SetDefaultSchema(value: string): Rewrap<this, void>;
   SetMaxIdentifierLength(length: System.Nullable_1<System_Internal.Int32>): Rewrap<this, void>;
   FindSequence(name: string, schema?: string): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IMutableSequence | undefined>;
@@ -867,6 +1035,46 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IMutableModel {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IMutableProperty {
+  GetColumnBaseName(): Rewrap<this, string>;
+  GetColumnName(): Rewrap<this, string>;
+  GetColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultColumnBaseName(): Rewrap<this, string>;
+  GetDefaultColumnName(): Rewrap<this, string>;
+  GetDefaultColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetColumnOrder(): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetColumnOrder(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetColumnType(): Rewrap<this, string | undefined>;
+  GetColumnType(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultValueSql(): Rewrap<this, string | undefined>;
+  GetDefaultValueSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetComputedColumnSql(): Rewrap<this, string | undefined>;
+  GetComputedColumnSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetIsStored(): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  GetIsStored(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  GetDefaultValue(): Rewrap<this, unknown | undefined>;
+  TryGetDefaultValue(defaultValue: unknown): Rewrap<this, boolean>;
+  GetDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, unknown | undefined>;
+  TryGetDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, defaultValue: unknown): Rewrap<this, boolean>;
+  GetMaxLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetPrecision(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetScale(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  IsUnicode(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsColumnNullable(): Rewrap<this, boolean>;
+  IsColumnNullable(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, boolean>;
+  GetComment(): Rewrap<this, string | undefined>;
+  GetComment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetCollation(): Rewrap<this, string | undefined>;
+  GetCollation(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetRelationalTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  FindRelationalTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  FindRelationalTypeMapping(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  GetMappedStoreObjects(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier>>;
+  GetJsonPropertyName(): Rewrap<this, string | undefined>;
+  GetDefaultConstraintName(): Rewrap<this, string | undefined>;
+  GetDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string>;
   SetColumnName(name: string): Rewrap<this, void>;
   SetColumnName(name: string, storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, void>;
   SetColumnOrder(order: System.Nullable_1<System_Internal.Int32>): Rewrap<this, void>;
@@ -899,6 +1107,44 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IMutableTypeBase {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IProperty {
+  GetColumnBaseName(): Rewrap<this, string>;
+  GetColumnName(): Rewrap<this, string>;
+  GetColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultColumnBaseName(): Rewrap<this, string>;
+  GetDefaultColumnName(): Rewrap<this, string>;
+  GetDefaultColumnName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetColumnOrder(): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetColumnOrder(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetDefaultValueSql(): Rewrap<this, string | undefined>;
+  GetDefaultValueSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetComputedColumnSql(): Rewrap<this, string | undefined>;
+  GetComputedColumnSql(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetIsStored(): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  GetIsStored(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  GetDefaultValue(): Rewrap<this, unknown | undefined>;
+  TryGetDefaultValue(defaultValue: unknown): Rewrap<this, boolean>;
+  GetDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, unknown | undefined>;
+  TryGetDefaultValue(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier, defaultValue: unknown): Rewrap<this, boolean>;
+  GetMaxLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetPrecision(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  GetScale(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Int32>>;
+  IsUnicode(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsFixedLength(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, System.Nullable_1<System_Internal.Boolean>>;
+  IsColumnNullable(): Rewrap<this, boolean>;
+  IsColumnNullable(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, boolean>;
+  GetComment(): Rewrap<this, string | undefined>;
+  GetComment(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetCollation(): Rewrap<this, string | undefined>;
+  GetCollation(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetRelationalTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping>;
+  FindRelationalTypeMapping(): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  FindRelationalTypeMapping(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, Microsoft_EntityFrameworkCore_Storage.RelationalTypeMapping | undefined>;
+  GetMappedStoreObjects(storeObjectType: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier>>;
+  GetJsonPropertyName(): Rewrap<this, string | undefined>;
+  GetDefaultConstraintName(): Rewrap<this, string | undefined>;
+  GetDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string | undefined>;
+  GetDefaultDefaultConstraintName(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string>;
   GetColumnType(): Rewrap<this, string>;
   GetColumnType(storeObject: Microsoft_EntityFrameworkCore_Metadata.StoreObjectIdentifier): Rewrap<this, string>;
   GetDefaultColumnMappings(): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IColumnMappingBase>>;
@@ -931,6 +1177,8 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyElementType {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyEntityType {
+  GetContainerColumnName(): Rewrap<this, string | undefined>;
+  GetContainerColumnType(): Rewrap<this, string | undefined>;
   GetTableName(): Rewrap<this, string | undefined>;
   GetDefaultTableName(truncate?: boolean): Rewrap<this, string | undefined>;
   GetSchema(): Rewrap<this, string | undefined>;
@@ -1078,6 +1326,17 @@ export interface __Ext_Microsoft_EntityFrameworkCore_IReadOnlyTypeBase {
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_ITypeBase {
+  GetTableName(): Rewrap<this, string | undefined>;
+  GetSchema(): Rewrap<this, string | undefined>;
+  GetViewName(): Rewrap<this, string | undefined>;
+  GetViewSchema(): Rewrap<this, string | undefined>;
+  GetSqlQuery(): Rewrap<this, string | undefined>;
+  GetFunctionName(): Rewrap<this, string | undefined>;
+  GetMappingStrategy(): Rewrap<this, string | undefined>;
+  IsMappedToJson(): Rewrap<this, boolean>;
+  GetContainerColumnName(): Rewrap<this, string | undefined>;
+  GetContainerColumnType(): Rewrap<this, string | undefined>;
+  GetJsonPropertyName(): Rewrap<this, string | undefined>;
   GetDefaultMappings(): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableMappingBase>>;
   GetTableMappings(): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.ITableMapping>>;
   GetViewMappings(): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IViewMapping>>;
@@ -1577,6 +1836,13 @@ export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IComplexP
 }
 
 export interface __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IConventionEntityType {
+  GetNavigationMemberInfo(navigationName: string): Rewrap<this, System_Reflection.MemberInfo>;
+  IsOwned(): Rewrap<this, boolean>;
+  FindInOwnershipPath(targetType: System.Type): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType | undefined>;
+  IsInOwnershipPath(targetType: System.Type): Rewrap<this, boolean>;
+  IsInOwnershipPath(targetType: Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType): Rewrap<this, boolean>;
+  FindDeclaredPrimaryKey(): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey | undefined>;
+  FindDerivedNavigations(navigationName: string): Rewrap<this, System_Collections_Generic.IEnumerable_1<Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation>>;
   FindDeclaredOwnership(): Rewrap<this, Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey | undefined>;
   GetStoreObjectConfigurationSource(type: Microsoft_EntityFrameworkCore_Metadata.StoreObjectType): Rewrap<this, System.Nullable_1<Microsoft_EntityFrameworkCore_Metadata.ConfigurationSource>>;
 }
@@ -1803,12 +2069,11 @@ export interface __Ext_System_Transactions_DatabaseFacade {
 type __TsonicExtMapOf<T> = T extends { __tsonic_ext?: infer M } ? M : {};
 type __TsonicMergeExtMaps<A, B> = A & B;
 type __TsonicWithExt<TShape, K extends string, TApplier> = { __tsonic_ext?: __TsonicMergeExtMaps<__TsonicExtMapOf<TShape>, { [P in K]: TApplier }> };
-type __TsonicPreferExt<A, B> = A & B;
 
 // Generic helper type for extension methods in namespace: Microsoft.EntityFrameworkCore
 type __TsonicExtSurface_Microsoft_EntityFrameworkCore<TShape> =
   (
-    (TShape extends Microsoft_EntityFrameworkCore.DbFunctions ? __Ext_Microsoft_EntityFrameworkCore_DbFunctions : {}) & (TShape extends Microsoft_EntityFrameworkCore.DbSet_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_DbSet_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore.ModelBuilder ? __Ext_Microsoft_EntityFrameworkCore_ModelBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_ChangeTracking.ChangeTracker ? __Ext_Microsoft_EntityFrameworkCore_ChangeTracker : {}) & (TShape extends Microsoft_EntityFrameworkCore_Infrastructure.DatabaseFacade ? __Ext_Microsoft_EntityFrameworkCore_DatabaseFacade : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_IConventionComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionElementType ? __Ext_Microsoft_EntityFrameworkCore_IConventionElementType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? __TsonicPreferExt<__TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyTypeBase, __Ext_Microsoft_EntityFrameworkCore_IReadOnlyEntityType>, __Ext_Microsoft_EntityFrameworkCore_IConventionEntityType> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyForeignKey, __Ext_Microsoft_EntityFrameworkCore_IConventionForeignKey> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionIndex ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyIndex, __Ext_Microsoft_EntityFrameworkCore_IConventionIndex> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionKey ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyKey, __Ext_Microsoft_EntityFrameworkCore_IConventionKey> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionModel ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyModel, __Ext_Microsoft_EntityFrameworkCore_IConventionModel> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionProperty ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyProperty, __Ext_Microsoft_EntityFrameworkCore_IConventionProperty> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionTrigger ? __Ext_Microsoft_EntityFrameworkCore_IConventionTrigger : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionTypeBase ? __Ext_Microsoft_EntityFrameworkCore_IConventionTypeBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IElementType ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyElementType, __Ext_Microsoft_EntityFrameworkCore_IElementType> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IEntityType ? __TsonicPreferExt<__TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyTypeBase, __Ext_Microsoft_EntityFrameworkCore_IReadOnlyEntityType>, __Ext_Microsoft_EntityFrameworkCore_IEntityType> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IForeignKey ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyForeignKey, __Ext_Microsoft_EntityFrameworkCore_IForeignKey> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IIndex ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyIndex, __Ext_Microsoft_EntityFrameworkCore_IIndex> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IKey ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyKey, __Ext_Microsoft_EntityFrameworkCore_IKey> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IModel ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyModel, __Ext_Microsoft_EntityFrameworkCore_IModel> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_IMutableComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyElementType ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IElementType ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyElementType) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableElementType ? __Ext_Microsoft_EntityFrameworkCore_IMutableElementType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableForeignKey ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyForeignKey, __Ext_Microsoft_EntityFrameworkCore_IMutableForeignKey> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableIndex ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyIndex, __Ext_Microsoft_EntityFrameworkCore_IMutableIndex> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableKey ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyKey, __Ext_Microsoft_EntityFrameworkCore_IMutableKey> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableModel ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyModel, __Ext_Microsoft_EntityFrameworkCore_IMutableModel> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableProperty ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyProperty, __Ext_Microsoft_EntityFrameworkCore_IMutableProperty> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableTrigger ? __Ext_Microsoft_EntityFrameworkCore_IMutableTrigger : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableTypeBase ? __Ext_Microsoft_EntityFrameworkCore_IMutableTypeBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IProperty ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyProperty, __Ext_Microsoft_EntityFrameworkCore_IProperty> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_IReadOnlyComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyTypeBase ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.ITypeBase ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyTypeBase))))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableEntityType ? {} : __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyTypeBase, __Ext_Microsoft_EntityFrameworkCore_IReadOnlyEntityType>))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableEntityType ? __TsonicPreferExt<__TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyTypeBase, __Ext_Microsoft_EntityFrameworkCore_IReadOnlyEntityType>, __Ext_Microsoft_EntityFrameworkCore_IMutableEntityType> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IForeignKey ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableForeignKey ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyForeignKey))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyIndex ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionIndex ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IIndex ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableIndex ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyIndex))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionKey ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IKey ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableKey ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyKey))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyModel ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionModel ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IModel ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableModel ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyModel))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionProperty ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableProperty ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IProperty ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyProperty))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyTrigger ? __Ext_Microsoft_EntityFrameworkCore_IReadOnlyTrigger : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.ITypeBase ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IReadOnlyTypeBase, __Ext_Microsoft_EntityFrameworkCore_ITypeBase> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_ComplexCollectionBuilder, __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionTypePropertyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_ComplexCollectionTypePropertyBuilder, __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionTypePropertyBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexPropertyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_ComplexPropertyBuilder, __Ext_Microsoft_EntityFrameworkCore_ComplexPropertyBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexTypePrimitiveCollectionBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_ComplexTypePrimitiveCollectionBuilder, __Ext_Microsoft_EntityFrameworkCore_ComplexTypePrimitiveCollectionBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexTypePropertyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_ComplexTypePropertyBuilder, __Ext_Microsoft_EntityFrameworkCore_ComplexTypePropertyBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ElementTypeBuilder ? __Ext_Microsoft_EntityFrameworkCore_ElementTypeBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_EntityTypeBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_EntityTypeBuilder, __Ext_Microsoft_EntityFrameworkCore_EntityTypeBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionElementTypeBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionElementTypeBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionEntityTypeBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionForeignKeyBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionForeignKeyBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionIndexBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionIndexBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionKeyBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionKeyBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionModelBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionModelBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionPropertyBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionTriggerBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionTriggerBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_IndexBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_IndexBuilder, __Ext_Microsoft_EntityFrameworkCore_IndexBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_KeyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_KeyBuilder, __Ext_Microsoft_EntityFrameworkCore_KeyBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<infer _0, infer _1> ? {} : __Ext_Microsoft_EntityFrameworkCore_OwnedNavigationBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<infer T0, infer T1> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_OwnedNavigationBuilder, __Ext_Microsoft_EntityFrameworkCore_OwnedNavigationBuilder_2<T0, T1>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder_2<infer _0, infer _1> ? {} : __Ext_Microsoft_EntityFrameworkCore_OwnershipBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder_2<infer T0, infer T1> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_OwnershipBuilder, __Ext_Microsoft_EntityFrameworkCore_OwnershipBuilder_2<T0, T1>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_PrimitiveCollectionBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_PrimitiveCollectionBuilder, __Ext_Microsoft_EntityFrameworkCore_PrimitiveCollectionBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_PropertiesConfigurationBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_PropertiesConfigurationBuilder, __Ext_Microsoft_EntityFrameworkCore_PropertiesConfigurationBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_PropertyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_PropertyBuilder, __Ext_Microsoft_EntityFrameworkCore_PropertyBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder_2<infer _0, infer _1> ? {} : __Ext_Microsoft_EntityFrameworkCore_ReferenceCollectionBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder_2<infer T0, infer T1> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_ReferenceCollectionBuilder, __Ext_Microsoft_EntityFrameworkCore_ReferenceCollectionBuilder_2<T0, T1>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder_2<infer _0, infer _1> ? {} : __Ext_Microsoft_EntityFrameworkCore_ReferenceReferenceBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder_2<infer T0, infer T1> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_ReferenceReferenceBuilder, __Ext_Microsoft_EntityFrameworkCore_ReferenceReferenceBuilder_2<T0, T1>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_TypeMappingConfigurationBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder_1<infer T0> ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_TypeMappingConfigurationBuilder, __Ext_Microsoft_EntityFrameworkCore_TypeMappingConfigurationBuilder_1<T0>> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Query.IIncludableQueryable_2<infer T0, infer T1> ? __Ext_Microsoft_EntityFrameworkCore_IIncludableQueryable_2<T0, T1> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Query_SqlExpressions.TableExpressionBase ? __Ext_Microsoft_EntityFrameworkCore_TableExpressionBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Storage.IExecutionStrategy ? __Ext_Microsoft_EntityFrameworkCore_IExecutionStrategy : {}) & (TShape extends System_Collections_Generic.IEnumerable_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_IEnumerable_1<T0> : {}) & (TShape extends System_Collections_ObjectModel.ObservableCollection_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_ObservableCollection_1<T0> : {}) & (TShape extends System_Linq.IQueryable ? __Ext_Microsoft_EntityFrameworkCore_IQueryable : {}) & (TShape extends System_Linq.IQueryable_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_IQueryable_1<T0> : {}) & (TShape extends (infer T)[] ? __Ext_Microsoft_EntityFrameworkCore_IEnumerable_1<T> : {})
+    (TShape extends Microsoft_EntityFrameworkCore.DbFunctions ? __Ext_Microsoft_EntityFrameworkCore_DbFunctions : {}) & (TShape extends Microsoft_EntityFrameworkCore.DbSet_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_DbSet_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore.ModelBuilder ? __Ext_Microsoft_EntityFrameworkCore_ModelBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_ChangeTracking.ChangeTracker ? __Ext_Microsoft_EntityFrameworkCore_ChangeTracker : {}) & (TShape extends Microsoft_EntityFrameworkCore_Infrastructure.DatabaseFacade ? __Ext_Microsoft_EntityFrameworkCore_DatabaseFacade : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_IConventionComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionElementType ? __Ext_Microsoft_EntityFrameworkCore_IConventionElementType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? __Ext_Microsoft_EntityFrameworkCore_IConventionEntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey ? __Ext_Microsoft_EntityFrameworkCore_IConventionForeignKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionIndex ? __Ext_Microsoft_EntityFrameworkCore_IConventionIndex : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionKey ? __Ext_Microsoft_EntityFrameworkCore_IConventionKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionModel ? __Ext_Microsoft_EntityFrameworkCore_IConventionModel : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionProperty ? __Ext_Microsoft_EntityFrameworkCore_IConventionProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionTrigger ? __Ext_Microsoft_EntityFrameworkCore_IConventionTrigger : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionTypeBase ? __Ext_Microsoft_EntityFrameworkCore_IConventionTypeBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IElementType ? __Ext_Microsoft_EntityFrameworkCore_IElementType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IEntityType ? __Ext_Microsoft_EntityFrameworkCore_IEntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IForeignKey ? __Ext_Microsoft_EntityFrameworkCore_IForeignKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IIndex ? __Ext_Microsoft_EntityFrameworkCore_IIndex : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IKey ? __Ext_Microsoft_EntityFrameworkCore_IKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IModel ? __Ext_Microsoft_EntityFrameworkCore_IModel : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_IMutableComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableElementType ? __Ext_Microsoft_EntityFrameworkCore_IMutableElementType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableEntityType ? __Ext_Microsoft_EntityFrameworkCore_IMutableEntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableForeignKey ? __Ext_Microsoft_EntityFrameworkCore_IMutableForeignKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableIndex ? __Ext_Microsoft_EntityFrameworkCore_IMutableIndex : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableKey ? __Ext_Microsoft_EntityFrameworkCore_IMutableKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableModel ? __Ext_Microsoft_EntityFrameworkCore_IMutableModel : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableProperty ? __Ext_Microsoft_EntityFrameworkCore_IMutableProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableTrigger ? __Ext_Microsoft_EntityFrameworkCore_IMutableTrigger : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableTypeBase ? __Ext_Microsoft_EntityFrameworkCore_IMutableTypeBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IProperty ? __Ext_Microsoft_EntityFrameworkCore_IProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_IReadOnlyComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyElementType ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IElementType ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyElementType) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableEntityType ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyEntityType))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionForeignKey ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IForeignKey ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableForeignKey ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyForeignKey))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyIndex ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionIndex ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IIndex ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableIndex ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyIndex))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionKey ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IKey ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableKey ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyKey))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyModel ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionModel ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IModel ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableModel ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyModel))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionProperty ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableProperty ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IProperty ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyProperty))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyTrigger ? __Ext_Microsoft_EntityFrameworkCore_IReadOnlyTrigger : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyTypeBase ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType ? {} : (TShape extends Microsoft_EntityFrameworkCore_Metadata.ITypeBase ? {} : __Ext_Microsoft_EntityFrameworkCore_IReadOnlyTypeBase))))) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.ITypeBase ? __Ext_Microsoft_EntityFrameworkCore_ITypeBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionTypePropertyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexCollectionTypePropertyBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_ComplexCollectionTypePropertyBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexPropertyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexPropertyBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_ComplexPropertyBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexTypePrimitiveCollectionBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePrimitiveCollectionBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_ComplexTypePrimitiveCollectionBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_ComplexTypePropertyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ComplexTypePropertyBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_ComplexTypePropertyBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ElementTypeBuilder ? __Ext_Microsoft_EntityFrameworkCore_ElementTypeBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_EntityTypeBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.EntityTypeBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_EntityTypeBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionElementTypeBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionElementTypeBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionEntityTypeBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionEntityTypeBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionForeignKeyBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionForeignKeyBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionIndexBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionIndexBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionKeyBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionKeyBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionModelBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionModelBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionPropertyBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionPropertyBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IConventionTriggerBuilder ? __Ext_Microsoft_EntityFrameworkCore_IConventionTriggerBuilder : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_IndexBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.IndexBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_IndexBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_KeyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.KeyBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_KeyBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<infer _0, infer _1> ? {} : __Ext_Microsoft_EntityFrameworkCore_OwnedNavigationBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnedNavigationBuilder_2<infer T0, infer T1> ? __Ext_Microsoft_EntityFrameworkCore_OwnedNavigationBuilder_2<T0, T1> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder_2<infer _0, infer _1> ? {} : __Ext_Microsoft_EntityFrameworkCore_OwnershipBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.OwnershipBuilder_2<infer T0, infer T1> ? __Ext_Microsoft_EntityFrameworkCore_OwnershipBuilder_2<T0, T1> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_PrimitiveCollectionBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PrimitiveCollectionBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_PrimitiveCollectionBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_PropertiesConfigurationBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertiesConfigurationBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_PropertiesConfigurationBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_PropertyBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.PropertyBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_PropertyBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder_2<infer _0, infer _1> ? {} : __Ext_Microsoft_EntityFrameworkCore_ReferenceCollectionBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceCollectionBuilder_2<infer T0, infer T1> ? __Ext_Microsoft_EntityFrameworkCore_ReferenceCollectionBuilder_2<T0, T1> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder_2<infer _0, infer _1> ? {} : __Ext_Microsoft_EntityFrameworkCore_ReferenceReferenceBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.ReferenceReferenceBuilder_2<infer T0, infer T1> ? __Ext_Microsoft_EntityFrameworkCore_ReferenceReferenceBuilder_2<T0, T1> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder ? (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder_1<infer _0> ? {} : __Ext_Microsoft_EntityFrameworkCore_TypeMappingConfigurationBuilder) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Builders.TypeMappingConfigurationBuilder_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_TypeMappingConfigurationBuilder_1<T0> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Query.IIncludableQueryable_2<infer T0, infer T1> ? __Ext_Microsoft_EntityFrameworkCore_IIncludableQueryable_2<T0, T1> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Query_SqlExpressions.TableExpressionBase ? __Ext_Microsoft_EntityFrameworkCore_TableExpressionBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Storage.IExecutionStrategy ? __Ext_Microsoft_EntityFrameworkCore_IExecutionStrategy : {}) & (TShape extends System_Collections_Generic.IEnumerable_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_IEnumerable_1<T0> : {}) & (TShape extends System_Collections_ObjectModel.ObservableCollection_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_ObservableCollection_1<T0> : {}) & (TShape extends System_Linq.IQueryable ? __Ext_Microsoft_EntityFrameworkCore_IQueryable : {}) & (TShape extends System_Linq.IQueryable_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_IQueryable_1<T0> : {}) & (TShape extends (infer T)[] ? __Ext_Microsoft_EntityFrameworkCore_IEnumerable_1<T> : {})
   );
 
 interface __TsonicExtApplier_Microsoft_EntityFrameworkCore {
@@ -1952,7 +2217,7 @@ export type ExtensionMethods_Microsoft_EntityFrameworkCore_Metadata_Conventions_
 // Generic helper type for extension methods in namespace: Microsoft.EntityFrameworkCore.Metadata.Internal
 type __TsonicExtSurface_Microsoft_EntityFrameworkCore_Metadata_Internal<TShape> =
   (
-    (TShape extends Microsoft_EntityFrameworkCore_Metadata.IComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? __TsonicPreferExt<__Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyEntityType, __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IConventionEntityType> : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IEntityType ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IEntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IForeignKey ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IForeignKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IModel ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IModel : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableModel ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IMutableModel : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IPropertyBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IPropertyBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IProperty ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? {} : __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyEntityType) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyForeignKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyIndex ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyIndex : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyPropertyBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyNavigation : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlySkipNavigation ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlySkipNavigation : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyTypeBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyTypeBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.ITypeBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_ITypeBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.ValueGenerated ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_ValueGenerated : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.EntityType ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_EntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.IRuntimeEntityType ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeEntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.PropertyBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_PropertyBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.Property ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_Property : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.TypeConfigurationType ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_TypeConfigurationType : {}) & (TShape extends System.Nullable_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_Nullable_1<T0> : {})
+    (TShape extends Microsoft_EntityFrameworkCore_Metadata.IComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IConventionEntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IEntityType ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IEntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IForeignKey ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IForeignKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IModel ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IModel : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IMutableModel ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IMutableModel : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IProperty ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IPropertyBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IPropertyBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyComplexProperty ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyComplexProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyEntityType ? (TShape extends Microsoft_EntityFrameworkCore_Metadata.IConventionEntityType ? {} : __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyEntityType) : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyForeignKey ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyForeignKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyIndex ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyIndex : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyKey ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyKey : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyNavigation ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyNavigation : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyProperty ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyProperty : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyPropertyBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyPropertyBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlySkipNavigation ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlySkipNavigation : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.IReadOnlyTypeBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IReadOnlyTypeBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.ITypeBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_ITypeBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata.ValueGenerated ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_ValueGenerated : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.EntityType ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_EntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.IRuntimeEntityType ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeEntityType : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.Property ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_Property : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.PropertyBase ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_PropertyBase : {}) & (TShape extends Microsoft_EntityFrameworkCore_Metadata_Internal.TypeConfigurationType ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_TypeConfigurationType : {}) & (TShape extends System.Nullable_1<infer T0> ? __Ext_Microsoft_EntityFrameworkCore_Metadata_Internal_Nullable_1<T0> : {})
   );
 
 interface __TsonicExtApplier_Microsoft_EntityFrameworkCore_Metadata_Internal {
