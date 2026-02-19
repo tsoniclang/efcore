@@ -33,12 +33,14 @@ export interface DatabaseColumn$instance extends Annotatable {
     get DefaultValueSql(): string | undefined;
     set DefaultValueSql(value: string | undefined);
     IsNullable: boolean;
-    IsStored: Nullable_1<System_Internal.Boolean>;
+    get IsStored(): Nullable_1<System_Internal.Boolean>;
+    set IsStored(value: Nullable_1<System_Internal.Boolean> | boolean);
     Name: string;
     get StoreType(): string | undefined;
     set StoreType(value: string | undefined);
     Table: DatabaseTable;
-    ValueGenerated: Nullable_1<ValueGenerated>;
+    get ValueGenerated(): Nullable_1<ValueGenerated>;
+    set ValueGenerated(value: Nullable_1<ValueGenerated> | ValueGenerated);
     ToString(): string;
 }
 
@@ -67,7 +69,8 @@ export interface DatabaseForeignKey$instance extends Annotatable {
     readonly Columns: IList_1<DatabaseColumn>;
     get Name(): string | undefined;
     set Name(value: string | undefined);
-    OnDelete: Nullable_1<ReferentialAction>;
+    get OnDelete(): Nullable_1<ReferentialAction>;
+    set OnDelete(value: Nullable_1<ReferentialAction> | ReferentialAction);
     readonly PrincipalColumns: IList_1<DatabaseColumn>;
     PrincipalTable: DatabaseTable;
     Table: DatabaseTable;
@@ -193,14 +196,19 @@ export interface DatabaseSequence$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     Database: DatabaseModel;
-    IncrementBy: Nullable_1<System_Internal.Int32>;
-    IsCyclic: Nullable_1<System_Internal.Boolean>;
-    MaxValue: Nullable_1<System_Internal.Int64>;
-    MinValue: Nullable_1<System_Internal.Int64>;
+    get IncrementBy(): Nullable_1<System_Internal.Int32>;
+    set IncrementBy(value: Nullable_1<System_Internal.Int32> | int);
+    get IsCyclic(): Nullable_1<System_Internal.Boolean>;
+    set IsCyclic(value: Nullable_1<System_Internal.Boolean> | boolean);
+    get MaxValue(): Nullable_1<System_Internal.Int64>;
+    set MaxValue(value: Nullable_1<System_Internal.Int64> | long);
+    get MinValue(): Nullable_1<System_Internal.Int64>;
+    set MinValue(value: Nullable_1<System_Internal.Int64> | long);
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
-    StartValue: Nullable_1<System_Internal.Int64>;
+    get StartValue(): Nullable_1<System_Internal.Int64>;
+    set StartValue(value: Nullable_1<System_Internal.Int64> | long);
     get StoreType(): string | undefined;
     set StoreType(value: string | undefined);
     ToString(): string;

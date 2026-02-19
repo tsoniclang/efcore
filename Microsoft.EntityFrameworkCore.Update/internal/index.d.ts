@@ -249,7 +249,8 @@ export interface ColumnModificationParameters$instance {
     set GenerateParameterName(value: Func_1<System_Internal.String> | undefined);
     IsCondition: boolean;
     IsKey: boolean;
-    IsNullable: Nullable_1<System_Internal.Boolean>;
+    get IsNullable(): Nullable_1<System_Internal.Boolean>;
+    set IsNullable(value: Nullable_1<System_Internal.Boolean> | boolean);
     IsRead: boolean;
     IsWrite: boolean;
     get JsonPath(): string | undefined;

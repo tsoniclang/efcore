@@ -2346,7 +2346,8 @@ export interface IMutableEntityTypeMappingFragment$instance extends IReadOnlyEnt
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableEntityTypeMappingFragment: never;
 
     readonly EntityType: IMutableEntityType;
-    IsTableExcludedFromMigrations: Nullable_1<System_Internal.Boolean>;
+    get IsTableExcludedFromMigrations(): Nullable_1<System_Internal.Boolean>;
+    set IsTableExcludedFromMigrations(value: Nullable_1<System_Internal.Boolean> | boolean);
     readonly StoreObject: StoreObjectIdentifier;
     AddAnnotation(name: string, value: unknown): IAnnotation;
     AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
@@ -2675,8 +2676,10 @@ export interface IMutableSequence$instance extends IReadOnlySequence, IReadOnlyA
     readonly Model: IMutableModel;
     StartValue: long;
     IncrementBy: int;
-    MinValue: Nullable_1<System_Internal.Int64>;
-    MaxValue: Nullable_1<System_Internal.Int64>;
+    get MinValue(): Nullable_1<System_Internal.Int64>;
+    set MinValue(value: Nullable_1<System_Internal.Int64> | long);
+    get MaxValue(): Nullable_1<System_Internal.Int64>;
+    set MaxValue(value: Nullable_1<System_Internal.Int64> | long);
     Type: Type;
     IsCyclic: boolean;
     readonly Name: string;

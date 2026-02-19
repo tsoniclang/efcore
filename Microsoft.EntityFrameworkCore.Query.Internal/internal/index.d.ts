@@ -1512,7 +1512,8 @@ export interface SingleQueryResultCoordinator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SingleQueryResultCoordinator: never;
 
     readonly Collections: IList_1<SingleQueryCollectionContext | undefined>;
-    HasNext: Nullable_1<System_Internal.Boolean>;
+    get HasNext(): Nullable_1<System_Internal.Boolean>;
+    set HasNext(value: Nullable_1<System_Internal.Boolean> | boolean);
     readonly ResultContext: ResultContext;
     ResultReady: boolean;
     SetSingleQueryCollectionContext(collectionId: int, singleQueryCollectionContext: SingleQueryCollectionContext): void;
@@ -1547,7 +1548,8 @@ export interface SplitQueryDataReaderContext$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SplitQueryDataReaderContext: never;
 
     readonly DataReader: RelationalDataReader;
-    HasNext: Nullable_1<System_Internal.Boolean>;
+    get HasNext(): Nullable_1<System_Internal.Boolean>;
+    set HasNext(value: Nullable_1<System_Internal.Boolean> | boolean);
 }
 
 
@@ -1592,7 +1594,8 @@ export interface SplitQueryResultCoordinator$instance {
 
     readonly Collections: IList_1<SplitQueryCollectionContext | undefined>;
     readonly DataReaders: IList_1<SplitQueryDataReaderContext | undefined>;
-    HasNext: Nullable_1<System_Internal.Boolean>;
+    get HasNext(): Nullable_1<System_Internal.Boolean>;
+    set HasNext(value: Nullable_1<System_Internal.Boolean> | boolean);
     readonly ResultContext: ResultContext;
     SetDataReader(collectionId: int, relationalDataReader: RelationalDataReader): void;
     SetSplitQueryCollectionContext(collectionId: int, splitQueryCollectionContext: SplitQueryCollectionContext): void;

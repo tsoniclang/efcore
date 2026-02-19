@@ -331,15 +331,21 @@ export interface ColumnOperation$instance extends MigrationOperation$instance {
     set DefaultValue(value: unknown | undefined);
     get DefaultValueSql(): string | undefined;
     set DefaultValueSql(value: string | undefined);
-    IsFixedLength: Nullable_1<System_Internal.Boolean>;
+    get IsFixedLength(): Nullable_1<System_Internal.Boolean>;
+    set IsFixedLength(value: Nullable_1<System_Internal.Boolean> | boolean);
     IsNullable: boolean;
     IsRowVersion: boolean;
-    IsStored: Nullable_1<System_Internal.Boolean>;
-    IsUnicode: Nullable_1<System_Internal.Boolean>;
-    MaxLength: Nullable_1<System_Internal.Int32>;
+    get IsStored(): Nullable_1<System_Internal.Boolean>;
+    set IsStored(value: Nullable_1<System_Internal.Boolean> | boolean);
+    get IsUnicode(): Nullable_1<System_Internal.Boolean>;
+    set IsUnicode(value: Nullable_1<System_Internal.Boolean> | boolean);
+    get MaxLength(): Nullable_1<System_Internal.Int32>;
+    set MaxLength(value: Nullable_1<System_Internal.Int32> | int);
     Name: string;
-    Precision: Nullable_1<System_Internal.Int32>;
-    Scale: Nullable_1<System_Internal.Int32>;
+    get Precision(): Nullable_1<System_Internal.Int32>;
+    set Precision(value: Nullable_1<System_Internal.Int32> | int);
+    get Scale(): Nullable_1<System_Internal.Int32>;
+    set Scale(value: Nullable_1<System_Internal.Int32> | int);
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
     Table: string;
@@ -993,7 +999,8 @@ export interface RestartSequenceOperation$instance extends MigrationOperation$in
     Name: string;
     get Schema(): string | undefined;
     set Schema(value: string | undefined);
-    StartValue: Nullable_1<System_Internal.Int64>;
+    get StartValue(): Nullable_1<System_Internal.Int64>;
+    set StartValue(value: Nullable_1<System_Internal.Int64> | long);
 }
 
 
@@ -1020,8 +1027,10 @@ export interface SequenceOperation$instance extends MigrationOperation$instance 
 
     IncrementBy: int;
     IsCyclic: boolean;
-    MaxValue: Nullable_1<System_Internal.Int64>;
-    MinValue: Nullable_1<System_Internal.Int64>;
+    get MaxValue(): Nullable_1<System_Internal.Int64>;
+    set MaxValue(value: Nullable_1<System_Internal.Int64> | long);
+    get MinValue(): Nullable_1<System_Internal.Int64>;
+    set MinValue(value: Nullable_1<System_Internal.Int64> | long);
 }
 
 

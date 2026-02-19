@@ -2134,7 +2134,8 @@ export interface EntityTypeMappingFragment$instance extends ConventionAnnotatabl
     readonly EntityType: IReadOnlyEntityType;
     readonly IsInModel: boolean;
     readonly IsReadOnly: boolean;
-    IsTableExcludedFromMigrations: Nullable_1<System_Internal.Boolean>;
+    get IsTableExcludedFromMigrations(): Nullable_1<System_Internal.Boolean>;
+    set IsTableExcludedFromMigrations(value: Nullable_1<System_Internal.Boolean> | boolean);
     readonly StoreObject: StoreObjectIdentifier;
     GetConfigurationSource(): ConfigurationSource;
     GetIsTableExcludedFromMigrationsConfigurationSource(): Nullable_1<ConfigurationSource>;
@@ -4309,7 +4310,8 @@ export interface QueryFilter$instance extends Microsoft_EntityFrameworkCore_Meta
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IQueryFilter: never;
 
-    ConfigurationSource: Nullable_1<ConfigurationSource>;
+    get ConfigurationSource(): Nullable_1<ConfigurationSource>;
+    set ConfigurationSource(value: Nullable_1<ConfigurationSource> | ConfigurationSource);
     readonly Expression: LambdaExpression;
     readonly Key: string | undefined;
 }
@@ -4605,8 +4607,10 @@ export interface Sequence$instance extends ConventionAnnotatable {
     IsCyclic: boolean;
     readonly IsInModel: boolean;
     readonly IsReadOnly: boolean;
-    MaxValue: Nullable_1<System_Internal.Int64>;
-    MinValue: Nullable_1<System_Internal.Int64>;
+    get MaxValue(): Nullable_1<System_Internal.Int64>;
+    set MaxValue(value: Nullable_1<System_Internal.Int64> | long);
+    get MinValue(): Nullable_1<System_Internal.Int64>;
+    set MinValue(value: Nullable_1<System_Internal.Int64> | long);
     readonly Model: IReadOnlyModel;
     readonly ModelSchema: string | undefined;
     Name: string;
@@ -5648,8 +5652,10 @@ export interface TableMappingBase_1$instance<TColumnMapping extends IColumnMappi
     readonly ColumnMappings: List_1<TColumnMapping>;
     readonly IncludesDerivedTypes: Nullable_1<System_Internal.Boolean>;
     readonly IsReadOnly: boolean;
-    IsSharedTablePrincipal: Nullable_1<System_Internal.Boolean>;
-    IsSplitEntityTypePrincipal: Nullable_1<System_Internal.Boolean>;
+    get IsSharedTablePrincipal(): Nullable_1<System_Internal.Boolean>;
+    set IsSharedTablePrincipal(value: Nullable_1<System_Internal.Boolean> | boolean);
+    get IsSplitEntityTypePrincipal(): Nullable_1<System_Internal.Boolean>;
+    set IsSplitEntityTypePrincipal(value: Nullable_1<System_Internal.Boolean> | boolean);
     readonly Table: ITable | TableBase;
     readonly TypeBase: ITypeBase;
     AddColumnMapping(columnMapping: TColumnMapping): boolean;
