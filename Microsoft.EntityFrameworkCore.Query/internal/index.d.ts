@@ -400,7 +400,8 @@ export interface EntityMaterializerSourceParameters$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     InstanceName: string;
-    QueryTrackingBehavior: Nullable_1<QueryTrackingBehavior>;
+    get QueryTrackingBehavior(): Nullable_1<QueryTrackingBehavior>;
+    set QueryTrackingBehavior(value: Nullable_1<QueryTrackingBehavior> | QueryTrackingBehavior);
     StructuralType: ITypeBase;
     Deconstruct(StructuralType: ITypeBase, InstanceName: string, QueryTrackingBehavior: Nullable_1<QueryTrackingBehavior>): void;
     Equals(obj: unknown): boolean;
@@ -452,7 +453,8 @@ export interface StructuralTypeMaterializerSourceParameters$instance {
     ClrType: Type;
     InstanceName: string;
     IsNullable: boolean;
-    QueryTrackingBehavior: Nullable_1<QueryTrackingBehavior>;
+    get QueryTrackingBehavior(): Nullable_1<QueryTrackingBehavior>;
+    set QueryTrackingBehavior(value: Nullable_1<QueryTrackingBehavior> | QueryTrackingBehavior);
     StructuralType: ITypeBase;
     Deconstruct(StructuralType: ITypeBase, InstanceName: string, ClrType: Type, IsNullable: boolean, QueryTrackingBehavior: Nullable_1<QueryTrackingBehavior>): void;
     Equals(obj: unknown): boolean;
@@ -2186,7 +2188,8 @@ export type RelationalQueryableMethodTranslatingExpressionVisitorDependencies = 
 export interface RelationalQueryCompilationContext$instance extends QueryCompilationContext {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalQueryCompilationContext: never;
 
-    QuerySplittingBehavior: Nullable_1<QuerySplittingBehavior>;
+    get QuerySplittingBehavior(): Nullable_1<QuerySplittingBehavior>;
+    set QuerySplittingBehavior(value: Nullable_1<QuerySplittingBehavior> | QuerySplittingBehavior);
     readonly RelationalDependencies: RelationalQueryCompilationContextDependencies;
     readonly SqlAliasManager: SqlAliasManager;
 }
