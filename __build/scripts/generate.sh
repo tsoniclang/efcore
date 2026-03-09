@@ -19,6 +19,7 @@ DOTNET_MAJOR="${DOTNET_MAJOR:-10}"
 DOTNET_LIB="$PROJECT_DIR/../dotnet/versions/$DOTNET_MAJOR"
 EXT_LIB="$PROJECT_DIR/../microsoft-extensions"
 REF_DIR="$PROJECT_DIR/__build/ref"
+SEMANTICS_FILE="$PROJECT_DIR/__build/templates/$DOTNET_MAJOR/tsbindgen.bindings-semantics.json"
 
 DOTNET_VERSION="${DOTNET_VERSION:-10.0.1}"
 DOTNET_HOME="${DOTNET_HOME:-$HOME/.dotnet}"
@@ -65,6 +66,11 @@ fi
 
 if [ ! -f "$REF_DIR/ref.csproj" ]; then
     echo "ERROR: Reference project not found at $REF_DIR/ref.csproj"
+    exit 1
+fi
+
+if [ ! -f "$SEMANTICS_FILE" ]; then
+    echo "ERROR: bindings semantics config not found at $SEMANTICS_FILE"
     exit 1
 fi
 
@@ -121,7 +127,8 @@ dotnet run --project src/tsbindgen/tsbindgen.csproj --no-build -c Release -- \
     generate "${GEN_ARGS[@]}" -d "$NETCORE_RUNTIME_PATH" -o "$PROJECT_DIR" \
     --allow-constructor-constraint-loss \
     --lib "$DOTNET_LIB" \
-    --lib "$EXT_LIB"
+    --lib "$EXT_LIB" \
+    --bindings-semantics "$SEMANTICS_FILE"
 
 echo ""
 echo "================================================================"
