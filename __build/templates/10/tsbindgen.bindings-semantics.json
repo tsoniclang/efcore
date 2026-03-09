@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "memberSemantics": [
+    {
+      "binding": {
+        "type": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions"
+      },
+      "emitSemantics": {
+        "callStyle": "receiver"
+      }
+    }
+  ]
+}

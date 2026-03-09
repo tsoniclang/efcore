@@ -8920,7 +8920,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AnyAsync(IQueryable_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -8940,7 +8943,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AnyAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -8960,7 +8966,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AllAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -8980,7 +8989,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::CountAsync(IQueryable_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9000,7 +9012,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::CountAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9020,7 +9035,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::LongCountAsync(IQueryable_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9040,7 +9058,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::LongCountAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9060,7 +9081,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ElementAtAsync(IQueryable_1,System.Int32,System.Threading.CancellationToken):Task_1",
@@ -9080,7 +9104,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ElementAtOrDefaultAsync(IQueryable_1,System.Int32,System.Threading.CancellationToken):Task_1",
@@ -9100,7 +9127,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::FirstAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -9120,7 +9150,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::FirstAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):Task_1",
@@ -9140,7 +9173,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::FirstOrDefaultAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -9160,7 +9196,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::FirstOrDefaultAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):Task_1",
@@ -9180,7 +9219,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::LastAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -9200,7 +9242,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::LastAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):Task_1",
@@ -9220,7 +9265,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::LastOrDefaultAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -9240,7 +9288,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::LastOrDefaultAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):Task_1",
@@ -9260,7 +9311,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SingleAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -9280,7 +9334,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SingleAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):Task_1",
@@ -9300,7 +9357,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SingleOrDefaultAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -9320,7 +9380,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SingleOrDefaultAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):Task_1",
@@ -9340,7 +9403,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::MinAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -9360,7 +9426,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::MinAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):Task_1",
@@ -9380,7 +9449,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::MaxAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -9400,7 +9472,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::MaxAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):Task_1",
@@ -9420,7 +9495,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9440,7 +9518,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9460,7 +9541,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9480,7 +9564,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9500,7 +9587,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9520,7 +9610,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9540,7 +9633,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9560,7 +9656,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9580,7 +9679,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9600,7 +9702,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9620,7 +9725,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9640,7 +9748,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9660,7 +9771,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9680,7 +9794,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9700,7 +9817,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9720,7 +9840,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9740,7 +9863,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9760,7 +9886,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9780,7 +9909,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9800,7 +9932,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::SumAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9820,7 +9955,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9840,7 +9978,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9860,7 +10001,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9880,7 +10024,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Decimal,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9900,7 +10047,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9920,7 +10070,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9940,7 +10093,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9960,7 +10116,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -9980,7 +10139,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10000,7 +10162,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Int64,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10020,7 +10185,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10040,7 +10208,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Double,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10060,7 +10231,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10080,7 +10254,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(System.Linq.IQueryable_1[[System.Nullable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10100,7 +10277,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10120,7 +10300,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AverageAsync(IQueryable_1,Expression_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Nullable_1[[System.Single,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10140,7 +10323,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ContainsAsync(IQueryable_1,TSource,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Boolean,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10160,7 +10346,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ToListAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -10180,7 +10369,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ToArrayAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -10200,7 +10392,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ToHashSetAsync(IQueryable_1,System.Threading.CancellationToken):Task_1",
@@ -10220,7 +10415,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ToHashSetAsync(IQueryable_1,IEqualityComparer_1,System.Threading.CancellationToken):Task_1",
@@ -10240,7 +10438,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::Include(IQueryable_1,Expression_1):IIncludableQueryable_2",
@@ -10260,7 +10461,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ThenInclude(IIncludableQueryable_2,Expression_1):IIncludableQueryable_2",
@@ -10280,7 +10484,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::Include(IQueryable_1,System.String):IQueryable_1",
@@ -10300,7 +10507,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::IgnoreAutoIncludes(IQueryable_1):IQueryable_1",
@@ -10320,7 +10530,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::IgnoreQueryFilters(IQueryable_1):IQueryable_1",
@@ -10340,7 +10553,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::IgnoreQueryFilters(IQueryable_1,System.Collections.Generic.IReadOnlyCollection_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):IQueryable_1",
@@ -10360,7 +10576,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AsNoTracking(IQueryable_1):IQueryable_1",
@@ -10380,7 +10599,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AsNoTrackingWithIdentityResolution(IQueryable_1):IQueryable_1",
@@ -10400,7 +10622,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AsTracking(IQueryable_1):IQueryable_1",
@@ -10420,7 +10645,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AsTracking(IQueryable_1,Microsoft.EntityFrameworkCore.QueryTrackingBehavior):IQueryable_1",
@@ -10440,7 +10668,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::TagWith(IQueryable_1,System.String):IQueryable_1",
@@ -10460,7 +10691,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::TagWithCallSite(IQueryable_1,System.String,System.Int32):IQueryable_1",
@@ -10480,7 +10714,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::Load(IQueryable_1):System.Void",
@@ -10500,7 +10737,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::LoadAsync(IQueryable_1,System.Threading.CancellationToken):System.Threading.Tasks.Task",
@@ -10520,7 +10760,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ToDictionaryAsync(IQueryable_1,Func_2,System.Threading.CancellationToken):Task_1",
@@ -10540,7 +10783,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ToDictionaryAsync(IQueryable_1,Func_2,IEqualityComparer_1,System.Threading.CancellationToken):Task_1",
@@ -10560,7 +10806,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ToDictionaryAsync(IQueryable_1,Func_2,Func_2,System.Threading.CancellationToken):Task_1",
@@ -10580,7 +10829,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ToDictionaryAsync(IQueryable_1,Func_2,Func_2,IEqualityComparer_1,System.Threading.CancellationToken):Task_1",
@@ -10600,7 +10852,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ForEachAsync(IQueryable_1,Action_1,System.Threading.CancellationToken):System.Threading.Tasks.Task",
@@ -10620,7 +10875,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::AsAsyncEnumerable(IQueryable_1):IAsyncEnumerable_1",
@@ -10640,7 +10898,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ExecuteDelete(IQueryable_1):System.Int32",
@@ -10660,7 +10921,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ExecuteDeleteAsync(IQueryable_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10680,7 +10944,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ExecuteUpdate(IQueryable_1,Action_1):System.Int32",
@@ -10700,7 +10967,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions::ExecuteUpdateAsync(IQueryable_1,Action_1,System.Threading.CancellationToken):System.Threading.Tasks.Task_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
@@ -10720,7 +10990,10 @@
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
-          "isExtensionMethod": true
+          "isExtensionMethod": true,
+          "emitSemantics": {
+            "callStyle": "receiver"
+          }
         }
       ],
       "properties": [],
