@@ -1,0 +1,6 @@
+{
+  "bindingVersion": 1,
+  "packageName": "@tsonic/efcore",
+  "packageVersion": "10.0.40",
+  "requiredTypeRoots": ["."]
+}
