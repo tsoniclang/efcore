@@ -2839,7 +2839,10 @@
           "isOverride": false,
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "emitSemantics": {
+            "callableStaticAccessorKind": "property"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonSignedEnumReaderWriter\u00601::ConstructorExpression:System.Linq.Expressions.Expression",
@@ -3612,7 +3615,10 @@
           "isOverride": false,
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "emitSemantics": {
+            "callableStaticAccessorKind": "property"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonUnsignedEnumReaderWriter\u00601::ConstructorExpression:System.Linq.Expressions.Expression",
@@ -4305,7 +4311,10 @@
           "isOverride": false,
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "emitSemantics": {
+            "callableStaticAccessorKind": "property"
+          }
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonWarningEnumReaderWriter\u00601::ConstructorExpression:System.Linq.Expressions.Expression",

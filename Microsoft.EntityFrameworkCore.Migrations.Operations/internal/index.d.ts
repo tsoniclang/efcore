@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Migrations.Operations
 // Assembly: Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
@@ -27,7 +28,7 @@ export type IAlterMigrationOperation = IAlterMigrationOperation$instance;
 export interface ITableMigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
-    readonly Schema: string | undefined;
+    readonly Schema: string | null;
     readonly Table: string;
 }
 
@@ -43,8 +44,8 @@ export interface AddCheckConstraintOperation$instance extends MigrationOperation
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Sql: string;
     Table: string;
 }
@@ -104,13 +105,13 @@ export interface AddForeignKeyOperation$instance extends MigrationOperation$inst
     Name: string;
     OnDelete: ReferentialAction;
     OnUpdate: ReferentialAction;
-    get PrincipalColumns(): string[] | undefined;
-    set PrincipalColumns(value: string[] | undefined);
-    get PrincipalSchema(): string | undefined;
-    set PrincipalSchema(value: string | undefined);
+    get PrincipalColumns(): string[] | null;
+    set PrincipalColumns(value: string[] | null);
+    get PrincipalSchema(): string | null;
+    set PrincipalSchema(value: string | null);
     PrincipalTable: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -141,8 +142,8 @@ export interface AddPrimaryKeyOperation$instance extends MigrationOperation$inst
 
     Columns: string[];
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -173,8 +174,8 @@ export interface AddUniqueConstraintOperation$instance extends MigrationOperatio
 
     Columns: string[];
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -261,8 +262,8 @@ export interface AlterSequenceOperation$instance extends SequenceOperation$insta
 
     Name: string;
     OldSequence: SequenceOperation;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
 }
 
 
@@ -319,18 +320,18 @@ export interface ColumnOperation$instance extends MigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     ClrType: Type;
-    get Collation(): string | undefined;
-    set Collation(value: string | undefined);
-    get ColumnType(): string | undefined;
-    set ColumnType(value: string | undefined);
-    get Comment(): string | undefined;
-    set Comment(value: string | undefined);
-    get ComputedColumnSql(): string | undefined;
-    set ComputedColumnSql(value: string | undefined);
-    get DefaultValue(): unknown | undefined;
-    set DefaultValue(value: unknown | undefined);
-    get DefaultValueSql(): string | undefined;
-    set DefaultValueSql(value: string | undefined);
+    get Collation(): string | null;
+    set Collation(value: string | null);
+    get ColumnType(): string | null;
+    set ColumnType(value: string | null);
+    get Comment(): string | null;
+    set Comment(value: string | null);
+    get ComputedColumnSql(): string | null;
+    set ComputedColumnSql(value: string | null);
+    get DefaultValue(): JsValue | null;
+    set DefaultValue(value: JsValue | null);
+    get DefaultValueSql(): string | null;
+    set DefaultValueSql(value: string | null);
     get IsFixedLength(): Nullable_1<System_Internal.Boolean>;
     set IsFixedLength(value: Nullable_1<System_Internal.Boolean> | boolean);
     IsNullable: boolean;
@@ -346,8 +347,8 @@ export interface ColumnOperation$instance extends MigrationOperation$instance {
     set Precision(value: Nullable_1<System_Internal.Int32> | int);
     get Scale(): Nullable_1<System_Internal.Int32>;
     set Scale(value: Nullable_1<System_Internal.Int32> | int);
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -375,14 +376,14 @@ export interface CreateIndexOperation$instance extends MigrationOperation$instan
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Columns: string[];
-    get Filter(): string | undefined;
-    set Filter(value: string | undefined);
-    get IsDescending(): boolean[] | undefined;
-    set IsDescending(value: boolean[] | undefined);
+    get Filter(): string | null;
+    set Filter(value: string | null);
+    get IsDescending(): boolean[] | null;
+    set IsDescending(value: boolean[] | null);
     IsUnique: boolean;
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -412,8 +413,8 @@ export interface CreateSequenceOperation$instance extends SequenceOperation$inst
 
     ClrType: Type;
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     StartValue: long;
 }
 
@@ -443,8 +444,8 @@ export interface CreateTableOperation$instance extends TableOperation$instance {
     readonly CheckConstraints: List_1<AddCheckConstraintOperation>;
     readonly Columns: List_1<AddColumnOperation>;
     readonly ForeignKeys: List_1<AddForeignKeyOperation>;
-    get PrimaryKey(): AddPrimaryKeyOperation | undefined;
-    set PrimaryKey(value: AddPrimaryKeyOperation | undefined);
+    get PrimaryKey(): AddPrimaryKeyOperation | null;
+    set PrimaryKey(value: AddPrimaryKeyOperation | null);
     readonly UniqueConstraints: List_1<AddUniqueConstraintOperation>;
 }
 
@@ -471,8 +472,8 @@ export interface DatabaseOperation$instance extends MigrationOperation$instance 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
-    get Collation(): string | undefined;
-    set Collation(value: string | undefined);
+    get Collation(): string | null;
+    set Collation(value: string | null);
 }
 
 
@@ -498,11 +499,11 @@ export interface DeleteDataOperation$instance extends MigrationOperation$instanc
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     KeyColumns: string[];
-    get KeyColumnTypes(): string[] | undefined;
-    set KeyColumnTypes(value: string[] | undefined);
-    KeyValues: Array<Array<(unknown | undefined)>>;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get KeyColumnTypes(): string[] | null;
+    set KeyColumnTypes(value: string[] | null);
+    KeyValues: Array<Array<(JsValue | null)>>;
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -531,8 +532,8 @@ export interface DropCheckConstraintOperation$instance extends MigrationOperatio
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -561,8 +562,8 @@ export interface DropColumnOperation$instance extends MigrationOperation$instanc
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -591,8 +592,8 @@ export interface DropForeignKeyOperation$instance extends MigrationOperation$ins
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -620,10 +621,10 @@ export interface DropIndexOperation$instance extends MigrationOperation$instance
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
-    get Table(): string | undefined;
-    set Table(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
+    get Table(): string | null;
+    set Table(value: string | null);
 }
 
 
@@ -650,8 +651,8 @@ export interface DropPrimaryKeyOperation$instance extends MigrationOperation$ins
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -704,8 +705,8 @@ export interface DropSequenceOperation$instance extends MigrationOperation$insta
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
 }
 
 
@@ -732,8 +733,8 @@ export interface DropTableOperation$instance extends MigrationOperation$instance
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
 }
 
 
@@ -761,8 +762,8 @@ export interface DropUniqueConstraintOperation$instance extends MigrationOperati
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -816,12 +817,12 @@ export interface InsertDataOperation$instance extends MigrationOperation$instanc
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Columns: string[];
-    get ColumnTypes(): string[] | undefined;
-    set ColumnTypes(value: string[] | undefined);
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get ColumnTypes(): string[] | null;
+    set ColumnTypes(value: string[] | null);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
-    Values: Array<Array<(unknown | undefined)>>;
+    Values: Array<Array<(JsValue | null)>>;
 }
 
 
@@ -874,8 +875,8 @@ export interface RenameColumnOperation$instance extends MigrationOperation$insta
 
     Name: string;
     NewName: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
 }
 
@@ -904,10 +905,10 @@ export interface RenameIndexOperation$instance extends MigrationOperation$instan
 
     Name: string;
     NewName: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
-    get Table(): string | undefined;
-    set Table(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
+    get Table(): string | null;
+    set Table(value: string | null);
 }
 
 
@@ -933,12 +934,12 @@ export interface RenameSequenceOperation$instance extends MigrationOperation$ins
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     Name: string;
-    get NewName(): string | undefined;
-    set NewName(value: string | undefined);
-    get NewSchema(): string | undefined;
-    set NewSchema(value: string | undefined);
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get NewName(): string | null;
+    set NewName(value: string | null);
+    get NewSchema(): string | null;
+    set NewSchema(value: string | null);
+    get Schema(): string | null;
+    set Schema(value: string | null);
 }
 
 
@@ -965,12 +966,12 @@ export interface RenameTableOperation$instance extends MigrationOperation$instan
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Name: string;
-    get NewName(): string | undefined;
-    set NewName(value: string | undefined);
-    get NewSchema(): string | undefined;
-    set NewSchema(value: string | undefined);
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get NewName(): string | null;
+    set NewName(value: string | null);
+    get NewSchema(): string | null;
+    set NewSchema(value: string | null);
+    get Schema(): string | null;
+    set Schema(value: string | null);
 }
 
 
@@ -997,8 +998,8 @@ export interface RestartSequenceOperation$instance extends MigrationOperation$in
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     get StartValue(): Nullable_1<System_Internal.Int64>;
     set StartValue(value: Nullable_1<System_Internal.Int64> | long);
 }
@@ -1081,11 +1082,11 @@ export interface TableOperation$instance extends MigrationOperation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
-    get Comment(): string | undefined;
-    set Comment(value: string | undefined);
+    get Comment(): string | null;
+    set Comment(value: string | null);
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
 }
 
 
@@ -1112,16 +1113,16 @@ export interface UpdateDataOperation$instance extends MigrationOperation$instanc
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_ITableMigrationOperation: never;
 
     Columns: string[];
-    get ColumnTypes(): string[] | undefined;
-    set ColumnTypes(value: string[] | undefined);
+    get ColumnTypes(): string[] | null;
+    set ColumnTypes(value: string[] | null);
     KeyColumns: string[];
-    get KeyColumnTypes(): string[] | undefined;
-    set KeyColumnTypes(value: string[] | undefined);
-    KeyValues: Array<Array<(unknown | undefined)>>;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get KeyColumnTypes(): string[] | null;
+    set KeyColumnTypes(value: string[] | null);
+    KeyValues: Array<Array<(JsValue | null)>>;
+    get Schema(): string | null;
+    set Schema(value: string | null);
     Table: string;
-    Values: Array<Array<(unknown | undefined)>>;
+    Values: Array<Array<(JsValue | null)>>;
 }
 
 

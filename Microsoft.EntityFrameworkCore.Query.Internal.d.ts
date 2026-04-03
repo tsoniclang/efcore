@@ -37,6 +37,7 @@ export { CompiledQueryCache as CompiledQueryCache } from './Microsoft.EntityFram
 export { EntityQueryable_1 as EntityQueryable } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { EntityQueryProvider as EntityQueryProvider } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { ExpressionTreeFuncletizer as ExpressionTreeFuncletizer } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
+export { ExpressionTreeFuncletizer_PathNode as ExpressionTreeFuncletizer_PathNode } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export type ICompiledQueryCache = Internal.ICompiledQueryCache;
 export { InvocationExpressionRemovingExpressionVisitor as InvocationExpressionRemovingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export type IParameterNullabilityInfo = Internal.IParameterNullabilityInfo;
@@ -57,7 +58,6 @@ export { QueryTranslationPreprocessorFactory as QueryTranslationPreprocessorFact
 export { StructuralTypeMaterializerSource as StructuralTypeMaterializerSource } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { StructuralTypeMaterializerSourceDependencies as StructuralTypeMaterializerSourceDependencies } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { SubqueryMemberPushdownExpressionVisitor as SubqueryMemberPushdownExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
-export { ExpressionTreeFuncletizer_PathNode as ExpressionTreeFuncletizer_PathNode } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { BufferedDataReader as BufferedDataReader } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { FromSqlQueryRootExpression as FromSqlQueryRootExpression } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { GroupBySingleQueryingEnumerable$instance as GroupBySingleQueryingEnumerable_0 } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';

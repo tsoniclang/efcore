@@ -3083,6 +3083,109 @@
       ]
     },
     {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey",
+      "clrName": "Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Struct",
+      "accessibility": "Protected",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.ValueType",
+        "clrName": "System.ValueType"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
+          "clrName": "System.IEquatable\u00601",
+          "typeArguments": [
+            "CompiledQueryCacheKey"
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey::Equals(System.Object):System.Boolean",
+          "clrName": "Equals",
+          "metadataToken": 100677618,
+          "canonicalSignature": "(System.Object):System.Boolean",
+          "normalizedSignature": "Equals|(System.Object):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey::Equals(Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey):System.Boolean",
+          "clrName": "Equals",
+          "metadataToken": 100677619,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey):System.Boolean",
+          "normalizedSignature": "Equals|(Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey::GetHashCode():System.Int32",
+          "clrName": "GetHashCode",
+          "metadataToken": 100677620,
+          "canonicalSignature": "():System.Int32",
+          "normalizedSignature": "GetHashCode|():System.Int32|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey::.ctor(System.Linq.Expressions.Expression,Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.QueryTrackingBehavior,System.Boolean):void",
+          "metadataToken": 100677617,
+          "canonicalSignature": "(System.Linq.Expressions.Expression,Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.QueryTrackingBehavior,System.Boolean):void",
+          "normalizedSignature": "constructor|(System.Linq.Expressions.Expression,Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.QueryTrackingBehavior,System.Boolean):void|static=false",
+          "isStatic": false,
+          "parameterCount": 4,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGeneratorDependencies",
       "clrName": "Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGeneratorDependencies",
       "assemblyName": "Microsoft.EntityFrameworkCore",
@@ -14446,6 +14549,109 @@
       ]
     },
     {
+      "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey",
+      "clrName": "Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey",
+      "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
+      "metadataToken": 0,
+      "kind": "Struct",
+      "accessibility": "Protected",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.ValueType",
+        "clrName": "System.ValueType"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
+          "clrName": "System.IEquatable\u00601",
+          "typeArguments": [
+            "RelationalCompiledQueryCacheKey"
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey::Equals(System.Object):System.Boolean",
+          "clrName": "Equals",
+          "metadataToken": 100673357,
+          "canonicalSignature": "(System.Object):System.Boolean",
+          "normalizedSignature": "Equals|(System.Object):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey::Equals(Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey):System.Boolean",
+          "clrName": "Equals",
+          "metadataToken": 100673358,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey):System.Boolean",
+          "normalizedSignature": "Equals|(Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isSealed": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey::GetHashCode():System.Int32",
+          "clrName": "GetHashCode",
+          "metadataToken": 100673359,
+          "canonicalSignature": "():System.Int32",
+          "normalizedSignature": "GetHashCode|():System.Int32|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 0,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey::.ctor(Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey,System.Boolean,System.Nullable_1[[Microsoft.EntityFrameworkCore.QuerySplittingBehavior,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean):void",
+          "metadataToken": 100673356,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey,System.Boolean,System.Nullable_1[[Microsoft.EntityFrameworkCore.QuerySplittingBehavior,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator\u002BCompiledQueryCacheKey,System.Boolean,System.Nullable_1[[Microsoft.EntityFrameworkCore.QuerySplittingBehavior,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Boolean):void|static=false",
+          "isStatic": false,
+          "parameterCount": 4,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator\u002BRelationalCompiledQueryCacheKey",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ]
+    },
+    {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGeneratorDependencies",
       "clrName": "Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGeneratorDependencies",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
@@ -18452,6 +18658,39 @@
           "parameterCount": 1,
           "visibility": "Protected",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor\u002BRelationalInferredTypeMappingApplier",
+      "clrName": "Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor\u002BRelationalInferredTypeMappingApplier",
+      "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Protected",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Object",
+        "clrName": "System.Object"
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor\u002BRelationalInferredTypeMappingApplier::.ctor():void",
+          "metadataToken": 100673400,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor\u002BRelationalInferredTypeMappingApplier",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
       ]

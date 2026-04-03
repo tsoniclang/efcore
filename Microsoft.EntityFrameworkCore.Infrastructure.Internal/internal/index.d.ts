@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Infrastructure.Internal
 // Assembly: Microsoft.EntityFrameworkCore
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import type { IDiagnosticsLogger_1 } from "../../Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js";
@@ -66,8 +67,8 @@ export interface CoreSingletonOptions$instance {
 
     AreDetailedErrorsEnabled: boolean;
     AreThreadSafetyChecksEnabled: boolean;
-    get RootApplicationServiceProvider(): IServiceProvider | undefined;
-    set RootApplicationServiceProvider(value: IServiceProvider | undefined);
+    get RootApplicationServiceProvider(): IServiceProvider | null;
+    set RootApplicationServiceProvider(value: IServiceProvider | null);
     Initialize(options: IDbContextOptions): void;
     Validate(options: IDbContextOptions): void;
 }
@@ -196,17 +197,17 @@ export interface LazyLoader$instance extends Microsoft_EntityFrameworkCore_Infra
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ILazyLoader: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IInjectableService: never;
 
-    get Context(): DbContext | undefined;
-    set Context(value: DbContext | undefined);
+    get Context(): DbContext | null;
+    set Context(value: DbContext | null);
     readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>;
-    Attaching(context: DbContext, entityType: IEntityType, entity: unknown): void;
-    Detaching(context: DbContext, entity: unknown): boolean;
+    Attaching(context: DbContext, entityType: IEntityType, entity: JsValue): void;
+    Detaching(context: DbContext, entity: JsValue): boolean;
     Dispose(): void;
-    Injected(context: DbContext, entity: unknown, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, structuralType: ITypeBase): void;
-    IsLoaded(entity: unknown, navigationName?: string): boolean;
-    Load(entity: unknown, navigationName?: string): void;
-    LoadAsync(entity: unknown, cancellationToken?: CancellationToken, navigationName?: string): Task;
-    SetLoaded(entity: unknown, navigationName?: string, loaded?: boolean): void;
+    Injected(context: DbContext, entity: JsValue, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, structuralType: ITypeBase): void;
+    IsLoaded(entity: JsValue, navigationName?: string): boolean;
+    Load(entity: JsValue, navigationName?: string): void;
+    LoadAsync(entity: JsValue, cancellationToken?: CancellationToken, navigationName?: string): Task;
+    SetLoaded(entity: JsValue, navigationName?: string, loaded?: boolean): void;
 }
 
 
@@ -255,7 +256,7 @@ export interface MemberInfoNameComparer$instance {
 
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
 
-    Compare(x: MemberInfo, y: MemberInfo): int;
+    Compare(x: MemberInfo | null, y: MemberInfo | null): int;
 }
 
 
@@ -274,7 +275,7 @@ export abstract class DbContextOptionsExtensions$instance {
 export type DbContextOptionsExtensions = DbContextOptionsExtensions$instance;
 
 export abstract class InfrastructureExtensions$instance {
-    static GetService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): unknown;
+    static GetService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): JsValue;
     static GetService<TService>(accessor: IInfrastructure_1<IServiceProvider>): TService;
 }
 

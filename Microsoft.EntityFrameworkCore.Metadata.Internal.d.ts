@@ -57,6 +57,7 @@ export { CoreAnnotationNames$instance as CoreAnnotationNames } from './Microsoft
 export { DesignTimeModel as DesignTimeModel } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { ElementType as ElementType } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { EntityType as EntityType } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
+export { EntityType_Snapshot as EntityType_Snapshot } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { EntityTypeExtensions$instance as EntityTypeExtensions } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { EntityTypeParameterBindingFactory as EntityTypeParameterBindingFactory } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { ForeignKey as ForeignKey } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
@@ -130,7 +131,6 @@ export { TypeBaseExtensions$instance as TypeBaseExtensions } from './Microsoft.E
 export { TypeConfigurationType as TypeConfigurationType } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { TypeConfigurationTypeExtensions$instance as TypeConfigurationTypeExtensions } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { TypeIdentity as TypeIdentity } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
-export { EntityType_Snapshot as EntityType_Snapshot } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { CheckConstraint as CheckConstraint } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { Column as Column } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { ColumnBase_1 as ColumnBase } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';

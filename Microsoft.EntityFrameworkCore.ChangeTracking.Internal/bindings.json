@@ -12832,6 +12832,352 @@
       ]
     },
     {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType",
+      "clrName": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Enum",
+      "accessibility": "Protected",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Enum",
+        "clrName": "System.Enum"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IComparable",
+          "clrName": "System.IComparable"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.ISpanFormattable",
+          "clrName": "System.ISpanFormattable"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.IFormattable",
+          "clrName": "System.IFormattable"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.IConvertible",
+          "clrName": "System.IConvertible"
+        }
+      ],
+      "methods": [],
+      "properties": [],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType::value__System.Int32",
+          "clrName": "value__",
+          "metadataToken": 67114343,
+          "normalizedSignature": "value__|System.Int32|static=false|const=false",
+          "isStatic": false,
+          "isReadOnly": false,
+          "isLiteral": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType::NormalMicrosoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType",
+          "clrName": "Normal",
+          "metadataToken": 67114344,
+          "normalizedSignature": "Normal|Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType|static=true|const=true",
+          "isStatic": true,
+          "isReadOnly": false,
+          "isLiteral": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType::StoreGeneratedMicrosoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType",
+          "clrName": "StoreGenerated",
+          "metadataToken": 67114345,
+          "normalizedSignature": "StoreGenerated|Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType|static=true|const=true",
+          "isStatic": true,
+          "isReadOnly": false,
+          "isLiteral": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType::TemporaryMicrosoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType",
+          "clrName": "Temporary",
+          "metadataToken": 67114346,
+          "normalizedSignature": "Temporary|Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType|static=true|const=true",
+          "isStatic": true,
+          "isReadOnly": false,
+          "isLiteral": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BCurrentValueType",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+      "clrName": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Enum",
+      "accessibility": "ProtectedInternal",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.Enum",
+        "clrName": "System.Enum"
+      },
+      "interfaces": [
+        {
+          "stableId": "System.Private.CoreLib:System.IComparable",
+          "clrName": "System.IComparable"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.ISpanFormattable",
+          "clrName": "System.ISpanFormattable"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.IFormattable",
+          "clrName": "System.IFormattable"
+        },
+        {
+          "stableId": "System.Private.CoreLib:System.IConvertible",
+          "clrName": "System.IConvertible"
+        }
+      ],
+      "methods": [],
+      "properties": [],
+      "fields": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag::value__System.Int32",
+          "clrName": "value__",
+          "metadataToken": 67114354,
+          "normalizedSignature": "value__|System.Int32|static=false|const=false",
+          "isStatic": false,
+          "isReadOnly": false,
+          "isLiteral": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag::ModifiedMicrosoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "clrName": "Modified",
+          "metadataToken": 67114355,
+          "normalizedSignature": "Modified|Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag|static=true|const=true",
+          "isStatic": true,
+          "isReadOnly": false,
+          "isLiteral": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag::NullMicrosoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "clrName": "Null",
+          "metadataToken": 67114356,
+          "normalizedSignature": "Null|Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag|static=true|const=true",
+          "isStatic": true,
+          "isReadOnly": false,
+          "isLiteral": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag::UnknownMicrosoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "clrName": "Unknown",
+          "metadataToken": 67114357,
+          "normalizedSignature": "Unknown|Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag|static=true|const=true",
+          "isStatic": true,
+          "isReadOnly": false,
+          "isLiteral": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag::IsLoadedMicrosoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "clrName": "IsLoaded",
+          "metadataToken": 67114358,
+          "normalizedSignature": "IsLoaded|Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag|static=true|const=true",
+          "isStatic": true,
+          "isReadOnly": false,
+          "isLiteral": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag::IsTemporaryMicrosoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "clrName": "IsTemporary",
+          "metadataToken": 67114359,
+          "normalizedSignature": "IsTemporary|Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag|static=true|const=true",
+          "isStatic": true,
+          "isReadOnly": false,
+          "isLiteral": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag::IsStoreGeneratedMicrosoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "clrName": "IsStoreGenerated",
+          "metadataToken": 67114360,
+          "normalizedSignature": "IsStoreGenerated|Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag|static=true|const=true",
+          "isStatic": true,
+          "isReadOnly": false,
+          "isLiteral": true,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "events": [],
+      "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData",
+      "clrName": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Struct",
+      "accessibility": "ProtectedInternal",
+      "isAbstract": false,
+      "isSealed": true,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "System.Private.CoreLib:System.ValueType",
+        "clrName": "System.ValueType"
+      },
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData::FlagAllProperties(System.Int32,Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag,System.Boolean):System.Void",
+          "clrName": "FlagAllProperties",
+          "metadataToken": 100680161,
+          "canonicalSignature": "(System.Int32,Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag,System.Boolean):System.Void",
+          "normalizedSignature": "FlagAllProperties|(System.Int32,Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag,System.Boolean):System.Void|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData::IsPropertyFlagged(System.Int32,Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag):System.Boolean",
+          "clrName": "IsPropertyFlagged",
+          "metadataToken": 100680164,
+          "canonicalSignature": "(System.Int32,Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag):System.Boolean",
+          "normalizedSignature": "IsPropertyFlagged|(System.Int32,Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData::FlagProperty(System.Int32,Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag,System.Boolean):System.Void",
+          "clrName": "FlagProperty",
+          "metadataToken": 100680165,
+          "canonicalSignature": "(System.Int32,Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag,System.Boolean):System.Void",
+          "normalizedSignature": "FlagProperty|(System.Int32,Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag,System.Boolean):System.Void|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 3,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData::AnyPropertiesFlagged(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag):System.Boolean",
+          "clrName": "AnyPropertiesFlagged",
+          "metadataToken": 100680166,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag):System.Boolean",
+          "normalizedSignature": "AnyPropertiesFlagged|(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BPropertyFlag):System.Boolean|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData::EntityState:Microsoft.EntityFrameworkCore.EntityState",
+          "clrName": "EntityState",
+          "metadataToken": 385878683,
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.EntityState",
+          "normalizedSignature": "EntityState|:Microsoft.EntityFrameworkCore.EntityState|static=false|accessor=getset",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "isIndexer": false,
+          "hasGetter": true,
+          "hasSetter": true,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData::.ctor(System.Int32,System.Int32):void",
+          "metadataToken": 100680160,
+          "canonicalSignature": "(System.Int32,System.Int32):void",
+          "normalizedSignature": "constructor|(System.Int32,System.Int32):void|static=false",
+          "isStatic": false,
+          "parameterCount": 2,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase\u002BStateData",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntrySubscriber",
       "clrName": "Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntrySubscriber",
       "assemblyName": "Microsoft.EntityFrameworkCore",

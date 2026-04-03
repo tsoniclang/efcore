@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.ValueGeneration.Internal
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import type { EntityEntry } from "../../Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js";
@@ -21,8 +22,8 @@ export interface ConvertedValueGenerator$instance extends ValueGenerator {
 
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
-    NextValue(entry: EntityEntry): unknown | undefined;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    NextValue(entry: EntityEntry): JsValue | null;
 }
 
 
@@ -38,7 +39,7 @@ export interface DiscriminatorValueGenerator$instance extends ValueGenerator {
 
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
-    NextValue(entry: EntityEntry): unknown;
+    NextValue(entry: EntityEntry): JsValue;
 }
 
 
@@ -54,7 +55,7 @@ export interface TemporaryBinaryValueGenerator$instance extends ValueGenerator_1
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): byte[];
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -69,7 +70,7 @@ export interface TemporaryByteValueGenerator$instance extends TemporaryNumberVal
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryByteValueGenerator: never;
 
     Next(entry: EntityEntry): byte;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -84,7 +85,7 @@ export interface TemporaryCharValueGenerator$instance extends TemporaryNumberVal
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryCharValueGenerator: never;
 
     Next(entry: EntityEntry): char;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -100,7 +101,7 @@ export interface TemporaryDateTimeOffsetValueGenerator$instance extends ValueGen
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): DateTimeOffset;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -116,7 +117,7 @@ export interface TemporaryDateTimeValueGenerator$instance extends ValueGenerator
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): DateTime;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -131,7 +132,7 @@ export interface TemporaryDecimalValueGenerator$instance extends TemporaryNumber
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryDecimalValueGenerator: never;
 
     Next(entry: EntityEntry): decimal;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -146,7 +147,7 @@ export interface TemporaryDoubleValueGenerator$instance extends TemporaryNumberV
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryDoubleValueGenerator: never;
 
     Next(entry: EntityEntry): double;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -161,7 +162,7 @@ export interface TemporaryFloatValueGenerator$instance extends TemporaryNumberVa
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryFloatValueGenerator: never;
 
     Next(entry: EntityEntry): float;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -176,7 +177,7 @@ export interface TemporaryIntValueGenerator$instance extends TemporaryNumberValu
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryIntValueGenerator: never;
 
     Next(entry: EntityEntry): int;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -191,7 +192,7 @@ export interface TemporaryLongValueGenerator$instance extends TemporaryNumberVal
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryLongValueGenerator: never;
 
     Next(entry: EntityEntry): long;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -219,7 +220,7 @@ export interface TemporarySByteValueGenerator$instance extends TemporaryNumberVa
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporarySByteValueGenerator: never;
 
     Next(entry: EntityEntry): sbyte;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -234,7 +235,7 @@ export interface TemporaryShortValueGenerator$instance extends TemporaryNumberVa
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryShortValueGenerator: never;
 
     Next(entry: EntityEntry): short;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -250,7 +251,7 @@ export interface TemporaryStringValueGenerator$instance extends ValueGenerator_1
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): string;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -265,7 +266,7 @@ export interface TemporaryUIntValueGenerator$instance extends TemporaryNumberVal
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryUIntValueGenerator: never;
 
     Next(entry: EntityEntry): uint;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -280,7 +281,7 @@ export interface TemporaryULongValueGenerator$instance extends TemporaryNumberVa
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryULongValueGenerator: never;
 
     Next(entry: EntityEntry): ulong;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -295,7 +296,7 @@ export interface TemporaryUShortValueGenerator$instance extends TemporaryNumberV
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_Internal_TemporaryUShortValueGenerator: never;
 
     Next(entry: EntityEntry): ushort;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 

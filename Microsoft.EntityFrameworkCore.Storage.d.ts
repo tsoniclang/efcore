@@ -9,7 +9,7 @@ import * as Internal from './Microsoft.EntityFrameworkCore.Storage/internal/inde
 import type { ValueComparer } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 import type { CommandSource, DbCommandMethod, IDiagnosticsLogger_1, ILoggingOptions, IRelationalCommandDiagnosticsLogger, IRelationalConnectionDiagnosticsLogger } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
 import type { IConcurrencyDetector, ICoreSingletonOptions, ICurrentDbContext, IDbContextOptions, IDbContextOptionsExtension, IInfrastructure_1, IResettableService } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
-import type { IAdHocMapper, IElementType, IEntityType, IModel, IProperty, IPropertyBase, ITypeMappingConfiguration } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
+import type { IAdHocMapper, IElementType, IEntityType, IModel, IProperty, IPropertyBase, ITypeBase, ITypeMappingConfiguration } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
 import type { IMigrationCommandExecutor, IMigrationsModelDiffer, IMigrationsSqlGenerator, MigrationCommand, MigrationsSqlGenerationOptions } from './Microsoft.EntityFrameworkCore.Migrations/internal/index.js';
 import type { IAsyncQueryProvider, IQueryCompilationContextFactory, QueryContext } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 import type { INamedConnectionStringResolver } from './Microsoft.EntityFrameworkCore.Storage.Internal/internal/index.js';
@@ -32,6 +32,7 @@ import type { Transaction } from '@tsonic/dotnet/System.Transactions.js';
 
 // Public API exports (curated - no internal $instance/$views leakage)
 export { CoreTypeMapping as CoreTypeMapping } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
+export { CoreTypeMapping_CoreTypeMappingParameters as CoreTypeMapping_CoreTypeMappingParameters } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 export { Database as Database } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 export { DatabaseDependencies as DatabaseDependencies } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 export { DatabaseProvider_1 as DatabaseProvider } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
@@ -117,6 +118,7 @@ export { RelationalTransaction as RelationalTransaction } from './Microsoft.Enti
 export { RelationalTransactionFactory as RelationalTransactionFactory } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 export { RelationalTransactionFactoryDependencies as RelationalTransactionFactoryDependencies } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 export { RelationalTypeMapping as RelationalTypeMapping } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
+export { RelationalTypeMapping_RelationalTypeMappingParameters as RelationalTypeMapping_RelationalTypeMappingParameters } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 export { RelationalTypeMappingInfo as RelationalTypeMappingInfo } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 export { RelationalTypeMappingSource as RelationalTypeMappingSource } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 export { RelationalTypeMappingSourceDependencies as RelationalTypeMappingSourceDependencies } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';

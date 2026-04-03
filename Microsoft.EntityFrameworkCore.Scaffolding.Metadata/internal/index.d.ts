@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Scaffolding.Metadata
 // Assembly: Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
@@ -22,22 +23,22 @@ export interface DatabaseColumn$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
-    get Collation(): string | undefined;
-    set Collation(value: string | undefined);
-    get Comment(): string | undefined;
-    set Comment(value: string | undefined);
-    get ComputedColumnSql(): string | undefined;
-    set ComputedColumnSql(value: string | undefined);
-    get DefaultValue(): unknown | undefined;
-    set DefaultValue(value: unknown | undefined);
-    get DefaultValueSql(): string | undefined;
-    set DefaultValueSql(value: string | undefined);
+    get Collation(): string | null;
+    set Collation(value: string | null);
+    get Comment(): string | null;
+    set Comment(value: string | null);
+    get ComputedColumnSql(): string | null;
+    set ComputedColumnSql(value: string | null);
+    get DefaultValue(): JsValue | null;
+    set DefaultValue(value: JsValue | null);
+    get DefaultValueSql(): string | null;
+    set DefaultValueSql(value: string | null);
     IsNullable: boolean;
     get IsStored(): Nullable_1<System_Internal.Boolean>;
     set IsStored(value: Nullable_1<System_Internal.Boolean> | boolean);
     Name: string;
-    get StoreType(): string | undefined;
-    set StoreType(value: string | undefined);
+    get StoreType(): string | null;
+    set StoreType(value: string | null);
     Table: DatabaseTable;
     get ValueGenerated(): Nullable_1<ValueGenerated>;
     set ValueGenerated(value: Nullable_1<ValueGenerated> | ValueGenerated);
@@ -67,8 +68,8 @@ export interface DatabaseForeignKey$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     readonly Columns: IList_1<DatabaseColumn>;
-    get Name(): string | undefined;
-    set Name(value: string | undefined);
+    get Name(): string | null;
+    set Name(value: string | null);
     get OnDelete(): Nullable_1<ReferentialAction>;
     set OnDelete(value: Nullable_1<ReferentialAction> | ReferentialAction);
     readonly PrincipalColumns: IList_1<DatabaseColumn>;
@@ -100,14 +101,14 @@ export interface DatabaseIndex$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     readonly Columns: IList_1<DatabaseColumn>;
-    get Filter(): string | undefined;
-    set Filter(value: string | undefined);
+    get Filter(): string | null;
+    set Filter(value: string | null);
     IsDescending: IList_1<System_Internal.Boolean>;
     IsUnique: boolean;
-    get Name(): string | undefined;
-    set Name(value: string | undefined);
-    get Table(): DatabaseTable | undefined;
-    set Table(value: DatabaseTable | undefined);
+    get Name(): string | null;
+    set Name(value: string | null);
+    get Table(): DatabaseTable | null;
+    set Table(value: DatabaseTable | null);
     ToString(): string;
 }
 
@@ -133,12 +134,12 @@ export interface DatabaseModel$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
-    get Collation(): string | undefined;
-    set Collation(value: string | undefined);
-    get DatabaseName(): string | undefined;
-    set DatabaseName(value: string | undefined);
-    get DefaultSchema(): string | undefined;
-    set DefaultSchema(value: string | undefined);
+    get Collation(): string | null;
+    set Collation(value: string | null);
+    get DatabaseName(): string | null;
+    set DatabaseName(value: string | null);
+    get DefaultSchema(): string | null;
+    set DefaultSchema(value: string | null);
     readonly Sequences: IList_1<DatabaseSequence>;
     readonly Tables: IList_1<DatabaseTable>;
 }
@@ -166,10 +167,10 @@ export interface DatabasePrimaryKey$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     readonly Columns: IList_1<DatabaseColumn>;
-    get Name(): string | undefined;
-    set Name(value: string | undefined);
-    get Table(): DatabaseTable | undefined;
-    set Table(value: DatabaseTable | undefined);
+    get Name(): string | null;
+    set Name(value: string | null);
+    get Table(): DatabaseTable | null;
+    set Table(value: DatabaseTable | null);
     ToString(): string;
 }
 
@@ -205,12 +206,12 @@ export interface DatabaseSequence$instance extends Annotatable {
     get MinValue(): Nullable_1<System_Internal.Int64>;
     set MinValue(value: Nullable_1<System_Internal.Int64> | long);
     Name: string;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     get StartValue(): Nullable_1<System_Internal.Int64>;
     set StartValue(value: Nullable_1<System_Internal.Int64> | long);
-    get StoreType(): string | undefined;
-    set StoreType(value: string | undefined);
+    get StoreType(): string | null;
+    set StoreType(value: string | null);
     ToString(): string;
 }
 
@@ -237,17 +238,17 @@ export interface DatabaseTable$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     readonly Columns: IList_1<DatabaseColumn>;
-    get Comment(): string | undefined;
-    set Comment(value: string | undefined);
-    get Database(): DatabaseModel | undefined;
-    set Database(value: DatabaseModel | undefined);
+    get Comment(): string | null;
+    set Comment(value: string | null);
+    get Database(): DatabaseModel | null;
+    set Database(value: DatabaseModel | null);
     readonly ForeignKeys: IList_1<DatabaseForeignKey>;
     readonly Indexes: IList_1<DatabaseIndex>;
     Name: string;
-    get PrimaryKey(): DatabasePrimaryKey | undefined;
-    set PrimaryKey(value: DatabasePrimaryKey | undefined);
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get PrimaryKey(): DatabasePrimaryKey | null;
+    set PrimaryKey(value: DatabasePrimaryKey | null);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     readonly Triggers: IList_1<DatabaseTrigger>;
     readonly UniqueConstraints: IList_1<DatabaseUniqueConstraint>;
     ToString(): string;
@@ -301,8 +302,8 @@ export interface DatabaseUniqueConstraint$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
     readonly Columns: IList_1<DatabaseColumn>;
-    get Name(): string | undefined;
-    set Name(value: string | undefined);
+    get Name(): string | null;
+    set Name(value: string | null);
     Table: DatabaseTable;
     ToString(): string;
 }

@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Internal
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import type { IChangeDetector, IEntityGraphAttacher, InternalEntityEntry, IStateManager } from "../../Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js";
@@ -141,9 +142,9 @@ export type IDbContextServices = IDbContextServices$instance;
 export interface IDbSetCache$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbSetCache: never;
 
-    GetOrAddSet(source: IDbSetSource, entityTypeName: string, type: Type): unknown;
-    GetOrAddSet(source: IDbSetSource, type: Type): unknown;
-    GetSets(): IEnumerable_1<unknown>;
+    GetOrAddSet(source: IDbSetSource, entityTypeName: string, type: Type): JsValue;
+    GetOrAddSet(source: IDbSetSource, type: Type): JsValue;
+    GetSets(): IEnumerable_1<JsValue>;
 }
 
 
@@ -161,8 +162,8 @@ export type IDbSetInitializer = IDbSetInitializer$instance;
 export interface IDbSetSource$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbSetSource: never;
 
-    Create(context: DbContext, name: string, type: Type): unknown;
-    Create(context: DbContext, type: Type): unknown;
+    Create(context: DbContext, name: string, type: Type): JsValue;
+    Create(context: DbContext, type: Type): JsValue;
 }
 
 
@@ -171,16 +172,16 @@ export type IDbSetSource = IDbSetSource$instance;
 export interface IEntityFinder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinder: never;
 
-    Find(keyValues: unknown[]): unknown | undefined;
-    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<unknown>;
-    FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
-    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
-    FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
-    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
-    GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
-    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
+    Find(keyValues: (JsValue | null)[] | null): JsValue | null;
+    FindAsync(keyValues: (JsValue | null)[] | null, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | null;
+    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<JsValue | null>): InternalEntityEntry | null;
+    FindEntry(keyValues: IEnumerable_1<JsValue | null>): InternalEntityEntry | null;
+    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | null;
+    GetDatabaseValues(entry: InternalEntityEntry): JsValue[] | null;
+    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<JsValue[] | null>;
     GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;
-    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): IEnumerable_1<InternalEntityEntry>;
+    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<JsValue | null>): IEnumerable_1<InternalEntityEntry>;
     Load(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions): void;
     LoadAsync(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions, cancellationToken?: CancellationToken): Task;
     Query(navigation: INavigation, entry: InternalEntityEntry): IQueryable;
@@ -192,18 +193,18 @@ export type IEntityFinder = IEntityFinder$instance;
 export interface IEntityFinder_1$instance<TEntity> extends IEntityFinder {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinder_1: never;
 
-    Find(keyValues: unknown[]): unknown | undefined;
-    Find(keyValues: unknown[]): TEntity | undefined;
-    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<TEntity>;
-    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<unknown>;
-    FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
-    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
-    FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
-    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
-    GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
-    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
+    Find(keyValues: (JsValue | null)[] | null): JsValue | null;
+    Find(keyValues: (JsValue | null)[] | null): TEntity | null;
+    FindAsync(keyValues: (JsValue | null)[] | null, cancellationToken?: CancellationToken): ValueTask_1<TEntity>;
+    FindAsync(keyValues: (JsValue | null)[] | null, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | null;
+    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<JsValue | null>): InternalEntityEntry | null;
+    FindEntry(keyValues: IEnumerable_1<JsValue | null>): InternalEntityEntry | null;
+    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | null;
+    GetDatabaseValues(entry: InternalEntityEntry): JsValue[] | null;
+    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<JsValue[] | null>;
     GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;
-    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): IEnumerable_1<InternalEntityEntry>;
+    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<JsValue | null>): IEnumerable_1<InternalEntityEntry>;
     Load(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions): void;
     LoadAsync(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions, cancellationToken?: CancellationToken): Task;
     Query(navigation: INavigation, entry: InternalEntityEntry): IQueryable;
@@ -234,9 +235,9 @@ export type IEntityFinderSource = IEntityFinderSource$instance;
 export interface IInjectableService$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IInjectableService: never;
 
-    Attaching(context: DbContext, entityType: IEntityType, entity: unknown): void;
-    Detaching(context: DbContext, entity: unknown): boolean;
-    Injected(context: DbContext, entity: unknown, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, structuralType: ITypeBase): void;
+    Attaching(context: DbContext, entityType: IEntityType, entity: JsValue): void;
+    Detaching(context: DbContext, entity: JsValue): boolean;
+    Injected(context: DbContext, entity: JsValue, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, structuralType: ITypeBase): void;
 }
 
 
@@ -315,8 +316,8 @@ export interface DbContextDependencies$instance extends IDbContextDependencies$i
     readonly StateManager: IStateManager;
     readonly UpdateLogger: IDiagnosticsLogger_1<DbLoggerCategory_Update>;
     _Clone_$(): DbContextDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: DbContextDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: DbContextDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -394,7 +395,7 @@ export interface DbContextPool_1$instance<TContext extends DbContext> extends ID
 
 
 export const DbContextPool_1: {
-    new<TContext extends DbContext>(options: DbContextOptions_1<TContext>, serviceProvider: IServiceProvider): DbContextPool_1<TContext>;
+    new<TContext extends DbContext>(options: DbContextOptions_1<TContext>, serviceProvider: IServiceProvider | null): DbContextPool_1<TContext>;
     readonly DefaultPoolSize: int;
 };
 
@@ -414,28 +415,28 @@ export interface DbContextPoolConfigurationSnapshot$instance {
     readonly AutoTransactionBehavior: AutoTransactionBehavior;
     readonly CascadeDeleteTiming: CascadeTiming;
     readonly DeleteOrphansTiming: CascadeTiming;
-    readonly DetectedAllChanges: EventHandler_1<DetectedChangesEventArgs> | undefined;
-    readonly DetectedEntityChanges: EventHandler_1<DetectedEntityChangesEventArgs> | undefined;
-    readonly DetectingAllChanges: EventHandler_1<DetectChangesEventArgs> | undefined;
-    readonly DetectingEntityChanges: EventHandler_1<DetectEntityChangesEventArgs> | undefined;
+    readonly DetectedAllChanges: EventHandler_1<DetectedChangesEventArgs> | null;
+    readonly DetectedEntityChanges: EventHandler_1<DetectedEntityChangesEventArgs> | null;
+    readonly DetectingAllChanges: EventHandler_1<DetectChangesEventArgs> | null;
+    readonly DetectingEntityChanges: EventHandler_1<DetectEntityChangesEventArgs> | null;
     readonly HasChangeDetectorConfiguration: boolean;
     readonly HasChangeTrackerConfiguration: boolean;
     readonly HasDatabaseConfiguration: boolean;
     readonly HasStateManagerConfiguration: boolean;
     readonly LazyLoadingEnabled: boolean;
     readonly QueryTrackingBehavior: Nullable_1<QueryTrackingBehavior>;
-    readonly SaveChangesFailed: EventHandler_1<SaveChangesFailedEventArgs> | undefined;
-    readonly SavedChanges: EventHandler_1<SavedChangesEventArgs> | undefined;
-    readonly SavingChanges: EventHandler_1<SavingChangesEventArgs> | undefined;
-    readonly StateChanged: EventHandler_1<EntityStateChangedEventArgs> | undefined;
-    readonly StateChanging: EventHandler_1<EntityStateChangingEventArgs> | undefined;
-    readonly Tracked: EventHandler_1<EntityTrackedEventArgs> | undefined;
-    readonly Tracking: EventHandler_1<EntityTrackingEventArgs> | undefined;
+    readonly SaveChangesFailed: EventHandler_1<SaveChangesFailedEventArgs> | null;
+    readonly SavedChanges: EventHandler_1<SavedChangesEventArgs> | null;
+    readonly SavingChanges: EventHandler_1<SavingChangesEventArgs> | null;
+    readonly StateChanged: EventHandler_1<EntityStateChangedEventArgs> | null;
+    readonly StateChanging: EventHandler_1<EntityStateChangingEventArgs> | null;
+    readonly Tracked: EventHandler_1<EntityTrackedEventArgs> | null;
+    readonly Tracking: EventHandler_1<EntityTrackingEventArgs> | null;
 }
 
 
 export const DbContextPoolConfigurationSnapshot: {
-    new(hasDatabaseConfiguration: boolean, hasStateManagerConfiguration: boolean, hasChangeTrackerConfiguration: boolean, hasChangeDetectorConfiguration: boolean, autoDetectChangesEnabled: boolean, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, autoTransactionBehavior: AutoTransactionBehavior, autoSavepointsEnabled: boolean, lazyLoadingEnabled: boolean, cascadeDeleteTiming: CascadeTiming, deleteOrphansTiming: CascadeTiming, savingChanges: EventHandler_1<SavingChangesEventArgs>, savedChanges: EventHandler_1<SavedChangesEventArgs>, saveChangesFailed: EventHandler_1<SaveChangesFailedEventArgs>, tracking: EventHandler_1<EntityTrackingEventArgs>, tracked: EventHandler_1<EntityTrackedEventArgs>, stateChanging: EventHandler_1<EntityStateChangingEventArgs>, stateChanged: EventHandler_1<EntityStateChangedEventArgs>, detectingAllChanges: EventHandler_1<DetectChangesEventArgs>, detectedAllChanges: EventHandler_1<DetectedChangesEventArgs>, detectingEntityChanges: EventHandler_1<DetectEntityChangesEventArgs>, detectedEntityChanges: EventHandler_1<DetectedEntityChangesEventArgs>): DbContextPoolConfigurationSnapshot;
+    new(hasDatabaseConfiguration: boolean, hasStateManagerConfiguration: boolean, hasChangeTrackerConfiguration: boolean, hasChangeDetectorConfiguration: boolean, autoDetectChangesEnabled: boolean, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, autoTransactionBehavior: AutoTransactionBehavior, autoSavepointsEnabled: boolean, lazyLoadingEnabled: boolean, cascadeDeleteTiming: CascadeTiming, deleteOrphansTiming: CascadeTiming, savingChanges: EventHandler_1<SavingChangesEventArgs> | null, savedChanges: EventHandler_1<SavedChangesEventArgs> | null, saveChangesFailed: EventHandler_1<SaveChangesFailedEventArgs> | null, tracking: EventHandler_1<EntityTrackingEventArgs> | null, tracked: EventHandler_1<EntityTrackedEventArgs> | null, stateChanging: EventHandler_1<EntityStateChangingEventArgs> | null, stateChanged: EventHandler_1<EntityStateChangedEventArgs> | null, detectingAllChanges: EventHandler_1<DetectChangesEventArgs> | null, detectedAllChanges: EventHandler_1<DetectedChangesEventArgs> | null, detectingEntityChanges: EventHandler_1<DetectEntityChangesEventArgs> | null, detectedEntityChanges: EventHandler_1<DetectedEntityChangesEventArgs> | null): DbContextPoolConfigurationSnapshot;
 };
 
 
@@ -493,8 +494,8 @@ export interface DbSetSource$instance extends IDbSetSource$instance {
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IDbSetSource: never;
 
-    Create(context: DbContext, type: Type): unknown;
-    Create(context: DbContext, name: string, type: Type): unknown;
+    Create(context: DbContext, type: Type): JsValue;
+    Create(context: DbContext, name: string, type: Type): JsValue;
 }
 
 
@@ -516,16 +517,16 @@ export interface EntityFinder_1$instance<TEntity> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Internal_IEntityFinder_1: never;
 
-    Find(keyValues: unknown[]): TEntity | undefined;
-    FindAsync(keyValues: unknown[], cancellationToken?: CancellationToken): ValueTask_1<TEntity>;
-    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | undefined;
-    FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | undefined;
-    FindEntry(keyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
-    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): InternalEntityEntry | undefined;
-    GetDatabaseValues(entry: InternalEntityEntry): unknown[] | undefined;
-    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<unknown[] | undefined>;
+    Find(keyValues: (JsValue | null)[] | null): TEntity | null;
+    FindAsync(keyValues: (JsValue | null)[] | null, cancellationToken?: CancellationToken): ValueTask_1<TEntity>;
+    FindEntry<TKey>(keyValue: TKey): InternalEntityEntry | null;
+    FindEntry<TProperty>(property: IProperty, propertyValue: TProperty): InternalEntityEntry | null;
+    FindEntry(keyValues: IEnumerable_1<JsValue | null>): InternalEntityEntry | null;
+    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<JsValue | null>): InternalEntityEntry | null;
+    GetDatabaseValues(entry: InternalEntityEntry): JsValue[] | null;
+    GetDatabaseValuesAsync(entry: InternalEntityEntry, cancellationToken?: CancellationToken): Task_1<JsValue[] | null>;
     GetEntries<TProperty>(property: IProperty, propertyValue: TProperty): IEnumerable_1<InternalEntityEntry>;
-    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown>): IEnumerable_1<InternalEntityEntry>;
+    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<JsValue | null>): IEnumerable_1<InternalEntityEntry>;
     Load(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions): void;
     LoadAsync(navigation: INavigation, entry: InternalEntityEntry, options: LoadOptions, cancellationToken?: CancellationToken): Task;
     Query(navigation: INavigation, entry: InternalEntityEntry): IQueryable_1<TEntity>;
@@ -634,9 +635,9 @@ export interface InternalDbSet_1$instance<TEntity> extends DbSet_1<TEntity>, Mic
     AttachRange(...entities: TEntity[]): void;
     AttachRange(entities: IEnumerable_1<TEntity>): void;
     Entry(entity: TEntity): EntityEntry_1<TEntity>;
-    Find(...keyValues: unknown[]): TEntity | undefined;
-    FindAsync(...keyValues: unknown[]): ValueTask_1<TEntity>;
-    FindAsync(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask_1<TEntity>;
+    Find(...keyValues: (JsValue | null)[] | null): TEntity | null;
+    FindAsync(...keyValues: (JsValue | null)[] | null): ValueTask_1<TEntity>;
+    FindAsync(keyValues: (JsValue | null)[] | null, cancellationToken: CancellationToken): ValueTask_1<TEntity>;
     Remove(entity: TEntity): EntityEntry_1<TEntity>;
     RemoveRange(...entities: TEntity[]): void;
     RemoveRange(entities: IEnumerable_1<TEntity>): void;
@@ -647,7 +648,7 @@ export interface InternalDbSet_1$instance<TEntity> extends DbSet_1<TEntity>, Mic
 
 
 export const InternalDbSet_1: {
-    new<TEntity>(context: DbContext, entityTypeName: string): InternalDbSet_1<TEntity>;
+    new<TEntity>(context: DbContext, entityTypeName: string | null): InternalDbSet_1<TEntity>;
 };
 
 
@@ -703,13 +704,13 @@ export interface NullableComparerAdapter_1$instance<TNullableKey> {
 
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Equals(x: TNullableKey, y: TNullableKey): boolean;
+    Equals(x: TNullableKey | null, y: TNullableKey | null): boolean;
     GetHashCode(obj: TNullableKey): int;
 }
 
 
 export const NullableComparerAdapter_1: {
-    Wrap<TNullableKey>(comparer: IEqualityComparer, valueConverter?: ValueConverter): IEqualityComparer_1<TNullableKey>;
+    Wrap<TNullableKey>(comparer: IEqualityComparer, valueConverter?: ValueConverter | null): IEqualityComparer_1<TNullableKey>;
 };
 
 
@@ -764,7 +765,7 @@ export interface SemanticVersionComparer$instance {
 
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
 
-    Compare(x: string, y: string): int;
+    Compare(x: string | null, y: string | null): int;
 }
 
 
@@ -817,8 +818,8 @@ export interface TypeFullNameComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: Type, y: Type): int;
-    Equals(x: Type, y: Type): boolean;
+    Compare(x: Type | null, y: Type | null): int;
+    Equals(x: Type | null, y: Type | null): boolean;
     GetHashCode(obj: Type): int;
 }
 
@@ -854,13 +855,13 @@ export type EntityTypeExtensions = EntityTypeExtensions$instance;
 
 export abstract class ExpressionExtensions$instance {
     static BuildPredicate(keyProperties: IReadOnlyList_1<IReadOnlyProperty>, keyValues: ValueBuffer, entityParameter: ParameterExpression): Expression;
-    static GetLambdaOrNull(expression: Expression): LambdaExpression | undefined;
+    static GetLambdaOrNull(expression: Expression): LambdaExpression | null;
     static IsLogicalNot(sqlUnaryExpression: UnaryExpression): boolean;
     static IsLogicalOperation(expression: Expression): boolean;
-    static MakeHasSentinel(currentValueExpression: Expression, propertyBase: IReadOnlyPropertyBase): Expression;
-    static MatchMemberAccessList<TMemberInfo extends MemberInfo>(lambdaExpression: LambdaExpression, memberMatcher: Func_3<Expression, Expression, TMemberInfo>): IReadOnlyList_1<TMemberInfo> | undefined;
-    static MatchSimpleMemberAccess<TMemberInfo extends MemberInfo>(parameterExpression: Expression, memberAccessExpression: Expression): TMemberInfo | undefined;
-    static RemoveTypeAs(expression: Expression): Expression | undefined;
+    static MakeHasSentinel(currentValueExpression: Expression, propertyBase: IReadOnlyPropertyBase | null): Expression;
+    static MatchMemberAccessList<TMemberInfo extends MemberInfo>(lambdaExpression: LambdaExpression, memberMatcher: Func_3<Expression, Expression, TMemberInfo | null>): IReadOnlyList_1<TMemberInfo> | null;
+    static MatchSimpleMemberAccess<TMemberInfo extends MemberInfo>(parameterExpression: Expression, memberAccessExpression: Expression): TMemberInfo | null;
+    static RemoveTypeAs(expression: Expression | null): Expression | null;
 }
 
 
@@ -915,10 +916,10 @@ export abstract class TypeBaseExtensions$instance {
 export type TypeBaseExtensions = TypeBaseExtensions$instance;
 
 export abstract class TypeExtensions$instance {
-    static FindIndexerProperty(type: Type): PropertyInfo | undefined;
+    static FindIndexerProperty(type: Type): PropertyInfo | null;
     static GenerateParameterName(type: Type): string;
-    static GetFieldInfo(type: Type, fieldName: string): FieldInfo | undefined;
-    static IsDefaultValue(type: Type, value: unknown): boolean;
+    static GetFieldInfo(type: Type, fieldName: string): FieldInfo | null;
+    static IsDefaultValue(type: Type, value: JsValue | null): boolean;
 }
 
 

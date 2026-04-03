@@ -2,8 +2,9 @@
 // Namespace: System.Transactions
 // Assembly: Microsoft.EntityFrameworkCore, System.Transactions.Local
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import type { DatabaseFacade } from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
@@ -12,8 +13,8 @@ import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Object as ClrObject, Void } from "@tsonic/dotnet/System/internal/index.js";
 
 export abstract class TransactionsDatabaseFacadeExtensions$instance {
-    static EnlistTransaction(databaseFacade: DatabaseFacade, transaction: Transaction): void;
-    static GetEnlistedTransaction(databaseFacade: DatabaseFacade): Transaction | undefined;
+    static EnlistTransaction(databaseFacade: DatabaseFacade, transaction: Transaction | null): void;
+    static GetEnlistedTransaction(databaseFacade: DatabaseFacade): Transaction | null;
 }
 
 

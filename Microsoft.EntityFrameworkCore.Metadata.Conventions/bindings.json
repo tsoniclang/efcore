@@ -14469,6 +14469,100 @@
       ]
     },
     {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor",
+      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Protected",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "System.Linq.Expressions:System.Linq.Expressions.ExpressionVisitor",
+        "clrName": "System.Linq.Expressions.ExpressionVisitor"
+      },
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor::Rewrite(Microsoft.EntityFrameworkCore.Metadata.IReadOnlyModel,System.Linq.Expressions.Expression):System.Linq.Expressions.Expression",
+          "clrName": "Rewrite",
+          "metadataToken": 100678937,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IReadOnlyModel,System.Linq.Expressions.Expression):System.Linq.Expressions.Expression",
+          "normalizedSignature": "Rewrite|(Microsoft.EntityFrameworkCore.Metadata.IReadOnlyModel,System.Linq.Expressions.Expression):System.Linq.Expressions.Expression|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 2,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor::VisitMember(System.Linq.Expressions.MemberExpression):System.Linq.Expressions.Expression",
+          "clrName": "VisitMember",
+          "metadataToken": 100678938,
+          "canonicalSignature": "(System.Linq.Expressions.MemberExpression):System.Linq.Expressions.Expression",
+          "normalizedSignature": "VisitMember|(System.Linq.Expressions.MemberExpression):System.Linq.Expressions.Expression|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor::VisitMethodCall(System.Linq.Expressions.MethodCallExpression):System.Linq.Expressions.Expression",
+          "clrName": "VisitMethodCall",
+          "metadataToken": 100678939,
+          "canonicalSignature": "(System.Linq.Expressions.MethodCallExpression):System.Linq.Expressions.Expression",
+          "normalizedSignature": "VisitMethodCall|(System.Linq.Expressions.MethodCallExpression):System.Linq.Expressions.Expression|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor::.ctor(System.Type):void",
+          "metadataToken": 100678936,
+          "canonicalSignature": "(System.Type):void",
+          "normalizedSignature": "constructor|(System.Type):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.RelationalColumnAttributeConvention",
       "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RelationalColumnAttributeConvention",
       "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
@@ -16150,6 +16244,60 @@
           "parameterCount": 2,
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RelationalQueryFilterRewritingConvention",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.RelationalQueryFilterRewritingConvention\u002BRelationalDbSetAccessRewritingExpressionVisitor",
+      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RelationalQueryFilterRewritingConvention\u002BRelationalDbSetAccessRewritingExpressionVisitor",
+      "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Protected",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor",
+        "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.QueryFilterRewritingConvention\u002BDbSetAccessRewritingExpressionVisitor"
+      },
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.RelationalQueryFilterRewritingConvention\u002BRelationalDbSetAccessRewritingExpressionVisitor::VisitMethodCall(System.Linq.Expressions.MethodCallExpression):System.Linq.Expressions.Expression",
+          "clrName": "VisitMethodCall",
+          "metadataToken": 100674754,
+          "canonicalSignature": "(System.Linq.Expressions.MethodCallExpression):System.Linq.Expressions.Expression",
+          "normalizedSignature": "VisitMethodCall|(System.Linq.Expressions.MethodCallExpression):System.Linq.Expressions.Expression|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RelationalQueryFilterRewritingConvention\u002BRelationalDbSetAccessRewritingExpressionVisitor",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.RelationalQueryFilterRewritingConvention\u002BRelationalDbSetAccessRewritingExpressionVisitor::.ctor(System.Type):void",
+          "metadataToken": 100674753,
+          "canonicalSignature": "(System.Type):void",
+          "normalizedSignature": "constructor|(System.Type):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RelationalQueryFilterRewritingConvention\u002BRelationalDbSetAccessRewritingExpressionVisitor",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
         }
       ]
@@ -18607,6 +18755,80 @@
           "parameterCount": 1,
           "visibility": "Public",
           "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RuntimeModelConvention",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.RuntimeModelConvention\u002BQueryRootRewritingExpressionVisitor",
+      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RuntimeModelConvention\u002BQueryRootRewritingExpressionVisitor",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Protected",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "System.Linq.Expressions:System.Linq.Expressions.ExpressionVisitor",
+        "clrName": "System.Linq.Expressions.ExpressionVisitor"
+      },
+      "methods": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.RuntimeModelConvention\u002BQueryRootRewritingExpressionVisitor::Rewrite(System.Linq.Expressions.Expression):System.Linq.Expressions.Expression",
+          "clrName": "Rewrite",
+          "metadataToken": 100678974,
+          "canonicalSignature": "(System.Linq.Expressions.Expression):System.Linq.Expressions.Expression",
+          "normalizedSignature": "Rewrite|(System.Linq.Expressions.Expression):System.Linq.Expressions.Expression|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isSealed": false,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RuntimeModelConvention\u002BQueryRootRewritingExpressionVisitor",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        },
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.RuntimeModelConvention\u002BQueryRootRewritingExpressionVisitor::VisitExtension(System.Linq.Expressions.Expression):System.Linq.Expressions.Expression",
+          "clrName": "VisitExtension",
+          "metadataToken": 100678975,
+          "canonicalSignature": "(System.Linq.Expressions.Expression):System.Linq.Expressions.Expression",
+          "normalizedSignature": "VisitExtension|(System.Linq.Expressions.Expression):System.Linq.Expressions.Expression|static=false",
+          "emitScope": "ClassSurface",
+          "provenance": "Original",
+          "arity": 0,
+          "parameterCount": 1,
+          "isStatic": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "isOverride": true,
+          "isSealed": false,
+          "visibility": "Protected",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RuntimeModelConvention\u002BQueryRootRewritingExpressionVisitor",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "isExtensionMethod": false
+        }
+      ],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.RuntimeModelConvention\u002BQueryRootRewritingExpressionVisitor::.ctor(Microsoft.EntityFrameworkCore.Metadata.IModel):void",
+          "metadataToken": 100678973,
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IModel):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IModel):void|static=false",
+          "isStatic": false,
+          "parameterCount": 1,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.RuntimeModelConvention\u002BQueryRootRewritingExpressionVisitor",
           "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
         }
       ]

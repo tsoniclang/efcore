@@ -21,7 +21,7 @@ import type { HashSet, ICollection as ICollection__System_Collections_Generic, I
 import type { ICollection, IComparer, IEnumerable, IEqualityComparer, IList } from '@tsonic/dotnet/System.Collections.js';
 import type { NotifyCollectionChangedEventArgs } from '@tsonic/dotnet/System.Collections.Specialized.js';
 import type { BindingList, IBindingList, ICancelAddNew, IRaiseItemChangedEvents, ListSortDirection, PropertyChangedEventArgs, PropertyChangingEventArgs, PropertyDescriptor } from '@tsonic/dotnet/System.ComponentModel.js';
-import type { Action, Boolean as ClrBoolean, EventHandler, Func, IEquatable, Int32, Nullable, Object as ClrObject, String as ClrString, Tuple, Type, ValueTuple, ValueType, Void } from '@tsonic/dotnet/System.js';
+import type { Action, Boolean as ClrBoolean, Enum, EventHandler, Func, IComparable, IConvertible, IEquatable, IFormattable, Int32, ISpanFormattable, Nullable, Object as ClrObject, String as ClrString, Tuple, Type, ValueTuple, ValueType, Void } from '@tsonic/dotnet/System.js';
 import type { Expression, LambdaExpression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { FieldInfo, MethodInfo } from '@tsonic/dotnet/System.Reflection.js';
 import type { CancellationToken } from '@tsonic/dotnet/System.Threading.js';
@@ -64,6 +64,9 @@ export { InternalComplexEntry as InternalComplexEntry } from './Microsoft.Entity
 export { InternalEntityEntry as InternalEntityEntry } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 export { InternalEntityEntryNotifier as InternalEntityEntryNotifier } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 export { InternalEntryBase as InternalEntryBase } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
+export { InternalEntryBase_CurrentValueType as InternalEntryBase_CurrentValueType } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
+export { InternalEntryBase_PropertyFlag as InternalEntryBase_PropertyFlag } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
+export { InternalEntryBase_StateData as InternalEntryBase_StateData } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 export { InternalEntrySubscriber as InternalEntrySubscriber } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 export type ISnapshot = Internal.ISnapshot;
 export type IStateManager = Internal.IStateManager;

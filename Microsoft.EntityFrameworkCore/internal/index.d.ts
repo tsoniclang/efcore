@@ -2,11 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Abstractions, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Import support types from @tsonic/core
-import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import type { IChangeDetector, IEntityGraphAttacher, IStateManager } from "../../Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js";
@@ -147,7 +145,7 @@ export interface DbContextId$instance {
     readonly InstanceId: Guid;
     readonly Lease: int;
     Equals(other: DbContextId): boolean;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -204,48 +202,48 @@ export interface DbContext$instance extends Microsoft_EntityFrameworkCore_Infras
     readonly Database: DatabaseFacade;
     readonly Model: IModel;
     Add<TEntity>(entity: TEntity): EntityEntry_1<TEntity>;
-    Add(entity: unknown): EntityEntry;
+    Add(entity: JsValue): EntityEntry;
     AddAsync<TEntity>(entity: TEntity, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry_1<TEntity>>;
-    AddAsync(entity: unknown, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry>;
-    AddRange(...entities: unknown[]): void;
-    AddRange(entities: IEnumerable_1<unknown>): void;
-    AddRangeAsync(...entities: unknown[]): Task;
-    AddRangeAsync(entities: IEnumerable_1<unknown>, cancellationToken?: CancellationToken): Task;
+    AddAsync(entity: JsValue, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry>;
+    AddRange(...entities: JsValue[]): void;
+    AddRange(entities: IEnumerable_1<JsValue>): void;
+    AddRangeAsync(...entities: JsValue[]): Task;
+    AddRangeAsync(entities: IEnumerable_1<JsValue>, cancellationToken?: CancellationToken): Task;
     Attach<TEntity>(entity: TEntity): EntityEntry_1<TEntity>;
-    Attach(entity: unknown): EntityEntry;
-    AttachRange(...entities: unknown[]): void;
-    AttachRange(entities: IEnumerable_1<unknown>): void;
+    Attach(entity: JsValue): EntityEntry;
+    AttachRange(...entities: JsValue[]): void;
+    AttachRange(entities: IEnumerable_1<JsValue>): void;
     ConfigureConventions(configurationBuilder: ModelConfigurationBuilder): void;
     Dispose(): void;
     DisposeAsync(): ValueTask;
     Entry<TEntity>(entity: TEntity): EntityEntry_1<TEntity>;
-    Entry(entity: unknown): EntityEntry;
-    Equals(obj: unknown): boolean;
-    Find(entityType: Type, ...keyValues: unknown[]): unknown | undefined;
-    Find<TEntity>(...keyValues: unknown[]): TEntity | undefined;
-    FindAsync(entityType: Type, ...keyValues: unknown[]): ValueTask_1<unknown>;
-    FindAsync(entityType: Type, keyValues: unknown[], cancellationToken: CancellationToken): ValueTask_1<unknown>;
-    FindAsync<TEntity>(...keyValues: unknown[]): ValueTask_1<TEntity>;
-    FindAsync<TEntity>(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask_1<TEntity>;
+    Entry(entity: JsValue): EntityEntry;
+    Equals(obj: JsValue | null): boolean;
+    Find(entityType: Type, ...keyValues: (JsValue | null)[] | null): JsValue | null;
+    Find<TEntity>(...keyValues: (JsValue | null)[] | null): TEntity | null;
+    FindAsync(entityType: Type, ...keyValues: (JsValue | null)[] | null): ValueTask_1<JsValue>;
+    FindAsync(entityType: Type, keyValues: (JsValue | null)[] | null, cancellationToken: CancellationToken): ValueTask_1<JsValue>;
+    FindAsync<TEntity>(...keyValues: (JsValue | null)[] | null): ValueTask_1<TEntity>;
+    FindAsync<TEntity>(keyValues: (JsValue | null)[] | null, cancellationToken: CancellationToken): ValueTask_1<TEntity>;
     FromExpression<TResult>(expression: Expression_1<Func_1<IQueryable_1<TResult>>>): IQueryable_1<TResult>;
     GetHashCode(): int;
     OnConfiguring(optionsBuilder: DbContextOptionsBuilder): void;
     OnModelCreating(modelBuilder: ModelBuilder): void;
     Remove<TEntity>(entity: TEntity): EntityEntry_1<TEntity>;
-    Remove(entity: unknown): EntityEntry;
-    RemoveRange(...entities: unknown[]): void;
-    RemoveRange(entities: IEnumerable_1<unknown>): void;
+    Remove(entity: JsValue): EntityEntry;
+    RemoveRange(...entities: JsValue[]): void;
+    RemoveRange(entities: IEnumerable_1<JsValue>): void;
     SaveChanges(): int;
     SaveChanges(acceptAllChangesOnSuccess: boolean): int;
     SaveChangesAsync(cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     SaveChangesAsync(acceptAllChangesOnSuccess: boolean, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     Set<TEntity>(): DbSet_1<TEntity>;
     Set<TEntity>(name: string): DbSet_1<TEntity>;
-    ToString(): string | undefined;
+    ToString(): string | null;
     Update<TEntity>(entity: TEntity): EntityEntry_1<TEntity>;
-    Update(entity: unknown): EntityEntry;
-    UpdateRange(...entities: unknown[]): void;
-    UpdateRange(entities: IEnumerable_1<unknown>): void;
+    Update(entity: JsValue): EntityEntry;
+    UpdateRange(...entities: JsValue[]): void;
+    UpdateRange(entities: IEnumerable_1<JsValue>): void;
 }
 
 
@@ -274,9 +272,9 @@ export interface DbContextOptions$instance extends Microsoft_EntityFrameworkCore
     readonly Extensions: IEnumerable_1<IDbContextOptionsExtension>;
     readonly ExtensionsMap: ImmutableSortedDictionary_2<Type, ValueTuple_2<IDbContextOptionsExtension, System_Internal.Int32>>;
     IsFrozen: boolean;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     Equals(other: DbContextOptions): boolean;
-    FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | undefined;
+    FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | null;
     Freeze(): void;
     GetExtension<TExtension extends IDbContextOptionsExtension>(): TExtension;
     GetHashCode(): int;
@@ -333,7 +331,7 @@ export interface DbContextOptionsBuilder$instance extends Microsoft_EntityFramew
     EnableSensitiveDataLogging(sensitiveDataLoggingEnabled?: boolean): DbContextOptionsBuilder;
     EnableServiceProviderCaching(cacheServiceProvider?: boolean): DbContextOptionsBuilder;
     EnableThreadSafetyChecks(enableChecks?: boolean): DbContextOptionsBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     LogTo(action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
     LogTo(action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
@@ -341,15 +339,15 @@ export interface DbContextOptionsBuilder$instance extends Microsoft_EntityFramew
     LogTo(action: Action_1<System_Internal.String>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
     LogTo(filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>): DbContextOptionsBuilder;
     ReplaceService<TService, TImplementation extends TService>(): DbContextOptionsBuilder;
-    ToString(): string | undefined;
-    UseApplicationServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder;
+    ToString(): string | null;
+    UseApplicationServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder;
     UseAsyncSeeding(seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder;
-    UseInternalServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder;
-    UseLoggerFactory(loggerFactory: ILoggerFactory): DbContextOptionsBuilder;
-    UseMemoryCache(memoryCache: IMemoryCache): DbContextOptionsBuilder;
+    UseInternalServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder;
+    UseLoggerFactory(loggerFactory: ILoggerFactory | null): DbContextOptionsBuilder;
+    UseMemoryCache(memoryCache: IMemoryCache | null): DbContextOptionsBuilder;
     UseModel(model: IModel): DbContextOptionsBuilder;
     UseQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): DbContextOptionsBuilder;
-    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider): DbContextOptionsBuilder;
+    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider | null): DbContextOptionsBuilder;
     UseRootApplicationServiceProvider(): DbContextOptionsBuilder;
     UseSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): DbContextOptionsBuilder;
 }
@@ -398,24 +396,24 @@ export interface DbContextOptionsBuilder_1$instance<TContext extends DbContext> 
     LogTo(filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>): DbContextOptionsBuilder;
     ReplaceService<TService, TImplementation extends TService>(): DbContextOptionsBuilder_1<TContext>;
     ReplaceService<TService, TImplementation extends TService>(): DbContextOptionsBuilder;
-    UseApplicationServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder_1<TContext>;
-    UseApplicationServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder;
+    UseApplicationServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder_1<TContext>;
+    UseApplicationServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder;
     UseAsyncSeeding(seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder_1<TContext>;
     UseAsyncSeeding(seedAsync: Func_4<TContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder_1<TContext>;
     UseAsyncSeeding(seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder;
-    UseInternalServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder_1<TContext>;
-    UseInternalServiceProvider(serviceProvider: IServiceProvider): DbContextOptionsBuilder;
-    UseLoggerFactory(loggerFactory: ILoggerFactory): DbContextOptionsBuilder_1<TContext>;
-    UseLoggerFactory(loggerFactory: ILoggerFactory): DbContextOptionsBuilder;
-    UseMemoryCache(memoryCache: IMemoryCache): DbContextOptionsBuilder_1<TContext>;
-    UseMemoryCache(memoryCache: IMemoryCache): DbContextOptionsBuilder;
+    UseInternalServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder_1<TContext>;
+    UseInternalServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder;
+    UseLoggerFactory(loggerFactory: ILoggerFactory | null): DbContextOptionsBuilder_1<TContext>;
+    UseLoggerFactory(loggerFactory: ILoggerFactory | null): DbContextOptionsBuilder;
+    UseMemoryCache(memoryCache: IMemoryCache | null): DbContextOptionsBuilder_1<TContext>;
+    UseMemoryCache(memoryCache: IMemoryCache | null): DbContextOptionsBuilder;
     UseModel(model: IModel): DbContextOptionsBuilder_1<TContext>;
     UseModel(model: IModel): DbContextOptionsBuilder;
     UseQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): DbContextOptionsBuilder_1<TContext>;
     UseQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): DbContextOptionsBuilder;
-    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider): DbContextOptionsBuilder_1<TContext>;
+    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider | null): DbContextOptionsBuilder_1<TContext>;
     UseRootApplicationServiceProvider(): DbContextOptionsBuilder_1<TContext>;
-    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider): DbContextOptionsBuilder;
+    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider | null): DbContextOptionsBuilder;
     UseRootApplicationServiceProvider(): DbContextOptionsBuilder;
     UseSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): DbContextOptionsBuilder_1<TContext>;
     UseSeeding(seed: Action_2<TContext, System_Internal.Boolean>): DbContextOptionsBuilder_1<TContext>;
@@ -442,16 +440,16 @@ export interface DbFunctionAttribute$instance extends Attribute {
     IsBuiltIn: boolean;
     IsNullable: boolean;
     readonly IsNullableHasValue: boolean;
-    get Name(): string | undefined;
-    set Name(value: string | undefined);
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Name(): string | null;
+    set Name(value: string | null);
+    get Schema(): string | null;
+    set Schema(value: string | null);
 }
 
 
 export const DbFunctionAttribute: {
     new(): DbFunctionAttribute;
-    new(name: string, schema: string): DbFunctionAttribute;
+    new(name: string, schema: string | null): DbFunctionAttribute;
 };
 
 
@@ -460,9 +458,9 @@ export type DbFunctionAttribute = DbFunctionAttribute$instance;
 export interface DbFunctions$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbFunctions: never;
 
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -471,6 +469,416 @@ export const DbFunctions: {
 
 
 export type DbFunctions = DbFunctions$instance;
+
+export interface DbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, System_Collections_Generic_Internal.IEnumerable_1<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable_1<TEntity> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbSet_1: never;
+
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+    readonly __tsonic_iface_System_ComponentModel_IListSource: never;
+    readonly __tsonic_iface_System_Linq_IQueryable: never;
+    readonly __tsonic_iface_System_Linq_IQueryable_1: never;
+
+    readonly EntityType: IEntityType;
+    readonly Local: LocalView_1<TEntity>;
+    Add(entity: TEntity): EntityEntry_1<TEntity>;
+    AddAsync(entity: TEntity, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry_1<TEntity>>;
+    AddRange(...entities: TEntity[]): void;
+    AddRange(entities: IEnumerable_1<TEntity>): void;
+    AddRangeAsync(...entities: TEntity[]): Task;
+    AddRangeAsync(entities: IEnumerable_1<TEntity>, cancellationToken?: CancellationToken): Task;
+    AsAsyncEnumerable(): IAsyncEnumerable_1<TEntity>;
+    AsQueryable(): IQueryable_1<TEntity>;
+    Attach(entity: TEntity): EntityEntry_1<TEntity>;
+    AttachRange(...entities: TEntity[]): void;
+    AttachRange(entities: IEnumerable_1<TEntity>): void;
+    Entry(entity: TEntity): EntityEntry_1<TEntity>;
+    Equals(obj: JsValue | null): boolean;
+    Find(...keyValues: (JsValue | null)[] | null): TEntity | null;
+    FindAsync(...keyValues: (JsValue | null)[] | null): ValueTask_1<TEntity>;
+    FindAsync(keyValues: (JsValue | null)[] | null, cancellationToken: CancellationToken): ValueTask_1<TEntity>;
+    GetAsyncEnumerator(cancellationToken?: CancellationToken): IAsyncEnumerator_1<TEntity>;
+    GetHashCode(): int;
+    Remove(entity: TEntity): EntityEntry_1<TEntity>;
+    RemoveRange(...entities: TEntity[]): void;
+    RemoveRange(entities: IEnumerable_1<TEntity>): void;
+    ToString(): string | null;
+    Update(entity: TEntity): EntityEntry_1<TEntity>;
+    UpdateRange(...entities: TEntity[]): void;
+    UpdateRange(entities: IEnumerable_1<TEntity>): void;
+}
+
+
+export const DbSet_1: (abstract new<TEntity>() => DbSet_1<TEntity>) & {
+};
+
+
+export interface __DbSet_1$views<TEntity> {
+    As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>;
+}
+
+export type DbSet_1<TEntity> = DbSet_1$instance<TEntity> & __DbSet_1$views<TEntity>;
+
+
+export interface DbUpdateConcurrencyException$instance extends DbUpdateException {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbUpdateConcurrencyException: never;
+
+    readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
+
+}
+
+
+export const DbUpdateConcurrencyException: {
+    new(): DbUpdateConcurrencyException;
+    new(message: string): DbUpdateConcurrencyException;
+    new(message: string, innerException: Exception | null): DbUpdateConcurrencyException;
+    new(message: string, innerException: Exception | null, entries: IReadOnlyList_1<IUpdateEntry>): DbUpdateConcurrencyException;
+    new(message: string, entries: IReadOnlyList_1<IUpdateEntry>): DbUpdateConcurrencyException;
+    new(info: SerializationInfo, context: StreamingContext): DbUpdateConcurrencyException;
+};
+
+
+export type DbUpdateConcurrencyException = DbUpdateConcurrencyException$instance;
+
+export interface DbUpdateException$instance extends Exception {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbUpdateException: never;
+
+    readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
+
+    readonly Entries: IReadOnlyList_1<EntityEntry>;
+}
+
+
+export const DbUpdateException: {
+    new(): DbUpdateException;
+    new(message: string): DbUpdateException;
+    new(message: string, innerException: Exception | null): DbUpdateException;
+    new(message: string, entries: IReadOnlyList_1<IUpdateEntry>): DbUpdateException;
+    new(message: string, innerException: Exception | null, entries: IReadOnlyList_1<IUpdateEntry>): DbUpdateException;
+    new(message: string, entries: IReadOnlyList_1<EntityEntry>): DbUpdateException;
+    new(message: string, innerException: Exception | null, entries: IReadOnlyList_1<EntityEntry>): DbUpdateException;
+    new(info: SerializationInfo, context: StreamingContext): DbUpdateException;
+};
+
+
+export type DbUpdateException = DbUpdateException$instance;
+
+export interface DeleteBehaviorAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DeleteBehaviorAttribute: never;
+
+    readonly Behavior: DeleteBehavior;
+}
+
+
+export const DeleteBehaviorAttribute: {
+    new(behavior: DeleteBehavior): DeleteBehaviorAttribute;
+};
+
+
+export type DeleteBehaviorAttribute = DeleteBehaviorAttribute$instance;
+
+export interface EntityTypeConfigurationAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityTypeConfigurationAttribute: never;
+
+    readonly EntityTypeConfigurationType: Type;
+}
+
+
+export const EntityTypeConfigurationAttribute: {
+    new(entityConfigurationType: Type): EntityTypeConfigurationAttribute;
+};
+
+
+export type EntityTypeConfigurationAttribute = EntityTypeConfigurationAttribute$instance;
+
+export interface EntityTypeConfigurationAttribute_2$instance<TConfiguration extends IEntityTypeConfiguration_1<TEntity>, TEntity> extends EntityTypeConfigurationAttribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityTypeConfigurationAttribute_2: never;
+
+}
+
+
+export const EntityTypeConfigurationAttribute_2: {
+    new<TConfiguration extends IEntityTypeConfiguration_1<TEntity>, TEntity>(): EntityTypeConfigurationAttribute_2<TConfiguration, TEntity>;
+};
+
+
+export type EntityTypeConfigurationAttribute_2<TConfiguration extends IEntityTypeConfiguration_1<TEntity>, TEntity> = EntityTypeConfigurationAttribute_2$instance<TConfiguration, TEntity>;
+
+export interface IndexAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_IndexAttribute: never;
+
+    AllDescending: boolean;
+    get IsDescending(): boolean[] | null;
+    set IsDescending(value: boolean[] | null);
+    IsUnique: boolean;
+    readonly IsUniqueHasValue: boolean;
+    get Name(): string | null;
+    set Name(value: string | null);
+    readonly PropertyNames: IReadOnlyList_1<System_Internal.String>;
+}
+
+
+export const IndexAttribute: {
+    new(propertyName: string, additionalPropertyNames: string[]): IndexAttribute;
+    new(propertyNames: string[]): IndexAttribute;
+};
+
+
+export type IndexAttribute = IndexAttribute$instance;
+
+export interface KeylessAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_KeylessAttribute: never;
+
+}
+
+
+export const KeylessAttribute: {
+    new(): KeylessAttribute;
+};
+
+
+export type KeylessAttribute = KeylessAttribute$instance;
+
+export interface ModelBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionModelBuilder> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelBuilder: never;
+
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
+
+    readonly Model: IMutableModel;
+    ApplyConfiguration<TEntity>(configuration: IEntityTypeConfiguration_1<TEntity>): ModelBuilder;
+    ApplyConfigurationsFromAssembly(assembly: Assembly, predicate?: Func_2<Type, System_Internal.Boolean> | null): ModelBuilder;
+    Entity<TEntity>(): EntityTypeBuilder_1<TEntity>;
+    Entity(type: Type): EntityTypeBuilder;
+    Entity(name: string): EntityTypeBuilder;
+    Entity<TEntity>(buildAction: Action_1<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
+    Entity(type: Type, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
+    Entity(name: string, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
+    Equals(obj: JsValue | null): boolean;
+    FinalizeModel(): IModel;
+    GetHashCode(): int;
+    HasAnnotation(annotation: string, value: JsValue | null): ModelBuilder;
+    HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ModelBuilder;
+    HasEmbeddedDiscriminatorName(name: string): ModelBuilder;
+    Ignore<TStructural>(): ModelBuilder;
+    Ignore(type: Type): ModelBuilder;
+    Ignore(typeName: string): ModelBuilder;
+    Owned<T>(): OwnedEntityTypeBuilder_1<T>;
+    Owned(type: Type): OwnedEntityTypeBuilder;
+    SharedTypeEntity<TEntity>(name: string): EntityTypeBuilder_1<TEntity>;
+    SharedTypeEntity(name: string, type: Type): EntityTypeBuilder;
+    SharedTypeEntity<TEntity>(name: string, buildAction: Action_1<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
+    SharedTypeEntity(name: string, type: Type, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
+    ToString(): string | null;
+    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ModelBuilder;
+}
+
+
+export const ModelBuilder: {
+    new(conventions: ConventionSet): ModelBuilder;
+    new(conventions: ConventionSet, modelDependencies: ModelDependencies): ModelBuilder;
+    new(conventions: ConventionSet, modelDependencies: ModelDependencies | null, modelConfiguration: ModelConfiguration | null): ModelBuilder;
+    new(): ModelBuilder;
+    new(model: IMutableModel): ModelBuilder;
+};
+
+
+export interface __ModelBuilder$views {
+    As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionModelBuilder>;
+}
+
+export type ModelBuilder = ModelBuilder$instance & __ModelBuilder$views;
+
+
+export interface ModelConfigurationBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelConfigurationBuilder: never;
+
+    readonly Conventions: ConventionSetBuilder;
+    readonly ModelConfiguration: ModelConfiguration;
+    ComplexProperties<TProperty>(): ComplexPropertiesConfigurationBuilder_1<TProperty>;
+    ComplexProperties(propertyType: Type): ComplexPropertiesConfigurationBuilder;
+    CreateModelBuilder(modelDependencies: ModelDependencies | null): ModelBuilder;
+    DefaultTypeMapping<TScalar>(): TypeMappingConfigurationBuilder_1<TScalar>;
+    DefaultTypeMapping<TScalar>(buildAction: Action_1<TypeMappingConfigurationBuilder_1<TScalar>>): ModelConfigurationBuilder;
+    DefaultTypeMapping(scalarType: Type): TypeMappingConfigurationBuilder;
+    DefaultTypeMapping(scalarType: Type, buildAction: Action_1<TypeMappingConfigurationBuilder>): ModelConfigurationBuilder;
+    Equals(obj: JsValue | null): boolean;
+    GetHashCode(): int;
+    IgnoreAny<T>(): ModelConfigurationBuilder;
+    IgnoreAny(type: Type): ModelConfigurationBuilder;
+    Properties<TProperty>(): PropertiesConfigurationBuilder_1<TProperty>;
+    Properties<TProperty>(buildAction: Action_1<PropertiesConfigurationBuilder_1<TProperty>>): ModelConfigurationBuilder;
+    Properties(propertyType: Type): PropertiesConfigurationBuilder;
+    Properties(propertyType: Type, buildAction: Action_1<PropertiesConfigurationBuilder>): ModelConfigurationBuilder;
+    ToString(): string | null;
+}
+
+
+export const ModelConfigurationBuilder: {
+    new(conventions: ConventionSet, serviceProvider: IServiceProvider): ModelConfigurationBuilder;
+};
+
+
+export type ModelConfigurationBuilder = ModelConfigurationBuilder$instance;
+
+export interface ModelCreationDependencies$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelCreationDependencies: never;
+
+    readonly __tsonic_iface_System_IEquatable_1: never;
+
+    ConventionSetBuilder: IConventionSetBuilder;
+    ModelDependencies: ModelDependencies;
+    ModelRuntimeInitializer: IModelRuntimeInitializer;
+    ModelSource: IModelSource;
+    ValidationLogger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>;
+    _Clone_$(): ModelCreationDependencies;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: ModelCreationDependencies | null): boolean;
+    GetHashCode(): int;
+    ToString(): string;
+}
+
+
+export const ModelCreationDependencies: {
+    new(modelSource: IModelSource, conventionSetBuilder: IConventionSetBuilder, modelDependencies: ModelDependencies, modelRuntimeInitializer: IModelRuntimeInitializer, validationLogger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): ModelCreationDependencies;
+};
+
+
+export type ModelCreationDependencies = ModelCreationDependencies$instance;
+
+export interface OwnedAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_OwnedAttribute: never;
+
+}
+
+
+export const OwnedAttribute: {
+    new(): OwnedAttribute;
+};
+
+
+export type OwnedAttribute = OwnedAttribute$instance;
+
+export interface PrecisionAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_PrecisionAttribute: never;
+
+    readonly Precision: int;
+    readonly Scale: Nullable_1<System_Internal.Int32>;
+}
+
+
+export const PrecisionAttribute: {
+    new(precision: int, scale: int): PrecisionAttribute;
+    new(precision: int): PrecisionAttribute;
+};
+
+
+export type PrecisionAttribute = PrecisionAttribute$instance;
+
+export interface PrimaryKeyAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_PrimaryKeyAttribute: never;
+
+    readonly PropertyNames: IReadOnlyList_1<System_Internal.String>;
+}
+
+
+export const PrimaryKeyAttribute: {
+    new(propertyName: string, additionalPropertyNames: string[]): PrimaryKeyAttribute;
+};
+
+
+export type PrimaryKeyAttribute = PrimaryKeyAttribute$instance;
+
+export interface SaveChangesEventArgs$instance extends EventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesEventArgs: never;
+
+    readonly AcceptAllChangesOnSuccess: boolean;
+}
+
+
+export const SaveChangesEventArgs: (abstract new(acceptAllChangesOnSuccess: boolean) => SaveChangesEventArgs) & {
+};
+
+
+export type SaveChangesEventArgs = SaveChangesEventArgs$instance;
+
+export interface SaveChangesFailedEventArgs$instance extends SaveChangesEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesFailedEventArgs: never;
+
+    readonly Exception: Exception;
+}
+
+
+export const SaveChangesFailedEventArgs: {
+    new(acceptAllChangesOnSuccess: boolean, exception: Exception): SaveChangesFailedEventArgs;
+};
+
+
+export type SaveChangesFailedEventArgs = SaveChangesFailedEventArgs$instance;
+
+export interface SavedChangesEventArgs$instance extends SaveChangesEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SavedChangesEventArgs: never;
+
+    readonly EntitiesSavedCount: int;
+}
+
+
+export const SavedChangesEventArgs: {
+    new(acceptAllChangesOnSuccess: boolean, entitiesSavedCount: int): SavedChangesEventArgs;
+};
+
+
+export type SavedChangesEventArgs = SavedChangesEventArgs$instance;
+
+export interface SavingChangesEventArgs$instance extends SaveChangesEventArgs {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SavingChangesEventArgs: never;
+
+}
+
+
+export const SavingChangesEventArgs: {
+    new(acceptAllChangesOnSuccess: boolean): SavingChangesEventArgs;
+};
+
+
+export type SavingChangesEventArgs = SavingChangesEventArgs$instance;
+
+export interface UnicodeAttribute$instance extends Attribute {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_UnicodeAttribute: never;
+
+    readonly IsUnicode: boolean;
+}
+
+
+export const UnicodeAttribute: {
+    new(unicode: boolean): UnicodeAttribute;
+};
+
+
+export type UnicodeAttribute = UnicodeAttribute$instance;
+
+export abstract class ChangeTrackerExtensions$instance {
+    static ToDebugString(changeTracker: ChangeTracker, options?: ChangeTrackerDebugStringOptions, indent?: int): string;
+}
+
+
+export type ChangeTrackerExtensions = ChangeTrackerExtensions$instance;
+
+export abstract class DbFunctionsExtensions$instance {
+    static Like(_: DbFunctions, matchExpression: string | null, pattern: string | null, escapeCharacter: string | null): boolean;
+    static Like(_: DbFunctions, matchExpression: string | null, pattern: string | null): boolean;
+    static Random(_: DbFunctions): double;
+}
+
+
+export type DbFunctionsExtensions = DbFunctionsExtensions$instance;
+
+export abstract class DbLoggerCategory$instance {
+    static readonly Name: string;
+}
+
+
+export type DbLoggerCategory = DbLoggerCategory$instance;
 
 export interface DbLoggerCategory_ChangeTracking$instance extends LoggerCategory_1<DbLoggerCategory_ChangeTracking> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_ChangeTracking: never;
@@ -628,416 +1036,6 @@ export const DbLoggerCategory_Update: {
 
 export type DbLoggerCategory_Update = DbLoggerCategory_Update$instance;
 
-export interface DbSet_1$instance<TEntity> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, System_Collections_Generic_Internal.IEnumerable_1<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable_1<TEntity> {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbSet_1: never;
-
-    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
-    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
-    readonly __tsonic_iface_System_Collections_IEnumerable: never;
-    readonly __tsonic_iface_System_ComponentModel_IListSource: never;
-    readonly __tsonic_iface_System_Linq_IQueryable: never;
-    readonly __tsonic_iface_System_Linq_IQueryable_1: never;
-
-    readonly EntityType: IEntityType;
-    readonly Local: LocalView_1<TEntity>;
-    Add(entity: TEntity): EntityEntry_1<TEntity>;
-    AddAsync(entity: TEntity, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry_1<TEntity>>;
-    AddRange(...entities: TEntity[]): void;
-    AddRange(entities: IEnumerable_1<TEntity>): void;
-    AddRangeAsync(...entities: TEntity[]): Task;
-    AddRangeAsync(entities: IEnumerable_1<TEntity>, cancellationToken?: CancellationToken): Task;
-    AsAsyncEnumerable(): IAsyncEnumerable_1<TEntity>;
-    AsQueryable(): IQueryable_1<TEntity>;
-    Attach(entity: TEntity): EntityEntry_1<TEntity>;
-    AttachRange(...entities: TEntity[]): void;
-    AttachRange(entities: IEnumerable_1<TEntity>): void;
-    Entry(entity: TEntity): EntityEntry_1<TEntity>;
-    Equals(obj: unknown): boolean;
-    Find(...keyValues: unknown[]): TEntity | undefined;
-    FindAsync(...keyValues: unknown[]): ValueTask_1<TEntity>;
-    FindAsync(keyValues: unknown[], cancellationToken: CancellationToken): ValueTask_1<TEntity>;
-    GetAsyncEnumerator(cancellationToken?: CancellationToken): IAsyncEnumerator_1<TEntity>;
-    GetHashCode(): int;
-    Remove(entity: TEntity): EntityEntry_1<TEntity>;
-    RemoveRange(...entities: TEntity[]): void;
-    RemoveRange(entities: IEnumerable_1<TEntity>): void;
-    ToString(): string | undefined;
-    Update(entity: TEntity): EntityEntry_1<TEntity>;
-    UpdateRange(...entities: TEntity[]): void;
-    UpdateRange(entities: IEnumerable_1<TEntity>): void;
-}
-
-
-export const DbSet_1: (abstract new<TEntity>() => DbSet_1<TEntity>) & {
-};
-
-
-export interface __DbSet_1$views<TEntity> {
-    As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>;
-}
-
-export type DbSet_1<TEntity> = DbSet_1$instance<TEntity> & __DbSet_1$views<TEntity>;
-
-
-export interface DbUpdateConcurrencyException$instance extends DbUpdateException {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbUpdateConcurrencyException: never;
-
-    readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
-
-}
-
-
-export const DbUpdateConcurrencyException: {
-    new(): DbUpdateConcurrencyException;
-    new(message: string): DbUpdateConcurrencyException;
-    new(message: string, innerException: Exception): DbUpdateConcurrencyException;
-    new(message: string, innerException: Exception, entries: IReadOnlyList_1<IUpdateEntry>): DbUpdateConcurrencyException;
-    new(message: string, entries: IReadOnlyList_1<IUpdateEntry>): DbUpdateConcurrencyException;
-    new(info: SerializationInfo, context: StreamingContext): DbUpdateConcurrencyException;
-};
-
-
-export type DbUpdateConcurrencyException = DbUpdateConcurrencyException$instance;
-
-export interface DbUpdateException$instance extends Exception {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbUpdateException: never;
-
-    readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
-
-    readonly Entries: IReadOnlyList_1<EntityEntry>;
-}
-
-
-export const DbUpdateException: {
-    new(): DbUpdateException;
-    new(message: string): DbUpdateException;
-    new(message: string, innerException: Exception): DbUpdateException;
-    new(message: string, entries: IReadOnlyList_1<IUpdateEntry>): DbUpdateException;
-    new(message: string, innerException: Exception, entries: IReadOnlyList_1<IUpdateEntry>): DbUpdateException;
-    new(message: string, entries: IReadOnlyList_1<EntityEntry>): DbUpdateException;
-    new(message: string, innerException: Exception, entries: IReadOnlyList_1<EntityEntry>): DbUpdateException;
-    new(info: SerializationInfo, context: StreamingContext): DbUpdateException;
-};
-
-
-export type DbUpdateException = DbUpdateException$instance;
-
-export interface DeleteBehaviorAttribute$instance extends Attribute {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DeleteBehaviorAttribute: never;
-
-    readonly Behavior: DeleteBehavior;
-}
-
-
-export const DeleteBehaviorAttribute: {
-    new(behavior: DeleteBehavior): DeleteBehaviorAttribute;
-};
-
-
-export type DeleteBehaviorAttribute = DeleteBehaviorAttribute$instance;
-
-export interface EntityTypeConfigurationAttribute$instance extends Attribute {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityTypeConfigurationAttribute: never;
-
-    readonly EntityTypeConfigurationType: Type;
-}
-
-
-export const EntityTypeConfigurationAttribute: {
-    new(entityConfigurationType: Type): EntityTypeConfigurationAttribute;
-};
-
-
-export type EntityTypeConfigurationAttribute = EntityTypeConfigurationAttribute$instance;
-
-export interface EntityTypeConfigurationAttribute_2$instance<TConfiguration extends IEntityTypeConfiguration_1<TEntity>, TEntity> extends EntityTypeConfigurationAttribute {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityTypeConfigurationAttribute_2: never;
-
-}
-
-
-export const EntityTypeConfigurationAttribute_2: {
-    new<TConfiguration extends IEntityTypeConfiguration_1<TEntity>, TEntity>(): EntityTypeConfigurationAttribute_2<TConfiguration, TEntity>;
-};
-
-
-export type EntityTypeConfigurationAttribute_2<TConfiguration extends IEntityTypeConfiguration_1<TEntity>, TEntity> = EntityTypeConfigurationAttribute_2$instance<TConfiguration, TEntity>;
-
-export interface IndexAttribute$instance extends Attribute {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_IndexAttribute: never;
-
-    AllDescending: boolean;
-    get IsDescending(): boolean[] | undefined;
-    set IsDescending(value: boolean[] | undefined);
-    IsUnique: boolean;
-    readonly IsUniqueHasValue: boolean;
-    get Name(): string | undefined;
-    set Name(value: string | undefined);
-    readonly PropertyNames: IReadOnlyList_1<System_Internal.String>;
-}
-
-
-export const IndexAttribute: {
-    new(propertyName: string, additionalPropertyNames: string[]): IndexAttribute;
-    new(propertyNames: string[]): IndexAttribute;
-};
-
-
-export type IndexAttribute = IndexAttribute$instance;
-
-export interface KeylessAttribute$instance extends Attribute {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_KeylessAttribute: never;
-
-}
-
-
-export const KeylessAttribute: {
-    new(): KeylessAttribute;
-};
-
-
-export type KeylessAttribute = KeylessAttribute$instance;
-
-export interface ModelBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionModelBuilder> {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelBuilder: never;
-
-    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
-
-    readonly Model: IMutableModel;
-    ApplyConfiguration<TEntity>(configuration: IEntityTypeConfiguration_1<TEntity>): ModelBuilder;
-    ApplyConfigurationsFromAssembly(assembly: Assembly, predicate?: Func_2<Type, System_Internal.Boolean>): ModelBuilder;
-    Entity<TEntity>(): EntityTypeBuilder_1<TEntity>;
-    Entity(type: Type): EntityTypeBuilder;
-    Entity(name: string): EntityTypeBuilder;
-    Entity<TEntity>(buildAction: Action_1<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
-    Entity(type: Type, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
-    Entity(name: string, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
-    Equals(obj: unknown): boolean;
-    FinalizeModel(): IModel;
-    GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): ModelBuilder;
-    HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ModelBuilder;
-    HasEmbeddedDiscriminatorName(name: string): ModelBuilder;
-    Ignore<TStructural>(): ModelBuilder;
-    Ignore(type: Type): ModelBuilder;
-    Ignore(typeName: string): ModelBuilder;
-    Owned<T>(): OwnedEntityTypeBuilder_1<T>;
-    Owned(type: Type): OwnedEntityTypeBuilder;
-    SharedTypeEntity<TEntity>(name: string): EntityTypeBuilder_1<TEntity>;
-    SharedTypeEntity(name: string, type: Type): EntityTypeBuilder;
-    SharedTypeEntity<TEntity>(name: string, buildAction: Action_1<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
-    SharedTypeEntity(name: string, type: Type, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
-    ToString(): string | undefined;
-    UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ModelBuilder;
-}
-
-
-export const ModelBuilder: {
-    new(conventions: ConventionSet): ModelBuilder;
-    new(conventions: ConventionSet, modelDependencies: ModelDependencies): ModelBuilder;
-    new(conventions: ConventionSet, modelDependencies: ModelDependencies, modelConfiguration: ModelConfiguration): ModelBuilder;
-    new(): ModelBuilder;
-    new(model: IMutableModel): ModelBuilder;
-};
-
-
-export interface __ModelBuilder$views {
-    As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionModelBuilder>;
-}
-
-export type ModelBuilder = ModelBuilder$instance & __ModelBuilder$views;
-
-
-export interface ModelConfigurationBuilder$instance {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelConfigurationBuilder: never;
-
-    readonly Conventions: ConventionSetBuilder;
-    readonly ModelConfiguration: ModelConfiguration;
-    ComplexProperties<TProperty>(): ComplexPropertiesConfigurationBuilder_1<TProperty>;
-    ComplexProperties(propertyType: Type): ComplexPropertiesConfigurationBuilder;
-    CreateModelBuilder(modelDependencies: ModelDependencies): ModelBuilder;
-    DefaultTypeMapping<TScalar>(): TypeMappingConfigurationBuilder_1<TScalar>;
-    DefaultTypeMapping<TScalar>(buildAction: Action_1<TypeMappingConfigurationBuilder_1<TScalar>>): ModelConfigurationBuilder;
-    DefaultTypeMapping(scalarType: Type): TypeMappingConfigurationBuilder;
-    DefaultTypeMapping(scalarType: Type, buildAction: Action_1<TypeMappingConfigurationBuilder>): ModelConfigurationBuilder;
-    Equals(obj: unknown): boolean;
-    GetHashCode(): int;
-    IgnoreAny<T>(): ModelConfigurationBuilder;
-    IgnoreAny(type: Type): ModelConfigurationBuilder;
-    Properties<TProperty>(): PropertiesConfigurationBuilder_1<TProperty>;
-    Properties<TProperty>(buildAction: Action_1<PropertiesConfigurationBuilder_1<TProperty>>): ModelConfigurationBuilder;
-    Properties(propertyType: Type): PropertiesConfigurationBuilder;
-    Properties(propertyType: Type, buildAction: Action_1<PropertiesConfigurationBuilder>): ModelConfigurationBuilder;
-    ToString(): string | undefined;
-}
-
-
-export const ModelConfigurationBuilder: {
-    new(conventions: ConventionSet, serviceProvider: IServiceProvider): ModelConfigurationBuilder;
-};
-
-
-export type ModelConfigurationBuilder = ModelConfigurationBuilder$instance;
-
-export interface ModelCreationDependencies$instance {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelCreationDependencies: never;
-
-    readonly __tsonic_iface_System_IEquatable_1: never;
-
-    ConventionSetBuilder: IConventionSetBuilder;
-    ModelDependencies: ModelDependencies;
-    ModelRuntimeInitializer: IModelRuntimeInitializer;
-    ModelSource: IModelSource;
-    ValidationLogger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>;
-    _Clone_$(): ModelCreationDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: ModelCreationDependencies): boolean;
-    GetHashCode(): int;
-    ToString(): string;
-}
-
-
-export const ModelCreationDependencies: {
-    new(modelSource: IModelSource, conventionSetBuilder: IConventionSetBuilder, modelDependencies: ModelDependencies, modelRuntimeInitializer: IModelRuntimeInitializer, validationLogger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): ModelCreationDependencies;
-};
-
-
-export type ModelCreationDependencies = ModelCreationDependencies$instance;
-
-export interface OwnedAttribute$instance extends Attribute {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_OwnedAttribute: never;
-
-}
-
-
-export const OwnedAttribute: {
-    new(): OwnedAttribute;
-};
-
-
-export type OwnedAttribute = OwnedAttribute$instance;
-
-export interface PrecisionAttribute$instance extends Attribute {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_PrecisionAttribute: never;
-
-    readonly Precision: int;
-    readonly Scale: Nullable_1<System_Internal.Int32>;
-}
-
-
-export const PrecisionAttribute: {
-    new(precision: int, scale: int): PrecisionAttribute;
-    new(precision: int): PrecisionAttribute;
-};
-
-
-export type PrecisionAttribute = PrecisionAttribute$instance;
-
-export interface PrimaryKeyAttribute$instance extends Attribute {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_PrimaryKeyAttribute: never;
-
-    readonly PropertyNames: IReadOnlyList_1<System_Internal.String>;
-}
-
-
-export const PrimaryKeyAttribute: {
-    new(propertyName: string, additionalPropertyNames: string[]): PrimaryKeyAttribute;
-};
-
-
-export type PrimaryKeyAttribute = PrimaryKeyAttribute$instance;
-
-export interface SaveChangesEventArgs$instance extends EventArgs {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesEventArgs: never;
-
-    readonly AcceptAllChangesOnSuccess: boolean;
-}
-
-
-export const SaveChangesEventArgs: (abstract new(acceptAllChangesOnSuccess: boolean) => SaveChangesEventArgs) & {
-};
-
-
-export type SaveChangesEventArgs = SaveChangesEventArgs$instance;
-
-export interface SaveChangesFailedEventArgs$instance extends SaveChangesEventArgs {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesFailedEventArgs: never;
-
-    readonly Exception: Exception;
-}
-
-
-export const SaveChangesFailedEventArgs: {
-    new(acceptAllChangesOnSuccess: boolean, exception: Exception): SaveChangesFailedEventArgs;
-};
-
-
-export type SaveChangesFailedEventArgs = SaveChangesFailedEventArgs$instance;
-
-export interface SavedChangesEventArgs$instance extends SaveChangesEventArgs {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SavedChangesEventArgs: never;
-
-    readonly EntitiesSavedCount: int;
-}
-
-
-export const SavedChangesEventArgs: {
-    new(acceptAllChangesOnSuccess: boolean, entitiesSavedCount: int): SavedChangesEventArgs;
-};
-
-
-export type SavedChangesEventArgs = SavedChangesEventArgs$instance;
-
-export interface SavingChangesEventArgs$instance extends SaveChangesEventArgs {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SavingChangesEventArgs: never;
-
-}
-
-
-export const SavingChangesEventArgs: {
-    new(acceptAllChangesOnSuccess: boolean): SavingChangesEventArgs;
-};
-
-
-export type SavingChangesEventArgs = SavingChangesEventArgs$instance;
-
-export interface UnicodeAttribute$instance extends Attribute {
-    readonly __tsonic_type_Microsoft_EntityFrameworkCore_UnicodeAttribute: never;
-
-    readonly IsUnicode: boolean;
-}
-
-
-export const UnicodeAttribute: {
-    new(unicode: boolean): UnicodeAttribute;
-};
-
-
-export type UnicodeAttribute = UnicodeAttribute$instance;
-
-export abstract class ChangeTrackerExtensions$instance {
-    static ToDebugString(changeTracker: ChangeTracker, options?: ChangeTrackerDebugStringOptions, indent?: int): string;
-}
-
-
-export type ChangeTrackerExtensions = ChangeTrackerExtensions$instance;
-
-export abstract class DbFunctionsExtensions$instance {
-    static Like(_: DbFunctions, matchExpression: string, pattern: string, escapeCharacter: string): boolean;
-    static Like(_: DbFunctions, matchExpression: string, pattern: string): boolean;
-    static Random(_: DbFunctions): double;
-}
-
-
-export type DbFunctionsExtensions = DbFunctionsExtensions$instance;
-
-export abstract class DbLoggerCategory$instance {
-    static readonly Name: string;
-}
-
-
-export type DbLoggerCategory = DbLoggerCategory$instance;
-
 export abstract class EF$instance {
     static IsDesignTime: boolean;
     static readonly Functions: DbFunctions;
@@ -1075,7 +1073,7 @@ export abstract class EF$instance {
     static CompileQuery<TContext extends DbContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TResult, TProperty>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IIncludableQueryable_2<TResult, TProperty>>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IEnumerable_1<TResult>>;
     static Constant<T>(argument: T): T;
     static Parameter<T>(argument: T): T;
-    static Property<TProperty>(instance: unknown, propertyName: string): TProperty;
+    static Property<TProperty>(instance: JsValue, propertyName: string): TProperty;
 }
 
 
@@ -1118,15 +1116,15 @@ export abstract class EntityFrameworkQueryableExtensions$instance {
     static CountAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     static CountAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     static ElementAtAsync<TSource>(source: IQueryable_1<TSource>, index: int, cancellationToken?: CancellationToken): Task_1<TSource>;
-    static ElementAtOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, index: int, cancellationToken?: CancellationToken): Task_1<TSource | undefined>;
+    static ElementAtOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, index: int, cancellationToken?: CancellationToken): Task_1<TSource | null>;
     static ExecuteDelete<TSource>(source: IQueryable_1<TSource>): int;
     static ExecuteDeleteAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     static ExecuteUpdate<TSource>(source: IQueryable_1<TSource>, setPropertyCalls: Action_1<UpdateSettersBuilder_1<TSource>>): int;
     static ExecuteUpdateAsync<TSource>(source: IQueryable_1<TSource>, setPropertyCalls: Action_1<UpdateSettersBuilder_1<TSource>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     static FirstAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TSource>;
     static FirstAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource>;
-    static FirstOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TSource | undefined>;
-    static FirstOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource | undefined>;
+    static FirstOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TSource | null>;
+    static FirstOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource | null>;
     static ForEachAsync<T>(source: IQueryable_1<T>, action: Action_1<T>, cancellationToken?: CancellationToken): Task;
     static IgnoreAutoIncludes<TEntity>(source: IQueryable_1<TEntity>): IQueryable_1<TEntity>;
     static IgnoreQueryFilters<TEntity>(source: IQueryable_1<TEntity>, filterKeys: IReadOnlyCollection_1<System_Internal.String>): IQueryable_1<TEntity>;
@@ -1135,8 +1133,8 @@ export abstract class EntityFrameworkQueryableExtensions$instance {
     static Include<TEntity>(source: IQueryable_1<TEntity>, navigationPropertyPath: string): IQueryable_1<TEntity>;
     static LastAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TSource>;
     static LastAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource>;
-    static LastOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TSource | undefined>;
-    static LastOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource | undefined>;
+    static LastOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TSource | null>;
+    static LastOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource | null>;
     static Load<TSource>(source: IQueryable_1<TSource>): void;
     static LoadAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task;
     static LongCountAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int64>;
@@ -1147,8 +1145,8 @@ export abstract class EntityFrameworkQueryableExtensions$instance {
     static MinAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource>;
     static SingleAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TSource>;
     static SingleAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource>;
-    static SingleOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TSource | undefined>;
-    static SingleOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource | undefined>;
+    static SingleOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, predicate: Expression_1<Func_2<TSource, System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task_1<TSource | null>;
+    static SingleOrDefaultAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource | null>;
     static SumAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, System_Internal.Decimal>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Decimal>;
     static SumAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, System_Internal.Double>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Double>;
     static SumAsync<TSource>(source: IQueryable_1<TSource>, selector: Expression_1<Func_2<TSource, System_Internal.Int32>>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
@@ -1170,14 +1168,14 @@ export abstract class EntityFrameworkQueryableExtensions$instance {
     static SumAsync(source: IQueryable_1<Nullable_1<System_Internal.Single>>, cancellationToken?: CancellationToken): Task_1<Nullable_1<System_Internal.Single>>;
     static SumAsync(source: IQueryable_1<System_Internal.Single>, cancellationToken?: CancellationToken): Task_1<System_Internal.Single>;
     static TagWith<T>(source: IQueryable_1<T>, tag: string): IQueryable_1<T>;
-    static TagWithCallSite<T>(source: IQueryable_1<T>, filePath?: string, lineNumber?: int): IQueryable_1<T>;
+    static TagWithCallSite<T>(source: IQueryable_1<T>, filePath?: string | null, lineNumber?: int): IQueryable_1<T>;
     static ThenInclude<TEntity, TPreviousProperty, TProperty>(source: IIncludableQueryable_2<TEntity, IEnumerable_1<TPreviousProperty>>, navigationPropertyPath: Expression_1<Func_2<TPreviousProperty, TProperty>>): IIncludableQueryable_2<TEntity, TProperty>;
     static ToArrayAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource[]>;
-    static ToDictionaryAsync<TSource, TKey, TElement>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, elementSelector: Func_2<TSource, TElement>, comparer: IEqualityComparer_1<TKey>, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TElement>>;
+    static ToDictionaryAsync<TSource, TKey, TElement>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, elementSelector: Func_2<TSource, TElement>, comparer: IEqualityComparer_1<TKey> | null, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TElement>>;
     static ToDictionaryAsync<TSource, TKey, TElement>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, elementSelector: Func_2<TSource, TElement>, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TElement>>;
     static ToDictionaryAsync<TSource, TKey>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, comparer: IEqualityComparer_1<TKey>, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TSource>>;
     static ToDictionaryAsync<TSource, TKey>(source: IQueryable_1<TSource>, keySelector: Func_2<TSource, TKey>, cancellationToken?: CancellationToken): Task_1<Dictionary_2<TKey, TSource>>;
-    static ToHashSetAsync<TSource>(source: IQueryable_1<TSource>, comparer: IEqualityComparer_1<TSource>, cancellationToken?: CancellationToken): Task_1<HashSet_1<TSource>>;
+    static ToHashSetAsync<TSource>(source: IQueryable_1<TSource>, comparer: IEqualityComparer_1<TSource> | null, cancellationToken?: CancellationToken): Task_1<HashSet_1<TSource>>;
     static ToHashSetAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<HashSet_1<TSource>>;
     static ToListAsync<TSource>(source: IQueryable_1<TSource>, cancellationToken?: CancellationToken): Task_1<List_1<TSource>>;
     static ToQueryString(source: IQueryable): string;
@@ -1190,7 +1188,7 @@ export abstract class ExecutionStrategyExtensions$instance {
     static Execute<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>): TResult;
     static Execute(strategy: IExecutionStrategy, operation: Action): void;
     static Execute<TState>(strategy: IExecutionStrategy, state: TState, operation: Action_1<TState>): void;
-    static Execute<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, ExecutionResult_1<TResult>>): TResult;
+    static Execute<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, TResult>, verifySucceeded: Func_2<TState, ExecutionResult_1<TResult>> | null): TResult;
     static Execute<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, TResult>): TResult;
     static ExecuteAsync<TResult>(strategy: IExecutionStrategy, operation: Func_1<Task_1<TResult>>): Task_1<TResult>;
     static ExecuteAsync<TResult>(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task_1<TResult>>, cancellationToken: CancellationToken): Task_1<TResult>;
@@ -1198,7 +1196,7 @@ export abstract class ExecutionStrategyExtensions$instance {
     static ExecuteAsync(strategy: IExecutionStrategy, operation: Func_2<CancellationToken, Task>, cancellationToken: CancellationToken): Task;
     static ExecuteAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, Task>): Task;
     static ExecuteAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_2<TState, Task_1<TResult>>): Task_1<TResult>;
-    static ExecuteAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<ExecutionResult_1<TResult>>>, cancellationToken?: CancellationToken): Task_1<TResult>;
+    static ExecuteAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, verifySucceeded: Func_3<TState, CancellationToken, Task_1<ExecutionResult_1<TResult>>> | null, cancellationToken?: CancellationToken): Task_1<TResult>;
     static ExecuteAsync<TState>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task>, cancellationToken: CancellationToken): Task;
     static ExecuteAsync<TState, TResult>(strategy: IExecutionStrategy, state: TState, operation: Func_3<TState, CancellationToken, Task_1<TResult>>, cancellationToken: CancellationToken): Task_1<TResult>;
     static ExecuteInTransaction<TResult>(strategy: IExecutionStrategy, operation: Func_1<TResult>, verifySucceeded: Func_1<System_Internal.Boolean>): TResult;
@@ -1232,110 +1230,110 @@ export abstract class PropertyBaseExtensions$instance {
 export type PropertyBaseExtensions = PropertyBaseExtensions$instance;
 
 export abstract class RelationalComplexCollectionBuilderExtensions$instance {
-    static HasColumnType<TComplex>(complexCollectionBuilder: ComplexCollectionBuilder_1<TComplex>, columnType: string): ComplexCollectionBuilder_1<TComplex>;
-    static HasColumnType(complexCollectionBuilder: ComplexCollectionBuilder, columnType: string): ComplexCollectionBuilder;
-    static HasJsonPropertyName<TComplex>(complexCollectionBuilder: ComplexCollectionBuilder_1<TComplex>, name: string): ComplexCollectionBuilder_1<TComplex>;
-    static HasJsonPropertyName(complexCollectionBuilder: ComplexCollectionBuilder, name: string): ComplexCollectionBuilder;
-    static ToJson<TComplex>(complexCollectionBuilder: ComplexCollectionBuilder_1<TComplex>, jsonColumnName?: string): ComplexCollectionBuilder_1<TComplex>;
-    static ToJson(complexCollectionBuilder: ComplexCollectionBuilder, jsonColumnName?: string): ComplexCollectionBuilder;
+    static HasColumnType<TComplex>(complexCollectionBuilder: ComplexCollectionBuilder_1<TComplex>, columnType: string | null): ComplexCollectionBuilder_1<TComplex>;
+    static HasColumnType(complexCollectionBuilder: ComplexCollectionBuilder, columnType: string | null): ComplexCollectionBuilder;
+    static HasJsonPropertyName<TComplex>(complexCollectionBuilder: ComplexCollectionBuilder_1<TComplex>, name: string | null): ComplexCollectionBuilder_1<TComplex>;
+    static HasJsonPropertyName(complexCollectionBuilder: ComplexCollectionBuilder, name: string | null): ComplexCollectionBuilder;
+    static ToJson<TComplex>(complexCollectionBuilder: ComplexCollectionBuilder_1<TComplex>, jsonColumnName?: string | null): ComplexCollectionBuilder_1<TComplex>;
+    static ToJson(complexCollectionBuilder: ComplexCollectionBuilder, jsonColumnName?: string | null): ComplexCollectionBuilder;
 }
 
 
 export type RelationalComplexCollectionBuilderExtensions = RelationalComplexCollectionBuilderExtensions$instance;
 
 export abstract class RelationalComplexCollectionTypePropertyBuilderExtensions$instance {
-    static HasJsonPropertyName<TProperty>(propertyBuilder: ComplexCollectionTypePropertyBuilder_1<TProperty>, name: string): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    static HasJsonPropertyName(propertyBuilder: ComplexCollectionTypePropertyBuilder, name: string): ComplexCollectionTypePropertyBuilder;
+    static HasJsonPropertyName<TProperty>(propertyBuilder: ComplexCollectionTypePropertyBuilder_1<TProperty>, name: string | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    static HasJsonPropertyName(propertyBuilder: ComplexCollectionTypePropertyBuilder, name: string | null): ComplexCollectionTypePropertyBuilder;
 }
 
 
 export type RelationalComplexCollectionTypePropertyBuilderExtensions = RelationalComplexCollectionTypePropertyBuilderExtensions$instance;
 
 export abstract class RelationalComplexPropertyBuilderExtensions$instance {
-    static HasColumnType<TComplex>(complexPropertyBuilder: ComplexPropertyBuilder_1<TComplex>, columnType: string): ComplexPropertyBuilder_1<TComplex>;
-    static HasColumnType(complexPropertyBuilder: ComplexPropertyBuilder, columnType: string): ComplexPropertyBuilder;
-    static HasJsonPropertyName<TComplex>(complexPropertyBuilder: ComplexPropertyBuilder_1<TComplex>, name: string): ComplexPropertyBuilder_1<TComplex>;
-    static HasJsonPropertyName(complexPropertyBuilder: ComplexPropertyBuilder, name: string): ComplexPropertyBuilder;
-    static ToJson<TComplex>(complexPropertyBuilder: ComplexPropertyBuilder_1<TComplex>, jsonColumnName?: string): ComplexPropertyBuilder_1<TComplex>;
-    static ToJson(complexPropertyBuilder: ComplexPropertyBuilder, jsonColumnName?: string): ComplexPropertyBuilder;
+    static HasColumnType<TComplex>(complexPropertyBuilder: ComplexPropertyBuilder_1<TComplex>, columnType: string | null): ComplexPropertyBuilder_1<TComplex>;
+    static HasColumnType(complexPropertyBuilder: ComplexPropertyBuilder, columnType: string | null): ComplexPropertyBuilder;
+    static HasJsonPropertyName<TComplex>(complexPropertyBuilder: ComplexPropertyBuilder_1<TComplex>, name: string | null): ComplexPropertyBuilder_1<TComplex>;
+    static HasJsonPropertyName(complexPropertyBuilder: ComplexPropertyBuilder, name: string | null): ComplexPropertyBuilder;
+    static ToJson<TComplex>(complexPropertyBuilder: ComplexPropertyBuilder_1<TComplex>, jsonColumnName?: string | null): ComplexPropertyBuilder_1<TComplex>;
+    static ToJson(complexPropertyBuilder: ComplexPropertyBuilder, jsonColumnName?: string | null): ComplexPropertyBuilder;
 }
 
 
 export type RelationalComplexPropertyBuilderExtensions = RelationalComplexPropertyBuilderExtensions$instance;
 
 export abstract class RelationalComplexPropertyExtensions$instance {
-    static GetJsonPropertyName(complexProperty: IReadOnlyComplexProperty): string | undefined;
+    static GetJsonPropertyName(complexProperty: IReadOnlyComplexProperty): string | null;
     static GetJsonPropertyNameConfigurationSource(complexProperty: IConventionComplexProperty): Nullable_1<ConfigurationSource>;
-    static SetJsonPropertyName(complexProperty: IConventionComplexProperty, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetJsonPropertyName(complexProperty: IMutableComplexProperty, name: string): void;
+    static SetJsonPropertyName(complexProperty: IConventionComplexProperty, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetJsonPropertyName(complexProperty: IMutableComplexProperty, name: string | null): void;
 }
 
 
 export type RelationalComplexPropertyExtensions = RelationalComplexPropertyExtensions$instance;
 
 export abstract class RelationalComplexTypePrimitiveCollectionBuilderExtensions$instance {
-    static HasColumnName<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, name: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    static HasColumnName(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, name: string): ComplexTypePrimitiveCollectionBuilder;
+    static HasColumnName<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, name: string | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    static HasColumnName(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, name: string | null): ComplexTypePrimitiveCollectionBuilder;
     static HasColumnOrder<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, order: Nullable_1<System_Internal.Int32>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     static HasColumnOrder(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, order: Nullable_1<System_Internal.Int32>): ComplexTypePrimitiveCollectionBuilder;
-    static HasColumnType<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, typeName: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    static HasColumnType(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, typeName: string): ComplexTypePrimitiveCollectionBuilder;
-    static HasComment<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, comment: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    static HasComment(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, comment: string): ComplexTypePrimitiveCollectionBuilder;
-    static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, sql: string, stored: Nullable_1<System_Internal.Boolean>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, sql: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    static HasColumnType<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, typeName: string | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    static HasColumnType(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, typeName: string | null): ComplexTypePrimitiveCollectionBuilder;
+    static HasComment<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, comment: string | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    static HasComment(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, comment: string | null): ComplexTypePrimitiveCollectionBuilder;
+    static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, sql: string | null, stored: Nullable_1<System_Internal.Boolean>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, sql: string | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    static HasComputedColumnSql(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, sql: string, stored: Nullable_1<System_Internal.Boolean>): ComplexTypePrimitiveCollectionBuilder;
-    static HasComputedColumnSql(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, sql: string): ComplexTypePrimitiveCollectionBuilder;
+    static HasComputedColumnSql(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, sql: string | null, stored: Nullable_1<System_Internal.Boolean>): ComplexTypePrimitiveCollectionBuilder;
+    static HasComputedColumnSql(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, sql: string | null): ComplexTypePrimitiveCollectionBuilder;
     static HasComputedColumnSql(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder): ComplexTypePrimitiveCollectionBuilder;
-    static HasDefaultValue<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, value: unknown): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    static HasDefaultValue<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, value: JsValue | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     static HasDefaultValue<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    static HasDefaultValue(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, value: unknown): ComplexTypePrimitiveCollectionBuilder;
+    static HasDefaultValue(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, value: JsValue | null): ComplexTypePrimitiveCollectionBuilder;
     static HasDefaultValue(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder): ComplexTypePrimitiveCollectionBuilder;
-    static HasDefaultValueSql<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, sql: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    static HasDefaultValueSql<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, sql: string | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     static HasDefaultValueSql<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    static HasDefaultValueSql(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, sql: string): ComplexTypePrimitiveCollectionBuilder;
+    static HasDefaultValueSql(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, sql: string | null): ComplexTypePrimitiveCollectionBuilder;
     static HasDefaultValueSql(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder): ComplexTypePrimitiveCollectionBuilder;
-    static HasJsonPropertyName<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, name: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    static HasJsonPropertyName(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, name: string): ComplexTypePrimitiveCollectionBuilder;
+    static HasJsonPropertyName<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, name: string | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    static HasJsonPropertyName(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, name: string | null): ComplexTypePrimitiveCollectionBuilder;
     static IsFixedLength<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, fixedLength?: boolean): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     static IsFixedLength(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, fixedLength?: boolean): ComplexTypePrimitiveCollectionBuilder;
-    static UseCollation<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, collation: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    static UseCollation(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, collation: string): ComplexTypePrimitiveCollectionBuilder;
+    static UseCollation<TProperty>(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder_1<TProperty>, collation: string | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    static UseCollation(primitiveCollectionBuilder: ComplexTypePrimitiveCollectionBuilder, collation: string | null): ComplexTypePrimitiveCollectionBuilder;
 }
 
 
 export type RelationalComplexTypePrimitiveCollectionBuilderExtensions = RelationalComplexTypePrimitiveCollectionBuilderExtensions$instance;
 
 export abstract class RelationalComplexTypePropertyBuilderExtensions$instance {
-    static HasColumnName<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, name: string): ComplexTypePropertyBuilder_1<TProperty>;
-    static HasColumnName(propertyBuilder: ComplexTypePropertyBuilder, name: string): ComplexTypePropertyBuilder;
+    static HasColumnName<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, name: string | null): ComplexTypePropertyBuilder_1<TProperty>;
+    static HasColumnName(propertyBuilder: ComplexTypePropertyBuilder, name: string | null): ComplexTypePropertyBuilder;
     static HasColumnOrder<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, order: Nullable_1<System_Internal.Int32>): ComplexTypePropertyBuilder_1<TProperty>;
     static HasColumnOrder(propertyBuilder: ComplexTypePropertyBuilder, order: Nullable_1<System_Internal.Int32>): ComplexTypePropertyBuilder;
-    static HasColumnType<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, typeName: string): ComplexTypePropertyBuilder_1<TProperty>;
-    static HasColumnType(propertyBuilder: ComplexTypePropertyBuilder, typeName: string): ComplexTypePropertyBuilder;
-    static HasComment<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, comment: string): ComplexTypePropertyBuilder_1<TProperty>;
-    static HasComment(propertyBuilder: ComplexTypePropertyBuilder, comment: string): ComplexTypePropertyBuilder;
-    static HasComputedColumnSql<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, sql: string, stored: Nullable_1<System_Internal.Boolean>): ComplexTypePropertyBuilder_1<TProperty>;
-    static HasComputedColumnSql<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, sql: string): ComplexTypePropertyBuilder_1<TProperty>;
+    static HasColumnType<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, typeName: string | null): ComplexTypePropertyBuilder_1<TProperty>;
+    static HasColumnType(propertyBuilder: ComplexTypePropertyBuilder, typeName: string | null): ComplexTypePropertyBuilder;
+    static HasComment<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, comment: string | null): ComplexTypePropertyBuilder_1<TProperty>;
+    static HasComment(propertyBuilder: ComplexTypePropertyBuilder, comment: string | null): ComplexTypePropertyBuilder;
+    static HasComputedColumnSql<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, sql: string | null, stored: Nullable_1<System_Internal.Boolean>): ComplexTypePropertyBuilder_1<TProperty>;
+    static HasComputedColumnSql<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, sql: string | null): ComplexTypePropertyBuilder_1<TProperty>;
     static HasComputedColumnSql<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>): ComplexTypePropertyBuilder_1<TProperty>;
-    static HasComputedColumnSql(propertyBuilder: ComplexTypePropertyBuilder, sql: string, stored: Nullable_1<System_Internal.Boolean>): ComplexTypePropertyBuilder;
-    static HasComputedColumnSql(propertyBuilder: ComplexTypePropertyBuilder, sql: string): ComplexTypePropertyBuilder;
+    static HasComputedColumnSql(propertyBuilder: ComplexTypePropertyBuilder, sql: string | null, stored: Nullable_1<System_Internal.Boolean>): ComplexTypePropertyBuilder;
+    static HasComputedColumnSql(propertyBuilder: ComplexTypePropertyBuilder, sql: string | null): ComplexTypePropertyBuilder;
     static HasComputedColumnSql(propertyBuilder: ComplexTypePropertyBuilder): ComplexTypePropertyBuilder;
-    static HasDefaultValue<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, value: unknown): ComplexTypePropertyBuilder_1<TProperty>;
+    static HasDefaultValue<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, value: JsValue | null): ComplexTypePropertyBuilder_1<TProperty>;
     static HasDefaultValue<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>): ComplexTypePropertyBuilder_1<TProperty>;
-    static HasDefaultValue(propertyBuilder: ComplexTypePropertyBuilder, value: unknown): ComplexTypePropertyBuilder;
+    static HasDefaultValue(propertyBuilder: ComplexTypePropertyBuilder, value: JsValue | null): ComplexTypePropertyBuilder;
     static HasDefaultValue(propertyBuilder: ComplexTypePropertyBuilder): ComplexTypePropertyBuilder;
-    static HasDefaultValueSql<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, sql: string): ComplexTypePropertyBuilder_1<TProperty>;
+    static HasDefaultValueSql<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, sql: string | null): ComplexTypePropertyBuilder_1<TProperty>;
     static HasDefaultValueSql<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>): ComplexTypePropertyBuilder_1<TProperty>;
-    static HasDefaultValueSql(propertyBuilder: ComplexTypePropertyBuilder, sql: string): ComplexTypePropertyBuilder;
+    static HasDefaultValueSql(propertyBuilder: ComplexTypePropertyBuilder, sql: string | null): ComplexTypePropertyBuilder;
     static HasDefaultValueSql(propertyBuilder: ComplexTypePropertyBuilder): ComplexTypePropertyBuilder;
-    static HasJsonPropertyName<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, name: string): ComplexTypePropertyBuilder_1<TProperty>;
-    static HasJsonPropertyName(propertyBuilder: ComplexTypePropertyBuilder, name: string): ComplexTypePropertyBuilder;
+    static HasJsonPropertyName<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, name: string | null): ComplexTypePropertyBuilder_1<TProperty>;
+    static HasJsonPropertyName(propertyBuilder: ComplexTypePropertyBuilder, name: string | null): ComplexTypePropertyBuilder;
     static IsFixedLength<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, fixedLength?: boolean): ComplexTypePropertyBuilder_1<TProperty>;
     static IsFixedLength(propertyBuilder: ComplexTypePropertyBuilder, fixedLength?: boolean): ComplexTypePropertyBuilder;
-    static UseCollation<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, collation: string): ComplexTypePropertyBuilder_1<TProperty>;
-    static UseCollation(propertyBuilder: ComplexTypePropertyBuilder, collation: string): ComplexTypePropertyBuilder;
+    static UseCollation<TProperty>(propertyBuilder: ComplexTypePropertyBuilder_1<TProperty>, collation: string | null): ComplexTypePropertyBuilder_1<TProperty>;
+    static UseCollation(propertyBuilder: ComplexTypePropertyBuilder, collation: string | null): ComplexTypePropertyBuilder;
 }
 
 
@@ -1350,38 +1348,38 @@ export abstract class RelationalDatabaseFacadeExtensions$instance {
     static ExecuteSqlAsync(databaseFacade: DatabaseFacade, sql: FormattableString, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     static ExecuteSqlInterpolated(databaseFacade: DatabaseFacade, sql: FormattableString): int;
     static ExecuteSqlInterpolatedAsync(databaseFacade: DatabaseFacade, sql: FormattableString, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
-    static ExecuteSqlRaw(databaseFacade: DatabaseFacade, sql: string, parameters: IEnumerable_1<unknown>): int;
-    static ExecuteSqlRaw(databaseFacade: DatabaseFacade, sql: string, ...parameters: unknown[]): int;
-    static ExecuteSqlRawAsync(databaseFacade: DatabaseFacade, sql: string, parameters: IEnumerable_1<unknown>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
-    static ExecuteSqlRawAsync(databaseFacade: DatabaseFacade, sql: string, ...parameters: unknown[]): Task_1<System_Internal.Int32>;
+    static ExecuteSqlRaw(databaseFacade: DatabaseFacade, sql: string, parameters: IEnumerable_1<JsValue | null>): int;
+    static ExecuteSqlRaw(databaseFacade: DatabaseFacade, sql: string, ...parameters: (JsValue | null)[]): int;
+    static ExecuteSqlRawAsync(databaseFacade: DatabaseFacade, sql: string, parameters: IEnumerable_1<JsValue>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
+    static ExecuteSqlRawAsync(databaseFacade: DatabaseFacade, sql: string, ...parameters: JsValue[]): Task_1<System_Internal.Int32>;
     static ExecuteSqlRawAsync(databaseFacade: DatabaseFacade, sql: string, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     static GenerateCreateScript(databaseFacade: DatabaseFacade): string;
     static GetAppliedMigrations(databaseFacade: DatabaseFacade): IEnumerable_1<System_Internal.String>;
     static GetAppliedMigrationsAsync(databaseFacade: DatabaseFacade, cancellationToken?: CancellationToken): Task_1<IEnumerable_1<System_Internal.String>>;
     static GetCommandTimeout(databaseFacade: DatabaseFacade): Nullable_1<System_Internal.Int32>;
-    static GetConnectionString(databaseFacade: DatabaseFacade): string | undefined;
+    static GetConnectionString(databaseFacade: DatabaseFacade): string | null;
     static GetDbConnection(databaseFacade: DatabaseFacade): DbConnection;
     static GetMigrations(databaseFacade: DatabaseFacade): IEnumerable_1<System_Internal.String>;
     static GetPendingMigrations(databaseFacade: DatabaseFacade): IEnumerable_1<System_Internal.String>;
     static GetPendingMigrationsAsync(databaseFacade: DatabaseFacade, cancellationToken?: CancellationToken): Task_1<IEnumerable_1<System_Internal.String>>;
     static HasPendingModelChanges(databaseFacade: DatabaseFacade): boolean;
     static IsRelational(databaseFacade: DatabaseFacade): boolean;
-    static Migrate(databaseFacade: DatabaseFacade, targetMigration: string): void;
+    static Migrate(databaseFacade: DatabaseFacade, targetMigration: string | null): void;
     static Migrate(databaseFacade: DatabaseFacade): void;
-    static MigrateAsync(databaseFacade: DatabaseFacade, targetMigration: string, cancellationToken?: CancellationToken): Task;
+    static MigrateAsync(databaseFacade: DatabaseFacade, targetMigration: string | null, cancellationToken?: CancellationToken): Task;
     static MigrateAsync(databaseFacade: DatabaseFacade, cancellationToken?: CancellationToken): Task;
     static OpenConnection(databaseFacade: DatabaseFacade): void;
     static OpenConnectionAsync(databaseFacade: DatabaseFacade, cancellationToken?: CancellationToken): Task;
     static SetCommandTimeout(databaseFacade: DatabaseFacade, timeout: Nullable_1<System_Internal.Int32>): void;
     static SetCommandTimeout(databaseFacade: DatabaseFacade, timeout: TimeSpan): void;
-    static SetConnectionString(databaseFacade: DatabaseFacade, connectionString: string): void;
-    static SetDbConnection(databaseFacade: DatabaseFacade, connection: DbConnection, contextOwnsConnection?: boolean): void;
+    static SetConnectionString(databaseFacade: DatabaseFacade, connectionString: string | null): void;
+    static SetDbConnection(databaseFacade: DatabaseFacade, connection: DbConnection | null, contextOwnsConnection?: boolean): void;
     static SqlQuery<TResult>(databaseFacade: DatabaseFacade, sql: FormattableString): IQueryable_1<TResult>;
-    static SqlQueryRaw<TResult>(databaseFacade: DatabaseFacade, sql: string, ...parameters: unknown[]): IQueryable_1<TResult>;
-    static UseTransaction(databaseFacade: DatabaseFacade, transaction: DbTransaction, transactionId: Guid): IDbContextTransaction | undefined;
-    static UseTransaction(databaseFacade: DatabaseFacade, transaction: DbTransaction): IDbContextTransaction | undefined;
-    static UseTransactionAsync(databaseFacade: DatabaseFacade, transaction: DbTransaction, transactionId: Guid, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | undefined>;
-    static UseTransactionAsync(databaseFacade: DatabaseFacade, transaction: DbTransaction, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | undefined>;
+    static SqlQueryRaw<TResult>(databaseFacade: DatabaseFacade, sql: string, ...parameters: JsValue[]): IQueryable_1<TResult>;
+    static UseTransaction(databaseFacade: DatabaseFacade, transaction: DbTransaction | null, transactionId: Guid): IDbContextTransaction | null;
+    static UseTransaction(databaseFacade: DatabaseFacade, transaction: DbTransaction | null): IDbContextTransaction | null;
+    static UseTransactionAsync(databaseFacade: DatabaseFacade, transaction: DbTransaction | null, transactionId: Guid, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | null>;
+    static UseTransactionAsync(databaseFacade: DatabaseFacade, transaction: DbTransaction | null, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | null>;
 }
 
 
@@ -1398,29 +1396,29 @@ export type RelationalDbFunctionsExtensions = RelationalDbFunctionsExtensions$in
 
 export abstract class RelationalElementTypeBuilderExtensions$instance {
     static CanSetFixedLength(elementTypeBuilder: IConventionElementTypeBuilder, fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    static CanSetStoreType(elementTypeBuilder: IConventionElementTypeBuilder, typeName: string, fromDataAnnotation?: boolean): boolean;
-    static HasStoreType(elementTypeBuilder: ElementTypeBuilder, typeName: string): ElementTypeBuilder;
-    static HasStoreType(elementTypeBuilder: IConventionElementTypeBuilder, typeName: string, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
+    static CanSetStoreType(elementTypeBuilder: IConventionElementTypeBuilder, typeName: string | null, fromDataAnnotation?: boolean): boolean;
+    static HasStoreType(elementTypeBuilder: ElementTypeBuilder, typeName: string | null): ElementTypeBuilder;
+    static HasStoreType(elementTypeBuilder: IConventionElementTypeBuilder, typeName: string | null, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
     static IsFixedLength(elementTypeBuilder: ElementTypeBuilder, fixedLength?: boolean): ElementTypeBuilder;
-    static IsFixedLength(elementTypeBuilder: IConventionElementTypeBuilder, fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
+    static IsFixedLength(elementTypeBuilder: IConventionElementTypeBuilder, fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
 }
 
 
 export type RelationalElementTypeBuilderExtensions = RelationalElementTypeBuilderExtensions$instance;
 
 export abstract class RelationalElementTypeExtensions$instance {
-    static FindRelationalTypeMapping(elementType: IReadOnlyElementType): RelationalTypeMapping | undefined;
+    static FindRelationalTypeMapping(elementType: IReadOnlyElementType): RelationalTypeMapping | null;
     static GetIsFixedLengthConfigurationSource(elementType: IConventionElementType): Nullable_1<ConfigurationSource>;
     static GetRelationalTypeMapping(elementType: IReadOnlyElementType): RelationalTypeMapping;
     static GetStoreType(elementType: IElementType): string;
-    static GetStoreType(elementType: IReadOnlyElementType): string | undefined;
+    static GetStoreType(elementType: IReadOnlyElementType): string | null;
     static GetStoreTypeConfigurationSource(elementType: IConventionElementType): Nullable_1<ConfigurationSource>;
     static IsFixedLength(elementType: IReadOnlyElementType, storeObject: StoreObjectIdentifier): Nullable_1<System_Internal.Boolean>;
     static IsFixedLength(elementType: IReadOnlyElementType): Nullable_1<System_Internal.Boolean>;
     static SetIsFixedLength(elementType: IConventionElementType, fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable_1<System_Internal.Boolean>;
     static SetIsFixedLength(elementType: IMutableElementType, fixedLength: Nullable_1<System_Internal.Boolean>): void;
-    static SetStoreType(elementType: IConventionElementType, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetStoreType(elementType: IMutableElementType, value: string): void;
+    static SetStoreType(elementType: IConventionElementType, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetStoreType(elementType: IMutableElementType, value: string | null): void;
 }
 
 
@@ -1428,150 +1426,150 @@ export type RelationalElementTypeExtensions = RelationalElementTypeExtensions$in
 
 export abstract class RelationalEntityTypeBuilderExtensions$instance {
     static CanExcludeTableFromMigrations(entityTypeBuilder: IConventionEntityTypeBuilder, excludedFromMigrations: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    static CanHaveCheckConstraint(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, sql: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetComment(entityTypeBuilder: IConventionEntityTypeBuilder, comment: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetFunction(entityTypeBuilder: IConventionEntityTypeBuilder, function_: MethodInfo, fromDataAnnotation?: boolean): boolean;
-    static CanSetFunction(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetJsonPropertyName(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetMappingStrategy(entityTypeBuilder: IConventionEntityTypeBuilder, strategy: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetSqlQuery(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetTable(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetView(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetViewSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string, fromDataAnnotation?: boolean): boolean;
+    static CanHaveCheckConstraint(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, sql: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetComment(entityTypeBuilder: IConventionEntityTypeBuilder, comment: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetFunction(entityTypeBuilder: IConventionEntityTypeBuilder, function_: MethodInfo | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetFunction(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetJsonPropertyName(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetMappingStrategy(entityTypeBuilder: IConventionEntityTypeBuilder, strategy: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetSqlQuery(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetTable(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetView(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetViewSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string | null, fromDataAnnotation?: boolean): boolean;
     static DeleteUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static DeleteUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static DeleteUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
+    static DeleteUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string | null, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static DeleteUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
     static DeleteUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
-    static DeleteUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
-    static DeleteUsingStoredProcedure(entityTypeBuilder: IConventionEntityTypeBuilder, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | undefined;
+    static DeleteUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string | null, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
+    static DeleteUsingStoredProcedure(entityTypeBuilder: IConventionEntityTypeBuilder, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | null;
     static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
-    static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
+    static DeleteUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static DeleteUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static DeleteUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static DeleteUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ExcludeTableFromMigrations(entityTypeBuilder: IConventionEntityTypeBuilder, excludedFromMigrations: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    static DeleteUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ExcludeTableFromMigrations(entityTypeBuilder: IConventionEntityTypeBuilder, excludedFromMigrations: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     static HasCheckConstraint<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, sql: string, buildAction: Action_1<CheckConstraintBuilder>): EntityTypeBuilder_1<TEntity>;
-    static HasCheckConstraint<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, sql: string): EntityTypeBuilder_1<TEntity>;
+    static HasCheckConstraint<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, sql: string | null): EntityTypeBuilder_1<TEntity>;
     static HasCheckConstraint(entityTypeBuilder: EntityTypeBuilder, name: string, sql: string, buildAction: Action_1<CheckConstraintBuilder>): EntityTypeBuilder;
-    static HasCheckConstraint(entityTypeBuilder: EntityTypeBuilder, name: string, sql: string): EntityTypeBuilder;
-    static HasCheckConstraint(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, sql: string, fromDataAnnotation?: boolean): IConventionCheckConstraintBuilder | undefined;
+    static HasCheckConstraint(entityTypeBuilder: EntityTypeBuilder, name: string, sql: string | null): EntityTypeBuilder;
+    static HasCheckConstraint(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, sql: string | null, fromDataAnnotation?: boolean): IConventionCheckConstraintBuilder | null;
     static HasCheckConstraint(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, sql: string, buildAction: Action_1<CheckConstraintBuilder>): OwnedNavigationBuilder;
-    static HasCheckConstraint(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, sql: string): OwnedNavigationBuilder;
+    static HasCheckConstraint(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, sql: string | null): OwnedNavigationBuilder;
     static HasCheckConstraint<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, sql: string, buildAction: Action_1<CheckConstraintBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static HasCheckConstraint<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, sql: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static HasComment<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, comment: string): EntityTypeBuilder_1<TEntity>;
-    static HasComment(entityTypeBuilder: EntityTypeBuilder, comment: string): EntityTypeBuilder;
-    static HasComment(entityTypeBuilder: IConventionEntityTypeBuilder, comment: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    static HasJsonPropertyName(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    static HasCheckConstraint<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, sql: string | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static HasComment<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, comment: string | null): EntityTypeBuilder_1<TEntity>;
+    static HasComment(entityTypeBuilder: EntityTypeBuilder, comment: string | null): EntityTypeBuilder;
+    static HasComment(entityTypeBuilder: IConventionEntityTypeBuilder, comment: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    static HasJsonPropertyName(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     static InsertUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static InsertUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static InsertUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
+    static InsertUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string | null, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static InsertUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
     static InsertUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
-    static InsertUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
-    static InsertUsingStoredProcedure(entityTypeBuilder: IConventionEntityTypeBuilder, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | undefined;
+    static InsertUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string | null, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
+    static InsertUsingStoredProcedure(entityTypeBuilder: IConventionEntityTypeBuilder, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | null;
     static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
-    static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
+    static InsertUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static InsertUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static InsertUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static InsertUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static InsertUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static SplitToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<SplitTableBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static SplitToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<SplitTableBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
+    static SplitToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string | null, buildAction: Action_1<SplitTableBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static SplitToTable(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<SplitTableBuilder>): EntityTypeBuilder;
-    static SplitToTable(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<SplitTableBuilder>): EntityTypeBuilder;
+    static SplitToTable(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string | null, buildAction: Action_1<SplitTableBuilder>): EntityTypeBuilder;
     static SplitToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder>): OwnedNavigationBuilder;
-    static SplitToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder>): OwnedNavigationBuilder;
+    static SplitToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationSplitTableBuilder>): OwnedNavigationBuilder;
     static SplitToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static SplitToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static SplitToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static SplitToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<SplitViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static SplitToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<SplitViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
+    static SplitToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string | null, buildAction: Action_1<SplitViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static SplitToView(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<SplitViewBuilder>): EntityTypeBuilder;
-    static SplitToView(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<SplitViewBuilder>): EntityTypeBuilder;
+    static SplitToView(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string | null, buildAction: Action_1<SplitViewBuilder>): EntityTypeBuilder;
     static SplitToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder>): OwnedNavigationBuilder;
-    static SplitToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder>): OwnedNavigationBuilder;
+    static SplitToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationSplitViewBuilder>): OwnedNavigationBuilder;
     static SplitToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static SplitToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static SplitToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToFunction<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, function_: MethodInfo, configureFunction: Action_1<TableValuedFunctionBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static ToFunction<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, function_: MethodInfo): EntityTypeBuilder_1<TEntity>;
+    static ToFunction<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, function_: MethodInfo | null): EntityTypeBuilder_1<TEntity>;
     static ToFunction<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, configureFunction: Action_1<TableValuedFunctionBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static ToFunction<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string): EntityTypeBuilder_1<TEntity>;
+    static ToFunction<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string | null): EntityTypeBuilder_1<TEntity>;
     static ToFunction(entityTypeBuilder: EntityTypeBuilder, function_: MethodInfo, configureFunction: Action_1<TableValuedFunctionBuilder>): EntityTypeBuilder;
-    static ToFunction(entityTypeBuilder: EntityTypeBuilder, function_: MethodInfo): EntityTypeBuilder;
+    static ToFunction(entityTypeBuilder: EntityTypeBuilder, function_: MethodInfo | null): EntityTypeBuilder;
     static ToFunction(entityTypeBuilder: EntityTypeBuilder, name: string, configureFunction: Action_1<TableValuedFunctionBuilder>): EntityTypeBuilder;
-    static ToFunction(entityTypeBuilder: EntityTypeBuilder, name: string): EntityTypeBuilder;
-    static ToFunction(entityTypeBuilder: IConventionEntityTypeBuilder, function_: MethodInfo, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    static ToFunction(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    static ToFunction(entityTypeBuilder: EntityTypeBuilder, name: string | null): EntityTypeBuilder;
+    static ToFunction(entityTypeBuilder: IConventionEntityTypeBuilder, function_: MethodInfo | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    static ToFunction(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, function_: MethodInfo, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder>): OwnedNavigationBuilder;
-    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, function_: MethodInfo): OwnedNavigationBuilder;
+    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, function_: MethodInfo | null): OwnedNavigationBuilder;
     static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder>): OwnedNavigationBuilder;
-    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
+    static ToFunction(ownedNavigationBuilder: OwnedNavigationBuilder, name: string | null): OwnedNavigationBuilder;
     static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, function_: MethodInfo, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, function_: MethodInfo): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, function_: MethodInfo | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, configureFunction: Action_1<OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    static ToFunction<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     static ToSqlQuery<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, query: string): EntityTypeBuilder_1<TEntity>;
     static ToSqlQuery(entityTypeBuilder: EntityTypeBuilder, query: string): EntityTypeBuilder;
-    static ToSqlQuery(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    static ToSqlQuery(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     static ToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, buildAction: Action_1<TableBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static ToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<TableBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static ToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<TableBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static ToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string): EntityTypeBuilder_1<TEntity>;
-    static ToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string): EntityTypeBuilder_1<TEntity>;
+    static ToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string | null, buildAction: Action_1<TableBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
+    static ToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string | null): EntityTypeBuilder_1<TEntity>;
+    static ToTable<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string | null): EntityTypeBuilder_1<TEntity>;
     static ToTable(entityTypeBuilder: EntityTypeBuilder, buildAction: Action_1<TableBuilder>): EntityTypeBuilder;
     static ToTable(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<TableBuilder>): EntityTypeBuilder;
-    static ToTable(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<TableBuilder>): EntityTypeBuilder;
-    static ToTable(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string): EntityTypeBuilder;
-    static ToTable(entityTypeBuilder: EntityTypeBuilder, name: string): EntityTypeBuilder;
-    static ToTable(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    static ToTable(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, schema: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    static ToTable(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string | null, buildAction: Action_1<TableBuilder>): EntityTypeBuilder;
+    static ToTable(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string | null): EntityTypeBuilder;
+    static ToTable(entityTypeBuilder: EntityTypeBuilder, name: string | null): EntityTypeBuilder;
+    static ToTable(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    static ToTable(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, schema: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
     static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
-    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
-    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string): OwnedNavigationBuilder;
-    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
+    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationTableBuilder>): OwnedNavigationBuilder;
+    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string | null): OwnedNavigationBuilder;
+    static ToTable(ownedNavigationBuilder: OwnedNavigationBuilder, name: string | null): OwnedNavigationBuilder;
     static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, buildAction: Action_1<OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToTable<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<ViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<ViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string): EntityTypeBuilder_1<TEntity>;
-    static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string): EntityTypeBuilder_1<TEntity>;
+    static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string | null, buildAction: Action_1<ViewBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
+    static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string | null, schema: string | null): EntityTypeBuilder_1<TEntity>;
+    static ToView<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string | null): EntityTypeBuilder_1<TEntity>;
     static ToView(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<ViewBuilder>): EntityTypeBuilder;
-    static ToView(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<ViewBuilder>): EntityTypeBuilder;
-    static ToView(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string): EntityTypeBuilder;
-    static ToView(entityTypeBuilder: EntityTypeBuilder, name: string): EntityTypeBuilder;
-    static ToView(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    static ToView(entityTypeBuilder: IConventionEntityTypeBuilder, name: string, schema: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    static ToView(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string | null, buildAction: Action_1<ViewBuilder>): EntityTypeBuilder;
+    static ToView(entityTypeBuilder: EntityTypeBuilder, name: string | null, schema: string | null): EntityTypeBuilder;
+    static ToView(entityTypeBuilder: EntityTypeBuilder, name: string | null): EntityTypeBuilder;
+    static ToView(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    static ToView(entityTypeBuilder: IConventionEntityTypeBuilder, name: string | null, schema: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationViewBuilder>): OwnedNavigationBuilder;
-    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationViewBuilder>): OwnedNavigationBuilder;
-    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string): OwnedNavigationBuilder;
-    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
+    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationViewBuilder>): OwnedNavigationBuilder;
+    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string | null, schema: string | null): OwnedNavigationBuilder;
+    static ToView(ownedNavigationBuilder: OwnedNavigationBuilder, name: string | null): OwnedNavigationBuilder;
     static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static ToViewSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationViewBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string | null, schema: string | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToView<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToViewSchema(entityTypeBuilder: IConventionEntityTypeBuilder, schema: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     static UpdateUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static UpdateUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
-    static UpdateUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
+    static UpdateUsingStoredProcedure<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>, name: string, schema: string | null, buildAction: Action_1<StoredProcedureBuilder_1<TEntity>>): EntityTypeBuilder_1<TEntity>;
     static UpdateUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
     static UpdateUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
-    static UpdateUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
-    static UpdateUsingStoredProcedure(entityTypeBuilder: IConventionEntityTypeBuilder, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | undefined;
+    static UpdateUsingStoredProcedure(entityTypeBuilder: EntityTypeBuilder, name: string, schema: string | null, buildAction: Action_1<StoredProcedureBuilder>): EntityTypeBuilder;
+    static UpdateUsingStoredProcedure(entityTypeBuilder: IConventionEntityTypeBuilder, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | null;
     static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
-    static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
+    static UpdateUsingStoredProcedure(ownedNavigationBuilder: OwnedNavigationBuilder, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder>): OwnedNavigationBuilder;
     static UpdateUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static UpdateUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static UpdateUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static UseMappingStrategy(entityTypeBuilder: IConventionEntityTypeBuilder, strategy: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    static UpdateUsingStoredProcedure<TOwnerEntity, TDependentEntity>(ownedNavigationBuilder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, name: string, schema: string | null, buildAction: Action_1<OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static UseMappingStrategy(entityTypeBuilder: IConventionEntityTypeBuilder, strategy: string | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     static UseTpcMappingStrategy<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>): EntityTypeBuilder_1<TEntity>;
     static UseTpcMappingStrategy(entityTypeBuilder: EntityTypeBuilder): EntityTypeBuilder;
     static UseTphMappingStrategy<TEntity>(entityTypeBuilder: EntityTypeBuilder_1<TEntity>): EntityTypeBuilder_1<TEntity>;
@@ -1587,14 +1585,14 @@ export abstract class RelationalEntityTypeExtensions$instance {
     static readonly DefaultQueryNameBase: string;
     static AddCheckConstraint(entityType: IConventionEntityType, name: string, sql: string, fromDataAnnotation?: boolean): IConventionCheckConstraint;
     static AddCheckConstraint(entityType: IMutableEntityType, name: string, sql: string): IMutableCheckConstraint;
-    static FindCheckConstraint(entityType: IConventionEntityType, name: string): IConventionCheckConstraint | undefined;
-    static FindCheckConstraint(entityType: IEntityType, name: string): ICheckConstraint | undefined;
-    static FindCheckConstraint(entityType: IMutableEntityType, name: string): IMutableCheckConstraint | undefined;
-    static FindCheckConstraint(entityType: IReadOnlyEntityType, name: string): IReadOnlyCheckConstraint | undefined;
-    static FindMappingFragment(entityType: IConventionEntityType, storeObject: StoreObjectIdentifier): IConventionEntityTypeMappingFragment | undefined;
-    static FindMappingFragment(entityType: IEntityType, storeObject: StoreObjectIdentifier): IEntityTypeMappingFragment | undefined;
-    static FindMappingFragment(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier): IMutableEntityTypeMappingFragment | undefined;
-    static FindMappingFragment(entityType: IReadOnlyEntityType, storeObject: StoreObjectIdentifier): IReadOnlyEntityTypeMappingFragment | undefined;
+    static FindCheckConstraint(entityType: IConventionEntityType, name: string): IConventionCheckConstraint | null;
+    static FindCheckConstraint(entityType: IEntityType, name: string): ICheckConstraint | null;
+    static FindCheckConstraint(entityType: IMutableEntityType, name: string): IMutableCheckConstraint | null;
+    static FindCheckConstraint(entityType: IReadOnlyEntityType, name: string): IReadOnlyCheckConstraint | null;
+    static FindMappingFragment(entityType: IConventionEntityType, storeObject: StoreObjectIdentifier): IConventionEntityTypeMappingFragment | null;
+    static FindMappingFragment(entityType: IEntityType, storeObject: StoreObjectIdentifier): IEntityTypeMappingFragment | null;
+    static FindMappingFragment(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier): IMutableEntityTypeMappingFragment | null;
+    static FindMappingFragment(entityType: IReadOnlyEntityType, storeObject: StoreObjectIdentifier): IReadOnlyEntityTypeMappingFragment | null;
     static FindRowInternalForeignKeys(entityType: IConventionEntityType, storeObject: StoreObjectIdentifier): IEnumerable_1<IConventionForeignKey>;
     static FindRowInternalForeignKeys(entityType: IEntityType, storeObject: StoreObjectIdentifier): IEnumerable_1<IForeignKey>;
     static FindRowInternalForeignKeys(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier): IEnumerable_1<IMutableForeignKey>;
@@ -1603,34 +1601,34 @@ export abstract class RelationalEntityTypeExtensions$instance {
     static GetCheckConstraints(entityType: IEntityType): IEnumerable_1<ICheckConstraint>;
     static GetCheckConstraints(entityType: IMutableEntityType): IEnumerable_1<IMutableCheckConstraint>;
     static GetCheckConstraints(entityType: IReadOnlyEntityType): IEnumerable_1<IReadOnlyCheckConstraint>;
-    static GetComment(entityType: IReadOnlyEntityType): string | undefined;
+    static GetComment(entityType: IReadOnlyEntityType): string | null;
     static GetCommentConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
-    static GetContainerColumnTypeMapping(entityType: IReadOnlyEntityType): RelationalTypeMapping | undefined;
+    static GetContainerColumnTypeMapping(entityType: IReadOnlyEntityType): RelationalTypeMapping | null;
     static GetContainerColumnTypeMappingConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
     static GetDeclaredCheckConstraints(entityType: IConventionEntityType): IEnumerable_1<IConventionCheckConstraint>;
     static GetDeclaredCheckConstraints(entityType: IEntityType): IEnumerable_1<ICheckConstraint>;
     static GetDeclaredCheckConstraints(entityType: IMutableEntityType): IEnumerable_1<IMutableCheckConstraint>;
     static GetDeclaredCheckConstraints(entityType: IReadOnlyEntityType): IEnumerable_1<IReadOnlyCheckConstraint>;
-    static GetDefaultSchema(entityType: IReadOnlyEntityType): string | undefined;
+    static GetDefaultSchema(entityType: IReadOnlyEntityType): string | null;
     static GetDefaultSqlQueryName(entityType: IReadOnlyEntityType): string;
-    static GetDefaultTableName(entityType: IReadOnlyEntityType, truncate?: boolean): string | undefined;
-    static GetDefaultViewName(entityType: IReadOnlyEntityType): string | undefined;
-    static GetDefaultViewSchema(entityType: IReadOnlyEntityType): string | undefined;
-    static GetDeleteStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | undefined;
-    static GetDeleteStoredProcedure(entityType: IEntityType): IStoredProcedure | undefined;
-    static GetDeleteStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | undefined;
-    static GetDeleteStoredProcedure(entityType: IReadOnlyEntityType): IReadOnlyStoredProcedure | undefined;
+    static GetDefaultTableName(entityType: IReadOnlyEntityType, truncate?: boolean): string | null;
+    static GetDefaultViewName(entityType: IReadOnlyEntityType): string | null;
+    static GetDefaultViewSchema(entityType: IReadOnlyEntityType): string | null;
+    static GetDeleteStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | null;
+    static GetDeleteStoredProcedure(entityType: IEntityType): IStoredProcedure | null;
+    static GetDeleteStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | null;
+    static GetDeleteStoredProcedure(entityType: IReadOnlyEntityType): IReadOnlyStoredProcedure | null;
     static GetDeleteStoredProcedureConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
-    static GetFunctionName(entityType: IReadOnlyEntityType): string | undefined;
+    static GetFunctionName(entityType: IReadOnlyEntityType): string | null;
     static GetFunctionNameConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
-    static GetInsertStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | undefined;
-    static GetInsertStoredProcedure(entityType: IEntityType): IStoredProcedure | undefined;
-    static GetInsertStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | undefined;
-    static GetInsertStoredProcedure(entityType: IReadOnlyEntityType): IReadOnlyStoredProcedure | undefined;
+    static GetInsertStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | null;
+    static GetInsertStoredProcedure(entityType: IEntityType): IStoredProcedure | null;
+    static GetInsertStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | null;
+    static GetInsertStoredProcedure(entityType: IReadOnlyEntityType): IReadOnlyStoredProcedure | null;
     static GetInsertStoredProcedureConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
     static GetIsTableExcludedFromMigrationsConfigurationSource(entityType: IConventionEntityType, storeObject: StoreObjectIdentifier): Nullable_1<ConfigurationSource>;
     static GetIsTableExcludedFromMigrationsConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
-    static GetJsonPropertyName(entityType: IReadOnlyEntityType): string | undefined;
+    static GetJsonPropertyName(entityType: IReadOnlyEntityType): string | null;
     static GetJsonPropertyNameConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
     static GetMappingFragments(entityType: IConventionEntityType, storeObjectType: StoreObjectType): IEnumerable_1<IConventionEntityTypeMappingFragment>;
     static GetMappingFragments(entityType: IConventionEntityType): IEnumerable_1<IConventionEntityTypeMappingFragment>;
@@ -1640,195 +1638,195 @@ export abstract class RelationalEntityTypeExtensions$instance {
     static GetMappingFragments(entityType: IMutableEntityType): IEnumerable_1<IMutableEntityTypeMappingFragment>;
     static GetMappingFragments(entityType: IReadOnlyEntityType, storeObjectType: StoreObjectType): IEnumerable_1<IReadOnlyEntityTypeMappingFragment>;
     static GetMappingFragments(entityType: IReadOnlyEntityType): IEnumerable_1<IReadOnlyEntityTypeMappingFragment>;
-    static GetMappingStrategy(entityType: IReadOnlyEntityType): string | undefined;
+    static GetMappingStrategy(entityType: IReadOnlyEntityType): string | null;
     static GetMappingStrategyConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
     static GetOrCreateMappingFragment(entityType: IConventionEntityType, storeObject: StoreObjectIdentifier, fromDataAnnotation?: boolean): IConventionEntityTypeMappingFragment;
     static GetOrCreateMappingFragment(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier): IMutableEntityTypeMappingFragment;
-    static GetSchema(entityType: IReadOnlyEntityType): string | undefined;
+    static GetSchema(entityType: IReadOnlyEntityType): string | null;
     static GetSchemaConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
-    static GetSchemaQualifiedTableName(entityType: IReadOnlyEntityType): string | undefined;
-    static GetSchemaQualifiedViewName(entityType: IReadOnlyEntityType): string | undefined;
-    static GetSqlQuery(entityType: IReadOnlyEntityType): string | undefined;
+    static GetSchemaQualifiedTableName(entityType: IReadOnlyEntityType): string | null;
+    static GetSchemaQualifiedViewName(entityType: IReadOnlyEntityType): string | null;
+    static GetSqlQuery(entityType: IReadOnlyEntityType): string | null;
     static GetSqlQueryConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
-    static GetTableName(entityType: IReadOnlyEntityType): string | undefined;
+    static GetTableName(entityType: IReadOnlyEntityType): string | null;
     static GetTableNameConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
-    static GetUpdateStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | undefined;
-    static GetUpdateStoredProcedure(entityType: IEntityType): IStoredProcedure | undefined;
-    static GetUpdateStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | undefined;
-    static GetUpdateStoredProcedure(entityType: IReadOnlyEntityType): IReadOnlyStoredProcedure | undefined;
+    static GetUpdateStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | null;
+    static GetUpdateStoredProcedure(entityType: IEntityType): IStoredProcedure | null;
+    static GetUpdateStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | null;
+    static GetUpdateStoredProcedure(entityType: IReadOnlyEntityType): IReadOnlyStoredProcedure | null;
     static GetUpdateStoredProcedureConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
-    static GetViewName(entityType: IReadOnlyEntityType): string | undefined;
+    static GetViewName(entityType: IReadOnlyEntityType): string | null;
     static GetViewNameConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
-    static GetViewSchema(entityType: IReadOnlyEntityType): string | undefined;
+    static GetViewSchema(entityType: IReadOnlyEntityType): string | null;
     static GetViewSchemaConfigurationSource(entityType: IConventionEntityType): Nullable_1<ConfigurationSource>;
     static IsMappedToJson(entityType: IReadOnlyEntityType): boolean;
     static IsTableExcludedFromMigrations(entityType: IReadOnlyEntityType, storeObject: StoreObjectIdentifier): boolean;
     static IsTableExcludedFromMigrations(entityType: IReadOnlyEntityType): boolean;
-    static RemoveCheckConstraint(entityType: IConventionEntityType, name: string): IConventionCheckConstraint | undefined;
-    static RemoveCheckConstraint(entityType: IMutableEntityType, name: string): IMutableCheckConstraint | undefined;
-    static RemoveDeleteStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | undefined;
-    static RemoveDeleteStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | undefined;
-    static RemoveInsertStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | undefined;
-    static RemoveInsertStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | undefined;
-    static RemoveMappingFragment(entityType: IConventionEntityType, storeObject: StoreObjectIdentifier): IConventionEntityTypeMappingFragment | undefined;
-    static RemoveMappingFragment(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier): IMutableEntityTypeMappingFragment | undefined;
-    static RemoveUpdateStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | undefined;
-    static RemoveUpdateStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | undefined;
-    static SetComment(entityType: IConventionEntityType, comment: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetComment(entityType: IMutableEntityType, comment: string): void;
-    static SetContainerColumnTypeMapping(entityType: IConventionEntityType, typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): RelationalTypeMapping | undefined;
+    static RemoveCheckConstraint(entityType: IConventionEntityType, name: string): IConventionCheckConstraint | null;
+    static RemoveCheckConstraint(entityType: IMutableEntityType, name: string): IMutableCheckConstraint | null;
+    static RemoveDeleteStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | null;
+    static RemoveDeleteStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | null;
+    static RemoveInsertStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | null;
+    static RemoveInsertStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | null;
+    static RemoveMappingFragment(entityType: IConventionEntityType, storeObject: StoreObjectIdentifier): IConventionEntityTypeMappingFragment | null;
+    static RemoveMappingFragment(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier): IMutableEntityTypeMappingFragment | null;
+    static RemoveUpdateStoredProcedure(entityType: IConventionEntityType): IConventionStoredProcedure | null;
+    static RemoveUpdateStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure | null;
+    static SetComment(entityType: IConventionEntityType, comment: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetComment(entityType: IMutableEntityType, comment: string | null): void;
+    static SetContainerColumnTypeMapping(entityType: IConventionEntityType, typeMapping: RelationalTypeMapping | null, fromDataAnnotation?: boolean): RelationalTypeMapping | null;
     static SetContainerColumnTypeMapping(entityType: IMutableEntityType, typeMapping: RelationalTypeMapping): void;
-    static SetDeleteStoredProcedure(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionStoredProcedure | undefined;
+    static SetDeleteStoredProcedure(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionStoredProcedure | null;
     static SetDeleteStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure;
-    static SetFunctionName(entityType: IConventionEntityType, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetFunctionName(entityType: IMutableEntityType, name: string): void;
-    static SetInsertStoredProcedure(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionStoredProcedure | undefined;
+    static SetFunctionName(entityType: IConventionEntityType, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetFunctionName(entityType: IMutableEntityType, name: string | null): void;
+    static SetInsertStoredProcedure(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionStoredProcedure | null;
     static SetInsertStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure;
     static SetIsTableExcludedFromMigrations(entityType: IConventionEntityType, excluded: Nullable_1<System_Internal.Boolean>, storeObject: StoreObjectIdentifier, fromDataAnnotation?: boolean): Nullable_1<System_Internal.Boolean>;
     static SetIsTableExcludedFromMigrations(entityType: IConventionEntityType, excluded: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable_1<System_Internal.Boolean>;
     static SetIsTableExcludedFromMigrations(entityType: IMutableEntityType, excluded: Nullable_1<System_Internal.Boolean>, storeObject: StoreObjectIdentifier): void;
     static SetIsTableExcludedFromMigrations(entityType: IMutableEntityType, excluded: Nullable_1<System_Internal.Boolean>): void;
-    static SetJsonPropertyName(entityType: IConventionEntityType, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetJsonPropertyName(entityType: IMutableEntityType, name: string): void;
-    static SetMappingStrategy(entityType: IConventionEntityType, strategy: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetMappingStrategy(entityType: IMutableEntityType, strategy: string): void;
-    static SetSchema(entityType: IConventionEntityType, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetSchema(entityType: IMutableEntityType, value: string): void;
-    static SetSqlQuery(entityType: IConventionEntityType, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetSqlQuery(entityType: IMutableEntityType, name: string): void;
-    static SetTableName(entityType: IConventionEntityType, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetTableName(entityType: IMutableEntityType, name: string): void;
-    static SetUpdateStoredProcedure(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionStoredProcedure | undefined;
+    static SetJsonPropertyName(entityType: IConventionEntityType, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetJsonPropertyName(entityType: IMutableEntityType, name: string | null): void;
+    static SetMappingStrategy(entityType: IConventionEntityType, strategy: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetMappingStrategy(entityType: IMutableEntityType, strategy: string | null): void;
+    static SetSchema(entityType: IConventionEntityType, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetSchema(entityType: IMutableEntityType, value: string | null): void;
+    static SetSqlQuery(entityType: IConventionEntityType, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetSqlQuery(entityType: IMutableEntityType, name: string | null): void;
+    static SetTableName(entityType: IConventionEntityType, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetTableName(entityType: IMutableEntityType, name: string | null): void;
+    static SetUpdateStoredProcedure(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionStoredProcedure | null;
     static SetUpdateStoredProcedure(entityType: IMutableEntityType): IMutableStoredProcedure;
-    static SetViewName(entityType: IConventionEntityType, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetViewName(entityType: IMutableEntityType, name: string): void;
-    static SetViewSchema(entityType: IConventionEntityType, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetViewSchema(entityType: IMutableEntityType, value: string): void;
+    static SetViewName(entityType: IConventionEntityType, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetViewName(entityType: IMutableEntityType, name: string | null): void;
+    static SetViewSchema(entityType: IConventionEntityType, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetViewSchema(entityType: IMutableEntityType, value: string | null): void;
 }
 
 
 export type RelationalEntityTypeExtensions = RelationalEntityTypeExtensions$instance;
 
 export abstract class RelationalForeignKeyBuilderExtensions$instance {
-    static CanSetConstraintName(relationship: IConventionForeignKeyBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static HasConstraintName(relationship: IConventionForeignKeyBuilder, name: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    static HasConstraintName(ownershipBuilder: OwnershipBuilder, name: string): OwnershipBuilder;
-    static HasConstraintName(referenceCollectionBuilder: ReferenceCollectionBuilder, name: string): ReferenceCollectionBuilder;
-    static HasConstraintName(referenceReferenceBuilder: ReferenceReferenceBuilder, name: string): ReferenceReferenceBuilder;
-    static HasConstraintName<TEntity, TDependentEntity>(ownershipBuilder: OwnershipBuilder_2<TEntity, TDependentEntity>, name: string): OwnershipBuilder_2<TEntity, TDependentEntity>;
-    static HasConstraintName<TEntity, TRelatedEntity>(referenceCollectionBuilder: ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>, name: string): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
-    static HasConstraintName<TEntity, TRelatedEntity>(referenceReferenceBuilder: ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>, name: string): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    static CanSetConstraintName(relationship: IConventionForeignKeyBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static HasConstraintName(relationship: IConventionForeignKeyBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    static HasConstraintName(ownershipBuilder: OwnershipBuilder, name: string | null): OwnershipBuilder;
+    static HasConstraintName(referenceCollectionBuilder: ReferenceCollectionBuilder, name: string | null): ReferenceCollectionBuilder;
+    static HasConstraintName(referenceReferenceBuilder: ReferenceReferenceBuilder, name: string | null): ReferenceReferenceBuilder;
+    static HasConstraintName<TEntity, TDependentEntity>(ownershipBuilder: OwnershipBuilder_2<TEntity, TDependentEntity>, name: string | null): OwnershipBuilder_2<TEntity, TDependentEntity>;
+    static HasConstraintName<TEntity, TRelatedEntity>(referenceCollectionBuilder: ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>, name: string | null): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
+    static HasConstraintName<TEntity, TRelatedEntity>(referenceReferenceBuilder: ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>, name: string | null): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
 }
 
 
 export type RelationalForeignKeyBuilderExtensions = RelationalForeignKeyBuilderExtensions$instance;
 
 export abstract class RelationalForeignKeyExtensions$instance {
-    static FindSharedObjectRootForeignKey(foreignKey: IConventionForeignKey, storeObject: StoreObjectIdentifier): IConventionForeignKey | undefined;
-    static FindSharedObjectRootForeignKey(foreignKey: IForeignKey, storeObject: StoreObjectIdentifier): IForeignKey | undefined;
-    static FindSharedObjectRootForeignKey(foreignKey: IMutableForeignKey, storeObject: StoreObjectIdentifier): IMutableForeignKey | undefined;
-    static FindSharedObjectRootForeignKey(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier): IReadOnlyForeignKey | undefined;
-    static GetConstraintName(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier, principalStoreObject: StoreObjectIdentifier): string | undefined;
-    static GetConstraintName(foreignKey: IReadOnlyForeignKey): string | undefined;
+    static FindSharedObjectRootForeignKey(foreignKey: IConventionForeignKey, storeObject: StoreObjectIdentifier): IConventionForeignKey | null;
+    static FindSharedObjectRootForeignKey(foreignKey: IForeignKey, storeObject: StoreObjectIdentifier): IForeignKey | null;
+    static FindSharedObjectRootForeignKey(foreignKey: IMutableForeignKey, storeObject: StoreObjectIdentifier): IMutableForeignKey | null;
+    static FindSharedObjectRootForeignKey(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier): IReadOnlyForeignKey | null;
+    static GetConstraintName(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier, principalStoreObject: StoreObjectIdentifier): string | null;
+    static GetConstraintName(foreignKey: IReadOnlyForeignKey): string | null;
     static GetConstraintNameConfigurationSource(foreignKey: IConventionForeignKey): Nullable_1<ConfigurationSource>;
-    static GetDefaultName(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier, principalStoreObject: StoreObjectIdentifier): string | undefined;
-    static GetDefaultName(foreignKey: IReadOnlyForeignKey): string | undefined;
+    static GetDefaultName(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier, principalStoreObject: StoreObjectIdentifier): string | null;
+    static GetDefaultName(foreignKey: IReadOnlyForeignKey): string | null;
     static GetMappedConstraints(foreignKey: IForeignKey): IEnumerable_1<IForeignKeyConstraint>;
     static IsRowInternal(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier): boolean;
-    static SetConstraintName(foreignKey: IConventionForeignKey, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetConstraintName(foreignKey: IMutableForeignKey, value: string): void;
+    static SetConstraintName(foreignKey: IConventionForeignKey, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetConstraintName(foreignKey: IMutableForeignKey, value: string | null): void;
 }
 
 
 export type RelationalForeignKeyExtensions = RelationalForeignKeyExtensions$instance;
 
 export abstract class RelationalIndexBuilderExtensions$instance {
-    static CanSetDatabaseName(indexBuilder: IConventionIndexBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetFilter(indexBuilder: IConventionIndexBuilder, sql: string, fromDataAnnotation?: boolean): boolean;
-    static HasDatabaseName<TEntity>(indexBuilder: IndexBuilder_1<TEntity>, name: string): IndexBuilder_1<TEntity>;
-    static HasDatabaseName(indexBuilder: IConventionIndexBuilder, name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    static HasDatabaseName(indexBuilder: IndexBuilder, name: string): IndexBuilder;
-    static HasFilter<TEntity>(indexBuilder: IndexBuilder_1<TEntity>, sql: string): IndexBuilder_1<TEntity>;
-    static HasFilter(indexBuilder: IConventionIndexBuilder, sql: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    static HasFilter(indexBuilder: IndexBuilder, sql: string): IndexBuilder;
-    static HasName(indexBuilder: IndexBuilder, name: string): IndexBuilder;
+    static CanSetDatabaseName(indexBuilder: IConventionIndexBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetFilter(indexBuilder: IConventionIndexBuilder, sql: string | null, fromDataAnnotation?: boolean): boolean;
+    static HasDatabaseName<TEntity>(indexBuilder: IndexBuilder_1<TEntity>, name: string | null): IndexBuilder_1<TEntity>;
+    static HasDatabaseName(indexBuilder: IConventionIndexBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionIndexBuilder | null;
+    static HasDatabaseName(indexBuilder: IndexBuilder, name: string | null): IndexBuilder;
+    static HasFilter<TEntity>(indexBuilder: IndexBuilder_1<TEntity>, sql: string | null): IndexBuilder_1<TEntity>;
+    static HasFilter(indexBuilder: IConventionIndexBuilder, sql: string | null, fromDataAnnotation?: boolean): IConventionIndexBuilder | null;
+    static HasFilter(indexBuilder: IndexBuilder, sql: string | null): IndexBuilder;
+    static HasName(indexBuilder: IndexBuilder, name: string | null): IndexBuilder;
 }
 
 
 export type RelationalIndexBuilderExtensions = RelationalIndexBuilderExtensions$instance;
 
 export abstract class RelationalIndexExtensions$instance {
-    static FindSharedObjectRootIndex(index: IConventionIndex, storeObject: StoreObjectIdentifier): IConventionIndex | undefined;
-    static FindSharedObjectRootIndex(index: IIndex, storeObject: StoreObjectIdentifier): IIndex | undefined;
-    static FindSharedObjectRootIndex(index: IMutableIndex, storeObject: StoreObjectIdentifier): IMutableIndex | undefined;
-    static FindSharedObjectRootIndex(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier): IReadOnlyIndex | undefined;
-    static GetDatabaseName(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetDatabaseName(index: IReadOnlyIndex): string | undefined;
+    static FindSharedObjectRootIndex(index: IConventionIndex, storeObject: StoreObjectIdentifier): IConventionIndex | null;
+    static FindSharedObjectRootIndex(index: IIndex, storeObject: StoreObjectIdentifier): IIndex | null;
+    static FindSharedObjectRootIndex(index: IMutableIndex, storeObject: StoreObjectIdentifier): IMutableIndex | null;
+    static FindSharedObjectRootIndex(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier): IReadOnlyIndex | null;
+    static GetDatabaseName(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier): string | null;
+    static GetDatabaseName(index: IReadOnlyIndex): string | null;
     static GetDatabaseNameConfigurationSource(index: IConventionIndex): Nullable_1<ConfigurationSource>;
-    static GetDefaultDatabaseName(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetDefaultDatabaseName(index: IReadOnlyIndex): string | undefined;
-    static GetFilter(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetFilter(index: IReadOnlyIndex): string | undefined;
+    static GetDefaultDatabaseName(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier): string | null;
+    static GetDefaultDatabaseName(index: IReadOnlyIndex): string | null;
+    static GetFilter(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier): string | null;
+    static GetFilter(index: IReadOnlyIndex): string | null;
     static GetFilterConfigurationSource(index: IConventionIndex): Nullable_1<ConfigurationSource>;
     static GetMappedTableIndexes(index: IIndex): IEnumerable_1<ITableIndex>;
-    static SetDatabaseName(index: IConventionIndex, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetDatabaseName(index: IMutableIndex, name: string): void;
-    static SetFilter(index: IConventionIndex, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetFilter(index: IMutableIndex, value: string): void;
+    static SetDatabaseName(index: IConventionIndex, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetDatabaseName(index: IMutableIndex, name: string | null): void;
+    static SetFilter(index: IConventionIndex, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetFilter(index: IMutableIndex, value: string | null): void;
 }
 
 
 export type RelationalIndexExtensions = RelationalIndexExtensions$instance;
 
 export abstract class RelationalKeyBuilderExtensions$instance {
-    static CanSetName(keyBuilder: IConventionKeyBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static HasName<TEntity>(keyBuilder: KeyBuilder_1<TEntity>, name: string): KeyBuilder_1<TEntity>;
-    static HasName(keyBuilder: IConventionKeyBuilder, name: string, fromDataAnnotation?: boolean): IConventionKeyBuilder | undefined;
-    static HasName(keyBuilder: KeyBuilder, name: string): KeyBuilder;
+    static CanSetName(keyBuilder: IConventionKeyBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static HasName<TEntity>(keyBuilder: KeyBuilder_1<TEntity>, name: string | null): KeyBuilder_1<TEntity>;
+    static HasName(keyBuilder: IConventionKeyBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionKeyBuilder | null;
+    static HasName(keyBuilder: KeyBuilder, name: string | null): KeyBuilder;
 }
 
 
 export type RelationalKeyBuilderExtensions = RelationalKeyBuilderExtensions$instance;
 
 export abstract class RelationalKeyExtensions$instance {
-    static FindSharedObjectRootKey(key: IConventionKey, storeObject: StoreObjectIdentifier): IConventionKey | undefined;
-    static FindSharedObjectRootKey(key: IKey, storeObject: StoreObjectIdentifier): IKey | undefined;
-    static FindSharedObjectRootKey(key: IMutableKey, storeObject: StoreObjectIdentifier): IMutableKey | undefined;
-    static FindSharedObjectRootKey(key: IReadOnlyKey, storeObject: StoreObjectIdentifier): IReadOnlyKey | undefined;
-    static GetDefaultName(key: IReadOnlyKey, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetDefaultName(key: IReadOnlyKey): string | undefined;
+    static FindSharedObjectRootKey(key: IConventionKey, storeObject: StoreObjectIdentifier): IConventionKey | null;
+    static FindSharedObjectRootKey(key: IKey, storeObject: StoreObjectIdentifier): IKey | null;
+    static FindSharedObjectRootKey(key: IMutableKey, storeObject: StoreObjectIdentifier): IMutableKey | null;
+    static FindSharedObjectRootKey(key: IReadOnlyKey, storeObject: StoreObjectIdentifier): IReadOnlyKey | null;
+    static GetDefaultName(key: IReadOnlyKey, storeObject: StoreObjectIdentifier): string | null;
+    static GetDefaultName(key: IReadOnlyKey): string | null;
     static GetMappedConstraints(key: IKey): IEnumerable_1<IUniqueConstraint>;
-    static GetName(key: IReadOnlyKey, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetName(key: IReadOnlyKey): string | undefined;
+    static GetName(key: IReadOnlyKey, storeObject: StoreObjectIdentifier): string | null;
+    static GetName(key: IReadOnlyKey): string | null;
     static GetNameConfigurationSource(key: IConventionKey): Nullable_1<ConfigurationSource>;
-    static SetName(key: IConventionKey, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetName(key: IMutableKey, name: string): void;
+    static SetName(key: IConventionKey, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetName(key: IMutableKey, name: string | null): void;
 }
 
 
 export type RelationalKeyExtensions = RelationalKeyExtensions$instance;
 
 export abstract class RelationalModelBuilderExtensions$instance {
-    static CanSetCollation(modelBuilder: IConventionModelBuilder, collation: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetDefaultSchema(modelBuilder: IConventionModelBuilder, schema: string, fromDataAnnotation?: boolean): boolean;
+    static CanSetCollation(modelBuilder: IConventionModelBuilder, collation: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetDefaultSchema(modelBuilder: IConventionModelBuilder, schema: string | null, fromDataAnnotation?: boolean): boolean;
     static CanSetMaxIdentifierLength(modelBuilder: IConventionModelBuilder, length: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): boolean;
     static HasDbFunction(modelBuilder: IConventionModelBuilder, methodInfo: MethodInfo, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder;
     static HasDbFunction(modelBuilder: IConventionModelBuilder, name: string, returnType: Type, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder;
     static HasDbFunction<TResult>(modelBuilder: ModelBuilder, expression: Expression_1<Func_1<TResult>>): DbFunctionBuilder;
     static HasDbFunction(modelBuilder: ModelBuilder, methodInfo: MethodInfo, builderAction: Action_1<DbFunctionBuilder>): ModelBuilder;
     static HasDbFunction(modelBuilder: ModelBuilder, methodInfo: MethodInfo): DbFunctionBuilder;
-    static HasDefaultSchema(modelBuilder: IConventionModelBuilder, schema: string, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
-    static HasDefaultSchema(modelBuilder: ModelBuilder, schema: string): ModelBuilder;
-    static HasMaxIdentifierLength(modelBuilder: IConventionModelBuilder, length: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
-    static HasSequence(modelBuilder: IConventionModelBuilder, name: string, schema?: string, fromDataAnnotation?: boolean): IConventionSequenceBuilder;
+    static HasDefaultSchema(modelBuilder: IConventionModelBuilder, schema: string | null, fromDataAnnotation?: boolean): IConventionModelBuilder | null;
+    static HasDefaultSchema(modelBuilder: ModelBuilder, schema: string | null): ModelBuilder;
+    static HasMaxIdentifierLength(modelBuilder: IConventionModelBuilder, length: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionModelBuilder | null;
+    static HasSequence(modelBuilder: IConventionModelBuilder, name: string, schema?: string | null, fromDataAnnotation?: boolean): IConventionSequenceBuilder;
     static HasSequence(modelBuilder: ModelBuilder, name: string, builderAction: Action_1<SequenceBuilder>): ModelBuilder;
-    static HasSequence(modelBuilder: ModelBuilder, name: string, schema: string, builderAction: Action_1<SequenceBuilder>): ModelBuilder;
-    static HasSequence(modelBuilder: ModelBuilder, name: string, schema?: string): SequenceBuilder;
+    static HasSequence(modelBuilder: ModelBuilder, name: string, schema: string | null, builderAction: Action_1<SequenceBuilder>): ModelBuilder;
+    static HasSequence(modelBuilder: ModelBuilder, name: string, schema?: string | null): SequenceBuilder;
     static HasSequence(modelBuilder: ModelBuilder, type: Type, name: string, builderAction: Action_1<SequenceBuilder>): ModelBuilder;
-    static HasSequence(modelBuilder: ModelBuilder, type: Type, name: string, schema: string, builderAction: Action_1<SequenceBuilder>): ModelBuilder;
-    static HasSequence(modelBuilder: ModelBuilder, type: Type, name: string, schema?: string): SequenceBuilder;
-    static UseCollation(modelBuilder: IConventionModelBuilder, collation: string, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
-    static UseCollation(modelBuilder: ModelBuilder, collation: string): ModelBuilder;
+    static HasSequence(modelBuilder: ModelBuilder, type: Type, name: string, schema: string | null, builderAction: Action_1<SequenceBuilder>): ModelBuilder;
+    static HasSequence(modelBuilder: ModelBuilder, type: Type, name: string, schema?: string | null): SequenceBuilder;
+    static UseCollation(modelBuilder: IConventionModelBuilder, collation: string | null, fromDataAnnotation?: boolean): IConventionModelBuilder | null;
+    static UseCollation(modelBuilder: ModelBuilder, collation: string | null): ModelBuilder;
 }
 
 
@@ -1839,28 +1837,28 @@ export abstract class RelationalModelExtensions$instance {
     static AddDbFunction(model: IConventionModel, name: string, returnType: Type, fromDataAnnotation?: boolean): IConventionDbFunction;
     static AddDbFunction(model: IMutableModel, methodInfo: MethodInfo): IMutableDbFunction;
     static AddDbFunction(model: IMutableModel, name: string, returnType: Type): IMutableDbFunction;
-    static AddSequence(model: IConventionModel, name: string, schema?: string, fromDataAnnotation?: boolean): IConventionSequence | undefined;
-    static AddSequence(model: IMutableModel, name: string, schema?: string): IMutableSequence;
+    static AddSequence(model: IConventionModel, name: string, schema?: string | null, fromDataAnnotation?: boolean): IConventionSequence | null;
+    static AddSequence(model: IMutableModel, name: string, schema?: string | null): IMutableSequence;
     static AreNamedDefaultConstraintsUsed(model: IReadOnlyModel): boolean;
-    static FindDbFunction(model: IConventionModel, method: MethodInfo): IConventionDbFunction | undefined;
-    static FindDbFunction(model: IConventionModel, name: string): IConventionDbFunction | undefined;
-    static FindDbFunction(model: IModel, method: MethodInfo): IDbFunction | undefined;
-    static FindDbFunction(model: IModel, name: string): IDbFunction | undefined;
-    static FindDbFunction(model: IMutableModel, method: MethodInfo): IMutableDbFunction | undefined;
-    static FindDbFunction(model: IMutableModel, name: string): IMutableDbFunction | undefined;
-    static FindDbFunction(model: IReadOnlyModel, method: MethodInfo): IReadOnlyDbFunction | undefined;
-    static FindDbFunction(model: IReadOnlyModel, name: string): IReadOnlyDbFunction | undefined;
-    static FindSequence(model: IConventionModel, name: string, schema?: string): IConventionSequence | undefined;
-    static FindSequence(model: IModel, name: string, schema?: string): ISequence | undefined;
-    static FindSequence(model: IMutableModel, name: string, schema?: string): IMutableSequence | undefined;
-    static FindSequence(model: IReadOnlyModel, name: string, schema?: string): IReadOnlySequence | undefined;
-    static GetCollation(model: IReadOnlyModel): string | undefined;
+    static FindDbFunction(model: IConventionModel, method: MethodInfo): IConventionDbFunction | null;
+    static FindDbFunction(model: IConventionModel, name: string): IConventionDbFunction | null;
+    static FindDbFunction(model: IModel, method: MethodInfo): IDbFunction | null;
+    static FindDbFunction(model: IModel, name: string): IDbFunction | null;
+    static FindDbFunction(model: IMutableModel, method: MethodInfo): IMutableDbFunction | null;
+    static FindDbFunction(model: IMutableModel, name: string): IMutableDbFunction | null;
+    static FindDbFunction(model: IReadOnlyModel, method: MethodInfo): IReadOnlyDbFunction | null;
+    static FindDbFunction(model: IReadOnlyModel, name: string): IReadOnlyDbFunction | null;
+    static FindSequence(model: IConventionModel, name: string, schema?: string | null): IConventionSequence | null;
+    static FindSequence(model: IModel, name: string, schema?: string | null): ISequence | null;
+    static FindSequence(model: IMutableModel, name: string, schema?: string | null): IMutableSequence | null;
+    static FindSequence(model: IReadOnlyModel, name: string, schema?: string | null): IReadOnlySequence | null;
+    static GetCollation(model: IReadOnlyModel): string | null;
     static GetCollationConfigurationSource(model: IConventionModel): Nullable_1<ConfigurationSource>;
     static GetDbFunctions(model: IConventionModel): IEnumerable_1<IConventionDbFunction>;
     static GetDbFunctions(model: IModel): IEnumerable_1<IDbFunction>;
     static GetDbFunctions(model: IMutableModel): IEnumerable_1<IMutableDbFunction>;
     static GetDbFunctions(model: IReadOnlyModel): IEnumerable_1<IReadOnlyDbFunction>;
-    static GetDefaultSchema(model: IReadOnlyModel): string | undefined;
+    static GetDefaultSchema(model: IReadOnlyModel): string | null;
     static GetDefaultSchemaConfigurationSource(model: IConventionModel): Nullable_1<ConfigurationSource>;
     static GetMaxIdentifierLength(model: IReadOnlyModel): int;
     static GetMaxIdentifierLengthConfigurationSource(model: IConventionModel): Nullable_1<ConfigurationSource>;
@@ -1869,16 +1867,16 @@ export abstract class RelationalModelExtensions$instance {
     static GetSequences(model: IModel): IEnumerable_1<ISequence>;
     static GetSequences(model: IMutableModel): IEnumerable_1<IMutableSequence>;
     static GetSequences(model: IReadOnlyModel): IEnumerable_1<IReadOnlySequence>;
-    static RemoveDbFunction(model: IConventionModel, method: MethodInfo): IConventionDbFunction | undefined;
-    static RemoveDbFunction(model: IConventionModel, name: string): IConventionDbFunction | undefined;
-    static RemoveDbFunction(model: IMutableModel, method: MethodInfo): IMutableDbFunction | undefined;
-    static RemoveDbFunction(model: IMutableModel, name: string): IMutableDbFunction | undefined;
-    static RemoveSequence(model: IConventionModel, name: string, schema?: string): IConventionSequence | undefined;
-    static RemoveSequence(model: IMutableModel, name: string, schema?: string): IMutableSequence | undefined;
-    static SetCollation(model: IConventionModel, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetCollation(model: IMutableModel, value: string): void;
-    static SetDefaultSchema(model: IConventionModel, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetDefaultSchema(model: IMutableModel, value: string): void;
+    static RemoveDbFunction(model: IConventionModel, method: MethodInfo): IConventionDbFunction | null;
+    static RemoveDbFunction(model: IConventionModel, name: string): IConventionDbFunction | null;
+    static RemoveDbFunction(model: IMutableModel, method: MethodInfo): IMutableDbFunction | null;
+    static RemoveDbFunction(model: IMutableModel, name: string): IMutableDbFunction | null;
+    static RemoveSequence(model: IConventionModel, name: string, schema?: string | null): IConventionSequence | null;
+    static RemoveSequence(model: IMutableModel, name: string, schema?: string | null): IMutableSequence | null;
+    static SetCollation(model: IConventionModel, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetCollation(model: IMutableModel, value: string | null): void;
+    static SetDefaultSchema(model: IConventionModel, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetDefaultSchema(model: IMutableModel, value: string | null): void;
     static SetMaxIdentifierLength(model: IConventionModel, length: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): Nullable_1<System_Internal.Int32>;
     static SetMaxIdentifierLength(model: IMutableModel, length: Nullable_1<System_Internal.Int32>): void;
     static UseNamedDefaultConstraints(model: IConventionModel, value: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable_1<System_Internal.Boolean>;
@@ -1890,13 +1888,13 @@ export abstract class RelationalModelExtensions$instance {
 export type RelationalModelExtensions = RelationalModelExtensions$instance;
 
 export abstract class RelationalOwnedNavigationBuilderExtensions$instance {
-    static HasColumnType(builder: OwnedNavigationBuilder, columnType: string): OwnedNavigationBuilder;
-    static HasColumnType<TOwnerEntity, TDependentEntity>(builder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, columnType: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    static HasJsonPropertyName(navigationBuilder: OwnedNavigationBuilder, name: string): OwnedNavigationBuilder;
-    static HasJsonPropertyName<TSource, TTarget>(navigationBuilder: OwnedNavigationBuilder_2<TSource, TTarget>, name: string): OwnedNavigationBuilder_2<TSource, TTarget>;
-    static ToJson(builder: OwnedNavigationBuilder, jsonColumnName: string): OwnedNavigationBuilder;
+    static HasColumnType(builder: OwnedNavigationBuilder, columnType: string | null): OwnedNavigationBuilder;
+    static HasColumnType<TOwnerEntity, TDependentEntity>(builder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, columnType: string | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static HasJsonPropertyName(navigationBuilder: OwnedNavigationBuilder, name: string | null): OwnedNavigationBuilder;
+    static HasJsonPropertyName<TSource, TTarget>(navigationBuilder: OwnedNavigationBuilder_2<TSource, TTarget>, name: string | null): OwnedNavigationBuilder_2<TSource, TTarget>;
+    static ToJson(builder: OwnedNavigationBuilder, jsonColumnName: string | null): OwnedNavigationBuilder;
     static ToJson(builder: OwnedNavigationBuilder): OwnedNavigationBuilder;
-    static ToJson<TOwnerEntity, TDependentEntity>(builder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, jsonColumnName: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    static ToJson<TOwnerEntity, TDependentEntity>(builder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>, jsonColumnName: string | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     static ToJson<TOwnerEntity, TDependentEntity>(builder: OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
 }
 
@@ -1904,34 +1902,34 @@ export abstract class RelationalOwnedNavigationBuilderExtensions$instance {
 export type RelationalOwnedNavigationBuilderExtensions = RelationalOwnedNavigationBuilderExtensions$instance;
 
 export abstract class RelationalPrimitiveCollectionBuilderExtensions$instance {
-    static HasColumnName(primitiveCollectionBuilder: PrimitiveCollectionBuilder, name: string): PrimitiveCollectionBuilder;
-    static HasColumnName<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, name: string): PrimitiveCollectionBuilder_1<TProperty>;
+    static HasColumnName(primitiveCollectionBuilder: PrimitiveCollectionBuilder, name: string | null): PrimitiveCollectionBuilder;
+    static HasColumnName<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, name: string | null): PrimitiveCollectionBuilder_1<TProperty>;
     static HasColumnOrder(primitiveCollectionBuilder: PrimitiveCollectionBuilder, order: Nullable_1<System_Internal.Int32>): PrimitiveCollectionBuilder;
     static HasColumnOrder<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, order: Nullable_1<System_Internal.Int32>): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasColumnType(primitiveCollectionBuilder: PrimitiveCollectionBuilder, typeName: string): PrimitiveCollectionBuilder;
-    static HasColumnType<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, typeName: string): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasComment(primitiveCollectionBuilder: PrimitiveCollectionBuilder, comment: string): PrimitiveCollectionBuilder;
-    static HasComment<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, comment: string): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string, stored: Nullable_1<System_Internal.Boolean>): PrimitiveCollectionBuilder;
-    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string): PrimitiveCollectionBuilder;
+    static HasColumnType(primitiveCollectionBuilder: PrimitiveCollectionBuilder, typeName: string | null): PrimitiveCollectionBuilder;
+    static HasColumnType<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, typeName: string | null): PrimitiveCollectionBuilder_1<TProperty>;
+    static HasComment(primitiveCollectionBuilder: PrimitiveCollectionBuilder, comment: string | null): PrimitiveCollectionBuilder;
+    static HasComment<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, comment: string | null): PrimitiveCollectionBuilder_1<TProperty>;
+    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string | null, stored: Nullable_1<System_Internal.Boolean>): PrimitiveCollectionBuilder;
+    static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string | null): PrimitiveCollectionBuilder;
     static HasComputedColumnSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder): PrimitiveCollectionBuilder;
-    static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, sql: string, stored: Nullable_1<System_Internal.Boolean>): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, sql: string): PrimitiveCollectionBuilder_1<TProperty>;
+    static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, sql: string | null, stored: Nullable_1<System_Internal.Boolean>): PrimitiveCollectionBuilder_1<TProperty>;
+    static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, sql: string | null): PrimitiveCollectionBuilder_1<TProperty>;
     static HasComputedColumnSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasDefaultValue(primitiveCollectionBuilder: PrimitiveCollectionBuilder, value: unknown): PrimitiveCollectionBuilder;
+    static HasDefaultValue(primitiveCollectionBuilder: PrimitiveCollectionBuilder, value: JsValue | null): PrimitiveCollectionBuilder;
     static HasDefaultValue(primitiveCollectionBuilder: PrimitiveCollectionBuilder): PrimitiveCollectionBuilder;
-    static HasDefaultValue<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, value: unknown): PrimitiveCollectionBuilder_1<TProperty>;
+    static HasDefaultValue<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, value: JsValue | null): PrimitiveCollectionBuilder_1<TProperty>;
     static HasDefaultValue<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasDefaultValueSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string): PrimitiveCollectionBuilder;
+    static HasDefaultValueSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder, sql: string | null): PrimitiveCollectionBuilder;
     static HasDefaultValueSql(primitiveCollectionBuilder: PrimitiveCollectionBuilder): PrimitiveCollectionBuilder;
-    static HasDefaultValueSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, sql: string): PrimitiveCollectionBuilder_1<TProperty>;
+    static HasDefaultValueSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, sql: string | null): PrimitiveCollectionBuilder_1<TProperty>;
     static HasDefaultValueSql<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>): PrimitiveCollectionBuilder_1<TProperty>;
-    static HasJsonPropertyName(primitiveCollectionBuilder: PrimitiveCollectionBuilder, name: string): PrimitiveCollectionBuilder;
-    static HasJsonPropertyName<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, name: string): PrimitiveCollectionBuilder_1<TProperty>;
+    static HasJsonPropertyName(primitiveCollectionBuilder: PrimitiveCollectionBuilder, name: string | null): PrimitiveCollectionBuilder;
+    static HasJsonPropertyName<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, name: string | null): PrimitiveCollectionBuilder_1<TProperty>;
     static IsFixedLength(primitiveCollectionBuilder: PrimitiveCollectionBuilder, fixedLength?: boolean): PrimitiveCollectionBuilder;
     static IsFixedLength<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, fixedLength?: boolean): PrimitiveCollectionBuilder_1<TProperty>;
-    static UseCollation(primitiveCollectionBuilder: PrimitiveCollectionBuilder, collation: string): PrimitiveCollectionBuilder;
-    static UseCollation<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, collation: string): PrimitiveCollectionBuilder_1<TProperty>;
+    static UseCollation(primitiveCollectionBuilder: PrimitiveCollectionBuilder, collation: string | null): PrimitiveCollectionBuilder;
+    static UseCollation<TProperty>(primitiveCollectionBuilder: PrimitiveCollectionBuilder_1<TProperty>, collation: string | null): PrimitiveCollectionBuilder_1<TProperty>;
 }
 
 
@@ -1950,80 +1948,80 @@ export abstract class RelationalPropertiesConfigurationBuilderExtensions$instanc
 export type RelationalPropertiesConfigurationBuilderExtensions = RelationalPropertiesConfigurationBuilderExtensions$instance;
 
 export abstract class RelationalPropertyBuilderExtensions$instance {
-    static CanSetCollation(propertyBuilder: IConventionPropertyBuilder, collation: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetColumnName(propertyBuilder: IConventionPropertyBuilder, name: string, storeObject: StoreObjectIdentifier, fromDataAnnotation?: boolean): boolean;
-    static CanSetColumnName(propertyBuilder: IConventionPropertyBuilder, name: string, fromDataAnnotation?: boolean): boolean;
+    static CanSetCollation(propertyBuilder: IConventionPropertyBuilder, collation: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetColumnName(propertyBuilder: IConventionPropertyBuilder, name: string | null, storeObject: StoreObjectIdentifier, fromDataAnnotation?: boolean): boolean;
+    static CanSetColumnName(propertyBuilder: IConventionPropertyBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
     static CanSetColumnOrder(propertyBuilder: IConventionPropertyBuilder, order: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): boolean;
-    static CanSetColumnType(propertyBuilder: IConventionPropertyBuilder, typeName: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetComment(propertyBuilder: IConventionPropertyBuilder, comment: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetComputedColumnSql(propertyBuilder: IConventionPropertyBuilder, sql: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetDefaultValue(propertyBuilder: IConventionPropertyBuilder, value: unknown, fromDataAnnotation?: boolean): boolean;
-    static CanSetDefaultValueSql(propertyBuilder: IConventionPropertyBuilder, sql: string, fromDataAnnotation?: boolean): boolean;
+    static CanSetColumnType(propertyBuilder: IConventionPropertyBuilder, typeName: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetComment(propertyBuilder: IConventionPropertyBuilder, comment: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetComputedColumnSql(propertyBuilder: IConventionPropertyBuilder, sql: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetDefaultValue(propertyBuilder: IConventionPropertyBuilder, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetDefaultValueSql(propertyBuilder: IConventionPropertyBuilder, sql: string | null, fromDataAnnotation?: boolean): boolean;
     static CanSetIsFixedLength(propertyBuilder: IConventionPropertyBuilder, fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
     static CanSetIsStoredComputedColumn(propertyBuilder: IConventionPropertyBuilder, stored: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    static CanSetJsonPropertyName(propertyBuilder: IConventionPropertyBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static HasColumnName(propertyBuilder: IConventionPropertyBuilder, name: string, storeObject: StoreObjectIdentifier, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasColumnName(propertyBuilder: IConventionPropertyBuilder, name: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasColumnName(propertyBuilder: PropertyBuilder, name: string): PropertyBuilder;
-    static HasColumnName<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, name: string): PropertyBuilder_1<TProperty>;
-    static HasColumnOrder(propertyBuilder: IConventionPropertyBuilder, order: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
+    static CanSetJsonPropertyName(propertyBuilder: IConventionPropertyBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static HasColumnName(propertyBuilder: IConventionPropertyBuilder, name: string | null, storeObject: StoreObjectIdentifier, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static HasColumnName(propertyBuilder: IConventionPropertyBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static HasColumnName(propertyBuilder: PropertyBuilder, name: string | null): PropertyBuilder;
+    static HasColumnName<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, name: string | null): PropertyBuilder_1<TProperty>;
+    static HasColumnOrder(propertyBuilder: IConventionPropertyBuilder, order: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
     static HasColumnOrder(propertyBuilder: PropertyBuilder, order: Nullable_1<System_Internal.Int32>): PropertyBuilder;
     static HasColumnOrder<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, order: Nullable_1<System_Internal.Int32>): PropertyBuilder_1<TProperty>;
-    static HasColumnType(propertyBuilder: IConventionPropertyBuilder, typeName: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasColumnType(propertyBuilder: PropertyBuilder, typeName: string): PropertyBuilder;
-    static HasColumnType<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, typeName: string): PropertyBuilder_1<TProperty>;
-    static HasComment(propertyBuilder: IConventionPropertyBuilder, comment: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasComment(propertyBuilder: PropertyBuilder, comment: string): PropertyBuilder;
-    static HasComment<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, comment: string): PropertyBuilder_1<TProperty>;
-    static HasComputedColumnSql(propertyBuilder: IConventionPropertyBuilder, sql: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasComputedColumnSql(propertyBuilder: PropertyBuilder, sql: string, stored: Nullable_1<System_Internal.Boolean>): PropertyBuilder;
-    static HasComputedColumnSql(propertyBuilder: PropertyBuilder, sql: string): PropertyBuilder;
+    static HasColumnType(propertyBuilder: IConventionPropertyBuilder, typeName: string | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static HasColumnType(propertyBuilder: PropertyBuilder, typeName: string | null): PropertyBuilder;
+    static HasColumnType<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, typeName: string | null): PropertyBuilder_1<TProperty>;
+    static HasComment(propertyBuilder: IConventionPropertyBuilder, comment: string | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static HasComment(propertyBuilder: PropertyBuilder, comment: string | null): PropertyBuilder;
+    static HasComment<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, comment: string | null): PropertyBuilder_1<TProperty>;
+    static HasComputedColumnSql(propertyBuilder: IConventionPropertyBuilder, sql: string | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static HasComputedColumnSql(propertyBuilder: PropertyBuilder, sql: string | null, stored: Nullable_1<System_Internal.Boolean>): PropertyBuilder;
+    static HasComputedColumnSql(propertyBuilder: PropertyBuilder, sql: string | null): PropertyBuilder;
     static HasComputedColumnSql(propertyBuilder: PropertyBuilder): PropertyBuilder;
-    static HasComputedColumnSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, sql: string, stored: Nullable_1<System_Internal.Boolean>): PropertyBuilder_1<TProperty>;
-    static HasComputedColumnSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, sql: string): PropertyBuilder_1<TProperty>;
+    static HasComputedColumnSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, sql: string | null, stored: Nullable_1<System_Internal.Boolean>): PropertyBuilder_1<TProperty>;
+    static HasComputedColumnSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, sql: string | null): PropertyBuilder_1<TProperty>;
     static HasComputedColumnSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>): PropertyBuilder_1<TProperty>;
-    static HasDefaultValue(propertyBuilder: IConventionPropertyBuilder, value: unknown, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasDefaultValue(propertyBuilder: PropertyBuilder, value: unknown): PropertyBuilder;
+    static HasDefaultValue(propertyBuilder: IConventionPropertyBuilder, value: JsValue | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static HasDefaultValue(propertyBuilder: PropertyBuilder, value: JsValue | null): PropertyBuilder;
     static HasDefaultValue(propertyBuilder: PropertyBuilder): PropertyBuilder;
-    static HasDefaultValue<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, value: unknown): PropertyBuilder_1<TProperty>;
+    static HasDefaultValue<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, value: JsValue | null): PropertyBuilder_1<TProperty>;
     static HasDefaultValue<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>): PropertyBuilder_1<TProperty>;
-    static HasDefaultValueSql(propertyBuilder: IConventionPropertyBuilder, sql: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasDefaultValueSql(propertyBuilder: PropertyBuilder, sql: string): PropertyBuilder;
+    static HasDefaultValueSql(propertyBuilder: IConventionPropertyBuilder, sql: string | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static HasDefaultValueSql(propertyBuilder: PropertyBuilder, sql: string | null): PropertyBuilder;
     static HasDefaultValueSql(propertyBuilder: PropertyBuilder): PropertyBuilder;
-    static HasDefaultValueSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, sql: string): PropertyBuilder_1<TProperty>;
+    static HasDefaultValueSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, sql: string | null): PropertyBuilder_1<TProperty>;
     static HasDefaultValueSql<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>): PropertyBuilder_1<TProperty>;
-    static HasJsonPropertyName(propertyBuilder: IConventionPropertyBuilder, name: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static HasJsonPropertyName(propertyBuilder: PropertyBuilder, name: string): PropertyBuilder;
-    static HasJsonPropertyName<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, name: string): PropertyBuilder_1<TProperty>;
-    static IsFixedLength(propertyBuilder: IConventionPropertyBuilder, fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
+    static HasJsonPropertyName(propertyBuilder: IConventionPropertyBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static HasJsonPropertyName(propertyBuilder: PropertyBuilder, name: string | null): PropertyBuilder;
+    static HasJsonPropertyName<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, name: string | null): PropertyBuilder_1<TProperty>;
+    static IsFixedLength(propertyBuilder: IConventionPropertyBuilder, fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
     static IsFixedLength(propertyBuilder: PropertyBuilder, fixedLength?: boolean): PropertyBuilder;
     static IsFixedLength<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, fixedLength?: boolean): PropertyBuilder_1<TProperty>;
-    static IsStoredComputedColumn(propertyBuilder: IConventionPropertyBuilder, stored: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static UseCollation(propertyBuilder: IConventionPropertyBuilder, collation: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    static UseCollation(propertyBuilder: PropertyBuilder, collation: string): PropertyBuilder;
-    static UseCollation<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, collation: string): PropertyBuilder_1<TProperty>;
+    static IsStoredComputedColumn(propertyBuilder: IConventionPropertyBuilder, stored: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static UseCollation(propertyBuilder: IConventionPropertyBuilder, collation: string | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    static UseCollation(propertyBuilder: PropertyBuilder, collation: string | null): PropertyBuilder;
+    static UseCollation<TProperty>(propertyBuilder: PropertyBuilder_1<TProperty>, collation: string | null): PropertyBuilder_1<TProperty>;
 }
 
 
 export type RelationalPropertyBuilderExtensions = RelationalPropertyBuilderExtensions$instance;
 
 export abstract class RelationalPropertyExtensions$instance {
-    static FindColumn(property: IProperty, storeObject: StoreObjectIdentifier): IColumnBase | undefined;
-    static FindOverrides(property: IConventionProperty, storeObject: StoreObjectIdentifier): IConventionRelationalPropertyOverrides | undefined;
-    static FindOverrides(property: IMutableProperty, storeObject: StoreObjectIdentifier): IMutableRelationalPropertyOverrides | undefined;
-    static FindOverrides(property: IProperty, storeObject: StoreObjectIdentifier): IRelationalPropertyOverrides | undefined;
-    static FindOverrides(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): IReadOnlyRelationalPropertyOverrides | undefined;
-    static FindRelationalTypeMapping(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): RelationalTypeMapping | undefined;
-    static FindRelationalTypeMapping(property: IReadOnlyProperty): RelationalTypeMapping | undefined;
-    static FindSharedStoreObjectRootProperty(property: IConventionProperty, storeObject: StoreObjectIdentifier): IConventionProperty | undefined;
-    static FindSharedStoreObjectRootProperty(property: IMutableProperty, storeObject: StoreObjectIdentifier): IMutableProperty | undefined;
-    static FindSharedStoreObjectRootProperty(property: IProperty, storeObject: StoreObjectIdentifier): IProperty | undefined;
-    static FindSharedStoreObjectRootProperty(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): IReadOnlyProperty | undefined;
-    static GetCollation(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetCollation(property: IReadOnlyProperty): string | undefined;
+    static FindColumn(property: IProperty, storeObject: StoreObjectIdentifier): IColumnBase | null;
+    static FindOverrides(property: IConventionProperty, storeObject: StoreObjectIdentifier): IConventionRelationalPropertyOverrides | null;
+    static FindOverrides(property: IMutableProperty, storeObject: StoreObjectIdentifier): IMutableRelationalPropertyOverrides | null;
+    static FindOverrides(property: IProperty, storeObject: StoreObjectIdentifier): IRelationalPropertyOverrides | null;
+    static FindOverrides(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): IReadOnlyRelationalPropertyOverrides | null;
+    static FindRelationalTypeMapping(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): RelationalTypeMapping | null;
+    static FindRelationalTypeMapping(property: IReadOnlyProperty): RelationalTypeMapping | null;
+    static FindSharedStoreObjectRootProperty(property: IConventionProperty, storeObject: StoreObjectIdentifier): IConventionProperty | null;
+    static FindSharedStoreObjectRootProperty(property: IMutableProperty, storeObject: StoreObjectIdentifier): IMutableProperty | null;
+    static FindSharedStoreObjectRootProperty(property: IProperty, storeObject: StoreObjectIdentifier): IProperty | null;
+    static FindSharedStoreObjectRootProperty(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): IReadOnlyProperty | null;
+    static GetCollation(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | null;
+    static GetCollation(property: IReadOnlyProperty): string | null;
     static GetCollationConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
     static GetColumnBaseName(property: IReadOnlyProperty): string;
-    static GetColumnName(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | undefined;
+    static GetColumnName(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | null;
     static GetColumnName(property: IReadOnlyProperty): string;
     static GetColumnNameConfigurationSource(property: IConventionProperty, storeObject: StoreObjectIdentifier): Nullable_1<ConfigurationSource>;
     static GetColumnNameConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
@@ -2032,28 +2030,28 @@ export abstract class RelationalPropertyExtensions$instance {
     static GetColumnOrderConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
     static GetColumnType(property: IProperty, storeObject: StoreObjectIdentifier): string;
     static GetColumnType(property: IProperty): string;
-    static GetColumnType(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetColumnType(property: IReadOnlyProperty): string | undefined;
+    static GetColumnType(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | null;
+    static GetColumnType(property: IReadOnlyProperty): string | null;
     static GetColumnTypeConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
-    static GetComment(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetComment(property: IReadOnlyProperty): string | undefined;
+    static GetComment(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | null;
+    static GetComment(property: IReadOnlyProperty): string | null;
     static GetCommentConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
-    static GetComputedColumnSql(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetComputedColumnSql(property: IReadOnlyProperty): string | undefined;
+    static GetComputedColumnSql(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | null;
+    static GetComputedColumnSql(property: IReadOnlyProperty): string | null;
     static GetComputedColumnSqlConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
     static GetDefaultColumnBaseName(property: IReadOnlyProperty): string;
     static GetDefaultColumnMappings(property: IProperty): IEnumerable_1<IColumnMappingBase>;
-    static GetDefaultColumnName(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | undefined;
+    static GetDefaultColumnName(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | null;
     static GetDefaultColumnName(property: IReadOnlyProperty): string;
-    static GetDefaultConstraintName(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetDefaultConstraintName(property: IReadOnlyProperty): string | undefined;
+    static GetDefaultConstraintName(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | null;
+    static GetDefaultConstraintName(property: IReadOnlyProperty): string | null;
     static GetDefaultConstraintNameConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
     static GetDefaultDefaultConstraintName(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string;
-    static GetDefaultValue(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): unknown | undefined;
-    static GetDefaultValue(property: IReadOnlyProperty): unknown | undefined;
+    static GetDefaultValue(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): JsValue | null;
+    static GetDefaultValue(property: IReadOnlyProperty): JsValue | null;
     static GetDefaultValueConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
-    static GetDefaultValueSql(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetDefaultValueSql(property: IReadOnlyProperty): string | undefined;
+    static GetDefaultValueSql(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): string | null;
+    static GetDefaultValueSql(property: IReadOnlyProperty): string | null;
     static GetDefaultValueSqlConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
     static GetDeleteStoredProcedureParameterMappings(property: IProperty): IEnumerable_1<IStoredProcedureParameterMapping>;
     static GetFunctionColumnMappings(property: IProperty): IEnumerable_1<IFunctionColumnMapping>;
@@ -2063,7 +2061,7 @@ export abstract class RelationalPropertyExtensions$instance {
     static GetIsStored(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): Nullable_1<System_Internal.Boolean>;
     static GetIsStored(property: IReadOnlyProperty): Nullable_1<System_Internal.Boolean>;
     static GetIsStoredConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
-    static GetJsonPropertyName(property: IReadOnlyProperty): string | undefined;
+    static GetJsonPropertyName(property: IReadOnlyProperty): string | null;
     static GetJsonPropertyNameConfigurationSource(property: IConventionProperty): Nullable_1<ConfigurationSource>;
     static GetMappedStoreObjects(property: IReadOnlyProperty, storeObjectType: StoreObjectType): IEnumerable_1<StoreObjectIdentifier>;
     static GetMaxLength(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): Nullable_1<System_Internal.Int32>;
@@ -2074,7 +2072,7 @@ export abstract class RelationalPropertyExtensions$instance {
     static GetOverrides(property: IProperty): IEnumerable_1<IRelationalPropertyOverrides>;
     static GetOverrides(property: IReadOnlyProperty): IEnumerable_1<IReadOnlyRelationalPropertyOverrides>;
     static GetPrecision(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): Nullable_1<System_Internal.Int32>;
-    static GetReaderFieldValue(property: IProperty, relationalReader: RelationalDataReader, ordinal: int, detailedErrorsEnabled: boolean): unknown | undefined;
+    static GetReaderFieldValue(property: IProperty, relationalReader: RelationalDataReader, ordinal: int, detailedErrorsEnabled: boolean): JsValue | null;
     static GetRelationalTypeMapping(property: IReadOnlyProperty): RelationalTypeMapping;
     static GetScale(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): Nullable_1<System_Internal.Int32>;
     static GetSqlQueryColumnMappings(property: IProperty): IEnumerable_1<ISqlQueryColumnMapping>;
@@ -2087,36 +2085,36 @@ export abstract class RelationalPropertyExtensions$instance {
     static IsFixedLength(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): Nullable_1<System_Internal.Boolean>;
     static IsFixedLength(property: IReadOnlyProperty): Nullable_1<System_Internal.Boolean>;
     static IsUnicode(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): Nullable_1<System_Internal.Boolean>;
-    static RemoveOverrides(property: IConventionProperty, storeObject: StoreObjectIdentifier): IConventionRelationalPropertyOverrides | undefined;
-    static RemoveOverrides(property: IMutableProperty, storeObject: StoreObjectIdentifier): IMutableRelationalPropertyOverrides | undefined;
-    static SetCollation(property: IConventionProperty, collation: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetCollation(property: IMutableProperty, collation: string): void;
-    static SetColumnName(property: IConventionProperty, name: string, storeObject: StoreObjectIdentifier, fromDataAnnotation?: boolean): string | undefined;
-    static SetColumnName(property: IConventionProperty, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetColumnName(property: IMutableProperty, name: string, storeObject: StoreObjectIdentifier): void;
-    static SetColumnName(property: IMutableProperty, name: string): void;
+    static RemoveOverrides(property: IConventionProperty, storeObject: StoreObjectIdentifier): IConventionRelationalPropertyOverrides | null;
+    static RemoveOverrides(property: IMutableProperty, storeObject: StoreObjectIdentifier): IMutableRelationalPropertyOverrides | null;
+    static SetCollation(property: IConventionProperty, collation: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetCollation(property: IMutableProperty, collation: string | null): void;
+    static SetColumnName(property: IConventionProperty, name: string | null, storeObject: StoreObjectIdentifier, fromDataAnnotation?: boolean): string | null;
+    static SetColumnName(property: IConventionProperty, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetColumnName(property: IMutableProperty, name: string | null, storeObject: StoreObjectIdentifier): void;
+    static SetColumnName(property: IMutableProperty, name: string | null): void;
     static SetColumnOrder(property: IConventionProperty, order: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): Nullable_1<System_Internal.Int32>;
     static SetColumnOrder(property: IMutableProperty, order: Nullable_1<System_Internal.Int32>): void;
-    static SetColumnType(property: IConventionProperty, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetColumnType(property: IMutableProperty, value: string): void;
-    static SetComment(property: IConventionProperty, comment: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetComment(property: IMutableProperty, comment: string): void;
-    static SetComputedColumnSql(property: IConventionProperty, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetComputedColumnSql(property: IMutableProperty, value: string): void;
-    static SetDefaultConstraintName(property: IConventionProperty, defaultConstraintName: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetDefaultConstraintName(property: IMutableProperty, defaultConstraintName: string): void;
-    static SetDefaultValue(property: IConventionProperty, value: unknown, fromDataAnnotation?: boolean): unknown | undefined;
-    static SetDefaultValue(property: IMutableProperty, value: unknown): void;
-    static SetDefaultValueSql(property: IConventionProperty, value: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetDefaultValueSql(property: IMutableProperty, value: string): void;
+    static SetColumnType(property: IConventionProperty, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetColumnType(property: IMutableProperty, value: string | null): void;
+    static SetComment(property: IConventionProperty, comment: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetComment(property: IMutableProperty, comment: string | null): void;
+    static SetComputedColumnSql(property: IConventionProperty, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetComputedColumnSql(property: IMutableProperty, value: string | null): void;
+    static SetDefaultConstraintName(property: IConventionProperty, defaultConstraintName: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetDefaultConstraintName(property: IMutableProperty, defaultConstraintName: string | null): void;
+    static SetDefaultValue(property: IConventionProperty, value: JsValue | null, fromDataAnnotation?: boolean): JsValue | null;
+    static SetDefaultValue(property: IMutableProperty, value: JsValue | null): void;
+    static SetDefaultValueSql(property: IConventionProperty, value: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetDefaultValueSql(property: IMutableProperty, value: string | null): void;
     static SetIsFixedLength(property: IConventionProperty, fixedLength: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable_1<System_Internal.Boolean>;
     static SetIsFixedLength(property: IMutableProperty, fixedLength: Nullable_1<System_Internal.Boolean>): void;
     static SetIsStored(property: IConventionProperty, value: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): Nullable_1<System_Internal.Boolean>;
     static SetIsStored(property: IMutableProperty, value: Nullable_1<System_Internal.Boolean>): void;
-    static SetJsonPropertyName(property: IConventionProperty, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetJsonPropertyName(property: IMutableProperty, name: string): void;
-    static TryGetDefaultValue(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier, defaultValue: unknown): boolean;
-    static TryGetDefaultValue(property: IReadOnlyProperty, defaultValue: unknown): boolean;
+    static SetJsonPropertyName(property: IConventionProperty, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetJsonPropertyName(property: IMutableProperty, name: string | null): void;
+    static TryGetDefaultValue(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier, defaultValue: JsValue | null): boolean;
+    static TryGetDefaultValue(property: IReadOnlyProperty, defaultValue: JsValue | null): boolean;
 }
 
 
@@ -2128,83 +2126,83 @@ export abstract class RelationalQueryableExtensions$instance {
     static CreateDbCommand(source: IQueryable): DbCommand;
     static FromSql<TEntity>(source: DbSet_1<TEntity>, sql: FormattableString): IQueryable_1<TEntity>;
     static FromSqlInterpolated<TEntity>(source: DbSet_1<TEntity>, sql: FormattableString): IQueryable_1<TEntity>;
-    static FromSqlRaw<TEntity>(source: DbSet_1<TEntity>, sql: string, ...parameters: unknown[]): IQueryable_1<TEntity>;
+    static FromSqlRaw<TEntity>(source: DbSet_1<TEntity>, sql: string, ...parameters: (JsValue | null)[]): IQueryable_1<TEntity>;
 }
 
 
 export type RelationalQueryableExtensions = RelationalQueryableExtensions$instance;
 
 export abstract class RelationalTriggerBuilderExtensions$instance {
-    static CanSetDatabaseName(triggerBuilder: IConventionTriggerBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetTableName(triggerBuilder: IConventionTriggerBuilder, name: string, fromDataAnnotation?: boolean): boolean;
-    static CanSetTableSchema(triggerBuilder: IConventionTriggerBuilder, schema: string, fromDataAnnotation?: boolean): boolean;
-    static HasDatabaseName(triggerBuilder: IConventionTriggerBuilder, name: string, fromDataAnnotation?: boolean): IConventionTriggerBuilder | undefined;
-    static HasTableName(triggerBuilder: IConventionTriggerBuilder, name: string, fromDataAnnotation?: boolean): IConventionTriggerBuilder | undefined;
-    static HasTableSchema(triggerBuilder: IConventionTriggerBuilder, schema: string, fromDataAnnotation?: boolean): IConventionTriggerBuilder | undefined;
+    static CanSetDatabaseName(triggerBuilder: IConventionTriggerBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetTableName(triggerBuilder: IConventionTriggerBuilder, name: string | null, fromDataAnnotation?: boolean): boolean;
+    static CanSetTableSchema(triggerBuilder: IConventionTriggerBuilder, schema: string | null, fromDataAnnotation?: boolean): boolean;
+    static HasDatabaseName(triggerBuilder: IConventionTriggerBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionTriggerBuilder | null;
+    static HasTableName(triggerBuilder: IConventionTriggerBuilder, name: string | null, fromDataAnnotation?: boolean): IConventionTriggerBuilder | null;
+    static HasTableSchema(triggerBuilder: IConventionTriggerBuilder, schema: string | null, fromDataAnnotation?: boolean): IConventionTriggerBuilder | null;
 }
 
 
 export type RelationalTriggerBuilderExtensions = RelationalTriggerBuilderExtensions$instance;
 
 export abstract class RelationalTriggerExtensions$instance {
-    static GetDatabaseName(trigger: IReadOnlyTrigger, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetDatabaseName(trigger: IReadOnlyTrigger): string | undefined;
+    static GetDatabaseName(trigger: IReadOnlyTrigger, storeObject: StoreObjectIdentifier): string | null;
+    static GetDatabaseName(trigger: IReadOnlyTrigger): string | null;
     static GetDatabaseNameConfigurationSource(trigger: IConventionTrigger): Nullable_1<ConfigurationSource>;
-    static GetDefaultDatabaseName(trigger: IReadOnlyTrigger, storeObject: StoreObjectIdentifier): string | undefined;
-    static GetDefaultDatabaseName(trigger: IReadOnlyTrigger): string | undefined;
+    static GetDefaultDatabaseName(trigger: IReadOnlyTrigger, storeObject: StoreObjectIdentifier): string | null;
+    static GetDefaultDatabaseName(trigger: IReadOnlyTrigger): string | null;
     static GetTableName(trigger: IReadOnlyTrigger): string;
     static GetTableNameConfigurationSource(trigger: IConventionTrigger): Nullable_1<ConfigurationSource>;
-    static GetTableSchema(trigger: IReadOnlyTrigger): string | undefined;
+    static GetTableSchema(trigger: IReadOnlyTrigger): string | null;
     static GetTableSchemaConfigurationSource(trigger: IConventionTrigger): Nullable_1<ConfigurationSource>;
-    static SetDatabaseName(trigger: IConventionTrigger, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetDatabaseName(trigger: IMutableTrigger, name: string): void;
-    static SetTableName(trigger: IConventionTrigger, name: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetTableName(trigger: IMutableTrigger, name: string): void;
-    static SetTableSchema(trigger: IConventionTrigger, schema: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetTableSchema(trigger: IMutableTrigger, schema: string): void;
+    static SetDatabaseName(trigger: IConventionTrigger, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetDatabaseName(trigger: IMutableTrigger, name: string | null): void;
+    static SetTableName(trigger: IConventionTrigger, name: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetTableName(trigger: IMutableTrigger, name: string | null): void;
+    static SetTableSchema(trigger: IConventionTrigger, schema: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetTableSchema(trigger: IMutableTrigger, schema: string | null): void;
 }
 
 
 export type RelationalTriggerExtensions = RelationalTriggerExtensions$instance;
 
 export abstract class RelationalTypeBaseExtensions$instance {
-    static FindMappingFragment(typeBase: IReadOnlyTypeBase, storeObject: StoreObjectIdentifier): IReadOnlyEntityTypeMappingFragment | undefined;
-    static FindMappingFragment(typeBase: ITypeBase, storeObject: StoreObjectIdentifier): IEntityTypeMappingFragment | undefined;
-    static GetContainerColumnName(typeBase: IReadOnlyTypeBase): string | undefined;
+    static FindMappingFragment(typeBase: IReadOnlyTypeBase, storeObject: StoreObjectIdentifier): IReadOnlyEntityTypeMappingFragment | null;
+    static FindMappingFragment(typeBase: ITypeBase, storeObject: StoreObjectIdentifier): IEntityTypeMappingFragment | null;
+    static GetContainerColumnName(typeBase: IReadOnlyTypeBase): string | null;
     static GetContainerColumnNameConfigurationSource(typeBase: IConventionTypeBase): Nullable_1<ConfigurationSource>;
-    static GetContainerColumnType(typeBase: IReadOnlyTypeBase): string | undefined;
+    static GetContainerColumnType(typeBase: IReadOnlyTypeBase): string | null;
     static GetContainerColumnTypeConfigurationSource(typeBase: IConventionTypeBase): Nullable_1<ConfigurationSource>;
     static GetDefaultMappings(typeBase: ITypeBase): IEnumerable_1<ITableMappingBase>;
-    static GetDeleteStoredProcedure(typeBase: IReadOnlyTypeBase): IReadOnlyStoredProcedure | undefined;
-    static GetDeleteStoredProcedure(typeBase: ITypeBase): IStoredProcedure | undefined;
+    static GetDeleteStoredProcedure(typeBase: IReadOnlyTypeBase): IReadOnlyStoredProcedure | null;
+    static GetDeleteStoredProcedure(typeBase: ITypeBase): IStoredProcedure | null;
     static GetDeleteStoredProcedureMappings(typeBase: ITypeBase): IEnumerable_1<IStoredProcedureMapping>;
     static GetFunctionMappings(typeBase: ITypeBase): IEnumerable_1<IFunctionMapping>;
-    static GetFunctionName(typeBase: IReadOnlyTypeBase): string | undefined;
-    static GetInsertStoredProcedure(typeBase: IReadOnlyTypeBase): IReadOnlyStoredProcedure | undefined;
-    static GetInsertStoredProcedure(typeBase: ITypeBase): IStoredProcedure | undefined;
+    static GetFunctionName(typeBase: IReadOnlyTypeBase): string | null;
+    static GetInsertStoredProcedure(typeBase: IReadOnlyTypeBase): IReadOnlyStoredProcedure | null;
+    static GetInsertStoredProcedure(typeBase: ITypeBase): IStoredProcedure | null;
     static GetInsertStoredProcedureMappings(typeBase: ITypeBase): IEnumerable_1<IStoredProcedureMapping>;
-    static GetJsonPropertyName(typeBase: IReadOnlyTypeBase): string | undefined;
+    static GetJsonPropertyName(typeBase: IReadOnlyTypeBase): string | null;
     static GetMappingFragments(typeBase: IReadOnlyTypeBase, storeObjectType: StoreObjectType): IEnumerable_1<IReadOnlyEntityTypeMappingFragment>;
     static GetMappingFragments(typeBase: IReadOnlyTypeBase): IEnumerable_1<IReadOnlyEntityTypeMappingFragment>;
     static GetMappingFragments(typeBase: ITypeBase, storeObjectType: StoreObjectType): IEnumerable_1<IEntityTypeMappingFragment>;
     static GetMappingFragments(typeBase: ITypeBase): IEnumerable_1<IEntityTypeMappingFragment>;
-    static GetMappingStrategy(typeBase: IReadOnlyTypeBase): string | undefined;
-    static GetSchema(typeBase: IReadOnlyTypeBase): string | undefined;
-    static GetSqlQuery(typeBase: IReadOnlyTypeBase): string | undefined;
+    static GetMappingStrategy(typeBase: IReadOnlyTypeBase): string | null;
+    static GetSchema(typeBase: IReadOnlyTypeBase): string | null;
+    static GetSqlQuery(typeBase: IReadOnlyTypeBase): string | null;
     static GetSqlQueryMappings(typeBase: ITypeBase): IEnumerable_1<ISqlQueryMapping>;
     static GetTableMappings(typeBase: ITypeBase): IEnumerable_1<ITableMapping>;
-    static GetTableName(typeBase: IReadOnlyTypeBase): string | undefined;
-    static GetUpdateStoredProcedure(typeBase: IReadOnlyTypeBase): IReadOnlyStoredProcedure | undefined;
-    static GetUpdateStoredProcedure(typeBase: ITypeBase): IStoredProcedure | undefined;
+    static GetTableName(typeBase: IReadOnlyTypeBase): string | null;
+    static GetUpdateStoredProcedure(typeBase: IReadOnlyTypeBase): IReadOnlyStoredProcedure | null;
+    static GetUpdateStoredProcedure(typeBase: ITypeBase): IStoredProcedure | null;
     static GetUpdateStoredProcedureMappings(typeBase: ITypeBase): IEnumerable_1<IStoredProcedureMapping>;
     static GetViewMappings(typeBase: ITypeBase): IEnumerable_1<IViewMapping>;
-    static GetViewName(typeBase: IReadOnlyTypeBase): string | undefined;
-    static GetViewSchema(typeBase: IReadOnlyTypeBase): string | undefined;
+    static GetViewName(typeBase: IReadOnlyTypeBase): string | null;
+    static GetViewSchema(typeBase: IReadOnlyTypeBase): string | null;
     static IsMappedToJson(typeBase: IReadOnlyTypeBase): boolean;
-    static SetContainerColumnName(typeBase: IConventionTypeBase, columnName: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetContainerColumnName(typeBase: IMutableTypeBase, columnName: string): void;
-    static SetContainerColumnType(typeBase: IConventionTypeBase, columnType: string, fromDataAnnotation?: boolean): string | undefined;
-    static SetContainerColumnType(typeBase: IMutableTypeBase, columnType: string): void;
+    static SetContainerColumnName(typeBase: IConventionTypeBase, columnName: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetContainerColumnName(typeBase: IMutableTypeBase, columnName: string | null): void;
+    static SetContainerColumnType(typeBase: IConventionTypeBase, columnType: string | null, fromDataAnnotation?: boolean): string | null;
+    static SetContainerColumnType(typeBase: IMutableTypeBase, columnType: string | null): void;
 }
 
 

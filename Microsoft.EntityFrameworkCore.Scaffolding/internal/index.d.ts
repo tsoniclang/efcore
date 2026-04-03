@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Scaffolding
 // Assembly: Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import type { MethodCallCodeFragment } from "../../Microsoft.EntityFrameworkCore.Design/internal/index.js";
@@ -26,7 +27,7 @@ export type IDatabaseModelFactory = IDatabaseModelFactory$instance;
 export interface IProviderCodeGeneratorPlugin$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderCodeGeneratorPlugin: never;
 
-    GenerateProviderOptions(): MethodCallCodeFragment | undefined;
+    GenerateProviderOptions(): MethodCallCodeFragment | null;
 }
 
 
@@ -35,8 +36,8 @@ export type IProviderCodeGeneratorPlugin = IProviderCodeGeneratorPlugin$instance
 export interface IProviderConfigurationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderConfigurationCodeGenerator: never;
 
-    GenerateProviderOptions(): MethodCallCodeFragment | undefined;
-    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment): MethodCallCodeFragment;
+    GenerateProviderOptions(): MethodCallCodeFragment | null;
+    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment | null): MethodCallCodeFragment;
     GenerateUseProvider(connectionString: string): MethodCallCodeFragment;
 }
 
@@ -73,7 +74,7 @@ export interface DatabaseModelFactoryOptions$instance {
 
 
 export const DatabaseModelFactoryOptions: {
-    new(tables: IEnumerable_1<System_Internal.String>, schemas: IEnumerable_1<System_Internal.String>): DatabaseModelFactoryOptions;
+    new(tables: IEnumerable_1<System_Internal.String> | null, schemas: IEnumerable_1<System_Internal.String> | null): DatabaseModelFactoryOptions;
 };
 
 
@@ -85,9 +86,9 @@ export interface ProviderCodeGenerator$instance extends IProviderConfigurationCo
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderConfigurationCodeGenerator: never;
 
     readonly Dependencies: ProviderCodeGeneratorDependencies;
-    GenerateContextOptions(): MethodCallCodeFragment | undefined;
-    GenerateProviderOptions(): MethodCallCodeFragment | undefined;
-    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment): MethodCallCodeFragment;
+    GenerateContextOptions(): MethodCallCodeFragment | null;
+    GenerateProviderOptions(): MethodCallCodeFragment | null;
+    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment | null): MethodCallCodeFragment;
     GenerateUseProvider(connectionString: string): MethodCallCodeFragment;
 }
 
@@ -110,8 +111,8 @@ export interface ProviderCodeGeneratorDependencies$instance {
 
     Plugins: IEnumerable_1<IProviderCodeGeneratorPlugin>;
     _Clone_$(): ProviderCodeGeneratorDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: ProviderCodeGeneratorDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: ProviderCodeGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -129,8 +130,8 @@ export interface ProviderCodeGeneratorPlugin$instance extends IProviderCodeGener
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderCodeGeneratorPlugin: never;
 
-    GenerateContextOptions(): MethodCallCodeFragment | undefined;
-    GenerateProviderOptions(): MethodCallCodeFragment | undefined;
+    GenerateContextOptions(): MethodCallCodeFragment | null;
+    GenerateProviderOptions(): MethodCallCodeFragment | null;
 }
 
 
