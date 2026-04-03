@@ -2,11 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.ValueGeneration
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Import support types from @tsonic/core
-import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import type { EntityEntry } from "../../Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js";
@@ -20,7 +18,7 @@ import type { Boolean as ClrBoolean, Byte, Func_1, Func_2, Func_3, Guid, IDispos
 export interface IValueGeneratorCache$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorCache: never;
 
-    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func_3<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
+    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func_3<IProperty, ITypeBase, ValueGenerator | null>): ValueGenerator | null;
 }
 
 
@@ -29,8 +27,8 @@ export type IValueGeneratorCache = IValueGeneratorCache$instance;
 export interface IValueGeneratorSelector$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorSelector: never;
 
-    Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
-    TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
+    Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | null;
+    TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator | null): boolean;
 }
 
 
@@ -41,7 +39,7 @@ export interface BinaryValueGenerator$instance extends ValueGenerator_1<byte[]> 
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): byte[];
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -71,7 +69,7 @@ export interface GuidValueGenerator$instance extends ValueGenerator_1<Guid> {
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): Guid;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -88,9 +86,9 @@ export interface HiLoValueGenerator_1$instance<TValue> extends ValueGenerator_1<
     GetNewLowValue(): long;
     GetNewLowValueAsync(cancellationToken?: CancellationToken): Task_1<System_Internal.Int64>;
     Next(entry: EntityEntry): TValue;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
 }
 
 
@@ -123,7 +121,7 @@ export interface RelationalValueGeneratorSelector$instance extends ValueGenerato
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorSelector: never;
 
-    FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
+    FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | null;
 }
 
 
@@ -144,7 +142,7 @@ export interface SequentialGuidValueGenerator$instance extends ValueGenerator_1<
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): Guid;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -160,7 +158,7 @@ export interface StringValueGenerator$instance extends ValueGenerator_1<System_I
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): string;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
 }
 
 
@@ -204,10 +202,10 @@ export interface ValueGenerator$instance {
 
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
-    Next(entry: EntityEntry): unknown;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
-    NextValue(entry: EntityEntry): unknown | undefined;
-    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    Next(entry: EntityEntry): JsValue;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    NextValue(entry: EntityEntry): JsValue | null;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
     WithConverter(converter: ValueConverter): ValueGenerator;
 }
 
@@ -222,11 +220,11 @@ export interface ValueGenerator_1$instance<TValue> extends ValueGenerator {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_ValueGenerator_1: never;
 
     Next(entry: EntityEntry): TValue;
-    Next(entry: EntityEntry): unknown;
+    Next(entry: EntityEntry): JsValue;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
-    NextValue(entry: EntityEntry): unknown | undefined;
-    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    NextValue(entry: EntityEntry): JsValue | null;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
 }
 
 
@@ -242,7 +240,7 @@ export interface ValueGeneratorCache$instance extends IValueGeneratorCache$insta
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ValueGeneration_IValueGeneratorCache: never;
 
     readonly Dependencies: ValueGeneratorCacheDependencies;
-    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func_3<IProperty, ITypeBase, ValueGenerator>): ValueGenerator | undefined;
+    GetOrAdd(property: IProperty, typeBase: ITypeBase, factory: Func_3<IProperty, ITypeBase, ValueGenerator | null>): ValueGenerator | null;
 }
 
 
@@ -264,8 +262,8 @@ export interface ValueGeneratorCacheDependencies$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): ValueGeneratorCacheDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: ValueGeneratorCacheDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: ValueGeneratorCacheDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -299,10 +297,10 @@ export interface ValueGeneratorSelector$instance extends IValueGeneratorSelector
     readonly Cache: IValueGeneratorCache;
     readonly Dependencies: ValueGeneratorSelectorDependencies;
     Create(property: IProperty, typeBase: ITypeBase): ValueGenerator;
-    FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | undefined;
-    Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | undefined;
-    TryCreate(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
-    TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator): boolean;
+    FindForType(property: IProperty, typeBase: ITypeBase, clrType: Type): ValueGenerator | null;
+    Select(property: IProperty, typeBase: ITypeBase): ValueGenerator | null;
+    TryCreate(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator | null): boolean;
+    TrySelect(property: IProperty, typeBase: ITypeBase, valueGenerator: ValueGenerator | null): boolean;
 }
 
 
@@ -325,8 +323,8 @@ export interface ValueGeneratorSelectorDependencies$instance {
 
     Cache: IValueGeneratorCache;
     _Clone_$(): ValueGeneratorSelectorDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: ValueGeneratorSelectorDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: ValueGeneratorSelectorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }

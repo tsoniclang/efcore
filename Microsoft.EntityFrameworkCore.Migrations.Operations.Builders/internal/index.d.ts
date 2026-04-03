@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Migrations.Operations.Builders
 // Assembly: Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import * as Microsoft_EntityFrameworkCore_Infrastructure_Internal from "../../Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js";
@@ -22,9 +23,9 @@ export interface AlterOperationBuilder_1$instance<TOperation extends MigrationOp
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Annotation(name: string, value: unknown): AlterOperationBuilder_1<TOperation>;
-    Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
-    OldAnnotation(name: string, value: unknown): AlterOperationBuilder_1<TOperation>;
+    Annotation(name: string, value: JsValue | null): AlterOperationBuilder_1<TOperation>;
+    Annotation(name: string, value: JsValue | null): OperationBuilder_1<TOperation>;
+    OldAnnotation(name: string, value: JsValue | null): AlterOperationBuilder_1<TOperation>;
 }
 
 
@@ -43,8 +44,8 @@ export type AlterOperationBuilder_1<TOperation extends MigrationOperation & IAlt
 export interface ColumnsBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_ColumnsBuilder: never;
 
-    Column<T>(type?: string, unicode?: Nullable_1<System_Internal.Boolean>, maxLength?: Nullable_1<System_Internal.Int32>, rowVersion?: boolean, name?: string, nullable?: boolean, defaultValue?: unknown, defaultValueSql?: string, computedColumnSql?: string, fixedLength?: Nullable_1<System_Internal.Boolean>, comment?: string, collation?: string, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>, stored?: Nullable_1<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
-    Equals(obj: unknown): boolean;
+    Column<T>(type?: string | null, unicode?: Nullable_1<System_Internal.Boolean>, maxLength?: Nullable_1<System_Internal.Int32>, rowVersion?: boolean, name?: string | null, nullable?: boolean, defaultValue?: JsValue | null, defaultValueSql?: string | null, computedColumnSql?: string | null, fixedLength?: Nullable_1<System_Internal.Boolean>, comment?: string | null, collation?: string | null, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>, stored?: Nullable_1<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -62,13 +63,13 @@ export interface CreateTableBuilder_1$instance<TColumns> extends OperationBuilde
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Annotation(name: string, value: unknown): CreateTableBuilder_1<TColumns>;
-    Annotation(name: string, value: unknown): OperationBuilder_1<CreateTableOperation>;
+    Annotation(name: string, value: JsValue | null): CreateTableBuilder_1<TColumns>;
+    Annotation(name: string, value: JsValue | null): OperationBuilder_1<CreateTableOperation>;
     CheckConstraint(name: string, sql: string): OperationBuilder_1<AddCheckConstraintOperation>;
-    ForeignKey(name: string, column: Expression_1<Func_2<TColumns, unknown>>, principalTable: string, principalColumn?: string, principalSchema?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
-    ForeignKey(name: string, columns: Expression_1<Func_2<TColumns, unknown>>, principalTable: string, principalColumns: string[], principalSchema?: string, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
-    PrimaryKey(name: string, columns: Expression_1<Func_2<TColumns, unknown>>): OperationBuilder_1<AddPrimaryKeyOperation>;
-    UniqueConstraint(name: string, columns: Expression_1<Func_2<TColumns, unknown>>): OperationBuilder_1<AddUniqueConstraintOperation>;
+    ForeignKey(name: string, column: Expression_1<Func_2<TColumns, JsValue>>, principalTable: string, principalColumn?: string | null, principalSchema?: string | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
+    ForeignKey(name: string, columns: Expression_1<Func_2<TColumns, JsValue>>, principalTable: string, principalColumns: string[] | null, principalSchema?: string | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
+    PrimaryKey(name: string, columns: Expression_1<Func_2<TColumns, JsValue>>): OperationBuilder_1<AddPrimaryKeyOperation>;
+    UniqueConstraint(name: string, columns: Expression_1<Func_2<TColumns, JsValue>>): OperationBuilder_1<AddUniqueConstraintOperation>;
 }
 
 
@@ -90,8 +91,8 @@ export interface OperationBuilder_1$instance<TOperation extends MigrationOperati
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Operation: TOperation;
-    Annotation(name: string, value: unknown): OperationBuilder_1<TOperation>;
-    Equals(obj: unknown): boolean;
+    Annotation(name: string, value: JsValue | null): OperationBuilder_1<TOperation>;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }

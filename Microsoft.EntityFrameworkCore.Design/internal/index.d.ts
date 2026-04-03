@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Design
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import type { QualifiedName } from "../../Microsoft.EntityFrameworkCore.Design.Internal/internal/index.js";
@@ -64,20 +65,20 @@ export type IAnnotationCodeGenerator = IAnnotationCodeGenerator$instance;
 export interface ICSharpHelper$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_ICSharpHelper: never;
 
-    Arguments(values: IEnumerable_1<unknown>): string;
+    Arguments(values: IEnumerable_1<JsValue>): string;
     Fragment(fragment: AttributeCodeFragment): string;
-    Fragment(fragment: IMethodCallCodeFragment, indent?: int): string;
-    Fragment(fragment: IMethodCallCodeFragment, instanceIdentifier: string, typeQualified: boolean): string;
+    Fragment(fragment: IMethodCallCodeFragment | null, indent?: int): string;
+    Fragment(fragment: IMethodCallCodeFragment, instanceIdentifier: string | null, typeQualified: boolean): string;
     Fragment(fragment: NestedClosureCodeFragment, indent?: int): string;
     Fragment(fragment: PropertyAccessorCodeFragment): string;
     GetRequiredUsings(type: Type): IEnumerable_1<System_Internal.String>;
-    Identifier(name: string, scope?: ICollection_1<System_Internal.String>, capitalize?: Nullable_1<System_Internal.Boolean>): string;
+    Identifier(name: string, scope?: ICollection_1<System_Internal.String> | null, capitalize?: Nullable_1<System_Internal.Boolean>): string;
     Identifier<T>(name: string, value: T, scope: IDictionary_2<System_Internal.String, T>, capitalize?: Nullable_1<System_Internal.Boolean>): string;
-    Lambda(properties: IEnumerable_1<IProperty>, lambdaIdentifier?: string): string;
-    Lambda(properties: IReadOnlyList_1<System_Internal.String>, lambdaIdentifier?: string): string;
+    Lambda(properties: IEnumerable_1<IProperty>, lambdaIdentifier?: string | null): string;
+    Lambda(properties: IReadOnlyList_1<System_Internal.String>, lambdaIdentifier?: string | null): string;
     Literal<TKey, TValue>(values: Dictionary_2<TKey, TValue>, vertical?: boolean): string;
     Literal<T>(values: List_1<T>, vertical?: boolean): string;
-    Literal<T extends unknown>(value: Nullable_1<T>): string;
+    Literal<T extends NonNullable<JsValue>>(value: Nullable_1<T>): string;
     Literal(value: boolean): string;
     Literal(value: byte): string;
     Literal(value: char): string;
@@ -92,10 +93,10 @@ export interface ICSharpHelper$instance {
     Literal(value: int): string;
     Literal(value: long): string;
     Literal(value: BigInteger): string;
-    Literal(values: Array<Array<unknown>>): string;
+    Literal(values: Array<Array<(JsValue | null)>>): string;
     Literal(value: sbyte): string;
     Literal(value: float): string;
-    Literal(value: string): string;
+    Literal(value: string | null): string;
     Literal(value: TimeOnly): string;
     Literal(value: TimeSpan): string;
     Literal(value: Type, fullName?: Nullable_1<System_Internal.Boolean>): string;
@@ -104,8 +105,8 @@ export interface ICSharpHelper$instance {
     Literal(value: ulong): string;
     Literal<T>(values: T[], vertical?: boolean): string;
     Namespace(...name: string[]): string;
-    Statement(node: Expression, collectedNamespaces: ISet_1<System_Internal.String>, unsafeAccessors: ISet_1<System_Internal.String>, constantReplacements?: IReadOnlyDictionary_2<unknown, System_Internal.String>, memberAccessReplacements?: IReadOnlyDictionary_2<MemberInfo, QualifiedName>): string;
-    UnknownLiteral(value: unknown): string;
+    Statement(node: Expression, collectedNamespaces: ISet_1<System_Internal.String>, unsafeAccessors: ISet_1<System_Internal.String>, constantReplacements?: IReadOnlyDictionary_2<JsValue, System_Internal.String> | null, memberAccessReplacements?: IReadOnlyDictionary_2<MemberInfo, QualifiedName> | null): string;
+    UnknownLiteral(value: JsValue | null): string;
     XmlComment(comment: string, indent?: int): string;
 }
 
@@ -133,11 +134,11 @@ export type IDesignTimeServices = IDesignTimeServices$instance;
 export interface IMethodCallCodeFragment$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IMethodCallCodeFragment: never;
 
-    readonly DeclaringType: string | undefined;
+    readonly DeclaringType: string | null;
     readonly Method: string;
     readonly TypeArguments: IEnumerable_1<System_Internal.String>;
-    readonly Arguments: IEnumerable_1<unknown | undefined>;
-    readonly ChainedCall: IMethodCallCodeFragment | undefined;
+    readonly Arguments: IEnumerable_1<JsValue | null>;
+    readonly ChainedCall: IMethodCallCodeFragment | null;
 }
 
 
@@ -150,26 +151,26 @@ export interface AnnotationCodeGenerator$instance {
 
     readonly Dependencies: AnnotationCodeGeneratorDependencies;
     FilterIgnoredAnnotations(annotations: IEnumerable_1<IAnnotation>): IEnumerable_1<IAnnotation>;
-    GenerateDataAnnotation(entityType: IEntityType, annotation: IAnnotation): AttributeCodeFragment | undefined;
-    GenerateDataAnnotation(property: IProperty, annotation: IAnnotation): AttributeCodeFragment | undefined;
+    GenerateDataAnnotation(entityType: IEntityType, annotation: IAnnotation): AttributeCodeFragment | null;
+    GenerateDataAnnotation(property: IProperty, annotation: IAnnotation): AttributeCodeFragment | null;
     GenerateDataAnnotationAttributes(entityType: IEntityType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<AttributeCodeFragment>;
     GenerateDataAnnotationAttributes(property: IProperty, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<AttributeCodeFragment>;
     GenerateDataAnnotationAttributes(annotatable: IAnnotatable, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<AttributeCodeFragment>;
-    GenerateFluentApi(model: IModel, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(entityType: IEntityType, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(complexType: IComplexType, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(fragment: IEntityTypeMappingFragment, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(key: IKey, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(property: IProperty, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(complexProperty: IComplexProperty, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(foreignKey: IForeignKey, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(navigation: INavigation, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(navigation: ISkipNavigation, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(index: IIndex, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(checkConstraint: ICheckConstraint, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(trigger: ITrigger, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(overrides: IRelationalPropertyOverrides, annotation: IAnnotation): MethodCallCodeFragment | undefined;
-    GenerateFluentApi(sequence: ISequence, annotation: IAnnotation): MethodCallCodeFragment | undefined;
+    GenerateFluentApi(model: IModel, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(entityType: IEntityType, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(complexType: IComplexType, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(fragment: IEntityTypeMappingFragment, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(key: IKey, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(property: IProperty, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(complexProperty: IComplexProperty, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(foreignKey: IForeignKey, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(navigation: INavigation, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(navigation: ISkipNavigation, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(index: IIndex, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(checkConstraint: ICheckConstraint, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(trigger: ITrigger, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(overrides: IRelationalPropertyOverrides, annotation: IAnnotation): MethodCallCodeFragment | null;
+    GenerateFluentApi(sequence: ISequence, annotation: IAnnotation): MethodCallCodeFragment | null;
     GenerateFluentApiCalls(model: IModel, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
     GenerateFluentApiCalls(entityType: IEntityType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
     GenerateFluentApiCalls(complexType: IComplexType, annotations: IDictionary_2<System_Internal.String, IAnnotation>): IReadOnlyList_1<MethodCallCodeFragment>;
@@ -239,8 +240,8 @@ export interface AnnotationCodeGeneratorDependencies$instance {
 
     RelationalTypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): AnnotationCodeGeneratorDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: AnnotationCodeGeneratorDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: AnnotationCodeGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -256,15 +257,15 @@ export type AnnotationCodeGeneratorDependencies = AnnotationCodeGeneratorDepende
 export interface AttributeCodeFragment$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_AttributeCodeFragment: never;
 
-    readonly Arguments: IReadOnlyList_1<unknown | undefined>;
-    readonly NamedArguments: IReadOnlyDictionary_2<System_Internal.String, unknown | undefined>;
+    readonly Arguments: IReadOnlyList_1<JsValue | null>;
+    readonly NamedArguments: IReadOnlyDictionary_2<System_Internal.String, JsValue | null>;
     readonly Type: Type;
 }
 
 
 export const AttributeCodeFragment: {
-    new(type: Type, arguments: unknown[]): AttributeCodeFragment;
-    new(type: Type, arguments: IEnumerable_1<unknown>, namedArguments: IDictionary_2<System_Internal.String, unknown>): AttributeCodeFragment;
+    new(type: Type, arguments: (JsValue | null)[]): AttributeCodeFragment;
+    new(type: Type, arguments: IEnumerable_1<JsValue | null>, namedArguments: IDictionary_2<System_Internal.String, JsValue | null>): AttributeCodeFragment;
 };
 
 
@@ -287,14 +288,14 @@ export type DesignTimeProviderServicesAttribute = DesignTimeProviderServicesAttr
 export interface DesignTimeServicesReferenceAttribute$instance extends Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_DesignTimeServicesReferenceAttribute: never;
 
-    readonly ForProvider: string | undefined;
+    readonly ForProvider: string | null;
     readonly TypeName: string;
 }
 
 
 export const DesignTimeServicesReferenceAttribute: {
     new(typeName: string): DesignTimeServicesReferenceAttribute;
-    new(typeName: string, forProvider: string): DesignTimeServicesReferenceAttribute;
+    new(typeName: string, forProvider: string | null): DesignTimeServicesReferenceAttribute;
 };
 
 
@@ -337,21 +338,21 @@ export interface MethodCallCodeFragment$instance {
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IMethodCallCodeFragment: never;
 
-    readonly Arguments: IReadOnlyList_1<unknown | undefined>;
-    readonly ChainedCall: MethodCallCodeFragment | undefined;
-    readonly DeclaringType: string | undefined;
+    readonly Arguments: IReadOnlyList_1<JsValue | null>;
+    readonly ChainedCall: MethodCallCodeFragment | null;
+    readonly DeclaringType: string | null;
     readonly Method: string;
-    readonly MethodInfo: MethodInfo | undefined;
-    readonly Namespace: string | undefined;
-    Chain(methodInfo: MethodInfo, ...arguments: unknown[]): MethodCallCodeFragment;
-    Chain(method: string, ...arguments: unknown[]): MethodCallCodeFragment;
+    readonly MethodInfo: MethodInfo | null;
+    readonly Namespace: string | null;
+    Chain(methodInfo: MethodInfo, ...arguments: (JsValue | null)[]): MethodCallCodeFragment;
+    Chain(method: string, ...arguments: (JsValue | null)[]): MethodCallCodeFragment;
     Chain(call: MethodCallCodeFragment): MethodCallCodeFragment;
 }
 
 
 export const MethodCallCodeFragment: {
-    new(methodInfo: MethodInfo, arguments: unknown[]): MethodCallCodeFragment;
-    new(method: string, arguments: unknown[]): MethodCallCodeFragment;
+    new(methodInfo: MethodInfo, arguments: (JsValue | null)[]): MethodCallCodeFragment;
+    new(method: string, arguments: (JsValue | null)[]): MethodCallCodeFragment;
 };
 
 

@@ -2,11 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Diagnostics.Internal
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Import support types from @tsonic/core
-import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import * as Microsoft_EntityFrameworkCore_Diagnostics_Internal from "../../Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js";
@@ -121,7 +119,7 @@ export interface DiagnosticsLogger_1$instance<TLoggerCategory extends LoggerCate
     readonly DbContextLogger: IDbContextLogger;
     readonly Definitions: LoggingDefinitions;
     readonly DiagnosticSource: DiagnosticSource;
-    readonly Interceptors: IInterceptors | undefined;
+    readonly Interceptors: IInterceptors | null;
     readonly Logger: ILogger;
     readonly Options: ILoggingOptions;
     ShouldLogSensitiveData(): boolean;
@@ -129,7 +127,7 @@ export interface DiagnosticsLogger_1$instance<TLoggerCategory extends LoggerCate
 
 
 export const DiagnosticsLogger_1: {
-    new<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(loggerFactory: ILoggerFactory, loggingOptions: ILoggingOptions, diagnosticSource: DiagnosticSource, loggingDefinitions: LoggingDefinitions, contextLogger: IDbContextLogger, interceptors: IInterceptors): DiagnosticsLogger_1<TLoggerCategory>;
+    new<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(loggerFactory: ILoggerFactory, loggingOptions: ILoggingOptions, diagnosticSource: DiagnosticSource, loggingDefinitions: LoggingDefinitions, contextLogger: IDbContextLogger, interceptors: IInterceptors | null): DiagnosticsLogger_1<TLoggerCategory>;
 };
 
 
@@ -188,7 +186,7 @@ export interface Interceptors$instance extends Microsoft_EntityFrameworkCore_Dia
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptors: never;
 
-    Aggregate<TInterceptor extends IInterceptor>(): TInterceptor | undefined;
+    Aggregate<TInterceptor extends IInterceptor>(): TInterceptor | null;
 }
 
 
@@ -304,25 +302,25 @@ export interface RelationalCommandDiagnosticsLogger$instance extends Diagnostics
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IDiagnosticsLogger_1: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IRelationalCommandDiagnosticsLogger: never;
 
-    CommandCanceled(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
-    CommandCanceledAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
-    CommandCreated(connection: IRelationalConnection, command: DbCommand, commandMethod: DbCommandMethod, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbCommand;
-    CommandCreating(connection: IRelationalConnection, commandMethod: DbCommandMethod, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbCommand>;
-    CommandError(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
-    CommandErrorAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
-    CommandInitialized(connection: IRelationalConnection, command: DbCommand, commandMethod: DbCommandMethod, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbCommand;
-    CommandNonQueryExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): int;
-    CommandNonQueryExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
-    CommandNonQueryExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<System_Internal.Int32>;
-    CommandNonQueryExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<System_Internal.Int32>>;
-    CommandReaderExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbDataReader;
-    CommandReaderExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
-    CommandReaderExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbDataReader>;
-    CommandReaderExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
-    CommandScalarExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): unknown | undefined;
-    CommandScalarExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
-    CommandScalarExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<unknown>;
-    CommandScalarExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<unknown>>;
+    CommandCanceled(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
+    CommandCanceledAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
+    CommandCreated(connection: IRelationalConnection, command: DbCommand, commandMethod: DbCommandMethod, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbCommand;
+    CommandCreating(connection: IRelationalConnection, commandMethod: DbCommandMethod, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbCommand>;
+    CommandError(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
+    CommandErrorAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
+    CommandInitialized(connection: IRelationalConnection, command: DbCommand, commandMethod: DbCommandMethod, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbCommand;
+    CommandNonQueryExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): int;
+    CommandNonQueryExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
+    CommandNonQueryExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<System_Internal.Int32>;
+    CommandNonQueryExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<System_Internal.Int32>>;
+    CommandReaderExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbDataReader;
+    CommandReaderExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
+    CommandReaderExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbDataReader>;
+    CommandReaderExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
+    CommandScalarExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: JsValue | null, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): JsValue | null;
+    CommandScalarExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: JsValue | null, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    CommandScalarExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<JsValue>;
+    CommandScalarExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<JsValue>>;
     DataReaderClosing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): InterceptionResult;
     DataReaderClosingAsync(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): ValueTask_1<InterceptionResult>;
     DataReaderDisposing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): InterceptionResult;
@@ -334,7 +332,7 @@ export interface RelationalCommandDiagnosticsLogger$instance extends Diagnostics
 
 
 export const RelationalCommandDiagnosticsLogger: {
-    new(loggerFactory: ILoggerFactory, loggingOptions: ILoggingOptions, diagnosticSource: DiagnosticSource, loggingDefinitions: LoggingDefinitions, contextLogger: IDbContextLogger, contextOptions: IDbContextOptions, interceptors: IInterceptors): RelationalCommandDiagnosticsLogger;
+    new(loggerFactory: ILoggerFactory, loggingOptions: ILoggingOptions, diagnosticSource: DiagnosticSource, loggingDefinitions: LoggingDefinitions, contextLogger: IDbContextLogger, contextOptions: IDbContextOptions, interceptors: IInterceptors | null): RelationalCommandDiagnosticsLogger;
 };
 
 
@@ -379,7 +377,7 @@ export interface RelationalConnectionDiagnosticsLogger$instance extends Diagnost
 
 
 export const RelationalConnectionDiagnosticsLogger: {
-    new(loggerFactory: ILoggerFactory, loggingOptions: ILoggingOptions, diagnosticSource: DiagnosticSource, loggingDefinitions: LoggingDefinitions, contextLogger: IDbContextLogger, contextOptions: IDbContextOptions, interceptors: IInterceptors): RelationalConnectionDiagnosticsLogger;
+    new(loggerFactory: ILoggerFactory, loggingOptions: ILoggingOptions, diagnosticSource: DiagnosticSource, loggingDefinitions: LoggingDefinitions, contextLogger: IDbContextLogger, contextOptions: IDbContextOptions, interceptors: IInterceptors | null): RelationalConnectionDiagnosticsLogger;
 };
 
 
@@ -426,7 +424,7 @@ export interface ScopedLoggerFactory$instance {
 
 export const ScopedLoggerFactory: {
     new(loggerFactory: ILoggerFactory, dispose: boolean): ScopedLoggerFactory;
-    Create(internalServiceProvider: IServiceProvider, contextOptions: IDbContextOptions): ScopedLoggerFactory;
+    Create(internalServiceProvider: IServiceProvider, contextOptions: IDbContextOptions | null): ScopedLoggerFactory;
 };
 
 
@@ -444,48 +442,48 @@ export abstract class CoreResources$instance {
     static LogCollectionChangeDetectedSensitive(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.Int32, System_Internal.Int32, System_Internal.String, System_Internal.String, System_Internal.String>;
     static LogCollectionWithoutComparer(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogComplexElementPropertyChangeDetected(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
-    static LogComplexElementPropertyChangeDetectedSensitive(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, System_Internal.String, unknown | undefined, unknown | undefined, System_Internal.String>;
-    static LogConflictingForeignKeyAttributesOnNavigationAndProperty(logger: IDiagnosticsLogger): EventDefinition_4<System_Internal.String, string | undefined, System_Internal.String, string | undefined>;
+    static LogComplexElementPropertyChangeDetectedSensitive(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, System_Internal.String, JsValue | null, JsValue | null, System_Internal.String>;
+    static LogConflictingForeignKeyAttributesOnNavigationAndProperty(logger: IDiagnosticsLogger): EventDefinition_4<System_Internal.String, string | null, System_Internal.String, string | null>;
     static LogConflictingKeylessAndKeyAttributes(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogConflictingShadowForeignKeys(logger: IDiagnosticsLogger): EventDefinition_3<System_Internal.String, System_Internal.String, System_Internal.String>;
     static LogContextDisposed(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
-    static LogContextInitialized(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, System_Internal.String, string | undefined, string | undefined, System_Internal.String>;
+    static LogContextInitialized(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, System_Internal.String, string | null, string | null, System_Internal.String>;
     static LogDetachedLazyLoading(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogDetectChangesCompleted(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
-    static LogDetectChangesStarting(logger: IDiagnosticsLogger): EventDefinition_1<string | undefined>;
+    static LogDetectChangesStarting(logger: IDiagnosticsLogger): EventDefinition_1<string | null>;
     static LogDistinctAfterOrderByWithoutRowLimitingOperatorWarning(logger: IDiagnosticsLogger): EventDefinition;
     static LogDuplicateDependentEntityTypeInstance(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogExceptionDuringQueryIteration(logger: IDiagnosticsLogger): EventDefinition_3<Type, System_Internal.String, Exception>;
-    static LogExceptionDuringSaveChanges(logger: IDiagnosticsLogger): EventDefinition_3<Type | undefined, System_Internal.String, Exception>;
+    static LogExceptionDuringSaveChanges(logger: IDiagnosticsLogger): EventDefinition_3<Type | null, System_Internal.String, Exception>;
     static LogExecutionStrategyRetrying(logger: IDiagnosticsLogger): EventDefinition_3<System_Internal.Int32, System_Internal.String, Exception>;
     static LogFirstWithoutOrderByAndFilter(logger: IDiagnosticsLogger): EventDefinition;
     static LogForeignKeyAttributesOnBothNavigations(logger: IDiagnosticsLogger): EventDefinition_4<System_Internal.String, System_Internal.String, System_Internal.String, System_Internal.String>;
-    static LogForeignKeyAttributesOnBothProperties(logger: IDiagnosticsLogger): EventDefinition_6<System_Internal.String, string | undefined, System_Internal.String, string | undefined, string | undefined, string | undefined>;
+    static LogForeignKeyAttributesOnBothProperties(logger: IDiagnosticsLogger): EventDefinition_6<System_Internal.String, string | null, System_Internal.String, string | null, string | null, string | null>;
     static LogForeignKeyChangeDetected(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
-    static LogForeignKeyChangeDetectedSensitive(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, System_Internal.String, unknown | undefined, unknown | undefined, System_Internal.String>;
+    static LogForeignKeyChangeDetectedSensitive(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, System_Internal.String, JsValue | null, JsValue | null, System_Internal.String>;
     static LogIncompatibleMatchingForeignKeyProperties(logger: IDiagnosticsLogger): EventDefinition_4<System_Internal.String, System_Internal.String, System_Internal.String, System_Internal.String>;
-    static LogInvalidIncludePath(logger: IDiagnosticsLogger): EventDefinition_2<unknown, unknown>;
+    static LogInvalidIncludePath(logger: IDiagnosticsLogger): EventDefinition_2<JsValue, JsValue>;
     static LogLazyLoadOnDisposedContext(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogManyServiceProvidersCreated(logger: IDiagnosticsLogger): EventDefinition;
     static LogMappedComplexPropertyIgnored(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogMappedEntityTypeIgnored(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
     static LogMappedNavigationIgnored(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogMappedPropertyIgnored(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
-    static LogMultipleInversePropertiesSameTarget(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, string | undefined>;
+    static LogMultipleInversePropertiesSameTarget(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, string | null>;
     static LogMultipleNavigationProperties(logger: IDiagnosticsLogger): EventDefinition_4<System_Internal.String, System_Internal.String, System_Internal.String, System_Internal.String>;
     static LogMultiplePrimaryKeyCandidates(logger: IDiagnosticsLogger): EventDefinition_3<System_Internal.String, System_Internal.String, System_Internal.String>;
     static LogNavigationBaseIncluded(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
     static LogNavigationBaseIncludeIgnored(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
     static LogNavigationLazyLoading(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogNoEntityTypeConfigurationsWarning(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
-    static LogNonOwnershipInverseNavigation(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, string | undefined, System_Internal.String, string | undefined, string | undefined>;
+    static LogNonOwnershipInverseNavigation(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, string | null, System_Internal.String, string | null, string | null>;
     static LogOldModelVersion(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogOptimisticConcurrencyException(logger: IDiagnosticsLogger): EventDefinition_1<Exception>;
     static LogPossibleIncorrectRequiredNavigationWithQueryFilterInteraction(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogPossibleUnintendedCollectionNavigationNullComparison(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
-    static LogPossibleUnintendedReferenceComparison(logger: IDiagnosticsLogger): EventDefinition_2<unknown, unknown>;
+    static LogPossibleUnintendedReferenceComparison(logger: IDiagnosticsLogger): EventDefinition_2<JsValue, JsValue>;
     static LogPropertyChangeDetected(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
-    static LogPropertyChangeDetectedSensitive(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, System_Internal.String, unknown | undefined, unknown | undefined, System_Internal.String>;
+    static LogPropertyChangeDetectedSensitive(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, System_Internal.String, JsValue | null, JsValue | null, System_Internal.String>;
     static LogQueryCanceled(logger: IDiagnosticsLogger): EventDefinition_1<Type>;
     static LogQueryCompilationStarting(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogQueryExecutionPlanned(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
@@ -497,9 +495,9 @@ export abstract class CoreResources$instance {
     static LogRequiredAttributeOnCollection(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogRequiredAttributeOnSkipNavigation(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogRowLimitingOperationWithoutOrderBy(logger: IDiagnosticsLogger): EventDefinition;
-    static LogSaveChangesCanceled(logger: IDiagnosticsLogger): EventDefinition_1<Type | undefined>;
-    static LogSaveChangesCompleted(logger: IDiagnosticsLogger): EventDefinition_2<string | undefined, System_Internal.Int32>;
-    static LogSaveChangesStarting(logger: IDiagnosticsLogger): EventDefinition_1<string | undefined>;
+    static LogSaveChangesCanceled(logger: IDiagnosticsLogger): EventDefinition_1<Type | null>;
+    static LogSaveChangesCompleted(logger: IDiagnosticsLogger): EventDefinition_2<string | null, System_Internal.Int32>;
+    static LogSaveChangesStarting(logger: IDiagnosticsLogger): EventDefinition_1<string | null>;
     static LogSensitiveDataLoggingEnabled(logger: IDiagnosticsLogger): EventDefinition;
     static LogServiceProviderCreated(logger: IDiagnosticsLogger): EventDefinition;
     static LogServiceProviderDebugInfo(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
@@ -514,10 +512,10 @@ export abstract class CoreResources$instance {
     static LogStateChangedSensitive(logger: IDiagnosticsLogger): EventDefinition_5<System_Internal.String, System_Internal.String, System_Internal.String, EntityState, EntityState>;
     static LogStringEnumValueInJson(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
     static LogTempValueGenerated(logger: IDiagnosticsLogger): EventDefinition_3<System_Internal.String, System_Internal.String, System_Internal.String>;
-    static LogTempValueGeneratedSensitive(logger: IDiagnosticsLogger): EventDefinition_4<System_Internal.String, unknown | undefined, System_Internal.String, System_Internal.String>;
+    static LogTempValueGeneratedSensitive(logger: IDiagnosticsLogger): EventDefinition_4<System_Internal.String, JsValue | null, System_Internal.String, System_Internal.String>;
     static LogTypeLoadingErrorWarning(logger: IDiagnosticsLogger): EventDefinition_2<System_Internal.String, System_Internal.String>;
     static LogValueGenerated(logger: IDiagnosticsLogger): EventDefinition_3<System_Internal.String, System_Internal.String, System_Internal.String>;
-    static LogValueGeneratedSensitive(logger: IDiagnosticsLogger): EventDefinition_4<System_Internal.String, unknown | undefined, System_Internal.String, System_Internal.String>;
+    static LogValueGeneratedSensitive(logger: IDiagnosticsLogger): EventDefinition_4<System_Internal.String, JsValue | null, System_Internal.String, System_Internal.String>;
 }
 
 
@@ -574,8 +572,8 @@ export abstract class RelationalResources$instance {
     static LogMigrationAttributeMissingWarning(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;
     static LogMigrationsUserTransaction(logger: IDiagnosticsLogger): EventDefinition;
     static LogMultipleCollectionIncludeWarning(logger: IDiagnosticsLogger): EventDefinition;
-    static LogNamedIndexAllPropertiesNotToMappedToAnyTable(logger: IDiagnosticsLogger): EventDefinition_3<string | undefined, System_Internal.String, System_Internal.String>;
-    static LogNamedIndexPropertiesBothMappedAndNotMappedToTable(logger: IDiagnosticsLogger): EventDefinition_4<string | undefined, System_Internal.String, System_Internal.String, System_Internal.String>;
+    static LogNamedIndexAllPropertiesNotToMappedToAnyTable(logger: IDiagnosticsLogger): EventDefinition_3<string | null, System_Internal.String, System_Internal.String>;
+    static LogNamedIndexPropertiesBothMappedAndNotMappedToTable(logger: IDiagnosticsLogger): EventDefinition_4<string | null, System_Internal.String, System_Internal.String, System_Internal.String>;
     static LogNamedIndexPropertiesMappedToNonOverlappingTables(logger: IDiagnosticsLogger): FallbackEventDefinition;
     static LogNoMigrationsApplied(logger: IDiagnosticsLogger): EventDefinition;
     static LogNoMigrationsFound(logger: IDiagnosticsLogger): EventDefinition_1<System_Internal.String>;

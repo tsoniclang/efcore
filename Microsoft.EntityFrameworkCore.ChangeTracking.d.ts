@@ -11,7 +11,7 @@ import type { DebugView, IInfrastructure_1, IResettableService } from './Microso
 import type { IComplexProperty, IEntityType, IModel, INavigation, INavigationBase, IProperty, IPropertyBase, ITypeBase } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
 import type { IUpdateEntry } from './Microsoft.EntityFrameworkCore.Update/internal/index.js';
 import type { DbContext, DbSet_1, EntityState, QueryTrackingBehavior } from './Microsoft.EntityFrameworkCore/internal/index.js';
-import type { HashSet_1$Enumerator, ICollection as ICollection__System_Collections_Generic, IComparer, IDictionary, IEnumerable as IEnumerable__System_Collections_Generic, IEnumerator, IEqualityComparer as IEqualityComparer__System_Collections_Generic, IList as IList__System_Collections_Generic, IReadOnlyCollection, IReadOnlyList, ISet, List } from '@tsonic/dotnet/System.Collections.Generic.js';
+import type { HashSet_1_Enumerator, ICollection as ICollection__System_Collections_Generic, IComparer, IDictionary, IEnumerable as IEnumerable__System_Collections_Generic, IEnumerator, IEqualityComparer as IEqualityComparer__System_Collections_Generic, IList as IList__System_Collections_Generic, IReadOnlyCollection, IReadOnlyList, ISet, List } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { ICollection, IEnumerable, IEqualityComparer, IList } from '@tsonic/dotnet/System.Collections.js';
 import type { ObservableCollection } from '@tsonic/dotnet/System.Collections.ObjectModel.js';
 import type { INotifyCollectionChanged, NotifyCollectionChangedEventArgs, NotifyCollectionChangedEventHandler } from '@tsonic/dotnet/System.Collections.Specialized.js';

@@ -2,11 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Diagnostics
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Abstractions, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Import support types from @tsonic/core
-import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import type { InternalComplexEntry, InternalEntityEntry } from "../../Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js";
@@ -75,8 +73,8 @@ export interface ICollectionChangedEventData$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
 
     readonly EntityEntry: EntityEntry;
-    readonly Added: IEnumerable_1<unknown>;
-    readonly Removed: IEnumerable_1<unknown>;
+    readonly Added: IEnumerable_1<JsValue>;
+    readonly Removed: IEnumerable_1<JsValue>;
 }
 
 
@@ -100,8 +98,8 @@ export interface IDbCommandInterceptor$instance extends IInterceptor {
     ReaderExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: DbDataReader, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
     ReaderExecuting(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>): InterceptionResult_1<DbDataReader>;
     ReaderExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
-    ScalarExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: unknown): unknown | undefined;
-    ScalarExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: unknown, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    ScalarExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: JsValue | null): JsValue | null;
+    ScalarExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: JsValue | null, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
 }
 
 
@@ -171,10 +169,10 @@ export interface IDiagnosticsLogger$instance {
     readonly Logger: ILogger;
     readonly DiagnosticSource: DiagnosticSource;
     readonly DbContextLogger: IDbContextLogger;
-    readonly Interceptors: IInterceptors | undefined;
+    readonly Interceptors: IInterceptors | null;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
     NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
-    NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor | null, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLog(definition: EventDefinitionBase): boolean;
     ShouldLogSensitiveData(): boolean;
 }
@@ -190,11 +188,11 @@ export interface IDiagnosticsLogger_1$instance<TLoggerCategory extends LoggerCat
     readonly Logger: ILogger;
     readonly DiagnosticSource: DiagnosticSource;
     readonly DbContextLogger: IDbContextLogger;
-    readonly Interceptors: IInterceptors | undefined;
+    readonly Interceptors: IInterceptors | null;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
     NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
-    NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
-    NeedsEventData<TInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor | null, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData<TInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor | null, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLog(definition: EventDefinitionBase): boolean;
     ShouldLogSensitiveData(): boolean;
 }
@@ -216,7 +214,7 @@ export type IErrorEventData = IErrorEventData$instance;
 export interface IIdentityResolutionInterceptor$instance extends IInterceptor {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
 
-    UpdateTrackedInstance(interceptionData: IdentityResolutionInterceptionData, existingEntry: EntityEntry, newEntity: unknown): void;
+    UpdateTrackedInstance(interceptionData: IdentityResolutionInterceptionData, existingEntry: EntityEntry, newEntity: JsValue): void;
 }
 
 
@@ -247,7 +245,7 @@ export interface IInterceptorAggregator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
     readonly InterceptorType: Type;
-    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | null;
 }
 
 
@@ -256,7 +254,7 @@ export type IInterceptorAggregator = IInterceptorAggregator$instance;
 export interface IInterceptors$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptors: never;
 
-    Aggregate<TInterceptor extends IInterceptor>(): TInterceptor | undefined;
+    Aggregate<TInterceptor extends IInterceptor>(): TInterceptor | null;
 }
 
 
@@ -281,9 +279,9 @@ export type ILoggingOptions = ILoggingOptions$instance;
 export interface IMaterializationInterceptor$instance extends ISingletonInterceptor, IInterceptor {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IMaterializationInterceptor: never;
 
-    CreatedInstance(materializationData: MaterializationInterceptionData, entity: unknown): unknown;
-    CreatingInstance(materializationData: MaterializationInterceptionData, result: InterceptionResult_1<unknown>): InterceptionResult_1<unknown>;
-    InitializingInstance(materializationData: MaterializationInterceptionData, entity: unknown, result: InterceptionResult): InterceptionResult;
+    CreatedInstance(materializationData: MaterializationInterceptionData, entity: JsValue): JsValue;
+    CreatingInstance(materializationData: MaterializationInterceptionData, result: InterceptionResult_1<JsValue>): InterceptionResult_1<JsValue>;
+    InitializingInstance(materializationData: MaterializationInterceptionData, entity: JsValue, result: InterceptionResult): InterceptionResult;
 }
 
 
@@ -319,28 +317,28 @@ export interface IRelationalCommandDiagnosticsLogger$instance extends IDiagnosti
     readonly Logger: ILogger;
     readonly DiagnosticSource: DiagnosticSource;
     readonly DbContextLogger: IDbContextLogger;
-    readonly Interceptors: IInterceptors | undefined;
-    CommandCanceled(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
-    CommandCanceledAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
-    CommandCreated(connection: IRelationalConnection, command: DbCommand, commandMethod: DbCommandMethod, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbCommand;
-    CommandCreating(connection: IRelationalConnection, commandMethod: DbCommandMethod, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbCommand>;
-    CommandError(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
-    CommandErrorAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
-    CommandNonQueryExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): int;
-    CommandNonQueryExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
-    CommandReaderExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbDataReader;
-    CommandReaderExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
-    CommandReaderExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbDataReader>;
-    CommandReaderExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
-    CommandScalarExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): unknown | undefined;
-    CommandScalarExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext, commandId: Guid, connectionId: Guid, methodResult: unknown, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    readonly Interceptors: IInterceptors | null;
+    CommandCanceled(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
+    CommandCanceledAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
+    CommandCreated(connection: IRelationalConnection, command: DbCommand, commandMethod: DbCommandMethod, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbCommand;
+    CommandCreating(connection: IRelationalConnection, commandMethod: DbCommandMethod, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbCommand>;
+    CommandError(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): void;
+    CommandErrorAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): Task;
+    CommandNonQueryExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): int;
+    CommandNonQueryExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: int, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<System_Internal.Int32>;
+    CommandReaderExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): DbDataReader;
+    CommandReaderExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: DbDataReader, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
+    CommandReaderExecuting(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource): InterceptionResult_1<DbDataReader>;
+    CommandReaderExecutingAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, startTime: DateTimeOffset, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
+    CommandScalarExecuted(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: JsValue | null, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): JsValue | null;
+    CommandScalarExecutedAsync(connection: IRelationalConnection, command: DbCommand, logCommandText: string, context: DbContext | null, commandId: Guid, connectionId: Guid, methodResult: JsValue | null, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
     DataReaderClosing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): InterceptionResult;
     DataReaderClosingAsync(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): ValueTask_1<InterceptionResult>;
     DataReaderDisposing(connection: IRelationalConnection, command: DbCommand, dataReader: DbDataReader, commandId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): InterceptionResult;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
     NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
-    NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
-    NeedsEventData<TInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor | null, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData<TInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor | null, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLog(definition: EventDefinitionBase): boolean;
     ShouldLogCommandCreate(now: DateTimeOffset): boolean;
     ShouldLogSensitiveData(): boolean;
@@ -357,7 +355,7 @@ export interface IRelationalConnectionDiagnosticsLogger$instance extends IDiagno
     readonly Logger: ILogger;
     readonly DiagnosticSource: DiagnosticSource;
     readonly DbContextLogger: IDbContextLogger;
-    readonly Interceptors: IInterceptors | undefined;
+    readonly Interceptors: IInterceptors | null;
     ConnectionCreated(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): DbConnection;
     ConnectionCreating(connection: IRelationalConnection, startTime: DateTimeOffset): InterceptionResult_1<DbConnection>;
     ConnectionDisposed(connection: IRelationalConnection, startTime: DateTimeOffset, duration: TimeSpan): void;
@@ -370,8 +368,8 @@ export interface IRelationalConnectionDiagnosticsLogger$instance extends IDiagno
     ConnectionOpeningAsync(connection: IRelationalConnection, startTime: DateTimeOffset, cancellationToken: CancellationToken): ValueTask_1<InterceptionResult>;
     DispatchEventData(definition: EventDefinitionBase, eventData: EventData, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): void;
     NeedsEventData(definition: EventDefinitionBase, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
-    NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
-    NeedsEventData<TInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData<TInterceptor extends IInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor | null, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
+    NeedsEventData<TInterceptor>(definition: EventDefinitionBase, interceptor: TInterceptor | null, diagnosticSourceEnabled: boolean, simpleLogEnabled: boolean): boolean;
     ShouldLog(definition: EventDefinitionBase): boolean;
     ShouldLogConnectionCreate(now: DateTimeOffset): boolean;
     ShouldLogSensitiveData(): boolean;
@@ -476,14 +474,14 @@ export interface MaterializationInterceptionData$instance {
     readonly EntityType: IEntityType;
     readonly QueryTrackingBehavior: Nullable_1<QueryTrackingBehavior>;
     GetPropertyValue<T>(propertyName: string): T;
-    GetPropertyValue(propertyName: string): unknown | undefined;
+    GetPropertyValue(propertyName: string): JsValue | null;
     GetPropertyValue<T>(property: IPropertyBase): T;
-    GetPropertyValue(property: IPropertyBase): unknown | undefined;
+    GetPropertyValue(property: IPropertyBase): JsValue | null;
 }
 
 
 export const MaterializationInterceptionData: {
-    new(materializationContext: MaterializationContext, entityType: IEntityType, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, valueAccessor: Dictionary_2<IPropertyBase, ValueTuple_2<unknown, Func_2<MaterializationContext, unknown>>>): MaterializationInterceptionData;
+    new(materializationContext: MaterializationContext, entityType: IEntityType, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, valueAccessor: Dictionary_2<IPropertyBase, ValueTuple_2<JsValue, Func_2<MaterializationContext, JsValue>>>): MaterializationInterceptionData;
 };
 
 
@@ -569,14 +567,14 @@ export interface CollectionChangedEventData$instance extends NavigationEventData
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
-    readonly Added: IEnumerable_1<unknown>;
+    readonly Added: IEnumerable_1<JsValue>;
     readonly EntityEntry: EntityEntry;
-    readonly Removed: IEnumerable_1<unknown>;
+    readonly Removed: IEnumerable_1<JsValue>;
 }
 
 
 export const CollectionChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: INavigation, added: IEnumerable_1<unknown>, removed: IEnumerable_1<unknown>): CollectionChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: INavigation, added: IEnumerable_1<JsValue>, removed: IEnumerable_1<JsValue>): CollectionChangedEventData;
 };
 
 
@@ -617,7 +615,7 @@ export interface CommandCorrelatedEventData$instance extends DbContextEventData 
 
 
 export const CommandCorrelatedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandCorrelatedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandCorrelatedEventData;
 };
 
 
@@ -631,7 +629,7 @@ export interface CommandEndEventData$instance extends CommandEventData {
 
 
 export const CommandEndEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandEndEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandEndEventData;
 };
 
 
@@ -647,7 +645,7 @@ export interface CommandErrorEventData$instance extends CommandEndEventData, IEr
 
 
 export const CommandErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, exception: Exception, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandErrorEventData;
 };
 
 
@@ -668,7 +666,7 @@ export interface CommandEventData$instance extends CommandCorrelatedEventData {
 
 
 export const CommandEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, commandSource: CommandSource): CommandEventData;
 };
 
 
@@ -677,12 +675,12 @@ export type CommandEventData = CommandEventData$instance;
 export interface CommandExecutedEventData$instance extends CommandEndEventData {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_CommandExecutedEventData: never;
 
-    readonly Result: unknown | undefined;
+    readonly Result: JsValue | null;
 }
 
 
 export const CommandExecutedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, result: unknown, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandExecutedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, command: DbCommand, logCommandText: string, context: DbContext | null, executeMethod: DbCommandMethod, commandId: Guid, connectionId: Guid, result: JsValue | null, async: boolean, logParameterValues: boolean, startTime: DateTimeOffset, duration: TimeSpan, commandSource: CommandSource): CommandExecutedEventData;
 };
 
 
@@ -706,14 +704,14 @@ export interface ComplexTypePropertyChangedEventData$instance extends PropertyEv
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ComplexTypePropertyChangedEventData: never;
 
     readonly ComplexEntry: ComplexElementEntry;
-    readonly NewValue: unknown | undefined;
-    readonly OldValue: unknown | undefined;
+    readonly NewValue: JsValue | null;
+    readonly OldValue: JsValue | null;
     readonly Property: IProperty | IReadOnlyProperty;
 }
 
 
 export const ComplexTypePropertyChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, complexEntry: ComplexElementEntry, property: IProperty, oldValue: unknown, newValue: unknown): ComplexTypePropertyChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, complexEntry: ComplexElementEntry, property: IProperty, oldValue: JsValue | null, newValue: JsValue | null): ComplexTypePropertyChangedEventData;
 };
 
 
@@ -751,7 +749,7 @@ export interface ConnectionCreatedEventData$instance extends DbContextEventData 
 
 
 export const ConnectionCreatedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ConnectionCreatedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext | null, connectionId: Guid, startTime: DateTimeOffset, duration: TimeSpan): ConnectionCreatedEventData;
 };
 
 
@@ -761,13 +759,13 @@ export interface ConnectionCreatingEventData$instance extends DbContextEventData
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_ConnectionCreatingEventData: never;
 
     readonly ConnectionId: Guid;
-    readonly ConnectionString: string | undefined;
+    readonly ConnectionString: string | null;
     readonly StartTime: DateTimeOffset;
 }
 
 
 export const ConnectionCreatingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, connectionString: string, connectionId: Guid, startTime: DateTimeOffset): ConnectionCreatingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext | null, connectionString: string | null, connectionId: Guid, startTime: DateTimeOffset): ConnectionCreatingEventData;
 };
 
 
@@ -781,7 +779,7 @@ export interface ConnectionEndEventData$instance extends ConnectionEventData {
 
 
 export const ConnectionEndEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionEndEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext | null, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionEndEventData;
 };
 
 
@@ -797,7 +795,7 @@ export interface ConnectionErrorEventData$instance extends ConnectionEndEventDat
 
 
 export const ConnectionErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, exception: Exception, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext | null, connectionId: Guid, exception: Exception, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): ConnectionErrorEventData;
 };
 
 
@@ -819,7 +817,7 @@ export interface ConnectionEventData$instance extends DbContextEventData {
 
 
 export const ConnectionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext, connectionId: Guid, async: boolean, startTime: DateTimeOffset): ConnectionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, connection: DbConnection, context: DbContext | null, connectionId: Guid, async: boolean, startTime: DateTimeOffset): ConnectionEventData;
 };
 
 
@@ -848,7 +846,7 @@ export interface DataReaderClosingEventData$instance extends DataReaderEventData
 
 
 export const DataReaderClosingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, async: boolean, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderClosingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext | null, commandId: Guid, connectionId: Guid, async: boolean, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderClosingEventData;
 };
 
 
@@ -862,7 +860,7 @@ export interface DataReaderDisposingEventData$instance extends DataReaderEventDa
 
 
 export const DataReaderDisposingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): DataReaderDisposingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext | null, commandId: Guid, connectionId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset, duration: TimeSpan): DataReaderDisposingEventData;
 };
 
 
@@ -882,7 +880,7 @@ export interface DataReaderEventData$instance extends DbContextEventData {
 
 
 export const DataReaderEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext, commandId: Guid, connectionId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, command: DbCommand, dataReader: DbDataReader, context: DbContext | null, commandId: Guid, connectionId: Guid, recordsAffected: int, readCount: int, startTime: DateTimeOffset): DataReaderEventData;
 };
 
 
@@ -912,10 +910,10 @@ export interface DbCommandInterceptor$instance extends IInterceptor, IDbCommandI
     ReaderExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: DbDataReader, cancellationToken?: CancellationToken): ValueTask_1<DbDataReader>;
     ReaderExecuting(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>): InterceptionResult_1<DbDataReader>;
     ReaderExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<DbDataReader>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<DbDataReader>>;
-    ScalarExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: unknown): unknown | undefined;
-    ScalarExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: unknown, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
-    ScalarExecuting(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<unknown>): InterceptionResult_1<unknown>;
-    ScalarExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<unknown>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<unknown>>;
+    ScalarExecuted(command: DbCommand, eventData: CommandExecutedEventData, result: JsValue | null): JsValue | null;
+    ScalarExecutedAsync(command: DbCommand, eventData: CommandExecutedEventData, result: JsValue | null, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    ScalarExecuting(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<JsValue>): InterceptionResult_1<JsValue>;
+    ScalarExecutingAsync(command: DbCommand, eventData: CommandEventData, result: InterceptionResult_1<JsValue>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult_1<JsValue>>;
 }
 
 
@@ -992,12 +990,12 @@ export type DbContextErrorEventData = DbContextErrorEventData$instance & __DbCon
 export interface DbContextEventData$instance extends EventData {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData: never;
 
-    readonly Context: DbContext | undefined;
+    readonly Context: DbContext | null;
 }
 
 
 export const DbContextEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext): DbContextEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext | null): DbContextEventData;
 };
 
 
@@ -1150,12 +1148,12 @@ export interface EventDefinition$instance extends EventDefinitionBase {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinition: never;
 
     GenerateMessage(): string;
-    Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, exception?: Exception): void;
+    Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, exception?: Exception | null): void;
 }
 
 
 export const EventDefinition: {
-    new(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_2<ILogger, Exception>>): EventDefinition;
+    new(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_2<ILogger, Exception | null>>): EventDefinition;
 };
 
 
@@ -1170,7 +1168,7 @@ export interface EventDefinition_1$instance<TParam> extends EventDefinitionBase 
 
 
 export const EventDefinition_1: {
-    new<TParam>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_3<ILogger, TParam, Exception>>): EventDefinition_1<TParam>;
+    new<TParam>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_3<ILogger, TParam, Exception | null>>): EventDefinition_1<TParam>;
 };
 
 
@@ -1185,7 +1183,7 @@ export interface EventDefinition_2$instance<TParam1, TParam2> extends EventDefin
 
 
 export const EventDefinition_2: {
-    new<TParam1, TParam2>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_4<ILogger, TParam1, TParam2, Exception>>): EventDefinition_2<TParam1, TParam2>;
+    new<TParam1, TParam2>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_4<ILogger, TParam1, TParam2, Exception | null>>): EventDefinition_2<TParam1, TParam2>;
 };
 
 
@@ -1194,13 +1192,13 @@ export type EventDefinition_2<TParam1, TParam2> = EventDefinition_2$instance<TPa
 export interface EventDefinition_3$instance<TParam1, TParam2, TParam3> extends EventDefinitionBase {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_EventDefinition_3: never;
 
-    GenerateMessage(arg1: TParam1, arg2: TParam2, arg3: TParam3, exception?: Exception): string;
-    Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, arg1: TParam1, arg2: TParam2, arg3: TParam3, exception?: Exception): void;
+    GenerateMessage(arg1: TParam1, arg2: TParam2, arg3: TParam3, exception?: Exception | null): string;
+    Log<TLoggerCategory extends LoggerCategory_1<TLoggerCategory>>(logger: IDiagnosticsLogger_1<TLoggerCategory>, arg1: TParam1, arg2: TParam2, arg3: TParam3, exception?: Exception | null): void;
 }
 
 
 export const EventDefinition_3: {
-    new<TParam1, TParam2, TParam3>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_5<ILogger, TParam1, TParam2, TParam3, Exception>>): EventDefinition_3<TParam1, TParam2, TParam3>;
+    new<TParam1, TParam2, TParam3>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_5<ILogger, TParam1, TParam2, TParam3, Exception | null>>): EventDefinition_3<TParam1, TParam2, TParam3>;
 };
 
 
@@ -1215,7 +1213,7 @@ export interface EventDefinition_4$instance<TParam1, TParam2, TParam3, TParam4> 
 
 
 export const EventDefinition_4: {
-    new<TParam1, TParam2, TParam3, TParam4>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_6<ILogger, TParam1, TParam2, TParam3, TParam4, Exception>>): EventDefinition_4<TParam1, TParam2, TParam3, TParam4>;
+    new<TParam1, TParam2, TParam3, TParam4>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_6<ILogger, TParam1, TParam2, TParam3, TParam4, Exception | null>>): EventDefinition_4<TParam1, TParam2, TParam3, TParam4>;
 };
 
 
@@ -1230,7 +1228,7 @@ export interface EventDefinition_5$instance<TParam1, TParam2, TParam3, TParam4, 
 
 
 export const EventDefinition_5: {
-    new<TParam1, TParam2, TParam3, TParam4, TParam5>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_7<ILogger, TParam1, TParam2, TParam3, TParam4, TParam5, Exception>>): EventDefinition_5<TParam1, TParam2, TParam3, TParam4, TParam5>;
+    new<TParam1, TParam2, TParam3, TParam4, TParam5>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_7<ILogger, TParam1, TParam2, TParam3, TParam4, TParam5, Exception | null>>): EventDefinition_5<TParam1, TParam2, TParam3, TParam4, TParam5>;
 };
 
 
@@ -1245,7 +1243,7 @@ export interface EventDefinition_6$instance<TParam1, TParam2, TParam3, TParam4, 
 
 
 export const EventDefinition_6: {
-    new<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_8<ILogger, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, Exception>>): EventDefinition_6<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>;
+    new<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>(loggingOptions: ILoggingOptions, eventId: EventId, level: LogLevel, eventIdCode: string, logActionFunc: Func_2<LogLevel, Action_8<ILogger, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, Exception | null>>): EventDefinition_6<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6>;
 };
 
 
@@ -1349,7 +1347,7 @@ export interface IgnoringIdentityResolutionInterceptor$instance extends IInterce
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
-    UpdateTrackedInstance(interceptionData: IdentityResolutionInterceptionData, existingEntry: EntityEntry, newEntity: unknown): void;
+    UpdateTrackedInstance(interceptionData: IdentityResolutionInterceptionData, existingEntry: EntityEntry, newEntity: JsValue): void;
 }
 
 
@@ -1369,13 +1367,13 @@ export interface IndexEventData$instance extends EventData {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_IndexEventData: never;
 
     readonly EntityType: IEntityType;
-    readonly Name: string | undefined;
+    readonly Name: string | null;
     readonly PropertyNames: List_1<System_Internal.String>;
 }
 
 
 export const IndexEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string, indexPropertyNames: List_1<System_Internal.String>): IndexEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string | null, indexPropertyNames: List_1<System_Internal.String>): IndexEventData;
 };
 
 
@@ -1385,7 +1383,7 @@ export interface IndexWithPropertiesEventData$instance extends EventData {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_IndexWithPropertiesEventData: never;
 
     readonly EntityType: IEntityType;
-    readonly Name: string | undefined;
+    readonly Name: string | null;
     readonly Property1Name: string;
     readonly Property2Name: string;
     readonly PropertyNames: List_1<System_Internal.String>;
@@ -1395,7 +1393,7 @@ export interface IndexWithPropertiesEventData$instance extends EventData {
 
 
 export const IndexWithPropertiesEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string, indexPropertyNames: List_1<System_Internal.String>, property1Name: string, tablesMappedToProperty1: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>, property2Name: string, tablesMappedToProperty2: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>): IndexWithPropertiesEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string | null, indexPropertyNames: List_1<System_Internal.String>, property1Name: string, tablesMappedToProperty1: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>, property2Name: string, tablesMappedToProperty2: List_1<ValueTuple_2<System_Internal.String, System_Internal.String>>): IndexWithPropertiesEventData;
 };
 
 
@@ -1405,14 +1403,14 @@ export interface IndexWithPropertyEventData$instance extends EventData {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_IndexWithPropertyEventData: never;
 
     readonly EntityType: IEntityType;
-    readonly Name: string | undefined;
+    readonly Name: string | null;
     readonly PropertyName: string;
     readonly PropertyNames: List_1<System_Internal.String>;
 }
 
 
 export const IndexWithPropertyEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string, indexPropertyNames: List_1<System_Internal.String>, invalidPropertyName: string): IndexWithPropertyEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityType: IEntityType, indexName: string | null, indexPropertyNames: List_1<System_Internal.String>, invalidPropertyName: string): IndexWithPropertyEventData;
 };
 
 
@@ -1424,7 +1422,7 @@ export interface InterceptorAggregator_1$instance<TInterceptor extends IIntercep
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptorAggregator: never;
 
     readonly InterceptorType: Type;
-    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | undefined;
+    AggregateInterceptors(interceptors: IReadOnlyList_1<IInterceptor>): IInterceptor | null;
     CreateChain(interceptors: IEnumerable_1<TInterceptor>): TInterceptor;
 }
 
@@ -1472,13 +1470,13 @@ export type KeyEventData = KeyEventData$instance;
 export interface LazyLoadingEventData$instance extends DbContextEventData {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LazyLoadingEventData: never;
 
-    readonly Entity: unknown;
+    readonly Entity: JsValue;
     readonly NavigationPropertyName: string;
 }
 
 
 export const LazyLoadingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, entity: unknown, navigationPropertyName: string): LazyLoadingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext | null, entity: JsValue, navigationPropertyName: string): LazyLoadingEventData;
 };
 
 
@@ -1501,93 +1499,93 @@ export type LoggerCategory_1<T> = LoggerCategory_1$instance<T>;
 export interface LoggingDefinitions$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggingDefinitions: never;
 
-    LogServiceProviderCreated: EventDefinitionBase | undefined;
-    LogManyServiceProvidersCreated: EventDefinitionBase | undefined;
-    LogMappedEntityTypeIgnored: EventDefinitionBase | undefined;
-    LogMappedNavigationIgnored: EventDefinitionBase | undefined;
-    LogMappedPropertyIgnored: EventDefinitionBase | undefined;
-    LogMappedComplexPropertyIgnored: EventDefinitionBase | undefined;
-    LogServiceProviderDebugInfo: EventDefinitionBase | undefined;
-    LogContextInitialized: EventDefinitionBase | undefined;
-    LogOldModelVersion: EventDefinitionBase | undefined;
-    LogExceptionDuringQueryIteration: EventDefinitionBase | undefined;
-    LogExceptionDuringSaveChanges: EventDefinitionBase | undefined;
-    LogDetectChangesStarting: EventDefinitionBase | undefined;
-    LogDetectChangesCompleted: EventDefinitionBase | undefined;
-    LogPropertyChangeDetected: EventDefinitionBase | undefined;
-    LogPropertyChangeDetectedSensitive: EventDefinitionBase | undefined;
-    LogForeignKeyChangeDetected: EventDefinitionBase | undefined;
-    LogForeignKeyChangeDetectedSensitive: EventDefinitionBase | undefined;
-    LogCollectionChangeDetected: EventDefinitionBase | undefined;
-    LogCollectionChangeDetectedSensitive: EventDefinitionBase | undefined;
-    LogSaveChangesCanceled: EventDefinitionBase | undefined;
-    LogSkipCollectionChangeDetected: EventDefinitionBase | undefined;
-    LogSkipCollectionChangeDetectedSensitive: EventDefinitionBase | undefined;
-    LogStringEnumValueInJson: EventDefinitionBase | undefined;
-    LogReferenceChangeDetected: EventDefinitionBase | undefined;
-    LogReferenceChangeDetectedSensitive: EventDefinitionBase | undefined;
-    LogCascadeDelete: EventDefinitionBase | undefined;
-    LogCascadeDeleteSensitive: EventDefinitionBase | undefined;
-    LogCascadeDeleteOrphan: EventDefinitionBase | undefined;
-    LogCascadeDeleteOrphanSensitive: EventDefinitionBase | undefined;
-    LogStartedTracking: EventDefinitionBase | undefined;
-    LogStartedTrackingSensitive: EventDefinitionBase | undefined;
-    LogStateChanged: EventDefinitionBase | undefined;
-    LogStateChangedSensitive: EventDefinitionBase | undefined;
-    LogValueGenerated: EventDefinitionBase | undefined;
-    LogValueGeneratedSensitive: EventDefinitionBase | undefined;
-    LogTempValueGenerated: EventDefinitionBase | undefined;
-    LogTempValueGeneratedSensitive: EventDefinitionBase | undefined;
-    LogTypeLoadingErrorWarning: EventDefinitionBase | undefined;
-    LogSkippedEntityTypeConfigurationWarning: EventDefinitionBase | undefined;
-    LogNoEntityTypeConfigurationsWarning: EventDefinitionBase | undefined;
-    LogSaveChangesStarting: EventDefinitionBase | undefined;
-    LogSaveChangesCompleted: EventDefinitionBase | undefined;
-    LogContextDisposed: EventDefinitionBase | undefined;
-    LogIncludingNavigation: EventDefinitionBase | undefined;
-    LogQueryCanceled: EventDefinitionBase | undefined;
-    LogQueryExecutionPlanned: EventDefinitionBase | undefined;
-    LogSensitiveDataLoggingEnabled: EventDefinitionBase | undefined;
-    LogRowLimitingOperationWithoutOrderBy: EventDefinitionBase | undefined;
-    LogPossibleUnintendedCollectionNavigationNullComparison: EventDefinitionBase | undefined;
-    LogPossibleUnintendedReferenceComparison: EventDefinitionBase | undefined;
-    LogInvalidIncludePath: EventDefinitionBase | undefined;
-    LogDuplicateDependentEntityTypeInstance: EventDefinitionBase | undefined;
-    LogShadowPropertyCreated: EventDefinitionBase | undefined;
-    LogShadowForeignKeyPropertyCreated: EventDefinitionBase | undefined;
-    LogCollectionWithoutComparer: EventDefinitionBase | undefined;
-    LogComplexElementPropertyChangeDetected: EventDefinitionBase | undefined;
-    LogComplexElementPropertyChangeDetectedSensitive: EventDefinitionBase | undefined;
-    LogExecutionStrategyRetrying: EventDefinitionBase | undefined;
-    LogNavigationLazyLoading: EventDefinitionBase | undefined;
-    LogLazyLoadOnDisposedContext: EventDefinitionBase | undefined;
-    LogDetachedLazyLoading: EventDefinitionBase | undefined;
-    LogRedundantAddServicesCall: EventDefinitionBase | undefined;
-    LogRedundantIndexRemoved: EventDefinitionBase | undefined;
-    LogIncompatibleMatchingForeignKeyProperties: EventDefinitionBase | undefined;
-    LogAccidentalEntityType: EventDefinitionBase | undefined;
-    LogAccidentalComplexPropertyCollection: EventDefinitionBase | undefined;
-    LogAmbiguousEndRequired: EventDefinitionBase | undefined;
-    LogForeignKeyAttributesOnBothNavigations: EventDefinitionBase | undefined;
-    LogRequiredAttributeOnCollection: EventDefinitionBase | undefined;
-    LogRequiredAttributeOnSkipNavigation: EventDefinitionBase | undefined;
-    LogForeignKeyAttributesOnBothProperties: EventDefinitionBase | undefined;
-    LogConflictingForeignKeyAttributesOnNavigationAndProperty: EventDefinitionBase | undefined;
-    LogMultipleInversePropertiesSameTarget: EventDefinitionBase | undefined;
-    LogConflictingShadowForeignKeys: EventDefinitionBase | undefined;
-    LogMultipleNavigationProperties: EventDefinitionBase | undefined;
-    LogMultiplePrimaryKeyCandidates: EventDefinitionBase | undefined;
-    LogNonOwnershipInverseNavigation: EventDefinitionBase | undefined;
-    LogFirstWithoutOrderByAndFilter: EventDefinitionBase | undefined;
-    LogDistinctAfterOrderByWithoutRowLimitingOperatorWarning: EventDefinitionBase | undefined;
-    LogNonDefiningInverseNavigation: EventDefinitionBase | undefined;
-    LogOptimisticConcurrencyException: EventDefinitionBase | undefined;
-    LogRedundantForeignKey: EventDefinitionBase | undefined;
-    LogConflictingKeylessAndKeyAttributes: EventDefinitionBase | undefined;
-    LogPossibleIncorrectRequiredNavigationWithQueryFilterInteraction: EventDefinitionBase | undefined;
-    LogNavigationBaseIncluded: EventDefinitionBase | undefined;
-    LogNavigationBaseIncludeIgnored: EventDefinitionBase | undefined;
-    LogQueryCompilationStarting: EventDefinitionBase | undefined;
+    LogServiceProviderCreated: EventDefinitionBase | null;
+    LogManyServiceProvidersCreated: EventDefinitionBase | null;
+    LogMappedEntityTypeIgnored: EventDefinitionBase | null;
+    LogMappedNavigationIgnored: EventDefinitionBase | null;
+    LogMappedPropertyIgnored: EventDefinitionBase | null;
+    LogMappedComplexPropertyIgnored: EventDefinitionBase | null;
+    LogServiceProviderDebugInfo: EventDefinitionBase | null;
+    LogContextInitialized: EventDefinitionBase | null;
+    LogOldModelVersion: EventDefinitionBase | null;
+    LogExceptionDuringQueryIteration: EventDefinitionBase | null;
+    LogExceptionDuringSaveChanges: EventDefinitionBase | null;
+    LogDetectChangesStarting: EventDefinitionBase | null;
+    LogDetectChangesCompleted: EventDefinitionBase | null;
+    LogPropertyChangeDetected: EventDefinitionBase | null;
+    LogPropertyChangeDetectedSensitive: EventDefinitionBase | null;
+    LogForeignKeyChangeDetected: EventDefinitionBase | null;
+    LogForeignKeyChangeDetectedSensitive: EventDefinitionBase | null;
+    LogCollectionChangeDetected: EventDefinitionBase | null;
+    LogCollectionChangeDetectedSensitive: EventDefinitionBase | null;
+    LogSaveChangesCanceled: EventDefinitionBase | null;
+    LogSkipCollectionChangeDetected: EventDefinitionBase | null;
+    LogSkipCollectionChangeDetectedSensitive: EventDefinitionBase | null;
+    LogStringEnumValueInJson: EventDefinitionBase | null;
+    LogReferenceChangeDetected: EventDefinitionBase | null;
+    LogReferenceChangeDetectedSensitive: EventDefinitionBase | null;
+    LogCascadeDelete: EventDefinitionBase | null;
+    LogCascadeDeleteSensitive: EventDefinitionBase | null;
+    LogCascadeDeleteOrphan: EventDefinitionBase | null;
+    LogCascadeDeleteOrphanSensitive: EventDefinitionBase | null;
+    LogStartedTracking: EventDefinitionBase | null;
+    LogStartedTrackingSensitive: EventDefinitionBase | null;
+    LogStateChanged: EventDefinitionBase | null;
+    LogStateChangedSensitive: EventDefinitionBase | null;
+    LogValueGenerated: EventDefinitionBase | null;
+    LogValueGeneratedSensitive: EventDefinitionBase | null;
+    LogTempValueGenerated: EventDefinitionBase | null;
+    LogTempValueGeneratedSensitive: EventDefinitionBase | null;
+    LogTypeLoadingErrorWarning: EventDefinitionBase | null;
+    LogSkippedEntityTypeConfigurationWarning: EventDefinitionBase | null;
+    LogNoEntityTypeConfigurationsWarning: EventDefinitionBase | null;
+    LogSaveChangesStarting: EventDefinitionBase | null;
+    LogSaveChangesCompleted: EventDefinitionBase | null;
+    LogContextDisposed: EventDefinitionBase | null;
+    LogIncludingNavigation: EventDefinitionBase | null;
+    LogQueryCanceled: EventDefinitionBase | null;
+    LogQueryExecutionPlanned: EventDefinitionBase | null;
+    LogSensitiveDataLoggingEnabled: EventDefinitionBase | null;
+    LogRowLimitingOperationWithoutOrderBy: EventDefinitionBase | null;
+    LogPossibleUnintendedCollectionNavigationNullComparison: EventDefinitionBase | null;
+    LogPossibleUnintendedReferenceComparison: EventDefinitionBase | null;
+    LogInvalidIncludePath: EventDefinitionBase | null;
+    LogDuplicateDependentEntityTypeInstance: EventDefinitionBase | null;
+    LogShadowPropertyCreated: EventDefinitionBase | null;
+    LogShadowForeignKeyPropertyCreated: EventDefinitionBase | null;
+    LogCollectionWithoutComparer: EventDefinitionBase | null;
+    LogComplexElementPropertyChangeDetected: EventDefinitionBase | null;
+    LogComplexElementPropertyChangeDetectedSensitive: EventDefinitionBase | null;
+    LogExecutionStrategyRetrying: EventDefinitionBase | null;
+    LogNavigationLazyLoading: EventDefinitionBase | null;
+    LogLazyLoadOnDisposedContext: EventDefinitionBase | null;
+    LogDetachedLazyLoading: EventDefinitionBase | null;
+    LogRedundantAddServicesCall: EventDefinitionBase | null;
+    LogRedundantIndexRemoved: EventDefinitionBase | null;
+    LogIncompatibleMatchingForeignKeyProperties: EventDefinitionBase | null;
+    LogAccidentalEntityType: EventDefinitionBase | null;
+    LogAccidentalComplexPropertyCollection: EventDefinitionBase | null;
+    LogAmbiguousEndRequired: EventDefinitionBase | null;
+    LogForeignKeyAttributesOnBothNavigations: EventDefinitionBase | null;
+    LogRequiredAttributeOnCollection: EventDefinitionBase | null;
+    LogRequiredAttributeOnSkipNavigation: EventDefinitionBase | null;
+    LogForeignKeyAttributesOnBothProperties: EventDefinitionBase | null;
+    LogConflictingForeignKeyAttributesOnNavigationAndProperty: EventDefinitionBase | null;
+    LogMultipleInversePropertiesSameTarget: EventDefinitionBase | null;
+    LogConflictingShadowForeignKeys: EventDefinitionBase | null;
+    LogMultipleNavigationProperties: EventDefinitionBase | null;
+    LogMultiplePrimaryKeyCandidates: EventDefinitionBase | null;
+    LogNonOwnershipInverseNavigation: EventDefinitionBase | null;
+    LogFirstWithoutOrderByAndFilter: EventDefinitionBase | null;
+    LogDistinctAfterOrderByWithoutRowLimitingOperatorWarning: EventDefinitionBase | null;
+    LogNonDefiningInverseNavigation: EventDefinitionBase | null;
+    LogOptimisticConcurrencyException: EventDefinitionBase | null;
+    LogRedundantForeignKey: EventDefinitionBase | null;
+    LogConflictingKeylessAndKeyAttributes: EventDefinitionBase | null;
+    LogPossibleIncorrectRequiredNavigationWithQueryFilterInteraction: EventDefinitionBase | null;
+    LogNavigationBaseIncluded: EventDefinitionBase | null;
+    LogNavigationBaseIncludeIgnored: EventDefinitionBase | null;
+    LogQueryCompilationStarting: EventDefinitionBase | null;
 }
 
 
@@ -1657,14 +1655,14 @@ export type MigrationEventData = MigrationEventData$instance;
 export interface MigrationScriptingEventData$instance extends MigrationEventData {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_MigrationScriptingEventData: never;
 
-    readonly FromMigration: string | undefined;
+    readonly FromMigration: string | null;
     readonly IsIdempotent: boolean;
-    readonly ToMigration: string | undefined;
+    readonly ToMigration: string | null;
 }
 
 
 export const MigrationScriptingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migration: Migration, fromMigration: string, toMigration: string, idempotent: boolean): MigrationScriptingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, migrator: IMigrator, migration: Migration, fromMigration: string | null, toMigration: string | null, idempotent: boolean): MigrationScriptingEventData;
 };
 
 
@@ -1773,14 +1771,14 @@ export interface PropertyChangedEventData$instance extends PropertyEventData {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_PropertyChangedEventData: never;
 
     readonly EntityEntry: EntityEntry;
-    readonly NewValue: unknown | undefined;
-    readonly OldValue: unknown | undefined;
+    readonly NewValue: JsValue | null;
+    readonly OldValue: JsValue | null;
     readonly Property: IProperty | IReadOnlyProperty;
 }
 
 
 export const PropertyChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): PropertyChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, property: IProperty, oldValue: JsValue | null, newValue: JsValue | null): PropertyChangedEventData;
 };
 
 
@@ -1805,12 +1803,12 @@ export interface PropertyValueEventData$instance extends PropertyEventData {
 
     readonly EntityEntry: EntityEntry;
     readonly Property: IProperty | IReadOnlyProperty;
-    readonly Value: unknown | undefined;
+    readonly Value: JsValue | null;
 }
 
 
 export const PropertyValueEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, property: IProperty, value: unknown): PropertyValueEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, property: IProperty, value: JsValue | null): PropertyValueEventData;
 };
 
 
@@ -1825,7 +1823,7 @@ export interface QueryExpressionEventData$instance extends DbContextEventData {
 
 
 export const QueryExpressionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, queryExpression: Expression, expressionPrinter: ExpressionPrinter): QueryExpressionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext | null, queryExpression: Expression, expressionPrinter: ExpressionPrinter): QueryExpressionEventData;
 };
 
 
@@ -1837,13 +1835,13 @@ export interface ReferenceChangedEventData$instance extends NavigationEventData$
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
     readonly EntityEntry: EntityEntry;
-    readonly NewReferencedEntity: unknown | undefined;
-    readonly OldReferencedEntity: unknown | undefined;
+    readonly NewReferencedEntity: JsValue | null;
+    readonly OldReferencedEntity: JsValue | null;
 }
 
 
 export const ReferenceChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: INavigation, oldReferencedEntity: unknown, newReferencedEntity: unknown): ReferenceChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: INavigation, oldReferencedEntity: JsValue | null, newReferencedEntity: JsValue | null): ReferenceChangedEventData;
 };
 
 
@@ -1882,87 +1880,87 @@ export type RelationalConcurrencyExceptionEventData = RelationalConcurrencyExcep
 export interface RelationalLoggingDefinitions$instance extends LoggingDefinitions {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_RelationalLoggingDefinitions: never;
 
-    LogTransactionError: EventDefinitionBase | undefined;
-    LogBoolWithDefaultWarning: EventDefinitionBase | undefined;
-    LogConnectionCreating: EventDefinitionBase | undefined;
-    LogConnectionCreated: EventDefinitionBase | undefined;
-    LogConnectionDisposing: EventDefinitionBase | undefined;
-    LogConnectionDisposed: EventDefinitionBase | undefined;
-    LogOpeningConnection: EventDefinitionBase | undefined;
-    LogOpenedConnection: EventDefinitionBase | undefined;
-    LogClosingConnection: EventDefinitionBase | undefined;
-    LogClosingDataReader: EventDefinitionBase | undefined;
-    LogClosedConnection: EventDefinitionBase | undefined;
-    LogConnectionError: EventDefinitionBase | undefined;
-    LogConnectionCanceled: EventDefinitionBase | undefined;
-    LogBeginningTransaction: EventDefinitionBase | undefined;
-    LogBeganTransaction: EventDefinitionBase | undefined;
-    LogUsingTransaction: EventDefinitionBase | undefined;
-    LogCommittingTransaction: EventDefinitionBase | undefined;
-    LogRollingBackTransaction: EventDefinitionBase | undefined;
-    LogCommittedTransaction: EventDefinitionBase | undefined;
-    LogRolledBackTransaction: EventDefinitionBase | undefined;
-    LogCreatingTransactionSavepoint: EventDefinitionBase | undefined;
-    LogRollingBackToTransactionSavepoint: EventDefinitionBase | undefined;
-    LogCreatedTransactionSavepoint: EventDefinitionBase | undefined;
-    LogRolledBackToTransactionSavepoint: EventDefinitionBase | undefined;
-    LogReleasingTransactionSavepoint: EventDefinitionBase | undefined;
-    LogReleasedTransactionSavepoint: EventDefinitionBase | undefined;
-    LogDisposingTransaction: EventDefinitionBase | undefined;
-    LogDisposingDataReader: EventDefinitionBase | undefined;
-    LogAmbientTransaction: EventDefinitionBase | undefined;
-    LogPossibleUnintendedUseOfEquals: EventDefinitionBase | undefined;
-    LogStoredProcedureConcurrencyTokenNotMapped: EventDefinitionBase | undefined;
-    LogGeneratingDown: EventDefinitionBase | undefined;
-    LogGeneratingUp: EventDefinitionBase | undefined;
-    LogApplyingMigration: EventDefinitionBase | undefined;
-    LogRevertingMigration: EventDefinitionBase | undefined;
-    LogMigrating: EventDefinitionBase | undefined;
-    LogNoMigrationsApplied: EventDefinitionBase | undefined;
-    LogNoMigrationsFound: EventDefinitionBase | undefined;
-    LogAcquiringMigrationLock: EventDefinitionBase | undefined;
-    LogMigrationsUserTransaction: EventDefinitionBase | undefined;
-    LogKeyHasDefaultValue: EventDefinitionBase | undefined;
-    LogCommandCanceled: EventDefinitionBase | undefined;
-    LogCommandCreating: EventDefinitionBase | undefined;
-    LogCommandCreated: EventDefinitionBase | undefined;
-    LogCommandInitialized: EventDefinitionBase | undefined;
-    LogExecutingCommand: EventDefinitionBase | undefined;
-    LogExecutedCommand: EventDefinitionBase | undefined;
-    LogCommandFailed: EventDefinitionBase | undefined;
-    LogConnectionErrorAsDebug: EventDefinitionBase | undefined;
-    LogAmbientTransactionEnlisted: EventDefinitionBase | undefined;
-    LogExplicitTransactionEnlisted: EventDefinitionBase | undefined;
-    LogBatchSmallerThanMinBatchSize: EventDefinitionBase | undefined;
-    LogBatchReadyForExecution: EventDefinitionBase | undefined;
-    LogMigrationAttributeMissingWarning: EventDefinitionBase | undefined;
-    LogNamedIndexAllPropertiesNotToMappedToAnyTable: EventDefinitionBase | undefined;
-    LogUnnamedIndexAllPropertiesNotToMappedToAnyTable: EventDefinitionBase | undefined;
-    LogNamedIndexPropertiesBothMappedAndNotMappedToTable: EventDefinitionBase | undefined;
-    LogUnnamedIndexPropertiesBothMappedAndNotMappedToTable: EventDefinitionBase | undefined;
-    LogNamedIndexPropertiesMappedToNonOverlappingTables: EventDefinitionBase | undefined;
-    LogUnnamedIndexPropertiesMappedToNonOverlappingTables: EventDefinitionBase | undefined;
-    LogKeyPropertiesNotMappedToTable: EventDefinitionBase | undefined;
-    LogForeignKeyPropertiesMappedToUnrelatedTables: EventDefinitionBase | undefined;
-    LogForeignKeyTpcPrincipal: EventDefinitionBase | undefined;
-    LogTpcStoreGeneratedIdentity: EventDefinitionBase | undefined;
-    LogMultipleCollectionIncludeWarning: EventDefinitionBase | undefined;
-    LogBatchExecutorFailedToRollbackToSavepoint: EventDefinitionBase | undefined;
-    LogBatchExecutorFailedToReleaseSavepoint: EventDefinitionBase | undefined;
-    LogOptionalDependentWithoutIdentifyingProperty: EventDefinitionBase | undefined;
-    LogOptionalDependentWithAllNullProperties: EventDefinitionBase | undefined;
-    LogOptionalDependentWithAllNullPropertiesSensitive: EventDefinitionBase | undefined;
-    LogDuplicateColumnOrders: EventDefinitionBase | undefined;
-    LogColumnOrderIgnoredWarning: EventDefinitionBase | undefined;
-    LogPendingModelChanges: EventDefinitionBase | undefined;
-    LogNonDeterministicModel: EventDefinitionBase | undefined;
-    LogNoModelSnapshotFound: EventDefinitionBase | undefined;
-    LogNonTransactionalMigrationOperationWarning: EventDefinitionBase | undefined;
-    LogExceptionDuringNonQueryOperation: EventDefinitionBase | undefined;
-    LogExceptionDuringExecuteDelete: EventDefinitionBase | undefined;
-    LogExceptionDuringExecuteUpdate: EventDefinitionBase | undefined;
-    LogUnexpectedTrailingResultSetWhenSaving: EventDefinitionBase | undefined;
-    LogTriggerOnNonRootTphEntity: EventDefinitionBase | undefined;
+    LogTransactionError: EventDefinitionBase | null;
+    LogBoolWithDefaultWarning: EventDefinitionBase | null;
+    LogConnectionCreating: EventDefinitionBase | null;
+    LogConnectionCreated: EventDefinitionBase | null;
+    LogConnectionDisposing: EventDefinitionBase | null;
+    LogConnectionDisposed: EventDefinitionBase | null;
+    LogOpeningConnection: EventDefinitionBase | null;
+    LogOpenedConnection: EventDefinitionBase | null;
+    LogClosingConnection: EventDefinitionBase | null;
+    LogClosingDataReader: EventDefinitionBase | null;
+    LogClosedConnection: EventDefinitionBase | null;
+    LogConnectionError: EventDefinitionBase | null;
+    LogConnectionCanceled: EventDefinitionBase | null;
+    LogBeginningTransaction: EventDefinitionBase | null;
+    LogBeganTransaction: EventDefinitionBase | null;
+    LogUsingTransaction: EventDefinitionBase | null;
+    LogCommittingTransaction: EventDefinitionBase | null;
+    LogRollingBackTransaction: EventDefinitionBase | null;
+    LogCommittedTransaction: EventDefinitionBase | null;
+    LogRolledBackTransaction: EventDefinitionBase | null;
+    LogCreatingTransactionSavepoint: EventDefinitionBase | null;
+    LogRollingBackToTransactionSavepoint: EventDefinitionBase | null;
+    LogCreatedTransactionSavepoint: EventDefinitionBase | null;
+    LogRolledBackToTransactionSavepoint: EventDefinitionBase | null;
+    LogReleasingTransactionSavepoint: EventDefinitionBase | null;
+    LogReleasedTransactionSavepoint: EventDefinitionBase | null;
+    LogDisposingTransaction: EventDefinitionBase | null;
+    LogDisposingDataReader: EventDefinitionBase | null;
+    LogAmbientTransaction: EventDefinitionBase | null;
+    LogPossibleUnintendedUseOfEquals: EventDefinitionBase | null;
+    LogStoredProcedureConcurrencyTokenNotMapped: EventDefinitionBase | null;
+    LogGeneratingDown: EventDefinitionBase | null;
+    LogGeneratingUp: EventDefinitionBase | null;
+    LogApplyingMigration: EventDefinitionBase | null;
+    LogRevertingMigration: EventDefinitionBase | null;
+    LogMigrating: EventDefinitionBase | null;
+    LogNoMigrationsApplied: EventDefinitionBase | null;
+    LogNoMigrationsFound: EventDefinitionBase | null;
+    LogAcquiringMigrationLock: EventDefinitionBase | null;
+    LogMigrationsUserTransaction: EventDefinitionBase | null;
+    LogKeyHasDefaultValue: EventDefinitionBase | null;
+    LogCommandCanceled: EventDefinitionBase | null;
+    LogCommandCreating: EventDefinitionBase | null;
+    LogCommandCreated: EventDefinitionBase | null;
+    LogCommandInitialized: EventDefinitionBase | null;
+    LogExecutingCommand: EventDefinitionBase | null;
+    LogExecutedCommand: EventDefinitionBase | null;
+    LogCommandFailed: EventDefinitionBase | null;
+    LogConnectionErrorAsDebug: EventDefinitionBase | null;
+    LogAmbientTransactionEnlisted: EventDefinitionBase | null;
+    LogExplicitTransactionEnlisted: EventDefinitionBase | null;
+    LogBatchSmallerThanMinBatchSize: EventDefinitionBase | null;
+    LogBatchReadyForExecution: EventDefinitionBase | null;
+    LogMigrationAttributeMissingWarning: EventDefinitionBase | null;
+    LogNamedIndexAllPropertiesNotToMappedToAnyTable: EventDefinitionBase | null;
+    LogUnnamedIndexAllPropertiesNotToMappedToAnyTable: EventDefinitionBase | null;
+    LogNamedIndexPropertiesBothMappedAndNotMappedToTable: EventDefinitionBase | null;
+    LogUnnamedIndexPropertiesBothMappedAndNotMappedToTable: EventDefinitionBase | null;
+    LogNamedIndexPropertiesMappedToNonOverlappingTables: EventDefinitionBase | null;
+    LogUnnamedIndexPropertiesMappedToNonOverlappingTables: EventDefinitionBase | null;
+    LogKeyPropertiesNotMappedToTable: EventDefinitionBase | null;
+    LogForeignKeyPropertiesMappedToUnrelatedTables: EventDefinitionBase | null;
+    LogForeignKeyTpcPrincipal: EventDefinitionBase | null;
+    LogTpcStoreGeneratedIdentity: EventDefinitionBase | null;
+    LogMultipleCollectionIncludeWarning: EventDefinitionBase | null;
+    LogBatchExecutorFailedToRollbackToSavepoint: EventDefinitionBase | null;
+    LogBatchExecutorFailedToReleaseSavepoint: EventDefinitionBase | null;
+    LogOptionalDependentWithoutIdentifyingProperty: EventDefinitionBase | null;
+    LogOptionalDependentWithAllNullProperties: EventDefinitionBase | null;
+    LogOptionalDependentWithAllNullPropertiesSensitive: EventDefinitionBase | null;
+    LogDuplicateColumnOrders: EventDefinitionBase | null;
+    LogColumnOrderIgnoredWarning: EventDefinitionBase | null;
+    LogPendingModelChanges: EventDefinitionBase | null;
+    LogNonDeterministicModel: EventDefinitionBase | null;
+    LogNoModelSnapshotFound: EventDefinitionBase | null;
+    LogNonTransactionalMigrationOperationWarning: EventDefinitionBase | null;
+    LogExceptionDuringNonQueryOperation: EventDefinitionBase | null;
+    LogExceptionDuringExecuteDelete: EventDefinitionBase | null;
+    LogExceptionDuringExecuteUpdate: EventDefinitionBase | null;
+    LogUnexpectedTrailingResultSetWhenSaving: EventDefinitionBase | null;
+    LogTriggerOnNonRootTphEntity: EventDefinitionBase | null;
 }
 
 
@@ -2109,14 +2107,14 @@ export interface SkipCollectionChangedEventData$instance extends SkipNavigationE
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_ICollectionChangedEventData: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_INavigationBaseEventData: never;
 
-    readonly Added: IEnumerable_1<unknown>;
+    readonly Added: IEnumerable_1<JsValue>;
     readonly EntityEntry: EntityEntry;
-    readonly Removed: IEnumerable_1<unknown>;
+    readonly Removed: IEnumerable_1<JsValue>;
 }
 
 
 export const SkipCollectionChangedEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: ISkipNavigation, added: IEnumerable_1<unknown>, removed: IEnumerable_1<unknown>): SkipCollectionChangedEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, entityEntry: EntityEntry, navigation: ISkipNavigation, added: IEnumerable_1<JsValue>, removed: IEnumerable_1<JsValue>): SkipCollectionChangedEventData;
 };
 
 
@@ -2187,7 +2185,7 @@ export interface TransactionEndEventData$instance extends TransactionEventData {
 
 
 export const TransactionEndEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): TransactionEndEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext | null, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset, duration: TimeSpan): TransactionEndEventData;
 };
 
 
@@ -2220,7 +2218,7 @@ export interface TransactionErrorEventData$instance extends TransactionEndEventD
 
 
 export const TransactionErrorEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan): TransactionErrorEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext | null, transactionId: Guid, connectionId: Guid, async: boolean, action: string, exception: Exception, startTime: DateTimeOffset, duration: TimeSpan): TransactionErrorEventData;
 };
 
 
@@ -2243,7 +2241,7 @@ export interface TransactionEventData$instance extends DbContextEventData {
 
 
 export const TransactionEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, transaction: DbTransaction, context: DbContext | null, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionEventData;
 };
 
 
@@ -2261,7 +2259,7 @@ export interface TransactionStartingEventData$instance extends DbContextEventDat
 
 
 export const TransactionStartingEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext, isolationLevel: IsolationLevel, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionStartingEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, context: DbContext | null, isolationLevel: IsolationLevel, transactionId: Guid, connectionId: Guid, async: boolean, startTime: DateTimeOffset): TransactionStartingEventData;
 };
 
 
@@ -2300,13 +2298,13 @@ export type TwoSqlExpressionsEventData = TwoSqlExpressionsEventData$instance;
 export interface TwoUnmappedPropertyCollectionsEventData$instance extends EventData {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_TwoUnmappedPropertyCollectionsEventData: never;
 
-    readonly FirstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | undefined, Type>>;
-    readonly SecondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | undefined, Type>>;
+    readonly FirstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | null, Type>>;
+    readonly SecondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | null, Type>>;
 }
 
 
 export const TwoUnmappedPropertyCollectionsEventData: {
-    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, firstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>, secondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>): TwoUnmappedPropertyCollectionsEventData;
+    new(eventDefinition: EventDefinitionBase, messageGenerator: Func_3<EventDefinitionBase, EventData, System_Internal.String>, firstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | null, Type>>, secondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | null, Type>>): TwoUnmappedPropertyCollectionsEventData;
 };
 
 
@@ -2381,7 +2379,7 @@ export interface UpdatingIdentityResolutionInterceptor$instance extends IInterce
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IIdentityResolutionInterceptor: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Diagnostics_IInterceptor: never;
 
-    UpdateTrackedInstance(interceptionData: IdentityResolutionInterceptionData, existingEntry: EntityEntry, newEntity: unknown): void;
+    UpdateTrackedInstance(interceptionData: IdentityResolutionInterceptionData, existingEntry: EntityEntry, newEntity: JsValue): void;
 }
 
 
@@ -2459,7 +2457,7 @@ export abstract class AbstractionsStrings$instance {
     static readonly CannotSpecifyBothIsDescendingAndAllDescending: string;
     static readonly CollectionArgumentHasEmptyElements: string;
     static readonly CollectionArgumentIsEmpty: string;
-    static InvalidNumberOfIndexSortOrderValues(numValues: unknown, numProperties: unknown): string;
+    static InvalidNumberOfIndexSortOrderValues(numValues: JsValue | null, numProperties: JsValue | null): string;
 }
 
 
@@ -2556,17 +2554,17 @@ export abstract class CoreLoggerExtensions$instance {
     static CascadeDeleteOrphan(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, internalChildEntry: InternalEntityEntry, parentEntityType: IEntityType, state: EntityState): void;
     static CascadeDeleteOrphanSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, internalChildEntry: InternalEntityEntry, parentEntityType: IEntityType, state: EntityState): void;
     static CascadeDeleteSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, internalChildEntry: InternalEntityEntry, internalParentEntry: InternalEntityEntry, state: EntityState): void;
-    static CollectionChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): void;
-    static CollectionChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): void;
+    static CollectionChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, added: ISet_1<JsValue>, removed: ISet_1<JsValue>): void;
+    static CollectionChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, added: ISet_1<JsValue>, removed: ISet_1<JsValue>): void;
     static CollectionWithoutComparer(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, property: IProperty): void;
-    static ComplexElementPropertyChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalComplexEntry: InternalComplexEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
-    static ComplexElementPropertyChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalComplexEntry: InternalComplexEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
+    static ComplexElementPropertyChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalComplexEntry: InternalComplexEntry, property: IProperty, oldValue: JsValue | null, newValue: JsValue | null): void;
+    static ComplexElementPropertyChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalComplexEntry: InternalComplexEntry, property: IProperty, oldValue: JsValue | null, newValue: JsValue | null): void;
     static ConflictingForeignKeyAttributesOnNavigationAndPropertyWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, navigation: IReadOnlyNavigation, property: MemberInfo): void;
     static ConflictingKeylessAndKeyAttributesWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, property: IReadOnlyProperty): void;
     static ConflictingShadowForeignKeysWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, foreignKey: IReadOnlyForeignKey): void;
     static ContextDisposed(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext): void;
     static ContextInitialized(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext, contextOptions: DbContextOptions): void;
-    static DetachedLazyLoadingWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext, entityType: unknown, navigationName: string): void;
+    static DetachedLazyLoadingWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext | null, entityType: JsValue, navigationName: string): void;
     static DetectChangesCompleted(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, context: DbContext): void;
     static DetectChangesStarting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, context: DbContext): void;
     static DistinctAfterOrderByWithoutRowLimitingOperatorWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>): void;
@@ -2575,41 +2573,41 @@ export abstract class CoreLoggerExtensions$instance {
     static FirstWithoutOrderByAndFilterWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>): void;
     static ForeignKeyAttributesOnBothNavigationsWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstNavigation: IReadOnlyNavigation, secondNavigation: IReadOnlyNavigation): void;
     static ForeignKeyAttributesOnBothPropertiesWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstNavigation: IReadOnlyNavigation, secondNavigation: IReadOnlyNavigation, firstProperty: MemberInfo, secondProperty: MemberInfo): void;
-    static ForeignKeyChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
-    static ForeignKeyChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
+    static ForeignKeyChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: JsValue | null, newValue: JsValue | null): void;
+    static ForeignKeyChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: JsValue | null, newValue: JsValue | null): void;
     static IncompatibleMatchingForeignKeyProperties(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, dependentToPrincipalNavigationSpecification: string, principalToDependentNavigationSpecification: string, foreignKeyProperties: IReadOnlyList_1<IReadOnlyPropertyBase>, principalKeyProperties: IReadOnlyList_1<IReadOnlyPropertyBase>): void;
     static InvalidIncludePathError(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, navigationChain: string, navigationName: string): void;
-    static LazyLoadOnDisposedContextWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext, entityType: unknown, navigationName: string): void;
+    static LazyLoadOnDisposedContextWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext | null, entityType: JsValue, navigationName: string): void;
     static ManyServiceProvidersCreatedWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, serviceProviders: ICollection_1<IServiceProvider>): void;
     static MappedComplexPropertyIgnoredWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, property: IComplexProperty): void;
     static MappedEntityTypeIgnoredWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, entityType: IEntityType): void;
     static MappedNavigationIgnoredWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, navigation: INavigationBase): void;
     static MappedPropertyIgnoredWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, property: IProperty): void;
-    static MultipleInversePropertiesSameTargetWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, conflictingNavigations: IEnumerable_1<Tuple_2<MemberInfo, Type>>, inverseNavigation: MemberInfo, targetType: Type): void;
-    static MultipleNavigationProperties(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>, secondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo, Type>>): void;
+    static MultipleInversePropertiesSameTargetWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, conflictingNavigations: IEnumerable_1<Tuple_2<MemberInfo | null, Type>>, inverseNavigation: MemberInfo, targetType: Type): void;
+    static MultipleNavigationProperties(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | null, Type>>, secondPropertyCollection: IEnumerable_1<Tuple_2<MemberInfo | null, Type>>): void;
     static MultiplePrimaryKeyCandidates(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, firstProperty: IReadOnlyProperty, secondProperty: IReadOnlyProperty): void;
     static NavigationBaseIncluded(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, navigation: INavigationBase): void;
     static NavigationBaseIncludeIgnored(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, navigation: INavigationBase): void;
-    static NavigationLazyLoading(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext, entityType: unknown, navigationName: string): void;
+    static NavigationLazyLoading(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext, entityType: JsValue, navigationName: string): void;
     static NoEntityTypeConfigurationsWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, assembly: Assembly): void;
     static NonOwnershipInverseNavigationWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, declaringType: IReadOnlyEntityType, navigation: MemberInfo, targetType: IReadOnlyEntityType, inverseNavigation: MemberInfo, ownershipNavigation: MemberInfo): void;
     static OldModelVersionWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, context: DbContext, contextOptions: DbContextOptions): void;
-    static OptimisticConcurrencyException(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entries: IReadOnlyList_1<IUpdateEntry>, exception: DbUpdateConcurrencyException, createEventData: Func_5<DbContext, DbUpdateConcurrencyException, IReadOnlyList_1<IUpdateEntry>, EventDefinition_1<Exception>, ConcurrencyExceptionEventData>): InterceptionResult;
-    static OptimisticConcurrencyExceptionAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entries: IReadOnlyList_1<IUpdateEntry>, exception: DbUpdateConcurrencyException, createEventData: Func_5<DbContext, DbUpdateConcurrencyException, IReadOnlyList_1<IUpdateEntry>, EventDefinition_1<Exception>, ConcurrencyExceptionEventData>, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
+    static OptimisticConcurrencyException(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entries: IReadOnlyList_1<IUpdateEntry>, exception: DbUpdateConcurrencyException, createEventData: Func_5<DbContext, DbUpdateConcurrencyException, IReadOnlyList_1<IUpdateEntry>, EventDefinition_1<Exception>, ConcurrencyExceptionEventData> | null): InterceptionResult;
+    static OptimisticConcurrencyExceptionAsync(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Update>, context: DbContext, entries: IReadOnlyList_1<IUpdateEntry>, exception: DbUpdateConcurrencyException, createEventData: Func_5<DbContext, DbUpdateConcurrencyException, IReadOnlyList_1<IUpdateEntry>, EventDefinition_1<Exception>, ConcurrencyExceptionEventData> | null, cancellationToken?: CancellationToken): ValueTask_1<InterceptionResult>;
     static PossibleIncorrectRequiredNavigationWithQueryFilterInteractionWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, foreignKey: IForeignKey): void;
     static PossibleUnintendedCollectionNavigationNullComparisonWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, navigation: INavigation): void;
     static PossibleUnintendedReferenceComparisonWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, left: Expression, right: Expression): void;
-    static PropertyChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
-    static PropertyChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: unknown, newValue: unknown): void;
+    static PropertyChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: JsValue | null, newValue: JsValue | null): void;
+    static PropertyChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, oldValue: JsValue | null, newValue: JsValue | null): void;
     static QueryCanceled(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, contextType: Type): void;
-    static QueryCompilationStarting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, context: DbContext, expressionPrinter: ExpressionPrinter, queryExpression: Expression): ValueTuple_2<Expression, QueryExpressionEventData>;
-    static QueryExecutionPlanned(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, context: DbContext, expressionPrinter: ExpressionPrinter, queryExecutorExpression: Expression): void;
+    static QueryCompilationStarting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, context: DbContext | null, expressionPrinter: ExpressionPrinter, queryExpression: Expression): ValueTuple_2<Expression, QueryExpressionEventData>;
+    static QueryExecutionPlanned(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, context: DbContext | null, expressionPrinter: ExpressionPrinter, queryExecutorExpression: Expression): void;
     static QueryIterationFailed(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, contextType: Type, exception: Exception): void;
     static RedundantAddServicesCallWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, serviceProvider: IServiceProvider): void;
     static RedundantForeignKeyWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, redundantForeignKey: IForeignKey): void;
     static RedundantIndexRemoved(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, redundantIndex: IReadOnlyList_1<IReadOnlyPropertyBase>, otherIndex: IReadOnlyList_1<IReadOnlyPropertyBase>): void;
-    static ReferenceChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, oldValue: unknown, newValue: unknown): void;
-    static ReferenceChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, oldValue: unknown, newValue: unknown): void;
+    static ReferenceChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, oldValue: JsValue | null, newValue: JsValue | null): void;
+    static ReferenceChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: INavigation, oldValue: JsValue | null, newValue: JsValue | null): void;
     static RequiredAttributeOnCollection(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, navigation: IReadOnlyNavigation): void;
     static RequiredAttributeOnSkipNavigation(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, navigation: IReadOnlySkipNavigation): void;
     static RowLimitingOperationWithoutOrderByWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>): void;
@@ -2626,8 +2624,8 @@ export abstract class CoreLoggerExtensions$instance {
     static ServiceProviderDebugInfo(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>, newDebugInfo: IDictionary_2<System_Internal.String, System_Internal.String>, cachedDebugInfos: IList_1<IDictionary_2<System_Internal.String, System_Internal.String>>): void;
     static ShadowForeignKeyPropertyCreated(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, property: IProperty, basePropertyName: string): void;
     static ShadowPropertyCreated(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>, property: IProperty): void;
-    static SkipCollectionChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): void;
-    static SkipCollectionChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet_1<unknown>, removed: ISet_1<unknown>): void;
+    static SkipCollectionChangeDetected(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet_1<JsValue>, removed: ISet_1<JsValue>): void;
+    static SkipCollectionChangeDetectedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, navigation: ISkipNavigation, added: ISet_1<JsValue>, removed: ISet_1<JsValue>): void;
     static SkippedEntityTypeConfigurationWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, type: Type): void;
     static StartedTracking(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry): void;
     static StartedTrackingSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry): void;
@@ -2635,8 +2633,8 @@ export abstract class CoreLoggerExtensions$instance {
     static StateChangedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, oldState: EntityState, newState: EntityState): void;
     static StringEnumValueInJson(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Query>, enumType: Type): void;
     static TypeLoadingErrorWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Model>, assembly: Assembly, exception: Exception): void;
-    static ValueGenerated(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, value: unknown, temporary: boolean): void;
-    static ValueGeneratedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, value: unknown, temporary: boolean): void;
+    static ValueGenerated(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, value: JsValue | null, temporary: boolean): void;
+    static ValueGeneratedSensitive(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_ChangeTracking>, internalEntityEntry: InternalEntityEntry, property: IProperty, value: JsValue | null, temporary: boolean): void;
 }
 
 
@@ -2696,397 +2694,397 @@ export abstract class CoreStrings$instance {
     static readonly SequenceContainsNoElements: string;
     static readonly SetOperationWithDifferentIncludesInOperands: string;
     static readonly TransactionsNotSupported: string;
-    static AbstractLeafEntityType(entityType: unknown): string;
-    static AddingProxyTypeAsEntityType(typeName: unknown): string;
-    static AmbiguousDependentEntity(entityType: unknown, targetEntryCall: unknown): string;
-    static AmbiguousEndRequiredDependent(foreignKeyProperties: unknown, entityType: unknown): string;
-    static AmbiguousEndRequiredDependentNavigation(entityType: unknown, navigation: unknown, foreignKeyProperties: unknown): string;
-    static AmbiguousEndRequiredInverted(foreignKeyProperties: unknown, entityType: unknown, principalEntityType: unknown): string;
-    static AmbiguousForeignKeyPropertyCandidates(firstDependentToPrincipalNavigationSpecification: unknown, firstPrincipalToDependentNavigationSpecification: unknown, secondDependentToPrincipalNavigationSpecification: unknown, secondPrincipalToDependentNavigationSpecification: unknown, foreignKeyProperties: unknown): string;
-    static AmbiguousOneToOneRelationship(dependentToPrincipalNavigationSpecification: unknown, principalToDependentNavigationSpecification: unknown): string;
-    static AmbiguousOwnedNavigation(entityTypeNavigationSpecification: unknown, otherEntityType: unknown): string;
-    static AmbiguousSharedTypeEntityTypeName(entityType: unknown): string;
-    static AnnotationNotFound(annotation: unknown, annotatable: unknown): string;
-    static ArgumentNotConstant(parameter: unknown, methodName: unknown): string;
-    static ArgumentPropertyNull(property: unknown, argument: unknown): string;
-    static AttributeNotOnEntityTypeProperty(attribute: unknown, type: unknown, propertyName: unknown): string;
-    static AutoIncludeNavigationCycle(cycleNavigations: unknown): string;
-    static BackingFieldOnIndexer(field: unknown, entityType: unknown, property: unknown): string;
-    static BadBackingFieldType(field: unknown, fieldType: unknown, entityType: unknown, property: unknown, propertyType: unknown): string;
-    static BadDependencyRegistration(dependenciesType: unknown): string;
-    static BadEnumValue(enumValue: unknown, enumType: unknown): string;
-    static BadFilterDerivedType(filter: unknown, entityType: unknown, rootType: unknown): string;
-    static BadFilterExpression(filter: unknown, entityType: unknown, clrType: unknown): string;
-    static BadFilterOwnedType(filter: unknown, entityType: unknown): string;
-    static BadJsonValueReaderWriterType(givenType: unknown): string;
-    static BadListType(givenType: unknown, listType: unknown): string;
-    static BadValueComparerType(givenType: unknown, expectedType: unknown): string;
-    static BadValueConverterType(givenType: unknown, expectedType: unknown): string;
-    static BadValueGeneratorType(givenType: unknown, expectedType: unknown): string;
-    static CannotBeNullable(property: unknown, entityType: unknown, propertyType: unknown): string;
-    static CannotBeNullableElement(entityType: unknown, property: unknown, elementType: unknown): string;
-    static CannotBeNullablePK(property: unknown, entityType: unknown): string;
-    static CannotConvertEnumValue(value: unknown, enumType: unknown): string;
-    static CannotCreateJsonValueReaderWriter(readerWriterType: unknown): string;
-    static CannotCreateValueComparer(generatorType: unknown, method: unknown): string;
-    static CannotCreateValueConverter(generatorType: unknown, method: unknown): string;
-    static CannotCreateValueGenerator(generatorType: unknown, method: unknown): string;
-    static CannotLoadDetachedShadow(navigation: unknown, entityType: unknown): string;
-    static CannotMarkNonShared(type: unknown): string;
-    static CannotMarkShared(type: unknown): string;
-    static CannotMaterializeAbstractType(entityType: unknown): string;
-    static CanOnlyConfigureExistingNavigations(navigationName: unknown, entityType: unknown): string;
-    static ChangeTrackingInterfaceMissing(entityType: unknown, changeTrackingStrategy: unknown, notificationInterface: unknown): string;
-    static CircularDependency(cycle: unknown): string;
-    static CircularInheritance(entityType: unknown, baseEntityType: unknown): string;
-    static ClashingMismatchedSharedType(entityType: unknown, otherClrType: unknown): string;
-    static ClashingNamedOwnedType(ownedTypeName: unknown, ownerEntityType: unknown, navigation: unknown): string;
-    static ClashingNonOwnedDerivedEntityType(entityType: unknown, derivedType: unknown): string;
-    static ClashingNonOwnedEntityType(entityType: unknown): string;
-    static ClashingNonSharedType(entityType: unknown, type: unknown): string;
-    static ClashingOwnedDerivedEntityType(entityType: unknown, derivedType: unknown): string;
-    static ClashingOwnedEntityType(entityType: unknown): string;
-    static ClashingSharedType(entityType: unknown): string;
-    static ClientProjectionCapturingConstantInMethodArgument(constantType: unknown, methodName: unknown): string;
-    static ClientProjectionCapturingConstantInMethodInstance(constantType: unknown, methodName: unknown): string;
-    static ClientProjectionCapturingConstantInTree(constantType: unknown): string;
-    static CollectionIsReference(property: unknown, entityType: unknown, collectionMethod: unknown, referenceMethod: unknown): string;
-    static ComparerPropertyMismatch(type: unknown, entityType: unknown, propertyName: unknown, propertyType: unknown): string;
-    static ComparerPropertyMismatchElement(type: unknown, entityType: unknown, propertyName: unknown, elementType: unknown): string;
-    static CompiledModelDuplicateAttribute(assemblyName: unknown, contextType: unknown): string;
-    static CompiledModelIncompatibleTypeMapping(typeMapping: unknown): string;
-    static CompiledModelMissingInstance(modelType: unknown): string;
-    static CompiledQueryDifferentModel(queryExpression: unknown): string;
-    static ComplexCollectionEntryDeletedEntity(ordinal: unknown, declaringType: unknown, collection: unknown): string;
-    static ComplexCollectionEntryInvalidStateChange(property: unknown): string;
-    static ComplexCollectionEntryOrdinalInvalid(ordinal: unknown, declaringType: unknown, collection: unknown, count: unknown): string;
-    static ComplexCollectionEntryOrdinalReadOnly(collectionDeclaringType: unknown, collection: unknown): string;
-    static ComplexCollectionEntryOriginalNull(declaringType: unknown, collection: unknown): string;
-    static ComplexCollectionEntryOriginalOrdinalInvalid(ordinal: unknown, declaringType: unknown, collection: unknown, count: unknown): string;
-    static ComplexCollectionEntryOriginalOrdinalReadOnly(collectionDeclaringType: unknown, collection: unknown): string;
-    static ComplexCollectionIsReference(entityType: unknown, property: unknown, collectionMethod: unknown, referenceMethod: unknown): string;
-    static ComplexCollectionMoveInvalidOrdinals(fromOrdinal: unknown, toOrdinal: unknown, count: unknown): string;
-    static ComplexCollectionNotInitialized(entityType: unknown, collection: unknown): string;
-    static ComplexCollectionNullElementSetter(complexType: unknown, property: unknown, collectionDeclaringType: unknown, collection: unknown, ordinal: unknown): string;
-    static ComplexCollectionOriginalEntryAddedEntity(ordinal: unknown, declaringType: unknown, collection: unknown): string;
-    static ComplexCollectionValueNotDictionaryList(property: unknown, typeName: unknown): string;
-    static ComplexCollectionWrongClrType(property: unknown, type: unknown, clrType: unknown, targetType: unknown): string;
-    static ComplexPropertyIndexer(type: unknown, property: unknown): string;
-    static ComplexPropertyNotCollection(type: unknown, property: unknown): string;
-    static ComplexPropertyNotFound(type: unknown, property: unknown): string;
-    static ComplexPropertyShadow(type: unknown, property: unknown): string;
-    static ComplexPropertyValueNotDictionary(property: unknown, typeName: unknown): string;
-    static ComplexPropertyValueNotList(property: unknown, clrType: unknown, typeName: unknown): string;
-    static ComplexPropertyWrongClrType(property: unknown, type: unknown, clrType: unknown, targetType: unknown): string;
-    static ComplexReferenceIsCollection(entityType: unknown, property: unknown, referenceMethod: unknown, collectionMethod: unknown): string;
-    static ComplexTypeNotificationChangeTracking(complexType: unknown, changeTrackingStrategy: unknown): string;
-    static ComplexTypeShadowProperty(complexType: unknown, property: unknown): string;
-    static ComplexTypesNotSupported(service: unknown): string;
-    static ComplexValueTypeCollection(type: unknown, property: unknown): string;
-    static ComplexValueTypeShadowProperty(type: unknown, property: unknown): string;
-    static CompositeFkOnProperty(navigation: unknown, entityType: unknown): string;
-    static CompositePKWithDataAnnotation(entityType: unknown): string;
-    static ConflictingBackingFields(property: unknown, entityType: unknown, field1: unknown, field2: unknown): string;
-    static ConflictingFieldProperty(type: unknown, property: unknown, field: unknown, conflictingType: unknown, conflictingProperty: unknown): string;
-    static ConflictingForeignKeyAttributes(propertyList: unknown, entityType: unknown, principalEntityType: unknown): string;
-    static ConflictingKeylessAndPrimaryKeyAttributes(entity: unknown): string;
-    static ConflictingPropertyOrNavigation(member: unknown, type: unknown, conflictingType: unknown): string;
-    static ConflictingRelationshipConversions(entityType: unknown, property: unknown, valueConversion: unknown, conflictingValueConversion: unknown): string;
-    static ConflictingRelationshipNavigation(newPrincipalNavigationSpecification: unknown, newDependentNavigationSpecification: unknown, existingPrincipalNavigationSpecification: unknown, existingDependentNavigationSpecification: unknown): string;
-    static ConstructorBindingFailed(failedBinds: unknown, parameters: unknown): string;
-    static ConstructorConflict(firstConstructor: unknown, secondConstructor: unknown): string;
-    static ConstructorNotFound(type: unknown, constructors: unknown): string;
-    static ConverterBadType(converter: unknown, type: unknown, allowed: unknown): string;
-    static ConverterPropertyMismatch(converterType: unknown, entityType: unknown, propertyName: unknown, propertyType: unknown): string;
-    static ConverterPropertyMismatchElement(converterType: unknown, entityType: unknown, propertyName: unknown, elementType: unknown): string;
-    static ConvertersCannotBeComposed(typeOneIn: unknown, typeOneOut: unknown, typeTwoIn: unknown, typeTwoOut: unknown): string;
-    static DbContextMissingConstructor(contextType: unknown): string;
-    static DbSetIncorrectGenericType(entityType: unknown, entityClrType: unknown, genericType: unknown): string;
-    static DebugViewError(message: unknown): string;
-    static DebugViewQueryExpressionError(message: unknown): string;
-    static DebugViewQueryStringError(message: unknown): string;
-    static DeleteBehaviorAttributeNotOnNavigationProperty(type: unknown, propertyName: unknown): string;
-    static DeleteBehaviorAttributeOnPrincipalProperty(entityType: unknown, navigationName: unknown): string;
-    static DependentEntityTypeNotInRelationship(dependentEntityType: unknown, principalEntityType: unknown, entityType: unknown): string;
-    static DerivedEntityCannotBeKeyless(entityType: unknown): string;
-    static DerivedEntityCannotHaveKeys(entityType: unknown): string;
-    static DerivedEntityOwnershipMismatch(baseEntityType: unknown, derivedEntityType: unknown, ownedEntityType: unknown, nonOwnedEntityType: unknown): string;
-    static DerivedEntityTypeHasNoKey(derivedType: unknown, rootType: unknown): string;
-    static DerivedEntityTypeKey(derivedType: unknown, rootType: unknown): string;
-    static DerivedTypeDefiningQuery(entityType: unknown, baseType: unknown): string;
-    static DiscriminatorEntityTypeNotDerived(entityType: unknown, rootEntityType: unknown): string;
-    static DiscriminatorPropertyMustBeOnRoot(entityType: unknown): string;
-    static DiscriminatorPropertyNotAllowedOnComplexCollection(type: unknown, containingType: unknown): string;
-    static DiscriminatorPropertyNotFound(property: unknown, entityType: unknown): string;
-    static DiscriminatorValueIncompatible(value: unknown, entityType: unknown, discriminatorType: unknown): string;
-    static DuplicateAnnotation(annotation: unknown, annotatable: unknown): string;
-    static DuplicateComplexType(complexType: unknown): string;
-    static DuplicateDiscriminatorValue(entityType1: unknown, discriminatorValue: unknown, entityType2: unknown): string;
-    static DuplicateEntityType(entityType: unknown): string;
-    static DuplicateForeignKey(foreignKeyProperties: unknown, entityType: unknown, duplicateEntityType: unknown, keyProperties: unknown, principalType: unknown): string;
-    static DuplicateIndex(indexProperties: unknown, entityType: unknown, duplicateEntityType: unknown): string;
-    static DuplicateKey(keyProperties: unknown, entityType: unknown, duplicateEntityType: unknown): string;
-    static DuplicateNamedIndex(indexName: unknown, indexProperties: unknown, entityType: unknown, duplicateEntityType: unknown): string;
-    static DuplicatePropertiesOnBase(entityType: unknown, baseType: unknown, derivedPropertyType: unknown, derivedProperty: unknown, basePropertyType: unknown, baseProperty: unknown): string;
-    static DuplicatePropertyInForeignKey(propertyList: unknown, property: unknown): string;
-    static DuplicatePropertyInIndex(propertyList: unknown, property: unknown): string;
-    static DuplicatePropertyInKey(propertyList: unknown, property: unknown): string;
-    static DuplicateTrigger(trigger: unknown, entityType: unknown, conflictingEntityType: unknown): string;
-    static EFMethodWithNonEvaluatableArgument(methodName: unknown): string;
-    static EmptyComplexType(complexType: unknown): string;
-    static EntityEqualityOnCompositeKeyEntitySubqueryNotSupported(comparisonOperator: unknown, entityType: unknown): string;
-    static EntityEqualityOnKeylessEntityNotSupported(comparisonOperator: unknown, entityType: unknown): string;
-    static EntityRequiresKey(entityType: unknown): string;
-    static EntityTypeInUseByDerived(entityType: unknown, derivedEntityType: unknown): string;
-    static EntityTypeInUseByReferencingForeignKey(entityType: unknown, foreignKeyProperties: unknown, referencingEntityType: unknown): string;
-    static EntityTypeInUseByReferencingSkipNavigation(entityType: unknown, skipNavigation: unknown, referencingEntityType: unknown): string;
-    static EntityTypeModelMismatch(firstEntityType: unknown, secondEntityType: unknown): string;
-    static EntityTypeNotFound(entityType: unknown): string;
-    static EntityTypeNotInRelationship(entityType: unknown, dependentType: unknown, principalType: unknown): string;
-    static EntityTypeNotInRelationshipStrict(entityType: unknown, dependentType: unknown, principalType: unknown): string;
-    static EntityTypesNotInRelationship(invalidDependentType: unknown, invalidPrincipalType: unknown, dependentType: unknown, principalType: unknown): string;
-    static ErrorMaterializingPropertyInvalidCast(entityType: unknown, property: unknown, expectedType: unknown, actualType: unknown): string;
-    static ExecuteQueriesNotSupported(methodName: unknown, asyncMethodName: unknown): string;
-    static ExecutionStrategyExistingTransaction(strategy: unknown, getExecutionStrategyMethod: unknown): string;
-    static ExpressionParameterizationExceptionSensitive(expression: unknown): string;
-    static FieldNameMismatch(field: unknown, entityType: unknown, property: unknown): string;
-    static FindNotCompositeKey(entityType: unknown, valuesCount: unknown): string;
-    static FindValueCountMismatch(entityType: unknown, propertiesCount: unknown, valuesCount: unknown): string;
-    static FindValueTypeMismatch(index: unknown, entityType: unknown, valueType: unknown, propertyType: unknown): string;
-    static FindWrongCount(values: unknown, properties: unknown): string;
-    static FindWrongType(valueType: unknown, propertyName: unknown, propertyType: unknown): string;
-    static FkAttributeOnNonUniquePrincipal(navigation: unknown, principalType: unknown, dependentType: unknown): string;
-    static FkAttributeOnPropertyNavigationMismatch(property: unknown, navigation: unknown, entityType: unknown): string;
-    static FkAttributeOnSkipNavigation(entityType: unknown, navigation: unknown): string;
-    static ForeignKeyCountMismatch(foreignKeyProperties: unknown, dependentType: unknown, principalKeyProperties: unknown, principalType: unknown): string;
-    static ForeignKeyInUseSkipNavigation(foreignKeyProperties: unknown, entityType: unknown, navigation: unknown, navigationEntityType: unknown): string;
-    static ForeignKeyPropertiesWrongEntity(foreignKeyProperties: unknown, entityType: unknown): string;
-    static ForeignKeyPropertyInKey(property: unknown, entityType: unknown, keyProperties: unknown, baseEntityType: unknown): string;
-    static ForeignKeyReferencedEntityKeyMismatch(principalKeyProperties: unknown, principalEntityType: unknown): string;
-    static ForeignKeyTypeMismatch(foreignKeyProperties: unknown, dependentType: unknown, principalKeyProperties: unknown, principalType: unknown): string;
-    static ForeignKeyWrongType(foreignKeyProperties: unknown, keyProperties: unknown, principalType: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static FullChangeTrackingRequired(entityType: unknown, changeTrackingStrategy: unknown, fullStrategy: unknown, fullPlusStrategy: unknown): string;
-    static FunctionOnClient(methodName: unknown): string;
-    static GraphDoesNotContainVertex(vertex: unknown): string;
-    static IdentifyingRelationshipCycle(entityType: unknown): string;
-    static IdentityConflict(entityType: unknown, keyProperties: unknown): string;
-    static IdentityConflictOwned(entityType: unknown, keyProperties: unknown): string;
-    static IdentityConflictOwnedSensitive(entityType: unknown, keyValue: unknown): string;
-    static IdentityConflictSensitive(entityType: unknown, keyValue: unknown): string;
-    static ImplementationTypeRequired(service: unknown): string;
-    static IncludeOnEntityWithDefiningQueryNotSupported(expression: unknown, entityType: unknown): string;
-    static IncludeOnNonEntity(expression: unknown): string;
-    static IncludeWithCycle(navigationName: unknown, inverseNavigationName: unknown): string;
-    static IncompatibleSentinelValue(sentinel: unknown, entityType: unknown, property: unknown, type: unknown): string;
-    static InconsistentInheritance(entityType: unknown, baseEntityType: unknown, clrBaseEntityType: unknown): string;
-    static IncorrectNumberOfArguments(method: unknown, argumentCount: unknown, parameterCount: unknown): string;
-    static IndexPropertiesWrongEntity(indexProperties: unknown, entityType: unknown): string;
-    static IndexWrongType(index: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static InheritedPropertyCannotBeIgnored(property: unknown, type: unknown, baseType: unknown): string;
-    static InterfacePropertyNotAdded(entityType: unknown, navigation: unknown, propertyType: unknown): string;
-    static InvalidAlternateKeyValue(entityType: unknown, keyProperty: unknown): string;
-    static InvalidComplexType(type: unknown): string;
-    static InvalidEntityType(type: unknown): string;
-    static InvalidEntityTypeConfigurationAttribute(entityTypeConfigurationType: unknown, entityType: unknown): string;
-    static InvalidEnumValue(value: unknown, argumentName: unknown, enumType: unknown): string;
-    static InvalidIncludeExpression(expression: unknown): string;
-    static InvalidKeyValue(entityType: unknown, keyProperty: unknown): string;
-    static InvalidMemberExpression(expression: unknown): string;
-    static InvalidMembersExpression(expression: unknown): string;
-    static InvalidNavigationWithInverseProperty(property: unknown, entityType: unknown, referencedProperty: unknown, referencedEntityType: unknown): string;
-    static InvalidNumberOfIndexSortOrderValues(indexProperties: unknown, numValues: unknown, numProperties: unknown): string;
-    static InvalidPropertyListOnNavigation(navigation: unknown, entityType: unknown, properties: unknown): string;
-    static InvalidRelationshipUsingDataAnnotations(navigation: unknown, entityType: unknown, referencedNavigation: unknown, referencedEntityType: unknown): string;
-    static InvalidReplaceService(replaceService: unknown, useInternalServiceProvider: unknown): string;
-    static InvalidSetKeylessOperation(entityType: unknown): string;
-    static InvalidSetSameTypeWithDifferentNamespace(typeName: unknown, entityTypeName: unknown): string;
-    static InvalidSetSharedType(typeName: unknown): string;
-    static InvalidSetType(typeName: unknown): string;
-    static InvalidSetTypeOwned(typeName: unknown, ownerType: unknown): string;
-    static InvalidSwitch(name: unknown, value: unknown): string;
-    static InvalidType(property: unknown, entityType: unknown, valueType: unknown, propertyType: unknown): string;
-    static InvalidTypeConversionWithInclude(includeExpression: unknown, type: unknown): string;
-    static InvalidUseService(useService: unknown, useInternalServiceProvider: unknown, service: unknown): string;
-    static InvalidValueGeneratorFactoryProperty(factory: unknown, property: unknown, entityType: unknown): string;
-    static InversePropertyMismatch(navigation: unknown, entityType: unknown, referencedNavigation: unknown, referencedEntityType: unknown): string;
-    static InverseToOwnedType(principalEntityType: unknown, navigation: unknown, ownedType: unknown, ownerType: unknown): string;
-    static IQueryableNotAsync(genericParameter: unknown): string;
-    static JsonReaderInvalidTokenType(tokenType: unknown): string;
-    static KeyAttributeOnDerivedEntity(derivedType: unknown, property: unknown, rootType: unknown): string;
-    static KeyInUse(keyProperties: unknown, entityType: unknown, foreignKeyProperties: unknown, dependentType: unknown): string;
-    static KeylessTypeExistingKey(entityType: unknown, keyProperties: unknown): string;
-    static KeylessTypeTracked(type: unknown): string;
-    static KeylessTypeWithKey(keyProperties: unknown, entityType: unknown): string;
-    static KeyPropertiesWrongEntity(keyProperties: unknown, entityType: unknown): string;
-    static KeyPropertyCannotBeNullable(property: unknown, entityType: unknown, keyProperties: unknown): string;
-    static KeyPropertyMustBeReadOnly(property: unknown, entityType: unknown): string;
-    static KeyReadOnly(property: unknown, entityType: unknown): string;
-    static KeyWrongType(keyProperties: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static LiteralGenerationNotSupported(type: unknown): string;
-    static ManyToManyOneNav(entityType: unknown, navigation: unknown): string;
-    static MissingBackingField(field: unknown, property: unknown, entityType: unknown): string;
-    static ModelNotFinalized(method: unknown): string;
-    static MultipleFilteredIncludesOnSameNavigation(filter1: unknown, filter2: unknown): string;
-    static MultipleNavigationsSameFk(entityType: unknown, properties: unknown, navigations: unknown): string;
-    static MultipleOwnerships(entityType: unknown, navigations: unknown): string;
-    static MultipleProvidersConfigured(storeNames: unknown): string;
-    static MustRewriteToSameNode(caller: unknown, type: unknown): string;
-    static MutableKeyProperty(keyProperty: unknown): string;
-    static NamedIndexDefinedOnIgnoredProperty(indexName: unknown, entityType: unknown, indexProperties: unknown, propertyName: unknown): string;
-    static NamedIndexDefinedOnNonExistentProperty(indexName: unknown, entityType: unknown, indexProperties: unknown, propertyName: unknown): string;
-    static NamedIndexWrongType(indexName: unknown, entityType: unknown): string;
-    static NavigationArray(navigation: unknown, entityType: unknown, foundType: unknown): string;
-    static NavigationBadType(navigation: unknown, entityType: unknown, foundType: unknown, targetType: unknown): string;
-    static NavigationCannotCreateType(navigation: unknown, entityType: unknown, foundType: unknown): string;
-    static NavigationCollectionWrongClrType(navigation: unknown, entityType: unknown, clrType: unknown, targetType: unknown): string;
-    static NavigationForWrongForeignKey(navigation: unknown, entityType: unknown, targetForeignKeyProperties: unknown, actualForeignKeyProperties: unknown): string;
-    static NavigationIsProperty(property: unknown, entityType: unknown, referenceMethod: unknown, collectionMethod: unknown, propertyMethod: unknown): string;
-    static NavigationlessOwnership(principalEntityType: unknown, dependentEntityType: unknown): string;
-    static NavigationNoSetter(navigation: unknown, entityType: unknown): string;
-    static NavigationNotAdded(entityType: unknown, navigation: unknown, propertyType: unknown): string;
-    static NavigationNotAddedAdHoc(entityType: unknown, navigation: unknown, propertyType: unknown): string;
-    static NavigationNotAddedComplexType(complexType: unknown, navigation: unknown, propertyType: unknown): string;
-    static NavigationSingleWrongClrType(navigation: unknown, entityType: unknown, clrType: unknown, targetType: unknown): string;
-    static NavigationToKeylessType(navigation: unknown, entityType: unknown): string;
-    static NoBackingField(property: unknown, entityType: unknown, propertyAccessMode: unknown): string;
-    static NoBackingFieldLazyLoading(property: unknown, entityType: unknown): string;
-    static NoClrNavigation(navigation: unknown, entityType: unknown): string;
-    static NoDiscriminatorProperty(entityType: unknown): string;
-    static NoDiscriminatorValue(entityType: unknown): string;
-    static NoFieldOrGetter(property: unknown, entityType: unknown): string;
-    static NoFieldOrSetter(property: unknown, entityType: unknown): string;
-    static NoGetter(property: unknown, entityType: unknown, propertyAccessMode: unknown): string;
-    static NonComparableKeyType(entityType: unknown, property: unknown, providerType: unknown): string;
-    static NonComparableKeyTypes(entityType: unknown, property: unknown, modelType: unknown, providerType: unknown): string;
-    static NonConfiguredNavigationToSharedType(navigation: unknown, entityType: unknown): string;
-    static NonGenericOptions(contextType: unknown): string;
-    static NonIndexerEntityType(property: unknown, entityType: unknown, type: unknown): string;
-    static NonListCollection(entityType: unknown, name: unknown, type: unknown, listInterface: unknown): string;
-    static NonNotifyingCollection(navigation: unknown, entityType: unknown, collectionType: unknown, changeTrackingStrategy: unknown): string;
-    static NonQueryTranslationFailedWithDetails(expression: unknown, details: unknown): string;
-    static NonUniqueRequiredDependentForeignKey(foreignKeyProperties: unknown, declaringEntityType: unknown): string;
-    static NonUniqueRequiredDependentNavigation(principalEntityType: unknown, principalNavigation: unknown): string;
-    static NoParameterlessConstructor(entityType: unknown): string;
-    static NoProperty(field: unknown, entity: unknown, propertyAccessMode: unknown): string;
-    static NoPropertyType(property: unknown, type: unknown): string;
-    static NoProviderConfiguredFailedToResolveService(service: unknown): string;
-    static NoSetter(property: unknown, entityType: unknown, propertyAccessMode: unknown): string;
-    static NotAnEFService(service: unknown): string;
-    static NotAProviderService(service: unknown): string;
-    static NotAssignableClrBaseType(entityType: unknown, baseEntityType: unknown, clrType: unknown, baseClrType: unknown): string;
-    static NotCollection(entityType: unknown, property: unknown): string;
-    static NotParameterizedAttributeWithNonConstantNotSupportedInPrecompiledQueries(parameter: unknown, method: unknown): string;
-    static NoValueGenerator(property: unknown, entityType: unknown, propertyType: unknown): string;
-    static NullableKey(entityType: unknown, property: unknown): string;
-    static NullRequiredComplexProperty(type: unknown, property: unknown): string;
-    static NullRequiredPrimitiveCollection(type: unknown, property: unknown): string;
-    static ObjectRemovedFromModel(name: unknown): string;
-    static OptionsExtensionNotFound(optionsExtension: unknown): string;
-    static OriginalValueNotStored(structuralType: unknown, property: unknown): string;
-    static OriginalValueNotTracked(property: unknown, entityType: unknown): string;
-    static OwnedDerivedType(entityType: unknown): string;
-    static OwnerlessOwnedType(ownedType: unknown): string;
-    static OwnershipToDependent(navigation: unknown, principalEntityType: unknown, dependentEntityType: unknown): string;
-    static ParameterExpressionMustHaveName(parameterExpression: unknown): string;
-    static PoolingContextCtorError(contextType: unknown): string;
-    static PrimaryKeyAttributeOnDerivedEntity(derivedType: unknown, rootType: unknown): string;
-    static PrimaryKeyDefinedOnIgnoredProperty(entityType: unknown, propertyName: unknown): string;
-    static PrimaryKeyDefinedOnNonExistentProperty(entityType: unknown, properties: unknown, propertyName: unknown): string;
-    static PrincipalEndIncompatibleNavigations(navigationSpecification1: unknown, navigationSpecification2: unknown, targetEntityType: unknown): string;
-    static PrincipalEntityTypeNotInRelationship(dependentEntityType: unknown, principalEntityType: unknown, entityType: unknown): string;
-    static PrincipalKeylessType(entityType: unknown, firstNavigationSpecification: unknown, secondNavigationSpecification: unknown): string;
-    static PrincipalOwnedType(referencingEntityTypeOrNavigation: unknown, referencedEntityTypeOrNavigation: unknown, ownedType: unknown): string;
-    static PropertyClashingNonIndexer(property: unknown, type: unknown): string;
-    static PropertyConceptualNull(property: unknown, entityType: unknown): string;
-    static PropertyConceptualNullSensitive(property: unknown, entityType: unknown, keyValue: unknown): string;
-    static PropertyDoesNotBelong(property: unknown, expectedType: unknown, actualType: unknown): string;
-    static PropertyInUseForeignKey(property: unknown, type: unknown, foreignKeyProperties: unknown, foreignKeyType: unknown): string;
-    static PropertyInUseIndex(property: unknown, entityType: unknown, index: unknown, indexType: unknown): string;
-    static PropertyInUseKey(property: unknown, entityType: unknown, keyProperties: unknown): string;
-    static PropertyIsNotACollection(propertyName: unknown, entityType: unknown): string;
-    static PropertyNotAdded(entityType: unknown, property: unknown, propertyType: unknown): string;
-    static PropertyNotAddedAdHoc(entityType: unknown, property: unknown, propertyType: unknown): string;
-    static PropertyNotFound(property: unknown, entityType: unknown): string;
-    static PropertyNotMapped(propertyType: unknown, entityType: unknown, property: unknown): string;
-    static PropertyReadOnlyAfterSave(property: unknown, entityType: unknown): string;
-    static PropertyReadOnlyBeforeSave(property: unknown, entityType: unknown): string;
-    static PropertyWrongClrType(property: unknown, type: unknown, clrType: unknown, propertyType: unknown): string;
-    static PropertyWrongEntityClrType(property: unknown, type: unknown, clrType: unknown): string;
-    static PropertyWrongName(property: unknown, type: unknown, clrName: unknown): string;
-    static PropertyWrongType(property: unknown, type: unknown, otherType: unknown): string;
-    static QueryEntityMaterializationConditionWrongShape(entityType: unknown): string;
-    static QueryInvalidMaterializationType(projection: unknown, queryableType: unknown): string;
-    static QueryRootDifferentEntityType(entityType: unknown): string;
-    static QueryUnableToTranslateEFProperty(expression: unknown): string;
-    static QueryUnableToTranslateMember(member: unknown, entityType: unknown): string;
-    static QueryUnableToTranslateMethod(declaringTypeName: unknown, methodName: unknown): string;
-    static QueryUnhandledQueryRootExpression(type: unknown): string;
-    static ReferencedShadowKey(referencingEntityTypeOrNavigation: unknown, referencedEntityTypeOrNavigation: unknown, foreignKeyPropertiesWithTypes: unknown, primaryKeyPropertiesWithTypes: unknown): string;
-    static ReferenceIsCollection(property: unknown, entityType: unknown, referenceMethod: unknown, collectionMethod: unknown): string;
-    static ReferenceMustBeLoaded(navigation: unknown, entityType: unknown): string;
-    static RelationshipConceptualNull(firstType: unknown, secondType: unknown): string;
-    static RelationshipConceptualNullSensitive(firstType: unknown, secondType: unknown, secondKeyValue: unknown): string;
-    static RelationshipCycle(entityType: unknown, property: unknown, configuration: unknown): string;
-    static RequiredSkipNavigation(entityType: unknown, navigation: unknown): string;
-    static RetryLimitExceeded(retryLimit: unknown, strategy: unknown): string;
-    static SameParameterInstanceUsedInMultipleLambdas(parameterName: unknown): string;
-    static SaveOwnedWithoutOwner(entityType: unknown): string;
-    static SeedDatumComplexProperty(entityType: unknown, property: unknown): string;
-    static SeedDatumComplexPropertySensitive(entityType: unknown, keyValue: unknown, property: unknown): string;
-    static SeedDatumDefaultValue(entityType: unknown, property: unknown, defaultValue: unknown): string;
-    static SeedDatumDerivedType(entityType: unknown, derivedType: unknown): string;
-    static SeedDatumDuplicate(entityType: unknown, keyProperties: unknown): string;
-    static SeedDatumDuplicateSensitive(entityType: unknown, keyValue: unknown): string;
-    static SeedDatumIncompatibleValue(entityType: unknown, property: unknown, type: unknown): string;
-    static SeedDatumIncompatibleValueSensitive(entityType: unknown, value: unknown, property: unknown, type: unknown): string;
-    static SeedDatumMissingValue(entityType: unknown, property: unknown): string;
-    static SeedDatumNavigation(entityType: unknown, navigation: unknown, relatedEntityType: unknown, foreignKeyProperties: unknown): string;
-    static SeedDatumNavigationSensitive(entityType: unknown, keyValue: unknown, navigation: unknown, relatedEntityType: unknown, foreignKeyProperties: unknown): string;
-    static SeedDatumSignedNumericValue(entityType: unknown, property: unknown): string;
-    static SeedKeylessEntity(entityType: unknown): string;
-    static SelfReferencingNavigationWithInverseProperty(entityType: unknown, property: unknown): string;
-    static ServiceProviderConfigAdded(key: unknown): string;
-    static ServiceProviderConfigChanged(key: unknown): string;
-    static ServiceProviderConfigRemoved(key: unknown): string;
-    static SharedTypeDerivedType(entityType: unknown): string;
-    static SingletonOptionChanged(optionCall: unknown, useInternalServiceProvider: unknown): string;
-    static SingletonRequired(scope: unknown, service: unknown): string;
-    static SkipInverseMismatchedForeignKey(foreignKeyProperties: unknown, navigation: unknown, joinType: unknown, inverse: unknown, inverseJoinType: unknown): string;
-    static SkipInverseMismatchedJoinType(inverse: unknown, inverseJoinType: unknown, navigation: unknown, joinType: unknown): string;
-    static SkipNavigationForeignKeyWrongDependentType(foreignKeyProperties: unknown, entityType: unknown, navigation: unknown, dependentEntityType: unknown): string;
-    static SkipNavigationForeignKeyWrongPrincipalType(foreignKeyProperties: unknown, entityType: unknown, navigation: unknown, principalEntityType: unknown): string;
-    static SkipNavigationInUseBySkipNavigation(entityType: unknown, skipNavigation: unknown, referencingEntityType: unknown, inverseSkipNavigation: unknown): string;
-    static SkipNavigationNoForeignKey(navigation: unknown, entityType: unknown): string;
-    static SkipNavigationNoInverse(navigation: unknown, entityType: unknown): string;
-    static SkipNavigationNonCollection(navigation: unknown, entityType: unknown): string;
-    static SkipNavigationWrongInverse(inverse: unknown, inverseEntityType: unknown, navigation: unknown, targetEntityType: unknown): string;
-    static SkipNavigationWrongType(navigation: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static StoreGenValue(property: unknown, entityType: unknown): string;
-    static TempValue(property: unknown, entityType: unknown): string;
-    static TempValuePersists(property: unknown, entityType: unknown, state: unknown): string;
-    static TrackingTypeMismatch(runtimeEntityType: unknown, entityType: unknown): string;
-    static TranslationFailed(expression: unknown): string;
-    static TranslationFailedWithDetails(expression: unknown, details: unknown): string;
-    static TypeConfigurationConflict(type: unknown, typeConfiguration: unknown, otherType: unknown, otherTypeConfiguration: unknown): string;
-    static TypeNotMarkedAsShared(type: unknown): string;
-    static UnableToDiscriminate(entityType: unknown, discriminator: unknown): string;
-    static UnableToSetIsUnique(isUnique: unknown, navigationName: unknown, entityType: unknown): string;
-    static UnconfigurableType(type: unknown, configuration: unknown, expectedConfiguration: unknown, configurationType: unknown): string;
-    static UnconfigurableTypeMapping(type: unknown): string;
-    static UnhandledExpressionNode(nodeType: unknown): string;
-    static UnhandledMemberBinding(bindingType: unknown): string;
-    static UnhandledNavigationBase(type: unknown): string;
-    static UnknownEntity(entity: unknown): string;
-    static UnknownKeyValue(entityType: unknown, property: unknown): string;
-    static UnknownShadowKeyValue(entityType: unknown, property: unknown): string;
-    static UnnamedIndexDefinedOnIgnoredProperty(entityType: unknown, indexProperties: unknown, propertyName: unknown): string;
-    static UnnamedIndexDefinedOnNonExistentProperty(entityType: unknown, indexProperties: unknown, propertyName: unknown): string;
-    static UntrackedDependentEntity(entityType: unknown, referenceCall: unknown, collectionCall: unknown): string;
-    static ValueCannotBeNull(property: unknown, entityType: unknown, propertyType: unknown): string;
-    static VisitIsNotAllowed(visitMethodName: unknown): string;
-    static WarningAsErrorTemplate(eventName: unknown, message: unknown, eventId: unknown): string;
-    static WrongGenericPropertyType(property: unknown, entityType: unknown, actualType: unknown, genericType: unknown): string;
-    static WrongStateManager(entityType: unknown): string;
+    static AbstractLeafEntityType(entityType: JsValue | null): string;
+    static AddingProxyTypeAsEntityType(typeName: JsValue | null): string;
+    static AmbiguousDependentEntity(entityType: JsValue | null, targetEntryCall: JsValue | null): string;
+    static AmbiguousEndRequiredDependent(foreignKeyProperties: JsValue | null, entityType: JsValue | null): string;
+    static AmbiguousEndRequiredDependentNavigation(entityType: JsValue | null, navigation: JsValue | null, foreignKeyProperties: JsValue | null): string;
+    static AmbiguousEndRequiredInverted(foreignKeyProperties: JsValue | null, entityType: JsValue | null, principalEntityType: JsValue | null): string;
+    static AmbiguousForeignKeyPropertyCandidates(firstDependentToPrincipalNavigationSpecification: JsValue | null, firstPrincipalToDependentNavigationSpecification: JsValue | null, secondDependentToPrincipalNavigationSpecification: JsValue | null, secondPrincipalToDependentNavigationSpecification: JsValue | null, foreignKeyProperties: JsValue | null): string;
+    static AmbiguousOneToOneRelationship(dependentToPrincipalNavigationSpecification: JsValue | null, principalToDependentNavigationSpecification: JsValue | null): string;
+    static AmbiguousOwnedNavigation(entityTypeNavigationSpecification: JsValue | null, otherEntityType: JsValue | null): string;
+    static AmbiguousSharedTypeEntityTypeName(entityType: JsValue | null): string;
+    static AnnotationNotFound(annotation: JsValue | null, annotatable: JsValue | null): string;
+    static ArgumentNotConstant(parameter: JsValue | null, methodName: JsValue | null): string;
+    static ArgumentPropertyNull(property: JsValue | null, argument: JsValue | null): string;
+    static AttributeNotOnEntityTypeProperty(attribute: JsValue | null, type: JsValue | null, propertyName: JsValue | null): string;
+    static AutoIncludeNavigationCycle(cycleNavigations: JsValue | null): string;
+    static BackingFieldOnIndexer(field: JsValue | null, entityType: JsValue | null, property: JsValue | null): string;
+    static BadBackingFieldType(field: JsValue | null, fieldType: JsValue | null, entityType: JsValue | null, property: JsValue | null, propertyType: JsValue | null): string;
+    static BadDependencyRegistration(dependenciesType: JsValue | null): string;
+    static BadEnumValue(enumValue: JsValue | null, enumType: JsValue | null): string;
+    static BadFilterDerivedType(filter: JsValue | null, entityType: JsValue | null, rootType: JsValue | null): string;
+    static BadFilterExpression(filter: JsValue | null, entityType: JsValue | null, clrType: JsValue | null): string;
+    static BadFilterOwnedType(filter: JsValue | null, entityType: JsValue | null): string;
+    static BadJsonValueReaderWriterType(givenType: JsValue | null): string;
+    static BadListType(givenType: JsValue | null, listType: JsValue | null): string;
+    static BadValueComparerType(givenType: JsValue | null, expectedType: JsValue | null): string;
+    static BadValueConverterType(givenType: JsValue | null, expectedType: JsValue | null): string;
+    static BadValueGeneratorType(givenType: JsValue | null, expectedType: JsValue | null): string;
+    static CannotBeNullable(property: JsValue | null, entityType: JsValue | null, propertyType: JsValue | null): string;
+    static CannotBeNullableElement(entityType: JsValue | null, property: JsValue | null, elementType: JsValue | null): string;
+    static CannotBeNullablePK(property: JsValue | null, entityType: JsValue | null): string;
+    static CannotConvertEnumValue(value: JsValue | null, enumType: JsValue | null): string;
+    static CannotCreateJsonValueReaderWriter(readerWriterType: JsValue | null): string;
+    static CannotCreateValueComparer(generatorType: JsValue | null, method: JsValue | null): string;
+    static CannotCreateValueConverter(generatorType: JsValue | null, method: JsValue | null): string;
+    static CannotCreateValueGenerator(generatorType: JsValue | null, method: JsValue | null): string;
+    static CannotLoadDetachedShadow(navigation: JsValue | null, entityType: JsValue | null): string;
+    static CannotMarkNonShared(type: JsValue | null): string;
+    static CannotMarkShared(type: JsValue | null): string;
+    static CannotMaterializeAbstractType(entityType: JsValue | null): string;
+    static CanOnlyConfigureExistingNavigations(navigationName: JsValue | null, entityType: JsValue | null): string;
+    static ChangeTrackingInterfaceMissing(entityType: JsValue | null, changeTrackingStrategy: JsValue | null, notificationInterface: JsValue | null): string;
+    static CircularDependency(cycle: JsValue | null): string;
+    static CircularInheritance(entityType: JsValue | null, baseEntityType: JsValue | null): string;
+    static ClashingMismatchedSharedType(entityType: JsValue | null, otherClrType: JsValue | null): string;
+    static ClashingNamedOwnedType(ownedTypeName: JsValue | null, ownerEntityType: JsValue | null, navigation: JsValue | null): string;
+    static ClashingNonOwnedDerivedEntityType(entityType: JsValue | null, derivedType: JsValue | null): string;
+    static ClashingNonOwnedEntityType(entityType: JsValue | null): string;
+    static ClashingNonSharedType(entityType: JsValue | null, type: JsValue | null): string;
+    static ClashingOwnedDerivedEntityType(entityType: JsValue | null, derivedType: JsValue | null): string;
+    static ClashingOwnedEntityType(entityType: JsValue | null): string;
+    static ClashingSharedType(entityType: JsValue | null): string;
+    static ClientProjectionCapturingConstantInMethodArgument(constantType: JsValue | null, methodName: JsValue | null): string;
+    static ClientProjectionCapturingConstantInMethodInstance(constantType: JsValue | null, methodName: JsValue | null): string;
+    static ClientProjectionCapturingConstantInTree(constantType: JsValue | null): string;
+    static CollectionIsReference(property: JsValue | null, entityType: JsValue | null, collectionMethod: JsValue | null, referenceMethod: JsValue | null): string;
+    static ComparerPropertyMismatch(type: JsValue | null, entityType: JsValue | null, propertyName: JsValue | null, propertyType: JsValue | null): string;
+    static ComparerPropertyMismatchElement(type: JsValue | null, entityType: JsValue | null, propertyName: JsValue | null, elementType: JsValue | null): string;
+    static CompiledModelDuplicateAttribute(assemblyName: JsValue | null, contextType: JsValue | null): string;
+    static CompiledModelIncompatibleTypeMapping(typeMapping: JsValue | null): string;
+    static CompiledModelMissingInstance(modelType: JsValue | null): string;
+    static CompiledQueryDifferentModel(queryExpression: JsValue | null): string;
+    static ComplexCollectionEntryDeletedEntity(ordinal: JsValue | null, declaringType: JsValue | null, collection: JsValue | null): string;
+    static ComplexCollectionEntryInvalidStateChange(property: JsValue | null): string;
+    static ComplexCollectionEntryOrdinalInvalid(ordinal: JsValue | null, declaringType: JsValue | null, collection: JsValue | null, count: JsValue | null): string;
+    static ComplexCollectionEntryOrdinalReadOnly(collectionDeclaringType: JsValue | null, collection: JsValue | null): string;
+    static ComplexCollectionEntryOriginalNull(declaringType: JsValue | null, collection: JsValue | null): string;
+    static ComplexCollectionEntryOriginalOrdinalInvalid(ordinal: JsValue | null, declaringType: JsValue | null, collection: JsValue | null, count: JsValue | null): string;
+    static ComplexCollectionEntryOriginalOrdinalReadOnly(collectionDeclaringType: JsValue | null, collection: JsValue | null): string;
+    static ComplexCollectionIsReference(entityType: JsValue | null, property: JsValue | null, collectionMethod: JsValue | null, referenceMethod: JsValue | null): string;
+    static ComplexCollectionMoveInvalidOrdinals(fromOrdinal: JsValue | null, toOrdinal: JsValue | null, count: JsValue | null): string;
+    static ComplexCollectionNotInitialized(entityType: JsValue | null, collection: JsValue | null): string;
+    static ComplexCollectionNullElementSetter(complexType: JsValue | null, property: JsValue | null, collectionDeclaringType: JsValue | null, collection: JsValue | null, ordinal: JsValue | null): string;
+    static ComplexCollectionOriginalEntryAddedEntity(ordinal: JsValue | null, declaringType: JsValue | null, collection: JsValue | null): string;
+    static ComplexCollectionValueNotDictionaryList(property: JsValue | null, typeName: JsValue | null): string;
+    static ComplexCollectionWrongClrType(property: JsValue | null, type: JsValue | null, clrType: JsValue | null, targetType: JsValue | null): string;
+    static ComplexPropertyIndexer(type: JsValue | null, property: JsValue | null): string;
+    static ComplexPropertyNotCollection(type: JsValue | null, property: JsValue | null): string;
+    static ComplexPropertyNotFound(type: JsValue | null, property: JsValue | null): string;
+    static ComplexPropertyShadow(type: JsValue | null, property: JsValue | null): string;
+    static ComplexPropertyValueNotDictionary(property: JsValue | null, typeName: JsValue | null): string;
+    static ComplexPropertyValueNotList(property: JsValue | null, clrType: JsValue | null, typeName: JsValue | null): string;
+    static ComplexPropertyWrongClrType(property: JsValue | null, type: JsValue | null, clrType: JsValue | null, targetType: JsValue | null): string;
+    static ComplexReferenceIsCollection(entityType: JsValue | null, property: JsValue | null, referenceMethod: JsValue | null, collectionMethod: JsValue | null): string;
+    static ComplexTypeNotificationChangeTracking(complexType: JsValue | null, changeTrackingStrategy: JsValue | null): string;
+    static ComplexTypeShadowProperty(complexType: JsValue | null, property: JsValue | null): string;
+    static ComplexTypesNotSupported(service: JsValue | null): string;
+    static ComplexValueTypeCollection(type: JsValue | null, property: JsValue | null): string;
+    static ComplexValueTypeShadowProperty(type: JsValue | null, property: JsValue | null): string;
+    static CompositeFkOnProperty(navigation: JsValue | null, entityType: JsValue | null): string;
+    static CompositePKWithDataAnnotation(entityType: JsValue | null): string;
+    static ConflictingBackingFields(property: JsValue | null, entityType: JsValue | null, field1: JsValue | null, field2: JsValue | null): string;
+    static ConflictingFieldProperty(type: JsValue | null, property: JsValue | null, field: JsValue | null, conflictingType: JsValue | null, conflictingProperty: JsValue | null): string;
+    static ConflictingForeignKeyAttributes(propertyList: JsValue | null, entityType: JsValue | null, principalEntityType: JsValue | null): string;
+    static ConflictingKeylessAndPrimaryKeyAttributes(entity: JsValue | null): string;
+    static ConflictingPropertyOrNavigation(member: JsValue | null, type: JsValue | null, conflictingType: JsValue | null): string;
+    static ConflictingRelationshipConversions(entityType: JsValue | null, property: JsValue | null, valueConversion: JsValue | null, conflictingValueConversion: JsValue | null): string;
+    static ConflictingRelationshipNavigation(newPrincipalNavigationSpecification: JsValue | null, newDependentNavigationSpecification: JsValue | null, existingPrincipalNavigationSpecification: JsValue | null, existingDependentNavigationSpecification: JsValue | null): string;
+    static ConstructorBindingFailed(failedBinds: JsValue | null, parameters: JsValue | null): string;
+    static ConstructorConflict(firstConstructor: JsValue | null, secondConstructor: JsValue | null): string;
+    static ConstructorNotFound(type: JsValue | null, constructors: JsValue | null): string;
+    static ConverterBadType(converter: JsValue | null, type: JsValue | null, allowed: JsValue | null): string;
+    static ConverterPropertyMismatch(converterType: JsValue | null, entityType: JsValue | null, propertyName: JsValue | null, propertyType: JsValue | null): string;
+    static ConverterPropertyMismatchElement(converterType: JsValue | null, entityType: JsValue | null, propertyName: JsValue | null, elementType: JsValue | null): string;
+    static ConvertersCannotBeComposed(typeOneIn: JsValue | null, typeOneOut: JsValue | null, typeTwoIn: JsValue | null, typeTwoOut: JsValue | null): string;
+    static DbContextMissingConstructor(contextType: JsValue | null): string;
+    static DbSetIncorrectGenericType(entityType: JsValue | null, entityClrType: JsValue | null, genericType: JsValue | null): string;
+    static DebugViewError(message: JsValue | null): string;
+    static DebugViewQueryExpressionError(message: JsValue | null): string;
+    static DebugViewQueryStringError(message: JsValue | null): string;
+    static DeleteBehaviorAttributeNotOnNavigationProperty(type: JsValue | null, propertyName: JsValue | null): string;
+    static DeleteBehaviorAttributeOnPrincipalProperty(entityType: JsValue | null, navigationName: JsValue | null): string;
+    static DependentEntityTypeNotInRelationship(dependentEntityType: JsValue | null, principalEntityType: JsValue | null, entityType: JsValue | null): string;
+    static DerivedEntityCannotBeKeyless(entityType: JsValue | null): string;
+    static DerivedEntityCannotHaveKeys(entityType: JsValue | null): string;
+    static DerivedEntityOwnershipMismatch(baseEntityType: JsValue | null, derivedEntityType: JsValue | null, ownedEntityType: JsValue | null, nonOwnedEntityType: JsValue | null): string;
+    static DerivedEntityTypeHasNoKey(derivedType: JsValue | null, rootType: JsValue | null): string;
+    static DerivedEntityTypeKey(derivedType: JsValue | null, rootType: JsValue | null): string;
+    static DerivedTypeDefiningQuery(entityType: JsValue | null, baseType: JsValue | null): string;
+    static DiscriminatorEntityTypeNotDerived(entityType: JsValue | null, rootEntityType: JsValue | null): string;
+    static DiscriminatorPropertyMustBeOnRoot(entityType: JsValue | null): string;
+    static DiscriminatorPropertyNotAllowedOnComplexCollection(type: JsValue | null, containingType: JsValue | null): string;
+    static DiscriminatorPropertyNotFound(property: JsValue | null, entityType: JsValue | null): string;
+    static DiscriminatorValueIncompatible(value: JsValue | null, entityType: JsValue | null, discriminatorType: JsValue | null): string;
+    static DuplicateAnnotation(annotation: JsValue | null, annotatable: JsValue | null): string;
+    static DuplicateComplexType(complexType: JsValue | null): string;
+    static DuplicateDiscriminatorValue(entityType1: JsValue | null, discriminatorValue: JsValue | null, entityType2: JsValue | null): string;
+    static DuplicateEntityType(entityType: JsValue | null): string;
+    static DuplicateForeignKey(foreignKeyProperties: JsValue | null, entityType: JsValue | null, duplicateEntityType: JsValue | null, keyProperties: JsValue | null, principalType: JsValue | null): string;
+    static DuplicateIndex(indexProperties: JsValue | null, entityType: JsValue | null, duplicateEntityType: JsValue | null): string;
+    static DuplicateKey(keyProperties: JsValue | null, entityType: JsValue | null, duplicateEntityType: JsValue | null): string;
+    static DuplicateNamedIndex(indexName: JsValue | null, indexProperties: JsValue | null, entityType: JsValue | null, duplicateEntityType: JsValue | null): string;
+    static DuplicatePropertiesOnBase(entityType: JsValue | null, baseType: JsValue | null, derivedPropertyType: JsValue | null, derivedProperty: JsValue | null, basePropertyType: JsValue | null, baseProperty: JsValue | null): string;
+    static DuplicatePropertyInForeignKey(propertyList: JsValue | null, property: JsValue | null): string;
+    static DuplicatePropertyInIndex(propertyList: JsValue | null, property: JsValue | null): string;
+    static DuplicatePropertyInKey(propertyList: JsValue | null, property: JsValue | null): string;
+    static DuplicateTrigger(trigger: JsValue | null, entityType: JsValue | null, conflictingEntityType: JsValue | null): string;
+    static EFMethodWithNonEvaluatableArgument(methodName: JsValue | null): string;
+    static EmptyComplexType(complexType: JsValue | null): string;
+    static EntityEqualityOnCompositeKeyEntitySubqueryNotSupported(comparisonOperator: JsValue | null, entityType: JsValue | null): string;
+    static EntityEqualityOnKeylessEntityNotSupported(comparisonOperator: JsValue | null, entityType: JsValue | null): string;
+    static EntityRequiresKey(entityType: JsValue | null): string;
+    static EntityTypeInUseByDerived(entityType: JsValue | null, derivedEntityType: JsValue | null): string;
+    static EntityTypeInUseByReferencingForeignKey(entityType: JsValue | null, foreignKeyProperties: JsValue | null, referencingEntityType: JsValue | null): string;
+    static EntityTypeInUseByReferencingSkipNavigation(entityType: JsValue | null, skipNavigation: JsValue | null, referencingEntityType: JsValue | null): string;
+    static EntityTypeModelMismatch(firstEntityType: JsValue | null, secondEntityType: JsValue | null): string;
+    static EntityTypeNotFound(entityType: JsValue | null): string;
+    static EntityTypeNotInRelationship(entityType: JsValue | null, dependentType: JsValue | null, principalType: JsValue | null): string;
+    static EntityTypeNotInRelationshipStrict(entityType: JsValue | null, dependentType: JsValue | null, principalType: JsValue | null): string;
+    static EntityTypesNotInRelationship(invalidDependentType: JsValue | null, invalidPrincipalType: JsValue | null, dependentType: JsValue | null, principalType: JsValue | null): string;
+    static ErrorMaterializingPropertyInvalidCast(entityType: JsValue | null, property: JsValue | null, expectedType: JsValue | null, actualType: JsValue | null): string;
+    static ExecuteQueriesNotSupported(methodName: JsValue | null, asyncMethodName: JsValue | null): string;
+    static ExecutionStrategyExistingTransaction(strategy: JsValue | null, getExecutionStrategyMethod: JsValue | null): string;
+    static ExpressionParameterizationExceptionSensitive(expression: JsValue | null): string;
+    static FieldNameMismatch(field: JsValue | null, entityType: JsValue | null, property: JsValue | null): string;
+    static FindNotCompositeKey(entityType: JsValue | null, valuesCount: JsValue | null): string;
+    static FindValueCountMismatch(entityType: JsValue | null, propertiesCount: JsValue | null, valuesCount: JsValue | null): string;
+    static FindValueTypeMismatch(index: JsValue | null, entityType: JsValue | null, valueType: JsValue | null, propertyType: JsValue | null): string;
+    static FindWrongCount(values: JsValue | null, properties: JsValue | null): string;
+    static FindWrongType(valueType: JsValue | null, propertyName: JsValue | null, propertyType: JsValue | null): string;
+    static FkAttributeOnNonUniquePrincipal(navigation: JsValue | null, principalType: JsValue | null, dependentType: JsValue | null): string;
+    static FkAttributeOnPropertyNavigationMismatch(property: JsValue | null, navigation: JsValue | null, entityType: JsValue | null): string;
+    static FkAttributeOnSkipNavigation(entityType: JsValue | null, navigation: JsValue | null): string;
+    static ForeignKeyCountMismatch(foreignKeyProperties: JsValue | null, dependentType: JsValue | null, principalKeyProperties: JsValue | null, principalType: JsValue | null): string;
+    static ForeignKeyInUseSkipNavigation(foreignKeyProperties: JsValue | null, entityType: JsValue | null, navigation: JsValue | null, navigationEntityType: JsValue | null): string;
+    static ForeignKeyPropertiesWrongEntity(foreignKeyProperties: JsValue | null, entityType: JsValue | null): string;
+    static ForeignKeyPropertyInKey(property: JsValue | null, entityType: JsValue | null, keyProperties: JsValue | null, baseEntityType: JsValue | null): string;
+    static ForeignKeyReferencedEntityKeyMismatch(principalKeyProperties: JsValue | null, principalEntityType: JsValue | null): string;
+    static ForeignKeyTypeMismatch(foreignKeyProperties: JsValue | null, dependentType: JsValue | null, principalKeyProperties: JsValue | null, principalType: JsValue | null): string;
+    static ForeignKeyWrongType(foreignKeyProperties: JsValue | null, keyProperties: JsValue | null, principalType: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null): string;
+    static FullChangeTrackingRequired(entityType: JsValue | null, changeTrackingStrategy: JsValue | null, fullStrategy: JsValue | null, fullPlusStrategy: JsValue | null): string;
+    static FunctionOnClient(methodName: JsValue | null): string;
+    static GraphDoesNotContainVertex(vertex: JsValue | null): string;
+    static IdentifyingRelationshipCycle(entityType: JsValue | null): string;
+    static IdentityConflict(entityType: JsValue | null, keyProperties: JsValue | null): string;
+    static IdentityConflictOwned(entityType: JsValue | null, keyProperties: JsValue | null): string;
+    static IdentityConflictOwnedSensitive(entityType: JsValue | null, keyValue: JsValue | null): string;
+    static IdentityConflictSensitive(entityType: JsValue | null, keyValue: JsValue | null): string;
+    static ImplementationTypeRequired(service: JsValue | null): string;
+    static IncludeOnEntityWithDefiningQueryNotSupported(expression: JsValue | null, entityType: JsValue | null): string;
+    static IncludeOnNonEntity(expression: JsValue | null): string;
+    static IncludeWithCycle(navigationName: JsValue | null, inverseNavigationName: JsValue | null): string;
+    static IncompatibleSentinelValue(sentinel: JsValue | null, entityType: JsValue | null, property: JsValue | null, type: JsValue | null): string;
+    static InconsistentInheritance(entityType: JsValue | null, baseEntityType: JsValue | null, clrBaseEntityType: JsValue | null): string;
+    static IncorrectNumberOfArguments(method: JsValue | null, argumentCount: JsValue | null, parameterCount: JsValue | null): string;
+    static IndexPropertiesWrongEntity(indexProperties: JsValue | null, entityType: JsValue | null): string;
+    static IndexWrongType(index: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null): string;
+    static InheritedPropertyCannotBeIgnored(property: JsValue | null, type: JsValue | null, baseType: JsValue | null): string;
+    static InterfacePropertyNotAdded(entityType: JsValue | null, navigation: JsValue | null, propertyType: JsValue | null): string;
+    static InvalidAlternateKeyValue(entityType: JsValue | null, keyProperty: JsValue | null): string;
+    static InvalidComplexType(type: JsValue | null): string;
+    static InvalidEntityType(type: JsValue | null): string;
+    static InvalidEntityTypeConfigurationAttribute(entityTypeConfigurationType: JsValue | null, entityType: JsValue | null): string;
+    static InvalidEnumValue(value: JsValue | null, argumentName: JsValue | null, enumType: JsValue | null): string;
+    static InvalidIncludeExpression(expression: JsValue | null): string;
+    static InvalidKeyValue(entityType: JsValue | null, keyProperty: JsValue | null): string;
+    static InvalidMemberExpression(expression: JsValue | null): string;
+    static InvalidMembersExpression(expression: JsValue | null): string;
+    static InvalidNavigationWithInverseProperty(property: JsValue | null, entityType: JsValue | null, referencedProperty: JsValue | null, referencedEntityType: JsValue | null): string;
+    static InvalidNumberOfIndexSortOrderValues(indexProperties: JsValue | null, numValues: JsValue | null, numProperties: JsValue | null): string;
+    static InvalidPropertyListOnNavigation(navigation: JsValue | null, entityType: JsValue | null, properties: JsValue | null): string;
+    static InvalidRelationshipUsingDataAnnotations(navigation: JsValue | null, entityType: JsValue | null, referencedNavigation: JsValue | null, referencedEntityType: JsValue | null): string;
+    static InvalidReplaceService(replaceService: JsValue | null, useInternalServiceProvider: JsValue | null): string;
+    static InvalidSetKeylessOperation(entityType: JsValue | null): string;
+    static InvalidSetSameTypeWithDifferentNamespace(typeName: JsValue | null, entityTypeName: JsValue | null): string;
+    static InvalidSetSharedType(typeName: JsValue | null): string;
+    static InvalidSetType(typeName: JsValue | null): string;
+    static InvalidSetTypeOwned(typeName: JsValue | null, ownerType: JsValue | null): string;
+    static InvalidSwitch(name: JsValue | null, value: JsValue | null): string;
+    static InvalidType(property: JsValue | null, entityType: JsValue | null, valueType: JsValue | null, propertyType: JsValue | null): string;
+    static InvalidTypeConversionWithInclude(includeExpression: JsValue | null, type: JsValue | null): string;
+    static InvalidUseService(useService: JsValue | null, useInternalServiceProvider: JsValue | null, service: JsValue | null): string;
+    static InvalidValueGeneratorFactoryProperty(factory: JsValue | null, property: JsValue | null, entityType: JsValue | null): string;
+    static InversePropertyMismatch(navigation: JsValue | null, entityType: JsValue | null, referencedNavigation: JsValue | null, referencedEntityType: JsValue | null): string;
+    static InverseToOwnedType(principalEntityType: JsValue | null, navigation: JsValue | null, ownedType: JsValue | null, ownerType: JsValue | null): string;
+    static IQueryableNotAsync(genericParameter: JsValue | null): string;
+    static JsonReaderInvalidTokenType(tokenType: JsValue | null): string;
+    static KeyAttributeOnDerivedEntity(derivedType: JsValue | null, property: JsValue | null, rootType: JsValue | null): string;
+    static KeyInUse(keyProperties: JsValue | null, entityType: JsValue | null, foreignKeyProperties: JsValue | null, dependentType: JsValue | null): string;
+    static KeylessTypeExistingKey(entityType: JsValue | null, keyProperties: JsValue | null): string;
+    static KeylessTypeTracked(type: JsValue | null): string;
+    static KeylessTypeWithKey(keyProperties: JsValue | null, entityType: JsValue | null): string;
+    static KeyPropertiesWrongEntity(keyProperties: JsValue | null, entityType: JsValue | null): string;
+    static KeyPropertyCannotBeNullable(property: JsValue | null, entityType: JsValue | null, keyProperties: JsValue | null): string;
+    static KeyPropertyMustBeReadOnly(property: JsValue | null, entityType: JsValue | null): string;
+    static KeyReadOnly(property: JsValue | null, entityType: JsValue | null): string;
+    static KeyWrongType(keyProperties: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null): string;
+    static LiteralGenerationNotSupported(type: JsValue | null): string;
+    static ManyToManyOneNav(entityType: JsValue | null, navigation: JsValue | null): string;
+    static MissingBackingField(field: JsValue | null, property: JsValue | null, entityType: JsValue | null): string;
+    static ModelNotFinalized(method: JsValue | null): string;
+    static MultipleFilteredIncludesOnSameNavigation(filter1: JsValue | null, filter2: JsValue | null): string;
+    static MultipleNavigationsSameFk(entityType: JsValue | null, properties: JsValue | null, navigations: JsValue | null): string;
+    static MultipleOwnerships(entityType: JsValue | null, navigations: JsValue | null): string;
+    static MultipleProvidersConfigured(storeNames: JsValue | null): string;
+    static MustRewriteToSameNode(caller: JsValue | null, type: JsValue | null): string;
+    static MutableKeyProperty(keyProperty: JsValue | null): string;
+    static NamedIndexDefinedOnIgnoredProperty(indexName: JsValue | null, entityType: JsValue | null, indexProperties: JsValue | null, propertyName: JsValue | null): string;
+    static NamedIndexDefinedOnNonExistentProperty(indexName: JsValue | null, entityType: JsValue | null, indexProperties: JsValue | null, propertyName: JsValue | null): string;
+    static NamedIndexWrongType(indexName: JsValue | null, entityType: JsValue | null): string;
+    static NavigationArray(navigation: JsValue | null, entityType: JsValue | null, foundType: JsValue | null): string;
+    static NavigationBadType(navigation: JsValue | null, entityType: JsValue | null, foundType: JsValue | null, targetType: JsValue | null): string;
+    static NavigationCannotCreateType(navigation: JsValue | null, entityType: JsValue | null, foundType: JsValue | null): string;
+    static NavigationCollectionWrongClrType(navigation: JsValue | null, entityType: JsValue | null, clrType: JsValue | null, targetType: JsValue | null): string;
+    static NavigationForWrongForeignKey(navigation: JsValue | null, entityType: JsValue | null, targetForeignKeyProperties: JsValue | null, actualForeignKeyProperties: JsValue | null): string;
+    static NavigationIsProperty(property: JsValue | null, entityType: JsValue | null, referenceMethod: JsValue | null, collectionMethod: JsValue | null, propertyMethod: JsValue | null): string;
+    static NavigationlessOwnership(principalEntityType: JsValue | null, dependentEntityType: JsValue | null): string;
+    static NavigationNoSetter(navigation: JsValue | null, entityType: JsValue | null): string;
+    static NavigationNotAdded(entityType: JsValue | null, navigation: JsValue | null, propertyType: JsValue | null): string;
+    static NavigationNotAddedAdHoc(entityType: JsValue | null, navigation: JsValue | null, propertyType: JsValue | null): string;
+    static NavigationNotAddedComplexType(complexType: JsValue | null, navigation: JsValue | null, propertyType: JsValue | null): string;
+    static NavigationSingleWrongClrType(navigation: JsValue | null, entityType: JsValue | null, clrType: JsValue | null, targetType: JsValue | null): string;
+    static NavigationToKeylessType(navigation: JsValue | null, entityType: JsValue | null): string;
+    static NoBackingField(property: JsValue | null, entityType: JsValue | null, propertyAccessMode: JsValue | null): string;
+    static NoBackingFieldLazyLoading(property: JsValue | null, entityType: JsValue | null): string;
+    static NoClrNavigation(navigation: JsValue | null, entityType: JsValue | null): string;
+    static NoDiscriminatorProperty(entityType: JsValue | null): string;
+    static NoDiscriminatorValue(entityType: JsValue | null): string;
+    static NoFieldOrGetter(property: JsValue | null, entityType: JsValue | null): string;
+    static NoFieldOrSetter(property: JsValue | null, entityType: JsValue | null): string;
+    static NoGetter(property: JsValue | null, entityType: JsValue | null, propertyAccessMode: JsValue | null): string;
+    static NonComparableKeyType(entityType: JsValue | null, property: JsValue | null, providerType: JsValue | null): string;
+    static NonComparableKeyTypes(entityType: JsValue | null, property: JsValue | null, modelType: JsValue | null, providerType: JsValue | null): string;
+    static NonConfiguredNavigationToSharedType(navigation: JsValue | null, entityType: JsValue | null): string;
+    static NonGenericOptions(contextType: JsValue | null): string;
+    static NonIndexerEntityType(property: JsValue | null, entityType: JsValue | null, type: JsValue | null): string;
+    static NonListCollection(entityType: JsValue | null, name: JsValue | null, type: JsValue | null, listInterface: JsValue | null): string;
+    static NonNotifyingCollection(navigation: JsValue | null, entityType: JsValue | null, collectionType: JsValue | null, changeTrackingStrategy: JsValue | null): string;
+    static NonQueryTranslationFailedWithDetails(expression: JsValue | null, details: JsValue | null): string;
+    static NonUniqueRequiredDependentForeignKey(foreignKeyProperties: JsValue | null, declaringEntityType: JsValue | null): string;
+    static NonUniqueRequiredDependentNavigation(principalEntityType: JsValue | null, principalNavigation: JsValue | null): string;
+    static NoParameterlessConstructor(entityType: JsValue | null): string;
+    static NoProperty(field: JsValue | null, entity: JsValue | null, propertyAccessMode: JsValue | null): string;
+    static NoPropertyType(property: JsValue | null, type: JsValue | null): string;
+    static NoProviderConfiguredFailedToResolveService(service: JsValue | null): string;
+    static NoSetter(property: JsValue | null, entityType: JsValue | null, propertyAccessMode: JsValue | null): string;
+    static NotAnEFService(service: JsValue | null): string;
+    static NotAProviderService(service: JsValue | null): string;
+    static NotAssignableClrBaseType(entityType: JsValue | null, baseEntityType: JsValue | null, clrType: JsValue | null, baseClrType: JsValue | null): string;
+    static NotCollection(entityType: JsValue | null, property: JsValue | null): string;
+    static NotParameterizedAttributeWithNonConstantNotSupportedInPrecompiledQueries(parameter: JsValue | null, method: JsValue | null): string;
+    static NoValueGenerator(property: JsValue | null, entityType: JsValue | null, propertyType: JsValue | null): string;
+    static NullableKey(entityType: JsValue | null, property: JsValue | null): string;
+    static NullRequiredComplexProperty(type: JsValue | null, property: JsValue | null): string;
+    static NullRequiredPrimitiveCollection(type: JsValue | null, property: JsValue | null): string;
+    static ObjectRemovedFromModel(name: JsValue | null): string;
+    static OptionsExtensionNotFound(optionsExtension: JsValue | null): string;
+    static OriginalValueNotStored(structuralType: JsValue | null, property: JsValue | null): string;
+    static OriginalValueNotTracked(property: JsValue | null, entityType: JsValue | null): string;
+    static OwnedDerivedType(entityType: JsValue | null): string;
+    static OwnerlessOwnedType(ownedType: JsValue | null): string;
+    static OwnershipToDependent(navigation: JsValue | null, principalEntityType: JsValue | null, dependentEntityType: JsValue | null): string;
+    static ParameterExpressionMustHaveName(parameterExpression: JsValue | null): string;
+    static PoolingContextCtorError(contextType: JsValue | null): string;
+    static PrimaryKeyAttributeOnDerivedEntity(derivedType: JsValue | null, rootType: JsValue | null): string;
+    static PrimaryKeyDefinedOnIgnoredProperty(entityType: JsValue | null, propertyName: JsValue | null): string;
+    static PrimaryKeyDefinedOnNonExistentProperty(entityType: JsValue | null, properties: JsValue | null, propertyName: JsValue | null): string;
+    static PrincipalEndIncompatibleNavigations(navigationSpecification1: JsValue | null, navigationSpecification2: JsValue | null, targetEntityType: JsValue | null): string;
+    static PrincipalEntityTypeNotInRelationship(dependentEntityType: JsValue | null, principalEntityType: JsValue | null, entityType: JsValue | null): string;
+    static PrincipalKeylessType(entityType: JsValue | null, firstNavigationSpecification: JsValue | null, secondNavigationSpecification: JsValue | null): string;
+    static PrincipalOwnedType(referencingEntityTypeOrNavigation: JsValue | null, referencedEntityTypeOrNavigation: JsValue | null, ownedType: JsValue | null): string;
+    static PropertyClashingNonIndexer(property: JsValue | null, type: JsValue | null): string;
+    static PropertyConceptualNull(property: JsValue | null, entityType: JsValue | null): string;
+    static PropertyConceptualNullSensitive(property: JsValue | null, entityType: JsValue | null, keyValue: JsValue | null): string;
+    static PropertyDoesNotBelong(property: JsValue | null, expectedType: JsValue | null, actualType: JsValue | null): string;
+    static PropertyInUseForeignKey(property: JsValue | null, type: JsValue | null, foreignKeyProperties: JsValue | null, foreignKeyType: JsValue | null): string;
+    static PropertyInUseIndex(property: JsValue | null, entityType: JsValue | null, index: JsValue | null, indexType: JsValue | null): string;
+    static PropertyInUseKey(property: JsValue | null, entityType: JsValue | null, keyProperties: JsValue | null): string;
+    static PropertyIsNotACollection(propertyName: JsValue | null, entityType: JsValue | null): string;
+    static PropertyNotAdded(entityType: JsValue | null, property: JsValue | null, propertyType: JsValue | null): string;
+    static PropertyNotAddedAdHoc(entityType: JsValue | null, property: JsValue | null, propertyType: JsValue | null): string;
+    static PropertyNotFound(property: JsValue | null, entityType: JsValue | null): string;
+    static PropertyNotMapped(propertyType: JsValue | null, entityType: JsValue | null, property: JsValue | null): string;
+    static PropertyReadOnlyAfterSave(property: JsValue | null, entityType: JsValue | null): string;
+    static PropertyReadOnlyBeforeSave(property: JsValue | null, entityType: JsValue | null): string;
+    static PropertyWrongClrType(property: JsValue | null, type: JsValue | null, clrType: JsValue | null, propertyType: JsValue | null): string;
+    static PropertyWrongEntityClrType(property: JsValue | null, type: JsValue | null, clrType: JsValue | null): string;
+    static PropertyWrongName(property: JsValue | null, type: JsValue | null, clrName: JsValue | null): string;
+    static PropertyWrongType(property: JsValue | null, type: JsValue | null, otherType: JsValue | null): string;
+    static QueryEntityMaterializationConditionWrongShape(entityType: JsValue | null): string;
+    static QueryInvalidMaterializationType(projection: JsValue | null, queryableType: JsValue | null): string;
+    static QueryRootDifferentEntityType(entityType: JsValue | null): string;
+    static QueryUnableToTranslateEFProperty(expression: JsValue | null): string;
+    static QueryUnableToTranslateMember(member: JsValue | null, entityType: JsValue | null): string;
+    static QueryUnableToTranslateMethod(declaringTypeName: JsValue | null, methodName: JsValue | null): string;
+    static QueryUnhandledQueryRootExpression(type: JsValue | null): string;
+    static ReferencedShadowKey(referencingEntityTypeOrNavigation: JsValue | null, referencedEntityTypeOrNavigation: JsValue | null, foreignKeyPropertiesWithTypes: JsValue | null, primaryKeyPropertiesWithTypes: JsValue | null): string;
+    static ReferenceIsCollection(property: JsValue | null, entityType: JsValue | null, referenceMethod: JsValue | null, collectionMethod: JsValue | null): string;
+    static ReferenceMustBeLoaded(navigation: JsValue | null, entityType: JsValue | null): string;
+    static RelationshipConceptualNull(firstType: JsValue | null, secondType: JsValue | null): string;
+    static RelationshipConceptualNullSensitive(firstType: JsValue | null, secondType: JsValue | null, secondKeyValue: JsValue | null): string;
+    static RelationshipCycle(entityType: JsValue | null, property: JsValue | null, configuration: JsValue | null): string;
+    static RequiredSkipNavigation(entityType: JsValue | null, navigation: JsValue | null): string;
+    static RetryLimitExceeded(retryLimit: JsValue | null, strategy: JsValue | null): string;
+    static SameParameterInstanceUsedInMultipleLambdas(parameterName: JsValue | null): string;
+    static SaveOwnedWithoutOwner(entityType: JsValue | null): string;
+    static SeedDatumComplexProperty(entityType: JsValue | null, property: JsValue | null): string;
+    static SeedDatumComplexPropertySensitive(entityType: JsValue | null, keyValue: JsValue | null, property: JsValue | null): string;
+    static SeedDatumDefaultValue(entityType: JsValue | null, property: JsValue | null, defaultValue: JsValue | null): string;
+    static SeedDatumDerivedType(entityType: JsValue | null, derivedType: JsValue | null): string;
+    static SeedDatumDuplicate(entityType: JsValue | null, keyProperties: JsValue | null): string;
+    static SeedDatumDuplicateSensitive(entityType: JsValue | null, keyValue: JsValue | null): string;
+    static SeedDatumIncompatibleValue(entityType: JsValue | null, property: JsValue | null, type: JsValue | null): string;
+    static SeedDatumIncompatibleValueSensitive(entityType: JsValue | null, value: JsValue | null, property: JsValue | null, type: JsValue | null): string;
+    static SeedDatumMissingValue(entityType: JsValue | null, property: JsValue | null): string;
+    static SeedDatumNavigation(entityType: JsValue | null, navigation: JsValue | null, relatedEntityType: JsValue | null, foreignKeyProperties: JsValue | null): string;
+    static SeedDatumNavigationSensitive(entityType: JsValue | null, keyValue: JsValue | null, navigation: JsValue | null, relatedEntityType: JsValue | null, foreignKeyProperties: JsValue | null): string;
+    static SeedDatumSignedNumericValue(entityType: JsValue | null, property: JsValue | null): string;
+    static SeedKeylessEntity(entityType: JsValue | null): string;
+    static SelfReferencingNavigationWithInverseProperty(entityType: JsValue | null, property: JsValue | null): string;
+    static ServiceProviderConfigAdded(key: JsValue | null): string;
+    static ServiceProviderConfigChanged(key: JsValue | null): string;
+    static ServiceProviderConfigRemoved(key: JsValue | null): string;
+    static SharedTypeDerivedType(entityType: JsValue | null): string;
+    static SingletonOptionChanged(optionCall: JsValue | null, useInternalServiceProvider: JsValue | null): string;
+    static SingletonRequired(scope: JsValue | null, service: JsValue | null): string;
+    static SkipInverseMismatchedForeignKey(foreignKeyProperties: JsValue | null, navigation: JsValue | null, joinType: JsValue | null, inverse: JsValue | null, inverseJoinType: JsValue | null): string;
+    static SkipInverseMismatchedJoinType(inverse: JsValue | null, inverseJoinType: JsValue | null, navigation: JsValue | null, joinType: JsValue | null): string;
+    static SkipNavigationForeignKeyWrongDependentType(foreignKeyProperties: JsValue | null, entityType: JsValue | null, navigation: JsValue | null, dependentEntityType: JsValue | null): string;
+    static SkipNavigationForeignKeyWrongPrincipalType(foreignKeyProperties: JsValue | null, entityType: JsValue | null, navigation: JsValue | null, principalEntityType: JsValue | null): string;
+    static SkipNavigationInUseBySkipNavigation(entityType: JsValue | null, skipNavigation: JsValue | null, referencingEntityType: JsValue | null, inverseSkipNavigation: JsValue | null): string;
+    static SkipNavigationNoForeignKey(navigation: JsValue | null, entityType: JsValue | null): string;
+    static SkipNavigationNoInverse(navigation: JsValue | null, entityType: JsValue | null): string;
+    static SkipNavigationNonCollection(navigation: JsValue | null, entityType: JsValue | null): string;
+    static SkipNavigationWrongInverse(inverse: JsValue | null, inverseEntityType: JsValue | null, navigation: JsValue | null, targetEntityType: JsValue | null): string;
+    static SkipNavigationWrongType(navigation: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null): string;
+    static StoreGenValue(property: JsValue | null, entityType: JsValue | null): string;
+    static TempValue(property: JsValue | null, entityType: JsValue | null): string;
+    static TempValuePersists(property: JsValue | null, entityType: JsValue | null, state: JsValue | null): string;
+    static TrackingTypeMismatch(runtimeEntityType: JsValue | null, entityType: JsValue | null): string;
+    static TranslationFailed(expression: JsValue | null): string;
+    static TranslationFailedWithDetails(expression: JsValue | null, details: JsValue | null): string;
+    static TypeConfigurationConflict(type: JsValue | null, typeConfiguration: JsValue | null, otherType: JsValue | null, otherTypeConfiguration: JsValue | null): string;
+    static TypeNotMarkedAsShared(type: JsValue | null): string;
+    static UnableToDiscriminate(entityType: JsValue | null, discriminator: JsValue | null): string;
+    static UnableToSetIsUnique(isUnique: JsValue | null, navigationName: JsValue | null, entityType: JsValue | null): string;
+    static UnconfigurableType(type: JsValue | null, configuration: JsValue | null, expectedConfiguration: JsValue | null, configurationType: JsValue | null): string;
+    static UnconfigurableTypeMapping(type: JsValue | null): string;
+    static UnhandledExpressionNode(nodeType: JsValue | null): string;
+    static UnhandledMemberBinding(bindingType: JsValue | null): string;
+    static UnhandledNavigationBase(type: JsValue | null): string;
+    static UnknownEntity(entity: JsValue | null): string;
+    static UnknownKeyValue(entityType: JsValue | null, property: JsValue | null): string;
+    static UnknownShadowKeyValue(entityType: JsValue | null, property: JsValue | null): string;
+    static UnnamedIndexDefinedOnIgnoredProperty(entityType: JsValue | null, indexProperties: JsValue | null, propertyName: JsValue | null): string;
+    static UnnamedIndexDefinedOnNonExistentProperty(entityType: JsValue | null, indexProperties: JsValue | null, propertyName: JsValue | null): string;
+    static UntrackedDependentEntity(entityType: JsValue | null, referenceCall: JsValue | null, collectionCall: JsValue | null): string;
+    static ValueCannotBeNull(property: JsValue | null, entityType: JsValue | null, propertyType: JsValue | null): string;
+    static VisitIsNotAllowed(visitMethodName: JsValue | null): string;
+    static WarningAsErrorTemplate(eventName: JsValue | null, message: JsValue | null, eventId: JsValue | null): string;
+    static WrongGenericPropertyType(property: JsValue | null, entityType: JsValue | null, actualType: JsValue | null, genericType: JsValue | null): string;
+    static WrongStateManager(entityType: JsValue | null): string;
 }
 
 
@@ -3200,8 +3198,8 @@ export abstract class RelationalLoggerExtensions$instance {
     static MigrateUsingConnection(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, connection: IRelationalConnection): void;
     static MigrationApplying(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, migration: Migration): void;
     static MigrationAttributeMissingWarning(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrationType: TypeInfo): void;
-    static MigrationGeneratingDownScript(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, migration: Migration, fromMigration: string, toMigration: string, idempotent: boolean): void;
-    static MigrationGeneratingUpScript(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, migration: Migration, fromMigration: string, toMigration: string, idempotent: boolean): void;
+    static MigrationGeneratingDownScript(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, migration: Migration, fromMigration: string | null, toMigration: string | null, idempotent: boolean): void;
+    static MigrationGeneratingUpScript(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, migration: Migration, fromMigration: string | null, toMigration: string | null, idempotent: boolean): void;
     static MigrationReverting(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, migration: Migration): void;
     static MigrationsNotApplied(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator): void;
     static MigrationsNotFound(diagnostics: IDiagnosticsLogger_1<DbLoggerCategory_Migrations>, migrator: IMigrator, migrationsAssembly: IMigrationsAssembly): void;
@@ -3303,261 +3301,261 @@ export abstract class RelationalStrings$instance {
     static readonly TransactionSuppressedMigrationInUserTransaction: string;
     static readonly UpdateStoreException: string;
     static readonly VisitChildrenMustBeOverridden: string;
-    static AbstractTpc(entityType: unknown, storeObject: unknown): string;
-    static CannotTranslateNonConstantNewArrayExpression(newArrayExpression: unknown): string;
-    static CompiledModelFunctionTranslation(function_: unknown): string;
-    static ComplexCollectionNotMappedToJson(entityType: unknown, property: unknown): string;
-    static ComplexPropertyBothJsonColumnAndJsonPropertyName(complexProperty: unknown, columnName: unknown, propertyName: unknown): string;
-    static ComplexPropertyJsonPropertyNameConflict(property1: unknown, property2: unknown, jsonPropertyName: unknown): string;
-    static ComplexPropertyJsonPropertyNameWithoutJsonMapping(complexProperty: unknown): string;
-    static ComplexPropertyOptionalTableSharing(type: unknown, property: unknown): string;
-    static ComputedColumnSqlUnspecified(table: unknown, column: unknown): string;
-    static ConcurrencyTokenOnJsonMappedProperty(property: unknown, type: unknown): string;
-    static ConflictingColumnServerGeneration(conflictingConfiguration: unknown, property: unknown, existingConfiguration: unknown): string;
-    static ConflictingOriginalRowValues(firstEntityType: unknown, secondEntityType: unknown, firstProperty: unknown, secondProperty: unknown, column: unknown): string;
-    static ConflictingOriginalRowValuesSensitive(firstEntityType: unknown, secondEntityType: unknown, keyValue: unknown, firstConflictingValues: unknown, secondConflictingValues: unknown, column: unknown): string;
-    static ConflictingRowUpdateTypes(firstEntityType: unknown, firstState: unknown, secondEntityType: unknown, secondState: unknown): string;
-    static ConflictingRowUpdateTypesSensitive(firstEntityType: unknown, firstKeyValue: unknown, firstState: unknown, secondEntityType: unknown, secondKeyValue: unknown, secondState: unknown): string;
-    static ConflictingRowValues(firstEntityType: unknown, secondEntityType: unknown, firstProperty: unknown, secondProperty: unknown, column: unknown): string;
-    static ConflictingRowValuesSensitive(firstEntityType: unknown, secondEntityType: unknown, keyValue: unknown, firstConflictingValue: unknown, secondConflictingValue: unknown, column: unknown): string;
-    static ConflictingSeedValues(entityType: unknown, table: unknown, column: unknown): string;
-    static ConflictingSeedValuesSensitive(entityType: unknown, keyValue: unknown, table: unknown, column: unknown, firstValue: unknown, secondValue: unknown): string;
-    static ConflictingTypeMappingsInferredForColumn(column: unknown): string;
-    static ContainerTypeOnNestedOwnedEntityType(entityType: unknown): string;
-    static ContainerTypeOnNonContainer(entityType: unknown): string;
-    static CreateIndexOperationWithInvalidSortOrder(numSortOrderProperties: unknown, numColumns: unknown): string;
-    static DataOperationNoProperty(table: unknown, column: unknown): string;
-    static DataOperationNoTable(table: unknown): string;
-    static DbFunctionExpressionIsNotMethodCall(expression: unknown): string;
-    static DbFunctionGenericMethodNotSupported(function_: unknown): string;
-    static DbFunctionInvalidInstanceType(function_: unknown, type: unknown): string;
-    static DbFunctionInvalidIQueryableOwnedReturnType(function_: unknown, type: unknown): string;
-    static DbFunctionInvalidIQueryableReturnType(function_: unknown, type: unknown): string;
-    static DbFunctionInvalidParameterName(function_: unknown, parameter: unknown): string;
-    static DbFunctionInvalidParameterType(parameter: unknown, function_: unknown, type: unknown): string;
-    static DbFunctionInvalidReturnEntityType(function_: unknown, type: unknown, elementType: unknown): string;
-    static DbFunctionInvalidReturnType(function_: unknown, type: unknown): string;
-    static DbFunctionNonScalarCustomTranslation(function_: unknown): string;
-    static DbFunctionNullableValueReturnType(function_: unknown, type: unknown): string;
-    static DefaultValueSqlUnspecified(table: unknown, column: unknown): string;
-    static DefaultValueUnspecified(table: unknown, column: unknown): string;
-    static DeleteDataOperationNoModel(table: unknown): string;
-    static DeleteDataOperationTypesCountMismatch(typesCount: unknown, columnsCount: unknown, table: unknown): string;
-    static DeleteDataOperationValuesCountMismatch(valuesCount: unknown, columnsCount: unknown, table: unknown): string;
-    static DerivedStrategy(entityType: unknown, strategy: unknown): string;
-    static DuplicateCheckConstraint(checkConstraint: unknown, entityType: unknown, conflictingEntityType: unknown): string;
-    static DuplicateCheckConstraintSqlMismatch(checkConstraint1: unknown, entityType1: unknown, checkConstraint2: unknown, entityType2: unknown, checkConstraintName: unknown): string;
-    static DuplicateColumnNameCollationMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, collation1: unknown, collation2: unknown): string;
-    static DuplicateColumnNameCommentMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, comment1: unknown, comment2: unknown): string;
-    static DuplicateColumnNameComputedSqlMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, value1: unknown, value2: unknown): string;
-    static DuplicateColumnNameConcurrencyTokenMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown): string;
-    static DuplicateColumnNameDataTypeMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, dataType1: unknown, dataType2: unknown): string;
-    static DuplicateColumnNameDefaultSqlMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, value1: unknown, value2: unknown): string;
-    static DuplicateColumnNameFixedLengthMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown): string;
-    static DuplicateColumnNameIsStoredMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, value1: unknown, value2: unknown): string;
-    static DuplicateColumnNameMaxLengthMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, maxLength1: unknown, maxLength2: unknown): string;
-    static DuplicateColumnNameOrderMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, columnOrder1: unknown, columnOrder2: unknown): string;
-    static DuplicateColumnNamePrecisionMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, precision1: unknown, precision2: unknown): string;
-    static DuplicateColumnNameProviderTypeMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, type1: unknown, type2: unknown): string;
-    static DuplicateColumnNameSameHierarchy(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown): string;
-    static DuplicateColumnNameScaleMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown, scale1: unknown, scale2: unknown): string;
-    static DuplicateColumnNameUnicodenessMismatch(entityType1: unknown, property1: unknown, entityType2: unknown, property2: unknown, columnName: unknown, table: unknown): string;
-    static DuplicateForeignKeyColumnMismatch(foreignKeyProperties1: unknown, entityType1: unknown, foreignKeyProperties2: unknown, entityType2: unknown, table: unknown, foreignKeyName: unknown, columnNames1: unknown, columnNames2: unknown): string;
-    static DuplicateForeignKeyDeleteBehaviorMismatch(foreignKeyProperties1: unknown, entityType1: unknown, foreignKeyProperties2: unknown, entityType2: unknown, table: unknown, foreignKeyName: unknown, deleteBehavior1: unknown, deleteBehavior2: unknown): string;
-    static DuplicateForeignKeyPrincipalColumnMismatch(foreignKeyProperties1: unknown, entityType1: unknown, foreignKeyProperties2: unknown, entityType2: unknown, table: unknown, foreignKeyName: unknown, principalColumnNames1: unknown, principalColumnNames2: unknown): string;
-    static DuplicateForeignKeyPrincipalTableMismatch(foreignKeyProperties1: unknown, entityType1: unknown, foreignKeyProperties2: unknown, entityType2: unknown, table: unknown, foreignKeyName: unknown, principalTable1: unknown, principalTable2: unknown): string;
-    static DuplicateForeignKeyTableMismatch(foreignKeyProperties1: unknown, entityType1: unknown, foreignKeyProperties2: unknown, entityType2: unknown, foreignKeyName: unknown, table1: unknown, table2: unknown): string;
-    static DuplicateForeignKeyUniquenessMismatch(foreignKeyProperties1: unknown, entityType1: unknown, foreignKeyProperties2: unknown, entityType2: unknown, table: unknown, foreignKeyName: unknown): string;
-    static DuplicateIndexColumnMismatch(index1: unknown, entityType1: unknown, index2: unknown, entityType2: unknown, table: unknown, indexName: unknown, columnNames1: unknown, columnNames2: unknown): string;
-    static DuplicateIndexFiltersMismatch(index1: unknown, entityType1: unknown, index2: unknown, entityType2: unknown, table: unknown, indexName: unknown, filter1: unknown, filter2: unknown): string;
-    static DuplicateIndexSortOrdersMismatch(index1: unknown, entityType1: unknown, index2: unknown, entityType2: unknown, table: unknown, indexName: unknown): string;
-    static DuplicateIndexTableMismatch(index1: unknown, entityType1: unknown, index2: unknown, entityType2: unknown, indexName: unknown, table1: unknown, table2: unknown): string;
-    static DuplicateIndexUniquenessMismatch(index1: unknown, entityType1: unknown, index2: unknown, entityType2: unknown, table: unknown, indexName: unknown): string;
-    static DuplicateKeyColumnMismatch(keyProperties1: unknown, entityType1: unknown, keyProperties2: unknown, entityType2: unknown, table: unknown, keyName: unknown, columnNames1: unknown, columnNames2: unknown): string;
-    static DuplicateKeyTableMismatch(keyProperties1: unknown, entityType1: unknown, keyProperties2: unknown, entityType2: unknown, keyName: unknown, table1: unknown, table2: unknown): string;
-    static DuplicateSeedData(entityType: unknown, table: unknown): string;
-    static DuplicateSeedDataSensitive(entityType: unknown, keyValue: unknown, table: unknown): string;
-    static EntityShortNameNotUnique(entityType1: unknown, discriminatorValue: unknown, entityType2: unknown): string;
-    static EntitySplittingConflictingMainFragment(entityType: unknown, storeObject: unknown): string;
-    static EntitySplittingHierarchy(entityType: unknown, storeObject: unknown): string;
-    static EntitySplittingMissingPrimaryKey(entityType: unknown, storeObject: unknown): string;
-    static EntitySplittingMissingProperties(entityType: unknown, storeObject: unknown): string;
-    static EntitySplittingMissingPropertiesMainFragment(entityType: unknown, storeObject: unknown): string;
-    static EntitySplittingMissingRequiredPropertiesOptionalDependent(entityType: unknown, storeObject: unknown, requiredDependentConfig: unknown): string;
-    static EntitySplittingUnmappedMainFragment(entityType: unknown, storeObject: unknown, storeObjectType: unknown): string;
-    static EntitySplittingUnmatchedMainTableSplitting(entityType: unknown, storeObject: unknown, principalEntityType: unknown, principalStoreObject: unknown): string;
-    static ErrorMaterializingProperty(entityType: unknown, property: unknown): string;
-    static ErrorMaterializingPropertyNullReference(entityType: unknown, property: unknown, expectedType: unknown): string;
-    static ErrorMaterializingValueInvalidCast(expectedType: unknown, actualType: unknown): string;
-    static ErrorMaterializingValueNullReference(expectedType: unknown): string;
-    static ExecuteDeleteOnTableSplitting(tableName: unknown): string;
-    static ExecuteOperationOnEntitySplitting(operation: unknown, entityType: unknown): string;
-    static ExecuteOperationOnKeylessEntityTypeWithUnsupportedOperator(operation: unknown, entityType: unknown): string;
-    static ExecuteOperationOnOwnedJsonIsNotSupported(operation: unknown, entityType: unknown): string;
-    static ExecuteOperationOnTPC(operation: unknown, entityType: unknown): string;
-    static ExecuteOperationOnTPT(operation: unknown, entityType: unknown): string;
-    static ExecuteOperationWithUnsupportedOperatorInSqlGeneration(operation: unknown): string;
-    static ExecuteUpdateDeleteOnEntityNotMappedToTable(entityType: unknown): string;
-    static ExecuteUpdateOverJsonIsNotSupported(structuralType: unknown): string;
-    static ExecuteUpdateSubqueryNotSupportedOverComplexTypes(complexType: unknown): string;
-    static ExplicitDefaultConstraintNamesNotSupportedForTpc(explicitDefaultConstraintName: unknown): string;
-    static FromSqlMissingColumn(column: unknown): string;
-    static FunctionOverrideMismatch(propertySpecification: unknown, function_: unknown): string;
-    static HasDataNotSupportedForEntitiesMappedToJson(entity: unknown): string;
-    static ImplicitDefaultNamesNotSupportedForTpcWhenNamesClash(constraintNameCandidate: unknown): string;
-    static IncompatibleTableCommentMismatch(table: unknown, entityType: unknown, otherEntityType: unknown, comment: unknown, otherComment: unknown): string;
-    static IncompatibleTableDerivedRelationship(table: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static IncompatibleTableExcludedMismatch(table: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static IncompatibleTableKeyNameMismatch(table: unknown, entityType: unknown, otherEntityType: unknown, keyName: unknown, primaryKey: unknown, otherName: unknown, otherPrimaryKey: unknown): string;
-    static IncompatibleTableNoRelationship(table: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static IncompatibleViewDerivedRelationship(view: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static IncompatibleViewNoRelationship(view: unknown, entityType: unknown, otherEntityType: unknown): string;
-    static InconsistentNumberOfArguments(name: unknown, argumentCount: unknown, argumentNullabilityCount: unknown): string;
-    static IncorrectDefaultValueType(value: unknown, valueType: unknown, property: unknown, propertyType: unknown, entityType: unknown): string;
-    static InsertDataOperationNoModel(table: unknown): string;
-    static InsertDataOperationTypesCountMismatch(typesCount: unknown, columnsCount: unknown, table: unknown): string;
-    static InsertDataOperationValuesCountMismatch(valuesCount: unknown, columnsCount: unknown, table: unknown): string;
-    static InvalidCommandTimeout(value: unknown): string;
-    static InvalidDerivedTypeInEntityProjection(derivedType: unknown, entityType: unknown): string;
-    static InvalidFromSqlArguments(expressionType: unknown, valueType: unknown): string;
-    static InvalidKeySelectorForGroupBy(keySelector: unknown, keyType: unknown): string;
-    static InvalidMappedFunctionDerivedType(entityType: unknown, functionName: unknown, baseEntityType: unknown): string;
-    static InvalidMappedFunctionUnmatchedReturn(entityType: unknown, functionName: unknown, returnType: unknown, clrType: unknown): string;
-    static InvalidMappedFunctionWithParameters(entityType: unknown, functionName: unknown, parameters: unknown): string;
-    static InvalidMappedSqlQueryDerivedType(entityType: unknown, baseEntityType: unknown): string;
-    static InvalidMappingStrategy(mappingStrategy: unknown, entityType: unknown): string;
-    static InvalidMaxBatchSize(value: unknown): string;
-    static InvalidMinBatchSize(value: unknown): string;
-    static InvalidPropertyInSetProperty(propertyExpression: unknown): string;
-    static InvalidValueInSetProperty(valueExpression: unknown): string;
-    static JsonCantNavigateToParentEntity(jsonEntity: unknown, parentEntity: unknown, navigation: unknown): string;
-    static JsonEntityMappedToDifferentColumnThanOwner(jsonType: unknown, containingColumn: unknown, ownerType: unknown, ownerContainingColumn: unknown): string;
-    static JsonEntityMappedToDifferentTableOrViewThanOwner(jsonType: unknown, tableOrViewName: unknown, ownerType: unknown, ownerTableOrViewName: unknown): string;
-    static JsonEntityMissingKeyInformation(jsonEntity: unknown): string;
-    static JsonEntityMultipleRootsMappedToTheSameJsonColumn(column: unknown, table: unknown): string;
-    static JsonEntityOwnedByNonJsonOwnedType(nonJsonType: unknown, table: unknown): string;
-    static JsonEntityReferencingRegularEntity(jsonEntity: unknown): string;
-    static JsonEntityWithDefaultValueSetOnItsProperty(jsonEntity: unknown, property: unknown): string;
-    static JsonEntityWithExplicitlyConfiguredJsonPropertyNameOnKey(keyProperty: unknown, jsonEntity: unknown): string;
-    static JsonEntityWithExplicitlyConfiguredKey(entityType: unknown, property: unknown): string;
-    static JsonEntityWithIncorrectNumberOfKeyProperties(jsonEntity: unknown, expectedCount: unknown, actualCount: unknown): string;
-    static JsonEntityWithNonTphInheritanceOnOwner(rootType: unknown): string;
-    static JsonEntityWithOwnerNotMappedToTableOrView(entity: unknown): string;
-    static JsonErrorExtractingJsonProperty(entityType: unknown, propertyName: unknown): string;
-    static JsonObjectWithMultiplePropertiesMappedToSameJsonProperty(property1: unknown, property2: unknown, type: unknown, jsonPropertyName: unknown): string;
-    static JsonProjectingCollectionElementAccessedUsingParmeterNoTrackingWithIdentityResolution(entityTypeName: unknown, asNoTrackingWithIdentityResolution: unknown): string;
-    static JsonProjectingEntitiesIncorrectOrderNoTrackingWithIdentityResolution(asNoTrackingWithIdentityResolution: unknown, entityTypeName: unknown): string;
-    static JsonProjectingQueryableOperationNoTrackingWithIdentityResolution(asNoTrackingWithIdentityResolution: unknown): string;
-    static JsonRequiredEntityWithNullJson(entity: unknown): string;
-    static JsonValueReadWriterMissingOnTypeMapping(typeMapping: unknown, property: unknown, entityType: unknown): string;
-    static KeylessMappingStrategy(mappingStrategy: unknown, entityType: unknown): string;
-    static LastUsedWithoutOrderBy(method: unknown): string;
-    static MappedFunctionNotFound(entityType: unknown, functionName: unknown): string;
-    static MethodOnNonTphRootNotSupported(methodName: unknown, entityType: unknown): string;
-    static MigrationNotFound(migrationName: unknown): string;
-    static MigrationSqlGenerationMissing(operation: unknown): string;
-    static MissingConcurrencyColumn(entityType: unknown, missingColumn: unknown, table: unknown): string;
-    static MissingParameterValue(parameter: unknown): string;
-    static ModificationCommandInvalidEntityState(entityType: unknown, entityState: unknown): string;
-    static ModificationCommandInvalidEntityStateSensitive(entityType: unknown, keyValues: unknown, entityState: unknown): string;
-    static MultipleColumnsWithSameJsonContainerName(entityType: unknown, columnName: unknown): string;
-    static MultipleTablesInExecuteUpdate(propertySelector1: unknown, propertySelector2: unknown): string;
-    static NamedConnectionStringNotFound(name: unknown): string;
-    static NestedCollectionsNotSupported(propertyType: unknown, type: unknown, property: unknown): string;
-    static NestedComplexPropertyJsonWithTableSharing(complexProperty: unknown, containingType: unknown): string;
-    static NoAliasOnTable(table: unknown): string;
-    static NonConstantOrParameterAsInExpressionValue(type: unknown): string;
-    static NonScalarFunctionCannotBeNullable(functionName: unknown): string;
-    static NonScalarFunctionParameterCannotPropagatesNullability(parameterName: unknown, functionName: unknown): string;
-    static NonTphDiscriminatorValueNotString(value: unknown, entityType: unknown): string;
-    static NonTphMappingStrategy(mappingStrategy: unknown, entityType: unknown): string;
-    static NonTphStoredProcedureClash(entityType: unknown, otherEntityType: unknown, sproc: unknown): string;
-    static NonTphTableClash(entityType: unknown, otherEntityType: unknown, table: unknown): string;
-    static NonTphViewClash(entityType: unknown, otherEntityType: unknown, view: unknown): string;
-    static NullKeyValue(table: unknown, keyColumn: unknown): string;
-    static NullTypeMappingInSqlTree(sqlExpression: unknown): string;
-    static NullValueInRequiredJsonProperty(property: unknown): string;
-    static OneOfThreeValuesMustBeSet(param1: unknown, param2: unknown, param3: unknown): string;
-    static OneOfTwoValuesMustBeSet(param1: unknown, param2: unknown): string;
-    static OptionalDependentWithDependentWithoutIdentifyingProperty(entityType: unknown): string;
-    static ParameterNotObjectArray(parameter: unknown): string;
-    static PropertyBothColumnNameAndJsonPropertyName(property: unknown, columnName: unknown, jsonPropertyName: unknown): string;
-    static PropertyNotMapped(propertyType: unknown, entityType: unknown, property: unknown, storeType: unknown): string;
-    static PropertyNotMappedToTable(property: unknown, entityType: unknown, table: unknown): string;
-    static ReadonlyEntitySaved(entityType: unknown): string;
-    static SelectExpressionNonTphWithCustomTable(entityType: unknown): string;
-    static SetOperationOverDifferentStructuralTypes(type1: unknown, type2: unknown): string;
-    static SetOperationsRequireAtLeastOneSideWithValidTypeMapping(setOperationType: unknown): string;
-    static SqlQueryOverrideMismatch(propertySpecification: unknown, query: unknown): string;
-    static SqlQueryUnmappedType(elementType: unknown): string;
-    static StoredKeyTypesNotConvertable(fkColumnName: unknown, fkColumnType: unknown, pkColumnType: unknown, pkColumnName: unknown): string;
-    static StoredProcedureCurrentValueParameterOnDelete(parameter: unknown, sproc: unknown): string;
-    static StoredProcedureDeleteNonKeyProperty(entityType: unknown, property: unknown, sproc: unknown): string;
-    static StoredProcedureDuplicateOriginalValueParameter(property: unknown, sproc: unknown): string;
-    static StoredProcedureDuplicateParameter(property: unknown, sproc: unknown): string;
-    static StoredProcedureDuplicateParameterName(parameter: unknown, sproc: unknown): string;
-    static StoredProcedureDuplicateResultColumn(property: unknown, sproc: unknown): string;
-    static StoredProcedureDuplicateResultColumnName(column: unknown, sproc: unknown): string;
-    static StoredProcedureDuplicateRowsAffectedParameter(sproc: unknown): string;
-    static StoredProcedureDuplicateRowsAffectedResultColumn(sproc: unknown): string;
-    static StoredProcedureGeneratedPropertiesNotMapped(entityType: unknown, sproc: unknown, properties: unknown): string;
-    static StoredProcedureInputParameterForInsertNonSaveProperty(parameter: unknown, sproc: unknown, property: unknown, entityType: unknown, behavior: unknown): string;
-    static StoredProcedureInputParameterForUpdateNonSaveProperty(parameter: unknown, sproc: unknown, property: unknown, entityType: unknown, behavior: unknown): string;
-    static StoredProcedureKeyless(entityType: unknown, sproc: unknown): string;
-    static StoredProcedureNoName(entityType: unknown, sproc: unknown): string;
-    static StoredProcedureOriginalValueParameterOnInsert(parameter: unknown, sproc: unknown): string;
-    static StoredProcedureOutputParameterConflict(entityType: unknown, property: unknown, sproc: unknown): string;
-    static StoredProcedureOutputParameterNotGenerated(entityType: unknown, property: unknown, sproc: unknown): string;
-    static StoredProcedureOverrideMismatch(propertySpecification: unknown, sproc: unknown): string;
-    static StoredProcedureParameterInvalidConfiguration(facet: unknown, parameter: unknown, sproc: unknown): string;
-    static StoredProcedureParameterInvalidDirection(direction: unknown, parameter: unknown, sproc: unknown): string;
-    static StoredProcedureParameterNotFound(property: unknown, entityType: unknown, sproc: unknown): string;
-    static StoredProcedurePropertiesNotMapped(entityType: unknown, sproc: unknown, properties: unknown): string;
-    static StoredProcedureResultColumnDelete(entityType: unknown, property: unknown, sproc: unknown): string;
-    static StoredProcedureResultColumnNotFound(property: unknown, entityType: unknown, sproc: unknown): string;
-    static StoredProcedureResultColumnNotGenerated(entityType: unknown, property: unknown, sproc: unknown): string;
-    static StoredProcedureResultColumnParameterConflict(entityType: unknown, property: unknown, sproc: unknown): string;
-    static StoredProcedureRowsAffectedForInsert(sproc: unknown): string;
-    static StoredProcedureRowsAffectedNotPopulated(sproc: unknown): string;
-    static StoredProcedureRowsAffectedReturnConflictingParameter(sproc: unknown): string;
-    static StoredProcedureRowsAffectedWithResultColumns(entityType: unknown, sproc: unknown): string;
-    static StoredProcedureTableSharing(entityType1: unknown, entityType2: unknown, sproc: unknown): string;
-    static StoredProcedureTphDuplicate(entityType: unknown, otherEntityType: unknown, sproc: unknown): string;
-    static StoredProcedureUnmapped(entityType: unknown): string;
-    static SubqueryOverComplexTypesNotSupported(complexType: unknown): string;
-    static TableNotMappedEntityType(entityType: unknown, table: unknown): string;
-    static TableOverrideMismatch(propertySpecification: unknown, table: unknown): string;
-    static TableValuedFunctionNonTph(dbFunction: unknown, entityType: unknown): string;
-    static TimeoutTooBig(seconds: unknown): string;
-    static TimeoutTooSmall(seconds: unknown): string;
-    static TooFewReaderFields(expected: unknown, actual: unknown): string;
-    static TpcTableSharing(dependentType: unknown, storeObject: unknown, principalEntityType: unknown): string;
-    static TpcTableSharingDependent(dependentType: unknown, storeObject: unknown, derivedType: unknown, otherStoreObject: unknown): string;
-    static TphDbFunctionMismatch(entityType: unknown, function_: unknown, otherEntityType: unknown, otherFunction: unknown): string;
-    static TphStoredProcedureMismatch(entityType: unknown, sproc: unknown, otherEntityType: unknown, otherSproc: unknown): string;
-    static TphTableMismatch(entityType: unknown, table: unknown, otherEntityType: unknown, otherTable: unknown): string;
-    static TphViewMismatch(entityType: unknown, view: unknown, otherEntityType: unknown, otherView: unknown): string;
-    static TriggerWithMismatchedTable(trigger: unknown, triggerTable: unknown, entityType: unknown, entityTable: unknown): string;
-    static UnableToBindMemberToEntityProjection(memberType: unknown, member: unknown, entityType: unknown): string;
-    static UnhandledAnnotatableType(annotatableType: unknown): string;
-    static UnhandledExpressionInVisitor(expression: unknown, expressionType: unknown, visitor: unknown): string;
-    static UnknownOperation(sqlGeneratorType: unknown, operationType: unknown): string;
-    static UnmappedNonTPHOwner(ownerType: unknown, navigation: unknown, ownedType: unknown, storeObjectType: unknown): string;
-    static UnsupportedDataOperationStoreType(type: unknown, column: unknown): string;
-    static UnsupportedJsonColumnType(storeType: unknown, columnName: unknown, tableName: unknown): string;
-    static UnsupportedOperatorForSqlExpression(nodeType: unknown, expressionType: unknown): string;
-    static UnsupportedPropertyType(entity: unknown, property: unknown, clrType: unknown): string;
-    static UnsupportedStoreType(type: unknown): string;
-    static UnsupportedType(clrType: unknown): string;
-    static UnsupportedTypeForColumn(table: unknown, column: unknown, clrType: unknown): string;
-    static UpdateConcurrencyException(expectedRows: unknown, actualRows: unknown): string;
-    static UpdateDataOperationKeyTypesCountMismatch(typesCount: unknown, columnsCount: unknown, table: unknown): string;
-    static UpdateDataOperationKeyValuesCountMismatch(valuesCount: unknown, columnsCount: unknown, table: unknown): string;
-    static UpdateDataOperationNoModel(table: unknown): string;
-    static UpdateDataOperationRowCountMismatch(valuesCount: unknown, keyCount: unknown, table: unknown): string;
-    static UpdateDataOperationTypesCountMismatch(typesCount: unknown, columnsCount: unknown, table: unknown): string;
-    static UpdateDataOperationValuesCountMismatch(valuesCount: unknown, columnsCount: unknown, table: unknown): string;
-    static ViewOverrideMismatch(propertySpecification: unknown, view: unknown): string;
+    static AbstractTpc(entityType: JsValue | null, storeObject: JsValue | null): string;
+    static CannotTranslateNonConstantNewArrayExpression(newArrayExpression: JsValue | null): string;
+    static CompiledModelFunctionTranslation(function_: JsValue | null): string;
+    static ComplexCollectionNotMappedToJson(entityType: JsValue | null, property: JsValue | null): string;
+    static ComplexPropertyBothJsonColumnAndJsonPropertyName(complexProperty: JsValue | null, columnName: JsValue | null, propertyName: JsValue | null): string;
+    static ComplexPropertyJsonPropertyNameConflict(property1: JsValue | null, property2: JsValue | null, jsonPropertyName: JsValue | null): string;
+    static ComplexPropertyJsonPropertyNameWithoutJsonMapping(complexProperty: JsValue | null): string;
+    static ComplexPropertyOptionalTableSharing(type: JsValue | null, property: JsValue | null): string;
+    static ComputedColumnSqlUnspecified(table: JsValue | null, column: JsValue | null): string;
+    static ConcurrencyTokenOnJsonMappedProperty(property: JsValue | null, type: JsValue | null): string;
+    static ConflictingColumnServerGeneration(conflictingConfiguration: JsValue | null, property: JsValue | null, existingConfiguration: JsValue | null): string;
+    static ConflictingOriginalRowValues(firstEntityType: JsValue | null, secondEntityType: JsValue | null, firstProperty: JsValue | null, secondProperty: JsValue | null, column: JsValue | null): string;
+    static ConflictingOriginalRowValuesSensitive(firstEntityType: JsValue | null, secondEntityType: JsValue | null, keyValue: JsValue | null, firstConflictingValues: JsValue | null, secondConflictingValues: JsValue | null, column: JsValue | null): string;
+    static ConflictingRowUpdateTypes(firstEntityType: JsValue | null, firstState: JsValue | null, secondEntityType: JsValue | null, secondState: JsValue | null): string;
+    static ConflictingRowUpdateTypesSensitive(firstEntityType: JsValue | null, firstKeyValue: JsValue | null, firstState: JsValue | null, secondEntityType: JsValue | null, secondKeyValue: JsValue | null, secondState: JsValue | null): string;
+    static ConflictingRowValues(firstEntityType: JsValue | null, secondEntityType: JsValue | null, firstProperty: JsValue | null, secondProperty: JsValue | null, column: JsValue | null): string;
+    static ConflictingRowValuesSensitive(firstEntityType: JsValue | null, secondEntityType: JsValue | null, keyValue: JsValue | null, firstConflictingValue: JsValue | null, secondConflictingValue: JsValue | null, column: JsValue | null): string;
+    static ConflictingSeedValues(entityType: JsValue | null, table: JsValue | null, column: JsValue | null): string;
+    static ConflictingSeedValuesSensitive(entityType: JsValue | null, keyValue: JsValue | null, table: JsValue | null, column: JsValue | null, firstValue: JsValue | null, secondValue: JsValue | null): string;
+    static ConflictingTypeMappingsInferredForColumn(column: JsValue | null): string;
+    static ContainerTypeOnNestedOwnedEntityType(entityType: JsValue | null): string;
+    static ContainerTypeOnNonContainer(entityType: JsValue | null): string;
+    static CreateIndexOperationWithInvalidSortOrder(numSortOrderProperties: JsValue | null, numColumns: JsValue | null): string;
+    static DataOperationNoProperty(table: JsValue | null, column: JsValue | null): string;
+    static DataOperationNoTable(table: JsValue | null): string;
+    static DbFunctionExpressionIsNotMethodCall(expression: JsValue | null): string;
+    static DbFunctionGenericMethodNotSupported(function_: JsValue | null): string;
+    static DbFunctionInvalidInstanceType(function_: JsValue | null, type: JsValue | null): string;
+    static DbFunctionInvalidIQueryableOwnedReturnType(function_: JsValue | null, type: JsValue | null): string;
+    static DbFunctionInvalidIQueryableReturnType(function_: JsValue | null, type: JsValue | null): string;
+    static DbFunctionInvalidParameterName(function_: JsValue | null, parameter: JsValue | null): string;
+    static DbFunctionInvalidParameterType(parameter: JsValue | null, function_: JsValue | null, type: JsValue | null): string;
+    static DbFunctionInvalidReturnEntityType(function_: JsValue | null, type: JsValue | null, elementType: JsValue | null): string;
+    static DbFunctionInvalidReturnType(function_: JsValue | null, type: JsValue | null): string;
+    static DbFunctionNonScalarCustomTranslation(function_: JsValue | null): string;
+    static DbFunctionNullableValueReturnType(function_: JsValue | null, type: JsValue | null): string;
+    static DefaultValueSqlUnspecified(table: JsValue | null, column: JsValue | null): string;
+    static DefaultValueUnspecified(table: JsValue | null, column: JsValue | null): string;
+    static DeleteDataOperationNoModel(table: JsValue | null): string;
+    static DeleteDataOperationTypesCountMismatch(typesCount: JsValue | null, columnsCount: JsValue | null, table: JsValue | null): string;
+    static DeleteDataOperationValuesCountMismatch(valuesCount: JsValue | null, columnsCount: JsValue | null, table: JsValue | null): string;
+    static DerivedStrategy(entityType: JsValue | null, strategy: JsValue | null): string;
+    static DuplicateCheckConstraint(checkConstraint: JsValue | null, entityType: JsValue | null, conflictingEntityType: JsValue | null): string;
+    static DuplicateCheckConstraintSqlMismatch(checkConstraint1: JsValue | null, entityType1: JsValue | null, checkConstraint2: JsValue | null, entityType2: JsValue | null, checkConstraintName: JsValue | null): string;
+    static DuplicateColumnNameCollationMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, collation1: JsValue | null, collation2: JsValue | null): string;
+    static DuplicateColumnNameCommentMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, comment1: JsValue | null, comment2: JsValue | null): string;
+    static DuplicateColumnNameComputedSqlMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, value1: JsValue | null, value2: JsValue | null): string;
+    static DuplicateColumnNameConcurrencyTokenMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null): string;
+    static DuplicateColumnNameDataTypeMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, dataType1: JsValue | null, dataType2: JsValue | null): string;
+    static DuplicateColumnNameDefaultSqlMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, value1: JsValue | null, value2: JsValue | null): string;
+    static DuplicateColumnNameFixedLengthMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null): string;
+    static DuplicateColumnNameIsStoredMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, value1: JsValue | null, value2: JsValue | null): string;
+    static DuplicateColumnNameMaxLengthMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, maxLength1: JsValue | null, maxLength2: JsValue | null): string;
+    static DuplicateColumnNameOrderMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, columnOrder1: JsValue | null, columnOrder2: JsValue | null): string;
+    static DuplicateColumnNamePrecisionMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, precision1: JsValue | null, precision2: JsValue | null): string;
+    static DuplicateColumnNameProviderTypeMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, type1: JsValue | null, type2: JsValue | null): string;
+    static DuplicateColumnNameSameHierarchy(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null): string;
+    static DuplicateColumnNameScaleMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null, scale1: JsValue | null, scale2: JsValue | null): string;
+    static DuplicateColumnNameUnicodenessMismatch(entityType1: JsValue | null, property1: JsValue | null, entityType2: JsValue | null, property2: JsValue | null, columnName: JsValue | null, table: JsValue | null): string;
+    static DuplicateForeignKeyColumnMismatch(foreignKeyProperties1: JsValue | null, entityType1: JsValue | null, foreignKeyProperties2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, foreignKeyName: JsValue | null, columnNames1: JsValue | null, columnNames2: JsValue | null): string;
+    static DuplicateForeignKeyDeleteBehaviorMismatch(foreignKeyProperties1: JsValue | null, entityType1: JsValue | null, foreignKeyProperties2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, foreignKeyName: JsValue | null, deleteBehavior1: JsValue | null, deleteBehavior2: JsValue | null): string;
+    static DuplicateForeignKeyPrincipalColumnMismatch(foreignKeyProperties1: JsValue | null, entityType1: JsValue | null, foreignKeyProperties2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, foreignKeyName: JsValue | null, principalColumnNames1: JsValue | null, principalColumnNames2: JsValue | null): string;
+    static DuplicateForeignKeyPrincipalTableMismatch(foreignKeyProperties1: JsValue | null, entityType1: JsValue | null, foreignKeyProperties2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, foreignKeyName: JsValue | null, principalTable1: JsValue | null, principalTable2: JsValue | null): string;
+    static DuplicateForeignKeyTableMismatch(foreignKeyProperties1: JsValue | null, entityType1: JsValue | null, foreignKeyProperties2: JsValue | null, entityType2: JsValue | null, foreignKeyName: JsValue | null, table1: JsValue | null, table2: JsValue | null): string;
+    static DuplicateForeignKeyUniquenessMismatch(foreignKeyProperties1: JsValue | null, entityType1: JsValue | null, foreignKeyProperties2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, foreignKeyName: JsValue | null): string;
+    static DuplicateIndexColumnMismatch(index1: JsValue | null, entityType1: JsValue | null, index2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, indexName: JsValue | null, columnNames1: JsValue | null, columnNames2: JsValue | null): string;
+    static DuplicateIndexFiltersMismatch(index1: JsValue | null, entityType1: JsValue | null, index2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, indexName: JsValue | null, filter1: JsValue | null, filter2: JsValue | null): string;
+    static DuplicateIndexSortOrdersMismatch(index1: JsValue | null, entityType1: JsValue | null, index2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, indexName: JsValue | null): string;
+    static DuplicateIndexTableMismatch(index1: JsValue | null, entityType1: JsValue | null, index2: JsValue | null, entityType2: JsValue | null, indexName: JsValue | null, table1: JsValue | null, table2: JsValue | null): string;
+    static DuplicateIndexUniquenessMismatch(index1: JsValue | null, entityType1: JsValue | null, index2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, indexName: JsValue | null): string;
+    static DuplicateKeyColumnMismatch(keyProperties1: JsValue | null, entityType1: JsValue | null, keyProperties2: JsValue | null, entityType2: JsValue | null, table: JsValue | null, keyName: JsValue | null, columnNames1: JsValue | null, columnNames2: JsValue | null): string;
+    static DuplicateKeyTableMismatch(keyProperties1: JsValue | null, entityType1: JsValue | null, keyProperties2: JsValue | null, entityType2: JsValue | null, keyName: JsValue | null, table1: JsValue | null, table2: JsValue | null): string;
+    static DuplicateSeedData(entityType: JsValue | null, table: JsValue | null): string;
+    static DuplicateSeedDataSensitive(entityType: JsValue | null, keyValue: JsValue | null, table: JsValue | null): string;
+    static EntityShortNameNotUnique(entityType1: JsValue | null, discriminatorValue: JsValue | null, entityType2: JsValue | null): string;
+    static EntitySplittingConflictingMainFragment(entityType: JsValue | null, storeObject: JsValue | null): string;
+    static EntitySplittingHierarchy(entityType: JsValue | null, storeObject: JsValue | null): string;
+    static EntitySplittingMissingPrimaryKey(entityType: JsValue | null, storeObject: JsValue | null): string;
+    static EntitySplittingMissingProperties(entityType: JsValue | null, storeObject: JsValue | null): string;
+    static EntitySplittingMissingPropertiesMainFragment(entityType: JsValue | null, storeObject: JsValue | null): string;
+    static EntitySplittingMissingRequiredPropertiesOptionalDependent(entityType: JsValue | null, storeObject: JsValue | null, requiredDependentConfig: JsValue | null): string;
+    static EntitySplittingUnmappedMainFragment(entityType: JsValue | null, storeObject: JsValue | null, storeObjectType: JsValue | null): string;
+    static EntitySplittingUnmatchedMainTableSplitting(entityType: JsValue | null, storeObject: JsValue | null, principalEntityType: JsValue | null, principalStoreObject: JsValue | null): string;
+    static ErrorMaterializingProperty(entityType: JsValue | null, property: JsValue | null): string;
+    static ErrorMaterializingPropertyNullReference(entityType: JsValue | null, property: JsValue | null, expectedType: JsValue | null): string;
+    static ErrorMaterializingValueInvalidCast(expectedType: JsValue | null, actualType: JsValue | null): string;
+    static ErrorMaterializingValueNullReference(expectedType: JsValue | null): string;
+    static ExecuteDeleteOnTableSplitting(tableName: JsValue | null): string;
+    static ExecuteOperationOnEntitySplitting(operation: JsValue | null, entityType: JsValue | null): string;
+    static ExecuteOperationOnKeylessEntityTypeWithUnsupportedOperator(operation: JsValue | null, entityType: JsValue | null): string;
+    static ExecuteOperationOnOwnedJsonIsNotSupported(operation: JsValue | null, entityType: JsValue | null): string;
+    static ExecuteOperationOnTPC(operation: JsValue | null, entityType: JsValue | null): string;
+    static ExecuteOperationOnTPT(operation: JsValue | null, entityType: JsValue | null): string;
+    static ExecuteOperationWithUnsupportedOperatorInSqlGeneration(operation: JsValue | null): string;
+    static ExecuteUpdateDeleteOnEntityNotMappedToTable(entityType: JsValue | null): string;
+    static ExecuteUpdateOverJsonIsNotSupported(structuralType: JsValue | null): string;
+    static ExecuteUpdateSubqueryNotSupportedOverComplexTypes(complexType: JsValue | null): string;
+    static ExplicitDefaultConstraintNamesNotSupportedForTpc(explicitDefaultConstraintName: JsValue | null): string;
+    static FromSqlMissingColumn(column: JsValue | null): string;
+    static FunctionOverrideMismatch(propertySpecification: JsValue | null, function_: JsValue | null): string;
+    static HasDataNotSupportedForEntitiesMappedToJson(entity: JsValue | null): string;
+    static ImplicitDefaultNamesNotSupportedForTpcWhenNamesClash(constraintNameCandidate: JsValue | null): string;
+    static IncompatibleTableCommentMismatch(table: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null, comment: JsValue | null, otherComment: JsValue | null): string;
+    static IncompatibleTableDerivedRelationship(table: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null): string;
+    static IncompatibleTableExcludedMismatch(table: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null): string;
+    static IncompatibleTableKeyNameMismatch(table: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null, keyName: JsValue | null, primaryKey: JsValue | null, otherName: JsValue | null, otherPrimaryKey: JsValue | null): string;
+    static IncompatibleTableNoRelationship(table: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null): string;
+    static IncompatibleViewDerivedRelationship(view: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null): string;
+    static IncompatibleViewNoRelationship(view: JsValue | null, entityType: JsValue | null, otherEntityType: JsValue | null): string;
+    static InconsistentNumberOfArguments(name: JsValue | null, argumentCount: JsValue | null, argumentNullabilityCount: JsValue | null): string;
+    static IncorrectDefaultValueType(value: JsValue | null, valueType: JsValue | null, property: JsValue | null, propertyType: JsValue | null, entityType: JsValue | null): string;
+    static InsertDataOperationNoModel(table: JsValue | null): string;
+    static InsertDataOperationTypesCountMismatch(typesCount: JsValue | null, columnsCount: JsValue | null, table: JsValue | null): string;
+    static InsertDataOperationValuesCountMismatch(valuesCount: JsValue | null, columnsCount: JsValue | null, table: JsValue | null): string;
+    static InvalidCommandTimeout(value: JsValue | null): string;
+    static InvalidDerivedTypeInEntityProjection(derivedType: JsValue | null, entityType: JsValue | null): string;
+    static InvalidFromSqlArguments(expressionType: JsValue | null, valueType: JsValue | null): string;
+    static InvalidKeySelectorForGroupBy(keySelector: JsValue | null, keyType: JsValue | null): string;
+    static InvalidMappedFunctionDerivedType(entityType: JsValue | null, functionName: JsValue | null, baseEntityType: JsValue | null): string;
+    static InvalidMappedFunctionUnmatchedReturn(entityType: JsValue | null, functionName: JsValue | null, returnType: JsValue | null, clrType: JsValue | null): string;
+    static InvalidMappedFunctionWithParameters(entityType: JsValue | null, functionName: JsValue | null, parameters: JsValue | null): string;
+    static InvalidMappedSqlQueryDerivedType(entityType: JsValue | null, baseEntityType: JsValue | null): string;
+    static InvalidMappingStrategy(mappingStrategy: JsValue | null, entityType: JsValue | null): string;
+    static InvalidMaxBatchSize(value: JsValue | null): string;
+    static InvalidMinBatchSize(value: JsValue | null): string;
+    static InvalidPropertyInSetProperty(propertyExpression: JsValue | null): string;
+    static InvalidValueInSetProperty(valueExpression: JsValue | null): string;
+    static JsonCantNavigateToParentEntity(jsonEntity: JsValue | null, parentEntity: JsValue | null, navigation: JsValue | null): string;
+    static JsonEntityMappedToDifferentColumnThanOwner(jsonType: JsValue | null, containingColumn: JsValue | null, ownerType: JsValue | null, ownerContainingColumn: JsValue | null): string;
+    static JsonEntityMappedToDifferentTableOrViewThanOwner(jsonType: JsValue | null, tableOrViewName: JsValue | null, ownerType: JsValue | null, ownerTableOrViewName: JsValue | null): string;
+    static JsonEntityMissingKeyInformation(jsonEntity: JsValue | null): string;
+    static JsonEntityMultipleRootsMappedToTheSameJsonColumn(column: JsValue | null, table: JsValue | null): string;
+    static JsonEntityOwnedByNonJsonOwnedType(nonJsonType: JsValue | null, table: JsValue | null): string;
+    static JsonEntityReferencingRegularEntity(jsonEntity: JsValue | null): string;
+    static JsonEntityWithDefaultValueSetOnItsProperty(jsonEntity: JsValue | null, property: JsValue | null): string;
+    static JsonEntityWithExplicitlyConfiguredJsonPropertyNameOnKey(keyProperty: JsValue | null, jsonEntity: JsValue | null): string;
+    static JsonEntityWithExplicitlyConfiguredKey(entityType: JsValue | null, property: JsValue | null): string;
+    static JsonEntityWithIncorrectNumberOfKeyProperties(jsonEntity: JsValue | null, expectedCount: JsValue | null, actualCount: JsValue | null): string;
+    static JsonEntityWithNonTphInheritanceOnOwner(rootType: JsValue | null): string;
+    static JsonEntityWithOwnerNotMappedToTableOrView(entity: JsValue | null): string;
+    static JsonErrorExtractingJsonProperty(entityType: JsValue | null, propertyName: JsValue | null): string;
+    static JsonObjectWithMultiplePropertiesMappedToSameJsonProperty(property1: JsValue | null, property2: JsValue | null, type: JsValue | null, jsonPropertyName: JsValue | null): string;
+    static JsonProjectingCollectionElementAccessedUsingParmeterNoTrackingWithIdentityResolution(entityTypeName: JsValue | null, asNoTrackingWithIdentityResolution: JsValue | null): string;
+    static JsonProjectingEntitiesIncorrectOrderNoTrackingWithIdentityResolution(asNoTrackingWithIdentityResolution: JsValue | null, entityTypeName: JsValue | null): string;
+    static JsonProjectingQueryableOperationNoTrackingWithIdentityResolution(asNoTrackingWithIdentityResolution: JsValue | null): string;
+    static JsonRequiredEntityWithNullJson(entity: JsValue | null): string;
+    static JsonValueReadWriterMissingOnTypeMapping(typeMapping: JsValue | null, property: JsValue | null, entityType: JsValue | null): string;
+    static KeylessMappingStrategy(mappingStrategy: JsValue | null, entityType: JsValue | null): string;
+    static LastUsedWithoutOrderBy(method: JsValue | null): string;
+    static MappedFunctionNotFound(entityType: JsValue | null, functionName: JsValue | null): string;
+    static MethodOnNonTphRootNotSupported(methodName: JsValue | null, entityType: JsValue | null): string;
+    static MigrationNotFound(migrationName: JsValue | null): string;
+    static MigrationSqlGenerationMissing(operation: JsValue | null): string;
+    static MissingConcurrencyColumn(entityType: JsValue | null, missingColumn: JsValue | null, table: JsValue | null): string;
+    static MissingParameterValue(parameter: JsValue | null): string;
+    static ModificationCommandInvalidEntityState(entityType: JsValue | null, entityState: JsValue | null): string;
+    static ModificationCommandInvalidEntityStateSensitive(entityType: JsValue | null, keyValues: JsValue | null, entityState: JsValue | null): string;
+    static MultipleColumnsWithSameJsonContainerName(entityType: JsValue | null, columnName: JsValue | null): string;
+    static MultipleTablesInExecuteUpdate(propertySelector1: JsValue | null, propertySelector2: JsValue | null): string;
+    static NamedConnectionStringNotFound(name: JsValue | null): string;
+    static NestedCollectionsNotSupported(propertyType: JsValue | null, type: JsValue | null, property: JsValue | null): string;
+    static NestedComplexPropertyJsonWithTableSharing(complexProperty: JsValue | null, containingType: JsValue | null): string;
+    static NoAliasOnTable(table: JsValue | null): string;
+    static NonConstantOrParameterAsInExpressionValue(type: JsValue | null): string;
+    static NonScalarFunctionCannotBeNullable(functionName: JsValue | null): string;
+    static NonScalarFunctionParameterCannotPropagatesNullability(parameterName: JsValue | null, functionName: JsValue | null): string;
+    static NonTphDiscriminatorValueNotString(value: JsValue | null, entityType: JsValue | null): string;
+    static NonTphMappingStrategy(mappingStrategy: JsValue | null, entityType: JsValue | null): string;
+    static NonTphStoredProcedureClash(entityType: JsValue | null, otherEntityType: JsValue | null, sproc: JsValue | null): string;
+    static NonTphTableClash(entityType: JsValue | null, otherEntityType: JsValue | null, table: JsValue | null): string;
+    static NonTphViewClash(entityType: JsValue | null, otherEntityType: JsValue | null, view: JsValue | null): string;
+    static NullKeyValue(table: JsValue | null, keyColumn: JsValue | null): string;
+    static NullTypeMappingInSqlTree(sqlExpression: JsValue | null): string;
+    static NullValueInRequiredJsonProperty(property: JsValue | null): string;
+    static OneOfThreeValuesMustBeSet(param1: JsValue | null, param2: JsValue | null, param3: JsValue | null): string;
+    static OneOfTwoValuesMustBeSet(param1: JsValue | null, param2: JsValue | null): string;
+    static OptionalDependentWithDependentWithoutIdentifyingProperty(entityType: JsValue | null): string;
+    static ParameterNotObjectArray(parameter: JsValue | null): string;
+    static PropertyBothColumnNameAndJsonPropertyName(property: JsValue | null, columnName: JsValue | null, jsonPropertyName: JsValue | null): string;
+    static PropertyNotMapped(propertyType: JsValue | null, entityType: JsValue | null, property: JsValue | null, storeType: JsValue | null): string;
+    static PropertyNotMappedToTable(property: JsValue | null, entityType: JsValue | null, table: JsValue | null): string;
+    static ReadonlyEntitySaved(entityType: JsValue | null): string;
+    static SelectExpressionNonTphWithCustomTable(entityType: JsValue | null): string;
+    static SetOperationOverDifferentStructuralTypes(type1: JsValue | null, type2: JsValue | null): string;
+    static SetOperationsRequireAtLeastOneSideWithValidTypeMapping(setOperationType: JsValue | null): string;
+    static SqlQueryOverrideMismatch(propertySpecification: JsValue | null, query: JsValue | null): string;
+    static SqlQueryUnmappedType(elementType: JsValue | null): string;
+    static StoredKeyTypesNotConvertable(fkColumnName: JsValue | null, fkColumnType: JsValue | null, pkColumnType: JsValue | null, pkColumnName: JsValue | null): string;
+    static StoredProcedureCurrentValueParameterOnDelete(parameter: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureDeleteNonKeyProperty(entityType: JsValue | null, property: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureDuplicateOriginalValueParameter(property: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureDuplicateParameter(property: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureDuplicateParameterName(parameter: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureDuplicateResultColumn(property: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureDuplicateResultColumnName(column: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureDuplicateRowsAffectedParameter(sproc: JsValue | null): string;
+    static StoredProcedureDuplicateRowsAffectedResultColumn(sproc: JsValue | null): string;
+    static StoredProcedureGeneratedPropertiesNotMapped(entityType: JsValue | null, sproc: JsValue | null, properties: JsValue | null): string;
+    static StoredProcedureInputParameterForInsertNonSaveProperty(parameter: JsValue | null, sproc: JsValue | null, property: JsValue | null, entityType: JsValue | null, behavior: JsValue | null): string;
+    static StoredProcedureInputParameterForUpdateNonSaveProperty(parameter: JsValue | null, sproc: JsValue | null, property: JsValue | null, entityType: JsValue | null, behavior: JsValue | null): string;
+    static StoredProcedureKeyless(entityType: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureNoName(entityType: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureOriginalValueParameterOnInsert(parameter: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureOutputParameterConflict(entityType: JsValue | null, property: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureOutputParameterNotGenerated(entityType: JsValue | null, property: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureOverrideMismatch(propertySpecification: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureParameterInvalidConfiguration(facet: JsValue | null, parameter: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureParameterInvalidDirection(direction: JsValue | null, parameter: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureParameterNotFound(property: JsValue | null, entityType: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedurePropertiesNotMapped(entityType: JsValue | null, sproc: JsValue | null, properties: JsValue | null): string;
+    static StoredProcedureResultColumnDelete(entityType: JsValue | null, property: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureResultColumnNotFound(property: JsValue | null, entityType: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureResultColumnNotGenerated(entityType: JsValue | null, property: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureResultColumnParameterConflict(entityType: JsValue | null, property: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureRowsAffectedForInsert(sproc: JsValue | null): string;
+    static StoredProcedureRowsAffectedNotPopulated(sproc: JsValue | null): string;
+    static StoredProcedureRowsAffectedReturnConflictingParameter(sproc: JsValue | null): string;
+    static StoredProcedureRowsAffectedWithResultColumns(entityType: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureTableSharing(entityType1: JsValue | null, entityType2: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureTphDuplicate(entityType: JsValue | null, otherEntityType: JsValue | null, sproc: JsValue | null): string;
+    static StoredProcedureUnmapped(entityType: JsValue | null): string;
+    static SubqueryOverComplexTypesNotSupported(complexType: JsValue | null): string;
+    static TableNotMappedEntityType(entityType: JsValue | null, table: JsValue | null): string;
+    static TableOverrideMismatch(propertySpecification: JsValue | null, table: JsValue | null): string;
+    static TableValuedFunctionNonTph(dbFunction: JsValue | null, entityType: JsValue | null): string;
+    static TimeoutTooBig(seconds: JsValue | null): string;
+    static TimeoutTooSmall(seconds: JsValue | null): string;
+    static TooFewReaderFields(expected: JsValue | null, actual: JsValue | null): string;
+    static TpcTableSharing(dependentType: JsValue | null, storeObject: JsValue | null, principalEntityType: JsValue | null): string;
+    static TpcTableSharingDependent(dependentType: JsValue | null, storeObject: JsValue | null, derivedType: JsValue | null, otherStoreObject: JsValue | null): string;
+    static TphDbFunctionMismatch(entityType: JsValue | null, function_: JsValue | null, otherEntityType: JsValue | null, otherFunction: JsValue | null): string;
+    static TphStoredProcedureMismatch(entityType: JsValue | null, sproc: JsValue | null, otherEntityType: JsValue | null, otherSproc: JsValue | null): string;
+    static TphTableMismatch(entityType: JsValue | null, table: JsValue | null, otherEntityType: JsValue | null, otherTable: JsValue | null): string;
+    static TphViewMismatch(entityType: JsValue | null, view: JsValue | null, otherEntityType: JsValue | null, otherView: JsValue | null): string;
+    static TriggerWithMismatchedTable(trigger: JsValue | null, triggerTable: JsValue | null, entityType: JsValue | null, entityTable: JsValue | null): string;
+    static UnableToBindMemberToEntityProjection(memberType: JsValue | null, member: JsValue | null, entityType: JsValue | null): string;
+    static UnhandledAnnotatableType(annotatableType: JsValue | null): string;
+    static UnhandledExpressionInVisitor(expression: JsValue | null, expressionType: JsValue | null, visitor: JsValue | null): string;
+    static UnknownOperation(sqlGeneratorType: JsValue | null, operationType: JsValue | null): string;
+    static UnmappedNonTPHOwner(ownerType: JsValue | null, navigation: JsValue | null, ownedType: JsValue | null, storeObjectType: JsValue | null): string;
+    static UnsupportedDataOperationStoreType(type: JsValue | null, column: JsValue | null): string;
+    static UnsupportedJsonColumnType(storeType: JsValue | null, columnName: JsValue | null, tableName: JsValue | null): string;
+    static UnsupportedOperatorForSqlExpression(nodeType: JsValue | null, expressionType: JsValue | null): string;
+    static UnsupportedPropertyType(entity: JsValue | null, property: JsValue | null, clrType: JsValue | null): string;
+    static UnsupportedStoreType(type: JsValue | null): string;
+    static UnsupportedType(clrType: JsValue | null): string;
+    static UnsupportedTypeForColumn(table: JsValue | null, column: JsValue | null, clrType: JsValue | null): string;
+    static UpdateConcurrencyException(expectedRows: JsValue | null, actualRows: JsValue | null): string;
+    static UpdateDataOperationKeyTypesCountMismatch(typesCount: JsValue | null, columnsCount: JsValue | null, table: JsValue | null): string;
+    static UpdateDataOperationKeyValuesCountMismatch(valuesCount: JsValue | null, columnsCount: JsValue | null, table: JsValue | null): string;
+    static UpdateDataOperationNoModel(table: JsValue | null): string;
+    static UpdateDataOperationRowCountMismatch(valuesCount: JsValue | null, keyCount: JsValue | null, table: JsValue | null): string;
+    static UpdateDataOperationTypesCountMismatch(typesCount: JsValue | null, columnsCount: JsValue | null, table: JsValue | null): string;
+    static UpdateDataOperationValuesCountMismatch(valuesCount: JsValue | null, columnsCount: JsValue | null, table: JsValue | null): string;
+    static ViewOverrideMismatch(propertySpecification: JsValue | null, view: JsValue | null): string;
 }
 
 

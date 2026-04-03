@@ -8,8 +8,8 @@ import * as Internal from './Microsoft.EntityFrameworkCore.Migrations.Internal/i
 // Cross-namespace type imports for constraints
 import type { IDiagnosticsLogger_1, IRelationalCommandDiagnosticsLogger } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
 import type { IAnnotation, ICurrentDbContext, IDbContextOptions, IModelRuntimeInitializer, ModelSnapshot } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
-import type { ICheckConstraint, IColumn, IDesignTimeModel, IForeignKeyConstraint, IRelationalAnnotationProvider, IRelationalModel, ISequence, ITable, ITableIndex, IUniqueConstraint } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
-import type { MigrationOperation } from './Microsoft.EntityFrameworkCore.Migrations.Operations/internal/index.js';
+import type { ICheckConstraint, IColumn, IDesignTimeModel, IForeignKeyConstraint, IRelationalAnnotationProvider, IRelationalModel, ISequence, ITable, ITableIndex, ITypeBase, IUniqueConstraint } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
+import type { CreateTableOperation, DropColumnOperation, DropTableOperation, MigrationOperation } from './Microsoft.EntityFrameworkCore.Migrations.Operations/internal/index.js';
 import type { IHistoryRepository, IMigrationCommandExecutor, IMigrationsAnnotationProvider, IMigrationsAssembly, IMigrationsIdGenerator, IMigrationsModelDiffer, IMigrationsSqlGenerator, IMigrator, Migration, MigrationCommand, MigrationExecutionState, MigrationsSqlGenerationOptions } from './Microsoft.EntityFrameworkCore.Migrations/internal/index.js';
 import type { IDatabaseCreator, IDatabaseProvider, IExecutionStrategy, IRawSqlCommandBuilder, IRelationalConnection, IRelationalTypeMappingSource, ISqlGenerationHelper } from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 import type { CommandBatchPreparerDependencies, IRowIdentityMapFactory } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
@@ -27,6 +27,7 @@ export { MigrationExtensions$instance as MigrationExtensions } from './Microsoft
 export { MigrationsAssembly as MigrationsAssembly } from './Microsoft.EntityFrameworkCore.Migrations.Internal/internal/index.js';
 export { MigrationsIdGenerator as MigrationsIdGenerator } from './Microsoft.EntityFrameworkCore.Migrations.Internal/internal/index.js';
 export { MigrationsModelDiffer as MigrationsModelDiffer } from './Microsoft.EntityFrameworkCore.Migrations.Internal/internal/index.js';
+export { MigrationsModelDiffer_DiffContext as MigrationsModelDiffer_DiffContext } from './Microsoft.EntityFrameworkCore.Migrations.Internal/internal/index.js';
 export { Migrator as Migrator } from './Microsoft.EntityFrameworkCore.Migrations.Internal/internal/index.js';
 export { MigratorData as MigratorData } from './Microsoft.EntityFrameworkCore.Migrations.Internal/internal/index.js';
 // Extension methods (C# using semantics)

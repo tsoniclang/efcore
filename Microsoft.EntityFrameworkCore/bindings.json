@@ -4625,438 +4625,6 @@
       "constructors": []
     },
     {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BChangeTracking",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BChangeTracking",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "ChangeTracking"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BChangeTracking::.ctor():void",
-          "metadataToken": 100676983,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BChangeTracking",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Database"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase::.ctor():void",
-          "metadataToken": 100676976,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BCommand",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BCommand",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Command"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BCommand::.ctor():void",
-          "metadataToken": 100680756,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BCommand",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BConnection",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BConnection",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Connection"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BConnection::.ctor():void",
-          "metadataToken": 100680755,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BConnection",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BTransaction",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BTransaction",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Transaction"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BTransaction::.ctor():void",
-          "metadataToken": 100680757,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BTransaction",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Infrastructure"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure::.ctor():void",
-          "metadataToken": 100676980,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BMigrations",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BMigrations",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Migrations"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BMigrations::.ctor():void",
-          "metadataToken": 100676982,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BMigrations",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Model"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel::.ctor():void",
-          "metadataToken": 100676978,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Validation"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation::.ctor():void",
-          "metadataToken": 100680758,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Query"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery::.ctor():void",
-          "metadataToken": 100676979,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BScaffolding",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BScaffolding",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Scaffolding"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BScaffolding::.ctor():void",
-          "metadataToken": 100676981,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BScaffolding",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate",
-      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
-      "metadataToken": 0,
-      "kind": "Class",
-      "accessibility": "Public",
-      "isAbstract": false,
-      "isSealed": false,
-      "isStatic": false,
-      "arity": 0,
-      "baseType": {
-        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
-        "typeArguments": [
-          "Update"
-        ]
-      },
-      "methods": [],
-      "properties": [],
-      "fields": [],
-      "events": [],
-      "constructors": [
-        {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate::.ctor():void",
-          "metadataToken": 100676977,
-          "canonicalSignature": "():void",
-          "normalizedSignature": "constructor|():void|static=false",
-          "isStatic": false,
-          "parameterCount": 0,
-          "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
-        }
-      ]
-    },
-    {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbSet\u00601",
       "clrName": "Microsoft.EntityFrameworkCore.DbSet\u00601",
       "assemblyName": "Microsoft.EntityFrameworkCore",
@@ -8082,6 +7650,438 @@
       ],
       "events": [],
       "constructors": []
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BChangeTracking",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BChangeTracking",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "ChangeTracking"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BChangeTracking::.ctor():void",
+          "metadataToken": 100676983,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BChangeTracking",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Database"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase::.ctor():void",
+          "metadataToken": 100676976,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BCommand",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BCommand",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Command"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BCommand::.ctor():void",
+          "metadataToken": 100680756,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BCommand",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BConnection",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BConnection",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Connection"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BConnection::.ctor():void",
+          "metadataToken": 100680755,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BConnection",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BTransaction",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BTransaction",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Transaction"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BTransaction::.ctor():void",
+          "metadataToken": 100680757,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BDatabase\u002BTransaction",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Infrastructure"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure::.ctor():void",
+          "metadataToken": 100676980,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BMigrations",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BMigrations",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Migrations"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BMigrations::.ctor():void",
+          "metadataToken": 100676982,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BMigrations",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Model"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel::.ctor():void",
+          "metadataToken": 100676978,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Validation"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation::.ctor():void",
+          "metadataToken": 100680758,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Query"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery::.ctor():void",
+          "metadataToken": 100676979,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BQuery",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BScaffolding",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BScaffolding",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Scaffolding"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BScaffolding::.ctor():void",
+          "metadataToken": 100676981,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BScaffolding",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
+    },
+    {
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate",
+      "clrName": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate",
+      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "metadataToken": 0,
+      "kind": "Class",
+      "accessibility": "Public",
+      "isAbstract": false,
+      "isSealed": false,
+      "isStatic": false,
+      "arity": 0,
+      "baseType": {
+        "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "clrName": "Microsoft.EntityFrameworkCore.Diagnostics.LoggerCategory\u00601",
+        "typeArguments": [
+          "Update"
+        ]
+      },
+      "methods": [],
+      "properties": [],
+      "fields": [],
+      "events": [],
+      "constructors": [
+        {
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate::.ctor():void",
+          "metadataToken": 100676977,
+          "canonicalSignature": "():void",
+          "normalizedSignature": "constructor|():void|static=false",
+          "isStatic": false,
+          "parameterCount": 0,
+          "visibility": "Public",
+          "declaringClrType": "Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BUpdate",
+          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+        }
+      ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.EF",

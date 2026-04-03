@@ -2,11 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Design.Internal
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Import support types from @tsonic/core
-import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import type { ValueComparer } from "../../Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js";
@@ -24,7 +22,7 @@ export interface ICSharpRuntimeAnnotationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
 
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
+    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer | null, keyValueComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null): boolean;
     Create(typeMapping: CoreTypeMapping, property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -54,7 +52,7 @@ export interface QualifiedName$instance {
     Name: string;
     Namespace: string;
     Deconstruct(Name: string, Namespace: string): void;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue): boolean;
     Equals(other: QualifiedName): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -76,8 +74,8 @@ export interface CSharpRuntimeAnnotationCodeGenerator$instance {
     readonly Dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
-    CreateDefaultTypeMapping(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): CoreTypeMapping | undefined;
+    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer | null, keyValueComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null): boolean;
+    CreateDefaultTypeMapping(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): CoreTypeMapping | null;
     Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -121,8 +119,8 @@ export interface CSharpRuntimeAnnotationCodeGeneratorDependencies$instance {
 
     CSharpHelper: ICSharpHelper;
     _Clone_$(): CSharpRuntimeAnnotationCodeGeneratorDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: CSharpRuntimeAnnotationCodeGeneratorDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: CSharpRuntimeAnnotationCodeGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -140,7 +138,7 @@ export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    Annotations: IDictionary_2<System_Internal.String, unknown | undefined>;
+    Annotations: IDictionary_2<System_Internal.String, JsValue | null>;
     ClassName: string;
     ConfigurationClassNames: IReadOnlyDictionary_2<ITypeBase, System_Internal.String>;
     ForNativeAot: boolean;
@@ -149,20 +147,20 @@ export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
     MethodBuilder: IndentedStringBuilder;
     Namespace: string;
     Namespaces: ISet_1<System_Internal.String>;
-    ScopeObjects: IDictionary_2<System_Internal.String, unknown>;
-    ScopeVariables: IDictionary_2<unknown, System_Internal.String>;
+    ScopeObjects: IDictionary_2<System_Internal.String, JsValue>;
+    ScopeVariables: IDictionary_2<JsValue, System_Internal.String>;
     TargetName: string;
     UseNullableReferenceTypes: boolean;
     _Clone_$(): CSharpRuntimeAnnotationCodeGeneratorParameters;
-    Equals(obj: unknown): boolean;
-    Equals(other: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: CSharpRuntimeAnnotationCodeGeneratorParameters | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
 
 
 export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
-    new(targetName: string, className: string, namespace: string, mainBuilder: IndentedStringBuilder, methodBuilder: IndentedStringBuilder, namespaces: ISet_1<System_Internal.String>, scopeObjects: IDictionary_2<System_Internal.String, unknown>, scopeVariables: IDictionary_2<unknown, System_Internal.String>, configurationClassNames: Dictionary_2<ITypeBase, System_Internal.String>, nullable: boolean, nativeAot: boolean): CSharpRuntimeAnnotationCodeGeneratorParameters;
+    new(targetName: string, className: string, namespace: string, mainBuilder: IndentedStringBuilder, methodBuilder: IndentedStringBuilder, namespaces: ISet_1<System_Internal.String>, scopeObjects: IDictionary_2<System_Internal.String, JsValue>, scopeVariables: IDictionary_2<JsValue, System_Internal.String>, configurationClassNames: Dictionary_2<ITypeBase, System_Internal.String>, nullable: boolean, nativeAot: boolean): CSharpRuntimeAnnotationCodeGeneratorParameters;
 };
 
 
@@ -174,7 +172,7 @@ export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
 
     readonly RelationalDependencies: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
-    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer, keyValueComparer?: ValueComparer, providerValueComparer?: ValueComparer): boolean;
+    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer | null, keyValueComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null): boolean;
     Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -245,8 +243,8 @@ export interface RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies$inst
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }

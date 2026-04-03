@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import type { IDiagnosticsLogger_1 } from "../../Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js";
@@ -82,8 +83,8 @@ export interface ProviderConventionSetBuilderDependencies$instance {
     TypeMappingSource: ITypeMappingSource;
     ValidationLogger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>;
     _Clone_$(): ProviderConventionSetBuilderDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: ProviderConventionSetBuilderDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: ProviderConventionSetBuilderDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
     With(currentContext: ICurrentDbContext): ProviderConventionSetBuilderDependencies;
@@ -126,8 +127,8 @@ export interface RelationalConventionSetBuilderDependencies$instance {
     RelationalAnnotationProvider: IRelationalAnnotationProvider;
     UpdateSqlGenerator: IUpdateSqlGenerator;
     _Clone_$(): RelationalConventionSetBuilderDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: RelationalConventionSetBuilderDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: RelationalConventionSetBuilderDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }

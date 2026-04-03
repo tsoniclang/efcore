@@ -106,6 +106,7 @@ export { RelationalModelRuntimeInitializerDependencies as RelationalModelRuntime
 export { RelationalModelValidator as RelationalModelValidator } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
 export { RelationalModelValidatorDependencies as RelationalModelValidatorDependencies } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
 export { RelationalOptionsExtension as RelationalOptionsExtension } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
+export { RelationalOptionsExtension_RelationalExtensionInfo as RelationalOptionsExtension_RelationalExtensionInfo } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
 export { RelationalPropertyExtensions$instance as RelationalPropertyExtensions } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore_Infrastructure as ExtensionMethods } from './__internal/extensions/index.js';

@@ -2,11 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Metadata.Builders
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Import support types from @tsonic/core
-import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import type { ValueComparer } from "../../Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js";
@@ -33,9 +31,9 @@ export interface IConventionAnnotatableBuilder$instance {
     readonly Metadata: IConventionAnnotatable;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
 }
 
 
@@ -46,12 +44,12 @@ export interface IConventionCheckConstraintBuilder$instance extends IConventionA
 
     readonly Metadata: IConventionCheckConstraint;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetName(name: string, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionCheckConstraintBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionCheckConstraintBuilder | undefined;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetName(name: string | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionCheckConstraintBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionCheckConstraintBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -63,20 +61,20 @@ export interface IConventionComplexPropertyBuilder$instance extends IConventionP
 
     readonly Metadata: IConventionComplexProperty;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldName: string | null, fromDataAnnotation?: boolean): boolean;
     CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
+    HasAnnotation2(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
     UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder;
 }
@@ -89,48 +87,48 @@ export interface IConventionComplexTypeBuilder$instance extends IConventionTypeB
 
     readonly Metadata: IConventionComplexType;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): boolean;
-    CanHaveComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): boolean;
+    CanHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type | null, fromDataAnnotation?: boolean): boolean;
+    CanHaveComplexProperty(propertyType: Type | null, propertyName: string, complexType?: Type | null, fromDataAnnotation?: boolean): boolean;
     CanHaveProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): boolean;
-    CanHaveProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): boolean;
+    CanHaveProperty(propertyType: Type | null, propertyName: string, fromDataAnnotation?: boolean): boolean;
     CanRemoveComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): boolean;
     CanRemoveDiscriminator(fromDataAnnotation?: boolean): boolean;
     CanRemoveProperty(property: IConventionProperty, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
-    ComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    ComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    GetOrCreateProperties(memberInfos: IEnumerable_1<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
-    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasDiscriminator(fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
-    HasDiscriminator(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
-    HasDiscriminator(name: string, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
-    HasDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
-    HasDiscriminator(type: Type, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
-    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoDiscriminator(fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
-    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
-    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    IndexerProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
+    ComplexProperty(memberInfo: MemberInfo, complexType?: Type | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    ComplexProperty(propertyType: Type, propertyName: string, complexType?: Type | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    GetOrCreateProperties(memberInfos: IEnumerable_1<MemberInfo> | null, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | null;
+    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String> | null, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | null;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasDiscriminator(fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | null;
+    HasDiscriminator(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | null;
+    HasDiscriminator(name: string, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | null;
+    HasDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | null;
+    HasDiscriminator(type: Type, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | null;
+    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoDiscriminator(fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | null;
+    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | null;
+    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    IndexerProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
     IsIgnored(memberName: string, fromDataAnnotation?: boolean): boolean;
-    Property(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    Property(propertyType: Type, propertyName: string, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
+    Property(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    Property(propertyType: Type, propertyName: string, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
     RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionComplexTypeBuilder;
     RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionTypeBaseBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
+    HasAnnotation2(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
 }
 
 
@@ -140,8 +138,8 @@ export interface IConventionComplexTypeDiscriminatorBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionComplexTypeDiscriminatorBuilder: never;
 
     readonly ComplexType: IConventionComplexType;
-    CanSetValue(value: unknown, fromDataAnnotation?: boolean): boolean;
-    HasValue(value: unknown, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | undefined;
+    CanSetValue(value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    HasValue(value: JsValue | null, fromDataAnnotation?: boolean): IConventionComplexTypeDiscriminatorBuilder | null;
 }
 
 
@@ -152,19 +150,19 @@ export interface IConventionDbFunctionBuilder$instance extends IConventionAnnota
 
     readonly Metadata: IConventionDbFunction;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetIsBuiltIn(builtIn: boolean, fromDataAnnotation?: boolean): boolean;
-    CanSetName(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>, fromDataAnnotation?: boolean): boolean;
-    CanSetTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
+    CanSetName(name: string | null, fromDataAnnotation?: boolean): boolean;
+    CanSetTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | null, fromDataAnnotation?: boolean): boolean;
+    CanSetTypeMapping(typeMapping: RelationalTypeMapping | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | null;
     HasParameter(name: string, fromDataAnnotation?: boolean): IConventionDbFunctionParameterBuilder;
-    HasTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
-    HasTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
-    IsBuiltIn(builtIn: boolean, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | undefined;
+    HasTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | null, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | null;
+    HasTypeMapping(typeMapping: RelationalTypeMapping | null, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | null;
+    IsBuiltIn(builtIn: boolean, fromDataAnnotation?: boolean): IConventionDbFunctionBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -176,14 +174,14 @@ export interface IConventionDbFunctionParameterBuilder$instance extends IConvent
 
     readonly Metadata: IConventionDbFunctionParameter;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetStoreType(storeType: string, fromDataAnnotation?: boolean): boolean;
-    CanSetTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionDbFunctionParameterBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionDbFunctionParameterBuilder | undefined;
-    HasTypeMapping(typeMapping: RelationalTypeMapping, fromDataAnnotation?: boolean): IConventionDbFunctionParameterBuilder | undefined;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetStoreType(storeType: string | null, fromDataAnnotation?: boolean): boolean;
+    CanSetTypeMapping(typeMapping: RelationalTypeMapping | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionDbFunctionParameterBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionDbFunctionParameterBuilder | null;
+    HasTypeMapping(typeMapping: RelationalTypeMapping | null, fromDataAnnotation?: boolean): IConventionDbFunctionParameterBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -195,11 +193,11 @@ export interface IConventionDiscriminatorBuilder$instance {
 
     readonly EntityType: IConventionEntityType;
     CanSetIsComplete(complete: boolean, fromDataAnnotation?: boolean): boolean;
-    CanSetValue(entityType: IConventionEntityType, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetValue(value: unknown, fromDataAnnotation?: boolean): boolean;
-    HasValue(entityType: IConventionEntityType, value: unknown, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    HasValue(value: unknown, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    IsComplete(complete: boolean, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
+    CanSetValue(entityType: IConventionEntityType, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetValue(value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    HasValue(entityType: IConventionEntityType, value: JsValue | null, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | null;
+    HasValue(value: JsValue | null, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | null;
+    IsComplete(complete: boolean, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | null;
 }
 
 
@@ -211,21 +209,21 @@ export interface IConventionElementTypeBuilder$instance extends IConventionAnnot
     readonly Metadata: IConventionElementType;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetConversion(converter: ValueConverter, fromDataAnnotation?: boolean): boolean;
-    CanSetConversion(providerClrType: Type, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetConversion(converter: ValueConverter | null, fromDataAnnotation?: boolean): boolean;
+    CanSetConversion(providerClrType: Type | null, fromDataAnnotation?: boolean): boolean;
     CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
     CanSetTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): boolean;
-    CanSetValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
-    HasConversion(converter: ValueConverter, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
-    HasConversion(providerClrType: Type, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
-    HasTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
-    HasValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
-    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
+    CanSetValueComparer(comparer: ValueComparer | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
+    HasConversion(converter: ValueConverter | null, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
+    HasConversion(providerClrType: Type | null, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
+    HasTypeMapping(typeMapping: CoreTypeMapping | null, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
+    HasValueComparer(comparer: ValueComparer | null, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
 }
 
 
@@ -236,10 +234,10 @@ export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBa
 
     readonly Metadata: IConventionEntityType;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): boolean;
-    CanHaveComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): boolean;
-    CanHaveNavigation(navigationName: string, type: Type, fromDataAnnotation?: boolean): boolean;
-    CanHaveProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): boolean;
+    CanHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type | null, fromDataAnnotation?: boolean): boolean;
+    CanHaveComplexProperty(propertyType: Type | null, propertyName: string, complexType?: Type | null, fromDataAnnotation?: boolean): boolean;
+    CanHaveNavigation(navigationName: string, type: Type | null, fromDataAnnotation?: boolean): boolean;
+    CanHaveProperty(propertyType: Type | null, propertyName: string, fromDataAnnotation?: boolean): boolean;
     CanHaveProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): boolean;
     CanHaveServiceProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): boolean;
     CanHaveTrigger(modelName: string, fromDataAnnotation?: boolean): boolean;
@@ -252,82 +250,82 @@ export interface IConventionEntityTypeBuilder$instance extends IConventionTypeBa
     CanRemoveRelationship(foreignKey: IConventionForeignKey, fromDataAnnotation?: boolean): boolean;
     CanRemoveServiceProperty(serviceProperty: IConventionServiceProperty, fromDataAnnotation?: boolean): boolean;
     CanRemoveSkipNavigation(skipNavigation: IConventionSkipNavigation, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetBaseType(baseEntityType: IConventionEntityType, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetBaseType(baseEntityType: IConventionEntityType | null, fromDataAnnotation?: boolean): boolean;
     CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     CanSetPrimaryKey(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): boolean;
-    CanSetQueryFilter(filter: LambdaExpression, fromDataAnnotation?: boolean): boolean;
-    CanSetQueryFilter(filterKey: string, filter: LambdaExpression, fromDataAnnotation?: boolean): boolean;
-    ComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    ComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    GetOrCreateProperties(memberInfos: IEnumerable_1<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
-    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
-    GetTargetEntityTypeBuilder(targetClrType: Type, navigationInfo: MemberInfo, createIfMissing?: boolean, targetShouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasBaseType(baseEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasDiscriminator(fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    HasDiscriminator(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    HasDiscriminator(name: string, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    HasDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    HasDiscriminator(type: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | undefined;
-    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoIndex(index: IConventionIndex, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoKey(key: IConventionKey, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoKey(fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoKey(properties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoNavigation(navigation: IConventionNavigation, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoRelationship(foreignKey: IConventionForeignKey, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoRelationship(properties: IReadOnlyList_1<IConventionProperty>, principalKey: IConventionKey, principalEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoServiceProperty(serviceProperty: IConventionServiceProperty, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasNoSkipNavigation(skipNavigation: IConventionSkipNavigation, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasOwnership(targetEntityType: IConventionEntityType, navigation: MemberInfo, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: IConventionEntityType, navigation: MemberInfo, inverseNavigation: MemberInfo, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: IConventionEntityType, navigationName: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: IConventionEntityType, navigationName: string, inverseNavigationName: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: Type, navigation: MemberInfo, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: Type, navigation: MemberInfo, inverseNavigation: MemberInfo, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: Type, navigationName: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: Type, navigationName: string, inverseNavigationName: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasQueryFilter(filter: LambdaExpression, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasQueryFilter(filterKey: string, filter: LambdaExpression, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasRelationship(principalEntityType: IConventionEntityType, principalKey: IConventionKey, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasRelationship(targetEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasRelationship(principalEntityType: IConventionEntityType, dependentProperties: IReadOnlyList_1<IConventionProperty>, principalKey: IConventionKey, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasRelationship(principalEntityType: IConventionEntityType, dependentProperties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasRelationship(targetEntityType: IConventionEntityType, navigation: MemberInfo, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasRelationship(targetEntityType: IConventionEntityType, navigation: MemberInfo, inverseNavigation: MemberInfo, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasRelationship(targetEntityType: IConventionEntityType, navigationName: string, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasRelationship(targetEntityType: IConventionEntityType, navigationName: string, inverseNavigationName: string, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasSkipNavigation(navigation: MemberInfo, targetEntityType: IConventionEntityType, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    HasSkipNavigation(navigation: MemberInfo, targetEntityType: IConventionEntityType, inverseNavigation: MemberInfo, collections?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    HasSkipNavigation(navigationName: string, targetEntityType: IConventionEntityType, navigationType?: Type, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    HasTrigger(modelName: string, fromDataAnnotation?: boolean): IConventionTriggerBuilder | undefined;
-    IndexerProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    PrimaryKey(properties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): IConventionKeyBuilder | undefined;
-    Property(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    Property(propertyType: Type, propertyName: string, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
+    CanSetQueryFilter(filter: LambdaExpression | null, fromDataAnnotation?: boolean): boolean;
+    CanSetQueryFilter(filterKey: string, filter: LambdaExpression | null, fromDataAnnotation?: boolean): boolean;
+    ComplexProperty(memberInfo: MemberInfo, complexType?: Type | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    ComplexProperty(propertyType: Type, propertyName: string, complexType?: Type | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    GetOrCreateProperties(memberInfos: IEnumerable_1<MemberInfo> | null, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | null;
+    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String> | null, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | null;
+    GetTargetEntityTypeBuilder(targetClrType: Type, navigationInfo: MemberInfo, createIfMissing?: boolean, targetShouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasBaseType(baseEntityType: IConventionEntityType | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasDiscriminator(fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | null;
+    HasDiscriminator(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | null;
+    HasDiscriminator(name: string, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | null;
+    HasDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | null;
+    HasDiscriminator(type: Type, fromDataAnnotation?: boolean): IConventionDiscriminatorBuilder | null;
+    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IConventionIndexBuilder | null;
+    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoIndex(index: IConventionIndex, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoKey(key: IConventionKey, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoKey(fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoKey(properties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoNavigation(navigation: IConventionNavigation, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoRelationship(foreignKey: IConventionForeignKey, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoRelationship(properties: IReadOnlyList_1<IConventionProperty>, principalKey: IConventionKey, principalEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoServiceProperty(serviceProperty: IConventionServiceProperty, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasNoSkipNavigation(skipNavigation: IConventionSkipNavigation, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasOwnership(targetEntityType: IConventionEntityType, navigation: MemberInfo, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: IConventionEntityType, navigation: MemberInfo, inverseNavigation: MemberInfo | null, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: IConventionEntityType, navigationName: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: IConventionEntityType, navigationName: string, inverseNavigationName: string | null, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: Type, navigation: MemberInfo, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: Type, navigation: MemberInfo, inverseNavigation: MemberInfo | null, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: Type, navigationName: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: Type, navigationName: string, inverseNavigationName: string | null, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasQueryFilter(filter: LambdaExpression | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasQueryFilter(filterKey: string, filter: LambdaExpression | null, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasRelationship(principalEntityType: IConventionEntityType, principalKey: IConventionKey, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasRelationship(targetEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasRelationship(principalEntityType: IConventionEntityType, dependentProperties: IReadOnlyList_1<IConventionProperty>, principalKey: IConventionKey, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasRelationship(principalEntityType: IConventionEntityType, dependentProperties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasRelationship(targetEntityType: IConventionEntityType, navigation: MemberInfo, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasRelationship(targetEntityType: IConventionEntityType, navigation: MemberInfo, inverseNavigation: MemberInfo | null, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasRelationship(targetEntityType: IConventionEntityType, navigationName: string, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasRelationship(targetEntityType: IConventionEntityType, navigationName: string, inverseNavigationName: string | null, setTargetAsPrincipal?: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasSkipNavigation(navigation: MemberInfo, targetEntityType: IConventionEntityType, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | null;
+    HasSkipNavigation(navigation: MemberInfo, targetEntityType: IConventionEntityType, inverseNavigation: MemberInfo, collections?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | null;
+    HasSkipNavigation(navigationName: string, targetEntityType: IConventionEntityType, navigationType?: Type | null, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | null;
+    HasTrigger(modelName: string, fromDataAnnotation?: boolean): IConventionTriggerBuilder | null;
+    IndexerProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    PrimaryKey(properties: IReadOnlyList_1<IConventionProperty> | null, fromDataAnnotation?: boolean): IConventionKeyBuilder | null;
+    Property(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    Property(propertyType: Type, propertyName: string, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
     RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionEntityTypeBuilder;
     RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionTypeBaseBuilder;
-    ServiceProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
-    ServiceProperty(serviceType: Type, memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
+    ServiceProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | null;
+    ServiceProperty(serviceType: Type, memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanRemoveDiscriminator(fromDataAnnotation?: boolean): boolean;
-    HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
+    HasAnnotation2(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
     IsIgnored(memberName: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -340,9 +338,9 @@ export interface IConventionEntityTypeMappingFragmentBuilder$instance extends IC
     readonly Metadata: IConventionEntityTypeMappingFragment;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
 }
 
 
@@ -353,26 +351,26 @@ export interface IConventionForeignKeyBuilder$instance extends IConventionAnnota
 
     readonly Metadata: IConventionForeignKey;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanInvert(newForeignKeyProperties: IReadOnlyList_1<IConventionProperty>, fromDataAnnotation?: boolean): boolean;
+    CanInvert(newForeignKeyProperties: IReadOnlyList_1<IConventionProperty> | null, fromDataAnnotation?: boolean): boolean;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetEntityTypes(principalEntityType: IConventionEntityType, dependentEntityType: IConventionEntityType, fromDataAnnotation?: boolean): boolean;
     CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    CanSetNavigation(property: MemberInfo, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): boolean;
-    CanSetNavigation(name: string, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): boolean;
-    CanSetNavigations(navigationToPrincipal: MemberInfo, navigationToDependent: MemberInfo, fromDataAnnotation?: boolean): boolean;
-    CanSetNavigations(navigationToPrincipalName: string, navigationToDependentName: string, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasEntityTypes(principalEntityType: IConventionEntityType, dependentEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasForeignKey(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasNavigation(property: MemberInfo, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasNavigation(name: string, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasNavigations(navigationToPrincipal: MemberInfo, navigationToDependent: MemberInfo, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasNavigations(navigationToPrincipalName: string, navigationToDependentName: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
-    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | undefined;
+    CanSetNavigation(property: MemberInfo | null, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): boolean;
+    CanSetNavigation(name: string | null, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): boolean;
+    CanSetNavigations(navigationToPrincipal: MemberInfo | null, navigationToDependent: MemberInfo | null, fromDataAnnotation?: boolean): boolean;
+    CanSetNavigations(navigationToPrincipalName: string | null, navigationToDependentName: string | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasEntityTypes(principalEntityType: IConventionEntityType, dependentEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasForeignKey(propertyNames: IReadOnlyList_1<System_Internal.String> | null, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasNavigation(property: MemberInfo | null, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasNavigation(name: string | null, pointsToPrincipal: boolean, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasNavigations(navigationToPrincipal: MemberInfo | null, navigationToDependent: MemberInfo | null, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasNavigations(navigationToPrincipalName: string | null, navigationToDependentName: string | null, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionForeignKeyBuilder | null;
 }
 
 
@@ -384,15 +382,15 @@ export interface IConventionIndexBuilder$instance extends IConventionAnnotatable
     readonly Metadata: IConventionIndex;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetIsDescending(descending: IReadOnlyList_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetIsDescending(descending: IReadOnlyList_1<System_Internal.Boolean> | null, fromDataAnnotation?: boolean): boolean;
     CanSetIsUnique(unique: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    IsDescending(descending: IReadOnlyList_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
-    IsUnique(unique: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionIndexBuilder | undefined;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionIndexBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionIndexBuilder | null;
+    IsDescending(descending: IReadOnlyList_1<System_Internal.Boolean> | null, fromDataAnnotation?: boolean): IConventionIndexBuilder | null;
+    IsUnique(unique: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionIndexBuilder | null;
 }
 
 
@@ -404,11 +402,11 @@ export interface IConventionKeyBuilder$instance extends IConventionAnnotatableBu
     readonly Metadata: IConventionKey;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionKeyBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionKeyBuilder | undefined;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionKeyBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionKeyBuilder | null;
 }
 
 
@@ -419,25 +417,25 @@ export interface IConventionModelBuilder$instance extends IConventionAnnotatable
 
     readonly Metadata: IConventionModel;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanHaveSharedTypeEntity(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
+    CanHaveSharedTypeEntity(name: string, type: Type | null, fromDataAnnotation?: boolean): boolean;
     CanRemoveEntity(entityType: IConventionEntityType, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
-    ComplexType(type: Type, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
-    Entity(name: string, shouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    Entity(name: string, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    Entity(type: Type, shouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    Entity(type: Type, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
-    HasNoEntityType(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionModelBuilder | undefined;
+    ComplexType(type: Type, fromDataAnnotation?: boolean): IConventionModelBuilder | null;
+    Entity(name: string, shouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    Entity(name: string, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    Entity(type: Type, shouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    Entity(type: Type, definingNavigationName: string, definingEntityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionModelBuilder | null;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionModelBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionModelBuilder | null;
+    HasNoEntityType(entityType: IConventionEntityType, fromDataAnnotation?: boolean): IConventionModelBuilder | null;
     IsIgnored(typeName: string, fromDataAnnotation?: boolean): boolean;
     IsIgnored(type: Type, fromDataAnnotation?: boolean): boolean;
-    Owned(type: Type, fromDataAnnotation?: boolean): IConventionOwnedEntityTypeBuilder | undefined;
-    SharedTypeEntity(name: string, type: Type, shouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | undefined;
+    Owned(type: Type, fromDataAnnotation?: boolean): IConventionOwnedEntityTypeBuilder | null;
+    SharedTypeEntity(name: string, type: Type, shouldBeOwned?: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionEntityTypeBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -449,20 +447,20 @@ export interface IConventionNavigationBuilder$instance extends IConventionProper
 
     readonly Metadata: IConventionNavigation;
     readonly ModelBuilder: IConventionModelBuilder;
-    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionNavigationBuilder | undefined;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
+    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionNavigationBuilder | null;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetAutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionNavigationBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionNavigationBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionNavigationBuilder | undefined;
+    CanSetField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldName: string | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionNavigationBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionNavigationBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionNavigationBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
+    HasAnnotation2(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
     UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionNavigationBuilder;
 }
@@ -483,16 +481,16 @@ export interface IConventionPropertyBaseBuilder_1$instance<TBuilder extends ICon
 
     readonly Metadata: IConventionPropertyBase;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldName: string | null, fromDataAnnotation?: boolean): boolean;
     CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): TBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): TBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): TBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): TBuilder | undefined;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): TBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): TBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): TBuilder | null;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): TBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -504,33 +502,33 @@ export interface IConventionPropertyBuilder$instance extends IConventionProperty
 
     readonly Metadata: IConventionProperty;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetConversion(converter: ValueConverter, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetConversion(converter: ValueConverter | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldName: string | null, fromDataAnnotation?: boolean): boolean;
     CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    CanSetSentinel(sentinel: unknown, fromDataAnnotation?: boolean): boolean;
+    CanSetSentinel(sentinel: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): boolean;
-    CanSetValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): boolean;
-    CanSetValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>, fromDataAnnotation?: boolean): boolean;
-    CanSetValueGeneratorFactory(valueGeneratorFactoryType: Type, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    HasConversion(converter: ValueConverter, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    HasSentinel(sentinel: unknown, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    HasTypeMapping(typeMapping: CoreTypeMapping, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    HasValueComparer(comparer: ValueComparer, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    HasValueGenerator(valueGeneratorType: Type, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    SetElementType(elementType: Type, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | undefined;
+    CanSetValueComparer(comparer: ValueComparer | null, fromDataAnnotation?: boolean): boolean;
+    CanSetValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator> | null, fromDataAnnotation?: boolean): boolean;
+    CanSetValueGeneratorFactory(valueGeneratorFactoryType: Type | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    HasConversion(converter: ValueConverter | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    HasSentinel(sentinel: JsValue | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    HasTypeMapping(typeMapping: CoreTypeMapping | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    HasValueComparer(comparer: ValueComparer | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator> | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    HasValueGenerator(valueGeneratorType: Type | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    SetElementType(elementType: Type | null, fromDataAnnotation?: boolean): IConventionElementTypeBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
+    HasAnnotation2(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
     UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionPropertyBuilder;
 }
@@ -544,9 +542,9 @@ export interface IConventionRelationalPropertyOverridesBuilder$instance extends 
     readonly Metadata: IConventionRelationalPropertyOverrides;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
 }
 
 
@@ -558,15 +556,15 @@ export interface IConventionSequenceBuilder$instance extends IConventionAnnotata
     readonly Metadata: IConventionSequence;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetIncrementsBy(increment: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): boolean;
-    CanSetType(type: Type, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
-    HasType(type: Type, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
-    IncrementsBy(increment: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionSequenceBuilder | undefined;
+    CanSetType(type: Type | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionSequenceBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionSequenceBuilder | null;
+    HasType(type: Type | null, fromDataAnnotation?: boolean): IConventionSequenceBuilder | null;
+    IncrementsBy(increment: Nullable_1<System_Internal.Int32>, fromDataAnnotation?: boolean): IConventionSequenceBuilder | null;
 }
 
 
@@ -577,22 +575,22 @@ export interface IConventionServicePropertyBuilder$instance extends IConventionP
 
     readonly Metadata: IConventionServiceProperty;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
-    CanSetParameterBinding(parameterBinding: ServiceParameterBinding, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldName: string | null, fromDataAnnotation?: boolean): boolean;
+    CanSetParameterBinding(parameterBinding: ServiceParameterBinding | null, fromDataAnnotation?: boolean): boolean;
     CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
-    HasParameterBinding(parameterBinding: ServiceParameterBinding, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | undefined;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | null;
+    HasParameterBinding(parameterBinding: ServiceParameterBinding | null, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | null;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder | null;
     UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
+    HasAnnotation2(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionServicePropertyBuilder;
 }
 
@@ -604,24 +602,24 @@ export interface IConventionSkipNavigationBuilder$instance extends IConventionPr
 
     readonly Metadata: IConventionSkipNavigation;
     readonly ModelBuilder: IConventionModelBuilder;
-    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
+    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | null;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetAutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): boolean;
-    CanSetField(fieldName: string, fromDataAnnotation?: boolean): boolean;
-    CanSetForeignKey(foreignKey: IConventionForeignKey, fromDataAnnotation?: boolean): boolean;
-    CanSetInverse(inverse: IConventionSkipNavigation, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
-    HasForeignKey(foreignKey: IConventionForeignKey, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    HasInverse(inverse: IConventionSkipNavigation, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | undefined;
+    CanSetField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): boolean;
+    CanSetField(fieldName: string | null, fromDataAnnotation?: boolean): boolean;
+    CanSetForeignKey(foreignKey: IConventionForeignKey | null, fromDataAnnotation?: boolean): boolean;
+    CanSetInverse(inverse: IConventionSkipNavigation | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
+    HasForeignKey(foreignKey: IConventionForeignKey | null, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | null;
+    HasInverse(inverse: IConventionSkipNavigation | null, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
     CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation2(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
+    HasAnnotation2(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
     HasNoAnnotation2(name: string, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
     UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, fromDataAnnotation?: boolean): IConventionSkipNavigationBuilder;
 }
@@ -635,17 +633,17 @@ export interface IConventionStoredProcedureBuilder$instance extends IConventionA
     readonly Metadata: IConventionStoredProcedure;
     readonly ModelBuilder: IConventionModelBuilder;
     CanHaveRowsAffectedParameter(fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetName(name: string, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | undefined;
-    HasName(name: string, schema: string, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | undefined;
-    HasParameter(propertyName: string, fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | undefined;
-    HasResultColumn(propertyName: string, fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumnBuilder | undefined;
-    HasRowsAffectedParameter(fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | undefined;
-    HasRowsAffectedResultColumn(fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumnBuilder | undefined;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetName(name: string | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | null;
+    HasName(name: string | null, schema: string | null, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionStoredProcedureBuilder | null;
+    HasParameter(propertyName: string, fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | null;
+    HasResultColumn(propertyName: string, fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumnBuilder | null;
+    HasRowsAffectedParameter(fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | null;
+    HasRowsAffectedResultColumn(fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumnBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -657,14 +655,14 @@ export interface IConventionStoredProcedureParameterBuilder$instance extends ICo
 
     readonly Metadata: IConventionStoredProcedureParameter;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetDirection(direction: ParameterDirection, fromDataAnnotation?: boolean): boolean;
-    CanSetName(name: string, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | undefined;
-    HasDirection(direction: ParameterDirection, fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | undefined;
+    CanSetName(name: string | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | null;
+    HasDirection(direction: ParameterDirection, fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionStoredProcedureParameterBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -676,12 +674,12 @@ export interface IConventionStoredProcedureResultColumnBuilder$instance extends 
 
     readonly Metadata: IConventionStoredProcedureResultColumn;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    CanSetName(name: string, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumnBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumnBuilder | undefined;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    CanSetName(name: string | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumnBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionStoredProcedureResultColumnBuilder | null;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
 
@@ -694,11 +692,11 @@ export interface IConventionTriggerBuilder$instance extends IConventionAnnotatab
     readonly Metadata: IConventionTrigger;
     readonly ModelBuilder: IConventionModelBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTriggerBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTriggerBuilder | undefined;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionTriggerBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTriggerBuilder | null;
 }
 
 
@@ -709,32 +707,32 @@ export interface IConventionTypeBaseBuilder$instance extends IConventionAnnotata
 
     readonly Metadata: IConventionTypeBase;
     readonly ModelBuilder: IConventionModelBuilder;
-    CanHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): boolean;
-    CanHaveComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): boolean;
+    CanHaveComplexProperty(memberInfo: MemberInfo, complexType?: Type | null, fromDataAnnotation?: boolean): boolean;
+    CanHaveComplexProperty(propertyType: Type | null, propertyName: string, complexType?: Type | null, fromDataAnnotation?: boolean): boolean;
     CanHaveProperty(memberInfo: MemberInfo, fromDataAnnotation?: boolean): boolean;
-    CanHaveProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): boolean;
+    CanHaveProperty(propertyType: Type | null, propertyName: string, fromDataAnnotation?: boolean): boolean;
     CanRemoveComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): boolean;
     CanRemoveDiscriminator(fromDataAnnotation?: boolean): boolean;
     CanRemoveProperty(property: IConventionProperty, fromDataAnnotation?: boolean): boolean;
-    CanSetAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): boolean;
+    CanSetAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): boolean;
     CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(name: string, type: Type, fromDataAnnotation?: boolean): boolean;
     CanSetDiscriminator(type: Type, fromDataAnnotation?: boolean): boolean;
-    ComplexProperty(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    ComplexProperty(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    GetOrCreateProperties(memberInfos: IEnumerable_1<MemberInfo>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
-    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String>, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasAnnotation(name: string, value: unknown, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | undefined;
-    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | undefined;
-    IndexerProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
+    ComplexProperty(memberInfo: MemberInfo, complexType?: Type | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    ComplexProperty(propertyType: Type, propertyName: string, complexType?: Type | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    GetOrCreateProperties(memberInfos: IEnumerable_1<MemberInfo> | null, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | null;
+    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String> | null, fromDataAnnotation?: boolean): IReadOnlyList_1<IConventionProperty> | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasAnnotation(name: string, value: JsValue | null, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionAnnotatableBuilder | null;
+    HasNoAnnotation(name: string, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoComplexProperty(complexProperty: IConventionComplexProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    HasNoProperty(property: IConventionProperty, fromDataAnnotation?: boolean): IConventionTypeBaseBuilder | null;
+    IndexerProperty(propertyType: Type, propertyName: string, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
     IsIgnored(memberName: string, fromDataAnnotation?: boolean): boolean;
-    Property(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
-    Property(propertyType: Type, propertyName: string, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionPropertyBuilder | undefined;
+    Property(memberInfo: MemberInfo, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
+    Property(propertyType: Type, propertyName: string, setTypeConfigurationSource?: boolean, fromDataAnnotation?: boolean): IConventionPropertyBuilder | null;
     RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): IConventionTypeBaseBuilder;
     CanRemoveAnnotation(name: string, fromDataAnnotation?: boolean): boolean;
 }
@@ -749,11 +747,11 @@ export interface CheckConstraintBuilder$instance extends Microsoft_EntityFramewo
 
     readonly Builder: InternalCheckConstraintBuilder;
     readonly Metadata: IMutableCheckConstraint;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): CheckConstraintBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): CheckConstraintBuilder;
     HasName(name: string): CheckConstraintBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -777,9 +775,9 @@ export interface CollectionCollectionBuilder$instance {
     readonly ModelBuilder: InternalModelBuilder;
     readonly RightEntityType: IMutableEntityType;
     readonly RightNavigation: IMutableSkipNavigation;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UsingEntity(joinEntityType: Type): EntityTypeBuilder;
     UsingEntity(joinEntityName: string): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, joinEntityType: Type): EntityTypeBuilder;
@@ -795,7 +793,7 @@ export interface CollectionCollectionBuilder$instance {
     UsingEntity(joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<IMutableEntityType, IMutableForeignKey>, configureLeft: Func_2<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
+    UsingEntity(joinEntityName: string | null, joinEntityType: Type | null, configureRight: Func_2<IMutableEntityType, IMutableForeignKey> | null, configureLeft: Func_2<IMutableEntityType, IMutableForeignKey> | null): IMutableEntityType;
 }
 
 
@@ -831,7 +829,7 @@ export interface CollectionCollectionBuilder_2$instance<TLeftEntity, TRightEntit
     UsingEntity(joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>): EntityTypeBuilder;
-    UsingEntity(joinEntityName: string, joinEntityType: Type, configureRight: Func_2<IMutableEntityType, IMutableForeignKey>, configureLeft: Func_2<IMutableEntityType, IMutableForeignKey>): IMutableEntityType;
+    UsingEntity(joinEntityName: string | null, joinEntityType: Type | null, configureRight: Func_2<IMutableEntityType, IMutableForeignKey> | null, configureLeft: Func_2<IMutableEntityType, IMutableForeignKey> | null): IMutableEntityType;
     UsingEntity(configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
     UsingEntity(configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
     UsingEntity(joinEntityName: string, configureRight: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureLeft: Func_2<EntityTypeBuilder, ReferenceCollectionBuilder>, configureJoinEntityType: Action_1<EntityTypeBuilder>): EntityTypeBuilder;
@@ -851,28 +849,28 @@ export interface CollectionNavigationBuilder$instance extends Microsoft_EntityFr
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    get Builder(): InternalForeignKeyBuilder | undefined;
-    set Builder(value: InternalForeignKeyBuilder | undefined);
-    readonly CollectionMember: MemberInfo | undefined;
-    readonly CollectionName: string | undefined;
+    get Builder(): InternalForeignKeyBuilder | null;
+    set Builder(value: InternalForeignKeyBuilder | null);
+    readonly CollectionMember: MemberInfo | null;
+    readonly CollectionName: string | null;
     readonly DeclaringEntityType: IMutableEntityType;
     readonly RelatedEntityType: IMutableEntityType;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string | null;
     WithLeftManyNavigation(inverseMemberInfo: MemberInfo): IMutableSkipNavigation;
-    WithLeftManyNavigation(inverseName: string): IMutableSkipNavigation;
-    WithMany(navigationName?: string): CollectionCollectionBuilder;
-    WithOne(navigationName?: string): ReferenceCollectionBuilder;
-    WithOneBuilder(navigationName: string): InternalForeignKeyBuilder;
-    WithOneBuilder(navigationMemberInfo: MemberInfo): InternalForeignKeyBuilder;
-    WithRightManyNavigation(navigationName: string, inverseName: string): IMutableSkipNavigation;
-    WithRightManyNavigation(navigationMemberInfo: MemberInfo, inverseName: string): IMutableSkipNavigation;
+    WithLeftManyNavigation(inverseName: string | null): IMutableSkipNavigation;
+    WithMany(navigationName?: string | null): CollectionCollectionBuilder;
+    WithOne(navigationName?: string | null): ReferenceCollectionBuilder;
+    WithOneBuilder(navigationName: string | null): InternalForeignKeyBuilder;
+    WithOneBuilder(navigationMemberInfo: MemberInfo | null): InternalForeignKeyBuilder;
+    WithRightManyNavigation(navigationName: string | null, inverseName: string | null): IMutableSkipNavigation;
+    WithRightManyNavigation(navigationMemberInfo: MemberInfo, inverseName: string | null): IMutableSkipNavigation;
 }
 
 
 export const CollectionNavigationBuilder: {
-    new(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigation: MemberIdentity, foreignKey: IMutableForeignKey, skipNavigation: IMutableSkipNavigation): CollectionNavigationBuilder;
+    new(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigation: MemberIdentity, foreignKey: IMutableForeignKey | null, skipNavigation: IMutableSkipNavigation | null): CollectionNavigationBuilder;
 };
 
 
@@ -888,17 +886,17 @@ export interface CollectionNavigationBuilder_2$instance<TEntity, TRelatedEntity>
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    WithMany(navigationName?: string): CollectionCollectionBuilder_2<TRelatedEntity, TEntity>;
-    WithMany(navigationExpression: Expression_1<Func_2<TRelatedEntity, IEnumerable_1<TEntity>>>): CollectionCollectionBuilder_2<TRelatedEntity, TEntity>;
-    WithMany(navigationName?: string): CollectionCollectionBuilder;
-    WithOne(navigationName?: string): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
-    WithOne(navigationExpression: Expression_1<Func_2<TRelatedEntity, TEntity>>): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
-    WithOne(navigationName?: string): ReferenceCollectionBuilder;
+    WithMany(navigationName?: string | null): CollectionCollectionBuilder_2<TRelatedEntity, TEntity>;
+    WithMany(navigationExpression: Expression_1<Func_2<TRelatedEntity, IEnumerable_1<TEntity> | null>>): CollectionCollectionBuilder_2<TRelatedEntity, TEntity>;
+    WithMany(navigationName?: string | null): CollectionCollectionBuilder;
+    WithOne(navigationName?: string | null): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
+    WithOne(navigationExpression: Expression_1<Func_2<TRelatedEntity, TEntity | null>> | null): ReferenceCollectionBuilder_2<TEntity, TRelatedEntity>;
+    WithOne(navigationName?: string | null): ReferenceCollectionBuilder;
 }
 
 
 export const CollectionNavigationBuilder_2: {
-    new<TEntity, TRelatedEntity>(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigation: MemberIdentity, foreignKey: IMutableForeignKey, skipNavigation: IMutableSkipNavigation): CollectionNavigationBuilder_2<TEntity, TRelatedEntity>;
+    new<TEntity, TRelatedEntity>(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigation: MemberIdentity, foreignKey: IMutableForeignKey | null, skipNavigation: IMutableSkipNavigation | null): CollectionNavigationBuilder_2<TEntity, TRelatedEntity>;
 };
 
 
@@ -916,11 +914,11 @@ export interface ColumnBuilder$instance extends Microsoft_EntityFrameworkCore_In
 
     readonly InternalOverrides: RelationalPropertyOverrides;
     readonly Overrides: IMutableRelationalPropertyOverrides;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): ColumnBuilder;
-    HasColumnName(name: string): ColumnBuilder;
-    ToString(): string | undefined;
+    HasAnnotation(annotation: string, value: JsValue | null): ColumnBuilder;
+    HasColumnName(name: string | null): ColumnBuilder;
+    ToString(): string | null;
 }
 
 
@@ -941,10 +939,10 @@ export interface ColumnBuilder_1$instance<TProperty> extends ColumnBuilder$insta
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): ColumnBuilder_1<TProperty>;
-    HasAnnotation(annotation: string, value: unknown): ColumnBuilder;
-    HasColumnName(name: string): ColumnBuilder_1<TProperty>;
-    HasColumnName(name: string): ColumnBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ColumnBuilder_1<TProperty>;
+    HasAnnotation(annotation: string, value: JsValue | null): ColumnBuilder;
+    HasColumnName(name: string | null): ColumnBuilder_1<TProperty>;
+    HasColumnName(name: string | null): ColumnBuilder;
 }
 
 
@@ -988,12 +986,12 @@ export interface ComplexCollectionBuilder$instance extends Microsoft_EntityFrame
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexCollectionBuilder;
     HasField(fieldName: string): ComplexCollectionBuilder;
-    HasPropertyAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder;
-    HasTypeAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder;
+    HasPropertyAnnotation(annotation: string, value: JsValue | null): ComplexCollectionBuilder;
+    HasTypeAnnotation(annotation: string, value: JsValue | null): ComplexCollectionBuilder;
     Ignore(propertyName: string): ComplexCollectionBuilder;
     IndexerProperty<TProperty>(propertyName: string): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     IndexerProperty(propertyType: Type, propertyName: string): ComplexCollectionTypePropertyBuilder;
@@ -1004,7 +1002,7 @@ export interface ComplexCollectionBuilder$instance extends Microsoft_EntityFrame
     Property(propertyName: string): ComplexCollectionTypePropertyBuilder;
     Property<TProperty>(propertyName: string): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     Property(propertyType: Type, propertyName: string): ComplexCollectionTypePropertyBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UseDefaultPropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexCollectionBuilder;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexCollectionBuilder;
 }
@@ -1032,10 +1030,10 @@ export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCo
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder_1<TComplex>;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement | null> | null>>): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement | null> | null>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement | null> | null>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement | null> | null>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1051,10 +1049,10 @@ export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCo
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder_1<TComplex>;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty | null>>): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty | null>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty | null>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty | null>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexCollectionBuilder_1<TComplex>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
@@ -1069,11 +1067,11 @@ export interface ComplexCollectionBuilder_1$instance<TComplex> extends ComplexCo
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexCollectionBuilder;
     HasField(fieldName: string): ComplexCollectionBuilder_1<TComplex>;
     HasField(fieldName: string): ComplexCollectionBuilder;
-    HasPropertyAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder_1<TComplex>;
-    HasPropertyAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder;
-    HasTypeAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder_1<TComplex>;
-    HasTypeAnnotation(annotation: string, value: unknown): ComplexCollectionBuilder;
-    Ignore(propertyExpression: Expression_1<Func_2<TComplex, unknown>>): ComplexCollectionBuilder_1<TComplex>;
+    HasPropertyAnnotation(annotation: string, value: JsValue | null): ComplexCollectionBuilder_1<TComplex>;
+    HasPropertyAnnotation(annotation: string, value: JsValue | null): ComplexCollectionBuilder;
+    HasTypeAnnotation(annotation: string, value: JsValue | null): ComplexCollectionBuilder_1<TComplex>;
+    HasTypeAnnotation(annotation: string, value: JsValue | null): ComplexCollectionBuilder;
+    Ignore(propertyExpression: Expression_1<Func_2<TComplex, JsValue | null>>): ComplexCollectionBuilder_1<TComplex>;
     Ignore(propertyName: string): ComplexCollectionBuilder_1<TComplex>;
     Ignore(propertyName: string): ComplexCollectionBuilder;
     IsRequired(required?: boolean): ComplexCollectionBuilder_1<TComplex>;
@@ -1111,29 +1109,29 @@ export interface ComplexCollectionTypePropertyBuilder$instance extends Microsoft
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableProperty;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): ComplexCollectionTypePropertyBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ComplexCollectionTypePropertyBuilder;
     HasConversion<TConversion>(): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type): ComplexCollectionTypePropertyBuilder;
-    HasConversion(converter: ValueConverter): ComplexCollectionTypePropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type): ComplexCollectionTypePropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): ComplexCollectionTypePropertyBuilder;
+    HasConversion(conversionType: Type | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion(conversionType: Type, comparerType: Type | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion(conversionType: Type, comparerType: Type | null, providerComparerType: Type | null): ComplexCollectionTypePropertyBuilder;
     HasField(fieldName: string): ComplexCollectionTypePropertyBuilder;
-    HasSentinel(sentinel: unknown): ComplexCollectionTypePropertyBuilder;
+    HasSentinel(sentinel: JsValue | null): ComplexCollectionTypePropertyBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexCollectionTypePropertyBuilder;
-    HasValueGenerator(valueGeneratorType: Type): ComplexCollectionTypePropertyBuilder;
+    HasValueGenerator(valueGeneratorType: Type | null): ComplexCollectionTypePropertyBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexCollectionTypePropertyBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexCollectionTypePropertyBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): ComplexCollectionTypePropertyBuilder;
     IsRequired(required?: boolean): ComplexCollectionTypePropertyBuilder;
     IsUnicode(unicode?: boolean): ComplexCollectionTypePropertyBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexCollectionTypePropertyBuilder;
 }
 
@@ -1155,44 +1153,44 @@ export interface ComplexCollectionTypePropertyBuilder_1$instance<TProperty> exte
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasAnnotation(annotation: string, value: unknown): ComplexCollectionTypePropertyBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasAnnotation(annotation: string, value: JsValue | null): ComplexCollectionTypePropertyBuilder;
     HasConversion<TConversion>(): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion(providerClrType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(providerClrType: Type | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion(converter: ValueConverter): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion<TConversion>(valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, comparerType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider> | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider> | null, valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider> | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, comparerType: Type | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, comparerType: Type | null, providerComparerType: Type | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasConversion<TConversion>(): ComplexCollectionTypePropertyBuilder;
-    HasConversion(converter: ValueConverter): ComplexCollectionTypePropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexCollectionTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexCollectionTypePropertyBuilder;
     HasField(fieldName: string): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasField(fieldName: string): ComplexCollectionTypePropertyBuilder;
-    HasSentinel(sentinel: unknown): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasSentinel(sentinel: TProperty): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasSentinel(sentinel: unknown): ComplexCollectionTypePropertyBuilder;
+    HasSentinel(sentinel: JsValue | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasSentinel(sentinel: TProperty | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasSentinel(sentinel: JsValue | null): ComplexCollectionTypePropertyBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasValueGenerator(valueGeneratorType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasValueGenerator(valueGeneratorType: Type | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexCollectionTypePropertyBuilder;
-    HasValueGenerator(valueGeneratorType: Type): ComplexCollectionTypePropertyBuilder;
+    HasValueGenerator(valueGeneratorType: Type | null): ComplexCollectionTypePropertyBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexCollectionTypePropertyBuilder_1<TProperty>;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexCollectionTypePropertyBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexCollectionTypePropertyBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexCollectionTypePropertyBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): ComplexCollectionTypePropertyBuilder;
     IsRequired(required?: boolean): ComplexCollectionTypePropertyBuilder_1<TProperty>;
     IsRequired(required?: boolean): ComplexCollectionTypePropertyBuilder;
     IsUnicode(unicode?: boolean): ComplexCollectionTypePropertyBuilder_1<TProperty>;
@@ -1218,9 +1216,9 @@ export interface ComplexPropertiesConfigurationBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Builders_ComplexPropertiesConfigurationBuilder: never;
 
     readonly Configuration: ComplexPropertyConfiguration;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -1272,7 +1270,7 @@ export interface ComplexPropertyBuilder$instance extends Microsoft_EntityFramewo
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ComplexPropertyBuilder;
     HasDiscriminator(): ComplexTypeDiscriminatorBuilder;
@@ -1280,8 +1278,8 @@ export interface ComplexPropertyBuilder$instance extends Microsoft_EntityFramewo
     HasDiscriminator<TDiscriminator>(name: string): ComplexTypeDiscriminatorBuilder_1<TDiscriminator>;
     HasField(fieldName: string): ComplexPropertyBuilder;
     HasNoDiscriminator(): ComplexPropertyBuilder;
-    HasPropertyAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder;
-    HasTypeAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder;
+    HasPropertyAnnotation(annotation: string, value: JsValue | null): ComplexPropertyBuilder;
+    HasTypeAnnotation(annotation: string, value: JsValue | null): ComplexPropertyBuilder;
     Ignore(propertyName: string): ComplexPropertyBuilder;
     IndexerProperty<TProperty>(propertyName: string): ComplexTypePropertyBuilder_1<TProperty>;
     IndexerProperty(propertyType: Type, propertyName: string): ComplexTypePropertyBuilder;
@@ -1292,7 +1290,7 @@ export interface ComplexPropertyBuilder$instance extends Microsoft_EntityFramewo
     Property(propertyName: string): ComplexTypePropertyBuilder;
     Property<TProperty>(propertyName: string): ComplexTypePropertyBuilder_1<TProperty>;
     Property(propertyType: Type, propertyName: string): ComplexTypePropertyBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UseDefaultPropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexPropertyBuilder;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexPropertyBuilder;
 }
@@ -1320,10 +1318,10 @@ export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexProp
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder_1<TComplex>;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement | null> | null>>): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement | null> | null>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement | null> | null>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplex, IEnumerable_1<TElement | null> | null>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
@@ -1339,10 +1337,10 @@ export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexProp
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder_1<TComplex>;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty | null>>): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty | null>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty | null>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TComplex, TProperty | null>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): ComplexPropertyBuilder_1<TComplex>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
@@ -1363,11 +1361,11 @@ export interface ComplexPropertyBuilder_1$instance<TComplex> extends ComplexProp
     HasField(fieldName: string): ComplexPropertyBuilder;
     HasNoDiscriminator(): ComplexPropertyBuilder_1<TComplex>;
     HasNoDiscriminator(): ComplexPropertyBuilder;
-    HasPropertyAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder_1<TComplex>;
-    HasPropertyAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder;
-    HasTypeAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder_1<TComplex>;
-    HasTypeAnnotation(annotation: string, value: unknown): ComplexPropertyBuilder;
-    Ignore(propertyExpression: Expression_1<Func_2<TComplex, unknown>>): ComplexPropertyBuilder_1<TComplex>;
+    HasPropertyAnnotation(annotation: string, value: JsValue | null): ComplexPropertyBuilder_1<TComplex>;
+    HasPropertyAnnotation(annotation: string, value: JsValue | null): ComplexPropertyBuilder;
+    HasTypeAnnotation(annotation: string, value: JsValue | null): ComplexPropertyBuilder_1<TComplex>;
+    HasTypeAnnotation(annotation: string, value: JsValue | null): ComplexPropertyBuilder;
+    Ignore(propertyExpression: Expression_1<Func_2<TComplex, JsValue | null>>): ComplexPropertyBuilder_1<TComplex>;
     Ignore(propertyName: string): ComplexPropertyBuilder_1<TComplex>;
     Ignore(propertyName: string): ComplexPropertyBuilder;
     IsRequired(required?: boolean): ComplexPropertyBuilder_1<TComplex>;
@@ -1405,10 +1403,10 @@ export interface ComplexTypeDiscriminatorBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionComplexTypeDiscriminatorBuilder: never;
 
     readonly ComplexTypeBuilder: InternalComplexTypeBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasValue(value: unknown): ComplexTypeDiscriminatorBuilder;
-    ToString(): string | undefined;
+    HasValue(value: JsValue | null): ComplexTypeDiscriminatorBuilder;
+    ToString(): string | null;
 }
 
 
@@ -1446,20 +1444,20 @@ export interface ComplexTypePrimitiveCollectionBuilder$instance extends Microsof
     readonly Metadata: IMutableProperty;
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action_1<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): ComplexTypePrimitiveCollectionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ComplexTypePrimitiveCollectionBuilder;
     HasField(fieldName: string): ComplexTypePrimitiveCollectionBuilder;
     HasMaxLength(maxLength: int): ComplexTypePrimitiveCollectionBuilder;
-    HasSentinel(sentinel: unknown): ComplexTypePrimitiveCollectionBuilder;
+    HasSentinel(sentinel: JsValue | null): ComplexTypePrimitiveCollectionBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePrimitiveCollectionBuilder;
-    HasValueGenerator(valueGeneratorType: Type): ComplexTypePrimitiveCollectionBuilder;
+    HasValueGenerator(valueGeneratorType: Type | null): ComplexTypePrimitiveCollectionBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePrimitiveCollectionBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePrimitiveCollectionBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): ComplexTypePrimitiveCollectionBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePrimitiveCollectionBuilder;
     IsRequired(required?: boolean): ComplexTypePrimitiveCollectionBuilder;
     IsUnicode(unicode?: boolean): ComplexTypePrimitiveCollectionBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexTypePrimitiveCollectionBuilder;
     ValueGeneratedNever(): ComplexTypePrimitiveCollectionBuilder;
     ValueGeneratedOnAdd(): ComplexTypePrimitiveCollectionBuilder;
@@ -1489,23 +1487,23 @@ export interface ComplexTypePrimitiveCollectionBuilder_1$instance<TProperty> ext
     ElementType(builderAction: Action_1<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action_1<ElementTypeBuilder>): ComplexTypePrimitiveCollectionBuilder;
-    HasAnnotation(annotation: string, value: unknown): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    HasAnnotation(annotation: string, value: unknown): ComplexTypePrimitiveCollectionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    HasAnnotation(annotation: string, value: JsValue | null): ComplexTypePrimitiveCollectionBuilder;
     HasField(fieldName: string): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasField(fieldName: string): ComplexTypePrimitiveCollectionBuilder;
     HasMaxLength(maxLength: int): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasMaxLength(maxLength: int): ComplexTypePrimitiveCollectionBuilder;
-    HasSentinel(sentinel: unknown): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    HasSentinel(sentinel: TProperty): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    HasSentinel(sentinel: unknown): ComplexTypePrimitiveCollectionBuilder;
+    HasSentinel(sentinel: JsValue | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    HasSentinel(sentinel: TProperty | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    HasSentinel(sentinel: JsValue | null): ComplexTypePrimitiveCollectionBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    HasValueGenerator(valueGeneratorType: Type): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    HasValueGenerator(valueGeneratorType: Type | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePrimitiveCollectionBuilder;
-    HasValueGenerator(valueGeneratorType: Type): ComplexTypePrimitiveCollectionBuilder;
+    HasValueGenerator(valueGeneratorType: Type | null): ComplexTypePrimitiveCollectionBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePrimitiveCollectionBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePrimitiveCollectionBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): ComplexTypePrimitiveCollectionBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
     IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePrimitiveCollectionBuilder;
     IsRequired(required?: boolean): ComplexTypePrimitiveCollectionBuilder_1<TProperty>;
@@ -1545,34 +1543,34 @@ export interface ComplexTypePropertyBuilder$instance extends Microsoft_EntityFra
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableProperty;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): ComplexTypePropertyBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ComplexTypePropertyBuilder;
     HasConversion<TConversion>(): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type): ComplexTypePropertyBuilder;
-    HasConversion(converter: ValueConverter): ComplexTypePropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type): ComplexTypePropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): ComplexTypePropertyBuilder;
+    HasConversion(conversionType: Type | null): ComplexTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null): ComplexTypePropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): ComplexTypePropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null): ComplexTypePropertyBuilder;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): ComplexTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder;
+    HasConversion(conversionType: Type, comparerType: Type | null): ComplexTypePropertyBuilder;
+    HasConversion(conversionType: Type, comparerType: Type | null, providerComparerType: Type | null): ComplexTypePropertyBuilder;
     HasField(fieldName: string): ComplexTypePropertyBuilder;
     HasMaxLength(maxLength: int): ComplexTypePropertyBuilder;
     HasPrecision(precision: int, scale: int): ComplexTypePropertyBuilder;
     HasPrecision(precision: int): ComplexTypePropertyBuilder;
-    HasSentinel(sentinel: unknown): ComplexTypePropertyBuilder;
+    HasSentinel(sentinel: JsValue | null): ComplexTypePropertyBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePropertyBuilder;
-    HasValueGenerator(valueGeneratorType: Type): ComplexTypePropertyBuilder;
+    HasValueGenerator(valueGeneratorType: Type | null): ComplexTypePropertyBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePropertyBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePropertyBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): ComplexTypePropertyBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePropertyBuilder;
     IsRequired(required?: boolean): ComplexTypePropertyBuilder;
     IsRowVersion(): ComplexTypePropertyBuilder;
     IsUnicode(unicode?: boolean): ComplexTypePropertyBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ComplexTypePropertyBuilder;
     ValueGeneratedNever(): ComplexTypePropertyBuilder;
     ValueGeneratedOnAdd(): ComplexTypePropertyBuilder;
@@ -1599,31 +1597,31 @@ export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends Comple
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): ComplexTypePropertyBuilder_1<TProperty>;
-    HasAnnotation(annotation: string, value: unknown): ComplexTypePropertyBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasAnnotation(annotation: string, value: JsValue | null): ComplexTypePropertyBuilder;
     HasConversion<TConversion>(): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion(providerClrType: Type): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(providerClrType: Type | null): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion(converter: ValueConverter): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion<TConversion>(valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, comparerType: Type): ComplexTypePropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider> | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider> | null, valueComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider> | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, comparerType: Type | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, comparerType: Type | null, providerComparerType: Type | null): ComplexTypePropertyBuilder_1<TProperty>;
     HasConversion<TConversion>(): ComplexTypePropertyBuilder;
-    HasConversion(converter: ValueConverter): ComplexTypePropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ComplexTypePropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): ComplexTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null): ComplexTypePropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): ComplexTypePropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): ComplexTypePropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): ComplexTypePropertyBuilder;
     HasField(fieldName: string): ComplexTypePropertyBuilder_1<TProperty>;
     HasField(fieldName: string): ComplexTypePropertyBuilder;
     HasMaxLength(maxLength: int): ComplexTypePropertyBuilder_1<TProperty>;
@@ -1632,17 +1630,17 @@ export interface ComplexTypePropertyBuilder_1$instance<TProperty> extends Comple
     HasPrecision(precision: int): ComplexTypePropertyBuilder_1<TProperty>;
     HasPrecision(precision: int, scale: int): ComplexTypePropertyBuilder;
     HasPrecision(precision: int): ComplexTypePropertyBuilder;
-    HasSentinel(sentinel: unknown): ComplexTypePropertyBuilder_1<TProperty>;
-    HasSentinel(sentinel: TProperty): ComplexTypePropertyBuilder_1<TProperty>;
-    HasSentinel(sentinel: unknown): ComplexTypePropertyBuilder;
+    HasSentinel(sentinel: JsValue | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasSentinel(sentinel: TProperty | null): ComplexTypePropertyBuilder_1<TProperty>;
+    HasSentinel(sentinel: JsValue | null): ComplexTypePropertyBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePropertyBuilder_1<TProperty>;
-    HasValueGenerator(valueGeneratorType: Type): ComplexTypePropertyBuilder_1<TProperty>;
+    HasValueGenerator(valueGeneratorType: Type | null): ComplexTypePropertyBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): ComplexTypePropertyBuilder;
-    HasValueGenerator(valueGeneratorType: Type): ComplexTypePropertyBuilder;
+    HasValueGenerator(valueGeneratorType: Type | null): ComplexTypePropertyBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePropertyBuilder_1<TProperty>;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePropertyBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): ComplexTypePropertyBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): ComplexTypePropertyBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): ComplexTypePropertyBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): ComplexTypePropertyBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePropertyBuilder_1<TProperty>;
     IsConcurrencyToken(concurrencyToken?: boolean): ComplexTypePropertyBuilder;
     IsRequired(required?: boolean): ComplexTypePropertyBuilder_1<TProperty>;
@@ -1682,12 +1680,12 @@ export interface ConventionSetBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Builders_ConventionSetBuilder: never;
 
     Add(conventionFactory: Func_2<IServiceProvider, IConvention>): void;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     Remove(conventionType: Type): void;
     Remove<TImplementation extends IConvention>(): void;
     Replace<TImplementation extends IConvention>(conventionFactory: Func_2<IServiceProvider, TImplementation>): void;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -1701,9 +1699,9 @@ export type ConventionSetBuilder = ConventionSetBuilder$instance;
 export interface DataBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Builders_DataBuilder: never;
 
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -1732,15 +1730,15 @@ export interface DbFunctionBuilder$instance extends DbFunctionBuilderBase$instan
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): DbFunctionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): DbFunctionBuilder;
     HasName(name: string): DbFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilder;
     HasParameter(name: string): DbFunctionParameterBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
-    HasSchema(schema: string): DbFunctionBuilder;
-    HasSchema(schema: string): DbFunctionBuilderBase;
-    HasStoreType(storeType: string): DbFunctionBuilder;
+    HasSchema(schema: string | null): DbFunctionBuilder;
+    HasSchema(schema: string | null): DbFunctionBuilderBase;
+    HasStoreType(storeType: string | null): DbFunctionBuilder;
     HasTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>): DbFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
@@ -1767,14 +1765,14 @@ export interface DbFunctionBuilderBase$instance extends Microsoft_EntityFramewor
 
     readonly Builder: InternalDbFunctionBuilder;
     readonly Metadata: IMutableDbFunction;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string): DbFunctionParameterBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
-    HasSchema(schema: string): DbFunctionBuilderBase;
+    HasSchema(schema: string | null): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -1795,11 +1793,11 @@ export interface DbFunctionParameterBuilder$instance extends Microsoft_EntityFra
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableDbFunctionParameter;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasStoreType(storeType: string): DbFunctionParameterBuilder;
+    HasStoreType(storeType: string | null): DbFunctionParameterBuilder;
     PropagatesNullability(propagatesNullability?: boolean): DbFunctionParameterBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -1821,13 +1819,13 @@ export interface DiscriminatorBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionDiscriminatorBuilder: never;
 
     readonly EntityTypeBuilder: InternalEntityTypeBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasValue(value: unknown): DiscriminatorBuilder;
-    HasValue(entityType: Type, value: unknown): DiscriminatorBuilder;
-    HasValue(entityTypeName: string, value: unknown): DiscriminatorBuilder;
+    HasValue(value: JsValue | null): DiscriminatorBuilder;
+    HasValue(entityType: Type, value: JsValue | null): DiscriminatorBuilder;
+    HasValue(entityTypeName: string, value: JsValue | null): DiscriminatorBuilder;
     IsComplete(complete?: boolean): DiscriminatorBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -1866,22 +1864,22 @@ export interface ElementTypeBuilder$instance extends Microsoft_EntityFrameworkCo
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableElementType;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): ElementTypeBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ElementTypeBuilder;
     HasConversion<TConversion>(): ElementTypeBuilder;
-    HasConversion(conversionType: Type): ElementTypeBuilder;
-    HasConversion(converter: ValueConverter): ElementTypeBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer): ElementTypeBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): ElementTypeBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): ElementTypeBuilder;
-    HasConversion(conversionType: Type, comparerType: Type): ElementTypeBuilder;
+    HasConversion(conversionType: Type | null): ElementTypeBuilder;
+    HasConversion(converter: ValueConverter | null): ElementTypeBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): ElementTypeBuilder;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null): ElementTypeBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): ElementTypeBuilder;
+    HasConversion(conversionType: Type, comparerType: Type | null): ElementTypeBuilder;
     HasMaxLength(maxLength: int): ElementTypeBuilder;
     HasPrecision(precision: int, scale: int): ElementTypeBuilder;
     HasPrecision(precision: int): ElementTypeBuilder;
     IsRequired(required?: boolean): ElementTypeBuilder;
     IsUnicode(unicode?: boolean): ElementTypeBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -1924,34 +1922,34 @@ export interface EntityTypeBuilder$instance extends Microsoft_EntityFrameworkCor
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
-    Equals(obj: unknown): boolean;
-    FindRelatedEntityType(relatedTypeName: string, navigationName: string): EntityType;
-    FindRelatedEntityType(relatedType: Type, navigationName: string): EntityType;
+    Equals(obj: JsValue | null): boolean;
+    FindRelatedEntityType(relatedTypeName: string, navigationName: string | null): EntityType;
+    FindRelatedEntityType(relatedType: Type, navigationName: string | null): EntityType;
     GetHashCode(): int;
     HasAlternateKey(...propertyNames: string[]): KeyBuilder;
-    HasAnnotation(annotation: string, value: unknown): EntityTypeBuilder;
-    HasBaseType(name: string): EntityTypeBuilder;
-    HasBaseType(entityType: Type): EntityTypeBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): EntityTypeBuilder;
+    HasBaseType(name: string | null): EntityTypeBuilder;
+    HasBaseType(entityType: Type | null): EntityTypeBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): EntityTypeBuilder;
-    HasData(...data: unknown[]): DataBuilder;
-    HasData(data: IEnumerable_1<unknown>): DataBuilder;
+    HasData(...data: JsValue[]): DataBuilder;
+    HasData(data: IEnumerable_1<JsValue>): DataBuilder;
     HasDiscriminator(): DiscriminatorBuilder;
     HasDiscriminator(name: string, type: Type): DiscriminatorBuilder;
     HasDiscriminator<TDiscriminator>(name: string): DiscriminatorBuilder_1<TDiscriminator>;
     HasIndex(...propertyNames: string[]): IndexBuilder;
     HasIndex(propertyNames: string[], name: string): IndexBuilder;
     HasKey(...propertyNames: string[]): KeyBuilder;
-    HasMany(relatedTypeName: string, navigationName: string): CollectionNavigationBuilder;
+    HasMany(relatedTypeName: string, navigationName: string | null): CollectionNavigationBuilder;
     HasMany(navigationName: string): CollectionNavigationBuilder;
-    HasMany(relatedType: Type, navigationName?: string): CollectionNavigationBuilder;
+    HasMany(relatedType: Type, navigationName?: string | null): CollectionNavigationBuilder;
     HasNoDiscriminator(): EntityTypeBuilder;
     HasNoKey(): EntityTypeBuilder;
-    HasOne(relatedTypeName: string, navigationName: string): ReferenceNavigationBuilder;
-    HasOne(relatedType: Type, navigationName?: string): ReferenceNavigationBuilder;
-    HasOne(navigationName: string): ReferenceNavigationBuilder;
+    HasOne(relatedTypeName: string, navigationName: string | null): ReferenceNavigationBuilder;
+    HasOne(relatedType: Type, navigationName?: string | null): ReferenceNavigationBuilder;
+    HasOne(navigationName: string | null): ReferenceNavigationBuilder;
     HasOneBuilder(navigationId: MemberIdentity, relatedEntityType: EntityType): ForeignKey;
-    HasQueryFilter(filter: LambdaExpression): EntityTypeBuilder;
-    HasQueryFilter(filterKey: string, filter: LambdaExpression): EntityTypeBuilder;
+    HasQueryFilter(filter: LambdaExpression | null): EntityTypeBuilder;
+    HasQueryFilter(filterKey: string, filter: LambdaExpression | null): EntityTypeBuilder;
     Ignore(propertyName: string): EntityTypeBuilder;
     IndexerProperty<TProperty>(propertyName: string): PropertyBuilder_1<TProperty>;
     IndexerProperty(propertyType: Type, propertyName: string): PropertyBuilder;
@@ -1974,7 +1972,7 @@ export interface EntityTypeBuilder$instance extends Microsoft_EntityFrameworkCor
     Property(propertyName: string): PropertyBuilder;
     Property<TProperty>(propertyName: string): PropertyBuilder_1<TProperty>;
     Property(propertyType: Type, propertyName: string): PropertyBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): EntityTypeBuilder;
 }
 
@@ -2002,10 +2000,10 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
     ComplexCollection(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder_1<TEntity>;
     ComplexCollection(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder>): EntityTypeBuilder_1<TEntity>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement>>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement | null> | null>>): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement | null> | null>>, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement | null> | null>>, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
+    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement | null> | null>>, complexTypeName: string, buildAction: Action_1<ComplexCollectionBuilder_1<TElement>>): EntityTypeBuilder_1<TEntity>;
     ComplexCollection(propertyName: string): ComplexCollectionBuilder;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string): ComplexCollectionBuilder_1<TElement>;
     ComplexCollection<TProperty extends IEnumerable_1<TElement>, TElement>(propertyName: string, complexTypeName: string): ComplexCollectionBuilder_1<TElement>;
@@ -2021,10 +2019,10 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder_1<TEntity>;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder_1<TEntity>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty | null>>): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty | null>>, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty | null>>, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
+    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty | null>>, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder_1<TProperty>>): EntityTypeBuilder_1<TEntity>;
     ComplexProperty(propertyName: string): ComplexPropertyBuilder;
     ComplexProperty<TProperty>(propertyName: string): ComplexPropertyBuilder_1<TProperty>;
     ComplexProperty<TProperty>(propertyName: string, complexTypeName: string): ComplexPropertyBuilder_1<TProperty>;
@@ -2035,71 +2033,71 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     ComplexProperty(propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
     ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, buildAction: Action_1<ComplexPropertyBuilder>): EntityTypeBuilder;
-    HasAlternateKey(keyExpression: Expression_1<Func_2<TEntity, unknown>>): KeyBuilder_1<TEntity>;
+    HasAlternateKey(keyExpression: Expression_1<Func_2<TEntity, JsValue | null>>): KeyBuilder_1<TEntity>;
     HasAlternateKey(...propertyNames: string[]): KeyBuilder_1<TEntity>;
     HasAlternateKey(...propertyNames: string[]): KeyBuilder;
-    HasAnnotation(annotation: string, value: unknown): EntityTypeBuilder_1<TEntity>;
-    HasAnnotation(annotation: string, value: unknown): EntityTypeBuilder;
-    HasBaseType(name: string): EntityTypeBuilder_1<TEntity>;
-    HasBaseType(entityType: Type): EntityTypeBuilder_1<TEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): EntityTypeBuilder_1<TEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): EntityTypeBuilder;
+    HasBaseType(name: string | null): EntityTypeBuilder_1<TEntity>;
+    HasBaseType(entityType: Type | null): EntityTypeBuilder_1<TEntity>;
     HasBaseType<TBaseType>(): EntityTypeBuilder_1<TEntity>;
-    HasBaseType(name: string): EntityTypeBuilder;
+    HasBaseType(name: string | null): EntityTypeBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): EntityTypeBuilder_1<TEntity>;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): EntityTypeBuilder;
     HasData(...data: TEntity[]): DataBuilder_1<TEntity>;
     HasData(data: IEnumerable_1<TEntity>): DataBuilder_1<TEntity>;
-    HasData(...data: unknown[]): DataBuilder_1<TEntity>;
-    HasData(data: IEnumerable_1<unknown>): DataBuilder_1<TEntity>;
-    HasData(data: IEnumerable_1<unknown>): DataBuilder;
+    HasData(...data: JsValue[]): DataBuilder_1<TEntity>;
+    HasData(data: IEnumerable_1<JsValue>): DataBuilder_1<TEntity>;
+    HasData(data: IEnumerable_1<JsValue>): DataBuilder;
     HasDiscriminator<TDiscriminator>(propertyExpression: Expression_1<Func_2<TEntity, TDiscriminator>>): DiscriminatorBuilder_1<TDiscriminator>;
     HasDiscriminator(): DiscriminatorBuilder;
     HasDiscriminator(name: string, type: Type): DiscriminatorBuilder;
     HasDiscriminator<TDiscriminator>(name: string): DiscriminatorBuilder_1<TDiscriminator>;
-    HasIndex(indexExpression: Expression_1<Func_2<TEntity, unknown>>): IndexBuilder_1<TEntity>;
-    HasIndex(indexExpression: Expression_1<Func_2<TEntity, unknown>>, name: string): IndexBuilder_1<TEntity>;
+    HasIndex(indexExpression: Expression_1<Func_2<TEntity, JsValue | null>>): IndexBuilder_1<TEntity>;
+    HasIndex(indexExpression: Expression_1<Func_2<TEntity, JsValue | null>>, name: string): IndexBuilder_1<TEntity>;
     HasIndex(...propertyNames: string[]): IndexBuilder_1<TEntity>;
     HasIndex(propertyNames: string[], name: string): IndexBuilder_1<TEntity>;
     HasIndex(...propertyNames: string[]): IndexBuilder;
     HasIndex(propertyNames: string[], name: string): IndexBuilder;
-    HasKey(keyExpression: Expression_1<Func_2<TEntity, unknown>>): KeyBuilder;
+    HasKey(keyExpression: Expression_1<Func_2<TEntity, JsValue | null>>): KeyBuilder;
     HasKey(...propertyNames: string[]): KeyBuilder_1<TEntity>;
     HasKey(...propertyNames: string[]): KeyBuilder;
-    HasMany<TRelatedEntity>(navigationName: string): CollectionNavigationBuilder_2<TEntity, TRelatedEntity>;
-    HasMany<TRelatedEntity>(navigationExpression?: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>): CollectionNavigationBuilder_2<TEntity, TRelatedEntity>;
-    HasMany(relatedTypeName: string, navigationName: string): CollectionNavigationBuilder;
-    HasMany(relatedType: Type, navigationName?: string): CollectionNavigationBuilder;
+    HasMany<TRelatedEntity>(navigationName: string | null): CollectionNavigationBuilder_2<TEntity, TRelatedEntity>;
+    HasMany<TRelatedEntity>(navigationExpression?: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity> | null>> | null): CollectionNavigationBuilder_2<TEntity, TRelatedEntity>;
+    HasMany(relatedTypeName: string, navigationName: string | null): CollectionNavigationBuilder;
+    HasMany(relatedType: Type, navigationName?: string | null): CollectionNavigationBuilder;
     HasMany(navigationName: string): CollectionNavigationBuilder;
     HasNoDiscriminator(): EntityTypeBuilder_1<TEntity>;
     HasNoDiscriminator(): EntityTypeBuilder;
     HasNoKey(): EntityTypeBuilder_1<TEntity>;
     HasNoKey(): EntityTypeBuilder;
-    HasOne<TRelatedEntity>(navigationName: string): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
-    HasOne<TRelatedEntity>(navigationExpression?: Expression_1<Func_2<TEntity, TRelatedEntity>>): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
-    HasOne(relatedTypeName: string, navigationName: string): ReferenceNavigationBuilder;
-    HasOne(relatedType: Type, navigationName?: string): ReferenceNavigationBuilder;
-    HasOne(navigationName: string): ReferenceNavigationBuilder;
-    HasQueryFilter(filter: LambdaExpression): EntityTypeBuilder_1<TEntity>;
-    HasQueryFilter(filterKey: string, filter: LambdaExpression): EntityTypeBuilder_1<TEntity>;
-    HasQueryFilter(filter: Expression_1<Func_2<TEntity, System_Internal.Boolean>>): EntityTypeBuilder_1<TEntity>;
-    HasQueryFilter(filterKey: string, filter: Expression_1<Func_2<TEntity, System_Internal.Boolean>>): EntityTypeBuilder_1<TEntity>;
-    HasQueryFilter(filter: LambdaExpression): EntityTypeBuilder;
-    HasQueryFilter(filterKey: string, filter: LambdaExpression): EntityTypeBuilder;
-    Ignore(propertyExpression: Expression_1<Func_2<TEntity, unknown>>): EntityTypeBuilder_1<TEntity>;
+    HasOne<TRelatedEntity>(navigationName: string | null): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
+    HasOne<TRelatedEntity>(navigationExpression?: Expression_1<Func_2<TEntity, TRelatedEntity | null>> | null): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
+    HasOne(relatedTypeName: string, navigationName: string | null): ReferenceNavigationBuilder;
+    HasOne(relatedType: Type, navigationName?: string | null): ReferenceNavigationBuilder;
+    HasOne(navigationName: string | null): ReferenceNavigationBuilder;
+    HasQueryFilter(filter: LambdaExpression | null): EntityTypeBuilder_1<TEntity>;
+    HasQueryFilter(filterKey: string, filter: LambdaExpression | null): EntityTypeBuilder_1<TEntity>;
+    HasQueryFilter(filter: Expression_1<Func_2<TEntity, System_Internal.Boolean>> | null): EntityTypeBuilder_1<TEntity>;
+    HasQueryFilter(filterKey: string, filter: Expression_1<Func_2<TEntity, System_Internal.Boolean>> | null): EntityTypeBuilder_1<TEntity>;
+    HasQueryFilter(filter: LambdaExpression | null): EntityTypeBuilder;
+    HasQueryFilter(filterKey: string, filter: LambdaExpression | null): EntityTypeBuilder;
+    Ignore(propertyExpression: Expression_1<Func_2<TEntity, JsValue | null>>): EntityTypeBuilder_1<TEntity>;
     Ignore(propertyName: string): EntityTypeBuilder_1<TEntity>;
     Ignore(propertyName: string): EntityTypeBuilder;
-    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TEntity, TNavigation>>): NavigationBuilder_2<TEntity, TNavigation>;
+    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TEntity, TNavigation | null>>): NavigationBuilder_2<TEntity, TNavigation>;
     Navigation(navigationName: string): NavigationBuilder;
     OwnsMany<TRelatedEntity>(navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
-    OwnsMany<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
-    OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
+    OwnsMany<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity> | null>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
+    OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity> | null>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsMany<TRelatedEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
     OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
-    OwnsMany<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
-    OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity>>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsMany<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity> | null>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsMany<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TRelatedEntity> | null>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
@@ -2107,15 +2105,15 @@ export interface EntityTypeBuilder_1$instance<TEntity> extends EntityTypeBuilder
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder;
     OwnsOne<TRelatedEntity>(navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
-    OwnsOne<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
-    OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
+    OwnsOne<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity | null>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
+    OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity | null>>): OwnedNavigationBuilder_2<TEntity, TRelatedEntity>;
     OwnsOne<TRelatedEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
     OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): EntityTypeBuilder_1<TEntity>;
     OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
-    OwnsOne<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
-    OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsOne<TRelatedEntity>(navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity | null>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
+    OwnsOne<TRelatedEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TEntity, TRelatedEntity | null>>, buildAction: Action_1<OwnedNavigationBuilder_2<TEntity, TRelatedEntity>>): EntityTypeBuilder_1<TEntity>;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
@@ -2152,12 +2150,12 @@ export interface IndexBuilder$instance extends Microsoft_EntityFrameworkCore_Inf
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableIndex;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): IndexBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): IndexBuilder;
     IsDescending(...descending: boolean[]): IndexBuilder;
     IsUnique(unique?: boolean): IndexBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -2178,8 +2176,8 @@ export interface IndexBuilder_1$instance<T> extends IndexBuilder$instance, Micro
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): IndexBuilder_1<T>;
-    HasAnnotation(annotation: string, value: unknown): IndexBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): IndexBuilder_1<T>;
+    HasAnnotation(annotation: string, value: JsValue | null): IndexBuilder;
     IsDescending(...descending: boolean[]): IndexBuilder_1<T>;
     IsDescending(...descending: boolean[]): IndexBuilder;
     IsUnique(unique?: boolean): IndexBuilder_1<T>;
@@ -2208,9 +2206,9 @@ export interface InvertibleRelationshipBuilderBase$instance extends Microsoft_En
     readonly DeclaringEntityType: IMutableEntityType;
     readonly Metadata: IMutableForeignKey;
     readonly RelatedEntityType: IMutableEntityType;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -2231,10 +2229,10 @@ export interface KeyBuilder$instance extends Microsoft_EntityFrameworkCore_Infra
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableKey;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): KeyBuilder;
-    ToString(): string | undefined;
+    HasAnnotation(annotation: string, value: JsValue | null): KeyBuilder;
+    ToString(): string | null;
 }
 
 
@@ -2255,8 +2253,8 @@ export interface KeyBuilder_1$instance<T> extends KeyBuilder$instance, Microsoft
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): KeyBuilder_1<T>;
-    HasAnnotation(annotation: string, value: unknown): KeyBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): KeyBuilder_1<T>;
+    HasAnnotation(annotation: string, value: JsValue | null): KeyBuilder;
 }
 
 
@@ -2280,12 +2278,12 @@ export interface NavigationBuilder$instance extends Microsoft_EntityFrameworkCor
     readonly Metadata: IMutableNavigationBase;
     AutoInclude(autoInclude?: boolean): NavigationBuilder;
     EnableLazyLoading(lazyLoadingEnabled?: boolean): NavigationBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): NavigationBuilder;
-    HasField(fieldName: string): NavigationBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): NavigationBuilder;
+    HasField(fieldName: string | null): NavigationBuilder;
     IsRequired(required?: boolean): NavigationBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): NavigationBuilder;
 }
 
@@ -2311,15 +2309,15 @@ export interface NavigationBuilder_2$instance<TSource, TTarget> extends Navigati
     AutoInclude(autoInclude?: boolean): NavigationBuilder;
     EnableLazyLoading(lazyLoadingEnabled?: boolean): NavigationBuilder_2<TSource, TTarget>;
     EnableLazyLoading(lazyLoadingEnabled?: boolean): NavigationBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): NavigationBuilder_2<TSource, TTarget>;
-    HasAnnotation(annotation: string, value: unknown): NavigationBuilder;
-    HasField(fieldName: string): NavigationBuilder_2<TSource, TTarget>;
-    HasField(fieldName: string): NavigationBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): NavigationBuilder_2<TSource, TTarget>;
+    HasAnnotation(annotation: string, value: JsValue | null): NavigationBuilder;
+    HasField(fieldName: string | null): NavigationBuilder_2<TSource, TTarget>;
+    HasField(fieldName: string | null): NavigationBuilder;
     IsRequired(required?: boolean): NavigationBuilder_2<TSource, TTarget>;
     IsRequired(required?: boolean): NavigationBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): NavigationBuilder_2<TSource, TTarget>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): NavigationBuilder;
 }
@@ -2340,9 +2338,9 @@ export type NavigationBuilder_2<TSource, TTarget> = NavigationBuilder_2$instance
 export interface OwnedEntityTypeBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Builders_OwnedEntityTypeBuilder: never;
 
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -2376,18 +2374,18 @@ export interface OwnedNavigationBuilder$instance extends Microsoft_EntityFramewo
     readonly Metadata: IMutableForeignKey;
     readonly OwnedEntityType: IMutableEntityType;
     readonly PrincipalEntityType: EntityType;
-    FindRelatedEntityType(relatedTypeName: string, navigationName: string): EntityType;
-    FindRelatedEntityType(relatedType: Type, navigationName: string): EntityType;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder;
+    FindRelatedEntityType(relatedTypeName: string, navigationName: string | null): EntityType;
+    FindRelatedEntityType(relatedType: Type, navigationName: string | null): EntityType;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): OwnedNavigationBuilder;
-    HasData(...data: unknown[]): DataBuilder;
-    HasData(data: IEnumerable_1<unknown>): DataBuilder;
+    HasData(...data: JsValue[]): DataBuilder;
+    HasData(data: IEnumerable_1<JsValue>): DataBuilder;
     HasIndex(...propertyNames: string[]): IndexBuilder;
     HasIndex(propertyNames: string[], name: string): IndexBuilder;
     HasKey(...propertyNames: string[]): KeyBuilder;
-    HasOne(relatedTypeName: string, navigationName: string): ReferenceNavigationBuilder;
+    HasOne(relatedTypeName: string, navigationName: string | null): ReferenceNavigationBuilder;
     HasOne(navigationName: string): ReferenceNavigationBuilder;
-    HasOne(relatedType: Type, navigationName?: string): ReferenceNavigationBuilder;
+    HasOne(relatedType: Type, navigationName?: string | null): ReferenceNavigationBuilder;
     HasOneBuilder(navigationId: MemberIdentity, relatedEntityType: EntityType): ForeignKey;
     Ignore(propertyName: string): OwnedNavigationBuilder;
     IndexerProperty<TProperty>(propertyName: string): PropertyBuilder_1<TProperty>;
@@ -2413,7 +2411,7 @@ export interface OwnedNavigationBuilder$instance extends Microsoft_EntityFramewo
     Property(propertyType: Type, propertyName: string): PropertyBuilder;
     UpdateBuilder<T>(configure: Func_1<T>): T;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): OwnedNavigationBuilder;
-    WithOwner(ownerReference?: string): OwnershipBuilder;
+    WithOwner(ownerReference?: string | null): OwnershipBuilder;
 }
 
 
@@ -2434,45 +2432,45 @@ export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntit
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): OwnedNavigationBuilder;
     HasData(...data: TDependentEntity[]): DataBuilder_1<TDependentEntity>;
     HasData(data: IEnumerable_1<TDependentEntity>): DataBuilder_1<TDependentEntity>;
-    HasData(...data: unknown[]): DataBuilder_1<TDependentEntity>;
-    HasData(data: IEnumerable_1<unknown>): DataBuilder_1<TDependentEntity>;
-    HasData(data: IEnumerable_1<unknown>): DataBuilder;
-    HasIndex(indexExpression: Expression_1<Func_2<TDependentEntity, unknown>>): IndexBuilder_1<TDependentEntity>;
-    HasIndex(indexExpression: Expression_1<Func_2<TDependentEntity, unknown>>, name: string): IndexBuilder_1<TDependentEntity>;
+    HasData(...data: JsValue[]): DataBuilder_1<TDependentEntity>;
+    HasData(data: IEnumerable_1<JsValue>): DataBuilder_1<TDependentEntity>;
+    HasData(data: IEnumerable_1<JsValue>): DataBuilder;
+    HasIndex(indexExpression: Expression_1<Func_2<TDependentEntity, JsValue | null>>): IndexBuilder_1<TDependentEntity>;
+    HasIndex(indexExpression: Expression_1<Func_2<TDependentEntity, JsValue | null>>, name: string): IndexBuilder_1<TDependentEntity>;
     HasIndex(...propertyNames: string[]): IndexBuilder_1<TDependentEntity>;
     HasIndex(propertyNames: string[], name: string): IndexBuilder_1<TDependentEntity>;
     HasIndex(...propertyNames: string[]): IndexBuilder;
     HasIndex(propertyNames: string[], name: string): IndexBuilder;
-    HasKey(keyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): KeyBuilder_1<TDependentEntity>;
+    HasKey(keyExpression: Expression_1<Func_2<TDependentEntity, JsValue | null>>): KeyBuilder_1<TDependentEntity>;
     HasKey(...propertyNames: string[]): KeyBuilder_1<TDependentEntity>;
     HasKey(...propertyNames: string[]): KeyBuilder;
-    HasOne<TNewRelatedEntity>(navigationName: string): ReferenceNavigationBuilder_2<TDependentEntity, TNewRelatedEntity>;
-    HasOne<TNewRelatedEntity>(navigationExpression?: Expression_1<Func_2<TDependentEntity, TNewRelatedEntity>>): ReferenceNavigationBuilder_2<TDependentEntity, TNewRelatedEntity>;
-    HasOne(relatedTypeName: string, navigationName: string): ReferenceNavigationBuilder;
-    HasOne(relatedType: Type, navigationName?: string): ReferenceNavigationBuilder;
+    HasOne<TNewRelatedEntity>(navigationName: string | null): ReferenceNavigationBuilder_2<TDependentEntity, TNewRelatedEntity>;
+    HasOne<TNewRelatedEntity>(navigationExpression?: Expression_1<Func_2<TDependentEntity, TNewRelatedEntity | null>> | null): ReferenceNavigationBuilder_2<TDependentEntity, TNewRelatedEntity>;
+    HasOne(relatedTypeName: string, navigationName: string | null): ReferenceNavigationBuilder;
+    HasOne(relatedType: Type, navigationName?: string | null): ReferenceNavigationBuilder;
     HasOne(navigationName: string): ReferenceNavigationBuilder;
     Ignore(propertyName: string): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    Ignore(propertyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    Ignore(propertyExpression: Expression_1<Func_2<TDependentEntity, JsValue | null>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     Ignore(propertyName: string): OwnedNavigationBuilder;
-    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNavigation>>): NavigationBuilder_2<TDependentEntity, TNavigation>;
+    Navigation<TNavigation>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNavigation | null>>): NavigationBuilder_2<TDependentEntity, TNavigation>;
     Navigation(navigationName: string): NavigationBuilder;
     OwnsMany<TNewDependentEntity>(navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
-    OwnsMany<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity>>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
-    OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity>>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
+    OwnsMany<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity> | null>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
+    OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity> | null>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsMany<TNewDependentEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsMany(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsMany(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsMany<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity>>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity>>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsMany<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity> | null>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsMany<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, IEnumerable_1<TNewDependentEntity> | null>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsMany(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
@@ -2480,15 +2478,15 @@ export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntit
     OwnsMany(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder;
     OwnsOne<TNewDependentEntity>(navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
-    OwnsOne<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
-    OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
+    OwnsOne<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity | null>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
+    OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity | null>>): OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>;
     OwnsOne<TNewDependentEntity>(navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsOne(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsOne(ownedType: Type, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationName: string, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsOne<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
-    OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsOne<TNewDependentEntity>(navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity | null>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
+    OwnsOne<TNewDependentEntity>(ownedTypeName: string, navigationExpression: Expression_1<Func_2<TDependentEntity, TNewDependentEntity | null>>, buildAction: Action_1<OwnedNavigationBuilder_2<TDependentEntity, TNewDependentEntity>>): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     OwnsOne(ownedTypeName: string, ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedType: Type, navigationName: string): OwnedNavigationBuilder;
     OwnsOne(ownedTypeName: string, navigationName: string): OwnedNavigationBuilder;
@@ -2504,9 +2502,9 @@ export interface OwnedNavigationBuilder_2$instance<TOwnerEntity, TDependentEntit
     Property(propertyType: Type, propertyName: string): PropertyBuilder;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): OwnedNavigationBuilder_2<TOwnerEntity, TDependentEntity>;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): OwnedNavigationBuilder;
-    WithOwner(ownerReference?: string): OwnershipBuilder_2<TOwnerEntity, TDependentEntity>;
-    WithOwner(referenceExpression: Expression_1<Func_2<TDependentEntity, TOwnerEntity>>): OwnershipBuilder_2<TOwnerEntity, TDependentEntity>;
-    WithOwner(ownerReference?: string): OwnershipBuilder;
+    WithOwner(ownerReference?: string | null): OwnershipBuilder_2<TOwnerEntity, TDependentEntity>;
+    WithOwner(referenceExpression: Expression_1<Func_2<TDependentEntity, TOwnerEntity | null>> | null): OwnershipBuilder_2<TOwnerEntity, TDependentEntity>;
+    WithOwner(ownerReference?: string | null): OwnershipBuilder;
 }
 
 
@@ -2531,15 +2529,15 @@ export interface OwnedNavigationSplitTableBuilder$instance extends Microsoft_Ent
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Metadata: IMutableEntityType;
     readonly Name: string;
-    readonly Schema: string | undefined;
-    Equals(obj: unknown): boolean;
+    readonly Schema: string | null;
+    Equals(obj: JsValue | null): boolean;
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationSplitTableBuilder;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitTableBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationSplitTableBuilder;
     HasTrigger(modelName: string): TableTriggerBuilder;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -2562,8 +2560,8 @@ export interface OwnedNavigationSplitTableBuilder_2$instance<TOwnerEntity, TDepe
 
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>;
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationSplitTableBuilder;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitTableBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationSplitTableBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationSplitTableBuilder;
     Property<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): ColumnBuilder_1<TProperty>;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
@@ -2589,13 +2587,13 @@ export interface OwnedNavigationSplitViewBuilder$instance extends Microsoft_Enti
 
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Name: string;
-    readonly Schema: string | undefined;
-    Equals(obj: unknown): boolean;
+    readonly Schema: string | null;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitViewBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationSplitViewBuilder;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -2616,8 +2614,8 @@ export interface OwnedNavigationSplitViewBuilder_2$instance<TOwnerEntity, TDepen
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationSplitViewBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationSplitViewBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationSplitViewBuilder;
     Property<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): ViewColumnBuilder_1<TProperty>;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
@@ -2645,7 +2643,7 @@ export interface OwnedNavigationStoredProcedureBuilder$instance extends Microsof
     readonly Metadata: IMutableStoredProcedure;
     CreatePropertyBuilder(propertyName: string): PropertyBuilder;
     CreatePropertyBuilder<TDependentEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): PropertyBuilder;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationStoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder;
     HasParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder;
@@ -2677,8 +2675,8 @@ export interface OwnedNavigationStoredProcedureBuilder_2$instance<TOwnerEntity, 
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationStoredProcedureBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationStoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
     HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
     HasOriginalValueParameter<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): OwnedNavigationStoredProcedureBuilder_2<TOwnerEntity, TDependentEntity>;
@@ -2728,19 +2726,19 @@ export interface OwnedNavigationTableBuilder$instance extends Microsoft_EntityFr
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableEntityType;
-    readonly Name: string | undefined;
-    readonly Schema: string | undefined;
+    readonly Name: string | null;
+    readonly Schema: string | null;
     readonly StoreObject: Nullable_1<StoreObjectIdentifier>;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationTableBuilder;
     GetHashCode(): int;
     GetStoreObjectIdentifier(): StoreObjectIdentifier;
-    HasCheckConstraint(name: string, sql: string): CheckConstraintBuilder;
-    HasComment(comment: string): OwnedNavigationTableBuilder;
+    HasCheckConstraint(name: string, sql: string | null): CheckConstraintBuilder;
+    HasComment(comment: string | null): OwnedNavigationTableBuilder;
     HasTrigger(modelName: string): TableTriggerBuilder;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -2763,8 +2761,8 @@ export interface OwnedNavigationTableBuilder_2$instance<TOwnerEntity, TDependent
 
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>;
     ExcludeFromMigrations(excluded?: boolean): OwnedNavigationTableBuilder;
-    HasComment(comment: string): OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>;
-    HasComment(comment: string): OwnedNavigationTableBuilder;
+    HasComment(comment: string | null): OwnedNavigationTableBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasComment(comment: string | null): OwnedNavigationTableBuilder;
     Property<TProperty>(propertyExpression: Expression_1<Func_2<TDependentEntity, TProperty>>): ColumnBuilder_1<TProperty>;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
@@ -2788,14 +2786,14 @@ export interface OwnedNavigationTableValuedFunctionBuilder$instance extends DbFu
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): OwnedNavigationTableValuedFunctionBuilder;
     HasParameter(name: string): DbFunctionParameterBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
-    HasSchema(schema: string): OwnedNavigationTableValuedFunctionBuilder;
-    HasSchema(schema: string): DbFunctionBuilderBase;
+    HasSchema(schema: string | null): OwnedNavigationTableValuedFunctionBuilder;
+    HasSchema(schema: string | null): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): OwnedNavigationTableValuedFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
 }
@@ -2818,8 +2816,8 @@ export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEnti
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
-    HasAnnotation(annotation: string, value: unknown): OwnedNavigationTableValuedFunctionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
     HasName(name: string): OwnedNavigationTableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
@@ -2827,9 +2825,9 @@ export interface OwnedNavigationTableValuedFunctionBuilder_2$instance<TOwnerEnti
     HasParameter(name: string): DbFunctionParameterBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): OwnedNavigationTableValuedFunctionBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
-    HasSchema(schema: string): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
-    HasSchema(schema: string): OwnedNavigationTableValuedFunctionBuilder;
-    HasSchema(schema: string): DbFunctionBuilderBase;
+    HasSchema(schema: string | null): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
+    HasSchema(schema: string | null): OwnedNavigationTableValuedFunctionBuilder;
+    HasSchema(schema: string | null): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): OwnedNavigationTableValuedFunctionBuilder_2<TOwnerEntity, TDependentEntity>;
     IsBuiltIn(builtIn?: boolean): OwnedNavigationTableValuedFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
@@ -2854,13 +2852,13 @@ export interface OwnedNavigationViewBuilder$instance extends Microsoft_EntityFra
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Name: string;
-    readonly Schema: string | undefined;
+    readonly Schema: string | null;
     readonly StoreObject: StoreObjectIdentifier;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -2904,7 +2902,7 @@ export interface OwnershipBuilder$instance extends RelationshipBuilderBase$insta
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): OwnershipBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnershipBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): OwnershipBuilder;
     HasPrincipalKey(...keyPropertyNames: string[]): OwnershipBuilder;
 }
@@ -2927,13 +2925,13 @@ export interface OwnershipBuilder_2$instance<TEntity, TDependentEntity> extends 
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): OwnershipBuilder_2<TEntity, TDependentEntity>;
-    HasAnnotation(annotation: string, value: unknown): OwnershipBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnershipBuilder_2<TEntity, TDependentEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): OwnershipBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): OwnershipBuilder_2<TEntity, TDependentEntity>;
-    HasForeignKey(foreignKeyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): OwnershipBuilder_2<TEntity, TDependentEntity>;
+    HasForeignKey(foreignKeyExpression: Expression_1<Func_2<TDependentEntity, JsValue | null>>): OwnershipBuilder_2<TEntity, TDependentEntity>;
     HasForeignKey(...foreignKeyPropertyNames: string[]): OwnershipBuilder;
     HasPrincipalKey(...keyPropertyNames: string[]): OwnershipBuilder_2<TEntity, TDependentEntity>;
-    HasPrincipalKey(keyExpression: Expression_1<Func_2<TEntity, unknown>>): OwnershipBuilder_2<TEntity, TDependentEntity>;
+    HasPrincipalKey(keyExpression: Expression_1<Func_2<TEntity, JsValue | null>>): OwnershipBuilder_2<TEntity, TDependentEntity>;
     HasPrincipalKey(...keyPropertyNames: string[]): OwnershipBuilder;
 }
 
@@ -2958,20 +2956,20 @@ export interface PrimitiveCollectionBuilder$instance extends Microsoft_EntityFra
     readonly Metadata: IMutableProperty;
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action_1<ElementTypeBuilder>): PrimitiveCollectionBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): PrimitiveCollectionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): PrimitiveCollectionBuilder;
     HasField(fieldName: string): PrimitiveCollectionBuilder;
     HasMaxLength(maxLength: int): PrimitiveCollectionBuilder;
-    HasSentinel(sentinel: unknown): PrimitiveCollectionBuilder;
+    HasSentinel(sentinel: JsValue | null): PrimitiveCollectionBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PrimitiveCollectionBuilder;
-    HasValueGenerator(valueGeneratorType: Type): PrimitiveCollectionBuilder;
+    HasValueGenerator(valueGeneratorType: Type | null): PrimitiveCollectionBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PrimitiveCollectionBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PrimitiveCollectionBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): PrimitiveCollectionBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): PrimitiveCollectionBuilder;
     IsRequired(required?: boolean): PrimitiveCollectionBuilder;
     IsUnicode(unicode?: boolean): PrimitiveCollectionBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): PrimitiveCollectionBuilder;
     ValueGeneratedNever(): PrimitiveCollectionBuilder;
     ValueGeneratedOnAdd(): PrimitiveCollectionBuilder;
@@ -3001,23 +2999,23 @@ export interface PrimitiveCollectionBuilder_1$instance<TProperty> extends Primit
     ElementType(builderAction: Action_1<ElementTypeBuilder>): PrimitiveCollectionBuilder_1<TProperty>;
     ElementType(): ElementTypeBuilder;
     ElementType(builderAction: Action_1<ElementTypeBuilder>): PrimitiveCollectionBuilder;
-    HasAnnotation(annotation: string, value: unknown): PrimitiveCollectionBuilder_1<TProperty>;
-    HasAnnotation(annotation: string, value: unknown): PrimitiveCollectionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): PrimitiveCollectionBuilder_1<TProperty>;
+    HasAnnotation(annotation: string, value: JsValue | null): PrimitiveCollectionBuilder;
     HasField(fieldName: string): PrimitiveCollectionBuilder_1<TProperty>;
     HasField(fieldName: string): PrimitiveCollectionBuilder;
     HasMaxLength(maxLength: int): PrimitiveCollectionBuilder_1<TProperty>;
     HasMaxLength(maxLength: int): PrimitiveCollectionBuilder;
-    HasSentinel(sentinel: unknown): PrimitiveCollectionBuilder_1<TProperty>;
-    HasSentinel(sentinel: TProperty): PrimitiveCollectionBuilder_1<TProperty>;
-    HasSentinel(sentinel: unknown): PrimitiveCollectionBuilder;
+    HasSentinel(sentinel: JsValue | null): PrimitiveCollectionBuilder_1<TProperty>;
+    HasSentinel(sentinel: TProperty | null): PrimitiveCollectionBuilder_1<TProperty>;
+    HasSentinel(sentinel: JsValue | null): PrimitiveCollectionBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PrimitiveCollectionBuilder_1<TProperty>;
-    HasValueGenerator(valueGeneratorType: Type): PrimitiveCollectionBuilder_1<TProperty>;
+    HasValueGenerator(valueGeneratorType: Type | null): PrimitiveCollectionBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PrimitiveCollectionBuilder;
-    HasValueGenerator(valueGeneratorType: Type): PrimitiveCollectionBuilder;
+    HasValueGenerator(valueGeneratorType: Type | null): PrimitiveCollectionBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PrimitiveCollectionBuilder_1<TProperty>;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PrimitiveCollectionBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): PrimitiveCollectionBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PrimitiveCollectionBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PrimitiveCollectionBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): PrimitiveCollectionBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): PrimitiveCollectionBuilder_1<TProperty>;
     IsConcurrencyToken(concurrencyToken?: boolean): PrimitiveCollectionBuilder;
     IsRequired(required?: boolean): PrimitiveCollectionBuilder_1<TProperty>;
@@ -3056,18 +3054,18 @@ export interface PropertiesConfigurationBuilder$instance {
 
     readonly Configuration: PropertyConfiguration;
     AreUnicode(unicode?: boolean): PropertiesConfigurationBuilder;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HaveAnnotation(annotation: string, value: unknown): PropertiesConfigurationBuilder;
+    HaveAnnotation(annotation: string, value: JsValue): PropertiesConfigurationBuilder;
     HaveConversion<TConversion>(): PropertiesConfigurationBuilder;
     HaveConversion(conversionType: Type): PropertiesConfigurationBuilder;
-    HaveConversion(conversionType: Type, comparerType: Type): PropertiesConfigurationBuilder;
-    HaveConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): PropertiesConfigurationBuilder;
+    HaveConversion(conversionType: Type, comparerType: Type | null): PropertiesConfigurationBuilder;
+    HaveConversion(conversionType: Type, comparerType: Type | null, providerComparerType: Type | null): PropertiesConfigurationBuilder;
     HaveMaxLength(maxLength: int): PropertiesConfigurationBuilder;
     HavePrecision(precision: int, scale: int): PropertiesConfigurationBuilder;
     HavePrecision(precision: int): PropertiesConfigurationBuilder;
-    HaveSentinel(sentinel: unknown): PropertiesConfigurationBuilder;
-    ToString(): string | undefined;
+    HaveSentinel(sentinel: JsValue | null): PropertiesConfigurationBuilder;
+    ToString(): string | null;
 }
 
 
@@ -3083,15 +3081,15 @@ export interface PropertiesConfigurationBuilder_1$instance<TProperty> extends Pr
 
     AreUnicode(unicode?: boolean): PropertiesConfigurationBuilder_1<TProperty>;
     AreUnicode(unicode?: boolean): PropertiesConfigurationBuilder;
-    HaveAnnotation(annotation: string, value: unknown): PropertiesConfigurationBuilder_1<TProperty>;
-    HaveAnnotation(annotation: string, value: unknown): PropertiesConfigurationBuilder;
+    HaveAnnotation(annotation: string, value: JsValue): PropertiesConfigurationBuilder_1<TProperty>;
+    HaveAnnotation(annotation: string, value: JsValue): PropertiesConfigurationBuilder;
     HaveConversion<TConversion>(): PropertiesConfigurationBuilder_1<TProperty>;
     HaveConversion(conversionType: Type): PropertiesConfigurationBuilder_1<TProperty>;
-    HaveConversion(conversionType: Type, comparerType: Type): PropertiesConfigurationBuilder_1<TProperty>;
-    HaveConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): PropertiesConfigurationBuilder;
+    HaveConversion(conversionType: Type, comparerType: Type | null): PropertiesConfigurationBuilder_1<TProperty>;
+    HaveConversion(conversionType: Type, comparerType: Type | null, providerComparerType: Type | null): PropertiesConfigurationBuilder;
     HaveConversion<TConversion>(): PropertiesConfigurationBuilder;
     HaveConversion(conversionType: Type): PropertiesConfigurationBuilder;
-    HaveConversion(conversionType: Type, comparerType: Type): PropertiesConfigurationBuilder;
+    HaveConversion(conversionType: Type, comparerType: Type | null): PropertiesConfigurationBuilder;
     HaveMaxLength(maxLength: int): PropertiesConfigurationBuilder_1<TProperty>;
     HaveMaxLength(maxLength: int): PropertiesConfigurationBuilder;
     HavePrecision(precision: int, scale: int): PropertiesConfigurationBuilder_1<TProperty>;
@@ -3114,35 +3112,35 @@ export interface PropertyBuilder$instance extends Microsoft_EntityFrameworkCore_
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableProperty;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): PropertyBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): PropertyBuilder;
     HasConversion<TConversion>(): PropertyBuilder;
-    HasConversion(conversionType: Type): PropertyBuilder;
-    HasConversion(converter: ValueConverter): PropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer): PropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): PropertyBuilder;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): PropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type): PropertyBuilder;
-    HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): PropertyBuilder;
+    HasConversion(conversionType: Type | null): PropertyBuilder;
+    HasConversion(converter: ValueConverter | null): PropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): PropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null): PropertyBuilder;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): PropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder;
+    HasConversion(conversionType: Type, comparerType: Type | null): PropertyBuilder;
+    HasConversion(conversionType: Type, comparerType: Type | null, providerComparerType: Type | null): PropertyBuilder;
     HasField(fieldName: string): PropertyBuilder;
     HasMaxLength(maxLength: int): PropertyBuilder;
     HasPrecision(precision: int, scale: int): PropertyBuilder;
     HasPrecision(precision: int): PropertyBuilder;
-    HasSentinel(sentinel: unknown): PropertyBuilder;
+    HasSentinel(sentinel: JsValue | null): PropertyBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PropertyBuilder;
-    HasValueGenerator(valueGeneratorType: Type): PropertyBuilder;
+    HasValueGenerator(valueGeneratorType: Type | null): PropertyBuilder;
     HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>): PropertyBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PropertyBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PropertyBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): PropertyBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): PropertyBuilder;
     IsRequired(required?: boolean): PropertyBuilder;
     IsRowVersion(): PropertyBuilder;
     IsUnicode(unicode?: boolean): PropertyBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): PropertyBuilder;
     ValueGeneratedNever(): PropertyBuilder;
     ValueGeneratedOnAdd(): PropertyBuilder;
@@ -3169,31 +3167,31 @@ export interface PropertyBuilder_1$instance<TProperty> extends PropertyBuilder$i
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): PropertyBuilder_1<TProperty>;
-    HasAnnotation(annotation: string, value: unknown): PropertyBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): PropertyBuilder_1<TProperty>;
+    HasAnnotation(annotation: string, value: JsValue | null): PropertyBuilder;
     HasConversion<TConversion>(): PropertyBuilder_1<TProperty>;
-    HasConversion(providerClrType: Type): PropertyBuilder_1<TProperty>;
+    HasConversion(providerClrType: Type | null): PropertyBuilder_1<TProperty>;
     HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>): PropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>): PropertyBuilder_1<TProperty>;
-    HasConversion(converter: ValueConverter): PropertyBuilder_1<TProperty>;
-    HasConversion<TConversion>(valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider>, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, comparerType: Type): PropertyBuilder_1<TProperty>;
-    HasConversion(conversionType: Type, comparerType: Type, providerComparerType: Type): PropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider> | null): PropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter | null): PropertyBuilder_1<TProperty>;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(convertToProviderExpression: Expression_1<Func_2<TProperty, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TProperty>>, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider> | null, valueComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion<TProvider>(converter: ValueConverter_2<TProperty, TProvider> | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, comparerType: Type | null): PropertyBuilder_1<TProperty>;
+    HasConversion(conversionType: Type, comparerType: Type | null, providerComparerType: Type | null): PropertyBuilder_1<TProperty>;
     HasConversion<TConversion>(): PropertyBuilder;
-    HasConversion(converter: ValueConverter): PropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer): PropertyBuilder;
-    HasConversion<TConversion>(valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer): PropertyBuilder;
-    HasConversion(converter: ValueConverter, valueComparer: ValueComparer, providerComparer: ValueComparer): PropertyBuilder;
+    HasConversion(converter: ValueConverter | null): PropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null): PropertyBuilder;
+    HasConversion<TConversion>(valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null): PropertyBuilder;
+    HasConversion(converter: ValueConverter | null, valueComparer: ValueComparer | null, providerComparer: ValueComparer | null): PropertyBuilder;
     HasField(fieldName: string): PropertyBuilder_1<TProperty>;
     HasField(fieldName: string): PropertyBuilder;
     HasMaxLength(maxLength: int): PropertyBuilder_1<TProperty>;
@@ -3202,18 +3200,18 @@ export interface PropertyBuilder_1$instance<TProperty> extends PropertyBuilder$i
     HasPrecision(precision: int): PropertyBuilder_1<TProperty>;
     HasPrecision(precision: int, scale: int): PropertyBuilder;
     HasPrecision(precision: int): PropertyBuilder;
-    HasSentinel(sentinel: unknown): PropertyBuilder_1<TProperty>;
-    HasSentinel(sentinel: TProperty): PropertyBuilder_1<TProperty>;
-    HasSentinel(sentinel: unknown): PropertyBuilder;
+    HasSentinel(sentinel: JsValue | null): PropertyBuilder_1<TProperty>;
+    HasSentinel(sentinel: TProperty | null): PropertyBuilder_1<TProperty>;
+    HasSentinel(sentinel: JsValue | null): PropertyBuilder;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PropertyBuilder_1<TProperty>;
-    HasValueGenerator(valueGeneratorType: Type): PropertyBuilder_1<TProperty>;
+    HasValueGenerator(valueGeneratorType: Type | null): PropertyBuilder_1<TProperty>;
     HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>): PropertyBuilder_1<TProperty>;
     HasValueGenerator<TGenerator extends ValueGenerator>(): PropertyBuilder;
     HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>): PropertyBuilder;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PropertyBuilder_1<TProperty>;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PropertyBuilder_1<TProperty>;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): PropertyBuilder_1<TProperty>;
     HasValueGeneratorFactory<TFactory extends ValueGeneratorFactory>(): PropertyBuilder;
-    HasValueGeneratorFactory(valueGeneratorFactoryType: Type): PropertyBuilder;
+    HasValueGeneratorFactory(valueGeneratorFactoryType: Type | null): PropertyBuilder;
     IsConcurrencyToken(concurrencyToken?: boolean): PropertyBuilder_1<TProperty>;
     IsConcurrencyToken(concurrencyToken?: boolean): PropertyBuilder;
     IsRequired(required?: boolean): PropertyBuilder_1<TProperty>;
@@ -3254,7 +3252,7 @@ export interface ReferenceCollectionBuilder$instance extends RelationshipBuilder
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ReferenceCollectionBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder;
     HasForeignKeyBuilder(foreignKeyPropertyNames: IReadOnlyList_1<System_Internal.String>): InternalForeignKeyBuilder;
     HasForeignKeyBuilder(foreignKeyMembers: IReadOnlyList_1<MemberInfo>): InternalForeignKeyBuilder;
@@ -3283,13 +3281,13 @@ export interface ReferenceCollectionBuilder_2$instance<TPrincipalEntity, TDepend
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
-    HasAnnotation(annotation: string, value: unknown): ReferenceCollectionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): ReferenceCollectionBuilder;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
-    HasForeignKey(foreignKeyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
+    HasForeignKey(foreignKeyExpression: Expression_1<Func_2<TDependentEntity, JsValue | null>>): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
     HasForeignKey(...foreignKeyPropertyNames: string[]): ReferenceCollectionBuilder;
     HasPrincipalKey(...keyPropertyNames: string[]): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
-    HasPrincipalKey(keyExpression: Expression_1<Func_2<TPrincipalEntity, unknown>>): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
+    HasPrincipalKey(keyExpression: Expression_1<Func_2<TPrincipalEntity, JsValue | null>>): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
     HasPrincipalKey(...keyPropertyNames: string[]): ReferenceCollectionBuilder;
     IsRequired(required?: boolean): ReferenceCollectionBuilder_2<TPrincipalEntity, TDependentEntity>;
     IsRequired(required?: boolean): ReferenceCollectionBuilder;
@@ -3317,24 +3315,24 @@ export interface ReferenceNavigationBuilder$instance extends Microsoft_EntityFra
 
     readonly Builder: InternalForeignKeyBuilder;
     readonly DeclaringEntityType: IMutableEntityType;
-    readonly ReferenceMember: MemberInfo | undefined;
-    readonly ReferenceName: string | undefined;
+    readonly ReferenceMember: MemberInfo | null;
+    readonly ReferenceName: string | null;
     readonly RelatedEntityType: IMutableEntityType;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
-    WithMany(collection?: string): ReferenceCollectionBuilder;
-    WithManyBuilder(navigationName: string): InternalForeignKeyBuilder;
-    WithManyBuilder(navigationMemberInfo: MemberInfo): InternalForeignKeyBuilder;
-    WithOne(reference?: string): ReferenceReferenceBuilder;
-    WithOneBuilder(navigationName: string): InternalForeignKeyBuilder;
-    WithOneBuilder(navigationMemberInfo: MemberInfo): InternalForeignKeyBuilder;
+    ToString(): string | null;
+    WithMany(collection?: string | null): ReferenceCollectionBuilder;
+    WithManyBuilder(navigationName: string | null): InternalForeignKeyBuilder;
+    WithManyBuilder(navigationMemberInfo: MemberInfo | null): InternalForeignKeyBuilder;
+    WithOne(reference?: string | null): ReferenceReferenceBuilder;
+    WithOneBuilder(navigationName: string | null): InternalForeignKeyBuilder;
+    WithOneBuilder(navigationMemberInfo: MemberInfo | null): InternalForeignKeyBuilder;
 }
 
 
 export const ReferenceNavigationBuilder: {
-    new(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigationName: string, foreignKey: IMutableForeignKey): ReferenceNavigationBuilder;
-    new(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigationMemberInfo: MemberInfo, foreignKey: IMutableForeignKey): ReferenceNavigationBuilder;
+    new(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigationName: string | null, foreignKey: IMutableForeignKey): ReferenceNavigationBuilder;
+    new(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigationMemberInfo: MemberInfo | null, foreignKey: IMutableForeignKey): ReferenceNavigationBuilder;
 };
 
 
@@ -3350,18 +3348,18 @@ export interface ReferenceNavigationBuilder_2$instance<TEntity, TRelatedEntity> 
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    WithMany(navigationName?: string): ReferenceCollectionBuilder_2<TRelatedEntity, TEntity>;
-    WithMany(navigationExpression: Expression_1<Func_2<TRelatedEntity, IEnumerable_1<TEntity>>>): ReferenceCollectionBuilder_2<TRelatedEntity, TEntity>;
-    WithMany(collection?: string): ReferenceCollectionBuilder;
-    WithOne(navigationName?: string): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
-    WithOne(navigationExpression: Expression_1<Func_2<TRelatedEntity, TEntity>>): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
-    WithOne(reference?: string): ReferenceReferenceBuilder;
+    WithMany(navigationName?: string | null): ReferenceCollectionBuilder_2<TRelatedEntity, TEntity>;
+    WithMany(navigationExpression: Expression_1<Func_2<TRelatedEntity, IEnumerable_1<TEntity> | null>> | null): ReferenceCollectionBuilder_2<TRelatedEntity, TEntity>;
+    WithMany(collection?: string | null): ReferenceCollectionBuilder;
+    WithOne(navigationName?: string | null): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    WithOne(navigationExpression: Expression_1<Func_2<TRelatedEntity, TEntity | null>> | null): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    WithOne(reference?: string | null): ReferenceReferenceBuilder;
 }
 
 
 export const ReferenceNavigationBuilder_2: {
-    new<TEntity, TRelatedEntity>(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigationName: string, foreignKey: IMutableForeignKey): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
-    new<TEntity, TRelatedEntity>(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigationMemberInfo: MemberInfo, foreignKey: IMutableForeignKey): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
+    new<TEntity, TRelatedEntity>(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigationName: string | null, foreignKey: IMutableForeignKey): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
+    new<TEntity, TRelatedEntity>(declaringEntityType: IMutableEntityType, relatedEntityType: IMutableEntityType, navigationMemberInfo: MemberInfo | null, foreignKey: IMutableForeignKey): ReferenceNavigationBuilder_2<TEntity, TRelatedEntity>;
 };
 
 
@@ -3377,7 +3375,7 @@ export interface ReferenceReferenceBuilder$instance extends InvertibleRelationsh
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityTypeName: string, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityType: Type, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
     HasForeignKeyBuilder(dependentEntityType: EntityType, dependentEntityTypeName: string, foreignKeyPropertyNames: IReadOnlyList_1<System_Internal.String>): InternalForeignKeyBuilder;
@@ -3388,8 +3386,8 @@ export interface ReferenceReferenceBuilder$instance extends InvertibleRelationsh
     HasPrincipalKeyBuilder(principalEntityType: EntityType, principalEntityTypeName: string, foreignKeyMembers: IReadOnlyList_1<MemberInfo>): InternalForeignKeyBuilder;
     IsRequired(required?: boolean): ReferenceReferenceBuilder;
     OnDelete(deleteBehavior: DeleteBehavior): ReferenceReferenceBuilder;
-    ResolveEntityType(entityTypeName: string): EntityType | undefined;
-    ResolveEntityType(entityType: Type): EntityType | undefined;
+    ResolveEntityType(entityTypeName: string): EntityType | null;
+    ResolveEntityType(entityType: Type): EntityType | null;
 }
 
 
@@ -3410,17 +3408,17 @@ export interface ReferenceReferenceBuilder_2$instance<TEntity, TRelatedEntity> e
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
-    HasAnnotation(annotation: string, value: unknown): ReferenceReferenceBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): ReferenceReferenceBuilder;
     HasForeignKey(dependentEntityTypeName: string, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasForeignKey(dependentEntityType: Type, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasForeignKey<TDependentEntity>(...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
-    HasForeignKey<TDependentEntity>(foreignKeyExpression: Expression_1<Func_2<TDependentEntity, unknown>>): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    HasForeignKey<TDependentEntity>(foreignKeyExpression: Expression_1<Func_2<TDependentEntity, JsValue | null>>): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasForeignKey(dependentEntityTypeName: string, ...foreignKeyPropertyNames: string[]): ReferenceReferenceBuilder;
     HasPrincipalKey(principalEntityTypeName: string, ...keyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasPrincipalKey(principalEntityType: Type, ...keyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasPrincipalKey<TPrincipalEntity>(...keyPropertyNames: string[]): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
-    HasPrincipalKey<TPrincipalEntity>(keyExpression: Expression_1<Func_2<TPrincipalEntity, unknown>>): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
+    HasPrincipalKey<TPrincipalEntity>(keyExpression: Expression_1<Func_2<TPrincipalEntity, JsValue | null>>): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     HasPrincipalKey(principalEntityTypeName: string, ...keyPropertyNames: string[]): ReferenceReferenceBuilder;
     IsRequired(required?: boolean): ReferenceReferenceBuilder_2<TEntity, TRelatedEntity>;
     IsRequired(required?: boolean): ReferenceReferenceBuilder;
@@ -3450,9 +3448,9 @@ export interface RelationshipBuilderBase$instance extends Microsoft_EntityFramew
     readonly DependentEntityType: IMutableEntityType;
     readonly Metadata: IMutableForeignKey;
     readonly PrincipalEntityType: IMutableEntityType;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -3473,15 +3471,15 @@ export interface SequenceBuilder$instance extends Microsoft_EntityFrameworkCore_
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableSequence;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): SequenceBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): SequenceBuilder;
     HasMax(maximum: long): SequenceBuilder;
     HasMin(minimum: long): SequenceBuilder;
     IncrementsBy(increment: int): SequenceBuilder;
     IsCyclic(cyclic?: boolean): SequenceBuilder;
     StartsAt(startValue: long): SequenceBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -3506,15 +3504,15 @@ export interface SplitTableBuilder$instance extends Microsoft_EntityFrameworkCor
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Metadata: IMutableEntityType;
     readonly Name: string;
-    readonly Schema: string | undefined;
-    Equals(obj: unknown): boolean;
+    readonly Schema: string | null;
+    Equals(obj: JsValue | null): boolean;
     ExcludeFromMigrations(excluded?: boolean): SplitTableBuilder;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): SplitTableBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): SplitTableBuilder;
     HasTrigger(modelName: string): TableTriggerBuilder;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -3537,8 +3535,8 @@ export interface SplitTableBuilder_1$instance<TEntity> extends SplitTableBuilder
 
     ExcludeFromMigrations(excluded?: boolean): SplitTableBuilder_1<TEntity>;
     ExcludeFromMigrations(excluded?: boolean): SplitTableBuilder;
-    HasAnnotation(annotation: string, value: unknown): SplitTableBuilder_1<TEntity>;
-    HasAnnotation(annotation: string, value: unknown): SplitTableBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): SplitTableBuilder_1<TEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): SplitTableBuilder;
     Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ColumnBuilder_1<TProperty>;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
@@ -3564,13 +3562,13 @@ export interface SplitViewBuilder$instance extends Microsoft_EntityFrameworkCore
 
     readonly MappingFragment: IMutableEntityTypeMappingFragment;
     readonly Name: string;
-    readonly Schema: string | undefined;
-    Equals(obj: unknown): boolean;
+    readonly Schema: string | null;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): SplitViewBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): SplitViewBuilder;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -3591,8 +3589,8 @@ export interface SplitViewBuilder_1$instance<TEntity> extends SplitViewBuilder$i
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): SplitViewBuilder_1<TEntity>;
-    HasAnnotation(annotation: string, value: unknown): SplitViewBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): SplitViewBuilder_1<TEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): SplitViewBuilder;
     Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ViewColumnBuilder_1<TProperty>;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
@@ -3620,7 +3618,7 @@ export interface StoredProcedureBuilder$instance extends Microsoft_EntityFramewo
     readonly Metadata: IMutableStoredProcedure;
     CreatePropertyBuilder(propertyName: string): PropertyBuilder;
     CreatePropertyBuilder<TDerivedEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>): PropertyBuilder;
-    HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder;
     HasParameter(propertyName: string): StoredProcedureBuilder;
@@ -3652,8 +3650,8 @@ export interface StoredProcedureBuilder_1$instance<TEntity> extends StoredProced
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder_1<TEntity>;
-    HasAnnotation(annotation: string, value: unknown): StoredProcedureBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): StoredProcedureBuilder_1<TEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): StoredProcedureBuilder;
     HasOriginalValueParameter(propertyName: string): StoredProcedureBuilder_1<TEntity>;
     HasOriginalValueParameter(propertyName: string, buildAction: Action_1<StoredProcedureParameterBuilder>): StoredProcedureBuilder_1<TEntity>;
     HasOriginalValueParameter<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): StoredProcedureBuilder_1<TEntity>;
@@ -3704,18 +3702,18 @@ export interface StoredProcedureParameterBuilder$instance extends Microsoft_Enti
 
     readonly Builder: InternalStoredProcedureParameterBuilder;
     readonly Metadata: IMutableStoredProcedureParameter;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): StoredProcedureParameterBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): StoredProcedureParameterBuilder;
     HasName(name: string): StoredProcedureParameterBuilder;
     IsInputOutput(): StoredProcedureParameterBuilder;
     IsOutput(): StoredProcedureParameterBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
 export const StoredProcedureParameterBuilder: {
-    new(builder: InternalStoredProcedureParameterBuilder, propertyBuilder: PropertyBuilder): StoredProcedureParameterBuilder;
+    new(builder: InternalStoredProcedureParameterBuilder, propertyBuilder: PropertyBuilder | null): StoredProcedureParameterBuilder;
 };
 
 
@@ -3733,16 +3731,16 @@ export interface StoredProcedureResultColumnBuilder$instance extends Microsoft_E
 
     readonly Builder: InternalStoredProcedureResultColumnBuilder;
     readonly Metadata: IMutableStoredProcedureResultColumn;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): StoredProcedureResultColumnBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): StoredProcedureResultColumnBuilder;
     HasName(name: string): StoredProcedureResultColumnBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
 export const StoredProcedureResultColumnBuilder: {
-    new(builder: InternalStoredProcedureResultColumnBuilder, propertyBuilder: PropertyBuilder): StoredProcedureResultColumnBuilder;
+    new(builder: InternalStoredProcedureResultColumnBuilder, propertyBuilder: PropertyBuilder | null): StoredProcedureResultColumnBuilder;
 };
 
 
@@ -3759,19 +3757,19 @@ export interface TableBuilder$instance extends Microsoft_EntityFrameworkCore_Inf
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Metadata: IMutableEntityType;
-    readonly Name: string | undefined;
-    readonly Schema: string | undefined;
+    readonly Name: string | null;
+    readonly Schema: string | null;
     readonly StoreObject: Nullable_1<StoreObjectIdentifier>;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     ExcludeFromMigrations(excluded?: boolean): TableBuilder;
     GetHashCode(): int;
     GetStoreObjectIdentifier(): StoreObjectIdentifier;
-    HasCheckConstraint(name: string, sql: string): CheckConstraintBuilder;
-    HasComment(comment: string): TableBuilder;
+    HasCheckConstraint(name: string, sql: string | null): CheckConstraintBuilder;
+    HasComment(comment: string | null): TableBuilder;
     HasTrigger(modelName: string): TableTriggerBuilder;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -3794,8 +3792,8 @@ export interface TableBuilder_1$instance<TEntity> extends TableBuilder$instance,
 
     ExcludeFromMigrations(excluded?: boolean): TableBuilder_1<TEntity>;
     ExcludeFromMigrations(excluded?: boolean): TableBuilder;
-    HasComment(comment: string): TableBuilder_1<TEntity>;
-    HasComment(comment: string): TableBuilder;
+    HasComment(comment: string | null): TableBuilder_1<TEntity>;
+    HasComment(comment: string | null): TableBuilder;
     Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): ColumnBuilder_1<TProperty>;
     Property(propertyName: string): ColumnBuilder;
     Property<TProperty>(propertyName: string): ColumnBuilder_1<TProperty>;
@@ -3819,12 +3817,12 @@ export interface TableTriggerBuilder$instance extends TriggerBuilder$instance, M
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): TableTriggerBuilder;
-    HasAnnotation(annotation: string, value: unknown): TriggerBuilder;
-    HasDatabaseName(name: string): TableTriggerBuilder;
-    ToString(): string | undefined;
+    HasAnnotation(annotation: string, value: JsValue | null): TableTriggerBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): TriggerBuilder;
+    HasDatabaseName(name: string | null): TableTriggerBuilder;
+    ToString(): string | null;
 }
 
 
@@ -3845,14 +3843,14 @@ export interface TableValuedFunctionBuilder$instance extends DbFunctionBuilderBa
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): TableValuedFunctionBuilder;
     HasName(name: string): TableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): TableValuedFunctionBuilder;
     HasParameter(name: string): DbFunctionParameterBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
-    HasSchema(schema: string): TableValuedFunctionBuilder;
-    HasSchema(schema: string): DbFunctionBuilderBase;
+    HasSchema(schema: string | null): TableValuedFunctionBuilder;
+    HasSchema(schema: string | null): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): TableValuedFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
 }
@@ -3875,8 +3873,8 @@ export interface TableValuedFunctionBuilder_1$instance<TEntity> extends TableVal
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder_1<TEntity>;
-    HasAnnotation(annotation: string, value: unknown): TableValuedFunctionBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): TableValuedFunctionBuilder_1<TEntity>;
+    HasAnnotation(annotation: string, value: JsValue | null): TableValuedFunctionBuilder;
     HasName(name: string): TableValuedFunctionBuilder_1<TEntity>;
     HasName(name: string): TableValuedFunctionBuilder;
     HasName(name: string): DbFunctionBuilderBase;
@@ -3884,9 +3882,9 @@ export interface TableValuedFunctionBuilder_1$instance<TEntity> extends TableVal
     HasParameter(name: string): DbFunctionParameterBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): TableValuedFunctionBuilder;
     HasParameter(name: string, buildAction: Action_1<DbFunctionParameterBuilder>): DbFunctionBuilderBase;
-    HasSchema(schema: string): TableValuedFunctionBuilder_1<TEntity>;
-    HasSchema(schema: string): TableValuedFunctionBuilder;
-    HasSchema(schema: string): DbFunctionBuilderBase;
+    HasSchema(schema: string | null): TableValuedFunctionBuilder_1<TEntity>;
+    HasSchema(schema: string | null): TableValuedFunctionBuilder;
+    HasSchema(schema: string | null): DbFunctionBuilderBase;
     IsBuiltIn(builtIn?: boolean): TableValuedFunctionBuilder_1<TEntity>;
     IsBuiltIn(builtIn?: boolean): TableValuedFunctionBuilder;
     IsBuiltIn(builtIn?: boolean): DbFunctionBuilderBase;
@@ -3913,10 +3911,10 @@ export interface TriggerBuilder$instance extends Microsoft_EntityFrameworkCore_I
     readonly Builder: IConventionTriggerBuilder;
     readonly InternalBuilder: InternalTriggerBuilder;
     readonly Metadata: IMutableTrigger;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): TriggerBuilder;
-    ToString(): string | undefined;
+    HasAnnotation(annotation: string, value: JsValue | null): TriggerBuilder;
+    ToString(): string | null;
 }
 
 
@@ -3936,17 +3934,17 @@ export interface TypeMappingConfigurationBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Builders_TypeMappingConfigurationBuilder: never;
 
     readonly Configuration: PropertyConfiguration;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): TypeMappingConfigurationBuilder;
+    HasAnnotation(annotation: string, value: JsValue): TypeMappingConfigurationBuilder;
     HasConversion<TConversion>(): TypeMappingConfigurationBuilder;
     HasConversion(conversionType: Type): TypeMappingConfigurationBuilder;
     HasMaxLength(maxLength: int): TypeMappingConfigurationBuilder;
     HasPrecision(precision: int, scale: int): TypeMappingConfigurationBuilder;
     HasPrecision(precision: int): TypeMappingConfigurationBuilder;
-    HasSentinel(sentinel: unknown): TypeMappingConfigurationBuilder;
+    HasSentinel(sentinel: JsValue | null): TypeMappingConfigurationBuilder;
     IsUnicode(unicode?: boolean): TypeMappingConfigurationBuilder;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -3960,8 +3958,8 @@ export type TypeMappingConfigurationBuilder = TypeMappingConfigurationBuilder$in
 export interface TypeMappingConfigurationBuilder_1$instance<TProperty> extends TypeMappingConfigurationBuilder {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Builders_TypeMappingConfigurationBuilder_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): TypeMappingConfigurationBuilder_1<TProperty>;
-    HasAnnotation(annotation: string, value: unknown): TypeMappingConfigurationBuilder;
+    HasAnnotation(annotation: string, value: JsValue): TypeMappingConfigurationBuilder_1<TProperty>;
+    HasAnnotation(annotation: string, value: JsValue): TypeMappingConfigurationBuilder;
     HasConversion<TConversion>(): TypeMappingConfigurationBuilder_1<TProperty>;
     HasConversion(conversionType: Type): TypeMappingConfigurationBuilder_1<TProperty>;
     HasConversion<TConversion>(): TypeMappingConfigurationBuilder;
@@ -3972,9 +3970,9 @@ export interface TypeMappingConfigurationBuilder_1$instance<TProperty> extends T
     HasPrecision(precision: int): TypeMappingConfigurationBuilder_1<TProperty>;
     HasPrecision(precision: int, scale: int): TypeMappingConfigurationBuilder;
     HasPrecision(precision: int): TypeMappingConfigurationBuilder;
-    HasSentinel(sentinel: unknown): TypeMappingConfigurationBuilder_1<TProperty>;
-    HasSentinel(sentinel: TProperty): TypeMappingConfigurationBuilder_1<TProperty>;
-    HasSentinel(sentinel: unknown): TypeMappingConfigurationBuilder;
+    HasSentinel(sentinel: JsValue | null): TypeMappingConfigurationBuilder_1<TProperty>;
+    HasSentinel(sentinel: TProperty | null): TypeMappingConfigurationBuilder_1<TProperty>;
+    HasSentinel(sentinel: JsValue | null): TypeMappingConfigurationBuilder;
     IsUnicode(unicode?: boolean): TypeMappingConfigurationBuilder_1<TProperty>;
     IsUnicode(unicode?: boolean): TypeMappingConfigurationBuilder;
 }
@@ -3993,13 +3991,13 @@ export interface ViewBuilder$instance extends Microsoft_EntityFrameworkCore_Infr
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Name: string;
-    readonly Schema: string | undefined;
+    readonly Schema: string | null;
     readonly StoreObject: StoreObjectIdentifier;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     Property(propertyName: string): ViewColumnBuilder;
     Property<TProperty>(propertyName: string): ViewColumnBuilder_1<TProperty>;
-    ToString(): string | undefined;
+    ToString(): string | null;
 }
 
 
@@ -4045,11 +4043,11 @@ export interface ViewColumnBuilder$instance extends Microsoft_EntityFrameworkCor
 
     readonly InternalOverrides: RelationalPropertyOverrides;
     readonly Overrides: IMutableRelationalPropertyOverrides;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
-    HasAnnotation(annotation: string, value: unknown): ViewColumnBuilder;
-    HasColumnName(name: string): ViewColumnBuilder;
-    ToString(): string | undefined;
+    HasAnnotation(annotation: string, value: JsValue | null): ViewColumnBuilder;
+    HasColumnName(name: string | null): ViewColumnBuilder;
+    ToString(): string | null;
 }
 
 
@@ -4070,10 +4068,10 @@ export interface ViewColumnBuilder_1$instance<TProperty> extends ViewColumnBuild
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    HasAnnotation(annotation: string, value: unknown): ViewColumnBuilder_1<TProperty>;
-    HasAnnotation(annotation: string, value: unknown): ViewColumnBuilder;
-    HasColumnName(name: string): ViewColumnBuilder_1<TProperty>;
-    HasColumnName(name: string): ViewColumnBuilder;
+    HasAnnotation(annotation: string, value: JsValue | null): ViewColumnBuilder_1<TProperty>;
+    HasAnnotation(annotation: string, value: JsValue | null): ViewColumnBuilder;
+    HasColumnName(name: string | null): ViewColumnBuilder_1<TProperty>;
+    HasColumnName(name: string | null): ViewColumnBuilder;
 }
 
 

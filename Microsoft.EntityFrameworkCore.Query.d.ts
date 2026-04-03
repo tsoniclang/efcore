@@ -31,6 +31,7 @@ import type { IMemoryCache } from '@tsonic/microsoft-extensions/Microsoft.Extens
 
 // Public API exports (curated - no internal $instance/$views leakage)
 export { CompiledQueryCacheKeyGenerator as CompiledQueryCacheKeyGenerator } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
+export { CompiledQueryCacheKeyGenerator_CompiledQueryCacheKey as CompiledQueryCacheKeyGenerator_CompiledQueryCacheKey } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { CompiledQueryCacheKeyGeneratorDependencies as CompiledQueryCacheKeyGeneratorDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { StructuralTypeMaterializerSourceParameters as StructuralTypeMaterializerSourceParameters } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { EntityMaterializerSourceParameters as EntityMaterializerSourceParameters } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
@@ -74,6 +75,7 @@ export { ProjectionBindingExpression as ProjectionBindingExpression } from './Mi
 export { ProjectionMember as ProjectionMember } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { QueryableMethods$instance as QueryableMethods } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { QueryableMethodTranslatingExpressionVisitor as QueryableMethodTranslatingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
+export { QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter as QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { QueryableMethodTranslatingExpressionVisitorDependencies as QueryableMethodTranslatingExpressionVisitorDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { QueryCompilationContext as QueryCompilationContext } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { QueryCompilationContextDependencies as QueryCompilationContextDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
@@ -93,7 +95,6 @@ export { ShapedQueryCompilingExpressionVisitorDependencies as ShapedQueryCompili
 export { ShapedQueryExpression as ShapedQueryExpression } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { StructuralTypeShaperExpression as StructuralTypeShaperExpression } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { TransparentIdentifierFactory$instance as TransparentIdentifierFactory } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
-export { QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter as QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { NotParameterizedAttribute as NotParameterizedAttribute } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { CollectionResultExpression as CollectionResultExpression } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { EnumerableExpression as EnumerableExpression } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
@@ -124,6 +125,7 @@ export { RelationalAggregateMethodCallTranslatorProvider as RelationalAggregateM
 export { RelationalAggregateMethodCallTranslatorProviderDependencies as RelationalAggregateMethodCallTranslatorProviderDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalCollectionShaperExpression as RelationalCollectionShaperExpression } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalCompiledQueryCacheKeyGenerator as RelationalCompiledQueryCacheKeyGenerator } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
+export { RelationalCompiledQueryCacheKeyGenerator_RelationalCompiledQueryCacheKey as RelationalCompiledQueryCacheKeyGenerator_RelationalCompiledQueryCacheKey } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalCompiledQueryCacheKeyGeneratorDependencies as RelationalCompiledQueryCacheKeyGeneratorDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalEvaluatableExpressionFilter as RelationalEvaluatableExpressionFilter } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalEvaluatableExpressionFilterDependencies as RelationalEvaluatableExpressionFilterDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
@@ -142,6 +144,7 @@ export { RelationalParameterBasedSqlProcessor as RelationalParameterBasedSqlProc
 export { RelationalParameterBasedSqlProcessorDependencies as RelationalParameterBasedSqlProcessorDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalParameterBasedSqlProcessorParameters as RelationalParameterBasedSqlProcessorParameters } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalQueryableMethodTranslatingExpressionVisitor as RelationalQueryableMethodTranslatingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
+export { RelationalQueryableMethodTranslatingExpressionVisitor_RelationalInferredTypeMappingApplier as RelationalQueryableMethodTranslatingExpressionVisitor_RelationalInferredTypeMappingApplier } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalQueryableMethodTranslatingExpressionVisitorDependencies as RelationalQueryableMethodTranslatingExpressionVisitorDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalQueryCompilationContext as RelationalQueryCompilationContext } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalQueryCompilationContextDependencies as RelationalQueryCompilationContextDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
@@ -153,6 +156,7 @@ export { RelationalQueryTranslationPostprocessorDependencies as RelationalQueryT
 export { RelationalQueryTranslationPreprocessor as RelationalQueryTranslationPreprocessor } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalQueryTranslationPreprocessorDependencies as RelationalQueryTranslationPreprocessorDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalShapedQueryCompilingExpressionVisitor as RelationalShapedQueryCompilingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
+export { RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor as RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalShapedQueryCompilingExpressionVisitorDependencies as RelationalShapedQueryCompilingExpressionVisitorDependencies } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalSplitCollectionShaperExpression as RelationalSplitCollectionShaperExpression } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { RelationalSqlTranslatingExpressionVisitor as RelationalSqlTranslatingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
@@ -168,7 +172,6 @@ export { SqlExpressionVisitor as SqlExpressionVisitor } from './Microsoft.Entity
 export { SqlNullabilityProcessor as SqlNullabilityProcessor } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { SqlTreePruner as SqlTreePruner } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 export { StructuralTypeProjectionExpression as StructuralTypeProjectionExpression } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
-export { RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor as RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 
 // Multi-arity family value exports (arity-0 constructors/static namespaces)
 export const UpdateSettersBuilder: typeof Internal.UpdateSettersBuilder;

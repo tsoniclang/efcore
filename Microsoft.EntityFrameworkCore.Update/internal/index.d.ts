@@ -2,11 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Update
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Import support types from @tsonic/core
-import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import type { CascadeTiming, ChangeTrackerDebugStringOptions, EntityEntry } from "../../Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js";
@@ -48,10 +46,10 @@ export type IBatchExecutor = IBatchExecutor$instance;
 export interface IColumnModification$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IColumnModification: never;
 
-    readonly Entry: IUpdateEntry | undefined;
-    readonly Property: IProperty | undefined;
-    readonly Column: IColumnBase | undefined;
-    readonly TypeMapping: RelationalTypeMapping | undefined;
+    readonly Entry: IUpdateEntry | null;
+    readonly Property: IProperty | null;
+    readonly Column: IColumnBase | null;
+    readonly TypeMapping: RelationalTypeMapping | null;
     readonly IsNullable: Nullable_1<System_Internal.Boolean>;
     IsRead: boolean;
     IsWrite: boolean;
@@ -62,15 +60,15 @@ export interface IColumnModification$instance {
     readonly UseOriginalValue: boolean;
     readonly UseCurrentValue: boolean;
     readonly UseParameter: boolean;
-    readonly ParameterName: string | undefined;
-    readonly OriginalParameterName: string | undefined;
+    readonly ParameterName: string | null;
+    readonly OriginalParameterName: string | null;
     readonly ColumnName: string;
-    readonly ColumnType: string | undefined;
-    get OriginalValue(): unknown | undefined;
-    set OriginalValue(value: unknown | undefined);
-    get Value(): unknown | undefined;
-    set Value(value: unknown | undefined);
-    readonly JsonPath: string | undefined;
+    readonly ColumnType: string | null;
+    get OriginalValue(): JsValue | null;
+    set OriginalValue(value: JsValue | null);
+    get Value(): JsValue | null;
+    set Value(value: JsValue | null);
+    readonly JsonPath: string | null;
     AddSharedColumnModification(modification: IColumnModification): void;
     ResetParameterNames(): void;
 }
@@ -95,14 +93,14 @@ export type ICommandBatchPreparer = ICommandBatchPreparer$instance;
 export interface IModificationCommand$instance extends IReadOnlyModificationCommand {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IModificationCommand: never;
 
-    readonly Table: ITable | undefined;
-    readonly StoreStoredProcedure: IStoreStoredProcedure | undefined;
+    readonly Table: ITable | null;
+    readonly StoreStoredProcedure: IStoreStoredProcedure | null;
     readonly TableName: string;
-    readonly Schema: string | undefined;
+    readonly Schema: string | null;
     readonly ColumnModifications: IReadOnlyList_1<IColumnModification>;
     readonly Entries: IReadOnlyList_1<IUpdateEntry>;
     readonly EntityState: EntityState;
-    readonly RowsAffectedColumn: IColumnBase | undefined;
+    readonly RowsAffectedColumn: IColumnBase | null;
     AddEntry(entry: IUpdateEntry, mainEntry: boolean): void;
     PropagateOutputParameters(parameterCollection: DbParameterCollection, baseParameterIndex: int): void;
     PropagateResults(relationalReader: RelationalDataReader): void;
@@ -136,13 +134,13 @@ export interface INonTrackedModificationCommand$instance extends IReadOnlyModifi
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_INonTrackedModificationCommand: never;
 
     EntityState: EntityState;
-    readonly Table: ITable | undefined;
-    readonly StoreStoredProcedure: IStoreStoredProcedure | undefined;
+    readonly Table: ITable | null;
+    readonly StoreStoredProcedure: IStoreStoredProcedure | null;
     readonly TableName: string;
-    readonly Schema: string | undefined;
+    readonly Schema: string | null;
     readonly ColumnModifications: IReadOnlyList_1<IColumnModification>;
     readonly Entries: IReadOnlyList_1<IUpdateEntry>;
-    readonly RowsAffectedColumn: IColumnBase | undefined;
+    readonly RowsAffectedColumn: IColumnBase | null;
     AddColumnModification(columnModificationParameters: ColumnModificationParameters): IColumnModification;
     PropagateOutputParameters(parameterCollection: DbParameterCollection, baseParameterIndex: int): void;
     PropagateResults(relationalReader: RelationalDataReader): void;
@@ -154,14 +152,14 @@ export type INonTrackedModificationCommand = INonTrackedModificationCommand$inst
 export interface IReadOnlyModificationCommand$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IReadOnlyModificationCommand: never;
 
-    readonly Table: ITable | undefined;
-    readonly StoreStoredProcedure: IStoreStoredProcedure | undefined;
+    readonly Table: ITable | null;
+    readonly StoreStoredProcedure: IStoreStoredProcedure | null;
     readonly TableName: string;
-    readonly Schema: string | undefined;
+    readonly Schema: string | null;
     readonly ColumnModifications: IReadOnlyList_1<IColumnModification>;
     readonly Entries: IReadOnlyList_1<IUpdateEntry>;
     readonly EntityState: EntityState;
-    readonly RowsAffectedColumn: IColumnBase | undefined;
+    readonly RowsAffectedColumn: IColumnBase | null;
     PropagateOutputParameters(parameterCollection: DbParameterCollection, baseParameterIndex: int): void;
     PropagateResults(relationalReader: RelationalDataReader): void;
 }
@@ -176,13 +174,13 @@ export interface IUpdateAdapter$instance {
     CascadeDeleteTiming: CascadeTiming;
     readonly Entries: IEnumerable_1<IUpdateEntry>;
     readonly Model: IModel;
-    CascadeDelete(entry: IUpdateEntry, foreignKeys?: IEnumerable_1<IForeignKey>): void;
-    CreateEntry(values: IDictionary_2<System_Internal.String, unknown>, entityType: IEntityType): IUpdateEntry;
+    CascadeDelete(entry: IUpdateEntry, foreignKeys?: IEnumerable_1<IForeignKey> | null): void;
+    CreateEntry(values: IDictionary_2<System_Internal.String, JsValue | null>, entityType: IEntityType): IUpdateEntry;
     DetectChanges(): void;
-    FindPrincipal(dependentEntry: IUpdateEntry, foreignKey: IForeignKey): IUpdateEntry | undefined;
+    FindPrincipal(dependentEntry: IUpdateEntry, foreignKey: IForeignKey): IUpdateEntry | null;
     GetDependents(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable_1<IUpdateEntry>;
     GetEntriesToSave(): IList_1<IUpdateEntry>;
-    TryGetEntry(key: IKey, keyValues: unknown[]): IUpdateEntry | undefined;
+    TryGetEntry(key: IKey, keyValues: (JsValue | null)[]): IUpdateEntry | null;
 }
 
 
@@ -192,7 +190,7 @@ export interface IUpdateAdapterFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateAdapterFactory: never;
 
     Create(): IUpdateAdapter;
-    CreateStandalone(model?: IModel): IUpdateAdapter;
+    CreateStandalone(model?: IModel | null): IUpdateAdapter;
 }
 
 
@@ -204,16 +202,16 @@ export interface IUpdateEntry$instance {
     readonly Context: DbContext;
     readonly EntityType: IEntityType;
     EntityState: EntityState;
-    readonly SharedIdentityEntry: IUpdateEntry | undefined;
+    readonly SharedIdentityEntry: IUpdateEntry | null;
     CanHaveOriginalValue(propertyBase: IPropertyBase): boolean;
-    GetCurrentValue(propertyBase: IPropertyBase): unknown | undefined;
+    GetCurrentValue(propertyBase: IPropertyBase): JsValue | null;
     GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
     GetOriginalValue<TProperty>(property: IProperty): TProperty;
     IsModified(property: IComplexProperty): boolean;
     IsModified(property: IProperty): boolean;
-    SetOriginalValue(property: IProperty, value: unknown): void;
+    SetOriginalValue(property: IProperty, value: JsValue | null): void;
     SetPropertyModified(property: IProperty): void;
-    SetStoreGeneratedValue(property: IProperty, value: unknown, setModified?: boolean): void;
+    SetStoreGeneratedValue(property: IProperty, value: JsValue | null, setModified?: boolean): void;
     ToEntityEntry(): EntityEntry;
 }
 
@@ -226,8 +224,8 @@ export interface IUpdateSqlGenerator$instance {
     AppendBatchHeader(commandStringBuilder: StringBuilder): void;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
-    AppendNextSequenceValueOperation(commandStringBuilder: StringBuilder, name: string, schema: string): void;
-    GenerateNextSequenceValueOperation(name: string, schema: string): string;
+    AppendNextSequenceValueOperation(commandStringBuilder: StringBuilder, name: string, schema: string | null): void;
+    GenerateNextSequenceValueOperation(name: string, schema: string | null): string;
 }
 
 
@@ -238,33 +236,33 @@ export interface ColumnModificationParameters$instance {
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    get Column(): IColumnBase | undefined;
-    set Column(value: IColumnBase | undefined);
+    get Column(): IColumnBase | null;
+    set Column(value: IColumnBase | null);
     ColumnName: string;
-    get ColumnType(): string | undefined;
-    set ColumnType(value: string | undefined);
-    get Entry(): IUpdateEntry | undefined;
-    set Entry(value: IUpdateEntry | undefined);
-    get GenerateParameterName(): Func_1<System_Internal.String> | undefined;
-    set GenerateParameterName(value: Func_1<System_Internal.String> | undefined);
+    get ColumnType(): string | null;
+    set ColumnType(value: string | null);
+    get Entry(): IUpdateEntry | null;
+    set Entry(value: IUpdateEntry | null);
+    get GenerateParameterName(): Func_1<System_Internal.String> | null;
+    set GenerateParameterName(value: Func_1<System_Internal.String> | null);
     IsCondition: boolean;
     IsKey: boolean;
     get IsNullable(): Nullable_1<System_Internal.Boolean>;
     set IsNullable(value: Nullable_1<System_Internal.Boolean> | boolean);
     IsRead: boolean;
     IsWrite: boolean;
-    get JsonPath(): string | undefined;
-    set JsonPath(value: string | undefined);
-    get OriginalValue(): unknown | undefined;
-    set OriginalValue(value: unknown | undefined);
-    get Property(): IProperty | undefined;
-    set Property(value: IProperty | undefined);
+    get JsonPath(): string | null;
+    set JsonPath(value: string | null);
+    get OriginalValue(): JsValue | null;
+    set OriginalValue(value: JsValue | null);
+    get Property(): IProperty | null;
+    set Property(value: IProperty | null);
     SensitiveLoggingEnabled: boolean;
-    get TypeMapping(): RelationalTypeMapping | undefined;
-    set TypeMapping(value: RelationalTypeMapping | undefined);
-    get Value(): unknown | undefined;
-    set Value(value: unknown | undefined);
-    Equals(obj: unknown): boolean;
+    get TypeMapping(): RelationalTypeMapping | null;
+    set TypeMapping(value: RelationalTypeMapping | null);
+    get Value(): JsValue | null;
+    set Value(value: JsValue | null);
+    Equals(obj: JsValue): boolean;
     Equals(other: ColumnModificationParameters): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -272,10 +270,10 @@ export interface ColumnModificationParameters$instance {
 
 
 export const ColumnModificationParameters: {
-    new(columnName: string, originalValue: unknown, value: unknown, property: IProperty, columnType: string, typeMapping: RelationalTypeMapping, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
-    new(column: IColumn, originalValue: unknown, value: unknown, property: IProperty, typeMapping: RelationalTypeMapping, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
-    new(entry: IUpdateEntry, property: IProperty, column: IColumnBase, generateParameterName: Func_1<System_Internal.String>, typeMapping: RelationalTypeMapping, valueIsRead: boolean, valueIsWrite: boolean, columnIsKey: boolean, columnIsCondition: boolean, sensitiveLoggingEnabled: boolean): ColumnModificationParameters;
-    new(columnName: string, value: unknown, property: IProperty, columnType: string, typeMapping: RelationalTypeMapping, jsonPath: string, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
+    new(columnName: string, originalValue: JsValue | null, value: JsValue | null, property: IProperty | null, columnType: string | null, typeMapping: RelationalTypeMapping | null, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
+    new(column: IColumn, originalValue: JsValue | null, value: JsValue | null, property: IProperty | null, typeMapping: RelationalTypeMapping | null, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
+    new(entry: IUpdateEntry | null, property: IProperty | null, column: IColumnBase, generateParameterName: Func_1<System_Internal.String>, typeMapping: RelationalTypeMapping, valueIsRead: boolean, valueIsWrite: boolean, columnIsKey: boolean, columnIsCondition: boolean, sensitiveLoggingEnabled: boolean): ColumnModificationParameters;
+    new(columnName: string, value: JsValue | null, property: IProperty | null, columnType: string | null, typeMapping: RelationalTypeMapping | null, jsonPath: string, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
 };
 
 
@@ -286,21 +284,21 @@ export interface ModificationCommandParameters$instance {
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    get Comparer(): IComparer_1<IUpdateEntry> | undefined;
-    set Comparer(value: IComparer_1<IUpdateEntry> | undefined);
+    get Comparer(): IComparer_1<IUpdateEntry> | null;
+    set Comparer(value: IComparer_1<IUpdateEntry> | null);
     DetailedErrorsEnabled: boolean;
-    get GenerateParameterName(): Func_1<System_Internal.String> | undefined;
-    set GenerateParameterName(value: Func_1<System_Internal.String> | undefined);
-    get Logger(): IDiagnosticsLogger_1<DbLoggerCategory_Update> | undefined;
-    set Logger(value: IDiagnosticsLogger_1<DbLoggerCategory_Update> | undefined);
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get GenerateParameterName(): Func_1<System_Internal.String> | null;
+    set GenerateParameterName(value: Func_1<System_Internal.String> | null);
+    get Logger(): IDiagnosticsLogger_1<DbLoggerCategory_Update> | null;
+    set Logger(value: IDiagnosticsLogger_1<DbLoggerCategory_Update> | null);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     SensitiveLoggingEnabled: boolean;
-    readonly StoreStoredProcedure: IStoreStoredProcedure | undefined;
-    get Table(): ITable | undefined;
-    set Table(value: ITable | undefined);
+    readonly StoreStoredProcedure: IStoreStoredProcedure | null;
+    get Table(): ITable | null;
+    set Table(value: ITable | null);
     TableName: string;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue): boolean;
     Equals(other: ModificationCommandParameters): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -308,8 +306,8 @@ export interface ModificationCommandParameters$instance {
 
 
 export const ModificationCommandParameters: {
-    new(table: ITable, storeStoredProcedure: IStoreStoredProcedure, sensitiveLoggingEnabled: boolean, detailedErrorsEnabled: boolean, comparer: IComparer_1<IUpdateEntry>, generateParameterName: Func_1<System_Internal.String>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Update>): ModificationCommandParameters;
-    new(table: ITable, sensitiveLoggingEnabled: boolean, detailedErrorsEnabled: boolean, comparer: IComparer_1<IUpdateEntry>, generateParameterName: Func_1<System_Internal.String>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Update>): ModificationCommandParameters;
+    new(table: ITable, storeStoredProcedure: IStoreStoredProcedure | null, sensitiveLoggingEnabled: boolean, detailedErrorsEnabled: boolean, comparer: IComparer_1<IUpdateEntry> | null, generateParameterName: Func_1<System_Internal.String> | null, logger: IDiagnosticsLogger_1<DbLoggerCategory_Update> | null): ModificationCommandParameters;
+    new(table: ITable, sensitiveLoggingEnabled: boolean, detailedErrorsEnabled: boolean, comparer: IComparer_1<IUpdateEntry> | null, generateParameterName: Func_1<System_Internal.String> | null, logger: IDiagnosticsLogger_1<DbLoggerCategory_Update> | null): ModificationCommandParameters;
 };
 
 
@@ -320,13 +318,13 @@ export interface NonTrackedModificationCommandParameters$instance {
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     SensitiveLoggingEnabled: boolean;
-    get Table(): ITable | undefined;
-    set Table(value: ITable | undefined);
+    get Table(): ITable | null;
+    set Table(value: ITable | null);
     TableName: string;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue): boolean;
     Equals(other: NonTrackedModificationCommandParameters): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -334,7 +332,7 @@ export interface NonTrackedModificationCommandParameters$instance {
 
 
 export const NonTrackedModificationCommandParameters: {
-    new(tableName: string, schemaName: string, sensitiveLoggingEnabled: boolean): NonTrackedModificationCommandParameters;
+    new(tableName: string, schemaName: string | null, sensitiveLoggingEnabled: boolean): NonTrackedModificationCommandParameters;
     new(table: ITable, sensitiveLoggingEnabled: boolean): NonTrackedModificationCommandParameters;
 };
 
@@ -366,29 +364,29 @@ export interface ColumnModification$instance extends IColumnModification$instanc
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IColumnModification: never;
 
-    readonly Column: IColumnBase | undefined;
+    readonly Column: IColumnBase | null;
     readonly ColumnName: string;
-    readonly ColumnType: string | undefined;
-    readonly Entry: IUpdateEntry | undefined;
+    readonly ColumnType: string | null;
+    readonly Entry: IUpdateEntry | null;
     IsCondition: boolean;
     IsKey: boolean;
     readonly IsNullable: Nullable_1<System_Internal.Boolean>;
     IsRead: boolean;
     IsWrite: boolean;
-    readonly JsonPath: string | undefined;
-    readonly OriginalParameterName: string | undefined;
-    get OriginalValue(): unknown | undefined;
-    set OriginalValue(value: unknown | undefined);
-    readonly ParameterName: string | undefined;
-    readonly Property: IProperty | undefined;
-    readonly TypeMapping: RelationalTypeMapping | undefined;
+    readonly JsonPath: string | null;
+    readonly OriginalParameterName: string | null;
+    get OriginalValue(): JsValue | null;
+    set OriginalValue(value: JsValue | null);
+    readonly ParameterName: string | null;
+    readonly Property: IProperty | null;
+    readonly TypeMapping: RelationalTypeMapping | null;
     readonly UseCurrentValue: boolean;
     readonly UseCurrentValueParameter: boolean;
     readonly UseOriginalValue: boolean;
     readonly UseOriginalValueParameter: boolean;
     readonly UseParameter: boolean;
-    get Value(): unknown | undefined;
-    set Value(value: unknown | undefined);
+    get Value(): JsValue | null;
+    set Value(value: JsValue | null);
     AddSharedColumnModification(modification: IColumnModification): void;
     ResetParameterNames(): void;
 }
@@ -396,13 +394,13 @@ export interface ColumnModification$instance extends IColumnModification$instanc
 
 export const ColumnModification: {
     new(columnModificationParameters: ColumnModificationParameters): ColumnModification;
-    GetCurrentProviderValue(entry: IUpdateEntry, property: IProperty): unknown | undefined;
-    GetCurrentValue(entry: IUpdateEntry, property: IProperty): unknown | undefined;
-    GetOriginalProviderValue(entry: IUpdateEntry, property: IProperty): unknown | undefined;
-    GetOriginalValue(entry: IUpdateEntry, property: IProperty): unknown | undefined;
+    GetCurrentProviderValue(entry: IUpdateEntry, property: IProperty): JsValue | null;
+    GetCurrentValue(entry: IUpdateEntry, property: IProperty): JsValue | null;
+    GetOriginalProviderValue(entry: IUpdateEntry, property: IProperty): JsValue | null;
+    GetOriginalValue(entry: IUpdateEntry, property: IProperty): JsValue | null;
     IsModified(entry: IUpdateEntry, property: IProperty): boolean;
     IsStoreGenerated(entry: IUpdateEntry, property: IProperty): boolean;
-    SetStoreGeneratedValue(entry: IUpdateEntry, property: IProperty, value: unknown): void;
+    SetStoreGeneratedValue(entry: IUpdateEntry, property: IProperty, value: JsValue | null): void;
 };
 
 
@@ -416,13 +414,13 @@ export type ColumnModification = ColumnModification$instance & __ColumnModificat
 export interface EquatableKeyValue_1$instance<TKey> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_EquatableKeyValue_1: never;
 
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
 }
 
 
 export const EquatableKeyValue_1: {
-    new<TKey>(metadata: IAnnotatable, keyValue: TKey, keyComparer: IEqualityComparer_1<TKey>): EquatableKeyValue_1<TKey>;
+    new<TKey>(metadata: IAnnotatable, keyValue: TKey | null, keyComparer: IEqualityComparer_1<TKey>): EquatableKeyValue_1<TKey>;
 };
 
 
@@ -438,11 +436,11 @@ export interface ModificationCommand$instance {
     readonly ColumnModifications: IReadOnlyList_1<IColumnModification>;
     EntityState: EntityState;
     readonly Entries: IReadOnlyList_1<IUpdateEntry>;
-    get RowsAffectedColumn(): IColumnBase | undefined;
-    set RowsAffectedColumn(value: IColumnBase | undefined);
-    readonly Schema: string | undefined;
-    readonly StoreStoredProcedure: IStoreStoredProcedure | undefined;
-    readonly Table: ITable | undefined;
+    get RowsAffectedColumn(): IColumnBase | null;
+    set RowsAffectedColumn(value: IColumnBase | null);
+    readonly Schema: string | null;
+    readonly StoreStoredProcedure: IStoreStoredProcedure | null;
+    readonly Table: ITable | null;
     readonly TableName: string;
     AddColumnModification(columnModificationParameters: ColumnModificationParameters): IColumnModification;
     AddEntry(entry: IUpdateEntry, mainEntry: boolean): void;
@@ -501,8 +499,8 @@ export interface ModificationCommandBatchFactoryDependencies$instance {
     readonly UpdateLogger: IDiagnosticsLogger_1<DbLoggerCategory_Update>;
     UpdateSqlGenerator: IUpdateSqlGenerator;
     _Clone_$(): ModificationCommandBatchFactoryDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: ModificationCommandBatchFactoryDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: ModificationCommandBatchFactoryDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -523,13 +521,13 @@ export interface ReaderModificationCommandBatch$instance extends ModificationCom
     readonly IsCommandTextEmpty: boolean;
     readonly MaxBatchSize: int;
     readonly ModificationCommands: IReadOnlyList_1<IReadOnlyModificationCommand>;
-    readonly ParameterValues: Dictionary_2<System_Internal.String, unknown | undefined>;
+    readonly ParameterValues: Dictionary_2<System_Internal.String, JsValue | null>;
     readonly RelationalCommandBuilder: IRelationalCommandBuilder;
     readonly RequiresTransaction: boolean;
     readonly ResultSetMappings: IList_1<ResultSetMapping>;
     readonly SqlBuilder: StringBuilder;
-    get StoreCommand(): RawSqlCommand | undefined;
-    set StoreCommand(value: RawSqlCommand | undefined);
+    get StoreCommand(): RawSqlCommand | null;
+    set StoreCommand(value: RawSqlCommand | null);
     readonly UpdateSqlGenerator: IUpdateSqlGenerator;
     AddCommand(modificationCommand: IReadOnlyModificationCommand): void;
     AddParameter(columnModification: IColumnModification): void;
@@ -573,14 +571,14 @@ export interface UpdateAndSelectSqlGenerator$instance extends UpdateSqlGenerator
     AppendDeleteAndSelectOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
-    AppendFromClause(commandStringBuilder: StringBuilder, name: string, schema: string): void;
+    AppendFromClause(commandStringBuilder: StringBuilder, name: string, schema: string | null): void;
     AppendIdentityWhereCondition(commandStringBuilder: StringBuilder, columnModification: IColumnModification): void;
     AppendInsertAndSelectOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendInsertOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendInsertOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
     AppendRowsAffectedWhereCondition(commandStringBuilder: StringBuilder, expectedRowsAffected: int): void;
-    AppendSelectAffectedCommand(commandStringBuilder: StringBuilder, name: string, schema: string, readOperations: IReadOnlyList_1<IColumnModification>, conditionOperations: IReadOnlyList_1<IColumnModification>, commandPosition: int): ResultSetMapping;
-    AppendSelectAffectedCountCommand(commandStringBuilder: StringBuilder, name: string, schema: string, commandPosition: int): ResultSetMapping;
+    AppendSelectAffectedCommand(commandStringBuilder: StringBuilder, name: string, schema: string | null, readOperations: IReadOnlyList_1<IColumnModification>, conditionOperations: IReadOnlyList_1<IColumnModification>, commandPosition: int): ResultSetMapping;
+    AppendSelectAffectedCountCommand(commandStringBuilder: StringBuilder, name: string, schema: string | null, commandPosition: int): ResultSetMapping;
     AppendSelectCommandHeader(commandStringBuilder: StringBuilder, operations: IReadOnlyList_1<IColumnModification>): void;
     AppendUpdateAndSelectOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendUpdateOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
@@ -609,38 +607,38 @@ export interface UpdateSqlGenerator$instance extends IUpdateSqlGenerator$instanc
     readonly Dependencies: UpdateSqlGeneratorDependencies;
     readonly SqlGenerationHelper: ISqlGenerationHelper;
     AppendBatchHeader(commandStringBuilder: StringBuilder): void;
-    AppendDeleteCommand(commandStringBuilder: StringBuilder, name: string, schema: string, readOperations: IReadOnlyList_1<IColumnModification>, conditionOperations: IReadOnlyList_1<IColumnModification>, appendReturningOneClause?: boolean): void;
-    AppendDeleteCommandHeader(commandStringBuilder: StringBuilder, name: string, schema: string): void;
+    AppendDeleteCommand(commandStringBuilder: StringBuilder, name: string, schema: string | null, readOperations: IReadOnlyList_1<IColumnModification>, conditionOperations: IReadOnlyList_1<IColumnModification>, appendReturningOneClause?: boolean): void;
+    AppendDeleteCommandHeader(commandStringBuilder: StringBuilder, name: string, schema: string | null): void;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendDeleteOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
     AppendDeleteReturningOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
-    AppendInsertCommand(commandStringBuilder: StringBuilder, name: string, schema: string, writeOperations: IReadOnlyList_1<IColumnModification>, readOperations: IReadOnlyList_1<IColumnModification>): void;
-    AppendInsertCommandHeader(commandStringBuilder: StringBuilder, name: string, schema: string, operations: IReadOnlyList_1<IColumnModification>): void;
+    AppendInsertCommand(commandStringBuilder: StringBuilder, name: string, schema: string | null, writeOperations: IReadOnlyList_1<IColumnModification>, readOperations: IReadOnlyList_1<IColumnModification>): void;
+    AppendInsertCommandHeader(commandStringBuilder: StringBuilder, name: string, schema: string | null, operations: IReadOnlyList_1<IColumnModification>): void;
     AppendInsertOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendInsertOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
     AppendInsertReturningOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
-    AppendNextSequenceValueOperation(commandStringBuilder: StringBuilder, name: string, schema: string): void;
-    AppendObtainNextSequenceValueOperation(commandStringBuilder: StringBuilder, name: string, schema: string): void;
-    AppendReturningClause(commandStringBuilder: StringBuilder, operations: IReadOnlyList_1<IColumnModification>, additionalValues?: string): void;
+    AppendNextSequenceValueOperation(commandStringBuilder: StringBuilder, name: string, schema: string | null): void;
+    AppendObtainNextSequenceValueOperation(commandStringBuilder: StringBuilder, name: string, schema: string | null): void;
+    AppendReturningClause(commandStringBuilder: StringBuilder, operations: IReadOnlyList_1<IColumnModification>, additionalValues?: string | null): void;
     AppendStoredProcedureCall(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
-    AppendUpdateColumnValue(updateSqlGeneratorHelper: ISqlGenerationHelper, columnModification: IColumnModification, stringBuilder: StringBuilder, name: string, schema: string): void;
-    AppendUpdateCommand(commandStringBuilder: StringBuilder, name: string, schema: string, writeOperations: IReadOnlyList_1<IColumnModification>, readOperations: IReadOnlyList_1<IColumnModification>, conditionOperations: IReadOnlyList_1<IColumnModification>, appendReturningOneClause?: boolean): void;
-    AppendUpdateCommandHeader(commandStringBuilder: StringBuilder, name: string, schema: string, operations: IReadOnlyList_1<IColumnModification>): void;
+    AppendUpdateColumnValue(updateSqlGeneratorHelper: ISqlGenerationHelper, columnModification: IColumnModification, stringBuilder: StringBuilder, name: string, schema: string | null): void;
+    AppendUpdateCommand(commandStringBuilder: StringBuilder, name: string, schema: string | null, writeOperations: IReadOnlyList_1<IColumnModification>, readOperations: IReadOnlyList_1<IColumnModification>, conditionOperations: IReadOnlyList_1<IColumnModification>, appendReturningOneClause?: boolean): void;
+    AppendUpdateCommandHeader(commandStringBuilder: StringBuilder, name: string, schema: string | null, operations: IReadOnlyList_1<IColumnModification>): void;
     AppendUpdateOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
     AppendUpdateOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int): ResultSetMapping;
     AppendUpdateReturningOperation(commandStringBuilder: StringBuilder, command: IReadOnlyModificationCommand, commandPosition: int, requiresTransaction: boolean): ResultSetMapping;
-    AppendValues(commandStringBuilder: StringBuilder, name: string, schema: string, operations: IReadOnlyList_1<IColumnModification>): void;
+    AppendValues(commandStringBuilder: StringBuilder, name: string, schema: string | null, operations: IReadOnlyList_1<IColumnModification>): void;
     AppendValuesHeader(commandStringBuilder: StringBuilder, operations: IReadOnlyList_1<IColumnModification>): void;
     AppendWhereClause(commandStringBuilder: StringBuilder, operations: IReadOnlyList_1<IColumnModification>): void;
     AppendWhereCondition(commandStringBuilder: StringBuilder, columnModification: IColumnModification, useOriginalValue: boolean): void;
-    GenerateNextSequenceValueOperation(name: string, schema: string): string;
-    GenerateObtainNextSequenceValueOperation(name: string, schema: string): string;
+    GenerateNextSequenceValueOperation(name: string, schema: string | null): string;
+    GenerateObtainNextSequenceValueOperation(name: string, schema: string | null): string;
     PrependEnsureAutocommit(commandStringBuilder: StringBuilder): void;
 }
 
 
 export const UpdateSqlGenerator: (abstract new(dependencies: UpdateSqlGeneratorDependencies) => UpdateSqlGenerator) & {
-    AppendSqlLiteral(commandStringBuilder: StringBuilder, modification: IColumnModification, tableName: string, schema: string): void;
+    AppendSqlLiteral(commandStringBuilder: StringBuilder, modification: IColumnModification, tableName: string | null, schema: string | null): void;
 };
 
 
@@ -659,8 +657,8 @@ export interface UpdateSqlGeneratorDependencies$instance {
     SqlGenerationHelper: ISqlGenerationHelper;
     TypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): UpdateSqlGeneratorDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: UpdateSqlGeneratorDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: UpdateSqlGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -676,8 +674,8 @@ export type UpdateSqlGeneratorDependencies = UpdateSqlGeneratorDependencies$inst
 export abstract class UpdateEntryExtensions$instance {
     static BuildCurrentValuesString(entry: IUpdateEntry, properties: IEnumerable_1<IPropertyBase>): string;
     static BuildOriginalValuesString(entry: IUpdateEntry, properties: IEnumerable_1<IPropertyBase>): string;
-    static GetCurrentProviderValue(updateEntry: IUpdateEntry, property: IProperty): unknown | undefined;
-    static GetOriginalProviderValue(updateEntry: IUpdateEntry, property: IProperty): unknown | undefined;
+    static GetCurrentProviderValue(updateEntry: IUpdateEntry, property: IProperty): JsValue | null;
+    static GetOriginalProviderValue(updateEntry: IUpdateEntry, property: IProperty): JsValue | null;
     static ToDebugString(updateEntry: IUpdateEntry, options?: ChangeTrackerDebugStringOptions, indent?: int): string;
 }
 

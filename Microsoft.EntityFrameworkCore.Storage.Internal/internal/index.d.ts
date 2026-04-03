@@ -2,11 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Storage.Internal
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Import support types from @tsonic/core
-import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import type { ValueComparer } from "../../Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js";
@@ -17,7 +15,7 @@ import type { IAsyncQueryProvider } from "../../Microsoft.EntityFrameworkCore.Qu
 import type { JsonValueReaderWriter } from "../../Microsoft.EntityFrameworkCore.Storage.Json/internal/index.js";
 import type { ValueConverter } from "../../Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js";
 import * as Microsoft_EntityFrameworkCore_Storage_Internal from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
-import type { CoreTypeMapping, ExecutionStrategyDependencies, IDatabaseCreator, IDatabaseFacadeDependencies, IDatabaseProvider, IDbContextTransactionManager, IExceptionDetector, IExecutionStrategy, IExecutionStrategyFactory, IParameterNameGeneratorFactory, IRawSqlCommandBuilder, IRelationalCommand, IRelationalCommandBuilderFactory, IRelationalConnection, IRelationalDatabaseFacadeDependencies, IRelationalParameter, IRelationalTypeMappingSource, ISqlGenerationHelper, ITypeMappingSource, RawSqlCommand, RelationalTypeMapping, RelationalTypeMappingInfo, StoreTypePostfix, TypeMappingInfo } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
+import type { CoreTypeMapping, CoreTypeMapping_CoreTypeMappingParameters, ExecutionStrategyDependencies, IDatabaseCreator, IDatabaseFacadeDependencies, IDatabaseProvider, IDbContextTransactionManager, IExceptionDetector, IExecutionStrategy, IExecutionStrategyFactory, IParameterNameGeneratorFactory, IRawSqlCommandBuilder, IRelationalCommand, IRelationalCommandBuilderFactory, IRelationalConnection, IRelationalDatabaseFacadeDependencies, IRelationalParameter, IRelationalTypeMappingSource, ISqlGenerationHelper, ITypeMappingSource, RawSqlCommand, RelationalTypeMapping, RelationalTypeMapping_RelationalTypeMappingParameters, RelationalTypeMappingInfo, StoreTypePostfix, TypeMappingInfo } from "../../Microsoft.EntityFrameworkCore.Storage/internal/index.js";
 import type { ValueGenerator } from "../../Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js";
 import type { DbLoggerCategory_Database_Command } from "../../Microsoft.EntityFrameworkCore/internal/index.js";
 import type { IEnumerable_1, IReadOnlyDictionary_2, IReadOnlyList_1 } from "@tsonic/dotnet/System.Collections.Generic/internal/index.js";
@@ -66,8 +64,8 @@ export interface CompositeRelationalParameter$instance extends RelationalParamet
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
     readonly RelationalParameters: IReadOnlyList_1<IRelationalParameter>;
-    AddDbParameter(command: DbCommand, value: unknown): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
+    AddDbParameter(command: DbCommand, value: JsValue | null): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null): void;
 }
 
 
@@ -102,8 +100,8 @@ export interface DatabaseFacadeDependencies$instance extends Microsoft_EntityFra
     readonly TransactionManager: IDbContextTransactionManager;
     readonly TypeMappingSource: ITypeMappingSource;
     _Clone_$(): DatabaseFacadeDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: DatabaseFacadeDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: DatabaseFacadeDependencies | null): boolean;
     GetHashCode(): int;
     PrintMembers(builder: StringBuilder): boolean;
     ToString(): string;
@@ -170,7 +168,7 @@ export interface NamedConnectionStringResolver$instance extends NamedConnectionS
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_INamedConnectionStringResolver: never;
 
-    readonly ApplicationServiceProvider: IServiceProvider | undefined;
+    readonly ApplicationServiceProvider: IServiceProvider | null;
 }
 
 
@@ -189,7 +187,7 @@ export type NamedConnectionStringResolver = NamedConnectionStringResolver$instan
 export interface NamedConnectionStringResolverBase$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_NamedConnectionStringResolverBase: never;
 
-    readonly ApplicationServiceProvider: IServiceProvider | undefined;
+    readonly ApplicationServiceProvider: IServiceProvider | null;
     ResolveConnectionString(connectionString: string): string;
 }
 
@@ -203,10 +201,10 @@ export type NamedConnectionStringResolverBase = NamedConnectionStringResolverBas
 export interface NullTypeMapping$instance extends RelationalTypeMapping {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_NullTypeMapping: never;
 
-    Clone(parameters: unknown): RelationalTypeMapping;
-    Clone(parameters: unknown): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type, converter?: ValueConverter, comparer?: ValueComparer, keyComparer?: ValueComparer, providerValueComparer?: ValueComparer, elementMapping?: CoreTypeMapping, jsonValueReaderWriter?: JsonValueReaderWriter): CoreTypeMapping;
+    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
+    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
+    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
+    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
 }
 
 
@@ -223,8 +221,8 @@ export interface RawRelationalParameter$instance extends RelationalParameterBase
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
-    AddDbParameter(command: DbCommand, value: unknown): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null): void;
+    AddDbParameter(command: DbCommand, value: JsValue | null): void;
 }
 
 
@@ -240,14 +238,14 @@ export interface __RawRelationalParameter$views {
 export type RawRelationalParameter = RawRelationalParameter$instance & __RawRelationalParameter$views;
 
 
-export interface RawSqlCommandBuilder$instance extends Microsoft_EntityFrameworkCore_Storage_Internal.IRawSqlCommandBuilder$instance {
+export interface RawSqlCommandBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Internal_RawSqlCommandBuilder: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRawSqlCommandBuilder: never;
 
     Build(sql: string): IRelationalCommand;
-    Build(sql: string, parameters: IEnumerable_1<unknown>): RawSqlCommand;
-    Build(sql: string, parameters: IEnumerable_1<unknown>, model: IModel): RawSqlCommand;
+    Build(sql: string, parameters: IEnumerable_1<JsValue | null>): RawSqlCommand;
+    Build(sql: string, parameters: IEnumerable_1<JsValue | null>, model: IModel | null): RawSqlCommand;
 }
 
 
@@ -285,8 +283,8 @@ export interface RelationalDatabaseFacadeDependencies$instance extends Microsoft
     readonly TransactionManager: IDbContextTransactionManager;
     readonly TypeMappingSource: ITypeMappingSource;
     _Clone_$(): RelationalDatabaseFacadeDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: RelationalDatabaseFacadeDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: RelationalDatabaseFacadeDependencies | null): boolean;
     GetHashCode(): int;
     PrintMembers(builder: StringBuilder): boolean;
     ToString(): string;
@@ -312,8 +310,8 @@ export interface RelationalParameterBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
     readonly InvariantName: string;
-    AddDbParameter(command: DbCommand, value: unknown): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
+    AddDbParameter(command: DbCommand, value: JsValue | null): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null): void;
 }
 
 
@@ -335,8 +333,8 @@ export interface TypeMappedRelationalParameter$instance extends RelationalParame
 
     readonly Direction: ParameterDirection;
     readonly Name: string;
-    AddDbParameter(command: DbCommand, value: unknown): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown>): void;
+    AddDbParameter(command: DbCommand, value: JsValue | null): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null): void;
 }
 
 
@@ -354,7 +352,7 @@ export type TypeMappedRelationalParameter = TypeMappedRelationalParameter$instan
 
 export abstract class DbParameterCollectionExtensions$instance {
     static FormatParameter(parameter: DbParameter, logParameterValues: boolean): string;
-    static FormatParameter(name: string, value: unknown, hasValue: boolean, direction: ParameterDirection, dbType: DbType, nullable: boolean, size: int, precision: byte, scale: byte): string;
+    static FormatParameter(name: string, value: JsValue | null, hasValue: boolean, direction: ParameterDirection, dbType: DbType, nullable: boolean, size: int, precision: byte, scale: byte): string;
     static FormatParameters(parameters: DbParameterCollection, logParameterValues: boolean): string;
 }
 

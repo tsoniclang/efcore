@@ -2,11 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Metadata.Internal
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
-// Import support types from @tsonic/core
-import type { ptr } from "@tsonic/core/types.js";
 
 // Import types from other namespaces
 import type { IDependentsMap, IIdentityMap, IInternalEntry, ISnapshot } from "../../Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js";
@@ -56,12 +54,12 @@ export enum TypeConfigurationType {
 export interface IMemberClassifier$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IMemberClassifier: never;
 
-    FindCandidateNavigationPropertyType(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, shouldBeOwned: Nullable_1<System_Internal.Boolean>): Type | undefined;
-    FindServicePropertyCandidateBindingFactory(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean): IParameterBindingFactory | undefined;
+    FindCandidateNavigationPropertyType(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, shouldBeOwned: Nullable_1<System_Internal.Boolean>): Type | null;
+    FindServicePropertyCandidateBindingFactory(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean): IParameterBindingFactory | null;
     GetInverseCandidateTypes(entityType: IConventionEntityType, useAttributes: boolean): IReadOnlyCollection_1<Type>;
     GetNavigationCandidates(entityType: IConventionEntityType, useAttributes: boolean): IReadOnlyDictionary_2<PropertyInfo, ValueTuple_2<Type, Nullable_1<System_Internal.Boolean>>>;
-    IsCandidateComplexProperty(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, elementType: Type, explicitlyConfigured: boolean): boolean;
-    IsCandidatePrimitiveProperty(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, typeMapping: CoreTypeMapping): boolean;
+    IsCandidateComplexProperty(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, elementType: Type | null, explicitlyConfigured: boolean): boolean;
+    IsCandidatePrimitiveProperty(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, typeMapping: CoreTypeMapping | null): boolean;
 }
 
 
@@ -85,50 +83,50 @@ export interface IRuntimeComplexProperty$instance extends IComplexProperty, IRea
     readonly Name: string;
     readonly DeclaringType: IReadOnlyTypeBase;
     readonly ClrType: Type;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     readonly IsCollection: boolean;
-    readonly PropertyInfo: PropertyInfo | undefined;
-    readonly FieldInfo: FieldInfo | undefined;
+    readonly PropertyInfo: PropertyInfo | null;
+    readonly FieldInfo: FieldInfo | null;
     readonly MaterializationSetter: IClrPropertySetter;
     readonly Accessors: PropertyAccessors;
     PropertyIndexes: PropertyIndexes;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCollectionAccessor(): IClrCollectionAccessor | null;
     GetCurrentValueComparer(): IComparer_1<IUpdateEntry>;
-    GetFieldName(): string | undefined;
+    GetFieldName(): string | null;
     GetGetter(): IClrPropertyGetter;
     GetIndex(): int;
     GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
     GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetSetter(): IClrPropertySetter;
     IsShadowProperty(): boolean;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeComplexProperty = IRuntimeComplexProperty$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeComplexProperty = IRuntimeComplexProperty$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeComplexType$instance extends IComplexType, IReadOnlyComplexType, IReadOnlyTypeBase, IReadOnlyAnnotatable, ITypeBase, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeComplexType: never;
 
     readonly CollectionDepth: int;
     readonly ComplexProperty: IComplexProperty;
-    readonly BaseType: IComplexType | undefined;
+    readonly BaseType: IComplexType | null;
     readonly Model: IReadOnlyModel;
     readonly ContainingEntityType: IReadOnlyEntityType;
     readonly Name: string;
     readonly ClrType: Type;
     readonly HasSharedClrType: boolean;
     readonly IsPropertyBag: boolean;
-    readonly ConstructorBinding: InstantiationBinding | undefined;
+    readonly ConstructorBinding: InstantiationBinding | null;
     readonly ContainingEntryType: IRuntimeTypeBase;
     readonly OriginalValueCount: int;
     readonly PropertyCount: int;
@@ -141,41 +139,41 @@ export interface IRuntimeComplexType$instance extends IComplexType, IReadOnlyCom
     readonly OriginalValuesFactory: Func_2<IInternalEntry, ISnapshot>;
     readonly StoreGeneratedValuesFactory: Func_1<ISnapshot>;
     readonly TemporaryValuesFactory: Func_2<IInternalEntry, ISnapshot>;
-    readonly ShadowValuesFactory: Func_2<IDictionary_2<System_Internal.String, unknown | undefined>, ISnapshot>;
+    readonly ShadowValuesFactory: Func_2<IDictionary_2<System_Internal.String, JsValue | null>, ISnapshot>;
     readonly EmptyShadowValuesFactory: Func_1<ISnapshot>;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
     CalculateCounts(): PropertyCounts;
     DisplayName(): string;
     DisplayName(omitSharedType: boolean): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
-    FindComplexProperty(name: string): IComplexProperty | undefined;
-    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    FindDiscriminatorProperty(): IProperty | undefined;
-    FindIndexerPropertyInfo(): PropertyInfo | undefined;
-    FindMember(name: string): IReadOnlyPropertyBase | undefined;
-    FindMember(name: string): IPropertyBase | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | null;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | null;
+    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | null;
+    FindComplexProperty(name: string): IComplexProperty | null;
+    FindDiscriminatorProperty(): IReadOnlyProperty | null;
+    FindDiscriminatorProperty(): IProperty | null;
+    FindIndexerPropertyInfo(): PropertyInfo | null;
+    FindMember(name: string): IReadOnlyPropertyBase | null;
+    FindMember(name: string): IPropertyBase | null;
     FindMembersInHierarchy(name: string): IEnumerable_1<IReadOnlyPropertyBase>;
     FindMembersInHierarchy(name: string): IEnumerable_1<IPropertyBase>;
-    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IReadOnlyProperty> | undefined;
-    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IProperty> | undefined;
-    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    FindProperty(name: string): IReadOnlyProperty | undefined;
-    FindProperty(memberInfo: MemberInfo): IProperty | undefined;
-    FindProperty(name: string): IProperty | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IReadOnlyProperty> | null;
+    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IProperty> | null;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | null;
+    FindProperty(name: string): IReadOnlyProperty | null;
+    FindProperty(memberInfo: MemberInfo): IProperty | null;
+    FindProperty(name: string): IProperty | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetChangeTrackingStrategy(): ChangeTrackingStrategy;
     GetConstructorBindingConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetDerivedTypes(): IEnumerable_1<IComplexType>;
     GetDerivedTypes(): IEnumerable_1<IReadOnlyComplexType>;
     GetDerivedTypes(): IEnumerable_1<IReadOnlyTypeBase>;
     GetDerivedTypes(): IEnumerable_1<ITypeBase>;
-    GetDiscriminatorValue(): unknown | undefined;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, unknown>;
+    GetDiscriminatorValue(): JsValue | null;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, JsValue>;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetRootType(): IReadOnlyComplexType;
     GetRootType(): IReadOnlyTypeBase;
@@ -184,20 +182,20 @@ export interface IRuntimeComplexType$instance extends IComplexType, IReadOnlyCom
     IsContainedBy(type: Type): boolean;
     SetCounts(value: PropertyCounts): void;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindComplexProperty2(name: string): IComplexProperty | undefined;
-    FindComplexProperty3(memberInfo: MemberInfo): IComplexProperty | undefined;
-    FindDiscriminatorProperty2(): IProperty | undefined;
-    FindMember2(name: string): IPropertyBase | undefined;
-    FindProperty2(name: string): IProperty | undefined;
-    FindProperty3(memberInfo: MemberInfo): IProperty | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindComplexProperty2(name: string): IComplexProperty | null;
+    FindComplexProperty3(memberInfo: MemberInfo): IComplexProperty | null;
+    FindDiscriminatorProperty2(): IProperty | null;
+    FindMember2(name: string): IPropertyBase | null;
+    FindProperty2(name: string): IProperty | null;
+    FindProperty3(memberInfo: MemberInfo): IProperty | null;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
     GetRootType2(): IReadOnlyTypeBase;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeComplexType = IRuntimeComplexType$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeComplexType = IRuntimeComplexType$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeDbFunction$instance extends IDbFunction, IReadOnlyDbFunction, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeDbFunction: never;
@@ -206,30 +204,30 @@ export interface IRuntimeDbFunction$instance extends IDbFunction, IReadOnlyDbFun
     readonly Model: IModel;
     readonly Parameters: IReadOnlyList_1<IDbFunctionParameter>;
     readonly Name: string;
-    readonly Schema: string | undefined;
+    readonly Schema: string | null;
     readonly ModelName: string;
-    readonly MethodInfo: MethodInfo | undefined;
+    readonly MethodInfo: MethodInfo | null;
     readonly IsBuiltIn: boolean;
     readonly IsScalar: boolean;
     readonly IsAggregate: boolean;
     readonly IsNullable: boolean;
-    readonly StoreType: string | undefined;
+    readonly StoreType: string | null;
     readonly ReturnType: Type;
-    readonly TypeMapping: RelationalTypeMapping | undefined;
-    readonly Translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | undefined;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    readonly TypeMapping: RelationalTypeMapping | null;
+    readonly Translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | null;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeDbFunction = IRuntimeDbFunction$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeDbFunction = IRuntimeDbFunction$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeDbFunctionParameter$instance extends IDbFunctionParameter, IReadOnlyDbFunctionParameter, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeDbFunctionParameter: never;
@@ -240,34 +238,34 @@ export interface IRuntimeDbFunctionParameter$instance extends IDbFunctionParamet
     readonly Name: string;
     readonly ClrType: Type;
     readonly PropagatesNullability: boolean;
-    readonly TypeMapping: RelationalTypeMapping | undefined;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    readonly TypeMapping: RelationalTypeMapping | null;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeDbFunctionParameter = IRuntimeDbFunctionParameter$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeDbFunctionParameter = IRuntimeDbFunctionParameter$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeEntityType$instance extends IEntityType, IReadOnlyEntityType, IReadOnlyTypeBase, IReadOnlyAnnotatable, ITypeBase, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeEntityType: never;
 
-    readonly BaseType: IRuntimeEntityType | undefined;
+    readonly BaseType: IRuntimeEntityType | null;
     readonly RelationshipSnapshotFactory: Func_2<IInternalEntry, ISnapshot>;
-    readonly ServiceOnlyConstructorBinding: InstantiationBinding | undefined;
+    readonly ServiceOnlyConstructorBinding: InstantiationBinding | null;
     readonly Model: IReadOnlyModel;
     readonly ContainingEntityType: IReadOnlyEntityType;
     readonly Name: string;
     readonly ClrType: Type;
     readonly HasSharedClrType: boolean;
     readonly IsPropertyBag: boolean;
-    readonly ConstructorBinding: InstantiationBinding | undefined;
+    readonly ConstructorBinding: InstantiationBinding | null;
     readonly ContainingEntryType: IRuntimeTypeBase;
     readonly OriginalValueCount: int;
     readonly PropertyCount: int;
@@ -280,111 +278,111 @@ export interface IRuntimeEntityType$instance extends IEntityType, IReadOnlyEntit
     readonly OriginalValuesFactory: Func_2<IInternalEntry, ISnapshot>;
     readonly StoreGeneratedValuesFactory: Func_1<ISnapshot>;
     readonly TemporaryValuesFactory: Func_2<IInternalEntry, ISnapshot>;
-    readonly ShadowValuesFactory: Func_2<IDictionary_2<System_Internal.String, unknown | undefined>, ISnapshot>;
+    readonly ShadowValuesFactory: Func_2<IDictionary_2<System_Internal.String, JsValue | null>, ISnapshot>;
     readonly EmptyShadowValuesFactory: Func_1<ISnapshot>;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
     CalculateCounts(): PropertyCounts;
     DisplayName(): string;
     DisplayName(omitSharedType: boolean): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindClosestCommonParent(otherEntityType: IEntityType): IEntityType | undefined;
-    FindClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
-    FindComplexProperty(name: string): IComplexProperty | undefined;
-    FindDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
-    FindDeclaredTrigger(name: string): ITrigger | undefined;
-    FindDeclaredTrigger(name: string): IReadOnlyTrigger | undefined;
-    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    FindDiscriminatorProperty(): IProperty | undefined;
-    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IForeignKey | undefined;
-    FindForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IForeignKey | undefined;
-    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    FindForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindClosestCommonParent(otherEntityType: IEntityType): IEntityType | null;
+    FindClosestCommonParent(otherEntityType: IReadOnlyEntityType): IReadOnlyEntityType | null;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | null;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | null;
+    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | null;
+    FindComplexProperty(name: string): IComplexProperty | null;
+    FindDeclaredQueryFilter(filterKey: string | null): IQueryFilter | null;
+    FindDeclaredTrigger(name: string): ITrigger | null;
+    FindDeclaredTrigger(name: string): IReadOnlyTrigger | null;
+    FindDiscriminatorProperty(): IReadOnlyProperty | null;
+    FindDiscriminatorProperty(): IProperty | null;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IForeignKey | null;
+    FindForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IForeignKey | null;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | null;
+    FindForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | null;
     FindForeignKeys(property: IReadOnlyProperty): IEnumerable_1<IForeignKey>;
     FindForeignKeys(properties: IReadOnlyList_1<IReadOnlyProperty>): IEnumerable_1<IForeignKey>;
     FindForeignKeys(properties: IReadOnlyList_1<IReadOnlyProperty>): IEnumerable_1<IReadOnlyForeignKey>;
     FindForeignKeys(property: IReadOnlyProperty): IEnumerable_1<IReadOnlyForeignKey>;
-    FindIndex(property: IReadOnlyProperty): IIndex | undefined;
-    FindIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): IIndex | undefined;
-    FindIndex(name: string): IIndex | undefined;
-    FindIndex(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
-    FindIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): IReadOnlyIndex | undefined;
-    FindIndex(name: string): IReadOnlyIndex | undefined;
-    FindIndexerPropertyInfo(): PropertyInfo | undefined;
-    FindKey(property: IReadOnlyProperty): IKey | undefined;
-    FindKey(properties: IReadOnlyList_1<IReadOnlyProperty>): IKey | undefined;
-    FindKey(property: IReadOnlyProperty): IReadOnlyKey | undefined;
-    FindKey(properties: IReadOnlyList_1<IReadOnlyProperty>): IReadOnlyKey | undefined;
-    FindMember(name: string): IReadOnlyPropertyBase | undefined;
-    FindMember(name: string): IPropertyBase | undefined;
+    FindIndex(property: IReadOnlyProperty): IIndex | null;
+    FindIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): IIndex | null;
+    FindIndex(name: string): IIndex | null;
+    FindIndex(property: IReadOnlyProperty): IReadOnlyIndex | null;
+    FindIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): IReadOnlyIndex | null;
+    FindIndex(name: string): IReadOnlyIndex | null;
+    FindIndexerPropertyInfo(): PropertyInfo | null;
+    FindKey(property: IReadOnlyProperty): IKey | null;
+    FindKey(properties: IReadOnlyList_1<IReadOnlyProperty>): IKey | null;
+    FindKey(property: IReadOnlyProperty): IReadOnlyKey | null;
+    FindKey(properties: IReadOnlyList_1<IReadOnlyProperty>): IReadOnlyKey | null;
+    FindMember(name: string): IReadOnlyPropertyBase | null;
+    FindMember(name: string): IPropertyBase | null;
     FindMembersInHierarchy(name: string): IEnumerable_1<IReadOnlyPropertyBase>;
     FindMembersInHierarchy(name: string): IEnumerable_1<IPropertyBase>;
-    FindNavigation(memberInfo: MemberInfo): INavigation | undefined;
-    FindNavigation(name: string): INavigation | undefined;
-    FindNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
-    FindNavigation(name: string): IReadOnlyNavigation | undefined;
-    FindOwnership(): IForeignKey | undefined;
-    FindOwnership(): IReadOnlyForeignKey | undefined;
-    FindPrimaryKey(): IKey | undefined;
-    FindPrimaryKey(): IReadOnlyKey | undefined;
-    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IProperty> | undefined;
-    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IReadOnlyProperty> | undefined;
-    FindProperty(memberInfo: MemberInfo): IProperty | undefined;
-    FindProperty(name: string): IProperty | undefined;
-    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    FindProperty(name: string): IReadOnlyProperty | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    FindServiceProperty(name: string): IServiceProperty | undefined;
-    FindServiceProperty(name: string): IReadOnlyServiceProperty | undefined;
-    FindSkipNavigation(memberInfo: MemberInfo): ISkipNavigation | undefined;
-    FindSkipNavigation(name: string): ISkipNavigation | undefined;
-    FindSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
-    FindSkipNavigation(name: string): IReadOnlySkipNavigation | undefined;
+    FindNavigation(memberInfo: MemberInfo): INavigation | null;
+    FindNavigation(name: string): INavigation | null;
+    FindNavigation(memberInfo: MemberInfo): IReadOnlyNavigation | null;
+    FindNavigation(name: string): IReadOnlyNavigation | null;
+    FindOwnership(): IForeignKey | null;
+    FindOwnership(): IReadOnlyForeignKey | null;
+    FindPrimaryKey(): IKey | null;
+    FindPrimaryKey(): IReadOnlyKey | null;
+    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IProperty> | null;
+    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IReadOnlyProperty> | null;
+    FindProperty(memberInfo: MemberInfo): IProperty | null;
+    FindProperty(name: string): IProperty | null;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | null;
+    FindProperty(name: string): IReadOnlyProperty | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
+    FindServiceProperty(name: string): IServiceProperty | null;
+    FindServiceProperty(name: string): IReadOnlyServiceProperty | null;
+    FindSkipNavigation(memberInfo: MemberInfo): ISkipNavigation | null;
+    FindSkipNavigation(name: string): ISkipNavigation | null;
+    FindSkipNavigation(memberInfo: MemberInfo): IReadOnlySkipNavigation | null;
+    FindSkipNavigation(name: string): IReadOnlySkipNavigation | null;
     GetAllBaseTypes(): IEnumerable_1<IEntityType>;
     GetAllBaseTypes(): IEnumerable_1<IReadOnlyEntityType>;
     GetChangeTrackingStrategy(): ChangeTrackingStrategy;
     GetConstructorBindingConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetDeclaredQueryFilters(): IReadOnlyCollection_1<IQueryFilter>;
-    GetDiscriminatorValue(): unknown | undefined;
+    GetDiscriminatorValue(): JsValue | null;
     GetIsDiscriminatorMappingComplete(): boolean;
     GetNavigationAccessMode(): PropertyAccessMode;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, unknown>;
-    GetQueryFilter(): LambdaExpression | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, JsValue>;
+    GetQueryFilter(): LambdaExpression | null;
     GetRootType(): IEntityType;
     GetRootType(): IReadOnlyEntityType;
     GetRootType(): IReadOnlyTypeBase;
-    GetSeedData(providerValues?: boolean): IEnumerable_1<IDictionary_2<System_Internal.String, unknown | undefined>>;
+    GetSeedData(providerValues?: boolean): IEnumerable_1<IDictionary_2<System_Internal.String, JsValue | null>>;
     IsAssignableFrom(derivedType: IReadOnlyEntityType): boolean;
     IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindComplexProperty2(name: string): IComplexProperty | undefined;
-    FindComplexProperty3(memberInfo: MemberInfo): IComplexProperty | undefined;
-    FindDeclaredTrigger2(name: string): IReadOnlyTrigger | undefined;
-    FindDiscriminatorProperty2(): IProperty | undefined;
-    FindForeignKey2(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    FindForeignKey3(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    FindIndex2(property: IReadOnlyProperty): IReadOnlyIndex | undefined;
-    FindIndex3(name: string): IReadOnlyIndex | undefined;
-    FindIndex4(properties: IReadOnlyList_1<IReadOnlyProperty>): IReadOnlyIndex | undefined;
-    FindKey2(property: IReadOnlyProperty): IReadOnlyKey | undefined;
-    FindKey3(properties: IReadOnlyList_1<IReadOnlyProperty>): IReadOnlyKey | undefined;
-    FindMember2(name: string): IPropertyBase | undefined;
-    FindNavigation2(name: string): IReadOnlyNavigation | undefined;
-    FindNavigation3(memberInfo: MemberInfo): IReadOnlyNavigation | undefined;
-    FindOwnership2(): IReadOnlyForeignKey | undefined;
-    FindPrimaryKey2(): IReadOnlyKey | undefined;
-    FindProperty2(name: string): IProperty | undefined;
-    FindProperty2(name: string): IReadOnlyProperty | undefined;
-    FindProperty3(memberInfo: MemberInfo): IProperty | undefined;
-    FindProperty3(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
-    FindServiceProperty2(name: string): IReadOnlyServiceProperty | undefined;
-    FindSkipNavigation2(name: string): IReadOnlySkipNavigation | undefined;
-    FindSkipNavigation3(memberInfo: MemberInfo): IReadOnlySkipNavigation | undefined;
+    FindComplexProperty2(name: string): IComplexProperty | null;
+    FindComplexProperty3(memberInfo: MemberInfo): IComplexProperty | null;
+    FindDeclaredTrigger2(name: string): IReadOnlyTrigger | null;
+    FindDiscriminatorProperty2(): IProperty | null;
+    FindForeignKey2(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | null;
+    FindForeignKey3(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IReadOnlyForeignKey | null;
+    FindIndex2(property: IReadOnlyProperty): IReadOnlyIndex | null;
+    FindIndex3(name: string): IReadOnlyIndex | null;
+    FindIndex4(properties: IReadOnlyList_1<IReadOnlyProperty>): IReadOnlyIndex | null;
+    FindKey2(property: IReadOnlyProperty): IReadOnlyKey | null;
+    FindKey3(properties: IReadOnlyList_1<IReadOnlyProperty>): IReadOnlyKey | null;
+    FindMember2(name: string): IPropertyBase | null;
+    FindNavigation2(name: string): IReadOnlyNavigation | null;
+    FindNavigation3(memberInfo: MemberInfo): IReadOnlyNavigation | null;
+    FindOwnership2(): IReadOnlyForeignKey | null;
+    FindPrimaryKey2(): IReadOnlyKey | null;
+    FindProperty2(name: string): IProperty | null;
+    FindProperty2(name: string): IReadOnlyProperty | null;
+    FindProperty3(memberInfo: MemberInfo): IProperty | null;
+    FindProperty3(memberInfo: MemberInfo): IReadOnlyProperty | null;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
+    FindServiceProperty2(name: string): IReadOnlyServiceProperty | null;
+    FindSkipNavigation2(name: string): IReadOnlySkipNavigation | null;
+    FindSkipNavigation3(memberInfo: MemberInfo): IReadOnlySkipNavigation | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
     GetDerivedTypes(): IEnumerable_1<IReadOnlyTypeBase>;
     GetDerivedTypes(): IEnumerable_1<ITypeBase>;
@@ -397,7 +395,7 @@ export interface IRuntimeEntityType$instance extends IEntityType, IReadOnlyEntit
 }
 
 
-export type IRuntimeEntityType = IRuntimeEntityType$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeEntityType = IRuntimeEntityType$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeForeignKey$instance extends IForeignKey, IReadOnlyForeignKey, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeForeignKey: never;
@@ -408,108 +406,108 @@ export interface IRuntimeForeignKey$instance extends IForeignKey, IReadOnlyForei
     readonly PrincipalKey: IKey;
     readonly DeclaringEntityType: IEntityType;
     readonly PrincipalEntityType: IEntityType;
-    readonly DependentToPrincipal: INavigation | undefined;
-    readonly PrincipalToDependent: INavigation | undefined;
+    readonly DependentToPrincipal: INavigation | null;
+    readonly PrincipalToDependent: INavigation | null;
     readonly IsUnique: boolean;
     readonly IsRequired: boolean;
     readonly IsRequiredDependent: boolean;
     readonly IsOwnership: boolean;
     readonly DeleteBehavior: DeleteBehavior;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetDependentKeyValueFactory<TKey>(): IDependentKeyValueFactory_1<TKey>;
     GetDependentKeyValueFactory(): IDependentKeyValueFactory;
-    GetNavigation(pointsToPrincipal: boolean): INavigation | undefined;
-    GetNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetNavigation(pointsToPrincipal: boolean): INavigation | null;
+    GetNavigation(pointsToPrincipal: boolean): IReadOnlyNavigation | null;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetReferencingSkipNavigations(): IEnumerable_1<ISkipNavigation>;
     GetReferencingSkipNavigations(): IEnumerable_1<IReadOnlySkipNavigation>;
     GetRelatedEntityType(entityType: IReadOnlyEntityType): IEntityType;
     GetRelatedEntityType(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
     IsBaseLinking(): boolean;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetNavigation2(pointsToPrincipal: boolean): IReadOnlyNavigation | undefined;
+    GetNavigation2(pointsToPrincipal: boolean): IReadOnlyNavigation | null;
     GetRelatedEntityType2(entityType: IReadOnlyEntityType): IReadOnlyEntityType;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeForeignKey = IRuntimeForeignKey$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeForeignKey = IRuntimeForeignKey$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeKey$instance extends IKey, IReadOnlyKey, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeKey: never;
 
     readonly Properties: IReadOnlyList_1<IProperty>;
     readonly DeclaringEntityType: IEntityType;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetIdentityMapFactory(): Func_2<System_Internal.Boolean, IIdentityMap>;
     GetKeyType(): Type;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetPrincipalKeyValueFactory<TKey>(): IPrincipalKeyValueFactory_1<TKey>;
     GetPrincipalKeyValueFactory(): IPrincipalKeyValueFactory;
     GetReferencingForeignKeys(): IEnumerable_1<IForeignKey>;
     GetReferencingForeignKeys(): IEnumerable_1<IReadOnlyForeignKey>;
     IsPrimaryKey(): boolean;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeKey = IRuntimeKey$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeKey = IRuntimeKey$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeModel$instance extends IModel, IReadOnlyModel, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeModel: never;
 
     readonly SkipDetectChanges: boolean;
-    readonly RelationalModel: unknown | undefined;
-    get ModelDependencies(): RuntimeModelDependencies | undefined;
-    set ModelDependencies(value: RuntimeModelDependencies | undefined);
+    readonly RelationalModel: JsValue | null;
+    get ModelDependencies(): RuntimeModelDependencies | null;
+    set ModelDependencies(value: RuntimeModelDependencies | null);
     readonly ModelId: Guid;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | undefined;
-    FindEntityType(name: string): IEntityType | undefined;
-    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | undefined;
-    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    FindEntityType(name: string): IReadOnlyEntityType | undefined;
-    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | undefined;
-    FindEntityType(type: Type): IReadOnlyEntityType | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | null;
+    FindEntityType(name: string): IEntityType | null;
+    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IEntityType): IEntityType | null;
+    FindEntityType(name: string, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | null;
+    FindEntityType(name: string): IReadOnlyEntityType | null;
+    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: IReadOnlyEntityType): IReadOnlyEntityType | null;
+    FindEntityType(type: Type): IReadOnlyEntityType | null;
     FindEntityTypes(type: Type): IEnumerable_1<IEntityType>;
     FindEntityTypes(type: Type): IEnumerable_1<IReadOnlyEntityType>;
-    FindLeastDerivedEntityTypes(type: Type, condition?: Func_2<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable_1<IEntityType>;
-    FindLeastDerivedEntityTypes(type: Type, condition?: Func_2<IReadOnlyEntityType, System_Internal.Boolean>): IEnumerable_1<IReadOnlyEntityType>;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
-    FindRuntimeEntityType(type: Type): IEntityType | undefined;
-    FindTypeMappingConfiguration(scalarType: Type): ITypeMappingConfiguration | undefined;
+    FindLeastDerivedEntityTypes(type: Type, condition?: Func_2<IReadOnlyEntityType, System_Internal.Boolean> | null): IEnumerable_1<IEntityType>;
+    FindLeastDerivedEntityTypes(type: Type, condition?: Func_2<IReadOnlyEntityType, System_Internal.Boolean> | null): IEnumerable_1<IReadOnlyEntityType>;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
+    FindRuntimeEntityType(type: Type | null): IEntityType | null;
+    FindTypeMappingConfiguration(scalarType: Type): ITypeMappingConfiguration | null;
     GetChangeTrackingStrategy(): ChangeTrackingStrategy;
     GetEmbeddedDiscriminatorName(): string;
     GetEntityTypes(): IEnumerable_1<IEntityType>;
     GetEntityTypes(): IEnumerable_1<IReadOnlyEntityType>;
     GetModelDependencies(): RuntimeModelDependencies;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetUnsafeAccessors(): IReadOnlyDictionary_2<MemberInfo, QualifiedName>;
     IsIndexerMethod(methodInfo: MethodInfo): boolean;
     IsShared(type: Type): boolean;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindEntityType2(name: string): IReadOnlyEntityType | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindEntityType2(name: string): IReadOnlyEntityType | null;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeModel = IRuntimeModel$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeModel = IRuntimeModel$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeNavigation$instance extends INavigation, IReadOnlyNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, INavigationBase, IPropertyBase, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeNavigation: never;
@@ -524,37 +522,37 @@ export interface IRuntimeNavigation$instance extends INavigation, IReadOnlyNavig
     readonly Name: string;
     readonly DeclaringType: IReadOnlyTypeBase;
     readonly ClrType: Type;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     readonly IsCollection: boolean;
-    readonly PropertyInfo: PropertyInfo | undefined;
-    readonly FieldInfo: FieldInfo | undefined;
+    readonly PropertyInfo: PropertyInfo | null;
+    readonly FieldInfo: FieldInfo | null;
     readonly MaterializationSetter: IClrPropertySetter;
     readonly Accessors: PropertyAccessors;
     PropertyIndexes: PropertyIndexes;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCollectionAccessor(): IClrCollectionAccessor | null;
     GetCurrentValueComparer(): IComparer_1<IUpdateEntry>;
-    GetFieldName(): string | undefined;
+    GetFieldName(): string | null;
     GetGetter(): IClrPropertyGetter;
     GetIndex(): int;
     GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
     GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetSetter(): IClrPropertySetter;
     IsShadowProperty(): boolean;
-    SetIsLoadedWhenNoTracking(entity: unknown): void;
+    SetIsLoadedWhenNoTracking(entity: JsValue): void;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeNavigation = IRuntimeNavigation$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeNavigation = IRuntimeNavigation$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeNavigationBase$instance extends INavigationBase, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeNavigationBase: never;
@@ -567,36 +565,36 @@ export interface IRuntimeNavigationBase$instance extends INavigationBase, IReadO
     readonly Name: string;
     readonly DeclaringType: IReadOnlyTypeBase;
     readonly ClrType: Type;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     readonly IsCollection: boolean;
-    readonly PropertyInfo: PropertyInfo | undefined;
-    readonly FieldInfo: FieldInfo | undefined;
+    readonly PropertyInfo: PropertyInfo | null;
+    readonly FieldInfo: FieldInfo | null;
     readonly MaterializationSetter: IClrPropertySetter;
     readonly Accessors: PropertyAccessors;
     PropertyIndexes: PropertyIndexes;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCollectionAccessor(): IClrCollectionAccessor | null;
     GetCurrentValueComparer(): IComparer_1<IUpdateEntry>;
-    GetFieldName(): string | undefined;
+    GetFieldName(): string | null;
     GetGetter(): IClrPropertyGetter;
     GetIndex(): int;
     GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
     GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetSetter(): IClrPropertySetter;
     IsShadowProperty(): boolean;
-    SetIsLoadedWhenNoTracking(entity: unknown): void;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    SetIsLoadedWhenNoTracking(entity: JsValue): void;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeNavigationBase = IRuntimeNavigationBase$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeNavigationBase = IRuntimeNavigationBase$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeProperty$instance extends IProperty, IReadOnlyProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeProperty: never;
@@ -609,59 +607,59 @@ export interface IRuntimeProperty$instance extends IProperty, IReadOnlyProperty,
     readonly Name: string;
     readonly DeclaringType: IReadOnlyTypeBase;
     readonly ClrType: Type;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     readonly IsCollection: boolean;
-    readonly PropertyInfo: PropertyInfo | undefined;
-    readonly FieldInfo: FieldInfo | undefined;
+    readonly PropertyInfo: PropertyInfo | null;
+    readonly FieldInfo: FieldInfo | null;
     readonly MaterializationSetter: IClrPropertySetter;
     readonly Accessors: PropertyAccessors;
     PropertyIndexes: PropertyIndexes;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
     CreateKeyEqualityComparer<TProperty>(): IEqualityComparer_1<TProperty>;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindContainingPrimaryKey(): IKey | undefined;
-    FindContainingPrimaryKey(): IReadOnlyKey | undefined;
-    FindFirstPrincipal(): IProperty | undefined;
-    FindFirstPrincipal(): IReadOnlyProperty | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindContainingPrimaryKey(): IKey | null;
+    FindContainingPrimaryKey(): IReadOnlyKey | null;
+    FindFirstPrincipal(): IProperty | null;
+    FindFirstPrincipal(): IReadOnlyProperty | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetBeforeSaveBehavior(): PropertySaveBehavior;
-    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCollectionAccessor(): IClrCollectionAccessor | null;
     GetContainingForeignKeys(): IEnumerable_1<IForeignKey>;
     GetContainingForeignKeys(): IEnumerable_1<IReadOnlyForeignKey>;
     GetCurrentValueComparer(): IComparer_1<IUpdateEntry>;
-    GetElementType(): IElementType | undefined;
-    GetElementType(): IReadOnlyElementType | undefined;
-    GetFieldName(): string | undefined;
+    GetElementType(): IElementType | null;
+    GetElementType(): IReadOnlyElementType | null;
+    GetFieldName(): string | null;
     GetGetter(): IClrPropertyGetter;
     GetIndex(): int;
     GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
-    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | null;
     GetMaxLength(): Nullable_1<System_Internal.Int32>;
     GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetPrincipals(): IReadOnlyList_1<IProperty>;
     GetPrincipals(): IReadOnlyList_1<IReadOnlyProperty>;
     GetPropertyAccessMode(): PropertyAccessMode;
-    GetProviderClrType(): Type | undefined;
+    GetProviderClrType(): Type | null;
     GetSetter(): IClrPropertySetter;
     GetTypeMapping(): CoreTypeMapping;
     GetValueComparer(): ValueComparer;
-    GetValueConverter(): ValueConverter | undefined;
-    GetValueGeneratorFactory(): Func_3<IProperty, ITypeBase, ValueGenerator> | undefined;
+    GetValueConverter(): ValueConverter | null;
+    GetValueGeneratorFactory(): Func_3<IProperty, ITypeBase, ValueGenerator> | null;
     IsForeignKey(): boolean;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindContainingPrimaryKey2(): IReadOnlyKey | undefined;
-    FindFirstPrincipal2(): IReadOnlyProperty | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindContainingPrimaryKey2(): IReadOnlyKey | null;
+    FindFirstPrincipal2(): IReadOnlyProperty | null;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetElementType2(): IReadOnlyElementType | undefined;
+    GetElementType2(): IReadOnlyElementType | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     IsShadowProperty(): boolean;
 }
 
 
-export type IRuntimeProperty = IRuntimeProperty$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeProperty = IRuntimeProperty$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimePropertyBase$instance extends IPropertyBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimePropertyBase: never;
@@ -672,33 +670,33 @@ export interface IRuntimePropertyBase$instance extends IPropertyBase, IReadOnlyP
     readonly DeclaringType: ITypeBase;
     readonly Name: string;
     readonly ClrType: Type;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     readonly IsCollection: boolean;
-    readonly PropertyInfo: PropertyInfo | undefined;
-    readonly FieldInfo: FieldInfo | undefined;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    readonly PropertyInfo: PropertyInfo | null;
+    readonly FieldInfo: FieldInfo | null;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCollectionAccessor(): IClrCollectionAccessor | null;
     GetCurrentValueComparer(): IComparer_1<IUpdateEntry>;
-    GetFieldName(): string | undefined;
+    GetFieldName(): string | null;
     GetGetter(): IClrPropertyGetter;
     GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
     GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetSetter(): IClrPropertySetter;
     GetShadowIndex(): int;
     IsShadowProperty(): boolean;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetIndex(): int;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimePropertyBase = IRuntimePropertyBase$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimePropertyBase = IRuntimePropertyBase$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeServiceProperty$instance extends IServiceProperty, IReadOnlyServiceProperty, IReadOnlyPropertyBase, IReadOnlyAnnotatable, IPropertyBase, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeServiceProperty: never;
@@ -708,36 +706,36 @@ export interface IRuntimeServiceProperty$instance extends IServiceProperty, IRea
     readonly Name: string;
     readonly DeclaringType: IReadOnlyTypeBase;
     readonly ClrType: Type;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     readonly IsCollection: boolean;
-    readonly PropertyInfo: PropertyInfo | undefined;
-    readonly FieldInfo: FieldInfo | undefined;
+    readonly PropertyInfo: PropertyInfo | null;
+    readonly FieldInfo: FieldInfo | null;
     readonly MaterializationSetter: IClrPropertySetter;
     readonly Accessors: PropertyAccessors;
     PropertyIndexes: PropertyIndexes;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCollectionAccessor(): IClrCollectionAccessor | null;
     GetCurrentValueComparer(): IComparer_1<IUpdateEntry>;
-    GetFieldName(): string | undefined;
+    GetFieldName(): string | null;
     GetGetter(): IClrPropertyGetter;
     GetIndex(): int;
     GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
     GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetSetter(): IClrPropertySetter;
     IsShadowProperty(): boolean;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeServiceProperty = IRuntimeServiceProperty$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeServiceProperty = IRuntimeServiceProperty$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeSkipNavigation$instance extends ISkipNavigation, IReadOnlySkipNavigation, IReadOnlyNavigationBase, IReadOnlyPropertyBase, IReadOnlyAnnotatable, INavigationBase, IPropertyBase, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeSkipNavigation: never;
@@ -753,38 +751,38 @@ export interface IRuntimeSkipNavigation$instance extends ISkipNavigation, IReadO
     readonly Name: string;
     readonly DeclaringType: IReadOnlyTypeBase;
     readonly ClrType: Type;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     readonly IsCollection: boolean;
-    readonly PropertyInfo: PropertyInfo | undefined;
-    readonly FieldInfo: FieldInfo | undefined;
+    readonly PropertyInfo: PropertyInfo | null;
+    readonly FieldInfo: FieldInfo | null;
     readonly MaterializationSetter: IClrPropertySetter;
     readonly Accessors: PropertyAccessors;
     PropertyIndexes: PropertyIndexes;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetCollectionAccessor(): IClrCollectionAccessor | undefined;
+    GetCollectionAccessor(): IClrCollectionAccessor | null;
     GetCurrentValueComparer(): IComparer_1<IUpdateEntry>;
-    GetFieldName(): string | undefined;
+    GetFieldName(): string | null;
     GetGetter(): IClrPropertyGetter;
     GetIndex(): int;
     GetIndexedCollectionAccessor(): IClrIndexedCollectionAccessor;
     GetManyToManyLoader(): ICollectionLoader;
     GetMemberInfo(forMaterialization: boolean, forSet: boolean): MemberInfo;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetSetter(): IClrPropertySetter;
     IsShadowProperty(): boolean;
-    SetIsLoadedWhenNoTracking(entity: unknown): void;
+    SetIsLoadedWhenNoTracking(entity: JsValue): void;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeSkipNavigation = IRuntimeSkipNavigation$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeSkipNavigation = IRuntimeSkipNavigation$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeStoredProcedure$instance extends IStoredProcedure, IReadOnlyStoredProcedure, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeStoredProcedure: never;
@@ -794,37 +792,37 @@ export interface IRuntimeStoredProcedure$instance extends IStoredProcedure, IRea
     readonly EntityType: IEntityType;
     readonly Parameters: IReadOnlyList_1<IStoredProcedureParameter>;
     readonly ResultColumns: IReadOnlyList_1<IStoredProcedureResultColumn>;
-    readonly Schema: string | undefined;
+    readonly Schema: string | null;
     readonly IsRowsAffectedReturned: boolean;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindParameter(propertyName: string): IReadOnlyStoredProcedureParameter | undefined;
-    FindParameter(propertyName: string): IStoredProcedureParameter | undefined;
-    FindResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | undefined;
-    FindResultColumn(propertyName: string): IStoredProcedureResultColumn | undefined;
-    FindRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | undefined;
-    FindRowsAffectedParameter(): IStoredProcedureParameter | undefined;
-    FindRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | undefined;
-    FindRowsAffectedResultColumn(): IStoredProcedureResultColumn | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindParameter(propertyName: string): IReadOnlyStoredProcedureParameter | null;
+    FindParameter(propertyName: string): IStoredProcedureParameter | null;
+    FindResultColumn(propertyName: string): IReadOnlyStoredProcedureResultColumn | null;
+    FindResultColumn(propertyName: string): IStoredProcedureResultColumn | null;
+    FindRowsAffectedParameter(): IReadOnlyStoredProcedureParameter | null;
+    FindRowsAffectedParameter(): IStoredProcedureParameter | null;
+    FindRowsAffectedResultColumn(): IReadOnlyStoredProcedureResultColumn | null;
+    FindRowsAffectedResultColumn(): IStoredProcedureResultColumn | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetSchemaQualifiedName(): string | undefined;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
+    GetSchemaQualifiedName(): string | null;
     GetStoreIdentifier(): Nullable_1<StoreObjectIdentifier>;
     GetStoreIdentifier(): StoreObjectIdentifier;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindParameter2(propertyName: string): IStoredProcedureParameter | undefined;
-    FindResultColumn2(propertyName: string): IStoredProcedureResultColumn | undefined;
-    FindRowsAffectedParameter2(): IStoredProcedureParameter | undefined;
-    FindRowsAffectedResultColumn2(): IStoredProcedureResultColumn | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindParameter2(propertyName: string): IStoredProcedureParameter | null;
+    FindResultColumn2(propertyName: string): IStoredProcedureResultColumn | null;
+    FindRowsAffectedParameter2(): IStoredProcedureParameter | null;
+    FindRowsAffectedResultColumn2(): IStoredProcedureResultColumn | null;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     GetStoreIdentifier2(): StoreObjectIdentifier;
 }
 
 
-export type IRuntimeStoredProcedure = IRuntimeStoredProcedure$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeStoredProcedure = IRuntimeStoredProcedure$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeStoredProcedureParameter$instance extends IStoredProcedureParameter, IReadOnlyStoredProcedureParameter, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeStoredProcedureParameter: never;
@@ -832,23 +830,23 @@ export interface IRuntimeStoredProcedureParameter$instance extends IStoredProced
     StoreParameter: IStoreStoredProcedureParameter;
     readonly StoredProcedure: IStoredProcedure;
     readonly Name: string;
-    readonly PropertyName: string | undefined;
+    readonly PropertyName: string | null;
     readonly Direction: ParameterDirection;
     readonly ForOriginalValue: Nullable_1<System_Internal.Boolean>;
     readonly ForRowsAffected: boolean;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeStoredProcedureParameter = IRuntimeStoredProcedureParameter$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeStoredProcedureParameter = IRuntimeStoredProcedureParameter$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeStoredProcedureResultColumn$instance extends IStoredProcedureResultColumn, IReadOnlyStoredProcedureResultColumn, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeStoredProcedureResultColumn: never;
@@ -856,21 +854,21 @@ export interface IRuntimeStoredProcedureResultColumn$instance extends IStoredPro
     StoreResultColumn: IStoreStoredProcedureResultColumn;
     readonly StoredProcedure: IStoredProcedure;
     readonly Name: string;
-    readonly PropertyName: string | undefined;
+    readonly PropertyName: string | null;
     readonly ForRowsAffected: boolean;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     ToDebugString(options?: MetadataDebugStringOptions, indent?: int): string;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeStoredProcedureResultColumn = IRuntimeStoredProcedureResultColumn$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeStoredProcedureResultColumn = IRuntimeStoredProcedureResultColumn$instance & { readonly [name: string]: JsValue | null; };
 
 export interface IRuntimeTypeBase$instance extends ITypeBase, IReadOnlyTypeBase, IReadOnlyAnnotatable, IAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeTypeBase: never;
@@ -887,64 +885,64 @@ export interface IRuntimeTypeBase$instance extends ITypeBase, IReadOnlyTypeBase,
     readonly OriginalValuesFactory: Func_2<IInternalEntry, ISnapshot>;
     readonly StoreGeneratedValuesFactory: Func_1<ISnapshot>;
     readonly TemporaryValuesFactory: Func_2<IInternalEntry, ISnapshot>;
-    readonly ShadowValuesFactory: Func_2<IDictionary_2<System_Internal.String, unknown | undefined>, ISnapshot>;
+    readonly ShadowValuesFactory: Func_2<IDictionary_2<System_Internal.String, JsValue | null>, ISnapshot>;
     readonly EmptyShadowValuesFactory: Func_1<ISnapshot>;
     readonly Model: IModel;
     readonly ContainingEntityType: IEntityType;
-    readonly BaseType: ITypeBase | undefined;
-    readonly ConstructorBinding: InstantiationBinding | undefined;
+    readonly BaseType: ITypeBase | null;
+    readonly ConstructorBinding: InstantiationBinding | null;
     readonly Name: string;
     readonly ClrType: Type;
     readonly HasSharedClrType: boolean;
     readonly IsPropertyBag: boolean;
-    AddRuntimeAnnotation(name: string, value: unknown): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
     CalculateCounts(): PropertyCounts;
     DisplayName(): string;
     DisplayName(omitSharedType: boolean): string;
-    FindAnnotation(name: string): IAnnotation | undefined;
-    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | undefined;
-    FindComplexProperty(name: string): IReadOnlyComplexProperty | undefined;
-    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | undefined;
-    FindComplexProperty(name: string): IComplexProperty | undefined;
-    FindDiscriminatorProperty(): IReadOnlyProperty | undefined;
-    FindDiscriminatorProperty(): IProperty | undefined;
-    FindIndexerPropertyInfo(): PropertyInfo | undefined;
-    FindMember(name: string): IReadOnlyPropertyBase | undefined;
-    FindMember(name: string): IPropertyBase | undefined;
+    FindAnnotation(name: string): IAnnotation | null;
+    FindComplexProperty(memberInfo: MemberInfo): IReadOnlyComplexProperty | null;
+    FindComplexProperty(name: string): IReadOnlyComplexProperty | null;
+    FindComplexProperty(memberInfo: MemberInfo): IComplexProperty | null;
+    FindComplexProperty(name: string): IComplexProperty | null;
+    FindDiscriminatorProperty(): IReadOnlyProperty | null;
+    FindDiscriminatorProperty(): IProperty | null;
+    FindIndexerPropertyInfo(): PropertyInfo | null;
+    FindMember(name: string): IReadOnlyPropertyBase | null;
+    FindMember(name: string): IPropertyBase | null;
     FindMembersInHierarchy(name: string): IEnumerable_1<IPropertyBase>;
     FindMembersInHierarchy(name: string): IEnumerable_1<IReadOnlyPropertyBase>;
-    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IProperty> | undefined;
-    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IReadOnlyProperty> | undefined;
-    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | undefined;
-    FindProperty(name: string): IReadOnlyProperty | undefined;
-    FindProperty(memberInfo: MemberInfo): IProperty | undefined;
-    FindProperty(name: string): IProperty | undefined;
-    FindRuntimeAnnotationValue(name: string): unknown | undefined;
+    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IProperty> | null;
+    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<IReadOnlyProperty> | null;
+    FindProperty(memberInfo: MemberInfo): IReadOnlyProperty | null;
+    FindProperty(name: string): IReadOnlyProperty | null;
+    FindProperty(memberInfo: MemberInfo): IProperty | null;
+    FindProperty(name: string): IProperty | null;
+    FindRuntimeAnnotationValue(name: string): JsValue | null;
     GetChangeTrackingStrategy(): ChangeTrackingStrategy;
     GetConstructorBindingConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetDerivedTypes(): IEnumerable_1<ITypeBase>;
     GetDerivedTypes(): IEnumerable_1<IReadOnlyTypeBase>;
-    GetDiscriminatorValue(): unknown | undefined;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg, TValue>, factoryArgument: TArg): TValue;
-    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, unknown>;
+    GetDiscriminatorValue(): JsValue | null;
+    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, JsValue>;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetRootType(): IReadOnlyTypeBase;
     IsAbstract(): boolean;
     IsAssignableFrom(derivedType: IReadOnlyTypeBase): boolean;
-    FindComplexProperty2(name: string): IComplexProperty | undefined;
-    FindComplexProperty3(memberInfo: MemberInfo): IComplexProperty | undefined;
-    FindDiscriminatorProperty2(): IProperty | undefined;
-    FindMember2(name: string): IPropertyBase | undefined;
-    FindProperty2(name: string): IProperty | undefined;
-    FindProperty3(memberInfo: MemberInfo): IProperty | undefined;
-    FindRuntimeAnnotation(name: string): IAnnotation | undefined;
+    FindComplexProperty2(name: string): IComplexProperty | null;
+    FindComplexProperty3(memberInfo: MemberInfo): IComplexProperty | null;
+    FindDiscriminatorProperty2(): IProperty | null;
+    FindMember2(name: string): IPropertyBase | null;
+    FindProperty2(name: string): IProperty | null;
+    FindProperty3(memberInfo: MemberInfo): IProperty | null;
+    FindRuntimeAnnotation(name: string): IAnnotation | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
 }
 
 
-export type IRuntimeTypeBase = IRuntimeTypeBase$instance & { readonly [name: string]: unknown | undefined; };
+export type IRuntimeTypeBase = IRuntimeTypeBase$instance & { readonly [name: string]: JsValue | null; };
 
 export interface TypeIdentity$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Internal_TypeIdentity: never;
@@ -953,8 +951,8 @@ export interface TypeIdentity$instance {
 
     readonly IsNamed: boolean;
     readonly Name: string;
-    readonly Type: Type | undefined;
-    Equals(obj: unknown): boolean;
+    readonly Type: Type | null;
+    Equals(obj: JsValue | null): boolean;
     Equals(other: TypeIdentity): boolean;
     GetHashCode(): int;
 }
@@ -986,13 +984,13 @@ export interface CheckConstraint$instance extends ConventionAnnotatable {
     readonly IsInModel: boolean;
     readonly IsReadOnly: boolean;
     readonly ModelName: string;
-    get Name(): string | undefined;
-    set Name(value: string | undefined);
+    get Name(): string | null;
+    set Name(value: string | null);
     readonly Sql: string;
     GetConfigurationSource(): ConfigurationSource;
-    GetName(storeObject: StoreObjectIdentifier): string | undefined;
+    GetName(storeObject: StoreObjectIdentifier): string | null;
     GetNameConfigurationSource(): Nullable_1<ConfigurationSource>;
-    SetName(name: string, configurationSource: ConfigurationSource): string | undefined;
+    SetName(name: string | null, configurationSource: ConfigurationSource): string | null;
     SetRemovedFromModel(): void;
     ToString(): string;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
@@ -1003,12 +1001,12 @@ export const CheckConstraint: {
     new(entityType: IMutableEntityType, name: string, sql: string, configurationSource: ConfigurationSource): CheckConstraint;
     AreCompatible(checkConstraint: IReadOnlyCheckConstraint, duplicateCheckConstraint: IReadOnlyCheckConstraint, storeObject: StoreObjectIdentifier, shouldThrow: boolean): boolean;
     Attach(entityType: IConventionEntityType, detachedCheckConstraint: IConventionCheckConstraint): void;
-    FindCheckConstraint(entityType: IReadOnlyEntityType, name: string): IReadOnlyCheckConstraint | undefined;
-    FindDeclaredCheckConstraint(entityType: IReadOnlyEntityType, name: string): IReadOnlyCheckConstraint | undefined;
+    FindCheckConstraint(entityType: IReadOnlyEntityType, name: string): IReadOnlyCheckConstraint | null;
+    FindDeclaredCheckConstraint(entityType: IReadOnlyEntityType, name: string): IReadOnlyCheckConstraint | null;
     GetCheckConstraints(entityType: IReadOnlyEntityType): IEnumerable_1<IReadOnlyCheckConstraint>;
     GetDeclaredCheckConstraints(entityType: IReadOnlyEntityType): IEnumerable_1<IReadOnlyCheckConstraint>;
     MergeInto(detachedCheckConstraint: IConventionCheckConstraint, existingCheckConstraint: IConventionCheckConstraint): void;
-    RemoveCheckConstraint(entityType: IMutableEntityType, name: string): IMutableCheckConstraint | undefined;
+    RemoveCheckConstraint(entityType: IMutableEntityType, name: string): IMutableCheckConstraint | null;
 };
 
 
@@ -1033,7 +1031,7 @@ export interface ClrAccessorFactory_1$instance<TAccessor> {
     Create(memberInfo: MemberInfo): TAccessor;
     CreateBase(memberInfo: MemberInfo): TAccessor;
     CreateBase(propertyBase: IPropertyBase): TAccessor;
-    CreateGeneric<TEntity, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase): TAccessor;
+    CreateGeneric<TEntity, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase | null): TAccessor;
     GetMemberInfo(propertyBase: IPropertyBase): MemberInfo;
 }
 
@@ -1050,19 +1048,19 @@ export interface ClrCollectionAccessor_3$instance<TStructural, TCollection exten
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrCollectionAccessor: never;
 
     readonly CollectionType: Type;
-    Add(entity: unknown, value: unknown, forMaterialization: boolean): boolean;
-    AddStandalone(collection: unknown, value: unknown): boolean;
-    Contains(entity: unknown, value: unknown): boolean;
-    ContainsStandalone(collection: unknown, value: unknown): boolean;
-    Create(): unknown;
-    GetOrCreate(entity: unknown, forMaterialization: boolean): unknown;
-    Remove(entity: unknown, value: unknown): boolean;
-    RemoveStandalone(collection: unknown, value: unknown): boolean;
+    Add(entity: JsValue, value: JsValue, forMaterialization: boolean): boolean;
+    AddStandalone(collection: JsValue, value: JsValue): boolean;
+    Contains(entity: JsValue, value: JsValue): boolean;
+    ContainsStandalone(collection: JsValue, value: JsValue): boolean;
+    Create(): JsValue;
+    GetOrCreate(entity: JsValue, forMaterialization: boolean): JsValue;
+    Remove(entity: JsValue, value: JsValue): boolean;
+    RemoveStandalone(collection: JsValue | null, value: JsValue): boolean;
 }
 
 
 export const ClrCollectionAccessor_3: {
-    new<TStructural, TCollection extends IEnumerable_1<TElement>, TElement>(propertyName: string, shadow: boolean, getCollection: Func_2<TStructural, TCollection>, setCollection: Action_2<TStructural, TCollection>, setCollectionForMaterialization: Action_2<TStructural, TCollection>, createAndSetCollection: Func_3<TStructural, Action_2<TStructural, TCollection>, TCollection>, createCollection: Func_1<TCollection>): ClrCollectionAccessor_3<TStructural, TCollection, TElement>;
+    new<TStructural, TCollection extends IEnumerable_1<TElement>, TElement>(propertyName: string, shadow: boolean, getCollection: Func_2<TStructural, TCollection> | null, setCollection: Action_2<TStructural, TCollection> | null, setCollectionForMaterialization: Action_2<TStructural, TCollection> | null, createAndSetCollection: Func_3<TStructural, Action_2<TStructural, TCollection>, TCollection> | null, createCollection: Func_1<TCollection> | null): ClrCollectionAccessor_3<TStructural, TCollection, TElement>;
 };
 
 
@@ -1076,8 +1074,8 @@ export type ClrCollectionAccessor_3<TStructural, TCollection extends IEnumerable
 export interface ClrCollectionAccessorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Internal_ClrCollectionAccessorFactory: never;
 
-    Create(structuralProperty: IPropertyBase): IClrCollectionAccessor | undefined;
-    Create(navigation: INavigationBase, entityType: Type, propertyType: Type, elementType: Type, getCollection: Expression, setCollection: Expression, setCollectionForMaterialization: Expression, createAndSetCollection: Expression, createCollection: Expression): void;
+    Create(structuralProperty: IPropertyBase): IClrCollectionAccessor | null;
+    Create(navigation: INavigationBase, entityType: Type, propertyType: Type, elementType: Type, getCollection: Expression | null, setCollection: Expression | null, setCollectionForMaterialization: Expression | null, createAndSetCollection: Expression | null, createCollection: Expression | null): void;
 }
 
 
@@ -1096,16 +1094,16 @@ export interface ClrIndexedCollectionAccessor_3$instance<TStructural, TCollectio
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrIndexedCollectionAccessor: never;
 
-    Create(capacity: int): unknown;
-    Get(entity: unknown, index: int): unknown | undefined;
-    Get(entity: TStructural, index: int): TElement | undefined;
-    Set(entity: unknown, index: int, value: unknown, forMaterialization: boolean): void;
-    Set(entity: TStructural, index: int, value: TElement, forMaterialization: boolean): void;
+    Create(capacity: int): JsValue;
+    Get(entity: JsValue, index: int): JsValue | null;
+    Get(entity: TStructural, index: int): TElement | null;
+    Set(entity: JsValue, index: int, value: JsValue | null, forMaterialization: boolean): void;
+    Set(entity: TStructural, index: int, value: TElement | null, forMaterialization: boolean): void;
 }
 
 
 export const ClrIndexedCollectionAccessor_3: {
-    new<TStructural, TCollection extends IList_1<TElement>, TElement>(propertyName: string, shadow: boolean, get: Func_3<TStructural, System_Internal.Int32, TElement>, set: Action_3<TStructural, System_Internal.Int32, TElement>, setForMaterialization: Action_3<TStructural, System_Internal.Int32, TElement>, createCollection: Func_2<System_Internal.Int32, TCollection>): ClrIndexedCollectionAccessor_3<TStructural, TCollection, TElement>;
+    new<TStructural, TCollection extends IList_1<TElement>, TElement>(propertyName: string, shadow: boolean, get: Func_3<TStructural, System_Internal.Int32, TElement> | null, set: Action_3<TStructural, System_Internal.Int32, TElement | null> | null, setForMaterialization: Action_3<TStructural, System_Internal.Int32, TElement | null> | null, createCollection: Func_2<System_Internal.Int32, TCollection>): ClrIndexedCollectionAccessor_3<TStructural, TCollection, TElement>;
 };
 
 
@@ -1119,8 +1117,8 @@ export type ClrIndexedCollectionAccessor_3<TStructural, TCollection extends ILis
 export interface ClrIndexedCollectionAccessorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Internal_ClrIndexedCollectionAccessorFactory: never;
 
-    Create(collection: IPropertyBase): IClrIndexedCollectionAccessor | undefined;
-    Create(collection: IPropertyBase, entityType: Type, propertyType: Type, elementType: Type, get: Expression, set: Expression, setForMaterialization: Expression, createCollection: Expression): void;
+    Create(collection: IPropertyBase): IClrIndexedCollectionAccessor | null;
+    Create(collection: IPropertyBase, entityType: Type, propertyType: Type, elementType: Type, get: Expression | null, set: Expression | null, setForMaterialization: Expression | null, createCollection: Expression): void;
 }
 
 
@@ -1136,14 +1134,14 @@ export interface ClrPropertyGetter_3$instance<TEntity, TStructural, TValue> {
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrPropertyGetter: never;
 
-    GetClrValue(structuralObject: unknown): unknown | undefined;
+    GetClrValue(structuralObject: JsValue): JsValue | null;
     GetClrValue(structuralObject: TStructural): TValue;
-    GetClrValueUsingContainingEntity(entity: unknown, indices: IReadOnlyList_1<System_Internal.Int32>): unknown | undefined;
+    GetClrValueUsingContainingEntity(entity: JsValue, indices: IReadOnlyList_1<System_Internal.Int32>): JsValue | null;
     GetClrValueUsingContainingEntity(entity: TEntity, indices: IReadOnlyList_1<System_Internal.Int32>): TValue;
     HasSentinelUsingContainingEntity(entity: TEntity, indices: IReadOnlyList_1<System_Internal.Int32>): boolean;
-    HasSentinelValue(structuralObject: unknown): boolean;
+    HasSentinelValue(structuralObject: JsValue): boolean;
     HasSentinelValue(structuralObject: TStructural): boolean;
-    HasSentinelValueUsingContainingEntity(entity: unknown, indices: IReadOnlyList_1<System_Internal.Int32>): boolean;
+    HasSentinelValueUsingContainingEntity(entity: JsValue, indices: IReadOnlyList_1<System_Internal.Int32>): boolean;
 }
 
 
@@ -1165,7 +1163,7 @@ export interface ClrPropertyGetterFactory$instance extends ClrAccessorFactory_1<
     Create(property: IPropertyBase): IClrPropertyGetter;
     Create(propertyBase: IPropertyBase, getClrValueUsingContainingEntityExpression: Expression, hasSentinelValueUsingContainingEntityExpression: Expression, getClrValueExpression: Expression, hasSentinelValueExpression: Expression): void;
     Create(memberInfo: MemberInfo): IClrPropertyGetter;
-    CreateGeneric<TRoot, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase): IClrPropertyGetter;
+    CreateGeneric<TRoot, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase | null): IClrPropertyGetter;
     GetMemberInfo(propertyBase: IPropertyBase): MemberInfo;
 }
 
@@ -1195,8 +1193,8 @@ export interface ClrPropertySetter_3$instance<TEntity, TStructural, TValue> {
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IClrPropertySetter: never;
 
-    SetClrValue(instance: unknown, value: unknown): unknown;
-    SetClrValueUsingContainingEntity(entity: unknown, indices: IReadOnlyList_1<System_Internal.Int32>, value: unknown): void;
+    SetClrValue(instance: JsValue, value: JsValue | null): JsValue;
+    SetClrValueUsingContainingEntity(entity: JsValue, indices: IReadOnlyList_1<System_Internal.Int32>, value: JsValue | null): void;
     SetClrValueUsingContainingEntity(entity: TEntity, indices: IReadOnlyList_1<System_Internal.Int32>, value: TValue): void;
 }
 
@@ -1220,7 +1218,7 @@ export interface ClrPropertySetterFactory$instance extends ClrAccessorFactory_1<
     Create(property: IPropertyBase): IClrPropertySetter;
     Create(propertyBase: IPropertyBase, setterUsingContainingEntityExpression: Expression, setterExpression: Expression): void;
     Create(memberInfo: MemberInfo): IClrPropertySetter;
-    CreateGeneric<TRoot, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase): IClrPropertySetter;
+    CreateGeneric<TRoot, TDeclaring, TValue>(memberInfo: MemberInfo, propertyBase: IPropertyBase | null): IClrPropertySetter;
     GetMemberInfo(propertyBase: IPropertyBase): MemberInfo;
 }
 
@@ -1235,7 +1233,7 @@ export type ClrPropertySetterFactory = ClrPropertySetterFactory$instance;
 export interface CollectionTypeFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Internal_CollectionTypeFactory: never;
 
-    TryFindTypeToInstantiate(entityType: Type, collectionType: Type, requireFullNotifications: boolean): Type | undefined;
+    TryFindTypeToInstantiate(entityType: Type, collectionType: Type, requireFullNotifications: boolean): Type | null;
 }
 
 
@@ -1261,7 +1259,7 @@ export interface Column$instance extends ColumnBase_1$instance<ColumnMapping> {
 
 
 export const Column: {
-    new(name: string, type: string, table: Table, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): Column;
+    new(name: string, type: string, table: Table, storeTypeMapping: RelationalTypeMapping | null, providerValueComparer: ValueComparer | null): Column;
 };
 
 
@@ -1300,7 +1298,7 @@ export interface ColumnBase_1$instance<TColumnMappingBase extends IColumnMapping
 
 
 export const ColumnBase_1: {
-    new<TColumnMappingBase extends IColumnMappingBase>(name: string, type: string, table: TableBase, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): ColumnBase_1<TColumnMappingBase>;
+    new<TColumnMappingBase extends IColumnMappingBase>(name: string, type: string, table: TableBase, storeTypeMapping: RelationalTypeMapping | null, providerValueComparer: ValueComparer | null): ColumnBase_1<TColumnMappingBase>;
     Format<TColumnMappingBase extends IColumnMappingBase>(columns: IEnumerable_1<IColumnBase>): string;
 };
 
@@ -1321,8 +1319,8 @@ export interface ColumnListComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: IReadOnlyList_1<IColumn>, y: IReadOnlyList_1<IColumn>): int;
-    Equals(x: IReadOnlyList_1<IColumn>, y: IReadOnlyList_1<IColumn>): boolean;
+    Compare(x: IReadOnlyList_1<IColumn> | null, y: IReadOnlyList_1<IColumn> | null): int;
+    Equals(x: IReadOnlyList_1<IColumn> | null, y: IReadOnlyList_1<IColumn> | null): boolean;
     GetHashCode(obj: IReadOnlyList_1<IColumn>): int;
 }
 
@@ -1402,8 +1400,8 @@ export interface ColumnMappingBaseComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: IColumnMappingBase, y: IColumnMappingBase): int;
-    Equals(x: IColumnMappingBase, y: IColumnMappingBase): boolean;
+    Compare(x: IColumnMappingBase | null, y: IColumnMappingBase | null): int;
+    Equals(x: IColumnMappingBase | null, y: IColumnMappingBase | null): boolean;
     GetHashCode(obj: IColumnMappingBase): int;
 }
 
@@ -1420,7 +1418,7 @@ export interface ColumnNameComparer$instance {
 
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
 
-    Compare(x: string, y: string): int;
+    Compare(x: string | null, y: string | null): int;
 }
 
 
@@ -1449,7 +1447,7 @@ export interface ComplexProperty$instance extends PropertyBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimePropertyBase: never;
 
     readonly ClrType: Type;
-    readonly CollectionAccessor: IClrCollectionAccessor | undefined;
+    readonly CollectionAccessor: IClrCollectionAccessor | null;
     readonly ComplexType: ComplexType;
     readonly DebugView: DebugView;
     readonly DeclaringType: TypeBase;
@@ -1457,9 +1455,9 @@ export interface ComplexProperty$instance extends PropertyBase$instance {
     readonly IsInModel: boolean;
     IsNullable: boolean;
     GetIsNullableConfigurationSource(): Nullable_1<ConfigurationSource>;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-    OnFieldInfoSet(newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo): FieldInfo | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
+    OnFieldInfoSet(newFieldInfo: FieldInfo | null, oldFieldInfo: FieldInfo | null): FieldInfo | null;
     OnPropertyNullableChanged(): Nullable_1<System_Internal.Boolean>;
     SetIsNullable(nullable: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
     SetRemovedFromModel(): void;
@@ -1468,7 +1466,7 @@ export interface ComplexProperty$instance extends PropertyBase$instance {
 
 
 export const ComplexProperty: {
-    new(name: string, type: Type, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, declaringType: TypeBase, targetTypeName: string, targetType: Type, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty;
+    new(name: string, type: Type, propertyInfo: PropertyInfo | null, fieldInfo: FieldInfo | null, declaringType: TypeBase, targetTypeName: string | null, targetType: Type, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty;
 };
 
 
@@ -1520,12 +1518,12 @@ export interface ComplexPropertySnapshot$instance {
 
     readonly ComplexProperty: ComplexProperty;
     readonly NestedComplexProperties: IReadOnlyList_1<ComplexPropertySnapshot>;
-    Attach(typeBaseBuilder: InternalTypeBaseBuilder): InternalComplexPropertyBuilder | undefined;
+    Attach(typeBaseBuilder: InternalTypeBaseBuilder): InternalComplexPropertyBuilder | null;
 }
 
 
 export const ComplexPropertySnapshot: {
-    new(complexPropertyBuilder: InternalComplexPropertyBuilder, properties: PropertiesSnapshot, indexes: List_1<InternalIndexBuilder>, keys: List_1<ValueTuple_2<InternalKeyBuilder, Nullable_1<ConfigurationSource>>>, relationships: List_1<RelationshipSnapshot>, nestedComplexProperties: List_1<ComplexPropertySnapshot>): ComplexPropertySnapshot;
+    new(complexPropertyBuilder: InternalComplexPropertyBuilder, properties: PropertiesSnapshot | null, indexes: List_1<InternalIndexBuilder> | null, keys: List_1<ValueTuple_2<InternalKeyBuilder, Nullable_1<ConfigurationSource>>> | null, relationships: List_1<RelationshipSnapshot> | null, nestedComplexProperties: List_1<ComplexPropertySnapshot>): ComplexPropertySnapshot;
 };
 
 
@@ -1553,23 +1551,23 @@ export interface ComplexType$instance extends TypeBase$instance {
     readonly DebugView: DebugView;
     readonly IsInModel: boolean;
     CalculateCounts(): PropertyCounts;
-    FindMember(name: string): PropertyBase | undefined;
+    FindMember(name: string): PropertyBase | null;
     FindMembersInHierarchy(name: string): IEnumerable_1<PropertyBase>;
     GetBaseTypeConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetDeclaredMembers(): IEnumerable_1<PropertyBase>;
     GetDirectlyDerivedTypes(): IEnumerable_1<ComplexType>;
     GetMembers(): IEnumerable_1<PropertyBase>;
-    GetOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, unknown>;
-    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, unknown>;
+    GetOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, JsValue>;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, JsValue>;
     GetRootType(): ComplexType;
     GetRootType(): TypeBase;
     IsAssignableFrom(derivedType: ComplexType): boolean;
     IsAssignableFrom(derivedType: TypeBase): boolean;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-    OnTypeMemberIgnored(name: string): string | undefined;
-    SetBaseType(newBaseType: TypeBase, configurationSource: ConfigurationSource): TypeBase | undefined;
-    SetBaseType(newBaseType: ComplexType, configurationSource: ConfigurationSource): ComplexType | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
+    OnTypeMemberIgnored(name: string): string | null;
+    SetBaseType(newBaseType: TypeBase | null, configurationSource: ConfigurationSource): TypeBase | null;
+    SetBaseType(newBaseType: ComplexType | null, configurationSource: ConfigurationSource): ComplexType | null;
     SetCounts(value: PropertyCounts): void;
     SetRemovedFromModel(): void;
     ToString(): string;
@@ -1605,12 +1603,12 @@ export interface ConstructorBindingFactory$instance {
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConstructorBindingFactory: never;
 
-    GetBindings(entityType: IConventionEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
-    GetBindings(entityType: IMutableEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
-    GetBindings(entityType: IReadOnlyEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
-    GetBindings(complexType: IReadOnlyComplexType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding): void;
-    TryBindConstructor(entityType: IMutableEntityType, constructor: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable_1<ParameterInfo>): boolean;
-    TryBindConstructor(entityType: IConventionEntityType, constructor: ConstructorInfo, binding: InstantiationBinding, unboundParameters: IEnumerable_1<ParameterInfo>): boolean;
+    GetBindings(entityType: IConventionEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding | null): void;
+    GetBindings(entityType: IMutableEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding | null): void;
+    GetBindings(entityType: IReadOnlyEntityType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding | null): void;
+    GetBindings(complexType: IReadOnlyComplexType, constructorBinding: InstantiationBinding, serviceOnlyBinding: InstantiationBinding | null): void;
+    TryBindConstructor(entityType: IMutableEntityType, constructor: ConstructorInfo, binding: InstantiationBinding | null, unboundParameters: IEnumerable_1<ParameterInfo> | null): boolean;
+    TryBindConstructor(entityType: IConventionEntityType, constructor: ConstructorInfo, binding: InstantiationBinding | null, unboundParameters: IEnumerable_1<ParameterInfo> | null): boolean;
 }
 
 
@@ -1662,7 +1660,7 @@ export interface ConventionAnnotation$instance extends Annotation, Microsoft_Ent
 
 
 export const ConventionAnnotation: {
-    new(name: string, value: unknown, configurationSource: ConfigurationSource): ConventionAnnotation;
+    new(name: string, value: JsValue | null, configurationSource: ConfigurationSource): ConventionAnnotation;
 };
 
 
@@ -1693,22 +1691,22 @@ export interface DbFunction$instance extends ConventionAnnotatable {
     IsNullable: boolean;
     readonly IsReadOnly: boolean;
     readonly IsScalar: boolean;
-    readonly MethodInfo: MethodInfo | undefined;
+    readonly MethodInfo: MethodInfo | null;
     readonly Model: IMutableModel;
     readonly ModelName: string;
     Name: string;
     readonly Parameters: IReadOnlyList_1<DbFunctionParameter>;
     readonly ReturnType: Type;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     readonly StoreFunction: IStoreFunction;
-    get StoreType(): string | undefined;
-    set StoreType(value: string | undefined);
-    get Translation(): Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | undefined;
-    set Translation(value: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | undefined);
-    get TypeMapping(): RelationalTypeMapping | undefined;
-    set TypeMapping(value: RelationalTypeMapping | undefined);
-    FindParameter(name: string): DbFunctionParameter | undefined;
+    get StoreType(): string | null;
+    set StoreType(value: string | null);
+    get Translation(): Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | null;
+    set Translation(value: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | null);
+    get TypeMapping(): RelationalTypeMapping | null;
+    set TypeMapping(value: RelationalTypeMapping | null);
+    FindParameter(name: string): DbFunctionParameter | null;
     GetConfigurationSource(): ConfigurationSource;
     GetIsBuiltInConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetIsNullableConfigurationSource(): Nullable_1<ConfigurationSource>;
@@ -1719,12 +1717,12 @@ export interface DbFunction$instance extends ConventionAnnotatable {
     GetTypeMappingConfigurationSource(): Nullable_1<ConfigurationSource>;
     SetIsBuiltIn(builtIn: boolean, configurationSource: ConfigurationSource): boolean;
     SetIsNullable(nullable: boolean, configurationSource: ConfigurationSource): boolean;
-    SetName(name: string, configurationSource: ConfigurationSource): string | undefined;
+    SetName(name: string | null, configurationSource: ConfigurationSource): string | null;
     SetRemovedFromModel(): void;
-    SetSchema(schema: string, configurationSource: ConfigurationSource): string | undefined;
-    SetStoreType(storeType: string, configurationSource: ConfigurationSource): string | undefined;
-    SetTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>, configurationSource: ConfigurationSource): Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | undefined;
-    SetTypeMapping(typeMapping: RelationalTypeMapping, configurationSource: ConfigurationSource): RelationalTypeMapping | undefined;
+    SetSchema(schema: string | null, configurationSource: ConfigurationSource): string | null;
+    SetStoreType(storeType: string | null, configurationSource: ConfigurationSource): string | null;
+    SetTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | null, configurationSource: ConfigurationSource): Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | null;
+    SetTypeMapping(typeMapping: RelationalTypeMapping | null, configurationSource: ConfigurationSource): RelationalTypeMapping | null;
     ToString(): string;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
 }
@@ -1732,15 +1730,15 @@ export interface DbFunction$instance extends ConventionAnnotatable {
 
 export const DbFunction: {
     new(methodInfo: MethodInfo, model: IMutableModel, configurationSource: ConfigurationSource): DbFunction;
-    new(name: string, returnType: Type, parameters: IEnumerable_1<ValueTuple_2<System_Internal.String, Type>>, model: IMutableModel, configurationSource: ConfigurationSource): DbFunction;
+    new(name: string, returnType: Type, parameters: IEnumerable_1<ValueTuple_2<System_Internal.String, Type>> | null, model: IMutableModel, configurationSource: ConfigurationSource): DbFunction;
     AddDbFunction(model: IMutableModel, methodInfo: MethodInfo, configurationSource: ConfigurationSource): DbFunction;
     AddDbFunction(model: IMutableModel, name: string, returnType: Type, configurationSource: ConfigurationSource): DbFunction;
-    FindDbFunction(model: IReadOnlyModel, methodInfo: MethodInfo): IDbFunction | undefined;
-    FindDbFunction(model: IReadOnlyModel, name: string): IDbFunction | undefined;
+    FindDbFunction(model: IReadOnlyModel, methodInfo: MethodInfo): IDbFunction | null;
+    FindDbFunction(model: IReadOnlyModel, name: string): IDbFunction | null;
     GetDbFunctions(model: IReadOnlyModel): IEnumerable_1<IDbFunction>;
     GetFunctionName(methodInfo: MethodInfo): string;
-    RemoveDbFunction(model: IMutableModel, methodInfo: MethodInfo): DbFunction | undefined;
-    RemoveDbFunction(model: IMutableModel, name: string): DbFunction | undefined;
+    RemoveDbFunction(model: IMutableModel, methodInfo: MethodInfo): DbFunction | null;
+    RemoveDbFunction(model: IMutableModel, name: string): DbFunction | null;
 };
 
 
@@ -1777,16 +1775,16 @@ export interface DbFunctionParameter$instance extends ConventionAnnotatable {
     readonly Name: string;
     PropagatesNullability: boolean;
     StoreType: string;
-    get TypeMapping(): RelationalTypeMapping | undefined;
-    set TypeMapping(value: RelationalTypeMapping | undefined);
+    get TypeMapping(): RelationalTypeMapping | null;
+    set TypeMapping(value: RelationalTypeMapping | null);
     GetConfigurationSource(): ConfigurationSource;
     GetPropagatesNullabilityConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetStoreTypeConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetTypeMappingConfigurationSource(): Nullable_1<ConfigurationSource>;
     SetPropagatesNullability(propagatesNullability: boolean, configurationSource: ConfigurationSource): boolean;
     SetRemovedFromModel(): void;
-    SetStoreType(storeType: string, configurationSource: ConfigurationSource): string | undefined;
-    SetTypeMapping(typeMapping: RelationalTypeMapping, configurationSource: ConfigurationSource): RelationalTypeMapping | undefined;
+    SetStoreType(storeType: string | null, configurationSource: ConfigurationSource): string | null;
+    SetTypeMapping(typeMapping: RelationalTypeMapping | null, configurationSource: ConfigurationSource): RelationalTypeMapping | null;
     ToString(): string;
 }
 
@@ -1849,46 +1847,46 @@ export interface ElementType$instance extends ConventionAnnotatable {
     readonly IsInModel: boolean;
     IsNullable: boolean;
     readonly IsReadOnly: boolean;
-    get TypeMapping(): CoreTypeMapping | undefined;
-    set TypeMapping(value: CoreTypeMapping | undefined);
-    CheckValueComparer(comparer: ValueComparer): string | undefined;
-    CheckValueConverter(converter: ValueConverter): string | undefined;
+    get TypeMapping(): CoreTypeMapping | null;
+    set TypeMapping(value: CoreTypeMapping | null);
+    CheckValueComparer(comparer: ValueComparer | null): string | null;
+    CheckValueConverter(converter: ValueConverter | null): string | null;
     GetConfigurationSource(): ConfigurationSource;
     GetIsNullableConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetIsUnicodeConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | null;
     GetJsonValueReaderWriterTypeConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetMaxLength(): Nullable_1<System_Internal.Int32>;
     GetMaxLengthConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetPrecision(): Nullable_1<System_Internal.Int32>;
     GetPrecisionConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetProviderClrType(): Type | undefined;
+    GetProviderClrType(): Type | null;
     GetProviderClrTypeConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetScale(): Nullable_1<System_Internal.Int32>;
     GetScaleConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetTypeMappingConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetValueComparer(): ValueComparer;
     GetValueComparerConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetValueConverter(): ValueConverter | undefined;
+    GetValueConverter(): ValueConverter | null;
     GetValueConverterConfigurationSource(): Nullable_1<ConfigurationSource>;
     IsUnicode(): Nullable_1<System_Internal.Boolean>;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
     OnElementTypeNullableChanged(): Nullable_1<System_Internal.Boolean>;
     SetConfigurationSource(configurationSource: ConfigurationSource): void;
     SetIsNullable(nullable: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
     SetIsUnicode(unicode: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
-    SetJsonValueReaderWriterType(readerWriterType: Type, configurationSource: ConfigurationSource): Type | undefined;
+    SetJsonValueReaderWriterType(readerWriterType: Type | null, configurationSource: ConfigurationSource): Type | null;
     SetMaxLength(maxLength: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Int32>;
     SetPrecision(precision: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Int32>;
-    SetProviderClrType(providerClrType: Type, configurationSource: ConfigurationSource): Type | undefined;
+    SetProviderClrType(providerClrType: Type | null, configurationSource: ConfigurationSource): Type | null;
     SetRemovedFromModel(): void;
     SetScale(scale: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Int32>;
-    SetTypeMapping(typeMapping: CoreTypeMapping, configurationSource: ConfigurationSource): CoreTypeMapping | undefined;
-    SetValueComparer(comparer: ValueComparer, configurationSource: ConfigurationSource): ValueComparer | undefined;
-    SetValueComparer(comparerType: Type, configurationSource: ConfigurationSource): Type | undefined;
-    SetValueConverter(converter: ValueConverter, configurationSource: ConfigurationSource): ValueConverter | undefined;
-    SetValueConverter(converterType: Type, configurationSource: ConfigurationSource): Type | undefined;
+    SetTypeMapping(typeMapping: CoreTypeMapping | null, configurationSource: ConfigurationSource): CoreTypeMapping | null;
+    SetValueComparer(comparer: ValueComparer | null, configurationSource: ConfigurationSource): ValueComparer | null;
+    SetValueComparer(comparerType: Type | null, configurationSource: ConfigurationSource): Type | null;
+    SetValueConverter(converter: ValueConverter | null, configurationSource: ConfigurationSource): ValueConverter | null;
+    SetValueConverter(converterType: Type | null, configurationSource: ConfigurationSource): Type | null;
     ToString(): string;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
 }
@@ -1937,36 +1935,36 @@ export interface EntityType$instance extends TypeBase$instance {
     readonly IsImplicitlyCreatedJoinEntityType: boolean;
     readonly IsInModel: boolean;
     IsKeyless: boolean;
-    readonly Owner: EntityType | undefined;
+    readonly Owner: EntityType | null;
     readonly RelationshipSnapshotFactory: Func_2<IInternalEntry, ISnapshot>;
-    AddData(data: IEnumerable_1<unknown>): void;
-    AddForeignKey(property: Property, principalKey: Key, principalEntityType: EntityType, componentConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: ConfigurationSource): ForeignKey | undefined;
-    AddForeignKey(properties: IReadOnlyList_1<Property>, principalKey: Key, principalEntityType: EntityType, componentConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: ConfigurationSource): ForeignKey | undefined;
-    AddIndex(property: Property, configurationSource: ConfigurationSource): Index | undefined;
-    AddIndex(property: Property, name: string, configurationSource: ConfigurationSource): Index | undefined;
-    AddIndex(properties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): Index | undefined;
-    AddIndex(properties: IReadOnlyList_1<Property>, name: string, configurationSource: ConfigurationSource): Index | undefined;
-    AddKey(property: Property, configurationSource: ConfigurationSource): Key | undefined;
-    AddKey(properties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): Key | undefined;
+    AddData(data: IEnumerable_1<JsValue>): void;
+    AddForeignKey(property: Property, principalKey: Key, principalEntityType: EntityType, componentConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: ConfigurationSource): ForeignKey | null;
+    AddForeignKey(properties: IReadOnlyList_1<Property>, principalKey: Key, principalEntityType: EntityType, componentConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: ConfigurationSource): ForeignKey | null;
+    AddIndex(property: Property, configurationSource: ConfigurationSource): Index | null;
+    AddIndex(property: Property, name: string, configurationSource: ConfigurationSource): Index | null;
+    AddIndex(properties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): Index | null;
+    AddIndex(properties: IReadOnlyList_1<Property>, name: string, configurationSource: ConfigurationSource): Index | null;
+    AddKey(property: Property, configurationSource: ConfigurationSource): Key | null;
+    AddKey(properties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): Key | null;
     AddNavigation(name: string, foreignKey: ForeignKey, pointsToPrincipal: boolean): Navigation;
     AddNavigation(navigationMember: MemberInfo, foreignKey: ForeignKey, pointsToPrincipal: boolean): Navigation;
     AddNavigation(navigationMember: MemberIdentity, foreignKey: ForeignKey, pointsToPrincipal: boolean): Navigation;
     AddServiceProperty(memberInfo: MemberInfo, serviceType: Type, configurationSource: ConfigurationSource): ServiceProperty;
-    AddSkipNavigation(name: string, navigationType: Type, memberInfo: MemberInfo, targetEntityType: EntityType, collection: boolean, onDependent: boolean, configurationSource: ConfigurationSource): SkipNavigation | undefined;
-    AddTrigger(modelName: string, configurationSource: ConfigurationSource): Trigger | undefined;
+    AddSkipNavigation(name: string, navigationType: Type | null, memberInfo: MemberInfo | null, targetEntityType: EntityType, collection: boolean, onDependent: boolean, configurationSource: ConfigurationSource): SkipNavigation | null;
+    AddTrigger(modelName: string, configurationSource: ConfigurationSource): Trigger | null;
     CalculateCounts(): PropertyCounts;
-    CheckQueryFilter(queryFilter: IQueryFilter): string | undefined;
-    FindDeclaredForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): ForeignKey | undefined;
+    CheckQueryFilter(queryFilter: IQueryFilter): string | null;
+    FindDeclaredForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): ForeignKey | null;
     FindDeclaredForeignKeys(properties: IReadOnlyList_1<IReadOnlyProperty>): IEnumerable_1<ForeignKey>;
-    FindDeclaredIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): Index | undefined;
-    FindDeclaredIndex(name: string): Index | undefined;
-    FindDeclaredKey(properties: IReadOnlyList_1<IReadOnlyProperty>): Key | undefined;
-    FindDeclaredNavigation(name: string): Navigation | undefined;
-    FindDeclaredOwnership(): ForeignKey | undefined;
-    FindDeclaredQueryFilter(filterKey: string): IQueryFilter | undefined;
-    FindDeclaredServiceProperty(name: string): ServiceProperty | undefined;
-    FindDeclaredSkipNavigation(name: string): SkipNavigation | undefined;
-    FindDeclaredTrigger(modelName: string): Trigger | undefined;
+    FindDeclaredIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): Index | null;
+    FindDeclaredIndex(name: string): Index | null;
+    FindDeclaredKey(properties: IReadOnlyList_1<IReadOnlyProperty>): Key | null;
+    FindDeclaredNavigation(name: string): Navigation | null;
+    FindDeclaredOwnership(): ForeignKey | null;
+    FindDeclaredQueryFilter(filterKey: string | null): IQueryFilter | null;
+    FindDeclaredServiceProperty(name: string): ServiceProperty | null;
+    FindDeclaredSkipNavigation(name: string): SkipNavigation | null;
+    FindDeclaredTrigger(modelName: string): Trigger | null;
     FindDerivedForeignKeys(properties: IReadOnlyList_1<IReadOnlyProperty>): IEnumerable_1<ForeignKey>;
     FindDerivedForeignKeys(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IEnumerable_1<ForeignKey>;
     FindDerivedIndexes(properties: IReadOnlyList_1<IReadOnlyProperty>): IEnumerable_1<Index>;
@@ -1976,32 +1974,32 @@ export interface EntityType$instance extends TypeBase$instance {
     FindDerivedServicePropertiesInclusive(propertyName: string): IEnumerable_1<ServiceProperty>;
     FindDerivedSkipNavigations(name: string): IEnumerable_1<SkipNavigation>;
     FindDerivedSkipNavigationsInclusive(name: string): IEnumerable_1<SkipNavigation>;
-    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): ForeignKey | undefined;
-    FindForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): ForeignKey | undefined;
+    FindForeignKey(property: IReadOnlyProperty, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): ForeignKey | null;
+    FindForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): ForeignKey | null;
     FindForeignKeys(property: IReadOnlyProperty): IEnumerable_1<ForeignKey>;
     FindForeignKeys(properties: IReadOnlyList_1<IReadOnlyProperty>): IEnumerable_1<ForeignKey>;
     FindForeignKeysInHierarchy(properties: IReadOnlyList_1<IReadOnlyProperty>): IEnumerable_1<ForeignKey>;
     FindForeignKeysInHierarchy(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): IEnumerable_1<ForeignKey>;
-    FindIndex(property: IReadOnlyProperty): Index | undefined;
-    FindIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): Index | undefined;
-    FindIndex(name: string): Index | undefined;
+    FindIndex(property: IReadOnlyProperty): Index | null;
+    FindIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): Index | null;
+    FindIndex(name: string): Index | null;
     FindIndexesInHierarchy(properties: IReadOnlyList_1<IReadOnlyProperty>): IEnumerable_1<Index>;
     FindIndexesInHierarchy(name: string): IEnumerable_1<Index>;
-    FindKey(property: IReadOnlyProperty): Key | undefined;
-    FindKey(properties: IReadOnlyList_1<IReadOnlyProperty>): Key | undefined;
-    FindMember(name: string): PropertyBase | undefined;
+    FindKey(property: IReadOnlyProperty): Key | null;
+    FindKey(properties: IReadOnlyList_1<IReadOnlyProperty>): Key | null;
+    FindMember(name: string): PropertyBase | null;
     FindMembersInHierarchy(name: string): IEnumerable_1<PropertyBase>;
-    FindNavigation(name: string): Navigation | undefined;
-    FindNavigation(memberInfo: MemberInfo): Navigation | undefined;
+    FindNavigation(name: string): Navigation | null;
+    FindNavigation(memberInfo: MemberInfo): Navigation | null;
     FindNavigationsInHierarchy(name: string): IEnumerable_1<Navigation>;
-    FindOwnership(): ForeignKey | undefined;
-    FindPrimaryKey(): Key | undefined;
-    FindPrimaryKey(properties: IReadOnlyList_1<Property>): Key | undefined;
+    FindOwnership(): ForeignKey | null;
+    FindPrimaryKey(): Key | null;
+    FindPrimaryKey(properties: IReadOnlyList_1<Property> | null): Key | null;
     FindServicePropertiesInHierarchy(propertyName: string): IEnumerable_1<ServiceProperty>;
-    FindServiceProperty(name: string): ServiceProperty | undefined;
-    FindServiceProperty(memberInfo: MemberInfo): Property | undefined;
-    FindSkipNavigation(name: string): SkipNavigation | undefined;
-    FindSkipNavigation(memberInfo: MemberInfo): SkipNavigation | undefined;
+    FindServiceProperty(name: string): ServiceProperty | null;
+    FindServiceProperty(memberInfo: MemberInfo): Property | null;
+    FindSkipNavigation(name: string): SkipNavigation | null;
+    FindSkipNavigation(memberInfo: MemberInfo): SkipNavigation | null;
     FindSkipNavigationsInHierarchy(name: string): IEnumerable_1<SkipNavigation>;
     GetBaseTypeConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetDeclaredForeignKeys(): IEnumerable_1<ForeignKey>;
@@ -2030,48 +2028,48 @@ export interface EntityType$instance extends TypeBase$instance {
     GetMembers(): IEnumerable_1<PropertyBase>;
     GetNavigationAccessMode(): PropertyAccessMode;
     GetNavigations(): IEnumerable_1<Navigation>;
-    GetOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, unknown>;
-    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, unknown>;
+    GetOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, JsValue>;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, JsValue>;
     GetPrimaryKeyConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetQueryFilter(): LambdaExpression | undefined;
-    GetQueryFilterConfigurationSource(filterKey: string): Nullable_1<ConfigurationSource>;
+    GetQueryFilter(): LambdaExpression | null;
+    GetQueryFilterConfigurationSource(filterKey: string | null): Nullable_1<ConfigurationSource>;
     GetQueryFilterConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetRawSeedData(): IEnumerable_1<unknown>;
+    GetRawSeedData(): IEnumerable_1<JsValue>;
     GetReferencingForeignKeys(): IEnumerable_1<ForeignKey>;
     GetReferencingSkipNavigations(): IEnumerable_1<SkipNavigation>;
     GetRootType(): EntityType;
     GetRootType(): TypeBase;
-    GetSeedData(providerValues?: boolean): IEnumerable_1<IDictionary_2<System_Internal.String, unknown | undefined>>;
+    GetSeedData(providerValues?: boolean): IEnumerable_1<IDictionary_2<System_Internal.String, JsValue | null>>;
     GetServiceProperties(): IEnumerable_1<ServiceProperty>;
     GetSkipNavigations(): IEnumerable_1<SkipNavigation>;
     GetSnapshottableMembers(): IEnumerable_1<PropertyBase>;
     HasServiceProperties(): boolean;
     IsOwned(): boolean;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
     OnForeignKeyUpdated(foreignKey: ForeignKey): void;
     OnForeignKeyUpdating(foreignKey: ForeignKey): void;
-    OnTypeMemberIgnored(name: string): string | undefined;
-    RemoveForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): ForeignKey | undefined;
-    RemoveForeignKey(foreignKey: ForeignKey): ForeignKey | undefined;
-    RemoveIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): Index | undefined;
-    RemoveIndex(name: string): Index | undefined;
-    RemoveIndex(index: Index): Index | undefined;
-    RemoveKey(properties: IReadOnlyList_1<IReadOnlyProperty>): Key | undefined;
-    RemoveKey(key: Key): Key | undefined;
-    RemoveNavigation(name: string): Navigation | undefined;
-    RemoveServiceProperty(name: string): ServiceProperty | undefined;
-    RemoveServiceProperty(property: ServiceProperty): ServiceProperty | undefined;
-    RemoveSkipNavigation(name: string): SkipNavigation | undefined;
-    RemoveSkipNavigation(navigation: SkipNavigation): SkipNavigation | undefined;
-    RemoveTrigger(modelName: string): Trigger | undefined;
-    SetBaseType(newBaseType: TypeBase, configurationSource: ConfigurationSource): TypeBase | undefined;
-    SetBaseType(newBaseType: EntityType, configurationSource: ConfigurationSource): EntityType | undefined;
+    OnTypeMemberIgnored(name: string): string | null;
+    RemoveForeignKey(properties: IReadOnlyList_1<IReadOnlyProperty>, principalKey: IReadOnlyKey, principalEntityType: IReadOnlyEntityType): ForeignKey | null;
+    RemoveForeignKey(foreignKey: ForeignKey): ForeignKey | null;
+    RemoveIndex(properties: IReadOnlyList_1<IReadOnlyProperty>): Index | null;
+    RemoveIndex(name: string): Index | null;
+    RemoveIndex(index: Index): Index | null;
+    RemoveKey(properties: IReadOnlyList_1<IReadOnlyProperty>): Key | null;
+    RemoveKey(key: Key): Key | null;
+    RemoveNavigation(name: string): Navigation | null;
+    RemoveServiceProperty(name: string): ServiceProperty | null;
+    RemoveServiceProperty(property: ServiceProperty): ServiceProperty | null;
+    RemoveSkipNavigation(name: string): SkipNavigation | null;
+    RemoveSkipNavigation(navigation: SkipNavigation): SkipNavigation | null;
+    RemoveTrigger(modelName: string): Trigger | null;
+    SetBaseType(newBaseType: TypeBase | null, configurationSource: ConfigurationSource): TypeBase | null;
+    SetBaseType(newBaseType: EntityType | null, configurationSource: ConfigurationSource): EntityType | null;
     SetIsKeyless(keyless: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
     SetIsOwned(value: boolean): void;
-    SetPrimaryKey(property: Property, configurationSource: ConfigurationSource): Key | undefined;
-    SetPrimaryKey(properties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): Key | undefined;
-    SetQueryFilter(queryFilter: IQueryFilter): IQueryFilter | undefined;
+    SetPrimaryKey(property: Property | null, configurationSource: ConfigurationSource): Key | null;
+    SetPrimaryKey(properties: IReadOnlyList_1<Property> | null, configurationSource: ConfigurationSource): Key | null;
+    SetQueryFilter(queryFilter: IQueryFilter): IQueryFilter | null;
     SetRemovedFromModel(): void;
     ToString(): string;
 }
@@ -2112,7 +2110,7 @@ export interface EntityType_Snapshot$instance {
 
 
 export const EntityType_Snapshot: {
-    new(entityType: EntityType, properties: PropertiesSnapshot, indexes: List_1<InternalIndexBuilder>, keys: List_1<ValueTuple_2<InternalKeyBuilder, Nullable_1<ConfigurationSource>>>, relationships: List_1<RelationshipSnapshot>, skipNavigations: List_1<InternalSkipNavigationBuilder>, serviceProperties: List_1<InternalServicePropertyBuilder>): EntityType_Snapshot;
+    new(entityType: EntityType, properties: PropertiesSnapshot | null, indexes: List_1<InternalIndexBuilder> | null, keys: List_1<ValueTuple_2<InternalKeyBuilder, Nullable_1<ConfigurationSource>>> | null, relationships: List_1<RelationshipSnapshot> | null, skipNavigations: List_1<InternalSkipNavigationBuilder> | null, serviceProperties: List_1<InternalServicePropertyBuilder> | null): EntityType_Snapshot;
 };
 
 
@@ -2149,11 +2147,11 @@ export interface EntityTypeMappingFragment$instance extends ConventionAnnotatabl
 export const EntityTypeMappingFragment: {
     new(entityType: IReadOnlyEntityType, storeObject: StoreObjectIdentifier, configurationSource: ConfigurationSource): EntityTypeMappingFragment;
     Attach(entityType: IConventionEntityType, detachedFragment: IConventionEntityTypeMappingFragment): void;
-    Find(entityType: IReadOnlyEntityType, storeObject: StoreObjectIdentifier): IReadOnlyEntityTypeMappingFragment | undefined;
-    Get(entityType: IReadOnlyEntityType): IEnumerable_1<IReadOnlyEntityTypeMappingFragment> | undefined;
+    Find(entityType: IReadOnlyEntityType, storeObject: StoreObjectIdentifier): IReadOnlyEntityTypeMappingFragment | null;
+    Get(entityType: IReadOnlyEntityType): IEnumerable_1<IReadOnlyEntityTypeMappingFragment> | null;
     GetOrCreate(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier, configurationSource: ConfigurationSource): EntityTypeMappingFragment;
     MergeInto(detachedFragment: IConventionEntityTypeMappingFragment, existingFragment: IConventionEntityTypeMappingFragment): EntityTypeMappingFragment;
-    Remove(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier): EntityTypeMappingFragment | undefined;
+    Remove(entityType: IMutableEntityType, storeObject: StoreObjectIdentifier): EntityTypeMappingFragment | null;
 };
 
 
@@ -2213,8 +2211,8 @@ export interface ForeignKey$instance extends ConventionAnnotatable {
     DeleteBehavior: DeleteBehavior;
     DependentKeyValueFactory: IDependentKeyValueFactory;
     DependentsMapFactory: Func_1<IDependentsMap>;
-    get DependentToPrincipal(): Navigation | undefined;
-    set DependentToPrincipal(value: Navigation | undefined);
+    get DependentToPrincipal(): Navigation | null;
+    set DependentToPrincipal(value: Navigation | null);
     readonly IsInModel: boolean;
     IsOwnership: boolean;
     readonly IsReadOnly: boolean;
@@ -2223,11 +2221,11 @@ export interface ForeignKey$instance extends ConventionAnnotatable {
     IsUnique: boolean;
     readonly PrincipalEntityType: EntityType;
     PrincipalKey: Key;
-    get PrincipalToDependent(): Navigation | undefined;
-    set PrincipalToDependent(value: Navigation | undefined);
+    get PrincipalToDependent(): Navigation | null;
+    set PrincipalToDependent(value: Navigation | null);
     Properties: IReadOnlyList_1<Property>;
-    get ReferencingSkipNavigations(): ISet_1<SkipNavigation> | undefined;
-    set ReferencingSkipNavigations(value: ISet_1<SkipNavigation> | undefined);
+    get ReferencingSkipNavigations(): ISet_1<SkipNavigation> | null;
+    set ReferencingSkipNavigations(value: ISet_1<SkipNavigation> | null);
     FindNavigationsFromInHierarchy(entityType: EntityType): IEnumerable_1<Navigation>;
     FindNavigationsTo(entityType: EntityType): IEnumerable_1<Navigation>;
     GetConfigurationSource(): ConfigurationSource;
@@ -2242,13 +2240,13 @@ export interface ForeignKey$instance extends ConventionAnnotatable {
     GetPrincipalToDependentConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetPropertiesConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetReferencingSkipNavigations(): IEnumerable_1<SkipNavigation>;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
     ResolveOtherEntityType(entityType: EntityType): EntityType;
     SetDeleteBehavior(deleteBehavior: Nullable_1<DeleteBehavior>, configurationSource: ConfigurationSource): Nullable_1<DeleteBehavior>;
-    SetDependentToPrincipal(name: string, configurationSource: ConfigurationSource): Navigation | undefined;
-    SetDependentToPrincipal(property: MemberInfo, configurationSource: ConfigurationSource): Navigation | undefined;
-    SetDependentToPrincipal(property: Nullable_1<MemberIdentity>, configurationSource: ConfigurationSource): Navigation | undefined;
+    SetDependentToPrincipal(name: string | null, configurationSource: ConfigurationSource): Navigation | null;
+    SetDependentToPrincipal(property: MemberInfo | null, configurationSource: ConfigurationSource): Navigation | null;
+    SetDependentToPrincipal(property: Nullable_1<MemberIdentity>, configurationSource: ConfigurationSource): Navigation | null;
     SetIsOwnership(ownership: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
     SetIsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
     SetIsRequiredConfigurationSource(configurationSource: Nullable_1<ConfigurationSource>): void;
@@ -2256,9 +2254,9 @@ export interface ForeignKey$instance extends ConventionAnnotatable {
     SetIsRequiredDependentConfigurationSource(configurationSource: Nullable_1<ConfigurationSource>): void;
     SetIsUnique(unique: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
     SetPrincipalEndConfigurationSource(configurationSource: Nullable_1<ConfigurationSource>): void;
-    SetPrincipalToDependent(name: string, configurationSource: ConfigurationSource): Navigation | undefined;
-    SetPrincipalToDependent(property: MemberInfo, configurationSource: ConfigurationSource): Navigation | undefined;
-    SetPrincipalToDependent(property: Nullable_1<MemberIdentity>, configurationSource: ConfigurationSource): Navigation | undefined;
+    SetPrincipalToDependent(name: string | null, configurationSource: ConfigurationSource): Navigation | null;
+    SetPrincipalToDependent(property: MemberInfo | null, configurationSource: ConfigurationSource): Navigation | null;
+    SetPrincipalToDependent(property: Nullable_1<MemberIdentity>, configurationSource: ConfigurationSource): Navigation | null;
     SetProperties(properties: IReadOnlyList_1<Property>, principalKey: Key, configurationSource: Nullable_1<ConfigurationSource>): IReadOnlyList_1<Property>;
     SetRemovedFromModel(): void;
     ToString(): string;
@@ -2277,7 +2275,7 @@ export const ForeignKey: {
     new(dependentProperties: IReadOnlyList_1<Property>, principalKey: Key, dependentEntityType: EntityType, principalEntityType: EntityType, configurationSource: ConfigurationSource): ForeignKey;
     readonly LongestFkChainAllowedLength: int;
     readonly DefaultDeleteBehavior: DeleteBehavior;
-    AreCompatible(principalEntityType: EntityType, dependentEntityType: EntityType, navigationToPrincipal: MemberInfo, navigationToDependent: MemberInfo, dependentProperties: IReadOnlyList_1<IReadOnlyProperty>, principalProperties: IReadOnlyList_1<IReadOnlyProperty>, unique: Nullable_1<System_Internal.Boolean>, shouldThrow: boolean): boolean;
+    AreCompatible(principalEntityType: EntityType, dependentEntityType: EntityType, navigationToPrincipal: MemberInfo | null, navigationToDependent: MemberInfo | null, dependentProperties: IReadOnlyList_1<IReadOnlyProperty> | null, principalProperties: IReadOnlyList_1<IReadOnlyProperty> | null, unique: Nullable_1<System_Internal.Boolean>, shouldThrow: boolean): boolean;
     AreCompatible(principalProperties: IReadOnlyList_1<IReadOnlyProperty>, dependentProperties: IReadOnlyList_1<IReadOnlyProperty>, principalEntityType: IReadOnlyEntityType, dependentEntityType: IReadOnlyEntityType, shouldThrow: boolean): boolean;
 };
 
@@ -2341,8 +2339,8 @@ export interface ForeignKeyConstraintComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: IForeignKeyConstraint, y: IForeignKeyConstraint): int;
-    Equals(x: IForeignKeyConstraint, y: IForeignKeyConstraint): boolean;
+    Compare(x: IForeignKeyConstraint | null, y: IForeignKeyConstraint | null): int;
+    Equals(x: IForeignKeyConstraint | null, y: IForeignKeyConstraint | null): boolean;
     GetHashCode(obj: IForeignKeyConstraint): int;
 }
 
@@ -2369,7 +2367,7 @@ export interface FunctionColumn$instance extends ColumnBase_1$instance<FunctionC
 
 
 export const FunctionColumn: {
-    new(name: string, type: string, function_: StoreFunction, storeTypeMapping: RelationalTypeMapping): FunctionColumn;
+    new(name: string, type: string, function_: StoreFunction, storeTypeMapping: RelationalTypeMapping | null): FunctionColumn;
 };
 
 
@@ -2461,21 +2459,21 @@ export interface Index$instance extends ConventionAnnotatable {
 
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: EntityType;
-    get IsDescending(): IReadOnlyList_1<System_Internal.Boolean> | undefined;
-    set IsDescending(value: IReadOnlyList_1<System_Internal.Boolean> | undefined);
+    get IsDescending(): IReadOnlyList_1<System_Internal.Boolean> | null;
+    set IsDescending(value: IReadOnlyList_1<System_Internal.Boolean> | null);
     readonly IsInModel: boolean;
     readonly IsReadOnly: boolean;
     IsUnique: boolean;
-    readonly Name: string | undefined;
+    readonly Name: string | null;
     readonly Properties: IReadOnlyList_1<Property>;
     DisplayName(): string;
     GetConfigurationSource(): ConfigurationSource;
     GetIsDescendingConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetIsUniqueConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetNullableValueFactory<TKey>(): IDependentKeyValueFactory_1<TKey>;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-    SetIsDescending(descending: IReadOnlyList_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): IReadOnlyList_1<System_Internal.Boolean> | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
+    SetIsDescending(descending: IReadOnlyList_1<System_Internal.Boolean> | null, configurationSource: ConfigurationSource): IReadOnlyList_1<System_Internal.Boolean> | null;
     SetIsUnique(unique: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
     SetRemovedFromModel(): void;
     ToString(): string;
@@ -2509,15 +2507,15 @@ export interface InternalCheckConstraintBuilder$instance extends AnnotatableBuil
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionCheckConstraintBuilder: never;
 
-    CanSetName(name: string, configurationSource: ConfigurationSource): boolean;
-    HasName(name: string, configurationSource: ConfigurationSource): IConventionCheckConstraintBuilder | undefined;
+    CanSetName(name: string | null, configurationSource: ConfigurationSource): boolean;
+    HasName(name: string | null, configurationSource: ConfigurationSource): IConventionCheckConstraintBuilder | null;
 }
 
 
 export const InternalCheckConstraintBuilder: {
     new(checkConstraint: CheckConstraint, modelBuilder: IConventionModelBuilder): InternalCheckConstraintBuilder;
-    CanHaveCheckConstraint(entityType: IConventionEntityType, name: string, sql: string, configurationSource: ConfigurationSource): boolean;
-    HasCheckConstraint(entityType: IConventionEntityType, name: string, sql: string, configurationSource: ConfigurationSource): IConventionCheckConstraint | undefined;
+    CanHaveCheckConstraint(entityType: IConventionEntityType, name: string, sql: string | null, configurationSource: ConfigurationSource): boolean;
+    HasCheckConstraint(entityType: IConventionEntityType, name: string, sql: string | null, configurationSource: ConfigurationSource): IConventionCheckConstraint | null;
 };
 
 
@@ -2538,13 +2536,13 @@ export interface InternalComplexPropertyBuilder$instance extends InternalPropert
 
     readonly ComplexTypeBuilder: InternalComplexTypeBuilder;
     CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalComplexPropertyBuilder | undefined;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalComplexPropertyBuilder | null;
 }
 
 
 export const InternalComplexPropertyBuilder: {
     new(metadata: ComplexProperty, modelBuilder: InternalModelBuilder): InternalComplexPropertyBuilder;
-    Detach(complexProperty: ComplexProperty): ComplexPropertySnapshot | undefined;
+    Detach(complexProperty: ComplexProperty): ComplexPropertySnapshot | null;
 };
 
 
@@ -2564,23 +2562,23 @@ export interface InternalComplexTypeBuilder$instance extends InternalTypeBaseBui
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionComplexTypeBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionTypeBaseBuilder: never;
 
-    CanAddComplexProperty(propertyName: string, propertyType: Type, targetType: Type, collection: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
-    CanAddProperty(propertyType: Type, propertyName: string, configurationSource: ConfigurationSource, checkClrProperty: boolean, skipTypeCheck: boolean): boolean;
+    CanAddComplexProperty(propertyName: string, propertyType: Type | null, targetType: Type | null, collection: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
+    CanAddProperty(propertyType: Type | null, propertyName: string, configurationSource: ConfigurationSource, checkClrProperty: boolean, skipTypeCheck: boolean): boolean;
     CanIgnore(name: string, configurationSource: ConfigurationSource, shouldThrow: boolean): boolean;
     CanIgnore(name: string, configurationSource: ConfigurationSource): boolean;
-    CanSetBaseType(baseComplexType: ComplexType, configurationSource: ConfigurationSource): boolean;
-    CanSetConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): boolean;
-    CanSetServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): boolean;
-    HasBaseType(baseComplexType: ComplexType, configurationSource: ConfigurationSource): InternalComplexTypeBuilder | undefined;
-    HasConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): InternalComplexTypeBuilder | undefined;
-    HasDiscriminator(configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | undefined;
-    HasDiscriminator(name: string, type: Type, configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | undefined;
-    HasDiscriminator(memberInfo: MemberInfo, configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | undefined;
-    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalComplexTypeBuilder | undefined;
-    HasNoDiscriminator(fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | undefined;
-    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalTypeBaseBuilder | undefined;
-    HasServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): InternalComplexTypeBuilder | undefined;
-    Ignore(name: string, configurationSource: ConfigurationSource): InternalComplexTypeBuilder | undefined;
+    CanSetBaseType(baseComplexType: ComplexType | null, configurationSource: ConfigurationSource): boolean;
+    CanSetConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): boolean;
+    CanSetServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): boolean;
+    HasBaseType(baseComplexType: ComplexType | null, configurationSource: ConfigurationSource): InternalComplexTypeBuilder | null;
+    HasConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): InternalComplexTypeBuilder | null;
+    HasDiscriminator(configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | null;
+    HasDiscriminator(name: string | null, type: Type | null, configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | null;
+    HasDiscriminator(memberInfo: MemberInfo, configurationSource: ConfigurationSource): ComplexTypeDiscriminatorBuilder | null;
+    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalComplexTypeBuilder | null;
+    HasNoDiscriminator(fromDataAnnotation?: boolean): IConventionComplexTypeBuilder | null;
+    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalTypeBaseBuilder | null;
+    HasServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): InternalComplexTypeBuilder | null;
+    Ignore(name: string, configurationSource: ConfigurationSource): InternalComplexTypeBuilder | null;
 }
 
 
@@ -2606,19 +2604,19 @@ export interface InternalDbFunctionBuilder$instance extends AnnotatableBuilder_2
 
     CanSetIsBuiltIn(builtIn: boolean, configurationSource: ConfigurationSource): boolean;
     CanSetIsNullable(nullable: boolean, configurationSource: ConfigurationSource): boolean;
-    CanSetName(name: string, configurationSource: ConfigurationSource): boolean;
-    CanSetSchema(schema: string, configurationSource: ConfigurationSource): boolean;
-    CanSetStoreType(storeType: string, configurationSource: ConfigurationSource): boolean;
-    CanSetTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>, configurationSource: ConfigurationSource): boolean;
-    CanSetTypeMapping(returnTypeMapping: RelationalTypeMapping, configurationSource: ConfigurationSource): boolean;
-    HasName(name: string, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | undefined;
+    CanSetName(name: string | null, configurationSource: ConfigurationSource): boolean;
+    CanSetSchema(schema: string | null, configurationSource: ConfigurationSource): boolean;
+    CanSetStoreType(storeType: string | null, configurationSource: ConfigurationSource): boolean;
+    CanSetTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | null, configurationSource: ConfigurationSource): boolean;
+    CanSetTypeMapping(returnTypeMapping: RelationalTypeMapping | null, configurationSource: ConfigurationSource): boolean;
+    HasName(name: string | null, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | null;
     HasParameter(name: string, configurationSource: ConfigurationSource): InternalDbFunctionParameterBuilder;
-    HasSchema(schema: string, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | undefined;
-    HasStoreType(storeType: string, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | undefined;
-    HasTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression>, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | undefined;
-    HasTypeMapping(returnTypeMapping: RelationalTypeMapping, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | undefined;
-    IsBuiltIn(builtIn: boolean, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | undefined;
-    IsNullable(nullable: boolean, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | undefined;
+    HasSchema(schema: string | null, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | null;
+    HasStoreType(storeType: string | null, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | null;
+    HasTranslation(translation: Func_2<IReadOnlyList_1<SqlExpression>, SqlExpression> | null, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | null;
+    HasTypeMapping(returnTypeMapping: RelationalTypeMapping | null, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | null;
+    IsBuiltIn(builtIn: boolean, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | null;
+    IsNullable(nullable: boolean, configurationSource: ConfigurationSource): IConventionDbFunctionBuilder | null;
 }
 
 
@@ -2642,11 +2640,11 @@ export interface InternalDbFunctionParameterBuilder$instance extends Annotatable
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionDbFunctionParameterBuilder: never;
 
     CanSetPropagatesNullability(propagatesNullability: boolean, configurationSource: ConfigurationSource): boolean;
-    CanSetStoreType(storeType: string, configurationSource: ConfigurationSource): boolean;
-    CanSetTypeMapping(typeMapping: RelationalTypeMapping, configurationSource: ConfigurationSource): boolean;
-    HasStoreType(storeType: string, configurationSource: ConfigurationSource): IConventionDbFunctionParameterBuilder | undefined;
-    HasTypeMapping(typeMapping: RelationalTypeMapping, configurationSource: ConfigurationSource): IConventionDbFunctionParameterBuilder | undefined;
-    PropagatesNullability(propagatesNullability: boolean, configurationSource: ConfigurationSource): IConventionDbFunctionParameterBuilder | undefined;
+    CanSetStoreType(storeType: string | null, configurationSource: ConfigurationSource): boolean;
+    CanSetTypeMapping(typeMapping: RelationalTypeMapping | null, configurationSource: ConfigurationSource): boolean;
+    HasStoreType(storeType: string | null, configurationSource: ConfigurationSource): IConventionDbFunctionParameterBuilder | null;
+    HasTypeMapping(typeMapping: RelationalTypeMapping | null, configurationSource: ConfigurationSource): IConventionDbFunctionParameterBuilder | null;
+    PropagatesNullability(propagatesNullability: boolean, configurationSource: ConfigurationSource): IConventionDbFunctionParameterBuilder | null;
 }
 
 
@@ -2670,28 +2668,28 @@ export interface InternalElementTypeBuilder$instance extends AnnotatableBuilder_
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionElementTypeBuilder: never;
 
     readonly This: IConventionElementTypeBuilder;
-    CanSetConversion(converter: ValueConverter, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetConversion(providerClrType: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetConverter(converterType: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetConversion(converter: ValueConverter | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetConversion(providerClrType: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetConverter(converterType: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsUnicode(unicode: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetMaxLength(maxLength: Nullable_1<System_Internal.Int32>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetPrecision(precision: Nullable_1<System_Internal.Int32>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetScale(scale: Nullable_1<System_Internal.Int32>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetTypeMapping(typeMapping: CoreTypeMapping, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetValueComparer(comparer: ValueComparer, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetValueComparer(comparerType: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    HasConversion(converter: ValueConverter, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    HasConversion(providerClrType: Type, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    HasConverter(converterType: Type, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    HasMaxLength(maxLength: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    HasPrecision(precision: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    HasScale(scale: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    HasTypeMapping(typeMapping: CoreTypeMapping, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    HasValueComparer(comparer: ValueComparer, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    HasValueComparer(comparerType: Type, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    IsUnicode(unicode: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
+    CanSetTypeMapping(typeMapping: CoreTypeMapping | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetValueComparer(comparer: ValueComparer | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetValueComparer(comparerType: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    HasConversion(converter: ValueConverter | null, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    HasConversion(providerClrType: Type | null, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    HasConverter(converterType: Type | null, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    HasMaxLength(maxLength: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    HasPrecision(precision: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    HasScale(scale: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    HasTypeMapping(typeMapping: CoreTypeMapping | null, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    HasValueComparer(comparer: ValueComparer | null, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    HasValueComparer(comparerType: Type | null, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    IsUnicode(unicode: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
 }
 
 
@@ -2715,13 +2713,13 @@ export interface InternalEntityTypeBuilder$instance extends InternalTypeBaseBuil
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionEntityTypeBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionTypeBaseBuilder: never;
 
-    CanAddComplexProperty(propertyName: string, propertyType: Type, targetType: Type, collection: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
-    CanAddNavigation(navigationName: string, type: Type, configurationSource: ConfigurationSource): boolean;
-    CanAddProperty(propertyType: Type, propertyName: string, configurationSource: ConfigurationSource, checkClrProperty: boolean, skipTypeCheck: boolean): boolean;
+    CanAddComplexProperty(propertyName: string, propertyType: Type | null, targetType: Type | null, collection: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
+    CanAddNavigation(navigationName: string, type: Type | null, configurationSource: ConfigurationSource): boolean;
+    CanAddProperty(propertyType: Type | null, propertyName: string, configurationSource: ConfigurationSource, checkClrProperty: boolean, skipTypeCheck: boolean): boolean;
     CanHaveIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): boolean;
-    CanHaveNavigation(navigationName: string, type: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanHaveNavigation(navigationName: string, type: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanHaveServiceProperty(memberInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanHaveSkipNavigation(skipNavigationName: string, type: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanHaveSkipNavigation(skipNavigationName: string, type: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanIgnore(name: string, configurationSource: ConfigurationSource, shouldThrow: boolean): boolean;
     CanIgnore(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveForeignKey(foreignKey: ForeignKey, configurationSource: ConfigurationSource): boolean;
@@ -2732,92 +2730,92 @@ export interface InternalEntityTypeBuilder$instance extends InternalTypeBaseBuil
     CanRemoveServiceProperty(serviceProperty: ServiceProperty, configurationSource: ConfigurationSource): boolean;
     CanRemoveSkipNavigation(skipNavigation: SkipNavigation, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanRemoveSkipNavigation(skipNavigation: SkipNavigation, configurationSource: ConfigurationSource): boolean;
-    CanSetBaseType(baseEntityType: EntityType, configurationSource: ConfigurationSource): boolean;
-    CanSetConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): boolean;
+    CanSetBaseType(baseEntityType: EntityType | null, configurationSource: ConfigurationSource): boolean;
+    CanSetConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): boolean;
     CanSetIsOwned(owned: boolean, configurationSource: ConfigurationSource): boolean;
     CanSetPrimaryKey(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): boolean;
-    CanSetPrimaryKey(properties: IReadOnlyList_1<IConventionProperty>, configurationSource: ConfigurationSource): boolean;
-    CanSetQueryFilter(filter: LambdaExpression, configurationSource: ConfigurationSource): boolean;
+    CanSetPrimaryKey(properties: IReadOnlyList_1<IConventionProperty> | null, configurationSource: ConfigurationSource): boolean;
+    CanSetQueryFilter(filter: LambdaExpression | null, configurationSource: ConfigurationSource): boolean;
     CanSetQueryFilter(queryFilter: QueryFilter): boolean;
-    CanSetServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): boolean;
-    CreateForeignKey(principalEntityTypeBuilder: InternalEntityTypeBuilder, dependentProperties: IReadOnlyList_1<Property>, principalKey: Key, propertyBaseName: string, required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    GetTargetEntityTypeBuilder(targetClrType: Type, navigationInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>, targetShouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
-    GetTargetEntityTypeBuilder(targetEntityType: TypeIdentity, navigation: MemberIdentity, configurationSource: Nullable_1<ConfigurationSource>, targetShouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
-    HasBaseType(baseEntityType: Type, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasBaseType(baseEntityTypeName: string, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasBaseType(baseEntityType: EntityType, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): IConventionEntityTypeBuilder | undefined;
-    HasData(data: IEnumerable_1<unknown>, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasDiscriminator(configurationSource: ConfigurationSource): DiscriminatorBuilder | undefined;
-    HasDiscriminator(name: string, type: Type, configurationSource: ConfigurationSource): DiscriminatorBuilder | undefined;
-    HasDiscriminator(memberInfo: MemberInfo, configurationSource: ConfigurationSource): DiscriminatorBuilder | undefined;
-    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
-    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, name: string, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
-    HasIndex(clrMembers: IReadOnlyList_1<MemberInfo>, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
-    HasIndex(clrMembers: IReadOnlyList_1<MemberInfo>, name: string, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
-    HasIndex(properties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
-    HasIndex(properties: IReadOnlyList_1<Property>, name: string, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
-    HasKey(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): InternalKeyBuilder | undefined;
-    HasKey(clrMembers: IReadOnlyList_1<MemberInfo>, configurationSource: ConfigurationSource): InternalKeyBuilder | undefined;
-    HasKey(properties: IReadOnlyList_1<Property>, configurationSource: Nullable_1<ConfigurationSource>): InternalKeyBuilder | undefined;
-    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalTypeBaseBuilder | undefined;
-    HasNoIndex(index: Index, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasNoKey(key: Key, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasNoKey(configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasNoNavigation(navigation: Navigation, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasNoRelationship(foreignKey: ForeignKey, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasNoServiceProperty(serviceProperty: ServiceProperty, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasNoSkipNavigation(skipNavigation: SkipNavigation, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasOwnership(targetEntityTypeName: string, navigationName: string, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: Type, navigationName: string, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: Type, navigationMember: MemberInfo, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: Type, navigation: MemberIdentity, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasOwnership(typeIdentity: TypeIdentity, navigation: MemberIdentity, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: Type, navigationPropertyName: string, inversePropertyName: string, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasOwnership(targetEntityType: Type, navigationMember: MemberInfo, inverseMember: MemberInfo, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasQueryFilter(filter: LambdaExpression, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasQueryFilter(queryFilter: QueryFilter): InternalEntityTypeBuilder | undefined;
-    HasRelationship(principalEntityTypeName: string, propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasRelationship(principalEntityTypeName: string, propertyNames: IReadOnlyList_1<System_Internal.String>, principalKey: Key, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasRelationship(principalClrType: Type, clrMembers: IReadOnlyList_1<MemberInfo>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasRelationship(principalClrType: Type, clrMembers: IReadOnlyList_1<MemberInfo>, principalKey: Key, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasRelationship(principalEntityType: EntityType, dependentProperties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasRelationship(principalEntityType: EntityType, dependentProperties: IReadOnlyList_1<Property>, principalKey: Key, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasRelationship(targetEntityType: EntityType, navigationName: string, configurationSource: ConfigurationSource, targetIsPrincipal?: Nullable_1<System_Internal.Boolean>): InternalForeignKeyBuilder | undefined;
-    HasRelationship(targetEntityType: EntityType, navigationMember: MemberInfo, configurationSource: ConfigurationSource, targetIsPrincipal?: Nullable_1<System_Internal.Boolean>): InternalForeignKeyBuilder | undefined;
-    HasRelationship(targetEntityType: EntityType, navigationName: string, inverseNavigationName: string, configurationSource: ConfigurationSource, setTargetAsPrincipal?: boolean): InternalForeignKeyBuilder | undefined;
-    HasRelationship(targetEntityType: EntityType, navigation: MemberInfo, inverseNavigation: MemberInfo, configurationSource: ConfigurationSource, setTargetAsPrincipal?: boolean): InternalForeignKeyBuilder | undefined;
-    HasRelationship(principalEntityType: EntityType, configurationSource: ConfigurationSource, required?: Nullable_1<System_Internal.Boolean>, propertyBaseName?: string): InternalForeignKeyBuilder | undefined;
-    HasRelationship(principalEntityType: EntityType, principalKey: Key, configurationSource: ConfigurationSource, required?: Nullable_1<System_Internal.Boolean>, propertyBaseName?: string): InternalForeignKeyBuilder | undefined;
-    HasServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): IConventionEntityTypeBuilder | undefined;
-    HasSkipNavigation(navigation: MemberIdentity, targetEntityType: EntityType, navigationType: Type, inverseNavigation: MemberIdentity, inverseNavigationType: Type, configurationSource: ConfigurationSource, collections?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>): InternalSkipNavigationBuilder | undefined;
-    HasSkipNavigation(navigation: MemberInfo, targetEntityType: EntityType, configurationSource: Nullable_1<ConfigurationSource>, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>): InternalSkipNavigationBuilder | undefined;
-    HasSkipNavigation(navigation: MemberIdentity, targetEntityType: EntityType, configurationSource: Nullable_1<ConfigurationSource>, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>): InternalSkipNavigationBuilder | undefined;
-    HasSkipNavigation(navigation: MemberIdentity, targetEntityType: EntityType, navigationType: Type, configurationSource: Nullable_1<ConfigurationSource>, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>): InternalSkipNavigationBuilder | undefined;
-    HasTrigger(modelName: string, configurationSource: ConfigurationSource): InternalTriggerBuilder | undefined;
-    Ignore(name: string, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    IsOwned(owned: boolean, configurationSource: ConfigurationSource, futureOwnership?: ForeignKey): InternalEntityTypeBuilder | undefined;
+    CanSetServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): boolean;
+    CreateForeignKey(principalEntityTypeBuilder: InternalEntityTypeBuilder, dependentProperties: IReadOnlyList_1<Property> | null, principalKey: Key | null, propertyBaseName: string | null, required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    GetTargetEntityTypeBuilder(targetClrType: Type, navigationInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>, targetShouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | null;
+    GetTargetEntityTypeBuilder(targetEntityType: TypeIdentity, navigation: MemberIdentity, configurationSource: Nullable_1<ConfigurationSource>, targetShouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | null;
+    HasBaseType(baseEntityType: Type | null, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasBaseType(baseEntityTypeName: string | null, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasBaseType(baseEntityType: EntityType | null, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): IConventionEntityTypeBuilder | null;
+    HasData(data: IEnumerable_1<JsValue>, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasDiscriminator(configurationSource: ConfigurationSource): DiscriminatorBuilder | null;
+    HasDiscriminator(name: string | null, type: Type | null, configurationSource: ConfigurationSource): DiscriminatorBuilder | null;
+    HasDiscriminator(memberInfo: MemberInfo, configurationSource: ConfigurationSource): DiscriminatorBuilder | null;
+    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): InternalIndexBuilder | null;
+    HasIndex(propertyNames: IReadOnlyList_1<System_Internal.String>, name: string, configurationSource: ConfigurationSource): InternalIndexBuilder | null;
+    HasIndex(clrMembers: IReadOnlyList_1<MemberInfo>, configurationSource: ConfigurationSource): InternalIndexBuilder | null;
+    HasIndex(clrMembers: IReadOnlyList_1<MemberInfo>, name: string, configurationSource: ConfigurationSource): InternalIndexBuilder | null;
+    HasIndex(properties: IReadOnlyList_1<Property> | null, configurationSource: ConfigurationSource): InternalIndexBuilder | null;
+    HasIndex(properties: IReadOnlyList_1<Property> | null, name: string, configurationSource: ConfigurationSource): InternalIndexBuilder | null;
+    HasKey(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): InternalKeyBuilder | null;
+    HasKey(clrMembers: IReadOnlyList_1<MemberInfo>, configurationSource: ConfigurationSource): InternalKeyBuilder | null;
+    HasKey(properties: IReadOnlyList_1<Property>, configurationSource: Nullable_1<ConfigurationSource>): InternalKeyBuilder | null;
+    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalTypeBaseBuilder | null;
+    HasNoIndex(index: Index, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasNoKey(key: Key, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasNoKey(configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasNoNavigation(navigation: Navigation, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasNoRelationship(foreignKey: ForeignKey, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasNoServiceProperty(serviceProperty: ServiceProperty, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasNoSkipNavigation(skipNavigation: SkipNavigation, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasOwnership(targetEntityTypeName: string, navigationName: string, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: Type, navigationName: string, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: Type, navigationMember: MemberInfo, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: Type, navigation: MemberIdentity, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasOwnership(typeIdentity: TypeIdentity, navigation: MemberIdentity, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: Type, navigationPropertyName: string, inversePropertyName: string | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasOwnership(targetEntityType: Type, navigationMember: MemberInfo, inverseMember: MemberInfo | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasQueryFilter(filter: LambdaExpression | null, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasQueryFilter(queryFilter: QueryFilter): InternalEntityTypeBuilder | null;
+    HasRelationship(principalEntityTypeName: string, propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasRelationship(principalEntityTypeName: string, propertyNames: IReadOnlyList_1<System_Internal.String>, principalKey: Key, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasRelationship(principalClrType: Type, clrMembers: IReadOnlyList_1<MemberInfo>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasRelationship(principalClrType: Type, clrMembers: IReadOnlyList_1<MemberInfo>, principalKey: Key, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasRelationship(principalEntityType: EntityType, dependentProperties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasRelationship(principalEntityType: EntityType, dependentProperties: IReadOnlyList_1<Property>, principalKey: Key | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasRelationship(targetEntityType: EntityType, navigationName: string | null, configurationSource: ConfigurationSource, targetIsPrincipal?: Nullable_1<System_Internal.Boolean>): InternalForeignKeyBuilder | null;
+    HasRelationship(targetEntityType: EntityType, navigationMember: MemberInfo | null, configurationSource: ConfigurationSource, targetIsPrincipal?: Nullable_1<System_Internal.Boolean>): InternalForeignKeyBuilder | null;
+    HasRelationship(targetEntityType: EntityType, navigationName: string | null, inverseNavigationName: string | null, configurationSource: ConfigurationSource, setTargetAsPrincipal?: boolean): InternalForeignKeyBuilder | null;
+    HasRelationship(targetEntityType: EntityType, navigation: MemberInfo | null, inverseNavigation: MemberInfo | null, configurationSource: ConfigurationSource, setTargetAsPrincipal?: boolean): InternalForeignKeyBuilder | null;
+    HasRelationship(principalEntityType: EntityType, configurationSource: ConfigurationSource, required?: Nullable_1<System_Internal.Boolean>, propertyBaseName?: string | null): InternalForeignKeyBuilder | null;
+    HasRelationship(principalEntityType: EntityType, principalKey: Key, configurationSource: ConfigurationSource, required?: Nullable_1<System_Internal.Boolean>, propertyBaseName?: string | null): InternalForeignKeyBuilder | null;
+    HasServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): IConventionEntityTypeBuilder | null;
+    HasSkipNavigation(navigation: MemberIdentity, targetEntityType: EntityType, navigationType: Type | null, inverseNavigation: MemberIdentity, inverseNavigationType: Type | null, configurationSource: ConfigurationSource, collections?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>): InternalSkipNavigationBuilder | null;
+    HasSkipNavigation(navigation: MemberInfo, targetEntityType: EntityType, configurationSource: Nullable_1<ConfigurationSource>, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>): InternalSkipNavigationBuilder | null;
+    HasSkipNavigation(navigation: MemberIdentity, targetEntityType: EntityType, configurationSource: Nullable_1<ConfigurationSource>, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>): InternalSkipNavigationBuilder | null;
+    HasSkipNavigation(navigation: MemberIdentity, targetEntityType: EntityType, navigationType: Type | null, configurationSource: Nullable_1<ConfigurationSource>, collection?: Nullable_1<System_Internal.Boolean>, onDependent?: Nullable_1<System_Internal.Boolean>): InternalSkipNavigationBuilder | null;
+    HasTrigger(modelName: string, configurationSource: ConfigurationSource): InternalTriggerBuilder | null;
+    Ignore(name: string, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    IsOwned(owned: boolean, configurationSource: ConfigurationSource, futureOwnership?: ForeignKey | null): InternalEntityTypeBuilder | null;
     Navigation(memberInfo: MemberInfo): IMutableNavigationBase;
     Navigation(navigationName: string): IMutableNavigationBase;
-    PrimaryKey(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): InternalKeyBuilder | undefined;
-    PrimaryKey(clrMembers: IReadOnlyList_1<MemberInfo>, configurationSource: ConfigurationSource): InternalKeyBuilder | undefined;
-    PrimaryKey(properties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): InternalKeyBuilder | undefined;
+    PrimaryKey(propertyNames: IReadOnlyList_1<System_Internal.String> | null, configurationSource: ConfigurationSource): InternalKeyBuilder | null;
+    PrimaryKey(clrMembers: IReadOnlyList_1<MemberInfo> | null, configurationSource: ConfigurationSource): InternalKeyBuilder | null;
+    PrimaryKey(properties: IReadOnlyList_1<Property> | null, configurationSource: ConfigurationSource): InternalKeyBuilder | null;
     RemoveMembersInHierarchy(propertyName: string, configurationSource: ConfigurationSource): void;
-    ServiceProperty(memberInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): InternalServicePropertyBuilder | undefined;
-    ServiceProperty(serviceType: Type, memberInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): InternalServicePropertyBuilder | undefined;
+    ServiceProperty(memberInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): InternalServicePropertyBuilder | null;
+    ServiceProperty(serviceType: Type, memberInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): InternalServicePropertyBuilder | null;
     ShouldReuniquifyTemporaryProperties(foreignKey: ForeignKey): boolean;
-    UpdateForeignKey(foreignKey: ForeignKey, dependentProperties: IReadOnlyList_1<Property>, principalKey: Key, propertyBaseName: string, isRequired: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalForeignKeyBuilder | undefined;
+    UpdateForeignKey(foreignKey: ForeignKey, dependentProperties: IReadOnlyList_1<Property> | null, principalKey: Key | null, propertyBaseName: string | null, isRequired: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalForeignKeyBuilder | null;
 }
 
 
 export const InternalEntityTypeBuilder: {
     new(metadata: EntityType, modelBuilder: InternalModelBuilder): InternalEntityTypeBuilder;
-    DetachAllMembers(entityType: EntityType): EntityType_Snapshot | undefined;
+    DetachAllMembers(entityType: EntityType): EntityType_Snapshot | null;
     DetachIndex(indexToDetach: Index): InternalIndexBuilder;
-    DetachIndexes(indexesToDetach: IEnumerable_1<Index>): List_1<InternalIndexBuilder> | undefined;
+    DetachIndexes(indexesToDetach: IEnumerable_1<Index>): List_1<InternalIndexBuilder> | null;
     DetachKey(keyToDetach: Key): ValueTuple_2<InternalKeyBuilder, Nullable_1<ConfigurationSource>>;
-    DetachKeys(keysToDetach: IEnumerable_1<Key>): List_1<ValueTuple_2<InternalKeyBuilder, Nullable_1<ConfigurationSource>>> | undefined;
+    DetachKeys(keysToDetach: IEnumerable_1<Key>): List_1<ValueTuple_2<InternalKeyBuilder, Nullable_1<ConfigurationSource>>> | null;
     DetachRelationship(foreignKey: ForeignKey, includeOwnedSharedType: boolean): RelationshipSnapshot;
     DetachRelationship(foreignKey: ForeignKey): RelationshipSnapshot;
 };
@@ -2839,7 +2837,7 @@ export interface InternalEntityTypeMappingFragmentBuilder$instance extends Annot
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionEntityTypeMappingFragmentBuilder: never;
 
     CanExcludeTableFromMigrations(excludedFromMigrations: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): boolean;
-    ExcludeTableFromMigrations(excludedFromMigrations: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalEntityTypeMappingFragmentBuilder | undefined;
+    ExcludeTableFromMigrations(excludedFromMigrations: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalEntityTypeMappingFragmentBuilder | null;
 }
 
 
@@ -2862,59 +2860,59 @@ export interface InternalForeignKeyBuilder$instance extends AnnotatableBuilder_2
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionForeignKeyBuilder: never;
 
-    Attach(entityTypeBuilder: InternalEntityTypeBuilder): InternalForeignKeyBuilder | undefined;
-    CanInvert(newForeignKeyProperties: IReadOnlyList_1<Property>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    Attach(entityTypeBuilder: InternalEntityTypeBuilder): InternalForeignKeyBuilder | null;
+    CanInvert(newForeignKeyProperties: IReadOnlyList_1<Property> | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetDeleteBehavior(deleteBehavior: Nullable_1<DeleteBehavior>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetEntityTypes(principalEntityType: EntityType, dependentEntityType: EntityType, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetEntityTypes(principalEntityType: EntityType, dependentEntityType: EntityType, configurationSource: Nullable_1<ConfigurationSource>, shouldResetToPrincipal: boolean, shouldResetToDependent: boolean): boolean;
-    CanSetForeignKey(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetForeignKey(properties: IReadOnlyList_1<Property>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetForeignKey(propertyNames: IReadOnlyList_1<System_Internal.String> | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetForeignKey(properties: IReadOnlyList_1<Property> | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsOwnership(ownership: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsRequiredDependent(required: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsUnique(unique: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetNavigation(property: MemberInfo, pointsToPrincipal: boolean, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetNavigation(name: string, pointsToPrincipal: boolean, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetNavigations(navigationToPrincipal: MemberInfo, navigationToDependent: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetNavigations(navigationToPrincipalName: string, navigationToDependentName: string, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetPrincipalKey(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetPrincipalKey(properties: IReadOnlyList_1<Property>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    DependentEntityType(dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasEntityTypes(principalEntityType: EntityType, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasForeignKey(properties: IReadOnlyList_1<MemberInfo>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasForeignKey(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasForeignKey(properties: IReadOnlyList_1<MemberInfo>, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasForeignKey(propertyNames: IReadOnlyList_1<System_Internal.String>, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasForeignKey(properties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasForeignKey(properties: IReadOnlyList_1<Property>, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasNavigation(name: string, pointsToPrincipal: boolean, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasNavigation(property: MemberInfo, pointsToPrincipal: boolean, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasNavigations(navigationToPrincipalName: string, navigationToDependentName: string, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasNavigations(navigationToPrincipal: MemberInfo, navigationToDependent: MemberInfo, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasNavigations(navigationToPrincipal: Nullable_1<MemberIdentity>, navigationToDependent: Nullable_1<MemberIdentity>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasNavigations(navigationToPrincipalName: string, navigationToDependentName: string, principalEntityType: EntityType, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasNavigations(navigationToPrincipal: MemberInfo, navigationToDependent: MemberInfo, principalEntityType: EntityType, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasPrincipalKey(members: IReadOnlyList_1<MemberInfo>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasPrincipalKey(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    HasPrincipalKey(properties: IReadOnlyList_1<Property>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    IsOwnership(ownership: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    IsRequiredDependent(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    IsUnique(unique: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    MakeDeclaringTypeShared(configurationSource: Nullable_1<ConfigurationSource>): InternalForeignKeyBuilder | undefined;
-    OnDelete(deleteBehavior: Nullable_1<DeleteBehavior>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    PrincipalEntityType(principalEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | undefined;
-    ReuniquifyImplicitProperties(force: boolean): InternalForeignKeyBuilder | undefined;
+    CanSetNavigation(property: MemberInfo | null, pointsToPrincipal: boolean, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetNavigation(name: string | null, pointsToPrincipal: boolean, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetNavigations(navigationToPrincipal: MemberInfo | null, navigationToDependent: MemberInfo | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetNavigations(navigationToPrincipalName: string | null, navigationToDependentName: string | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetPrincipalKey(propertyNames: IReadOnlyList_1<System_Internal.String> | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetPrincipalKey(properties: IReadOnlyList_1<Property> | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    DependentEntityType(dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasEntityTypes(principalEntityType: EntityType, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasForeignKey(properties: IReadOnlyList_1<MemberInfo> | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasForeignKey(propertyNames: IReadOnlyList_1<System_Internal.String> | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasForeignKey(properties: IReadOnlyList_1<MemberInfo> | null, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasForeignKey(propertyNames: IReadOnlyList_1<System_Internal.String> | null, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasForeignKey(properties: IReadOnlyList_1<Property> | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasForeignKey(properties: IReadOnlyList_1<Property> | null, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasNavigation(name: string | null, pointsToPrincipal: boolean, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasNavigation(property: MemberInfo | null, pointsToPrincipal: boolean, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasNavigations(navigationToPrincipalName: string | null, navigationToDependentName: string | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasNavigations(navigationToPrincipal: MemberInfo | null, navigationToDependent: MemberInfo | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasNavigations(navigationToPrincipal: Nullable_1<MemberIdentity>, navigationToDependent: Nullable_1<MemberIdentity>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasNavigations(navigationToPrincipalName: string | null, navigationToDependentName: string | null, principalEntityType: EntityType, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasNavigations(navigationToPrincipal: MemberInfo | null, navigationToDependent: MemberInfo | null, principalEntityType: EntityType, dependentEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasPrincipalKey(members: IReadOnlyList_1<MemberInfo> | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasPrincipalKey(propertyNames: IReadOnlyList_1<System_Internal.String> | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    HasPrincipalKey(properties: IReadOnlyList_1<Property> | null, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    IsOwnership(ownership: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    IsRequiredDependent(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    IsUnique(unique: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    MakeDeclaringTypeShared(configurationSource: Nullable_1<ConfigurationSource>): InternalForeignKeyBuilder | null;
+    OnDelete(deleteBehavior: Nullable_1<DeleteBehavior>, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    PrincipalEntityType(principalEntityType: EntityType, configurationSource: ConfigurationSource): InternalForeignKeyBuilder | null;
+    ReuniquifyImplicitProperties(force: boolean): InternalForeignKeyBuilder | null;
 }
 
 
 export const InternalForeignKeyBuilder: {
     new(foreignKey: ForeignKey, modelBuilder: InternalModelBuilder): InternalForeignKeyBuilder;
-    AreCompatible(principalEntityType: EntityType, dependentEntityType: EntityType, navigationToPrincipal: MemberInfo, navigationToDependent: MemberInfo, dependentProperties: IReadOnlyList_1<Property>, principalProperties: IReadOnlyList_1<Property>, isUnique: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    AreCompatible(navigationToPrincipalProperty: MemberInfo, navigationToDependentProperty: MemberInfo, principalEntityType: EntityType, dependentEntityType: EntityType, shouldThrow: boolean, shouldInvert: Nullable_1<System_Internal.Boolean>, shouldBeUnique: Nullable_1<System_Internal.Boolean>): boolean;
-    FindCompatibleClrMember(navigationName: string, sourceType: EntityType, targetType: EntityType, shouldThrow?: boolean): MemberInfo | undefined;
-    FindCurrentForeignKeyBuilder(principalEntityType: EntityType, dependentEntityType: EntityType, navigationToPrincipal: Nullable_1<MemberIdentity>, navigationToDependent: Nullable_1<MemberIdentity>, dependentProperties: IReadOnlyList_1<Property>, principalProperties: IReadOnlyList_1<Property>): InternalForeignKeyBuilder | undefined;
-    ThrowForConflictingNavigation(foreignKey: IReadOnlyForeignKey, principalEntityType: IReadOnlyEntityType, dependentEntityType: IReadOnlyEntityType, navigationToDependent: string, navigationToPrincipal: string): void;
+    AreCompatible(principalEntityType: EntityType, dependentEntityType: EntityType, navigationToPrincipal: MemberInfo | null, navigationToDependent: MemberInfo | null, dependentProperties: IReadOnlyList_1<Property> | null, principalProperties: IReadOnlyList_1<Property> | null, isUnique: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    AreCompatible(navigationToPrincipalProperty: MemberInfo | null, navigationToDependentProperty: MemberInfo | null, principalEntityType: EntityType, dependentEntityType: EntityType, shouldThrow: boolean, shouldInvert: Nullable_1<System_Internal.Boolean>, shouldBeUnique: Nullable_1<System_Internal.Boolean>): boolean;
+    FindCompatibleClrMember(navigationName: string, sourceType: EntityType, targetType: EntityType, shouldThrow?: boolean): MemberInfo | null;
+    FindCurrentForeignKeyBuilder(principalEntityType: EntityType, dependentEntityType: EntityType, navigationToPrincipal: Nullable_1<MemberIdentity>, navigationToDependent: Nullable_1<MemberIdentity>, dependentProperties: IReadOnlyList_1<Property> | null, principalProperties: IReadOnlyList_1<Property> | null): InternalForeignKeyBuilder | null;
+    ThrowForConflictingNavigation(foreignKey: IReadOnlyForeignKey, principalEntityType: IReadOnlyEntityType, dependentEntityType: IReadOnlyEntityType, navigationToDependent: string | null, navigationToPrincipal: string | null): void;
     ThrowForConflictingNavigation(foreignKey: IReadOnlyForeignKey, newInverseName: string, newToPrincipal: boolean): void;
 };
 
@@ -2933,11 +2931,11 @@ export interface InternalIndexBuilder$instance extends AnnotatableBuilder_2<Inde
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionIndexBuilder: never;
 
-    Attach(entityTypeBuilder: InternalEntityTypeBuilder): InternalIndexBuilder | undefined;
-    CanSetIsDescending(descending: IReadOnlyList_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    Attach(entityTypeBuilder: InternalEntityTypeBuilder): InternalIndexBuilder | null;
+    CanSetIsDescending(descending: IReadOnlyList_1<System_Internal.Boolean> | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsUnique(unique: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    IsDescending(descending: IReadOnlyList_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
-    IsUnique(unique: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalIndexBuilder | undefined;
+    IsDescending(descending: IReadOnlyList_1<System_Internal.Boolean> | null, configurationSource: ConfigurationSource): InternalIndexBuilder | null;
+    IsUnique(unique: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalIndexBuilder | null;
 }
 
 
@@ -2960,7 +2958,7 @@ export interface InternalKeyBuilder$instance extends AnnotatableBuilder_2<Key, I
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionKeyBuilder: never;
 
-    Attach(entityTypeBuilder: InternalEntityTypeBuilder, primaryKeyConfigurationSource: Nullable_1<ConfigurationSource>): InternalKeyBuilder | undefined;
+    Attach(entityTypeBuilder: InternalEntityTypeBuilder, primaryKeyConfigurationSource: Nullable_1<ConfigurationSource>): InternalKeyBuilder | null;
 }
 
 
@@ -2989,24 +2987,24 @@ export interface InternalModelBuilder$instance extends AnnotatableBuilder_2<Mode
     CanIgnore(name: string, configurationSource: ConfigurationSource): boolean;
     CanRemoveEntityType(entityType: EntityType, configurationSource: ConfigurationSource): boolean;
     CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): boolean;
-    CanSetEmbeddedDiscriminatorName(name: string, configurationSource: ConfigurationSource): boolean;
+    CanSetEmbeddedDiscriminatorName(name: string | null, configurationSource: ConfigurationSource): boolean;
     CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): boolean;
     Complex(type: Type, configurationSource: ConfigurationSource): InternalModelBuilder;
-    Entity(name: string, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
-    Entity(type: Type, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
-    Entity(name: string, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    Entity(type: Type, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
-    HasEmbeddedDiscriminatorName(name: string, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
-    HasNoEntityType(entityType: EntityType, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
-    Ignore(type: Type, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
-    Ignore(name: string, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
+    Entity(name: string, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | null;
+    Entity(type: Type, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | null;
+    Entity(name: string, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    Entity(type: Type, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): InternalEntityTypeBuilder | null;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): InternalModelBuilder | null;
+    HasEmbeddedDiscriminatorName(name: string | null, configurationSource: ConfigurationSource): InternalModelBuilder | null;
+    HasNoEntityType(entityType: EntityType, configurationSource: ConfigurationSource): InternalModelBuilder | null;
+    Ignore(type: Type, configurationSource: ConfigurationSource): InternalModelBuilder | null;
+    Ignore(name: string, configurationSource: ConfigurationSource): InternalModelBuilder | null;
     IsIgnored(type: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     IsIgnored(name: string, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    Owned(type: Type, configurationSource: ConfigurationSource): IConventionOwnedEntityTypeBuilder | undefined;
-    RemoveImplicitJoinEntity(joinEntityType: EntityType, configurationSource?: ConfigurationSource): InternalModelBuilder | undefined;
-    SharedTypeEntity(name: string, type: Type, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalModelBuilder | undefined;
+    Owned(type: Type, configurationSource: ConfigurationSource): IConventionOwnedEntityTypeBuilder | null;
+    RemoveImplicitJoinEntity(joinEntityType: EntityType, configurationSource?: ConfigurationSource): InternalModelBuilder | null;
+    SharedTypeEntity(name: string, type: Type | null, configurationSource: ConfigurationSource, shouldBeOwned?: Nullable_1<System_Internal.Boolean>): InternalEntityTypeBuilder | null;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalModelBuilder | null;
 }
 
 
@@ -3030,16 +3028,16 @@ export interface InternalNavigationBuilder$instance extends InternalPropertyBase
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionNavigationBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionPropertyBaseBuilder_1: never;
 
-    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalNavigationBuilder | undefined;
+    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalNavigationBuilder | null;
     CanSetAutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): boolean;
     CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): boolean;
     CanSetLazyLoadingEnabled(lazyLoadingEnabled: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): boolean;
-    EnableLazyLoading(lazyLoadingEnabled: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalNavigationBuilder | undefined;
-    HasField(fieldName: string, configurationSource: ConfigurationSource): InternalNavigationBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, configurationSource: ConfigurationSource): InternalNavigationBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, configurationSource: ConfigurationSource): IConventionNavigationBuilder;
-    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalNavigationBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalNavigationBuilder | undefined;
+    EnableLazyLoading(lazyLoadingEnabled: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalNavigationBuilder | null;
+    HasField(fieldName: string | null, configurationSource: ConfigurationSource): InternalNavigationBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, configurationSource: ConfigurationSource): InternalNavigationBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, configurationSource: ConfigurationSource): IConventionNavigationBuilder;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalNavigationBuilder | null;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalNavigationBuilder | null;
     UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): IConventionNavigationBuilder;
 }
 
@@ -3079,12 +3077,12 @@ export interface InternalPropertyBaseBuilder_2$instance<TBuilder extends IConven
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
 
     readonly This: TBuilder;
-    CanSetField(fieldName: string, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetField(fieldInfo: FieldInfo, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetField(fieldName: string | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetField(fieldInfo: FieldInfo | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    HasField(fieldName: string, configurationSource: ConfigurationSource): TBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, configurationSource: ConfigurationSource): TBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): TBuilder | undefined;
+    HasField(fieldName: string | null, configurationSource: ConfigurationSource): TBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, configurationSource: ConfigurationSource): TBuilder | null;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): TBuilder | null;
 }
 
 
@@ -3106,55 +3104,55 @@ export interface InternalPropertyBuilder$instance extends InternalPropertyBaseBu
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionPropertyBaseBuilder_1: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionPropertyBuilder: never;
 
-    AfterSave(behavior: Nullable_1<PropertySaveBehavior>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    Attach(typeBaseBuilder: InternalTypeBaseBuilder): InternalPropertyBuilder | undefined;
-    BeforeSave(behavior: Nullable_1<PropertySaveBehavior>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
+    AfterSave(behavior: Nullable_1<PropertySaveBehavior>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    Attach(typeBaseBuilder: InternalTypeBaseBuilder): InternalPropertyBuilder | null;
+    BeforeSave(behavior: Nullable_1<PropertySaveBehavior>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
     CanSetAfterSave(behavior: Nullable_1<PropertySaveBehavior>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetBeforeSave(behavior: Nullable_1<PropertySaveBehavior>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetConversion(converter: ValueConverter, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetConversion(providerClrType: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetConverter(converterType: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetElementType(elementType: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetConversion(converter: ValueConverter | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetConversion(providerClrType: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetConverter(converterType: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetElementType(elementType: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsConcurrencyToken(concurrencyToken: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetIsUnicode(unicode: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetMaxLength(maxLength: Nullable_1<System_Internal.Int32>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetPrecision(precision: Nullable_1<System_Internal.Int32>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetProviderValueComparer(comparer: ValueComparer, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetProviderValueComparer(comparerType: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetProviderValueComparer(comparer: ValueComparer | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetProviderValueComparer(comparerType: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetScale(scale: Nullable_1<System_Internal.Int32>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetSentinel(sentinel: unknown, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetTypeMapping(typeMapping: CoreTypeMapping, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetValueComparer(comparer: ValueComparer, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetValueComparer(comparerType: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetSentinel(sentinel: JsValue | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetTypeMapping(typeMapping: CoreTypeMapping | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetValueComparer(comparer: ValueComparer | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetValueComparer(comparerType: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetValueGenerated(valueGenerated: Nullable_1<ValueGenerated>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetValueGenerator(factory: Func_3<IProperty, IEntityType, ValueGenerator>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetValueGeneratorFactory(factory: Type, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    HasConversion(converter: ValueConverter, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasConversion(providerClrType: Type, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasConverter(converterType: Type, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasField(fieldName: string, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, configurationSource: ConfigurationSource): IConventionPropertyBuilder;
-    HasMaxLength(maxLength: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasPrecision(precision: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasProviderValueComparer(comparer: ValueComparer, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasProviderValueComparer(comparerType: Type, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasScale(scale: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasSentinel(sentinel: unknown, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasTypeMapping(typeMapping: CoreTypeMapping, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasValueComparer(comparer: ValueComparer, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasValueComparer(comparerType: Type, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasValueGenerator(valueGeneratorType: Type, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    HasValueGeneratorFactory(factory: Type, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    IsConcurrencyToken(concurrencyToken: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    IsUnicode(unicode: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    SetElementType(elementType: Type, configurationSource: ConfigurationSource): InternalElementTypeBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
+    CanSetValueGenerator(factory: Func_3<IProperty, IEntityType, ValueGenerator> | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetValueGeneratorFactory(factory: Type | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    HasConversion(converter: ValueConverter | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasConversion(providerClrType: Type | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasConverter(converterType: Type | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasField(fieldName: string | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, configurationSource: ConfigurationSource): IConventionPropertyBuilder;
+    HasMaxLength(maxLength: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasPrecision(precision: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasProviderValueComparer(comparer: ValueComparer | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasProviderValueComparer(comparerType: Type | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasScale(scale: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasSentinel(sentinel: JsValue | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasTypeMapping(typeMapping: CoreTypeMapping | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasValueComparer(comparer: ValueComparer | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasValueComparer(comparerType: Type | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasValueGenerator(valueGeneratorType: Type | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasValueGenerator(factory: Func_3<IProperty, ITypeBase, ValueGenerator> | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    HasValueGeneratorFactory(factory: Type | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    IsConcurrencyToken(concurrencyToken: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    IsRequired(required: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    IsUnicode(unicode: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    SetElementType(elementType: Type | null, configurationSource: ConfigurationSource): InternalElementTypeBuilder | null;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
     UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): IConventionPropertyBuilder;
-    ValueGenerated(valueGenerated: Nullable_1<ValueGenerated>, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
+    ValueGenerated(valueGenerated: Nullable_1<ValueGenerated>, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
 }
 
 
@@ -3178,8 +3176,8 @@ export interface InternalRelationalPropertyOverridesBuilder$instance extends Ann
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionRelationalPropertyOverridesBuilder: never;
 
-    CanSetColumnName(name: string, configurationSource: ConfigurationSource): boolean;
-    HasColumnName(name: string, configurationSource: ConfigurationSource): InternalRelationalPropertyOverridesBuilder | undefined;
+    CanSetColumnName(name: string | null, configurationSource: ConfigurationSource): boolean;
+    HasColumnName(name: string | null, configurationSource: ConfigurationSource): InternalRelationalPropertyOverridesBuilder | null;
 }
 
 
@@ -3207,13 +3205,13 @@ export interface InternalSequenceBuilder$instance extends AnnotatableBuilder_2<S
     CanSetMax(maximum: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): boolean;
     CanSetMin(minimum: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): boolean;
     CanSetStartsAt(startValue: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): boolean;
-    CanSetType(type: Type, configurationSource: ConfigurationSource): boolean;
-    HasMax(maximum: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
-    HasMin(minimum: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
-    HasType(type: Type, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
-    IncrementsBy(increment: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
-    IsCyclic(cyclic: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
-    StartsAt(startValue: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | undefined;
+    CanSetType(type: Type | null, configurationSource: ConfigurationSource): boolean;
+    HasMax(maximum: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | null;
+    HasMin(minimum: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | null;
+    HasType(type: Type | null, configurationSource: ConfigurationSource): IConventionSequenceBuilder | null;
+    IncrementsBy(increment: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | null;
+    IsCyclic(cyclic: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | null;
+    StartsAt(startValue: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): IConventionSequenceBuilder | null;
 }
 
 
@@ -3237,13 +3235,13 @@ export interface InternalServicePropertyBuilder$instance extends InternalPropert
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionPropertyBaseBuilder_1: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionServicePropertyBuilder: never;
 
-    Attach(entityTypeBuilder: InternalEntityTypeBuilder): InternalServicePropertyBuilder | undefined;
-    CanSetParameterBinding(parameterBinding: ServiceParameterBinding, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    HasField(fieldName: string, configurationSource: ConfigurationSource): InternalServicePropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, configurationSource: ConfigurationSource): InternalServicePropertyBuilder | undefined;
-    HasField(fieldInfo: FieldInfo, configurationSource: ConfigurationSource): IConventionServicePropertyBuilder;
-    HasParameterBinding(parameterBinding: ServiceParameterBinding, configurationSource: ConfigurationSource): InternalServicePropertyBuilder | undefined;
-    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalServicePropertyBuilder | undefined;
+    Attach(entityTypeBuilder: InternalEntityTypeBuilder): InternalServicePropertyBuilder | null;
+    CanSetParameterBinding(parameterBinding: ServiceParameterBinding | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    HasField(fieldName: string | null, configurationSource: ConfigurationSource): InternalServicePropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, configurationSource: ConfigurationSource): InternalServicePropertyBuilder | null;
+    HasField(fieldInfo: FieldInfo | null, configurationSource: ConfigurationSource): IConventionServicePropertyBuilder;
+    HasParameterBinding(parameterBinding: ServiceParameterBinding | null, configurationSource: ConfigurationSource): InternalServicePropertyBuilder | null;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalServicePropertyBuilder | null;
     UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): IConventionServicePropertyBuilder;
 }
 
@@ -3269,15 +3267,15 @@ export interface InternalSkipNavigationBuilder$instance extends InternalProperty
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionPropertyBaseBuilder_1: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionSkipNavigationBuilder: never;
 
-    Attach(entityTypeBuilder?: InternalEntityTypeBuilder, targetEntityType?: EntityType, inverseBuilder?: InternalSkipNavigationBuilder): InternalSkipNavigationBuilder | undefined;
-    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalSkipNavigationBuilder | undefined;
+    Attach(entityTypeBuilder?: InternalEntityTypeBuilder | null, targetEntityType?: EntityType | null, inverseBuilder?: InternalSkipNavigationBuilder | null): InternalSkipNavigationBuilder | null;
+    AutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalSkipNavigationBuilder | null;
     CanSetAutoInclude(autoInclude: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): boolean;
-    CanSetForeignKey(foreignKey: ForeignKey, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanSetInverse(inverse: SkipNavigation, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetForeignKey(foreignKey: ForeignKey | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanSetInverse(inverse: SkipNavigation | null, configurationSource: Nullable_1<ConfigurationSource>): boolean;
     CanSetLazyLoadingEnabled(lazyLoadingEnabled: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): boolean;
-    EnableLazyLoading(lazyLoadingEnabled: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalSkipNavigationBuilder | undefined;
-    HasForeignKey(foreignKey: ForeignKey, configurationSource: ConfigurationSource): InternalSkipNavigationBuilder | undefined;
-    HasInverse(inverse: SkipNavigation, configurationSource: ConfigurationSource): InternalSkipNavigationBuilder | undefined;
+    EnableLazyLoading(lazyLoadingEnabled: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): InternalSkipNavigationBuilder | null;
+    HasForeignKey(foreignKey: ForeignKey | null, configurationSource: ConfigurationSource): InternalSkipNavigationBuilder | null;
+    HasInverse(inverse: SkipNavigation | null, configurationSource: ConfigurationSource): InternalSkipNavigationBuilder | null;
 }
 
 
@@ -3307,27 +3305,27 @@ export interface InternalStoredProcedureBuilder$instance extends AnnotatableBuil
     CanHaveRowsAffectedParameter(configurationSource: ConfigurationSource): boolean;
     CanHaveRowsAffectedResultColumn(configurationSource: ConfigurationSource): boolean;
     CanHaveRowsAffectedReturn(rowsAffectedReturned: boolean, configurationSource: ConfigurationSource): boolean;
-    CanSetName(name: string, configurationSource: ConfigurationSource): boolean;
-    CanSetSchema(schema: string, configurationSource: ConfigurationSource): boolean;
-    HasName(name: string, configurationSource: ConfigurationSource): InternalStoredProcedureBuilder | undefined;
-    HasName(name: string, schema: string, configurationSource: ConfigurationSource): InternalStoredProcedureBuilder | undefined;
-    HasOriginalValueParameter(propertyName: string, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | undefined;
-    HasOriginalValueParameter<TDerivedEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | undefined;
-    HasParameter(propertyName: string, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | undefined;
-    HasParameter<TDerivedEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | undefined;
-    HasResultColumn(propertyName: string, configurationSource: ConfigurationSource): InternalStoredProcedureResultColumnBuilder | undefined;
-    HasResultColumn<TDerivedEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, configurationSource: ConfigurationSource): InternalStoredProcedureResultColumnBuilder | undefined;
-    HasRowsAffectedParameter(configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | undefined;
-    HasRowsAffectedResultColumn(configurationSource: ConfigurationSource): InternalStoredProcedureResultColumnBuilder | undefined;
-    HasRowsAffectedReturn(rowsAffectedReturned: boolean, configurationSource: ConfigurationSource): InternalStoredProcedureBuilder | undefined;
-    HasSchema(schema: string, configurationSource: ConfigurationSource): InternalStoredProcedureBuilder | undefined;
+    CanSetName(name: string | null, configurationSource: ConfigurationSource): boolean;
+    CanSetSchema(schema: string | null, configurationSource: ConfigurationSource): boolean;
+    HasName(name: string | null, configurationSource: ConfigurationSource): InternalStoredProcedureBuilder | null;
+    HasName(name: string | null, schema: string | null, configurationSource: ConfigurationSource): InternalStoredProcedureBuilder | null;
+    HasOriginalValueParameter(propertyName: string, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | null;
+    HasOriginalValueParameter<TDerivedEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | null;
+    HasParameter(propertyName: string, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | null;
+    HasParameter<TDerivedEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | null;
+    HasResultColumn(propertyName: string, configurationSource: ConfigurationSource): InternalStoredProcedureResultColumnBuilder | null;
+    HasResultColumn<TDerivedEntity, TProperty>(propertyExpression: Expression_1<Func_2<TDerivedEntity, TProperty>>, configurationSource: ConfigurationSource): InternalStoredProcedureResultColumnBuilder | null;
+    HasRowsAffectedParameter(configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | null;
+    HasRowsAffectedResultColumn(configurationSource: ConfigurationSource): InternalStoredProcedureResultColumnBuilder | null;
+    HasRowsAffectedReturn(rowsAffectedReturned: boolean, configurationSource: ConfigurationSource): InternalStoredProcedureBuilder | null;
+    HasSchema(schema: string | null, configurationSource: ConfigurationSource): InternalStoredProcedureBuilder | null;
 }
 
 
 export const InternalStoredProcedureBuilder: {
     new(storedProcedure: StoredProcedure, modelBuilder: IConventionModelBuilder): InternalStoredProcedureBuilder;
-    HasStoredProcedure(entityType: IConventionEntityType, sprocType: StoreObjectType, fromDataAnnotation: boolean): InternalStoredProcedureBuilder | undefined;
-    HasStoredProcedure(entityType: IMutableEntityType, sprocType: StoreObjectType, name?: string, schema?: string): InternalStoredProcedureBuilder;
+    HasStoredProcedure(entityType: IConventionEntityType, sprocType: StoreObjectType, fromDataAnnotation: boolean): InternalStoredProcedureBuilder | null;
+    HasStoredProcedure(entityType: IMutableEntityType, sprocType: StoreObjectType, name?: string | null, schema?: string | null): InternalStoredProcedureBuilder;
 };
 
 
@@ -3346,9 +3344,9 @@ export interface InternalStoredProcedureParameterBuilder$instance extends Annota
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionStoredProcedureParameterBuilder: never;
 
     CanSetDirection(direction: ParameterDirection, configurationSource: ConfigurationSource): boolean;
-    CanSetName(name: string, configurationSource: ConfigurationSource): boolean;
-    HasDirection(direction: ParameterDirection, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | undefined;
-    HasName(name: string, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | undefined;
+    CanSetName(name: string | null, configurationSource: ConfigurationSource): boolean;
+    HasDirection(direction: ParameterDirection, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | null;
+    HasName(name: string, configurationSource: ConfigurationSource): InternalStoredProcedureParameterBuilder | null;
 }
 
 
@@ -3371,8 +3369,8 @@ export interface InternalStoredProcedureResultColumnBuilder$instance extends Ann
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionStoredProcedureResultColumnBuilder: never;
 
-    CanSetName(name: string, configurationSource: ConfigurationSource): boolean;
-    HasName(name: string, configurationSource: ConfigurationSource): InternalStoredProcedureResultColumnBuilder | undefined;
+    CanSetName(name: string | null, configurationSource: ConfigurationSource): boolean;
+    HasName(name: string, configurationSource: ConfigurationSource): InternalStoredProcedureResultColumnBuilder | null;
 }
 
 
@@ -3395,7 +3393,7 @@ export interface InternalTriggerBuilder$instance extends AnnotatableBuilder_2<Tr
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionTriggerBuilder: never;
 
-    Attach(entityTypeBuilder: InternalEntityTypeBuilder): InternalTriggerBuilder | undefined;
+    Attach(entityTypeBuilder: InternalEntityTypeBuilder): InternalTriggerBuilder | null;
 }
 
 
@@ -3418,61 +3416,61 @@ export interface InternalTypeBaseBuilder$instance extends AnnotatableBuilder_2<T
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionTypeBaseBuilder: never;
 
-    CanAddComplexProperty(propertyName: string, propertyType: Type, targetType: Type, collection: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
-    CanAddProperty(propertyType: Type, propertyName: string, configurationSource: ConfigurationSource, checkClrProperty?: boolean, skipTypeCheck?: boolean): boolean;
-    CanHaveComplexProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, complexType: Type, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    CanHaveProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>, checkClrProperty?: boolean): boolean;
+    CanAddComplexProperty(propertyName: string, propertyType: Type | null, targetType: Type | null, collection: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource, checkClrProperty?: boolean): boolean;
+    CanAddProperty(propertyType: Type | null, propertyName: string, configurationSource: ConfigurationSource, checkClrProperty?: boolean, skipTypeCheck?: boolean): boolean;
+    CanHaveComplexProperty(propertyType: Type | null, propertyName: string, memberInfo: MemberInfo | null, complexType: Type | null, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): boolean;
+    CanHaveProperty(propertyType: Type | null, propertyName: string, memberInfo: MemberInfo | null, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>, checkClrProperty?: boolean): boolean;
     CanIgnore(name: string, configurationSource: ConfigurationSource): boolean;
     CanIgnore(name: string, configurationSource: ConfigurationSource, shouldThrow: boolean): boolean;
     CanRemoveComplexProperty(complexProperty: ComplexProperty, configurationSource: ConfigurationSource): boolean;
     CanRemoveDiscriminator(configurationSource: ConfigurationSource): boolean;
     CanRemoveProperty(property: Property, configurationSource: ConfigurationSource, canOverrideSameSource?: boolean): boolean;
     CanSetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): boolean;
-    CanSetDiscriminator(name: string, type: Type, configurationSource: ConfigurationSource): boolean;
+    CanSetDiscriminator(name: string | null, type: Type | null, configurationSource: ConfigurationSource): boolean;
     CanSetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): boolean;
-    ComplexCollection(propertyType: Type, propertyName: string, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    ComplexCollection(memberInfo: MemberInfo, complexType?: Type, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | undefined;
-    ComplexIndexerProperty(propertyType: Type, propertyName: string, complexType: Type, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalComplexPropertyBuilder | undefined;
-    ComplexProperty(memberInfo: MemberInfo, complexTypeName: string, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalComplexPropertyBuilder | undefined;
-    ComplexProperty(propertyType: Type, propertyName: string, complexTypeName: string, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalComplexPropertyBuilder | undefined;
-    ComplexProperty(propertyType: Type, propertyName: string, memberInfo: MemberInfo, complexTypeName: string, complexType: Type, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalComplexPropertyBuilder | undefined;
-    CreateUniqueProperties(propertyTypes: IReadOnlyList_1<Type>, propertyNames: IReadOnlyList_1<System_Internal.String>, isRequired: boolean, checkTypes?: boolean): IReadOnlyList_1<Property> | undefined;
-    CreateUniqueProperties(principalProperties: IReadOnlyList_1<Property>, isRequired: boolean, baseName: string, checkTypes?: boolean): IReadOnlyList_1<Property> | undefined;
-    CreateUniqueProperty(propertyType: Type, propertyName: string, required: boolean, checkType?: boolean): InternalPropertyBuilder | undefined;
-    GetActualProperties(properties: IReadOnlyList_1<Property>, configurationSource: Nullable_1<ConfigurationSource>): IReadOnlyList_1<Property> | undefined;
-    GetOrCreateDiscriminatorProperty(type: Type, name: string, memberInfo: MemberInfo, configurationSource: ConfigurationSource): InternalPropertyBuilder | undefined;
-    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String>, configurationSource: Nullable_1<ConfigurationSource>, referencedProperties?: IReadOnlyList_1<Property>, required?: boolean, useDefaultType?: boolean): IReadOnlyList_1<Property> | undefined;
-    GetOrCreateProperties(clrMembers: IEnumerable_1<MemberInfo>, configurationSource: Nullable_1<ConfigurationSource>): IReadOnlyList_1<Property> | undefined;
-    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): InternalTypeBaseBuilder | undefined;
-    HasNoComplexProperty(complexProperty: ComplexProperty, configurationSource: ConfigurationSource): InternalTypeBaseBuilder | undefined;
-    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalTypeBaseBuilder | undefined;
-    Ignore(name: string, configurationSource: ConfigurationSource): InternalTypeBaseBuilder | undefined;
-    IndexerProperty(propertyType: Type, propertyName: string, configurationSource: Nullable_1<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | undefined;
+    ComplexCollection(propertyType: Type, propertyName: string, complexType?: Type | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    ComplexCollection(memberInfo: MemberInfo, complexType?: Type | null, fromDataAnnotation?: boolean): IConventionComplexPropertyBuilder | null;
+    ComplexIndexerProperty(propertyType: Type | null, propertyName: string, complexType: Type | null, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalComplexPropertyBuilder | null;
+    ComplexProperty(memberInfo: MemberInfo, complexTypeName: string | null, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalComplexPropertyBuilder | null;
+    ComplexProperty(propertyType: Type | null, propertyName: string, complexTypeName: string | null, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalComplexPropertyBuilder | null;
+    ComplexProperty(propertyType: Type | null, propertyName: string, memberInfo: MemberInfo | null, complexTypeName: string | null, complexType: Type | null, collection: Nullable_1<System_Internal.Boolean>, configurationSource: Nullable_1<ConfigurationSource>): InternalComplexPropertyBuilder | null;
+    CreateUniqueProperties(propertyTypes: IReadOnlyList_1<Type>, propertyNames: IReadOnlyList_1<System_Internal.String>, isRequired: boolean, checkTypes?: boolean): IReadOnlyList_1<Property> | null;
+    CreateUniqueProperties(principalProperties: IReadOnlyList_1<Property>, isRequired: boolean, baseName: string, checkTypes?: boolean): IReadOnlyList_1<Property> | null;
+    CreateUniqueProperty(propertyType: Type, propertyName: string, required: boolean, checkType?: boolean): InternalPropertyBuilder | null;
+    GetActualProperties(properties: IReadOnlyList_1<Property> | null, configurationSource: Nullable_1<ConfigurationSource>): IReadOnlyList_1<Property> | null;
+    GetOrCreateDiscriminatorProperty(type: Type | null, name: string | null, memberInfo: MemberInfo | null, configurationSource: ConfigurationSource): InternalPropertyBuilder | null;
+    GetOrCreateProperties(propertyNames: IReadOnlyList_1<System_Internal.String> | null, configurationSource: Nullable_1<ConfigurationSource>, referencedProperties?: IReadOnlyList_1<Property> | null, required?: boolean, useDefaultType?: boolean): IReadOnlyList_1<Property> | null;
+    GetOrCreateProperties(clrMembers: IEnumerable_1<MemberInfo> | null, configurationSource: Nullable_1<ConfigurationSource>): IReadOnlyList_1<Property> | null;
+    HasChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): InternalTypeBaseBuilder | null;
+    HasNoComplexProperty(complexProperty: ComplexProperty, configurationSource: ConfigurationSource): InternalTypeBaseBuilder | null;
+    HasNoDiscriminator(configurationSource: ConfigurationSource): InternalTypeBaseBuilder | null;
+    Ignore(name: string, configurationSource: ConfigurationSource): InternalTypeBaseBuilder | null;
+    IndexerProperty(propertyType: Type | null, propertyName: string, configurationSource: Nullable_1<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | null;
     IsIgnored(name: string, configurationSource: Nullable_1<ConfigurationSource>): boolean;
-    PrimitiveCollection(propertyType: Type, propertyName: string, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | undefined;
-    PrimitiveCollection(propertyType: Type, propertyName: string, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | undefined;
-    PrimitiveCollection(propertyName: string, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | undefined;
-    PrimitiveCollection(memberInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | undefined;
-    PrimitiveCollection(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | undefined;
-    Property(propertyType: Type, propertyName: string, configurationSource: Nullable_1<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | undefined;
-    Property(propertyType: Type, propertyName: string, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | undefined;
-    Property(propertyName: string, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | undefined;
-    Property(memberInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | undefined;
-    Property(propertyType: Type, propertyName: string, memberInfo: MemberInfo, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | undefined;
-    RemoveIncompatibleDiscriminatorValues(structuralType: TypeBase, newDiscriminatorProperty: Property, configurationSource: ConfigurationSource): void;
+    PrimitiveCollection(propertyType: Type | null, propertyName: string, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | null;
+    PrimitiveCollection(propertyType: Type | null, propertyName: string, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | null;
+    PrimitiveCollection(propertyName: string, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | null;
+    PrimitiveCollection(memberInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | null;
+    PrimitiveCollection(propertyType: Type | null, propertyName: string, memberInfo: MemberInfo | null, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | null;
+    Property(propertyType: Type | null, propertyName: string, configurationSource: Nullable_1<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | null;
+    Property(propertyType: Type | null, propertyName: string, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | null;
+    Property(propertyName: string, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | null;
+    Property(memberInfo: MemberInfo, configurationSource: Nullable_1<ConfigurationSource>): InternalPropertyBuilder | null;
+    Property(propertyType: Type | null, propertyName: string, memberInfo: MemberInfo | null, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: Nullable_1<ConfigurationSource>, skipTypeCheck?: boolean): InternalPropertyBuilder | null;
+    RemoveIncompatibleDiscriminatorValues(structuralType: TypeBase, newDiscriminatorProperty: Property | null, configurationSource: ConfigurationSource): void;
     RemoveMembersInHierarchy(propertyName: string, configurationSource: ConfigurationSource): void;
     RemoveProperty(property: Property, configurationSource: ConfigurationSource, canOverrideSameSource?: boolean): Nullable_1<ConfigurationSource>;
     RemovePropertyIfUnused(property: Property, configurationSource: ConfigurationSource): void;
     RemoveUnusedImplicitProperties(properties: IReadOnlyList_1<IConventionProperty>): InternalTypeBaseBuilder;
-    TryCreateUniqueProperties(propertyCount: int, currentProperties: IReadOnlyList_1<Property>, principalPropertyTypes: IEnumerable_1<Type>, principalPropertyNames: IEnumerable_1<System_Internal.String>, isRequired: boolean, baseName: string, checkTypes?: boolean): ValueTuple_2<System_Internal.Boolean, IReadOnlyList_1<Property>>;
-    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalTypeBaseBuilder | undefined;
+    TryCreateUniqueProperties(propertyCount: int, currentProperties: IReadOnlyList_1<Property> | null, principalPropertyTypes: IEnumerable_1<Type>, principalPropertyNames: IEnumerable_1<System_Internal.String>, isRequired: boolean, baseName: string, checkTypes?: boolean): ValueTuple_2<System_Internal.Boolean, IReadOnlyList_1<Property>>;
+    UsePropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): InternalTypeBaseBuilder | null;
 }
 
 
 export const InternalTypeBaseBuilder: (abstract new(metadata: TypeBase, modelBuilder: InternalModelBuilder) => InternalTypeBaseBuilder) & {
-    DetachProperties(propertiesToDetach: IReadOnlyList_1<ComplexProperty>): List_1<ComplexPropertySnapshot> | undefined;
-    DetachProperties(propertiesToDetach: IReadOnlyList_1<Property>): PropertiesSnapshot | undefined;
-    IsCompatible(newMemberInfo: MemberInfo, existingProperty: PropertyBase): boolean;
+    DetachProperties(propertiesToDetach: IReadOnlyList_1<ComplexProperty>): List_1<ComplexPropertySnapshot> | null;
+    DetachProperties(propertiesToDetach: IReadOnlyList_1<Property>): PropertiesSnapshot | null;
+    IsCompatible(newMemberInfo: MemberInfo | null, existingProperty: PropertyBase): boolean;
 };
 
 
@@ -3498,7 +3496,7 @@ export interface JsonColumn$instance extends Column$instance {
 
 
 export const JsonColumn: {
-    new(name: string, type: string, table: Table, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): JsonColumn;
+    new(name: string, type: string, table: Table, storeTypeMapping: RelationalTypeMapping | null, providerValueComparer: ValueComparer | null): JsonColumn;
 };
 
 
@@ -3526,7 +3524,7 @@ export interface JsonColumnBase$instance extends ColumnBase_1$instance<ColumnMap
 
 
 export const JsonColumnBase: {
-    new(name: string, type: string, table: TableBase, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): JsonColumnBase;
+    new(name: string, type: string, table: TableBase, storeTypeMapping: RelationalTypeMapping | null, providerValueComparer: ValueComparer | null): JsonColumnBase;
 };
 
 
@@ -3554,7 +3552,7 @@ export interface JsonViewColumn$instance extends ViewColumn$instance {
 
 
 export const JsonViewColumn: {
-    new(name: string, type: string, view: View, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): JsonViewColumn;
+    new(name: string, type: string, view: View, storeTypeMapping: RelationalTypeMapping | null, providerValueComparer: ValueComparer | null): JsonViewColumn;
 };
 
 
@@ -3588,12 +3586,12 @@ export interface Key$instance extends ConventionAnnotatable {
     readonly IsInModel: boolean;
     readonly IsReadOnly: boolean;
     readonly Properties: IReadOnlyList_1<Property>;
-    get ReferencingForeignKeys(): ISet_1<ForeignKey> | undefined;
-    set ReferencingForeignKeys(value: ISet_1<ForeignKey> | undefined);
+    get ReferencingForeignKeys(): ISet_1<ForeignKey> | null;
+    set ReferencingForeignKeys(value: ISet_1<ForeignKey> | null);
     GetConfigurationSource(): ConfigurationSource;
     GetReferencingForeignKeys(): IEnumerable_1<ForeignKey>;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
     SetRemovedFromModel(): void;
     ToString(): string;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
@@ -3625,12 +3623,12 @@ export interface MemberClassifier$instance extends IMemberClassifier$instance {
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IMemberClassifier: never;
 
-    FindCandidateNavigationPropertyType(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, shouldBeOwned: Nullable_1<System_Internal.Boolean>): Type | undefined;
-    FindServicePropertyCandidateBindingFactory(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean): IParameterBindingFactory | undefined;
+    FindCandidateNavigationPropertyType(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, shouldBeOwned: Nullable_1<System_Internal.Boolean>): Type | null;
+    FindServicePropertyCandidateBindingFactory(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean): IParameterBindingFactory | null;
     GetInverseCandidateTypes(entityType: IConventionEntityType, useAttributes: boolean): IReadOnlyCollection_1<Type>;
     GetNavigationCandidates(entityType: IConventionEntityType, useAttributes: boolean): IReadOnlyDictionary_2<PropertyInfo, ValueTuple_2<Type, Nullable_1<System_Internal.Boolean>>>;
-    IsCandidateComplexProperty(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, elementType: Type, explicitlyConfigured: boolean): boolean;
-    IsCandidatePrimitiveProperty(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, typeMapping: CoreTypeMapping): boolean;
+    IsCandidateComplexProperty(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, elementType: Type | null, explicitlyConfigured: boolean): boolean;
+    IsCandidatePrimitiveProperty(memberInfo: MemberInfo, model: IConventionModel, useAttributes: boolean, typeMapping: CoreTypeMapping | null): boolean;
 }
 
 
@@ -3659,46 +3657,46 @@ export interface Model$instance extends ConventionAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyModel: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeModel: never;
 
-    readonly Configuration: ModelConfiguration | undefined;
+    readonly Configuration: ModelConfiguration | null;
     readonly ConventionDispatcher: ConventionDispatcher;
     readonly DebugView: DebugView;
     readonly IsReadOnly: boolean;
     ModelId: Guid;
-    readonly RelationalModel: unknown | undefined;
-    get ScopedModelDependencies(): ModelDependencies | undefined;
-    set ScopedModelDependencies(value: ModelDependencies | undefined);
+    readonly RelationalModel: JsValue | null;
+    get ScopedModelDependencies(): ModelDependencies | null;
+    set ScopedModelDependencies(value: ModelDependencies | null);
     SkipDetectChanges: boolean;
     AddComplex(type: Type, configurationSource: ConfigurationSource): Nullable_1<ConfigurationSource>;
     AddComplexType(complexType: ComplexType): void;
-    AddEntityType(name: string, owned: boolean, configurationSource: ConfigurationSource): EntityType | undefined;
-    AddEntityType(type: Type, owned: boolean, configurationSource: ConfigurationSource): EntityType | undefined;
-    AddEntityType(name: string, type: Type, owned: boolean, configurationSource: ConfigurationSource): EntityType | undefined;
-    AddEntityType(name: string, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): EntityType | undefined;
-    AddEntityType(type: Type, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): EntityType | undefined;
-    AddIgnored(type: Type, configurationSource: ConfigurationSource): string | undefined;
-    AddIgnored(name: string, configurationSource: ConfigurationSource): string | undefined;
-    AddIgnored(name: string, type: Type, configurationSource: ConfigurationSource): string | undefined;
+    AddEntityType(name: string, owned: boolean, configurationSource: ConfigurationSource): EntityType | null;
+    AddEntityType(type: Type, owned: boolean, configurationSource: ConfigurationSource): EntityType | null;
+    AddEntityType(name: string, type: Type, owned: boolean, configurationSource: ConfigurationSource): EntityType | null;
+    AddEntityType(name: string, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): EntityType | null;
+    AddEntityType(type: Type, definingNavigationName: string, definingEntityType: EntityType, configurationSource: ConfigurationSource): EntityType | null;
+    AddIgnored(type: Type, configurationSource: ConfigurationSource): string | null;
+    AddIgnored(name: string, configurationSource: ConfigurationSource): string | null;
+    AddIgnored(name: string, type: Type | null, configurationSource: ConfigurationSource): string | null;
     AddOwned(type: Type, configurationSource: ConfigurationSource): void;
     AddProperty(property: Property): void;
     AddShared(type: Type, configurationSource: ConfigurationSource): void;
     DelayConventions(): IConventionBatch;
     FinalizeModel(): IModel;
-    FindActualEntityType(entityType: EntityType): EntityType | undefined;
-    FindClrType(name: string): Type | undefined;
-    FindComplexType(name: string): ComplexType | undefined;
-    FindEntityType(type: Type): EntityType | undefined;
-    FindEntityType(name: string): EntityType | undefined;
-    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
-    FindEntityType(name: string, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
+    FindActualEntityType(entityType: EntityType): EntityType | null;
+    FindClrType(name: string): Type | null;
+    FindComplexType(name: string): ComplexType | null;
+    FindEntityType(type: Type): EntityType | null;
+    FindEntityType(name: string): EntityType | null;
+    FindEntityType(type: Type, definingNavigationName: string, definingEntityType: EntityType): EntityType | null;
+    FindEntityType(name: string, definingNavigationName: string, definingEntityType: EntityType): EntityType | null;
     FindEntityTypes(type: Type): IEnumerable_1<EntityType>;
     FindIgnoredConfigurationSource(type: Type): Nullable_1<ConfigurationSource>;
     FindIgnoredConfigurationSource(name: string): Nullable_1<ConfigurationSource>;
-    FindIndexerPropertyInfo(type: Type): PropertyInfo | undefined;
+    FindIndexerPropertyInfo(type: Type): PropertyInfo | null;
     FindIsComplexConfigurationSource(type: Type): Nullable_1<ConfigurationSource>;
     FindIsOwnedConfigurationSource(type: Type): Nullable_1<ConfigurationSource>;
     FindIsSharedConfigurationSource(type: Type): Nullable_1<ConfigurationSource>;
-    FindProperties(type: Type): IReadOnlySet_1<Property> | undefined;
-    FindTypeMappingConfiguration(propertyType: Type): ITypeMappingConfiguration | undefined;
+    FindProperties(type: Type): IReadOnlySet_1<Property> | null;
+    FindTypeMappingConfiguration(propertyType: Type): ITypeMappingConfiguration | null;
     GetChangeTrackingStrategy(): ChangeTrackingStrategy;
     GetChangeTrackingStrategyConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetDisplayName(type: Type): string;
@@ -3715,31 +3713,31 @@ export interface Model$instance extends ConventionAnnotatable {
     IsIndexerMethod(methodInfo: MethodInfo): boolean;
     IsOwned(type: Type): boolean;
     IsShared(type: Type): boolean;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
     OnModelFinalized(): IModel;
     RemoveComplexType(complexType: ComplexType): void;
-    RemoveEntityType(type: Type): EntityType | undefined;
-    RemoveEntityType(name: string): EntityType | undefined;
-    RemoveEntityType(entityType: EntityType): EntityType | undefined;
-    RemoveEntityType(type: Type, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
-    RemoveEntityType(name: string, definingNavigationName: string, definingEntityType: EntityType): EntityType | undefined;
-    RemoveIgnored(type: Type): string | undefined;
-    RemoveIgnored(name: string): string | undefined;
-    RemoveOwned(type: Type): string | undefined;
-    RemoveProperty(property: Property): Property | undefined;
-    RemoveShared(type: Type): Type | undefined;
+    RemoveEntityType(type: Type): EntityType | null;
+    RemoveEntityType(name: string): EntityType | null;
+    RemoveEntityType(entityType: EntityType | null): EntityType | null;
+    RemoveEntityType(type: Type, definingNavigationName: string, definingEntityType: EntityType): EntityType | null;
+    RemoveEntityType(name: string, definingNavigationName: string, definingEntityType: EntityType): EntityType | null;
+    RemoveIgnored(type: Type): string | null;
+    RemoveIgnored(name: string): string | null;
+    RemoveOwned(type: Type): string | null;
+    RemoveProperty(property: Property): Property | null;
+    RemoveShared(type: Type): Type | null;
     SetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): Nullable_1<ChangeTrackingStrategy>;
-    SetEmbeddedDiscriminatorName(name: string, configurationSource: ConfigurationSource): string | undefined;
+    SetEmbeddedDiscriminatorName(name: string | null, configurationSource: ConfigurationSource): string | null;
     SetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): Nullable_1<PropertyAccessMode>;
     SetSkipDetectChanges(skipDetectChanges: Nullable_1<System_Internal.Boolean>): Nullable_1<System_Internal.Boolean>;
-    Track<T>(func: Func_1<T>, foreignKey: IConventionForeignKey): T;
+    Track<T>(func: Func_1<T>, foreignKey: IConventionForeignKey | null): T;
 }
 
 
 export const Model: {
     new(modelId: Nullable_1<Guid>): Model;
-    new(conventions: ConventionSet, modelDependencies: ModelDependencies, modelConfiguration: ModelConfiguration): Model;
+    new(conventions: ConventionSet, modelDependencies: ModelDependencies | null, modelConfiguration: ModelConfiguration | null): Model;
     readonly DefaultPropertyBagType: Type;
     readonly DefaultPropertyAccessMode: PropertyAccessMode;
     readonly DefaultEmbeddedDiscriminatorName: string;
@@ -3767,10 +3765,10 @@ export interface ModelConfiguration$instance {
     AddIgnored(type: Type): void;
     ConfigureComplexProperty(property: IMutableComplexProperty): void;
     ConfigureProperty(property: IMutableProperty): void;
-    FindComplexProperty(type: Type): ComplexPropertyConfiguration | undefined;
-    FindProperty(type: Type): PropertyConfiguration | undefined;
-    FindTypeMapping(type: Type): PropertyConfiguration | undefined;
-    FindTypeMappingConfiguration(scalarType: Type): ITypeMappingConfiguration | undefined;
+    FindComplexProperty(type: Type): ComplexPropertyConfiguration | null;
+    FindProperty(type: Type): PropertyConfiguration | null;
+    FindTypeMapping(type: Type): PropertyConfiguration | null;
+    FindTypeMappingConfiguration(scalarType: Type): ITypeMappingConfiguration | null;
     GetConfigurationType(type: Type): Nullable_1<TypeConfigurationType>;
     GetOrAddComplexProperty(type: Type): ComplexPropertyConfiguration;
     GetOrAddProperty(type: Type): PropertyConfiguration;
@@ -3833,7 +3831,7 @@ export interface Navigation$instance extends PropertyBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimePropertyBase: never;
 
     readonly ClrType: Type;
-    readonly CollectionAccessor: IClrCollectionAccessor | undefined;
+    readonly CollectionAccessor: IClrCollectionAccessor | null;
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: EntityType;
     readonly DeclaringType: TypeBase;
@@ -3842,15 +3840,15 @@ export interface Navigation$instance extends PropertyBase$instance {
     readonly IsCollection: boolean;
     readonly IsInModel: boolean;
     readonly IsOnDependent: boolean;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     readonly TargetEntityType: EntityType;
     GetConfigurationSource(): ConfigurationSource;
     GetInverseConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetPropertyAccessMode(): PropertyAccessMode;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-    SetInverse(inverseName: string, configurationSource: ConfigurationSource): Navigation | undefined;
-    SetInverse(inverse: MemberInfo, configurationSource: ConfigurationSource): Navigation | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
+    SetInverse(inverseName: string | null, configurationSource: ConfigurationSource): Navigation | null;
+    SetInverse(inverse: MemberInfo | null, configurationSource: ConfigurationSource): Navigation | null;
     SetRemovedFromModel(): void;
     ToString(): string;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
@@ -3858,7 +3856,7 @@ export interface Navigation$instance extends PropertyBase$instance {
 
 
 export const Navigation: {
-    new(name: string, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, foreignKey: ForeignKey): Navigation;
+    new(name: string, propertyInfo: PropertyInfo | null, fieldInfo: FieldInfo | null, foreignKey: ForeignKey): Navigation;
 };
 
 
@@ -3889,12 +3887,12 @@ export interface ParameterBindingFactories$instance extends Microsoft_EntityFram
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IParameterBindingFactories: never;
 
-    FindFactory(parameterType: Type, parameterName: string): IParameterBindingFactory | undefined;
+    FindFactory(parameterType: Type, parameterName: string): IParameterBindingFactory | null;
 }
 
 
 export const ParameterBindingFactories: {
-    new(registeredFactories: IEnumerable_1<IParameterBindingFactory>, registeredServices: IRegisteredServices): ParameterBindingFactories;
+    new(registeredFactories: IEnumerable_1<IParameterBindingFactory> | null, registeredServices: IRegisteredServices): ParameterBindingFactories;
 };
 
 
@@ -3916,7 +3914,7 @@ export interface PropertiesSnapshot$instance {
 
 
 export const PropertiesSnapshot: {
-    new(properties: List_1<InternalPropertyBuilder>, indexes: List_1<InternalIndexBuilder>, keys: List_1<ValueTuple_2<InternalKeyBuilder, Nullable_1<ConfigurationSource>>>, relationships: List_1<RelationshipSnapshot>): PropertiesSnapshot;
+    new(properties: List_1<InternalPropertyBuilder> | null, indexes: List_1<InternalIndexBuilder> | null, keys: List_1<ValueTuple_2<InternalKeyBuilder, Nullable_1<ConfigurationSource>>> | null, relationships: List_1<RelationshipSnapshot> | null): PropertiesSnapshot;
 };
 
 
@@ -3942,27 +3940,27 @@ export interface Property$instance extends PropertyBase$instance {
     readonly ClrType: Type;
     readonly DebugView: DebugView;
     readonly DeclaringType: TypeBase;
-    get ForeignKeys(): List_1<ForeignKey> | undefined;
-    set ForeignKeys(value: List_1<ForeignKey> | undefined);
-    get Indexes(): List_1<Index> | undefined;
-    set Indexes(value: List_1<Index> | undefined);
+    get ForeignKeys(): List_1<ForeignKey> | null;
+    set ForeignKeys(value: List_1<ForeignKey> | null);
+    get Indexes(): List_1<Index> | null;
+    set Indexes(value: List_1<Index> | null);
     readonly IsCollection: boolean;
     IsConcurrencyToken: boolean;
     readonly IsInModel: boolean;
     IsNullable: boolean;
     readonly IsPrimitiveCollection: boolean;
-    get Keys(): List_1<Key> | undefined;
-    set Keys(value: List_1<Key> | undefined);
-    get PrimaryKey(): IReadOnlyKey | undefined;
-    set PrimaryKey(value: IReadOnlyKey | undefined);
-    get Sentinel(): unknown | undefined;
-    set Sentinel(value: unknown | undefined);
-    get TypeMapping(): CoreTypeMapping | undefined;
-    set TypeMapping(value: CoreTypeMapping | undefined);
+    get Keys(): List_1<Key> | null;
+    set Keys(value: List_1<Key> | null);
+    get PrimaryKey(): IReadOnlyKey | null;
+    set PrimaryKey(value: IReadOnlyKey | null);
+    get Sentinel(): JsValue | null;
+    set Sentinel(value: JsValue | null);
+    get TypeMapping(): CoreTypeMapping | null;
+    set TypeMapping(value: CoreTypeMapping | null);
     ValueGenerated: ValueGenerated;
-    CheckAfterSaveBehavior(behavior: PropertySaveBehavior): string | undefined;
-    CheckValueComparer(comparer: ValueComparer): string | undefined;
-    CheckValueConverter(converter: ValueConverter): string | undefined;
+    CheckAfterSaveBehavior(behavior: PropertySaveBehavior): string | null;
+    CheckValueComparer(comparer: ValueComparer | null): string | null;
+    CheckValueConverter(converter: ValueConverter | null): string | null;
     GetAfterSaveBehavior(): PropertySaveBehavior;
     GetAfterSaveBehaviorConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetBeforeSaveBehavior(): PropertySaveBehavior;
@@ -3971,21 +3969,21 @@ export interface Property$instance extends PropertyBase$instance {
     GetContainingIndexes(): IEnumerable_1<Index>;
     GetContainingKeys(): IEnumerable_1<Key>;
     GetConversion(throwOnValueConverterConflict?: boolean, throwOnProviderClrTypeConflict?: boolean): ValueTuple_3<ValueConverter, Type, Type>;
-    GetElementType(): ElementType | undefined;
+    GetElementType(): ElementType | null;
     GetElementTypeConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetIsConcurrencyTokenConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetIsNullableConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetIsUnicodeConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetJsonValueReaderWriter(): JsonValueReaderWriter | undefined;
+    GetJsonValueReaderWriter(): JsonValueReaderWriter | null;
     GetJsonValueReaderWriterTypeConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetKeyValueComparer(): ValueComparer | undefined;
+    GetKeyValueComparer(): ValueComparer | null;
     GetMaxLength(): Nullable_1<System_Internal.Int32>;
     GetMaxLengthConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetPrecision(): Nullable_1<System_Internal.Int32>;
     GetPrecisionConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetProviderClrType(): Type | undefined;
+    GetProviderClrType(): Type | null;
     GetProviderClrTypeConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetProviderValueComparer(): ValueComparer | undefined;
+    GetProviderValueComparer(): ValueComparer | null;
     GetProviderValueComparerConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetScale(): Nullable_1<System_Internal.Int32>;
     GetScaleConfigurationSource(): Nullable_1<ConfigurationSource>;
@@ -3994,52 +3992,52 @@ export interface Property$instance extends PropertyBase$instance {
     GetTypeMappingConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetValueComparer(): ValueComparer;
     GetValueComparerConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetValueConverter(): ValueConverter | undefined;
+    GetValueConverter(): ValueConverter | null;
     GetValueConverterConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetValueGeneratedConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetValueGeneratorFactory(): Func_3<IProperty, ITypeBase, ValueGenerator> | undefined;
+    GetValueGeneratorFactory(): Func_3<IProperty, ITypeBase, ValueGenerator> | null;
     GetValueGeneratorFactoryConfigurationSource(): Nullable_1<ConfigurationSource>;
     IsForeignKey(): boolean;
     IsIndex(): boolean;
     IsKey(): boolean;
     IsUnicode(): Nullable_1<System_Internal.Boolean>;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-    OnElementTypeSet(newElementType: IElementType, oldElementType: IElementType): IElementType | undefined;
-    OnFieldInfoSet(newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo): FieldInfo | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
+    OnElementTypeSet(newElementType: IElementType | null, oldElementType: IElementType | null): IElementType | null;
+    OnFieldInfoSet(newFieldInfo: FieldInfo | null, oldFieldInfo: FieldInfo | null): FieldInfo | null;
     OnPropertyNullableChanged(): Nullable_1<System_Internal.Boolean>;
     SetAfterSaveBehavior(afterSaveBehavior: Nullable_1<PropertySaveBehavior>, configurationSource: ConfigurationSource): Nullable_1<PropertySaveBehavior>;
     SetBeforeSaveBehavior(beforeSaveBehavior: Nullable_1<PropertySaveBehavior>, configurationSource: ConfigurationSource): Nullable_1<PropertySaveBehavior>;
-    SetElementType(elementType: Type, configurationSource: ConfigurationSource): ElementType | undefined;
+    SetElementType(elementType: Type | null, configurationSource: ConfigurationSource): ElementType | null;
     SetIsConcurrencyToken(concurrencyToken: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
     SetIsNullable(nullable: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
     SetIsUnicode(unicode: Nullable_1<System_Internal.Boolean>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Boolean>;
-    SetJsonValueReaderWriterType(readerWriterType: Type, configurationSource: ConfigurationSource): Type | undefined;
+    SetJsonValueReaderWriterType(readerWriterType: Type | null, configurationSource: ConfigurationSource): Type | null;
     SetMaxLength(maxLength: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Int32>;
     SetPrecision(precision: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Int32>;
-    SetProviderClrType(providerClrType: Type, configurationSource: ConfigurationSource): Type | undefined;
-    SetProviderValueComparer(comparer: ValueComparer, configurationSource: ConfigurationSource): ValueComparer | undefined;
-    SetProviderValueComparer(comparerType: Type, configurationSource: ConfigurationSource): Type | undefined;
+    SetProviderClrType(providerClrType: Type | null, configurationSource: ConfigurationSource): Type | null;
+    SetProviderValueComparer(comparer: ValueComparer | null, configurationSource: ConfigurationSource): ValueComparer | null;
+    SetProviderValueComparer(comparerType: Type | null, configurationSource: ConfigurationSource): Type | null;
     SetRemovedFromModel(): void;
     SetScale(scale: Nullable_1<System_Internal.Int32>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Int32>;
-    SetSentinel(sentinel: unknown, configurationSource: ConfigurationSource): unknown | undefined;
-    SetTypeMapping(typeMapping: CoreTypeMapping, configurationSource: ConfigurationSource): CoreTypeMapping | undefined;
-    SetValueComparer(comparer: ValueComparer, configurationSource: ConfigurationSource): ValueComparer | undefined;
-    SetValueComparer(comparerType: Type, configurationSource: ConfigurationSource): Type | undefined;
-    SetValueConverter(converter: ValueConverter, configurationSource: ConfigurationSource): ValueConverter | undefined;
-    SetValueConverter(converterType: Type, configurationSource: ConfigurationSource): Type | undefined;
+    SetSentinel(sentinel: JsValue | null, configurationSource: ConfigurationSource): JsValue | null;
+    SetTypeMapping(typeMapping: CoreTypeMapping | null, configurationSource: ConfigurationSource): CoreTypeMapping | null;
+    SetValueComparer(comparer: ValueComparer | null, configurationSource: ConfigurationSource): ValueComparer | null;
+    SetValueComparer(comparerType: Type | null, configurationSource: ConfigurationSource): Type | null;
+    SetValueConverter(converter: ValueConverter | null, configurationSource: ConfigurationSource): ValueConverter | null;
+    SetValueConverter(converterType: Type | null, configurationSource: ConfigurationSource): Type | null;
     SetValueGenerated(valueGenerated: Nullable_1<ValueGenerated>, configurationSource: ConfigurationSource): Nullable_1<ValueGenerated>;
-    SetValueGeneratorFactory(factory: Func_3<IProperty, ITypeBase, ValueGenerator>, configurationSource: ConfigurationSource): Func_3<IProperty, ITypeBase, ValueGenerator> | undefined;
-    SetValueGeneratorFactory(factoryType: Type, configurationSource: ConfigurationSource): Type | undefined;
+    SetValueGeneratorFactory(factory: Func_3<IProperty, ITypeBase, ValueGenerator> | null, configurationSource: ConfigurationSource): Func_3<IProperty, ITypeBase, ValueGenerator> | null;
+    SetValueGeneratorFactory(factoryType: Type | null, configurationSource: ConfigurationSource): Type | null;
     ToString(): string;
     UpdateTypeConfigurationSource(configurationSource: ConfigurationSource): void;
 }
 
 
 export const Property: {
-    new(name: string, clrType: Type, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, declaringType: TypeBase, configurationSource: ConfigurationSource, typeConfigurationSource: Nullable_1<ConfigurationSource>): Property;
+    new(name: string, clrType: Type, propertyInfo: PropertyInfo | null, fieldInfo: FieldInfo | null, declaringType: TypeBase, configurationSource: ConfigurationSource, typeConfigurationSource: Nullable_1<ConfigurationSource>): Property;
     AreCompatible(properties: IReadOnlyList_1<Property>, entityType: EntityType): boolean;
-    Format(properties: IEnumerable_1<System_Internal.String>): string;
+    Format(properties: IEnumerable_1<string | null>): string;
 };
 
 
@@ -4066,7 +4064,7 @@ export interface PropertyAccessors$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Internal_PropertyAccessors: never;
 
     readonly CurrentValueGetter: Function;
-    readonly OriginalValueGetter: Function | undefined;
+    readonly OriginalValueGetter: Function | null;
     readonly PreStoreGeneratedCurrentValueGetter: Function;
     readonly Property: IPropertyBase;
     readonly RelationshipSnapshotGetter: Function;
@@ -4078,7 +4076,7 @@ export interface PropertyAccessors$instance {
 
 
 export const PropertyAccessors: {
-    new(propertyBase: IPropertyBase, currentValueGetter: Function, preStoreGeneratedCurrentValueGetter: Function, originalValueGetter: Function, relationshipSnapshotGetter: Function): PropertyAccessors;
+    new(propertyBase: IPropertyBase, currentValueGetter: Function, preStoreGeneratedCurrentValueGetter: Function, originalValueGetter: Function | null, relationshipSnapshotGetter: Function): PropertyAccessors;
 };
 
 
@@ -4088,7 +4086,7 @@ export interface PropertyAccessorsFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Internal_PropertyAccessorsFactory: never;
 
     Create(propertyBase: IPropertyBase): PropertyAccessors;
-    Create(propertyBase: IPropertyBase, currentValueGetter: Expression, preStoreGeneratedCurrentValueGetter: Expression, originalValueGetter: Expression, relationshipSnapshotGetter: Expression): void;
+    Create(propertyBase: IPropertyBase, currentValueGetter: Expression, preStoreGeneratedCurrentValueGetter: Expression, originalValueGetter: Expression | null, relationshipSnapshotGetter: Expression): void;
 }
 
 
@@ -4098,7 +4096,7 @@ export const PropertyAccessorsFactory: {
     readonly ContainsKeyMethod: MethodInfo;
     readonly InvalidOperationConstructor: ConstructorInfo;
     CreateComplexCollectionElementAccess(complexProperty: IComplexProperty, instanceExpression: Expression, indicesExpression: Expression, fromDeclaringType: boolean, fromEntity: boolean): Expression;
-    CreateMemberAccess(property: IPropertyBase, instanceExpression: Expression, indicesExpression: Expression, memberInfo: MemberInfo, fromDeclaringType: boolean, fromEntity: boolean, addNullCheck?: boolean): Expression;
+    CreateMemberAccess(property: IPropertyBase | null, instanceExpression: Expression, indicesExpression: Expression, memberInfo: MemberInfo, fromDeclaringType: boolean, fromEntity: boolean, addNullCheck?: boolean): Expression;
 };
 
 
@@ -4119,15 +4117,15 @@ export interface PropertyBase$instance extends ConventionAnnotatable {
     readonly Accessors: PropertyAccessors;
     readonly ClrType: Type;
     readonly DeclaringType: TypeBase;
-    get FieldInfo(): FieldInfo | undefined;
-    set FieldInfo(value: FieldInfo | undefined);
+    get FieldInfo(): FieldInfo | null;
+    set FieldInfo(value: FieldInfo | null);
     readonly Getter: IClrPropertyGetter;
     readonly IsCollection: boolean;
     readonly IsReadOnly: boolean;
     readonly MaterializationSetter: IClrPropertySetter;
     readonly Name: string;
     PropertyIndexes: PropertyIndexes;
-    readonly PropertyInfo: PropertyInfo | undefined;
+    readonly PropertyInfo: PropertyInfo | null;
     GetConfigurationSource(): ConfigurationSource;
     GetCurrentValueComparer(): IComparer_1<IUpdateEntry>;
     GetFieldInfoConfigurationSource(): Nullable_1<ConfigurationSource>;
@@ -4135,19 +4133,19 @@ export interface PropertyBase$instance extends ConventionAnnotatable {
     GetPropertyAccessMode(): PropertyAccessMode;
     GetPropertyAccessModeConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetSetter(): IClrPropertySetter;
-    OnFieldInfoSet(newFieldInfo: FieldInfo, oldFieldInfo: FieldInfo): FieldInfo | undefined;
+    OnFieldInfoSet(newFieldInfo: FieldInfo | null, oldFieldInfo: FieldInfo | null): FieldInfo | null;
     SetConfigurationSource(configurationSource: ConfigurationSource): void;
     SetCurrentValueComparer(comparer: IComparer_1<IUpdateEntry>): void;
-    SetField(fieldName: string, configurationSource: ConfigurationSource): FieldInfo | undefined;
-    SetFieldInfo(fieldInfo: FieldInfo, configurationSource: ConfigurationSource): FieldInfo | undefined;
+    SetField(fieldName: string | null, configurationSource: ConfigurationSource): FieldInfo | null;
+    SetFieldInfo(fieldInfo: FieldInfo | null, configurationSource: ConfigurationSource): FieldInfo | null;
     SetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): Nullable_1<PropertyAccessMode>;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
 }
 
 
-export const PropertyBase: (abstract new(name: string, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, configurationSource: ConfigurationSource) => PropertyBase) & {
-    GetFieldInfo(fieldName: string, type: TypeBase, propertyName: string, shouldThrow: boolean): FieldInfo | undefined;
-    IsCompatible(fieldInfo: FieldInfo, propertyType: Type, entityType: Type, propertyName: string, shouldThrow: boolean): boolean;
+export const PropertyBase: (abstract new(name: string, propertyInfo: PropertyInfo | null, fieldInfo: FieldInfo | null, configurationSource: ConfigurationSource) => PropertyBase) & {
+    GetFieldInfo(fieldName: string, type: TypeBase, propertyName: string, shouldThrow: boolean): FieldInfo | null;
+    IsCompatible(fieldInfo: FieldInfo, propertyType: Type | null, entityType: Type | null, propertyName: string | null, shouldThrow: boolean): boolean;
 };
 
 
@@ -4176,19 +4174,19 @@ export interface PropertyConfiguration$instance extends AnnotatableBase {
     Apply(property: IMutableProperty): void;
     GetMaxLength(): Nullable_1<System_Internal.Int32>;
     GetPrecision(): Nullable_1<System_Internal.Int32>;
-    GetProviderClrType(): Type | undefined;
+    GetProviderClrType(): Type | null;
     GetScale(): Nullable_1<System_Internal.Int32>;
-    GetValueConverter(): ValueConverter | undefined;
+    GetValueConverter(): ValueConverter | null;
     IsUnicode(): Nullable_1<System_Internal.Boolean>;
     SetIsUnicode(unicode: Nullable_1<System_Internal.Boolean>): void;
     SetMaxLength(maxLength: Nullable_1<System_Internal.Int32>): void;
     SetPrecision(precision: Nullable_1<System_Internal.Int32>): void;
-    SetProviderClrType(providerClrType: Type): void;
-    SetProviderValueComparer(comparerType: Type): void;
+    SetProviderClrType(providerClrType: Type | null): void;
+    SetProviderValueComparer(comparerType: Type | null): void;
     SetScale(scale: Nullable_1<System_Internal.Int32>): void;
-    SetSentinel(sentinel: unknown): void;
-    SetValueComparer(comparerType: Type): void;
-    SetValueConverter(converterType: Type): void;
+    SetSentinel(sentinel: JsValue | null): void;
+    SetValueComparer(comparerType: Type | null): void;
+    SetValueConverter(converterType: Type | null): void;
 }
 
 
@@ -4251,8 +4249,8 @@ export interface PropertyListComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: IReadOnlyList_1<IReadOnlyProperty>, y: IReadOnlyList_1<IReadOnlyProperty>): int;
-    Equals(x: IReadOnlyList_1<IReadOnlyProperty>, y: IReadOnlyList_1<IReadOnlyProperty>): boolean;
+    Compare(x: IReadOnlyList_1<IReadOnlyProperty> | null, y: IReadOnlyList_1<IReadOnlyProperty> | null): int;
+    Equals(x: IReadOnlyList_1<IReadOnlyProperty> | null, y: IReadOnlyList_1<IReadOnlyProperty> | null): boolean;
     GetHashCode(obj: IReadOnlyList_1<IReadOnlyProperty>): int;
 }
 
@@ -4270,8 +4268,8 @@ export interface PropertyNameComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: string, y: string): int;
-    Equals(x: string, y: string): boolean;
+    Compare(x: string | null, y: string | null): int;
+    Equals(x: string | null, y: string | null): boolean;
     GetHashCode(obj: string): int;
 }
 
@@ -4288,8 +4286,8 @@ export interface PropertyParameterBindingFactory$instance {
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IPropertyParameterBindingFactory: never;
 
-    FindParameter(entityType: IEntityType, parameterType: Type, parameterName: string): ParameterBinding | undefined;
-    FindParameter(complexType: IComplexType, parameterType: Type, parameterName: string): ParameterBinding | undefined;
+    FindParameter(entityType: IEntityType, parameterType: Type, parameterName: string): ParameterBinding | null;
+    FindParameter(complexType: IComplexType, parameterType: Type, parameterName: string): ParameterBinding | null;
 }
 
 
@@ -4313,17 +4311,17 @@ export interface QueryFilter$instance extends Microsoft_EntityFrameworkCore_Meta
     get ConfigurationSource(): Nullable_1<ConfigurationSource>;
     set ConfigurationSource(value: Nullable_1<ConfigurationSource> | ConfigurationSource);
     readonly Expression: LambdaExpression;
-    readonly Key: string | undefined;
+    readonly Key: string | null;
 }
 
 
 export const QueryFilter: {
-    new(key: string, expression: LambdaExpression): QueryFilter;
-    new(expression: LambdaExpression, configurationSource: ConfigurationSource): QueryFilter;
-    new(key: string, expression: LambdaExpression, configurationSource: ConfigurationSource): QueryFilter;
-    new(expression: LambdaExpression): QueryFilter;
-    new(key: string, expression: LambdaExpression, fromDataAnnotation: boolean): QueryFilter;
-    new(expression: LambdaExpression, fromDataAnnotation: boolean): QueryFilter;
+    new(key: string | null, expression: LambdaExpression | null): QueryFilter;
+    new(expression: LambdaExpression | null, configurationSource: ConfigurationSource): QueryFilter;
+    new(key: string, expression: LambdaExpression | null, configurationSource: ConfigurationSource): QueryFilter;
+    new(expression: LambdaExpression | null): QueryFilter;
+    new(key: string, expression: LambdaExpression | null, fromDataAnnotation: boolean): QueryFilter;
+    new(expression: LambdaExpression | null, fromDataAnnotation: boolean): QueryFilter;
 };
 
 
@@ -4343,7 +4341,7 @@ export interface QueryFilterCollection$instance {
 
     readonly Count: int;
     GetEnumerator(): IEnumerator_1<IQueryFilter>;
-    Set(filter: IQueryFilter): IQueryFilter | undefined;
+    Set(filter: IQueryFilter | null): IQueryFilter | null;
     SetRange(newFilters: IEnumerable_1<IQueryFilter>): void;
 }
 
@@ -4354,7 +4352,7 @@ export const QueryFilterCollection: {
 };
 
 
-export type QueryFilterCollection = QueryFilterCollection$instance & { readonly [filterKey: string]: IQueryFilter | undefined; };
+export type QueryFilterCollection = QueryFilterCollection$instance & { readonly [filterKey: string]: IQueryFilter | null; };
 
 export interface Reference_1$instance<T> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Internal_Reference_1: never;
@@ -4370,7 +4368,7 @@ export interface Reference_1$instance<T> {
 
 export const Reference_1: {
     new<T>(object: T): Reference_1<T>;
-    new<T>(object: T, root: IReferenceRoot_1<T>): Reference_1<T>;
+    new<T>(object: T, root: IReferenceRoot_1<T> | null): Reference_1<T>;
 };
 
 
@@ -4398,12 +4396,12 @@ export interface RelationalModel$instance extends Annotatable {
     readonly StoredProcedures: Dictionary_2<ValueTuple_2<System_Internal.String, System_Internal.String>, StoreStoredProcedure>;
     readonly Tables: Dictionary_2<ValueTuple_2<System_Internal.String, System_Internal.String>, Table>;
     readonly Views: Dictionary_2<ValueTuple_2<System_Internal.String, System_Internal.String>, View>;
-    FindDefaultTable(name: string): TableBase | undefined;
-    FindFunction(name: string, schema: string, parameters: IReadOnlyList_1<System_Internal.String>): IStoreFunction | undefined;
-    FindQuery(name: string): ISqlQuery | undefined;
-    FindStoredProcedure(name: string, schema: string): IStoreStoredProcedure | undefined;
-    FindTable(name: string, schema: string): ITable | undefined;
-    FindView(name: string, schema: string): IView | undefined;
+    FindDefaultTable(name: string): TableBase | null;
+    FindFunction(name: string, schema: string | null, parameters: IReadOnlyList_1<System_Internal.String>): IStoreFunction | null;
+    FindQuery(name: string): ISqlQuery | null;
+    FindStoredProcedure(name: string, schema: string | null): IStoreStoredProcedure | null;
+    FindTable(name: string, schema: string | null): ITable | null;
+    FindView(name: string, schema: string | null): IView | null;
     MakeReadOnly(): RelationalModel;
 }
 
@@ -4451,8 +4449,8 @@ export interface RelationalPropertyOverrides$instance extends ConventionAnnotata
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IReadOnlyRelationalPropertyOverrides: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IRelationalPropertyOverrides: never;
 
-    get ColumnName(): string | undefined;
-    set ColumnName(value: string | undefined);
+    get ColumnName(): string | null;
+    set ColumnName(value: string | null);
     readonly DebugView: DebugView;
     readonly IsColumnNameOverridden: boolean;
     readonly IsInModel: boolean;
@@ -4461,7 +4459,7 @@ export interface RelationalPropertyOverrides$instance extends ConventionAnnotata
     readonly StoreObject: StoreObjectIdentifier;
     GetColumnNameConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetConfigurationSource(): ConfigurationSource;
-    SetColumnName(columnName: string, configurationSource: ConfigurationSource): string | undefined;
+    SetColumnName(columnName: string | null, configurationSource: ConfigurationSource): string | null;
     SetRemovedFromModel(): void;
     ToString(): string;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
@@ -4472,11 +4470,11 @@ export const RelationalPropertyOverrides: {
     new(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier, configurationSource: ConfigurationSource): RelationalPropertyOverrides;
     Attach(property: IConventionProperty, detachedOverrides: IConventionRelationalPropertyOverrides, newStoreObject: StoreObjectIdentifier): void;
     Attach(property: IConventionProperty, detachedOverrides: IConventionRelationalPropertyOverrides): void;
-    Find(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): IReadOnlyRelationalPropertyOverrides | undefined;
-    Get(property: IReadOnlyProperty): IEnumerable_1<IReadOnlyRelationalPropertyOverrides> | undefined;
+    Find(property: IReadOnlyProperty, storeObject: StoreObjectIdentifier): IReadOnlyRelationalPropertyOverrides | null;
+    Get(property: IReadOnlyProperty): IEnumerable_1<IReadOnlyRelationalPropertyOverrides> | null;
     GetOrCreate(property: IMutableProperty, storeObject: StoreObjectIdentifier, configurationSource: ConfigurationSource): RelationalPropertyOverrides;
     MergeInto(detachedOverrides: IConventionRelationalPropertyOverrides, existingOverrides: IConventionRelationalPropertyOverrides): RelationalPropertyOverrides;
-    Remove(property: IMutableProperty, storeObject: StoreObjectIdentifier): RelationalPropertyOverrides | undefined;
+    Remove(property: IMutableProperty, storeObject: StoreObjectIdentifier): RelationalPropertyOverrides | null;
 };
 
 
@@ -4497,15 +4495,15 @@ export type RelationalPropertyOverrides = RelationalPropertyOverrides$instance &
 export interface RelationshipSnapshot$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Internal_RelationshipSnapshot: never;
 
-    readonly OwnedEntityTypeSnapshot: EntityType_Snapshot | undefined;
-    readonly ReferencingSkipNavigations: List_1<ValueTuple_2<SkipNavigation, ConfigurationSource>> | undefined;
+    readonly OwnedEntityTypeSnapshot: EntityType_Snapshot | null;
+    readonly ReferencingSkipNavigations: List_1<ValueTuple_2<SkipNavigation, ConfigurationSource>> | null;
     readonly Relationship: InternalForeignKeyBuilder;
-    Attach(entityTypeBuilder?: InternalEntityTypeBuilder): InternalForeignKeyBuilder | undefined;
+    Attach(entityTypeBuilder?: InternalEntityTypeBuilder | null): InternalForeignKeyBuilder | null;
 }
 
 
 export const RelationshipSnapshot: {
-    new(relationship: InternalForeignKeyBuilder, ownedEntityTypeSnapshot: EntityType_Snapshot, referencingSkipNavigations: List_1<ValueTuple_2<SkipNavigation, ConfigurationSource>>): RelationshipSnapshot;
+    new(relationship: InternalForeignKeyBuilder, ownedEntityTypeSnapshot: EntityType_Snapshot | null, referencingSkipNavigations: List_1<ValueTuple_2<SkipNavigation, ConfigurationSource>> | null): RelationshipSnapshot;
 };
 
 
@@ -4517,12 +4515,12 @@ export interface RuntimeQueryFilter$instance extends Microsoft_EntityFrameworkCo
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IQueryFilter: never;
 
     readonly Expression: LambdaExpression;
-    readonly Key: string | undefined;
+    readonly Key: string | null;
 }
 
 
 export const RuntimeQueryFilter: {
-    new(key: string, expression: LambdaExpression): RuntimeQueryFilter;
+    new(key: string | null, expression: LambdaExpression): RuntimeQueryFilter;
 };
 
 
@@ -4548,7 +4546,7 @@ export interface RuntimeStoredProcedureParameter$instance extends AnnotatableBas
 
 
 export const RuntimeStoredProcedureParameter: {
-    new(storedProcedure: RuntimeStoredProcedure, name: string, direction: ParameterDirection, forRowsAffected: boolean, propertyName: string, forOriginalValue: Nullable_1<System_Internal.Boolean>): RuntimeStoredProcedureParameter;
+    new(storedProcedure: RuntimeStoredProcedure, name: string, direction: ParameterDirection, forRowsAffected: boolean, propertyName: string | null, forOriginalValue: Nullable_1<System_Internal.Boolean>): RuntimeStoredProcedureParameter;
 };
 
 
@@ -4577,7 +4575,7 @@ export interface RuntimeStoredProcedureResultColumn$instance extends Annotatable
 
 
 export const RuntimeStoredProcedureResultColumn: {
-    new(storedProcedure: RuntimeStoredProcedure, name: string, forRowsAffected: boolean, propertyName: string): RuntimeStoredProcedureResultColumn;
+    new(storedProcedure: RuntimeStoredProcedure, name: string, forRowsAffected: boolean, propertyName: string | null): RuntimeStoredProcedureResultColumn;
 };
 
 
@@ -4612,9 +4610,9 @@ export interface Sequence$instance extends ConventionAnnotatable {
     get MinValue(): Nullable_1<System_Internal.Int64>;
     set MinValue(value: Nullable_1<System_Internal.Int64> | long);
     readonly Model: IReadOnlyModel;
-    readonly ModelSchema: string | undefined;
+    readonly ModelSchema: string | null;
     Name: string;
-    readonly Schema: string | undefined;
+    readonly Schema: string | null;
     StartValue: long;
     Type: Type;
     GetConfigurationSource(): ConfigurationSource;
@@ -4630,14 +4628,14 @@ export interface Sequence$instance extends ConventionAnnotatable {
     SetMinValue(minValue: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Int64>;
     SetRemovedFromModel(): void;
     SetStartValue(startValue: Nullable_1<System_Internal.Int64>, configurationSource: ConfigurationSource): Nullable_1<System_Internal.Int64>;
-    SetType(type: Type, configurationSource: ConfigurationSource): Type | undefined;
+    SetType(type: Type | null, configurationSource: ConfigurationSource): Type | null;
     ToString(): string;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
 }
 
 
 export const Sequence: {
-    new(name: string, schema: string, model: IReadOnlyModel, configurationSource: ConfigurationSource): Sequence;
+    new(name: string, schema: string | null, model: IReadOnlyModel, configurationSource: ConfigurationSource): Sequence;
     new(model: IReadOnlyModel, annotationName: string): Sequence;
     readonly DefaultClrType: Type;
     readonly DefaultMaxValue: Nullable_1<System_Internal.Int64>;
@@ -4646,11 +4644,11 @@ export const Sequence: {
     readonly DefaultIncrementBy: int;
     readonly DefaultStartValue: int;
     readonly SupportedTypes: IReadOnlyCollection_1<Type>;
-    AddSequence(model: IMutableModel, name: string, schema: string, configurationSource: ConfigurationSource): Sequence;
-    FindSequence(model: IReadOnlyModel, name: string, schema: string): ISequence | undefined;
+    AddSequence(model: IMutableModel, name: string, schema: string | null, configurationSource: ConfigurationSource): Sequence;
+    FindSequence(model: IReadOnlyModel, name: string, schema: string | null): ISequence | null;
     GetSequences(model: IReadOnlyModel): IEnumerable_1<ISequence>;
-    RemoveSequence(model: IMutableModel, name: string, schema: string): Sequence | undefined;
-    SetName(model: IMutableModel, sequence: Sequence, name: string): Sequence | undefined;
+    RemoveSequence(model: IMutableModel, name: string, schema: string | null): Sequence | null;
+    SetName(model: IMutableModel, sequence: Sequence, name: string): Sequence | null;
 };
 
 
@@ -4692,16 +4690,16 @@ export interface ServiceProperty$instance extends PropertyBase$instance {
     readonly IsCollection: boolean;
     readonly IsInModel: boolean;
     ParameterBinding: ServiceParameterBinding;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     GetParameterBindingConfigurationSource(): Nullable_1<ConfigurationSource>;
-    SetParameterBinding(parameterBinding: ServiceParameterBinding, configurationSource: ConfigurationSource): ServiceParameterBinding | undefined;
+    SetParameterBinding(parameterBinding: ServiceParameterBinding | null, configurationSource: ConfigurationSource): ServiceParameterBinding | null;
     SetRemovedFromModel(): void;
     ToString(): string;
 }
 
 
 export const ServiceProperty: {
-    new(name: string, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, serviceType: Type, declaringEntityType: EntityType, configurationSource: ConfigurationSource): ServiceProperty;
+    new(name: string, propertyInfo: PropertyInfo | null, fieldInfo: FieldInfo | null, serviceType: Type, declaringEntityType: EntityType, configurationSource: ConfigurationSource): ServiceProperty;
 };
 
 
@@ -4747,7 +4745,7 @@ export interface SkipNavigation$instance extends PropertyBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeSkipNavigation: never;
 
     readonly ClrType: Type;
-    readonly CollectionAccessor: IClrCollectionAccessor | undefined;
+    readonly CollectionAccessor: IClrCollectionAccessor | null;
     readonly DebugView: DebugView;
     readonly DeclaringEntityType: EntityType;
     readonly DeclaringType: TypeBase;
@@ -4758,15 +4756,15 @@ export interface SkipNavigation$instance extends PropertyBase$instance {
     readonly IsOnDependent: boolean;
     readonly JoinEntityType: EntityType;
     readonly ManyToManyLoader: ICollectionLoader;
-    readonly Sentinel: unknown | undefined;
+    readonly Sentinel: JsValue | null;
     readonly TargetEntityType: EntityType;
     GetForeignKeyConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetInverseConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetPropertyAccessMode(): PropertyAccessMode;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation, oldAnnotation: IConventionAnnotation): IConventionAnnotation | undefined;
-    OnAnnotationSet(name: string, annotation: Annotation, oldAnnotation: Annotation): Annotation | undefined;
-    SetForeignKey(foreignKey: ForeignKey, configurationSource: ConfigurationSource): ForeignKey | undefined;
-    SetInverse(inverse: SkipNavigation, configurationSource: ConfigurationSource): SkipNavigation | undefined;
+    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
+    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
+    SetForeignKey(foreignKey: ForeignKey | null, configurationSource: ConfigurationSource): ForeignKey | null;
+    SetInverse(inverse: SkipNavigation | null, configurationSource: ConfigurationSource): SkipNavigation | null;
     SetRemovedFromModel(): void;
     ToString(): string;
     UpdateForeignKeyConfigurationSource(configurationSource: ConfigurationSource): void;
@@ -4775,7 +4773,7 @@ export interface SkipNavigation$instance extends PropertyBase$instance {
 
 
 export const SkipNavigation: {
-    new(name: string, navigationType: Type, propertyInfo: PropertyInfo, fieldInfo: FieldInfo, declaringEntityType: EntityType, targetEntityType: EntityType, collection: boolean, onDependent: boolean, configurationSource: ConfigurationSource): SkipNavigation;
+    new(name: string, navigationType: Type | null, propertyInfo: PropertyInfo | null, fieldInfo: FieldInfo | null, declaringEntityType: EntityType, targetEntityType: EntityType, collection: boolean, onDependent: boolean, configurationSource: ConfigurationSource): SkipNavigation;
 };
 
 
@@ -4807,7 +4805,7 @@ export interface SkipNavigationComparer$instance {
 
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
 
-    Compare(x: IReadOnlySkipNavigation, y: IReadOnlySkipNavigation): int;
+    Compare(x: IReadOnlySkipNavigation | null, y: IReadOnlySkipNavigation | null): int;
 }
 
 
@@ -4828,8 +4826,8 @@ export interface SqlQuery$instance extends TableBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITableBase: never;
 
     Sql: string;
-    FindColumn(property: IProperty): IColumnBase | undefined;
-    FindColumn(name: string): SqlQueryColumn | undefined;
+    FindColumn(property: IProperty): IColumnBase | null;
+    FindColumn(name: string): SqlQueryColumn | null;
     ToString(): string;
 }
 
@@ -4865,7 +4863,7 @@ export interface SqlQueryColumn$instance extends ColumnBase_1$instance<SqlQueryC
 
 
 export const SqlQueryColumn: {
-    new(name: string, type: string, sqlQuery: SqlQuery, storeTypeMapping: RelationalTypeMapping): SqlQueryColumn;
+    new(name: string, type: string, sqlQuery: SqlQuery, storeTypeMapping: RelationalTypeMapping | null): SqlQueryColumn;
 };
 
 
@@ -4962,26 +4960,26 @@ export interface StoredProcedure$instance extends ConventionAnnotatable {
     Name: string;
     readonly Parameters: IReadOnlyList_1<StoredProcedureParameter>;
     readonly ResultColumns: IReadOnlyList_1<StoredProcedureResultColumn>;
-    get Schema(): string | undefined;
-    set Schema(value: string | undefined);
+    get Schema(): string | null;
+    set Schema(value: string | null);
     AddOriginalValueParameter(propertyName: string): StoredProcedureParameter;
     AddParameter(propertyName: string): StoredProcedureParameter;
     AddResultColumn(propertyName: string): StoredProcedureResultColumn;
     AddRowsAffectedParameter(): StoredProcedureParameter;
     AddRowsAffectedResultColumn(): StoredProcedureResultColumn;
-    FindOriginalValueParameter(propertyName: string): StoredProcedureParameter | undefined;
-    FindParameter(propertyName: string): StoredProcedureParameter | undefined;
-    FindResultColumn(propertyName: string): StoredProcedureResultColumn | undefined;
-    FindRowsAffectedParameter(): StoredProcedureParameter | undefined;
-    FindRowsAffectedResultColumn(): StoredProcedureResultColumn | undefined;
+    FindOriginalValueParameter(propertyName: string): StoredProcedureParameter | null;
+    FindParameter(propertyName: string): StoredProcedureParameter | null;
+    FindResultColumn(propertyName: string): StoredProcedureResultColumn | null;
+    FindRowsAffectedParameter(): StoredProcedureParameter | null;
+    FindRowsAffectedResultColumn(): StoredProcedureResultColumn | null;
     GetConfigurationSource(): ConfigurationSource;
     GetNameConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetSchemaConfigurationSource(): Nullable_1<ConfigurationSource>;
     SetIsRowsAffectedReturned(rowsAffectedReturned: boolean): boolean;
-    SetName(name: string, configurationSource: ConfigurationSource): string | undefined;
-    SetName(name: string, schema: string, configurationSource: ConfigurationSource, skipOverrides?: boolean): void;
+    SetName(name: string | null, configurationSource: ConfigurationSource): string | null;
+    SetName(name: string | null, schema: string | null, configurationSource: ConfigurationSource, skipOverrides?: boolean): void;
     SetRemovedFromModel(): void;
-    SetSchema(schema: string, configurationSource: ConfigurationSource): string | undefined;
+    SetSchema(schema: string | null, configurationSource: ConfigurationSource): string | null;
     ToString(): string;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
 }
@@ -4989,14 +4987,14 @@ export interface StoredProcedure$instance extends ConventionAnnotatable {
 
 export const StoredProcedure: {
     new(entityType: IMutableEntityType, configurationSource: ConfigurationSource): StoredProcedure;
-    FindDeclaredStoredProcedure(entityType: IReadOnlyEntityType, sprocType: StoreObjectType): IStoredProcedure | undefined;
-    FindStoredProcedure(entityType: IReadOnlyEntityType, sprocType: StoreObjectType): IStoredProcedure | undefined;
+    FindDeclaredStoredProcedure(entityType: IReadOnlyEntityType, sprocType: StoreObjectType): IStoredProcedure | null;
+    FindStoredProcedure(entityType: IReadOnlyEntityType, sprocType: StoreObjectType): IStoredProcedure | null;
     GetStoredProcedureConfigurationSource(entityType: IConventionEntityType, sprocType: StoreObjectType): Nullable_1<ConfigurationSource>;
-    RemoveStoredProcedure(entityType: IConventionEntityType, sprocType: StoreObjectType): IConventionStoredProcedure | undefined;
-    RemoveStoredProcedure(entityType: IMutableEntityType, sprocType: StoreObjectType): IMutableStoredProcedure | undefined;
-    SetStoredProcedure(entityType: IConventionEntityType, sprocType: StoreObjectType, fromDataAnnotation: boolean): StoredProcedure | undefined;
-    SetStoredProcedure(entityType: IConventionEntityType, sprocType: StoreObjectType, name: string, schema: string, fromDataAnnotation: boolean): StoredProcedure | undefined;
-    SetStoredProcedure(entityType: IMutableEntityType, sprocType: StoreObjectType, name: string, schema: string): StoredProcedure;
+    RemoveStoredProcedure(entityType: IConventionEntityType, sprocType: StoreObjectType): IConventionStoredProcedure | null;
+    RemoveStoredProcedure(entityType: IMutableEntityType, sprocType: StoreObjectType): IMutableStoredProcedure | null;
+    SetStoredProcedure(entityType: IConventionEntityType, sprocType: StoreObjectType, fromDataAnnotation: boolean): StoredProcedure | null;
+    SetStoredProcedure(entityType: IConventionEntityType, sprocType: StoreObjectType, name: string | null, schema: string | null, fromDataAnnotation: boolean): StoredProcedure | null;
+    SetStoredProcedure(entityType: IMutableEntityType, sprocType: StoreObjectType, name: string | null, schema: string | null): StoredProcedure;
     SetStoredProcedure(entityType: IMutableEntityType, sprocType: StoreObjectType): StoredProcedure;
 };
 
@@ -5021,8 +5019,8 @@ export interface StoredProcedureComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: IStoredProcedure, y: IStoredProcedure): int;
-    Equals(x: IStoredProcedure, y: IStoredProcedure): boolean;
+    Compare(x: IStoredProcedure | null, y: IStoredProcedure | null): int;
+    Equals(x: IStoredProcedure | null, y: IStoredProcedure | null): boolean;
     GetHashCode(obj: IStoredProcedure): int;
 }
 
@@ -5048,14 +5046,14 @@ export interface StoredProcedureMapping$instance extends TableMappingBase_1$inst
     readonly StoredProcedure: IStoredProcedure;
     readonly StoredProcedureIdentifier: StoreObjectIdentifier;
     readonly StoreStoredProcedure: IStoreStoredProcedure;
-    readonly TableMapping: ITableMapping | undefined;
+    readonly TableMapping: ITableMapping | null;
     AddParameterMapping(parameterMapping: IStoredProcedureParameterMapping): boolean;
     ToString(): string;
 }
 
 
 export const StoredProcedureMapping: {
-    new(entityType: IEntityType, storeStoredProcedure: StoreStoredProcedure, storedProcedure: IStoredProcedure, tableMapping: ITableMapping, includesDerivedTypes: Nullable_1<System_Internal.Boolean>): StoredProcedureMapping;
+    new(entityType: IEntityType, storeStoredProcedure: StoreStoredProcedure, storedProcedure: IStoredProcedure, tableMapping: ITableMapping | null, includesDerivedTypes: Nullable_1<System_Internal.Boolean>): StoredProcedureMapping;
 };
 
 
@@ -5089,7 +5087,7 @@ export interface StoredProcedureParameter$instance extends ConventionAnnotatable
     readonly IsInModel: boolean;
     readonly IsReadOnly: boolean;
     Name: string;
-    readonly PropertyName: string | undefined;
+    readonly PropertyName: string | null;
     readonly StoredProcedure: StoredProcedure;
     StoreParameter: IStoreStoredProcedureParameter;
     GetDirectionConfigurationSource(): Nullable_1<ConfigurationSource>;
@@ -5103,7 +5101,7 @@ export interface StoredProcedureParameter$instance extends ConventionAnnotatable
 
 
 export const StoredProcedureParameter: {
-    new(storedProcedure: StoredProcedure, rowsAffected: boolean, propertyName: string, originalValue: Nullable_1<System_Internal.Boolean>): StoredProcedureParameter;
+    new(storedProcedure: StoredProcedure, rowsAffected: boolean, propertyName: string | null, originalValue: Nullable_1<System_Internal.Boolean>): StoredProcedureParameter;
 };
 
 
@@ -5171,18 +5169,18 @@ export interface StoredProcedureResultColumn$instance extends ConventionAnnotata
     readonly IsInModel: boolean;
     readonly IsReadOnly: boolean;
     Name: string;
-    readonly PropertyName: string | undefined;
+    readonly PropertyName: string | null;
     readonly StoredProcedure: StoredProcedure;
     StoreResultColumn: IStoreStoredProcedureResultColumn;
     GetNameConfigurationSource(): Nullable_1<ConfigurationSource>;
-    SetName(name: string, configurationSource: ConfigurationSource): string | undefined;
+    SetName(name: string, configurationSource: ConfigurationSource): string | null;
     SetRemovedFromModel(): void;
     ToString(): string;
 }
 
 
 export const StoredProcedureResultColumn: {
-    new(storedProcedure: StoredProcedure, forRowsAffected: boolean, propertyName: string): StoredProcedureResultColumn;
+    new(storedProcedure: StoredProcedure, forRowsAffected: boolean, propertyName: string | null): StoredProcedureResultColumn;
 };
 
 
@@ -5245,11 +5243,11 @@ export interface StoreFunction$instance extends TableBase$instance {
     readonly DbFunctions: SortedDictionary_2<System_Internal.String, IDbFunction>;
     readonly IsBuiltIn: boolean;
     readonly Parameters: StoreFunctionParameter[];
-    readonly ReturnType: string | undefined;
+    readonly ReturnType: string | null;
     AddDbFunction(dbFunction: IRuntimeDbFunction): void;
-    FindColumn(property: IProperty): IColumnBase | undefined;
-    FindColumn(name: string): FunctionColumn | undefined;
-    FindParameter(propertyName: string): StoreFunctionParameter | undefined;
+    FindColumn(property: IProperty): IColumnBase | null;
+    FindColumn(name: string): FunctionColumn | null;
+    FindParameter(propertyName: string): StoreFunctionParameter | null;
     ToString(): string;
 }
 
@@ -5314,24 +5312,24 @@ export interface StoreStoredProcedure$instance extends TableBase$instance {
     readonly DebugView: DebugView;
     Parameters: List_1<IStoreStoredProcedureParameter>;
     ResultColumns: List_1<IStoreStoredProcedureResultColumn>;
-    get ReturnValue(): IStoreStoredProcedureReturnValue | undefined;
-    set ReturnValue(value: IStoreStoredProcedureReturnValue | undefined);
+    get ReturnValue(): IStoreStoredProcedureReturnValue | null;
+    set ReturnValue(value: IStoreStoredProcedureReturnValue | null);
     readonly StoredProcedures: SortedSet_1<IStoredProcedure>;
     AddParameter(parameter: IStoreStoredProcedureParameter): void;
     AddResultColumn(column: IStoreStoredProcedureResultColumn): void;
     AddStoredProcedure(storedProcedure: IRuntimeStoredProcedure): void;
-    FindColumn(property: IProperty): IColumnBase | undefined;
-    FindColumn(name: string): IColumnBase | undefined;
-    FindParameter(name: string): IStoreStoredProcedureParameter | undefined;
-    FindParameter(property: IProperty): IStoreStoredProcedureParameter | undefined;
-    FindResultColumn(name: string): IStoreStoredProcedureResultColumn | undefined;
-    FindResultColumn(property: IProperty): IStoreStoredProcedureResultColumn | undefined;
+    FindColumn(property: IProperty): IColumnBase | null;
+    FindColumn(name: string): IColumnBase | null;
+    FindParameter(name: string): IStoreStoredProcedureParameter | null;
+    FindParameter(property: IProperty): IStoreStoredProcedureParameter | null;
+    FindResultColumn(name: string): IStoreStoredProcedureResultColumn | null;
+    FindResultColumn(property: IProperty): IStoreStoredProcedureResultColumn | null;
     ToString(): string;
 }
 
 
 export const StoreStoredProcedure: {
-    new(name: string, schema: string, model: RelationalModel): StoreStoredProcedure;
+    new(name: string, schema: string | null, model: RelationalModel): StoreStoredProcedure;
 };
 
 
@@ -5365,7 +5363,7 @@ export interface StoreStoredProcedureParameter$instance extends ColumnBase_1$ins
 
 
 export const StoreStoredProcedureParameter: {
-    new(name: string, type: string, position: int, storedProcedure: StoreStoredProcedure, direction: ParameterDirection, storeTypeMapping: RelationalTypeMapping): StoreStoredProcedureParameter;
+    new(name: string, type: string, position: int, storedProcedure: StoreStoredProcedure, direction: ParameterDirection, storeTypeMapping: RelationalTypeMapping | null): StoreStoredProcedureParameter;
 };
 
 
@@ -5398,7 +5396,7 @@ export interface StoreStoredProcedureResultColumn$instance extends ColumnBase_1$
 
 
 export const StoreStoredProcedureResultColumn: {
-    new(name: string, type: string, position: int, storedProcedure: StoreStoredProcedure, storeTypeMapping: RelationalTypeMapping): StoreStoredProcedureResultColumn;
+    new(name: string, type: string, position: int, storedProcedure: StoreStoredProcedure, storeTypeMapping: RelationalTypeMapping | null): StoreStoredProcedureResultColumn;
 };
 
 
@@ -5430,7 +5428,7 @@ export interface StoreStoredProcedureReturnValue$instance extends ColumnBase_1$i
 
 
 export const StoreStoredProcedureReturnValue: {
-    new(name: string, type: string, storedProcedure: StoreStoredProcedure, storeTypeMapping: RelationalTypeMapping): StoreStoredProcedureReturnValue;
+    new(name: string, type: string, storedProcedure: StoreStoredProcedure, storeTypeMapping: RelationalTypeMapping | null): StoreStoredProcedureReturnValue;
 };
 
 
@@ -5458,20 +5456,20 @@ export interface Table$instance extends TableBase$instance {
     readonly ForeignKeyConstraints: SortedSet_1<ForeignKeyConstraint>;
     readonly Indexes: SortedDictionary_2<System_Internal.String, TableIndex>;
     readonly IsExcludedFromMigrations: boolean;
-    get PrimaryKey(): UniqueConstraint | undefined;
-    set PrimaryKey(value: UniqueConstraint | undefined);
+    get PrimaryKey(): UniqueConstraint | null;
+    set PrimaryKey(value: UniqueConstraint | null);
     readonly ReferencingForeignKeyConstraints: SortedSet_1<ForeignKeyConstraint>;
     readonly Triggers: SortedDictionary_2<System_Internal.String, ITrigger>;
     readonly UniqueConstraints: SortedDictionary_2<System_Internal.String, UniqueConstraint>;
-    FindColumn(property: IProperty): IColumnBase | undefined;
-    FindColumn(name: string): Column | undefined;
-    FindUniqueConstraint(name: string): UniqueConstraint | undefined;
+    FindColumn(property: IProperty): IColumnBase | null;
+    FindColumn(name: string): Column | null;
+    FindUniqueConstraint(name: string): UniqueConstraint | null;
     ToString(): string;
 }
 
 
 export const Table: {
-    new(name: string, schema: string, model: RelationalModel): Table;
+    new(name: string, schema: string | null, model: RelationalModel): Table;
 };
 
 
@@ -5501,24 +5499,24 @@ export interface TableBase$instance extends Annotatable {
     IsShared: boolean;
     readonly Model: RelationalModel;
     readonly Name: string;
-    get OptionalTypes(): Dictionary_2<ITypeBase, System_Internal.Boolean> | undefined;
-    set OptionalTypes(value: Dictionary_2<ITypeBase, System_Internal.Boolean> | undefined);
-    get ReferencingRowInternalForeignKeys(): SortedDictionary_2<IEntityType, IEnumerable_1<IForeignKey>> | undefined;
-    set ReferencingRowInternalForeignKeys(value: SortedDictionary_2<IEntityType, IEnumerable_1<IForeignKey>> | undefined);
-    get RowInternalForeignKeys(): SortedDictionary_2<IEntityType, IEnumerable_1<IForeignKey>> | undefined;
-    set RowInternalForeignKeys(value: SortedDictionary_2<IEntityType, IEnumerable_1<IForeignKey>> | undefined);
-    readonly Schema: string | undefined;
+    get OptionalTypes(): Dictionary_2<ITypeBase, System_Internal.Boolean> | null;
+    set OptionalTypes(value: Dictionary_2<ITypeBase, System_Internal.Boolean> | null);
+    get ReferencingRowInternalForeignKeys(): SortedDictionary_2<IEntityType, IEnumerable_1<IForeignKey>> | null;
+    set ReferencingRowInternalForeignKeys(value: SortedDictionary_2<IEntityType, IEnumerable_1<IForeignKey>> | null);
+    get RowInternalForeignKeys(): SortedDictionary_2<IEntityType, IEnumerable_1<IForeignKey>> | null;
+    set RowInternalForeignKeys(value: SortedDictionary_2<IEntityType, IEnumerable_1<IForeignKey>> | null);
+    readonly Schema: string | null;
     AddRowInternalForeignKey(entityType: IEntityType, foreignKey: IForeignKey): void;
     AddTypeMapping(tableMapping: ITableMappingBase, optional: Nullable_1<System_Internal.Boolean>): void;
-    FindColumn(name: string): IColumnBase | undefined;
-    FindColumn(property: IProperty): IColumnBase | undefined;
+    FindColumn(name: string): IColumnBase | null;
+    FindColumn(property: IProperty): IColumnBase | null;
     IsOptional(typeBase: ITypeBase): boolean;
     ToString(): string;
 }
 
 
 export const TableBase: {
-    new(name: string, schema: string, model: RelationalModel): TableBase;
+    new(name: string, schema: string | null, model: RelationalModel): TableBase;
 };
 
 
@@ -5537,7 +5535,7 @@ export interface TableBaseIdentityComparer$instance {
 
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Equals(x: ITableBase, y: ITableBase): boolean;
+    Equals(x: ITableBase | null, y: ITableBase | null): boolean;
     GetHashCode(obj: ITableBase): int;
 }
 
@@ -5558,8 +5556,8 @@ export interface TableIndex$instance extends Annotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITableIndex: never;
 
     readonly Columns: IReadOnlyList_1<Column>;
-    readonly Filter: string | undefined;
-    readonly IsDescending: IReadOnlyList_1<System_Internal.Boolean> | undefined;
+    readonly Filter: string | null;
+    readonly IsDescending: IReadOnlyList_1<System_Internal.Boolean> | null;
     readonly IsReadOnly: boolean;
     readonly IsUnique: boolean;
     readonly MappedIndexes: SortedSet_1<IIndex>;
@@ -5592,8 +5590,8 @@ export interface TableIndexComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: ITableIndex, y: ITableIndex): int;
-    Equals(x: ITableIndex, y: ITableIndex): boolean;
+    Compare(x: ITableIndex | null, y: ITableIndex | null): int;
+    Equals(x: ITableIndex | null, y: ITableIndex | null): boolean;
     GetHashCode(obj: ITableIndex): int;
 }
 
@@ -5614,12 +5612,12 @@ export interface TableMapping$instance extends TableMappingBase_1$instance<Colum
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITableMapping: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITableMappingBase: never;
 
-    get DeleteStoredProcedureMapping(): IStoredProcedureMapping | undefined;
-    set DeleteStoredProcedureMapping(value: IStoredProcedureMapping | undefined);
-    get InsertStoredProcedureMapping(): IStoredProcedureMapping | undefined;
-    set InsertStoredProcedureMapping(value: IStoredProcedureMapping | undefined);
-    get UpdateStoredProcedureMapping(): IStoredProcedureMapping | undefined;
-    set UpdateStoredProcedureMapping(value: IStoredProcedureMapping | undefined);
+    get DeleteStoredProcedureMapping(): IStoredProcedureMapping | null;
+    set DeleteStoredProcedureMapping(value: IStoredProcedureMapping | null);
+    get InsertStoredProcedureMapping(): IStoredProcedureMapping | null;
+    set InsertStoredProcedureMapping(value: IStoredProcedureMapping | null);
+    get UpdateStoredProcedureMapping(): IStoredProcedureMapping | null;
+    set UpdateStoredProcedureMapping(value: IStoredProcedureMapping | null);
     SetIsSharedTablePrincipal(isSharedTablePrincipal: boolean): void;
     ToString(): string;
 }
@@ -5685,8 +5683,8 @@ export interface TableMappingBaseComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: ITableMappingBase, y: ITableMappingBase): int;
-    Equals(x: ITableMappingBase, y: ITableMappingBase): boolean;
+    Compare(x: ITableMappingBase | null, y: ITableMappingBase | null): int;
+    Equals(x: ITableMappingBase | null, y: ITableMappingBase | null): boolean;
     GetHashCode(obj: ITableMappingBase): int;
 }
 
@@ -5754,11 +5752,11 @@ export interface TypeBase$instance extends ConventionAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IRuntimeTypeBase: never;
 
     readonly BaseBuilder: InternalTypeBaseBuilder;
-    get BaseType(): EntityType | undefined | TypeBase | undefined;
-    set BaseType(value: EntityType | undefined | TypeBase | undefined);
+    get BaseType(): ComplexType | null | TypeBase | null;
+    set BaseType(value: ComplexType | null | TypeBase | null);
     readonly ClrType: Type;
-    get ConstructorBinding(): InstantiationBinding | undefined;
-    set ConstructorBinding(value: InstantiationBinding | undefined);
+    get ConstructorBinding(): InstantiationBinding | null;
+    set ConstructorBinding(value: InstantiationBinding | null);
     readonly DirectlyDerivedTypes: SortedSet_1<TypeBase>;
     readonly EmptyShadowValuesFactory: Func_1<ISnapshot>;
     readonly HasSharedClrType: boolean;
@@ -5769,37 +5767,37 @@ export interface TypeBase$instance extends ConventionAnnotatable {
     readonly Name: string;
     readonly OriginalValuesFactory: Func_2<IInternalEntry, ISnapshot>;
     readonly Properties: SortedDictionary_2<System_Internal.String, Property>;
-    get ServiceOnlyConstructorBinding(): InstantiationBinding | undefined;
-    set ServiceOnlyConstructorBinding(value: InstantiationBinding | undefined);
-    readonly ShadowValuesFactory: Func_2<IDictionary_2<System_Internal.String, unknown | undefined>, ISnapshot>;
+    get ServiceOnlyConstructorBinding(): InstantiationBinding | null;
+    set ServiceOnlyConstructorBinding(value: InstantiationBinding | null);
+    readonly ShadowValuesFactory: Func_2<IDictionary_2<System_Internal.String, JsValue | null>, ISnapshot>;
     readonly StoreGeneratedValuesFactory: Func_1<ISnapshot>;
     readonly TemporaryValuesFactory: Func_2<IInternalEntry, ISnapshot>;
-    AddComplexProperty(name: string, propertyType: Type, targetType: Type, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty | undefined;
-    AddComplexProperty(memberInfo: MemberInfo, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty | undefined;
-    AddComplexProperty(name: string, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty | undefined;
-    AddComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo, complexTypeName: string, targetType: Type, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty | undefined;
-    AddIgnored(name: string, configurationSource: ConfigurationSource): string | undefined;
-    AddProperty(name: string, propertyType: Type, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: ConfigurationSource): Property | undefined;
-    AddProperty(memberInfo: MemberInfo, configurationSource: ConfigurationSource): Property | undefined;
-    AddProperty(name: string, configurationSource: ConfigurationSource): Property | undefined;
-    AddProperty(name: string, propertyType: Type, memberInfo: MemberInfo, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: ConfigurationSource): Property | undefined;
+    AddComplexProperty(name: string, propertyType: Type, targetType: Type, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty | null;
+    AddComplexProperty(memberInfo: MemberInfo, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty | null;
+    AddComplexProperty(name: string, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty | null;
+    AddComplexProperty(name: string, propertyType: Type, memberInfo: MemberInfo | null, complexTypeName: string | null, targetType: Type, collection: boolean, configurationSource: ConfigurationSource): ComplexProperty | null;
+    AddIgnored(name: string, configurationSource: ConfigurationSource): string | null;
+    AddProperty(name: string, propertyType: Type, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: ConfigurationSource): Property | null;
+    AddProperty(memberInfo: MemberInfo, configurationSource: ConfigurationSource): Property | null;
+    AddProperty(name: string, configurationSource: ConfigurationSource): Property | null;
+    AddProperty(name: string, propertyType: Type, memberInfo: MemberInfo | null, typeConfigurationSource: Nullable_1<ConfigurationSource>, configurationSource: ConfigurationSource): Property | null;
     CalculateCounts(): PropertyCounts;
     FindComplexPropertiesInHierarchy(propertyName: string): IEnumerable_1<ComplexProperty>;
-    FindComplexProperty(name: string): ComplexProperty | undefined;
-    FindDeclaredComplexProperty(name: string): ComplexProperty | undefined;
+    FindComplexProperty(name: string): ComplexProperty | null;
+    FindDeclaredComplexProperty(name: string): ComplexProperty | null;
     FindDeclaredIgnoredConfigurationSource(name: string): Nullable_1<ConfigurationSource>;
-    FindDeclaredProperty(name: string): Property | undefined;
+    FindDeclaredProperty(name: string): Property | null;
     FindDerivedComplexProperties(propertyName: string): IEnumerable_1<ComplexProperty>;
     FindDerivedComplexPropertiesInclusive(propertyName: string): IEnumerable_1<ComplexProperty>;
     FindDerivedProperties(propertyName: string): IEnumerable_1<Property>;
     FindDerivedPropertiesInclusive(propertyName: string): IEnumerable_1<Property>;
     FindIgnoredConfigurationSource(name: string): Nullable_1<ConfigurationSource>;
-    FindIndexerPropertyInfo(): PropertyInfo | undefined;
-    FindMember(name: string): PropertyBase | undefined;
+    FindIndexerPropertyInfo(): PropertyInfo | null;
+    FindMember(name: string): PropertyBase | null;
     FindMembersInHierarchy(name: string): IEnumerable_1<PropertyBase>;
-    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<Property> | undefined;
+    FindProperties(propertyNames: IReadOnlyList_1<System_Internal.String>): IReadOnlyList_1<Property> | null;
     FindPropertiesInHierarchy(propertyName: string): IEnumerable_1<Property>;
-    FindProperty(name: string): Property | undefined;
+    FindProperty(name: string): Property | null;
     GetBaseTypeConfigurationSource(): Nullable_1<ConfigurationSource>;
     GetChangeTrackingStrategy(): ChangeTrackingStrategy;
     GetChangeTrackingStrategyConfigurationSource(): Nullable_1<ConfigurationSource>;
@@ -5815,15 +5813,15 @@ export interface TypeBase$instance extends ConventionAnnotatable {
     GetDerivedTypes<T extends TypeBase>(): IEnumerable_1<T>;
     GetDerivedTypesInclusive(): IEnumerable_1<TypeBase>;
     GetDiscriminatorPropertyConfigurationSource(): Nullable_1<ConfigurationSource>;
-    GetDiscriminatorPropertyName(): string | undefined;
+    GetDiscriminatorPropertyName(): string | null;
     GetFlattenedComplexProperties(): IEnumerable_1<ComplexProperty>;
     GetFlattenedDeclaredProperties(): IEnumerable_1<Property>;
     GetFlattenedProperties(): IEnumerable_1<Property>;
     GetFlattenedValueGeneratingProperties(): IEnumerable_1<Property>;
     GetIgnoredMembers(): IEnumerable_1<System_Internal.String>;
     GetMembers(): IEnumerable_1<PropertyBase>;
-    GetOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, unknown>;
-    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, unknown>;
+    GetOrCreateEmptyMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, JsValue>;
+    GetOrCreateMaterializer(source: IStructuralTypeMaterializerSource): Func_2<MaterializationContext, JsValue>;
     GetProperties(): IEnumerable_1<Property>;
     GetPropertyAccessMode(): PropertyAccessMode;
     GetRootType(): TypeBase;
@@ -5833,26 +5831,26 @@ export interface TypeBase$instance extends ConventionAnnotatable {
     GetSnapshottableMembers(): IEnumerable_1<PropertyBase>;
     IsAssignableFrom(derivedType: TypeBase): boolean;
     IsIgnored(name: string): boolean;
-    OnTypeMemberIgnored(name: string): string | undefined;
-    RemoveComplexProperty(name: string): ComplexProperty | undefined;
-    RemoveComplexProperty(property: ComplexProperty): ComplexProperty | undefined;
-    RemoveIgnored(name: string): string | undefined;
-    RemoveProperty(name: string): Property | undefined;
-    RemoveProperty(property: Property): Property | undefined;
-    SetBaseType(newBaseType: TypeBase, configurationSource: ConfigurationSource): TypeBase | undefined;
+    OnTypeMemberIgnored(name: string): string | null;
+    RemoveComplexProperty(name: string): ComplexProperty | null;
+    RemoveComplexProperty(property: ComplexProperty): ComplexProperty | null;
+    RemoveIgnored(name: string): string | null;
+    RemoveProperty(name: string): Property | null;
+    RemoveProperty(property: Property): Property | null;
+    SetBaseType(newBaseType: TypeBase | null, configurationSource: ConfigurationSource): TypeBase | null;
     SetChangeTrackingStrategy(changeTrackingStrategy: Nullable_1<ChangeTrackingStrategy>, configurationSource: ConfigurationSource): Nullable_1<ChangeTrackingStrategy>;
-    SetConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): InstantiationBinding | undefined;
-    SetDiscriminatorProperty(property: Property, configurationSource: ConfigurationSource): Property | undefined;
+    SetConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): InstantiationBinding | null;
+    SetDiscriminatorProperty(property: Property | null, configurationSource: ConfigurationSource): Property | null;
     SetPropertyAccessMode(propertyAccessMode: Nullable_1<PropertyAccessMode>, configurationSource: ConfigurationSource): Nullable_1<PropertyAccessMode>;
-    SetServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding, configurationSource: ConfigurationSource): InstantiationBinding | undefined;
+    SetServiceOnlyConstructorBinding(constructorBinding: InstantiationBinding | null, configurationSource: ConfigurationSource): InstantiationBinding | null;
     UpdateConfigurationSource(configurationSource: ConfigurationSource): void;
-    ValidateClrMember(name: string, memberInfo: MemberInfo, throwOnNameMismatch?: boolean): Type | undefined;
+    ValidateClrMember(name: string, memberInfo: MemberInfo, throwOnNameMismatch?: boolean): Type | null;
 }
 
 
 export const TypeBase: (abstract new(type: Type, model: Model, configurationSource: ConfigurationSource) => TypeBase) & (abstract new(name: string, type: Type, model: Model, configurationSource: ConfigurationSource) => TypeBase) & {
-    CheckChangeTrackingStrategy(structuralType: IReadOnlyTypeBase, value: ChangeTrackingStrategy, requireFullNotifications: boolean): string | undefined;
-    ToEnumerable<T>(element: T): IEnumerable_1<T>;
+    CheckChangeTrackingStrategy(structuralType: IReadOnlyTypeBase, value: ChangeTrackingStrategy, requireFullNotifications: boolean): string | null;
+    ToEnumerable<T>(element: T | null): IEnumerable_1<T>;
 };
 
 
@@ -5912,8 +5910,8 @@ export interface UniqueConstraintComparer$instance {
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
 
-    Compare(x: IUniqueConstraint, y: IUniqueConstraint): int;
-    Equals(x: IUniqueConstraint, y: IUniqueConstraint): boolean;
+    Compare(x: IUniqueConstraint | null, y: IUniqueConstraint | null): int;
+    Equals(x: IUniqueConstraint | null, y: IUniqueConstraint | null): boolean;
     GetHashCode(obj: IUniqueConstraint): int;
 }
 
@@ -5934,15 +5932,15 @@ export interface View$instance extends TableBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_ITableBase: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IView: never;
 
-    readonly ViewDefinitionSql: string | undefined;
-    FindColumn(property: IProperty): IColumnBase | undefined;
-    FindColumn(name: string): ViewColumn | undefined;
+    readonly ViewDefinitionSql: string | null;
+    FindColumn(property: IProperty): IColumnBase | null;
+    FindColumn(name: string): ViewColumn | null;
     ToString(): string;
 }
 
 
 export const View: {
-    new(name: string, schema: string, model: RelationalModel): View;
+    new(name: string, schema: string | null, model: RelationalModel): View;
 };
 
 
@@ -5972,7 +5970,7 @@ export interface ViewColumn$instance extends ColumnBase_1$instance<ViewColumnMap
 
 
 export const ViewColumn: {
-    new(name: string, type: string, view: View, storeTypeMapping: RelationalTypeMapping, providerValueComparer: ValueComparer): ViewColumn;
+    new(name: string, type: string, view: View, storeTypeMapping: RelationalTypeMapping | null, providerValueComparer: ValueComparer | null): ViewColumn;
 };
 
 
@@ -6110,19 +6108,19 @@ export type CoreAnnotationNames = CoreAnnotationNames$instance;
 
 export abstract class EntityTypeExtensions$instance {
     static CalculateCounts(entityType: IRuntimeEntityType): PropertyCounts;
-    static FindDeclaredOwnership(entityType: IConventionEntityType): IConventionForeignKey | undefined;
-    static FindDeclaredOwnership(entityType: IReadOnlyEntityType): IReadOnlyForeignKey | undefined;
-    static FindDeclaredPrimaryKey(entityType: IReadOnlyEntityType): IReadOnlyKey | undefined;
+    static FindDeclaredOwnership(entityType: IConventionEntityType): IConventionForeignKey | null;
+    static FindDeclaredOwnership(entityType: IReadOnlyEntityType): IReadOnlyForeignKey | null;
+    static FindDeclaredPrimaryKey(entityType: IReadOnlyEntityType): IReadOnlyKey | null;
     static FindDerivedNavigations(entityType: IReadOnlyEntityType, navigationName: string): IEnumerable_1<IReadOnlyNavigation>;
-    static FindInOwnershipPath(entityType: IReadOnlyEntityType, targetType: Type): IReadOnlyEntityType | undefined;
-    static GetDiscriminatorValue(entityType: EntityType): unknown | undefined;
+    static FindInOwnershipPath(entityType: IReadOnlyEntityType, targetType: Type): IReadOnlyEntityType | null;
+    static GetDiscriminatorValue(entityType: EntityType): JsValue | null;
     static GetNavigationMemberInfo(entityType: IReadOnlyEntityType, navigationName: string): MemberInfo;
     static IsAssignableFrom(entityType: EntityType, otherEntityType: IReadOnlyEntityType): boolean;
     static IsInOwnershipPath(entityType: IReadOnlyEntityType, targetType: IReadOnlyEntityType): boolean;
     static IsInOwnershipPath(entityType: IReadOnlyEntityType, targetType: Type): boolean;
     static IsOwned(entityType: IReadOnlyEntityType): boolean;
     static IsStrictlyDerivedFrom(entityType: EntityType, otherEntityType: IReadOnlyEntityType): boolean;
-    static LeastDerivedType(entityType: EntityType, otherEntityType: EntityType): EntityType | undefined;
+    static LeastDerivedType(entityType: EntityType, otherEntityType: EntityType): EntityType | null;
 }
 
 
@@ -6149,7 +6147,7 @@ export abstract class KeyExtensions$instance {
 export type KeyExtensions = KeyExtensions$instance;
 
 export abstract class ModelExtensions$instance {
-    static FindSameTypeNameWithDifferentNamespace(model: IModel, type: Type): string | undefined;
+    static FindSameTypeNameWithDifferentNamespace(model: IModel, type: Type): string | null;
     static GetEntityTypesInHierarchicalOrder(model: IModel): IEnumerable_1<IEntityType>;
     static GetRootEntityTypes(model: IModel): IEnumerable_1<IEntityType>;
     static SetProductVersion(model: IMutableModel, value: string): void;
@@ -6159,14 +6157,14 @@ export abstract class ModelExtensions$instance {
 export type ModelExtensions = ModelExtensions$instance;
 
 export abstract class NavigationExtensions$instance {
-    static CreateMemberIdentity(navigation: IReadOnlyNavigation): MemberIdentity;
+    static CreateMemberIdentity(navigation: IReadOnlyNavigation | null): MemberIdentity;
 }
 
 
 export type NavigationExtensions = NavigationExtensions$instance;
 
 export abstract class PropertyBaseExtensions$instance {
-    static GetIdentifyingMemberInfo(propertyBase: IReadOnlyPropertyBase): MemberInfo | undefined;
+    static GetIdentifyingMemberInfo(propertyBase: IReadOnlyPropertyBase): MemberInfo | null;
     static GetOriginalValueIndex(propertyBase: IPropertyBase): int;
     static GetPropertyAccessors(propertyBase: IPropertyBase): PropertyAccessors;
     static GetPropertyIndexes(propertyBase: IPropertyBase): PropertyIndexes;
@@ -6175,15 +6173,15 @@ export abstract class PropertyBaseExtensions$instance {
     static GetStoreGeneratedIndex(propertyBase: IPropertyBase): int;
     static IsIndexerProperty(propertyBase: PropertyBase): boolean;
     static IsShadowProperty(propertyBase: PropertyBase): boolean;
-    static TryGetMemberInfo(propertyBase: IPropertyBase, forMaterialization: boolean, forSet: boolean, memberInfo: MemberInfo, errorMessage: string): boolean;
+    static TryGetMemberInfo(propertyBase: IPropertyBase, forMaterialization: boolean, forSet: boolean, memberInfo: MemberInfo | null, errorMessage: string | null): boolean;
 }
 
 
 export type PropertyBaseExtensions = PropertyBaseExtensions$instance;
 
 export abstract class PropertyExtensions$instance {
-    static FindFirstDifferentPrincipal(property: IReadOnlyProperty): IReadOnlyProperty | undefined;
-    static FindGenerationProperty(property: IProperty): IProperty | undefined;
+    static FindFirstDifferentPrincipal(property: IReadOnlyProperty): IReadOnlyProperty | null;
+    static FindGenerationProperty(property: IProperty): IProperty | null;
     static ForAdd(valueGenerated: ValueGenerated): boolean;
     static ForUpdate(valueGenerated: ValueGenerated): boolean;
     static IsForeignKeyToSelf(property: IReadOnlyProperty): boolean;
@@ -6210,8 +6208,8 @@ export type RelationalEntityTypeExtensions = RelationalEntityTypeExtensions$inst
 
 export abstract class RelationalForeignKeyExtensions$instance {
     static AreCompatible(foreignKey: IReadOnlyForeignKey, duplicateForeignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier, shouldThrow: boolean): boolean;
-    static GetConstraintName(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier, principalStoreObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): string | undefined;
-    static GetDefaultName(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier, principalStoreObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): string | undefined;
+    static GetConstraintName(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier, principalStoreObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation> | null): string | null;
+    static GetDefaultName(foreignKey: IReadOnlyForeignKey, storeObject: StoreObjectIdentifier, principalStoreObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation> | null): string | null;
 }
 
 
@@ -6219,8 +6217,8 @@ export type RelationalForeignKeyExtensions = RelationalForeignKeyExtensions$inst
 
 export abstract class RelationalIndexExtensions$instance {
     static AreCompatible(index: IReadOnlyIndex, duplicateIndex: IReadOnlyIndex, storeObject: StoreObjectIdentifier, shouldThrow: boolean): boolean;
-    static GetDatabaseName(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): string | undefined;
-    static GetDefaultDatabaseName(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): string | undefined;
+    static GetDatabaseName(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation> | null): string | null;
+    static GetDefaultDatabaseName(index: IReadOnlyIndex, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation> | null): string | null;
 }
 
 
@@ -6228,15 +6226,15 @@ export type RelationalIndexExtensions = RelationalIndexExtensions$instance;
 
 export abstract class RelationalKeyExtensions$instance {
     static AreCompatible(key: IReadOnlyKey, duplicateKey: IReadOnlyKey, storeObject: StoreObjectIdentifier, shouldThrow: boolean): boolean;
-    static GetDefaultName(key: IReadOnlyKey, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): string | undefined;
-    static GetName(key: IReadOnlyKey, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): string | undefined;
+    static GetDefaultName(key: IReadOnlyKey, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation> | null): string | null;
+    static GetName(key: IReadOnlyKey, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation> | null): string | null;
 }
 
 
 export type RelationalKeyExtensions = RelationalKeyExtensions$instance;
 
 export abstract class RelationalPropertyExtensions$instance {
-    static GetConfiguredColumnType(property: IReadOnlyProperty): string | undefined;
+    static GetConfiguredColumnType(property: IReadOnlyProperty): string | null;
     static IsOrdinalKeyProperty(property: IReadOnlyProperty): boolean;
 }
 
@@ -6251,7 +6249,7 @@ export abstract class RelationalTypeBaseExtensions$instance {
 export type RelationalTypeBaseExtensions = RelationalTypeBaseExtensions$instance;
 
 export abstract class SkipNavigationExtensions$instance {
-    static CreateMemberIdentity(navigation: IReadOnlySkipNavigation): MemberIdentity;
+    static CreateMemberIdentity(navigation: IReadOnlySkipNavigation | null): MemberIdentity;
 }
 
 

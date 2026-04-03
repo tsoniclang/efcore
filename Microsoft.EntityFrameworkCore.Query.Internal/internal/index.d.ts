@@ -2,8 +2,9 @@
 // Namespace: Microsoft.EntityFrameworkCore.Query.Internal
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
-// Primitive type aliases from @tsonic/core
-import type { sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+// Core type aliases from @tsonic/core
+import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
 
 // Import types from other namespaces
 import type { IDiagnosticsLogger_1, ISingletonInterceptor } from "../../Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js";
@@ -39,13 +40,13 @@ import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Action_3, AsyncCallback, Boolean as ClrBoolean, Byte, Char, DateTime, Decimal, Double, Func_1, Func_2, Func_3, Func_4, Func_5, Guid, IAsyncDisposable, IAsyncResult, ICloneable, IDisposable, IEquatable_1, Int16, Int32, Int64, IntPtr, MulticastDelegate, Nullable_1, Object as ClrObject, Single, String as ClrString, Type, ValueTuple_2, ValueTuple_3, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 import type { IMemoryCache } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Caching.Memory/internal/index.js";
 
-export type RelationalCommandResolver = (parameters: Dictionary_2<System_Internal.String, unknown>) => IRelationalCommandTemplate;
+export type RelationalCommandResolver = (parameters: Dictionary_2<System_Internal.String, JsValue | null>) => IRelationalCommandTemplate;
 
 
 export interface ICompiledQueryCache$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_ICompiledQueryCache: never;
 
-    GetOrAddQuery<TResult>(cacheKey: unknown, compiler: Func_1<Func_2<QueryContext, TResult>>): Func_2<QueryContext, TResult>;
+    GetOrAddQuery<TResult>(cacheKey: JsValue, compiler: Func_1<Func_2<QueryContext, TResult>>): Func_2<QueryContext, TResult>;
 }
 
 
@@ -130,13 +131,13 @@ export interface BufferedDataReader$instance extends DbDataReader {
     readonly RecordsAffected: int;
     Close(): void;
     Dispose(disposing: boolean): void;
-    get_Item(name: string): unknown;
-    get_Item(ordinal: int): unknown;
+    get_Item(name: string): JsValue;
+    get_Item(ordinal: int): JsValue;
     GetBoolean(ordinal: int): boolean;
     GetByte(ordinal: int): byte;
-    GetBytes(ordinal: int, dataOffset: long, buffer: byte[], bufferOffset: int, length: int): long;
+    GetBytes(ordinal: int, dataOffset: long, buffer: byte[] | null, bufferOffset: int, length: int): long;
     GetChar(ordinal: int): char;
-    GetChars(ordinal: int, dataOffset: long, buffer: char[], bufferOffset: int, length: int): long;
+    GetChars(ordinal: int, dataOffset: long, buffer: char[] | null, bufferOffset: int, length: int): long;
     GetDataTypeName(ordinal: int): string;
     GetDateTime(ordinal: int): DateTime;
     GetDecimal(ordinal: int): decimal;
@@ -154,10 +155,10 @@ export interface BufferedDataReader$instance extends DbDataReader {
     GetOrdinal(name: string): int;
     GetSchemaTable(): DataTable;
     GetString(ordinal: int): string;
-    GetValue(ordinal: int): unknown;
-    GetValues(values: unknown[]): int;
-    Initialize(columns: IReadOnlyList_1<ReaderColumn>): BufferedDataReader;
-    InitializeAsync(columns: IReadOnlyList_1<ReaderColumn>, cancellationToken: CancellationToken): Task_1<BufferedDataReader>;
+    GetValue(ordinal: int): JsValue;
+    GetValues(values: JsValue[]): int;
+    Initialize(columns: IReadOnlyList_1<ReaderColumn | null>): BufferedDataReader;
+    InitializeAsync(columns: IReadOnlyList_1<ReaderColumn | null>, cancellationToken: CancellationToken): Task_1<BufferedDataReader>;
     IsDBNull(ordinal: int): boolean;
     IsDBNullAsync(ordinal: int, cancellationToken: CancellationToken): Task_1<System_Internal.Boolean>;
     NextResult(): boolean;
@@ -180,7 +181,7 @@ export interface ByteArraySequenceEqualTranslator$instance extends Microsoft_Ent
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -215,7 +216,7 @@ export interface CollateTranslator$instance extends Microsoft_EntityFrameworkCor
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -236,7 +237,7 @@ export interface ComparisonTranslator$instance extends Microsoft_EntityFramework
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -361,8 +362,8 @@ export interface CompiledQueryBase_2$instance<TContext extends DbContext, TResul
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQueryBase_2: never;
 
     CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func_2<QueryContext, TResult>;
-    ExecuteCore(context: TContext, ...parameters: unknown[]): TResult;
-    ExecuteCore(context: TContext, cancellationToken: CancellationToken, ...parameters: unknown[]): TResult;
+    ExecuteCore(context: TContext, ...parameters: (JsValue | null)[]): TResult;
+    ExecuteCore(context: TContext, cancellationToken: CancellationToken, ...parameters: (JsValue | null)[]): TResult;
 }
 
 
@@ -377,7 +378,7 @@ export interface CompiledQueryCache$instance extends ICompiledQueryCache$instanc
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_ICompiledQueryCache: never;
 
-    GetOrAddQuery<TResult>(cacheKey: unknown, compiler: Func_1<Func_2<QueryContext, TResult>>): Func_2<QueryContext, TResult>;
+    GetOrAddQuery<TResult>(cacheKey: JsValue, compiler: Func_1<Func_2<QueryContext, TResult>>): Func_2<QueryContext, TResult>;
 }
 
 
@@ -398,7 +399,7 @@ export interface ContainsTranslator$instance extends Microsoft_EntityFrameworkCo
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -452,7 +453,7 @@ export interface EntityQueryProvider$instance extends Microsoft_EntityFrameworkC
     CreateQuery<TElement>(expression: Expression): IQueryable_1<TElement>;
     CreateQuery(expression: Expression): IQueryable;
     Execute<TResult>(expression: Expression): TResult;
-    Execute(expression: Expression): unknown;
+    Execute(expression: Expression): JsValue;
     ExecuteAsync<TResult>(expression: Expression, cancellationToken?: CancellationToken): TResult;
 }
 
@@ -474,7 +475,7 @@ export interface EnumMethodTranslator$instance extends Microsoft_EntityFramework
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -495,7 +496,7 @@ export interface EqualsTranslator$instance extends Microsoft_EntityFrameworkCore
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -514,12 +515,12 @@ export type EqualsTranslator = EqualsTranslator$instance & __EqualsTranslator$vi
 export interface ExpressionTreeFuncletizer$instance extends ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ExpressionTreeFuncletizer: never;
 
-    CalculatePathsToEvaluatableRoots(linqOperatorMethodCall: MethodCallExpression, argumentIndex: int): ExpressionTreeFuncletizer_PathNode | undefined;
-    CalculatePathsToEvaluatableRoots(expression: Expression): ExpressionTreeFuncletizer_PathNode | undefined;
-    ExtractParameters(expression: Expression, parameters: Dictionary_2<System_Internal.String, unknown>, parameterize: boolean, clearParameterizedValues: boolean): Expression;
-    ExtractParameters(expression: Expression, parameters: Dictionary_2<System_Internal.String, unknown>, parameterize: boolean, clearParameterizedValues: boolean, precompiledQuery: boolean): Expression;
+    CalculatePathsToEvaluatableRoots(linqOperatorMethodCall: MethodCallExpression, argumentIndex: int): ExpressionTreeFuncletizer_PathNode | null;
+    CalculatePathsToEvaluatableRoots(expression: Expression): ExpressionTreeFuncletizer_PathNode | null;
+    ExtractParameters(expression: Expression, parameters: Dictionary_2<System_Internal.String, JsValue | null>, parameterize: boolean, clearParameterizedValues: boolean): Expression;
+    ExtractParameters(expression: Expression, parameters: Dictionary_2<System_Internal.String, JsValue | null>, parameterize: boolean, clearParameterizedValues: boolean, precompiledQuery: boolean): Expression;
     ResetPathCalculation(): void;
-    Visit(expression: Expression): Expression | undefined;
+    Visit(expression: Expression | null): Expression | null;
     VisitBinary(binary: BinaryExpression): Expression;
     VisitBlock(node: BlockExpression): Expression;
     VisitCatchBlock(node: CatchBlock): CatchBlock;
@@ -534,7 +535,7 @@ export interface ExpressionTreeFuncletizer$instance extends ExpressionVisitor {
     VisitIndex(index: IndexExpression): Expression;
     VisitInvocation(invocation: InvocationExpression): Expression;
     VisitLabel(node: LabelExpression): Expression;
-    VisitLabelTarget(node: LabelTarget): LabelTarget;
+    VisitLabelTarget(node: LabelTarget | null): LabelTarget;
     VisitLambda<T>(lambda: Expression_1<T>): Expression;
     VisitListInit(listInit: ListInitExpression): Expression;
     VisitLoop(node: LoopExpression): Expression;
@@ -567,16 +568,16 @@ export interface ExpressionTreeFuncletizer_PathNode$instance {
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    get Children(): IReadOnlyList_1<ExpressionTreeFuncletizer_PathNode> | undefined;
-    set Children(value: IReadOnlyList_1<ExpressionTreeFuncletizer_PathNode> | undefined);
+    get Children(): IReadOnlyList_1<ExpressionTreeFuncletizer_PathNode> | null;
+    set Children(value: IReadOnlyList_1<ExpressionTreeFuncletizer_PathNode> | null);
     ExpressionType: Type;
-    get ParameterName(): string | undefined;
-    set ParameterName(value: string | undefined);
-    get PathFromParent(): Func_2<Expression, Expression> | undefined;
-    set PathFromParent(value: Func_2<Expression, Expression> | undefined);
+    get ParameterName(): string | null;
+    set ParameterName(value: string | null);
+    get PathFromParent(): Func_2<Expression, Expression> | null;
+    set PathFromParent(value: Func_2<Expression, Expression> | null);
     _Clone_$(): ExpressionTreeFuncletizer_PathNode;
-    Equals(obj: unknown): boolean;
-    Equals(other: ExpressionTreeFuncletizer_PathNode): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: ExpressionTreeFuncletizer_PathNode | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -606,7 +607,7 @@ export interface FromSqlQueryingEnumerable_1$instance<T> extends System_Collecti
 
 
 export const FromSqlQueryingEnumerable_1: {
-    new<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, columnNames: IReadOnlyList_1<System_Internal.String>, shaper: Func_4<QueryContext, DbDataReader, int[], T>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): FromSqlQueryingEnumerable_1<T>;
+    new<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, columnNames: IReadOnlyList_1<System_Internal.String>, shaper: Func_4<QueryContext, DbDataReader, int[], T>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): FromSqlQueryingEnumerable_1<T>;
     BuildIndexMap<T>(columnNames: IReadOnlyList_1<System_Internal.String>, dataReader: DbDataReader): int[];
 };
 
@@ -627,7 +628,7 @@ export interface FromSqlQueryRootExpression$instance extends EntityQueryRootExpr
     readonly Argument: Expression;
     readonly Sql: string;
     DetachQueryProvider(): Expression;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     Print(expressionPrinter: ExpressionPrinter): void;
     UpdateEntityType(entityType: IEntityType): EntityQueryRootExpression;
@@ -653,7 +654,7 @@ export interface GetValueOrDefaultTranslator$instance extends Microsoft_EntityFr
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -686,7 +687,7 @@ export interface GroupBySingleQueryingEnumerable_2$instance<TKey, TElement> exte
 
 
 export const GroupBySingleQueryingEnumerable_2: {
-    new<TKey, TElement>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, keySelector: Func_3<QueryContext, DbDataReader, TKey>, keyIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, keyIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, elementSelector: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TElement>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): GroupBySingleQueryingEnumerable_2<TKey, TElement>;
+    new<TKey, TElement>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, keySelector: Func_3<QueryContext, DbDataReader, TKey>, keyIdentifier: Func_3<QueryContext, DbDataReader, JsValue[]>, keyIdentifierValueComparers: IReadOnlyList_1<Func_3<JsValue, JsValue, System_Internal.Boolean>>, elementSelector: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TElement>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): GroupBySingleQueryingEnumerable_2<TKey, TElement>;
 };
 
 
@@ -715,7 +716,7 @@ export interface GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> exten
 
 
 export const GroupBySplitQueryingEnumerable_2: {
-    new<TKey, TElement>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, keySelector: Func_3<QueryContext, DbDataReader, TKey>, keyIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, keyIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, elementSelector: Func_5<QueryContext, DbDataReader, ResultContext, SplitQueryResultCoordinator, TElement>, relatedDataLoaders: Action_3<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator>, relatedDataLoadersAsync: Func_4<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator, Task>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): GroupBySplitQueryingEnumerable_2<TKey, TElement>;
+    new<TKey, TElement>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, keySelector: Func_3<QueryContext, DbDataReader, TKey>, keyIdentifier: Func_3<QueryContext, DbDataReader, JsValue[]>, keyIdentifierValueComparers: IReadOnlyList_1<Func_3<JsValue, JsValue, System_Internal.Boolean>>, elementSelector: Func_5<QueryContext, DbDataReader, ResultContext, SplitQueryResultCoordinator, TElement>, relatedDataLoaders: Action_3<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator> | null, relatedDataLoadersAsync: Func_4<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator, Task> | null, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): GroupBySplitQueryingEnumerable_2<TKey, TElement>;
 };
 
 
@@ -746,7 +747,7 @@ export interface LikeTranslator$instance extends Microsoft_EntityFrameworkCore_Q
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -895,7 +896,7 @@ export interface QueryableAggregateMethodTranslator$instance extends Microsoft_E
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAggregateMethodCallTranslator: never;
 
-    Translate(method: MethodInfo, source: EnumerableExpression, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(method: MethodInfo, source: EnumerableExpression, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -960,7 +961,7 @@ export interface QueryCompiler$instance {
     CreateCompiledQuery<TResult>(query: Expression): Func_2<QueryContext, TResult>;
     Execute<TResult>(query: Expression): TResult;
     ExecuteAsync<TResult>(query: Expression, cancellationToken?: CancellationToken): TResult;
-    ExtractParameters(query: Expression, parameters: Dictionary_2<System_Internal.String, unknown>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>, compiledQuery?: boolean, generateContextAccessors?: boolean): Expression;
+    ExtractParameters(query: Expression, parameters: Dictionary_2<System_Internal.String, JsValue | null>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>, compiledQuery?: boolean, generateContextAccessors?: boolean): Expression;
     PrecompileQuery<TResult>(query: Expression, async: boolean): Expression_1<Func_2<QueryContext, TResult>>;
 }
 
@@ -995,7 +996,7 @@ export type QueryDebugView = QueryDebugView$instance;
 export interface QueryExpressionReplacingExpressionVisitor$instance extends ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryExpressionReplacingExpressionVisitor: never;
 
-    Visit(expression: Expression): Expression | undefined;
+    Visit(expression: Expression | null): Expression | null;
 }
 
 
@@ -1011,8 +1012,8 @@ export interface QueryFiltersCacheKey$instance {
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    Equals(other: QueryFiltersCacheKey): boolean;
-    Equals(obj: unknown): boolean;
+    Equals(other: QueryFiltersCacheKey | null): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
 }
 
@@ -1118,7 +1119,7 @@ export interface RandomTranslator$instance extends Microsoft_EntityFrameworkCore
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -1139,7 +1140,7 @@ export interface RelationalCommandCache$instance extends Microsoft_EntityFramewo
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
-    GetRelationalCommandTemplate(parameters: Dictionary_2<System_Internal.String, unknown>): IRelationalCommandTemplate;
+    GetRelationalCommandTemplate(parameters: Dictionary_2<System_Internal.String, JsValue | null>): IRelationalCommandTemplate;
 }
 
 
@@ -1197,7 +1198,7 @@ export interface RelationalProjectionBindingExpressionVisitor$instance extends E
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalProjectionBindingExpressionVisitor: never;
 
     Translate(selectExpression: SelectExpression, expression: Expression): Expression;
-    Visit(expression: Expression): Expression | undefined;
+    Visit(expression: Expression | null): Expression | null;
     VisitBinary(binaryExpression: BinaryExpression): Expression;
     VisitConditional(conditionalExpression: ConditionalExpression): Expression;
     VisitElementInit(elementInit: ElementInit): ElementInit;
@@ -1432,8 +1433,8 @@ export type RelationalValueConverterCompensatingExpressionVisitor = RelationalVa
 export interface ResultContext$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ResultContext: never;
 
-    get Values(): unknown[] | undefined;
-    set Values(value: unknown[] | undefined);
+    get Values(): JsValue[] | null;
+    set Values(value: JsValue[] | null);
 }
 
 
@@ -1461,19 +1462,19 @@ export type SelectExpressionProjectionApplyingExpressionVisitor = SelectExpressi
 export interface SingleQueryCollectionContext$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SingleQueryCollectionContext: never;
 
-    readonly Collection: unknown | undefined;
-    readonly OuterIdentifier: unknown[];
-    readonly Parent: unknown | undefined;
-    readonly ParentIdentifier: unknown[];
+    readonly Collection: JsValue | null;
+    readonly OuterIdentifier: JsValue[];
+    readonly Parent: JsValue | null;
+    readonly ParentIdentifier: JsValue[];
     readonly ResultContext: ResultContext;
-    get SelfIdentifier(): unknown[] | undefined;
-    set SelfIdentifier(value: unknown[] | undefined);
-    UpdateSelfIdentifier(selfIdentifier: unknown[]): void;
+    get SelfIdentifier(): JsValue[] | null;
+    set SelfIdentifier(value: JsValue[] | null);
+    UpdateSelfIdentifier(selfIdentifier: JsValue[] | null): void;
 }
 
 
 export const SingleQueryCollectionContext: {
-    new(parent: unknown, collection: unknown, parentIdentifier: unknown[], outerIdentifier: unknown[]): SingleQueryCollectionContext;
+    new(parent: JsValue | null, collection: JsValue | null, parentIdentifier: JsValue[], outerIdentifier: JsValue[]): SingleQueryCollectionContext;
 };
 
 
@@ -1496,7 +1497,7 @@ export interface SingleQueryingEnumerable_1$instance<T> extends System_Collectio
 
 
 export const SingleQueryingEnumerable_1: {
-    new<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, shaper: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, T>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): SingleQueryingEnumerable_1<T>;
+    new<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, shaper: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, T>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): SingleQueryingEnumerable_1<T>;
 };
 
 
@@ -1511,7 +1512,7 @@ export type SingleQueryingEnumerable_1<T> = SingleQueryingEnumerable_1$instance<
 export interface SingleQueryResultCoordinator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SingleQueryResultCoordinator: never;
 
-    readonly Collections: IList_1<SingleQueryCollectionContext | undefined>;
+    readonly Collections: IList_1<SingleQueryCollectionContext | null>;
     get HasNext(): Nullable_1<System_Internal.Boolean>;
     set HasNext(value: Nullable_1<System_Internal.Boolean> | boolean);
     readonly ResultContext: ResultContext;
@@ -1530,15 +1531,15 @@ export type SingleQueryResultCoordinator = SingleQueryResultCoordinator$instance
 export interface SplitQueryCollectionContext$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SplitQueryCollectionContext: never;
 
-    readonly Collection: unknown | undefined;
-    readonly Parent: unknown | undefined;
-    readonly ParentIdentifier: unknown[];
+    readonly Collection: JsValue | null;
+    readonly Parent: JsValue | null;
+    readonly ParentIdentifier: JsValue[];
     readonly ResultContext: ResultContext;
 }
 
 
 export const SplitQueryCollectionContext: {
-    new(parent: unknown, collection: unknown, parentIdentifier: unknown[]): SplitQueryCollectionContext;
+    new(parent: JsValue | null, collection: JsValue | null, parentIdentifier: JsValue[]): SplitQueryCollectionContext;
 };
 
 
@@ -1577,7 +1578,7 @@ export interface SplitQueryingEnumerable_1$instance<T> extends System_Collection
 
 
 export const SplitQueryingEnumerable_1: {
-    new<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, shaper: Func_5<QueryContext, DbDataReader, ResultContext, SplitQueryResultCoordinator, T>, relatedDataLoaders: Action_3<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator>, relatedDataLoadersAsync: Func_4<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator, Task>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): SplitQueryingEnumerable_1<T>;
+    new<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, shaper: Func_5<QueryContext, DbDataReader, ResultContext, SplitQueryResultCoordinator, T>, relatedDataLoaders: Action_3<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator> | null, relatedDataLoadersAsync: Func_4<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator, Task> | null, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): SplitQueryingEnumerable_1<T>;
 };
 
 
@@ -1592,8 +1593,8 @@ export type SplitQueryingEnumerable_1<T> = SplitQueryingEnumerable_1$instance<T>
 export interface SplitQueryResultCoordinator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SplitQueryResultCoordinator: never;
 
-    readonly Collections: IList_1<SplitQueryCollectionContext | undefined>;
-    readonly DataReaders: IList_1<SplitQueryDataReaderContext | undefined>;
+    readonly Collections: IList_1<SplitQueryCollectionContext | null>;
+    readonly DataReaders: IList_1<SplitQueryDataReaderContext | null>;
     get HasNext(): Nullable_1<System_Internal.Boolean>;
     set HasNext(value: Nullable_1<System_Internal.Boolean> | boolean);
     readonly ResultContext: ResultContext;
@@ -1631,7 +1632,7 @@ export interface SqlQueryRootExpression$instance extends QueryRootExpression {
     readonly Argument: Expression;
     readonly Sql: string;
     DetachQueryProvider(): Expression;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     Print(expressionPrinter: ExpressionPrinter): void;
     VisitChildren(visitor: ExpressionVisitor): Expression;
@@ -1656,7 +1657,7 @@ export interface StringMethodTranslator$instance extends Microsoft_EntityFramewo
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
 
-    Translate(instance: SqlExpression, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | undefined;
+    Translate(instance: SqlExpression | null, method: MethodInfo, arguments: IReadOnlyList_1<SqlExpression>, logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>): SqlExpression | null;
 }
 
 
@@ -1680,11 +1681,11 @@ export interface StructuralTypeMaterializerSource$instance {
     readonly Dependencies: StructuralTypeMaterializerSourceDependencies;
     AddInitializeExpression(property: IPropertyBase, bindingInfo: ParameterBindingInfo, instanceVariable: Expression, getValueBufferExpression: MethodCallExpression, blockExpressions: List_1<Expression>, nullable: boolean): void;
     CreateMaterializeExpression(parameters: StructuralTypeMaterializerSourceParameters, materializationContextExpression: Expression): Expression;
-    GetEmptyMaterializer(entityType: IEntityType): Func_2<MaterializationContext, unknown>;
-    GetEmptyMaterializer(complexType: IComplexType): Func_2<MaterializationContext, unknown>;
-    GetEmptyMaterializer(entityType: ITypeBase, binding: InstantiationBinding, serviceProperties: List_1<IServiceProperty>): Func_2<MaterializationContext, unknown>;
-    GetMaterializer(entityType: IEntityType): Func_2<MaterializationContext, unknown>;
-    GetMaterializer(complexType: IComplexType): Func_2<MaterializationContext, unknown>;
+    GetEmptyMaterializer(entityType: IEntityType): Func_2<MaterializationContext, JsValue>;
+    GetEmptyMaterializer(complexType: IComplexType): Func_2<MaterializationContext, JsValue>;
+    GetEmptyMaterializer(entityType: ITypeBase, binding: InstantiationBinding, serviceProperties: List_1<IServiceProperty>): Func_2<MaterializationContext, JsValue>;
+    GetMaterializer(entityType: IEntityType): Func_2<MaterializationContext, JsValue>;
+    GetMaterializer(complexType: IComplexType): Func_2<MaterializationContext, JsValue>;
     ReadComplexTypeDirectly(complexType: IComplexType): boolean;
 }
 
@@ -1710,8 +1711,8 @@ export interface StructuralTypeMaterializerSourceDependencies$instance {
 
     SingletonInterceptors: IEnumerable_1<ISingletonInterceptor>;
     _Clone_$(): StructuralTypeMaterializerSourceDependencies;
-    Equals(obj: unknown): boolean;
-    Equals(other: StructuralTypeMaterializerSourceDependencies): boolean;
+    Equals(obj: JsValue | null): boolean;
+    Equals(other: StructuralTypeMaterializerSourceDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -1746,7 +1747,7 @@ export interface TableValuedFunctionQueryRootExpression$instance extends EntityQ
 
     readonly Arguments: IReadOnlyCollection_1<Expression>;
     readonly Function: IStoreFunction;
-    Equals(obj: unknown): boolean;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     Print(expressionPrinter: ExpressionPrinter): void;
     UpdateEntityType(entityType: IEntityType): EntityQueryRootExpression;
@@ -1772,13 +1773,13 @@ export interface TpcTablesExpression$instance extends TableExpressionBase {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
-    readonly Alias: string | string | undefined;
+    readonly Alias: string | string | null;
     readonly DiscriminatorColumn: ColumnExpression;
     DiscriminatorValues: List_1<System_Internal.String>;
     readonly EntityType: IEntityType;
     readonly SelectExpressions: IReadOnlyList_1<SelectExpression>;
-    Clone(alias: string, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    Equals(obj: unknown): boolean;
+    Clone(alias: string | null, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
+    Equals(obj: JsValue | null): boolean;
     GetHashCode(): int;
     Print(expressionPrinter: ExpressionPrinter): void;
     Prune(discriminatorValues: IReadOnlyList_1<System_Internal.String>): TpcTablesExpression;
@@ -1790,7 +1791,7 @@ export interface TpcTablesExpression$instance extends TableExpressionBase {
 
 
 export const TpcTablesExpression: {
-    new(alias: string, entityType: IEntityType, subSelectExpressions: IReadOnlyList_1<SelectExpression>, discriminatorColumn: ColumnExpression, discriminatorValues: List_1<System_Internal.String>): TpcTablesExpression;
+    new(alias: string | null, entityType: IEntityType, subSelectExpressions: IReadOnlyList_1<SelectExpression>, discriminatorColumn: ColumnExpression, discriminatorValues: List_1<System_Internal.String>): TpcTablesExpression;
 };
 
 
@@ -1803,21 +1804,21 @@ export type TpcTablesExpression = TpcTablesExpression$instance & __TpcTablesExpr
 
 
 export abstract class FromSqlQueryingEnumerable$instance {
-    static Create<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, columnNames: IReadOnlyList_1<System_Internal.String>, shaper: Func_4<QueryContext, DbDataReader, int[], T>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): FromSqlQueryingEnumerable_1<T>;
+    static Create<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, columnNames: IReadOnlyList_1<System_Internal.String>, shaper: Func_4<QueryContext, DbDataReader, int[], T>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): FromSqlQueryingEnumerable_1<T>;
 }
 
 
 export type FromSqlQueryingEnumerable = FromSqlQueryingEnumerable$instance;
 
 export abstract class GroupBySingleQueryingEnumerable$instance {
-    static Create<TKey, TElement>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, keySelector: Func_3<QueryContext, DbDataReader, TKey>, keyIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, keyIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, elementSelector: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TElement>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): GroupBySingleQueryingEnumerable_2<TKey, TElement>;
+    static Create<TKey, TElement>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, keySelector: Func_3<QueryContext, DbDataReader, TKey>, keyIdentifier: Func_3<QueryContext, DbDataReader, JsValue[]>, keyIdentifierValueComparers: IReadOnlyList_1<Func_3<JsValue, JsValue, System_Internal.Boolean>>, elementSelector: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TElement>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): GroupBySingleQueryingEnumerable_2<TKey, TElement>;
 }
 
 
 export type GroupBySingleQueryingEnumerable = GroupBySingleQueryingEnumerable$instance;
 
 export abstract class GroupBySplitQueryingEnumerable$instance {
-    static Create<TKey, TElement>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, keySelector: Func_3<QueryContext, DbDataReader, TKey>, keyIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, keyIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, elementSelector: Func_5<QueryContext, DbDataReader, ResultContext, SplitQueryResultCoordinator, TElement>, relatedDataLoaders: Action_3<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator>, relatedDataLoadersAsync: Func_4<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator, Task>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): GroupBySplitQueryingEnumerable_2<TKey, TElement>;
+    static Create<TKey, TElement>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, keySelector: Func_3<QueryContext, DbDataReader, TKey>, keyIdentifier: Func_3<QueryContext, DbDataReader, JsValue[]>, keyIdentifierValueComparers: IReadOnlyList_1<Func_3<JsValue, JsValue, System_Internal.Boolean>>, elementSelector: Func_5<QueryContext, DbDataReader, ResultContext, SplitQueryResultCoordinator, TElement>, relatedDataLoaders: Action_3<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator> | null, relatedDataLoadersAsync: Func_4<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator, Task> | null, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): GroupBySplitQueryingEnumerable_2<TKey, TElement>;
 }
 
 
@@ -1825,21 +1826,21 @@ export type GroupBySplitQueryingEnumerable = GroupBySplitQueryingEnumerable$inst
 
 export abstract class RelationalJsonUtilities$instance {
     static readonly SerializeComplexTypeToJsonMethod: MethodInfo;
-    static SerializeComplexTypeToJson(complexType: IComplexType, value: unknown, collection: boolean): string | undefined;
+    static SerializeComplexTypeToJson(complexType: IComplexType, value: JsValue | null, collection: boolean): string | null;
 }
 
 
 export type RelationalJsonUtilities = RelationalJsonUtilities$instance;
 
 export abstract class SingleQueryingEnumerable$instance {
-    static Create<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, shaper: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, T>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): SingleQueryingEnumerable_1<T>;
+    static Create<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, shaper: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, T>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): SingleQueryingEnumerable_1<T>;
 }
 
 
 export type SingleQueryingEnumerable = SingleQueryingEnumerable$instance;
 
 export abstract class SplitQueryingEnumerable$instance {
-    static Create<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn>, shaper: Func_5<QueryContext, DbDataReader, ResultContext, SplitQueryResultCoordinator, T>, relatedDataLoaders: Action_3<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator>, relatedDataLoadersAsync: Func_4<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator, Task>, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): SplitQueryingEnumerable_1<T>;
+    static Create<T>(relationalQueryContext: RelationalQueryContext, relationalCommandResolver: RelationalCommandResolver, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, shaper: Func_5<QueryContext, DbDataReader, ResultContext, SplitQueryResultCoordinator, T>, relatedDataLoaders: Action_3<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator> | null, relatedDataLoadersAsync: Func_4<QueryContext, IExecutionStrategy, SplitQueryResultCoordinator, Task> | null, contextType: Type, standAloneStateManager: boolean, detailedErrorsEnabled: boolean, threadSafetyChecksEnabled: boolean): SplitQueryingEnumerable_1<T>;
 }
 
 
