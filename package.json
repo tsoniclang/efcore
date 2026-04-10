@@ -19,8 +19,8 @@
     "url": "https://github.com/tsoniclang/efcore.git"
   },
   "peerDependencies": {
-    "@tsonic/core": "10.0.40",
-    "@tsonic/dotnet": "10.0.40",
-    "@tsonic/microsoft-extensions": "10.0.40"
+    "@tsonic/core": "10.0.41",
+    "@tsonic/dotnet": "10.0.41",
+    "@tsonic/microsoft-extensions": "10.0.41"
   }
 }
