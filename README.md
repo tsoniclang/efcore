@@ -108,6 +108,14 @@ declarations, extension buckets, and `bindings.json` compiler metadata:
 `bindings.json` preserves CLR identity, overloads, receiver semantics,
 extension methods, nullable/reference metadata, and generic constraints.
 
+## Broad CLR values
+
+Generated CLR object slots are represented with TypeScript `unknown`, not a
+package-specific catch-all value. This is important for EF Core because many
+extension points accept broad CLR objects while query and model APIs still need
+strict metadata for overload selection. Value-type constraints are represented
+with `NonNullable<unknown>`.
+
 ## Versioning
 
 This repo is versioned by .NET major:
