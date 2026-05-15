@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { IDependentsMap, IIdentityMap, IInternalEntry, ISnapshot } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 import type { IDependentKeyValueFactory, IDependentKeyValueFactory_1, IPrincipalKeyValueFactory, IPrincipalKeyValueFactory_1, ValueComparer } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
@@ -80,7 +84,7 @@ export { InternalServicePropertyBuilder as InternalServicePropertyBuilder } from
 export { InternalSkipNavigationBuilder as InternalSkipNavigationBuilder } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { InternalTriggerBuilder as InternalTriggerBuilder } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
 export { InternalTypeBaseBuilder as InternalTypeBaseBuilder } from './Microsoft.EntityFrameworkCore.Metadata.Internal/internal/index.js';
-export type IReferenceRoot<T> = Internal.IReferenceRoot_1<T>;
+export type IReferenceRoot<T extends unknown> = Internal.IReferenceRoot_1<T>;
 export type IRuntimeComplexProperty = Internal.IRuntimeComplexProperty;
 export type IRuntimeComplexType = Internal.IRuntimeComplexType;
 export type IRuntimeEntityType = Internal.IRuntimeEntityType;

@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -53,7 +53,7 @@ export interface ProviderConventionSetBuilder$instance extends IProviderConventi
 
     readonly Dependencies: ProviderConventionSetBuilderDependencies;
     CreateConventionSet(): ConventionSet;
-    ReplaceConvention<TConvention, TImplementation extends TConvention>(conventionsList: List_1<TConvention>, newConvention: TImplementation): boolean;
+    ReplaceConvention<TConvention extends unknown, TImplementation extends unknown & TConvention>(conventionsList: List_1<TConvention>, newConvention: TImplementation): boolean;
 }
 
 
@@ -83,7 +83,7 @@ export interface ProviderConventionSetBuilderDependencies$instance {
     TypeMappingSource: ITypeMappingSource;
     ValidationLogger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>;
     _Clone_$(): ProviderConventionSetBuilderDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ProviderConventionSetBuilderDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -98,7 +98,7 @@ export const ProviderConventionSetBuilderDependencies: {
 
 export type ProviderConventionSetBuilderDependencies = ProviderConventionSetBuilderDependencies$instance;
 
-export interface RelationalConventionSetBuilder$instance extends ProviderConventionSetBuilder$instance {
+export interface RelationalConventionSetBuilder$instance extends ProviderConventionSetBuilder$instance, IProviderConventionSetBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_RelationalConventionSetBuilder: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IProviderConventionSetBuilder: never;
@@ -127,7 +127,7 @@ export interface RelationalConventionSetBuilderDependencies$instance {
     RelationalAnnotationProvider: IRelationalAnnotationProvider;
     UpdateSqlGenerator: IUpdateSqlGenerator;
     _Clone_$(): RelationalConventionSetBuilderDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: RelationalConventionSetBuilderDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;

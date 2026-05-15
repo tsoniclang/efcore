@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.Extensions.Caching.Memory, Microsoft.Extensions.DependencyInjection, Microsoft.Extensions.DependencyInjection.Abstractions, Microsoft.Extensions.Logging, Microsoft.Extensions.Options
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -13,17 +13,17 @@ import type { Action_1, Action_2, Int32, IServiceProvider, Object as ClrObject }
 import type { IServiceCollection, ServiceLifetime } from "@tsonic/microsoft-extensions/Microsoft.Extensions.DependencyInjection/internal/index.js";
 
 export abstract class EntityFrameworkServiceCollectionExtensions$instance {
-    static AddDbContext<TContext extends DbContext>(serviceCollection: IServiceCollection, contextLifetime: ServiceLifetime, optionsLifetime?: ServiceLifetime): IServiceCollection;
-    static AddDbContext<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction?: Action_1<DbContextOptionsBuilder> | null, contextLifetime?: ServiceLifetime, optionsLifetime?: ServiceLifetime): IServiceCollection;
-    static AddDbContext<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder> | null, contextLifetime?: ServiceLifetime, optionsLifetime?: ServiceLifetime): IServiceCollection;
-    static AddDbContextFactory<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction?: Action_1<DbContextOptionsBuilder> | null, lifetime?: ServiceLifetime): IServiceCollection;
-    static AddDbContextFactory<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder>, lifetime?: ServiceLifetime): IServiceCollection;
-    static AddDbContextPool<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_1<DbContextOptionsBuilder>, poolSize?: int): IServiceCollection;
-    static AddDbContextPool<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder>, poolSize?: int): IServiceCollection;
-    static AddPooledDbContextFactory<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_1<DbContextOptionsBuilder>, poolSize?: int): IServiceCollection;
-    static AddPooledDbContextFactory<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder>, poolSize?: int): IServiceCollection;
-    static ConfigureDbContext<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_1<DbContextOptionsBuilder>, optionsLifetime?: ServiceLifetime): IServiceCollection;
-    static ConfigureDbContext<TContext extends DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder>, optionsLifetime?: ServiceLifetime): IServiceCollection;
+    static AddDbContext<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, contextLifetime: ServiceLifetime, optionsLifetime?: ServiceLifetime): IServiceCollection;
+    static AddDbContext<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction?: Action_1<DbContextOptionsBuilder> | null, contextLifetime?: ServiceLifetime, optionsLifetime?: ServiceLifetime): IServiceCollection;
+    static AddDbContext<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder> | null, contextLifetime?: ServiceLifetime, optionsLifetime?: ServiceLifetime): IServiceCollection;
+    static AddDbContextFactory<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction?: Action_1<DbContextOptionsBuilder> | null, lifetime?: ServiceLifetime): IServiceCollection;
+    static AddDbContextFactory<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder>, lifetime?: ServiceLifetime): IServiceCollection;
+    static AddDbContextPool<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_1<DbContextOptionsBuilder>, poolSize?: int): IServiceCollection;
+    static AddDbContextPool<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder>, poolSize?: int): IServiceCollection;
+    static AddPooledDbContextFactory<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_1<DbContextOptionsBuilder>, poolSize?: int): IServiceCollection;
+    static AddPooledDbContextFactory<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder>, poolSize?: int): IServiceCollection;
+    static ConfigureDbContext<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_1<DbContextOptionsBuilder>, optionsLifetime?: ServiceLifetime): IServiceCollection;
+    static ConfigureDbContext<TContext extends unknown & DbContext>(serviceCollection: IServiceCollection, optionsAction: Action_2<IServiceProvider, DbContextOptionsBuilder>, optionsLifetime?: ServiceLifetime): IServiceCollection;
 }
 
 

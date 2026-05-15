@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Migrations.Operations/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { Annotatable, Annotation, IAnnotatable, IAnnotation, IReadOnlyAnnotatable } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
 import type { ICheckConstraint, IForeignKeyConstraint, IMutableAnnotatable, IPrimaryKeyConstraint, ITableIndex, IUniqueConstraint } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';

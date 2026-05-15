@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Abstractions, Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -48,11 +48,11 @@ export enum MetadataDebugStringOptions {
 export interface IAnnotatable$instance extends IReadOnlyAnnotatable {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
 
-    AddRuntimeAnnotation(name: string, value: JsValue | null): IAnnotation;
+    AddRuntimeAnnotation(name: string, value: unknown | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
     FindRuntimeAnnotation(name: string): IAnnotation | null;
-    FindRuntimeAnnotationValue(name: string): JsValue | null;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
+    FindRuntimeAnnotationValue(name: string): unknown | null;
+    GetOrAddRuntimeAnnotationValue<TValue extends unknown, TArg extends unknown>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetRuntimeAnnotations(): IEnumerable_1<IAnnotation>;
     FindAnnotation(name: string): IAnnotation | null;
     GetAnnotations(): IEnumerable_1<IAnnotation>;
@@ -61,13 +61,13 @@ export interface IAnnotatable$instance extends IReadOnlyAnnotatable {
 
 export interface IAnnotatable$instance extends IReadOnlyAnnotatable$instance {}
 
-export type IAnnotatable = IAnnotatable$instance & { readonly [name: string]: JsValue | null; };
+export type IAnnotatable = IAnnotatable$instance & { readonly [name: string]: unknown | null; };
 
 export interface IAnnotation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotation: never;
 
     readonly Name: string;
-    readonly Value: JsValue | null;
+    readonly Value: unknown | null;
 }
 
 
@@ -110,7 +110,7 @@ export interface IDbContextOptions$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
 
     readonly Extensions: IEnumerable_1<IDbContextOptionsExtension>;
-    FindExtension<TExtension extends IDbContextOptionsExtension>(): TExtension | null;
+    FindExtension<TExtension extends (object | null) & IDbContextOptionsExtension>(): TExtension | null;
 }
 
 
@@ -119,20 +119,20 @@ export type IDbContextOptions = IDbContextOptions$instance;
 export interface IDbContextOptionsBuilderInfrastructure$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
-    AddOrUpdateExtension<TExtension extends IDbContextOptionsExtension>(extension: TExtension): void;
+    AddOrUpdateExtension<TExtension extends (object | null) & IDbContextOptionsExtension>(extension: TExtension): void;
 }
 
 
 export type IDbContextOptionsBuilderInfrastructure = IDbContextOptionsBuilderInfrastructure$instance;
 
-export interface IDbContextOptionsConfiguration_1$instance<TContext extends DbContext> {
+export interface IDbContextOptionsConfiguration_1$instance<TContext extends unknown & DbContext> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsConfiguration_1: never;
 
     Configure(serviceProvider: IServiceProvider, optionsBuilder: DbContextOptionsBuilder): void;
 }
 
 
-export type IDbContextOptionsConfiguration_1<TContext extends DbContext> = IDbContextOptionsConfiguration_1$instance<TContext>;
+export type IDbContextOptionsConfiguration_1<TContext extends unknown & DbContext> = IDbContextOptionsConfiguration_1$instance<TContext>;
 
 export interface IDbContextOptionsExtension$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never;
@@ -155,19 +155,19 @@ export interface IDbSetFinder$instance {
 
 export type IDbSetFinder = IDbSetFinder$instance;
 
-export interface IInfrastructure_1$instance<T> {
+export interface IInfrastructure_1$instance<T extends unknown> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Instance: T;
 }
 
 
-export type IInfrastructure_1<T> = IInfrastructure_1$instance<T>;
+export type IInfrastructure_1<T extends unknown> = IInfrastructure_1$instance<T>;
 
 export interface IInternalServiceCollectionMap$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInternalServiceCollectionMap: never;
 
-    AddDependencySingleton<TDependencies>(): IInternalServiceCollectionMap;
+    AddDependencySingleton<TDependencies extends unknown>(): IInternalServiceCollectionMap;
 }
 
 
@@ -177,10 +177,10 @@ export interface ILazyLoader$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ILazyLoader: never;
 
     Dispose(): void;
-    IsLoaded(entity: JsValue, navigationName?: string): boolean;
-    Load(entity: JsValue, navigationName?: string): void;
-    LoadAsync(entity: JsValue, cancellationToken?: CancellationToken, navigationName?: string): Task;
-    SetLoaded(entity: JsValue, navigationName?: string, loaded?: boolean): void;
+    IsLoaded(entity: unknown, navigationName?: string): boolean;
+    Load(entity: unknown, navigationName?: string): void;
+    LoadAsync(entity: unknown, cancellationToken?: CancellationToken, navigationName?: string): Task;
+    SetLoaded(entity: unknown, navigationName?: string, loaded?: boolean): void;
 }
 
 
@@ -189,7 +189,7 @@ export type ILazyLoader = ILazyLoader$instance;
 export interface IModelCacheKeyFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCacheKeyFactory: never;
 
-    Create(context: DbContext, designTime: boolean): JsValue;
+    Create(context: DbContext, designTime: boolean): unknown;
 }
 
 
@@ -240,7 +240,7 @@ export interface IReadOnlyAnnotatable$instance {
 }
 
 
-export type IReadOnlyAnnotatable = IReadOnlyAnnotatable$instance & { readonly [name: string]: JsValue | null; };
+export type IReadOnlyAnnotatable = IReadOnlyAnnotatable$instance & { readonly [name: string]: unknown | null; };
 
 export interface IRelationalDbContextOptionsBuilderInfrastructure$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IRelationalDbContextOptionsBuilderInfrastructure: never;
@@ -350,30 +350,30 @@ export interface AnnotatableBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
 
     readonly IsReadOnly: boolean;
-    AddAnnotation(name: string, value: JsValue | null): Annotation;
+    AddAnnotation(name: string, value: unknown | null): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
     AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, JsValue | null>): void;
-    AddRuntimeAnnotation(name: string, value: JsValue | null): Annotation;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown | null>): void;
+    AddRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AddRuntimeAnnotations(annotations: IEnumerable_1<Annotation>): void;
-    AddRuntimeAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, JsValue | null>): void;
-    CreateAnnotation(name: string, value: JsValue | null): Annotation;
-    CreateRuntimeAnnotation(name: string, value: JsValue | null): Annotation;
+    AddRuntimeAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown | null>): void;
+    CreateAnnotation(name: string, value: unknown | null): Annotation;
+    CreateRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     EnsureMutable(): void;
     EnsureReadOnly(): void;
     FindAnnotation(name: string): Annotation | null;
     FindRuntimeAnnotation(name: string): Annotation | null;
     GetAnnotation(annotationName: string): Annotation;
     GetAnnotations(): IEnumerable_1<Annotation>;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue extends unknown, TArg extends unknown>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetRuntimeAnnotations(): IEnumerable_1<Annotation>;
     OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
     RemoveAnnotation(name: string): Annotation | null;
     RemoveRuntimeAnnotation(name: string): Annotation | null;
-    SetAnnotation(name: string, value: JsValue | null): void;
+    SetAnnotation(name: string, value: unknown | null): void;
     SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation | null): Annotation | null;
-    SetRuntimeAnnotation(name: string, value: JsValue | null): Annotation;
+    SetRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     SetRuntimeAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation | null): Annotation;
 }
 
@@ -388,10 +388,10 @@ export interface __AnnotatableBase$views {
     As_IReadOnlyAnnotatable(): IReadOnlyAnnotatable$instance;
 }
 
-export type AnnotatableBase = AnnotatableBase$instance & __AnnotatableBase$views & { [name: string]: JsValue | null; };
+export type AnnotatableBase = AnnotatableBase$instance & __AnnotatableBase$views & { [name: string]: unknown | null; };
 
 
-export interface AnnotatableBuilder_2$instance<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder> {
+export interface AnnotatableBuilder_2$instance<TMetadata extends unknown & ConventionAnnotatable, TModelBuilder extends unknown & IConventionModelBuilder> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBuilder_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
@@ -399,25 +399,25 @@ export interface AnnotatableBuilder_2$instance<TMetadata extends ConventionAnnot
     readonly Metadata: TMetadata;
     readonly ModelBuilder: TModelBuilder;
     CanRemoveAnnotation(name: string, configurationSource: ConfigurationSource): boolean;
-    CanSetAnnotation(name: string, value: JsValue | null, configurationSource: ConfigurationSource): boolean;
-    HasAnnotation(name: string, value: JsValue | null, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | null;
+    CanSetAnnotation(name: string, value: unknown | null, configurationSource: ConfigurationSource): boolean;
+    HasAnnotation(name: string, value: unknown | null, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | null;
     HasNoAnnotation(name: string, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | null;
-    HasNonNullAnnotation(name: string, value: JsValue | null, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | null;
+    HasNonNullAnnotation(name: string, value: unknown | null, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | null;
     MergeAnnotationsFrom(annotatable: TMetadata): AnnotatableBuilder_2<TMetadata, TModelBuilder>;
     MergeAnnotationsFrom(annotatable: TMetadata, minimalConfigurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder>;
     RemoveAnnotation(name: string, configurationSource: ConfigurationSource): AnnotatableBuilder_2<TMetadata, TModelBuilder> | null;
 }
 
 
-export const AnnotatableBuilder_2: (abstract new<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder>(metadata: TMetadata, modelBuilder: TModelBuilder) => AnnotatableBuilder_2<TMetadata, TModelBuilder>) & {
+export const AnnotatableBuilder_2: (abstract new<TMetadata extends unknown & ConventionAnnotatable, TModelBuilder extends unknown & IConventionModelBuilder>(metadata: TMetadata, modelBuilder: TModelBuilder) => AnnotatableBuilder_2<TMetadata, TModelBuilder>) & {
 };
 
 
-export interface __AnnotatableBuilder_2$views<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder> {
+export interface __AnnotatableBuilder_2$views<TMetadata extends unknown & ConventionAnnotatable, TModelBuilder extends unknown & IConventionModelBuilder> {
     As_IConventionAnnotatableBuilder(): Microsoft_EntityFrameworkCore_Metadata_Builders_Internal.IConventionAnnotatableBuilder$instance;
 }
 
-export type AnnotatableBuilder_2<TMetadata extends ConventionAnnotatable, TModelBuilder extends IConventionModelBuilder> = AnnotatableBuilder_2$instance<TMetadata, TModelBuilder> & __AnnotatableBuilder_2$views<TMetadata, TModelBuilder>;
+export type AnnotatableBuilder_2<TMetadata extends unknown & ConventionAnnotatable, TModelBuilder extends unknown & IConventionModelBuilder> = AnnotatableBuilder_2$instance<TMetadata, TModelBuilder> & __AnnotatableBuilder_2$views<TMetadata, TModelBuilder>;
 
 
 export interface Annotation$instance extends IAnnotation$instance {
@@ -426,12 +426,12 @@ export interface Annotation$instance extends IAnnotation$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotation: never;
 
     readonly Name: string;
-    readonly Value: JsValue | null;
+    readonly Value: unknown | null;
 }
 
 
 export const Annotation: {
-    new(name: string, value: JsValue | null): Annotation;
+    new(name: string, value: unknown | null): Annotation;
 };
 
 
@@ -450,20 +450,20 @@ export interface ConventionAnnotatable$instance extends Annotatable$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
-    AddAnnotation(name: string, value: JsValue | null, configurationSource: ConfigurationSource): ConventionAnnotation;
-    AddAnnotation(name: string, value: JsValue | null): Annotation;
+    AddAnnotation(name: string, value: unknown | null, configurationSource: ConfigurationSource): ConventionAnnotation;
+    AddAnnotation(name: string, value: unknown | null): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
-    CreateAnnotation(name: string, value: JsValue | null): Annotation;
+    CreateAnnotation(name: string, value: unknown | null): Annotation;
     FindAnnotation(name: string): ConventionAnnotation | null;
     FindAnnotation(name: string): Annotation | null;
     GetAnnotations(): IEnumerable_1<ConventionAnnotation>;
     GetAnnotations(): IEnumerable_1<Annotation>;
     OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
     OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
-    SetAnnotation(name: string, value: JsValue | null): void;
-    SetAnnotation(name: string, value: JsValue | null, configurationSource: ConfigurationSource): ConventionAnnotation | null;
+    SetAnnotation(name: string, value: unknown | null): void;
+    SetAnnotation(name: string, value: unknown | null, configurationSource: ConfigurationSource): ConventionAnnotation | null;
     SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation | null): Annotation | null;
-    SetOrRemoveAnnotation(name: string, value: JsValue | null, configurationSource: ConfigurationSource): ConventionAnnotation | null;
+    SetOrRemoveAnnotation(name: string, value: unknown | null, configurationSource: ConfigurationSource): ConventionAnnotation | null;
 }
 
 
@@ -570,7 +570,7 @@ export interface DatabaseFacade$instance extends IInfrastructure_1$instance<ISer
     EnsureCreatedAsync(cancellationToken?: CancellationToken): Task_1<System_Internal.Boolean>;
     EnsureDeleted(): boolean;
     EnsureDeletedAsync(cancellationToken?: CancellationToken): Task_1<System_Internal.Boolean>;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
     RollbackTransaction(): void;
     RollbackTransactionAsync(cancellationToken?: CancellationToken): Task;
@@ -712,12 +712,12 @@ export interface EntityFrameworkServicesBuilder$instance {
 
     readonly ServiceCollectionMap: ServiceCollectionMap;
     GetServiceCharacteristics(serviceType: Type): ServiceCharacteristics;
-    TryAdd<TService, TImplementation extends TService>(): EntityFrameworkServicesBuilder;
+    TryAdd<TService extends (object | null), TImplementation extends (object | null) & TService>(): EntityFrameworkServicesBuilder;
     TryAdd(serviceType: Type, implementationType: Type): EntityFrameworkServicesBuilder;
-    TryAdd<TService>(factory: Func_2<IServiceProvider, TService>): EntityFrameworkServicesBuilder;
-    TryAdd(serviceType: Type, implementationType: Type, factory: Func_2<IServiceProvider, JsValue>): EntityFrameworkServicesBuilder;
-    TryAdd<TService>(implementation: TService): EntityFrameworkServicesBuilder;
-    TryAdd(serviceType: Type, implementation: JsValue): EntityFrameworkServicesBuilder;
+    TryAdd<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): EntityFrameworkServicesBuilder;
+    TryAdd(serviceType: Type, implementationType: Type, factory: Func_2<IServiceProvider, unknown>): EntityFrameworkServicesBuilder;
+    TryAdd<TService extends (object | null)>(implementation: TService): EntityFrameworkServicesBuilder;
+    TryAdd(serviceType: Type, implementation: unknown): EntityFrameworkServicesBuilder;
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
     TryAddProviderSpecificServices(serviceMap: Action_1<ServiceCollectionMap>): EntityFrameworkServicesBuilder;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
@@ -769,7 +769,7 @@ export interface ModelCacheKey$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ModelCacheKey: never;
 
     Equals(other: ModelCacheKey): boolean;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
 }
 
@@ -788,8 +788,8 @@ export interface ModelCacheKeyFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCacheKeyFactory: never;
 
     readonly Dependencies: ModelCacheKeyFactoryDependencies;
-    Create(context: DbContext): JsValue;
-    Create(context: DbContext, designTime: boolean): JsValue;
+    Create(context: DbContext): unknown;
+    Create(context: DbContext, designTime: boolean): unknown;
 }
 
 
@@ -811,7 +811,7 @@ export interface ModelCacheKeyFactoryDependencies$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): ModelCacheKeyFactoryDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ModelCacheKeyFactoryDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -853,7 +853,7 @@ export interface ModelCustomizerDependencies$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): ModelCustomizerDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ModelCustomizerDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -874,7 +874,7 @@ export interface ModelDependencies$instance {
 
     Logger: IDiagnosticsLogger_1<DbLoggerCategory_Model>;
     _Clone_$(): ModelDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ModelDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -912,7 +912,7 @@ export interface ModelRuntimeInitializerDependencies$instance {
     ModelDependencies: RuntimeModelDependencies;
     ModelValidator: IModelValidator;
     _Clone_$(): ModelRuntimeInitializerDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ModelRuntimeInitializerDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -973,7 +973,7 @@ export interface ModelSourceDependencies$instance {
     ModelCacheKeyFactory: IModelCacheKeyFactory;
     ModelCustomizer: IModelCustomizer;
     _Clone_$(): ModelSourceDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ModelSourceDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -1043,7 +1043,7 @@ export interface ModelValidatorDependencies$instance {
 
     MemberClassifier: IMemberClassifier;
     _Clone_$(): ModelValidatorDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ModelValidatorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -1057,7 +1057,7 @@ export const ModelValidatorDependencies: {
 
 export type ModelValidatorDependencies = ModelValidatorDependencies$instance;
 
-export interface PooledDbContextFactory_1$instance<TContext extends DbContext> extends Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext> {
+export interface PooledDbContextFactory_1$instance<TContext extends unknown & DbContext> extends Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_PooledDbContextFactory_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IDbContextFactory_1: never;
@@ -1068,26 +1068,26 @@ export interface PooledDbContextFactory_1$instance<TContext extends DbContext> e
 
 
 export const PooledDbContextFactory_1: {
-    new<TContext extends DbContext>(pool: IDbContextPool_1<TContext>): PooledDbContextFactory_1<TContext>;
-    new<TContext extends DbContext>(options: DbContextOptions_1<TContext>, poolSize: int): PooledDbContextFactory_1<TContext>;
+    new<TContext extends unknown & DbContext>(pool: IDbContextPool_1<TContext>): PooledDbContextFactory_1<TContext>;
+    new<TContext extends unknown & DbContext>(options: DbContextOptions_1<TContext>, poolSize: int): PooledDbContextFactory_1<TContext>;
 };
 
 
-export interface __PooledDbContextFactory_1$views<TContext extends DbContext> {
+export interface __PooledDbContextFactory_1$views<TContext extends unknown & DbContext> {
     As_IDbContextFactory_1(): Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext>;
 }
 
-export type PooledDbContextFactory_1<TContext extends DbContext> = PooledDbContextFactory_1$instance<TContext> & __PooledDbContextFactory_1$views<TContext>;
+export type PooledDbContextFactory_1<TContext extends unknown & DbContext> = PooledDbContextFactory_1$instance<TContext> & __PooledDbContextFactory_1$views<TContext>;
 
 
-export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> extends IRelationalDbContextOptionsBuilderInfrastructure$instance {
+export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends unknown & RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends unknown & RelationalOptionsExtension> extends IRelationalDbContextOptionsBuilderInfrastructure$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalDbContextOptionsBuilder_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IRelationalDbContextOptionsBuilderInfrastructure: never;
 
     readonly OptionsBuilder: DbContextOptionsBuilder;
     CommandTimeout(commandTimeout: Nullable_1<System_Internal.Int32>): TBuilder;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     ExecutionStrategy(getExecutionStrategy: Func_2<ExecutionStrategyDependencies, IExecutionStrategy>): TBuilder;
     GetHashCode(): int;
     MaxBatchSize(maxBatchSize: int): TBuilder;
@@ -1105,15 +1105,15 @@ export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends R
 }
 
 
-export const RelationalDbContextOptionsBuilder_2: (abstract new<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension>(optionsBuilder: DbContextOptionsBuilder) => RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>) & {
+export const RelationalDbContextOptionsBuilder_2: (abstract new<TBuilder extends unknown & RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends unknown & RelationalOptionsExtension>(optionsBuilder: DbContextOptionsBuilder) => RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>) & {
 };
 
 
-export interface __RelationalDbContextOptionsBuilder_2$views<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> {
+export interface __RelationalDbContextOptionsBuilder_2$views<TBuilder extends unknown & RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends unknown & RelationalOptionsExtension> {
     As_IRelationalDbContextOptionsBuilderInfrastructure(): IRelationalDbContextOptionsBuilderInfrastructure$instance;
 }
 
-export type RelationalDbContextOptionsBuilder_2<TBuilder extends RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends RelationalOptionsExtension> = RelationalDbContextOptionsBuilder_2$instance<TBuilder, TExtension> & __RelationalDbContextOptionsBuilder_2$views<TBuilder, TExtension>;
+export type RelationalDbContextOptionsBuilder_2<TBuilder extends unknown & RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends unknown & RelationalOptionsExtension> = RelationalDbContextOptionsBuilder_2$instance<TBuilder, TExtension> & __RelationalDbContextOptionsBuilder_2$views<TBuilder, TExtension>;
 
 
 export interface RelationalModelCustomizer$instance extends ModelCustomizer$instance, IModelCustomizer$instance {
@@ -1146,7 +1146,7 @@ export interface RelationalModelDependencies$instance {
     RowKeyValueFactoryFactory: IRowKeyValueFactoryFactory;
     ValueConverterSelector: IValueConverterSelector;
     _Clone_$(): RelationalModelDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: RelationalModelDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -1190,7 +1190,7 @@ export interface RelationalModelRuntimeInitializerDependencies$instance {
     RelationalAnnotationProvider: IRelationalAnnotationProvider;
     RelationalModelDependencies: RelationalModelDependencies;
     _Clone_$(): RelationalModelRuntimeInitializerDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: RelationalModelRuntimeInitializerDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -1204,13 +1204,13 @@ export const RelationalModelRuntimeInitializerDependencies: {
 
 export type RelationalModelRuntimeInitializerDependencies = RelationalModelRuntimeInitializerDependencies$instance;
 
-export interface RelationalModelValidator$instance extends ModelValidator$instance {
+export interface RelationalModelValidator$instance extends ModelValidator$instance, IModelValidator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalModelValidator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelValidator: never;
 
     readonly RelationalDependencies: RelationalModelValidatorDependencies;
-    GetDefaultColumnValue(property: IProperty, storeObject: StoreObjectIdentifier): JsValue | null;
+    GetDefaultColumnValue(property: IProperty, storeObject: StoreObjectIdentifier): unknown | null;
     IsRedundant(foreignKey: IForeignKey): boolean;
     ThrowPropertyNotMappedException(propertyType: string, typeBase: IConventionTypeBase, unmappedProperty: IConventionProperty): void;
     Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
@@ -1275,7 +1275,7 @@ export interface RelationalModelValidatorDependencies$instance {
 
     TypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): RelationalModelValidatorDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: RelationalModelValidatorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -1365,24 +1365,24 @@ export interface RuntimeAnnotatableBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
 
-    AddAnnotation(name: string, value: JsValue | null): Annotation;
+    AddAnnotation(name: string, value: unknown | null): Annotation;
     AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
-    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, JsValue | null>): void;
-    AddRuntimeAnnotation(name: string, value: JsValue | null): Annotation;
+    AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown | null>): void;
+    AddRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
     AddRuntimeAnnotations(annotations: IEnumerable_1<Annotation>): void;
-    AddRuntimeAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, JsValue | null>): void;
-    CreateAnnotation(name: string, value: JsValue | null): Annotation;
-    CreateRuntimeAnnotation(name: string, value: JsValue | null): Annotation;
+    AddRuntimeAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown | null>): void;
+    CreateAnnotation(name: string, value: unknown | null): Annotation;
+    CreateRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     FindAnnotation(name: string): Annotation | null;
     FindRuntimeAnnotation(name: string): Annotation | null;
     GetAnnotation(annotationName: string): Annotation;
-    GetOrAddRuntimeAnnotationValue<TValue, TArg>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
+    GetOrAddRuntimeAnnotationValue<TValue extends unknown, TArg extends unknown>(name: string, valueFactory: Func_2<TArg | null, TValue>, factoryArgument: TArg | null): TValue;
     GetRuntimeAnnotations(): IEnumerable_1<Annotation>;
     RemoveAnnotation(name: string): Annotation | null;
     RemoveRuntimeAnnotation(name: string): Annotation | null;
-    SetAnnotation(name: string, value: JsValue | null): void;
-    SetRuntimeAnnotation(name: string, value: JsValue | null): Annotation;
+    SetAnnotation(name: string, value: unknown | null): void;
+    SetRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     SetRuntimeAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation | null): Annotation;
 }
 
@@ -1397,7 +1397,7 @@ export interface __RuntimeAnnotatableBase$views {
     As_IReadOnlyAnnotatable(): IReadOnlyAnnotatable$instance;
 }
 
-export type RuntimeAnnotatableBase = RuntimeAnnotatableBase$instance & __RuntimeAnnotatableBase$views & { [name: string]: JsValue | null; };
+export type RuntimeAnnotatableBase = RuntimeAnnotatableBase$instance & __RuntimeAnnotatableBase$views & { [name: string]: unknown | null; };
 
 
 export interface RuntimeModelDependencies$instance {
@@ -1409,7 +1409,7 @@ export interface RuntimeModelDependencies$instance {
     ParameterBindingFactories: IParameterBindingFactories;
     TypeMappingSource: ITypeMappingSource;
     _Clone_$(): RuntimeModelDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: RuntimeModelDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -1430,34 +1430,34 @@ export interface ServiceCollectionMap$instance extends IInfrastructure_1$instanc
 
     readonly ServiceCollection: IServiceCollection;
     TryAdd(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
-    TryAdd(serviceType: Type, factory: Func_2<IServiceProvider, JsValue>, lifetime: ServiceLifetime): ServiceCollectionMap;
+    TryAdd(serviceType: Type, factory: Func_2<IServiceProvider, unknown>, lifetime: ServiceLifetime): ServiceCollectionMap;
     TryAddEnumerable(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
-    TryAddEnumerable(serviceType: Type, implementationType: Type, factory: Func_2<IServiceProvider, JsValue>, lifetime: ServiceLifetime): ServiceCollectionMap;
-    TryAddScoped<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddEnumerable(serviceType: Type, implementationType: Type, factory: Func_2<IServiceProvider, unknown>, lifetime: ServiceLifetime): ServiceCollectionMap;
+    TryAddScoped<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
     TryAddScoped(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    TryAddScoped<TService>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
-    TryAddScoped(serviceType: Type, factory: Func_2<IServiceProvider, JsValue>): ServiceCollectionMap;
-    TryAddScopedEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddScoped<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddScoped(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
+    TryAddScopedEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
     TryAddScopedEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    TryAddScopedEnumerable<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
-    TryAddSingleton<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddScopedEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
+    TryAddSingleton<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
     TryAddSingleton(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    TryAddSingleton<TService>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
-    TryAddSingleton(serviceType: Type, factory: Func_2<IServiceProvider, JsValue>): ServiceCollectionMap;
-    TryAddSingleton<TService>(implementation: TService): ServiceCollectionMap;
-    TryAddSingleton(serviceType: Type, implementation: JsValue): ServiceCollectionMap;
-    TryAddSingletonEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddSingleton<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddSingleton(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
+    TryAddSingleton<TService extends (object | null)>(implementation: TService): ServiceCollectionMap;
+    TryAddSingleton(serviceType: Type, implementation: unknown): ServiceCollectionMap;
+    TryAddSingletonEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
     TryAddSingletonEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    TryAddSingletonEnumerable<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
-    TryAddSingletonEnumerable<TService>(implementation: TService): ServiceCollectionMap;
-    TryAddSingletonEnumerable(serviceType: Type, implementation: JsValue): ServiceCollectionMap;
-    TryAddTransient<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddSingletonEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
+    TryAddSingletonEnumerable<TService extends (object | null)>(implementation: TService): ServiceCollectionMap;
+    TryAddSingletonEnumerable(serviceType: Type, implementation: unknown): ServiceCollectionMap;
+    TryAddTransient<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
     TryAddTransient(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    TryAddTransient<TService>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
-    TryAddTransient(serviceType: Type, factory: Func_2<IServiceProvider, JsValue>): ServiceCollectionMap;
-    TryAddTransientEnumerable<TService, TImplementation extends TService>(): ServiceCollectionMap;
+    TryAddTransient<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddTransient(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
+    TryAddTransientEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
     TryAddTransientEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    TryAddTransientEnumerable<TService, TImplementation extends TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
+    TryAddTransientEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
 }
 
 
@@ -1488,9 +1488,9 @@ export const ServiceProviderAccessor: {
 export type ServiceProviderAccessor = ServiceProviderAccessor$instance;
 
 export abstract class AccessorExtensions$instance {
-    static GetInfrastructure<T>(accessor: IInfrastructure_1<T>): T;
-    static GetService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): JsValue;
-    static GetService<TService>(accessor: IInfrastructure_1<IServiceProvider>): TService;
+    static GetInfrastructure<T extends unknown>(accessor: IInfrastructure_1<T>): T;
+    static GetService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): unknown;
+    static GetService<TService extends (object | null)>(accessor: IInfrastructure_1<IServiceProvider>): TService;
 }
 
 
@@ -1534,7 +1534,7 @@ export abstract class ExpressionExtensions$instance {
 export type ExpressionExtensions = ExpressionExtensions$instance;
 
 export abstract class LazyLoaderExtensions$instance {
-    static Load<TRelated>(loader: ILazyLoader | null, entity: JsValue, navigationField: TRelated | null, navigationName?: string): TRelated | null;
+    static Load<TRelated extends (object | null)>(loader: ILazyLoader | null, entity: unknown, navigationField: TRelated | null, navigationName?: string): TRelated | null;
 }
 
 
@@ -1579,10 +1579,10 @@ export type TypeExtensions = TypeExtensions$instance;
 export abstract class Uniquifier$instance {
     static Truncate(identifier: string, maxLength: int, uniquifier?: Nullable_1<System_Internal.Int32>): string;
     static Truncate(identifier: string, maxLength: int, suffix: string | null, uniquifier?: Nullable_1<System_Internal.Int32>): string;
-    static Uniquify<TKey, TValue>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary_2<TKey, TValue>, keySelector: Func_2<System_Internal.String, TKey>, maxLength: int): string;
-    static Uniquify<TKey, TValue>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary_2<TKey, TValue>, keySelector: Func_2<System_Internal.String, TKey>, suffix: string | null, maxLength: int): string;
-    static Uniquify<T>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary_2<System_Internal.String, T>, maxLength: int): string;
-    static Uniquify<T>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary_2<System_Internal.String, T>, suffix: string | null, maxLength: int): string;
+    static Uniquify<TKey extends unknown, TValue extends unknown>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary_2<TKey, TValue>, keySelector: Func_2<System_Internal.String, TKey>, maxLength: int): string;
+    static Uniquify<TKey extends unknown, TValue extends unknown>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary_2<TKey, TValue>, keySelector: Func_2<System_Internal.String, TKey>, suffix: string | null, maxLength: int): string;
+    static Uniquify<T extends unknown>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary_2<System_Internal.String, T>, maxLength: int): string;
+    static Uniquify<T extends unknown>(currentIdentifier: string, otherIdentifiers: IReadOnlyDictionary_2<System_Internal.String, T>, suffix: string | null, maxLength: int): string;
     static Uniquify(currentIdentifier: string, otherIdentifiers: ISet_1<System_Internal.String>, suffix: string | null, maxLength: int): string;
 }
 

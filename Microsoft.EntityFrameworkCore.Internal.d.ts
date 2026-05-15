@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { IChangeDetector, IEntityGraphAttacher, InternalEntityEntry, IStateManager } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 import type { CascadeTiming, DetectChangesEventArgs, DetectedChangesEventArgs, DetectedEntityChangesEventArgs, DetectEntityChangesEventArgs, EntityEntry_1, EntityStateChangedEventArgs, EntityStateChangingEventArgs, EntityTrackedEventArgs, EntityTrackingEventArgs, LoadOptions, LocalView_1 } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
@@ -49,7 +53,7 @@ export { EntityFinderCollectionLoaderAdapter as EntityFinderCollectionLoaderAdap
 export { EntityFinderFactory as EntityFinderFactory } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 export { EntityFinderSource as EntityFinderSource } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 export type IDbContextDependencies = Internal.IDbContextDependencies;
-export type IDbContextFactorySource<TContext extends Internal.DbContext> = Internal.IDbContextFactorySource_1<TContext>;
+export type IDbContextFactorySource<TContext extends unknown & Internal.DbContext> = Internal.IDbContextFactorySource_1<TContext>;
 export type IDbContextPoolable = Internal.IDbContextPoolable;
 export type IDbContextServices = Internal.IDbContextServices;
 export type IDbSetCache = Internal.IDbSetCache;
@@ -61,7 +65,7 @@ export type IInjectableService = Internal.IInjectableService;
 export { InternalDbSet_1 as InternalDbSet } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 export type IPatchServiceInjectionSite = Internal.IPatchServiceInjectionSite;
 export type IRegisteredServices = Internal.IRegisteredServices;
-export type IScopedDbContextLease<TContext extends Internal.DbContext> = Internal.IScopedDbContextLease_1<TContext>;
+export type IScopedDbContextLease<TContext extends unknown & Internal.DbContext> = Internal.IScopedDbContextLease_1<TContext>;
 export type ISingletonOptionsInitializer = Internal.ISingletonOptionsInitializer;
 export { ManyToManyLoader_2 as ManyToManyLoader } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 export { ManyToManyLoaderFactory as ManyToManyLoaderFactory } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
@@ -84,22 +88,22 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type ICollectionLoader<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.ICollectionLoader :
-  Internal.ICollectionLoader_1<T1>;
+  [T1] extends [(object | null)] ? Internal.ICollectionLoader_1<T1> : never;
 
 export type IDbContextPool<
-  T1 = __,
+  T1 extends unknown & DbContext | __ = __,
 > =
   [T1] extends [__] ? Internal.IDbContextPool :
-  [T1] extends [DbContext] ? Internal.IDbContextPool_1<T1> : never;
+  [T1] extends [unknown & DbContext] ? Internal.IDbContextPool_1<T1> : never;
 
 export type IEntityFinder<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.IEntityFinder :
-  Internal.IEntityFinder_1<T1>;
+  [T1] extends [(object | null)] ? Internal.IEntityFinder_1<T1> : never;
 
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore_Internal as ExtensionMethods } from './__internal/extensions/index.js';

@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Abstractions
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -57,30 +57,30 @@ export enum LoadOptions {
 export interface IDependentKeyValueFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory: never;
 
-    CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): JsValue;
+    CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
 }
 
 
 export type IDependentKeyValueFactory = IDependentKeyValueFactory$instance;
 
-export interface IDependentKeyValueFactory_1$instance<TKey> extends IDependentKeyValueFactory {
+export interface IDependentKeyValueFactory_1$instance<TKey extends unknown> extends IDependentKeyValueFactory {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IDependentKeyValueFactory_1: never;
 
     readonly EqualityComparer: IEqualityComparer_1<TKey>;
-    CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): JsValue;
+    CreatePrincipalEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
     TryCreateFromCurrentValues(entry: IUpdateEntry, key: TKey | null): boolean;
 }
 
 
-export interface IDependentKeyValueFactory_1$instance<TKey> extends IDependentKeyValueFactory$instance {}
+export interface IDependentKeyValueFactory_1$instance<TKey extends unknown> extends IDependentKeyValueFactory$instance {}
 
-export type IDependentKeyValueFactory_1<TKey> = IDependentKeyValueFactory_1$instance<TKey>;
+export type IDependentKeyValueFactory_1<TKey extends unknown> = IDependentKeyValueFactory_1$instance<TKey>;
 
 export interface IEntityEntryGraphIterator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IEntityEntryGraphIterator: never;
 
-    TraverseGraph<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func_2<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
-    TraverseGraphAsync<TState>(node: EntityEntryGraphNode_1<TState>, handleNode: Func_3<EntityEntryGraphNode_1<TState>, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
+    TraverseGraph<TState extends unknown>(node: EntityEntryGraphNode_1<TState>, handleNode: Func_2<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
+    TraverseGraphAsync<TState extends unknown>(node: EntityEntryGraphNode_1<TState>, handleNode: Func_3<EntityEntryGraphNode_1<TState>, CancellationToken, Task_1<System_Internal.Boolean>>, cancellationToken?: CancellationToken): Task;
 }
 
 
@@ -89,30 +89,30 @@ export type IEntityEntryGraphIterator = IEntityEntryGraphIterator$instance;
 export interface IPrincipalKeyValueFactory$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IPrincipalKeyValueFactory: never;
 
-    CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): JsValue;
+    CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
 }
 
 
 export type IPrincipalKeyValueFactory = IPrincipalKeyValueFactory$instance;
 
-export interface IPrincipalKeyValueFactory_1$instance<TKey> extends IPrincipalKeyValueFactory {
+export interface IPrincipalKeyValueFactory_1$instance<TKey extends unknown> extends IPrincipalKeyValueFactory {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_ChangeTracking_IPrincipalKeyValueFactory_1: never;
 
     readonly EqualityComparer: IEqualityComparer_1<TKey>;
-    CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): JsValue;
+    CreateEquatableKey(entry: IUpdateEntry, fromOriginalValues?: boolean): unknown;
     CreateFromCurrentValues(entry: IUpdateEntry): TKey;
-    CreateFromKeyValues(keyValues: IReadOnlyList_1<JsValue | null>): JsValue | null;
+    CreateFromKeyValues(keyValues: IReadOnlyList_1<unknown | null>): unknown | null;
     CreateFromRelationshipSnapshot(entry: IUpdateEntry): TKey;
     FindNullPropertyInCurrentValues(entry: IUpdateEntry): IProperty;
-    FindNullPropertyInKeyValues(keyValues: IReadOnlyList_1<JsValue | null>): IProperty;
+    FindNullPropertyInKeyValues(keyValues: IReadOnlyList_1<unknown | null>): IProperty;
 }
 
 
-export interface IPrincipalKeyValueFactory_1$instance<TKey> extends IPrincipalKeyValueFactory$instance {}
+export interface IPrincipalKeyValueFactory_1$instance<TKey extends unknown> extends IPrincipalKeyValueFactory$instance {}
 
-export type IPrincipalKeyValueFactory_1<TKey> = IPrincipalKeyValueFactory_1$instance<TKey>;
+export type IPrincipalKeyValueFactory_1<TKey extends unknown> = IPrincipalKeyValueFactory_1$instance<TKey>;
 
-export interface ArrayStructuralComparer_1$instance<TElement> extends ValueComparer_1<TElement[]> {
+export interface ArrayStructuralComparer_1$instance<TElement extends unknown> extends ValueComparer_1<TElement[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ArrayStructuralComparer_1: never;
 
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
@@ -122,11 +122,11 @@ export interface ArrayStructuralComparer_1$instance<TElement> extends ValueCompa
 
 
 export const ArrayStructuralComparer_1: {
-    new<TElement>(): ArrayStructuralComparer_1<TElement>;
+    new<TElement extends unknown>(): ArrayStructuralComparer_1<TElement>;
 };
 
 
-export type ArrayStructuralComparer_1<TElement> = ArrayStructuralComparer_1$instance<TElement>;
+export type ArrayStructuralComparer_1<TElement extends unknown> = ArrayStructuralComparer_1$instance<TElement>;
 
 export interface CaseInsensitiveValueComparer$instance extends ValueComparer_1<System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_CaseInsensitiveValueComparer: never;
@@ -161,13 +161,13 @@ export interface ChangeTracker$instance extends Microsoft_EntityFrameworkCore_In
     Clear(): void;
     DetectChanges(): void;
     Entries(): IEnumerable_1<EntityEntry>;
-    Entries<TEntity>(): IEnumerable_1<EntityEntry_1<TEntity>>;
-    Equals(obj: JsValue | null): boolean;
+    Entries<TEntity extends (object | null)>(): IEnumerable_1<EntityEntry_1<TEntity>>;
+    Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
     HasChanges(): boolean;
     ToString(): string | null;
-    TrackGraph(rootEntity: JsValue, callback: Action_1<EntityEntryGraphNode>): void;
-    TrackGraph<TState>(rootEntity: JsValue, state: TState, callback: Func_2<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
+    TrackGraph(rootEntity: unknown, callback: Action_1<EntityEntryGraphNode>): void;
+    TrackGraph<TState extends unknown>(rootEntity: unknown, state: TState, callback: Func_2<EntityEntryGraphNode_1<TState>, System_Internal.Boolean>): void;
 }
 
 
@@ -188,10 +188,10 @@ export interface CollectionEntry$instance extends NavigationEntry$instance, Micr
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    CurrentValue: IEnumerable | JsValue;
+    CurrentValue: IEnumerable | unknown;
     IsModified: boolean;
-    FindEntry(entity: JsValue): EntityEntry | null;
-    GetInternalTargetEntry(entity: JsValue): InternalEntityEntry | null;
+    FindEntry(entity: unknown): EntityEntry | null;
+    GetInternalTargetEntry(entity: unknown): InternalEntityEntry | null;
     Load(): void;
     Load(options: LoadOptions): void;
     LoadAsync(cancellationToken?: CancellationToken): Task;
@@ -213,30 +213,30 @@ export interface __CollectionEntry$views {
 export type CollectionEntry = CollectionEntry$instance & __CollectionEntry$views;
 
 
-export interface CollectionEntry_2$instance<TEntity, TRelatedEntity> extends CollectionEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+export interface CollectionEntry_2$instance<TEntity extends (object | null), TRelatedEntity extends (object | null)> extends CollectionEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_CollectionEntry_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly EntityEntry: EntityEntry_1<TEntity>;
-    FindEntry(entity: JsValue): EntityEntry_1<TRelatedEntity> | null;
-    FindEntry(entity: JsValue): EntityEntry | null;
+    FindEntry(entity: unknown): EntityEntry_1<TRelatedEntity> | null;
+    FindEntry(entity: unknown): EntityEntry | null;
     Query(): IQueryable_1<TRelatedEntity>;
     Query(): IQueryable;
 }
 
 
 export const CollectionEntry_2: {
-    new<TEntity, TRelatedEntity>(internalEntry: InternalEntityEntry, name: string): CollectionEntry_2<TEntity, TRelatedEntity>;
-    new<TEntity, TRelatedEntity>(internalEntry: InternalEntityEntry, navigationBase: INavigationBase): CollectionEntry_2<TEntity, TRelatedEntity>;
+    new<TEntity extends (object | null), TRelatedEntity extends (object | null)>(internalEntry: InternalEntityEntry, name: string): CollectionEntry_2<TEntity, TRelatedEntity>;
+    new<TEntity extends (object | null), TRelatedEntity extends (object | null)>(internalEntry: InternalEntityEntry, navigationBase: INavigationBase): CollectionEntry_2<TEntity, TRelatedEntity>;
 };
 
 
-export interface __CollectionEntry_2$views<TEntity, TRelatedEntity> {
+export interface __CollectionEntry_2$views<TEntity extends (object | null), TRelatedEntity extends (object | null)> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export type CollectionEntry_2<TEntity, TRelatedEntity> = CollectionEntry_2$instance<TEntity, TRelatedEntity> & __CollectionEntry_2$views<TEntity, TRelatedEntity>;
+export type CollectionEntry_2<TEntity extends (object | null), TRelatedEntity extends (object | null)> = CollectionEntry_2$instance<TEntity, TRelatedEntity> & __CollectionEntry_2$views<TEntity, TRelatedEntity>;
 
 
 export interface ComplexCollectionEntry$instance extends MemberEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
@@ -262,7 +262,7 @@ export interface __ComplexCollectionEntry$views {
 export type ComplexCollectionEntry = ComplexCollectionEntry$instance & __ComplexCollectionEntry$views & { readonly [ordinal: number]: ComplexElementEntry; };
 
 
-export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends ComplexCollectionEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+export interface ComplexCollectionEntry_2$instance<TEntity extends (object | null), TElement extends unknown> extends ComplexCollectionEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ComplexCollectionEntry_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -274,15 +274,15 @@ export interface ComplexCollectionEntry_2$instance<TEntity, TElement> extends Co
 
 
 export const ComplexCollectionEntry_2: {
-    new<TEntity, TElement>(internalEntry: IInternalEntry, property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
+    new<TEntity extends (object | null), TElement extends unknown>(internalEntry: IInternalEntry, property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
 };
 
 
-export interface __ComplexCollectionEntry_2$views<TEntity, TElement> {
+export interface __ComplexCollectionEntry_2$views<TEntity extends (object | null), TElement extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export type ComplexCollectionEntry_2<TEntity, TElement> = ComplexCollectionEntry_2$instance<TEntity, TElement> & __ComplexCollectionEntry_2$views<TEntity, TElement> & { readonly [ordinal: number]: ComplexElementEntry_2<TEntity, TElement>; };
+export type ComplexCollectionEntry_2<TEntity extends (object | null), TElement extends unknown> = ComplexCollectionEntry_2$instance<TEntity, TElement> & __ComplexCollectionEntry_2$views<TEntity, TElement> & { readonly [ordinal: number]: ComplexElementEntry_2<TEntity, TElement>; };
 
 
 export interface ComplexElementEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry> {
@@ -292,7 +292,7 @@ export interface ComplexElementEntry$instance extends Microsoft_EntityFrameworkC
 
     readonly ComplexCollections: IEnumerable_1<ComplexCollectionEntry>;
     readonly ComplexProperties: IEnumerable_1<ComplexPropertyEntry>;
-    readonly CurrentValue: JsValue;
+    readonly CurrentValue: unknown;
     readonly EntityEntry: EntityEntry;
     readonly InternalEntry: InternalComplexEntry;
     IsModified: boolean;
@@ -320,36 +320,36 @@ export interface __ComplexElementEntry$views {
 export type ComplexElementEntry = ComplexElementEntry$instance & __ComplexElementEntry$views;
 
 
-export interface ComplexElementEntry_2$instance<TEntity, TComplexProperty> extends ComplexElementEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry> {
+export interface ComplexElementEntry_2$instance<TEntity extends (object | null), TComplexProperty extends unknown> extends ComplexElementEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ComplexElementEntry_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplexProperty, IEnumerable_1<TElement> | null>>): ComplexCollectionEntry_2<TEntity, TElement>;
-    ComplexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
-    ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplexProperty, IEnumerable_1<TElement> | null>>): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement extends unknown>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement extends unknown>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    ComplexProperty<TNestedComplexProperty>(propertyExpression: Expression_1<Func_2<TComplexProperty, TNestedComplexProperty>>): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
-    ComplexProperty<TNestedComplexProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
-    ComplexProperty<TNestedComplexProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty<TNestedComplexProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplexProperty, TNestedComplexProperty>>): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty<TNestedComplexProperty extends unknown>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty<TNestedComplexProperty extends unknown>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
     ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    Property<TProperty>(propertyExpression: Expression_1<Func_2<TComplexProperty, TProperty | null>>): PropertyEntry_2<TEntity, TProperty>;
-    Property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
-    Property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplexProperty, TProperty | null>>): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty extends unknown>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty extends unknown>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
     Property(property: IProperty): PropertyEntry;
 }
 
 
 export const ComplexElementEntry_2: {
-    new<TEntity, TComplexProperty>(internalEntry: InternalComplexEntry): ComplexElementEntry_2<TEntity, TComplexProperty>;
+    new<TEntity extends (object | null), TComplexProperty extends unknown>(internalEntry: InternalComplexEntry): ComplexElementEntry_2<TEntity, TComplexProperty>;
 };
 
 
-export interface __ComplexElementEntry_2$views<TEntity, TComplexProperty> {
+export interface __ComplexElementEntry_2$views<TEntity extends (object | null), TComplexProperty extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalComplexEntry>;
 }
 
-export type ComplexElementEntry_2<TEntity, TComplexProperty> = ComplexElementEntry_2$instance<TEntity, TComplexProperty> & __ComplexElementEntry_2$views<TEntity, TComplexProperty>;
+export type ComplexElementEntry_2<TEntity extends (object | null), TComplexProperty extends unknown> = ComplexElementEntry_2$instance<TEntity, TComplexProperty> & __ComplexElementEntry_2$views<TEntity, TComplexProperty>;
 
 
 export interface ComplexPropertyEntry$instance extends MemberEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
@@ -382,38 +382,38 @@ export interface __ComplexPropertyEntry$views {
 export type ComplexPropertyEntry = ComplexPropertyEntry$instance & __ComplexPropertyEntry$views;
 
 
-export interface ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> extends ComplexPropertyEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+export interface ComplexPropertyEntry_2$instance<TEntity extends (object | null), TComplexProperty extends unknown> extends ComplexPropertyEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ComplexPropertyEntry_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     CurrentValue: TComplexProperty;
     readonly EntityEntry: EntityEntry_1<TEntity>;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TComplexProperty, IEnumerable_1<TElement> | null>>): ComplexCollectionEntry_2<TEntity, TElement>;
-    ComplexCollection<TElement>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
-    ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TComplexProperty, IEnumerable_1<TElement> | null>>): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement extends unknown>(property: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement extends unknown>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    ComplexProperty<TNestedComplexProperty>(propertyExpression: Expression_1<Func_2<TComplexProperty, TNestedComplexProperty | null>>): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
-    ComplexProperty<TNestedComplexProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
-    ComplexProperty<TNestedComplexProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty<TNestedComplexProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplexProperty, TNestedComplexProperty | null>>): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty<TNestedComplexProperty extends unknown>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
+    ComplexProperty<TNestedComplexProperty extends unknown>(propertyName: string): ComplexPropertyEntry_2<TEntity, TNestedComplexProperty>;
     ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    Property<TProperty>(propertyExpression: Expression_1<Func_2<TComplexProperty, TProperty>>): PropertyEntry_2<TEntity, TProperty>;
-    Property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
-    Property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TComplexProperty, TProperty>>): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty extends unknown>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty extends unknown>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
     Property(property: IProperty): PropertyEntry;
 }
 
 
 export const ComplexPropertyEntry_2: {
-    new<TEntity, TComplexProperty>(internalEntry: IInternalEntry, complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TComplexProperty>;
+    new<TEntity extends (object | null), TComplexProperty extends unknown>(internalEntry: IInternalEntry, complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TComplexProperty>;
 };
 
 
-export interface __ComplexPropertyEntry_2$views<TEntity, TComplexProperty> {
+export interface __ComplexPropertyEntry_2$views<TEntity extends (object | null), TComplexProperty extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export type ComplexPropertyEntry_2<TEntity, TComplexProperty> = ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> & __ComplexPropertyEntry_2$views<TEntity, TComplexProperty>;
+export type ComplexPropertyEntry_2<TEntity extends (object | null), TComplexProperty extends unknown> = ComplexPropertyEntry_2$instance<TEntity, TComplexProperty> & __ComplexPropertyEntry_2$views<TEntity, TComplexProperty>;
 
 
 export interface DetectChangesEventArgs$instance extends EventArgs {
@@ -482,7 +482,7 @@ export interface EntityEntry$instance extends Microsoft_EntityFrameworkCore_Infr
     readonly Context: DbContext;
     readonly CurrentValues: PropertyValues;
     readonly DebugView: DebugView;
-    readonly Entity: JsValue;
+    readonly Entity: unknown;
     readonly InternalEntry: InternalEntityEntry;
     readonly IsKeySet: boolean;
     readonly Members: IEnumerable_1<MemberEntry>;
@@ -499,7 +499,7 @@ export interface EntityEntry$instance extends Microsoft_EntityFrameworkCore_Infr
     ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
     ComplexProperty(propertyName: string): ComplexPropertyEntry;
     DetectChanges(): void;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     GetDatabaseValues(): PropertyValues | null;
     GetDatabaseValuesAsync(cancellationToken?: CancellationToken): Task_1<PropertyValues | null>;
     GetHashCode(): int;
@@ -529,44 +529,44 @@ export interface __EntityEntry$views {
 export type EntityEntry = EntityEntry$instance & __EntityEntry$views;
 
 
-export interface EntityEntry_1$instance<TEntity> extends EntityEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
+export interface EntityEntry_1$instance<TEntity extends (object | null)> extends EntityEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityEntry_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Collection<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TProperty>>>): CollectionEntry_2<TEntity, TProperty>;
-    Collection<TProperty>(navigation: INavigationBase): CollectionEntry_2<TEntity, TProperty>;
-    Collection<TProperty>(propertyName: string): CollectionEntry_2<TEntity, TProperty>;
+    Collection<TProperty extends (object | null)>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TProperty>>>): CollectionEntry_2<TEntity, TProperty>;
+    Collection<TProperty extends (object | null)>(navigation: INavigationBase): CollectionEntry_2<TEntity, TProperty>;
+    Collection<TProperty extends (object | null)>(propertyName: string): CollectionEntry_2<TEntity, TProperty>;
     Collection(navigation: INavigationBase): CollectionEntry;
-    ComplexCollection<TElement>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement> | null>>): ComplexCollectionEntry_2<TEntity, TElement>;
-    ComplexCollection<TElement>(complexProperty: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
-    ComplexCollection<TElement>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, IEnumerable_1<TElement> | null>>): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement extends unknown>(complexProperty: IComplexProperty): ComplexCollectionEntry_2<TEntity, TElement>;
+    ComplexCollection<TElement extends unknown>(propertyName: string): ComplexCollectionEntry_2<TEntity, TElement>;
     ComplexCollection(property: IComplexProperty): ComplexCollectionEntry;
-    ComplexProperty<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty | null>>): ComplexPropertyEntry_2<TEntity, TProperty>;
-    ComplexProperty<TProperty>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TProperty>;
-    ComplexProperty<TProperty>(propertyName: string): ComplexPropertyEntry_2<TEntity, TProperty>;
+    ComplexProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, TProperty | null>>): ComplexPropertyEntry_2<TEntity, TProperty>;
+    ComplexProperty<TProperty extends unknown>(complexProperty: IComplexProperty): ComplexPropertyEntry_2<TEntity, TProperty>;
+    ComplexProperty<TProperty extends unknown>(propertyName: string): ComplexPropertyEntry_2<TEntity, TProperty>;
     ComplexProperty(property: IComplexProperty): ComplexPropertyEntry;
-    Property<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): PropertyEntry_2<TEntity, TProperty>;
-    Property<TProperty>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
-    Property<TProperty>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TEntity, TProperty>>): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty extends unknown>(property: IProperty): PropertyEntry_2<TEntity, TProperty>;
+    Property<TProperty extends unknown>(propertyName: string): PropertyEntry_2<TEntity, TProperty>;
     Property(property: IProperty): PropertyEntry;
-    Reference<TProperty>(propertyExpression: Expression_1<Func_2<TEntity, TProperty | null>>): ReferenceEntry_2<TEntity, TProperty>;
-    Reference<TProperty>(navigation: INavigationBase): ReferenceEntry_2<TEntity, TProperty>;
-    Reference<TProperty>(propertyName: string): ReferenceEntry_2<TEntity, TProperty>;
+    Reference<TProperty extends (object | null)>(propertyExpression: Expression_1<Func_2<TEntity, TProperty | null>>): ReferenceEntry_2<TEntity, TProperty>;
+    Reference<TProperty extends (object | null)>(navigation: INavigationBase): ReferenceEntry_2<TEntity, TProperty>;
+    Reference<TProperty extends (object | null)>(propertyName: string): ReferenceEntry_2<TEntity, TProperty>;
     Reference(navigation: INavigationBase): ReferenceEntry;
 }
 
 
 export const EntityEntry_1: {
-    new<TEntity>(internalEntry: InternalEntityEntry): EntityEntry_1<TEntity>;
+    new<TEntity extends (object | null)>(internalEntry: InternalEntityEntry): EntityEntry_1<TEntity>;
 };
 
 
-export interface __EntityEntry_1$views<TEntity> {
+export interface __EntityEntry_1$views<TEntity extends (object | null)> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
 
-export type EntityEntry_1<TEntity> = EntityEntry_1$instance<TEntity> & __EntityEntry_1$views<TEntity>;
+export type EntityEntry_1<TEntity extends (object | null)> = EntityEntry_1$instance<TEntity> & __EntityEntry_1$views<TEntity>;
 
 
 export interface EntityEntryEventArgs$instance extends EventArgs {
@@ -607,7 +607,7 @@ export interface __EntityEntryGraphNode$views {
 export type EntityEntryGraphNode = EntityEntryGraphNode$instance & __EntityEntryGraphNode$views;
 
 
-export interface EntityEntryGraphNode_1$instance<TState> extends EntityEntryGraphNode$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
+export interface EntityEntryGraphNode_1$instance<TState extends unknown> extends EntityEntryGraphNode$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntityEntryGraphNode_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -618,16 +618,16 @@ export interface EntityEntryGraphNode_1$instance<TState> extends EntityEntryGrap
 
 
 export const EntityEntryGraphNode_1: {
-    new<TState>(entry: InternalEntityEntry, state: TState, sourceEntry: InternalEntityEntry | null, inboundNavigation: INavigationBase | null): EntityEntryGraphNode_1<TState>;
-    new<TState>(entry: EntityEntry, state: TState, sourceEntry: EntityEntry | null, inboundNavigation: INavigationBase | null): EntityEntryGraphNode_1<TState>;
+    new<TState extends unknown>(entry: InternalEntityEntry, state: TState, sourceEntry: InternalEntityEntry | null, inboundNavigation: INavigationBase | null): EntityEntryGraphNode_1<TState>;
+    new<TState extends unknown>(entry: EntityEntry, state: TState, sourceEntry: EntityEntry | null, inboundNavigation: INavigationBase | null): EntityEntryGraphNode_1<TState>;
 };
 
 
-export interface __EntityEntryGraphNode_1$views<TState> {
+export interface __EntityEntryGraphNode_1$views<TState extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<InternalEntityEntry>;
 }
 
-export type EntityEntryGraphNode_1<TState> = EntityEntryGraphNode_1$instance<TState> & __EntityEntryGraphNode_1$views<TState>;
+export type EntityEntryGraphNode_1<TState extends unknown> = EntityEntryGraphNode_1$instance<TState> & __EntityEntryGraphNode_1$views<TState>;
 
 
 export interface EntityStateChangedEventArgs$instance extends EntityEntryEventArgs {
@@ -689,7 +689,7 @@ export const EntityTrackingEventArgs: {
 
 export type EntityTrackingEventArgs = EntityTrackingEventArgs$instance;
 
-export interface EntryCurrentValueComparer_1$instance<TProperty> {
+export interface EntryCurrentValueComparer_1$instance<TProperty extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_EntryCurrentValueComparer_1: never;
 
     readonly __tsonic_iface_System_Collections_Generic_IComparer_1: never;
@@ -702,13 +702,13 @@ export interface EntryCurrentValueComparer_1$instance<TProperty> {
 
 
 export const EntryCurrentValueComparer_1: {
-    new<TProperty>(property: IPropertyBase): EntryCurrentValueComparer_1<TProperty>;
+    new<TProperty extends unknown>(property: IPropertyBase): EntryCurrentValueComparer_1<TProperty>;
 };
 
 
-export type EntryCurrentValueComparer_1<TProperty> = EntryCurrentValueComparer_1$instance<TProperty>;
+export type EntryCurrentValueComparer_1<TProperty extends unknown> = EntryCurrentValueComparer_1$instance<TProperty>;
 
-export interface GeometryValueComparer_1$instance<TGeometry> extends ValueComparer_1<TGeometry> {
+export interface GeometryValueComparer_1$instance<TGeometry extends unknown> extends ValueComparer_1<TGeometry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_GeometryValueComparer_1: never;
 
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
@@ -718,13 +718,13 @@ export interface GeometryValueComparer_1$instance<TGeometry> extends ValueCompar
 
 
 export const GeometryValueComparer_1: {
-    new<TGeometry>(): GeometryValueComparer_1<TGeometry>;
+    new<TGeometry extends unknown>(): GeometryValueComparer_1<TGeometry>;
 };
 
 
-export type GeometryValueComparer_1<TGeometry> = GeometryValueComparer_1$instance<TGeometry>;
+export type GeometryValueComparer_1<TGeometry extends unknown> = GeometryValueComparer_1$instance<TGeometry>;
 
-export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement extends NonNullable<JsValue>> extends ValueComparer_1<IEnumerable_1<Nullable_1<TElement>>>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<JsValue>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<Nullable_1<TElement>>> {
+export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList extends unknown, TElement extends NonNullable<unknown>> extends ValueComparer_1<IEnumerable_1<Nullable_1<TElement>>>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<Nullable_1<TElement>>> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ListOfNullableValueTypesComparer_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -736,18 +736,18 @@ export interface ListOfNullableValueTypesComparer_2$instance<TConcreteList, TEle
 
 
 export const ListOfNullableValueTypesComparer_2: {
-    new<TConcreteList, TElement extends NonNullable<JsValue>>(elementComparer: ValueComparer): ListOfNullableValueTypesComparer_2<TConcreteList, TElement>;
+    new<TConcreteList extends unknown, TElement extends NonNullable<unknown>>(elementComparer: ValueComparer): ListOfNullableValueTypesComparer_2<TConcreteList, TElement>;
 };
 
 
-export interface __ListOfNullableValueTypesComparer_2$views<TConcreteList, TElement extends NonNullable<JsValue>> {
+export interface __ListOfNullableValueTypesComparer_2$views<TConcreteList extends unknown, TElement extends NonNullable<unknown>> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export type ListOfNullableValueTypesComparer_2<TConcreteList, TElement> = ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfNullableValueTypesComparer_2$views<TConcreteList, TElement>;
+export type ListOfNullableValueTypesComparer_2<TConcreteList extends unknown, TElement extends NonNullable<unknown>> = ListOfNullableValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfNullableValueTypesComparer_2$views<TConcreteList, TElement>;
 
 
-export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> extends ValueComparer_1<JsValue>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<JsValue> {
+export interface ListOfReferenceTypesComparer_2$instance<TConcreteList extends unknown, TElement extends (object | null)> extends ValueComparer_1<unknown>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ListOfReferenceTypesComparer_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -759,18 +759,18 @@ export interface ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement
 
 
 export const ListOfReferenceTypesComparer_2: {
-    new<TConcreteList, TElement>(elementComparer: ValueComparer): ListOfReferenceTypesComparer_2<TConcreteList, TElement>;
+    new<TConcreteList extends unknown, TElement extends (object | null)>(elementComparer: ValueComparer): ListOfReferenceTypesComparer_2<TConcreteList, TElement>;
 };
 
 
-export interface __ListOfReferenceTypesComparer_2$views<TConcreteList, TElement> {
+export interface __ListOfReferenceTypesComparer_2$views<TConcreteList extends unknown, TElement extends (object | null)> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export type ListOfReferenceTypesComparer_2<TConcreteList, TElement> = ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> & __ListOfReferenceTypesComparer_2$views<TConcreteList, TElement>;
+export type ListOfReferenceTypesComparer_2<TConcreteList extends unknown, TElement extends (object | null)> = ListOfReferenceTypesComparer_2$instance<TConcreteList, TElement> & __ListOfReferenceTypesComparer_2$views<TConcreteList, TElement>;
 
 
-export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement extends NonNullable<JsValue>> extends ValueComparer_1<IEnumerable_1<TElement>>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<JsValue>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<TElement>> {
+export interface ListOfValueTypesComparer_2$instance<TConcreteList extends unknown, TElement extends NonNullable<unknown>> extends ValueComparer_1<IEnumerable_1<TElement>>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>, System_Collections_Generic_Internal.IEqualityComparer_1<unknown>, System_Collections_Generic_Internal.IEqualityComparer_1<IEnumerable_1<TElement>> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ListOfValueTypesComparer_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -782,18 +782,18 @@ export interface ListOfValueTypesComparer_2$instance<TConcreteList, TElement ext
 
 
 export const ListOfValueTypesComparer_2: {
-    new<TConcreteList, TElement extends NonNullable<JsValue>>(elementComparer: ValueComparer): ListOfValueTypesComparer_2<TConcreteList, TElement>;
+    new<TConcreteList extends unknown, TElement extends NonNullable<unknown>>(elementComparer: ValueComparer): ListOfValueTypesComparer_2<TConcreteList, TElement>;
 };
 
 
-export interface __ListOfValueTypesComparer_2$views<TConcreteList, TElement extends NonNullable<JsValue>> {
+export interface __ListOfValueTypesComparer_2$views<TConcreteList extends unknown, TElement extends NonNullable<unknown>> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<ValueComparer>;
 }
 
-export type ListOfValueTypesComparer_2<TConcreteList, TElement> = ListOfValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfValueTypesComparer_2$views<TConcreteList, TElement>;
+export type ListOfValueTypesComparer_2<TConcreteList extends unknown, TElement extends NonNullable<unknown>> = ListOfValueTypesComparer_2$instance<TConcreteList, TElement> & __ListOfValueTypesComparer_2$views<TConcreteList, TElement>;
 
 
-export interface LocalView_1$instance<TEntity> {
+export interface LocalView_1$instance<TEntity extends (object | null)> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_LocalView_1: never;
 
     readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
@@ -810,16 +810,16 @@ export interface LocalView_1$instance<TEntity> {
     Clear(): void;
     Contains(item: TEntity): boolean;
     CopyTo(array: TEntity[], arrayIndex: int): void;
-    FindEntry<TKey>(keyValue: TKey): EntityEntry_1<TEntity> | null;
-    FindEntry<TProperty>(propertyName: string, propertyValue: TProperty | null): EntityEntry_1<TEntity> | null;
-    FindEntry(propertyNames: IEnumerable_1<System_Internal.String>, propertyValues: IEnumerable_1<JsValue | null>): EntityEntry_1<TEntity> | null;
-    FindEntry<TProperty>(property: IProperty, propertyValue: TProperty | null): EntityEntry_1<TEntity> | null;
-    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<JsValue | null>): EntityEntry_1<TEntity> | null;
-    FindEntryUntyped(keyValues: IEnumerable_1<JsValue | null>): EntityEntry_1<TEntity> | null;
-    GetEntries<TProperty>(propertyName: string, propertyValue: TProperty | null): IEnumerable_1<EntityEntry_1<TEntity>>;
-    GetEntries(propertyNames: IEnumerable_1<System_Internal.String>, propertyValues: IEnumerable_1<JsValue | null>): IEnumerable_1<EntityEntry_1<TEntity>>;
-    GetEntries<TProperty>(property: IProperty, propertyValue: TProperty | null): IEnumerable_1<EntityEntry_1<TEntity>>;
-    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<JsValue | null>): IEnumerable_1<EntityEntry_1<TEntity>>;
+    FindEntry<TKey extends unknown>(keyValue: TKey): EntityEntry_1<TEntity> | null;
+    FindEntry<TProperty extends unknown>(propertyName: string, propertyValue: TProperty | null): EntityEntry_1<TEntity> | null;
+    FindEntry(propertyNames: IEnumerable_1<System_Internal.String>, propertyValues: IEnumerable_1<unknown | null>): EntityEntry_1<TEntity> | null;
+    FindEntry<TProperty extends unknown>(property: IProperty, propertyValue: TProperty | null): EntityEntry_1<TEntity> | null;
+    FindEntry(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown | null>): EntityEntry_1<TEntity> | null;
+    FindEntryUntyped(keyValues: IEnumerable_1<unknown | null>): EntityEntry_1<TEntity> | null;
+    GetEntries<TProperty extends unknown>(propertyName: string, propertyValue: TProperty | null): IEnumerable_1<EntityEntry_1<TEntity>>;
+    GetEntries(propertyNames: IEnumerable_1<System_Internal.String>, propertyValues: IEnumerable_1<unknown | null>): IEnumerable_1<EntityEntry_1<TEntity>>;
+    GetEntries<TProperty extends unknown>(property: IProperty, propertyValue: TProperty | null): IEnumerable_1<EntityEntry_1<TEntity>>;
+    GetEntries(properties: IEnumerable_1<IProperty>, propertyValues: IEnumerable_1<unknown | null>): IEnumerable_1<EntityEntry_1<TEntity>>;
     GetEnumerator(): IEnumerator_1<TEntity>;
     OnCollectionChanged(e: NotifyCollectionChangedEventArgs): void;
     OnPropertyChanged(e: PropertyChangedEventArgs): void;
@@ -832,23 +832,23 @@ export interface LocalView_1$instance<TEntity> {
 
 
 export const LocalView_1: {
-    new<TEntity>(set: DbSet_1<TEntity>): LocalView_1<TEntity>;
+    new<TEntity extends (object | null)>(set: DbSet_1<TEntity>): LocalView_1<TEntity>;
 };
 
 
-export type LocalView_1<TEntity> = LocalView_1$instance<TEntity>;
+export type LocalView_1<TEntity extends (object | null)> = LocalView_1$instance<TEntity>;
 
 export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_MemberEntry: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    CurrentValue: IEnumerable | JsValue;
+    CurrentValue: IEnumerable | unknown;
     readonly EntityEntry: EntityEntry;
     readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
-    readonly Metadata: IComplexProperty | IPropertyBase;
-    Equals(obj: JsValue | null): boolean;
+    readonly Metadata: INavigationBase | IPropertyBase;
+    Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
     ToString(): string | null;
 }
@@ -891,7 +891,7 @@ export interface __NavigationEntry$views {
 export type NavigationEntry = NavigationEntry$instance & __NavigationEntry$views;
 
 
-export interface ObservableCollectionListSource_1$instance<T> extends ObservableCollection_1<T> {
+export interface ObservableCollectionListSource_1$instance<T extends (object | null)> extends ObservableCollection_1<T> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ObservableCollectionListSource_1: never;
 
     readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
@@ -910,15 +910,15 @@ export interface ObservableCollectionListSource_1$instance<T> extends Observable
 
 
 export const ObservableCollectionListSource_1: {
-    new<T>(): ObservableCollectionListSource_1<T>;
-    new<T>(collection: IEnumerable_1<T>): ObservableCollectionListSource_1<T>;
-    new<T>(list: List_1<T>): ObservableCollectionListSource_1<T>;
+    new<T extends (object | null)>(): ObservableCollectionListSource_1<T>;
+    new<T extends (object | null)>(collection: IEnumerable_1<T>): ObservableCollectionListSource_1<T>;
+    new<T extends (object | null)>(list: List_1<T>): ObservableCollectionListSource_1<T>;
 };
 
 
-export type ObservableCollectionListSource_1<T> = ObservableCollectionListSource_1$instance<T>;
+export type ObservableCollectionListSource_1<T extends (object | null)> = ObservableCollectionListSource_1$instance<T>;
 
-export interface ObservableHashSet_1$instance<T> {
+export interface ObservableHashSet_1$instance<T extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ObservableHashSet_1: never;
 
     readonly __tsonic_iface_System_Collections_Generic_ICollection_1: never;
@@ -960,14 +960,14 @@ export interface ObservableHashSet_1$instance<T> {
 
 
 export const ObservableHashSet_1: {
-    new<T>(): ObservableHashSet_1<T>;
-    new<T>(comparer: IEqualityComparer_1<T>): ObservableHashSet_1<T>;
-    new<T>(collection: IEnumerable_1<T>): ObservableHashSet_1<T>;
-    new<T>(collection: IEnumerable_1<T>, comparer: IEqualityComparer_1<T>): ObservableHashSet_1<T>;
+    new<T extends unknown>(): ObservableHashSet_1<T>;
+    new<T extends unknown>(comparer: IEqualityComparer_1<T>): ObservableHashSet_1<T>;
+    new<T extends unknown>(collection: IEnumerable_1<T>): ObservableHashSet_1<T>;
+    new<T extends unknown>(collection: IEnumerable_1<T>, comparer: IEqualityComparer_1<T>): ObservableHashSet_1<T>;
 };
 
 
-export type ObservableHashSet_1<T> = ObservableHashSet_1$instance<T>;
+export type ObservableHashSet_1<T extends unknown> = ObservableHashSet_1$instance<T>;
 
 export interface PropertyEntry$instance extends MemberEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry: never;
@@ -976,7 +976,7 @@ export interface PropertyEntry$instance extends MemberEntry$instance, Microsoft_
 
     IsModified: boolean;
     IsTemporary: boolean;
-    OriginalValue: JsValue;
+    OriginalValue: unknown;
 }
 
 
@@ -992,7 +992,7 @@ export interface __PropertyEntry$views {
 export type PropertyEntry = PropertyEntry$instance & __PropertyEntry$views;
 
 
-export interface PropertyEntry_2$instance<TEntity, TProperty> extends PropertyEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+export interface PropertyEntry_2$instance<TEntity extends (object | null), TProperty extends unknown> extends PropertyEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -1003,15 +1003,15 @@ export interface PropertyEntry_2$instance<TEntity, TProperty> extends PropertyEn
 
 
 export const PropertyEntry_2: {
-    new<TEntity, TProperty>(internalEntry: IInternalEntry, property: IProperty): PropertyEntry_2<TEntity, TProperty>;
+    new<TEntity extends (object | null), TProperty extends unknown>(internalEntry: IInternalEntry, property: IProperty): PropertyEntry_2<TEntity, TProperty>;
 };
 
 
-export interface __PropertyEntry_2$views<TEntity, TProperty> {
+export interface __PropertyEntry_2$views<TEntity extends (object | null), TProperty extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export type PropertyEntry_2<TEntity, TProperty> = PropertyEntry_2$instance<TEntity, TProperty> & __PropertyEntry_2$views<TEntity, TProperty>;
+export type PropertyEntry_2<TEntity extends (object | null), TProperty extends unknown> = PropertyEntry_2$instance<TEntity, TProperty> & __PropertyEntry_2$views<TEntity, TProperty>;
 
 
 export interface PropertyValues$instance {
@@ -1022,22 +1022,22 @@ export interface PropertyValues$instance {
     readonly Properties: IReadOnlyList_1<IProperty>;
     readonly StructuralType: ITypeBase;
     Clone(): PropertyValues;
-    Equals(obj: JsValue | null): boolean;
-    get_Item(propertyName: string): JsValue | null;
-    get_Item(property: IProperty): JsValue | null;
+    Equals(obj: unknown | null): boolean;
+    get_Item(propertyName: string): unknown | null;
+    get_Item(property: IProperty): unknown | null;
     get_Item(complexProperty: IComplexProperty): IList | null;
     GetHashCode(): int;
-    GetValue<TValue>(propertyName: string): TValue;
-    GetValue<TValue>(property: IProperty): TValue;
-    set_Item(propertyName: string, value: JsValue | null): void;
-    set_Item(property: IProperty, value: JsValue | null): void;
+    GetValue<TValue extends unknown>(propertyName: string): TValue;
+    GetValue<TValue extends unknown>(property: IProperty): TValue;
+    set_Item(propertyName: string, value: unknown | null): void;
+    set_Item(property: IProperty, value: unknown | null): void;
     set_Item(complexProperty: IComplexProperty, value: IList | null): void;
-    SetValues(obj: JsValue): void;
+    SetValues(obj: unknown): void;
     SetValues(propertyValues: PropertyValues): void;
-    SetValues<TProperty>(values: IDictionary_2<System_Internal.String, TProperty>): void;
-    ToObject(): JsValue;
+    SetValues<TProperty extends unknown>(values: IDictionary_2<System_Internal.String, TProperty>): void;
+    ToObject(): unknown;
     ToString(): string | null;
-    TryGetValue<TValue>(propertyName: string, value: TValue): boolean;
+    TryGetValue<TValue extends unknown>(propertyName: string, value: TValue): boolean;
 }
 
 
@@ -1076,7 +1076,7 @@ export interface __ReferenceEntry$views {
 export type ReferenceEntry = ReferenceEntry$instance & __ReferenceEntry$views;
 
 
-export interface ReferenceEntry_2$instance<TEntity, TProperty> extends ReferenceEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
+export interface ReferenceEntry_2$instance<TEntity extends (object | null), TProperty extends (object | null)> extends ReferenceEntry$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ReferenceEntry_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -1089,16 +1089,16 @@ export interface ReferenceEntry_2$instance<TEntity, TProperty> extends Reference
 
 
 export const ReferenceEntry_2: {
-    new<TEntity, TProperty>(internalEntry: InternalEntityEntry, name: string): ReferenceEntry_2<TEntity, TProperty>;
-    new<TEntity, TProperty>(internalEntry: InternalEntityEntry, navigation: INavigation): ReferenceEntry_2<TEntity, TProperty>;
+    new<TEntity extends (object | null), TProperty extends (object | null)>(internalEntry: InternalEntityEntry, name: string): ReferenceEntry_2<TEntity, TProperty>;
+    new<TEntity extends (object | null), TProperty extends (object | null)>(internalEntry: InternalEntityEntry, navigation: INavigation): ReferenceEntry_2<TEntity, TProperty>;
 };
 
 
-export interface __ReferenceEntry_2$views<TEntity, TProperty> {
+export interface __ReferenceEntry_2$views<TEntity extends (object | null), TProperty extends (object | null)> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IInternalEntry>;
 }
 
-export type ReferenceEntry_2<TEntity, TProperty> = ReferenceEntry_2$instance<TEntity, TProperty> & __ReferenceEntry_2$views<TEntity, TProperty>;
+export type ReferenceEntry_2<TEntity extends (object | null), TProperty extends (object | null)> = ReferenceEntry_2$instance<TEntity, TProperty> & __ReferenceEntry_2$views<TEntity, TProperty>;
 
 
 export interface ValueComparer$instance {
@@ -1112,12 +1112,12 @@ export interface ValueComparer$instance {
     readonly ObjectEqualsExpression: LambdaExpression;
     readonly SnapshotExpression: LambdaExpression;
     readonly Type: Type;
-    Equals(left: JsValue | null, right: JsValue | null): boolean;
+    Equals(left: unknown | null, right: unknown | null): boolean;
     ExtractEqualsBody(leftExpression: Expression, rightExpression: Expression): Expression;
     ExtractHashCodeBody(expression: Expression): Expression;
     ExtractSnapshotBody(expression: Expression): Expression;
-    GetHashCode(instance: JsValue | null): int;
-    Snapshot(instance: JsValue | null): JsValue | null;
+    GetHashCode(instance: unknown | null): int;
+    Snapshot(instance: unknown | null): unknown | null;
 }
 
 
@@ -1126,7 +1126,7 @@ export const ValueComparer: (abstract new(equalsExpression: LambdaExpression, ha
     readonly ToHashCodeMethod: MethodInfo;
     readonly BoolIdentity: Expression_1<Func_2<System_Internal.Boolean, System_Internal.Boolean>>;
     Add(hash: HashCode, code: int): HashCode;
-    CreateDefault<T>(favorStructuralComparisons: boolean): ValueComparer;
+    CreateDefault<T extends unknown>(favorStructuralComparisons: boolean): ValueComparer;
     CreateDefault(type: Type, favorStructuralComparisons: boolean): ValueComparer;
     GetGenericSnapshotMethod(type: Type): MethodInfo;
 };
@@ -1134,7 +1134,7 @@ export const ValueComparer: (abstract new(equalsExpression: LambdaExpression, ha
 
 export type ValueComparer = ValueComparer$instance;
 
-export interface ValueComparer_1$instance<T> extends ValueComparer {
+export interface ValueComparer_1$instance<T extends unknown> extends ValueComparer {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTracking_ValueComparer_1: never;
 
     readonly __tsonic_iface_System_Collections_Generic_IEqualityComparer_1: never;
@@ -1145,26 +1145,26 @@ export interface ValueComparer_1$instance<T> extends ValueComparer {
     readonly ObjectEqualsExpression: LambdaExpression;
     readonly SnapshotExpression: Expression_1<Func_2<T, T>>;
     readonly Type: Type;
-    Equals(left: JsValue | null, right: JsValue | null): boolean;
+    Equals(left: unknown | null, right: unknown | null): boolean;
     Equals(left: T | null, right: T | null): boolean;
-    GetHashCode(instance: JsValue | null): int;
+    GetHashCode(instance: unknown | null): int;
     GetHashCode(instance: T): int;
-    Snapshot(instance: JsValue | null): JsValue | null;
+    Snapshot(instance: unknown | null): unknown | null;
     Snapshot(instance: T): T;
 }
 
 
 export const ValueComparer_1: {
-    new<T>(favorStructuralComparisons: boolean): ValueComparer_1<T>;
-    new<T>(equalsExpression: Expression_1<Func_3<T | null, T | null, System_Internal.Boolean>>, hashCodeExpression: Expression_1<Func_2<T, System_Internal.Int32>>): ValueComparer_1<T>;
-    new<T>(equalsExpression: Expression_1<Func_3<T | null, T | null, System_Internal.Boolean>>, hashCodeExpression: Expression_1<Func_2<T, System_Internal.Int32>>, snapshotExpression: Expression_1<Func_2<T, T>>): ValueComparer_1<T>;
-    CreateDefaultEqualsExpression<T>(): Expression_1<Func_3<T | null, T | null, System_Internal.Boolean>>;
-    CreateDefaultHashCodeExpression<T>(favorStructuralComparisons: boolean): Expression_1<Func_2<T, System_Internal.Int32>>;
-    CreateDefaultSnapshotExpression<T>(favorStructuralComparisons: boolean): Expression_1<Func_2<T, T>>;
+    new<T extends unknown>(favorStructuralComparisons: boolean): ValueComparer_1<T>;
+    new<T extends unknown>(equalsExpression: Expression_1<Func_3<T | null, T | null, System_Internal.Boolean>>, hashCodeExpression: Expression_1<Func_2<T, System_Internal.Int32>>): ValueComparer_1<T>;
+    new<T extends unknown>(equalsExpression: Expression_1<Func_3<T | null, T | null, System_Internal.Boolean>>, hashCodeExpression: Expression_1<Func_2<T, System_Internal.Int32>>, snapshotExpression: Expression_1<Func_2<T, T>>): ValueComparer_1<T>;
+    CreateDefaultEqualsExpression<T extends unknown>(): Expression_1<Func_3<T | null, T | null, System_Internal.Boolean>>;
+    CreateDefaultHashCodeExpression<T extends unknown>(favorStructuralComparisons: boolean): Expression_1<Func_2<T, System_Internal.Int32>>;
+    CreateDefaultSnapshotExpression<T extends unknown>(favorStructuralComparisons: boolean): Expression_1<Func_2<T, T>>;
 };
 
 
-export type ValueComparer_1<T> = ValueComparer_1$instance<T>;
+export type ValueComparer_1<T extends unknown> = ValueComparer_1$instance<T>;
 
 export abstract class ValueComparerExtensions$instance {
     static IsDefault(valueComparer: ValueComparer): boolean;

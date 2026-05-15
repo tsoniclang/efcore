@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -39,7 +39,7 @@ export interface BinaryValueGenerator$instance extends ValueGenerator_1<byte[]> 
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): byte[];
-    Next(entry: EntityEntry): JsValue;
+    Next(entry: EntityEntry): unknown;
 }
 
 
@@ -69,7 +69,7 @@ export interface GuidValueGenerator$instance extends ValueGenerator_1<Guid> {
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): Guid;
-    Next(entry: EntityEntry): JsValue;
+    Next(entry: EntityEntry): unknown;
 }
 
 
@@ -80,23 +80,23 @@ export const GuidValueGenerator: {
 
 export type GuidValueGenerator = GuidValueGenerator$instance;
 
-export interface HiLoValueGenerator_1$instance<TValue> extends ValueGenerator_1<TValue> {
+export interface HiLoValueGenerator_1$instance<TValue extends unknown> extends ValueGenerator_1<TValue> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_HiLoValueGenerator_1: never;
 
     GetNewLowValue(): long;
     GetNewLowValueAsync(cancellationToken?: CancellationToken): Task_1<System_Internal.Int64>;
     Next(entry: EntityEntry): TValue;
-    Next(entry: EntityEntry): JsValue;
+    Next(entry: EntityEntry): unknown;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
 }
 
 
-export const HiLoValueGenerator_1: (abstract new<TValue>(generatorState: HiLoValueGeneratorState) => HiLoValueGenerator_1<TValue>) & {
+export const HiLoValueGenerator_1: (abstract new<TValue extends unknown>(generatorState: HiLoValueGeneratorState) => HiLoValueGenerator_1<TValue>) & {
 };
 
 
-export type HiLoValueGenerator_1<TValue> = HiLoValueGenerator_1$instance<TValue>;
+export type HiLoValueGenerator_1<TValue extends unknown> = HiLoValueGenerator_1$instance<TValue>;
 
 export interface HiLoValueGeneratorState$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_HiLoValueGeneratorState: never;
@@ -104,8 +104,8 @@ export interface HiLoValueGeneratorState$instance {
     readonly __tsonic_iface_System_IDisposable: never;
 
     Dispose(): void;
-    Next<TValue>(getNewLowValue: Func_1<System_Internal.Int64>): TValue;
-    NextAsync<TValue>(getNewLowValue: Func_2<CancellationToken, Task_1<System_Internal.Int64>>, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
+    Next<TValue extends unknown>(getNewLowValue: Func_1<System_Internal.Int64>): TValue;
+    NextAsync<TValue extends unknown>(getNewLowValue: Func_2<CancellationToken, Task_1<System_Internal.Int64>>, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
 }
 
 
@@ -142,7 +142,7 @@ export interface SequentialGuidValueGenerator$instance extends ValueGenerator_1<
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): Guid;
-    Next(entry: EntityEntry): JsValue;
+    Next(entry: EntityEntry): unknown;
 }
 
 
@@ -158,7 +158,7 @@ export interface StringValueGenerator$instance extends ValueGenerator_1<System_I
 
     readonly GeneratesTemporaryValues: boolean;
     Next(entry: EntityEntry): string;
-    Next(entry: EntityEntry): JsValue;
+    Next(entry: EntityEntry): unknown;
 }
 
 
@@ -202,10 +202,10 @@ export interface ValueGenerator$instance {
 
     readonly GeneratesStableValues: boolean;
     readonly GeneratesTemporaryValues: boolean;
-    Next(entry: EntityEntry): JsValue;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
-    NextValue(entry: EntityEntry): JsValue | null;
-    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    Next(entry: EntityEntry): unknown;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    NextValue(entry: EntityEntry): unknown | null;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
     WithConverter(converter: ValueConverter): ValueGenerator;
 }
 
@@ -216,23 +216,23 @@ export const ValueGenerator: (abstract new() => ValueGenerator) & {
 
 export type ValueGenerator = ValueGenerator$instance;
 
-export interface ValueGenerator_1$instance<TValue> extends ValueGenerator {
+export interface ValueGenerator_1$instance<TValue extends unknown> extends ValueGenerator {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_ValueGenerator_1: never;
 
     Next(entry: EntityEntry): TValue;
-    Next(entry: EntityEntry): JsValue;
+    Next(entry: EntityEntry): unknown;
     NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<TValue>;
-    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
-    NextValue(entry: EntityEntry): JsValue | null;
-    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<JsValue>;
+    NextAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
+    NextValue(entry: EntityEntry): unknown | null;
+    NextValueAsync(entry: EntityEntry, cancellationToken?: CancellationToken): ValueTask_1<unknown>;
 }
 
 
-export const ValueGenerator_1: (abstract new<TValue>() => ValueGenerator_1<TValue>) & {
+export const ValueGenerator_1: (abstract new<TValue extends unknown>() => ValueGenerator_1<TValue>) & {
 };
 
 
-export type ValueGenerator_1<TValue> = ValueGenerator_1$instance<TValue>;
+export type ValueGenerator_1<TValue extends unknown> = ValueGenerator_1$instance<TValue>;
 
 export interface ValueGeneratorCache$instance extends IValueGeneratorCache$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ValueGeneration_ValueGeneratorCache: never;
@@ -262,7 +262,7 @@ export interface ValueGeneratorCacheDependencies$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): ValueGeneratorCacheDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ValueGeneratorCacheDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -323,7 +323,7 @@ export interface ValueGeneratorSelectorDependencies$instance {
 
     Cache: IValueGeneratorCache;
     _Clone_$(): ValueGeneratorSelectorDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ValueGeneratorSelectorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;

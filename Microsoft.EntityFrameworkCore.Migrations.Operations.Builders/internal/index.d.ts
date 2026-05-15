@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -18,34 +18,34 @@ import type { PropertyInfo } from "@tsonic/dotnet/System.Reflection/internal/ind
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Boolean as ClrBoolean, Func_2, Int32, Nullable_1, Object as ClrObject, String as ClrString } from "@tsonic/dotnet/System/internal/index.js";
 
-export interface AlterOperationBuilder_1$instance<TOperation extends MigrationOperation & IAlterMigrationOperation> extends OperationBuilder_1$instance<TOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
+export interface AlterOperationBuilder_1$instance<TOperation extends unknown & MigrationOperation & IAlterMigrationOperation> extends OperationBuilder_1$instance<TOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_AlterOperationBuilder_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Annotation(name: string, value: JsValue | null): AlterOperationBuilder_1<TOperation>;
-    Annotation(name: string, value: JsValue | null): OperationBuilder_1<TOperation>;
-    OldAnnotation(name: string, value: JsValue | null): AlterOperationBuilder_1<TOperation>;
+    Annotation(name: string, value: unknown | null): AlterOperationBuilder_1<TOperation>;
+    Annotation(name: string, value: unknown | null): OperationBuilder_1<TOperation>;
+    OldAnnotation(name: string, value: unknown | null): AlterOperationBuilder_1<TOperation>;
 }
 
 
 export const AlterOperationBuilder_1: {
-    new<TOperation extends MigrationOperation & IAlterMigrationOperation>(operation: TOperation): AlterOperationBuilder_1<TOperation>;
+    new<TOperation extends unknown & MigrationOperation & IAlterMigrationOperation>(operation: TOperation): AlterOperationBuilder_1<TOperation>;
 };
 
 
-export interface __AlterOperationBuilder_1$views<TOperation extends MigrationOperation & IAlterMigrationOperation> {
+export interface __AlterOperationBuilder_1$views<TOperation extends unknown & MigrationOperation & IAlterMigrationOperation> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation>;
 }
 
-export type AlterOperationBuilder_1<TOperation extends MigrationOperation & IAlterMigrationOperation> = AlterOperationBuilder_1$instance<TOperation> & __AlterOperationBuilder_1$views<TOperation>;
+export type AlterOperationBuilder_1<TOperation extends unknown & MigrationOperation & IAlterMigrationOperation> = AlterOperationBuilder_1$instance<TOperation> & __AlterOperationBuilder_1$views<TOperation>;
 
 
 export interface ColumnsBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_ColumnsBuilder: never;
 
-    Column<T>(type?: string | null, unicode?: Nullable_1<System_Internal.Boolean>, maxLength?: Nullable_1<System_Internal.Int32>, rowVersion?: boolean, name?: string | null, nullable?: boolean, defaultValue?: JsValue | null, defaultValueSql?: string | null, computedColumnSql?: string | null, fixedLength?: Nullable_1<System_Internal.Boolean>, comment?: string | null, collation?: string | null, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>, stored?: Nullable_1<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
-    Equals(obj: JsValue | null): boolean;
+    Column<T extends unknown>(type?: string | null, unicode?: Nullable_1<System_Internal.Boolean>, maxLength?: Nullable_1<System_Internal.Int32>, rowVersion?: boolean, name?: string | null, nullable?: boolean, defaultValue?: unknown | null, defaultValueSql?: string | null, computedColumnSql?: string | null, fixedLength?: Nullable_1<System_Internal.Boolean>, comment?: string | null, collation?: string | null, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>, stored?: Nullable_1<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
+    Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -58,55 +58,55 @@ export const ColumnsBuilder: {
 
 export type ColumnsBuilder = ColumnsBuilder$instance;
 
-export interface CreateTableBuilder_1$instance<TColumns> extends OperationBuilder_1$instance<CreateTableOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<CreateTableOperation> {
+export interface CreateTableBuilder_1$instance<TColumns extends unknown> extends OperationBuilder_1$instance<CreateTableOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<CreateTableOperation> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_CreateTableBuilder_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Annotation(name: string, value: JsValue | null): CreateTableBuilder_1<TColumns>;
-    Annotation(name: string, value: JsValue | null): OperationBuilder_1<CreateTableOperation>;
+    Annotation(name: string, value: unknown | null): CreateTableBuilder_1<TColumns>;
+    Annotation(name: string, value: unknown | null): OperationBuilder_1<CreateTableOperation>;
     CheckConstraint(name: string, sql: string): OperationBuilder_1<AddCheckConstraintOperation>;
-    ForeignKey(name: string, column: Expression_1<Func_2<TColumns, JsValue>>, principalTable: string, principalColumn?: string | null, principalSchema?: string | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
-    ForeignKey(name: string, columns: Expression_1<Func_2<TColumns, JsValue>>, principalTable: string, principalColumns: string[] | null, principalSchema?: string | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
-    PrimaryKey(name: string, columns: Expression_1<Func_2<TColumns, JsValue>>): OperationBuilder_1<AddPrimaryKeyOperation>;
-    UniqueConstraint(name: string, columns: Expression_1<Func_2<TColumns, JsValue>>): OperationBuilder_1<AddUniqueConstraintOperation>;
+    ForeignKey(name: string, column: Expression_1<Func_2<TColumns, unknown>>, principalTable: string, principalColumn?: string | null, principalSchema?: string | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
+    ForeignKey(name: string, columns: Expression_1<Func_2<TColumns, unknown>>, principalTable: string, principalColumns: string[] | null, principalSchema?: string | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
+    PrimaryKey(name: string, columns: Expression_1<Func_2<TColumns, unknown>>): OperationBuilder_1<AddPrimaryKeyOperation>;
+    UniqueConstraint(name: string, columns: Expression_1<Func_2<TColumns, unknown>>): OperationBuilder_1<AddUniqueConstraintOperation>;
 }
 
 
 export const CreateTableBuilder_1: {
-    new<TColumns>(operation: CreateTableOperation, columnMap: IReadOnlyDictionary_2<PropertyInfo, AddColumnOperation>): CreateTableBuilder_1<TColumns>;
+    new<TColumns extends unknown>(operation: CreateTableOperation, columnMap: IReadOnlyDictionary_2<PropertyInfo, AddColumnOperation>): CreateTableBuilder_1<TColumns>;
 };
 
 
-export interface __CreateTableBuilder_1$views<TColumns> {
+export interface __CreateTableBuilder_1$views<TColumns extends unknown> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<CreateTableOperation>;
 }
 
-export type CreateTableBuilder_1<TColumns> = CreateTableBuilder_1$instance<TColumns> & __CreateTableBuilder_1$views<TColumns>;
+export type CreateTableBuilder_1<TColumns extends unknown> = CreateTableBuilder_1$instance<TColumns> & __CreateTableBuilder_1$views<TColumns>;
 
 
-export interface OperationBuilder_1$instance<TOperation extends MigrationOperation> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
+export interface OperationBuilder_1$instance<TOperation extends unknown & MigrationOperation> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_OperationBuilder_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly Operation: TOperation;
-    Annotation(name: string, value: JsValue | null): OperationBuilder_1<TOperation>;
-    Equals(obj: JsValue | null): boolean;
+    Annotation(name: string, value: unknown | null): OperationBuilder_1<TOperation>;
+    Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
 
 
 export const OperationBuilder_1: {
-    new<TOperation extends MigrationOperation>(operation: TOperation): OperationBuilder_1<TOperation>;
+    new<TOperation extends unknown & MigrationOperation>(operation: TOperation): OperationBuilder_1<TOperation>;
 };
 
 
-export interface __OperationBuilder_1$views<TOperation extends MigrationOperation> {
+export interface __OperationBuilder_1$views<TOperation extends unknown & MigrationOperation> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation>;
 }
 
-export type OperationBuilder_1<TOperation extends MigrationOperation> = OperationBuilder_1$instance<TOperation> & __OperationBuilder_1$views<TOperation>;
+export type OperationBuilder_1<TOperation extends unknown & MigrationOperation> = OperationBuilder_1$instance<TOperation> & __OperationBuilder_1$views<TOperation>;
 
 

@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -64,33 +64,33 @@ export const BoolToStringConverter: {
 
 export type BoolToStringConverter = BoolToStringConverter$instance;
 
-export interface BoolToTwoValuesConverter_1$instance<TProvider> extends ValueConverter_2<System_Internal.Boolean, TProvider> {
+export interface BoolToTwoValuesConverter_1$instance<TProvider extends unknown> extends ValueConverter_2<System_Internal.Boolean, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_BoolToTwoValuesConverter_1: never;
 
 }
 
 
 export const BoolToTwoValuesConverter_1: {
-    new<TProvider>(falseValue: TProvider, trueValue: TProvider, fromProvider: Expression_1<Func_2<TProvider, System_Internal.Boolean>> | null, mappingHints: ConverterMappingHints | null): BoolToTwoValuesConverter_1<TProvider>;
+    new<TProvider extends unknown>(falseValue: TProvider, trueValue: TProvider, fromProvider: Expression_1<Func_2<TProvider, System_Internal.Boolean>> | null, mappingHints: ConverterMappingHints | null): BoolToTwoValuesConverter_1<TProvider>;
 };
 
 
-export type BoolToTwoValuesConverter_1<TProvider> = BoolToTwoValuesConverter_1$instance<TProvider>;
+export type BoolToTwoValuesConverter_1<TProvider extends unknown> = BoolToTwoValuesConverter_1$instance<TProvider>;
 
-export interface BoolToZeroOneConverter_1$instance<TProvider> extends BoolToTwoValuesConverter_1<TProvider> {
+export interface BoolToZeroOneConverter_1$instance<TProvider extends unknown> extends BoolToTwoValuesConverter_1<TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_BoolToZeroOneConverter_1: never;
 
 }
 
 
 export const BoolToZeroOneConverter_1: {
-    new<TProvider>(): BoolToZeroOneConverter_1<TProvider>;
-    new<TProvider>(mappingHints: ConverterMappingHints | null): BoolToZeroOneConverter_1<TProvider>;
+    new<TProvider extends unknown>(): BoolToZeroOneConverter_1<TProvider>;
+    new<TProvider extends unknown>(mappingHints: ConverterMappingHints | null): BoolToZeroOneConverter_1<TProvider>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type BoolToZeroOneConverter_1<TProvider> = BoolToZeroOneConverter_1$instance<TProvider>;
+export type BoolToZeroOneConverter_1<TProvider extends unknown> = BoolToZeroOneConverter_1$instance<TProvider>;
 
 export interface BytesToStringConverter$instance extends ValueConverter_2<byte[], System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_BytesToStringConverter: never;
@@ -107,20 +107,20 @@ export const BytesToStringConverter: {
 
 export type BytesToStringConverter = BytesToStringConverter$instance;
 
-export interface CastingConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface CastingConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_CastingConverter_2: never;
 
 }
 
 
 export const CastingConverter_2: {
-    new<TModel, TProvider>(): CastingConverter_2<TModel, TProvider>;
-    new<TModel, TProvider>(mappingHints: ConverterMappingHints | null): CastingConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(): CastingConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(mappingHints: ConverterMappingHints | null): CastingConverter_2<TModel, TProvider>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type CastingConverter_2<TModel, TProvider> = CastingConverter_2$instance<TModel, TProvider>;
+export type CastingConverter_2<TModel extends unknown, TProvider extends unknown> = CastingConverter_2$instance<TModel, TProvider>;
 
 export interface CharToStringConverter$instance extends StringCharConverter_2<System_Internal.Char, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_CharToStringConverter: never;
@@ -137,7 +137,7 @@ export const CharToStringConverter: {
 
 export type CharToStringConverter = CharToStringConverter$instance;
 
-export interface CollectionToJsonStringConverter_1$instance<TElement> extends ValueConverter_2<IEnumerable_1<TElement>, System_Internal.String> {
+export interface CollectionToJsonStringConverter_1$instance<TElement extends unknown> extends ValueConverter_2<IEnumerable_1<TElement>, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_CollectionToJsonStringConverter_1: never;
 
     readonly JsonReaderWriter: JsonValueReaderWriter;
@@ -145,11 +145,11 @@ export interface CollectionToJsonStringConverter_1$instance<TElement> extends Va
 
 
 export const CollectionToJsonStringConverter_1: {
-    new<TElement>(collectionJsonReaderWriter: JsonValueReaderWriter): CollectionToJsonStringConverter_1<TElement>;
+    new<TElement extends unknown>(collectionJsonReaderWriter: JsonValueReaderWriter): CollectionToJsonStringConverter_1<TElement>;
 };
 
 
-export type CollectionToJsonStringConverter_1<TElement> = CollectionToJsonStringConverter_1$instance<TElement>;
+export type CollectionToJsonStringConverter_1<TElement extends unknown> = CollectionToJsonStringConverter_1$instance<TElement>;
 
 export interface ConverterMappingHints$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ConverterMappingHints: never;
@@ -279,35 +279,35 @@ export const DateTimeToTicksConverter: {
 
 export type DateTimeToTicksConverter = DateTimeToTicksConverter$instance;
 
-export interface EnumToNumberConverter_2$instance<TEnum extends number & NonNullable<JsValue>, TNumber extends NonNullable<JsValue>> extends ValueConverter_2<TEnum, TNumber> {
+export interface EnumToNumberConverter_2$instance<TEnum extends NonNullable<unknown> & number, TNumber extends NonNullable<unknown>> extends ValueConverter_2<TEnum, TNumber> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_EnumToNumberConverter_2: never;
 
 }
 
 
 export const EnumToNumberConverter_2: {
-    new<TEnum extends number & NonNullable<JsValue>, TNumber extends NonNullable<JsValue>>(): EnumToNumberConverter_2<TEnum, TNumber>;
-    new<TEnum extends number & NonNullable<JsValue>, TNumber extends NonNullable<JsValue>>(mappingHints: ConverterMappingHints | null): EnumToNumberConverter_2<TEnum, TNumber>;
+    new<TEnum extends NonNullable<unknown> & number, TNumber extends NonNullable<unknown>>(): EnumToNumberConverter_2<TEnum, TNumber>;
+    new<TEnum extends NonNullable<unknown> & number, TNumber extends NonNullable<unknown>>(mappingHints: ConverterMappingHints | null): EnumToNumberConverter_2<TEnum, TNumber>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type EnumToNumberConverter_2<TEnum extends number, TNumber> = EnumToNumberConverter_2$instance<TEnum, TNumber>;
+export type EnumToNumberConverter_2<TEnum extends NonNullable<unknown> & number, TNumber extends NonNullable<unknown>> = EnumToNumberConverter_2$instance<TEnum, TNumber>;
 
-export interface EnumToStringConverter_1$instance<TEnum extends number & NonNullable<JsValue>> extends StringEnumConverter_3<TEnum, System_Internal.String, TEnum> {
+export interface EnumToStringConverter_1$instance<TEnum extends NonNullable<unknown> & number> extends StringEnumConverter_3<TEnum, System_Internal.String, TEnum> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_EnumToStringConverter_1: never;
 
 }
 
 
 export const EnumToStringConverter_1: {
-    new<TEnum extends number & NonNullable<JsValue>>(): EnumToStringConverter_1<TEnum>;
-    new<TEnum extends number & NonNullable<JsValue>>(mappingHints: ConverterMappingHints | null): EnumToStringConverter_1<TEnum>;
+    new<TEnum extends NonNullable<unknown> & number>(): EnumToStringConverter_1<TEnum>;
+    new<TEnum extends NonNullable<unknown> & number>(mappingHints: ConverterMappingHints | null): EnumToStringConverter_1<TEnum>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type EnumToStringConverter_1<TEnum extends number> = EnumToStringConverter_1$instance<TEnum>;
+export type EnumToStringConverter_1<TEnum extends NonNullable<unknown> & number> = EnumToStringConverter_1$instance<TEnum>;
 
 export interface GuidToBytesConverter$instance extends ValueConverter_2<Guid, byte[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_GuidToBytesConverter: never;
@@ -369,42 +369,42 @@ export const IPAddressToStringConverter: {
 
 export type IPAddressToStringConverter = IPAddressToStringConverter$instance;
 
-export interface NumberToBytesConverter_1$instance<TNumber> extends ValueConverter_2<TNumber, byte[]> {
+export interface NumberToBytesConverter_1$instance<TNumber extends unknown> extends ValueConverter_2<TNumber, byte[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_NumberToBytesConverter_1: never;
 
 }
 
 
 export const NumberToBytesConverter_1: {
-    new<TNumber>(): NumberToBytesConverter_1<TNumber>;
-    new<TNumber>(mappingHints: ConverterMappingHints | null): NumberToBytesConverter_1<TNumber>;
+    new<TNumber extends unknown>(): NumberToBytesConverter_1<TNumber>;
+    new<TNumber extends unknown>(mappingHints: ConverterMappingHints | null): NumberToBytesConverter_1<TNumber>;
     readonly DefaultInfo: ValueConverterInfo;
-    BytesToDecimal<TNumber>(bytes: byte[]): decimal;
-    DecimalToBytes<TNumber>(value: decimal): byte[];
-    ReverseInt<TNumber>(bytes: byte[]): byte[];
-    ReverseLong<TNumber>(bytes: byte[]): byte[];
-    ReverseShort<TNumber>(bytes: byte[]): byte[];
-    ToBytes<TNumber>(): Expression_1<Func_2<TNumber, byte[]>>;
-    ToNumber<TNumber>(): Expression_1<Func_2<byte[], TNumber>>;
+    BytesToDecimal<TNumber extends unknown>(bytes: byte[]): decimal;
+    DecimalToBytes<TNumber extends unknown>(value: decimal): byte[];
+    ReverseInt<TNumber extends unknown>(bytes: byte[]): byte[];
+    ReverseLong<TNumber extends unknown>(bytes: byte[]): byte[];
+    ReverseShort<TNumber extends unknown>(bytes: byte[]): byte[];
+    ToBytes<TNumber extends unknown>(): Expression_1<Func_2<TNumber, byte[]>>;
+    ToNumber<TNumber extends unknown>(): Expression_1<Func_2<byte[], TNumber>>;
 };
 
 
-export type NumberToBytesConverter_1<TNumber> = NumberToBytesConverter_1$instance<TNumber>;
+export type NumberToBytesConverter_1<TNumber extends unknown> = NumberToBytesConverter_1$instance<TNumber>;
 
-export interface NumberToStringConverter_1$instance<TNumber> extends StringNumberConverter_3<TNumber, System_Internal.String, TNumber> {
+export interface NumberToStringConverter_1$instance<TNumber extends unknown> extends StringNumberConverter_3<TNumber, System_Internal.String, TNumber> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_NumberToStringConverter_1: never;
 
 }
 
 
 export const NumberToStringConverter_1: {
-    new<TNumber>(): NumberToStringConverter_1<TNumber>;
-    new<TNumber>(mappingHints: ConverterMappingHints | null): NumberToStringConverter_1<TNumber>;
+    new<TNumber extends unknown>(): NumberToStringConverter_1<TNumber>;
+    new<TNumber extends unknown>(mappingHints: ConverterMappingHints | null): NumberToStringConverter_1<TNumber>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type NumberToStringConverter_1<TNumber> = NumberToStringConverter_1$instance<TNumber>;
+export type NumberToStringConverter_1<TNumber extends unknown> = NumberToStringConverter_1$instance<TNumber>;
 
 export interface PhysicalAddressToBytesConverter$instance extends ValueConverter_2<PhysicalAddress, byte[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_PhysicalAddressToBytesConverter: never;
@@ -543,20 +543,20 @@ export const StringToDateTimeOffsetConverter: {
 
 export type StringToDateTimeOffsetConverter = StringToDateTimeOffsetConverter$instance;
 
-export interface StringToEnumConverter_1$instance<TEnum extends number & NonNullable<JsValue>> extends StringEnumConverter_3<System_Internal.String, TEnum, TEnum> {
+export interface StringToEnumConverter_1$instance<TEnum extends NonNullable<unknown> & number> extends StringEnumConverter_3<System_Internal.String, TEnum, TEnum> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToEnumConverter_1: never;
 
 }
 
 
 export const StringToEnumConverter_1: {
-    new<TEnum extends number & NonNullable<JsValue>>(): StringToEnumConverter_1<TEnum>;
-    new<TEnum extends number & NonNullable<JsValue>>(mappingHints: ConverterMappingHints | null): StringToEnumConverter_1<TEnum>;
+    new<TEnum extends NonNullable<unknown> & number>(): StringToEnumConverter_1<TEnum>;
+    new<TEnum extends NonNullable<unknown> & number>(mappingHints: ConverterMappingHints | null): StringToEnumConverter_1<TEnum>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type StringToEnumConverter_1<TEnum extends number> = StringToEnumConverter_1$instance<TEnum>;
+export type StringToEnumConverter_1<TEnum extends NonNullable<unknown> & number> = StringToEnumConverter_1$instance<TEnum>;
 
 export interface StringToGuidConverter$instance extends StringGuidConverter_2<System_Internal.String, Guid> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToGuidConverter: never;
@@ -573,20 +573,20 @@ export const StringToGuidConverter: {
 
 export type StringToGuidConverter = StringToGuidConverter$instance;
 
-export interface StringToNumberConverter_1$instance<TNumber> extends StringNumberConverter_3<System_Internal.String, TNumber, TNumber> {
+export interface StringToNumberConverter_1$instance<TNumber extends unknown> extends StringNumberConverter_3<System_Internal.String, TNumber, TNumber> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToNumberConverter_1: never;
 
 }
 
 
 export const StringToNumberConverter_1: {
-    new<TNumber>(): StringToNumberConverter_1<TNumber>;
-    new<TNumber>(mappingHints: ConverterMappingHints | null): StringToNumberConverter_1<TNumber>;
+    new<TNumber extends unknown>(): StringToNumberConverter_1<TNumber>;
+    new<TNumber extends unknown>(mappingHints: ConverterMappingHints | null): StringToNumberConverter_1<TNumber>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type StringToNumberConverter_1<TNumber> = StringToNumberConverter_1$instance<TNumber>;
+export type StringToNumberConverter_1<TNumber extends unknown> = StringToNumberConverter_1$instance<TNumber>;
 
 export interface StringToTimeOnlyConverter$instance extends StringTimeOnlyConverter_2<System_Internal.String, TimeOnly> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToTimeOnlyConverter: never;
@@ -712,10 +712,10 @@ export interface ValueConverter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
 
     readonly ConstructorExpression: Expression;
-    readonly ConvertFromProvider: Func_2<JsValue | null, JsValue | null>;
+    readonly ConvertFromProvider: Func_2<unknown | null, unknown | null>;
     readonly ConvertFromProviderExpression: LambdaExpression;
     readonly ConvertsNulls: boolean;
-    readonly ConvertToProvider: Func_2<JsValue | null, JsValue | null>;
+    readonly ConvertToProvider: Func_2<unknown | null, unknown | null>;
     readonly ConvertToProviderExpression: LambdaExpression;
     readonly MappingHints: ConverterMappingHints | null;
     readonly ModelClrType: Type;
@@ -731,14 +731,14 @@ export const ValueConverter: (abstract new(convertToProviderExpression: LambdaEx
 
 export type ValueConverter = ValueConverter$instance;
 
-export interface ValueConverter_2$instance<TModel, TProvider> extends ValueConverter {
+export interface ValueConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
     readonly ConstructorExpression: Expression;
-    readonly ConvertFromProvider: Func_2<JsValue | null, JsValue | null>;
+    readonly ConvertFromProvider: Func_2<unknown | null, unknown | null>;
     readonly ConvertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>;
     readonly ConvertFromProviderTyped: Func_2<TProvider, TModel>;
-    readonly ConvertToProvider: Func_2<JsValue | null, JsValue | null>;
+    readonly ConvertToProvider: Func_2<unknown | null, unknown | null>;
     readonly ConvertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>;
     readonly ConvertToProviderTyped: Func_2<TModel, TProvider>;
     readonly ModelClrType: Type;
@@ -747,12 +747,12 @@ export interface ValueConverter_2$instance<TModel, TProvider> extends ValueConve
 
 
 export const ValueConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): ValueConverter_2<TModel, TProvider>;
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, convertsNulls: boolean, mappingHints: ConverterMappingHints | null): ValueConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): ValueConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, convertsNulls: boolean, mappingHints: ConverterMappingHints | null): ValueConverter_2<TModel, TProvider>;
 };
 
 
-export type ValueConverter_2<TModel, TProvider> = ValueConverter_2$instance<TModel, TProvider>;
+export type ValueConverter_2<TModel extends unknown, TProvider extends unknown> = ValueConverter_2$instance<TModel, TProvider>;
 
 export interface ValueConverterSelector$instance extends IValueConverterSelector$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverterSelector: never;
@@ -782,7 +782,7 @@ export interface ValueConverterSelectorDependencies$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): ValueConverterSelectorDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ValueConverterSelectorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;

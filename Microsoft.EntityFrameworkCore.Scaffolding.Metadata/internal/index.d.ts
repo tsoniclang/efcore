@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -29,8 +29,8 @@ export interface DatabaseColumn$instance extends Annotatable {
     set Comment(value: string | null);
     get ComputedColumnSql(): string | null;
     set ComputedColumnSql(value: string | null);
-    get DefaultValue(): JsValue | null;
-    set DefaultValue(value: JsValue | null);
+    get DefaultValue(): unknown | null;
+    set DefaultValue(value: unknown | null);
     get DefaultValueSql(): string | null;
     set DefaultValueSql(value: string | null);
     IsNullable: boolean;

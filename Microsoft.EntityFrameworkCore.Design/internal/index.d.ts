@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -65,7 +65,7 @@ export type IAnnotationCodeGenerator = IAnnotationCodeGenerator$instance;
 export interface ICSharpHelper$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_ICSharpHelper: never;
 
-    Arguments(values: IEnumerable_1<JsValue>): string;
+    Arguments(values: IEnumerable_1<unknown>): string;
     Fragment(fragment: AttributeCodeFragment): string;
     Fragment(fragment: IMethodCallCodeFragment | null, indent?: int): string;
     Fragment(fragment: IMethodCallCodeFragment, instanceIdentifier: string | null, typeQualified: boolean): string;
@@ -73,12 +73,12 @@ export interface ICSharpHelper$instance {
     Fragment(fragment: PropertyAccessorCodeFragment): string;
     GetRequiredUsings(type: Type): IEnumerable_1<System_Internal.String>;
     Identifier(name: string, scope?: ICollection_1<System_Internal.String> | null, capitalize?: Nullable_1<System_Internal.Boolean>): string;
-    Identifier<T>(name: string, value: T, scope: IDictionary_2<System_Internal.String, T>, capitalize?: Nullable_1<System_Internal.Boolean>): string;
+    Identifier<T extends unknown>(name: string, value: T, scope: IDictionary_2<System_Internal.String, T>, capitalize?: Nullable_1<System_Internal.Boolean>): string;
     Lambda(properties: IEnumerable_1<IProperty>, lambdaIdentifier?: string | null): string;
     Lambda(properties: IReadOnlyList_1<System_Internal.String>, lambdaIdentifier?: string | null): string;
-    Literal<TKey, TValue>(values: Dictionary_2<TKey, TValue>, vertical?: boolean): string;
-    Literal<T>(values: List_1<T>, vertical?: boolean): string;
-    Literal<T extends NonNullable<JsValue>>(value: Nullable_1<T>): string;
+    Literal<TKey extends unknown, TValue extends unknown>(values: Dictionary_2<TKey, TValue>, vertical?: boolean): string;
+    Literal<T extends unknown>(values: List_1<T>, vertical?: boolean): string;
+    Literal<T extends NonNullable<unknown>>(value: Nullable_1<T>): string;
     Literal(value: boolean): string;
     Literal(value: byte): string;
     Literal(value: char): string;
@@ -93,7 +93,7 @@ export interface ICSharpHelper$instance {
     Literal(value: int): string;
     Literal(value: long): string;
     Literal(value: BigInteger): string;
-    Literal(values: Array<Array<(JsValue | null)>>): string;
+    Literal(values: Array<Array<(unknown | null)>>): string;
     Literal(value: sbyte): string;
     Literal(value: float): string;
     Literal(value: string | null): string;
@@ -103,24 +103,24 @@ export interface ICSharpHelper$instance {
     Literal(value: ushort): string;
     Literal(value: uint): string;
     Literal(value: ulong): string;
-    Literal<T>(values: T[], vertical?: boolean): string;
+    Literal<T extends unknown>(values: T[], vertical?: boolean): string;
     Namespace(...name: string[]): string;
-    Statement(node: Expression, collectedNamespaces: ISet_1<System_Internal.String>, unsafeAccessors: ISet_1<System_Internal.String>, constantReplacements?: IReadOnlyDictionary_2<JsValue, System_Internal.String> | null, memberAccessReplacements?: IReadOnlyDictionary_2<MemberInfo, QualifiedName> | null): string;
-    UnknownLiteral(value: JsValue | null): string;
+    Statement(node: Expression, collectedNamespaces: ISet_1<System_Internal.String>, unsafeAccessors: ISet_1<System_Internal.String>, constantReplacements?: IReadOnlyDictionary_2<unknown, System_Internal.String> | null, memberAccessReplacements?: IReadOnlyDictionary_2<MemberInfo, QualifiedName> | null): string;
+    UnknownLiteral(value: unknown | null): string;
     XmlComment(comment: string, indent?: int): string;
 }
 
 
 export type ICSharpHelper = ICSharpHelper$instance;
 
-export interface IDesignTimeDbContextFactory_1$instance<TContext extends DbContext> {
+export interface IDesignTimeDbContextFactory_1$instance<TContext extends unknown & DbContext> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IDesignTimeDbContextFactory_1: never;
 
     CreateDbContext(args: string[]): TContext;
 }
 
 
-export type IDesignTimeDbContextFactory_1<TContext extends DbContext> = IDesignTimeDbContextFactory_1$instance<TContext>;
+export type IDesignTimeDbContextFactory_1<TContext extends unknown & DbContext> = IDesignTimeDbContextFactory_1$instance<TContext>;
 
 export interface IDesignTimeServices$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IDesignTimeServices: never;
@@ -137,7 +137,7 @@ export interface IMethodCallCodeFragment$instance {
     readonly DeclaringType: string | null;
     readonly Method: string;
     readonly TypeArguments: IEnumerable_1<System_Internal.String>;
-    readonly Arguments: IEnumerable_1<JsValue | null>;
+    readonly Arguments: IEnumerable_1<unknown | null>;
     readonly ChainedCall: IMethodCallCodeFragment | null;
 }
 
@@ -240,7 +240,7 @@ export interface AnnotationCodeGeneratorDependencies$instance {
 
     RelationalTypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): AnnotationCodeGeneratorDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: AnnotationCodeGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -257,15 +257,15 @@ export type AnnotationCodeGeneratorDependencies = AnnotationCodeGeneratorDepende
 export interface AttributeCodeFragment$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_AttributeCodeFragment: never;
 
-    readonly Arguments: IReadOnlyList_1<JsValue | null>;
-    readonly NamedArguments: IReadOnlyDictionary_2<System_Internal.String, JsValue | null>;
+    readonly Arguments: IReadOnlyList_1<unknown | null>;
+    readonly NamedArguments: IReadOnlyDictionary_2<System_Internal.String, unknown | null>;
     readonly Type: Type;
 }
 
 
 export const AttributeCodeFragment: {
-    new(type: Type, arguments: (JsValue | null)[]): AttributeCodeFragment;
-    new(type: Type, arguments: IEnumerable_1<JsValue | null>, namedArguments: IDictionary_2<System_Internal.String, JsValue | null>): AttributeCodeFragment;
+    new(type: Type, arguments: (unknown | null)[]): AttributeCodeFragment;
+    new(type: Type, arguments: IEnumerable_1<unknown | null>, namedArguments: IDictionary_2<System_Internal.String, unknown | null>): AttributeCodeFragment;
 };
 
 
@@ -338,21 +338,21 @@ export interface MethodCallCodeFragment$instance {
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_IMethodCallCodeFragment: never;
 
-    readonly Arguments: IReadOnlyList_1<JsValue | null>;
+    readonly Arguments: IReadOnlyList_1<unknown | null>;
     readonly ChainedCall: MethodCallCodeFragment | null;
     readonly DeclaringType: string | null;
     readonly Method: string;
     readonly MethodInfo: MethodInfo | null;
     readonly Namespace: string | null;
-    Chain(methodInfo: MethodInfo, ...arguments: (JsValue | null)[]): MethodCallCodeFragment;
-    Chain(method: string, ...arguments: (JsValue | null)[]): MethodCallCodeFragment;
+    Chain(methodInfo: MethodInfo, ...arguments: (unknown | null)[]): MethodCallCodeFragment;
+    Chain(method: string, ...arguments: (unknown | null)[]): MethodCallCodeFragment;
     Chain(call: MethodCallCodeFragment): MethodCallCodeFragment;
 }
 
 
 export const MethodCallCodeFragment: {
-    new(methodInfo: MethodInfo, arguments: (JsValue | null)[]): MethodCallCodeFragment;
-    new(method: string, arguments: (JsValue | null)[]): MethodCallCodeFragment;
+    new(methodInfo: MethodInfo, arguments: (unknown | null)[]): MethodCallCodeFragment;
+    new(method: string, arguments: (unknown | null)[]): MethodCallCodeFragment;
 };
 
 

@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { IStateManager } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 import type { CascadeTiming } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
@@ -47,8 +51,8 @@ export { RowIdentityMapFactory as RowIdentityMapFactory } from './Microsoft.Enti
 export { RowIndexValueFactoryFactory as RowIndexValueFactoryFactory } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
 export { RowKeyValueFactoryFactory as RowKeyValueFactoryFactory } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
 export { SharedTableEntryMap_1 as SharedTableEntryMap } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
-export type SharedTableEntryMapFactory<TValue> = Internal.SharedTableEntryMapFactory_1<TValue>;
-export type SharedTableEntryValueFactory<TValue> = Internal.SharedTableEntryValueFactory_1<TValue>;
+export type SharedTableEntryMapFactory<TValue extends unknown> = Internal.SharedTableEntryMapFactory_1<TValue>;
+export type SharedTableEntryValueFactory<TValue extends unknown> = Internal.SharedTableEntryValueFactory_1<TValue>;
 export { SimpleFullyNullableRowForeignKeyValueFactory_2 as SimpleFullyNullableRowForeignKeyValueFactory } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
 export { SimpleNonNullableRowForeignKeyValueFactory_2 as SimpleNonNullableRowForeignKeyValueFactory } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
 export { SimpleNullablePrincipalRowForeignKeyValueFactory_2 as SimpleNullablePrincipalRowForeignKeyValueFactory } from './Microsoft.EntityFrameworkCore.Update.Internal/internal/index.js';
@@ -63,20 +67,20 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type IRowForeignKeyValueFactory<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IRowForeignKeyValueFactory :
-  Internal.IRowForeignKeyValueFactory_1<T1>;
+  [T1] extends [unknown] ? Internal.IRowForeignKeyValueFactory_1<T1> : never;
 
 export type IRowIndexValueFactory<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IRowIndexValueFactory :
-  Internal.IRowIndexValueFactory_1<T1>;
+  [T1] extends [unknown] ? Internal.IRowIndexValueFactory_1<T1> : never;
 
 export type IRowKeyValueFactory<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IRowKeyValueFactory :
-  Internal.IRowKeyValueFactory_1<T1>;
+  [T1] extends [unknown] ? Internal.IRowKeyValueFactory_1<T1> : never;
 

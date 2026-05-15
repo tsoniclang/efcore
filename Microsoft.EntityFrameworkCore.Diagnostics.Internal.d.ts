@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Diagnostics.Internal/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { CommandSource, DbCommandMethod, DbContextLoggerOptions, EventData, EventDefinition, EventDefinition_1, EventDefinition_2, EventDefinition_3, EventDefinition_4, EventDefinition_5, EventDefinition_6, EventDefinitionBase, FallbackEventDefinition, IDbCommandInterceptor, IDbConnectionInterceptor, IDbContextLogger, IDbTransactionInterceptor, IDiagnosticsLogger, IDiagnosticsLogger_1, IIdentityResolutionInterceptor, IInterceptor, IInterceptorAggregator, IInterceptors, ILoggingOptions, IMaterializationInterceptor, InterceptionResult, InterceptionResult_1, InterceptorAggregator_1, IQueryExpressionInterceptor, IRelationalCommandDiagnosticsLogger, IRelationalConnectionDiagnosticsLogger, ISaveChangesInterceptor, LoggerCategory_1, LoggingDefinitions, WarningsConfiguration } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
 import type { IDbContextOptions, ISingletonOptions } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';

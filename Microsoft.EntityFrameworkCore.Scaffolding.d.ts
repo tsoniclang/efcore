@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Scaffolding/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { MethodCallCodeFragment } from './Microsoft.EntityFrameworkCore.Design/internal/index.js';
 import type { DatabaseModel } from './Microsoft.EntityFrameworkCore.Scaffolding.Metadata/internal/index.js';

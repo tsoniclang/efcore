@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { IDependentsMap, IIdentityMap, IInternalEntry, ISnapshot } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 import type { IDependentKeyValueFactory, IDependentKeyValueFactory_1, IPrincipalKeyValueFactory, IPrincipalKeyValueFactory_1, ValueComparer } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
@@ -74,7 +78,7 @@ export type IEntityType = Internal.IEntityType;
 export type IForeignKey = Internal.IForeignKey;
 export type IIndex = Internal.IIndex;
 export type IKey = Internal.IKey;
-export type IMetadataReference<T> = Internal.IMetadataReference_1<T>;
+export type IMetadataReference<T extends unknown> = Internal.IMetadataReference_1<T>;
 export type IModel = Internal.IModel;
 export type IMutableAnnotatable = Internal.IMutableAnnotatable;
 export type IMutableComplexProperty = Internal.IMutableComplexProperty;
@@ -195,7 +199,7 @@ export type IReadOnlySequence = Internal.IReadOnlySequence;
 export type IReadOnlyStoredProcedure = Internal.IReadOnlyStoredProcedure;
 export type IReadOnlyStoredProcedureParameter = Internal.IReadOnlyStoredProcedureParameter;
 export type IReadOnlyStoredProcedureResultColumn = Internal.IReadOnlyStoredProcedureResultColumn;
-export type IReadOnlyStoreObjectDictionary<T> = Internal.IReadOnlyStoreObjectDictionary_1<T>;
+export type IReadOnlyStoreObjectDictionary<T extends (object | null)> = Internal.IReadOnlyStoreObjectDictionary_1<T>;
 export type IRelationalAnnotationProvider = Internal.IRelationalAnnotationProvider;
 export type IRelationalModel = Internal.IRelationalModel;
 export type IRelationalPropertyOverrides = Internal.IRelationalPropertyOverrides;

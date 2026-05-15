@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { IDbContextLogger, IDiagnosticsLogger_1, IInterceptor, ISingletonInterceptor, WarningsConfiguration } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
 import type { IDbContextPool_1 } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
@@ -55,10 +59,10 @@ export type ICoreSingletonOptions = Internal.ICoreSingletonOptions;
 export type ICurrentDbContext = Internal.ICurrentDbContext;
 export type IDbContextOptions = Internal.IDbContextOptions;
 export type IDbContextOptionsBuilderInfrastructure = Internal.IDbContextOptionsBuilderInfrastructure;
-export type IDbContextOptionsConfiguration<TContext extends Internal.DbContext> = Internal.IDbContextOptionsConfiguration_1<TContext>;
+export type IDbContextOptionsConfiguration<TContext extends unknown & Internal.DbContext> = Internal.IDbContextOptionsConfiguration_1<TContext>;
 export type IDbContextOptionsExtension = Internal.IDbContextOptionsExtension;
 export type IDbSetFinder = Internal.IDbSetFinder;
-export type IInfrastructure<T> = Internal.IInfrastructure_1<T>;
+export type IInfrastructure<T extends unknown> = Internal.IInfrastructure_1<T>;
 export type IInternalServiceCollectionMap = Internal.IInternalServiceCollectionMap;
 export type IModelCacheKeyFactory = Internal.IModelCacheKeyFactory;
 export type IModelCustomizer = Internal.IModelCustomizer;
