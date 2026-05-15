@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -13,174 +13,174 @@ import type { ConverterMappingHints, ValueConverter, ValueConverter_2 } from "..
 import type { Expression, Expression_1, LambdaExpression } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
 import type { Boolean as ClrBoolean, Char, DateOnly, DateTime, DateTimeOffset, Enum, Func_2, Guid, Object as ClrObject, String as ClrString, TimeOnly, TimeSpan, Type, Uri, ValueType } from "@tsonic/dotnet/System/internal/index.js";
 
-export interface CompositeValueConverter_3$instance<TModel, TMiddle, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface CompositeValueConverter_3$instance<TModel extends unknown, TMiddle extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_CompositeValueConverter_3: never;
 
 }
 
 
 export const CompositeValueConverter_3: {
-    new<TModel, TMiddle, TProvider>(converter1: ValueConverter, converter2: ValueConverter, mappingHints: ConverterMappingHints | null): CompositeValueConverter_3<TModel, TMiddle, TProvider>;
+    new<TModel extends unknown, TMiddle extends unknown, TProvider extends unknown>(converter1: ValueConverter, converter2: ValueConverter, mappingHints: ConverterMappingHints | null): CompositeValueConverter_3<TModel, TMiddle, TProvider>;
 };
 
 
-export type CompositeValueConverter_3<TModel, TMiddle, TProvider> = CompositeValueConverter_3$instance<TModel, TMiddle, TProvider>;
+export type CompositeValueConverter_3<TModel extends unknown, TMiddle extends unknown, TProvider extends unknown> = CompositeValueConverter_3$instance<TModel, TMiddle, TProvider>;
 
-export interface StringCharConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface StringCharConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringCharConverter_2: never;
 
 }
 
 
 export const StringCharConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringCharConverter_2<TModel, TProvider>;
-    ToChar<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, System_Internal.Char>>;
-    ToString<TModel, TProvider>(): Expression_1<Func_2<System_Internal.Char, System_Internal.String>>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringCharConverter_2<TModel, TProvider>;
+    ToChar<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<System_Internal.String, System_Internal.Char>>;
+    ToString<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<System_Internal.Char, System_Internal.String>>;
 };
 
 
-export type StringCharConverter_2<TModel, TProvider> = StringCharConverter_2$instance<TModel, TProvider>;
+export type StringCharConverter_2<TModel extends unknown, TProvider extends unknown> = StringCharConverter_2$instance<TModel, TProvider>;
 
-export interface StringDateOnlyConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface StringDateOnlyConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateOnlyConverter_2: never;
 
 }
 
 
 export const StringDateOnlyConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringDateOnlyConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringDateOnlyConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToDateOnly<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, DateOnly>>;
-    ToString<TModel, TProvider>(): Expression_1<Func_2<DateOnly, System_Internal.String>>;
+    ToDateOnly<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<System_Internal.String, DateOnly>>;
+    ToString<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<DateOnly, System_Internal.String>>;
 };
 
 
-export type StringDateOnlyConverter_2<TModel, TProvider> = StringDateOnlyConverter_2$instance<TModel, TProvider>;
+export type StringDateOnlyConverter_2<TModel extends unknown, TProvider extends unknown> = StringDateOnlyConverter_2$instance<TModel, TProvider>;
 
-export interface StringDateTimeConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface StringDateTimeConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateTimeConverter_2: never;
 
 }
 
 
 export const StringDateTimeConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringDateTimeConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringDateTimeConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToDateTime<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, DateTime>>;
-    ToString<TModel, TProvider>(): Expression_1<Func_2<DateTime, System_Internal.String>>;
+    ToDateTime<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<System_Internal.String, DateTime>>;
+    ToString<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<DateTime, System_Internal.String>>;
 };
 
 
-export type StringDateTimeConverter_2<TModel, TProvider> = StringDateTimeConverter_2$instance<TModel, TProvider>;
+export type StringDateTimeConverter_2<TModel extends unknown, TProvider extends unknown> = StringDateTimeConverter_2$instance<TModel, TProvider>;
 
-export interface StringDateTimeOffsetConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface StringDateTimeOffsetConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateTimeOffsetConverter_2: never;
 
 }
 
 
 export const StringDateTimeOffsetConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringDateTimeOffsetConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringDateTimeOffsetConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToDateTimeOffset<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, DateTimeOffset>>;
-    ToString<TModel, TProvider>(): Expression_1<Func_2<DateTimeOffset, System_Internal.String>>;
+    ToDateTimeOffset<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<System_Internal.String, DateTimeOffset>>;
+    ToString<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<DateTimeOffset, System_Internal.String>>;
 };
 
 
-export type StringDateTimeOffsetConverter_2<TModel, TProvider> = StringDateTimeOffsetConverter_2$instance<TModel, TProvider>;
+export type StringDateTimeOffsetConverter_2<TModel extends unknown, TProvider extends unknown> = StringDateTimeOffsetConverter_2$instance<TModel, TProvider>;
 
-export interface StringEnumConverter_3$instance<TModel, TProvider, TEnum extends number & NonNullable<JsValue>> extends ValueConverter_2<TModel, TProvider> {
+export interface StringEnumConverter_3$instance<TModel extends unknown, TProvider extends unknown, TEnum extends NonNullable<unknown> & number> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringEnumConverter_3: never;
 
 }
 
 
 export const StringEnumConverter_3: {
-    new<TModel, TProvider, TEnum extends number & NonNullable<JsValue>>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringEnumConverter_3<TModel, TProvider, TEnum>;
-    ConvertToEnum<TModel, TProvider, TEnum extends number & NonNullable<JsValue>>(value: string): TEnum;
-    ToEnum<TModel, TProvider, TEnum extends number & NonNullable<JsValue>>(): Expression_1<Func_2<System_Internal.String, TEnum>>;
-    ToString<TModel, TProvider, TEnum extends number & NonNullable<JsValue>>(): Expression_1<Func_2<TEnum, System_Internal.String>>;
+    new<TModel extends unknown, TProvider extends unknown, TEnum extends NonNullable<unknown> & number>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringEnumConverter_3<TModel, TProvider, TEnum>;
+    ConvertToEnum<TModel extends unknown, TProvider extends unknown, TEnum extends NonNullable<unknown> & number>(value: string): TEnum;
+    ToEnum<TModel extends unknown, TProvider extends unknown, TEnum extends NonNullable<unknown> & number>(): Expression_1<Func_2<System_Internal.String, TEnum>>;
+    ToString<TModel extends unknown, TProvider extends unknown, TEnum extends NonNullable<unknown> & number>(): Expression_1<Func_2<TEnum, System_Internal.String>>;
 };
 
 
-export type StringEnumConverter_3<TModel, TProvider, TEnum extends number> = StringEnumConverter_3$instance<TModel, TProvider, TEnum>;
+export type StringEnumConverter_3<TModel extends unknown, TProvider extends unknown, TEnum extends NonNullable<unknown> & number> = StringEnumConverter_3$instance<TModel, TProvider, TEnum>;
 
-export interface StringGuidConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface StringGuidConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringGuidConverter_2: never;
 
 }
 
 
 export const StringGuidConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringGuidConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringGuidConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToGuid<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, Guid>>;
-    ToString<TModel, TProvider>(): Expression_1<Func_2<Guid, System_Internal.String>>;
+    ToGuid<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<System_Internal.String, Guid>>;
+    ToString<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<Guid, System_Internal.String>>;
 };
 
 
-export type StringGuidConverter_2<TModel, TProvider> = StringGuidConverter_2$instance<TModel, TProvider>;
+export type StringGuidConverter_2<TModel extends unknown, TProvider extends unknown> = StringGuidConverter_2$instance<TModel, TProvider>;
 
-export interface StringNumberConverter_3$instance<TModel, TProvider, TNumber> extends ValueConverter_2<TModel, TProvider> {
+export interface StringNumberConverter_3$instance<TModel extends unknown, TProvider extends unknown, TNumber extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringNumberConverter_3: never;
 
 }
 
 
 export const StringNumberConverter_3: {
-    new<TModel, TProvider, TNumber>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringNumberConverter_3<TModel, TProvider, TNumber>;
+    new<TModel extends unknown, TProvider extends unknown, TNumber extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringNumberConverter_3<TModel, TProvider, TNumber>;
     readonly DefaultHints: ConverterMappingHints;
-    ToNumber<TModel, TProvider, TNumber>(): Expression_1<Func_2<System_Internal.String, TNumber>>;
-    ToString<TModel, TProvider, TNumber>(): Expression_1<Func_2<TNumber, System_Internal.String>>;
+    ToNumber<TModel extends unknown, TProvider extends unknown, TNumber extends unknown>(): Expression_1<Func_2<System_Internal.String, TNumber>>;
+    ToString<TModel extends unknown, TProvider extends unknown, TNumber extends unknown>(): Expression_1<Func_2<TNumber, System_Internal.String>>;
 };
 
 
-export type StringNumberConverter_3<TModel, TProvider, TNumber> = StringNumberConverter_3$instance<TModel, TProvider, TNumber>;
+export type StringNumberConverter_3<TModel extends unknown, TProvider extends unknown, TNumber extends unknown> = StringNumberConverter_3$instance<TModel, TProvider, TNumber>;
 
-export interface StringTimeOnlyConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface StringTimeOnlyConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringTimeOnlyConverter_2: never;
 
 }
 
 
 export const StringTimeOnlyConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringTimeOnlyConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringTimeOnlyConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToString<TModel, TProvider>(): Expression_1<Func_2<TimeOnly, System_Internal.String>>;
-    ToTimeOnly<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, TimeOnly>>;
+    ToString<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<TimeOnly, System_Internal.String>>;
+    ToTimeOnly<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<System_Internal.String, TimeOnly>>;
 };
 
 
-export type StringTimeOnlyConverter_2<TModel, TProvider> = StringTimeOnlyConverter_2$instance<TModel, TProvider>;
+export type StringTimeOnlyConverter_2<TModel extends unknown, TProvider extends unknown> = StringTimeOnlyConverter_2$instance<TModel, TProvider>;
 
-export interface StringTimeSpanConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface StringTimeSpanConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringTimeSpanConverter_2: never;
 
 }
 
 
 export const StringTimeSpanConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringTimeSpanConverter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringTimeSpanConverter_2<TModel, TProvider>;
     readonly DefaultHints: ConverterMappingHints;
-    ToString<TModel, TProvider>(): Expression_1<Func_2<TimeSpan, System_Internal.String>>;
-    ToTimeSpan<TModel, TProvider>(): Expression_1<Func_2<System_Internal.String, TimeSpan>>;
+    ToString<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<TimeSpan, System_Internal.String>>;
+    ToTimeSpan<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<System_Internal.String, TimeSpan>>;
 };
 
 
-export type StringTimeSpanConverter_2<TModel, TProvider> = StringTimeSpanConverter_2$instance<TModel, TProvider>;
+export type StringTimeSpanConverter_2<TModel extends unknown, TProvider extends unknown> = StringTimeSpanConverter_2$instance<TModel, TProvider>;
 
-export interface StringUriConverter_2$instance<TModel, TProvider> extends ValueConverter_2<TModel, TProvider> {
+export interface StringUriConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringUriConverter_2: never;
 
 }
 
 
 export const StringUriConverter_2: {
-    new<TModel, TProvider>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringUriConverter_2<TModel, TProvider>;
-    ToString<TModel, TProvider>(): Expression_1<Func_2<Uri | null, string | null>>;
-    ToUri<TModel, TProvider>(): Expression_1<Func_2<string | null, Uri | null>>;
+    new<TModel extends unknown, TProvider extends unknown>(convertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>, convertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>, mappingHints: ConverterMappingHints | null): StringUriConverter_2<TModel, TProvider>;
+    ToString<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<Uri | null, string | null>>;
+    ToUri<TModel extends unknown, TProvider extends unknown>(): Expression_1<Func_2<string | null, Uri | null>>;
 };
 
 
-export type StringUriConverter_2<TModel, TProvider> = StringUriConverter_2$instance<TModel, TProvider>;
+export type StringUriConverter_2<TModel extends unknown, TProvider extends unknown> = StringUriConverter_2$instance<TModel, TProvider>;
 

@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -328,8 +328,8 @@ export interface ColumnOperation$instance extends MigrationOperation$instance {
     set Comment(value: string | null);
     get ComputedColumnSql(): string | null;
     set ComputedColumnSql(value: string | null);
-    get DefaultValue(): JsValue | null;
-    set DefaultValue(value: JsValue | null);
+    get DefaultValue(): unknown | null;
+    set DefaultValue(value: unknown | null);
     get DefaultValueSql(): string | null;
     set DefaultValueSql(value: string | null);
     get IsFixedLength(): Nullable_1<System_Internal.Boolean>;
@@ -501,7 +501,7 @@ export interface DeleteDataOperation$instance extends MigrationOperation$instanc
     KeyColumns: string[];
     get KeyColumnTypes(): string[] | null;
     set KeyColumnTypes(value: string[] | null);
-    KeyValues: Array<Array<(JsValue | null)>>;
+    KeyValues: Array<Array<(unknown | null)>>;
     get Schema(): string | null;
     set Schema(value: string | null);
     Table: string;
@@ -822,7 +822,7 @@ export interface InsertDataOperation$instance extends MigrationOperation$instanc
     get Schema(): string | null;
     set Schema(value: string | null);
     Table: string;
-    Values: Array<Array<(JsValue | null)>>;
+    Values: Array<Array<(unknown | null)>>;
 }
 
 
@@ -1118,11 +1118,11 @@ export interface UpdateDataOperation$instance extends MigrationOperation$instanc
     KeyColumns: string[];
     get KeyColumnTypes(): string[] | null;
     set KeyColumnTypes(value: string[] | null);
-    KeyValues: Array<Array<(JsValue | null)>>;
+    KeyValues: Array<Array<(unknown | null)>>;
     get Schema(): string | null;
     set Schema(value: string | null);
     Table: string;
-    Values: Array<Array<(JsValue | null)>>;
+    Values: Array<Array<(unknown | null)>>;
 }
 
 

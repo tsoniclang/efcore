@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { ConverterMappingHints, ValueConverter, ValueConverter_2 } from './Microsoft.EntityFrameworkCore.Storage.ValueConversion/internal/index.js';
 import type { Boolean as ClrBoolean, Char, DateOnly, DateTime, DateTimeOffset, Enum, Func, Guid, Object as ClrObject, String as ClrString, TimeOnly, TimeSpan, Type, Uri, ValueType } from '@tsonic/dotnet/System.js';

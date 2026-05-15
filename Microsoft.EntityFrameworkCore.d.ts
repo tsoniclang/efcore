@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { IChangeDetector, IEntityGraphAttacher, IStateManager } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 import type { ChangeTracker, ChangeTrackerDebugStringOptions, EntityEntry, EntityEntry_1, LocalView_1 } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
@@ -66,8 +70,8 @@ export { EntityState as EntityState } from './Microsoft.EntityFrameworkCore/inte
 export { EntityTypeConfigurationAttribute_2 as EntityTypeConfigurationAttribute } from './Microsoft.EntityFrameworkCore/internal/index.js';
 export { EntityFrameworkQueryableExtensions$instance as EntityFrameworkQueryableExtensions } from './Microsoft.EntityFrameworkCore/internal/index.js';
 export { PropertyBaseExtensions$instance as PropertyBaseExtensions } from './Microsoft.EntityFrameworkCore/internal/index.js';
-export type IDbContextFactory<TContext extends Internal.DbContext> = Internal.IDbContextFactory_1<TContext>;
-export type IEntityTypeConfiguration<TEntity> = Internal.IEntityTypeConfiguration_1<TEntity>;
+export type IDbContextFactory<TContext extends unknown & Internal.DbContext> = Internal.IDbContextFactory_1<TContext>;
+export type IEntityTypeConfiguration<TEntity extends (object | null)> = Internal.IEntityTypeConfiguration_1<TEntity>;
 export { ModelCreationDependencies as ModelCreationDependencies } from './Microsoft.EntityFrameworkCore/internal/index.js';
 export { ModelBuilder as ModelBuilder } from './Microsoft.EntityFrameworkCore/internal/index.js';
 export { ModelConfigurationBuilder as ModelConfigurationBuilder } from './Microsoft.EntityFrameworkCore/internal/index.js';
@@ -136,16 +140,16 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type DbContextOptions<
-  T1 = __,
+  T1 extends unknown & Internal.DbContext | __ = __,
 > =
   [T1] extends [__] ? Internal.DbContextOptions :
-  [T1] extends [Internal.DbContext] ? Internal.DbContextOptions_1<T1> : never;
+  [T1] extends [unknown & Internal.DbContext] ? Internal.DbContextOptions_1<T1> : never;
 
 export type DbContextOptionsBuilder<
-  T1 = __,
+  T1 extends unknown & Internal.DbContext | __ = __,
 > =
   [T1] extends [__] ? Internal.DbContextOptionsBuilder :
-  [T1] extends [Internal.DbContext] ? Internal.DbContextOptionsBuilder_1<T1> : never;
+  [T1] extends [unknown & Internal.DbContext] ? Internal.DbContextOptionsBuilder_1<T1> : never;
 
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore as ExtensionMethods } from './__internal/extensions/index.js';

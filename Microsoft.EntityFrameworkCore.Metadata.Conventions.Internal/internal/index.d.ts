@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -34,7 +34,7 @@ export interface IReadableConventionContext$instance extends Microsoft_EntityFra
 
 export type IReadableConventionContext = IReadableConventionContext$instance;
 
-export interface ConventionContext_1$instance<TMetadata> {
+export interface ConventionContext_1$instance<TMetadata extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_ConventionContext_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConventionContext: never;
@@ -52,17 +52,17 @@ export interface ConventionContext_1$instance<TMetadata> {
 
 
 export const ConventionContext_1: {
-    new<TMetadata>(dispatcher: ConventionDispatcher): ConventionContext_1<TMetadata>;
+    new<TMetadata extends unknown>(dispatcher: ConventionDispatcher): ConventionContext_1<TMetadata>;
 };
 
 
-export interface __ConventionContext_1$views<TMetadata> {
+export interface __ConventionContext_1$views<TMetadata extends unknown> {
     As_IConventionContext(): Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal.IConventionContext$instance;
     As_IConventionContext_1(): Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal.IConventionContext_1$instance<TMetadata>;
     As_IReadableConventionContext(): IReadableConventionContext$instance;
 }
 
-export type ConventionContext_1<TMetadata> = ConventionContext_1$instance<TMetadata> & __ConventionContext_1$views<TMetadata>;
+export type ConventionContext_1<TMetadata extends unknown> = ConventionContext_1$instance<TMetadata> & __ConventionContext_1$views<TMetadata>;
 
 
 export interface ConventionDispatcher$instance {
@@ -125,7 +125,7 @@ export interface ConventionDispatcher$instance {
     OnTriggerAdded(triggerBuilder: IConventionTriggerBuilder): IConventionTriggerBuilder | null;
     OnTriggerRemoved(entityTypeBuilder: IConventionEntityTypeBuilder, trigger: IConventionTrigger): IConventionTrigger | null;
     OnTypeIgnored(modelBuilder: IConventionModelBuilder, name: string, type: Type | null): string | null;
-    Track<T>(func: Func_1<T>, foreignKey: IConventionForeignKey | null): T;
+    Track<T extends unknown>(func: Func_1<T>, foreignKey: IConventionForeignKey | null): T;
 }
 
 

@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Query/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { InternalEntityEntry, ISnapshot, IStateManager } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 import type { ValueComparer } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
@@ -45,7 +49,7 @@ export type IAsyncQueryProvider = Internal.IAsyncQueryProvider;
 export type ICompiledQueryCacheKeyGenerator = Internal.ICompiledQueryCacheKeyGenerator;
 export type IEvaluatableExpressionFilter = Internal.IEvaluatableExpressionFilter;
 export type IEvaluatableExpressionFilterPlugin = Internal.IEvaluatableExpressionFilterPlugin;
-export type IIncludableQueryable<TEntity, TProperty> = Internal.IIncludableQueryable_2<TEntity, TProperty>;
+export type IIncludableQueryable<TEntity extends unknown, TProperty extends unknown> = Internal.IIncludableQueryable_2<TEntity, TProperty>;
 export type ILiftableConstantFactory = Internal.ILiftableConstantFactory;
 export type ILiftableConstantProcessor = Internal.ILiftableConstantProcessor;
 export type INavigationExpansionExtensibilityHelper = Internal.INavigationExpansionExtensibilityHelper;
@@ -181,8 +185,8 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type UpdateSettersBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.UpdateSettersBuilder :
-  Internal.UpdateSettersBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.UpdateSettersBuilder_1<T1> : never;
 

@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.ValueGeneration/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { EntityEntry } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 import type { IProperty, ITypeBase } from './Microsoft.EntityFrameworkCore.Metadata/internal/index.js';
@@ -40,8 +44,8 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type ValueGenerator<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ValueGenerator :
-  Internal.ValueGenerator_1<T1>;
+  [T1] extends [unknown] ? Internal.ValueGenerator_1<T1> : never;
 

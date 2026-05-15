@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { CascadeTiming, ChangeTracker, DetectChangesEventArgs, DetectedChangesEventArgs, DetectedEntityChangesEventArgs, DetectEntityChangesEventArgs, EntityEntry, EntityEntryGraphNode_1, EntityStateChangedEventArgs, EntityStateChangingEventArgs, EntityTrackedEventArgs, EntityTrackingEventArgs, IDependentKeyValueFactory, IDependentKeyValueFactory_1, IEntityEntryGraphIterator, IPrincipalKeyValueFactory, IPrincipalKeyValueFactory_1, PropertyValues, ValueComparer, ValueComparer_1 } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 import type { IDiagnosticsLogger_1, IInterceptors, ILoggingOptions } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
@@ -111,80 +115,80 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type IIdentityMap<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IIdentityMap :
-  Internal.IIdentityMap_1<T1>;
+  [T1] extends [unknown] ? Internal.IIdentityMap_1<T1> : never;
 
 export type Snapshot<
-  T1 = __,
-  T2 = __,
-  T3 = __,
-  T4 = __,
-  T5 = __,
-  T6 = __,
-  T7 = __,
-  T8 = __,
-  T9 = __,
-  T10 = __,
-  T11 = __,
-  T12 = __,
-  T13 = __,
-  T14 = __,
-  T15 = __,
-  T16 = __,
-  T17 = __,
-  T18 = __,
-  T19 = __,
-  T20 = __,
-  T21 = __,
-  T22 = __,
-  T23 = __,
-  T24 = __,
-  T25 = __,
-  T26 = __,
-  T27 = __,
-  T28 = __,
-  T29 = __,
-  T30 = __,
+  T1 extends unknown | __ = __,
+  T2 extends unknown | __ = __,
+  T3 extends unknown | __ = __,
+  T4 extends unknown | __ = __,
+  T5 extends unknown | __ = __,
+  T6 extends unknown | __ = __,
+  T7 extends unknown | __ = __,
+  T8 extends unknown | __ = __,
+  T9 extends unknown | __ = __,
+  T10 extends unknown | __ = __,
+  T11 extends unknown | __ = __,
+  T12 extends unknown | __ = __,
+  T13 extends unknown | __ = __,
+  T14 extends unknown | __ = __,
+  T15 extends unknown | __ = __,
+  T16 extends unknown | __ = __,
+  T17 extends unknown | __ = __,
+  T18 extends unknown | __ = __,
+  T19 extends unknown | __ = __,
+  T20 extends unknown | __ = __,
+  T21 extends unknown | __ = __,
+  T22 extends unknown | __ = __,
+  T23 extends unknown | __ = __,
+  T24 extends unknown | __ = __,
+  T25 extends unknown | __ = __,
+  T26 extends unknown | __ = __,
+  T27 extends unknown | __ = __,
+  T28 extends unknown | __ = __,
+  T29 extends unknown | __ = __,
+  T30 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.Snapshot :
-  [T2] extends [__] ? Internal.Snapshot_1<T1> :
-  [T3] extends [__] ? Internal.Snapshot_2<T1, T2> :
-  [T4] extends [__] ? Internal.Snapshot_3<T1, T2, T3> :
-  [T5] extends [__] ? Internal.Snapshot_4<T1, T2, T3, T4> :
-  [T6] extends [__] ? Internal.Snapshot_5<T1, T2, T3, T4, T5> :
-  [T7] extends [__] ? Internal.Snapshot_6<T1, T2, T3, T4, T5, T6> :
-  [T8] extends [__] ? Internal.Snapshot_7<T1, T2, T3, T4, T5, T6, T7> :
-  [T9] extends [__] ? Internal.Snapshot_8<T1, T2, T3, T4, T5, T6, T7, T8> :
-  [T10] extends [__] ? Internal.Snapshot_9<T1, T2, T3, T4, T5, T6, T7, T8, T9> :
-  [T11] extends [__] ? Internal.Snapshot_10<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> :
-  [T12] extends [__] ? Internal.Snapshot_11<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> :
-  [T13] extends [__] ? Internal.Snapshot_12<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> :
-  [T14] extends [__] ? Internal.Snapshot_13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> :
-  [T15] extends [__] ? Internal.Snapshot_14<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> :
-  [T16] extends [__] ? Internal.Snapshot_15<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> :
-  [T17] extends [__] ? Internal.Snapshot_16<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> :
-  [T18] extends [__] ? Internal.Snapshot_17<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> :
-  [T19] extends [__] ? Internal.Snapshot_18<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> :
-  [T20] extends [__] ? Internal.Snapshot_19<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> :
-  [T21] extends [__] ? Internal.Snapshot_20<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> :
-  [T22] extends [__] ? Internal.Snapshot_21<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> :
-  [T23] extends [__] ? Internal.Snapshot_22<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> :
-  [T24] extends [__] ? Internal.Snapshot_23<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> :
-  [T25] extends [__] ? Internal.Snapshot_24<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> :
-  [T26] extends [__] ? Internal.Snapshot_25<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> :
-  [T27] extends [__] ? Internal.Snapshot_26<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> :
-  [T28] extends [__] ? Internal.Snapshot_27<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> :
-  [T29] extends [__] ? Internal.Snapshot_28<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> :
-  [T30] extends [__] ? Internal.Snapshot_29<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> :
-  Internal.Snapshot_30<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>;
+  [T2] extends [__] ? [T1] extends [unknown] ? Internal.Snapshot_1<T1> : never :
+  [T3] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? Internal.Snapshot_2<T1, T2> : never : never :
+  [T4] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? Internal.Snapshot_3<T1, T2, T3> : never : never : never :
+  [T5] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? Internal.Snapshot_4<T1, T2, T3, T4> : never : never : never : never :
+  [T6] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? Internal.Snapshot_5<T1, T2, T3, T4, T5> : never : never : never : never : never :
+  [T7] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? Internal.Snapshot_6<T1, T2, T3, T4, T5, T6> : never : never : never : never : never : never :
+  [T8] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? Internal.Snapshot_7<T1, T2, T3, T4, T5, T6, T7> : never : never : never : never : never : never : never :
+  [T9] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? Internal.Snapshot_8<T1, T2, T3, T4, T5, T6, T7, T8> : never : never : never : never : never : never : never : never :
+  [T10] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? Internal.Snapshot_9<T1, T2, T3, T4, T5, T6, T7, T8, T9> : never : never : never : never : never : never : never : never : never :
+  [T11] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? Internal.Snapshot_10<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : never : never : never : never : never : never : never : never : never : never :
+  [T12] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? Internal.Snapshot_11<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : never : never : never : never : never : never : never : never : never : never : never :
+  [T13] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? Internal.Snapshot_12<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T14] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? Internal.Snapshot_13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T15] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? Internal.Snapshot_14<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T16] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? Internal.Snapshot_15<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T17] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? Internal.Snapshot_16<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T18] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? Internal.Snapshot_17<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T19] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? Internal.Snapshot_18<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T20] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? Internal.Snapshot_19<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T21] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? Internal.Snapshot_20<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T22] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? Internal.Snapshot_21<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T23] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? [T22] extends [unknown] ? Internal.Snapshot_22<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T24] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? [T22] extends [unknown] ? [T23] extends [unknown] ? Internal.Snapshot_23<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T25] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? [T22] extends [unknown] ? [T23] extends [unknown] ? [T24] extends [unknown] ? Internal.Snapshot_24<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T26] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? [T22] extends [unknown] ? [T23] extends [unknown] ? [T24] extends [unknown] ? [T25] extends [unknown] ? Internal.Snapshot_25<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T27] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? [T22] extends [unknown] ? [T23] extends [unknown] ? [T24] extends [unknown] ? [T25] extends [unknown] ? [T26] extends [unknown] ? Internal.Snapshot_26<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T28] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? [T22] extends [unknown] ? [T23] extends [unknown] ? [T24] extends [unknown] ? [T25] extends [unknown] ? [T26] extends [unknown] ? [T27] extends [unknown] ? Internal.Snapshot_27<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T29] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? [T22] extends [unknown] ? [T23] extends [unknown] ? [T24] extends [unknown] ? [T25] extends [unknown] ? [T26] extends [unknown] ? [T27] extends [unknown] ? [T28] extends [unknown] ? Internal.Snapshot_28<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T30] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? [T22] extends [unknown] ? [T23] extends [unknown] ? [T24] extends [unknown] ? [T25] extends [unknown] ? [T26] extends [unknown] ? [T27] extends [unknown] ? [T28] extends [unknown] ? [T29] extends [unknown] ? Internal.Snapshot_29<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never :
+  [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? [T7] extends [unknown] ? [T8] extends [unknown] ? [T9] extends [unknown] ? [T10] extends [unknown] ? [T11] extends [unknown] ? [T12] extends [unknown] ? [T13] extends [unknown] ? [T14] extends [unknown] ? [T15] extends [unknown] ? [T16] extends [unknown] ? [T17] extends [unknown] ? [T18] extends [unknown] ? [T19] extends [unknown] ? [T20] extends [unknown] ? [T21] extends [unknown] ? [T22] extends [unknown] ? [T23] extends [unknown] ? [T24] extends [unknown] ? [T25] extends [unknown] ? [T26] extends [unknown] ? [T27] extends [unknown] ? [T28] extends [unknown] ? [T29] extends [unknown] ? [T30] extends [unknown] ? Internal.Snapshot_30<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never : never;
 
 export type SnapshotFactoryFactory<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.SnapshotFactoryFactory :
-  Internal.SnapshotFactoryFactory_1<T1>;
+  [T1] extends [unknown] ? Internal.SnapshotFactoryFactory_1<T1> : never;
 
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking_Internal as ExtensionMethods } from './__internal/extensions/index.js';

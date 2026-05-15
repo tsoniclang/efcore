@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -52,7 +52,7 @@ export interface QualifiedName$instance {
     Name: string;
     Namespace: string;
     Deconstruct(Name: string, Namespace: string): void;
-    Equals(obj: JsValue): boolean;
+    Equals(obj: unknown): boolean;
     Equals(other: QualifiedName): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -119,7 +119,7 @@ export interface CSharpRuntimeAnnotationCodeGeneratorDependencies$instance {
 
     CSharpHelper: ICSharpHelper;
     _Clone_$(): CSharpRuntimeAnnotationCodeGeneratorDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: CSharpRuntimeAnnotationCodeGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -138,7 +138,7 @@ export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    Annotations: IDictionary_2<System_Internal.String, JsValue | null>;
+    Annotations: IDictionary_2<System_Internal.String, unknown | null>;
     ClassName: string;
     ConfigurationClassNames: IReadOnlyDictionary_2<ITypeBase, System_Internal.String>;
     ForNativeAot: boolean;
@@ -147,12 +147,12 @@ export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
     MethodBuilder: IndentedStringBuilder;
     Namespace: string;
     Namespaces: ISet_1<System_Internal.String>;
-    ScopeObjects: IDictionary_2<System_Internal.String, JsValue>;
-    ScopeVariables: IDictionary_2<JsValue, System_Internal.String>;
+    ScopeObjects: IDictionary_2<System_Internal.String, unknown>;
+    ScopeVariables: IDictionary_2<unknown, System_Internal.String>;
     TargetName: string;
     UseNullableReferenceTypes: boolean;
     _Clone_$(): CSharpRuntimeAnnotationCodeGeneratorParameters;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: CSharpRuntimeAnnotationCodeGeneratorParameters | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -160,7 +160,7 @@ export interface CSharpRuntimeAnnotationCodeGeneratorParameters$instance {
 
 
 export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
-    new(targetName: string, className: string, namespace: string, mainBuilder: IndentedStringBuilder, methodBuilder: IndentedStringBuilder, namespaces: ISet_1<System_Internal.String>, scopeObjects: IDictionary_2<System_Internal.String, JsValue>, scopeVariables: IDictionary_2<JsValue, System_Internal.String>, configurationClassNames: Dictionary_2<ITypeBase, System_Internal.String>, nullable: boolean, nativeAot: boolean): CSharpRuntimeAnnotationCodeGeneratorParameters;
+    new(targetName: string, className: string, namespace: string, mainBuilder: IndentedStringBuilder, methodBuilder: IndentedStringBuilder, namespaces: ISet_1<System_Internal.String>, scopeObjects: IDictionary_2<System_Internal.String, unknown>, scopeVariables: IDictionary_2<unknown, System_Internal.String>, configurationClassNames: Dictionary_2<ITypeBase, System_Internal.String>, nullable: boolean, nativeAot: boolean): CSharpRuntimeAnnotationCodeGeneratorParameters;
 };
 
 
@@ -243,7 +243,7 @@ export interface RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies$inst
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;

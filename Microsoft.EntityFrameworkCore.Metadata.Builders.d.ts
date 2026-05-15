@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Metadata.Builders/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { ValueComparer } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 import type { IInfrastructure_1 } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
@@ -42,7 +46,7 @@ export type IConventionKeyBuilder = Internal.IConventionKeyBuilder;
 export type IConventionModelBuilder = Internal.IConventionModelBuilder;
 export type IConventionNavigationBuilder = Internal.IConventionNavigationBuilder;
 export type IConventionOwnedEntityTypeBuilder = Internal.IConventionOwnedEntityTypeBuilder;
-export type IConventionPropertyBaseBuilder<TBuilder extends Internal.IConventionPropertyBaseBuilder_1<TBuilder>> = Internal.IConventionPropertyBaseBuilder_1<TBuilder>;
+export type IConventionPropertyBaseBuilder<TBuilder extends unknown & Internal.IConventionPropertyBaseBuilder_1<TBuilder>> = Internal.IConventionPropertyBaseBuilder_1<TBuilder>;
 export type IConventionPropertyBuilder = Internal.IConventionPropertyBuilder;
 export type IConventionServicePropertyBuilder = Internal.IConventionServicePropertyBuilder;
 export type IConventionSkipNavigationBuilder = Internal.IConventionSkipNavigationBuilder;
@@ -125,152 +129,152 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type ColumnBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ColumnBuilder :
-  Internal.ColumnBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.ColumnBuilder_1<T1> : never;
 
 export type ComplexCollectionBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ComplexCollectionBuilder :
-  Internal.ComplexCollectionBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.ComplexCollectionBuilder_1<T1> : never;
 
 export type ComplexCollectionTypePropertyBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ComplexCollectionTypePropertyBuilder :
-  Internal.ComplexCollectionTypePropertyBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.ComplexCollectionTypePropertyBuilder_1<T1> : never;
 
 export type ComplexPropertiesConfigurationBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ComplexPropertiesConfigurationBuilder :
-  Internal.ComplexPropertiesConfigurationBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.ComplexPropertiesConfigurationBuilder_1<T1> : never;
 
 export type ComplexPropertyBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ComplexPropertyBuilder :
-  Internal.ComplexPropertyBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.ComplexPropertyBuilder_1<T1> : never;
 
 export type ComplexTypeDiscriminatorBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ComplexTypeDiscriminatorBuilder :
-  Internal.ComplexTypeDiscriminatorBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.ComplexTypeDiscriminatorBuilder_1<T1> : never;
 
 export type ComplexTypePrimitiveCollectionBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ComplexTypePrimitiveCollectionBuilder :
-  Internal.ComplexTypePrimitiveCollectionBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.ComplexTypePrimitiveCollectionBuilder_1<T1> : never;
 
 export type ComplexTypePropertyBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ComplexTypePropertyBuilder :
-  Internal.ComplexTypePropertyBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.ComplexTypePropertyBuilder_1<T1> : never;
 
 export type DataBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.DataBuilder :
-  Internal.DataBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.DataBuilder_1<T1> : never;
 
 export type DiscriminatorBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.DiscriminatorBuilder :
-  Internal.DiscriminatorBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.DiscriminatorBuilder_1<T1> : never;
 
 export type EntityTypeBuilder<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.EntityTypeBuilder :
-  Internal.EntityTypeBuilder_1<T1>;
+  [T1] extends [(object | null)] ? Internal.EntityTypeBuilder_1<T1> : never;
 
 export type IndexBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IndexBuilder :
-  Internal.IndexBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.IndexBuilder_1<T1> : never;
 
 export type KeyBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.KeyBuilder :
-  Internal.KeyBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.KeyBuilder_1<T1> : never;
 
 export type OwnedEntityTypeBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.OwnedEntityTypeBuilder :
-  Internal.OwnedEntityTypeBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.OwnedEntityTypeBuilder_1<T1> : never;
 
 export type PrimitiveCollectionBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.PrimitiveCollectionBuilder :
-  Internal.PrimitiveCollectionBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.PrimitiveCollectionBuilder_1<T1> : never;
 
 export type PropertiesConfigurationBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.PropertiesConfigurationBuilder :
-  Internal.PropertiesConfigurationBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.PropertiesConfigurationBuilder_1<T1> : never;
 
 export type PropertyBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.PropertyBuilder :
-  Internal.PropertyBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.PropertyBuilder_1<T1> : never;
 
 export type SplitTableBuilder<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.SplitTableBuilder :
-  Internal.SplitTableBuilder_1<T1>;
+  [T1] extends [(object | null)] ? Internal.SplitTableBuilder_1<T1> : never;
 
 export type SplitViewBuilder<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.SplitViewBuilder :
-  Internal.SplitViewBuilder_1<T1>;
+  [T1] extends [(object | null)] ? Internal.SplitViewBuilder_1<T1> : never;
 
 export type StoredProcedureBuilder<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.StoredProcedureBuilder :
-  Internal.StoredProcedureBuilder_1<T1>;
+  [T1] extends [(object | null)] ? Internal.StoredProcedureBuilder_1<T1> : never;
 
 export type TableBuilder<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.TableBuilder :
-  Internal.TableBuilder_1<T1>;
+  [T1] extends [(object | null)] ? Internal.TableBuilder_1<T1> : never;
 
 export type TableValuedFunctionBuilder<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.TableValuedFunctionBuilder :
-  Internal.TableValuedFunctionBuilder_1<T1>;
+  [T1] extends [(object | null)] ? Internal.TableValuedFunctionBuilder_1<T1> : never;
 
 export type TypeMappingConfigurationBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.TypeMappingConfigurationBuilder :
-  Internal.TypeMappingConfigurationBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.TypeMappingConfigurationBuilder_1<T1> : never;
 
 export type ViewBuilder<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.ViewBuilder :
-  Internal.ViewBuilder_1<T1>;
+  [T1] extends [(object | null)] ? Internal.ViewBuilder_1<T1> : never;
 
 export type ViewColumnBuilder<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ViewColumnBuilder :
-  Internal.ViewColumnBuilder_1<T1>;
+  [T1] extends [unknown] ? Internal.ViewColumnBuilder_1<T1> : never;
 

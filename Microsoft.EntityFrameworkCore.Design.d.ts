@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Design/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { QualifiedName } from './Microsoft.EntityFrameworkCore.Design.Internal/internal/index.js';
 import type { EntityFrameworkServicesBuilder, IAnnotatable, IAnnotation, ServiceCharacteristics, ServiceCollectionMap } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
@@ -24,7 +28,7 @@ export { DesignTimeProviderServicesAttribute as DesignTimeProviderServicesAttrib
 export { DesignTimeServicesReferenceAttribute as DesignTimeServicesReferenceAttribute } from './Microsoft.EntityFrameworkCore.Design/internal/index.js';
 export { EntityFrameworkDesignServicesBuilder as EntityFrameworkDesignServicesBuilder } from './Microsoft.EntityFrameworkCore.Design/internal/index.js';
 export type ICSharpHelper = Internal.ICSharpHelper;
-export type IDesignTimeDbContextFactory<TContext extends Internal.DbContext> = Internal.IDesignTimeDbContextFactory_1<TContext>;
+export type IDesignTimeDbContextFactory<TContext extends unknown & Internal.DbContext> = Internal.IDesignTimeDbContextFactory_1<TContext>;
 export type IDesignTimeServices = Internal.IDesignTimeServices;
 export type IMethodCallCodeFragment = Internal.IMethodCallCodeFragment;
 export { MethodCallCodeFragment as MethodCallCodeFragment } from './Microsoft.EntityFrameworkCore.Design/internal/index.js';

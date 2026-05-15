@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { IChangeDetector, IInternalEntry, InternalComplexEntry, InternalEntityEntry, InternalEntryBase, IStateManager } from './Microsoft.EntityFrameworkCore.ChangeTracking.Internal/internal/index.js';
 import type { DebugView, IInfrastructure_1, IResettableService } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
@@ -75,34 +79,34 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type EntityEntry<
-  T1 = __,
+  T1 extends (object | null) | __ = __,
 > =
   [T1] extends [__] ? Internal.EntityEntry :
-  Internal.EntityEntry_1<T1>;
+  [T1] extends [(object | null)] ? Internal.EntityEntry_1<T1> : never;
 
 export type EntityEntryGraphNode<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.EntityEntryGraphNode :
-  Internal.EntityEntryGraphNode_1<T1>;
+  [T1] extends [unknown] ? Internal.EntityEntryGraphNode_1<T1> : never;
 
 export type IDependentKeyValueFactory<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IDependentKeyValueFactory :
-  Internal.IDependentKeyValueFactory_1<T1>;
+  [T1] extends [unknown] ? Internal.IDependentKeyValueFactory_1<T1> : never;
 
 export type IPrincipalKeyValueFactory<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IPrincipalKeyValueFactory :
-  Internal.IPrincipalKeyValueFactory_1<T1>;
+  [T1] extends [unknown] ? Internal.IPrincipalKeyValueFactory_1<T1> : never;
 
 export type ValueComparer<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ValueComparer :
-  Internal.ValueComparer_1<T1>;
+  [T1] extends [unknown] ? Internal.ValueComparer_1<T1> : never;
 
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking as ExtensionMethods } from './__internal/extensions/index.js';

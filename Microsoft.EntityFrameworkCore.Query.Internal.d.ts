@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { IDiagnosticsLogger_1, ISingletonInterceptor } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
 import type { IAnnotation, ICurrentDbContext } from './Microsoft.EntityFrameworkCore.Infrastructure/internal/index.js';
@@ -118,20 +122,20 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type FromSqlQueryingEnumerable<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.FromSqlQueryingEnumerable :
-  Internal.FromSqlQueryingEnumerable_1<T1>;
+  [T1] extends [unknown] ? Internal.FromSqlQueryingEnumerable_1<T1> : never;
 
 export type SingleQueryingEnumerable<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.SingleQueryingEnumerable :
-  Internal.SingleQueryingEnumerable_1<T1>;
+  [T1] extends [unknown] ? Internal.SingleQueryingEnumerable_1<T1> : never;
 
 export type SplitQueryingEnumerable<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.SplitQueryingEnumerable :
-  Internal.SplitQueryingEnumerable_1<T1>;
+  [T1] extends [unknown] ? Internal.SplitQueryingEnumerable_1<T1> : never;
 

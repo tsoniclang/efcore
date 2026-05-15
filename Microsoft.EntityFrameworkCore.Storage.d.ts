@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Storage/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { ValueComparer } from './Microsoft.EntityFrameworkCore.ChangeTracking/internal/index.js';
 import type { CommandSource, DbCommandMethod, IDiagnosticsLogger_1, ILoggingOptions, IRelationalCommandDiagnosticsLogger, IRelationalConnectionDiagnosticsLogger } from './Microsoft.EntityFrameworkCore.Diagnostics/internal/index.js';
@@ -142,10 +146,10 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type ReaderColumn<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ReaderColumn :
-  Internal.ReaderColumn_1<T1>;
+  [T1] extends [unknown] ? Internal.ReaderColumn_1<T1> : never;
 
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore_Storage as ExtensionMethods } from './__internal/extensions/index.js';

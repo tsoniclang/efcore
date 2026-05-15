@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -64,10 +64,10 @@ export interface IColumnModification$instance {
     readonly OriginalParameterName: string | null;
     readonly ColumnName: string;
     readonly ColumnType: string | null;
-    get OriginalValue(): JsValue | null;
-    set OriginalValue(value: JsValue | null);
-    get Value(): JsValue | null;
-    set Value(value: JsValue | null);
+    get OriginalValue(): unknown | null;
+    set OriginalValue(value: unknown | null);
+    get Value(): unknown | null;
+    set Value(value: unknown | null);
     readonly JsonPath: string | null;
     AddSharedColumnModification(modification: IColumnModification): void;
     ResetParameterNames(): void;
@@ -175,12 +175,12 @@ export interface IUpdateAdapter$instance {
     readonly Entries: IEnumerable_1<IUpdateEntry>;
     readonly Model: IModel;
     CascadeDelete(entry: IUpdateEntry, foreignKeys?: IEnumerable_1<IForeignKey> | null): void;
-    CreateEntry(values: IDictionary_2<System_Internal.String, JsValue | null>, entityType: IEntityType): IUpdateEntry;
+    CreateEntry(values: IDictionary_2<System_Internal.String, unknown | null>, entityType: IEntityType): IUpdateEntry;
     DetectChanges(): void;
     FindPrincipal(dependentEntry: IUpdateEntry, foreignKey: IForeignKey): IUpdateEntry | null;
     GetDependents(principalEntry: IUpdateEntry, foreignKey: IForeignKey): IEnumerable_1<IUpdateEntry>;
     GetEntriesToSave(): IList_1<IUpdateEntry>;
-    TryGetEntry(key: IKey, keyValues: (JsValue | null)[]): IUpdateEntry | null;
+    TryGetEntry(key: IKey, keyValues: (unknown | null)[]): IUpdateEntry | null;
 }
 
 
@@ -204,14 +204,14 @@ export interface IUpdateEntry$instance {
     EntityState: EntityState;
     readonly SharedIdentityEntry: IUpdateEntry | null;
     CanHaveOriginalValue(propertyBase: IPropertyBase): boolean;
-    GetCurrentValue(propertyBase: IPropertyBase): JsValue | null;
-    GetCurrentValue<TProperty>(propertyBase: IPropertyBase): TProperty;
-    GetOriginalValue<TProperty>(property: IProperty): TProperty;
+    GetCurrentValue(propertyBase: IPropertyBase): unknown | null;
+    GetCurrentValue<TProperty extends unknown>(propertyBase: IPropertyBase): TProperty;
+    GetOriginalValue<TProperty extends unknown>(property: IProperty): TProperty;
     IsModified(property: IComplexProperty): boolean;
     IsModified(property: IProperty): boolean;
-    SetOriginalValue(property: IProperty, value: JsValue | null): void;
+    SetOriginalValue(property: IProperty, value: unknown | null): void;
     SetPropertyModified(property: IProperty): void;
-    SetStoreGeneratedValue(property: IProperty, value: JsValue | null, setModified?: boolean): void;
+    SetStoreGeneratedValue(property: IProperty, value: unknown | null, setModified?: boolean): void;
     ToEntityEntry(): EntityEntry;
 }
 
@@ -253,16 +253,16 @@ export interface ColumnModificationParameters$instance {
     IsWrite: boolean;
     get JsonPath(): string | null;
     set JsonPath(value: string | null);
-    get OriginalValue(): JsValue | null;
-    set OriginalValue(value: JsValue | null);
+    get OriginalValue(): unknown | null;
+    set OriginalValue(value: unknown | null);
     get Property(): IProperty | null;
     set Property(value: IProperty | null);
     SensitiveLoggingEnabled: boolean;
     get TypeMapping(): RelationalTypeMapping | null;
     set TypeMapping(value: RelationalTypeMapping | null);
-    get Value(): JsValue | null;
-    set Value(value: JsValue | null);
-    Equals(obj: JsValue): boolean;
+    get Value(): unknown | null;
+    set Value(value: unknown | null);
+    Equals(obj: unknown): boolean;
     Equals(other: ColumnModificationParameters): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -270,10 +270,10 @@ export interface ColumnModificationParameters$instance {
 
 
 export const ColumnModificationParameters: {
-    new(columnName: string, originalValue: JsValue | null, value: JsValue | null, property: IProperty | null, columnType: string | null, typeMapping: RelationalTypeMapping | null, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
-    new(column: IColumn, originalValue: JsValue | null, value: JsValue | null, property: IProperty | null, typeMapping: RelationalTypeMapping | null, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
+    new(columnName: string, originalValue: unknown | null, value: unknown | null, property: IProperty | null, columnType: string | null, typeMapping: RelationalTypeMapping | null, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
+    new(column: IColumn, originalValue: unknown | null, value: unknown | null, property: IProperty | null, typeMapping: RelationalTypeMapping | null, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
     new(entry: IUpdateEntry | null, property: IProperty | null, column: IColumnBase, generateParameterName: Func_1<System_Internal.String>, typeMapping: RelationalTypeMapping, valueIsRead: boolean, valueIsWrite: boolean, columnIsKey: boolean, columnIsCondition: boolean, sensitiveLoggingEnabled: boolean): ColumnModificationParameters;
-    new(columnName: string, value: JsValue | null, property: IProperty | null, columnType: string | null, typeMapping: RelationalTypeMapping | null, jsonPath: string, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
+    new(columnName: string, value: unknown | null, property: IProperty | null, columnType: string | null, typeMapping: RelationalTypeMapping | null, jsonPath: string, read: boolean, write: boolean, key: boolean, condition: boolean, sensitiveLoggingEnabled: boolean, isNullable: Nullable_1<System_Internal.Boolean>): ColumnModificationParameters;
 };
 
 
@@ -298,7 +298,7 @@ export interface ModificationCommandParameters$instance {
     get Table(): ITable | null;
     set Table(value: ITable | null);
     TableName: string;
-    Equals(obj: JsValue): boolean;
+    Equals(obj: unknown): boolean;
     Equals(other: ModificationCommandParameters): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -324,7 +324,7 @@ export interface NonTrackedModificationCommandParameters$instance {
     get Table(): ITable | null;
     set Table(value: ITable | null);
     TableName: string;
-    Equals(obj: JsValue): boolean;
+    Equals(obj: unknown): boolean;
     Equals(other: NonTrackedModificationCommandParameters): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -375,8 +375,8 @@ export interface ColumnModification$instance extends IColumnModification$instanc
     IsWrite: boolean;
     readonly JsonPath: string | null;
     readonly OriginalParameterName: string | null;
-    get OriginalValue(): JsValue | null;
-    set OriginalValue(value: JsValue | null);
+    get OriginalValue(): unknown | null;
+    set OriginalValue(value: unknown | null);
     readonly ParameterName: string | null;
     readonly Property: IProperty | null;
     readonly TypeMapping: RelationalTypeMapping | null;
@@ -385,8 +385,8 @@ export interface ColumnModification$instance extends IColumnModification$instanc
     readonly UseOriginalValue: boolean;
     readonly UseOriginalValueParameter: boolean;
     readonly UseParameter: boolean;
-    get Value(): JsValue | null;
-    set Value(value: JsValue | null);
+    get Value(): unknown | null;
+    set Value(value: unknown | null);
     AddSharedColumnModification(modification: IColumnModification): void;
     ResetParameterNames(): void;
 }
@@ -394,13 +394,13 @@ export interface ColumnModification$instance extends IColumnModification$instanc
 
 export const ColumnModification: {
     new(columnModificationParameters: ColumnModificationParameters): ColumnModification;
-    GetCurrentProviderValue(entry: IUpdateEntry, property: IProperty): JsValue | null;
-    GetCurrentValue(entry: IUpdateEntry, property: IProperty): JsValue | null;
-    GetOriginalProviderValue(entry: IUpdateEntry, property: IProperty): JsValue | null;
-    GetOriginalValue(entry: IUpdateEntry, property: IProperty): JsValue | null;
+    GetCurrentProviderValue(entry: IUpdateEntry, property: IProperty): unknown | null;
+    GetCurrentValue(entry: IUpdateEntry, property: IProperty): unknown | null;
+    GetOriginalProviderValue(entry: IUpdateEntry, property: IProperty): unknown | null;
+    GetOriginalValue(entry: IUpdateEntry, property: IProperty): unknown | null;
     IsModified(entry: IUpdateEntry, property: IProperty): boolean;
     IsStoreGenerated(entry: IUpdateEntry, property: IProperty): boolean;
-    SetStoreGeneratedValue(entry: IUpdateEntry, property: IProperty, value: JsValue | null): void;
+    SetStoreGeneratedValue(entry: IUpdateEntry, property: IProperty, value: unknown | null): void;
 };
 
 
@@ -411,20 +411,20 @@ export interface __ColumnModification$views {
 export type ColumnModification = ColumnModification$instance & __ColumnModification$views;
 
 
-export interface EquatableKeyValue_1$instance<TKey> {
+export interface EquatableKeyValue_1$instance<TKey extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_EquatableKeyValue_1: never;
 
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
 }
 
 
 export const EquatableKeyValue_1: {
-    new<TKey>(metadata: IAnnotatable, keyValue: TKey | null, keyComparer: IEqualityComparer_1<TKey>): EquatableKeyValue_1<TKey>;
+    new<TKey extends unknown>(metadata: IAnnotatable, keyValue: TKey | null, keyComparer: IEqualityComparer_1<TKey>): EquatableKeyValue_1<TKey>;
 };
 
 
-export type EquatableKeyValue_1<TKey> = EquatableKeyValue_1$instance<TKey>;
+export type EquatableKeyValue_1<TKey extends unknown> = EquatableKeyValue_1$instance<TKey>;
 
 export interface ModificationCommand$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_ModificationCommand: never;
@@ -499,7 +499,7 @@ export interface ModificationCommandBatchFactoryDependencies$instance {
     readonly UpdateLogger: IDiagnosticsLogger_1<DbLoggerCategory_Update>;
     UpdateSqlGenerator: IUpdateSqlGenerator;
     _Clone_$(): ModificationCommandBatchFactoryDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: ModificationCommandBatchFactoryDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -521,7 +521,7 @@ export interface ReaderModificationCommandBatch$instance extends ModificationCom
     readonly IsCommandTextEmpty: boolean;
     readonly MaxBatchSize: int;
     readonly ModificationCommands: IReadOnlyList_1<IReadOnlyModificationCommand>;
-    readonly ParameterValues: Dictionary_2<System_Internal.String, JsValue | null>;
+    readonly ParameterValues: Dictionary_2<System_Internal.String, unknown | null>;
     readonly RelationalCommandBuilder: IRelationalCommandBuilder;
     readonly RequiresTransaction: boolean;
     readonly ResultSetMappings: IList_1<ResultSetMapping>;
@@ -563,7 +563,7 @@ export const SingularModificationCommandBatch: {
 
 export type SingularModificationCommandBatch = SingularModificationCommandBatch$instance;
 
-export interface UpdateAndSelectSqlGenerator$instance extends UpdateSqlGenerator$instance {
+export interface UpdateAndSelectSqlGenerator$instance extends UpdateSqlGenerator$instance, IUpdateSqlGenerator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Update_UpdateAndSelectSqlGenerator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Update_IUpdateSqlGenerator: never;
@@ -657,7 +657,7 @@ export interface UpdateSqlGeneratorDependencies$instance {
     SqlGenerationHelper: ISqlGenerationHelper;
     TypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): UpdateSqlGeneratorDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: UpdateSqlGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -674,8 +674,8 @@ export type UpdateSqlGeneratorDependencies = UpdateSqlGeneratorDependencies$inst
 export abstract class UpdateEntryExtensions$instance {
     static BuildCurrentValuesString(entry: IUpdateEntry, properties: IEnumerable_1<IPropertyBase>): string;
     static BuildOriginalValuesString(entry: IUpdateEntry, properties: IEnumerable_1<IPropertyBase>): string;
-    static GetCurrentProviderValue(updateEntry: IUpdateEntry, property: IProperty): JsValue | null;
-    static GetOriginalProviderValue(updateEntry: IUpdateEntry, property: IProperty): JsValue | null;
+    static GetCurrentProviderValue(updateEntry: IUpdateEntry, property: IProperty): unknown | null;
+    static GetOriginalProviderValue(updateEntry: IUpdateEntry, property: IProperty): unknown | null;
     static ToDebugString(updateEntry: IUpdateEntry, options?: ChangeTrackerDebugStringOptions, indent?: int): string;
 }
 

@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -108,7 +108,7 @@ export interface __CurrentDbContext$views {
 export type CurrentDbContext = CurrentDbContext$instance & __CurrentDbContext$views;
 
 
-export interface DbContextOptionsConfiguration_1$instance<TContext extends DbContext> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsConfiguration_1$instance<TContext> {
+export interface DbContextOptionsConfiguration_1$instance<TContext extends unknown & DbContext> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsConfiguration_1$instance<TContext> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Internal_DbContextOptionsConfiguration_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsConfiguration_1: never;
@@ -118,15 +118,15 @@ export interface DbContextOptionsConfiguration_1$instance<TContext extends DbCon
 
 
 export const DbContextOptionsConfiguration_1: {
-    new<TContext extends DbContext>(configure: Action_2<IServiceProvider, DbContextOptionsBuilder>): DbContextOptionsConfiguration_1<TContext>;
+    new<TContext extends unknown & DbContext>(configure: Action_2<IServiceProvider, DbContextOptionsBuilder>): DbContextOptionsConfiguration_1<TContext>;
 };
 
 
-export interface __DbContextOptionsConfiguration_1$views<TContext extends DbContext> {
+export interface __DbContextOptionsConfiguration_1$views<TContext extends unknown & DbContext> {
     As_IDbContextOptionsConfiguration_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsConfiguration_1$instance<TContext>;
 }
 
-export type DbContextOptionsConfiguration_1<TContext extends DbContext> = DbContextOptionsConfiguration_1$instance<TContext> & __DbContextOptionsConfiguration_1$views<TContext>;
+export type DbContextOptionsConfiguration_1<TContext extends unknown & DbContext> = DbContextOptionsConfiguration_1$instance<TContext> & __DbContextOptionsConfiguration_1$views<TContext>;
 
 
 export interface DbSetFinder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbSetFinder$instance {
@@ -176,10 +176,10 @@ export interface InternalServiceCollectionMap$instance {
 
     readonly ServiceCollection: IServiceCollection;
     AddDependency(serviceType: Type, lifetime: ServiceLifetime): IInternalServiceCollectionMap;
-    AddDependencyScoped<TDependencies>(): IInternalServiceCollectionMap;
-    AddDependencySingleton<TDependencies>(): IInternalServiceCollectionMap;
+    AddDependencyScoped<TDependencies extends unknown>(): IInternalServiceCollectionMap;
+    AddDependencySingleton<TDependencies extends unknown>(): IInternalServiceCollectionMap;
     AddNewDescriptor(indexes: IList_1<System_Internal.Int32>, newDescriptor: ServiceDescriptor): void;
-    DoPatchInjection<TService>(): InternalServiceCollectionMap;
+    DoPatchInjection<TService extends (object | null)>(): InternalServiceCollectionMap;
     GetOrCreateDescriptorIndexes(serviceType: Type): IList_1<System_Internal.Int32>;
 }
 
@@ -200,14 +200,14 @@ export interface LazyLoader$instance extends Microsoft_EntityFrameworkCore_Infra
     get Context(): DbContext | null;
     set Context(value: DbContext | null);
     readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Infrastructure>;
-    Attaching(context: DbContext, entityType: IEntityType, entity: JsValue): void;
-    Detaching(context: DbContext, entity: JsValue): boolean;
+    Attaching(context: DbContext, entityType: IEntityType, entity: unknown): void;
+    Detaching(context: DbContext, entity: unknown): boolean;
     Dispose(): void;
-    Injected(context: DbContext, entity: JsValue, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, structuralType: ITypeBase): void;
-    IsLoaded(entity: JsValue, navigationName?: string): boolean;
-    Load(entity: JsValue, navigationName?: string): void;
-    LoadAsync(entity: JsValue, cancellationToken?: CancellationToken, navigationName?: string): Task;
-    SetLoaded(entity: JsValue, navigationName?: string, loaded?: boolean): void;
+    Injected(context: DbContext, entity: unknown, queryTrackingBehavior: Nullable_1<QueryTrackingBehavior>, structuralType: ITypeBase): void;
+    IsLoaded(entity: unknown, navigationName?: string): boolean;
+    Load(entity: unknown, navigationName?: string): void;
+    LoadAsync(entity: unknown, cancellationToken?: CancellationToken, navigationName?: string): Task;
+    SetLoaded(entity: unknown, navigationName?: string, loaded?: boolean): void;
 }
 
 
@@ -224,7 +224,7 @@ export interface __LazyLoader$views {
 export type LazyLoader = LazyLoader$instance & __LazyLoader$views;
 
 
-export interface LazyLoaderFactory$instance {
+export interface LazyLoaderFactory$instance extends ILazyLoaderFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Internal_LazyLoaderFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
@@ -275,8 +275,8 @@ export abstract class DbContextOptionsExtensions$instance {
 export type DbContextOptionsExtensions = DbContextOptionsExtensions$instance;
 
 export abstract class InfrastructureExtensions$instance {
-    static GetService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): JsValue;
-    static GetService<TService>(accessor: IInfrastructure_1<IServiceProvider>): TService;
+    static GetService(accessor: IInfrastructure_1<IServiceProvider>, serviceType: Type): unknown;
+    static GetService<TService extends (object | null)>(accessor: IInfrastructure_1<IServiceProvider>): TService;
 }
 
 

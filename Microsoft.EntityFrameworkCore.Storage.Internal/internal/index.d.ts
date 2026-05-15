@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -64,8 +64,8 @@ export interface CompositeRelationalParameter$instance extends RelationalParamet
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
     readonly RelationalParameters: IReadOnlyList_1<IRelationalParameter>;
-    AddDbParameter(command: DbCommand, value: JsValue | null): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null): void;
+    AddDbParameter(command: DbCommand, value: unknown | null): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown | null> | null): void;
 }
 
 
@@ -100,7 +100,7 @@ export interface DatabaseFacadeDependencies$instance extends Microsoft_EntityFra
     readonly TransactionManager: IDbContextTransactionManager;
     readonly TypeMappingSource: ITypeMappingSource;
     _Clone_$(): DatabaseFacadeDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: DatabaseFacadeDependencies | null): boolean;
     GetHashCode(): int;
     PrintMembers(builder: StringBuilder): boolean;
@@ -221,8 +221,8 @@ export interface RawRelationalParameter$instance extends RelationalParameterBase
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null): void;
-    AddDbParameter(command: DbCommand, value: JsValue | null): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown | null> | null): void;
+    AddDbParameter(command: DbCommand, value: unknown | null): void;
 }
 
 
@@ -244,8 +244,8 @@ export interface RawSqlCommandBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRawSqlCommandBuilder: never;
 
     Build(sql: string): IRelationalCommand;
-    Build(sql: string, parameters: IEnumerable_1<JsValue | null>): RawSqlCommand;
-    Build(sql: string, parameters: IEnumerable_1<JsValue | null>, model: IModel | null): RawSqlCommand;
+    Build(sql: string, parameters: IEnumerable_1<unknown | null>): RawSqlCommand;
+    Build(sql: string, parameters: IEnumerable_1<unknown | null>, model: IModel | null): RawSqlCommand;
 }
 
 
@@ -283,7 +283,7 @@ export interface RelationalDatabaseFacadeDependencies$instance extends Microsoft
     readonly TransactionManager: IDbContextTransactionManager;
     readonly TypeMappingSource: ITypeMappingSource;
     _Clone_$(): RelationalDatabaseFacadeDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: RelationalDatabaseFacadeDependencies | null): boolean;
     GetHashCode(): int;
     PrintMembers(builder: StringBuilder): boolean;
@@ -310,8 +310,8 @@ export interface RelationalParameterBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalParameter: never;
 
     readonly InvariantName: string;
-    AddDbParameter(command: DbCommand, value: JsValue | null): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null): void;
+    AddDbParameter(command: DbCommand, value: unknown | null): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown | null> | null): void;
 }
 
 
@@ -333,8 +333,8 @@ export interface TypeMappedRelationalParameter$instance extends RelationalParame
 
     readonly Direction: ParameterDirection;
     readonly Name: string;
-    AddDbParameter(command: DbCommand, value: JsValue | null): void;
-    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null): void;
+    AddDbParameter(command: DbCommand, value: unknown | null): void;
+    AddDbParameter(command: DbCommand, parameterValues: IReadOnlyDictionary_2<System_Internal.String, unknown | null> | null): void;
 }
 
 
@@ -352,7 +352,7 @@ export type TypeMappedRelationalParameter = TypeMappedRelationalParameter$instan
 
 export abstract class DbParameterCollectionExtensions$instance {
     static FormatParameter(parameter: DbParameter, logParameterValues: boolean): string;
-    static FormatParameter(name: string, value: JsValue | null, hasValue: boolean, direction: ParameterDirection, dbType: DbType, nullable: boolean, size: int, precision: byte, scale: byte): string;
+    static FormatParameter(name: string, value: unknown | null, hasValue: boolean, direction: ParameterDirection, dbType: DbType, nullable: boolean, size: int, precision: byte, scale: byte): string;
     static FormatParameters(parameters: DbParameterCollection, logParameterValues: boolean): string;
 }
 

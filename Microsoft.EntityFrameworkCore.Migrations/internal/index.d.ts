@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -195,7 +195,7 @@ export interface HistoryRepository$instance extends IHistoryRepository$instance 
     GetDeleteScript(migrationId: string): string;
     GetEndIfScript(): string;
     GetInsertScript(row: HistoryRow): string;
-    InterpretExistsResult(value: JsValue | null): boolean;
+    InterpretExistsResult(value: unknown | null): boolean;
 }
 
 
@@ -232,7 +232,7 @@ export interface HistoryRepositoryDependencies$instance {
     SqlGenerationHelper: ISqlGenerationHelper;
     TypeMappingSource: IRelationalTypeMappingSource;
     _Clone_$(): HistoryRepositoryDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: HistoryRepositoryDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -302,14 +302,14 @@ export interface MigrationBuilder$instance {
     readonly ActiveProvider: string | null;
     readonly Operations: List_1<MigrationOperation>;
     AddCheckConstraint(name: string, table: string, sql: string, schema?: string | null): OperationBuilder_1<AddCheckConstraintOperation>;
-    AddColumn<T>(name: string, table: string, type?: string | null, unicode?: Nullable_1<System_Internal.Boolean>, maxLength?: Nullable_1<System_Internal.Int32>, rowVersion?: boolean, schema?: string | null, nullable?: boolean, defaultValue?: JsValue | null, defaultValueSql?: string | null, computedColumnSql?: string | null, fixedLength?: Nullable_1<System_Internal.Boolean>, comment?: string | null, collation?: string | null, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>, stored?: Nullable_1<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
+    AddColumn<T extends unknown>(name: string, table: string, type?: string | null, unicode?: Nullable_1<System_Internal.Boolean>, maxLength?: Nullable_1<System_Internal.Int32>, rowVersion?: boolean, schema?: string | null, nullable?: boolean, defaultValue?: unknown | null, defaultValueSql?: string | null, computedColumnSql?: string | null, fixedLength?: Nullable_1<System_Internal.Boolean>, comment?: string | null, collation?: string | null, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>, stored?: Nullable_1<System_Internal.Boolean>): OperationBuilder_1<AddColumnOperation>;
     AddForeignKey(name: string, table: string, column: string, principalTable: string, schema?: string | null, principalSchema?: string | null, principalColumn?: string | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
     AddForeignKey(name: string, table: string, columns: string[], principalTable: string, schema?: string | null, principalSchema?: string | null, principalColumns?: string[] | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
     AddPrimaryKey(name: string, table: string, column: string, schema?: string | null): OperationBuilder_1<AddPrimaryKeyOperation>;
     AddPrimaryKey(name: string, table: string, columns: string[], schema?: string | null): OperationBuilder_1<AddPrimaryKeyOperation>;
     AddUniqueConstraint(name: string, table: string, column: string, schema?: string | null): OperationBuilder_1<AddUniqueConstraintOperation>;
     AddUniqueConstraint(name: string, table: string, columns: string[], schema?: string | null): OperationBuilder_1<AddUniqueConstraintOperation>;
-    AlterColumn<T>(name: string, table: string, type?: string | null, unicode?: Nullable_1<System_Internal.Boolean>, maxLength?: Nullable_1<System_Internal.Int32>, rowVersion?: boolean, schema?: string | null, nullable?: boolean, defaultValue?: JsValue | null, defaultValueSql?: string | null, computedColumnSql?: string | null, oldClrType?: Type | null, oldType?: string | null, oldUnicode?: Nullable_1<System_Internal.Boolean>, oldMaxLength?: Nullable_1<System_Internal.Int32>, oldRowVersion?: boolean, oldNullable?: boolean, oldDefaultValue?: JsValue | null, oldDefaultValueSql?: string | null, oldComputedColumnSql?: string | null, fixedLength?: Nullable_1<System_Internal.Boolean>, oldFixedLength?: Nullable_1<System_Internal.Boolean>, comment?: string | null, oldComment?: string | null, collation?: string | null, oldCollation?: string | null, precision?: Nullable_1<System_Internal.Int32>, oldPrecision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>, oldScale?: Nullable_1<System_Internal.Int32>, stored?: Nullable_1<System_Internal.Boolean>, oldStored?: Nullable_1<System_Internal.Boolean>): AlterOperationBuilder_1<AlterColumnOperation>;
+    AlterColumn<T extends unknown>(name: string, table: string, type?: string | null, unicode?: Nullable_1<System_Internal.Boolean>, maxLength?: Nullable_1<System_Internal.Int32>, rowVersion?: boolean, schema?: string | null, nullable?: boolean, defaultValue?: unknown | null, defaultValueSql?: string | null, computedColumnSql?: string | null, oldClrType?: Type | null, oldType?: string | null, oldUnicode?: Nullable_1<System_Internal.Boolean>, oldMaxLength?: Nullable_1<System_Internal.Int32>, oldRowVersion?: boolean, oldNullable?: boolean, oldDefaultValue?: unknown | null, oldDefaultValueSql?: string | null, oldComputedColumnSql?: string | null, fixedLength?: Nullable_1<System_Internal.Boolean>, oldFixedLength?: Nullable_1<System_Internal.Boolean>, comment?: string | null, oldComment?: string | null, collation?: string | null, oldCollation?: string | null, precision?: Nullable_1<System_Internal.Int32>, oldPrecision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>, oldScale?: Nullable_1<System_Internal.Int32>, stored?: Nullable_1<System_Internal.Boolean>, oldStored?: Nullable_1<System_Internal.Boolean>): AlterOperationBuilder_1<AlterColumnOperation>;
     AlterDatabase(collation?: string | null, oldCollation?: string | null): AlterOperationBuilder_1<AlterDatabaseOperation>;
     AlterSequence(name: string, schema?: string | null, incrementBy?: int, minValue?: Nullable_1<System_Internal.Int64>, maxValue?: Nullable_1<System_Internal.Int64>, cyclic?: boolean, oldIncrementBy?: int, oldMinValue?: Nullable_1<System_Internal.Int64>, oldMaxValue?: Nullable_1<System_Internal.Int64>, oldCyclic?: boolean): AlterOperationBuilder_1<AlterSequenceOperation>;
     AlterTable(name: string, schema?: string | null, comment?: string | null, oldComment?: string | null): AlterOperationBuilder_1<AlterTableOperation>;
@@ -317,15 +317,15 @@ export interface MigrationBuilder$instance {
     CreateIndex(name: string, table: string, column: string, schema?: string | null, unique?: boolean, filter?: string | null, descending?: boolean[] | null): OperationBuilder_1<CreateIndexOperation>;
     CreateIndex(name: string, table: string, columns: string[], schema?: string | null, unique?: boolean, filter?: string | null, descending?: boolean[] | null): OperationBuilder_1<CreateIndexOperation>;
     CreateSequence(name: string, schema?: string | null, startValue?: long, incrementBy?: int, minValue?: Nullable_1<System_Internal.Int64>, maxValue?: Nullable_1<System_Internal.Int64>, cyclic?: boolean): OperationBuilder_1<CreateSequenceOperation>;
-    CreateTable<TColumns>(name: string, columns: Func_2<ColumnsBuilder, TColumns>, schema?: string | null, constraints?: Action_1<CreateTableBuilder_1<TColumns>> | null, comment?: string | null): CreateTableBuilder_1<TColumns>;
-    DeleteData(table: string, keyColumn: string, keyValue: JsValue | null, schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
-    DeleteData(table: string, keyColumn: string, keyColumnType: string, keyValue: JsValue | null, schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
-    DeleteData(table: string, keyColumns: string[], keyValues: (JsValue | null)[], schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
-    DeleteData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: (JsValue | null)[], schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
-    DeleteData(table: string, keyColumn: string, keyValues: JsValue[], schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
-    DeleteData(table: string, keyColumn: string, keyColumnType: string, keyValues: JsValue[], schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
-    DeleteData(table: string, keyColumns: string[], keyValues: Array<Array<(JsValue | null)>>, schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
-    DeleteData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: Array<Array<(JsValue | null)>>, schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
+    CreateTable<TColumns extends unknown>(name: string, columns: Func_2<ColumnsBuilder, TColumns>, schema?: string | null, constraints?: Action_1<CreateTableBuilder_1<TColumns>> | null, comment?: string | null): CreateTableBuilder_1<TColumns>;
+    DeleteData(table: string, keyColumn: string, keyValue: unknown | null, schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumn: string, keyColumnType: string, keyValue: unknown | null, schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumns: string[], keyValues: (unknown | null)[], schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: (unknown | null)[], schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumn: string, keyValues: unknown[], schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumn: string, keyColumnType: string, keyValues: unknown[], schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumns: string[], keyValues: Array<Array<(unknown | null)>>, schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
+    DeleteData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: Array<Array<(unknown | null)>>, schema?: string | null): OperationBuilder_1<DeleteDataOperation>;
     DropCheckConstraint(name: string, table: string, schema?: string | null): OperationBuilder_1<DropCheckConstraintOperation>;
     DropColumn(name: string, table: string, schema?: string | null): OperationBuilder_1<DropColumnOperation>;
     DropForeignKey(name: string, table: string, schema?: string | null): OperationBuilder_1<DropForeignKeyOperation>;
@@ -336,16 +336,16 @@ export interface MigrationBuilder$instance {
     DropTable(name: string, schema?: string | null): OperationBuilder_1<DropTableOperation>;
     DropUniqueConstraint(name: string, table: string, schema?: string | null): OperationBuilder_1<DropUniqueConstraintOperation>;
     EnsureSchema(name: string): OperationBuilder_1<EnsureSchemaOperation>;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
-    InsertData(table: string, column: string, value: JsValue | null, schema?: string | null): OperationBuilder_1<InsertDataOperation>;
-    InsertData(table: string, column: string, columnType: string, value: JsValue | null, schema?: string | null): OperationBuilder_1<InsertDataOperation>;
-    InsertData(table: string, columns: string[], values: (JsValue | null)[], schema?: string | null): OperationBuilder_1<InsertDataOperation>;
-    InsertData(table: string, columns: string[], columnTypes: string[], values: (JsValue | null)[], schema?: string | null): OperationBuilder_1<InsertDataOperation>;
-    InsertData(table: string, column: string, values: JsValue[], schema?: string | null): OperationBuilder_1<InsertDataOperation>;
-    InsertData(table: string, column: string, columnType: string, values: JsValue[], schema?: string | null): OperationBuilder_1<InsertDataOperation>;
-    InsertData(table: string, columns: string[], values: Array<Array<(JsValue | null)>>, schema?: string | null): OperationBuilder_1<InsertDataOperation>;
-    InsertData(table: string, columns: string[], columnTypes: string[], values: Array<Array<(JsValue | null)>>, schema?: string | null): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, column: string, value: unknown | null, schema?: string | null): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, column: string, columnType: string, value: unknown | null, schema?: string | null): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, columns: string[], values: (unknown | null)[], schema?: string | null): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, columns: string[], columnTypes: string[], values: (unknown | null)[], schema?: string | null): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, column: string, values: unknown[], schema?: string | null): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, column: string, columnType: string, values: unknown[], schema?: string | null): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, columns: string[], values: Array<Array<(unknown | null)>>, schema?: string | null): OperationBuilder_1<InsertDataOperation>;
+    InsertData(table: string, columns: string[], columnTypes: string[], values: Array<Array<(unknown | null)>>, schema?: string | null): OperationBuilder_1<InsertDataOperation>;
     RenameColumn(name: string, table: string, newName: string, schema?: string | null): OperationBuilder_1<RenameColumnOperation>;
     RenameIndex(name: string, newName: string, table?: string | null, schema?: string | null): OperationBuilder_1<RenameIndexOperation>;
     RenameSequence(name: string, schema?: string | null, newName?: string | null, newSchema?: string | null): OperationBuilder_1<RenameSequenceOperation>;
@@ -353,16 +353,16 @@ export interface MigrationBuilder$instance {
     RestartSequence(name: string, startValue?: Nullable_1<System_Internal.Int64>, schema?: string | null): OperationBuilder_1<RestartSequenceOperation>;
     Sql(sql: string, suppressTransaction?: boolean): OperationBuilder_1<SqlOperation>;
     ToString(): string;
-    UpdateData(table: string, keyColumn: string, keyValue: JsValue | null, column: string, value: JsValue | null, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
-    UpdateData(table: string, keyColumn: string, keyValue: JsValue | null, columns: string[], values: (JsValue | null)[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
-    UpdateData(table: string, keyColumns: string[], keyValues: JsValue[], column: string, value: JsValue | null, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
-    UpdateData(table: string, keyColumns: string[], keyValues: (JsValue | null)[], columns: string[], values: (JsValue | null)[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
-    UpdateData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: JsValue[], columns: string[], columnTypes: string[], values: JsValue[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
-    UpdateData(table: string, keyColumn: string, keyValues: JsValue[], column: string, values: JsValue[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
-    UpdateData(table: string, keyColumn: string, keyValues: JsValue[], columns: string[], values: Array<Array<(JsValue | null)>>, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
-    UpdateData(table: string, keyColumns: string[], keyValues: Array<Array<JsValue>>, column: string, values: JsValue[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
-    UpdateData(table: string, keyColumns: string[], keyValues: Array<Array<(JsValue | null)>>, columns: string[], values: Array<Array<(JsValue | null)>>, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
-    UpdateData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: Array<Array<(JsValue | null)>>, columns: string[], columnTypes: string[], values: Array<Array<(JsValue | null)>>, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumn: string, keyValue: unknown | null, column: string, value: unknown | null, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumn: string, keyValue: unknown | null, columns: string[], values: (unknown | null)[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyValues: unknown[], column: string, value: unknown | null, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyValues: (unknown | null)[], columns: string[], values: (unknown | null)[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: unknown[], columns: string[], columnTypes: string[], values: unknown[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumn: string, keyValues: unknown[], column: string, values: unknown[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumn: string, keyValues: unknown[], columns: string[], values: Array<Array<(unknown | null)>>, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyValues: Array<Array<unknown>>, column: string, values: unknown[], schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyValues: Array<Array<(unknown | null)>>, columns: string[], values: Array<Array<(unknown | null)>>, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
+    UpdateData(table: string, keyColumns: string[], keyColumnTypes: string[], keyValues: Array<Array<(unknown | null)>>, columns: string[], columnTypes: string[], values: Array<Array<(unknown | null)>>, schema?: string | null): OperationBuilder_1<UpdateDataOperation>;
 }
 
 
@@ -379,8 +379,8 @@ export interface MigrationCommand$instance {
     readonly CommandLogger: IRelationalCommandDiagnosticsLogger;
     readonly CommandText: string;
     readonly TransactionSuppressed: boolean;
-    ExecuteNonQuery(connection: IRelationalConnection, parameterValues?: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null): int;
-    ExecuteNonQueryAsync(connection: IRelationalConnection, parameterValues?: IReadOnlyDictionary_2<System_Internal.String, JsValue | null> | null, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
+    ExecuteNonQuery(connection: IRelationalConnection, parameterValues?: IReadOnlyDictionary_2<System_Internal.String, unknown | null> | null): int;
+    ExecuteNonQueryAsync(connection: IRelationalConnection, parameterValues?: IReadOnlyDictionary_2<System_Internal.String, unknown | null> | null, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
 }
 
 
@@ -477,7 +477,7 @@ export interface MigrationsAnnotationProviderDependencies$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): MigrationsAnnotationProviderDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: MigrationsAnnotationProviderDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -511,7 +511,7 @@ export interface MigrationsSqlGenerator$instance {
     CreateTableForeignKeys(operation: CreateTableOperation, model: IModel | null, builder: MigrationCommandListBuilder): void;
     CreateTablePrimaryKeyConstraint(operation: CreateTableOperation, model: IModel | null, builder: MigrationCommandListBuilder): void;
     CreateTableUniqueConstraints(operation: CreateTableOperation, model: IModel | null, builder: MigrationCommandListBuilder): void;
-    DefaultValue(defaultValue: JsValue | null, defaultValueSql: string | null, columnType: string | null, builder: MigrationCommandListBuilder): void;
+    DefaultValue(defaultValue: unknown | null, defaultValueSql: string | null, columnType: string | null, builder: MigrationCommandListBuilder): void;
     EndStatement(builder: MigrationCommandListBuilder, suppressTransaction?: boolean): void;
     ForeignKeyAction(referentialAction: ReferentialAction, builder: MigrationCommandListBuilder): void;
     ForeignKeyConstraint(operation: AddForeignKeyOperation, model: IModel | null, builder: MigrationCommandListBuilder): void;
@@ -594,7 +594,7 @@ export interface MigrationsSqlGeneratorDependencies$instance {
     TypeMappingSource: IRelationalTypeMappingSource;
     UpdateSqlGenerator: IUpdateSqlGenerator;
     _Clone_$(): MigrationsSqlGeneratorDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: MigrationsSqlGeneratorDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;

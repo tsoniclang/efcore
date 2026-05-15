@@ -5,6 +5,10 @@
 // Import internal declarations
 import * as Internal from './Microsoft.EntityFrameworkCore.Metadata.Conventions/internal/index.js';
 
+// Core type aliases from @tsonic/core
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+
+
 // Cross-namespace type imports for constraints
 import type { IConventionComplexPropertyBuilder, IConventionComplexTypeBuilder, IConventionComplexTypeDiscriminatorBuilder, IConventionDbFunctionBuilder, IConventionDiscriminatorBuilder, IConventionElementTypeBuilder, IConventionEntityTypeBuilder, IConventionForeignKeyBuilder, IConventionIndexBuilder, IConventionKeyBuilder, IConventionModelBuilder, IConventionNavigationBuilder, IConventionPropertyBuilder, IConventionSkipNavigationBuilder, IConventionTriggerBuilder, IConventionTypeBaseBuilder } from './Microsoft.EntityFrameworkCore.Metadata.Builders/internal/index.js';
 import type { ProviderConventionSetBuilderDependencies, RelationalConventionSetBuilderDependencies } from './Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure/internal/index.js';
@@ -167,8 +171,8 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type IConventionContext<
-  T1 = __,
+  T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IConventionContext :
-  Internal.IConventionContext_1<T1>;
+  [T1] extends [unknown] ? Internal.IConventionContext_1<T1> : never;
 

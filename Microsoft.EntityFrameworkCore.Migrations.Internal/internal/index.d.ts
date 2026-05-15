@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore.Relational
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -132,10 +132,10 @@ export interface MigrationsModelDiffer$instance extends Microsoft_EntityFramewor
     Diff(source: ICheckConstraint, target: ICheckConstraint, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable_1<MigrationOperation>;
     Diff(source: IEnumerable_1<ISequence>, target: IEnumerable_1<ISequence>, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable_1<MigrationOperation>;
     Diff(source: ISequence, target: ISequence, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable_1<MigrationOperation>;
-    DiffCollection<T>(sources: IEnumerable_1<T>, targets: IEnumerable_1<T>, diffContext: MigrationsModelDiffer_DiffContext, diff: Func_4<T, T, MigrationsModelDiffer_DiffContext, IEnumerable_1<MigrationOperation>>, add: Func_3<T, MigrationsModelDiffer_DiffContext, IEnumerable_1<MigrationOperation>>, remove: Func_3<T, MigrationsModelDiffer_DiffContext, IEnumerable_1<MigrationOperation>>, ...predicates: Func_4<T, T, MigrationsModelDiffer_DiffContext, System_Internal.Boolean>[]): IEnumerable_1<MigrationOperation>;
+    DiffCollection<T extends unknown>(sources: IEnumerable_1<T>, targets: IEnumerable_1<T>, diffContext: MigrationsModelDiffer_DiffContext, diff: Func_4<T, T, MigrationsModelDiffer_DiffContext, IEnumerable_1<MigrationOperation>>, add: Func_3<T, MigrationsModelDiffer_DiffContext, IEnumerable_1<MigrationOperation>>, remove: Func_3<T, MigrationsModelDiffer_DiffContext, IEnumerable_1<MigrationOperation>>, ...predicates: Func_4<T, T, MigrationsModelDiffer_DiffContext, System_Internal.Boolean>[]): IEnumerable_1<MigrationOperation>;
     DiffData(source: IRelationalModel | null, target: IRelationalModel | null, diffContext: MigrationsModelDiffer_DiffContext): void;
     GetDataOperations(source: IRelationalModel | null, target: IRelationalModel | null, diffContext: MigrationsModelDiffer_DiffContext): IEnumerable_1<MigrationOperation>;
-    GetDefaultValue(type: Type): JsValue | null;
+    GetDefaultValue(type: Type): unknown | null;
     GetDifferences(source: IRelationalModel | null, target: IRelationalModel | null): IReadOnlyList_1<MigrationOperation>;
     GetSchemas(model: IRelationalModel): IEnumerable_1<System_Internal.String>;
     HasDifferences(source: IRelationalModel | null, target: IRelationalModel | null): boolean;
@@ -172,15 +172,15 @@ export interface MigrationsModelDiffer_DiffContext$instance {
     AddCreate(target: ITable, operation: CreateTableOperation): void;
     AddDrop(source: ITable, operation: DropTableOperation): void;
     AddDrop(source: IColumn, operation: DropColumnOperation): void;
-    AddMapping<T>(source: T, target: T): void;
+    AddMapping<T extends unknown>(source: T, target: T): void;
     FindColumn(operation: DropColumnOperation): IColumn | null;
     FindCreate(target: ITable): CreateTableOperation | null;
     FindDrop(source: ITable): DropTableOperation | null;
     FindDrop(source: IColumn): DropColumnOperation | null;
-    FindSource<T>(target: T | null): T | null;
+    FindSource<T extends (object | null)>(target: T | null): T | null;
     FindTable(typeBase: ITypeBase): ITable | null;
     FindTable(operation: DropTableOperation): ITable | null;
-    FindTarget<T>(source: T | null): T | null;
+    FindTarget<T extends (object | null)>(source: T | null): T | null;
 }
 
 

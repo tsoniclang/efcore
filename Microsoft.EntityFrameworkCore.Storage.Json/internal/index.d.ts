@@ -3,7 +3,7 @@
 // Assembly: Microsoft.EntityFrameworkCore
 
 // Core type aliases from @tsonic/core
-import type { JsValue, fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
+import type { fnptr, ptr, sbyte, byte, short, ushort, int, uint, long, ulong, int128, uint128, half, float, double, decimal, nint, nuint, char } from '@tsonic/core/types.js';
 
 
 // Import types from other namespaces
@@ -52,7 +52,7 @@ export interface JsonBoolReaderWriter$instance extends JsonValueReaderWriter_1<S
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonBoolReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): boolean;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): boolean;
     ToJsonTyped(writer: Utf8JsonWriter, value: boolean): void;
 }
 
@@ -69,7 +69,7 @@ export interface JsonByteArrayReaderWriter$instance extends JsonValueReaderWrite
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonByteArrayReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): byte[];
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): byte[];
     ToJsonTyped(writer: Utf8JsonWriter, value: byte[]): void;
 }
 
@@ -85,7 +85,7 @@ export interface JsonByteReaderWriter$instance extends JsonValueReaderWriter_1<S
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonByteReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): byte;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): byte;
     ToJsonTyped(writer: Utf8JsonWriter, value: byte): void;
 }
 
@@ -97,34 +97,34 @@ export const JsonByteReaderWriter: {
 
 export type JsonByteReaderWriter = JsonByteReaderWriter$instance;
 
-export interface JsonCastValueReaderWriter_1$instance<TConverted> extends JsonValueReaderWriter_1<TConverted>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
+export interface JsonCastValueReaderWriter_1$instance<TConverted extends unknown> extends JsonValueReaderWriter_1<TConverted>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonCastValueReaderWriter_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): TConverted;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): TConverted;
     ToJsonTyped(writer: Utf8JsonWriter, value: TConverted): void;
 }
 
 
 export const JsonCastValueReaderWriter_1: {
-    new<TConverted>(providerReaderWriter: JsonValueReaderWriter): JsonCastValueReaderWriter_1<TConverted>;
+    new<TConverted extends unknown>(providerReaderWriter: JsonValueReaderWriter): JsonCastValueReaderWriter_1<TConverted>;
 };
 
 
-export interface __JsonCastValueReaderWriter_1$views<TConverted> {
+export interface __JsonCastValueReaderWriter_1$views<TConverted extends unknown> {
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export type JsonCastValueReaderWriter_1<TConverted> = JsonCastValueReaderWriter_1$instance<TConverted> & __JsonCastValueReaderWriter_1$views<TConverted>;
+export type JsonCastValueReaderWriter_1<TConverted extends unknown> = JsonCastValueReaderWriter_1$instance<TConverted> & __JsonCastValueReaderWriter_1$views<TConverted>;
 
 
 export interface JsonCharReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.Char> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonCharReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): char;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): char;
     ToJsonTyped(writer: Utf8JsonWriter, value: char): void;
 }
 
@@ -136,105 +136,105 @@ export const JsonCharReaderWriter: {
 
 export type JsonCharReaderWriter = JsonCharReaderWriter$instance;
 
-export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement extends NonNullable<JsValue>> extends JsonValueReaderWriter_1<IEnumerable_1<Nullable_1<TElement>>>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
+export interface JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection extends unknown, TElement extends NonNullable<unknown>> extends JsonValueReaderWriter_1<IEnumerable_1<Nullable_1<TElement>>>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonCollectionOfNullableStructsReaderWriter_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): IEnumerable_1<Nullable_1<TElement>>;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): IEnumerable_1<Nullable_1<TElement>>;
     ToJsonTyped(writer: Utf8JsonWriter, value: IEnumerable_1<Nullable_1<TElement>>): void;
 }
 
 
 export const JsonCollectionOfNullableStructsReaderWriter_2: {
-    new<TConcreteCollection, TElement extends NonNullable<JsValue>>(elementReaderWriter: JsonValueReaderWriter_1<TElement>): JsonCollectionOfNullableStructsReaderWriter_2<TConcreteCollection, TElement>;
+    new<TConcreteCollection extends unknown, TElement extends NonNullable<unknown>>(elementReaderWriter: JsonValueReaderWriter_1<TElement>): JsonCollectionOfNullableStructsReaderWriter_2<TConcreteCollection, TElement>;
 };
 
 
-export interface __JsonCollectionOfNullableStructsReaderWriter_2$views<TConcreteCollection, TElement extends NonNullable<JsValue>> {
+export interface __JsonCollectionOfNullableStructsReaderWriter_2$views<TConcreteCollection extends unknown, TElement extends NonNullable<unknown>> {
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export type JsonCollectionOfNullableStructsReaderWriter_2<TConcreteCollection, TElement> = JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfNullableStructsReaderWriter_2$views<TConcreteCollection, TElement>;
+export type JsonCollectionOfNullableStructsReaderWriter_2<TConcreteCollection extends unknown, TElement extends NonNullable<unknown>> = JsonCollectionOfNullableStructsReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfNullableStructsReaderWriter_2$views<TConcreteCollection, TElement>;
 
 
-export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> extends JsonValueReaderWriter_1<JsValue>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
+export interface JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection extends unknown, TElement extends (object | null)> extends JsonValueReaderWriter_1<unknown>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonCollectionOfReferencesReaderWriter_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): JsValue;
-    ToJsonTyped(writer: Utf8JsonWriter, value: JsValue | null): void;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): unknown;
+    ToJsonTyped(writer: Utf8JsonWriter, value: unknown | null): void;
 }
 
 
 export const JsonCollectionOfReferencesReaderWriter_2: {
-    new<TConcreteCollection, TElement>(elementReaderWriter: JsonValueReaderWriter): JsonCollectionOfReferencesReaderWriter_2<TConcreteCollection, TElement>;
+    new<TConcreteCollection extends unknown, TElement extends (object | null)>(elementReaderWriter: JsonValueReaderWriter): JsonCollectionOfReferencesReaderWriter_2<TConcreteCollection, TElement>;
 };
 
 
-export interface __JsonCollectionOfReferencesReaderWriter_2$views<TConcreteCollection, TElement> {
+export interface __JsonCollectionOfReferencesReaderWriter_2$views<TConcreteCollection extends unknown, TElement extends (object | null)> {
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export type JsonCollectionOfReferencesReaderWriter_2<TConcreteCollection, TElement> = JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfReferencesReaderWriter_2$views<TConcreteCollection, TElement>;
+export type JsonCollectionOfReferencesReaderWriter_2<TConcreteCollection extends unknown, TElement extends (object | null)> = JsonCollectionOfReferencesReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfReferencesReaderWriter_2$views<TConcreteCollection, TElement>;
 
 
-export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement extends NonNullable<JsValue>> extends JsonValueReaderWriter_1<IEnumerable_1<TElement>>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
+export interface JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection extends unknown, TElement extends NonNullable<unknown>> extends JsonValueReaderWriter_1<IEnumerable_1<TElement>>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonCollectionOfStructsReaderWriter_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): IEnumerable_1<TElement>;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): IEnumerable_1<TElement>;
     ToJsonTyped(writer: Utf8JsonWriter, value: IEnumerable_1<TElement>): void;
 }
 
 
 export const JsonCollectionOfStructsReaderWriter_2: {
-    new<TConcreteCollection, TElement extends NonNullable<JsValue>>(elementReaderWriter: JsonValueReaderWriter_1<TElement>): JsonCollectionOfStructsReaderWriter_2<TConcreteCollection, TElement>;
+    new<TConcreteCollection extends unknown, TElement extends NonNullable<unknown>>(elementReaderWriter: JsonValueReaderWriter_1<TElement>): JsonCollectionOfStructsReaderWriter_2<TConcreteCollection, TElement>;
 };
 
 
-export interface __JsonCollectionOfStructsReaderWriter_2$views<TConcreteCollection, TElement extends NonNullable<JsValue>> {
+export interface __JsonCollectionOfStructsReaderWriter_2$views<TConcreteCollection extends unknown, TElement extends NonNullable<unknown>> {
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
 }
 
-export type JsonCollectionOfStructsReaderWriter_2<TConcreteCollection, TElement> = JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfStructsReaderWriter_2$views<TConcreteCollection, TElement>;
+export type JsonCollectionOfStructsReaderWriter_2<TConcreteCollection extends unknown, TElement extends NonNullable<unknown>> = JsonCollectionOfStructsReaderWriter_2$instance<TConcreteCollection, TElement> & __JsonCollectionOfStructsReaderWriter_2$views<TConcreteCollection, TElement>;
 
 
-export interface JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> extends JsonValueReaderWriter_1<TModel>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.IJsonConvertedValueReaderWriter$instance {
+export interface JsonConvertedValueReaderWriter_2$instance<TModel extends unknown, TProvider extends unknown> extends JsonValueReaderWriter_1<TModel>, Microsoft_EntityFrameworkCore_Storage_Internal_Internal.IJsonConvertedValueReaderWriter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonConvertedValueReaderWriter_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_ICompositeJsonValueReaderWriter: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_Internal_IJsonConvertedValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): TModel;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): TModel;
     ToJsonTyped(writer: Utf8JsonWriter, value: TModel): void;
 }
 
 
 export const JsonConvertedValueReaderWriter_2: {
-    new<TModel, TProvider>(providerReaderWriter: JsonValueReaderWriter_1<TProvider>, converter: ValueConverter): JsonConvertedValueReaderWriter_2<TModel, TProvider>;
+    new<TModel extends unknown, TProvider extends unknown>(providerReaderWriter: JsonValueReaderWriter_1<TProvider>, converter: ValueConverter): JsonConvertedValueReaderWriter_2<TModel, TProvider>;
 };
 
 
-export interface __JsonConvertedValueReaderWriter_2$views<TModel, TProvider> {
+export interface __JsonConvertedValueReaderWriter_2$views<TModel extends unknown, TProvider extends unknown> {
     As_ICompositeJsonValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.ICompositeJsonValueReaderWriter$instance;
     As_IJsonConvertedValueReaderWriter(): Microsoft_EntityFrameworkCore_Storage_Internal_Internal.IJsonConvertedValueReaderWriter$instance;
 }
 
-export type JsonConvertedValueReaderWriter_2<TModel, TProvider> = JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> & __JsonConvertedValueReaderWriter_2$views<TModel, TProvider>;
+export type JsonConvertedValueReaderWriter_2<TModel extends unknown, TProvider extends unknown> = JsonConvertedValueReaderWriter_2$instance<TModel, TProvider> & __JsonConvertedValueReaderWriter_2$views<TModel, TProvider>;
 
 
 export interface JsonDateOnlyReaderWriter$instance extends JsonValueReaderWriter_1<DateOnly> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonDateOnlyReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): DateOnly;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): DateOnly;
     ToJsonTyped(writer: Utf8JsonWriter, value: DateOnly): void;
 }
 
@@ -250,7 +250,7 @@ export interface JsonDateTimeOffsetReaderWriter$instance extends JsonValueReader
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonDateTimeOffsetReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): DateTimeOffset;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): DateTimeOffset;
     ToJsonTyped(writer: Utf8JsonWriter, value: DateTimeOffset): void;
 }
 
@@ -266,7 +266,7 @@ export interface JsonDateTimeReaderWriter$instance extends JsonValueReaderWriter
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonDateTimeReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): DateTime;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): DateTime;
     ToJsonTyped(writer: Utf8JsonWriter, value: DateTime): void;
 }
 
@@ -282,7 +282,7 @@ export interface JsonDecimalReaderWriter$instance extends JsonValueReaderWriter_
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonDecimalReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): decimal;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): decimal;
     ToJsonTyped(writer: Utf8JsonWriter, value: decimal): void;
 }
 
@@ -298,7 +298,7 @@ export interface JsonDoubleReaderWriter$instance extends JsonValueReaderWriter_1
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonDoubleReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): double;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): double;
     ToJsonTyped(writer: Utf8JsonWriter, value: double): void;
 }
 
@@ -314,7 +314,7 @@ export interface JsonFloatReaderWriter$instance extends JsonValueReaderWriter_1<
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonFloatReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): float;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): float;
     ToJsonTyped(writer: Utf8JsonWriter, value: float): void;
 }
 
@@ -330,7 +330,7 @@ export interface JsonGuidReaderWriter$instance extends JsonValueReaderWriter_1<G
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonGuidReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): Guid;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): Guid;
     ToJsonTyped(writer: Utf8JsonWriter, value: Guid): void;
 }
 
@@ -346,7 +346,7 @@ export interface JsonInt16ReaderWriter$instance extends JsonValueReaderWriter_1<
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonInt16ReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): short;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): short;
     ToJsonTyped(writer: Utf8JsonWriter, value: short): void;
 }
 
@@ -362,7 +362,7 @@ export interface JsonInt32ReaderWriter$instance extends JsonValueReaderWriter_1<
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonInt32ReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): int;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): int;
     ToJsonTyped(writer: Utf8JsonWriter, value: int): void;
 }
 
@@ -378,7 +378,7 @@ export interface JsonInt64ReaderWriter$instance extends JsonValueReaderWriter_1<
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonInt64ReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): long;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): long;
     ToJsonTyped(writer: Utf8JsonWriter, value: long): void;
 }
 
@@ -390,12 +390,12 @@ export const JsonInt64ReaderWriter: {
 
 export type JsonInt64ReaderWriter = JsonInt64ReaderWriter$instance;
 
-export interface JsonNullReaderWriter$instance extends JsonValueReaderWriter_1<JsValue> {
+export interface JsonNullReaderWriter$instance extends JsonValueReaderWriter_1<unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonNullReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): JsValue;
-    ToJsonTyped(writer: Utf8JsonWriter, value: JsValue | null): void;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): unknown;
+    ToJsonTyped(writer: Utf8JsonWriter, value: unknown | null): void;
 }
 
 
@@ -427,7 +427,7 @@ export interface JsonSByteReaderWriter$instance extends JsonValueReaderWriter_1<
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonSByteReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): sbyte;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): sbyte;
     ToJsonTyped(writer: Utf8JsonWriter, value: sbyte): void;
 }
 
@@ -439,27 +439,27 @@ export const JsonSByteReaderWriter: {
 
 export type JsonSByteReaderWriter = JsonSByteReaderWriter$instance;
 
-export interface JsonSignedEnumReaderWriter_1$instance<TEnum extends number & NonNullable<JsValue>> extends JsonValueReaderWriter_1<TEnum> {
+export interface JsonSignedEnumReaderWriter_1$instance<TEnum extends NonNullable<unknown> & number> extends JsonValueReaderWriter_1<TEnum> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonSignedEnumReaderWriter_1: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): TEnum;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): TEnum;
     ToJsonTyped(writer: Utf8JsonWriter, value: TEnum): void;
 }
 
 
 export const JsonSignedEnumReaderWriter_1: {
-    readonly Instance: <TEnum extends number & NonNullable<JsValue>>() => JsonSignedEnumReaderWriter_1<TEnum>;
+    readonly Instance: <TEnum extends NonNullable<unknown> & number>() => JsonSignedEnumReaderWriter_1<TEnum>;
 };
 
 
-export type JsonSignedEnumReaderWriter_1<TEnum extends number> = JsonSignedEnumReaderWriter_1$instance<TEnum>;
+export type JsonSignedEnumReaderWriter_1<TEnum extends NonNullable<unknown> & number> = JsonSignedEnumReaderWriter_1$instance<TEnum>;
 
 export interface JsonStringReaderWriter$instance extends JsonValueReaderWriter_1<System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonStringReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): string;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): string;
     ToJsonTyped(writer: Utf8JsonWriter, value: string): void;
 }
 
@@ -475,7 +475,7 @@ export interface JsonTimeOnlyReaderWriter$instance extends JsonValueReaderWriter
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonTimeOnlyReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): TimeOnly;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): TimeOnly;
     ToJsonTyped(writer: Utf8JsonWriter, value: TimeOnly): void;
 }
 
@@ -491,7 +491,7 @@ export interface JsonTimeSpanReaderWriter$instance extends JsonValueReaderWriter
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonTimeSpanReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): TimeSpan;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): TimeSpan;
     ToJsonTyped(writer: Utf8JsonWriter, value: TimeSpan): void;
 }
 
@@ -507,7 +507,7 @@ export interface JsonUInt16ReaderWriter$instance extends JsonValueReaderWriter_1
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonUInt16ReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): ushort;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): ushort;
     ToJsonTyped(writer: Utf8JsonWriter, value: ushort): void;
 }
 
@@ -523,7 +523,7 @@ export interface JsonUInt32ReaderWriter$instance extends JsonValueReaderWriter_1
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonUInt32ReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): uint;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): uint;
     ToJsonTyped(writer: Utf8JsonWriter, value: uint): void;
 }
 
@@ -539,7 +539,7 @@ export interface JsonUInt64ReaderWriter$instance extends JsonValueReaderWriter_1
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonUInt64ReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): ulong;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): ulong;
     ToJsonTyped(writer: Utf8JsonWriter, value: ulong): void;
 }
 
@@ -551,32 +551,32 @@ export const JsonUInt64ReaderWriter: {
 
 export type JsonUInt64ReaderWriter = JsonUInt64ReaderWriter$instance;
 
-export interface JsonUnsignedEnumReaderWriter_1$instance<TEnum extends number & NonNullable<JsValue>> extends JsonValueReaderWriter_1<TEnum> {
+export interface JsonUnsignedEnumReaderWriter_1$instance<TEnum extends NonNullable<unknown> & number> extends JsonValueReaderWriter_1<TEnum> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonUnsignedEnumReaderWriter_1: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): TEnum;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): TEnum;
     ToJsonTyped(writer: Utf8JsonWriter, value: TEnum): void;
 }
 
 
 export const JsonUnsignedEnumReaderWriter_1: {
-    readonly Instance: <TEnum extends number & NonNullable<JsValue>>() => JsonUnsignedEnumReaderWriter_1<TEnum>;
+    readonly Instance: <TEnum extends NonNullable<unknown> & number>() => JsonUnsignedEnumReaderWriter_1<TEnum>;
 };
 
 
-export type JsonUnsignedEnumReaderWriter_1<TEnum extends number> = JsonUnsignedEnumReaderWriter_1$instance<TEnum>;
+export type JsonUnsignedEnumReaderWriter_1<TEnum extends NonNullable<unknown> & number> = JsonUnsignedEnumReaderWriter_1$instance<TEnum>;
 
 export interface JsonValueReaderWriter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonValueReaderWriter: never;
 
     readonly ConstructorExpression: Expression;
     readonly ValueType: Type;
-    FromJson(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): JsValue;
-    FromJsonString(json: string, existingObject?: JsValue | null): JsValue;
-    ToJson(writer: Utf8JsonWriter, value: JsValue): void;
-    ToJsonObjectString(propertyName: string, value: JsValue | null): string;
-    ToJsonString(value: JsValue): string;
+    FromJson(manager: Utf8JsonReaderManager, existingObject?: unknown | null): unknown;
+    FromJsonString(json: string, existingObject?: unknown | null): unknown;
+    ToJson(writer: Utf8JsonWriter, value: unknown): void;
+    ToJsonObjectString(propertyName: string, value: unknown | null): string;
+    ToJsonString(value: unknown): string;
 }
 
 
@@ -587,22 +587,22 @@ export const JsonValueReaderWriter: {
 
 export type JsonValueReaderWriter = JsonValueReaderWriter$instance;
 
-export interface JsonValueReaderWriter_1$instance<TValue> extends JsonValueReaderWriter {
+export interface JsonValueReaderWriter_1$instance<TValue extends unknown> extends JsonValueReaderWriter {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonValueReaderWriter_1: never;
 
     readonly ValueType: Type;
-    FromJson(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): JsValue;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): TValue;
-    ToJson(writer: Utf8JsonWriter, value: JsValue): void;
+    FromJson(manager: Utf8JsonReaderManager, existingObject?: unknown | null): unknown;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): TValue;
+    ToJson(writer: Utf8JsonWriter, value: unknown): void;
     ToJsonTyped(writer: Utf8JsonWriter, value: TValue): void;
 }
 
 
-export const JsonValueReaderWriter_1: (abstract new<TValue>() => JsonValueReaderWriter_1<TValue>) & {
+export const JsonValueReaderWriter_1: (abstract new<TValue extends unknown>() => JsonValueReaderWriter_1<TValue>) & {
 };
 
 
-export type JsonValueReaderWriter_1<TValue> = JsonValueReaderWriter_1$instance<TValue>;
+export type JsonValueReaderWriter_1<TValue extends unknown> = JsonValueReaderWriter_1$instance<TValue>;
 
 export interface JsonValueReaderWriterSource$instance extends IJsonValueReaderWriterSource$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonValueReaderWriterSource: never;
@@ -632,7 +632,7 @@ export interface JsonValueReaderWriterSourceDependencies$instance {
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     _Clone_$(): JsonValueReaderWriterSourceDependencies;
-    Equals(obj: JsValue | null): boolean;
+    Equals(obj: unknown | null): boolean;
     Equals(other: JsonValueReaderWriterSourceDependencies | null): boolean;
     GetHashCode(): int;
     ToString(): string;
@@ -646,19 +646,19 @@ export const JsonValueReaderWriterSourceDependencies: {
 
 export type JsonValueReaderWriterSourceDependencies = JsonValueReaderWriterSourceDependencies$instance;
 
-export interface JsonWarningEnumReaderWriter_1$instance<TEnum extends number & NonNullable<JsValue>> extends JsonValueReaderWriter_1<TEnum> {
+export interface JsonWarningEnumReaderWriter_1$instance<TEnum extends NonNullable<unknown> & number> extends JsonValueReaderWriter_1<TEnum> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Json_JsonWarningEnumReaderWriter_1: never;
 
     readonly ConstructorExpression: Expression;
-    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: JsValue | null): TEnum;
+    FromJsonTyped(manager: Utf8JsonReaderManager, existingObject?: unknown | null): TEnum;
     ToJsonTyped(writer: Utf8JsonWriter, value: TEnum): void;
 }
 
 
 export const JsonWarningEnumReaderWriter_1: {
-    readonly Instance: <TEnum extends number & NonNullable<JsValue>>() => JsonWarningEnumReaderWriter_1<TEnum>;
+    readonly Instance: <TEnum extends NonNullable<unknown> & number>() => JsonWarningEnumReaderWriter_1<TEnum>;
 };
 
 
-export type JsonWarningEnumReaderWriter_1<TEnum extends number> = JsonWarningEnumReaderWriter_1$instance<TEnum>;
+export type JsonWarningEnumReaderWriter_1<TEnum extends NonNullable<unknown> & number> = JsonWarningEnumReaderWriter_1$instance<TEnum>;
 
