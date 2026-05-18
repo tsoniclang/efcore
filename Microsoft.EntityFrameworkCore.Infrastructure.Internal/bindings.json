@@ -6,8 +6,8 @@
   "types": [
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Interface",
       "accessibility": "Public",
@@ -18,17 +18,17 @@
       "interfaces": [
         {
           "stableId": "System.Private.CoreLib:System.IDisposable",
-          "clrName": "System.IDisposable"
+          "targetName": "System.IDisposable"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
         }
       ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory::Create():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-          "clrName": "Create",
+          "targetName": "Create",
           "metadataToken": 100673473,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "normalizedSignature": "Create|():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader|static=false",
@@ -42,13 +42,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService::ResetState():System.Void",
-          "clrName": "ResetState",
+          "targetName": "ResetState",
           "metadataToken": 100673199,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ResetState|():System.Void|static=false",
@@ -62,13 +62,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService::ResetStateAsync(System.Threading.CancellationToken):System.Threading.Tasks.Task",
-          "clrName": "ResetStateAsync",
+          "targetName": "ResetStateAsync",
           "metadataToken": 100673200,
           "canonicalSignature": "(System.Threading.CancellationToken):System.Threading.Tasks.Task",
           "normalizedSignature": "ResetStateAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task|static=false",
@@ -82,8 +82,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         }
       ],
@@ -94,8 +94,8 @@
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -105,18 +105,18 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector"
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector"
         }
       ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector::EnterCriticalSection():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer",
-          "clrName": "EnterCriticalSection",
+          "targetName": "EnterCriticalSection",
           "metadataToken": 100673450,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer",
           "normalizedSignature": "EnterCriticalSection|():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer|static=false",
@@ -130,13 +130,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector::ExitCriticalSection():System.Void",
-          "clrName": "ExitCriticalSection",
+          "targetName": "ExitCriticalSection",
           "metadataToken": 100673451,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ExitCriticalSection|():System.Void|static=false",
@@ -150,13 +150,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector::EnterCriticalSection():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer",
-          "clrName": "EnterCriticalSection",
+          "targetName": "EnterCriticalSection",
           "metadataToken": 100673149,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer",
           "normalizedSignature": "EnterCriticalSection|():Microsoft.EntityFrameworkCore.Infrastructure.ConcurrencyDetectorCriticalSectionDisposer|static=false",
@@ -170,14 +170,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector::ExitCriticalSection():System.Void",
-          "clrName": "ExitCriticalSection",
+          "targetName": "ExitCriticalSection",
           "metadataToken": 100673150,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ExitCriticalSection|():System.Void|static=false",
@@ -191,8 +191,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IConcurrencyDetector"
         }
@@ -209,15 +209,15 @@
           "isStatic": false,
           "parameterCount": 0,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -227,22 +227,22 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions"
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions"
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions"
         }
       ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::Initialize(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
-          "clrName": "Initialize",
+          "targetName": "Initialize",
           "metadataToken": 100673454,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
           "normalizedSignature": "Initialize|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void|static=false",
@@ -256,13 +256,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::Validate(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
-          "clrName": "Validate",
+          "targetName": "Validate",
           "metadataToken": 100673455,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
           "normalizedSignature": "Validate|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void|static=false",
@@ -276,13 +276,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions::Initialize(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
-          "clrName": "Initialize",
+          "targetName": "Initialize",
           "metadataToken": 100673201,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void",
           "normalizedSignature": "Initialize|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.Void|static=false",
@@ -296,8 +296,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ISingletonOptions"
         }
@@ -305,7 +305,7 @@
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::AreDetailedErrorsEnabled:System.Boolean",
-          "clrName": "AreDetailedErrorsEnabled",
+          "targetName": "AreDetailedErrorsEnabled",
           "metadataToken": 385877738,
           "canonicalSignature": ":System.Boolean",
           "normalizedSignature": "AreDetailedErrorsEnabled|:System.Boolean|static=false|accessor=getset",
@@ -319,12 +319,12 @@
           "isVirtual": true,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::AreThreadSafetyChecksEnabled:System.Boolean",
-          "clrName": "AreThreadSafetyChecksEnabled",
+          "targetName": "AreThreadSafetyChecksEnabled",
           "metadataToken": 385877739,
           "canonicalSignature": ":System.Boolean",
           "normalizedSignature": "AreThreadSafetyChecksEnabled|:System.Boolean|static=false|accessor=getset",
@@ -338,12 +338,12 @@
           "isVirtual": true,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions::RootApplicationServiceProvider:System.IServiceProvider",
-          "clrName": "RootApplicationServiceProvider",
+          "targetName": "RootApplicationServiceProvider",
           "metadataToken": 385877740,
           "canonicalSignature": ":System.IServiceProvider",
           "normalizedSignature": "RootApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=getset",
@@ -357,12 +357,12 @@
           "isVirtual": true,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions::AreDetailedErrorsEnabled:System.Boolean",
-          "clrName": "AreDetailedErrorsEnabled",
+          "targetName": "AreDetailedErrorsEnabled",
           "metadataToken": 385877698,
           "canonicalSignature": ":System.Boolean",
           "normalizedSignature": "AreDetailedErrorsEnabled|:System.Boolean|static=false|accessor=get",
@@ -377,12 +377,12 @@
           "isOverride": false,
           "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions::AreThreadSafetyChecksEnabled:System.Boolean",
-          "clrName": "AreThreadSafetyChecksEnabled",
+          "targetName": "AreThreadSafetyChecksEnabled",
           "metadataToken": 385877699,
           "canonicalSignature": ":System.Boolean",
           "normalizedSignature": "AreThreadSafetyChecksEnabled|:System.Boolean|static=false|accessor=get",
@@ -397,12 +397,12 @@
           "isOverride": false,
           "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions::RootApplicationServiceProvider:System.IServiceProvider",
-          "clrName": "RootApplicationServiceProvider",
+          "targetName": "RootApplicationServiceProvider",
           "metadataToken": 385877700,
           "canonicalSignature": ":System.IServiceProvider",
           "normalizedSignature": "RootApplicationServiceProvider|:System.IServiceProvider|static=false|accessor=get",
@@ -417,8 +417,8 @@
           "isOverride": false,
           "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ICoreSingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ],
       "fields": [],
@@ -432,15 +432,15 @@
           "isStatic": false,
           "parameterCount": 0,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CoreSingletonOptions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -450,19 +450,19 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext"
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext"
         }
       ],
       "methods": [],
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext::Context:Microsoft.EntityFrameworkCore.DbContext",
-          "clrName": "Context",
+          "targetName": "Context",
           "metadataToken": 385877741,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.DbContext",
           "normalizedSignature": "Context|:Microsoft.EntityFrameworkCore.DbContext|static=false|accessor=get",
@@ -476,12 +476,12 @@
           "isVirtual": true,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext::Context:Microsoft.EntityFrameworkCore.DbContext",
-          "clrName": "Context",
+          "targetName": "Context",
           "metadataToken": 385877701,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.DbContext",
           "normalizedSignature": "Context|:Microsoft.EntityFrameworkCore.DbContext|static=false|accessor=get",
@@ -496,8 +496,8 @@
           "isOverride": false,
           "visibility": "Public",
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ],
       "fields": [],
@@ -511,15 +511,15 @@
           "isStatic": false,
           "parameterCount": 1,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.CurrentDbContext",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
-      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration`1",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration`1",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -529,12 +529,12 @@
       "arity": 1,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration`1",
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration`1",
           "typeArguments": [
             "TContext"
           ]
@@ -545,8 +545,8 @@
       ],
       "methods": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601::Configure(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
-          "clrName": "Configure",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration`1::Configure(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
+          "targetName": "Configure",
           "metadataToken": 100673466,
           "canonicalSignature": "(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
           "normalizedSignature": "Configure|(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void|static=false",
@@ -560,13 +560,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration`1",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601::Configure(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
-          "clrName": "Configure",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration`1::Configure(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
+          "targetName": "Configure",
           "metadataToken": 100673158,
           "canonicalSignature": "(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void",
           "normalizedSignature": "Configure|(System.IServiceProvider,Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void|static=false",
@@ -580,10 +580,10 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration`1",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
-          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration\u00601"
+          "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsConfiguration`1"
         }
       ],
       "properties": [],
@@ -591,22 +591,22 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601::.ctor(System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration`1::.ctor(System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
           "metadataToken": 100673465,
           "canonicalSignature": "(System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
           "normalizedSignature": "constructor|(System.Action_2[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 1,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration\u00601",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsConfiguration`1",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -616,18 +616,18 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder"
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder"
         }
       ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder::FindSets(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-          "clrName": "FindSets",
+          "targetName": "FindSets",
           "metadataToken": 100673468,
           "canonicalSignature": "(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "normalizedSignature": "FindSets|(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
@@ -641,13 +641,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder::FindSets(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-          "clrName": "FindSets",
+          "targetName": "FindSets",
           "metadataToken": 100673163,
           "canonicalSignature": "(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
           "normalizedSignature": "FindSets|(System.Type):System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Infrastructure.DbSetProperty,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false",
@@ -661,8 +661,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder"
         }
@@ -679,15 +679,15 @@
           "isStatic": false,
           "parameterCount": 0,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbSetFinder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -697,106 +697,106 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "methods": [],
       "properties": [],
       "fields": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::MeterNameSystem.String",
-          "clrName": "MeterName",
+          "targetName": "MeterName",
           "metadataToken": 67110526,
           "normalizedSignature": "MeterName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::ActiveDbContextsInstrumentNameSystem.String",
-          "clrName": "ActiveDbContextsInstrumentName",
+          "targetName": "ActiveDbContextsInstrumentName",
           "metadataToken": 67110527,
           "normalizedSignature": "ActiveDbContextsInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::QueriesInstrumentNameSystem.String",
-          "clrName": "QueriesInstrumentName",
+          "targetName": "QueriesInstrumentName",
           "metadataToken": 67110528,
           "normalizedSignature": "QueriesInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::SaveChangesInstrumentNameSystem.String",
-          "clrName": "SaveChangesInstrumentName",
+          "targetName": "SaveChangesInstrumentName",
           "metadataToken": 67110529,
           "normalizedSignature": "SaveChangesInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::CompiledQueryCacheHitsInstrumentNameSystem.String",
-          "clrName": "CompiledQueryCacheHitsInstrumentName",
+          "targetName": "CompiledQueryCacheHitsInstrumentName",
           "metadataToken": 67110530,
           "normalizedSignature": "CompiledQueryCacheHitsInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::CompiledQueryCacheMissesInstrumentNameSystem.String",
-          "clrName": "CompiledQueryCacheMissesInstrumentName",
+          "targetName": "CompiledQueryCacheMissesInstrumentName",
           "metadataToken": 67110531,
           "normalizedSignature": "CompiledQueryCacheMissesInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::ExecutionStrategyFailuresInstrumentNameSystem.String",
-          "clrName": "ExecutionStrategyFailuresInstrumentName",
+          "targetName": "ExecutionStrategyFailuresInstrumentName",
           "metadataToken": 67110532,
           "normalizedSignature": "ExecutionStrategyFailuresInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics::OptimisticConcurrencyFailuresInstrumentNameSystem.String",
-          "clrName": "OptimisticConcurrencyFailuresInstrumentName",
+          "targetName": "OptimisticConcurrencyFailuresInstrumentName",
           "metadataToken": 67110533,
           "normalizedSignature": "OptimisticConcurrencyFailuresInstrumentName|System.String|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ],
       "events": [],
@@ -809,15 +809,15 @@
           "isStatic": false,
           "parameterCount": 0,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.EntityFrameworkMetrics",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -827,12 +827,12 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::GetOrCreateDescriptorIndexes(System.Type):System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-          "clrName": "GetOrCreateDescriptorIndexes",
+          "targetName": "GetOrCreateDescriptorIndexes",
           "metadataToken": 100673478,
           "canonicalSignature": "(System.Type):System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
           "normalizedSignature": "GetOrCreateDescriptorIndexes|(System.Type):System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false",
@@ -846,13 +846,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::AddNewDescriptor(System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],Microsoft.Extensions.DependencyInjection.ServiceDescriptor):System.Void",
-          "clrName": "AddNewDescriptor",
+          "targetName": "AddNewDescriptor",
           "metadataToken": 100673479,
           "canonicalSignature": "(System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],Microsoft.Extensions.DependencyInjection.ServiceDescriptor):System.Void",
           "normalizedSignature": "AddNewDescriptor|(System.Collections.Generic.IList_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],Microsoft.Extensions.DependencyInjection.ServiceDescriptor):System.Void|static=false",
@@ -866,13 +866,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::AddDependencySingleton():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
-          "clrName": "AddDependencySingleton",
+          "targetName": "AddDependencySingleton",
           "metadataToken": 100673480,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
           "normalizedSignature": "AddDependencySingleton|():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap|static=false",
@@ -886,13 +886,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::AddDependencyScoped():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
-          "clrName": "AddDependencyScoped",
+          "targetName": "AddDependencyScoped",
           "metadataToken": 100673481,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
           "normalizedSignature": "AddDependencyScoped|():Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap|static=false",
@@ -906,13 +906,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::AddDependency(System.Type,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
-          "clrName": "AddDependency",
+          "targetName": "AddDependency",
           "metadataToken": 100673482,
           "canonicalSignature": "(System.Type,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap",
           "normalizedSignature": "AddDependency|(System.Type,Microsoft.Extensions.DependencyInjection.ServiceLifetime):Microsoft.EntityFrameworkCore.Infrastructure.IInternalServiceCollectionMap|static=false",
@@ -926,13 +926,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::DoPatchInjection():Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-          "clrName": "DoPatchInjection",
+          "targetName": "DoPatchInjection",
           "metadataToken": 100673483,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
           "normalizedSignature": "DoPatchInjection|():Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap|static=false",
@@ -946,15 +946,15 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         }
       ],
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap::ServiceCollection:Microsoft.Extensions.DependencyInjection.IServiceCollection",
-          "clrName": "ServiceCollection",
+          "targetName": "ServiceCollection",
           "metadataToken": 385877742,
           "canonicalSignature": ":Microsoft.Extensions.DependencyInjection.IServiceCollection",
           "normalizedSignature": "ServiceCollection|:Microsoft.Extensions.DependencyInjection.IServiceCollection|static=false|accessor=get",
@@ -968,8 +968,8 @@
           "isVirtual": true,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ],
       "fields": [],
@@ -983,15 +983,15 @@
           "isStatic": false,
           "parameterCount": 1,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InternalServiceCollectionMap",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -1001,22 +1001,22 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IInjectableService",
-          "clrName": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
+          "targetName": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
         }
       ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Injected(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void",
-          "clrName": "Injected",
+          "targetName": "Injected",
           "metadataToken": 100673488,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void",
           "normalizedSignature": "Injected|(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void|static=false",
@@ -1030,13 +1030,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::SetLoaded(System.Object,System.String,System.Boolean):System.Void",
-          "clrName": "SetLoaded",
+          "targetName": "SetLoaded",
           "metadataToken": 100673489,
           "canonicalSignature": "(System.Object,System.String,System.Boolean):System.Void",
           "normalizedSignature": "SetLoaded|(System.Object,System.String,System.Boolean):System.Void|static=false",
@@ -1050,13 +1050,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::IsLoaded(System.Object,System.String):System.Boolean",
-          "clrName": "IsLoaded",
+          "targetName": "IsLoaded",
           "metadataToken": 100673490,
           "canonicalSignature": "(System.Object,System.String):System.Boolean",
           "normalizedSignature": "IsLoaded|(System.Object,System.String):System.Boolean|static=false",
@@ -1070,13 +1070,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Load(System.Object,System.String):System.Void",
-          "clrName": "Load",
+          "targetName": "Load",
           "metadataToken": 100673494,
           "canonicalSignature": "(System.Object,System.String):System.Void",
           "normalizedSignature": "Load|(System.Object,System.String):System.Void|static=false",
@@ -1090,13 +1090,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::LoadAsync(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task",
-          "clrName": "LoadAsync",
+          "targetName": "LoadAsync",
           "metadataToken": 100673495,
           "canonicalSignature": "(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task",
           "normalizedSignature": "LoadAsync|(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task|static=false",
@@ -1110,13 +1110,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Dispose():System.Void",
-          "clrName": "Dispose",
+          "targetName": "Dispose",
           "metadataToken": 100673497,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "Dispose|():System.Void|static=false",
@@ -1130,13 +1130,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Detaching(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean",
-          "clrName": "Detaching",
+          "targetName": "Detaching",
           "metadataToken": 100673498,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean",
           "normalizedSignature": "Detaching|(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean|static=false",
@@ -1150,13 +1150,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Attaching(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void",
-          "clrName": "Attaching",
+          "targetName": "Attaching",
           "metadataToken": 100673499,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void",
           "normalizedSignature": "Attaching|(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void|static=false",
@@ -1170,13 +1170,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::SetLoaded(System.Object,System.String,System.Boolean):System.Void",
-          "clrName": "SetLoaded",
+          "targetName": "SetLoaded",
           "metadataToken": 100663375,
           "canonicalSignature": "(System.Object,System.String,System.Boolean):System.Void",
           "normalizedSignature": "SetLoaded|(System.Object,System.String,System.Boolean):System.Void|static=false",
@@ -1190,14 +1190,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::IsLoaded(System.Object,System.String):System.Boolean",
-          "clrName": "IsLoaded",
+          "targetName": "IsLoaded",
           "metadataToken": 100663376,
           "canonicalSignature": "(System.Object,System.String):System.Boolean",
           "normalizedSignature": "IsLoaded|(System.Object,System.String):System.Boolean|static=false",
@@ -1211,14 +1211,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::Load(System.Object,System.String):System.Void",
-          "clrName": "Load",
+          "targetName": "Load",
           "metadataToken": 100663377,
           "canonicalSignature": "(System.Object,System.String):System.Void",
           "normalizedSignature": "Load|(System.Object,System.String):System.Void|static=false",
@@ -1232,14 +1232,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::LoadAsync(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task",
-          "clrName": "LoadAsync",
+          "targetName": "LoadAsync",
           "metadataToken": 100663378,
           "canonicalSignature": "(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task",
           "normalizedSignature": "LoadAsync|(System.Object,System.Threading.CancellationToken,System.String):System.Threading.Tasks.Task|static=false",
@@ -1253,14 +1253,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader::Dispose():System.Void",
-          "clrName": "Dispose",
+          "targetName": "Dispose",
           "metadataToken": 100663379,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "Dispose|():System.Void|static=false",
@@ -1274,14 +1274,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Abstractions",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Abstractions",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IInjectableService::Injected(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void",
-          "clrName": "Injected",
+          "targetName": "Injected",
           "metadataToken": 100673728,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void",
           "normalizedSignature": "Injected|(Microsoft.EntityFrameworkCore.DbContext,System.Object,System.Nullable_1[[Microsoft.EntityFrameworkCore.QueryTrackingBehavior,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Metadata.ITypeBase):System.Void|static=false",
@@ -1295,14 +1295,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IInjectableService::Detaching(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean",
-          "clrName": "Detaching",
+          "targetName": "Detaching",
           "metadataToken": 100673729,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean",
           "normalizedSignature": "Detaching|(Microsoft.EntityFrameworkCore.DbContext,System.Object):System.Boolean|static=false",
@@ -1316,14 +1316,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Internal.IInjectableService::Attaching(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void",
-          "clrName": "Attaching",
+          "targetName": "Attaching",
           "metadataToken": 100673730,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void",
           "normalizedSignature": "Attaching|(Microsoft.EntityFrameworkCore.DbContext,Microsoft.EntityFrameworkCore.Metadata.IEntityType,System.Object):System.Void|static=false",
@@ -1337,19 +1337,19 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Internal.IInjectableService",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Internal.IInjectableService"
         }
       ],
       "properties": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Logger:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-          "clrName": "Logger",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Logger:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Infrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "targetName": "Logger",
           "metadataToken": 385877743,
-          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-          "normalizedSignature": "Logger|:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Infrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "Logger|:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Infrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
@@ -1360,12 +1360,12 @@
           "isVirtual": true,
           "isOverride": false,
           "visibility": "Protected",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::Context:Microsoft.EntityFrameworkCore.DbContext",
-          "clrName": "Context",
+          "targetName": "Context",
           "metadataToken": 385877744,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.DbContext",
           "normalizedSignature": "Context|:Microsoft.EntityFrameworkCore.DbContext|static=false|accessor=getset",
@@ -1379,30 +1379,30 @@
           "isVirtual": true,
           "isOverride": false,
           "visibility": "Protected",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ],
       "fields": [],
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Infrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
           "metadataToken": 100673487,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Infrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Infrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoader",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -1412,26 +1412,26 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory"
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory"
         },
         {
           "stableId": "System.Private.CoreLib:System.IDisposable",
-          "clrName": "System.IDisposable"
+          "targetName": "System.IDisposable"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-          "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
+          "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
         }
       ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::Create():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-          "clrName": "Create",
+          "targetName": "Create",
           "metadataToken": 100673503,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "normalizedSignature": "Create|():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader|static=false",
@@ -1445,13 +1445,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::Dispose():System.Void",
-          "clrName": "Dispose",
+          "targetName": "Dispose",
           "metadataToken": 100673504,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "Dispose|():System.Void|static=false",
@@ -1465,13 +1465,13 @@
           "isOverride": false,
           "isSealed": true,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::ResetState():System.Void",
-          "clrName": "ResetState",
+          "targetName": "ResetState",
           "metadataToken": 100673505,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ResetState|():System.Void|static=false",
@@ -1485,13 +1485,13 @@
           "isOverride": false,
           "isSealed": true,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::ResetStateAsync(System.Threading.CancellationToken):System.Threading.Tasks.Task",
-          "clrName": "ResetStateAsync",
+          "targetName": "ResetStateAsync",
           "metadataToken": 100673506,
           "canonicalSignature": "(System.Threading.CancellationToken):System.Threading.Tasks.Task",
           "normalizedSignature": "ResetStateAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task|static=false",
@@ -1505,13 +1505,13 @@
           "isOverride": false,
           "isSealed": true,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory::Create():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
-          "clrName": "Create",
+          "targetName": "Create",
           "metadataToken": 100673473,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader",
           "normalizedSignature": "Create|():Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader|static=false",
@@ -1525,14 +1525,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.ILazyLoaderFactory"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService::ResetState():System.Void",
-          "clrName": "ResetState",
+          "targetName": "ResetState",
           "metadataToken": 100673199,
           "canonicalSignature": "():System.Void",
           "normalizedSignature": "ResetState|():System.Void|static=false",
@@ -1546,14 +1546,14 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IResettableService::ResetStateAsync(System.Threading.CancellationToken):System.Threading.Tasks.Task",
-          "clrName": "ResetStateAsync",
+          "targetName": "ResetStateAsync",
           "metadataToken": 100673200,
           "canonicalSignature": "(System.Threading.CancellationToken):System.Threading.Tasks.Task",
           "normalizedSignature": "ResetStateAsync|(System.Threading.CancellationToken):System.Threading.Tasks.Task|static=false",
@@ -1567,8 +1567,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Infrastructure.IResettableService"
         }
@@ -1578,22 +1578,22 @@
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Infrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
           "metadataToken": 100673502,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BInfrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Infrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Infrastructure,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
           "isStatic": false,
           "parameterCount": 2,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.LazyLoaderFactory",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -1603,12 +1603,12 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
-          "stableId": "System.Private.CoreLib:System.Collections.Generic.IComparer\u00601",
-          "clrName": "System.Collections.Generic.IComparer\u00601",
+          "stableId": "System.Private.CoreLib:System.Collections.Generic.IComparer`1",
+          "targetName": "System.Collections.Generic.IComparer`1",
           "typeArguments": [
             "MemberInfo"
           ]
@@ -1617,7 +1617,7 @@
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer::Compare(System.Reflection.MemberInfo,System.Reflection.MemberInfo):System.Int32",
-          "clrName": "Compare",
+          "targetName": "Compare",
           "metadataToken": 100673508,
           "canonicalSignature": "(System.Reflection.MemberInfo,System.Reflection.MemberInfo):System.Int32",
           "normalizedSignature": "Compare|(System.Reflection.MemberInfo,System.Reflection.MemberInfo):System.Int32|static=false",
@@ -1631,8 +1631,8 @@
           "isOverride": false,
           "isSealed": true,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         }
       ],
@@ -1640,15 +1640,15 @@
       "fields": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer::InstanceMicrosoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
-          "clrName": "Instance",
+          "targetName": "Instance",
           "metadataToken": 67110557,
           "normalizedSignature": "Instance|Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer|static=true|const=false",
           "isStatic": true,
           "isReadOnly": true,
           "isLiteral": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.MemberInfoNameComparer",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ],
       "events": [],
@@ -1656,8 +1656,8 @@
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "StaticNamespace",
       "accessibility": "Public",
@@ -1667,12 +1667,12 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions::BuildOptionsFragment(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.String",
-          "clrName": "BuildOptionsFragment",
+          "targetName": "BuildOptionsFragment",
           "metadataToken": 100673467,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.String",
           "normalizedSignature": "BuildOptionsFragment|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions):System.String|static=true",
@@ -1686,8 +1686,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.DbContextOptionsExtensions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
         }
       ],
@@ -1698,8 +1698,8 @@
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
-      "clrName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "StaticNamespace",
       "accessibility": "Public",
@@ -1709,12 +1709,12 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions::GetService(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService",
-          "clrName": "GetService",
+          "targetName": "GetService",
           "metadataToken": 100673474,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService",
           "normalizedSignature": "GetService|(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]]):TService|static=true",
@@ -1728,13 +1728,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions::GetService(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Type):System.Object",
-          "clrName": "GetService",
+          "targetName": "GetService",
           "metadataToken": 100673475,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Type):System.Object",
           "normalizedSignature": "GetService|(Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure_1[[System.IServiceProvider,System.ComponentModel,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Type):System.Object|static=true",
@@ -1748,8 +1748,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         }
       ],

@@ -7,8 +7,8 @@
   "types": [
     {
       "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions",
-      "clrName": "System.Transactions.TransactionsDatabaseFacadeExtensions",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "System.Transactions.TransactionsDatabaseFacadeExtensions",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "StaticNamespace",
       "accessibility": "Public",
@@ -18,12 +18,12 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions::EnlistTransaction(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void",
-          "clrName": "EnlistTransaction",
+          "targetName": "EnlistTransaction",
           "metadataToken": 100663383,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void",
           "normalizedSignature": "EnlistTransaction|(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.Transactions.Transaction):System.Void|static=true",
@@ -37,13 +37,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "System.Transactions.TransactionsDatabaseFacadeExtensions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "System.Transactions.TransactionsDatabaseFacadeExtensions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:System.Transactions.TransactionsDatabaseFacadeExtensions::GetEnlistedTransaction(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade):System.Transactions.Transaction",
-          "clrName": "GetEnlistedTransaction",
+          "targetName": "GetEnlistedTransaction",
           "metadataToken": 100663384,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade):System.Transactions.Transaction",
           "normalizedSignature": "GetEnlistedTransaction|(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade):System.Transactions.Transaction|static=true",
@@ -57,8 +57,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "System.Transactions.TransactionsDatabaseFacadeExtensions",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "System.Transactions.TransactionsDatabaseFacadeExtensions",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": true
         }
       ],
