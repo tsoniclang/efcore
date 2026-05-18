@@ -7,8 +7,8 @@
   "types": [
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetBuilder",
-      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetBuilder",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetBuilder",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Interface",
       "accessibility": "Public",
@@ -19,7 +19,7 @@
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetBuilder::CreateConventionSet():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
-          "clrName": "CreateConventionSet",
+          "targetName": "CreateConventionSet",
           "metadataToken": 100671387,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
           "normalizedSignature": "CreateConventionSet|():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet|static=false",
@@ -33,8 +33,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         }
       ],
@@ -45,8 +45,8 @@
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetPlugin",
-      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetPlugin",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetPlugin",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Interface",
       "accessibility": "Public",
@@ -57,7 +57,7 @@
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetPlugin::ModifyConventions(Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet):Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
-          "clrName": "ModifyConventions",
+          "targetName": "ModifyConventions",
           "metadataToken": 100671388,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet):Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
           "normalizedSignature": "ModifyConventions|(Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet):Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet|static=false",
@@ -71,8 +71,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetPlugin",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IConventionSetPlugin",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         }
       ],
@@ -83,8 +83,8 @@
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
-      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Interface",
       "accessibility": "Public",
@@ -95,7 +95,7 @@
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder::CreateConventionSet():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
-          "clrName": "CreateConventionSet",
+          "targetName": "CreateConventionSet",
           "metadataToken": 100671389,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
           "normalizedSignature": "CreateConventionSet|():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet|static=false",
@@ -109,8 +109,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         }
       ],
@@ -121,8 +121,8 @@
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
-      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -132,18 +132,18 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
-          "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder"
+          "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder"
         }
       ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder::CreateConventionSet():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
-          "clrName": "CreateConventionSet",
+          "targetName": "CreateConventionSet",
           "metadataToken": 100671392,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
           "normalizedSignature": "CreateConventionSet|():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet|static=false",
@@ -157,13 +157,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder::ReplaceConvention(List_1,TImplementation):System.Boolean",
-          "clrName": "ReplaceConvention",
+          "targetName": "ReplaceConvention",
           "metadataToken": 100671393,
           "canonicalSignature": "(List_1,TImplementation):System.Boolean",
           "normalizedSignature": "ReplaceConvention|(List_1,TImplementation):System.Boolean|static=false",
@@ -177,13 +177,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Protected",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder::CreateConventionSet():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
-          "clrName": "CreateConventionSet",
+          "targetName": "CreateConventionSet",
           "metadataToken": 100671389,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
           "normalizedSignature": "CreateConventionSet|():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet|static=false",
@@ -197,8 +197,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder"
         }
@@ -206,7 +206,7 @@
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder::Dependencies:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "clrName": "Dependencies",
+          "targetName": "Dependencies",
           "metadataToken": 385877524,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
           "normalizedSignature": "Dependencies|:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies|static=false|accessor=get",
@@ -220,8 +220,8 @@
           "isVirtual": true,
           "isOverride": false,
           "visibility": "Protected",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ],
       "fields": [],
@@ -235,15 +235,15 @@
           "isStatic": false,
           "parameterCount": 1,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-      "assemblyName": "Microsoft.EntityFrameworkCore",
+      "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -253,12 +253,12 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
-          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
-          "clrName": "System.IEquatable\u00601",
+          "stableId": "System.Private.CoreLib:System.IEquatable`1",
+          "targetName": "System.IEquatable`1",
           "typeArguments": [
             "ProviderConventionSetBuilderDependencies"
           ]
@@ -267,7 +267,7 @@
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::With(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "clrName": "With",
+          "targetName": "With",
           "metadataToken": 100671411,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
           "normalizedSignature": "With|(Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies|static=false",
@@ -281,13 +281,13 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::ToString():System.String",
-          "clrName": "ToString",
+          "targetName": "ToString",
           "metadataToken": 100671412,
           "canonicalSignature": "():System.String",
           "normalizedSignature": "ToString|():System.String|static=false",
@@ -301,13 +301,13 @@
           "isOverride": true,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::GetHashCode():System.Int32",
-          "clrName": "GetHashCode",
+          "targetName": "GetHashCode",
           "metadataToken": 100671416,
           "canonicalSignature": "():System.Int32",
           "normalizedSignature": "GetHashCode|():System.Int32|static=false",
@@ -321,13 +321,13 @@
           "isOverride": true,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::Equals(System.Object):System.Boolean",
-          "clrName": "Equals",
+          "targetName": "Equals",
           "metadataToken": 100671417,
           "canonicalSignature": "(System.Object):System.Boolean",
           "normalizedSignature": "Equals|(System.Object):System.Boolean|static=false",
@@ -341,13 +341,13 @@
           "isOverride": true,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::Equals(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies):System.Boolean",
-          "clrName": "Equals",
+          "targetName": "Equals",
           "metadataToken": 100671418,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies):System.Boolean",
           "normalizedSignature": "Equals|(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies):System.Boolean|static=false",
@@ -361,16 +361,16 @@
           "isOverride": false,
           "isSealed": true,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::\u003CClone\u003E$():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "clrName": "\u003CClone\u003E$",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::<Clone>$():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "targetName": "<Clone>$",
           "metadataToken": 100671419,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "normalizedSignature": "\u003CClone\u003E$|():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies|static=false",
+          "normalizedSignature": "<Clone>$|():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -381,15 +381,15 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false
         }
       ],
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::TypeMappingSource:Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource",
-          "clrName": "TypeMappingSource",
+          "targetName": "TypeMappingSource",
           "metadataToken": 385877526,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource",
           "normalizedSignature": "TypeMappingSource|:Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource|static=false|accessor=getset",
@@ -403,12 +403,12 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::ParameterBindingFactories:Microsoft.EntityFrameworkCore.Metadata.IParameterBindingFactories",
-          "clrName": "ParameterBindingFactories",
+          "targetName": "ParameterBindingFactories",
           "metadataToken": 385877527,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.IParameterBindingFactories",
           "normalizedSignature": "ParameterBindingFactories|:Microsoft.EntityFrameworkCore.Metadata.IParameterBindingFactories|static=false|accessor=getset",
@@ -422,12 +422,12 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::MemberClassifier:Microsoft.EntityFrameworkCore.Metadata.Internal.IMemberClassifier",
-          "clrName": "MemberClassifier",
+          "targetName": "MemberClassifier",
           "metadataToken": 385877528,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Internal.IMemberClassifier",
           "normalizedSignature": "MemberClassifier|:Microsoft.EntityFrameworkCore.Metadata.Internal.IMemberClassifier|static=false|accessor=getset",
@@ -441,12 +441,12 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::ConstructorBindingFactory:Microsoft.EntityFrameworkCore.Metadata.IConstructorBindingFactory",
-          "clrName": "ConstructorBindingFactory",
+          "targetName": "ConstructorBindingFactory",
           "metadataToken": 385877529,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.IConstructorBindingFactory",
           "normalizedSignature": "ConstructorBindingFactory|:Microsoft.EntityFrameworkCore.Metadata.IConstructorBindingFactory|static=false|accessor=getset",
@@ -460,15 +460,15 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::Logger:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-          "clrName": "Logger",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::Logger:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "targetName": "Logger",
           "metadataToken": 385877530,
-          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-          "normalizedSignature": "Logger|:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=getset",
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "Logger|:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=getset",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
@@ -479,15 +479,15 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::ValidationLogger:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-          "clrName": "ValidationLogger",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::ValidationLogger:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model+Validation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "targetName": "ValidationLogger",
           "metadataToken": 385877531,
-          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-          "normalizedSignature": "ValidationLogger|:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=getset",
+          "canonicalSignature": ":Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model+Validation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
+          "normalizedSignature": "ValidationLogger|:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model+Validation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=getset",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "isIndexer": false,
@@ -498,12 +498,12 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::SetFinder:Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder",
-          "clrName": "SetFinder",
+          "targetName": "SetFinder",
           "metadataToken": 385877532,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder",
           "normalizedSignature": "SetFinder|:Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder|static=false|accessor=getset",
@@ -517,12 +517,12 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::ContextType:System.Type",
-          "clrName": "ContextType",
+          "targetName": "ContextType",
           "metadataToken": 385877533,
           "canonicalSignature": ":System.Type",
           "normalizedSignature": "ContextType|:System.Type|static=false|accessor=get",
@@ -536,30 +536,30 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ],
       "fields": [],
       "events": [],
       "constructors": [
         {
-          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::.ctor(Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource,Microsoft.EntityFrameworkCore.Metadata.IConstructorBindingFactory,Microsoft.EntityFrameworkCore.Metadata.IParameterBindingFactories,Microsoft.EntityFrameworkCore.Metadata.Internal.IMemberClassifier,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder,Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):void",
+          "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies::.ctor(Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource,Microsoft.EntityFrameworkCore.Metadata.IConstructorBindingFactory,Microsoft.EntityFrameworkCore.Metadata.IParameterBindingFactories,Microsoft.EntityFrameworkCore.Metadata.Internal.IMemberClassifier,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model+Validation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder,Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):void",
           "metadataToken": 100671395,
-          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource,Microsoft.EntityFrameworkCore.Metadata.IConstructorBindingFactory,Microsoft.EntityFrameworkCore.Metadata.IParameterBindingFactories,Microsoft.EntityFrameworkCore.Metadata.Internal.IMemberClassifier,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder,Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):void",
-          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource,Microsoft.EntityFrameworkCore.Metadata.IConstructorBindingFactory,Microsoft.EntityFrameworkCore.Metadata.IParameterBindingFactories,Microsoft.EntityFrameworkCore.Metadata.Internal.IMemberClassifier,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory\u002BModel\u002BValidation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder,Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):void|static=false",
+          "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource,Microsoft.EntityFrameworkCore.Metadata.IConstructorBindingFactory,Microsoft.EntityFrameworkCore.Metadata.IParameterBindingFactories,Microsoft.EntityFrameworkCore.Metadata.Internal.IMemberClassifier,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model+Validation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder,Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):void",
+          "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.ITypeMappingSource,Microsoft.EntityFrameworkCore.Metadata.IConstructorBindingFactory,Microsoft.EntityFrameworkCore.Metadata.IParameterBindingFactories,Microsoft.EntityFrameworkCore.Metadata.Internal.IMemberClassifier,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger_1[[Microsoft.EntityFrameworkCore.DbLoggerCategory+Model+Validation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],Microsoft.EntityFrameworkCore.Infrastructure.IDbSetFinder,Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext):void|static=false",
           "isStatic": false,
           "parameterCount": 8,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder",
-      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder",
-      "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
+      "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -569,18 +569,18 @@
       "arity": 0,
       "baseType": {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder",
-        "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder"
+        "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilder"
       },
       "interfaces": [
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
-          "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder"
+          "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder"
         }
       ],
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder::CreateConventionSet():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
-          "clrName": "CreateConventionSet",
+          "targetName": "CreateConventionSet",
           "metadataToken": 100670766,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
           "normalizedSignature": "CreateConventionSet|():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet|static=false",
@@ -594,13 +594,13 @@
           "isOverride": true,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder::CreateConventionSet():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
-          "clrName": "CreateConventionSet",
+          "targetName": "CreateConventionSet",
           "metadataToken": 100671389,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet",
           "normalizedSignature": "CreateConventionSet|():Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet|static=false",
@@ -614,8 +614,8 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore",
           "isExtensionMethod": false,
           "sourceInterface": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.IProviderConventionSetBuilder"
         }
@@ -623,7 +623,7 @@
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder::RelationalDependencies:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "clrName": "RelationalDependencies",
+          "targetName": "RelationalDependencies",
           "metadataToken": 385877854,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
           "normalizedSignature": "RelationalDependencies|:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies|static=false|accessor=get",
@@ -637,8 +637,8 @@
           "isVirtual": true,
           "isOverride": false,
           "visibility": "Protected",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
         }
       ],
       "fields": [],
@@ -652,15 +652,15 @@
           "isStatic": false,
           "parameterCount": 2,
           "visibility": "Protected",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilder",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
         }
       ]
     },
     {
       "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-      "clrName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-      "assemblyName": "Microsoft.EntityFrameworkCore.Relational",
+      "targetName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+      "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
       "metadataToken": 0,
       "kind": "Class",
       "accessibility": "Public",
@@ -670,12 +670,12 @@
       "arity": 0,
       "baseType": {
         "stableId": "System.Private.CoreLib:System.Object",
-        "clrName": "System.Object"
+        "targetName": "System.Object"
       },
       "interfaces": [
         {
-          "stableId": "System.Private.CoreLib:System.IEquatable\u00601",
-          "clrName": "System.IEquatable\u00601",
+          "stableId": "System.Private.CoreLib:System.IEquatable`1",
+          "targetName": "System.IEquatable`1",
           "typeArguments": [
             "RelationalConventionSetBuilderDependencies"
           ]
@@ -684,7 +684,7 @@
       "methods": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies::ToString():System.String",
-          "clrName": "ToString",
+          "targetName": "ToString",
           "metadataToken": 100670773,
           "canonicalSignature": "():System.String",
           "normalizedSignature": "ToString|():System.String|static=false",
@@ -698,13 +698,13 @@
           "isOverride": true,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies::GetHashCode():System.Int32",
-          "clrName": "GetHashCode",
+          "targetName": "GetHashCode",
           "metadataToken": 100670777,
           "canonicalSignature": "():System.Int32",
           "normalizedSignature": "GetHashCode|():System.Int32|static=false",
@@ -718,13 +718,13 @@
           "isOverride": true,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies::Equals(System.Object):System.Boolean",
-          "clrName": "Equals",
+          "targetName": "Equals",
           "metadataToken": 100670778,
           "canonicalSignature": "(System.Object):System.Boolean",
           "normalizedSignature": "Equals|(System.Object):System.Boolean|static=false",
@@ -738,13 +738,13 @@
           "isOverride": true,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies::Equals(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies):System.Boolean",
-          "clrName": "Equals",
+          "targetName": "Equals",
           "metadataToken": 100670779,
           "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies):System.Boolean",
           "normalizedSignature": "Equals|(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies):System.Boolean|static=false",
@@ -758,16 +758,16 @@
           "isOverride": false,
           "isSealed": true,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         },
         {
-          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies::\u003CClone\u003E$():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "clrName": "\u003CClone\u003E$",
+          "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies::<Clone>$():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+          "targetName": "<Clone>$",
           "metadataToken": 100670780,
           "canonicalSignature": "():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "normalizedSignature": "\u003CClone\u003E$|():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies|static=false",
+          "normalizedSignature": "<Clone>$|():Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies|static=false",
           "emitScope": "ClassSurface",
           "provenance": "Original",
           "arity": 0,
@@ -778,15 +778,15 @@
           "isOverride": false,
           "isSealed": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational",
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
           "isExtensionMethod": false
         }
       ],
       "properties": [
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies::RelationalAnnotationProvider:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider",
-          "clrName": "RelationalAnnotationProvider",
+          "targetName": "RelationalAnnotationProvider",
           "metadataToken": 385877856,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider",
           "normalizedSignature": "RelationalAnnotationProvider|:Microsoft.EntityFrameworkCore.Metadata.IRelationalAnnotationProvider|static=false|accessor=getset",
@@ -800,12 +800,12 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
         },
         {
           "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies::UpdateSqlGenerator:Microsoft.EntityFrameworkCore.Update.IUpdateSqlGenerator",
-          "clrName": "UpdateSqlGenerator",
+          "targetName": "UpdateSqlGenerator",
           "metadataToken": 385877857,
           "canonicalSignature": ":Microsoft.EntityFrameworkCore.Update.IUpdateSqlGenerator",
           "normalizedSignature": "UpdateSqlGenerator|:Microsoft.EntityFrameworkCore.Update.IUpdateSqlGenerator|static=false|accessor=getset",
@@ -819,8 +819,8 @@
           "isVirtual": false,
           "isOverride": false,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
         }
       ],
       "fields": [],
@@ -834,8 +834,8 @@
           "isStatic": false,
           "parameterCount": 2,
           "visibility": "Public",
-          "declaringClrType": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
-          "declaringAssemblyName": "Microsoft.EntityFrameworkCore.Relational"
+          "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies",
+          "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
         }
       ]
     }
