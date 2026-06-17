@@ -174,5 +174,5 @@ export type IConventionContext<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IConventionContext :
-  [T1] extends [unknown] ? Internal.IConventionContext_1<T1> : never;
+  Internal.IConventionContext_1<T1>;
 

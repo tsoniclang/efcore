@@ -3008,26 +3008,6 @@
             "isExtensionMethod": false
           },
           {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator::GenerateCacheKeyCore(System.Linq.Expressions.Expression,System.Boolean):Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator+CompiledQueryCacheKey",
-            "targetName": "GenerateCacheKeyCore",
-            "metadataToken": 100665221,
-            "canonicalSignature": "(System.Linq.Expressions.Expression,System.Boolean):Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator+CompiledQueryCacheKey",
-            "normalizedSignature": "GenerateCacheKeyCore|(System.Linq.Expressions.Expression,System.Boolean):Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator+CompiledQueryCacheKey|static=false",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 2,
-            "isStatic": false,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
-          {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.ICompiledQueryCacheKeyGenerator::GenerateCacheKey(System.Linq.Expressions.Expression,System.Boolean):System.Object",
             "targetName": "GenerateCacheKey",
             "metadataToken": 100665372,
@@ -6739,12 +6719,12 @@
             "targetName": "LiftedConstants",
             "metadataToken": 385876421,
             "canonicalSignature": ":System.Collections.Generic.IReadOnlyList_1[[System.ValueTuple_2[[System.Linq.Expressions.ParameterExpression,System.Linq.Expressions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[System.Linq.Expressions.Expression,System.Linq.Expressions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-            "normalizedSignature": "LiftedConstants|:System.Collections.Generic.IReadOnlyList_1[[System.ValueTuple_2[[System.Linq.Expressions.ParameterExpression,System.Linq.Expressions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[System.Linq.Expressions.Expression,System.Linq.Expressions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=getset",
+            "normalizedSignature": "LiftedConstants|:System.Collections.Generic.IReadOnlyList_1[[System.ValueTuple_2[[System.Linq.Expressions.ParameterExpression,System.Linq.Expressions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a],[System.Linq.Expressions.Expression,System.Linq.Expressions,Version=10.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -7191,17 +7171,6 @@
             "isStatic": false,
             "parameterCount": 1,
             "visibility": "Public",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.MaterializerLiftableConstantContext",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.MaterializerLiftableConstantContext::.ctor(Microsoft.EntityFrameworkCore.Query.MaterializerLiftableConstantContext):void",
-            "metadataToken": 100665479,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.MaterializerLiftableConstantContext):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.MaterializerLiftableConstantContext):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.MaterializerLiftableConstantContext",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
@@ -7822,12 +7791,12 @@
             "targetName": "CanCache",
             "metadataToken": 385876508,
             "canonicalSignature": ":System.Boolean",
-            "normalizedSignature": "CanCache|:System.Boolean|static=false|accessor=getset",
+            "normalizedSignature": "CanCache|:System.Boolean|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": false,
@@ -9297,12 +9266,12 @@
             "targetName": "TranslationErrorDetails",
             "metadataToken": 385876502,
             "canonicalSignature": ":System.String",
-            "normalizedSignature": "TranslationErrorDetails|:System.String|static=false|accessor=getset",
+            "normalizedSignature": "TranslationErrorDetails|:System.String|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -9333,19 +9302,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor::.ctor(Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitorDependencies,Microsoft.EntityFrameworkCore.Query.QueryCompilationContext,System.Boolean):void",
-            "metadataToken": 100665600,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitorDependencies,Microsoft.EntityFrameworkCore.Query.QueryCompilationContext,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitorDependencies,Microsoft.EntityFrameworkCore.Query.QueryCompilationContext,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor+ExecuteUpdateSetter",
@@ -9881,12 +9838,12 @@
             "targetName": "QueryTrackingBehavior",
             "metadataToken": 385876509,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.QueryTrackingBehavior",
-            "normalizedSignature": "QueryTrackingBehavior|:Microsoft.EntityFrameworkCore.QueryTrackingBehavior|static=false|accessor=getset",
+            "normalizedSignature": "QueryTrackingBehavior|:Microsoft.EntityFrameworkCore.QueryTrackingBehavior|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -9938,12 +9895,12 @@
             "targetName": "IgnoreQueryFilters",
             "metadataToken": 385876512,
             "canonicalSignature": ":System.Boolean",
-            "normalizedSignature": "IgnoreQueryFilters|:System.Boolean|static=false|accessor=getset",
+            "normalizedSignature": "IgnoreQueryFilters|:System.Boolean|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -9957,12 +9914,12 @@
             "targetName": "IgnoredQueryFilters",
             "metadataToken": 385876513,
             "canonicalSignature": ":System.Collections.Generic.HashSet_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-            "normalizedSignature": "IgnoredQueryFilters|:System.Collections.Generic.HashSet_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=getset",
+            "normalizedSignature": "IgnoredQueryFilters|:System.Collections.Generic.HashSet_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -9976,12 +9933,12 @@
             "targetName": "IgnoreAutoIncludes",
             "metadataToken": 385876514,
             "canonicalSignature": ":System.Boolean",
-            "normalizedSignature": "IgnoreAutoIncludes|:System.Boolean|static=false|accessor=getset",
+            "normalizedSignature": "IgnoreAutoIncludes|:System.Boolean|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -10813,19 +10770,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.QueryContext::.ctor(Microsoft.EntityFrameworkCore.Query.QueryContextDependencies):void",
-            "metadataToken": 100665730,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.QueryContextDependencies):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.QueryContextDependencies):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.QueryContext",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.QueryContextDependencies",
@@ -11606,30 +11551,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.QueryRootExpression::.ctor(Microsoft.EntityFrameworkCore.Query.IAsyncQueryProvider,System.Type):void",
-            "metadataToken": 100665782,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.IAsyncQueryProvider,System.Type):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.IAsyncQueryProvider,System.Type):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.QueryRootExpression",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.QueryRootExpression::.ctor(System.Type):void",
-            "metadataToken": 100665783,
-            "canonicalSignature": "(System.Type):void",
-            "normalizedSignature": "constructor|(System.Type):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.QueryRootExpression",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.QueryRootProcessor",
@@ -14454,26 +14376,6 @@
             "isExtensionMethod": false
           },
           {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator::GenerateCacheKeyCore(System.Linq.Expressions.Expression,System.Boolean):Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator+RelationalCompiledQueryCacheKey",
-            "targetName": "GenerateCacheKeyCore",
-            "metadataToken": 100666276,
-            "canonicalSignature": "(System.Linq.Expressions.Expression,System.Boolean):Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator+RelationalCompiledQueryCacheKey",
-            "normalizedSignature": "GenerateCacheKeyCore|(System.Linq.Expressions.Expression,System.Boolean):Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator+RelationalCompiledQueryCacheKey|static=false",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 2,
-            "isStatic": false,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
-            "isExtensionMethod": false
-          },
-          {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.ICompiledQueryCacheKeyGenerator::GenerateCacheKey(System.Linq.Expressions.Expression,System.Boolean):System.Object",
             "targetName": "GenerateCacheKey",
             "metadataToken": 100665372,
@@ -14493,26 +14395,6 @@
             "ownerIdentity": "Microsoft.EntityFrameworkCore",
             "isExtensionMethod": false,
             "sourceInterface": "Microsoft.EntityFrameworkCore.Query.ICompiledQueryCacheKeyGenerator"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator::GenerateCacheKeyCore(System.Linq.Expressions.Expression,System.Boolean):Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator+CompiledQueryCacheKey",
-            "targetName": "GenerateCacheKeyCore",
-            "metadataToken": 0,
-            "canonicalSignature": "(System.Linq.Expressions.Expression,System.Boolean):Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator+CompiledQueryCacheKey",
-            "normalizedSignature": "GenerateCacheKeyCore|(System.Linq.Expressions.Expression,System.Boolean):Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGenerator+CompiledQueryCacheKey|static=false",
-            "emitScope": "ClassSurface",
-            "provenance": "BaseOverload",
-            "arity": 0,
-            "parameterCount": 2,
-            "isStatic": false,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGenerator",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
-            "isExtensionMethod": false
           }
         ],
         "properties": [
@@ -16114,17 +15996,6 @@
             "isStatic": false,
             "parameterCount": 3,
             "visibility": "Public",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.RelationalMaterializerLiftableConstantContext",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalMaterializerLiftableConstantContext::.ctor(Microsoft.EntityFrameworkCore.Query.RelationalMaterializerLiftableConstantContext):void",
-            "metadataToken": 100666355,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.RelationalMaterializerLiftableConstantContext):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.RelationalMaterializerLiftableConstantContext):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.RelationalMaterializerLiftableConstantContext",
             "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
           }
@@ -18652,17 +18523,6 @@
             "visibility": "Public",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor",
             "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor::.ctor(Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor):void",
-            "metadataToken": 100666450,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
           }
         ]
       },
@@ -18960,12 +18820,12 @@
             "targetName": "QuerySplittingBehavior",
             "metadataToken": 385876576,
             "canonicalSignature": ":System.Nullable_1[[Microsoft.EntityFrameworkCore.QuerySplittingBehavior,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-            "normalizedSignature": "QuerySplittingBehavior|:System.Nullable_1[[Microsoft.EntityFrameworkCore.QuerySplittingBehavior,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=getset",
+            "normalizedSignature": "QuerySplittingBehavior|:System.Nullable_1[[Microsoft.EntityFrameworkCore.QuerySplittingBehavior,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -21938,12 +21798,12 @@
             "targetName": "TranslationErrorDetails",
             "metadataToken": 385876611,
             "canonicalSignature": ":System.String",
-            "normalizedSignature": "TranslationErrorDetails|:System.String|static=false|accessor=getset",
+            "normalizedSignature": "TranslationErrorDetails|:System.String|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -22525,17 +22385,6 @@
             "visibility": "Public",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.RelationalStructuralTypeShaperExpression",
             "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.RelationalStructuralTypeShaperExpression::.ctor(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Linq.Expressions.Expression,System.Boolean,System.Linq.Expressions.LambdaExpression,System.Type):void",
-            "metadataToken": 100666780,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Linq.Expressions.Expression,System.Boolean,System.Linq.Expressions.LambdaExpression,System.Type):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Linq.Expressions.Expression,System.Boolean,System.Linq.Expressions.LambdaExpression,System.Type):void|static=false",
-            "isStatic": false,
-            "parameterCount": 5,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.RelationalStructuralTypeShaperExpression",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
           }
         ]
       },
@@ -23090,19 +22939,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor::.ctor(Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitorDependencies,Microsoft.EntityFrameworkCore.Query.QueryCompilationContext):void",
-            "metadataToken": 100665848,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitorDependencies,Microsoft.EntityFrameworkCore.Query.QueryCompilationContext):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitorDependencies,Microsoft.EntityFrameworkCore.Query.QueryCompilationContext):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitorDependencies",
@@ -26258,19 +26095,7 @@
         "properties": [],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressionVisitor::.ctor():void",
-            "metadataToken": 100666913,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressionVisitor",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlNullabilityProcessor",
@@ -27120,12 +26945,12 @@
             "targetName": "ParametersDecorator",
             "metadataToken": 385876631,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Query.ParametersCacheDecorator",
-            "normalizedSignature": "ParametersDecorator|:Microsoft.EntityFrameworkCore.Query.ParametersCacheDecorator|static=false|accessor=getset",
+            "normalizedSignature": "ParametersDecorator|:Microsoft.EntityFrameworkCore.Query.ParametersCacheDecorator|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -27726,26 +27551,6 @@
             "isExtensionMethod": false
           },
           {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.StructuralTypeShaperExpression::CreateUnableToDiscriminateExceptionExpression(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Linq.Expressions.Expression):System.Linq.Expressions.Expression",
-            "targetName": "CreateUnableToDiscriminateExceptionExpression",
-            "metadataToken": 100665906,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Linq.Expressions.Expression):System.Linq.Expressions.Expression",
-            "normalizedSignature": "CreateUnableToDiscriminateExceptionExpression|(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Linq.Expressions.Expression):System.Linq.Expressions.Expression|static=true",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 2,
-            "isStatic": true,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.StructuralTypeShaperExpression",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
-          {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.StructuralTypeShaperExpression::GenerateMaterializationCondition(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Boolean):System.Linq.Expressions.LambdaExpression",
             "targetName": "GenerateMaterializationCondition",
             "metadataToken": 100665907,
@@ -28054,17 +27859,6 @@
             "isStatic": false,
             "parameterCount": 3,
             "visibility": "Public",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.StructuralTypeShaperExpression",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.StructuralTypeShaperExpression::.ctor(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Linq.Expressions.Expression,System.Boolean,System.Linq.Expressions.LambdaExpression,System.Type):void",
-            "metadataToken": 100665905,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Linq.Expressions.Expression,System.Boolean,System.Linq.Expressions.LambdaExpression,System.Type):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.ITypeBase,System.Linq.Expressions.Expression,System.Boolean,System.Linq.Expressions.LambdaExpression,System.Type):void|static=false",
-            "isStatic": false,
-            "parameterCount": 5,
-            "visibility": "Protected",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.StructuralTypeShaperExpression",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }

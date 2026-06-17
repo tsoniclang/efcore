@@ -22,9 +22,9 @@ export interface ICSharpRuntimeAnnotationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
 
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer | null, keyValueComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null): boolean;
     Create(typeMapping: CoreTypeMapping, property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): boolean;
-    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -34,9 +34,9 @@ export interface ICSharpRuntimeAnnotationCodeGenerator$instance {
     Generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
 }
@@ -46,6 +46,7 @@ export type ICSharpRuntimeAnnotationCodeGenerator = ICSharpRuntimeAnnotationCode
 
 export interface QualifiedName$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_Internal_QualifiedName: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -72,22 +73,22 @@ export interface CSharpRuntimeAnnotationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
 
     readonly Dependencies: CSharpRuntimeAnnotationCodeGeneratorDependencies;
-    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer | null, keyValueComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null): boolean;
     CreateDefaultTypeMapping(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): CoreTypeMapping | null;
-    Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     Generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
     GenerateSimpleAnnotation(annotationName: string, valueString: string, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
@@ -167,61 +168,14 @@ export const CSharpRuntimeAnnotationCodeGeneratorParameters: {
 export type CSharpRuntimeAnnotationCodeGeneratorParameters = CSharpRuntimeAnnotationCodeGeneratorParameters$instance;
 
 export interface RelationalCSharpRuntimeAnnotationCodeGenerator$instance extends CSharpRuntimeAnnotationCodeGenerator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_Internal_CSharpRuntimeAnnotationCodeGenerator: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Design_Internal_RelationalCSharpRuntimeAnnotationCodeGenerator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Design_Internal_ICSharpRuntimeAnnotationCodeGenerator: never;
 
     readonly RelationalDependencies: RelationalCSharpRuntimeAnnotationCodeGeneratorDependencies;
-    Create(typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer | null, keyValueComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null): boolean;
-    Create(converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Create(comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(model: IRelationalModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(table: ITableBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(table: ITable, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(view: IView, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(sqlQuery: ISqlQuery, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(function_: IStoreFunction, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(storedProcedure: IStoreStoredProcedure, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(column: IColumnBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(column: IColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(column: IViewColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(column: ISqlQueryColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(column: IFunctionColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(parameter: IStoreFunctionParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(column: IStoreStoredProcedureResultColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(parameter: IStoreStoredProcedureParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(uniqueConstraint: IUniqueConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(index: ITableIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(foreignKey: IForeignKeyConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(tableMapping: ITableMappingBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(tableMapping: ITableMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(viewMapping: IViewMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(sqlQueryMapping: ISqlQueryMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(functionMapping: IFunctionMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(sprocMapping: IStoredProcedureMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(function_: IDbFunction, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(functionParameter: IDbFunctionParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(sequence: ISequence, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(fragment: IEntityTypeMappingFragment, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(storedProcedure: IStoredProcedure, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(storedProcedure: IStoredProcedureParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(storedProcedure: IStoredProcedureResultColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(constraint: ICheckConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(overrides: IRelationalPropertyOverrides, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
-    Generate(typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters): void;
+    Create: CSharpRuntimeAnnotationCodeGenerator$instance["Create"] & ((comparer: ValueComparer, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((converter: ValueConverter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((typeMapping: CoreTypeMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters, valueComparer?: ValueComparer | null, keyValueComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null) => boolean);
+    Generate: CSharpRuntimeAnnotationCodeGenerator$instance["Generate"] & ((column: IColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((column: IColumnBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((column: IFunctionColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((column: ISqlQueryColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((column: IStoreStoredProcedureResultColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((column: IViewColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((complexProperty: IComplexProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((complexType: IComplexType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((constraint: ICheckConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((elementType: IElementType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((entityType: IEntityType, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((foreignKey: IForeignKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((foreignKey: IForeignKeyConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((fragment: IEntityTypeMappingFragment, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((functionMapping: IFunctionMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((functionParameter: IDbFunctionParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((function_: IDbFunction, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((function_: IStoreFunction, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((index: IIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((index: ITableIndex, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((key: IKey, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((model: IModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((model: IRelationalModel, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((navigation: INavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((navigation: ISkipNavigation, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((overrides: IRelationalPropertyOverrides, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((parameter: IStoreFunctionParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((parameter: IStoreStoredProcedureParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((property: IProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((property: IServiceProperty, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((sequence: ISequence, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((sprocMapping: IStoredProcedureMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((sqlQuery: ISqlQuery, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((sqlQueryMapping: ISqlQueryMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((storedProcedure: IStoreStoredProcedure, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((storedProcedure: IStoredProcedure, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((storedProcedure: IStoredProcedureParameter, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((storedProcedure: IStoredProcedureResultColumn, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((table: ITable, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((table: ITableBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((tableMapping: ITableMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((tableMapping: ITableMappingBase, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((trigger: ITrigger, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((typeConfiguration: ITypeMappingConfiguration, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((uniqueConstraint: IUniqueConstraint, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((view: IView, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void) & ((viewMapping: IViewMapping, parameters: CSharpRuntimeAnnotationCodeGeneratorParameters) => void);
 }
 
 

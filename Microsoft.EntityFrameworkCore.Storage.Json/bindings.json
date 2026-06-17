@@ -3970,19 +3970,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter`1::.ctor():void",
-            "metadataToken": 100665177,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriter`1",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Json.JsonValueReaderWriterSource",

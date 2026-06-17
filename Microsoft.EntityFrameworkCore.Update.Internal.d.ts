@@ -70,17 +70,17 @@ export type IRowForeignKeyValueFactory<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IRowForeignKeyValueFactory :
-  [T1] extends [unknown] ? Internal.IRowForeignKeyValueFactory_1<T1> : never;
+  Internal.IRowForeignKeyValueFactory_1<T1>;
 
 export type IRowIndexValueFactory<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IRowIndexValueFactory :
-  [T1] extends [unknown] ? Internal.IRowIndexValueFactory_1<T1> : never;
+  Internal.IRowIndexValueFactory_1<T1>;
 
 export type IRowKeyValueFactory<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IRowKeyValueFactory :
-  [T1] extends [unknown] ? Internal.IRowKeyValueFactory_1<T1> : never;
+  Internal.IRowKeyValueFactory_1<T1>;
 

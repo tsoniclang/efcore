@@ -182,24 +182,24 @@ export type EventDefinition<
   T6 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.EventDefinition :
-  [T2] extends [__] ? [T1] extends [unknown] ? Internal.EventDefinition_1<T1> : never :
-  [T3] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? Internal.EventDefinition_2<T1, T2> : never : never :
-  [T4] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? Internal.EventDefinition_3<T1, T2, T3> : never : never : never :
-  [T5] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? Internal.EventDefinition_4<T1, T2, T3, T4> : never : never : never : never :
-  [T6] extends [__] ? [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? Internal.EventDefinition_5<T1, T2, T3, T4, T5> : never : never : never : never : never :
-  [T1] extends [unknown] ? [T2] extends [unknown] ? [T3] extends [unknown] ? [T4] extends [unknown] ? [T5] extends [unknown] ? [T6] extends [unknown] ? Internal.EventDefinition_6<T1, T2, T3, T4, T5, T6> : never : never : never : never : never : never;
+  [T2] extends [__] ? Internal.EventDefinition_1<T1> :
+  [T3] extends [__] ? Internal.EventDefinition_2<T1, T2> :
+  [T4] extends [__] ? Internal.EventDefinition_3<T1, T2, T3> :
+  [T5] extends [__] ? Internal.EventDefinition_4<T1, T2, T3, T4> :
+  [T6] extends [__] ? Internal.EventDefinition_5<T1, T2, T3, T4, T5> :
+  Internal.EventDefinition_6<T1, T2, T3, T4, T5, T6>;
 
 export type IDiagnosticsLogger<
-  T1 extends unknown & Internal.LoggerCategory_1<T1> | __ = __,
+  T1 extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never } | __ = __,
 > =
   [T1] extends [__] ? Internal.IDiagnosticsLogger :
-  [T1] extends [unknown & Internal.LoggerCategory_1<T1>] ? Internal.IDiagnosticsLogger_1<T1> : never;
+  [T1] extends [unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never }] ? Internal.IDiagnosticsLogger_1<T1> : never;
 
 export type InterceptionResult<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.InterceptionResult :
-  [T1] extends [unknown] ? Internal.InterceptionResult_1<T1> : never;
+  Internal.InterceptionResult_1<T1>;
 
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore_Diagnostics as ExtensionMethods } from './__internal/extensions/index.js';

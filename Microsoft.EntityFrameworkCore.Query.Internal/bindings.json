@@ -3213,19 +3213,7 @@
         "properties": [],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryBase`2::.ctor(System.Linq.Expressions.LambdaExpression):void",
-            "metadataToken": 100666000,
-            "canonicalSignature": "(System.Linq.Expressions.LambdaExpression):void",
-            "normalizedSignature": "constructor|(System.Linq.Expressions.LambdaExpression):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryBase`2",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache",
@@ -10037,12 +10025,12 @@
             "targetName": "SelfIdentifier",
             "metadataToken": 385876793,
             "canonicalSignature": ":System.Object[]",
-            "normalizedSignature": "SelfIdentifier|:System.Object[]|static=false|accessor=getset",
+            "normalizedSignature": "SelfIdentifier|:System.Object[]|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": false,
@@ -12336,12 +12324,12 @@
             "targetName": "DiscriminatorValues",
             "metadataToken": 385876816,
             "canonicalSignature": ":System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-            "normalizedSignature": "DiscriminatorValues|:System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=getset",
+            "normalizedSignature": "DiscriminatorValues|:System.Collections.Generic.List_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": false,

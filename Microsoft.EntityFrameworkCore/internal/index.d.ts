@@ -48,79 +48,97 @@ import type { Action, Action_1, Action_2, Attribute, Boolean as ClrBoolean, Deci
 import type { IMemoryCache } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Caching.Memory/internal/index.js";
 import type { EventId, ILoggerFactory, LogLevel } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging/internal/index.js";
 
-export enum AutoTransactionBehavior {
-    WhenNeeded = 0,
-    Always = 1,
-    Never = 2
-}
+export type AutoTransactionBehavior = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_AutoTransactionBehavior: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const AutoTransactionBehavior: {
+    readonly WhenNeeded: AutoTransactionBehavior;
+    readonly Always: AutoTransactionBehavior;
+    readonly Never: AutoTransactionBehavior;
+};
 
 
-export enum ChangeTrackingStrategy {
-    Snapshot = 0,
-    ChangedNotifications = 1,
-    ChangingAndChangedNotifications = 2,
-    ChangingAndChangedNotificationsWithOriginalValues = 3
-}
+export type ChangeTrackingStrategy = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_ChangeTrackingStrategy: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const ChangeTrackingStrategy: {
+    readonly Snapshot: ChangeTrackingStrategy;
+    readonly ChangedNotifications: ChangeTrackingStrategy;
+    readonly ChangingAndChangedNotifications: ChangeTrackingStrategy;
+    readonly ChangingAndChangedNotificationsWithOriginalValues: ChangeTrackingStrategy;
+};
 
 
-export enum DeleteBehavior {
-    ClientSetNull = 0,
-    Restrict = 1,
-    SetNull = 2,
-    Cascade = 3,
-    ClientCascade = 4,
-    NoAction = 5,
-    ClientNoAction = 6
-}
+export type DeleteBehavior = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DeleteBehavior: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const DeleteBehavior: {
+    readonly ClientSetNull: DeleteBehavior;
+    readonly Restrict: DeleteBehavior;
+    readonly SetNull: DeleteBehavior;
+    readonly Cascade: DeleteBehavior;
+    readonly ClientCascade: DeleteBehavior;
+    readonly NoAction: DeleteBehavior;
+    readonly ClientNoAction: DeleteBehavior;
+};
 
 
-export enum EntityState {
-    Detached = 0,
-    Unchanged = 1,
-    Deleted = 2,
-    Modified = 3,
-    Added = 4
-}
+export type EntityState = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityState: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const EntityState: {
+    readonly Detached: EntityState;
+    readonly Unchanged: EntityState;
+    readonly Deleted: EntityState;
+    readonly Modified: EntityState;
+    readonly Added: EntityState;
+};
 
 
-export enum ParameterTranslationMode {
-    MultipleParameters = 0,
-    Constant = 1,
-    Parameter = 2
-}
+export type ParameterTranslationMode = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_ParameterTranslationMode: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const ParameterTranslationMode: {
+    readonly MultipleParameters: ParameterTranslationMode;
+    readonly Constant: ParameterTranslationMode;
+    readonly Parameter: ParameterTranslationMode;
+};
 
 
-export enum PropertyAccessMode {
-    Field = 0,
-    FieldDuringConstruction = 1,
-    Property = 2,
-    PreferField = 3,
-    PreferFieldDuringConstruction = 4,
-    PreferProperty = 5
-}
+export type PropertyAccessMode = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_PropertyAccessMode: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const PropertyAccessMode: {
+    readonly Field: PropertyAccessMode;
+    readonly FieldDuringConstruction: PropertyAccessMode;
+    readonly Property: PropertyAccessMode;
+    readonly PreferField: PropertyAccessMode;
+    readonly PreferFieldDuringConstruction: PropertyAccessMode;
+    readonly PreferProperty: PropertyAccessMode;
+};
 
 
-export enum QuerySplittingBehavior {
-    SingleQuery = 0,
-    SplitQuery = 1
-}
+export type QuerySplittingBehavior = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_QuerySplittingBehavior: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const QuerySplittingBehavior: {
+    readonly SingleQuery: QuerySplittingBehavior;
+    readonly SplitQuery: QuerySplittingBehavior;
+};
 
 
-export enum QueryTrackingBehavior {
-    TrackAll = 0,
-    NoTracking = 1,
-    NoTrackingWithIdentityResolution = 2
-}
+export type QueryTrackingBehavior = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_QueryTrackingBehavior: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const QueryTrackingBehavior: {
+    readonly TrackAll: QueryTrackingBehavior;
+    readonly NoTracking: QueryTrackingBehavior;
+    readonly NoTrackingWithIdentityResolution: QueryTrackingBehavior;
+};
 
 
-export enum WarningBehavior {
-    Log = 0,
-    Ignore = 1,
-    Throw = 2
-}
+export type WarningBehavior = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_WarningBehavior: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const WarningBehavior: {
+    readonly Log: WarningBehavior;
+    readonly Ignore: WarningBehavior;
+    readonly Throw: WarningBehavior;
+};
 
 
-export interface IDbContextFactory_1$instance<TContext extends unknown & DbContext> {
+export interface IDbContextFactory_1$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IDbContextFactory_1: never;
 
     CreateDbContext(): TContext;
@@ -128,7 +146,7 @@ export interface IDbContextFactory_1$instance<TContext extends unknown & DbConte
 }
 
 
-export type IDbContextFactory_1<TContext extends unknown & DbContext> = IDbContextFactory_1$instance<TContext>;
+export type IDbContextFactory_1<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = IDbContextFactory_1$instance<TContext>;
 
 export interface IEntityTypeConfiguration_1$instance<TEntity extends (object | null)> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IEntityTypeConfiguration_1: never;
@@ -141,11 +159,12 @@ export type IEntityTypeConfiguration_1<TEntity extends (object | null)> = IEntit
 
 export interface DbContextId$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextId: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly InstanceId: Guid;
     readonly Lease: int;
-    Equals(other: DbContextId): boolean;
     Equals(obj: unknown | null): boolean;
+    Equals(other: DbContextId): boolean;
     GetHashCode(): int;
     ToString(): string;
 }
@@ -158,8 +177,9 @@ export const DbContextId: {
 
 export type DbContextId = DbContextId$instance;
 
-export interface BackingFieldAttribute$instance extends Attribute {
+export interface BackingFieldAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_BackingFieldAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     readonly Name: string;
 }
@@ -172,8 +192,9 @@ export const BackingFieldAttribute: {
 
 export type BackingFieldAttribute = BackingFieldAttribute$instance;
 
-export interface CommentAttribute$instance extends Attribute {
+export interface CommentAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_CommentAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     readonly Comment: string;
 }
@@ -186,7 +207,7 @@ export const CommentAttribute: {
 
 export type CommentAttribute = CommentAttribute$instance;
 
-export interface DbContext$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, Microsoft_EntityFrameworkCore_Internal_Internal.IDbContextDependencies$instance, Microsoft_EntityFrameworkCore_Internal_Internal.IDbContextPoolable$instance, Microsoft_EntityFrameworkCore_Internal_Internal.IDbSetCache$instance {
+export interface DbContext$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -201,23 +222,23 @@ export interface DbContext$instance extends Microsoft_EntityFrameworkCore_Infras
     readonly ContextId: DbContextId;
     readonly Database: DatabaseFacade;
     readonly Model: IModel;
-    Add<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     Add(entity: unknown): EntityEntry;
-    AddAsync<TEntity extends (object | null)>(entity: TEntity, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry_1<TEntity>>;
+    Add<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     AddAsync(entity: unknown, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry>;
+    AddAsync<TEntity extends (object | null)>(entity: TEntity, cancellationToken?: CancellationToken): ValueTask_1<EntityEntry_1<TEntity>>;
     AddRange(...entities: unknown[]): void;
     AddRange(entities: IEnumerable_1<unknown>): void;
     AddRangeAsync(...entities: unknown[]): Task;
     AddRangeAsync(entities: IEnumerable_1<unknown>, cancellationToken?: CancellationToken): Task;
-    Attach<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     Attach(entity: unknown): EntityEntry;
+    Attach<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     AttachRange(...entities: unknown[]): void;
     AttachRange(entities: IEnumerable_1<unknown>): void;
     ConfigureConventions(configurationBuilder: ModelConfigurationBuilder): void;
     Dispose(): void;
     DisposeAsync(): ValueTask;
-    Entry<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     Entry(entity: unknown): EntityEntry;
+    Entry<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     Equals(obj: unknown | null): boolean;
     Find(entityType: Type, ...keyValues: (unknown | null)[]): unknown | null;
     Find(entityType: Type, keyValues: (unknown | null)[] | null): unknown | null;
@@ -233,19 +254,19 @@ export interface DbContext$instance extends Microsoft_EntityFrameworkCore_Infras
     GetHashCode(): int;
     OnConfiguring(optionsBuilder: DbContextOptionsBuilder): void;
     OnModelCreating(modelBuilder: ModelBuilder): void;
-    Remove<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     Remove(entity: unknown): EntityEntry;
+    Remove<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     RemoveRange(...entities: unknown[]): void;
     RemoveRange(entities: IEnumerable_1<unknown>): void;
     SaveChanges(): int;
     SaveChanges(acceptAllChangesOnSuccess: boolean): int;
-    SaveChangesAsync(cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     SaveChangesAsync(acceptAllChangesOnSuccess: boolean, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
+    SaveChangesAsync(cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
     Set<TEntity extends (object | null)>(): DbSet_1<TEntity>;
     Set<TEntity extends (object | null)>(name: string): DbSet_1<TEntity>;
     ToString(): string | null;
-    Update<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     Update(entity: unknown): EntityEntry;
+    Update<TEntity extends (object | null)>(entity: TEntity): EntityEntry_1<TEntity>;
     UpdateRange(...entities: unknown[]): void;
     UpdateRange(entities: IEnumerable_1<unknown>): void;
 }
@@ -267,7 +288,7 @@ export interface __DbContext$views {
 export type DbContext = DbContext$instance & __DbContext$views;
 
 
-export interface DbContextOptions$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptions$instance {
+export interface DbContextOptions$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptions: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
@@ -275,18 +296,18 @@ export interface DbContextOptions$instance extends Microsoft_EntityFrameworkCore
     readonly ContextType: Type;
     readonly Extensions: IEnumerable_1<IDbContextOptionsExtension>;
     readonly ExtensionsMap: ImmutableSortedDictionary_2<Type, ValueTuple_2<IDbContextOptionsExtension, System_Internal.Int32>>;
-    IsFrozen: boolean;
+    readonly IsFrozen: boolean;
     Equals(obj: unknown | null): boolean;
     Equals(other: DbContextOptions): boolean;
-    FindExtension<TExtension extends (object | null) & IDbContextOptionsExtension>(): TExtension | null;
+    FindExtension<TExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }>(): TExtension | null;
     Freeze(): void;
-    GetExtension<TExtension extends (object | null) & IDbContextOptionsExtension>(): TExtension;
+    GetExtension<TExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }>(): TExtension;
     GetHashCode(): int;
-    WithExtension<TExtension extends (object | null) & IDbContextOptionsExtension>(extension: TExtension): DbContextOptions;
+    WithExtension<TExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }>(extension: TExtension): DbContextOptions;
 }
 
 
-export const DbContextOptions: (abstract new() => DbContextOptions) & (abstract new(extensions: IReadOnlyDictionary_2<Type, IDbContextOptionsExtension>) => DbContextOptions) & (abstract new(extensions: ImmutableSortedDictionary_2<Type, ValueTuple_2<IDbContextOptionsExtension, System_Internal.Int32>>) => DbContextOptions) & {
+export const DbContextOptions: {
 };
 
 
@@ -297,38 +318,38 @@ export interface __DbContextOptions$views {
 export type DbContextOptions = DbContextOptions$instance & __DbContextOptions$views;
 
 
-export interface DbContextOptions_1$instance<TContext extends unknown & DbContext> extends DbContextOptions$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptions$instance {
+export interface DbContextOptions_1$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> extends DbContextOptions$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptions: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptions_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
 
-    readonly ContextType: Type;
-    WithExtension<TExtension extends (object | null) & IDbContextOptionsExtension>(extension: TExtension): DbContextOptions;
+    WithExtension: DbContextOptions$instance["WithExtension"] & (<TExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }>(extension: TExtension) => DbContextOptions);
 }
 
 
 export const DbContextOptions_1: {
-    new<TContext extends unknown & DbContext>(): DbContextOptions_1<TContext>;
-    new<TContext extends unknown & DbContext>(extensions: IReadOnlyDictionary_2<Type, IDbContextOptionsExtension>): DbContextOptions_1<TContext>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }>(): DbContextOptions_1<TContext>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }>(extensions: IReadOnlyDictionary_2<Type, IDbContextOptionsExtension>): DbContextOptions_1<TContext>;
 };
 
 
-export interface __DbContextOptions_1$views<TContext extends unknown & DbContext> {
+export interface __DbContextOptions_1$views<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> {
     As_IDbContextOptions(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptions$instance;
 }
 
-export type DbContextOptions_1<TContext extends unknown & DbContext> = DbContextOptions_1$instance<TContext> & __DbContextOptions_1$views<TContext>;
+export type DbContextOptions_1<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = DbContextOptions_1$instance<TContext> & __DbContextOptions_1$views<TContext>;
 
 
-export interface DbContextOptionsBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure$instance {
+export interface DbContextOptionsBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptionsBuilder: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
     readonly IsConfigured: boolean;
     readonly Options: DbContextOptions;
-    AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder;
     AddInterceptors(...interceptors: IInterceptor[]): DbContextOptionsBuilder;
+    AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder;
     ConfigureLoggingCacheTime(timeSpan: TimeSpan): DbContextOptionsBuilder;
     ConfigureWarnings(warningsConfigurationBuilderAction: Action_1<WarningsConfigurationBuilder>): DbContextOptionsBuilder;
     EnableDetailedErrors(detailedErrorsEnabled?: boolean): DbContextOptionsBuilder;
@@ -337,10 +358,10 @@ export interface DbContextOptionsBuilder$instance extends Microsoft_EntityFramew
     EnableThreadSafetyChecks(enableChecks?: boolean): DbContextOptionsBuilder;
     Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
-    LogTo(action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
-    LogTo(action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
     LogTo(action: Action_1<System_Internal.String>, categories: IEnumerable_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
+    LogTo(action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
     LogTo(action: Action_1<System_Internal.String>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
+    LogTo(action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
     LogTo(filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>): DbContextOptionsBuilder;
     ReplaceService<TService extends unknown, TImplementation extends unknown & TService>(): DbContextOptionsBuilder;
     ToString(): string | null;
@@ -351,8 +372,8 @@ export interface DbContextOptionsBuilder$instance extends Microsoft_EntityFramew
     UseMemoryCache(memoryCache: IMemoryCache | null): DbContextOptionsBuilder;
     UseModel(model: IModel): DbContextOptionsBuilder;
     UseQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): DbContextOptionsBuilder;
-    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider | null): DbContextOptionsBuilder;
     UseRootApplicationServiceProvider(): DbContextOptionsBuilder;
+    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider | null): DbContextOptionsBuilder;
     UseSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): DbContextOptionsBuilder;
 }
 
@@ -370,76 +391,49 @@ export interface __DbContextOptionsBuilder$views {
 export type DbContextOptionsBuilder = DbContextOptionsBuilder$instance & __DbContextOptionsBuilder$views;
 
 
-export interface DbContextOptionsBuilder_1$instance<TContext extends unknown & DbContext> extends DbContextOptionsBuilder$instance, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure$instance {
+export interface DbContextOptionsBuilder_1$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> extends DbContextOptionsBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptionsBuilder: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContextOptionsBuilder_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
-    AddInterceptors(interceptors: IEnumerable_1<IInterceptor>): DbContextOptionsBuilder_1<TContext>;
-    AddInterceptors(...interceptors: IInterceptor[]): DbContextOptionsBuilder_1<TContext>;
-    AddInterceptors(...interceptors: IInterceptor[]): DbContextOptionsBuilder;
-    ConfigureLoggingCacheTime(timeSpan: TimeSpan): DbContextOptionsBuilder_1<TContext>;
-    ConfigureLoggingCacheTime(timeSpan: TimeSpan): DbContextOptionsBuilder;
-    ConfigureWarnings(warningsConfigurationBuilderAction: Action_1<WarningsConfigurationBuilder>): DbContextOptionsBuilder_1<TContext>;
-    ConfigureWarnings(warningsConfigurationBuilderAction: Action_1<WarningsConfigurationBuilder>): DbContextOptionsBuilder;
-    EnableDetailedErrors(detailedErrorsEnabled?: boolean): DbContextOptionsBuilder_1<TContext>;
-    EnableDetailedErrors(detailedErrorsEnabled?: boolean): DbContextOptionsBuilder;
-    EnableSensitiveDataLogging(sensitiveDataLoggingEnabled?: boolean): DbContextOptionsBuilder_1<TContext>;
-    EnableSensitiveDataLogging(sensitiveDataLoggingEnabled?: boolean): DbContextOptionsBuilder;
-    EnableServiceProviderCaching(cacheServiceProvider?: boolean): DbContextOptionsBuilder_1<TContext>;
-    EnableServiceProviderCaching(cacheServiceProvider?: boolean): DbContextOptionsBuilder;
-    EnableThreadSafetyChecks(checksEnabled?: boolean): DbContextOptionsBuilder_1<TContext>;
-    EnableThreadSafetyChecks(enableChecks?: boolean): DbContextOptionsBuilder;
-    LogTo(action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
-    LogTo(action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
-    LogTo(action: Action_1<System_Internal.String>, categories: IEnumerable_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
-    LogTo(action: Action_1<System_Internal.String>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder_1<TContext>;
-    LogTo(filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>): DbContextOptionsBuilder_1<TContext>;
-    LogTo(action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
-    LogTo(action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>): DbContextOptionsBuilder;
-    LogTo(filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>): DbContextOptionsBuilder;
-    ReplaceService<TService extends unknown, TImplementation extends unknown & TService>(): DbContextOptionsBuilder_1<TContext>;
-    ReplaceService<TService extends unknown, TImplementation extends unknown & TService>(): DbContextOptionsBuilder;
-    UseApplicationServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder_1<TContext>;
-    UseApplicationServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder;
-    UseAsyncSeeding(seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder_1<TContext>;
-    UseAsyncSeeding(seedAsync: Func_4<TContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder_1<TContext>;
-    UseAsyncSeeding(seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>): DbContextOptionsBuilder;
-    UseInternalServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder_1<TContext>;
-    UseInternalServiceProvider(serviceProvider: IServiceProvider | null): DbContextOptionsBuilder;
-    UseLoggerFactory(loggerFactory: ILoggerFactory | null): DbContextOptionsBuilder_1<TContext>;
-    UseLoggerFactory(loggerFactory: ILoggerFactory | null): DbContextOptionsBuilder;
-    UseMemoryCache(memoryCache: IMemoryCache | null): DbContextOptionsBuilder_1<TContext>;
-    UseMemoryCache(memoryCache: IMemoryCache | null): DbContextOptionsBuilder;
-    UseModel(model: IModel): DbContextOptionsBuilder_1<TContext>;
-    UseModel(model: IModel): DbContextOptionsBuilder;
-    UseQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): DbContextOptionsBuilder_1<TContext>;
-    UseQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): DbContextOptionsBuilder;
-    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider | null): DbContextOptionsBuilder_1<TContext>;
-    UseRootApplicationServiceProvider(): DbContextOptionsBuilder_1<TContext>;
-    UseRootApplicationServiceProvider(rootServiceProvider: IServiceProvider | null): DbContextOptionsBuilder;
-    UseRootApplicationServiceProvider(): DbContextOptionsBuilder;
-    UseSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): DbContextOptionsBuilder_1<TContext>;
-    UseSeeding(seed: Action_2<TContext, System_Internal.Boolean>): DbContextOptionsBuilder_1<TContext>;
-    UseSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): DbContextOptionsBuilder;
+    AddInterceptors: DbContextOptionsBuilder$instance["AddInterceptors"] & ((...interceptors: IInterceptor[]) => DbContextOptionsBuilder) & ((...interceptors: IInterceptor[]) => DbContextOptionsBuilder_1<TContext>) & ((interceptors: IEnumerable_1<IInterceptor>) => DbContextOptionsBuilder_1<TContext>);
+    ConfigureLoggingCacheTime: DbContextOptionsBuilder$instance["ConfigureLoggingCacheTime"] & ((timeSpan: TimeSpan) => DbContextOptionsBuilder) & ((timeSpan: TimeSpan) => DbContextOptionsBuilder_1<TContext>);
+    ConfigureWarnings: DbContextOptionsBuilder$instance["ConfigureWarnings"] & ((warningsConfigurationBuilderAction: Action_1<WarningsConfigurationBuilder>) => DbContextOptionsBuilder) & ((warningsConfigurationBuilderAction: Action_1<WarningsConfigurationBuilder>) => DbContextOptionsBuilder_1<TContext>);
+    EnableDetailedErrors: DbContextOptionsBuilder$instance["EnableDetailedErrors"] & ((detailedErrorsEnabled?: boolean) => DbContextOptionsBuilder) & ((detailedErrorsEnabled?: boolean) => DbContextOptionsBuilder_1<TContext>);
+    EnableSensitiveDataLogging: DbContextOptionsBuilder$instance["EnableSensitiveDataLogging"] & ((sensitiveDataLoggingEnabled?: boolean) => DbContextOptionsBuilder) & ((sensitiveDataLoggingEnabled?: boolean) => DbContextOptionsBuilder_1<TContext>);
+    EnableServiceProviderCaching: DbContextOptionsBuilder$instance["EnableServiceProviderCaching"] & ((cacheServiceProvider?: boolean) => DbContextOptionsBuilder) & ((cacheServiceProvider?: boolean) => DbContextOptionsBuilder_1<TContext>);
+    EnableThreadSafetyChecks: DbContextOptionsBuilder$instance["EnableThreadSafetyChecks"] & ((checksEnabled?: boolean) => DbContextOptionsBuilder_1<TContext>) & ((enableChecks?: boolean) => DbContextOptionsBuilder);
+    LogTo: DbContextOptionsBuilder$instance["LogTo"] & ((action: Action_1<System_Internal.String>, categories: IEnumerable_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>) => DbContextOptionsBuilder_1<TContext>) & ((action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>) => DbContextOptionsBuilder) & ((action: Action_1<System_Internal.String>, events: IEnumerable_1<EventId>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>) => DbContextOptionsBuilder_1<TContext>) & ((action: Action_1<System_Internal.String>, filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, options?: Nullable_1<DbContextLoggerOptions>) => DbContextOptionsBuilder_1<TContext>) & ((action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>) => DbContextOptionsBuilder) & ((action: Action_1<System_Internal.String>, minimumLevel?: LogLevel, options?: Nullable_1<DbContextLoggerOptions>) => DbContextOptionsBuilder_1<TContext>) & ((filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>) => DbContextOptionsBuilder) & ((filter: Func_3<EventId, LogLevel, System_Internal.Boolean>, logger: Action_1<EventData>) => DbContextOptionsBuilder_1<TContext>);
+    ReplaceService: DbContextOptionsBuilder$instance["ReplaceService"] & (<TService extends unknown, TImplementation extends unknown & TService>() => DbContextOptionsBuilder) & (<TService extends unknown, TImplementation extends unknown & TService>() => DbContextOptionsBuilder_1<TContext>);
+    UseApplicationServiceProvider: DbContextOptionsBuilder$instance["UseApplicationServiceProvider"] & ((serviceProvider: IServiceProvider | null) => DbContextOptionsBuilder) & ((serviceProvider: IServiceProvider | null) => DbContextOptionsBuilder_1<TContext>);
+    UseAsyncSeeding: DbContextOptionsBuilder$instance["UseAsyncSeeding"] & ((seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>) => DbContextOptionsBuilder) & ((seedAsync: Func_4<DbContext, System_Internal.Boolean, CancellationToken, Task>) => DbContextOptionsBuilder_1<TContext>) & ((seedAsync: Func_4<TContext, System_Internal.Boolean, CancellationToken, Task>) => DbContextOptionsBuilder_1<TContext>);
+    UseInternalServiceProvider: DbContextOptionsBuilder$instance["UseInternalServiceProvider"] & ((serviceProvider: IServiceProvider | null) => DbContextOptionsBuilder) & ((serviceProvider: IServiceProvider | null) => DbContextOptionsBuilder_1<TContext>);
+    UseLoggerFactory: DbContextOptionsBuilder$instance["UseLoggerFactory"] & ((loggerFactory: ILoggerFactory | null) => DbContextOptionsBuilder) & ((loggerFactory: ILoggerFactory | null) => DbContextOptionsBuilder_1<TContext>);
+    UseMemoryCache: DbContextOptionsBuilder$instance["UseMemoryCache"] & ((memoryCache: IMemoryCache | null) => DbContextOptionsBuilder) & ((memoryCache: IMemoryCache | null) => DbContextOptionsBuilder_1<TContext>);
+    UseModel: DbContextOptionsBuilder$instance["UseModel"] & ((model: IModel) => DbContextOptionsBuilder) & ((model: IModel) => DbContextOptionsBuilder_1<TContext>);
+    UseQueryTrackingBehavior: DbContextOptionsBuilder$instance["UseQueryTrackingBehavior"] & ((queryTrackingBehavior: QueryTrackingBehavior) => DbContextOptionsBuilder) & ((queryTrackingBehavior: QueryTrackingBehavior) => DbContextOptionsBuilder_1<TContext>);
+    UseRootApplicationServiceProvider: DbContextOptionsBuilder$instance["UseRootApplicationServiceProvider"] & (() => DbContextOptionsBuilder) & (() => DbContextOptionsBuilder_1<TContext>) & ((rootServiceProvider: IServiceProvider | null) => DbContextOptionsBuilder) & ((rootServiceProvider: IServiceProvider | null) => DbContextOptionsBuilder_1<TContext>);
+    UseSeeding: DbContextOptionsBuilder$instance["UseSeeding"] & ((seed: Action_2<DbContext, System_Internal.Boolean>) => DbContextOptionsBuilder) & ((seed: Action_2<DbContext, System_Internal.Boolean>) => DbContextOptionsBuilder_1<TContext>) & ((seed: Action_2<TContext, System_Internal.Boolean>) => DbContextOptionsBuilder_1<TContext>);
 }
 
 
 export const DbContextOptionsBuilder_1: {
-    new<TContext extends unknown & DbContext>(): DbContextOptionsBuilder_1<TContext>;
-    new<TContext extends unknown & DbContext>(options: DbContextOptions_1<TContext>): DbContextOptionsBuilder_1<TContext>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }>(): DbContextOptionsBuilder_1<TContext>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }>(options: DbContextOptions_1<TContext>): DbContextOptionsBuilder_1<TContext>;
 };
 
 
-export interface __DbContextOptionsBuilder_1$views<TContext extends unknown & DbContext> {
+export interface __DbContextOptionsBuilder_1$views<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> {
     As_IDbContextOptionsBuilderInfrastructure(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsBuilderInfrastructure$instance;
 }
 
-export type DbContextOptionsBuilder_1<TContext extends unknown & DbContext> = DbContextOptionsBuilder_1$instance<TContext> & __DbContextOptionsBuilder_1$views<TContext>;
+export type DbContextOptionsBuilder_1<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = DbContextOptionsBuilder_1$instance<TContext> & __DbContextOptionsBuilder_1$views<TContext>;
 
 
-export interface DbFunctionAttribute$instance extends Attribute {
+export interface DbFunctionAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbFunctionAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     IsBuiltIn: boolean;
     IsNullable: boolean;
@@ -474,7 +468,7 @@ export const DbFunctions: {
 
 export type DbFunctions = DbFunctions$instance;
 
-export interface DbSet_1$instance<TEntity extends (object | null)> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IServiceProvider>, System_Collections_Generic_Internal.IEnumerable_1<TEntity>, System_ComponentModel_Internal.IListSource, System_Linq_Internal.IQueryable_1<TEntity> {
+export interface DbSet_1$instance<TEntity extends (object | null)> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbSet_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -516,7 +510,7 @@ export interface DbSet_1$instance<TEntity extends (object | null)> extends Micro
 }
 
 
-export const DbSet_1: (abstract new<TEntity extends (object | null)>() => DbSet_1<TEntity>) & {
+export const DbSet_1: {
 };
 
 
@@ -527,8 +521,10 @@ export interface __DbSet_1$views<TEntity extends (object | null)> {
 export type DbSet_1<TEntity extends (object | null)> = DbSet_1$instance<TEntity> & __DbSet_1$views<TEntity>;
 
 
-export interface DbUpdateConcurrencyException$instance extends DbUpdateException {
+export interface DbUpdateConcurrencyException$instance extends DbUpdateException$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbUpdateConcurrencyException: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbUpdateException: never;
+    readonly __tsonic_type_System_Exception: never;
 
     readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
 
@@ -547,8 +543,9 @@ export const DbUpdateConcurrencyException: {
 
 export type DbUpdateConcurrencyException = DbUpdateConcurrencyException$instance;
 
-export interface DbUpdateException$instance extends Exception {
+export interface DbUpdateException$instance extends System_Internal.Exception {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbUpdateException: never;
+    readonly __tsonic_type_System_Exception: never;
 
     readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
 
@@ -570,8 +567,9 @@ export const DbUpdateException: {
 
 export type DbUpdateException = DbUpdateException$instance;
 
-export interface DeleteBehaviorAttribute$instance extends Attribute {
+export interface DeleteBehaviorAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DeleteBehaviorAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     readonly Behavior: DeleteBehavior;
 }
@@ -584,8 +582,9 @@ export const DeleteBehaviorAttribute: {
 
 export type DeleteBehaviorAttribute = DeleteBehaviorAttribute$instance;
 
-export interface EntityTypeConfigurationAttribute$instance extends Attribute {
+export interface EntityTypeConfigurationAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityTypeConfigurationAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     readonly EntityTypeConfigurationType: Type;
 }
@@ -598,21 +597,24 @@ export const EntityTypeConfigurationAttribute: {
 
 export type EntityTypeConfigurationAttribute = EntityTypeConfigurationAttribute$instance;
 
-export interface EntityTypeConfigurationAttribute_2$instance<TConfiguration extends (object | null) & IEntityTypeConfiguration_1<TEntity>, TEntity extends (object | null)> extends EntityTypeConfigurationAttribute {
+export interface EntityTypeConfigurationAttribute_2$instance<TConfiguration extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IEntityTypeConfiguration_1: never }, TEntity extends (object | null)> extends EntityTypeConfigurationAttribute$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityTypeConfigurationAttribute: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_EntityTypeConfigurationAttribute_2: never;
+    readonly __tsonic_type_System_Attribute: never;
 
 }
 
 
 export const EntityTypeConfigurationAttribute_2: {
-    new<TConfiguration extends (object | null) & IEntityTypeConfiguration_1<TEntity>, TEntity extends (object | null)>(): EntityTypeConfigurationAttribute_2<TConfiguration, TEntity>;
+    new<TConfiguration extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IEntityTypeConfiguration_1: never }, TEntity extends (object | null)>(): EntityTypeConfigurationAttribute_2<TConfiguration, TEntity>;
 };
 
 
-export type EntityTypeConfigurationAttribute_2<TConfiguration extends (object | null) & IEntityTypeConfiguration_1<TEntity>, TEntity extends (object | null)> = EntityTypeConfigurationAttribute_2$instance<TConfiguration, TEntity>;
+export type EntityTypeConfigurationAttribute_2<TConfiguration extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IEntityTypeConfiguration_1: never }, TEntity extends (object | null)> = EntityTypeConfigurationAttribute_2$instance<TConfiguration, TEntity>;
 
-export interface IndexAttribute$instance extends Attribute {
+export interface IndexAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_IndexAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     AllDescending: boolean;
     get IsDescending(): boolean[] | null;
@@ -633,8 +635,9 @@ export const IndexAttribute: {
 
 export type IndexAttribute = IndexAttribute$instance;
 
-export interface KeylessAttribute$instance extends Attribute {
+export interface KeylessAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_KeylessAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
 }
 
@@ -646,7 +649,7 @@ export const KeylessAttribute: {
 
 export type KeylessAttribute = KeylessAttribute$instance;
 
-export interface ModelBuilder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<IConventionModelBuilder> {
+export interface ModelBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_ModelBuilder: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -654,27 +657,27 @@ export interface ModelBuilder$instance extends Microsoft_EntityFrameworkCore_Inf
     readonly Model: IMutableModel;
     ApplyConfiguration<TEntity extends (object | null)>(configuration: IEntityTypeConfiguration_1<TEntity>): ModelBuilder;
     ApplyConfigurationsFromAssembly(assembly: Assembly, predicate?: Func_2<Type, System_Internal.Boolean> | null): ModelBuilder;
-    Entity<TEntity extends (object | null)>(): EntityTypeBuilder_1<TEntity>;
-    Entity(type: Type): EntityTypeBuilder;
     Entity(name: string): EntityTypeBuilder;
-    Entity<TEntity extends (object | null)>(buildAction: Action_1<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
-    Entity(type: Type, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
     Entity(name: string, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
+    Entity(type: Type): EntityTypeBuilder;
+    Entity(type: Type, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
+    Entity<TEntity extends (object | null)>(): EntityTypeBuilder_1<TEntity>;
+    Entity<TEntity extends (object | null)>(buildAction: Action_1<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
     Equals(obj: unknown | null): boolean;
     FinalizeModel(): IModel;
     GetHashCode(): int;
     HasAnnotation(annotation: string, value: unknown | null): ModelBuilder;
     HasChangeTrackingStrategy(changeTrackingStrategy: ChangeTrackingStrategy): ModelBuilder;
     HasEmbeddedDiscriminatorName(name: string): ModelBuilder;
-    Ignore<TStructural extends unknown>(): ModelBuilder;
     Ignore(type: Type): ModelBuilder;
     Ignore(typeName: string): ModelBuilder;
-    Owned<T extends (object | null)>(): OwnedEntityTypeBuilder_1<T>;
+    Ignore<TStructural extends unknown>(): ModelBuilder;
     Owned(type: Type): OwnedEntityTypeBuilder;
-    SharedTypeEntity<TEntity extends (object | null)>(name: string): EntityTypeBuilder_1<TEntity>;
+    Owned<T extends (object | null)>(): OwnedEntityTypeBuilder_1<T>;
     SharedTypeEntity(name: string, type: Type): EntityTypeBuilder;
-    SharedTypeEntity<TEntity extends (object | null)>(name: string, buildAction: Action_1<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
     SharedTypeEntity(name: string, type: Type, buildAction: Action_1<EntityTypeBuilder>): ModelBuilder;
+    SharedTypeEntity<TEntity extends (object | null)>(name: string): EntityTypeBuilder_1<TEntity>;
+    SharedTypeEntity<TEntity extends (object | null)>(name: string, buildAction: Action_1<EntityTypeBuilder_1<TEntity>>): ModelBuilder;
     ToString(): string | null;
     UsePropertyAccessMode(propertyAccessMode: PropertyAccessMode): ModelBuilder;
 }
@@ -701,21 +704,21 @@ export interface ModelConfigurationBuilder$instance {
 
     readonly Conventions: ConventionSetBuilder;
     readonly ModelConfiguration: ModelConfiguration;
-    ComplexProperties<TProperty extends unknown>(): ComplexPropertiesConfigurationBuilder_1<TProperty>;
     ComplexProperties(propertyType: Type): ComplexPropertiesConfigurationBuilder;
+    ComplexProperties<TProperty extends unknown>(): ComplexPropertiesConfigurationBuilder_1<TProperty>;
     CreateModelBuilder(modelDependencies: ModelDependencies | null): ModelBuilder;
-    DefaultTypeMapping<TScalar extends unknown>(): TypeMappingConfigurationBuilder_1<TScalar>;
-    DefaultTypeMapping<TScalar extends unknown>(buildAction: Action_1<TypeMappingConfigurationBuilder_1<TScalar>>): ModelConfigurationBuilder;
     DefaultTypeMapping(scalarType: Type): TypeMappingConfigurationBuilder;
     DefaultTypeMapping(scalarType: Type, buildAction: Action_1<TypeMappingConfigurationBuilder>): ModelConfigurationBuilder;
+    DefaultTypeMapping<TScalar extends unknown>(): TypeMappingConfigurationBuilder_1<TScalar>;
+    DefaultTypeMapping<TScalar extends unknown>(buildAction: Action_1<TypeMappingConfigurationBuilder_1<TScalar>>): ModelConfigurationBuilder;
     Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
-    IgnoreAny<T extends unknown>(): ModelConfigurationBuilder;
     IgnoreAny(type: Type): ModelConfigurationBuilder;
-    Properties<TProperty extends unknown>(): PropertiesConfigurationBuilder_1<TProperty>;
-    Properties<TProperty extends unknown>(buildAction: Action_1<PropertiesConfigurationBuilder_1<TProperty>>): ModelConfigurationBuilder;
+    IgnoreAny<T extends unknown>(): ModelConfigurationBuilder;
     Properties(propertyType: Type): PropertiesConfigurationBuilder;
     Properties(propertyType: Type, buildAction: Action_1<PropertiesConfigurationBuilder>): ModelConfigurationBuilder;
+    Properties<TProperty extends unknown>(): PropertiesConfigurationBuilder_1<TProperty>;
+    Properties<TProperty extends unknown>(buildAction: Action_1<PropertiesConfigurationBuilder_1<TProperty>>): ModelConfigurationBuilder;
     ToString(): string | null;
 }
 
@@ -752,8 +755,9 @@ export const ModelCreationDependencies: {
 
 export type ModelCreationDependencies = ModelCreationDependencies$instance;
 
-export interface OwnedAttribute$instance extends Attribute {
+export interface OwnedAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_OwnedAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
 }
 
@@ -765,8 +769,9 @@ export const OwnedAttribute: {
 
 export type OwnedAttribute = OwnedAttribute$instance;
 
-export interface PrecisionAttribute$instance extends Attribute {
+export interface PrecisionAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_PrecisionAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     readonly Precision: int;
     readonly Scale: Nullable_1<System_Internal.Int32>;
@@ -781,8 +786,9 @@ export const PrecisionAttribute: {
 
 export type PrecisionAttribute = PrecisionAttribute$instance;
 
-export interface PrimaryKeyAttribute$instance extends Attribute {
+export interface PrimaryKeyAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_PrimaryKeyAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     readonly PropertyNames: IReadOnlyList_1<System_Internal.String>;
 }
@@ -795,21 +801,24 @@ export const PrimaryKeyAttribute: {
 
 export type PrimaryKeyAttribute = PrimaryKeyAttribute$instance;
 
-export interface SaveChangesEventArgs$instance extends EventArgs {
+export interface SaveChangesEventArgs$instance extends System_Internal.EventArgs {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesEventArgs: never;
+    readonly __tsonic_type_System_EventArgs: never;
 
     readonly AcceptAllChangesOnSuccess: boolean;
 }
 
 
-export const SaveChangesEventArgs: (abstract new(acceptAllChangesOnSuccess: boolean) => SaveChangesEventArgs) & {
+export const SaveChangesEventArgs: {
 };
 
 
 export type SaveChangesEventArgs = SaveChangesEventArgs$instance;
 
-export interface SaveChangesFailedEventArgs$instance extends SaveChangesEventArgs {
+export interface SaveChangesFailedEventArgs$instance extends SaveChangesEventArgs$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesEventArgs: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesFailedEventArgs: never;
+    readonly __tsonic_type_System_EventArgs: never;
 
     readonly Exception: Exception;
 }
@@ -822,8 +831,10 @@ export const SaveChangesFailedEventArgs: {
 
 export type SaveChangesFailedEventArgs = SaveChangesFailedEventArgs$instance;
 
-export interface SavedChangesEventArgs$instance extends SaveChangesEventArgs {
+export interface SavedChangesEventArgs$instance extends SaveChangesEventArgs$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesEventArgs: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_SavedChangesEventArgs: never;
+    readonly __tsonic_type_System_EventArgs: never;
 
     readonly EntitiesSavedCount: int;
 }
@@ -836,8 +847,10 @@ export const SavedChangesEventArgs: {
 
 export type SavedChangesEventArgs = SavedChangesEventArgs$instance;
 
-export interface SavingChangesEventArgs$instance extends SaveChangesEventArgs {
+export interface SavingChangesEventArgs$instance extends SaveChangesEventArgs$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_SaveChangesEventArgs: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_SavingChangesEventArgs: never;
+    readonly __tsonic_type_System_EventArgs: never;
 
 }
 
@@ -849,8 +862,9 @@ export const SavingChangesEventArgs: {
 
 export type SavingChangesEventArgs = SavingChangesEventArgs$instance;
 
-export interface UnicodeAttribute$instance extends Attribute {
+export interface UnicodeAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_UnicodeAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     readonly IsUnicode: boolean;
 }
@@ -886,8 +900,9 @@ export abstract class DbLoggerCategory$instance {
 
 export type DbLoggerCategory = DbLoggerCategory$instance;
 
-export interface DbLoggerCategory_ChangeTracking$instance extends LoggerCategory_1<DbLoggerCategory_ChangeTracking> {
+export interface DbLoggerCategory_ChangeTracking$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_ChangeTracking> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_ChangeTracking: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -899,8 +914,9 @@ export const DbLoggerCategory_ChangeTracking: {
 
 export type DbLoggerCategory_ChangeTracking = DbLoggerCategory_ChangeTracking$instance;
 
-export interface DbLoggerCategory_Database$instance extends LoggerCategory_1<DbLoggerCategory_Database> {
+export interface DbLoggerCategory_Database$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Database> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Database: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -912,8 +928,9 @@ export const DbLoggerCategory_Database: {
 
 export type DbLoggerCategory_Database = DbLoggerCategory_Database$instance;
 
-export interface DbLoggerCategory_Database_Command$instance extends LoggerCategory_1<DbLoggerCategory_Database_Command> {
+export interface DbLoggerCategory_Database_Command$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Database_Command> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Database_Command: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -925,8 +942,9 @@ export const DbLoggerCategory_Database_Command: {
 
 export type DbLoggerCategory_Database_Command = DbLoggerCategory_Database_Command$instance;
 
-export interface DbLoggerCategory_Database_Connection$instance extends LoggerCategory_1<DbLoggerCategory_Database_Connection> {
+export interface DbLoggerCategory_Database_Connection$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Database_Connection> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Database_Connection: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -938,8 +956,9 @@ export const DbLoggerCategory_Database_Connection: {
 
 export type DbLoggerCategory_Database_Connection = DbLoggerCategory_Database_Connection$instance;
 
-export interface DbLoggerCategory_Database_Transaction$instance extends LoggerCategory_1<DbLoggerCategory_Database_Transaction> {
+export interface DbLoggerCategory_Database_Transaction$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Database_Transaction> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Database_Transaction: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -951,8 +970,9 @@ export const DbLoggerCategory_Database_Transaction: {
 
 export type DbLoggerCategory_Database_Transaction = DbLoggerCategory_Database_Transaction$instance;
 
-export interface DbLoggerCategory_Infrastructure$instance extends LoggerCategory_1<DbLoggerCategory_Infrastructure> {
+export interface DbLoggerCategory_Infrastructure$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Infrastructure> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Infrastructure: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -964,8 +984,9 @@ export const DbLoggerCategory_Infrastructure: {
 
 export type DbLoggerCategory_Infrastructure = DbLoggerCategory_Infrastructure$instance;
 
-export interface DbLoggerCategory_Migrations$instance extends LoggerCategory_1<DbLoggerCategory_Migrations> {
+export interface DbLoggerCategory_Migrations$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Migrations> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Migrations: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -977,8 +998,9 @@ export const DbLoggerCategory_Migrations: {
 
 export type DbLoggerCategory_Migrations = DbLoggerCategory_Migrations$instance;
 
-export interface DbLoggerCategory_Model$instance extends LoggerCategory_1<DbLoggerCategory_Model> {
+export interface DbLoggerCategory_Model$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Model> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Model: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -990,8 +1012,9 @@ export const DbLoggerCategory_Model: {
 
 export type DbLoggerCategory_Model = DbLoggerCategory_Model$instance;
 
-export interface DbLoggerCategory_Model_Validation$instance extends LoggerCategory_1<DbLoggerCategory_Model_Validation> {
+export interface DbLoggerCategory_Model_Validation$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Model_Validation> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Model_Validation: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -1003,8 +1026,9 @@ export const DbLoggerCategory_Model_Validation: {
 
 export type DbLoggerCategory_Model_Validation = DbLoggerCategory_Model_Validation$instance;
 
-export interface DbLoggerCategory_Query$instance extends LoggerCategory_1<DbLoggerCategory_Query> {
+export interface DbLoggerCategory_Query$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Query> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Query: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -1016,8 +1040,9 @@ export const DbLoggerCategory_Query: {
 
 export type DbLoggerCategory_Query = DbLoggerCategory_Query$instance;
 
-export interface DbLoggerCategory_Scaffolding$instance extends LoggerCategory_1<DbLoggerCategory_Scaffolding> {
+export interface DbLoggerCategory_Scaffolding$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Scaffolding> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Scaffolding: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -1029,8 +1054,9 @@ export const DbLoggerCategory_Scaffolding: {
 
 export type DbLoggerCategory_Scaffolding = DbLoggerCategory_Scaffolding$instance;
 
-export interface DbLoggerCategory_Update$instance extends LoggerCategory_1<DbLoggerCategory_Update> {
+export interface DbLoggerCategory_Update$instance extends Microsoft_EntityFrameworkCore_Diagnostics_Internal.LoggerCategory_1$instance<DbLoggerCategory_Update> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbLoggerCategory_Update: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Diagnostics_LoggerCategory_1: never;
 
 }
 
@@ -1045,38 +1071,38 @@ export type DbLoggerCategory_Update = DbLoggerCategory_Update$instance;
 export abstract class EF$instance {
     static IsDesignTime: boolean;
     static readonly Functions: DbFunctions;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, CancellationToken, TResult>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, CancellationToken, TResult>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, CancellationToken, TResult>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, CancellationToken, TResult>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, CancellationToken, TResult>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, CancellationToken, TResult>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, CancellationToken, TResult>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, CancellationToken, TResult>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TResult extends (object | null)>(queryExpression: Expression_1<Func_2<TContext, DbSet_1<TResult>>>): Func_2<TContext, IAsyncEnumerable_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TResult extends unknown>(queryExpression: Expression_1<Func_3<TContext, CancellationToken, TResult>>): Func_3<TContext, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_4<TContext, TParam1, CancellationToken, TResult>>): Func_4<TContext, TParam1, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, CancellationToken, TResult>>): Func_5<TContext, TParam1, TParam2, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, CancellationToken, TResult>>): Func_6<TContext, TParam1, TParam2, TParam3, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, CancellationToken, TResult>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, CancellationToken, TResult>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, CancellationToken, Task_1<TResult>>;
-    static CompileAsyncQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, CancellationToken, TResult>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, CancellationToken, Task_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IIncludableQueryable_2<TResult, TProperty>>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IIncludableQueryable_2<TResult, TProperty>>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IIncludableQueryable_2<TResult, TProperty>>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IIncludableQueryable_2<TResult, TProperty>>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IIncludableQueryable_2<TResult, TProperty>>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IIncludableQueryable_2<TResult, TProperty>>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IIncludableQueryable_2<TResult, TProperty>>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TParam15 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IIncludableQueryable_2<TResult, TProperty>>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TResult extends (object | null)>(queryExpression: Expression_1<Func_2<TContext, DbSet_1<TResult>>>): Func_2<TContext, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_3<TContext, TParam1, IIncludableQueryable_2<TResult, TProperty>>>): Func_3<TContext, TParam1, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_4<TContext, TParam1, TParam2, IIncludableQueryable_2<TResult, TProperty>>>): Func_4<TContext, TParam1, TParam2, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, TParam3, IIncludableQueryable_2<TResult, TProperty>>>): Func_5<TContext, TParam1, TParam2, TParam3, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IIncludableQueryable_2<TResult, TProperty>>>): Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IIncludableQueryable_2<TResult, TProperty>>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IIncludableQueryable_2<TResult, TProperty>>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IEnumerable_1<TResult>>;
-    static CompileQuery<TContext extends unknown & DbContext, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IIncludableQueryable_2<TResult, TProperty>>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, CancellationToken, TResult>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, CancellationToken, TResult>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, CancellationToken, TResult>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, CancellationToken, TResult>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, CancellationToken, TResult>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, CancellationToken, TResult>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, CancellationToken, TResult>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, CancellationToken, TResult>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends (object | null)>(queryExpression: Expression_1<Func_2<TContext, DbSet_1<TResult>>>): Func_2<TContext, IAsyncEnumerable_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown>(queryExpression: Expression_1<Func_3<TContext, CancellationToken, TResult>>): Func_3<TContext, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_4<TContext, TParam1, CancellationToken, TResult>>): Func_4<TContext, TParam1, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, CancellationToken, TResult>>): Func_5<TContext, TParam1, TParam2, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, CancellationToken, TResult>>): Func_6<TContext, TParam1, TParam2, TParam3, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, CancellationToken, TResult>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, CancellationToken, TResult>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, CancellationToken, Task_1<TResult>>;
+    static CompileAsyncQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TResult extends unknown>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, CancellationToken, TResult>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, CancellationToken, Task_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IIncludableQueryable_2<TResult, TProperty>>>): Func_10<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IIncludableQueryable_2<TResult, TProperty>>>): Func_11<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IIncludableQueryable_2<TResult, TProperty>>>): Func_12<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IIncludableQueryable_2<TResult, TProperty>>>): Func_13<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IIncludableQueryable_2<TResult, TProperty>>>): Func_14<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IIncludableQueryable_2<TResult, TProperty>>>): Func_15<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IIncludableQueryable_2<TResult, TProperty>>>): Func_16<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TParam15 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IIncludableQueryable_2<TResult, TProperty>>>): Func_17<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TParam11, TParam12, TParam13, TParam14, TParam15, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends (object | null)>(queryExpression: Expression_1<Func_2<TContext, DbSet_1<TResult>>>): Func_2<TContext, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_3<TContext, TParam1, IIncludableQueryable_2<TResult, TProperty>>>): Func_3<TContext, TParam1, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_4<TContext, TParam1, TParam2, IIncludableQueryable_2<TResult, TProperty>>>): Func_4<TContext, TParam1, TParam2, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_5<TContext, TParam1, TParam2, TParam3, IIncludableQueryable_2<TResult, TProperty>>>): Func_5<TContext, TParam1, TParam2, TParam3, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IIncludableQueryable_2<TResult, TProperty>>>): Func_6<TContext, TParam1, TParam2, TParam3, TParam4, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IIncludableQueryable_2<TResult, TProperty>>>): Func_7<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IIncludableQueryable_2<TResult, TProperty>>>): Func_8<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, IEnumerable_1<TResult>>;
+    static CompileQuery<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TResult extends unknown, TProperty extends unknown>(queryExpression: Expression_1<Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IIncludableQueryable_2<TResult, TProperty>>>): Func_9<TContext, TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, IEnumerable_1<TResult>>;
     static Constant<T extends unknown>(argument: T): T;
     static Parameter<T extends unknown>(argument: T): T;
     static Property<TProperty extends unknown>(instance: unknown, propertyName: string): TProperty;
@@ -1086,7 +1112,7 @@ export abstract class EF$instance {
 export type EF = EF$instance;
 
 export abstract class EFExtensions$instance {
-    static MultipleParameters<TSource extends unknown & IEnumerable>(argument: TSource): TSource;
+    static MultipleParameters<TSource extends unknown & { readonly __tsonic_iface_System_Collections_IEnumerable: never }>(argument: TSource): TSource;
 }
 
 

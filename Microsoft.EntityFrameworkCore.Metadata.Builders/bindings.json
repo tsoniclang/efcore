@@ -10999,12 +10999,12 @@
             "targetName": "Builder",
             "metadataToken": 385877539,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder",
-            "normalizedSignature": "Builder|:Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder|static=false|accessor=getset",
+            "normalizedSignature": "Builder|:Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -20667,19 +20667,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Builders.DbFunctionBuilderBase::.ctor(Microsoft.EntityFrameworkCore.Metadata.IMutableDbFunction):void",
-            "metadataToken": 100670815,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IMutableDbFunction):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IMutableDbFunction):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.DbFunctionBuilderBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Builders.DbFunctionParameterBuilder",
@@ -25995,30 +25983,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.InvertibleRelationshipBuilderBase::.ctor(Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey):void",
-            "metadataToken": 100672441,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.InvertibleRelationshipBuilderBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.InvertibleRelationshipBuilderBase::.ctor(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.InvertibleRelationshipBuilderBase,System.Boolean,System.Boolean,System.Boolean,System.Boolean):void",
-            "metadataToken": 100672442,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.InvertibleRelationshipBuilderBase,System.Boolean,System.Boolean,System.Boolean,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.InvertibleRelationshipBuilderBase,System.Boolean,System.Boolean,System.Boolean,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 6,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.InvertibleRelationshipBuilderBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.KeyBuilder",
@@ -27755,12 +27720,12 @@
             "targetName": "Builder",
             "metadataToken": 385877614,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder",
-            "normalizedSignature": "Builder|:Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder|static=false|accessor=getset",
+            "normalizedSignature": "Builder|:Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -32206,17 +32171,6 @@
             "visibility": "Public",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder::.ctor(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder,System.Boolean,System.Boolean,System.Boolean):void",
-            "metadataToken": 100672590,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder,System.Boolean,System.Boolean,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder,System.Boolean,System.Boolean,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 5,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
         ]
       },
@@ -32383,17 +32337,6 @@
             "isStatic": false,
             "parameterCount": 3,
             "visibility": "Public",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder`2",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder`2::.ctor(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder,System.Boolean,System.Boolean,System.Boolean):void",
-            "metadataToken": 100672595,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder,System.Boolean,System.Boolean,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder,System.Boolean,System.Boolean,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 5,
-            "visibility": "Protected",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.OwnershipBuilder`2",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
@@ -35791,17 +35734,6 @@
             "visibility": "Public",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder::.ctor(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder,System.Boolean,System.Boolean,System.Boolean):void",
-            "metadataToken": 100672758,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder,System.Boolean,System.Boolean,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder,System.Boolean,System.Boolean,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 5,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
         ]
       },
@@ -36008,17 +35940,6 @@
             "isStatic": false,
             "parameterCount": 3,
             "visibility": "Public",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder`2",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder`2::.ctor(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder,System.Boolean,System.Boolean,System.Boolean):void",
-            "metadataToken": 100672769,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder,System.Boolean,System.Boolean,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder,System.Boolean,System.Boolean,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 5,
-            "visibility": "Protected",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceCollectionBuilder`2",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
@@ -36854,17 +36775,6 @@
             "visibility": "Public",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder::.ctor(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder,System.Boolean,System.Boolean,System.Boolean,System.Boolean):void",
-            "metadataToken": 100672803,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder,System.Boolean,System.Boolean,System.Boolean,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder,System.Boolean,System.Boolean,System.Boolean,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 6,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
         ]
       },
@@ -37153,17 +37063,6 @@
             "visibility": "Public",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder`2",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder`2::.ctor(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder,System.Boolean,System.Boolean,System.Boolean,System.Boolean):void",
-            "metadataToken": 100672821,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder,System.Boolean,System.Boolean,System.Boolean,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder,System.Boolean,System.Boolean,System.Boolean,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 6,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceReferenceBuilder`2",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
         ]
       },
@@ -37353,30 +37252,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.RelationshipBuilderBase::.ctor(Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey):void",
-            "metadataToken": 100672833,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableEntityType,Microsoft.EntityFrameworkCore.Metadata.IMutableForeignKey):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.RelationshipBuilderBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Builders.RelationshipBuilderBase::.ctor(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.RelationshipBuilderBase,System.Boolean,System.Boolean,System.Boolean):void",
-            "metadataToken": 100672834,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.RelationshipBuilderBase,System.Boolean,System.Boolean,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.Internal.InternalForeignKeyBuilder,Microsoft.EntityFrameworkCore.Metadata.Builders.RelationshipBuilderBase,System.Boolean,System.Boolean,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 5,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Builders.RelationshipBuilderBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Builders.SequenceBuilder",

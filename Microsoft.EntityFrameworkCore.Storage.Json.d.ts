@@ -68,5 +68,5 @@ export type JsonValueReaderWriter<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.JsonValueReaderWriter :
-  [T1] extends [unknown] ? Internal.JsonValueReaderWriter_1<T1> : never;
+  Internal.JsonValueReaderWriter_1<T1>;
 

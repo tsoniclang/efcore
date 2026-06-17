@@ -71386,19 +71386,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding::.ctor(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "metadataToken": 100667191,
-            "canonicalSignature": "(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "normalizedSignature": "constructor|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.ParameterBinding,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.InstantiationBinding",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.KeyComparer",
@@ -72051,19 +72039,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ParameterBinding::.ctor(System.Type,Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):void",
-            "metadataToken": 100667572,
-            "canonicalSignature": "(System.Type,Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):void",
-            "normalizedSignature": "constructor|(System.Type,Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.ParameterBinding",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.PropertyParameterBinding",
@@ -87076,12 +87052,12 @@
             "targetName": "IsPrimitiveCollection",
             "metadataToken": 385876974,
             "canonicalSignature": ":System.Boolean",
-            "normalizedSignature": "IsPrimitiveCollection|:System.Boolean|static=false|accessor=getset",
+            "normalizedSignature": "IsPrimitiveCollection|:System.Boolean|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -88419,19 +88395,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.RuntimePropertyBase::.ctor(System.String,System.Reflection.PropertyInfo,System.Reflection.FieldInfo,Microsoft.EntityFrameworkCore.PropertyAccessMode):void",
-            "metadataToken": 100668024,
-            "canonicalSignature": "(System.String,System.Reflection.PropertyInfo,System.Reflection.FieldInfo,Microsoft.EntityFrameworkCore.PropertyAccessMode):void",
-            "normalizedSignature": "constructor|(System.String,System.Reflection.PropertyInfo,System.Reflection.FieldInfo,Microsoft.EntityFrameworkCore.PropertyAccessMode):void|static=false",
-            "isStatic": false,
-            "parameterCount": 4,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.RuntimePropertyBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.RuntimeRelationalPropertyOverrides",
@@ -93557,26 +93521,6 @@
             "isExtensionMethod": false
           },
           {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.RuntimeTypeBase::ToEnumerable(T):IEnumerable_1",
-            "targetName": "ToEnumerable",
-            "metadataToken": 100668150,
-            "canonicalSignature": "(T):IEnumerable_1",
-            "normalizedSignature": "ToEnumerable|(T):IEnumerable_1|static=true",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 1,
-            "parameterCount": 1,
-            "isStatic": true,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.RuntimeTypeBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
-          {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.IAnnotatable::FindRuntimeAnnotation(System.String):Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation",
             "targetName": "FindRuntimeAnnotation",
             "metadataToken": 100673140,
@@ -94846,19 +94790,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.RuntimeTypeBase::.ctor(System.String,System.Type,Microsoft.EntityFrameworkCore.Metadata.RuntimeModel,Microsoft.EntityFrameworkCore.Metadata.RuntimeTypeBase,Microsoft.EntityFrameworkCore.ChangeTrackingStrategy,System.Reflection.PropertyInfo,System.Boolean,System.String,System.Object,System.Int32,System.Int32,System.Int32):void",
-            "metadataToken": 100668096,
-            "canonicalSignature": "(System.String,System.Type,Microsoft.EntityFrameworkCore.Metadata.RuntimeModel,Microsoft.EntityFrameworkCore.Metadata.RuntimeTypeBase,Microsoft.EntityFrameworkCore.ChangeTrackingStrategy,System.Reflection.PropertyInfo,System.Boolean,System.String,System.Object,System.Int32,System.Int32,System.Int32):void",
-            "normalizedSignature": "constructor|(System.String,System.Type,Microsoft.EntityFrameworkCore.Metadata.RuntimeModel,Microsoft.EntityFrameworkCore.Metadata.RuntimeTypeBase,Microsoft.EntityFrameworkCore.ChangeTrackingStrategy,System.Reflection.PropertyInfo,System.Boolean,System.String,System.Object,System.Int32,System.Int32,System.Int32):void|static=false",
-            "isStatic": false,
-            "parameterCount": 12,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.RuntimeTypeBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.RuntimeTypeMappingConfiguration",
@@ -95278,19 +95210,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ServiceParameterBinding::.ctor(System.Type,System.Type,Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):void",
-            "metadataToken": 100668210,
-            "canonicalSignature": "(System.Type,System.Type,Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):void",
-            "normalizedSignature": "constructor|(System.Type,System.Type,Microsoft.EntityFrameworkCore.Metadata.IPropertyBase[]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.ServiceParameterBinding",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.ServiceParameterBindingFactory",

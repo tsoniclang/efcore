@@ -25,7 +25,7 @@ import type { DbContext, DbLoggerCategory_Database_Command, DbLoggerCategory_Dat
 import type { IEnumerable, IList, IReadOnlyDictionary, IReadOnlyList, List } from '@tsonic/dotnet/System.Collections.Generic.js';
 import type { DbCommand, DbConnection, DbDataReader, DbParameter, DbTransaction } from '@tsonic/dotnet/System.Data.Common.js';
 import type { DbType, IsolationLevel, ParameterDirection } from '@tsonic/dotnet/System.Data.js';
-import type { Action, Boolean as ClrBoolean, Enum, Exception, FormattableString, Func, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, ISpanFormattable, Nullable, Object as ClrObject, Random, String as ClrString, TimeSpan, Type, ValueType, Void } from '@tsonic/dotnet/System.js';
+import type { Action, Boolean as ClrBoolean, Enum, Exception, FormattableString, Func, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable, IFormattable, Int32, IServiceProvider, ISpanFormattable, Nullable, Object as ClrObject, Random, String as ClrString, TimeSpan, Type, ValueType, Void } from '@tsonic/dotnet/System.js';
 import type { Expression, LambdaExpression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { ConstructorInfo, MemberInfo, MethodInfo } from '@tsonic/dotnet/System.Reflection.js';
 import type { ISerializable, SerializationInfo, StreamingContext } from '@tsonic/dotnet/System.Runtime.Serialization.js';
@@ -149,7 +149,7 @@ export type ReaderColumn<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ReaderColumn :
-  [T1] extends [unknown] ? Internal.ReaderColumn_1<T1> : never;
+  Internal.ReaderColumn_1<T1>;
 
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore_Storage as ExtensionMethods } from './__internal/extensions/index.js';

@@ -24,8 +24,10 @@ import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Action_2, Boolean as ClrBoolean, IDisposable, Int32, IServiceProvider, Nullable_1, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
 import type { IServiceCollection, ServiceDescriptor, ServiceLifetime } from "@tsonic/microsoft-extensions/Microsoft.Extensions.DependencyInjection/internal/index.js";
 
-export interface ILazyLoaderFactory$instance extends IDisposable, IResettableService {
+export interface ILazyLoaderFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_Internal_ILazyLoaderFactory: never;
+    readonly __tsonic_iface_System_IDisposable: never;
 
     Create(): ILazyLoader;
     ResetState(): void;
@@ -33,11 +35,11 @@ export interface ILazyLoaderFactory$instance extends IDisposable, IResettableSer
 }
 
 
-export interface ILazyLoaderFactory$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance, System_Internal.IDisposable {}
+export interface ILazyLoaderFactory$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IResettableService$instance {}
 
 export type ILazyLoaderFactory = ILazyLoaderFactory$instance;
 
-export interface ConcurrencyDetector$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IConcurrencyDetector$instance {
+export interface ConcurrencyDetector$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Internal_ConcurrencyDetector: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IConcurrencyDetector: never;
@@ -65,10 +67,9 @@ export interface CoreSingletonOptions$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ICoreSingletonOptions: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ISingletonOptions: never;
 
-    AreDetailedErrorsEnabled: boolean;
-    AreThreadSafetyChecksEnabled: boolean;
-    get RootApplicationServiceProvider(): IServiceProvider | null;
-    set RootApplicationServiceProvider(value: IServiceProvider | null);
+    readonly AreDetailedErrorsEnabled: boolean;
+    readonly AreThreadSafetyChecksEnabled: boolean;
+    readonly RootApplicationServiceProvider: IServiceProvider | null;
     Initialize(options: IDbContextOptions): void;
     Validate(options: IDbContextOptions): void;
 }
@@ -87,7 +88,7 @@ export interface __CoreSingletonOptions$views {
 export type CoreSingletonOptions = CoreSingletonOptions$instance & __CoreSingletonOptions$views;
 
 
-export interface CurrentDbContext$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.ICurrentDbContext$instance {
+export interface CurrentDbContext$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Internal_CurrentDbContext: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ICurrentDbContext: never;
@@ -108,7 +109,7 @@ export interface __CurrentDbContext$views {
 export type CurrentDbContext = CurrentDbContext$instance & __CurrentDbContext$views;
 
 
-export interface DbContextOptionsConfiguration_1$instance<TContext extends unknown & DbContext> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsConfiguration_1$instance<TContext> {
+export interface DbContextOptionsConfiguration_1$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Internal_DbContextOptionsConfiguration_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsConfiguration_1: never;
@@ -118,18 +119,18 @@ export interface DbContextOptionsConfiguration_1$instance<TContext extends unkno
 
 
 export const DbContextOptionsConfiguration_1: {
-    new<TContext extends unknown & DbContext>(configure: Action_2<IServiceProvider, DbContextOptionsBuilder>): DbContextOptionsConfiguration_1<TContext>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }>(configure: Action_2<IServiceProvider, DbContextOptionsBuilder>): DbContextOptionsConfiguration_1<TContext>;
 };
 
 
-export interface __DbContextOptionsConfiguration_1$views<TContext extends unknown & DbContext> {
+export interface __DbContextOptionsConfiguration_1$views<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> {
     As_IDbContextOptionsConfiguration_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbContextOptionsConfiguration_1$instance<TContext>;
 }
 
-export type DbContextOptionsConfiguration_1<TContext extends unknown & DbContext> = DbContextOptionsConfiguration_1$instance<TContext> & __DbContextOptionsConfiguration_1$views<TContext>;
+export type DbContextOptionsConfiguration_1<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = DbContextOptionsConfiguration_1$instance<TContext> & __DbContextOptionsConfiguration_1$views<TContext>;
 
 
-export interface DbSetFinder$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IDbSetFinder$instance {
+export interface DbSetFinder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Internal_DbSetFinder: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbSetFinder: never;
@@ -191,7 +192,7 @@ export const InternalServiceCollectionMap: {
 
 export type InternalServiceCollectionMap = InternalServiceCollectionMap$instance;
 
-export interface LazyLoader$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.ILazyLoader$instance, Microsoft_EntityFrameworkCore_Internal_Internal.IInjectableService$instance {
+export interface LazyLoader$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Internal_LazyLoader: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ILazyLoader: never;
@@ -224,7 +225,7 @@ export interface __LazyLoader$views {
 export type LazyLoader = LazyLoader$instance & __LazyLoader$views;
 
 
-export interface LazyLoaderFactory$instance extends ILazyLoaderFactory$instance {
+export interface LazyLoaderFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Internal_LazyLoaderFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;

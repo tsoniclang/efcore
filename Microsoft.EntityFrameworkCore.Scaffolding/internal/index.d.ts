@@ -37,8 +37,8 @@ export interface IProviderConfigurationCodeGenerator$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderConfigurationCodeGenerator: never;
 
     GenerateProviderOptions(): MethodCallCodeFragment | null;
-    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment | null): MethodCallCodeFragment;
     GenerateUseProvider(connectionString: string): MethodCallCodeFragment;
+    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment | null): MethodCallCodeFragment;
 }
 
 
@@ -49,12 +49,12 @@ export interface DatabaseModelFactory$instance {
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IDatabaseModelFactory: never;
 
-    Create(connectionString: string, options: DatabaseModelFactoryOptions): DatabaseModel;
     Create(connection: DbConnection, options: DatabaseModelFactoryOptions): DatabaseModel;
+    Create(connectionString: string, options: DatabaseModelFactoryOptions): DatabaseModel;
 }
 
 
-export const DatabaseModelFactory: (abstract new() => DatabaseModelFactory) & {
+export const DatabaseModelFactory: {
 };
 
 
@@ -80,7 +80,7 @@ export const DatabaseModelFactoryOptions: {
 
 export type DatabaseModelFactoryOptions = DatabaseModelFactoryOptions$instance;
 
-export interface ProviderCodeGenerator$instance extends IProviderConfigurationCodeGenerator$instance {
+export interface ProviderCodeGenerator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_ProviderCodeGenerator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderConfigurationCodeGenerator: never;
@@ -88,12 +88,12 @@ export interface ProviderCodeGenerator$instance extends IProviderConfigurationCo
     readonly Dependencies: ProviderCodeGeneratorDependencies;
     GenerateContextOptions(): MethodCallCodeFragment | null;
     GenerateProviderOptions(): MethodCallCodeFragment | null;
-    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment | null): MethodCallCodeFragment;
     GenerateUseProvider(connectionString: string): MethodCallCodeFragment;
+    GenerateUseProvider(connectionString: string, providerOptions: MethodCallCodeFragment | null): MethodCallCodeFragment;
 }
 
 
-export const ProviderCodeGenerator: (abstract new(dependencies: ProviderCodeGeneratorDependencies) => ProviderCodeGenerator) & {
+export const ProviderCodeGenerator: {
 };
 
 
@@ -125,7 +125,7 @@ export const ProviderCodeGeneratorDependencies: {
 
 export type ProviderCodeGeneratorDependencies = ProviderCodeGeneratorDependencies$instance;
 
-export interface ProviderCodeGeneratorPlugin$instance extends IProviderCodeGeneratorPlugin$instance {
+export interface ProviderCodeGeneratorPlugin$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Scaffolding_ProviderCodeGeneratorPlugin: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Scaffolding_IProviderCodeGeneratorPlugin: never;

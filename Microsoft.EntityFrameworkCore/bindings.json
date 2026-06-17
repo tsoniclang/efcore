@@ -2662,17 +2662,6 @@
         ],
         "constructors": [
           {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbContext::.ctor():void",
-            "metadataToken": 100663408,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.DbContext",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions):void",
             "metadataToken": 100663409,
             "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContextOptions):void",
@@ -2932,12 +2921,12 @@
             "targetName": "IsFrozen",
             "metadataToken": 385875998,
             "canonicalSignature": ":System.Boolean",
-            "normalizedSignature": "IsFrozen|:System.Boolean|static=false|accessor=getset",
+            "normalizedSignature": "IsFrozen|:System.Boolean|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -2969,41 +2958,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbContextOptions::.ctor():void",
-            "metadataToken": 100663508,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.DbContextOptions",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbContextOptions::.ctor(System.Collections.Generic.IReadOnlyDictionary_2[[System.Type,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "metadataToken": 100663509,
-            "canonicalSignature": "(System.Collections.Generic.IReadOnlyDictionary_2[[System.Type,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "normalizedSignature": "constructor|(System.Collections.Generic.IReadOnlyDictionary_2[[System.Type,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.DbContextOptions",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbContextOptions::.ctor(System.Collections.Immutable.ImmutableSortedDictionary_2[[System.Type,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.ValueTuple_2[[Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-            "metadataToken": 100663510,
-            "canonicalSignature": "(System.Collections.Immutable.ImmutableSortedDictionary_2[[System.Type,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.ValueTuple_2[[Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-            "normalizedSignature": "constructor|(System.Collections.Immutable.ImmutableSortedDictionary_2[[System.Type,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[System.ValueTuple_2[[Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.DbContextOptions",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbContextOptions`1",
@@ -5245,19 +5200,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbSet`1::.ctor():void",
-            "metadataToken": 100663637,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.DbSet`1",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException",
@@ -7291,19 +7234,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.SaveChangesEventArgs::.ctor(System.Boolean):void",
-            "metadataToken": 100663954,
-            "canonicalSignature": "(System.Boolean):void",
-            "normalizedSignature": "constructor|(System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.SaveChangesEventArgs",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.SaveChangesFailedEventArgs",

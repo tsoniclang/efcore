@@ -4482,19 +4482,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.JoinExpressionBase::.ctor(Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase,System.Boolean,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "metadataToken": 100667189,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase,System.Boolean,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase,System.Boolean,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressions.JoinExpressionBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.JsonScalarExpression",
@@ -5953,19 +5941,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.PredicateJoinExpressionBase::.ctor(Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Boolean,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "metadataToken": 100667252,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Boolean,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Boolean,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 4,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressions.PredicateJoinExpressionBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.ProjectionExpression",
@@ -8365,12 +8341,12 @@
             "targetName": "Tags",
             "metadataToken": 385876694,
             "canonicalSignature": ":System.Collections.Generic.ISet_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-            "normalizedSignature": "Tags|:System.Collections.Generic.ISet_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=getset",
+            "normalizedSignature": "Tags|:System.Collections.Generic.ISet_1[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": false,
@@ -8441,12 +8417,12 @@
             "targetName": "Predicate",
             "metadataToken": 385876698,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
-            "normalizedSignature": "Predicate|:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false|accessor=getset",
+            "normalizedSignature": "Predicate|:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": false,
@@ -8479,12 +8455,12 @@
             "targetName": "Having",
             "metadataToken": 385876700,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
-            "normalizedSignature": "Having|:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false|accessor=getset",
+            "normalizedSignature": "Having|:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": false,
@@ -8517,12 +8493,12 @@
             "targetName": "Limit",
             "metadataToken": 385876702,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
-            "normalizedSignature": "Limit|:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false|accessor=getset",
+            "normalizedSignature": "Limit|:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": false,
@@ -8536,12 +8512,12 @@
             "targetName": "Offset",
             "metadataToken": 385876703,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
-            "normalizedSignature": "Offset|:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false|accessor=getset",
+            "normalizedSignature": "Offset|:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": false,
@@ -8828,30 +8804,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SetOperationBase::.ctor(System.String,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,System.Boolean):void",
-            "metadataToken": 100667445,
-            "canonicalSignature": "(System.String,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,System.Boolean):void",
-            "normalizedSignature": "constructor|(System.String,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 4,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressions.SetOperationBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SetOperationBase::.ctor(System.String,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,System.Boolean,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "metadataToken": 100667446,
-            "canonicalSignature": "(System.String,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,System.Boolean,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "normalizedSignature": "constructor|(System.String,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression,System.Boolean,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 5,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressions.SetOperationBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlBinaryExpression",
@@ -9636,19 +9589,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression::.ctor(System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):void",
-            "metadataToken": 100667484,
-            "canonicalSignature": "(System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):void",
-            "normalizedSignature": "constructor|(System.Type,Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlFragmentExpression",
@@ -11626,30 +11567,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase::.ctor(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "metadataToken": 100667570,
-            "canonicalSignature": "(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "normalizedSignature": "constructor|(System.String,System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase::.ctor(System.String,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "metadataToken": 100667571,
-            "canonicalSignature": "(System.String,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "normalizedSignature": "constructor|(System.String,System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableExpressionBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableValuedFunctionExpression",
@@ -12062,17 +11980,6 @@
             "isStatic": false,
             "parameterCount": 3,
             "visibility": "Public",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableValuedFunctionExpression",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableValuedFunctionExpression::.ctor(System.String,System.String,System.String,System.Boolean,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "metadataToken": 100667592,
-            "canonicalSignature": "(System.String,System.String,System.String,System.Boolean,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "normalizedSignature": "constructor|(System.String,System.String,System.String,System.Boolean,System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Collections.Generic.IReadOnlyDictionary_2[[System.String,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e],[Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 6,
-            "visibility": "Protected",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Query.SqlExpressions.TableValuedFunctionExpression",
             "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
           }

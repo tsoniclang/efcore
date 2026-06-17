@@ -46,7 +46,7 @@ export interface IProviderConventionSetBuilder$instance {
 
 export type IProviderConventionSetBuilder = IProviderConventionSetBuilder$instance;
 
-export interface ProviderConventionSetBuilder$instance extends IProviderConventionSetBuilder$instance {
+export interface ProviderConventionSetBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_ProviderConventionSetBuilder: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IProviderConventionSetBuilder: never;
@@ -98,17 +98,18 @@ export const ProviderConventionSetBuilderDependencies: {
 
 export type ProviderConventionSetBuilderDependencies = ProviderConventionSetBuilderDependencies$instance;
 
-export interface RelationalConventionSetBuilder$instance extends ProviderConventionSetBuilder$instance, IProviderConventionSetBuilder$instance {
+export interface RelationalConventionSetBuilder$instance extends ProviderConventionSetBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_ProviderConventionSetBuilder: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_RelationalConventionSetBuilder: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IProviderConventionSetBuilder: never;
 
     readonly RelationalDependencies: RelationalConventionSetBuilderDependencies;
-    CreateConventionSet(): ConventionSet;
+    CreateConventionSet: ProviderConventionSetBuilder$instance["CreateConventionSet"] & (() => ConventionSet);
 }
 
 
-export const RelationalConventionSetBuilder: (abstract new(dependencies: ProviderConventionSetBuilderDependencies, relationalDependencies: RelationalConventionSetBuilderDependencies) => RelationalConventionSetBuilder) & {
+export const RelationalConventionSetBuilder: {
 };
 
 

@@ -2972,26 +2972,6 @@
                 "modifier": "out"
               }
             ]
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::CreateEqualityComparer(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-            "targetName": "CreateEqualityComparer",
-            "metadataToken": 100664962,
-            "canonicalSignature": "(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-            "normalizedSignature": "CreateEqualityComparer|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Collections.Generic.List_1[[Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):System.Collections.Generic.IEqualityComparer_1[[System.Object[],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=true",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 2,
-            "isStatic": true,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
-            "isExtensionMethod": false
           }
         ],
         "properties": [
@@ -3055,19 +3035,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory::.ctor(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "metadataToken": 100664951,
-            "canonicalSignature": "(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void",
-            "normalizedSignature": "constructor|(System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Relational,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Update.Internal.CompositeRowValueFactory",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.ModificationCommandComparer",
@@ -3714,19 +3682,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory`2::.ctor(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void",
-            "metadataToken": 100664997,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Metadata.IForeignKeyConstraint,Microsoft.EntityFrameworkCore.Metadata.IColumn,Microsoft.EntityFrameworkCore.Update.Internal.ColumnAccessors):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactory`2",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.Internal.RowForeignKeyValueFactoryFactory",

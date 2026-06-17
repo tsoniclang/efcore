@@ -6534,19 +6534,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.MemberEntry::.ctor(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IInternalEntry,Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):void",
-            "metadataToken": 100675421,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IInternalEntry,Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IInternalEntry,Microsoft.EntityFrameworkCore.Metadata.IPropertyBase):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.MemberEntry",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry",
@@ -6762,30 +6750,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry::.ctor(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry,System.String,System.Boolean):void",
-            "metadataToken": 100675433,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry,System.String,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry,System.String,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry::.ctor(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry,Microsoft.EntityFrameworkCore.Metadata.INavigationBase,System.Boolean):void",
-            "metadataToken": 100675434,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry,Microsoft.EntityFrameworkCore.Metadata.INavigationBase,System.Boolean):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry,Microsoft.EntityFrameworkCore.Metadata.INavigationBase,System.Boolean):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.NavigationEntry",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Abstractions:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1",
@@ -8280,19 +8245,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.PropertyValues::.ctor(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase):void",
-            "metadataToken": 100675505,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntryBase):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.PropertyValues",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ReferenceEntry",
@@ -9044,58 +8997,9 @@
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
         ],
-        "fields": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer::HashCodeAddMethodSystem.Reflection.MethodInfo",
-            "targetName": "HashCodeAddMethod",
-            "metadataToken": 67111092,
-            "normalizedSignature": "HashCodeAddMethod|System.Reflection.MethodInfo|static=true|const=false",
-            "isStatic": true,
-            "isReadOnly": true,
-            "isLiteral": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer::ToHashCodeMethodSystem.Reflection.MethodInfo",
-            "targetName": "ToHashCodeMethod",
-            "metadataToken": 67111093,
-            "normalizedSignature": "ToHashCodeMethod|System.Reflection.MethodInfo|static=true|const=false",
-            "isStatic": true,
-            "isReadOnly": true,
-            "isLiteral": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer::BoolIdentitySystem.Linq.Expressions.Expression`1[[System.Func`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-            "targetName": "BoolIdentity",
-            "metadataToken": 67111094,
-            "normalizedSignature": "BoolIdentity|System.Linq.Expressions.Expression`1[[System.Func`2[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]|static=true|const=false",
-            "isStatic": true,
-            "isReadOnly": true,
-            "isLiteral": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ],
+        "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer::.ctor(System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression):void",
-            "metadataToken": 100675552,
-            "canonicalSignature": "(System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression):void",
-            "normalizedSignature": "constructor|(System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1",
@@ -9136,66 +9040,6 @@
           "T"
         ],
         "methods": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1::CreateDefaultEqualsExpression():Expression_1",
-            "targetName": "CreateDefaultEqualsExpression",
-            "metadataToken": 100675571,
-            "canonicalSignature": "():Expression_1",
-            "normalizedSignature": "CreateDefaultEqualsExpression|():Expression_1|static=true",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 0,
-            "isStatic": true,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1::CreateDefaultSnapshotExpression(System.Boolean):Expression_1",
-            "targetName": "CreateDefaultSnapshotExpression",
-            "metadataToken": 100675572,
-            "canonicalSignature": "(System.Boolean):Expression_1",
-            "normalizedSignature": "CreateDefaultSnapshotExpression|(System.Boolean):Expression_1|static=true",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 1,
-            "isStatic": true,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1::CreateDefaultHashCodeExpression(System.Boolean):Expression_1",
-            "targetName": "CreateDefaultHashCodeExpression",
-            "metadataToken": 100675573,
-            "canonicalSignature": "(System.Boolean):Expression_1",
-            "normalizedSignature": "CreateDefaultHashCodeExpression|(System.Boolean):Expression_1|static=true",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 1,
-            "isStatic": true,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
           {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer`1::Equals(System.Object,System.Object):System.Boolean",
             "targetName": "Equals",

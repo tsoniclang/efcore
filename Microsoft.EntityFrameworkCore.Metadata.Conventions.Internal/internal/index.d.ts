@@ -21,7 +21,8 @@ import type { FieldInfo, MemberInfo } from "@tsonic/dotnet/System.Reflection/int
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Boolean as ClrBoolean, Func_1, Nullable_1, Object as ClrObject, String as ClrString, Type, Void } from "@tsonic/dotnet/System/internal/index.js";
 
-export interface IReadableConventionContext$instance extends IConventionContext {
+export interface IReadableConventionContext$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_IConventionContext: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_IReadableConventionContext: never;
 
     DelayConventions(): IConventionBatch;
@@ -136,7 +137,7 @@ export const ConventionDispatcher: {
 
 export type ConventionDispatcher = ConventionDispatcher$instance;
 
-export interface MetadataTracker$instance extends Microsoft_EntityFrameworkCore_Metadata_Internal_Internal.IReferenceRoot_1$instance<IConventionForeignKey> {
+export interface MetadataTracker$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_MetadataTracker: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Internal_IReferenceRoot_1: never;
@@ -158,7 +159,7 @@ export interface __MetadataTracker$views {
 export type MetadataTracker = MetadataTracker$instance & __MetadataTracker$views;
 
 
-export interface RuntimeConventionSetBuilder$instance extends Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_Internal.IConventionSetBuilder$instance {
+export interface RuntimeConventionSetBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Metadata_Conventions_Internal_RuntimeConventionSetBuilder: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Conventions_Infrastructure_IConventionSetBuilder: never;

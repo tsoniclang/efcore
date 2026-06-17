@@ -921,17 +921,6 @@
             "visibility": "Public",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies::.ctor(Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies):void",
-            "metadataToken": 100665210,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.Internal.DatabaseFacadeDependencies",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
         ]
       },
@@ -1258,19 +1247,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase::.ctor():void",
-            "metadataToken": 100665821,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.Internal.NamedConnectionStringResolverBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.NullTypeMapping",
@@ -2439,17 +2416,6 @@
             "visibility": "Public",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
             "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies::.ctor(Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies):void",
-            "metadataToken": 100665857,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalDatabaseFacadeDependencies",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
           }
         ]
       },
@@ -2601,19 +2567,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase::.ctor(System.String):void",
-            "metadataToken": 100665858,
-            "canonicalSignature": "(System.String):void",
-            "normalizedSignature": "constructor|(System.String):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.Internal.RelationalParameterBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Storage.Internal.TypeMappedRelationalParameter",

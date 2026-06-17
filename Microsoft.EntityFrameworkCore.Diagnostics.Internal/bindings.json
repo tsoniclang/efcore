@@ -499,132 +499,6 @@
             "isExtensionMethod": false
           },
           {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.Internal.DiagnosticsLogger`1::DispatchEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,Microsoft.EntityFrameworkCore.Diagnostics.EventData,System.Boolean,System.Boolean):System.Void",
-            "targetName": "DispatchEventData",
-            "metadataToken": 100674738,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,Microsoft.EntityFrameworkCore.Diagnostics.EventData,System.Boolean,System.Boolean):System.Void",
-            "normalizedSignature": "DispatchEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,Microsoft.EntityFrameworkCore.Diagnostics.EventData,System.Boolean,System.Boolean):System.Void|static=false",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 4,
-            "isStatic": false,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Diagnostics.Internal.DiagnosticsLogger`1",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.Internal.DiagnosticsLogger`1::ShouldLog(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase):System.Boolean",
-            "targetName": "ShouldLog",
-            "metadataToken": 100674739,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase):System.Boolean",
-            "normalizedSignature": "ShouldLog|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase):System.Boolean|static=false",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 1,
-            "isStatic": false,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Diagnostics.Internal.DiagnosticsLogger`1",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.Internal.DiagnosticsLogger`1::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor&,System.Boolean&,System.Boolean&):System.Boolean",
-            "targetName": "NeedsEventData",
-            "metadataToken": 100674740,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor&,System.Boolean&,System.Boolean&):System.Boolean",
-            "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor&,System.Boolean&,System.Boolean&):System.Boolean|static=false",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 1,
-            "parameterCount": 4,
-            "isStatic": false,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Diagnostics.Internal.DiagnosticsLogger`1",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false,
-            "parameterModifiers": [
-              {
-                "index": 1,
-                "modifier": "out"
-              },
-              {
-                "index": 2,
-                "modifier": "out"
-              },
-              {
-                "index": 3,
-                "modifier": "out"
-              }
-            ]
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,System.Boolean&,System.Boolean&):System.Boolean",
-            "targetName": "NeedsEventData",
-            "metadataToken": 100674109,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,System.Boolean&,System.Boolean&):System.Boolean",
-            "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,System.Boolean&,System.Boolean&):System.Boolean|static=false",
-            "emitScope": "ViewOnly",
-            "provenance": "ExplicitView",
-            "arity": 0,
-            "parameterCount": 3,
-            "isStatic": false,
-            "isAbstract": false,
-            "isVirtual": true,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Public",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false,
-            "sourceInterface": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger",
-            "parameterModifiers": [
-              {
-                "index": 1,
-                "modifier": "out"
-              },
-              {
-                "index": 2,
-                "modifier": "out"
-              }
-            ]
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::ShouldLogSensitiveData():System.Boolean",
-            "targetName": "ShouldLogSensitiveData",
-            "metadataToken": 100674102,
-            "canonicalSignature": "():System.Boolean",
-            "normalizedSignature": "ShouldLogSensitiveData|():System.Boolean|static=false",
-            "emitScope": "ViewOnly",
-            "provenance": "ExplicitView",
-            "arity": 0,
-            "parameterCount": 0,
-            "isStatic": false,
-            "isAbstract": false,
-            "isVirtual": true,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Public",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false,
-            "sourceInterface": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger"
-          },
-          {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::ShouldLog(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase):System.Boolean",
             "targetName": "ShouldLog",
             "metadataToken": 100674107,
@@ -667,6 +541,37 @@
             "sourceInterface": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger"
           },
           {
+            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,System.Boolean&,System.Boolean&):System.Boolean",
+            "targetName": "NeedsEventData",
+            "metadataToken": 100674109,
+            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,System.Boolean&,System.Boolean&):System.Boolean",
+            "normalizedSignature": "NeedsEventData|(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,System.Boolean&,System.Boolean&):System.Boolean|static=false",
+            "emitScope": "ViewOnly",
+            "provenance": "ExplicitView",
+            "arity": 0,
+            "parameterCount": 3,
+            "isStatic": false,
+            "isAbstract": false,
+            "isVirtual": true,
+            "isOverride": false,
+            "isSealed": false,
+            "visibility": "Public",
+            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger",
+            "ownerIdentity": "Microsoft.EntityFrameworkCore",
+            "isExtensionMethod": false,
+            "sourceInterface": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger",
+            "parameterModifiers": [
+              {
+                "index": 1,
+                "modifier": "out"
+              },
+              {
+                "index": 2,
+                "modifier": "out"
+              }
+            ]
+          },
+          {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::NeedsEventData(Microsoft.EntityFrameworkCore.Diagnostics.EventDefinitionBase,TInterceptor&,System.Boolean&,System.Boolean&):System.Boolean",
             "targetName": "NeedsEventData",
             "metadataToken": 100674110,
@@ -700,6 +605,27 @@
                 "modifier": "out"
               }
             ]
+          },
+          {
+            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger::ShouldLogSensitiveData():System.Boolean",
+            "targetName": "ShouldLogSensitiveData",
+            "metadataToken": 100674102,
+            "canonicalSignature": "():System.Boolean",
+            "normalizedSignature": "ShouldLogSensitiveData|():System.Boolean|static=false",
+            "emitScope": "ViewOnly",
+            "provenance": "ExplicitView",
+            "arity": 0,
+            "parameterCount": 0,
+            "isStatic": false,
+            "isAbstract": false,
+            "isVirtual": true,
+            "isOverride": false,
+            "isSealed": false,
+            "visibility": "Public",
+            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger",
+            "ownerIdentity": "Microsoft.EntityFrameworkCore",
+            "isExtensionMethod": false,
+            "sourceInterface": "Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger"
           }
         ],
         "properties": [
@@ -1397,12 +1323,12 @@
             "targetName": "IsSensitiveDataLoggingEnabled",
             "metadataToken": 385877998,
             "canonicalSignature": ":System.Boolean",
-            "normalizedSignature": "IsSensitiveDataLoggingEnabled|:System.Boolean|static=false|accessor=getset",
+            "normalizedSignature": "IsSensitiveDataLoggingEnabled|:System.Boolean|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -1454,12 +1380,12 @@
             "targetName": "WarningsConfiguration",
             "metadataToken": 385878001,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfiguration",
-            "normalizedSignature": "WarningsConfiguration|:Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfiguration|static=false|accessor=getset",
+            "normalizedSignature": "WarningsConfiguration|:Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfiguration|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,

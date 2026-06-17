@@ -3108,19 +3108,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.AnnotatableBuilder`2::.ctor(TMetadata,TModelBuilder):void",
-            "metadataToken": 100672927,
-            "canonicalSignature": "(TMetadata,TModelBuilder):void",
-            "normalizedSignature": "constructor|(TMetadata,TModelBuilder):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.AnnotatableBuilder`2",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.Annotation",
@@ -3936,19 +3924,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ConventionAnnotatable::.ctor():void",
-            "metadataToken": 100672973,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ConventionAnnotatable",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.CoreOptionsExtension",
@@ -4969,17 +4945,6 @@
             "visibility": "Public",
             "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.CoreOptionsExtension",
             "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.CoreOptionsExtension::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.CoreOptionsExtension):void",
-            "metadataToken": 100672975,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.CoreOptionsExtension):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.CoreOptionsExtension):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.CoreOptionsExtension",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
           }
         ]
       },
@@ -5815,19 +5780,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.DbContextOptionsExtensionInfo::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension):void",
-            "metadataToken": 100673060,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.DbContextOptionsExtensionInfo",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.DebugView",
@@ -8054,19 +8007,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Infrastructure.ModelSnapshot::.ctor():void",
-            "metadataToken": 100671258,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.ModelSnapshot",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.ModelSource",
@@ -9743,19 +9684,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Infrastructure.RelationalDbContextOptionsBuilder`2::.ctor(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):void",
-            "metadataToken": 100671259,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.RelationalDbContextOptionsBuilder`2",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer",
@@ -12302,30 +12231,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension::.ctor():void",
-            "metadataToken": 100671389,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension):void",
-            "metadataToken": 100671390,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension+RelationalExtensionInfo",
@@ -12445,19 +12351,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension+RelationalExtensionInfo::.ctor(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension):void",
-            "metadataToken": 100674922,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptionsExtension):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension+RelationalExtensionInfo",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Infrastructure.RuntimeAnnotatableBase",
