@@ -929,4 +929,3 @@ export abstract class TypeExtensions$instance {
 
 
 export type TypeExtensions = TypeExtensions$instance;
-

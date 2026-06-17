@@ -28,4 +28,3 @@ export abstract class EntityFrameworkServiceCollectionExtensions$instance {
 
 
 export type EntityFrameworkServiceCollectionExtensions = EntityFrameworkServiceCollectionExtensions$instance;
-

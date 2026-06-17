@@ -281,4 +281,3 @@ export abstract class InfrastructureExtensions$instance {
 
 
 export type InfrastructureExtensions = InfrastructureExtensions$instance;
-

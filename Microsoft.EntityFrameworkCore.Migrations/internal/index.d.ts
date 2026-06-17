@@ -614,4 +614,3 @@ export abstract class MigrationsAssemblyExtensions$instance {
 
 
 export type MigrationsAssemblyExtensions = MigrationsAssemblyExtensions$instance;
-

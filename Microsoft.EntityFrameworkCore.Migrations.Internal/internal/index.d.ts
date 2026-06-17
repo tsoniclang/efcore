@@ -243,4 +243,3 @@ export abstract class MigrationExtensions$instance {
 
 
 export type MigrationExtensions = MigrationExtensions$instance;
-

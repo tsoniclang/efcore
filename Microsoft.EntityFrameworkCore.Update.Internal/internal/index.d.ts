@@ -769,4 +769,3 @@ export abstract class ColumnAccessorsFactory$instance {
 
 
 export type ColumnAccessorsFactory = ColumnAccessorsFactory$instance;
-

@@ -661,4 +661,3 @@ export const JsonWarningEnumReaderWriter_1: {
 
 
 export type JsonWarningEnumReaderWriter_1<TEnum extends NonNullable<unknown> & number> = JsonWarningEnumReaderWriter_1$instance<TEnum>;
-

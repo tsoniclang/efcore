@@ -1139,5 +1139,3 @@ export interface __UpdateDataOperation$views {
 }
 
 export type UpdateDataOperation = UpdateDataOperation$instance & __UpdateDataOperation$views;
-
-

@@ -681,4 +681,3 @@ export abstract class UpdateEntryExtensions$instance {
 
 
 export type UpdateEntryExtensions = UpdateEntryExtensions$instance;
-

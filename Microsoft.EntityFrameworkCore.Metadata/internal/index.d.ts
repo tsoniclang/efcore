@@ -6560,4 +6560,3 @@ export abstract class RelationalAnnotationNames$instance {
 
 
 export type RelationalAnnotationNames = RelationalAnnotationNames$instance;
-

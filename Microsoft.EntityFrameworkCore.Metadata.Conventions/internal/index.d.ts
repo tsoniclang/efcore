@@ -3100,5 +3100,3 @@ export interface __ValueGenerationConvention$views {
 }
 
 export type ValueGenerationConvention = ValueGenerationConvention$instance & __ValueGenerationConvention$views;
-
-

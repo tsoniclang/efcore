@@ -6304,4 +6304,3 @@ export abstract class TypeConfigurationTypeExtensions$instance {
 
 
 export type TypeConfigurationTypeExtensions = TypeConfigurationTypeExtensions$instance;
-

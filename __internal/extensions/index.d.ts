@@ -1573,4 +1573,3 @@ export type ExtensionMethods_System_Transactions<TShape> =
   TShape extends null | undefined ? TShape
   : TShape extends void ? void
   : TShape & __TsonicWithExt<TShape, "System.Transactions", __TsonicExtApplier_System_Transactions> & __TsonicExtMethods_System_Transactions;
-

@@ -145,5 +145,3 @@ export interface __ProviderCodeGeneratorPlugin$views {
 }
 
 export type ProviderCodeGeneratorPlugin = ProviderCodeGeneratorPlugin$instance & __ProviderCodeGeneratorPlugin$views;
-
-

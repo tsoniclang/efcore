@@ -19,4 +19,3 @@ export abstract class TransactionsDatabaseFacadeExtensions$instance {
 
 
 export type TransactionsDatabaseFacadeExtensions = TransactionsDatabaseFacadeExtensions$instance;
-

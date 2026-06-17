@@ -108,5 +108,3 @@ export interface __OperationBuilder_1$views<TOperation extends unknown & Migrati
 }
 
 export type OperationBuilder_1<TOperation extends unknown & MigrationOperation> = OperationBuilder_1$instance<TOperation> & __OperationBuilder_1$views<TOperation>;
-
-

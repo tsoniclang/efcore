@@ -2217,4 +2217,3 @@ export abstract class RelationalTypeMappingSourceExtensions$instance {
 
 
 export type RelationalTypeMappingSourceExtensions = RelationalTypeMappingSourceExtensions$instance;
-

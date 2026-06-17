@@ -4085,5 +4085,3 @@ export interface __ViewColumnBuilder_1$views<TProperty extends unknown> {
 }
 
 export type ViewColumnBuilder_1<TProperty extends unknown> = ViewColumnBuilder_1$instance<TProperty> & __ViewColumnBuilder_1$views<TProperty>;
-
-

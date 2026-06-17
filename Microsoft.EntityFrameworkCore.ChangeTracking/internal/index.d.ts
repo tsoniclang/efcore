@@ -847,7 +847,7 @@ export interface MemberEntry$instance extends Microsoft_EntityFrameworkCore_Infr
     readonly EntityEntry: EntityEntry;
     readonly InternalEntry: IInternalEntry;
     IsModified: boolean;
-    readonly Metadata: INavigationBase | IPropertyBase;
+    readonly Metadata: IComplexProperty | IPropertyBase;
     Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
     ToString(): string | null;
@@ -1172,4 +1172,3 @@ export abstract class ValueComparerExtensions$instance {
 
 
 export type ValueComparerExtensions = ValueComparerExtensions$instance;
-

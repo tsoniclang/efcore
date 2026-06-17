@@ -607,4 +607,3 @@ export abstract class RelationalResources$instance {
 
 
 export type RelationalResources = RelationalResources$instance;
-

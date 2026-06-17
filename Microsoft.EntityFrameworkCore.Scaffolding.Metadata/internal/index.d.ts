@@ -345,5 +345,3 @@ export interface __DatabaseView$views {
 }
 
 export type DatabaseView = DatabaseView$instance & __DatabaseView$views;
-
-

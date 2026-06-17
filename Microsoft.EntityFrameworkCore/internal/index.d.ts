@@ -2230,4 +2230,3 @@ export abstract class TableExpressionExtensions$instance {
 
 
 export type TableExpressionExtensions = TableExpressionExtensions$instance;
-

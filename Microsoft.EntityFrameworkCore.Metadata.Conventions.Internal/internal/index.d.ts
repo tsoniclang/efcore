@@ -185,4 +185,3 @@ export abstract class ConventionBatchExtensions$instance {
 
 
 export type ConventionBatchExtensions = ConventionBatchExtensions$instance;
-

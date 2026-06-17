@@ -358,4 +358,3 @@ export abstract class DbParameterCollectionExtensions$instance {
 
 
 export type DbParameterCollectionExtensions = DbParameterCollectionExtensions$instance;
-

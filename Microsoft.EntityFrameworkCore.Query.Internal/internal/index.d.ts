@@ -1845,4 +1845,3 @@ export abstract class SplitQueryingEnumerable$instance {
 
 
 export type SplitQueryingEnumerable = SplitQueryingEnumerable$instance;
-
