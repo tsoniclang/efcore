@@ -73,7 +73,8 @@ export interface IQueryCompiler$instance {
 
 export type IQueryCompiler = IQueryCompiler$instance;
 
-export interface IRelationalQueryingEnumerable$instance extends IQueryingEnumerable {
+export interface IRelationalQueryingEnumerable$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_IRelationalQueryingEnumerable: never;
 
     CreateDbCommand(): DbCommand;
@@ -87,6 +88,7 @@ export type IRelationalQueryingEnumerable = IRelationalQueryingEnumerable$instan
 
 export interface JsonProjectionInfo$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_JsonProjectionInfo: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly JsonColumnIndex: int;
     readonly KeyAccessInfo: List_1<ValueTuple_3<IProperty, Nullable_1<System_Internal.Int32>, Nullable_1<System_Internal.Int32>>>;
@@ -102,6 +104,7 @@ export type JsonProjectionInfo = JsonProjectionInfo$instance;
 
 export interface QueryableJsonProjectionInfo$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryableJsonProjectionInfo: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly ChildrenProjectionInfo: IList_1<ValueTuple_2<JsonProjectionInfo, INavigation>>;
     readonly PropertyIndexMap: IDictionary_2<IPropertyBase, System_Internal.Int32>;
@@ -115,8 +118,10 @@ export const QueryableJsonProjectionInfo: {
 
 export type QueryableJsonProjectionInfo = QueryableJsonProjectionInfo$instance;
 
-export interface BufferedDataReader$instance extends DbDataReader {
+export interface BufferedDataReader$instance extends System_Data_Common_Internal.DbDataReader {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_BufferedDataReader: never;
+    readonly __tsonic_type_System_Data_Common_DbDataReader: never;
+    readonly __tsonic_type_System_MarshalByRefObject: never;
 
     readonly __tsonic_iface_System_Collections_IEnumerable: never;
     readonly __tsonic_iface_System_Data_IDataReader: never;
@@ -124,47 +129,41 @@ export interface BufferedDataReader$instance extends DbDataReader {
     readonly __tsonic_iface_System_IAsyncDisposable: never;
     readonly __tsonic_iface_System_IDisposable: never;
 
-    readonly Depth: int;
-    readonly FieldCount: int;
-    readonly HasRows: boolean;
-    readonly IsClosed: boolean;
-    readonly RecordsAffected: int;
-    Close(): void;
-    Dispose(disposing: boolean): void;
-    get_Item(name: string): unknown;
-    get_Item(ordinal: int): unknown;
-    GetBoolean(ordinal: int): boolean;
-    GetByte(ordinal: int): byte;
-    GetBytes(ordinal: int, dataOffset: long, buffer: byte[] | null, bufferOffset: int, length: int): long;
-    GetChar(ordinal: int): char;
-    GetChars(ordinal: int, dataOffset: long, buffer: char[] | null, bufferOffset: int, length: int): long;
-    GetDataTypeName(ordinal: int): string;
-    GetDateTime(ordinal: int): DateTime;
-    GetDecimal(ordinal: int): decimal;
-    GetDouble(ordinal: int): double;
-    GetEnumerator(): IEnumerator;
-    GetFieldType(ordinal: int): Type;
-    GetFieldValue<T extends unknown>(ordinal: int): T;
-    GetFieldValueAsync<T extends unknown>(ordinal: int, cancellationToken: CancellationToken): Task_1<T>;
-    GetFloat(ordinal: int): float;
-    GetGuid(ordinal: int): Guid;
-    GetInt16(ordinal: int): short;
-    GetInt32(ordinal: int): int;
-    GetInt64(ordinal: int): long;
-    GetName(ordinal: int): string;
-    GetOrdinal(name: string): int;
-    GetSchemaTable(): DataTable;
-    GetString(ordinal: int): string;
-    GetValue(ordinal: int): unknown;
-    GetValues(values: unknown[]): int;
+    Close: System_Data_Common_Internal.DbDataReader["Close"] & (() => void);
+    Dispose: System_Data_Common_Internal.DbDataReader["Dispose"] & ((disposing: boolean) => void);
+    get_Item: System_Data_Common_Internal.DbDataReader["get_Item"] & ((name: string) => unknown) & ((ordinal: int) => unknown);
+    GetBoolean: System_Data_Common_Internal.DbDataReader["GetBoolean"] & ((ordinal: int) => boolean);
+    GetByte: System_Data_Common_Internal.DbDataReader["GetByte"] & ((ordinal: int) => byte);
+    GetBytes: System_Data_Common_Internal.DbDataReader["GetBytes"] & ((ordinal: int, dataOffset: long, buffer: byte[] | null, bufferOffset: int, length: int) => long);
+    GetChar: System_Data_Common_Internal.DbDataReader["GetChar"] & ((ordinal: int) => char);
+    GetChars: System_Data_Common_Internal.DbDataReader["GetChars"] & ((ordinal: int, dataOffset: long, buffer: char[] | null, bufferOffset: int, length: int) => long);
+    GetDataTypeName: System_Data_Common_Internal.DbDataReader["GetDataTypeName"] & ((ordinal: int) => string);
+    GetDateTime: System_Data_Common_Internal.DbDataReader["GetDateTime"] & ((ordinal: int) => DateTime);
+    GetDecimal: System_Data_Common_Internal.DbDataReader["GetDecimal"] & ((ordinal: int) => decimal);
+    GetDouble: System_Data_Common_Internal.DbDataReader["GetDouble"] & ((ordinal: int) => double);
+    GetEnumerator: System_Data_Common_Internal.DbDataReader["GetEnumerator"] & (() => IEnumerator);
+    GetFieldType: System_Data_Common_Internal.DbDataReader["GetFieldType"] & ((ordinal: int) => Type);
+    GetFieldValue: System_Data_Common_Internal.DbDataReader["GetFieldValue"] & (<T extends unknown>(ordinal: int) => T);
+    GetFieldValueAsync: System_Data_Common_Internal.DbDataReader["GetFieldValueAsync"] & (<T extends unknown>(ordinal: int, cancellationToken: CancellationToken) => Task_1<T>);
+    GetFloat: System_Data_Common_Internal.DbDataReader["GetFloat"] & ((ordinal: int) => float);
+    GetGuid: System_Data_Common_Internal.DbDataReader["GetGuid"] & ((ordinal: int) => Guid);
+    GetInt16: System_Data_Common_Internal.DbDataReader["GetInt16"] & ((ordinal: int) => short);
+    GetInt32: System_Data_Common_Internal.DbDataReader["GetInt32"] & ((ordinal: int) => int);
+    GetInt64: System_Data_Common_Internal.DbDataReader["GetInt64"] & ((ordinal: int) => long);
+    GetName: System_Data_Common_Internal.DbDataReader["GetName"] & ((ordinal: int) => string);
+    GetOrdinal: System_Data_Common_Internal.DbDataReader["GetOrdinal"] & ((name: string) => int);
+    GetSchemaTable: System_Data_Common_Internal.DbDataReader["GetSchemaTable"] & (() => DataTable);
+    GetString: System_Data_Common_Internal.DbDataReader["GetString"] & ((ordinal: int) => string);
+    GetValue: System_Data_Common_Internal.DbDataReader["GetValue"] & ((ordinal: int) => unknown);
+    GetValues: System_Data_Common_Internal.DbDataReader["GetValues"] & ((values: unknown[]) => int);
     Initialize(columns: IReadOnlyList_1<ReaderColumn | null>): BufferedDataReader;
     InitializeAsync(columns: IReadOnlyList_1<ReaderColumn | null>, cancellationToken: CancellationToken): Task_1<BufferedDataReader>;
-    IsDBNull(ordinal: int): boolean;
-    IsDBNullAsync(ordinal: int, cancellationToken: CancellationToken): Task_1<System_Internal.Boolean>;
-    NextResult(): boolean;
-    NextResultAsync(cancellationToken: CancellationToken): Task_1<System_Internal.Boolean>;
-    Read(): boolean;
-    ReadAsync(cancellationToken: CancellationToken): Task_1<System_Internal.Boolean>;
+    IsDBNull: System_Data_Common_Internal.DbDataReader["IsDBNull"] & ((ordinal: int) => boolean);
+    IsDBNullAsync: System_Data_Common_Internal.DbDataReader["IsDBNullAsync"] & ((ordinal: int, cancellationToken: CancellationToken) => Task_1<System_Internal.Boolean>);
+    NextResult: System_Data_Common_Internal.DbDataReader["NextResult"] & (() => boolean);
+    NextResultAsync: System_Data_Common_Internal.DbDataReader["NextResultAsync"] & ((cancellationToken: CancellationToken) => Task_1<System_Internal.Boolean>);
+    Read: System_Data_Common_Internal.DbDataReader["Read"] & (() => boolean);
+    ReadAsync: System_Data_Common_Internal.DbDataReader["ReadAsync"] & ((cancellationToken: CancellationToken) => Task_1<System_Internal.Boolean>);
 }
 
 
@@ -176,7 +175,7 @@ export const BufferedDataReader: {
 
 export type BufferedDataReader = BufferedDataReader$instance;
 
-export interface ByteArraySequenceEqualTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface ByteArraySequenceEqualTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ByteArraySequenceEqualTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -197,10 +196,11 @@ export interface __ByteArraySequenceEqualTranslator$views {
 export type ByteArraySequenceEqualTranslator = ByteArraySequenceEqualTranslator$instance & __ByteArraySequenceEqualTranslator$views;
 
 
-export interface CallForwardingExpressionVisitor$instance extends ExpressionVisitor {
+export interface CallForwardingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CallForwardingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
@@ -211,7 +211,7 @@ export const CallForwardingExpressionVisitor: {
 
 export type CallForwardingExpressionVisitor = CallForwardingExpressionVisitor$instance;
 
-export interface CollateTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface CollateTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CollateTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -232,7 +232,7 @@ export interface __CollateTranslator$views {
 export type CollateTranslator = CollateTranslator$instance & __CollateTranslator$views;
 
 
-export interface ComparisonTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface ComparisonTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ComparisonTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -253,112 +253,115 @@ export interface __ComparisonTranslator$views {
 export type ComparisonTranslator = ComparisonTranslator$instance & __ComparisonTranslator$views;
 
 
-export interface CompiledAsyncEnumerableQuery_2$instance<TContext extends unknown & DbContext, TResult extends unknown> extends CompiledQueryBase_2<TContext, IAsyncEnumerable_1<TResult>> {
+export interface CompiledAsyncEnumerableQuery_2$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown> extends CompiledQueryBase_2$instance<TContext, IAsyncEnumerable_1<TResult>> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledAsyncEnumerableQuery_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQueryBase_2: never;
 
-    CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func_2<QueryContext, IAsyncEnumerable_1<TResult>>;
+    CreateCompiledQuery: CompiledQueryBase_2$instance<TContext, IAsyncEnumerable_1<TResult>>["CreateCompiledQuery"] & ((queryCompiler: IQueryCompiler, expression: Expression) => Func_2<QueryContext, IAsyncEnumerable_1<TResult>>);
     Execute(context: TContext): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown>(context: TContext, param1: TParam1): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown>(context: TContext, param1: TParam1, param2: TParam2): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13): IAsyncEnumerable_1<TResult>;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14): IAsyncEnumerable_1<TResult>;
     Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TParam15 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14, param15: TParam15): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown, TParam2 extends unknown>(context: TContext, param1: TParam1, param2: TParam2): IAsyncEnumerable_1<TResult>;
+    Execute<TParam1 extends unknown>(context: TContext, param1: TParam1): IAsyncEnumerable_1<TResult>;
 }
 
 
 export const CompiledAsyncEnumerableQuery_2: {
-    new<TContext extends unknown & DbContext, TResult extends unknown>(queryExpression: LambdaExpression): CompiledAsyncEnumerableQuery_2<TContext, TResult>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown>(queryExpression: LambdaExpression): CompiledAsyncEnumerableQuery_2<TContext, TResult>;
 };
 
 
-export type CompiledAsyncEnumerableQuery_2<TContext extends unknown & DbContext, TResult extends unknown> = CompiledAsyncEnumerableQuery_2$instance<TContext, TResult>;
+export type CompiledAsyncEnumerableQuery_2<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown> = CompiledAsyncEnumerableQuery_2$instance<TContext, TResult>;
 
-export interface CompiledAsyncTaskQuery_2$instance<TContext extends unknown & DbContext, TResult extends unknown> extends CompiledQueryBase_2<TContext, Task_1<TResult>> {
+export interface CompiledAsyncTaskQuery_2$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown> extends CompiledQueryBase_2$instance<TContext, Task_1<TResult>> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledAsyncTaskQuery_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQueryBase_2: never;
 
-    CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func_2<QueryContext, Task_1<TResult>>;
+    CreateCompiledQuery: CompiledQueryBase_2$instance<TContext, Task_1<TResult>>["CreateCompiledQuery"] & ((queryCompiler: IQueryCompiler, expression: Expression) => Func_2<QueryContext, Task_1<TResult>>);
     ExecuteAsync(context: TContext): Task_1<TResult>;
     ExecuteAsync(context: TContext, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown>(context: TContext, param1: TParam1): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown>(context: TContext, param1: TParam1, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown>(context: TContext, param1: TParam1, param2: TParam2): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TParam15 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14, param15: TParam15): Task_1<TResult>;
     ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14): Task_1<TResult>;
     ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14, cancellationToken: CancellationToken): Task_1<TResult>;
-    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TParam15 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14, param15: TParam15): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown>(context: TContext, param1: TParam1, param2: TParam2): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown, TParam2 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, cancellationToken: CancellationToken): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown>(context: TContext, param1: TParam1): Task_1<TResult>;
+    ExecuteAsync<TParam1 extends unknown>(context: TContext, param1: TParam1, cancellationToken: CancellationToken): Task_1<TResult>;
 }
 
 
 export const CompiledAsyncTaskQuery_2: {
-    new<TContext extends unknown & DbContext, TResult extends unknown>(queryExpression: LambdaExpression): CompiledAsyncTaskQuery_2<TContext, TResult>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown>(queryExpression: LambdaExpression): CompiledAsyncTaskQuery_2<TContext, TResult>;
 };
 
 
-export type CompiledAsyncTaskQuery_2<TContext extends unknown & DbContext, TResult extends unknown> = CompiledAsyncTaskQuery_2$instance<TContext, TResult>;
+export type CompiledAsyncTaskQuery_2<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown> = CompiledAsyncTaskQuery_2$instance<TContext, TResult>;
 
-export interface CompiledQuery_2$instance<TContext extends unknown & DbContext, TResult extends unknown> extends CompiledQueryBase_2<TContext, TResult> {
+export interface CompiledQuery_2$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown> extends CompiledQueryBase_2$instance<TContext, TResult> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQueryBase_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQuery_2: never;
 
-    CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func_2<QueryContext, TResult>;
+    CreateCompiledQuery: CompiledQueryBase_2$instance<TContext, TResult>["CreateCompiledQuery"] & ((queryCompiler: IQueryCompiler, expression: Expression) => Func_2<QueryContext, TResult>);
     Execute(context: TContext): TResult;
-    Execute<TParam1 extends unknown>(context: TContext, param1: TParam1): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown>(context: TContext, param1: TParam1, param2: TParam2): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13): TResult;
-    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14): TResult;
     Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown, TParam15 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14, param15: TParam15): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown, TParam14 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13, param14: TParam14): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown, TParam13 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12, param13: TParam13): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown, TParam12 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11, param12: TParam12): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown, TParam11 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10, param11: TParam11): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown, TParam10 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9, param10: TParam10): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown, TParam9 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8, param9: TParam9): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown, TParam8 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7, param8: TParam8): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown, TParam7 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6, param7: TParam7): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown, TParam6 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5, param6: TParam6): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown, TParam5 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4, param5: TParam5): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown, TParam4 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3, param4: TParam4): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown, TParam3 extends unknown>(context: TContext, param1: TParam1, param2: TParam2, param3: TParam3): TResult;
+    Execute<TParam1 extends unknown, TParam2 extends unknown>(context: TContext, param1: TParam1, param2: TParam2): TResult;
+    Execute<TParam1 extends unknown>(context: TContext, param1: TParam1): TResult;
 }
 
 
 export const CompiledQuery_2: {
-    new<TContext extends unknown & DbContext, TResult extends unknown>(queryExpression: LambdaExpression): CompiledQuery_2<TContext, TResult>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown>(queryExpression: LambdaExpression): CompiledQuery_2<TContext, TResult>;
 };
 
 
-export type CompiledQuery_2<TContext extends unknown & DbContext, TResult extends unknown> = CompiledQuery_2$instance<TContext, TResult>;
+export type CompiledQuery_2<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown> = CompiledQuery_2$instance<TContext, TResult>;
 
-export interface CompiledQueryBase_2$instance<TContext extends unknown & DbContext, TResult extends unknown> {
+export interface CompiledQueryBase_2$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQueryBase_2: never;
 
     CreateCompiledQuery(queryCompiler: IQueryCompiler, expression: Expression): Func_2<QueryContext, TResult>;
@@ -367,13 +370,13 @@ export interface CompiledQueryBase_2$instance<TContext extends unknown & DbConte
 }
 
 
-export const CompiledQueryBase_2: (abstract new<TContext extends unknown & DbContext, TResult extends unknown>(queryExpression: LambdaExpression) => CompiledQueryBase_2<TContext, TResult>) & {
+export const CompiledQueryBase_2: {
 };
 
 
-export type CompiledQueryBase_2<TContext extends unknown & DbContext, TResult extends unknown> = CompiledQueryBase_2$instance<TContext, TResult>;
+export type CompiledQueryBase_2<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }, TResult extends unknown> = CompiledQueryBase_2$instance<TContext, TResult>;
 
-export interface CompiledQueryCache$instance extends ICompiledQueryCache$instance {
+export interface CompiledQueryCache$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_CompiledQueryCache: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_Internal_ICompiledQueryCache: never;
@@ -394,7 +397,7 @@ export interface __CompiledQueryCache$views {
 export type CompiledQueryCache = CompiledQueryCache$instance & __CompiledQueryCache$views;
 
 
-export interface ContainsTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface ContainsTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ContainsTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -444,16 +447,16 @@ export const EntityQueryable_1: {
 
 export type EntityQueryable_1<TResult extends unknown> = EntityQueryable_1$instance<TResult>;
 
-export interface EntityQueryProvider$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider$instance {
+export interface EntityQueryProvider$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_EntityQueryProvider: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAsyncQueryProvider: never;
     readonly __tsonic_iface_System_Linq_IQueryProvider: never;
 
-    CreateQuery<TElement extends unknown>(expression: Expression): IQueryable_1<TElement>;
     CreateQuery(expression: Expression): IQueryable;
-    Execute<TResult extends unknown>(expression: Expression): TResult;
+    CreateQuery<TElement extends unknown>(expression: Expression): IQueryable_1<TElement>;
     Execute(expression: Expression): unknown;
+    Execute<TResult extends unknown>(expression: Expression): TResult;
     ExecuteAsync<TResult extends unknown>(expression: Expression, cancellationToken?: CancellationToken): TResult;
 }
 
@@ -470,7 +473,7 @@ export interface __EntityQueryProvider$views {
 export type EntityQueryProvider = EntityQueryProvider$instance & __EntityQueryProvider$views;
 
 
-export interface EnumMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface EnumMethodTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_EnumMethodTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -491,7 +494,7 @@ export interface __EnumMethodTranslator$views {
 export type EnumMethodTranslator = EnumMethodTranslator$instance & __EnumMethodTranslator$views;
 
 
-export interface EqualsTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface EqualsTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_EqualsTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -512,47 +515,48 @@ export interface __EqualsTranslator$views {
 export type EqualsTranslator = EqualsTranslator$instance & __EqualsTranslator$views;
 
 
-export interface ExpressionTreeFuncletizer$instance extends ExpressionVisitor {
+export interface ExpressionTreeFuncletizer$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_ExpressionTreeFuncletizer: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    CalculatePathsToEvaluatableRoots(linqOperatorMethodCall: MethodCallExpression, argumentIndex: int): ExpressionTreeFuncletizer_PathNode | null;
     CalculatePathsToEvaluatableRoots(expression: Expression): ExpressionTreeFuncletizer_PathNode | null;
+    CalculatePathsToEvaluatableRoots(linqOperatorMethodCall: MethodCallExpression, argumentIndex: int): ExpressionTreeFuncletizer_PathNode | null;
     ExtractParameters(expression: Expression, parameters: Dictionary_2<System_Internal.String, unknown | null>, parameterize: boolean, clearParameterizedValues: boolean): Expression;
     ExtractParameters(expression: Expression, parameters: Dictionary_2<System_Internal.String, unknown | null>, parameterize: boolean, clearParameterizedValues: boolean, precompiledQuery: boolean): Expression;
     ResetPathCalculation(): void;
-    Visit(expression: Expression | null): Expression | null;
-    VisitBinary(binary: BinaryExpression): Expression;
-    VisitBlock(node: BlockExpression): Expression;
-    VisitCatchBlock(node: CatchBlock): CatchBlock;
-    VisitConditional(conditional: ConditionalExpression): Expression;
-    VisitConstant(constant: ConstantExpression): Expression;
-    VisitDebugInfo(node: DebugInfoExpression): Expression;
-    VisitDefault(node: DefaultExpression): Expression;
-    VisitDynamic(node: DynamicExpression): Expression;
-    VisitElementInit(node: ElementInit): ElementInit;
-    VisitExtension(extension: Expression): Expression;
-    VisitGoto(node: GotoExpression): Expression;
-    VisitIndex(index: IndexExpression): Expression;
-    VisitInvocation(invocation: InvocationExpression): Expression;
-    VisitLabel(node: LabelExpression): Expression;
-    VisitLabelTarget(node: LabelTarget | null): LabelTarget;
-    VisitLambda<T extends unknown>(lambda: Expression_1<T>): Expression;
-    VisitListInit(listInit: ListInitExpression): Expression;
-    VisitLoop(node: LoopExpression): Expression;
-    VisitMember(member: MemberExpression): Expression;
-    VisitMemberInit(memberInit: MemberInitExpression): Expression;
-    VisitMemberListBinding(node: MemberListBinding): MemberListBinding;
-    VisitMemberMemberBinding(node: MemberMemberBinding): MemberMemberBinding;
-    VisitMethodCall(methodCall: MethodCallExpression): Expression;
-    VisitNew(new_: NewExpression): Expression;
-    VisitNewArray(newArray: NewArrayExpression): Expression;
-    VisitParameter(parameterExpression: ParameterExpression): Expression;
-    VisitRuntimeVariables(node: RuntimeVariablesExpression): Expression;
-    VisitSwitch(node: SwitchExpression): Expression;
-    VisitSwitchCase(node: SwitchCase): SwitchCase;
-    VisitTry(node: TryExpression): Expression;
-    VisitTypeBinary(typeBinary: TypeBinaryExpression): Expression;
-    VisitUnary(unary: UnaryExpression): Expression;
+    Visit: System_Linq_Expressions_Internal.ExpressionVisitor["Visit"] & ((expression: Expression | null) => Expression | null);
+    VisitBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBinary"] & ((binary: BinaryExpression) => Expression);
+    VisitBlock: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBlock"] & ((node: BlockExpression) => Expression);
+    VisitCatchBlock: System_Linq_Expressions_Internal.ExpressionVisitor["VisitCatchBlock"] & ((node: CatchBlock) => CatchBlock);
+    VisitConditional: System_Linq_Expressions_Internal.ExpressionVisitor["VisitConditional"] & ((conditional: ConditionalExpression) => Expression);
+    VisitConstant: System_Linq_Expressions_Internal.ExpressionVisitor["VisitConstant"] & ((constant: ConstantExpression) => Expression);
+    VisitDebugInfo: System_Linq_Expressions_Internal.ExpressionVisitor["VisitDebugInfo"] & ((node: DebugInfoExpression) => Expression);
+    VisitDefault: System_Linq_Expressions_Internal.ExpressionVisitor["VisitDefault"] & ((node: DefaultExpression) => Expression);
+    VisitDynamic: System_Linq_Expressions_Internal.ExpressionVisitor["VisitDynamic"] & ((node: DynamicExpression) => Expression);
+    VisitElementInit: System_Linq_Expressions_Internal.ExpressionVisitor["VisitElementInit"] & ((node: ElementInit) => ElementInit);
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extension: Expression) => Expression);
+    VisitGoto: System_Linq_Expressions_Internal.ExpressionVisitor["VisitGoto"] & ((node: GotoExpression) => Expression);
+    VisitIndex: System_Linq_Expressions_Internal.ExpressionVisitor["VisitIndex"] & ((index: IndexExpression) => Expression);
+    VisitInvocation: System_Linq_Expressions_Internal.ExpressionVisitor["VisitInvocation"] & ((invocation: InvocationExpression) => Expression);
+    VisitLabel: System_Linq_Expressions_Internal.ExpressionVisitor["VisitLabel"] & ((node: LabelExpression) => Expression);
+    VisitLabelTarget: System_Linq_Expressions_Internal.ExpressionVisitor["VisitLabelTarget"] & ((node: LabelTarget | null) => LabelTarget);
+    VisitLambda: System_Linq_Expressions_Internal.ExpressionVisitor["VisitLambda"] & (<T extends unknown>(lambda: Expression_1<T>) => Expression);
+    VisitListInit: System_Linq_Expressions_Internal.ExpressionVisitor["VisitListInit"] & ((listInit: ListInitExpression) => Expression);
+    VisitLoop: System_Linq_Expressions_Internal.ExpressionVisitor["VisitLoop"] & ((node: LoopExpression) => Expression);
+    VisitMember: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMember"] & ((member: MemberExpression) => Expression);
+    VisitMemberInit: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMemberInit"] & ((memberInit: MemberInitExpression) => Expression);
+    VisitMemberListBinding: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMemberListBinding"] & ((node: MemberListBinding) => MemberListBinding);
+    VisitMemberMemberBinding: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMemberMemberBinding"] & ((node: MemberMemberBinding) => MemberMemberBinding);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCall: MethodCallExpression) => Expression);
+    VisitNew: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNew"] & ((new_: NewExpression) => Expression);
+    VisitNewArray: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNewArray"] & ((newArray: NewArrayExpression) => Expression);
+    VisitParameter: System_Linq_Expressions_Internal.ExpressionVisitor["VisitParameter"] & ((parameterExpression: ParameterExpression) => Expression);
+    VisitRuntimeVariables: System_Linq_Expressions_Internal.ExpressionVisitor["VisitRuntimeVariables"] & ((node: RuntimeVariablesExpression) => Expression);
+    VisitSwitch: System_Linq_Expressions_Internal.ExpressionVisitor["VisitSwitch"] & ((node: SwitchExpression) => Expression);
+    VisitSwitchCase: System_Linq_Expressions_Internal.ExpressionVisitor["VisitSwitchCase"] & ((node: SwitchCase) => SwitchCase);
+    VisitTry: System_Linq_Expressions_Internal.ExpressionVisitor["VisitTry"] & ((node: TryExpression) => Expression);
+    VisitTypeBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitTypeBinary"] & ((typeBinary: TypeBinaryExpression) => Expression);
+    VisitUnary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitUnary"] & ((unary: UnaryExpression) => Expression);
 }
 
 
@@ -590,7 +594,7 @@ export const ExpressionTreeFuncletizer_PathNode: {
 
 export type ExpressionTreeFuncletizer_PathNode = ExpressionTreeFuncletizer_PathNode$instance;
 
-export interface FromSqlQueryingEnumerable_1$instance<T extends unknown> extends IRelationalQueryingEnumerable$instance, System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {
+export interface FromSqlQueryingEnumerable_1$instance<T extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_FromSqlQueryingEnumerable_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
@@ -620,19 +624,22 @@ export interface __FromSqlQueryingEnumerable_1$views<T extends unknown> {
 export type FromSqlQueryingEnumerable_1<T extends unknown> = FromSqlQueryingEnumerable_1$instance<T> & __FromSqlQueryingEnumerable_1$views<T>;
 
 
-export interface FromSqlQueryRootExpression$instance extends EntityQueryRootExpression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {
+export interface FromSqlQueryRootExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_EntityQueryRootExpression: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_FromSqlQueryRootExpression: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryRootExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Argument: Expression;
     readonly Sql: string;
-    DetachQueryProvider(): Expression;
-    Equals(obj: unknown | null): boolean;
-    GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
-    UpdateEntityType(entityType: IEntityType): EntityQueryRootExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    DetachQueryProvider: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["DetachQueryProvider"] & (() => Expression);
+    Equals: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["Equals"] & ((obj: unknown | null) => boolean);
+    GetHashCode: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["GetHashCode"] & (() => int);
+    Print: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["Print"] & ((expressionPrinter: ExpressionPrinter) => void);
+    UpdateEntityType: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["UpdateEntityType"] & ((entityType: IEntityType) => EntityQueryRootExpression);
+    VisitChildren: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -649,7 +656,7 @@ export interface __FromSqlQueryRootExpression$views {
 export type FromSqlQueryRootExpression = FromSqlQueryRootExpression$instance & __FromSqlQueryRootExpression$views;
 
 
-export interface GetValueOrDefaultTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface GetValueOrDefaultTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_GetValueOrDefaultTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -670,7 +677,7 @@ export interface __GetValueOrDefaultTranslator$views {
 export type GetValueOrDefaultTranslator = GetValueOrDefaultTranslator$instance & __GetValueOrDefaultTranslator$views;
 
 
-export interface GroupBySingleQueryingEnumerable_2$instance<TKey extends unknown, TElement extends unknown> extends IRelationalQueryingEnumerable$instance, System_Collections_Generic_Internal.IAsyncEnumerable_1<IGrouping_2<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable_1<IGrouping_2<TKey, TElement>> {
+export interface GroupBySingleQueryingEnumerable_2$instance<TKey extends unknown, TElement extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_GroupBySingleQueryingEnumerable_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
@@ -699,7 +706,7 @@ export interface __GroupBySingleQueryingEnumerable_2$views<TKey extends unknown,
 export type GroupBySingleQueryingEnumerable_2<TKey extends unknown, TElement extends unknown> = GroupBySingleQueryingEnumerable_2$instance<TKey, TElement> & __GroupBySingleQueryingEnumerable_2$views<TKey, TElement>;
 
 
-export interface GroupBySplitQueryingEnumerable_2$instance<TKey extends unknown, TElement extends unknown> extends IRelationalQueryingEnumerable$instance, System_Collections_Generic_Internal.IAsyncEnumerable_1<IGrouping_2<TKey, TElement>>, System_Collections_Generic_Internal.IEnumerable_1<IGrouping_2<TKey, TElement>> {
+export interface GroupBySplitQueryingEnumerable_2$instance<TKey extends unknown, TElement extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_GroupBySplitQueryingEnumerable_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
@@ -728,10 +735,11 @@ export interface __GroupBySplitQueryingEnumerable_2$views<TKey extends unknown, 
 export type GroupBySplitQueryingEnumerable_2<TKey extends unknown, TElement extends unknown> = GroupBySplitQueryingEnumerable_2$instance<TKey, TElement> & __GroupBySplitQueryingEnumerable_2$views<TKey, TElement>;
 
 
-export interface InvocationExpressionRemovingExpressionVisitor$instance extends ExpressionVisitor {
+export interface InvocationExpressionRemovingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_InvocationExpressionRemovingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    VisitInvocation(invocationExpression: InvocationExpression): Expression;
+    VisitInvocation: System_Linq_Expressions_Internal.ExpressionVisitor["VisitInvocation"] & ((invocationExpression: InvocationExpression) => Expression);
 }
 
 
@@ -742,7 +750,7 @@ export const InvocationExpressionRemovingExpressionVisitor: {
 
 export type InvocationExpressionRemovingExpressionVisitor = InvocationExpressionRemovingExpressionVisitor$instance;
 
-export interface LikeTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface LikeTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_LikeTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -763,14 +771,15 @@ export interface __LikeTranslator$views {
 export type LikeTranslator = LikeTranslator$instance & __LikeTranslator$views;
 
 
-export interface NavigationExpandingExpressionVisitor$instance extends ExpressionVisitor {
+export interface NavigationExpandingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_NavigationExpandingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     Expand(query: Expression): Expression;
-    VisitExtension(extensionExpression: Expression): Expression;
-    VisitMember(memberExpression: MemberExpression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    VisitUnary(unaryExpression: UnaryExpression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
+    VisitMember: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMember"] & ((memberExpression: MemberExpression) => Expression);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
+    VisitUnary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitUnary"] & ((unaryExpression: UnaryExpression) => Expression);
 }
 
 
@@ -782,7 +791,7 @@ export const NavigationExpandingExpressionVisitor: {
 
 export type NavigationExpandingExpressionVisitor = NavigationExpandingExpressionVisitor$instance;
 
-export interface NullAsyncQueryProvider$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAsyncQueryProvider$instance {
+export interface NullAsyncQueryProvider$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_NullAsyncQueryProvider: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAsyncQueryProvider: never;
@@ -803,11 +812,12 @@ export interface __NullAsyncQueryProvider$views {
 export type NullAsyncQueryProvider = NullAsyncQueryProvider$instance & __NullAsyncQueryProvider$views;
 
 
-export interface NullCheckRemovingExpressionVisitor$instance extends ExpressionVisitor {
+export interface NullCheckRemovingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_NullCheckRemovingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    VisitBinary(binaryExpression: BinaryExpression): Expression;
-    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
+    VisitBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBinary"] & ((binaryExpression: BinaryExpression) => Expression);
+    VisitConditional: System_Linq_Expressions_Internal.ExpressionVisitor["VisitConditional"] & ((conditionalExpression: ConditionalExpression) => Expression);
 }
 
 
@@ -870,7 +880,8 @@ export const PrecompiledQueryContext_1: {
 
 export type PrecompiledQueryContext_1<T extends unknown> = PrecompiledQueryContext_1$instance<T>;
 
-export interface PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2$instance<T extends unknown, TEntity extends unknown, TProperty extends unknown> extends PrecompiledQueryContext_1<TEntity>, IIncludableQueryable_2<TEntity, TProperty> {
+export interface PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2$instance<T extends unknown, TEntity extends unknown, TProperty extends unknown> extends PrecompiledQueryContext_1$instance<TEntity> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_PrecompiledQueryContext_1: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IIncludableQueryable_2: never;
@@ -891,7 +902,7 @@ export const PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2: {
 
 export type PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2<T extends unknown, TEntity extends unknown, TProperty extends unknown> = PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2$instance<T, TEntity, TProperty>;
 
-export interface QueryableAggregateMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IAggregateMethodCallTranslator$instance {
+export interface QueryableAggregateMethodTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryableAggregateMethodTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAggregateMethodCallTranslator: never;
@@ -912,12 +923,13 @@ export interface __QueryableAggregateMethodTranslator$views {
 export type QueryableAggregateMethodTranslator = QueryableAggregateMethodTranslator$instance & __QueryableAggregateMethodTranslator$views;
 
 
-export interface QueryableMethodNormalizingExpressionVisitor$instance extends ExpressionVisitor {
+export interface QueryableMethodNormalizingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryableMethodNormalizingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     Normalize(expression: Expression): Expression;
-    VisitBinary(binaryExpression: BinaryExpression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBinary"] & ((binaryExpression: BinaryExpression) => Expression);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
@@ -928,7 +940,7 @@ export const QueryableMethodNormalizingExpressionVisitor: {
 
 export type QueryableMethodNormalizingExpressionVisitor = QueryableMethodNormalizingExpressionVisitor$instance;
 
-export interface QueryCompilationContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory$instance {
+export interface QueryCompilationContextFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryCompilationContextFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryCompilationContextFactory: never;
@@ -993,10 +1005,11 @@ export const QueryDebugView: {
 
 export type QueryDebugView = QueryDebugView$instance;
 
-export interface QueryExpressionReplacingExpressionVisitor$instance extends ExpressionVisitor {
+export interface QueryExpressionReplacingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryExpressionReplacingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    Visit(expression: Expression | null): Expression | null;
+    Visit: System_Linq_Expressions_Internal.ExpressionVisitor["Visit"] & ((expression: Expression | null) => Expression | null);
 }
 
 
@@ -1012,8 +1025,8 @@ export interface QueryFiltersCacheKey$instance {
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
-    Equals(other: QueryFiltersCacheKey | null): boolean;
     Equals(obj: unknown | null): boolean;
+    Equals(other: QueryFiltersCacheKey | null): boolean;
     GetHashCode(): int;
 }
 
@@ -1025,19 +1038,20 @@ export const QueryFiltersCacheKey: {
 
 export type QueryFiltersCacheKey = QueryFiltersCacheKey$instance;
 
-export interface QueryOptimizingExpressionVisitor$instance extends ExpressionVisitor {
+export interface QueryOptimizingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryOptimizingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    VisitBinary(binaryExpression: BinaryExpression): Expression;
-    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
-    VisitElementInit(elementInit: ElementInit): ElementInit;
-    VisitLambda<T extends unknown>(lambdaExpression: Expression_1<T>): Expression;
-    VisitMember(memberExpression: MemberExpression): Expression;
-    VisitMemberAssignment(memberAssignment: MemberAssignment): MemberAssignment;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    VisitNew(newExpression: NewExpression): Expression;
-    VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
-    VisitUnary(unaryExpression: UnaryExpression): Expression;
+    VisitBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBinary"] & ((binaryExpression: BinaryExpression) => Expression);
+    VisitConditional: System_Linq_Expressions_Internal.ExpressionVisitor["VisitConditional"] & ((conditionalExpression: ConditionalExpression) => Expression);
+    VisitElementInit: System_Linq_Expressions_Internal.ExpressionVisitor["VisitElementInit"] & ((elementInit: ElementInit) => ElementInit);
+    VisitLambda: System_Linq_Expressions_Internal.ExpressionVisitor["VisitLambda"] & (<T extends unknown>(lambdaExpression: Expression_1<T>) => Expression);
+    VisitMember: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMember"] & ((memberExpression: MemberExpression) => Expression);
+    VisitMemberAssignment: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMemberAssignment"] & ((memberAssignment: MemberAssignment) => MemberAssignment);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
+    VisitNew: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNew"] & ((newExpression: NewExpression) => Expression);
+    VisitNewArray: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNewArray"] & ((newArrayExpression: NewArrayExpression) => Expression);
+    VisitUnary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitUnary"] & ((unaryExpression: UnaryExpression) => Expression);
 }
 
 
@@ -1048,7 +1062,7 @@ export const QueryOptimizingExpressionVisitor: {
 
 export type QueryOptimizingExpressionVisitor = QueryOptimizingExpressionVisitor$instance;
 
-export interface QuerySqlGeneratorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQuerySqlGeneratorFactory$instance {
+export interface QuerySqlGeneratorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QuerySqlGeneratorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQuerySqlGeneratorFactory: never;
@@ -1070,7 +1084,7 @@ export interface __QuerySqlGeneratorFactory$views {
 export type QuerySqlGeneratorFactory = QuerySqlGeneratorFactory$instance & __QuerySqlGeneratorFactory$views;
 
 
-export interface QueryTranslationPostprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory$instance {
+export interface QueryTranslationPostprocessorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryTranslationPostprocessorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPostprocessorFactory: never;
@@ -1092,7 +1106,7 @@ export interface __QueryTranslationPostprocessorFactory$views {
 export type QueryTranslationPostprocessorFactory = QueryTranslationPostprocessorFactory$instance & __QueryTranslationPostprocessorFactory$views;
 
 
-export interface QueryTranslationPreprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory$instance {
+export interface QueryTranslationPreprocessorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_QueryTranslationPreprocessorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPreprocessorFactory: never;
@@ -1114,7 +1128,7 @@ export interface __QueryTranslationPreprocessorFactory$views {
 export type QueryTranslationPreprocessorFactory = QueryTranslationPreprocessorFactory$instance & __QueryTranslationPreprocessorFactory$views;
 
 
-export interface RandomTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface RandomTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RandomTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -1135,7 +1149,7 @@ export interface __RandomTranslator$views {
 export type RandomTranslator = RandomTranslator$instance & __RandomTranslator$views;
 
 
-export interface RelationalCommandCache$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {
+export interface RelationalCommandCache$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalCommandCache: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
@@ -1156,7 +1170,7 @@ export interface __RelationalCommandCache$views {
 export type RelationalCommandCache = RelationalCommandCache$instance & __RelationalCommandCache$views;
 
 
-export interface RelationalParameterBasedSqlProcessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IRelationalParameterBasedSqlProcessorFactory$instance {
+export interface RelationalParameterBasedSqlProcessorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalParameterBasedSqlProcessorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalParameterBasedSqlProcessorFactory: never;
@@ -1178,12 +1192,13 @@ export interface __RelationalParameterBasedSqlProcessorFactory$views {
 export type RelationalParameterBasedSqlProcessorFactory = RelationalParameterBasedSqlProcessorFactory$instance & __RelationalParameterBasedSqlProcessorFactory$views;
 
 
-export interface RelationalParameterProcessor$instance extends ExpressionVisitor {
+export interface RelationalParameterProcessor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalParameterProcessor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
     Expand(queryExpression: Expression, parametersDecorator: ParametersCacheDecorator): Expression;
-    VisitExtension(expression: Expression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((expression: Expression) => Expression);
 }
 
 
@@ -1194,22 +1209,23 @@ export const RelationalParameterProcessor: {
 
 export type RelationalParameterProcessor = RelationalParameterProcessor$instance;
 
-export interface RelationalProjectionBindingExpressionVisitor$instance extends ExpressionVisitor {
+export interface RelationalProjectionBindingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalProjectionBindingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     Translate(selectExpression: SelectExpression, expression: Expression): Expression;
-    Visit(expression: Expression | null): Expression | null;
-    VisitBinary(binaryExpression: BinaryExpression): Expression;
-    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
-    VisitElementInit(elementInit: ElementInit): ElementInit;
-    VisitExtension(extensionExpression: Expression): Expression;
-    VisitMember(memberExpression: MemberExpression): Expression;
-    VisitMemberAssignment(memberAssignment: MemberAssignment): MemberAssignment;
-    VisitMemberInit(memberInitExpression: MemberInitExpression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    VisitNew(newExpression: NewExpression): Expression;
-    VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
-    VisitUnary(unaryExpression: UnaryExpression): Expression;
+    Visit: System_Linq_Expressions_Internal.ExpressionVisitor["Visit"] & ((expression: Expression | null) => Expression | null);
+    VisitBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBinary"] & ((binaryExpression: BinaryExpression) => Expression);
+    VisitConditional: System_Linq_Expressions_Internal.ExpressionVisitor["VisitConditional"] & ((conditionalExpression: ConditionalExpression) => Expression);
+    VisitElementInit: System_Linq_Expressions_Internal.ExpressionVisitor["VisitElementInit"] & ((elementInit: ElementInit) => ElementInit);
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
+    VisitMember: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMember"] & ((memberExpression: MemberExpression) => Expression);
+    VisitMemberAssignment: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMemberAssignment"] & ((memberAssignment: MemberAssignment) => MemberAssignment);
+    VisitMemberInit: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMemberInit"] & ((memberInitExpression: MemberInitExpression) => Expression);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
+    VisitNew: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNew"] & ((newExpression: NewExpression) => Expression);
+    VisitNewArray: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNewArray"] & ((newArrayExpression: NewArrayExpression) => Expression);
+    VisitUnary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitUnary"] & ((unaryExpression: UnaryExpression) => Expression);
 }
 
 
@@ -1221,7 +1237,7 @@ export const RelationalProjectionBindingExpressionVisitor: {
 
 export type RelationalProjectionBindingExpressionVisitor = RelationalProjectionBindingExpressionVisitor$instance;
 
-export interface RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryableMethodTranslatingExpressionVisitorFactory$instance {
+export interface RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryableMethodTranslatingExpressionVisitorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryableMethodTranslatingExpressionVisitorFactory: never;
@@ -1244,7 +1260,7 @@ export interface __RelationalQueryableMethodTranslatingExpressionVisitorFactory$
 export type RelationalQueryableMethodTranslatingExpressionVisitorFactory = RelationalQueryableMethodTranslatingExpressionVisitorFactory$instance & __RelationalQueryableMethodTranslatingExpressionVisitorFactory$views;
 
 
-export interface RelationalQueryCompilationContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryCompilationContextFactory$instance {
+export interface RelationalQueryCompilationContextFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryCompilationContextFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryCompilationContextFactory: never;
@@ -1268,7 +1284,7 @@ export interface __RelationalQueryCompilationContextFactory$views {
 export type RelationalQueryCompilationContextFactory = RelationalQueryCompilationContextFactory$instance & __RelationalQueryCompilationContextFactory$views;
 
 
-export interface RelationalQueryContextFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryContextFactory$instance {
+export interface RelationalQueryContextFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryContextFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryContextFactory: never;
@@ -1291,10 +1307,11 @@ export interface __RelationalQueryContextFactory$views {
 export type RelationalQueryContextFactory = RelationalQueryContextFactory$instance & __RelationalQueryContextFactory$views;
 
 
-export interface RelationalQueryMetadataExtractingExpressionVisitor$instance extends ExpressionVisitor {
+export interface RelationalQueryMetadataExtractingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryMetadataExtractingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
@@ -1305,7 +1322,7 @@ export const RelationalQueryMetadataExtractingExpressionVisitor: {
 
 export type RelationalQueryMetadataExtractingExpressionVisitor = RelationalQueryMetadataExtractingExpressionVisitor$instance;
 
-export interface RelationalQueryStringFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQueryStringFactory$instance {
+export interface RelationalQueryStringFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryStringFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQueryStringFactory: never;
@@ -1326,7 +1343,7 @@ export interface __RelationalQueryStringFactory$views {
 export type RelationalQueryStringFactory = RelationalQueryStringFactory$instance & __RelationalQueryStringFactory$views;
 
 
-export interface RelationalQueryTranslationPostprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPostprocessorFactory$instance {
+export interface RelationalQueryTranslationPostprocessorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryTranslationPostprocessorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPostprocessorFactory: never;
@@ -1349,7 +1366,7 @@ export interface __RelationalQueryTranslationPostprocessorFactory$views {
 export type RelationalQueryTranslationPostprocessorFactory = RelationalQueryTranslationPostprocessorFactory$instance & __RelationalQueryTranslationPostprocessorFactory$views;
 
 
-export interface RelationalQueryTranslationPreprocessorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IQueryTranslationPreprocessorFactory$instance {
+export interface RelationalQueryTranslationPreprocessorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalQueryTranslationPreprocessorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryTranslationPreprocessorFactory: never;
@@ -1372,7 +1389,7 @@ export interface __RelationalQueryTranslationPreprocessorFactory$views {
 export type RelationalQueryTranslationPreprocessorFactory = RelationalQueryTranslationPreprocessorFactory$instance & __RelationalQueryTranslationPreprocessorFactory$views;
 
 
-export interface RelationalShapedQueryCompilingExpressionVisitorFactory$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IShapedQueryCompilingExpressionVisitorFactory$instance {
+export interface RelationalShapedQueryCompilingExpressionVisitorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalShapedQueryCompilingExpressionVisitorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IShapedQueryCompilingExpressionVisitorFactory: never;
@@ -1397,10 +1414,11 @@ export type RelationalShapedQueryCompilingExpressionVisitorFactory = RelationalS
 
 export interface RelationalStructuralTypeMaterializerSource$instance extends StructuralTypeMaterializerSource$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalStructuralTypeMaterializerSource: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_StructuralTypeMaterializerSource: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IStructuralTypeMaterializerSource: never;
 
-    ReadComplexTypeDirectly(complexType: IComplexType): boolean;
+    ReadComplexTypeDirectly: StructuralTypeMaterializerSource$instance["ReadComplexTypeDirectly"] & ((complexType: IComplexType) => boolean);
 }
 
 
@@ -1416,10 +1434,11 @@ export interface __RelationalStructuralTypeMaterializerSource$views {
 export type RelationalStructuralTypeMaterializerSource = RelationalStructuralTypeMaterializerSource$instance & __RelationalStructuralTypeMaterializerSource$views;
 
 
-export interface RelationalValueConverterCompensatingExpressionVisitor$instance extends ExpressionVisitor {
+export interface RelationalValueConverterCompensatingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_RelationalValueConverterCompensatingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    VisitExtension(extensionExpression: Expression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
 }
 
 
@@ -1445,10 +1464,11 @@ export const ResultContext: {
 
 export type ResultContext = ResultContext$instance;
 
-export interface SelectExpressionProjectionApplyingExpressionVisitor$instance extends ExpressionVisitor {
+export interface SelectExpressionProjectionApplyingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SelectExpressionProjectionApplyingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    VisitExtension(extensionExpression: Expression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
 }
 
 
@@ -1467,8 +1487,7 @@ export interface SingleQueryCollectionContext$instance {
     readonly Parent: unknown | null;
     readonly ParentIdentifier: unknown[];
     readonly ResultContext: ResultContext;
-    get SelfIdentifier(): unknown[] | null;
-    set SelfIdentifier(value: unknown[] | null);
+    readonly SelfIdentifier: unknown[] | null;
     UpdateSelfIdentifier(selfIdentifier: unknown[] | null): void;
 }
 
@@ -1480,7 +1499,7 @@ export const SingleQueryCollectionContext: {
 
 export type SingleQueryCollectionContext = SingleQueryCollectionContext$instance;
 
-export interface SingleQueryingEnumerable_1$instance<T extends unknown> extends IRelationalQueryingEnumerable$instance, System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {
+export interface SingleQueryingEnumerable_1$instance<T extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SingleQueryingEnumerable_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
@@ -1561,7 +1580,7 @@ export const SplitQueryDataReaderContext: {
 
 export type SplitQueryDataReaderContext = SplitQueryDataReaderContext$instance;
 
-export interface SplitQueryingEnumerable_1$instance<T extends unknown> extends IRelationalQueryingEnumerable$instance, System_Collections_Generic_Internal.IAsyncEnumerable_1<T>, System_Collections_Generic_Internal.IEnumerable_1<T> {
+export interface SplitQueryingEnumerable_1$instance<T extends unknown> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SplitQueryingEnumerable_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IQueryingEnumerable: never;
@@ -1610,10 +1629,11 @@ export const SplitQueryResultCoordinator: {
 
 export type SplitQueryResultCoordinator = SplitQueryResultCoordinator$instance;
 
-export interface SqlExpressionSimplifyingExpressionVisitor$instance extends ExpressionVisitor {
+export interface SqlExpressionSimplifyingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SqlExpressionSimplifyingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    VisitExtension(extensionExpression: Expression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
 }
 
 
@@ -1624,18 +1644,20 @@ export const SqlExpressionSimplifyingExpressionVisitor: {
 
 export type SqlExpressionSimplifyingExpressionVisitor = SqlExpressionSimplifyingExpressionVisitor$instance;
 
-export interface SqlQueryRootExpression$instance extends QueryRootExpression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {
+export interface SqlQueryRootExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.QueryRootExpression$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SqlQueryRootExpression: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryRootExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Argument: Expression;
     readonly Sql: string;
-    DetachQueryProvider(): Expression;
-    Equals(obj: unknown | null): boolean;
-    GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    DetachQueryProvider: Microsoft_EntityFrameworkCore_Query_Internal.QueryRootExpression$instance["DetachQueryProvider"] & (() => Expression);
+    Equals: Microsoft_EntityFrameworkCore_Query_Internal.QueryRootExpression$instance["Equals"] & ((obj: unknown | null) => boolean);
+    GetHashCode: Microsoft_EntityFrameworkCore_Query_Internal.QueryRootExpression$instance["GetHashCode"] & (() => int);
+    Print: Microsoft_EntityFrameworkCore_Query_Internal.QueryRootExpression$instance["Print"] & ((expressionPrinter: ExpressionPrinter) => void);
+    VisitChildren: Microsoft_EntityFrameworkCore_Query_Internal.QueryRootExpression$instance["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -1652,7 +1674,7 @@ export interface __SqlQueryRootExpression$views {
 export type SqlQueryRootExpression = SqlQueryRootExpression$instance & __SqlQueryRootExpression$views;
 
 
-export interface StringMethodTranslator$instance extends Microsoft_EntityFrameworkCore_Query_Internal.IMethodCallTranslator$instance {
+export interface StringMethodTranslator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_StringMethodTranslator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslator: never;
@@ -1681,11 +1703,11 @@ export interface StructuralTypeMaterializerSource$instance {
     readonly Dependencies: StructuralTypeMaterializerSourceDependencies;
     AddInitializeExpression(property: IPropertyBase, bindingInfo: ParameterBindingInfo, instanceVariable: Expression, getValueBufferExpression: MethodCallExpression, blockExpressions: List_1<Expression>, nullable: boolean): void;
     CreateMaterializeExpression(parameters: StructuralTypeMaterializerSourceParameters, materializationContextExpression: Expression): Expression;
-    GetEmptyMaterializer(entityType: IEntityType): Func_2<MaterializationContext, unknown>;
     GetEmptyMaterializer(complexType: IComplexType): Func_2<MaterializationContext, unknown>;
+    GetEmptyMaterializer(entityType: IEntityType): Func_2<MaterializationContext, unknown>;
     GetEmptyMaterializer(entityType: ITypeBase, binding: InstantiationBinding, serviceProperties: List_1<IServiceProperty>): Func_2<MaterializationContext, unknown>;
-    GetMaterializer(entityType: IEntityType): Func_2<MaterializationContext, unknown>;
     GetMaterializer(complexType: IComplexType): Func_2<MaterializationContext, unknown>;
+    GetMaterializer(entityType: IEntityType): Func_2<MaterializationContext, unknown>;
     ReadComplexTypeDirectly(complexType: IComplexType): boolean;
 }
 
@@ -1725,11 +1747,12 @@ export const StructuralTypeMaterializerSourceDependencies: {
 
 export type StructuralTypeMaterializerSourceDependencies = StructuralTypeMaterializerSourceDependencies$instance;
 
-export interface SubqueryMemberPushdownExpressionVisitor$instance extends ExpressionVisitor {
+export interface SubqueryMemberPushdownExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_SubqueryMemberPushdownExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    VisitMember(memberExpression: MemberExpression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitMember: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMember"] & ((memberExpression: MemberExpression) => Expression);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
@@ -1740,18 +1763,21 @@ export const SubqueryMemberPushdownExpressionVisitor: {
 
 export type SubqueryMemberPushdownExpressionVisitor = SubqueryMemberPushdownExpressionVisitor$instance;
 
-export interface TableValuedFunctionQueryRootExpression$instance extends EntityQueryRootExpression, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance {
+export interface TableValuedFunctionQueryRootExpression$instance extends Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_EntityQueryRootExpression: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_TableValuedFunctionQueryRootExpression: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryRootExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Arguments: IReadOnlyCollection_1<Expression>;
     readonly Function: IStoreFunction;
-    Equals(obj: unknown | null): boolean;
-    GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
-    UpdateEntityType(entityType: IEntityType): EntityQueryRootExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    Equals: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["Equals"] & ((obj: unknown | null) => boolean);
+    GetHashCode: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["GetHashCode"] & (() => int);
+    Print: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["Print"] & ((expressionPrinter: ExpressionPrinter) => void);
+    UpdateEntityType: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["UpdateEntityType"] & ((entityType: IEntityType) => EntityQueryRootExpression);
+    VisitChildren: Microsoft_EntityFrameworkCore_Query_Internal.EntityQueryRootExpression$instance["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -1767,26 +1793,28 @@ export interface __TableValuedFunctionQueryRootExpression$views {
 export type TableValuedFunctionQueryRootExpression = TableValuedFunctionQueryRootExpression$instance & __TableValuedFunctionQueryRootExpression$views;
 
 
-export interface TpcTablesExpression$instance extends TableExpressionBase, Microsoft_EntityFrameworkCore_Query_Internal.IPrintableExpression$instance, Microsoft_EntityFrameworkCore_Query_Internal.IRelationalQuotableExpression$instance {
+export interface TpcTablesExpression$instance extends Microsoft_EntityFrameworkCore_Query_SqlExpressions_Internal.TableExpressionBase$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_Internal_TpcTablesExpression: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressions_TableExpressionBase: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
     readonly Alias: string | string | null;
     readonly DiscriminatorColumn: ColumnExpression;
-    DiscriminatorValues: List_1<System_Internal.String>;
+    readonly DiscriminatorValues: List_1<System_Internal.String>;
     readonly EntityType: IEntityType;
     readonly SelectExpressions: IReadOnlyList_1<SelectExpression>;
-    Clone(alias: string | null, cloningExpressionVisitor: ExpressionVisitor): TableExpressionBase;
-    Equals(obj: unknown | null): boolean;
-    GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
+    Clone: Microsoft_EntityFrameworkCore_Query_SqlExpressions_Internal.TableExpressionBase$instance["Clone"] & ((alias: string | null, cloningExpressionVisitor: ExpressionVisitor) => TableExpressionBase);
+    Equals: Microsoft_EntityFrameworkCore_Query_SqlExpressions_Internal.TableExpressionBase$instance["Equals"] & ((obj: unknown | null) => boolean);
+    GetHashCode: Microsoft_EntityFrameworkCore_Query_SqlExpressions_Internal.TableExpressionBase$instance["GetHashCode"] & (() => int);
+    Print: Microsoft_EntityFrameworkCore_Query_SqlExpressions_Internal.TableExpressionBase$instance["Print"] & ((expressionPrinter: ExpressionPrinter) => void);
     Prune(discriminatorValues: IReadOnlyList_1<System_Internal.String>): TpcTablesExpression;
-    Quote(): Expression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
-    WithAlias(newAlias: string): TpcTablesExpression;
-    WithAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, IAnnotation>): TpcTablesExpression;
+    Quote: Microsoft_EntityFrameworkCore_Query_SqlExpressions_Internal.TableExpressionBase$instance["Quote"] & (() => Expression);
+    VisitChildren: Microsoft_EntityFrameworkCore_Query_SqlExpressions_Internal.TableExpressionBase$instance["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
+    WithAlias: Microsoft_EntityFrameworkCore_Query_SqlExpressions_Internal.TableExpressionBase$instance["WithAlias"] & ((newAlias: string) => TpcTablesExpression);
+    WithAnnotations: Microsoft_EntityFrameworkCore_Query_SqlExpressions_Internal.TableExpressionBase$instance["WithAnnotations"] & ((annotations: IReadOnlyDictionary_2<System_Internal.String, IAnnotation>) => TpcTablesExpression);
 }
 
 

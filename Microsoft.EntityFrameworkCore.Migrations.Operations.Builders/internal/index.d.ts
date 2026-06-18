@@ -16,29 +16,29 @@ import type { IReadOnlyDictionary_2 } from "@tsonic/dotnet/System.Collections.Ge
 import type { Expression_1 } from "@tsonic/dotnet/System.Linq.Expressions/internal/index.js";
 import type { PropertyInfo } from "@tsonic/dotnet/System.Reflection/internal/index.js";
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
-import type { Boolean as ClrBoolean, Func_2, Int32, Nullable_1, Object as ClrObject, String as ClrString } from "@tsonic/dotnet/System/internal/index.js";
+import type { Boolean as ClrBoolean, Func_2, Int32, IServiceProvider, Nullable_1, Object as ClrObject, String as ClrString } from "@tsonic/dotnet/System/internal/index.js";
 
-export interface AlterOperationBuilder_1$instance<TOperation extends unknown & MigrationOperation & IAlterMigrationOperation> extends OperationBuilder_1$instance<TOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
+export interface AlterOperationBuilder_1$instance<TOperation extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_MigrationOperation: never } & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never }> extends OperationBuilder_1$instance<TOperation> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_AlterOperationBuilder_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_OperationBuilder_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Annotation(name: string, value: unknown | null): AlterOperationBuilder_1<TOperation>;
-    Annotation(name: string, value: unknown | null): OperationBuilder_1<TOperation>;
+    Annotation: OperationBuilder_1$instance<TOperation>["Annotation"] & ((name: string, value: unknown | null) => AlterOperationBuilder_1<TOperation>) & ((name: string, value: unknown | null) => OperationBuilder_1<TOperation>);
     OldAnnotation(name: string, value: unknown | null): AlterOperationBuilder_1<TOperation>;
 }
 
 
 export const AlterOperationBuilder_1: {
-    new<TOperation extends unknown & MigrationOperation & IAlterMigrationOperation>(operation: TOperation): AlterOperationBuilder_1<TOperation>;
+    new<TOperation extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_MigrationOperation: never } & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never }>(operation: TOperation): AlterOperationBuilder_1<TOperation>;
 };
 
 
-export interface __AlterOperationBuilder_1$views<TOperation extends unknown & MigrationOperation & IAlterMigrationOperation> {
+export interface __AlterOperationBuilder_1$views<TOperation extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_MigrationOperation: never } & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never }> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation>;
 }
 
-export type AlterOperationBuilder_1<TOperation extends unknown & MigrationOperation & IAlterMigrationOperation> = AlterOperationBuilder_1$instance<TOperation> & __AlterOperationBuilder_1$views<TOperation>;
+export type AlterOperationBuilder_1<TOperation extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_MigrationOperation: never } & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Migrations_Operations_IAlterMigrationOperation: never }> = AlterOperationBuilder_1$instance<TOperation> & __AlterOperationBuilder_1$views<TOperation>;
 
 
 export interface ColumnsBuilder$instance {
@@ -58,13 +58,13 @@ export const ColumnsBuilder: {
 
 export type ColumnsBuilder = ColumnsBuilder$instance;
 
-export interface CreateTableBuilder_1$instance<TColumns extends unknown> extends OperationBuilder_1$instance<CreateTableOperation>, Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<CreateTableOperation> {
+export interface CreateTableBuilder_1$instance<TColumns extends unknown> extends OperationBuilder_1$instance<CreateTableOperation> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_CreateTableBuilder_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_OperationBuilder_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
-    Annotation(name: string, value: unknown | null): CreateTableBuilder_1<TColumns>;
-    Annotation(name: string, value: unknown | null): OperationBuilder_1<CreateTableOperation>;
+    Annotation: OperationBuilder_1$instance<CreateTableOperation>["Annotation"] & ((name: string, value: unknown | null) => CreateTableBuilder_1<TColumns>) & ((name: string, value: unknown | null) => OperationBuilder_1<CreateTableOperation>);
     CheckConstraint(name: string, sql: string): OperationBuilder_1<AddCheckConstraintOperation>;
     ForeignKey(name: string, column: Expression_1<Func_2<TColumns, unknown>>, principalTable: string, principalColumn?: string | null, principalSchema?: string | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
     ForeignKey(name: string, columns: Expression_1<Func_2<TColumns, unknown>>, principalTable: string, principalColumns: string[] | null, principalSchema?: string | null, onUpdate?: ReferentialAction, onDelete?: ReferentialAction): OperationBuilder_1<AddForeignKeyOperation>;
@@ -85,7 +85,7 @@ export interface __CreateTableBuilder_1$views<TColumns extends unknown> {
 export type CreateTableBuilder_1<TColumns extends unknown> = CreateTableBuilder_1$instance<TColumns> & __CreateTableBuilder_1$views<TColumns>;
 
 
-export interface OperationBuilder_1$instance<TOperation extends unknown & MigrationOperation> extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation> {
+export interface OperationBuilder_1$instance<TOperation extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_MigrationOperation: never }> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_Builders_OperationBuilder_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -99,12 +99,12 @@ export interface OperationBuilder_1$instance<TOperation extends unknown & Migrat
 
 
 export const OperationBuilder_1: {
-    new<TOperation extends unknown & MigrationOperation>(operation: TOperation): OperationBuilder_1<TOperation>;
+    new<TOperation extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_MigrationOperation: never }>(operation: TOperation): OperationBuilder_1<TOperation>;
 };
 
 
-export interface __OperationBuilder_1$views<TOperation extends unknown & MigrationOperation> {
+export interface __OperationBuilder_1$views<TOperation extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_MigrationOperation: never }> {
     As_IInfrastructure_1(): Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<TOperation>;
 }
 
-export type OperationBuilder_1<TOperation extends unknown & MigrationOperation> = OperationBuilder_1$instance<TOperation> & __OperationBuilder_1$views<TOperation>;
+export type OperationBuilder_1<TOperation extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Migrations_Operations_MigrationOperation: never }> = OperationBuilder_1$instance<TOperation> & __OperationBuilder_1$views<TOperation>;

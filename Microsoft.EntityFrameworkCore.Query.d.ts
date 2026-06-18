@@ -188,5 +188,5 @@ export type UpdateSettersBuilder<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.UpdateSettersBuilder :
-  [T1] extends [unknown] ? Internal.UpdateSettersBuilder_1<T1> : never;
+  Internal.UpdateSettersBuilder_1<T1>;
 

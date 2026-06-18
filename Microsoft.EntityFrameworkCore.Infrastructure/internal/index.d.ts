@@ -35,18 +35,21 @@ import type { IMemoryCache } from "@tsonic/microsoft-extensions/Microsoft.Extens
 import type { IServiceCollection, ServiceLifetime } from "@tsonic/microsoft-extensions/Microsoft.Extensions.DependencyInjection/internal/index.js";
 import type { ILoggerFactory } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Logging/internal/index.js";
 
-export enum MetadataDebugStringOptions {
-    IncludeAnnotations = 1,
-    IncludePropertyIndexes = 2,
-    SingleLine = 4,
-    ShortDefault = 0,
-    LongDefault = 1,
-    SingleLineDefault = 4
-}
+export type MetadataDebugStringOptions = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_MetadataDebugStringOptions: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const MetadataDebugStringOptions: {
+    readonly IncludeAnnotations: MetadataDebugStringOptions;
+    readonly IncludePropertyIndexes: MetadataDebugStringOptions;
+    readonly SingleLine: MetadataDebugStringOptions;
+    readonly ShortDefault: MetadataDebugStringOptions;
+    readonly LongDefault: MetadataDebugStringOptions;
+    readonly SingleLineDefault: MetadataDebugStringOptions;
+};
 
 
-export interface IAnnotatable$instance extends IReadOnlyAnnotatable {
+export interface IAnnotatable$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
 
     AddRuntimeAnnotation(name: string, value: unknown | null): IAnnotation;
     AnnotationsToDebugString(indent?: int): string;
@@ -83,8 +86,9 @@ export interface IConcurrencyDetector$instance {
 
 export type IConcurrencyDetector = IConcurrencyDetector$instance;
 
-export interface ICoreSingletonOptions$instance extends ISingletonOptions {
+export interface ICoreSingletonOptions$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ICoreSingletonOptions: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_ISingletonOptions: never;
 
     readonly AreDetailedErrorsEnabled: boolean;
     readonly AreThreadSafetyChecksEnabled: boolean;
@@ -110,7 +114,7 @@ export interface IDbContextOptions$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptions: never;
 
     readonly Extensions: IEnumerable_1<IDbContextOptionsExtension>;
-    FindExtension<TExtension extends (object | null) & IDbContextOptionsExtension>(): TExtension | null;
+    FindExtension<TExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }>(): TExtension | null;
 }
 
 
@@ -119,20 +123,20 @@ export type IDbContextOptions = IDbContextOptions$instance;
 export interface IDbContextOptionsBuilderInfrastructure$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsBuilderInfrastructure: never;
 
-    AddOrUpdateExtension<TExtension extends (object | null) & IDbContextOptionsExtension>(extension: TExtension): void;
+    AddOrUpdateExtension<TExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }>(extension: TExtension): void;
 }
 
 
 export type IDbContextOptionsBuilderInfrastructure = IDbContextOptionsBuilderInfrastructure$instance;
 
-export interface IDbContextOptionsConfiguration_1$instance<TContext extends unknown & DbContext> {
+export interface IDbContextOptionsConfiguration_1$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsConfiguration_1: never;
 
     Configure(serviceProvider: IServiceProvider, optionsBuilder: DbContextOptionsBuilder): void;
 }
 
 
-export type IDbContextOptionsConfiguration_1<TContext extends unknown & DbContext> = IDbContextOptionsConfiguration_1$instance<TContext>;
+export type IDbContextOptionsConfiguration_1<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = IDbContextOptionsConfiguration_1$instance<TContext>;
 
 export interface IDbContextOptionsExtension$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never;
@@ -272,6 +276,7 @@ export type ISingletonOptions = ISingletonOptions$instance;
 
 export interface ConcurrencyDetectorCriticalSectionDisposer$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ConcurrencyDetectorCriticalSectionDisposer: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IDisposable: never;
 
@@ -288,6 +293,7 @@ export type ConcurrencyDetectorCriticalSectionDisposer = ConcurrencyDetectorCrit
 
 export interface DbSetProperty$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_DbSetProperty: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly Name: string;
     readonly Setter: IClrPropertySetter | null;
@@ -304,6 +310,7 @@ export type DbSetProperty = DbSetProperty$instance;
 
 export interface ServiceCharacteristics$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ServiceCharacteristics: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly Lifetime: ServiceLifetime;
     readonly MultipleRegistrations: boolean;
@@ -319,13 +326,14 @@ export type ServiceCharacteristics = ServiceCharacteristics$instance;
 
 export interface Annotatable$instance extends AnnotatableBase$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
-    EnsureMutable(): void;
-    EnsureReadOnly(): void;
+    EnsureMutable: AnnotatableBase$instance["EnsureMutable"] & (() => void);
+    EnsureReadOnly: AnnotatableBase$instance["EnsureReadOnly"] & (() => void);
 }
 
 
@@ -350,12 +358,12 @@ export interface AnnotatableBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IReadOnlyAnnotatable: never;
 
     readonly IsReadOnly: boolean;
-    AddAnnotation(name: string, value: unknown | null): Annotation;
     AddAnnotation(name: string, annotation: Annotation): Annotation;
+    AddAnnotation(name: string, value: unknown | null): Annotation;
     AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown | null>): void;
-    AddRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     AddRuntimeAnnotations(annotations: IEnumerable_1<Annotation>): void;
     AddRuntimeAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown | null>): void;
     CreateAnnotation(name: string, value: unknown | null): Annotation;
@@ -371,10 +379,10 @@ export interface AnnotatableBase$instance {
     OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
     RemoveAnnotation(name: string): Annotation | null;
     RemoveRuntimeAnnotation(name: string): Annotation | null;
-    SetAnnotation(name: string, value: unknown | null): void;
     SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation | null): Annotation | null;
-    SetRuntimeAnnotation(name: string, value: unknown | null): Annotation;
+    SetAnnotation(name: string, value: unknown | null): void;
     SetRuntimeAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation | null): Annotation;
+    SetRuntimeAnnotation(name: string, value: unknown | null): Annotation;
 }
 
 
@@ -391,7 +399,7 @@ export interface __AnnotatableBase$views {
 export type AnnotatableBase = AnnotatableBase$instance & __AnnotatableBase$views & { [name: string]: unknown | null; };
 
 
-export interface AnnotatableBuilder_2$instance<TMetadata extends unknown & ConventionAnnotatable, TModelBuilder extends unknown & IConventionModelBuilder> {
+export interface AnnotatableBuilder_2$instance<TMetadata extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ConventionAnnotatable: never }, TModelBuilder extends unknown & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionModelBuilder: never }> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBuilder_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionAnnotatableBuilder: never;
@@ -409,18 +417,18 @@ export interface AnnotatableBuilder_2$instance<TMetadata extends unknown & Conve
 }
 
 
-export const AnnotatableBuilder_2: (abstract new<TMetadata extends unknown & ConventionAnnotatable, TModelBuilder extends unknown & IConventionModelBuilder>(metadata: TMetadata, modelBuilder: TModelBuilder) => AnnotatableBuilder_2<TMetadata, TModelBuilder>) & {
+export const AnnotatableBuilder_2: {
 };
 
 
-export interface __AnnotatableBuilder_2$views<TMetadata extends unknown & ConventionAnnotatable, TModelBuilder extends unknown & IConventionModelBuilder> {
+export interface __AnnotatableBuilder_2$views<TMetadata extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ConventionAnnotatable: never }, TModelBuilder extends unknown & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionModelBuilder: never }> {
     As_IConventionAnnotatableBuilder(): Microsoft_EntityFrameworkCore_Metadata_Builders_Internal.IConventionAnnotatableBuilder$instance;
 }
 
-export type AnnotatableBuilder_2<TMetadata extends unknown & ConventionAnnotatable, TModelBuilder extends unknown & IConventionModelBuilder> = AnnotatableBuilder_2$instance<TMetadata, TModelBuilder> & __AnnotatableBuilder_2$views<TMetadata, TModelBuilder>;
+export type AnnotatableBuilder_2<TMetadata extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never } & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ConventionAnnotatable: never }, TModelBuilder extends unknown & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_Builders_IConventionModelBuilder: never }> = AnnotatableBuilder_2$instance<TMetadata, TModelBuilder> & __AnnotatableBuilder_2$views<TMetadata, TModelBuilder>;
 
 
-export interface Annotation$instance extends IAnnotation$instance {
+export interface Annotation$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotation: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotation: never;
@@ -443,6 +451,8 @@ export type Annotation = Annotation$instance & __Annotation$views;
 
 
 export interface ConventionAnnotatable$instance extends Annotatable$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_Annotatable: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_AnnotatableBase: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ConventionAnnotatable: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IAnnotatable: never;
@@ -450,24 +460,17 @@ export interface ConventionAnnotatable$instance extends Annotatable$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IConventionAnnotatable: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Metadata_IMutableAnnotatable: never;
 
-    AddAnnotation(name: string, value: unknown | null, configurationSource: ConfigurationSource): ConventionAnnotation;
-    AddAnnotation(name: string, value: unknown | null): Annotation;
-    AddAnnotation(name: string, annotation: Annotation): Annotation;
-    CreateAnnotation(name: string, value: unknown | null): Annotation;
-    FindAnnotation(name: string): ConventionAnnotation | null;
-    FindAnnotation(name: string): Annotation | null;
-    GetAnnotations(): IEnumerable_1<ConventionAnnotation>;
-    GetAnnotations(): IEnumerable_1<Annotation>;
-    OnAnnotationSet(name: string, annotation: Annotation | null, oldAnnotation: Annotation | null): Annotation | null;
-    OnAnnotationSet(name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null): IConventionAnnotation | null;
-    SetAnnotation(name: string, value: unknown | null): void;
-    SetAnnotation(name: string, value: unknown | null, configurationSource: ConfigurationSource): ConventionAnnotation | null;
-    SetAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation | null): Annotation | null;
+    AddAnnotation: Annotatable$instance["AddAnnotation"] & ((name: string, annotation: Annotation) => Annotation) & ((name: string, value: unknown | null) => Annotation) & ((name: string, value: unknown | null, configurationSource: ConfigurationSource) => ConventionAnnotation);
+    CreateAnnotation: Annotatable$instance["CreateAnnotation"] & ((name: string, value: unknown | null) => Annotation);
+    FindAnnotation: Annotatable$instance["FindAnnotation"] & ((name: string) => Annotation | null) & ((name: string) => ConventionAnnotation | null);
+    GetAnnotations: Annotatable$instance["GetAnnotations"] & (() => IEnumerable_1<Annotation>) & (() => IEnumerable_1<ConventionAnnotation>);
+    OnAnnotationSet: Annotatable$instance["OnAnnotationSet"] & ((name: string, annotation: Annotation | null, oldAnnotation: Annotation | null) => Annotation | null) & ((name: string, annotation: IConventionAnnotation | null, oldAnnotation: IConventionAnnotation | null) => IConventionAnnotation | null);
+    SetAnnotation: Annotatable$instance["SetAnnotation"] & ((name: string, annotation: Annotation, oldAnnotation: Annotation | null) => Annotation | null) & ((name: string, value: unknown | null) => void) & ((name: string, value: unknown | null, configurationSource: ConfigurationSource) => ConventionAnnotation | null);
     SetOrRemoveAnnotation(name: string, value: unknown | null, configurationSource: ConfigurationSource): ConventionAnnotation | null;
 }
 
 
-export const ConventionAnnotatable: (abstract new() => ConventionAnnotatable) & {
+export const ConventionAnnotatable: {
 };
 
 
@@ -481,7 +484,7 @@ export interface __ConventionAnnotatable$views {
 export type ConventionAnnotatable = ConventionAnnotatable$instance & __ConventionAnnotatable$views;
 
 
-export interface CoreOptionsExtension$instance extends IDbContextOptionsExtension$instance {
+export interface CoreOptionsExtension$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_CoreOptionsExtension: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never;
@@ -524,8 +527,8 @@ export interface CoreOptionsExtension$instance extends IDbContextOptionsExtensio
     WithModel(model: IModel | null): CoreOptionsExtension;
     WithQueryTrackingBehavior(queryTrackingBehavior: QueryTrackingBehavior): CoreOptionsExtension;
     WithReplacedService(serviceType: Type, newImplementationType: Type, currentImplementationType?: Type | null): CoreOptionsExtension;
-    WithRootApplicationServiceProvider(rootApplicationServiceProvider: IServiceProvider | null): CoreOptionsExtension;
     WithRootApplicationServiceProvider(autoResolve?: boolean): CoreOptionsExtension;
+    WithRootApplicationServiceProvider(rootApplicationServiceProvider: IServiceProvider | null): CoreOptionsExtension;
     WithSeeding(seed: Action_2<DbContext, System_Internal.Boolean>): CoreOptionsExtension;
     WithSensitiveDataLoggingEnabled(sensitiveDataLoggingEnabled: boolean): CoreOptionsExtension;
     WithServiceProviderCachingEnabled(serviceProviderCachingEnabled: boolean): CoreOptionsExtension;
@@ -547,7 +550,7 @@ export interface __CoreOptionsExtension$views {
 export type CoreOptionsExtension = CoreOptionsExtension$instance & __CoreOptionsExtension$views;
 
 
-export interface DatabaseFacade$instance extends IInfrastructure_1$instance<IServiceProvider>, IResettableService$instance, Microsoft_EntityFrameworkCore_Storage_Internal.IDatabaseFacadeDependenciesAccessor$instance {
+export interface DatabaseFacade$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -592,8 +595,9 @@ export interface __DatabaseFacade$views {
 export type DatabaseFacade = DatabaseFacade$instance & __DatabaseFacade$views;
 
 
-export interface DbContextAttribute$instance extends Attribute {
+export interface DbContextAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_DbContextAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     readonly ContextType: Type;
 }
@@ -606,8 +610,9 @@ export const DbContextAttribute: {
 
 export type DbContextAttribute = DbContextAttribute$instance;
 
-export interface DbContextModelAttribute$instance extends Attribute {
+export interface DbContextModelAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_DbContextModelAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
     readonly ContextType: Type;
     readonly ModelType: Type;
@@ -633,7 +638,7 @@ export interface DbContextOptionsExtensionInfo$instance {
 }
 
 
-export const DbContextOptionsExtensionInfo: (abstract new(extension: IDbContextOptionsExtension) => DbContextOptionsExtensionInfo) & {
+export const DbContextOptionsExtensionInfo: {
 };
 
 
@@ -654,8 +659,9 @@ export const DebugView: {
 
 export type DebugView = DebugView$instance;
 
-export interface EntityFrameworkEventSource$instance extends EventSource {
+export interface EntityFrameworkEventSource$instance extends System_Diagnostics_Tracing_Internal.EventSource {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_EntityFrameworkEventSource: never;
+    readonly __tsonic_type_System_Diagnostics_Tracing_EventSource: never;
 
     readonly __tsonic_iface_System_IDisposable: never;
 
@@ -664,7 +670,7 @@ export interface EntityFrameworkEventSource$instance extends EventSource {
     DbContextDisposing(): void;
     DbContextInitializing(): void;
     ExecutionStrategyOperationFailure(): void;
-    OnEventCommand(command: EventCommandEventArgs): void;
+    OnEventCommand: System_Diagnostics_Tracing_Internal.EventSource["OnEventCommand"] & ((command: EventCommandEventArgs) => void);
     OptimisticConcurrencyFailure(): void;
     QueryExecuting(): void;
     SavingChanges(): void;
@@ -678,8 +684,9 @@ export const EntityFrameworkEventSource: {
 
 export type EntityFrameworkEventSource = EntityFrameworkEventSource$instance;
 
-export interface EntityFrameworkInternalAttribute$instance extends Attribute {
+export interface EntityFrameworkInternalAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_EntityFrameworkInternalAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
 }
 
@@ -691,11 +698,12 @@ export const EntityFrameworkInternalAttribute: {
 
 export type EntityFrameworkInternalAttribute = EntityFrameworkInternalAttribute$instance;
 
-export interface EntityFrameworkRelationalServicesBuilder$instance extends EntityFrameworkServicesBuilder {
+export interface EntityFrameworkRelationalServicesBuilder$instance extends EntityFrameworkServicesBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_EntityFrameworkRelationalServicesBuilder: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_EntityFrameworkServicesBuilder: never;
 
-    TryAddCoreServices(): EntityFrameworkServicesBuilder;
-    TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
+    TryAddCoreServices: EntityFrameworkServicesBuilder$instance["TryAddCoreServices"] & (() => EntityFrameworkServicesBuilder);
+    TryGetServiceCharacteristics: EntityFrameworkServicesBuilder$instance["TryGetServiceCharacteristics"] & ((serviceType: Type) => Nullable_1<ServiceCharacteristics>);
 }
 
 
@@ -712,12 +720,12 @@ export interface EntityFrameworkServicesBuilder$instance {
 
     readonly ServiceCollectionMap: ServiceCollectionMap;
     GetServiceCharacteristics(serviceType: Type): ServiceCharacteristics;
-    TryAdd<TService extends (object | null), TImplementation extends (object | null) & TService>(): EntityFrameworkServicesBuilder;
-    TryAdd(serviceType: Type, implementationType: Type): EntityFrameworkServicesBuilder;
-    TryAdd<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): EntityFrameworkServicesBuilder;
-    TryAdd(serviceType: Type, implementationType: Type, factory: Func_2<IServiceProvider, unknown>): EntityFrameworkServicesBuilder;
-    TryAdd<TService extends (object | null)>(implementation: TService): EntityFrameworkServicesBuilder;
     TryAdd(serviceType: Type, implementation: unknown): EntityFrameworkServicesBuilder;
+    TryAdd(serviceType: Type, implementationType: Type): EntityFrameworkServicesBuilder;
+    TryAdd(serviceType: Type, implementationType: Type, factory: Func_2<IServiceProvider, unknown>): EntityFrameworkServicesBuilder;
+    TryAdd<TService extends (object | null), TImplementation extends (object | null) & TService>(): EntityFrameworkServicesBuilder;
+    TryAdd<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): EntityFrameworkServicesBuilder;
+    TryAdd<TService extends (object | null)>(implementation: TService): EntityFrameworkServicesBuilder;
     TryAddCoreServices(): EntityFrameworkServicesBuilder;
     TryAddProviderSpecificServices(serviceMap: Action_1<ServiceCollectionMap>): EntityFrameworkServicesBuilder;
     TryGetServiceCharacteristics(serviceType: Type): Nullable_1<ServiceCharacteristics>;
@@ -737,16 +745,16 @@ export interface IndentedStringBuilder$instance {
 
     readonly IndentCount: int;
     readonly Length: int;
-    Append(value: string): IndentedStringBuilder;
     Append(value: FormattableString): IndentedStringBuilder;
-    Append(value: char): IndentedStringBuilder;
-    Append(value: IEnumerable_1<System_Internal.String>): IndentedStringBuilder;
     Append(value: IEnumerable_1<System_Internal.Char>): IndentedStringBuilder;
-    AppendJoin(values: IEnumerable_1<System_Internal.String>, separator?: string): IndentedStringBuilder;
+    Append(value: IEnumerable_1<System_Internal.String>): IndentedStringBuilder;
+    Append(value: char): IndentedStringBuilder;
+    Append(value: string): IndentedStringBuilder;
     AppendJoin(separator: string, ...values: string[]): IndentedStringBuilder;
+    AppendJoin(values: IEnumerable_1<System_Internal.String>, separator?: string): IndentedStringBuilder;
     AppendLine(): IndentedStringBuilder;
-    AppendLine(value: string): IndentedStringBuilder;
     AppendLine(value: FormattableString): IndentedStringBuilder;
+    AppendLine(value: string): IndentedStringBuilder;
     AppendLines(value: string, skipFinalNewline?: boolean): IndentedStringBuilder;
     Clear(): IndentedStringBuilder;
     Clone(): IndentedStringBuilder;
@@ -768,8 +776,8 @@ export type IndentedStringBuilder = IndentedStringBuilder$instance;
 export interface ModelCacheKey$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ModelCacheKey: never;
 
-    Equals(other: ModelCacheKey): boolean;
     Equals(obj: unknown | null): boolean;
+    Equals(other: ModelCacheKey): boolean;
     GetHashCode(): int;
 }
 
@@ -825,7 +833,7 @@ export const ModelCacheKeyFactoryDependencies: {
 
 export type ModelCacheKeyFactoryDependencies = ModelCacheKeyFactoryDependencies$instance;
 
-export interface ModelCustomizer$instance extends IModelCustomizer$instance {
+export interface ModelCustomizer$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ModelCustomizer: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCustomizer: never;
@@ -934,20 +942,20 @@ export interface ModelSnapshot$instance {
 }
 
 
-export const ModelSnapshot: (abstract new() => ModelSnapshot) & {
+export const ModelSnapshot: {
 };
 
 
 export type ModelSnapshot = ModelSnapshot$instance;
 
-export interface ModelSource$instance extends IModelSource$instance {
+export interface ModelSource$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ModelSource: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelSource: never;
 
     readonly Dependencies: ModelSourceDependencies;
-    CreateModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
     CreateModel(context: DbContext, conventionSetBuilder: IConventionSetBuilder, modelDependencies: ModelDependencies): IModel;
+    CreateModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
     GetModel(context: DbContext, modelCreationDependencies: ModelCreationDependencies, designTime: boolean): IModel;
 }
 
@@ -987,7 +995,7 @@ export const ModelSourceDependencies: {
 
 export type ModelSourceDependencies = ModelSourceDependencies$instance;
 
-export interface ModelValidator$instance extends IModelValidator$instance {
+export interface ModelValidator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ModelValidator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelValidator: never;
@@ -1001,8 +1009,8 @@ export interface ModelValidator$instance extends IModelValidator$instance {
     ValidateChangeTrackingStrategy(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateClrInheritance(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateData(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateDiscriminatorValues(rootEntityType: IEntityType): void;
     ValidateDiscriminatorValues(complexType: IComplexType): void;
+    ValidateDiscriminatorValues(rootEntityType: IEntityType): void;
     ValidateEntityClrTypes(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateFieldMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateForeignKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
@@ -1014,9 +1022,9 @@ export interface ModelValidator$instance extends IModelValidator$instance {
     ValidateNoShadowKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateOwnership(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidatePrimitiveCollections(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    ValidatePropertyMapping(complexProperty: IConventionComplexProperty, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidatePropertyMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidatePropertyMapping(structuralType: IConventionTypeBase, model: IConventionModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidatePropertyMapping(complexProperty: IConventionComplexProperty, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateQueryFilters(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateRelationships(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateTriggers(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
@@ -1057,7 +1065,7 @@ export const ModelValidatorDependencies: {
 
 export type ModelValidatorDependencies = ModelValidatorDependencies$instance;
 
-export interface PooledDbContextFactory_1$instance<TContext extends unknown & DbContext> extends Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext> {
+export interface PooledDbContextFactory_1$instance<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_PooledDbContextFactory_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_IDbContextFactory_1: never;
@@ -1068,19 +1076,19 @@ export interface PooledDbContextFactory_1$instance<TContext extends unknown & Db
 
 
 export const PooledDbContextFactory_1: {
-    new<TContext extends unknown & DbContext>(pool: IDbContextPool_1<TContext>): PooledDbContextFactory_1<TContext>;
-    new<TContext extends unknown & DbContext>(options: DbContextOptions_1<TContext>, poolSize: int): PooledDbContextFactory_1<TContext>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }>(pool: IDbContextPool_1<TContext>): PooledDbContextFactory_1<TContext>;
+    new<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }>(options: DbContextOptions_1<TContext>, poolSize: int): PooledDbContextFactory_1<TContext>;
 };
 
 
-export interface __PooledDbContextFactory_1$views<TContext extends unknown & DbContext> {
+export interface __PooledDbContextFactory_1$views<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> {
     As_IDbContextFactory_1(): Microsoft_EntityFrameworkCore_Internal.IDbContextFactory_1$instance<TContext>;
 }
 
-export type PooledDbContextFactory_1<TContext extends unknown & DbContext> = PooledDbContextFactory_1$instance<TContext> & __PooledDbContextFactory_1$views<TContext>;
+export type PooledDbContextFactory_1<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = PooledDbContextFactory_1$instance<TContext> & __PooledDbContextFactory_1$views<TContext>;
 
 
-export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends unknown & RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends unknown & RelationalOptionsExtension> extends IRelationalDbContextOptionsBuilderInfrastructure$instance {
+export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalDbContextOptionsBuilder_2: never }, TExtension extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalOptionsExtension: never }> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalDbContextOptionsBuilder_2: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IRelationalDbContextOptionsBuilderInfrastructure: never;
@@ -1091,8 +1099,8 @@ export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends u
     ExecutionStrategy(getExecutionStrategy: Func_2<ExecutionStrategyDependencies, IExecutionStrategy>): TBuilder;
     GetHashCode(): int;
     MaxBatchSize(maxBatchSize: int): TBuilder;
-    MigrationsAssembly(assemblyName: string | null): TBuilder;
     MigrationsAssembly(assembly: Assembly): TBuilder;
+    MigrationsAssembly(assemblyName: string | null): TBuilder;
     MigrationsHistoryTable(tableName: string, schema?: string | null): TBuilder;
     MinBatchSize(minBatchSize: int): TBuilder;
     ToString(): string | null;
@@ -1105,18 +1113,19 @@ export interface RelationalDbContextOptionsBuilder_2$instance<TBuilder extends u
 }
 
 
-export const RelationalDbContextOptionsBuilder_2: (abstract new<TBuilder extends unknown & RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends unknown & RelationalOptionsExtension>(optionsBuilder: DbContextOptionsBuilder) => RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>) & {
+export const RelationalDbContextOptionsBuilder_2: {
 };
 
 
-export interface __RelationalDbContextOptionsBuilder_2$views<TBuilder extends unknown & RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends unknown & RelationalOptionsExtension> {
+export interface __RelationalDbContextOptionsBuilder_2$views<TBuilder extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalDbContextOptionsBuilder_2: never }, TExtension extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalOptionsExtension: never }> {
     As_IRelationalDbContextOptionsBuilderInfrastructure(): IRelationalDbContextOptionsBuilderInfrastructure$instance;
 }
 
-export type RelationalDbContextOptionsBuilder_2<TBuilder extends unknown & RelationalDbContextOptionsBuilder_2<TBuilder, TExtension>, TExtension extends unknown & RelationalOptionsExtension> = RelationalDbContextOptionsBuilder_2$instance<TBuilder, TExtension> & __RelationalDbContextOptionsBuilder_2$views<TBuilder, TExtension>;
+export type RelationalDbContextOptionsBuilder_2<TBuilder extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalDbContextOptionsBuilder_2: never }, TExtension extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalOptionsExtension: never }> = RelationalDbContextOptionsBuilder_2$instance<TBuilder, TExtension> & __RelationalDbContextOptionsBuilder_2$views<TBuilder, TExtension>;
 
 
-export interface RelationalModelCustomizer$instance extends ModelCustomizer$instance, IModelCustomizer$instance {
+export interface RelationalModelCustomizer$instance extends ModelCustomizer$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ModelCustomizer: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalModelCustomizer: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelCustomizer: never;
@@ -1160,13 +1169,14 @@ export const RelationalModelDependencies: {
 
 export type RelationalModelDependencies = RelationalModelDependencies$instance;
 
-export interface RelationalModelRuntimeInitializer$instance extends ModelRuntimeInitializer {
+export interface RelationalModelRuntimeInitializer$instance extends ModelRuntimeInitializer$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ModelRuntimeInitializer: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalModelRuntimeInitializer: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelRuntimeInitializer: never;
 
     readonly RelationalDependencies: RelationalModelRuntimeInitializerDependencies;
-    InitializeModel(model: IModel, designTime: boolean, prevalidation: boolean): void;
+    InitializeModel: ModelRuntimeInitializer$instance["InitializeModel"] & ((model: IModel, designTime: boolean, prevalidation: boolean) => void);
 }
 
 
@@ -1204,28 +1214,29 @@ export const RelationalModelRuntimeInitializerDependencies: {
 
 export type RelationalModelRuntimeInitializerDependencies = RelationalModelRuntimeInitializerDependencies$instance;
 
-export interface RelationalModelValidator$instance extends ModelValidator$instance, IModelValidator$instance {
+export interface RelationalModelValidator$instance extends ModelValidator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ModelValidator: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalModelValidator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IModelValidator: never;
 
     readonly RelationalDependencies: RelationalModelValidatorDependencies;
     GetDefaultColumnValue(property: IProperty, storeObject: StoreObjectIdentifier): unknown | null;
-    IsRedundant(foreignKey: IForeignKey): boolean;
-    ThrowPropertyNotMappedException(propertyType: string, typeBase: IConventionTypeBase, unmappedProperty: IConventionProperty): void;
-    Validate(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    IsRedundant: ModelValidator$instance["IsRedundant"] & ((foreignKey: IForeignKey) => boolean);
+    ThrowPropertyNotMappedException: ModelValidator$instance["ThrowPropertyNotMappedException"] & ((propertyType: string, typeBase: IConventionTypeBase, unmappedProperty: IConventionProperty) => void);
+    Validate: ModelValidator$instance["Validate"] & ((model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>) => void);
     ValidateBoolsWithDefaults(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateCompatible(property: IProperty, duplicateProperty: IProperty, columnName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    ValidateCompatible(checkConstraint: ICheckConstraint, duplicateCheckConstraint: ICheckConstraint, indexName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateCompatible(foreignKey: IForeignKey, duplicateForeignKey: IForeignKey, foreignKeyName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateCompatible(index: IIndex, duplicateIndex: IIndex, indexName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateCompatible(key: IKey, duplicateKey: IKey, keyName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateCompatible(checkConstraint: ICheckConstraint, duplicateCheckConstraint: ICheckConstraint, indexName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    ValidateCompatible(property: IProperty, duplicateProperty: IProperty, columnName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateCompatible(trigger: ITrigger, duplicateTrigger: ITrigger, indexName: string, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateData(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    ValidateData: ModelValidator$instance["ValidateData"] & ((model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>) => void);
     ValidateDbFunctions(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateDefaultValuesOnKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateIndexProperties(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateInheritanceMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    ValidateInheritanceMapping: ModelValidator$instance["ValidateInheritanceMapping"] & ((model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>) => void);
     ValidateJsonEntities(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateJsonEntityKey(storeObject: StoreObjectIdentifier, jsonEntityType: IEntityType): void;
     ValidateJsonEntityNavigations(storeObject: StoreObjectIdentifier, jsonEntityType: IEntityType): void;
@@ -1233,25 +1244,23 @@ export interface RelationalModelValidator$instance extends ModelValidator$instan
     ValidateJsonEntityRoot(storeObject: StoreObjectIdentifier, rootType: IEntityType): void;
     ValidateMappingFragments(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateMappingStrategy(entityType: IEntityType, mappingStrategy: string | null): void;
-    ValidateNoMutableKeys(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidatePrimitiveCollections(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidatePropertyMapping(complexProperty: IConventionComplexProperty, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidatePropertyMapping(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidatePropertyMapping(structuralType: IConventionTypeBase, model: IConventionModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    ValidateNoMutableKeys: ModelValidator$instance["ValidateNoMutableKeys"] & ((model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>) => void);
+    ValidatePrimitiveCollections: ModelValidator$instance["ValidatePrimitiveCollections"] & ((model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>) => void);
+    ValidatePropertyMapping: ModelValidator$instance["ValidatePropertyMapping"] & ((complexProperty: IConventionComplexProperty, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>) => void) & ((model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>) => void) & ((structuralType: IConventionTypeBase, model: IConventionModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>) => void);
     ValidatePropertyOverrides(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedCheckConstraintCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedColumnsCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedForeignKeysCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedIndexesCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedKeysCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateSharedTableCompatibility(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedTableCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    ValidateSharedTableCompatibility(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedTriggerCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, storeObject: StoreObjectIdentifier, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateSharedViewCompatibility(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSharedViewCompatibility(mappedTypes: IReadOnlyList_1<IEntityType>, viewName: string, schema: string | null, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    ValidateSharedViewCompatibility(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateSqlQueries(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
     ValidateStoredProcedures(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
-    ValidateTriggers(model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
+    ValidateTriggers: ModelValidator$instance["ValidateTriggers"] & ((model: IModel, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>) => void);
     ValidateValueGeneration(entityType: IEntityType, key: IKey, logger: IDiagnosticsLogger_1<DbLoggerCategory_Model_Validation>): void;
 }
 
@@ -1289,7 +1298,7 @@ export const RelationalModelValidatorDependencies: {
 
 export type RelationalModelValidatorDependencies = RelationalModelValidatorDependencies$instance;
 
-export interface RelationalOptionsExtension$instance extends IDbContextOptionsExtension$instance {
+export interface RelationalOptionsExtension$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalOptionsExtension: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never;
@@ -1318,8 +1327,8 @@ export interface RelationalOptionsExtension$instance extends IDbContextOptionsEx
     WithConnectionString(connectionString: string | null): RelationalOptionsExtension;
     WithExecutionStrategyFactory(executionStrategyFactory: Func_2<ExecutionStrategyDependencies, IExecutionStrategy> | null): RelationalOptionsExtension;
     WithMaxBatchSize(maxBatchSize: Nullable_1<System_Internal.Int32>): RelationalOptionsExtension;
-    WithMigrationsAssembly(migrationsAssembly: string | null): RelationalOptionsExtension;
     WithMigrationsAssembly(migrationsAssembly: Assembly): RelationalOptionsExtension;
+    WithMigrationsAssembly(migrationsAssembly: string | null): RelationalOptionsExtension;
     WithMigrationsHistoryTableName(migrationsHistoryTableName: string | null): RelationalOptionsExtension;
     WithMigrationsHistoryTableSchema(migrationsHistoryTableSchema: string | null): RelationalOptionsExtension;
     WithMinBatchSize(minBatchSize: Nullable_1<System_Internal.Int32>): RelationalOptionsExtension;
@@ -1329,7 +1338,7 @@ export interface RelationalOptionsExtension$instance extends IDbContextOptionsEx
 }
 
 
-export const RelationalOptionsExtension: (abstract new() => RelationalOptionsExtension) & (abstract new(copyFrom: RelationalOptionsExtension) => RelationalOptionsExtension) & {
+export const RelationalOptionsExtension: {
     Extract(options: IDbContextOptions): RelationalOptionsExtension;
     WithDefaultWarningConfiguration(coreOptionsExtension: CoreOptionsExtension): CoreOptionsExtension;
 };
@@ -1342,18 +1351,17 @@ export interface __RelationalOptionsExtension$views {
 export type RelationalOptionsExtension = RelationalOptionsExtension$instance & __RelationalOptionsExtension$views;
 
 
-export interface RelationalOptionsExtension_RelationalExtensionInfo$instance extends DbContextOptionsExtensionInfo {
+export interface RelationalOptionsExtension_RelationalExtensionInfo$instance extends DbContextOptionsExtensionInfo$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_DbContextOptionsExtensionInfo: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_RelationalOptionsExtension_RelationalExtensionInfo: never;
 
     readonly Extension: IDbContextOptionsExtension | RelationalOptionsExtension;
-    readonly IsDatabaseProvider: boolean;
-    readonly LogFragment: string;
-    GetServiceProviderHashCode(): int;
-    ShouldUseSameServiceProvider(other: DbContextOptionsExtensionInfo): boolean;
+    GetServiceProviderHashCode: DbContextOptionsExtensionInfo$instance["GetServiceProviderHashCode"] & (() => int);
+    ShouldUseSameServiceProvider: DbContextOptionsExtensionInfo$instance["ShouldUseSameServiceProvider"] & ((other: DbContextOptionsExtensionInfo) => boolean);
 }
 
 
-export const RelationalOptionsExtension_RelationalExtensionInfo: (abstract new(extension: IDbContextOptionsExtension) => RelationalOptionsExtension_RelationalExtensionInfo) & {
+export const RelationalOptionsExtension_RelationalExtensionInfo: {
 };
 
 
@@ -1368,8 +1376,8 @@ export interface RuntimeAnnotatableBase$instance {
     AddAnnotation(name: string, value: unknown | null): Annotation;
     AddAnnotations(annotations: IEnumerable_1<IAnnotation>): void;
     AddAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown | null>): void;
-    AddRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     AddRuntimeAnnotation(name: string, annotation: Annotation): Annotation;
+    AddRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     AddRuntimeAnnotations(annotations: IEnumerable_1<Annotation>): void;
     AddRuntimeAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, unknown | null>): void;
     CreateAnnotation(name: string, value: unknown | null): Annotation;
@@ -1382,8 +1390,8 @@ export interface RuntimeAnnotatableBase$instance {
     RemoveAnnotation(name: string): Annotation | null;
     RemoveRuntimeAnnotation(name: string): Annotation | null;
     SetAnnotation(name: string, value: unknown | null): void;
-    SetRuntimeAnnotation(name: string, value: unknown | null): Annotation;
     SetRuntimeAnnotation(name: string, annotation: Annotation, oldAnnotation: Annotation | null): Annotation;
+    SetRuntimeAnnotation(name: string, value: unknown | null): Annotation;
 }
 
 
@@ -1423,40 +1431,40 @@ export const RuntimeModelDependencies: {
 
 export type RuntimeModelDependencies = RuntimeModelDependencies$instance;
 
-export interface ServiceCollectionMap$instance extends IInfrastructure_1$instance<IInternalServiceCollectionMap> {
+export interface ServiceCollectionMap$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Infrastructure_ServiceCollectionMap: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
 
     readonly ServiceCollection: IServiceCollection;
-    TryAdd(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
     TryAdd(serviceType: Type, factory: Func_2<IServiceProvider, unknown>, lifetime: ServiceLifetime): ServiceCollectionMap;
-    TryAddEnumerable(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
+    TryAdd(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
     TryAddEnumerable(serviceType: Type, implementationType: Type, factory: Func_2<IServiceProvider, unknown>, lifetime: ServiceLifetime): ServiceCollectionMap;
-    TryAddScoped<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
-    TryAddScoped(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    TryAddScoped<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddEnumerable(serviceType: Type, implementationType: Type, lifetime: ServiceLifetime): ServiceCollectionMap;
     TryAddScoped(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
-    TryAddScopedEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
+    TryAddScoped(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddScoped<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
+    TryAddScoped<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
     TryAddScopedEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddScopedEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
     TryAddScopedEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
-    TryAddSingleton<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
-    TryAddSingleton(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    TryAddSingleton<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
     TryAddSingleton(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
-    TryAddSingleton<TService extends (object | null)>(implementation: TService): ServiceCollectionMap;
     TryAddSingleton(serviceType: Type, implementation: unknown): ServiceCollectionMap;
-    TryAddSingletonEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
+    TryAddSingleton(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddSingleton<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
+    TryAddSingleton<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
+    TryAddSingleton<TService extends (object | null)>(implementation: TService): ServiceCollectionMap;
+    TryAddSingletonEnumerable(serviceType: Type, implementation: unknown): ServiceCollectionMap;
     TryAddSingletonEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddSingletonEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
     TryAddSingletonEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
     TryAddSingletonEnumerable<TService extends (object | null)>(implementation: TService): ServiceCollectionMap;
-    TryAddSingletonEnumerable(serviceType: Type, implementation: unknown): ServiceCollectionMap;
-    TryAddTransient<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
-    TryAddTransient(serviceType: Type, implementationType: Type): ServiceCollectionMap;
-    TryAddTransient<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
     TryAddTransient(serviceType: Type, factory: Func_2<IServiceProvider, unknown>): ServiceCollectionMap;
-    TryAddTransientEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
+    TryAddTransient(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddTransient<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
+    TryAddTransient<TService extends (object | null)>(factory: Func_2<IServiceProvider, TService>): ServiceCollectionMap;
     TryAddTransientEnumerable(serviceType: Type, implementationType: Type): ServiceCollectionMap;
+    TryAddTransientEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(): ServiceCollectionMap;
     TryAddTransientEnumerable<TService extends (object | null), TImplementation extends (object | null) & TService>(factory: Func_2<IServiceProvider, TImplementation>): ServiceCollectionMap;
 }
 

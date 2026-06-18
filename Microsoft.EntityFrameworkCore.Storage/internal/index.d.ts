@@ -33,14 +33,16 @@ import type { Task, Task_1, ValueTask, ValueTask_1 } from "@tsonic/dotnet/System
 import type { CancellationToken } from "@tsonic/dotnet/System.Threading/internal/index.js";
 import type { Transaction } from "@tsonic/dotnet/System.Transactions/internal/index.js";
 import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
-import type { Action, Action_1, Boolean as ClrBoolean, Enum, Exception, FormattableString, Func_1, Func_2, Func_3, Func_4, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable_1, IFormattable, Int32, ISpanFormattable, Nullable_1, Object as ClrObject, Random, String as ClrString, TimeSpan, Type, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
+import type { Action, Action_1, Boolean as ClrBoolean, Enum, Exception, FormattableString, Func_1, Func_2, Func_3, Func_4, Guid, IAsyncDisposable, IComparable, IConvertible, IDisposable, IEquatable_1, IFormattable, Int32, IServiceProvider, ISpanFormattable, Nullable_1, Object as ClrObject, Random, String as ClrString, TimeSpan, Type, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 
-export enum StoreTypePostfix {
-    None = 0,
-    Size = 1,
-    Precision = 2,
-    PrecisionAndScale = 3
-}
+export type StoreTypePostfix = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_StoreTypePostfix: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const StoreTypePostfix: {
+    readonly None: StoreTypePostfix;
+    readonly Size: StoreTypePostfix;
+    readonly Precision: StoreTypePostfix;
+    readonly PrecisionAndScale: StoreTypePostfix;
+};
 
 
 export interface IDatabase$instance {
@@ -105,8 +107,10 @@ export interface IDatabaseProvider$instance {
 
 export type IDatabaseProvider = IDatabaseProvider$instance;
 
-export interface IDbContextTransaction$instance extends IDisposable, IAsyncDisposable {
+export interface IDbContextTransaction$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDbContextTransaction: never;
+    readonly __tsonic_iface_System_IAsyncDisposable: never;
+    readonly __tsonic_iface_System_IDisposable: never;
 
     readonly TransactionId: Guid;
     readonly SupportsSavepoints: boolean;
@@ -117,11 +121,10 @@ export interface IDbContextTransaction$instance extends IDisposable, IAsyncDispo
 }
 
 
-export interface IDbContextTransaction$instance extends System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
-
 export type IDbContextTransaction = IDbContextTransaction$instance;
 
-export interface IDbContextTransactionManager$instance extends IResettableService {
+export interface IDbContextTransactionManager$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDbContextTransactionManager: never;
 
     readonly CurrentTransaction: IDbContextTransaction | null;
@@ -179,16 +182,17 @@ export type IParameterNameGeneratorFactory = IParameterNameGeneratorFactory$inst
 export interface IRawSqlCommandBuilder$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRawSqlCommandBuilder: never;
 
-    Build(sql: string, parameters: IEnumerable_1<unknown | null>, model: IModel): RawSqlCommand;
-    Build(sql: string, parameters: IEnumerable_1<unknown | null>): RawSqlCommand;
     Build(sql: string): IRelationalCommand;
+    Build(sql: string, parameters: IEnumerable_1<unknown | null>): RawSqlCommand;
+    Build(sql: string, parameters: IEnumerable_1<unknown | null>, model: IModel): RawSqlCommand;
 }
 
 
 export type IRawSqlCommandBuilder = IRawSqlCommandBuilder$instance;
 
-export interface IRelationalCommand$instance extends IRelationalCommandTemplate {
+export interface IRelationalCommand$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommand: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandTemplate: never;
 
     readonly CommandText: string;
     readonly LogCommandText: string;
@@ -244,8 +248,13 @@ export interface IRelationalCommandTemplate$instance {
 
 export type IRelationalCommandTemplate = IRelationalCommandTemplate$instance;
 
-export interface IRelationalConnection$instance extends IRelationalTransactionManager, IDbContextTransactionManager, IResettableService, IDisposable, IAsyncDisposable {
+export interface IRelationalConnection$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDbContextTransactionManager: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalConnection: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTransactionManager: never;
+    readonly __tsonic_iface_System_IAsyncDisposable: never;
+    readonly __tsonic_iface_System_IDisposable: never;
 
     get ConnectionString(): string | null;
     set ConnectionString(value: string | null);
@@ -268,20 +277,21 @@ export interface IRelationalConnection$instance extends IRelationalTransactionMa
     RentCommand(): IRelationalCommand;
     ReturnCommand(command: IRelationalCommand): void;
     SetDbConnection(value: DbConnection | null, contextOwnsConnection: boolean): void;
-    UseTransaction(transaction: DbTransaction | null, transactionId: Guid): IDbContextTransaction | null;
     UseTransaction(transaction: DbTransaction | null): IDbContextTransaction | null;
-    UseTransactionAsync(transaction: DbTransaction | null, transactionId: Guid, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | null>;
+    UseTransaction(transaction: DbTransaction | null, transactionId: Guid): IDbContextTransaction | null;
     UseTransactionAsync(transaction: DbTransaction | null, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | null>;
+    UseTransactionAsync(transaction: DbTransaction | null, transactionId: Guid, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | null>;
     ResetState(): void;
     ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
 
 
-export interface IRelationalConnection$instance extends IRelationalTransactionManager$instance, System_Internal.IAsyncDisposable, System_Internal.IDisposable {}
+export interface IRelationalConnection$instance extends IRelationalTransactionManager$instance {}
 
 export type IRelationalConnection = IRelationalConnection$instance;
 
-export interface IRelationalDatabaseCreator$instance extends IDatabaseCreator {
+export interface IRelationalDatabaseCreator$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseCreator: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalDatabaseCreator: never;
 
     Create(): void;
@@ -298,7 +308,8 @@ export interface IRelationalDatabaseCreator$instance extends IDatabaseCreator$in
 
 export type IRelationalDatabaseCreator = IRelationalDatabaseCreator$instance;
 
-export interface IRelationalDatabaseFacadeDependencies$instance extends IDatabaseFacadeDependencies {
+export interface IRelationalDatabaseFacadeDependencies$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseFacadeDependencies: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalDatabaseFacadeDependencies: never;
 
     readonly RelationalConnection: IRelationalConnection;
@@ -339,7 +350,9 @@ export interface IRelationalTransactionFactory$instance {
 
 export type IRelationalTransactionFactory = IRelationalTransactionFactory$instance;
 
-export interface IRelationalTransactionManager$instance extends IDbContextTransactionManager, IResettableService {
+export interface IRelationalTransactionManager$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IResettableService: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDbContextTransactionManager: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTransactionManager: never;
 
     readonly CurrentTransaction: IDbContextTransaction | null;
@@ -349,10 +362,10 @@ export interface IRelationalTransactionManager$instance extends IDbContextTransa
     BeginTransactionAsync(isolationLevel: IsolationLevel, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction>;
     CommitTransaction(): void;
     CommitTransactionAsync(cancellationToken?: CancellationToken): Task;
-    UseTransaction(transaction: DbTransaction | null, transactionId: Guid): IDbContextTransaction | null;
     UseTransaction(transaction: DbTransaction | null): IDbContextTransaction | null;
-    UseTransactionAsync(transaction: DbTransaction | null, transactionId: Guid, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | null>;
+    UseTransaction(transaction: DbTransaction | null, transactionId: Guid): IDbContextTransaction | null;
     UseTransactionAsync(transaction: DbTransaction | null, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | null>;
+    UseTransactionAsync(transaction: DbTransaction | null, transactionId: Guid, cancellationToken?: CancellationToken): Task_1<IDbContextTransaction | null>;
     ResetState(): void;
     ResetStateAsync(cancellationToken?: CancellationToken): Task;
 }
@@ -360,21 +373,22 @@ export interface IRelationalTransactionManager$instance extends IDbContextTransa
 
 export type IRelationalTransactionManager = IRelationalTransactionManager$instance;
 
-export interface IRelationalTypeMappingSource$instance extends ITypeMappingSource {
+export interface IRelationalTypeMappingSource$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTypeMappingSource: never;
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSource: never;
 
     FindMapping(elementType: IElementType): CoreTypeMapping | null;
-    FindMapping(property: IProperty): CoreTypeMapping | null;
-    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | null;
     FindMapping(member: MemberInfo): CoreTypeMapping | null;
-    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping | null): CoreTypeMapping | null;
-    FindMapping(type: Type): CoreTypeMapping | null;
-    FindMapping(property: IProperty): RelationalTypeMapping | null;
     FindMapping(member: MemberInfo): RelationalTypeMapping | null;
+    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | null;
+    FindMapping(property: IProperty): CoreTypeMapping | null;
+    FindMapping(property: IProperty): RelationalTypeMapping | null;
     FindMapping(storeTypeName: string): RelationalTypeMapping | null;
+    FindMapping(type: Type): CoreTypeMapping | null;
+    FindMapping(type: Type): RelationalTypeMapping | null;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping | null): CoreTypeMapping | null;
     FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping | null): RelationalTypeMapping | null;
     FindMapping(type: Type, storeTypeName: string | null, keyOrIndex?: boolean, unicode?: Nullable_1<System_Internal.Boolean>, size?: Nullable_1<System_Internal.Int32>, rowVersion?: Nullable_1<System_Internal.Boolean>, fixedLength?: Nullable_1<System_Internal.Boolean>, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>): RelationalTypeMapping | null;
-    FindMapping(type: Type): RelationalTypeMapping | null;
 }
 
 
@@ -397,10 +411,10 @@ export interface ISqlGenerationHelper$instance {
     readonly StartTransactionStatement: string;
     readonly CommitTransactionStatement: string;
     readonly SingleLineCommentToken: string;
-    DelimitIdentifier(name: string, schema: string | null): string;
     DelimitIdentifier(builder: StringBuilder, name: string, schema: string | null): void;
-    GenerateParameterName(name: string): string;
+    DelimitIdentifier(name: string, schema: string | null): string;
     GenerateParameterName(builder: StringBuilder, name: string): void;
+    GenerateParameterName(name: string): string;
 }
 
 
@@ -421,11 +435,11 @@ export interface ITypeMappingSource$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSource: never;
 
     FindMapping(elementType: IElementType): CoreTypeMapping | null;
-    FindMapping(property: IProperty): CoreTypeMapping | null;
-    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | null;
     FindMapping(member: MemberInfo): CoreTypeMapping | null;
-    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping | null): CoreTypeMapping | null;
+    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | null;
+    FindMapping(property: IProperty): CoreTypeMapping | null;
     FindMapping(type: Type): CoreTypeMapping | null;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping | null): CoreTypeMapping | null;
 }
 
 
@@ -442,6 +456,7 @@ export type ITypeMappingSourcePlugin = ITypeMappingSourcePlugin$instance;
 
 export interface MaterializationContext$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_MaterializationContext: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly Context: DbContext;
     readonly ValueBuffer: ValueBuffer;
@@ -458,6 +473,7 @@ export type MaterializationContext = MaterializationContext$instance;
 
 export interface RelationalCommandParameterObject$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalCommandParameterObject: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -487,6 +503,7 @@ export type RelationalCommandParameterObject = RelationalCommandParameterObject$
 
 export interface RelationalTypeMappingInfo$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMappingInfo: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -541,6 +558,7 @@ export type RelationalTypeMappingInfo = RelationalTypeMappingInfo$instance;
 
 export interface TypeMappingInfo$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_TypeMappingInfo: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -585,6 +603,7 @@ export type TypeMappingInfo = TypeMappingInfo$instance;
 
 export interface ValueBuffer$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueBuffer: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -604,14 +623,13 @@ export const ValueBuffer: {
 
 export type ValueBuffer = ValueBuffer$instance & { [index: number]: unknown | null; };
 
-export interface BoolTypeMapping$instance extends RelationalTypeMapping {
+export interface BoolTypeMapping$instance extends RelationalTypeMapping$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_BoolTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
-    GenerateNonNullSqlLiteral(value: unknown): string;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
+    GenerateNonNullSqlLiteral: RelationalTypeMapping$instance["GenerateNonNullSqlLiteral"] & ((value: unknown) => string);
 }
 
 
@@ -623,14 +641,13 @@ export const BoolTypeMapping: {
 
 export type BoolTypeMapping = BoolTypeMapping$instance;
 
-export interface ByteArrayTypeMapping$instance extends RelationalTypeMapping {
+export interface ByteArrayTypeMapping$instance extends RelationalTypeMapping$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ByteArrayTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
-    GenerateNonNullSqlLiteral(value: unknown): string;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
+    GenerateNonNullSqlLiteral: RelationalTypeMapping$instance["GenerateNonNullSqlLiteral"] & ((value: unknown) => string);
 }
 
 
@@ -642,13 +659,12 @@ export const ByteArrayTypeMapping: {
 
 export type ByteArrayTypeMapping = ByteArrayTypeMapping$instance;
 
-export interface ByteTypeMapping$instance extends RelationalTypeMapping {
+export interface ByteTypeMapping$instance extends RelationalTypeMapping$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ByteTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -660,14 +676,13 @@ export const ByteTypeMapping: {
 
 export type ByteTypeMapping = ByteTypeMapping$instance;
 
-export interface CharTypeMapping$instance extends RelationalTypeMapping {
+export interface CharTypeMapping$instance extends RelationalTypeMapping$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CharTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
-    GenerateNonNullSqlLiteral(value: unknown): string;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
+    GenerateNonNullSqlLiteral: RelationalTypeMapping$instance["GenerateNonNullSqlLiteral"] & ((value: unknown) => string);
 }
 
 
@@ -691,14 +706,14 @@ export interface CoreTypeMapping$instance {
     readonly Parameters: CoreTypeMapping_CoreTypeMappingParameters | RelationalTypeMapping_RelationalTypeMappingParameters;
     readonly ProviderValueComparer: ValueComparer;
     readonly ValueGeneratorFactory: Func_3<IProperty, IEntityType, ValueGenerator> | null;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
     Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
     GenerateCodeLiteral(value: unknown): Expression;
     WithComposedConverter(converter: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
 }
 
 
-export const CoreTypeMapping: (abstract new(parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & {
+export const CoreTypeMapping: {
 };
 
 
@@ -706,6 +721,7 @@ export type CoreTypeMapping = CoreTypeMapping$instance;
 
 export interface CoreTypeMapping_CoreTypeMappingParameters$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping_CoreTypeMappingParameters: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -738,7 +754,7 @@ export const CoreTypeMapping_CoreTypeMappingParameters: {
 
 export type CoreTypeMapping_CoreTypeMappingParameters = CoreTypeMapping_CoreTypeMappingParameters$instance;
 
-export interface Database$instance extends IDatabase$instance {
+export interface Database$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Database: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabase: never;
@@ -751,7 +767,7 @@ export interface Database$instance extends IDatabase$instance {
 }
 
 
-export const Database: (abstract new(dependencies: DatabaseDependencies) => Database) & {
+export const Database: {
 };
 
 
@@ -785,7 +801,7 @@ export const DatabaseDependencies: {
 
 export type DatabaseDependencies = DatabaseDependencies$instance;
 
-export interface DatabaseProvider_1$instance<TOptionsExtension extends (object | null) & IDbContextOptionsExtension> extends IDatabaseProvider$instance {
+export interface DatabaseProvider_1$instance<TOptionsExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_DatabaseProvider_1: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseProvider: never;
@@ -798,15 +814,15 @@ export interface DatabaseProvider_1$instance<TOptionsExtension extends (object |
 
 
 export const DatabaseProvider_1: {
-    new<TOptionsExtension extends (object | null) & IDbContextOptionsExtension>(dependencies: DatabaseProviderDependencies): DatabaseProvider_1<TOptionsExtension>;
+    new<TOptionsExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }>(dependencies: DatabaseProviderDependencies): DatabaseProvider_1<TOptionsExtension>;
 };
 
 
-export interface __DatabaseProvider_1$views<TOptionsExtension extends (object | null) & IDbContextOptionsExtension> {
+export interface __DatabaseProvider_1$views<TOptionsExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }> {
     As_IDatabaseProvider(): IDatabaseProvider$instance;
 }
 
-export type DatabaseProvider_1<TOptionsExtension extends (object | null) & IDbContextOptionsExtension> = DatabaseProvider_1$instance<TOptionsExtension> & __DatabaseProvider_1$views<TOptionsExtension>;
+export type DatabaseProvider_1<TOptionsExtension extends (object | null) & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IDbContextOptionsExtension: never }> = DatabaseProvider_1$instance<TOptionsExtension> & __DatabaseProvider_1$views<TOptionsExtension>;
 
 
 export interface DatabaseProviderDependencies$instance {
@@ -829,14 +845,12 @@ export const DatabaseProviderDependencies: {
 
 export type DatabaseProviderDependencies = DatabaseProviderDependencies$instance;
 
-export interface DateOnlyTypeMapping$instance extends RelationalTypeMapping {
+export interface DateOnlyTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_DateOnlyTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    readonly SqlLiteralFormatString: string;
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -848,14 +862,12 @@ export const DateOnlyTypeMapping: {
 
 export type DateOnlyTypeMapping = DateOnlyTypeMapping$instance;
 
-export interface DateTimeOffsetTypeMapping$instance extends RelationalTypeMapping {
+export interface DateTimeOffsetTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_DateTimeOffsetTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    readonly SqlLiteralFormatString: string;
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -867,14 +879,12 @@ export const DateTimeOffsetTypeMapping: {
 
 export type DateTimeOffsetTypeMapping = DateTimeOffsetTypeMapping$instance;
 
-export interface DateTimeTypeMapping$instance extends RelationalTypeMapping {
+export interface DateTimeTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_DateTimeTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    readonly SqlLiteralFormatString: string;
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -886,14 +896,12 @@ export const DateTimeTypeMapping: {
 
 export type DateTimeTypeMapping = DateTimeTypeMapping$instance;
 
-export interface DecimalTypeMapping$instance extends RelationalTypeMapping {
+export interface DecimalTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_DecimalTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    readonly SqlLiteralFormatString: string;
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -905,14 +913,13 @@ export const DecimalTypeMapping: {
 
 export type DecimalTypeMapping = DecimalTypeMapping$instance;
 
-export interface DoubleTypeMapping$instance extends RelationalTypeMapping {
+export interface DoubleTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_DoubleTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
-    GenerateNonNullSqlLiteral(value: unknown): string;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
+    GenerateNonNullSqlLiteral: RelationalTypeMapping$instance["GenerateNonNullSqlLiteral"] & ((value: unknown) => string);
 }
 
 
@@ -939,7 +946,7 @@ export const ExecutionResult_1: {
 
 export type ExecutionResult_1<TResult extends unknown> = ExecutionResult_1$instance<TResult>;
 
-export interface ExecutionStrategy$instance extends IExecutionStrategy$instance {
+export interface ExecutionStrategy$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ExecutionStrategy: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategy: never;
@@ -960,11 +967,8 @@ export interface ExecutionStrategy$instance extends IExecutionStrategy$instance 
 }
 
 
-export const ExecutionStrategy: (abstract new(context: DbContext, maxRetryCount: int, maxRetryDelay: TimeSpan) => ExecutionStrategy) & (abstract new(dependencies: ExecutionStrategyDependencies, maxRetryCount: int, maxRetryDelay: TimeSpan) => ExecutionStrategy) & {
-    readonly DefaultMaxRetryCount: int;
-    readonly DefaultMaxDelay: TimeSpan;
-    get Current(): ExecutionStrategy | null;
-    set Current(value: ExecutionStrategy | null);
+export const ExecutionStrategy: {
+    readonly Current: ExecutionStrategy | null;
     CallOnWrappedException<TResult extends unknown>(exception: Exception, exceptionHandler: Func_2<Exception, TResult>): TResult;
 };
 
@@ -999,14 +1003,13 @@ export const ExecutionStrategyDependencies: {
 
 export type ExecutionStrategyDependencies = ExecutionStrategyDependencies$instance;
 
-export interface FloatTypeMapping$instance extends RelationalTypeMapping {
+export interface FloatTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_FloatTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
-    GenerateNonNullSqlLiteral(value: unknown): string;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
+    GenerateNonNullSqlLiteral: RelationalTypeMapping$instance["GenerateNonNullSqlLiteral"] & ((value: unknown) => string);
 }
 
 
@@ -1018,14 +1021,12 @@ export const FloatTypeMapping: {
 
 export type FloatTypeMapping = FloatTypeMapping$instance;
 
-export interface GuidTypeMapping$instance extends RelationalTypeMapping {
+export interface GuidTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_GuidTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    readonly SqlLiteralFormatString: string;
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -1037,13 +1038,12 @@ export const GuidTypeMapping: {
 
 export type GuidTypeMapping = GuidTypeMapping$instance;
 
-export interface IntTypeMapping$instance extends RelationalTypeMapping {
+export interface IntTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_IntTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -1055,14 +1055,16 @@ export const IntTypeMapping: {
 
 export type IntTypeMapping = IntTypeMapping$instance;
 
-export interface JsonTypeMapping$instance extends RelationalTypeMapping {
+export interface JsonTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_JsonTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    GenerateNonNullSqlLiteral(value: unknown): string;
+    GenerateNonNullSqlLiteral: RelationalTypeMapping$instance["GenerateNonNullSqlLiteral"] & ((value: unknown) => string);
 }
 
 
-export const JsonTypeMapping: (abstract new(storeType: string, clrType: Type, dbType: Nullable_1<DbType>) => JsonTypeMapping) & (abstract new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => JsonTypeMapping) & {
+export const JsonTypeMapping: {
 };
 
 
@@ -1080,13 +1082,12 @@ export const JsonTypePlaceholder: {
 
 export type JsonTypePlaceholder = JsonTypePlaceholder$instance;
 
-export interface LongTypeMapping$instance extends RelationalTypeMapping {
+export interface LongTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_LongTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -1098,7 +1099,7 @@ export const LongTypeMapping: {
 
 export type LongTypeMapping = LongTypeMapping$instance;
 
-export interface NonRetryingExecutionStrategy$instance extends IExecutionStrategy$instance {
+export interface NonRetryingExecutionStrategy$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_NonRetryingExecutionStrategy: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategy: never;
@@ -1157,7 +1158,7 @@ export const ParameterNameGeneratorDependencies: {
 
 export type ParameterNameGeneratorDependencies = ParameterNameGeneratorDependencies$instance;
 
-export interface ParameterNameGeneratorFactory$instance extends IParameterNameGeneratorFactory$instance {
+export interface ParameterNameGeneratorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ParameterNameGeneratorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IParameterNameGeneratorFactory: never;
@@ -1205,7 +1206,7 @@ export interface ReaderColumn$instance {
 }
 
 
-export const ReaderColumn: (abstract new(type: Type, nullable: boolean, name: string | null, property: IPropertyBase | null, getFieldValueExpression: LambdaExpression) => ReaderColumn) & {
+export const ReaderColumn: {
     Create(type: Type, nullable: boolean, columnName: string | null, property: IPropertyBase | null, readFunc: LambdaExpression): ReaderColumn;
     GetConstructor(type: Type): ConstructorInfo;
 };
@@ -1213,7 +1214,8 @@ export const ReaderColumn: (abstract new(type: Type, nullable: boolean, name: st
 
 export type ReaderColumn = ReaderColumn$instance;
 
-export interface ReaderColumn_1$instance<T extends unknown> extends ReaderColumn {
+export interface ReaderColumn_1$instance<T extends unknown> extends ReaderColumn$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ReaderColumn: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ReaderColumn_1: never;
 
     readonly GetFieldValue: Func_3<DbDataReader, int[], T>;
@@ -1233,10 +1235,10 @@ export interface RelationalCommand$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommand: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandTemplate: never;
 
-    CommandText: string;
+    readonly CommandText: string;
     readonly Dependencies: RelationalCommandBuilderDependencies;
-    LogCommandText: string;
-    Parameters: IReadOnlyList_1<IRelationalParameter>;
+    readonly LogCommandText: string;
+    readonly Parameters: IReadOnlyList_1<IRelationalParameter>;
     CreateDbCommand(parameterObject: RelationalCommandParameterObject, commandId: Guid, commandMethod: DbCommandMethod): DbCommand;
     CreateRelationalDataReader(): RelationalDataReader;
     ExecuteNonQuery(parameterObject: RelationalCommandParameterObject): int;
@@ -1272,8 +1274,8 @@ export interface RelationalCommandBuilder$instance {
     readonly Parameters: IReadOnlyList_1<IRelationalParameter>;
     readonly TypeMappingSource: IRelationalTypeMappingSource;
     AddParameter(parameter: IRelationalParameter): IRelationalCommandBuilder;
-    Append(value: string, sensitive?: boolean): IRelationalCommandBuilder;
     Append(value: FormattableString, sensitive?: boolean): IRelationalCommandBuilder;
+    Append(value: string, sensitive?: boolean): IRelationalCommandBuilder;
     AppendLine(): IRelationalCommandBuilder;
     Build(): IRelationalCommand;
     DecrementIndent(): IRelationalCommandBuilder;
@@ -1318,7 +1320,7 @@ export const RelationalCommandBuilderDependencies: {
 
 export type RelationalCommandBuilderDependencies = RelationalCommandBuilderDependencies$instance;
 
-export interface RelationalCommandBuilderFactory$instance extends IRelationalCommandBuilderFactory$instance {
+export interface RelationalCommandBuilderFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalCommandBuilderFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalCommandBuilderFactory: never;
@@ -1403,7 +1405,7 @@ export interface RelationalConnection$instance {
 }
 
 
-export const RelationalConnection: (abstract new(dependencies: RelationalConnectionDependencies) => RelationalConnection) & {
+export const RelationalConnection: {
 };
 
 
@@ -1446,14 +1448,15 @@ export const RelationalConnectionDependencies: {
 
 export type RelationalConnectionDependencies = RelationalConnectionDependencies$instance;
 
-export interface RelationalDatabase$instance extends Database$instance, IDatabase$instance {
+export interface RelationalDatabase$instance extends Database$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_Database: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalDatabase: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabase: never;
 
     readonly RelationalDependencies: RelationalDatabaseDependencies;
-    SaveChanges(entries: IList_1<IUpdateEntry>): int;
-    SaveChangesAsync(entries: IList_1<IUpdateEntry>, cancellationToken?: CancellationToken): Task_1<System_Internal.Int32>;
+    SaveChanges: Database$instance["SaveChanges"] & ((entries: IList_1<IUpdateEntry>) => int);
+    SaveChangesAsync: Database$instance["SaveChangesAsync"] & ((entries: IList_1<IUpdateEntry>, cancellationToken?: CancellationToken) => Task_1<System_Internal.Int32>);
 }
 
 
@@ -1469,7 +1472,7 @@ export interface __RelationalDatabase$views {
 export type RelationalDatabase = RelationalDatabase$instance & __RelationalDatabase$views;
 
 
-export interface RelationalDatabaseCreator$instance extends IRelationalDatabaseCreator$instance {
+export interface RelationalDatabaseCreator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalDatabaseCreator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IDatabaseCreator: never;
@@ -1497,7 +1500,7 @@ export interface RelationalDatabaseCreator$instance extends IRelationalDatabaseC
 }
 
 
-export const RelationalDatabaseCreator: (abstract new(dependencies: RelationalDatabaseCreatorDependencies) => RelationalDatabaseCreator) & {
+export const RelationalDatabaseCreator: {
 };
 
 
@@ -1589,7 +1592,7 @@ export const RelationalDataReader: {
 
 export type RelationalDataReader = RelationalDataReader$instance;
 
-export interface RelationalExecutionStrategyFactory$instance extends IExecutionStrategyFactory$instance {
+export interface RelationalExecutionStrategyFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalExecutionStrategyFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IExecutionStrategyFactory: never;
@@ -1612,20 +1615,22 @@ export interface __RelationalExecutionStrategyFactory$views {
 export type RelationalExecutionStrategyFactory = RelationalExecutionStrategyFactory$instance & __RelationalExecutionStrategyFactory$views;
 
 
-export interface RelationalGeometryTypeMapping_2$instance<TGeometry extends unknown, TProvider extends unknown> extends RelationalTypeMapping {
+export interface RelationalGeometryTypeMapping_2$instance<TGeometry extends unknown, TProvider extends unknown> extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalGeometryTypeMapping_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
     readonly SpatialConverter: ValueConverter_2<TGeometry, TProvider> | null;
     readonly WktReaderType: Type;
     AsText(value: unknown): string;
-    CreateParameter(command: DbCommand, name: string, value: unknown | null, nullable?: Nullable_1<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
-    CustomizeDataReaderExpression(expression: Expression): Expression;
-    GenerateCodeLiteral(value: unknown): Expression;
+    CreateParameter: RelationalTypeMapping$instance["CreateParameter"] & ((command: DbCommand, name: string, value: unknown | null, nullable?: Nullable_1<System_Internal.Boolean>, direction?: ParameterDirection) => DbParameter);
+    CustomizeDataReaderExpression: RelationalTypeMapping$instance["CustomizeDataReaderExpression"] & ((expression: Expression) => Expression);
+    GenerateCodeLiteral: RelationalTypeMapping$instance["GenerateCodeLiteral"] & ((value: unknown) => Expression);
     GetSrid(value: unknown): int;
 }
 
 
-export const RelationalGeometryTypeMapping_2: (abstract new<TGeometry extends unknown, TProvider extends unknown>(converter: ValueConverter_2<TGeometry, TProvider> | null, storeType: string, jsonValueReaderWriter: JsonValueReaderWriter | null) => RelationalGeometryTypeMapping_2<TGeometry, TProvider>) & (abstract new<TGeometry extends unknown, TProvider extends unknown>(parameters: RelationalTypeMapping_RelationalTypeMappingParameters, converter: ValueConverter_2<TGeometry, TProvider> | null) => RelationalGeometryTypeMapping_2<TGeometry, TProvider>) & {
+export const RelationalGeometryTypeMapping_2: {
 };
 
 
@@ -1642,20 +1647,20 @@ export interface RelationalSqlGenerationHelper$instance {
     readonly SingleLineCommentToken: string;
     readonly StartTransactionStatement: string;
     readonly StatementTerminator: string;
-    DelimitIdentifier(identifier: string): string;
     DelimitIdentifier(builder: StringBuilder, identifier: string): void;
-    DelimitIdentifier(name: string, schema: string | null): string;
     DelimitIdentifier(builder: StringBuilder, name: string, schema: string | null): void;
+    DelimitIdentifier(identifier: string): string;
+    DelimitIdentifier(name: string, schema: string | null): string;
     DelimitJsonPathElement(pathElement: string): string;
-    EscapeIdentifier(identifier: string): string;
     EscapeIdentifier(builder: StringBuilder, identifier: string): void;
+    EscapeIdentifier(identifier: string): string;
     EscapeJsonPathElement(identifier: string): string;
     GenerateComment(text: string): string;
     GenerateCreateSavepointStatement(name: string): string;
-    GenerateParameterName(name: string): string;
     GenerateParameterName(builder: StringBuilder, name: string): void;
-    GenerateParameterNamePlaceholder(name: string): string;
+    GenerateParameterName(name: string): string;
     GenerateParameterNamePlaceholder(builder: StringBuilder, name: string): void;
+    GenerateParameterNamePlaceholder(name: string): string;
     GenerateReleaseSavepointStatement(name: string): string;
     GenerateRollbackToSavepointStatement(name: string): string;
 }
@@ -1693,7 +1698,7 @@ export const RelationalSqlGenerationHelperDependencies: {
 
 export type RelationalSqlGenerationHelperDependencies = RelationalSqlGenerationHelperDependencies$instance;
 
-export interface RelationalTransaction$instance extends Microsoft_EntityFrameworkCore_Infrastructure_Internal.IInfrastructure_1$instance<DbTransaction>, IDbContextTransaction$instance {
+export interface RelationalTransaction$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTransaction: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Infrastructure_IInfrastructure_1: never;
@@ -1735,7 +1740,7 @@ export interface __RelationalTransaction$views {
 export type RelationalTransaction = RelationalTransaction$instance & __RelationalTransaction$views;
 
 
-export interface RelationalTransactionFactory$instance extends IRelationalTransactionFactory$instance {
+export interface RelationalTransactionFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTransactionFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTransactionFactory: never;
@@ -1778,7 +1783,8 @@ export const RelationalTransactionFactoryDependencies: {
 
 export type RelationalTransactionFactoryDependencies = RelationalTransactionFactoryDependencies$instance;
 
-export interface RelationalTypeMapping$instance extends CoreTypeMapping {
+export interface RelationalTypeMapping$instance extends CoreTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
 
     readonly DbType: Nullable_1<DbType>;
@@ -1792,10 +1798,7 @@ export interface RelationalTypeMapping$instance extends CoreTypeMapping {
     readonly StoreType: string;
     readonly StoreTypeNameBase: string;
     readonly StoreTypePostfix: StoreTypePostfix;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: CoreTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
     ConfigureParameter(parameter: DbParameter): void;
     CreateParameter(command: DbCommand, name: string, value: unknown | null, nullable?: Nullable_1<System_Internal.Boolean>, direction?: ParameterDirection): DbParameter;
     CustomizeDataReaderExpression(expression: Expression): Expression;
@@ -1804,14 +1807,14 @@ export interface RelationalTypeMapping$instance extends CoreTypeMapping {
     GenerateSqlLiteral(value: unknown | null): string;
     GetDataReaderMethod(): MethodInfo;
     ProcessStoreType(parameters: RelationalTypeMapping_RelationalTypeMappingParameters, storeType: string, storeTypeNameBase: string): string;
-    WithComposedConverter(converter: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    WithComposedConverter: CoreTypeMapping$instance["WithComposedConverter"] & ((converter: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping);
     WithPrecisionAndScale(precision: Nullable_1<System_Internal.Int32>, scale: Nullable_1<System_Internal.Int32>): RelationalTypeMapping;
     WithStoreTypeAndSize(storeType: string, size: Nullable_1<System_Internal.Int32>): RelationalTypeMapping;
     WithTypeMappingInfo(mappingInfo: RelationalTypeMappingInfo): RelationalTypeMapping;
 }
 
 
-export const RelationalTypeMapping: (abstract new(parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping) & (abstract new(storeType: string, clrType: Type, dbType: Nullable_1<DbType>, unicode: boolean, size: Nullable_1<System_Internal.Int32>, fixedLength: boolean, precision: Nullable_1<System_Internal.Int32>, scale: Nullable_1<System_Internal.Int32>, jsonValueReaderWriter: JsonValueReaderWriter | null) => RelationalTypeMapping) & {
+export const RelationalTypeMapping: {
     readonly NullMapping: RelationalTypeMapping;
     GetDataReaderMethod(type: Type): MethodInfo;
 };
@@ -1821,6 +1824,7 @@ export type RelationalTypeMapping = RelationalTypeMapping$instance;
 
 export interface RelationalTypeMapping_RelationalTypeMappingParameters$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping_RelationalTypeMappingParameters: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly CoreParameters: CoreTypeMapping_CoreTypeMappingParameters;
     readonly DbType: Nullable_1<DbType>;
@@ -1850,28 +1854,19 @@ export type RelationalTypeMapping_RelationalTypeMappingParameters = RelationalTy
 
 export interface RelationalTypeMappingSource$instance extends TypeMappingSourceBase$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMappingSource: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_TypeMappingSourceBase: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_IRelationalTypeMappingSource: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSource: never;
 
     readonly RelationalDependencies: RelationalTypeMappingSourceDependencies;
     FindCollectionMapping(info: RelationalTypeMappingInfo, modelType: Type, providerType: Type | null, elementMapping: CoreTypeMapping | null): RelationalTypeMapping | null;
-    FindMapping(mappingInfo: RelationalTypeMappingInfo): RelationalTypeMapping | null;
-    FindMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping;
-    FindMapping(property: IProperty): CoreTypeMapping | null;
-    FindMapping(elementType: IElementType): CoreTypeMapping | null;
-    FindMapping(type: Type): RelationalTypeMapping | null;
-    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping | null): RelationalTypeMapping | null;
-    FindMapping(member: MemberInfo): RelationalTypeMapping | null;
-    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): RelationalTypeMapping | null;
-    FindMapping(storeTypeName: string): RelationalTypeMapping | null;
-    FindMapping(type: Type, storeTypeName: string | null, keyOrIndex?: boolean, unicode?: Nullable_1<System_Internal.Boolean>, size?: Nullable_1<System_Internal.Int32>, rowVersion?: Nullable_1<System_Internal.Boolean>, fixedLength?: Nullable_1<System_Internal.Boolean>, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>): RelationalTypeMapping | null;
-    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | null;
+    FindMapping: TypeMappingSourceBase$instance["FindMapping"] & ((elementType: IElementType) => CoreTypeMapping | null) & ((mappingInfo: RelationalTypeMappingInfo) => RelationalTypeMapping | null) & ((mappingInfo: TypeMappingInfo) => CoreTypeMapping) & ((member: MemberInfo) => RelationalTypeMapping | null) & ((member: MemberInfo, model: IModel, useAttributes: boolean) => CoreTypeMapping | null) & ((member: MemberInfo, model: IModel, useAttributes: boolean) => RelationalTypeMapping | null) & ((property: IProperty) => CoreTypeMapping | null) & ((storeTypeName: string) => RelationalTypeMapping | null) & ((type: Type) => RelationalTypeMapping | null) & ((type: Type, model: IModel, elementMapping?: CoreTypeMapping | null) => RelationalTypeMapping | null) & ((type: Type, storeTypeName: string | null, keyOrIndex?: boolean, unicode?: Nullable_1<System_Internal.Boolean>, size?: Nullable_1<System_Internal.Int32>, rowVersion?: Nullable_1<System_Internal.Boolean>, fixedLength?: Nullable_1<System_Internal.Boolean>, precision?: Nullable_1<System_Internal.Int32>, scale?: Nullable_1<System_Internal.Int32>) => RelationalTypeMapping | null);
     ParseStoreTypeName(storeTypeName: string | null, unicode: Nullable_1<System_Internal.Boolean>, size: Nullable_1<System_Internal.Int32>, precision: Nullable_1<System_Internal.Int32>, scale: Nullable_1<System_Internal.Int32>): string | null;
 }
 
 
-export const RelationalTypeMappingSource: (abstract new(dependencies: TypeMappingSourceDependencies, relationalDependencies: RelationalTypeMappingSourceDependencies) => RelationalTypeMappingSource) & {
+export const RelationalTypeMappingSource: {
 };
 
 
@@ -1904,8 +1899,9 @@ export const RelationalTypeMappingSourceDependencies: {
 
 export type RelationalTypeMappingSourceDependencies = RelationalTypeMappingSourceDependencies$instance;
 
-export interface RetryLimitExceededException$instance extends Exception {
+export interface RetryLimitExceededException$instance extends System_Internal.Exception {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RetryLimitExceededException: never;
+    readonly __tsonic_type_System_Exception: never;
 
     readonly __tsonic_iface_System_Runtime_Serialization_ISerializable: never;
 
@@ -1922,13 +1918,12 @@ export const RetryLimitExceededException: {
 
 export type RetryLimitExceededException = RetryLimitExceededException$instance;
 
-export interface SByteTypeMapping$instance extends RelationalTypeMapping {
+export interface SByteTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_SByteTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -1940,13 +1935,12 @@ export const SByteTypeMapping: {
 
 export type SByteTypeMapping = SByteTypeMapping$instance;
 
-export interface ShortTypeMapping$instance extends RelationalTypeMapping {
+export interface ShortTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ShortTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -1958,15 +1952,14 @@ export const ShortTypeMapping: {
 
 export type ShortTypeMapping = ShortTypeMapping$instance;
 
-export interface StringTypeMapping$instance extends RelationalTypeMapping {
+export interface StringTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_StringTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
     EscapeSqlLiteral(literal: string): string;
-    GenerateNonNullSqlLiteral(value: unknown): string;
+    GenerateNonNullSqlLiteral: RelationalTypeMapping$instance["GenerateNonNullSqlLiteral"] & ((value: unknown) => string);
 }
 
 
@@ -1978,14 +1971,13 @@ export const StringTypeMapping: {
 
 export type StringTypeMapping = StringTypeMapping$instance;
 
-export interface TimeOnlyTypeMapping$instance extends RelationalTypeMapping {
+export interface TimeOnlyTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_TimeOnlyTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
-    GenerateNonNullSqlLiteral(value: unknown): string;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
+    GenerateNonNullSqlLiteral: RelationalTypeMapping$instance["GenerateNonNullSqlLiteral"] & ((value: unknown) => string);
 }
 
 
@@ -1997,14 +1989,12 @@ export const TimeOnlyTypeMapping: {
 
 export type TimeOnlyTypeMapping = TimeOnlyTypeMapping$instance;
 
-export interface TimeSpanTypeMapping$instance extends RelationalTypeMapping {
+export interface TimeSpanTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_TimeSpanTypeMapping: never;
 
-    readonly SqlLiteralFormatString: string;
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -2018,21 +2008,16 @@ export type TimeSpanTypeMapping = TimeSpanTypeMapping$instance;
 
 export interface TypeMappingSource$instance extends TypeMappingSourceBase$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_TypeMappingSource: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_TypeMappingSourceBase: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSource: never;
 
     FindCollectionMapping(info: TypeMappingInfo, modelType: Type, providerType: Type | null, elementMapping: CoreTypeMapping | null): CoreTypeMapping | null;
-    FindMapping(property: IProperty): CoreTypeMapping | null;
-    FindMapping(elementType: IElementType): CoreTypeMapping | null;
-    FindMapping(type: Type): CoreTypeMapping | null;
-    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping | null): CoreTypeMapping | null;
-    FindMapping(member: MemberInfo): CoreTypeMapping | null;
-    FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | null;
-    FindMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping | null;
+    FindMapping: TypeMappingSourceBase$instance["FindMapping"] & ((elementType: IElementType) => CoreTypeMapping | null) & ((mappingInfo: TypeMappingInfo) => CoreTypeMapping | null) & ((member: MemberInfo) => CoreTypeMapping | null) & ((member: MemberInfo, model: IModel, useAttributes: boolean) => CoreTypeMapping | null) & ((property: IProperty) => CoreTypeMapping | null) & ((type: Type) => CoreTypeMapping | null) & ((type: Type, model: IModel, elementMapping?: CoreTypeMapping | null) => CoreTypeMapping | null);
 }
 
 
-export const TypeMappingSource: (abstract new(dependencies: TypeMappingSourceDependencies) => TypeMappingSource) & {
+export const TypeMappingSource: {
 };
 
 
@@ -2049,19 +2034,19 @@ export interface TypeMappingSourceBase$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ITypeMappingSource: never;
 
     readonly Dependencies: TypeMappingSourceDependencies;
-    FindMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping | null;
-    FindMapping(property: IProperty): CoreTypeMapping | null;
     FindMapping(elementType: IElementType): CoreTypeMapping | null;
-    FindMapping(type: Type): CoreTypeMapping | null;
-    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping | null): CoreTypeMapping | null;
+    FindMapping(mappingInfo: TypeMappingInfo): CoreTypeMapping | null;
     FindMapping(member: MemberInfo): CoreTypeMapping | null;
     FindMapping(member: MemberInfo, model: IModel, useAttributes: boolean): CoreTypeMapping | null;
+    FindMapping(property: IProperty): CoreTypeMapping | null;
+    FindMapping(type: Type): CoreTypeMapping | null;
+    FindMapping(type: Type, model: IModel, elementMapping?: CoreTypeMapping | null): CoreTypeMapping | null;
     TryFindJsonCollectionMapping(mappingInfo: TypeMappingInfo, modelClrType: Type, providerClrType: Type | null, elementMapping: CoreTypeMapping | null, elementComparer: ValueComparer | null, collectionReaderWriter: JsonValueReaderWriter | null): boolean;
     ValidateMapping(mapping: CoreTypeMapping | null, property: IProperty | null): void;
 }
 
 
-export const TypeMappingSourceBase: (abstract new(dependencies: TypeMappingSourceDependencies) => TypeMappingSourceBase) & {
+export const TypeMappingSourceBase: {
 };
 
 
@@ -2103,8 +2088,8 @@ export interface TypeMaterializationInfo$instance {
     readonly ModelClrType: Type;
     readonly Property: IProperty | null;
     readonly ProviderClrType: Type;
-    Equals(other: TypeMaterializationInfo): boolean;
     Equals(obj: unknown | null): boolean;
+    Equals(other: TypeMaterializationInfo): boolean;
     GetHashCode(): int;
 }
 
@@ -2116,13 +2101,12 @@ export const TypeMaterializationInfo: {
 
 export type TypeMaterializationInfo = TypeMaterializationInfo$instance;
 
-export interface UIntTypeMapping$instance extends RelationalTypeMapping {
+export interface UIntTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_UIntTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -2134,13 +2118,12 @@ export const UIntTypeMapping: {
 
 export type UIntTypeMapping = UIntTypeMapping$instance;
 
-export interface ULongTypeMapping$instance extends RelationalTypeMapping {
+export interface ULongTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ULongTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 
@@ -2152,13 +2135,12 @@ export const ULongTypeMapping: {
 
 export type ULongTypeMapping = ULongTypeMapping$instance;
 
-export interface UShortTypeMapping$instance extends RelationalTypeMapping {
+export interface UShortTypeMapping$instance extends RelationalTypeMapping$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_CoreTypeMapping: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_RelationalTypeMapping: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_UShortTypeMapping: never;
 
-    Clone(parameters: RelationalTypeMapping_RelationalTypeMappingParameters): RelationalTypeMapping;
-    Clone(parameters: CoreTypeMapping_CoreTypeMappingParameters): CoreTypeMapping;
-    Clone(mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>): RelationalTypeMapping;
-    Clone(mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null): CoreTypeMapping;
+    Clone: RelationalTypeMapping$instance["Clone"] & ((mappingInfo?: Nullable_1<RelationalTypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null, storeTypePostfix?: Nullable_1<StoreTypePostfix>) => RelationalTypeMapping) & ((mappingInfo?: Nullable_1<TypeMappingInfo>, clrType?: Type | null, converter?: ValueConverter | null, comparer?: ValueComparer | null, keyComparer?: ValueComparer | null, providerValueComparer?: ValueComparer | null, elementMapping?: CoreTypeMapping | null, jsonValueReaderWriter?: JsonValueReaderWriter | null) => CoreTypeMapping) & ((parameters: CoreTypeMapping_CoreTypeMappingParameters) => CoreTypeMapping) & ((parameters: RelationalTypeMapping_RelationalTypeMappingParameters) => RelationalTypeMapping);
 }
 
 

@@ -35,11 +35,13 @@ import * as System_Internal from "@tsonic/dotnet/System/internal/index.js";
 import type { Action_1, Action_2, Action_3, Attribute, Boolean as ClrBoolean, Char, Enum, Exception, Func_1, Func_2, Func_3, Func_4, Func_5, IComparable, IConvertible, IDisposable, IEquatable_1, IFormattable, Int32, ISpanFormattable, Nullable_1, Object as ClrObject, ReadOnlySpan_1, String as ClrString, Type, ValueTuple_2, ValueType, Void } from "@tsonic/dotnet/System/internal/index.js";
 import type { IMemoryCache } from "@tsonic/microsoft-extensions/Microsoft.Extensions.Caching.Memory/internal/index.js";
 
-export enum ResultCardinality {
-    Enumerable = 0,
-    Single = 1,
-    SingleOrDefault = 2
-}
+export type ResultCardinality = number & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_ResultCardinality: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never };
+
+export const ResultCardinality: {
+    readonly Enumerable: ResultCardinality;
+    readonly Single: ResultCardinality;
+    readonly SingleOrDefault: ResultCardinality;
+};
 
 
 export interface IAggregateMethodCallTranslator$instance {
@@ -69,14 +71,13 @@ export interface IAggregateMethodCallTranslatorProvider$instance {
 
 export type IAggregateMethodCallTranslatorProvider = IAggregateMethodCallTranslatorProvider$instance;
 
-export interface IAsyncQueryProvider$instance extends IQueryProvider {
+export interface IAsyncQueryProvider$instance {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAsyncQueryProvider: never;
+    readonly __tsonic_iface_System_Linq_IQueryProvider: never;
 
     ExecuteAsync<TResult extends unknown>(expression: Expression, cancellationToken?: CancellationToken): TResult;
 }
 
-
-export interface IAsyncQueryProvider$instance extends System_Linq_Internal.IQueryProvider {}
 
 export type IAsyncQueryProvider = IAsyncQueryProvider$instance;
 
@@ -115,13 +116,15 @@ export interface IEvaluatableExpressionFilterPlugin$instance {
 
 export type IEvaluatableExpressionFilterPlugin = IEvaluatableExpressionFilterPlugin$instance;
 
-export interface IIncludableQueryable_2$instance<TEntity extends unknown, TProperty extends unknown> extends IQueryable_1<TEntity>, IEnumerable_1<TEntity>, IEnumerable, IQueryable {
+export interface IIncludableQueryable_2$instance<TEntity extends unknown, TProperty extends unknown> {
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IIncludableQueryable_2: never;
+    readonly __tsonic_iface_System_Collections_Generic_IEnumerable_1: never;
+    readonly __tsonic_iface_System_Collections_IEnumerable: never;
+    readonly __tsonic_iface_System_Linq_IQueryable: never;
+    readonly __tsonic_iface_System_Linq_IQueryable_1: never;
 
 }
 
-
-export interface IIncludableQueryable_2$instance<TEntity extends unknown, TProperty extends unknown> extends System_Collections_Generic_Internal.IEnumerable_1<TEntity>, System_Linq_Internal.IQueryable_1<TEntity> {}
 
 export type IIncludableQueryable_2<TEntity extends unknown, TProperty extends unknown> = IIncludableQueryable_2$instance<TEntity, TProperty>;
 
@@ -282,7 +285,8 @@ export interface IQueryTranslationPreprocessorFactory$instance {
 
 export type IQueryTranslationPreprocessorFactory = IQueryTranslationPreprocessorFactory$instance;
 
-export interface IRelationalLiftableConstantFactory$instance extends ILiftableConstantFactory {
+export interface IRelationalLiftableConstantFactory$instance {
+    readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ILiftableConstantFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalLiftableConstantFactory: never;
 
     CreateLiftableConstant(originalValue: unknown | null, resolverExpression: Expression_1<Func_2<MaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): Expression;
@@ -356,10 +360,10 @@ export interface ISqlExpressionFactory$instance {
     ApplyTypeMapping(sqlExpression: SqlExpression | null, typeMapping: RelationalTypeMapping | null): SqlExpression | null;
     Case(operand: SqlExpression | null, whenClauses: IReadOnlyList_1<CaseWhenClause>, elseResult: SqlExpression | null, existingExpression?: SqlExpression | null): SqlExpression;
     Case(whenClauses: IReadOnlyList_1<CaseWhenClause>, elseResult: SqlExpression | null): SqlExpression;
-    Constant(value: unknown, typeMapping?: RelationalTypeMapping | null): SqlExpression;
-    Constant(value: unknown, sensitive: boolean, typeMapping?: RelationalTypeMapping | null): SqlExpression;
-    Constant(value: unknown | null, type: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Constant(value: unknown | null, type: Type, sensitive: boolean, typeMapping?: RelationalTypeMapping | null): SqlExpression;
+    Constant(value: unknown | null, type: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
+    Constant(value: unknown, sensitive: boolean, typeMapping?: RelationalTypeMapping | null): SqlExpression;
+    Constant(value: unknown, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Convert(operand: SqlExpression, type: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Equal(left: SqlExpression, right: SqlExpression): SqlExpression;
     Exists(subquery: SelectExpression): SqlExpression;
@@ -368,8 +372,8 @@ export interface ISqlExpressionFactory$instance {
     Function(name: string, arguments: IEnumerable_1<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable_1<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Function(schema: string | null, name: string, arguments: IEnumerable_1<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable_1<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     In(item: SqlExpression, subquery: SelectExpression): SqlExpression;
-    In(item: SqlExpression, valuesParameter: SqlParameterExpression): SqlExpression;
     In(item: SqlExpression, values: IReadOnlyList_1<SqlExpression>): SqlExpression;
+    In(item: SqlExpression, valuesParameter: SqlParameterExpression): SqlExpression;
     Like(match: SqlExpression, pattern: SqlExpression, escapeChar?: SqlExpression | null): SqlExpression;
     MakeBinary(operatorType: ExpressionType, left: SqlExpression, right: SqlExpression, typeMapping: RelationalTypeMapping | null, existingExpression?: SqlExpression | null): SqlExpression | null;
     MakeUnary(operatorType: ExpressionType, operand: SqlExpression, type: Type, typeMapping?: RelationalTypeMapping | null, existingExpression?: SqlExpression | null): SqlExpression | null;
@@ -394,6 +398,7 @@ export type IStructuralTypeMaterializerSource = IStructuralTypeMaterializerSourc
 
 export interface EntityMaterializerSourceParameters$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_EntityMaterializerSourceParameters: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -416,8 +421,9 @@ export const EntityMaterializerSourceParameters: {
 
 export type EntityMaterializerSourceParameters = EntityMaterializerSourceParameters$instance;
 
-export interface PathSegment$instance extends IRelationalQuotableExpression$instance {
+export interface PathSegment$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_PathSegment: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never;
 
@@ -445,6 +451,7 @@ export type PathSegment = PathSegment$instance & __PathSegment$views;
 
 export interface StructuralTypeMaterializerSourceParameters$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_StructuralTypeMaterializerSourceParameters: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -469,21 +476,20 @@ export const StructuralTypeMaterializerSourceParameters: {
 
 export type StructuralTypeMaterializerSourceParameters = StructuralTypeMaterializerSourceParameters$instance;
 
-export interface CollectionResultExpression$instance extends Expression, IPrintableExpression$instance {
+export interface CollectionResultExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_CollectionResultExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly ElementType: Type;
     readonly Navigation: INavigationBase | null;
-    readonly NodeType: ExpressionType;
     readonly ProjectionBindingExpression: ProjectionBindingExpression;
     readonly QueryExpression: Expression;
     readonly StructuralProperty: IPropertyBase | null;
-    readonly Type: Type;
     Print(expressionPrinter: ExpressionPrinter): void;
     Update(queryExpression: Expression): CollectionResultExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -499,7 +505,7 @@ export interface __CollectionResultExpression$views {
 export type CollectionResultExpression = CollectionResultExpression$instance & __CollectionResultExpression$views;
 
 
-export interface CompiledQueryCacheKeyGenerator$instance extends ICompiledQueryCacheKeyGenerator$instance {
+export interface CompiledQueryCacheKeyGenerator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_CompiledQueryCacheKeyGenerator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ICompiledQueryCacheKeyGenerator: never;
@@ -523,6 +529,7 @@ export type CompiledQueryCacheKeyGenerator = CompiledQueryCacheKeyGenerator$inst
 
 export interface CompiledQueryCacheKeyGenerator_CompiledQueryCacheKey$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_CompiledQueryCacheKeyGenerator_CompiledQueryCacheKey: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -562,20 +569,20 @@ export const CompiledQueryCacheKeyGeneratorDependencies: {
 
 export type CompiledQueryCacheKeyGeneratorDependencies = CompiledQueryCacheKeyGeneratorDependencies$instance;
 
-export interface EntityQueryRootExpression$instance extends QueryRootExpression$instance, IPrintableExpression$instance {
+export interface EntityQueryRootExpression$instance extends QueryRootExpression$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_EntityQueryRootExpression: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryRootExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
-    readonly CanReduce: boolean;
     readonly EntityType: IEntityType;
-    readonly NodeType: ExpressionType;
-    DetachQueryProvider(): Expression;
-    Equals(obj: unknown | null): boolean;
-    GetHashCode(): int;
-    Print(expressionPrinter: ExpressionPrinter): void;
+    DetachQueryProvider: QueryRootExpression$instance["DetachQueryProvider"] & (() => Expression);
+    Equals: QueryRootExpression$instance["Equals"] & ((obj: unknown | null) => boolean);
+    GetHashCode: QueryRootExpression$instance["GetHashCode"] & (() => int);
+    Print: QueryRootExpression$instance["Print"] & ((expressionPrinter: ExpressionPrinter) => void);
     UpdateEntityType(entityType: IEntityType): EntityQueryRootExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: QueryRootExpression$instance["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -592,17 +599,16 @@ export interface __EntityQueryRootExpression$views {
 export type EntityQueryRootExpression = EntityQueryRootExpression$instance & __EntityQueryRootExpression$views;
 
 
-export interface EnumerableExpression$instance extends Expression, IPrintableExpression$instance {
+export interface EnumerableExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_EnumerableExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly IsDistinct: boolean;
-    readonly NodeType: ExpressionType;
     readonly Orderings: IReadOnlyList_1<OrderingExpression>;
     readonly Predicate: SqlExpression | null;
     readonly Selector: Expression;
-    readonly Type: Type;
     AppendOrdering(orderingExpression: OrderingExpression): EnumerableExpression;
     ApplyOrdering(orderingExpression: OrderingExpression): EnumerableExpression;
     ApplyPredicate(sqlExpression: SqlExpression): EnumerableExpression;
@@ -611,7 +617,7 @@ export interface EnumerableExpression$instance extends Expression, IPrintableExp
     GetHashCode(): int;
     Print(expressionPrinter: ExpressionPrinter): void;
     SetDistinct(value: boolean): EnumerableExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -627,7 +633,7 @@ export interface __EnumerableExpression$views {
 export type EnumerableExpression = EnumerableExpression$instance & __EnumerableExpression$views;
 
 
-export interface EvaluatableExpressionFilter$instance extends IEvaluatableExpressionFilter$instance {
+export interface EvaluatableExpressionFilter$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_EvaluatableExpressionFilter: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IEvaluatableExpressionFilter: never;
@@ -687,8 +693,9 @@ export const ExpressionEqualityComparer: {
 
 export type ExpressionEqualityComparer = ExpressionEqualityComparer$instance;
 
-export interface ExpressionPrinter$instance extends ExpressionVisitor {
+export interface ExpressionPrinter$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_ExpressionPrinter: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     Append(value: string): ExpressionPrinter;
     AppendLine(): ExpressionPrinter;
@@ -699,30 +706,30 @@ export interface ExpressionPrinter$instance extends ExpressionVisitor {
     PrintExpression(expression: Expression, characterLimit?: Nullable_1<System_Internal.Int32>): string;
     PrintExpressionDebug(expression: Expression): string;
     ToString(): string;
-    Visit(expression: Expression | null): Expression | null;
-    VisitBinary(binaryExpression: BinaryExpression): Expression;
-    VisitBlock(blockExpression: BlockExpression): Expression;
-    VisitCollection<T extends unknown & Expression>(items: IReadOnlyCollection_1<T>, joinAction?: Action_1<ExpressionPrinter> | null): void;
-    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
-    VisitConstant(constantExpression: ConstantExpression): Expression;
-    VisitDefault(defaultExpression: DefaultExpression): Expression;
-    VisitExtension(extensionExpression: Expression): Expression;
-    VisitGoto(gotoExpression: GotoExpression): Expression;
-    VisitIndex(indexExpression: IndexExpression): Expression;
-    VisitInvocation(invocationExpression: InvocationExpression): Expression;
-    VisitLabel(labelExpression: LabelExpression): Expression;
-    VisitLambda<T extends unknown>(lambdaExpression: Expression_1<T>): Expression;
-    VisitLoop(loopExpression: LoopExpression): Expression;
-    VisitMember(memberExpression: MemberExpression): Expression;
-    VisitMemberInit(memberInitExpression: MemberInitExpression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    VisitNew(newExpression: NewExpression): Expression;
-    VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
-    VisitParameter(parameterExpression: ParameterExpression): Expression;
-    VisitSwitch(switchExpression: SwitchExpression): Expression;
-    VisitTry(tryExpression: TryExpression): Expression;
-    VisitTypeBinary(typeBinaryExpression: TypeBinaryExpression): Expression;
-    VisitUnary(unaryExpression: UnaryExpression): Expression;
+    Visit: System_Linq_Expressions_Internal.ExpressionVisitor["Visit"] & ((expression: Expression | null) => Expression | null);
+    VisitBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBinary"] & ((binaryExpression: BinaryExpression) => Expression);
+    VisitBlock: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBlock"] & ((blockExpression: BlockExpression) => Expression);
+    VisitCollection<T extends unknown & { readonly __tsonic_type_System_Linq_Expressions_Expression: never }>(items: IReadOnlyCollection_1<T>, joinAction?: Action_1<ExpressionPrinter> | null): void;
+    VisitConditional: System_Linq_Expressions_Internal.ExpressionVisitor["VisitConditional"] & ((conditionalExpression: ConditionalExpression) => Expression);
+    VisitConstant: System_Linq_Expressions_Internal.ExpressionVisitor["VisitConstant"] & ((constantExpression: ConstantExpression) => Expression);
+    VisitDefault: System_Linq_Expressions_Internal.ExpressionVisitor["VisitDefault"] & ((defaultExpression: DefaultExpression) => Expression);
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
+    VisitGoto: System_Linq_Expressions_Internal.ExpressionVisitor["VisitGoto"] & ((gotoExpression: GotoExpression) => Expression);
+    VisitIndex: System_Linq_Expressions_Internal.ExpressionVisitor["VisitIndex"] & ((indexExpression: IndexExpression) => Expression);
+    VisitInvocation: System_Linq_Expressions_Internal.ExpressionVisitor["VisitInvocation"] & ((invocationExpression: InvocationExpression) => Expression);
+    VisitLabel: System_Linq_Expressions_Internal.ExpressionVisitor["VisitLabel"] & ((labelExpression: LabelExpression) => Expression);
+    VisitLambda: System_Linq_Expressions_Internal.ExpressionVisitor["VisitLambda"] & (<T extends unknown>(lambdaExpression: Expression_1<T>) => Expression);
+    VisitLoop: System_Linq_Expressions_Internal.ExpressionVisitor["VisitLoop"] & ((loopExpression: LoopExpression) => Expression);
+    VisitMember: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMember"] & ((memberExpression: MemberExpression) => Expression);
+    VisitMemberInit: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMemberInit"] & ((memberInitExpression: MemberInitExpression) => Expression);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
+    VisitNew: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNew"] & ((newExpression: NewExpression) => Expression);
+    VisitNewArray: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNewArray"] & ((newArrayExpression: NewArrayExpression) => Expression);
+    VisitParameter: System_Linq_Expressions_Internal.ExpressionVisitor["VisitParameter"] & ((parameterExpression: ParameterExpression) => Expression);
+    VisitSwitch: System_Linq_Expressions_Internal.ExpressionVisitor["VisitSwitch"] & ((switchExpression: SwitchExpression) => Expression);
+    VisitTry: System_Linq_Expressions_Internal.ExpressionVisitor["VisitTry"] & ((tryExpression: TryExpression) => Expression);
+    VisitTypeBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitTypeBinary"] & ((typeBinaryExpression: TypeBinaryExpression) => Expression);
+    VisitUnary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitUnary"] & ((unaryExpression: UnaryExpression) => Expression);
 }
 
 
@@ -735,18 +742,17 @@ export const ExpressionPrinter: {
 
 export type ExpressionPrinter = ExpressionPrinter$instance;
 
-export interface GroupByShaperExpression$instance extends Expression, IPrintableExpression$instance {
+export interface GroupByShaperExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_GroupByShaperExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly GroupingEnumerable: ShapedQueryExpression;
     readonly KeySelector: Expression;
-    readonly NodeType: ExpressionType;
-    readonly Type: Type;
     Print(expressionPrinter: ExpressionPrinter): void;
     Update(keySelector: Expression, groupingEnumerable: ShapedQueryExpression): GroupByShaperExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -762,19 +768,18 @@ export interface __GroupByShaperExpression$views {
 export type GroupByShaperExpression = GroupByShaperExpression$instance & __GroupByShaperExpression$views;
 
 
-export interface IncludeExpression$instance extends Expression, IPrintableExpression$instance {
+export interface IncludeExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_IncludeExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly EntityExpression: Expression;
     readonly Navigation: INavigationBase;
     readonly NavigationExpression: Expression;
-    readonly NodeType: ExpressionType;
     readonly SetLoaded: boolean;
-    readonly Type: Type;
     Update(entityExpression: Expression, navigationExpression: Expression): IncludeExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -791,16 +796,18 @@ export interface __IncludeExpression$views {
 export type IncludeExpression = IncludeExpression$instance & __IncludeExpression$views;
 
 
-export interface InlineQueryRootExpression$instance extends QueryRootExpression$instance, IPrintableExpression$instance {
+export interface InlineQueryRootExpression$instance extends QueryRootExpression$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_InlineQueryRootExpression: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryRootExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Values: IReadOnlyList_1<Expression>;
-    DetachQueryProvider(): Expression;
-    Print(expressionPrinter: ExpressionPrinter): void;
+    DetachQueryProvider: QueryRootExpression$instance["DetachQueryProvider"] & (() => Expression);
+    Print: QueryRootExpression$instance["Print"] & ((expressionPrinter: ExpressionPrinter) => void);
     Update(values: IReadOnlyList_1<Expression>): InlineQueryRootExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: QueryRootExpression$instance["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -817,8 +824,9 @@ export interface __InlineQueryRootExpression$views {
 export type InlineQueryRootExpression = InlineQueryRootExpression$instance & __InlineQueryRootExpression$views;
 
 
-export interface JsonQueryExpression$instance extends Expression, IPrintableExpression$instance {
+export interface JsonQueryExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_JsonQueryExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
@@ -826,10 +834,8 @@ export interface JsonQueryExpression$instance extends Expression, IPrintableExpr
     readonly IsNullable: boolean;
     readonly JsonColumn: ColumnExpression;
     readonly KeyPropertyMap: IReadOnlyDictionary_2<IProperty, ColumnExpression> | null;
-    readonly NodeType: ExpressionType;
     readonly Path: IReadOnlyList_1<PathSegment>;
     readonly StructuralType: ITypeBase;
-    readonly Type: Type;
     BindCollectionElement(collectionIndexExpression: SqlExpression): JsonQueryExpression;
     BindProperty(property: IProperty): SqlExpression;
     BindStructuralProperty(structuralProperty: IPropertyBase): JsonQueryExpression;
@@ -838,7 +844,7 @@ export interface JsonQueryExpression$instance extends Expression, IPrintableExpr
     MakeNullable(): JsonQueryExpression;
     Print(expressionPrinter: ExpressionPrinter): void;
     Update(jsonColumn: ColumnExpression, keyPropertyMap: IReadOnlyDictionary_2<IProperty, ColumnExpression> | null): JsonQueryExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -855,19 +861,18 @@ export interface __JsonQueryExpression$views {
 export type JsonQueryExpression = JsonQueryExpression$instance & __JsonQueryExpression$views;
 
 
-export interface LiftableConstantExpression$instance extends Expression, IPrintableExpression$instance {
+export interface LiftableConstantExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_LiftableConstantExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
-    readonly NodeType: ExpressionType;
     readonly OriginalExpression: ConstantExpression;
     readonly ResolverExpression: LambdaExpression;
-    readonly Type: Type;
     readonly VariableName: string;
     Print(expressionPrinter: ExpressionPrinter): void;
     Update(resolverExpression: LambdaExpression): LiftableConstantExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -903,7 +908,7 @@ export const LiftableConstantExpressionDependencies: {
 
 export type LiftableConstantExpressionDependencies = LiftableConstantExpressionDependencies$instance;
 
-export interface LiftableConstantFactory$instance extends ILiftableConstantFactory$instance {
+export interface LiftableConstantFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_LiftableConstantFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ILiftableConstantFactory: never;
@@ -925,18 +930,19 @@ export interface __LiftableConstantFactory$views {
 export type LiftableConstantFactory = LiftableConstantFactory$instance & __LiftableConstantFactory$views;
 
 
-export interface LiftableConstantProcessor$instance extends ExpressionVisitor {
+export interface LiftableConstantProcessor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_LiftableConstantProcessor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ILiftableConstantProcessor: never;
 
-    LiftedConstants: IReadOnlyList_1<ValueTuple_2<ParameterExpression, Expression>>;
+    readonly LiftedConstants: IReadOnlyList_1<ValueTuple_2<ParameterExpression, Expression>>;
     InlineConstant(liftableConstant: LiftableConstantExpression): ConstantExpression;
     InlineConstants(expression: Expression, supportsPrecompiledQuery: boolean): Expression;
     LiftConstant(liftableConstant: LiftableConstantExpression): ParameterExpression;
     LiftConstants(expression: Expression, contextParameter: ParameterExpression, variableNames: HashSet_1<System_Internal.String>): Expression;
-    VisitBinary(binaryExpression: BinaryExpression): Expression;
-    VisitExtension(node: Expression): Expression;
+    VisitBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBinary"] & ((binaryExpression: BinaryExpression) => Expression);
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((node: Expression) => Expression);
 }
 
 
@@ -952,17 +958,16 @@ export interface __LiftableConstantProcessor$views {
 export type LiftableConstantProcessor = LiftableConstantProcessor$instance & __LiftableConstantProcessor$views;
 
 
-export interface MaterializeCollectionNavigationExpression$instance extends Expression, IPrintableExpression$instance {
+export interface MaterializeCollectionNavigationExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_MaterializeCollectionNavigationExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Navigation: INavigationBase;
-    readonly NodeType: ExpressionType;
     readonly Subquery: Expression;
-    readonly Type: Type;
     Update(subquery: Expression): MaterializeCollectionNavigationExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -1002,7 +1007,7 @@ export const MaterializerLiftableConstantContext: {
 
 export type MaterializerLiftableConstantContext = MaterializerLiftableConstantContext$instance;
 
-export interface NavigationExpansionExtensibilityHelper$instance extends INavigationExpansionExtensibilityHelper$instance {
+export interface NavigationExpansionExtensibilityHelper$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_NavigationExpansionExtensibilityHelper: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_INavigationExpansionExtensibilityHelper: never;
@@ -1046,8 +1051,9 @@ export const NavigationExpansionExtensibilityHelperDependencies: {
 
 export type NavigationExpansionExtensibilityHelperDependencies = NavigationExpansionExtensibilityHelperDependencies$instance;
 
-export interface NotParameterizedAttribute$instance extends Attribute {
+export interface NotParameterizedAttribute$instance extends System_Internal.Attribute {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_NotParameterizedAttribute: never;
+    readonly __tsonic_type_System_Attribute: never;
 
 }
 
@@ -1059,16 +1065,18 @@ export const NotParameterizedAttribute: {
 
 export type NotParameterizedAttribute = NotParameterizedAttribute$instance;
 
-export interface ParameterQueryRootExpression$instance extends QueryRootExpression$instance, IPrintableExpression$instance {
+export interface ParameterQueryRootExpression$instance extends QueryRootExpression$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_ParameterQueryRootExpression: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryRootExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly ParameterExpression: ParameterExpression;
     readonly QueryParameterExpression: QueryParameterExpression;
-    DetachQueryProvider(): Expression;
-    Print(expressionPrinter: ExpressionPrinter): void;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    DetachQueryProvider: QueryRootExpression$instance["DetachQueryProvider"] & (() => Expression);
+    Print: QueryRootExpression$instance["Print"] & ((expressionPrinter: ExpressionPrinter) => void);
+    VisitChildren: QueryRootExpression$instance["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -1090,7 +1098,7 @@ export type ParameterQueryRootExpression = ParameterQueryRootExpression$instance
 export interface ParametersCacheDecorator$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_ParametersCacheDecorator: never;
 
-    CanCache: boolean;
+    readonly CanCache: boolean;
     GetAndDisableCaching(): Dictionary_2<System_Internal.String, unknown | null>;
     IsNull(parameterName: string): boolean;
 }
@@ -1103,19 +1111,18 @@ export const ParametersCacheDecorator: {
 
 export type ParametersCacheDecorator = ParametersCacheDecorator$instance;
 
-export interface ProjectionBindingExpression$instance extends Expression, IPrintableExpression$instance {
+export interface ProjectionBindingExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_ProjectionBindingExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly Index: Nullable_1<System_Internal.Int32>;
-    readonly NodeType: ExpressionType;
     readonly ProjectionMember: ProjectionMember | null;
     readonly QueryExpression: Expression;
-    readonly Type: Type;
     Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -1151,13 +1158,13 @@ export const ProjectionMember: {
 
 export type ProjectionMember = ProjectionMember$instance;
 
-export interface QueryableMethodTranslatingExpressionVisitor$instance extends ExpressionVisitor {
+export interface QueryableMethodTranslatingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryableMethodTranslatingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly Dependencies: QueryableMethodTranslatingExpressionVisitorDependencies;
     readonly QueryCompilationContext: QueryCompilationContext;
-    get TranslationErrorDetails(): string | null;
-    set TranslationErrorDetails(value: string | null);
+    readonly TranslationErrorDetails: string | null;
     AddTranslationErrorDetails(details: string): void;
     CreateShapedQueryExpression(entityType: IEntityType): ShapedQueryExpression | null;
     CreateSubqueryVisitor(): QueryableMethodTranslatingExpressionVisitor;
@@ -1206,13 +1213,13 @@ export interface QueryableMethodTranslatingExpressionVisitor$instance extends Ex
     TranslateThenBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | null;
     TranslateUnion(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression | null;
     TranslateWhere(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | null;
-    VisitExtension(extensionExpression: Expression): Expression;
-    VisitMember(memberExpression: MemberExpression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
+    VisitMember: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMember"] & ((memberExpression: MemberExpression) => Expression);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
-export const QueryableMethodTranslatingExpressionVisitor: (abstract new(dependencies: QueryableMethodTranslatingExpressionVisitorDependencies, queryCompilationContext: QueryCompilationContext, subquery: boolean) => QueryableMethodTranslatingExpressionVisitor) & {
+export const QueryableMethodTranslatingExpressionVisitor: {
 };
 
 
@@ -1267,16 +1274,15 @@ export interface QueryCompilationContext$instance {
     readonly ContextOptions: IDbContextOptions;
     readonly ContextType: Type;
     readonly Dependencies: QueryCompilationContextDependencies;
-    IgnoreAutoIncludes: boolean;
-    get IgnoredQueryFilters(): HashSet_1<System_Internal.String> | null;
-    set IgnoredQueryFilters(value: HashSet_1<System_Internal.String> | null);
-    IgnoreQueryFilters: boolean;
+    readonly IgnoreAutoIncludes: boolean;
+    readonly IgnoredQueryFilters: HashSet_1<System_Internal.String> | null;
+    readonly IgnoreQueryFilters: boolean;
     readonly IsAsync: boolean;
     readonly IsBuffering: boolean;
     readonly IsPrecompiling: boolean;
     readonly Logger: IDiagnosticsLogger_1<DbLoggerCategory_Query>;
     readonly Model: IModel;
-    QueryTrackingBehavior: QueryTrackingBehavior;
+    readonly QueryTrackingBehavior: QueryTrackingBehavior;
     readonly SupportsPrecompiledQuery: boolean;
     readonly Tags: ISet_1<System_Internal.String>;
     AddTag(tag: string): void;
@@ -1349,7 +1355,7 @@ export interface QueryContext$instance {
 }
 
 
-export const QueryContext: (abstract new(dependencies: QueryContextDependencies) => QueryContext) & {
+export const QueryContext: {
 };
 
 
@@ -1382,20 +1388,19 @@ export const QueryContextDependencies: {
 
 export type QueryContextDependencies = QueryContextDependencies$instance;
 
-export interface QueryParameterExpression$instance extends Expression, IPrintableExpression$instance {
+export interface QueryParameterExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryParameterExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly IsNonNullableReferenceType: boolean;
     readonly Name: string;
-    readonly NodeType: ExpressionType;
     readonly TranslationMode: Nullable_1<ParameterTranslationMode>;
-    readonly Type: Type;
     Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
     Print(expressionPrinter: ExpressionPrinter): void;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -1413,25 +1418,23 @@ export interface __QueryParameterExpression$views {
 export type QueryParameterExpression = QueryParameterExpression$instance & __QueryParameterExpression$views;
 
 
-export interface QueryRootExpression$instance extends Expression, IPrintableExpression$instance {
+export interface QueryRootExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryRootExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
-    readonly CanReduce: boolean;
     readonly ElementType: Type;
-    readonly NodeType: ExpressionType;
     readonly QueryProvider: IAsyncQueryProvider | null;
-    readonly Type: Type;
     DetachQueryProvider(): Expression;
     Equals(obj: unknown | null): boolean;
     GetHashCode(): int;
     Print(expressionPrinter: ExpressionPrinter): void;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
-export const QueryRootExpression: (abstract new(asyncQueryProvider: IAsyncQueryProvider, elementType: Type) => QueryRootExpression) & (abstract new(elementType: Type) => QueryRootExpression) & {
+export const QueryRootExpression: {
 };
 
 
@@ -1442,12 +1445,13 @@ export interface __QueryRootExpression$views {
 export type QueryRootExpression = QueryRootExpression$instance & __QueryRootExpression$views;
 
 
-export interface QueryRootProcessor$instance extends ExpressionVisitor {
+export interface QueryRootProcessor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryRootProcessor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     ShouldConvertToInlineQueryRoot(expression: Expression): boolean;
     ShouldConvertToParameterQueryRoot(queryParameterExpression: QueryParameterExpression): boolean;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
@@ -1458,8 +1462,10 @@ export const QueryRootProcessor: {
 
 export type QueryRootProcessor = QueryRootProcessor$instance;
 
-export interface QuerySqlGenerator$instance extends SqlExpressionVisitor {
+export interface QuerySqlGenerator$instance extends SqlExpressionVisitor$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QuerySqlGenerator: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly AliasSeparator: string;
     readonly Dependencies: QuerySqlGeneratorDependencies;
@@ -1487,42 +1493,42 @@ export interface QuerySqlGenerator$instance extends SqlExpressionVisitor {
     RequiresParentheses(outerExpression: SqlExpression, innerExpression: SqlExpression): boolean;
     TryGenerateWithoutWrappingSelect(selectExpression: SelectExpression): boolean;
     TryGetOperatorInfo(expression: SqlExpression, precedence: int, isAssociative: boolean): boolean;
-    VisitAtTimeZone(atTimeZoneExpression: AtTimeZoneExpression): Expression;
-    VisitCase(caseExpression: CaseExpression): Expression;
-    VisitCollate(collateExpression: CollateExpression): Expression;
-    VisitColumn(columnExpression: ColumnExpression): Expression;
-    VisitCrossApply(crossApplyExpression: CrossApplyExpression): Expression;
-    VisitCrossJoin(crossJoinExpression: CrossJoinExpression): Expression;
-    VisitDelete(deleteExpression: DeleteExpression): Expression;
-    VisitDistinct(distinctExpression: DistinctExpression): Expression;
-    VisitExcept(exceptExpression: ExceptExpression): Expression;
-    VisitExists(existsExpression: ExistsExpression): Expression;
-    VisitFromSql(fromSqlExpression: FromSqlExpression): Expression;
-    VisitIn(inExpression: InExpression): Expression;
-    VisitInnerJoin(innerJoinExpression: InnerJoinExpression): Expression;
-    VisitIntersect(intersectExpression: IntersectExpression): Expression;
-    VisitJsonScalar(jsonScalarExpression: JsonScalarExpression): Expression;
-    VisitLeftJoin(leftJoinExpression: LeftJoinExpression): Expression;
-    VisitLike(likeExpression: LikeExpression): Expression;
-    VisitOrdering(orderingExpression: OrderingExpression): Expression;
-    VisitOuterApply(outerApplyExpression: OuterApplyExpression): Expression;
-    VisitProjection(projectionExpression: ProjectionExpression): Expression;
-    VisitRightJoin(rightJoinExpression: RightJoinExpression): Expression;
-    VisitRowNumber(rowNumberExpression: RowNumberExpression): Expression;
-    VisitRowValue(rowValueExpression: RowValueExpression): Expression;
-    VisitScalarSubquery(scalarSubqueryExpression: ScalarSubqueryExpression): Expression;
-    VisitSelect(selectExpression: SelectExpression): Expression;
-    VisitSqlBinary(sqlBinaryExpression: SqlBinaryExpression): Expression;
-    VisitSqlConstant(sqlConstantExpression: SqlConstantExpression): Expression;
-    VisitSqlFragment(sqlFragmentExpression: SqlFragmentExpression): Expression;
-    VisitSqlFunction(sqlFunctionExpression: SqlFunctionExpression): Expression;
-    VisitSqlParameter(sqlParameterExpression: SqlParameterExpression): Expression;
-    VisitSqlUnary(sqlUnaryExpression: SqlUnaryExpression): Expression;
-    VisitTable(tableExpression: TableExpression): Expression;
-    VisitTableValuedFunction(tableValuedFunctionExpression: TableValuedFunctionExpression): Expression;
-    VisitUnion(unionExpression: UnionExpression): Expression;
-    VisitUpdate(updateExpression: UpdateExpression): Expression;
-    VisitValues(valuesExpression: ValuesExpression): Expression;
+    VisitAtTimeZone: SqlExpressionVisitor$instance["VisitAtTimeZone"] & ((atTimeZoneExpression: AtTimeZoneExpression) => Expression);
+    VisitCase: SqlExpressionVisitor$instance["VisitCase"] & ((caseExpression: CaseExpression) => Expression);
+    VisitCollate: SqlExpressionVisitor$instance["VisitCollate"] & ((collateExpression: CollateExpression) => Expression);
+    VisitColumn: SqlExpressionVisitor$instance["VisitColumn"] & ((columnExpression: ColumnExpression) => Expression);
+    VisitCrossApply: SqlExpressionVisitor$instance["VisitCrossApply"] & ((crossApplyExpression: CrossApplyExpression) => Expression);
+    VisitCrossJoin: SqlExpressionVisitor$instance["VisitCrossJoin"] & ((crossJoinExpression: CrossJoinExpression) => Expression);
+    VisitDelete: SqlExpressionVisitor$instance["VisitDelete"] & ((deleteExpression: DeleteExpression) => Expression);
+    VisitDistinct: SqlExpressionVisitor$instance["VisitDistinct"] & ((distinctExpression: DistinctExpression) => Expression);
+    VisitExcept: SqlExpressionVisitor$instance["VisitExcept"] & ((exceptExpression: ExceptExpression) => Expression);
+    VisitExists: SqlExpressionVisitor$instance["VisitExists"] & ((existsExpression: ExistsExpression) => Expression);
+    VisitFromSql: SqlExpressionVisitor$instance["VisitFromSql"] & ((fromSqlExpression: FromSqlExpression) => Expression);
+    VisitIn: SqlExpressionVisitor$instance["VisitIn"] & ((inExpression: InExpression) => Expression);
+    VisitInnerJoin: SqlExpressionVisitor$instance["VisitInnerJoin"] & ((innerJoinExpression: InnerJoinExpression) => Expression);
+    VisitIntersect: SqlExpressionVisitor$instance["VisitIntersect"] & ((intersectExpression: IntersectExpression) => Expression);
+    VisitJsonScalar: SqlExpressionVisitor$instance["VisitJsonScalar"] & ((jsonScalarExpression: JsonScalarExpression) => Expression);
+    VisitLeftJoin: SqlExpressionVisitor$instance["VisitLeftJoin"] & ((leftJoinExpression: LeftJoinExpression) => Expression);
+    VisitLike: SqlExpressionVisitor$instance["VisitLike"] & ((likeExpression: LikeExpression) => Expression);
+    VisitOrdering: SqlExpressionVisitor$instance["VisitOrdering"] & ((orderingExpression: OrderingExpression) => Expression);
+    VisitOuterApply: SqlExpressionVisitor$instance["VisitOuterApply"] & ((outerApplyExpression: OuterApplyExpression) => Expression);
+    VisitProjection: SqlExpressionVisitor$instance["VisitProjection"] & ((projectionExpression: ProjectionExpression) => Expression);
+    VisitRightJoin: SqlExpressionVisitor$instance["VisitRightJoin"] & ((rightJoinExpression: RightJoinExpression) => Expression);
+    VisitRowNumber: SqlExpressionVisitor$instance["VisitRowNumber"] & ((rowNumberExpression: RowNumberExpression) => Expression);
+    VisitRowValue: SqlExpressionVisitor$instance["VisitRowValue"] & ((rowValueExpression: RowValueExpression) => Expression);
+    VisitScalarSubquery: SqlExpressionVisitor$instance["VisitScalarSubquery"] & ((scalarSubqueryExpression: ScalarSubqueryExpression) => Expression);
+    VisitSelect: SqlExpressionVisitor$instance["VisitSelect"] & ((selectExpression: SelectExpression) => Expression);
+    VisitSqlBinary: SqlExpressionVisitor$instance["VisitSqlBinary"] & ((sqlBinaryExpression: SqlBinaryExpression) => Expression);
+    VisitSqlConstant: SqlExpressionVisitor$instance["VisitSqlConstant"] & ((sqlConstantExpression: SqlConstantExpression) => Expression);
+    VisitSqlFragment: SqlExpressionVisitor$instance["VisitSqlFragment"] & ((sqlFragmentExpression: SqlFragmentExpression) => Expression);
+    VisitSqlFunction: SqlExpressionVisitor$instance["VisitSqlFunction"] & ((sqlFunctionExpression: SqlFunctionExpression) => Expression);
+    VisitSqlParameter: SqlExpressionVisitor$instance["VisitSqlParameter"] & ((sqlParameterExpression: SqlParameterExpression) => Expression);
+    VisitSqlUnary: SqlExpressionVisitor$instance["VisitSqlUnary"] & ((sqlUnaryExpression: SqlUnaryExpression) => Expression);
+    VisitTable: SqlExpressionVisitor$instance["VisitTable"] & ((tableExpression: TableExpression) => Expression);
+    VisitTableValuedFunction: SqlExpressionVisitor$instance["VisitTableValuedFunction"] & ((tableValuedFunctionExpression: TableValuedFunctionExpression) => Expression);
+    VisitUnion: SqlExpressionVisitor$instance["VisitUnion"] & ((unionExpression: UnionExpression) => Expression);
+    VisitUpdate: SqlExpressionVisitor$instance["VisitUpdate"] & ((updateExpression: UpdateExpression) => Expression);
+    VisitValues: SqlExpressionVisitor$instance["VisitValues"] & ((valuesExpression: ValuesExpression) => Expression);
 }
 
 
@@ -1633,7 +1639,7 @@ export const QueryTranslationPreprocessorDependencies: {
 
 export type QueryTranslationPreprocessorDependencies = QueryTranslationPreprocessorDependencies$instance;
 
-export interface RelationalAggregateMethodCallTranslatorProvider$instance extends IAggregateMethodCallTranslatorProvider$instance {
+export interface RelationalAggregateMethodCallTranslatorProvider$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalAggregateMethodCallTranslatorProvider: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IAggregateMethodCallTranslatorProvider: never;
@@ -1679,24 +1685,23 @@ export const RelationalAggregateMethodCallTranslatorProviderDependencies: {
 
 export type RelationalAggregateMethodCallTranslatorProviderDependencies = RelationalAggregateMethodCallTranslatorProviderDependencies$instance;
 
-export interface RelationalCollectionShaperExpression$instance extends Expression, IPrintableExpression$instance {
+export interface RelationalCollectionShaperExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalCollectionShaperExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly ElementType: Type;
     readonly InnerShaper: Expression;
     readonly Navigation: INavigationBase | null;
-    readonly NodeType: ExpressionType;
     readonly OuterIdentifier: Expression;
     readonly OuterIdentifierValueComparers: IReadOnlyList_1<ValueComparer>;
     readonly ParentIdentifier: Expression;
     readonly ParentIdentifierValueComparers: IReadOnlyList_1<ValueComparer>;
     readonly SelfIdentifier: Expression;
     readonly SelfIdentifierValueComparers: IReadOnlyList_1<ValueComparer>;
-    readonly Type: Type;
     Update(parentIdentifier: Expression, outerIdentifier: Expression, selfIdentifier: Expression, innerShaper: Expression): RelationalCollectionShaperExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -1712,13 +1717,14 @@ export interface __RelationalCollectionShaperExpression$views {
 export type RelationalCollectionShaperExpression = RelationalCollectionShaperExpression$instance & __RelationalCollectionShaperExpression$views;
 
 
-export interface RelationalCompiledQueryCacheKeyGenerator$instance extends CompiledQueryCacheKeyGenerator$instance, ICompiledQueryCacheKeyGenerator$instance {
+export interface RelationalCompiledQueryCacheKeyGenerator$instance extends CompiledQueryCacheKeyGenerator$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_CompiledQueryCacheKeyGenerator: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalCompiledQueryCacheKeyGenerator: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ICompiledQueryCacheKeyGenerator: never;
 
     readonly RelationalDependencies: RelationalCompiledQueryCacheKeyGeneratorDependencies;
-    GenerateCacheKey(query: Expression, async: boolean): unknown;
+    GenerateCacheKey: CompiledQueryCacheKeyGenerator$instance["GenerateCacheKey"] & ((query: Expression, async: boolean) => unknown);
 }
 
 
@@ -1736,6 +1742,7 @@ export type RelationalCompiledQueryCacheKeyGenerator = RelationalCompiledQueryCa
 
 export interface RelationalCompiledQueryCacheKeyGenerator_RelationalCompiledQueryCacheKey$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalCompiledQueryCacheKeyGenerator_RelationalCompiledQueryCacheKey: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
@@ -1773,13 +1780,14 @@ export const RelationalCompiledQueryCacheKeyGeneratorDependencies: {
 
 export type RelationalCompiledQueryCacheKeyGeneratorDependencies = RelationalCompiledQueryCacheKeyGeneratorDependencies$instance;
 
-export interface RelationalEvaluatableExpressionFilter$instance extends EvaluatableExpressionFilter$instance, IEvaluatableExpressionFilter$instance {
+export interface RelationalEvaluatableExpressionFilter$instance extends EvaluatableExpressionFilter$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_EvaluatableExpressionFilter: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalEvaluatableExpressionFilter: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IEvaluatableExpressionFilter: never;
 
     readonly RelationalDependencies: RelationalEvaluatableExpressionFilterDependencies;
-    IsEvaluatableExpression(expression: Expression, model: IModel): boolean;
+    IsEvaluatableExpression: EvaluatableExpressionFilter$instance["IsEvaluatableExpression"] & ((expression: Expression, model: IModel) => boolean);
 }
 
 
@@ -1815,8 +1823,9 @@ export const RelationalEvaluatableExpressionFilterDependencies: {
 
 export type RelationalEvaluatableExpressionFilterDependencies = RelationalEvaluatableExpressionFilterDependencies$instance;
 
-export interface RelationalGroupByResultExpression$instance extends Expression, IPrintableExpression$instance {
+export interface RelationalGroupByResultExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalGroupByResultExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
@@ -1824,10 +1833,8 @@ export interface RelationalGroupByResultExpression$instance extends Expression, 
     readonly KeyIdentifier: Expression;
     readonly KeyIdentifierValueComparers: IReadOnlyList_1<ValueComparer>;
     readonly KeyShaper: Expression;
-    readonly NodeType: ExpressionType;
-    readonly Type: Type;
     Update(keyIdentifier: Expression, keyShaper: Expression, elementShaper: Expression): RelationalGroupByResultExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -1843,14 +1850,16 @@ export interface __RelationalGroupByResultExpression$views {
 export type RelationalGroupByResultExpression = RelationalGroupByResultExpression$instance & __RelationalGroupByResultExpression$views;
 
 
-export interface RelationalGroupByShaperExpression$instance extends GroupByShaperExpression$instance, IPrintableExpression$instance {
+export interface RelationalGroupByShaperExpression$instance extends GroupByShaperExpression$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_GroupByShaperExpression: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalGroupByShaperExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly ElementSelector: Expression;
-    Print(expressionPrinter: ExpressionPrinter): void;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    Print: GroupByShaperExpression$instance["Print"] & ((expressionPrinter: ExpressionPrinter) => void);
+    VisitChildren: GroupByShaperExpression$instance["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -1887,14 +1896,14 @@ export const RelationalLiftableConstantExpressionDependencies: {
 export type RelationalLiftableConstantExpressionDependencies = RelationalLiftableConstantExpressionDependencies$instance;
 
 export interface RelationalLiftableConstantFactory$instance extends LiftableConstantFactory$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_LiftableConstantFactory: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalLiftableConstantFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ILiftableConstantFactory: never;
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalLiftableConstantFactory: never;
 
     readonly RelationalDependencies: RelationalLiftableConstantExpressionDependencies;
-    CreateLiftableConstant(originalValue: unknown | null, resolverExpression: Expression_1<Func_2<RelationalMaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): LiftableConstantExpression;
-    CreateLiftableConstant(originalValue: unknown | null, resolverExpression: Expression_1<Func_2<MaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type): Expression;
+    CreateLiftableConstant: LiftableConstantFactory$instance["CreateLiftableConstant"] & ((originalValue: unknown | null, resolverExpression: Expression_1<Func_2<MaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type) => Expression) & ((originalValue: unknown | null, resolverExpression: Expression_1<Func_2<RelationalMaterializerLiftableConstantContext, unknown>>, variableName: string, type: Type) => LiftableConstantExpression);
 }
 
 
@@ -1912,11 +1921,13 @@ export type RelationalLiftableConstantFactory = RelationalLiftableConstantFactor
 
 
 export interface RelationalLiftableConstantProcessor$instance extends LiftableConstantProcessor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_LiftableConstantProcessor: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalLiftableConstantProcessor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ILiftableConstantProcessor: never;
 
-    InlineConstant(liftableConstant: LiftableConstantExpression): ConstantExpression;
+    InlineConstant: LiftableConstantProcessor$instance["InlineConstant"] & ((liftableConstant: LiftableConstantExpression) => ConstantExpression);
 }
 
 
@@ -1932,24 +1943,20 @@ export interface __RelationalLiftableConstantProcessor$views {
 export type RelationalLiftableConstantProcessor = RelationalLiftableConstantProcessor$instance & __RelationalLiftableConstantProcessor$views;
 
 
-export interface RelationalMaterializerLiftableConstantContext$instance extends MaterializerLiftableConstantContext {
+export interface RelationalMaterializerLiftableConstantContext$instance extends MaterializerLiftableConstantContext$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_MaterializerLiftableConstantContext: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalMaterializerLiftableConstantContext: never;
 
     readonly __tsonic_iface_System_IEquatable_1: never;
 
     CommandBuilderDependencies: RelationalCommandBuilderDependencies;
-    readonly EqualityContract: Type;
     RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies;
-    _Clone_$(): RelationalMaterializerLiftableConstantContext;
-    _Clone_$(): MaterializerLiftableConstantContext;
-    Deconstruct(Dependencies: ShapedQueryCompilingExpressionVisitorDependencies, RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies, CommandBuilderDependencies: RelationalCommandBuilderDependencies): void;
-    Deconstruct(Dependencies: ShapedQueryCompilingExpressionVisitorDependencies): void;
-    Equals(obj: unknown | null): boolean;
-    Equals(other: MaterializerLiftableConstantContext | null): boolean;
-    Equals(other: RelationalMaterializerLiftableConstantContext | null): boolean;
-    GetHashCode(): int;
-    PrintMembers(builder: StringBuilder): boolean;
-    ToString(): string;
+    _Clone_$: MaterializerLiftableConstantContext$instance["_Clone_$"] & (() => MaterializerLiftableConstantContext) & (() => RelationalMaterializerLiftableConstantContext);
+    Deconstruct: MaterializerLiftableConstantContext$instance["Deconstruct"] & ((Dependencies: ShapedQueryCompilingExpressionVisitorDependencies) => void) & ((Dependencies: ShapedQueryCompilingExpressionVisitorDependencies, RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies, CommandBuilderDependencies: RelationalCommandBuilderDependencies) => void);
+    Equals: MaterializerLiftableConstantContext$instance["Equals"] & ((obj: unknown | null) => boolean) & ((other: MaterializerLiftableConstantContext | null) => boolean) & ((other: RelationalMaterializerLiftableConstantContext | null) => boolean);
+    GetHashCode: MaterializerLiftableConstantContext$instance["GetHashCode"] & (() => int);
+    PrintMembers: MaterializerLiftableConstantContext$instance["PrintMembers"] & ((builder: StringBuilder) => boolean);
+    ToString: MaterializerLiftableConstantContext$instance["ToString"] & (() => string);
 }
 
 
@@ -1960,7 +1967,7 @@ export const RelationalMaterializerLiftableConstantContext: {
 
 export type RelationalMaterializerLiftableConstantContext = RelationalMaterializerLiftableConstantContext$instance;
 
-export interface RelationalMemberTranslatorProvider$instance extends IMemberTranslatorProvider$instance {
+export interface RelationalMemberTranslatorProvider$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalMemberTranslatorProvider: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMemberTranslatorProvider: never;
@@ -2005,7 +2012,7 @@ export const RelationalMemberTranslatorProviderDependencies: {
 
 export type RelationalMemberTranslatorProviderDependencies = RelationalMemberTranslatorProviderDependencies$instance;
 
-export interface RelationalMethodCallTranslatorProvider$instance extends IMethodCallTranslatorProvider$instance {
+export interface RelationalMethodCallTranslatorProvider$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalMethodCallTranslatorProvider: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IMethodCallTranslatorProvider: never;
@@ -2117,14 +2124,16 @@ export const RelationalParameterBasedSqlProcessorParameters: {
 
 export type RelationalParameterBasedSqlProcessorParameters = RelationalParameterBasedSqlProcessorParameters$instance;
 
-export interface RelationalQueryableMethodTranslatingExpressionVisitor$instance extends QueryableMethodTranslatingExpressionVisitor {
+export interface RelationalQueryableMethodTranslatingExpressionVisitor$instance extends QueryableMethodTranslatingExpressionVisitor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryableMethodTranslatingExpressionVisitor: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalQueryableMethodTranslatingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly RelationalDependencies: RelationalQueryableMethodTranslatingExpressionVisitorDependencies;
     CreateSelect(entityType: IEntityType): SelectExpression;
     CreateSelect(jsonQueryExpression: JsonQueryExpression, tableExpressionBase: TableExpressionBase, identifierColumnName: string, identifierColumnType: Type, identifierColumnTypeMapping: RelationalTypeMapping): SelectExpression;
-    CreateShapedQueryExpression(entityType: IEntityType): ShapedQueryExpression;
-    CreateSubqueryVisitor(): QueryableMethodTranslatingExpressionVisitor;
+    CreateShapedQueryExpression: QueryableMethodTranslatingExpressionVisitor$instance["CreateShapedQueryExpression"] & ((entityType: IEntityType) => ShapedQueryExpression);
+    CreateSubqueryVisitor: QueryableMethodTranslatingExpressionVisitor$instance["CreateSubqueryVisitor"] & (() => QueryableMethodTranslatingExpressionVisitor);
     GenerateJsonPartialUpdateSetter(target: Expression, value: SqlExpression, existingSetterValue: SqlExpression | null): SqlExpression | null;
     IsNaturallyOrdered(selectExpression: SelectExpression): boolean;
     IsOrdered(selectExpression: SelectExpression): boolean;
@@ -2132,57 +2141,54 @@ export interface RelationalQueryableMethodTranslatingExpressionVisitor$instance 
     IsValidSelectExpressionForExecuteDelete(selectExpression: SelectExpression, shaper: StructuralTypeShaperExpression, tableExpression: TableExpression | null): boolean;
     IsValidSelectExpressionForExecuteUpdate(selectExpression: SelectExpression, targetTable: TableExpressionBase, tableExpression: TableExpression | null): boolean;
     TransformJsonQueryToTable(jsonQueryExpression: JsonQueryExpression): ShapedQueryExpression | null;
-    TranslateAll(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | null;
-    TranslateAny(source: ShapedQueryExpression, predicate: LambdaExpression | null): ShapedQueryExpression | null;
-    TranslateAverage(source: ShapedQueryExpression, selector: LambdaExpression | null, resultType: Type): ShapedQueryExpression | null;
-    TranslateCast(source: ShapedQueryExpression, resultType: Type): ShapedQueryExpression;
-    TranslateConcat(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
-    TranslateContains(source: ShapedQueryExpression, item: Expression): ShapedQueryExpression | null;
-    TranslateCount(source: ShapedQueryExpression, predicate: LambdaExpression | null): ShapedQueryExpression | null;
-    TranslateDefaultIfEmpty(source: ShapedQueryExpression, defaultValue: Expression | null): ShapedQueryExpression | null;
-    TranslateDistinct(source: ShapedQueryExpression): ShapedQueryExpression;
-    TranslateElementAtOrDefault(source: ShapedQueryExpression, index: Expression, returnDefault: boolean): ShapedQueryExpression | null;
-    TranslateExcept(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
-    TranslateExecuteDelete(source: ShapedQueryExpression): DeleteExpression | null;
-    TranslateExecuteDelete(source: ShapedQueryExpression): Expression | null;
-    TranslateExecuteUpdate(source: ShapedQueryExpression, setters: IReadOnlyList_1<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>): UpdateExpression | null;
-    TranslateExecuteUpdate(source: ShapedQueryExpression, setters: IReadOnlyList_1<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>): Expression | null;
+    TranslateAll: QueryableMethodTranslatingExpressionVisitor$instance["TranslateAll"] & ((source: ShapedQueryExpression, predicate: LambdaExpression) => ShapedQueryExpression | null);
+    TranslateAny: QueryableMethodTranslatingExpressionVisitor$instance["TranslateAny"] & ((source: ShapedQueryExpression, predicate: LambdaExpression | null) => ShapedQueryExpression | null);
+    TranslateAverage: QueryableMethodTranslatingExpressionVisitor$instance["TranslateAverage"] & ((source: ShapedQueryExpression, selector: LambdaExpression | null, resultType: Type) => ShapedQueryExpression | null);
+    TranslateCast: QueryableMethodTranslatingExpressionVisitor$instance["TranslateCast"] & ((source: ShapedQueryExpression, resultType: Type) => ShapedQueryExpression);
+    TranslateConcat: QueryableMethodTranslatingExpressionVisitor$instance["TranslateConcat"] & ((source1: ShapedQueryExpression, source2: ShapedQueryExpression) => ShapedQueryExpression);
+    TranslateContains: QueryableMethodTranslatingExpressionVisitor$instance["TranslateContains"] & ((source: ShapedQueryExpression, item: Expression) => ShapedQueryExpression | null);
+    TranslateCount: QueryableMethodTranslatingExpressionVisitor$instance["TranslateCount"] & ((source: ShapedQueryExpression, predicate: LambdaExpression | null) => ShapedQueryExpression | null);
+    TranslateDefaultIfEmpty: QueryableMethodTranslatingExpressionVisitor$instance["TranslateDefaultIfEmpty"] & ((source: ShapedQueryExpression, defaultValue: Expression | null) => ShapedQueryExpression | null);
+    TranslateDistinct: QueryableMethodTranslatingExpressionVisitor$instance["TranslateDistinct"] & ((source: ShapedQueryExpression) => ShapedQueryExpression);
+    TranslateElementAtOrDefault: QueryableMethodTranslatingExpressionVisitor$instance["TranslateElementAtOrDefault"] & ((source: ShapedQueryExpression, index: Expression, returnDefault: boolean) => ShapedQueryExpression | null);
+    TranslateExcept: QueryableMethodTranslatingExpressionVisitor$instance["TranslateExcept"] & ((source1: ShapedQueryExpression, source2: ShapedQueryExpression) => ShapedQueryExpression);
+    TranslateExecuteDelete: QueryableMethodTranslatingExpressionVisitor$instance["TranslateExecuteDelete"] & ((source: ShapedQueryExpression) => DeleteExpression | null) & ((source: ShapedQueryExpression) => Expression | null);
+    TranslateExecuteUpdate: QueryableMethodTranslatingExpressionVisitor$instance["TranslateExecuteUpdate"] & ((source: ShapedQueryExpression, setters: IReadOnlyList_1<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>) => Expression | null) & ((source: ShapedQueryExpression, setters: IReadOnlyList_1<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>) => UpdateExpression | null);
     TranslateExpression(expression: Expression, applyDefaultTypeMapping?: boolean): SqlExpression | null;
-    TranslateFirstOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression | null, returnType: Type, returnDefault: boolean): ShapedQueryExpression | null;
-    TranslateGroupBy(source: ShapedQueryExpression, keySelector: LambdaExpression, elementSelector: LambdaExpression | null, resultSelector: LambdaExpression | null): ShapedQueryExpression | null;
-    TranslateGroupJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | null;
-    TranslateInlineQueryRoot(inlineQueryRootExpression: InlineQueryRootExpression): ShapedQueryExpression | null;
-    TranslateIntersect(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
-    TranslateJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | null;
+    TranslateFirstOrDefault: QueryableMethodTranslatingExpressionVisitor$instance["TranslateFirstOrDefault"] & ((source: ShapedQueryExpression, predicate: LambdaExpression | null, returnType: Type, returnDefault: boolean) => ShapedQueryExpression | null);
+    TranslateGroupBy: QueryableMethodTranslatingExpressionVisitor$instance["TranslateGroupBy"] & ((source: ShapedQueryExpression, keySelector: LambdaExpression, elementSelector: LambdaExpression | null, resultSelector: LambdaExpression | null) => ShapedQueryExpression | null);
+    TranslateGroupJoin: QueryableMethodTranslatingExpressionVisitor$instance["TranslateGroupJoin"] & ((outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression) => ShapedQueryExpression | null);
+    TranslateInlineQueryRoot: QueryableMethodTranslatingExpressionVisitor$instance["TranslateInlineQueryRoot"] & ((inlineQueryRootExpression: InlineQueryRootExpression) => ShapedQueryExpression | null);
+    TranslateIntersect: QueryableMethodTranslatingExpressionVisitor$instance["TranslateIntersect"] & ((source1: ShapedQueryExpression, source2: ShapedQueryExpression) => ShapedQueryExpression);
+    TranslateJoin: QueryableMethodTranslatingExpressionVisitor$instance["TranslateJoin"] & ((outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression) => ShapedQueryExpression | null);
     TranslateLambdaExpression(shapedQueryExpression: ShapedQueryExpression, lambdaExpression: LambdaExpression): SqlExpression | null;
-    TranslateLastOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression | null, returnType: Type, returnDefault: boolean): ShapedQueryExpression | null;
-    TranslateLeftJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | null;
-    TranslateLongCount(source: ShapedQueryExpression, predicate: LambdaExpression | null): ShapedQueryExpression | null;
-    TranslateMax(source: ShapedQueryExpression, selector: LambdaExpression | null, resultType: Type): ShapedQueryExpression | null;
-    TranslateMemberAccess(source: Expression, member: MemberIdentity): ShapedQueryExpression | null;
-    TranslateMin(source: ShapedQueryExpression, selector: LambdaExpression | null, resultType: Type): ShapedQueryExpression | null;
-    TranslateOfType(source: ShapedQueryExpression, resultType: Type): ShapedQueryExpression | null;
-    TranslateOrderBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | null;
-    TranslateParameterQueryRoot(parameterQueryRootExpression: ParameterQueryRootExpression): ShapedQueryExpression | null;
+    TranslateLastOrDefault: QueryableMethodTranslatingExpressionVisitor$instance["TranslateLastOrDefault"] & ((source: ShapedQueryExpression, predicate: LambdaExpression | null, returnType: Type, returnDefault: boolean) => ShapedQueryExpression | null);
+    TranslateLeftJoin: QueryableMethodTranslatingExpressionVisitor$instance["TranslateLeftJoin"] & ((outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression) => ShapedQueryExpression | null);
+    TranslateLongCount: QueryableMethodTranslatingExpressionVisitor$instance["TranslateLongCount"] & ((source: ShapedQueryExpression, predicate: LambdaExpression | null) => ShapedQueryExpression | null);
+    TranslateMax: QueryableMethodTranslatingExpressionVisitor$instance["TranslateMax"] & ((source: ShapedQueryExpression, selector: LambdaExpression | null, resultType: Type) => ShapedQueryExpression | null);
+    TranslateMemberAccess: QueryableMethodTranslatingExpressionVisitor$instance["TranslateMemberAccess"] & ((source: Expression, member: MemberIdentity) => ShapedQueryExpression | null);
+    TranslateMin: QueryableMethodTranslatingExpressionVisitor$instance["TranslateMin"] & ((source: ShapedQueryExpression, selector: LambdaExpression | null, resultType: Type) => ShapedQueryExpression | null);
+    TranslateOfType: QueryableMethodTranslatingExpressionVisitor$instance["TranslateOfType"] & ((source: ShapedQueryExpression, resultType: Type) => ShapedQueryExpression | null);
+    TranslateOrderBy: QueryableMethodTranslatingExpressionVisitor$instance["TranslateOrderBy"] & ((source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean) => ShapedQueryExpression | null);
+    TranslateParameterQueryRoot: QueryableMethodTranslatingExpressionVisitor$instance["TranslateParameterQueryRoot"] & ((parameterQueryRootExpression: ParameterQueryRootExpression) => ShapedQueryExpression | null);
     TranslatePrimitiveCollection(sqlExpression: SqlExpression, property: IProperty | null, tableAlias: string): ShapedQueryExpression | null;
-    TranslateReverse(source: ShapedQueryExpression): ShapedQueryExpression | null;
-    TranslateRightJoin(outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | null;
-    TranslateSelect(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression;
-    TranslateSelectMany(source: ShapedQueryExpression, collectionSelector: LambdaExpression, resultSelector: LambdaExpression): ShapedQueryExpression | null;
-    TranslateSelectMany(source: ShapedQueryExpression, selector: LambdaExpression): ShapedQueryExpression | null;
-    TranslateSingleOrDefault(source: ShapedQueryExpression, predicate: LambdaExpression | null, returnType: Type, returnDefault: boolean): ShapedQueryExpression | null;
-    TranslateSkip(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | null;
-    TranslateSkipWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | null;
-    TranslateSum(source: ShapedQueryExpression, selector: LambdaExpression | null, resultType: Type): ShapedQueryExpression | null;
-    TranslateTake(source: ShapedQueryExpression, count: Expression): ShapedQueryExpression | null;
-    TranslateTakeWhile(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | null;
-    TranslateThenBy(source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean): ShapedQueryExpression | null;
-    TranslateUnion(source1: ShapedQueryExpression, source2: ShapedQueryExpression): ShapedQueryExpression;
-    TranslateWhere(source: ShapedQueryExpression, predicate: LambdaExpression): ShapedQueryExpression | null;
+    TranslateReverse: QueryableMethodTranslatingExpressionVisitor$instance["TranslateReverse"] & ((source: ShapedQueryExpression) => ShapedQueryExpression | null);
+    TranslateRightJoin: QueryableMethodTranslatingExpressionVisitor$instance["TranslateRightJoin"] & ((outer: ShapedQueryExpression, inner: ShapedQueryExpression, outerKeySelector: LambdaExpression, innerKeySelector: LambdaExpression, resultSelector: LambdaExpression) => ShapedQueryExpression | null);
+    TranslateSelect: QueryableMethodTranslatingExpressionVisitor$instance["TranslateSelect"] & ((source: ShapedQueryExpression, selector: LambdaExpression) => ShapedQueryExpression);
+    TranslateSelectMany: QueryableMethodTranslatingExpressionVisitor$instance["TranslateSelectMany"] & ((source: ShapedQueryExpression, collectionSelector: LambdaExpression, resultSelector: LambdaExpression) => ShapedQueryExpression | null) & ((source: ShapedQueryExpression, selector: LambdaExpression) => ShapedQueryExpression | null);
+    TranslateSingleOrDefault: QueryableMethodTranslatingExpressionVisitor$instance["TranslateSingleOrDefault"] & ((source: ShapedQueryExpression, predicate: LambdaExpression | null, returnType: Type, returnDefault: boolean) => ShapedQueryExpression | null);
+    TranslateSkip: QueryableMethodTranslatingExpressionVisitor$instance["TranslateSkip"] & ((source: ShapedQueryExpression, count: Expression) => ShapedQueryExpression | null);
+    TranslateSkipWhile: QueryableMethodTranslatingExpressionVisitor$instance["TranslateSkipWhile"] & ((source: ShapedQueryExpression, predicate: LambdaExpression) => ShapedQueryExpression | null);
+    TranslateSum: QueryableMethodTranslatingExpressionVisitor$instance["TranslateSum"] & ((source: ShapedQueryExpression, selector: LambdaExpression | null, resultType: Type) => ShapedQueryExpression | null);
+    TranslateTake: QueryableMethodTranslatingExpressionVisitor$instance["TranslateTake"] & ((source: ShapedQueryExpression, count: Expression) => ShapedQueryExpression | null);
+    TranslateTakeWhile: QueryableMethodTranslatingExpressionVisitor$instance["TranslateTakeWhile"] & ((source: ShapedQueryExpression, predicate: LambdaExpression) => ShapedQueryExpression | null);
+    TranslateThenBy: QueryableMethodTranslatingExpressionVisitor$instance["TranslateThenBy"] & ((source: ShapedQueryExpression, keySelector: LambdaExpression, ascending: boolean) => ShapedQueryExpression | null);
+    TranslateUnion: QueryableMethodTranslatingExpressionVisitor$instance["TranslateUnion"] & ((source1: ShapedQueryExpression, source2: ShapedQueryExpression) => ShapedQueryExpression);
+    TranslateWhere: QueryableMethodTranslatingExpressionVisitor$instance["TranslateWhere"] & ((source: ShapedQueryExpression, predicate: LambdaExpression) => ShapedQueryExpression | null);
     TrySerializeScalarToJson(target: JsonScalarExpression, value: SqlExpression, jsonValue: SqlExpression | null): boolean;
     TryTranslateSetters(source: ShapedQueryExpression, setters: IReadOnlyList_1<QueryableMethodTranslatingExpressionVisitor_ExecuteUpdateSetter>, columnSetters: IReadOnlyList_1<ColumnValueSetter> | null, targetTable: TableExpressionBase | null): boolean;
-    VisitExtension(extensionExpression: Expression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitExtension: QueryableMethodTranslatingExpressionVisitor$instance["VisitExtension"] & ((extensionExpression: Expression) => Expression);
+    VisitMethodCall: QueryableMethodTranslatingExpressionVisitor$instance["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
@@ -2232,11 +2238,11 @@ export const RelationalQueryableMethodTranslatingExpressionVisitorDependencies: 
 
 export type RelationalQueryableMethodTranslatingExpressionVisitorDependencies = RelationalQueryableMethodTranslatingExpressionVisitorDependencies$instance;
 
-export interface RelationalQueryCompilationContext$instance extends QueryCompilationContext {
+export interface RelationalQueryCompilationContext$instance extends QueryCompilationContext$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryCompilationContext: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalQueryCompilationContext: never;
 
-    get QuerySplittingBehavior(): Nullable_1<QuerySplittingBehavior>;
-    set QuerySplittingBehavior(value: Nullable_1<QuerySplittingBehavior> | QuerySplittingBehavior);
+    readonly QuerySplittingBehavior: Nullable_1<QuerySplittingBehavior>;
     readonly RelationalDependencies: RelationalQueryCompilationContextDependencies;
     readonly SqlAliasManager: SqlAliasManager;
 }
@@ -2271,7 +2277,8 @@ export const RelationalQueryCompilationContextDependencies: {
 
 export type RelationalQueryCompilationContextDependencies = RelationalQueryCompilationContextDependencies$instance;
 
-export interface RelationalQueryContext$instance extends QueryContext {
+export interface RelationalQueryContext$instance extends QueryContext$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryContext: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalQueryContext: never;
 
     readonly CommandLogger: IDiagnosticsLogger_1<DbLoggerCategory_Database_Command> | IRelationalCommandDiagnosticsLogger;
@@ -2310,13 +2317,15 @@ export const RelationalQueryContextDependencies: {
 
 export type RelationalQueryContextDependencies = RelationalQueryContextDependencies$instance;
 
-export interface RelationalQueryRootProcessor$instance extends QueryRootProcessor {
+export interface RelationalQueryRootProcessor$instance extends QueryRootProcessor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryRootProcessor: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalQueryRootProcessor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    ShouldConvertToInlineQueryRoot(expression: Expression): boolean;
-    ShouldConvertToParameterQueryRoot(queryParameterExpression: QueryParameterExpression): boolean;
-    VisitExtension(node: Expression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    ShouldConvertToInlineQueryRoot: QueryRootProcessor$instance["ShouldConvertToInlineQueryRoot"] & ((expression: Expression) => boolean);
+    ShouldConvertToParameterQueryRoot: QueryRootProcessor$instance["ShouldConvertToParameterQueryRoot"] & ((queryParameterExpression: QueryParameterExpression) => boolean);
+    VisitExtension: QueryRootProcessor$instance["VisitExtension"] & ((node: Expression) => Expression);
+    VisitMethodCall: QueryRootProcessor$instance["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
@@ -2327,12 +2336,13 @@ export const RelationalQueryRootProcessor: {
 
 export type RelationalQueryRootProcessor = RelationalQueryRootProcessor$instance;
 
-export interface RelationalQueryTranslationPostprocessor$instance extends QueryTranslationPostprocessor {
+export interface RelationalQueryTranslationPostprocessor$instance extends QueryTranslationPostprocessor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryTranslationPostprocessor: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalQueryTranslationPostprocessor: never;
 
     readonly RelationalDependencies: RelationalQueryTranslationPostprocessorDependencies;
     readonly RelationalQueryCompilationContext: RelationalQueryCompilationContext;
-    Process(query: Expression): Expression;
+    Process: QueryTranslationPostprocessor$instance["Process"] & ((query: Expression) => Expression);
     ProcessTypeMappings(expression: Expression): Expression;
     Prune(query: Expression): Expression;
 }
@@ -2367,13 +2377,13 @@ export const RelationalQueryTranslationPostprocessorDependencies: {
 
 export type RelationalQueryTranslationPostprocessorDependencies = RelationalQueryTranslationPostprocessorDependencies$instance;
 
-export interface RelationalQueryTranslationPreprocessor$instance extends QueryTranslationPreprocessor {
+export interface RelationalQueryTranslationPreprocessor$instance extends QueryTranslationPreprocessor$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_QueryTranslationPreprocessor: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalQueryTranslationPreprocessor: never;
 
-    readonly IsEfConstantSupported: boolean;
     readonly RelationalDependencies: RelationalQueryTranslationPreprocessorDependencies;
-    NormalizeQueryableMethod(expression: Expression): Expression;
-    ProcessQueryRoots(expression: Expression): Expression;
+    NormalizeQueryableMethod: QueryTranslationPreprocessor$instance["NormalizeQueryableMethod"] & ((expression: Expression) => Expression);
+    ProcessQueryRoots: QueryTranslationPreprocessor$instance["ProcessQueryRoots"] & ((expression: Expression) => Expression);
 }
 
 
@@ -2405,14 +2415,16 @@ export const RelationalQueryTranslationPreprocessorDependencies: {
 
 export type RelationalQueryTranslationPreprocessorDependencies = RelationalQueryTranslationPreprocessorDependencies$instance;
 
-export interface RelationalShapedQueryCompilingExpressionVisitor$instance extends ShapedQueryCompilingExpressionVisitor {
+export interface RelationalShapedQueryCompilingExpressionVisitor$instance extends ShapedQueryCompilingExpressionVisitor$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalShapedQueryCompilingExpressionVisitor: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_ShapedQueryCompilingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly MaxNullableParametersForPregeneratedSql: int;
     readonly RelationalDependencies: RelationalShapedQueryCompilingExpressionVisitorDependencies;
-    AddStructuralTypeInitialization(shaper: StructuralTypeShaperExpression, instanceVariable: ParameterExpression, variables: List_1<ParameterExpression>, expressions: List_1<Expression>): void;
-    VisitExtension(extensionExpression: Expression): Expression;
-    VisitShapedQuery(shapedQueryExpression: ShapedQueryExpression): Expression;
+    AddStructuralTypeInitialization: ShapedQueryCompilingExpressionVisitor$instance["AddStructuralTypeInitialization"] & ((shaper: StructuralTypeShaperExpression, instanceVariable: ParameterExpression, variables: List_1<ParameterExpression>, expressions: List_1<Expression>) => void);
+    VisitExtension: ShapedQueryCompilingExpressionVisitor$instance["VisitExtension"] & ((extensionExpression: Expression) => Expression);
+    VisitShapedQuery: ShapedQueryCompilingExpressionVisitor$instance["VisitShapedQuery"] & ((shapedQueryExpression: ShapedQueryExpression) => Expression);
 }
 
 
@@ -2425,14 +2437,15 @@ export const RelationalShapedQueryCompilingExpressionVisitor: {
 
 export type RelationalShapedQueryCompilingExpressionVisitor = RelationalShapedQueryCompilingExpressionVisitor$instance;
 
-export interface RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor$instance extends ExpressionVisitor {
+export interface RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     ProcessRelationalGroupingResult(relationalGroupByResultExpression: RelationalGroupByResultExpression, relationalCommandResolver: Expression, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, keySelector: LambdaExpression, keyIdentifier: LambdaExpression, relatedDataLoaders: LambdaExpression | null, collectionId: int): LambdaExpression;
     ProcessShaper(shaperExpression: Expression, relationalCommandResolver: Expression, readerColumns: IReadOnlyList_1<ReaderColumn | null> | null, relatedDataLoaders: LambdaExpression | null, collectionId: int): LambdaExpression;
-    VisitBinary(binaryExpression: BinaryExpression): Expression;
-    VisitExtension(extensionExpression: Expression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    VisitBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBinary"] & ((binaryExpression: BinaryExpression) => Expression);
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
@@ -2449,7 +2462,7 @@ export const RelationalShapedQueryCompilingExpressionVisitor_ShaperProcessingExp
     InitializeSplitIncludeCollection<TParent extends (object | null), TNavigationEntity extends (object | null)>(collectionId: int, queryContext: QueryContext, parentDataReader: DbDataReader, resultCoordinator: SplitQueryResultCoordinator, entity: TParent, parentIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, navigation: INavigationBase, clrCollectionAccessor: IClrCollectionAccessor | null, trackingQuery: boolean, setLoaded: boolean): void;
     InverseCollectionFixup<TCollectionElement extends unknown, TEntity extends unknown>(collection: ICollection_1<TCollectionElement>, entity: TEntity, elementFixup: Action_2<TCollectionElement, TEntity>): void;
     MaterializeJsonEntityCollection<TEntity extends (object | null), TResult extends unknown>(queryContext: QueryContext, keyPropertyValues: unknown[] | null, jsonReaderData: JsonReaderData | null, structuralProperty: IPropertyBase, innerShaper: Func_4<QueryContext, unknown[] | null, JsonReaderData, TEntity>): TResult | null;
-    MaterializeJsonNullableValueStructuralType<TStructural extends NonNullable<unknown>>(queryContext: QueryContext, keyPropertyValues: unknown[] | null, jsonReaderData: JsonReaderData | null, nullable: boolean, shaper: Func_4<QueryContext, unknown[], JsonReaderData, TStructural>): Nullable_1<TStructural>;
+    MaterializeJsonNullableValueStructuralType<TStructural extends { readonly __tsonic_type_System_ValueType: never }>(queryContext: QueryContext, keyPropertyValues: unknown[] | null, jsonReaderData: JsonReaderData | null, nullable: boolean, shaper: Func_4<QueryContext, unknown[], JsonReaderData, TStructural>): Nullable_1<TStructural>;
     MaterializeJsonStructuralType<TStructural extends unknown>(queryContext: QueryContext, keyPropertyValues: unknown[] | null, jsonReaderData: JsonReaderData | null, nullable: boolean, shaper: Func_4<QueryContext, unknown[] | null, JsonReaderData, TStructural>): TStructural | null;
     PopulateCollection<TCollection extends (object | null), TElement extends unknown, TRelatedEntity extends unknown>(collectionId: int, queryContext: QueryContext, dbDataReader: DbDataReader, resultCoordinator: SingleQueryResultCoordinator, parentIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, outerIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, selfIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, parentIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, outerIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, selfIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, innerShaper: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TRelatedEntity>): void;
     PopulateIncludeCollection<TIncludingEntity extends (object | null), TIncludedEntity extends (object | null)>(collectionId: int, queryContext: QueryContext, dbDataReader: DbDataReader, resultCoordinator: SingleQueryResultCoordinator, parentIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, outerIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, selfIdentifier: Func_3<QueryContext, DbDataReader, unknown[]>, parentIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, outerIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, selfIdentifierValueComparers: IReadOnlyList_1<Func_3<unknown, unknown, System_Internal.Boolean>>, innerShaper: Func_5<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TIncludedEntity>, inverseNavigation: INavigationBase | null, fixup: Action_2<TIncludingEntity, TIncludedEntity>, trackingQuery: boolean): void;
@@ -2487,8 +2500,9 @@ export const RelationalShapedQueryCompilingExpressionVisitorDependencies: {
 
 export type RelationalShapedQueryCompilingExpressionVisitorDependencies = RelationalShapedQueryCompilingExpressionVisitorDependencies$instance;
 
-export interface RelationalSplitCollectionShaperExpression$instance extends Expression, IPrintableExpression$instance {
+export interface RelationalSplitCollectionShaperExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalSplitCollectionShaperExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
@@ -2497,12 +2511,10 @@ export interface RelationalSplitCollectionShaperExpression$instance extends Expr
     readonly IdentifierValueComparers: IReadOnlyList_1<ValueComparer>;
     readonly InnerShaper: Expression;
     readonly Navigation: INavigationBase | null;
-    readonly NodeType: ExpressionType;
     readonly ParentIdentifier: Expression;
     readonly SelectExpression: SelectExpression;
-    readonly Type: Type;
     Update(parentIdentifier: Expression, childIdentifier: Expression, selectExpression: SelectExpression, innerShaper: Expression): RelationalSplitCollectionShaperExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -2518,12 +2530,12 @@ export interface __RelationalSplitCollectionShaperExpression$views {
 export type RelationalSplitCollectionShaperExpression = RelationalSplitCollectionShaperExpression$instance & __RelationalSplitCollectionShaperExpression$views;
 
 
-export interface RelationalSqlTranslatingExpressionVisitor$instance extends ExpressionVisitor {
+export interface RelationalSqlTranslatingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalSqlTranslatingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly Dependencies: RelationalSqlTranslatingExpressionVisitorDependencies;
-    get TranslationErrorDetails(): string | null;
-    set TranslationErrorDetails(value: string | null);
+    readonly TranslationErrorDetails: string | null;
     AddTranslationErrorDetails(details: string): void;
     GenerateGreatest(expressions: IReadOnlyList_1<SqlExpression>, resultType: Type): SqlExpression | null;
     GenerateLeast(expressions: IReadOnlyList_1<SqlExpression>, resultType: Type): SqlExpression | null;
@@ -2531,21 +2543,21 @@ export interface RelationalSqlTranslatingExpressionVisitor$instance extends Expr
     TranslateProjection(expression: Expression, applyDefaultTypeMapping?: boolean): Expression | null;
     TryBindMember(source: Expression | null, member: MemberIdentity, expression: Expression | null, property: IPropertyBase | null): boolean;
     TryTranslateAggregateMethodCall(methodCallExpression: MethodCallExpression, translation: SqlExpression | null): boolean;
-    VisitBinary(binaryExpression: BinaryExpression): Expression;
-    VisitConditional(conditionalExpression: ConditionalExpression): Expression;
-    VisitConstant(constantExpression: ConstantExpression): Expression;
-    VisitExtension(extensionExpression: Expression): Expression;
-    VisitInvocation(invocationExpression: InvocationExpression): Expression;
-    VisitLambda<T extends unknown>(lambdaExpression: Expression_1<T>): Expression;
-    VisitListInit(listInitExpression: ListInitExpression): Expression;
-    VisitMember(memberExpression: MemberExpression): Expression;
-    VisitMemberInit(memberInitExpression: MemberInitExpression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
-    VisitNew(newExpression: NewExpression): Expression;
-    VisitNewArray(newArrayExpression: NewArrayExpression): Expression;
-    VisitParameter(parameterExpression: ParameterExpression): Expression;
-    VisitTypeBinary(typeBinaryExpression: TypeBinaryExpression): Expression;
-    VisitUnary(unaryExpression: UnaryExpression): Expression;
+    VisitBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitBinary"] & ((binaryExpression: BinaryExpression) => Expression);
+    VisitConditional: System_Linq_Expressions_Internal.ExpressionVisitor["VisitConditional"] & ((conditionalExpression: ConditionalExpression) => Expression);
+    VisitConstant: System_Linq_Expressions_Internal.ExpressionVisitor["VisitConstant"] & ((constantExpression: ConstantExpression) => Expression);
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
+    VisitInvocation: System_Linq_Expressions_Internal.ExpressionVisitor["VisitInvocation"] & ((invocationExpression: InvocationExpression) => Expression);
+    VisitLambda: System_Linq_Expressions_Internal.ExpressionVisitor["VisitLambda"] & (<T extends unknown>(lambdaExpression: Expression_1<T>) => Expression);
+    VisitListInit: System_Linq_Expressions_Internal.ExpressionVisitor["VisitListInit"] & ((listInitExpression: ListInitExpression) => Expression);
+    VisitMember: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMember"] & ((memberExpression: MemberExpression) => Expression);
+    VisitMemberInit: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMemberInit"] & ((memberInitExpression: MemberInitExpression) => Expression);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
+    VisitNew: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNew"] & ((newExpression: NewExpression) => Expression);
+    VisitNewArray: System_Linq_Expressions_Internal.ExpressionVisitor["VisitNewArray"] & ((newArrayExpression: NewArrayExpression) => Expression);
+    VisitParameter: System_Linq_Expressions_Internal.ExpressionVisitor["VisitParameter"] & ((parameterExpression: ParameterExpression) => Expression);
+    VisitTypeBinary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitTypeBinary"] & ((typeBinaryExpression: TypeBinaryExpression) => Expression);
+    VisitUnary: System_Linq_Expressions_Internal.ExpressionVisitor["VisitUnary"] & ((unaryExpression: UnaryExpression) => Expression);
 }
 
 
@@ -2584,7 +2596,7 @@ export const RelationalSqlTranslatingExpressionVisitorDependencies: {
 
 export type RelationalSqlTranslatingExpressionVisitorDependencies = RelationalSqlTranslatingExpressionVisitorDependencies$instance;
 
-export interface RelationalSqlTranslatingExpressionVisitorFactory$instance extends IRelationalSqlTranslatingExpressionVisitorFactory$instance {
+export interface RelationalSqlTranslatingExpressionVisitorFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalSqlTranslatingExpressionVisitorFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalSqlTranslatingExpressionVisitorFactory: never;
@@ -2606,19 +2618,19 @@ export interface __RelationalSqlTranslatingExpressionVisitorFactory$views {
 export type RelationalSqlTranslatingExpressionVisitorFactory = RelationalSqlTranslatingExpressionVisitorFactory$instance & __RelationalSqlTranslatingExpressionVisitorFactory$views;
 
 
-export interface RelationalStructuralTypeShaperExpression$instance extends StructuralTypeShaperExpression$instance, IPrintableExpression$instance {
+export interface RelationalStructuralTypeShaperExpression$instance extends StructuralTypeShaperExpression$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalStructuralTypeShaperExpression: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_StructuralTypeShaperExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
-    GenerateMaterializationCondition(type: ITypeBase, nullable: boolean): LambdaExpression;
-    MakeClrTypeNonNullable(): RelationalStructuralTypeShaperExpression;
-    MakeClrTypeNonNullable(): StructuralTypeShaperExpression;
-    MakeClrTypeNullable(): RelationalStructuralTypeShaperExpression;
-    MakeClrTypeNullable(): StructuralTypeShaperExpression;
-    MakeNullable(nullable?: boolean): StructuralTypeShaperExpression;
-    Update(valueBufferExpression: Expression): StructuralTypeShaperExpression;
-    WithType(type: ITypeBase): StructuralTypeShaperExpression;
+    GenerateMaterializationCondition: StructuralTypeShaperExpression$instance["GenerateMaterializationCondition"] & ((type: ITypeBase, nullable: boolean) => LambdaExpression);
+    MakeClrTypeNonNullable: StructuralTypeShaperExpression$instance["MakeClrTypeNonNullable"] & (() => RelationalStructuralTypeShaperExpression) & (() => StructuralTypeShaperExpression);
+    MakeClrTypeNullable: StructuralTypeShaperExpression$instance["MakeClrTypeNullable"] & (() => RelationalStructuralTypeShaperExpression) & (() => StructuralTypeShaperExpression);
+    MakeNullable: StructuralTypeShaperExpression$instance["MakeNullable"] & ((nullable?: boolean) => StructuralTypeShaperExpression);
+    Update: StructuralTypeShaperExpression$instance["Update"] & ((valueBufferExpression: Expression) => StructuralTypeShaperExpression);
+    WithType: StructuralTypeShaperExpression$instance["WithType"] & ((type: ITypeBase) => StructuralTypeShaperExpression);
 }
 
 
@@ -2634,8 +2646,9 @@ export interface __RelationalStructuralTypeShaperExpression$views {
 export type RelationalStructuralTypeShaperExpression = RelationalStructuralTypeShaperExpression$instance & __RelationalStructuralTypeShaperExpression$views;
 
 
-export interface RelationalTypeMappingPostprocessor$instance extends ExpressionVisitor {
+export interface RelationalTypeMappingPostprocessor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_RelationalTypeMappingPostprocessor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly Dependencies: QueryTranslationPostprocessorDependencies;
     readonly QueryCompilationContext: RelationalQueryCompilationContext;
@@ -2643,7 +2656,7 @@ export interface RelationalTypeMappingPostprocessor$instance extends ExpressionV
     ApplyTypeMappingsOnValuesExpression(valuesExpression: ValuesExpression): ValuesExpression;
     Process(expression: Expression): Expression;
     TryGetInferredTypeMapping(tableAlias: string, columnName: string, inferredTypeMapping: RelationalTypeMapping | null): boolean;
-    VisitExtension(expression: Expression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((expression: Expression) => Expression);
 }
 
 
@@ -2654,12 +2667,13 @@ export const RelationalTypeMappingPostprocessor: {
 
 export type RelationalTypeMappingPostprocessor = RelationalTypeMappingPostprocessor$instance;
 
-export interface ReplacingExpressionVisitor$instance extends ExpressionVisitor {
+export interface ReplacingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_ReplacingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
-    Visit(expression: Expression | null): Expression | null;
-    VisitMember(memberExpression: MemberExpression): Expression;
-    VisitMethodCall(methodCallExpression: MethodCallExpression): Expression;
+    Visit: System_Linq_Expressions_Internal.ExpressionVisitor["Visit"] & ((expression: Expression | null) => Expression | null);
+    VisitMember: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMember"] & ((memberExpression: MemberExpression) => Expression);
+    VisitMethodCall: System_Linq_Expressions_Internal.ExpressionVisitor["VisitMethodCall"] & ((methodCallExpression: MethodCallExpression) => Expression);
 }
 
 
@@ -2672,8 +2686,9 @@ export const ReplacingExpressionVisitor: {
 
 export type ReplacingExpressionVisitor = ReplacingExpressionVisitor$instance;
 
-export interface ShapedQueryCompilingExpressionVisitor$instance extends ExpressionVisitor {
+export interface ShapedQueryCompilingExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_ShapedQueryCompilingExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly Dependencies: ShapedQueryCompilingExpressionVisitorDependencies;
     readonly QueryCompilationContext: QueryCompilationContext;
@@ -2681,12 +2696,12 @@ export interface ShapedQueryCompilingExpressionVisitor$instance extends Expressi
     InjectEntityMaterializers(expression: Expression): Expression;
     InjectStructuralTypeMaterializers(expression: Expression): Expression;
     VerifyNoClientConstant(expression: Expression): void;
-    VisitExtension(extensionExpression: Expression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
     VisitShapedQuery(shapedQueryExpression: ShapedQueryExpression): Expression;
 }
 
 
-export const ShapedQueryCompilingExpressionVisitor: (abstract new(dependencies: ShapedQueryCompilingExpressionVisitorDependencies, queryCompilationContext: QueryCompilationContext) => ShapedQueryCompilingExpressionVisitor) & {
+export const ShapedQueryCompilingExpressionVisitor: {
     CreateNullKeyValueInNoTrackingQuery(entityType: IEntityType, properties: IReadOnlyList_1<IProperty>, keyValues: (unknown | null)[]): Exception;
     SingleAsync<TSource extends unknown>(asyncEnumerable: IAsyncEnumerable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource>;
     SingleOrDefaultAsync<TSource extends unknown>(asyncEnumerable: IAsyncEnumerable_1<TSource>, cancellationToken?: CancellationToken): Task_1<TSource | null>;
@@ -2724,21 +2739,20 @@ export const ShapedQueryCompilingExpressionVisitorDependencies: {
 
 export type ShapedQueryCompilingExpressionVisitorDependencies = ShapedQueryCompilingExpressionVisitorDependencies$instance;
 
-export interface ShapedQueryExpression$instance extends Expression, IPrintableExpression$instance {
+export interface ShapedQueryExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_ShapedQueryExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
-    readonly NodeType: ExpressionType;
     readonly QueryExpression: Expression;
     readonly ResultCardinality: ResultCardinality;
     readonly ShaperExpression: Expression;
-    readonly Type: Type;
     Update(queryExpression: Expression, shaperExpression: Expression): ShapedQueryExpression;
     UpdateQueryExpression(queryExpression: Expression): ShapedQueryExpression;
     UpdateResultCardinality(resultCardinality: ResultCardinality): ShapedQueryExpression;
     UpdateShaperExpression(shaperExpression: Expression): ShapedQueryExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -2757,8 +2771,8 @@ export type ShapedQueryExpression = ShapedQueryExpression$instance & __ShapedQue
 export interface SqlAliasManager$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlAliasManager: never;
 
-    GenerateTableAlias(name: string): string;
     GenerateTableAlias(modelTable: ITableBase): string;
+    GenerateTableAlias(name: string): string;
     PostprocessAliases(expression: Expression): Expression;
     RemapTableAliases(usedAliases: IReadOnlySet_1<System_Internal.String>): Dictionary_2<System_Internal.String, System_Internal.String> | null;
 }
@@ -2771,7 +2785,7 @@ export const SqlAliasManager: {
 
 export type SqlAliasManager = SqlAliasManager$instance;
 
-export interface SqlAliasManagerFactory$instance extends ISqlAliasManagerFactory$instance {
+export interface SqlAliasManagerFactory$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlAliasManagerFactory: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_ISqlAliasManagerFactory: never;
@@ -2806,18 +2820,18 @@ export interface SqlExpressionFactory$instance {
     Case(operand: SqlExpression | null, whenClauses: IReadOnlyList_1<CaseWhenClause>, elseResult: SqlExpression | null, existingExpression?: SqlExpression | null): SqlExpression;
     Case(whenClauses: IReadOnlyList_1<CaseWhenClause>, elseResult: SqlExpression | null): SqlExpression;
     Coalesce(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping | null): SqlExpression;
-    Constant(value: unknown, typeMapping?: RelationalTypeMapping | null): SqlExpression;
+    Constant(value: unknown | null, type: Type, sensitive: boolean, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Constant(value: unknown | null, type: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Constant(value: unknown, sensitive: boolean, typeMapping?: RelationalTypeMapping | null): SqlExpression;
-    Constant(value: unknown | null, type: Type, sensitive: boolean, typeMapping?: RelationalTypeMapping | null): SqlExpression;
+    Constant(value: unknown, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Convert(operand: SqlExpression, type: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Divide(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Equal(left: SqlExpression, right: SqlExpression): SqlExpression;
     Exists(subquery: SelectExpression): SqlExpression;
     Fragment(sql: string, type?: Type | null, typeMapping?: RelationalTypeMapping | null): SqlExpression;
+    Function(instance: SqlExpression, name: string, arguments: IEnumerable_1<SqlExpression>, nullable: boolean, instancePropagatesNullability: boolean, argumentsPropagateNullability: IEnumerable_1<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Function(name: string, arguments: IEnumerable_1<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable_1<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Function(schema: string | null, name: string, arguments: IEnumerable_1<SqlExpression>, nullable: boolean, argumentsPropagateNullability: IEnumerable_1<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
-    Function(instance: SqlExpression, name: string, arguments: IEnumerable_1<SqlExpression>, nullable: boolean, instancePropagatesNullability: boolean, argumentsPropagateNullability: IEnumerable_1<System_Internal.Boolean>, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     GreaterThan(left: SqlExpression, right: SqlExpression): SqlExpression;
     GreaterThanOrEqual(left: SqlExpression, right: SqlExpression): SqlExpression;
     In(item: SqlExpression, subquery: SelectExpression): SqlExpression;
@@ -2833,9 +2847,9 @@ export interface SqlExpressionFactory$instance {
     Modulo(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Multiply(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Negate(operand: SqlExpression): SqlExpression;
+    NiladicFunction(instance: SqlExpression, name: string, nullable: boolean, instancePropagatesNullability: boolean, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     NiladicFunction(name: string, nullable: boolean, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     NiladicFunction(schema: string, name: string, nullable: boolean, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
-    NiladicFunction(instance: SqlExpression, name: string, nullable: boolean, instancePropagatesNullability: boolean, returnType: Type, typeMapping?: RelationalTypeMapping | null): SqlExpression;
     Not(operand: SqlExpression): SqlExpression;
     NotEqual(left: SqlExpression, right: SqlExpression): SqlExpression;
     Or(left: SqlExpression, right: SqlExpression, typeMapping?: RelationalTypeMapping | null): SqlExpression;
@@ -2878,8 +2892,9 @@ export const SqlExpressionFactoryDependencies: {
 
 export type SqlExpressionFactoryDependencies = SqlExpressionFactoryDependencies$instance;
 
-export interface SqlExpressionVisitor$instance extends ExpressionVisitor {
+export interface SqlExpressionVisitor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlExpressionVisitor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     VisitAtTimeZone(atTimeZoneExpression: AtTimeZoneExpression): Expression;
     VisitCase(caseExpression: CaseExpression): Expression;
@@ -2891,7 +2906,7 @@ export interface SqlExpressionVisitor$instance extends ExpressionVisitor {
     VisitDistinct(distinctExpression: DistinctExpression): Expression;
     VisitExcept(exceptExpression: ExceptExpression): Expression;
     VisitExists(existsExpression: ExistsExpression): Expression;
-    VisitExtension(extensionExpression: Expression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((extensionExpression: Expression) => Expression);
     VisitFromSql(fromSqlExpression: FromSqlExpression): Expression;
     VisitIn(inExpression: InExpression): Expression;
     VisitInnerJoin(innerJoinExpression: InnerJoinExpression): Expression;
@@ -2921,18 +2936,19 @@ export interface SqlExpressionVisitor$instance extends ExpressionVisitor {
 }
 
 
-export const SqlExpressionVisitor: (abstract new() => SqlExpressionVisitor) & {
+export const SqlExpressionVisitor: {
 };
 
 
 export type SqlExpressionVisitor = SqlExpressionVisitor$instance;
 
-export interface SqlNullabilityProcessor$instance extends ExpressionVisitor {
+export interface SqlNullabilityProcessor$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlNullabilityProcessor: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     readonly CollectionParameterTranslationMode: ParameterTranslationMode;
     readonly Dependencies: RelationalParameterBasedSqlProcessorDependencies;
-    ParametersDecorator: ParametersCacheDecorator;
+    readonly ParametersDecorator: ParametersCacheDecorator;
     readonly PreferExistsToInWithCoalesce: boolean;
     readonly UseRelationalNulls: boolean;
     AddNonNullableColumn(columnExpression: ColumnExpression): void;
@@ -2943,9 +2959,7 @@ export interface SqlNullabilityProcessor$instance extends ExpressionVisitor {
     ProcessValuesOrderingColumn(valuesExpression: ValuesExpression, expressions: IReadOnlyList_1<SqlExpression>, intTypeMapping: IntTypeMapping, counter: int): IReadOnlyList_1<SqlExpression>;
     TryMakeNonNullable(selectExpression: SelectExpression, rewrittenSelectExpression: SelectExpression | null, foundNull: Nullable_1<System_Internal.Boolean>): boolean;
     UpdateParameterCollection(table: TableExpressionBase, newCollectionParameter: SqlParameterExpression): TableExpressionBase;
-    Visit(selectExpression: SelectExpression, visitProjection?: boolean): SelectExpression;
-    Visit(sqlExpression: SqlExpression | null, nullable: boolean): SqlExpression | null;
-    Visit(sqlExpression: SqlExpression | null, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression | null;
+    Visit: System_Linq_Expressions_Internal.ExpressionVisitor["Visit"] & ((selectExpression: SelectExpression, visitProjection?: boolean) => SelectExpression) & ((sqlExpression: SqlExpression | null, allowOptimizedExpansion: boolean, nullable: boolean) => SqlExpression | null) & ((sqlExpression: SqlExpression | null, nullable: boolean) => SqlExpression | null);
     VisitAtTimeZone(atTimeZoneExpression: AtTimeZoneExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
     VisitCase(caseExpression: CaseExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
     VisitCollate(collateExpression: CollateExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
@@ -2953,7 +2967,7 @@ export interface SqlNullabilityProcessor$instance extends ExpressionVisitor {
     VisitCustomSqlExpression(sqlExpression: SqlExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
     VisitDistinct(distinctExpression: DistinctExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
     VisitExists(existsExpression: ExistsExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
-    VisitExtension(node: Expression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((node: Expression) => Expression);
     VisitIn(inExpression: InExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
     VisitJsonScalar(jsonScalarExpression: JsonScalarExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
     VisitLike(likeExpression: LikeExpression, allowOptimizedExpansion: boolean, nullable: boolean): SqlExpression;
@@ -2976,8 +2990,9 @@ export const SqlNullabilityProcessor: {
 
 export type SqlNullabilityProcessor = SqlNullabilityProcessor$instance;
 
-export interface SqlTreePruner$instance extends ExpressionVisitor {
+export interface SqlTreePruner$instance extends System_Linq_Expressions_Internal.ExpressionVisitor {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_SqlTreePruner: never;
+    readonly __tsonic_type_System_Linq_Expressions_ExpressionVisitor: never;
 
     get CurrentTableAlias(): string | null;
     set CurrentTableAlias(value: string | null);
@@ -2986,7 +3001,7 @@ export interface SqlTreePruner$instance extends ExpressionVisitor {
     PruneSelect(select: SelectExpression, preserveProjection: boolean): SelectExpression;
     PruneTopLevelSelect(select: SelectExpression): SelectExpression;
     PruneValues(values: ValuesExpression): ValuesExpression;
-    VisitExtension(node: Expression): Expression;
+    VisitExtension: System_Linq_Expressions_Internal.ExpressionVisitor["VisitExtension"] & ((node: Expression) => Expression);
 }
 
 
@@ -2997,24 +3012,23 @@ export const SqlTreePruner: {
 
 export type SqlTreePruner = SqlTreePruner$instance;
 
-export interface StructuralTypeProjectionExpression$instance extends Expression {
+export interface StructuralTypeProjectionExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_StructuralTypeProjectionExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly DiscriminatorExpression: SqlExpression | null;
     readonly IsNullable: boolean;
-    readonly NodeType: ExpressionType;
     readonly StructuralType: ITypeBase;
     readonly TableMap: IReadOnlyDictionary_2<ITableBase, System_Internal.String>;
-    readonly Type: Type;
     AddNavigationBinding(navigation: INavigation, shaper: StructuralTypeShaperExpression): void;
     BindComplexProperty(complexProperty: IComplexProperty): Expression;
     BindNavigation(navigation: INavigation): StructuralTypeShaperExpression | null;
     BindProperty(property: IProperty): ColumnExpression;
     MakeNullable(): StructuralTypeProjectionExpression;
-    ToString(): string;
+    ToString: System_Linq_Expressions_Internal.Expression["ToString"] & (() => string);
     UpdateEntityType(derivedType: IEntityType): StructuralTypeProjectionExpression;
     UpdateTableMap(newTableMap: IReadOnlyDictionary_2<ITableBase, System_Internal.String>): StructuralTypeProjectionExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
 }
 
 
@@ -3026,16 +3040,15 @@ export const StructuralTypeProjectionExpression: {
 
 export type StructuralTypeProjectionExpression = StructuralTypeProjectionExpression$instance;
 
-export interface StructuralTypeShaperExpression$instance extends Expression, IPrintableExpression$instance {
+export interface StructuralTypeShaperExpression$instance extends System_Linq_Expressions_Internal.Expression {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_StructuralTypeShaperExpression: never;
+    readonly __tsonic_type_System_Linq_Expressions_Expression: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IPrintableExpression: never;
 
     readonly IsNullable: boolean;
     readonly MaterializationCondition: LambdaExpression;
-    readonly NodeType: ExpressionType;
     readonly StructuralType: ITypeBase;
-    readonly Type: Type;
     readonly ValueBufferExpression: Expression;
     DebuggerDisplay(): string;
     GenerateMaterializationCondition(type: ITypeBase, nullable: boolean): LambdaExpression;
@@ -3043,7 +3056,7 @@ export interface StructuralTypeShaperExpression$instance extends Expression, IPr
     MakeClrTypeNullable(): StructuralTypeShaperExpression;
     MakeNullable(nullable?: boolean): StructuralTypeShaperExpression;
     Update(valueBufferExpression: Expression): StructuralTypeShaperExpression;
-    VisitChildren(visitor: ExpressionVisitor): Expression;
+    VisitChildren: System_Linq_Expressions_Internal.Expression["VisitChildren"] & ((visitor: ExpressionVisitor) => Expression);
     WithType(type: ITypeBase): StructuralTypeShaperExpression;
 }
 
@@ -3051,7 +3064,6 @@ export interface StructuralTypeShaperExpression$instance extends Expression, IPr
 export const StructuralTypeShaperExpression: {
     new(type: ITypeBase, valueBufferExpression: Expression, nullable: boolean): StructuralTypeShaperExpression;
     CreateUnableToDiscriminateException(type: ITypeBase, discriminator: unknown | null): Exception;
-    CreateUnableToDiscriminateExceptionExpression(type: ITypeBase, discriminatorValue: Expression): Expression;
 };
 
 
@@ -3066,8 +3078,8 @@ export interface UpdateSettersBuilder$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder: never;
 
     BuildSettersExpression(): NewArrayExpression;
-    SetProperty(propertyExpression: LambdaExpression, valueExpression: LambdaExpression): UpdateSettersBuilder;
     SetProperty(propertyExpression: LambdaExpression, valueExpression: Expression): UpdateSettersBuilder;
+    SetProperty(propertyExpression: LambdaExpression, valueExpression: LambdaExpression): UpdateSettersBuilder;
 }
 
 
@@ -3078,13 +3090,11 @@ export const UpdateSettersBuilder: {
 
 export type UpdateSettersBuilder = UpdateSettersBuilder$instance;
 
-export interface UpdateSettersBuilder_1$instance<TSource extends unknown> extends UpdateSettersBuilder {
+export interface UpdateSettersBuilder_1$instance<TSource extends unknown> extends UpdateSettersBuilder$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder_1: never;
 
-    SetProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TSource, TProperty>>, valueExpression: Expression_1<Func_2<TSource, TProperty>>): UpdateSettersBuilder_1<TSource>;
-    SetProperty<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TSource, TProperty>>, valueExpression: TProperty): UpdateSettersBuilder_1<TSource>;
-    SetProperty(propertyExpression: LambdaExpression, valueExpression: LambdaExpression): UpdateSettersBuilder;
-    SetProperty(propertyExpression: LambdaExpression, valueExpression: Expression): UpdateSettersBuilder;
+    SetProperty: UpdateSettersBuilder$instance["SetProperty"] & ((propertyExpression: LambdaExpression, valueExpression: Expression) => UpdateSettersBuilder) & ((propertyExpression: LambdaExpression, valueExpression: LambdaExpression) => UpdateSettersBuilder) & (<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TSource, TProperty>>, valueExpression: Expression_1<Func_2<TSource, TProperty>>) => UpdateSettersBuilder_1<TSource>) & (<TProperty extends unknown>(propertyExpression: Expression_1<Func_2<TSource, TProperty>>, valueExpression: TProperty) => UpdateSettersBuilder_1<TSource>);
 }
 
 
@@ -3193,7 +3203,7 @@ export type QueryableMethods = QueryableMethods$instance;
 
 export abstract class RelationalExpressionQuotingUtilities$instance {
     static QuoteAnnotations(annotations: IReadOnlyDictionary_2<System_Internal.String, IAnnotation> | null): Expression;
-    static QuoteOrNull<T extends unknown & IRelationalQuotableExpression>(expression: T | null): Expression;
+    static QuoteOrNull<T extends unknown & { readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Query_IRelationalQuotableExpression: never }>(expression: T | null): Expression;
     static QuoteTableBase(tableBase: ITableBase): Expression;
     static QuoteTags(tags: ISet_1<System_Internal.String>): Expression;
     static QuoteTypeMapping(typeMapping: RelationalTypeMapping | null): Expression;

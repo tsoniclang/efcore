@@ -3434,19 +3434,7 @@
         "properties": [],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch::.ctor(Microsoft.EntityFrameworkCore.Update.ModificationCommandBatchFactoryDependencies,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-            "metadataToken": 100664503,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Update.ModificationCommandBatchFactoryDependencies,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Update.ModificationCommandBatchFactoryDependencies,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.ColumnModification",
@@ -5032,12 +5020,12 @@
             "targetName": "RowsAffectedColumn",
             "metadataToken": 385876156,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.IColumnBase",
-            "normalizedSignature": "RowsAffectedColumn|:Microsoft.EntityFrameworkCore.Metadata.IColumnBase|static=false|accessor=getset",
+            "normalizedSignature": "RowsAffectedColumn|:Microsoft.EntityFrameworkCore.Metadata.IColumnBase|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -5443,19 +5431,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.ModificationCommandBatch::.ctor():void",
-            "metadataToken": 100664702,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Update.ModificationCommandBatch",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.ModificationCommandBatchFactoryDependencies",
@@ -6204,19 +6180,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch::.ctor(Microsoft.EntityFrameworkCore.Update.ModificationCommandBatchFactoryDependencies,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-            "metadataToken": 100664768,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Update.ModificationCommandBatchFactoryDependencies,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Update.ModificationCommandBatchFactoryDependencies,System.Nullable_1[[System.Int32,System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]):void|static=false",
-            "isStatic": false,
-            "parameterCount": 2,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.SingularModificationCommandBatch",
@@ -6791,19 +6755,7 @@
         "properties": [],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.UpdateAndSelectSqlGenerator::.ctor(Microsoft.EntityFrameworkCore.Update.UpdateSqlGeneratorDependencies):void",
-            "metadataToken": 100664796,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Update.UpdateSqlGeneratorDependencies):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Update.UpdateSqlGeneratorDependencies):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Update.UpdateAndSelectSqlGenerator",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.UpdateSqlGenerator",
@@ -7430,26 +7382,6 @@
             "isExtensionMethod": false
           },
           {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.UpdateSqlGenerator::AppendSqlLiteral(System.Text.StringBuilder,Microsoft.EntityFrameworkCore.Update.IColumnModification,System.String,System.String):System.Void",
-            "targetName": "AppendSqlLiteral",
-            "metadataToken": 100664843,
-            "canonicalSignature": "(System.Text.StringBuilder,Microsoft.EntityFrameworkCore.Update.IColumnModification,System.String,System.String):System.Void",
-            "normalizedSignature": "AppendSqlLiteral|(System.Text.StringBuilder,Microsoft.EntityFrameworkCore.Update.IColumnModification,System.String,System.String):System.Void|static=true",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 4,
-            "isStatic": true,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Update.UpdateSqlGenerator",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational",
-            "isExtensionMethod": false
-          },
-          {
             "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.IUpdateSqlGenerator::GenerateNextSequenceValueOperation(System.String,System.String):System.String",
             "targetName": "GenerateNextSequenceValueOperation",
             "metadataToken": 100664647,
@@ -7603,19 +7535,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.UpdateSqlGenerator::.ctor(Microsoft.EntityFrameworkCore.Update.UpdateSqlGeneratorDependencies):void",
-            "metadataToken": 100664812,
-            "canonicalSignature": "(Microsoft.EntityFrameworkCore.Update.UpdateSqlGeneratorDependencies):void",
-            "normalizedSignature": "constructor|(Microsoft.EntityFrameworkCore.Update.UpdateSqlGeneratorDependencies):void|static=false",
-            "isStatic": false,
-            "parameterCount": 1,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Update.UpdateSqlGenerator",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore.Relational"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Update.UpdateSqlGeneratorDependencies",

@@ -28,7 +28,7 @@ export { DesignTimeProviderServicesAttribute as DesignTimeProviderServicesAttrib
 export { DesignTimeServicesReferenceAttribute as DesignTimeServicesReferenceAttribute } from './Microsoft.EntityFrameworkCore.Design/internal/index.js';
 export { EntityFrameworkDesignServicesBuilder as EntityFrameworkDesignServicesBuilder } from './Microsoft.EntityFrameworkCore.Design/internal/index.js';
 export type ICSharpHelper = Internal.ICSharpHelper;
-export type IDesignTimeDbContextFactory<TContext extends unknown & Internal.DbContext> = Internal.IDesignTimeDbContextFactory_1<TContext>;
+export type IDesignTimeDbContextFactory<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = Internal.IDesignTimeDbContextFactory_1<TContext>;
 export type IDesignTimeServices = Internal.IDesignTimeServices;
 export type IMethodCallCodeFragment = Internal.IMethodCallCodeFragment;
 export { MethodCallCodeFragment as MethodCallCodeFragment } from './Microsoft.EntityFrameworkCore.Design/internal/index.js';

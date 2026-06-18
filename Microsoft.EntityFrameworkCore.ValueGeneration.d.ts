@@ -47,5 +47,5 @@ export type ValueGenerator<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ValueGenerator :
-  [T1] extends [unknown] ? Internal.ValueGenerator_1<T1> : never;
+  Internal.ValueGenerator_1<T1>;
 

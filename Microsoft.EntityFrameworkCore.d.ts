@@ -70,7 +70,7 @@ export { EntityState as EntityState } from './Microsoft.EntityFrameworkCore/inte
 export { EntityTypeConfigurationAttribute_2 as EntityTypeConfigurationAttribute } from './Microsoft.EntityFrameworkCore/internal/index.js';
 export { EntityFrameworkQueryableExtensions$instance as EntityFrameworkQueryableExtensions } from './Microsoft.EntityFrameworkCore/internal/index.js';
 export { PropertyBaseExtensions$instance as PropertyBaseExtensions } from './Microsoft.EntityFrameworkCore/internal/index.js';
-export type IDbContextFactory<TContext extends unknown & Internal.DbContext> = Internal.IDbContextFactory_1<TContext>;
+export type IDbContextFactory<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = Internal.IDbContextFactory_1<TContext>;
 export type IEntityTypeConfiguration<TEntity extends (object | null)> = Internal.IEntityTypeConfiguration_1<TEntity>;
 export { ModelCreationDependencies as ModelCreationDependencies } from './Microsoft.EntityFrameworkCore/internal/index.js';
 export { ModelBuilder as ModelBuilder } from './Microsoft.EntityFrameworkCore/internal/index.js';
@@ -140,16 +140,16 @@ declare const __unspecified: unique symbol;
 export type __ = typeof __unspecified;
 
 export type DbContextOptions<
-  T1 extends unknown & Internal.DbContext | __ = __,
+  T1 extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never } | __ = __,
 > =
   [T1] extends [__] ? Internal.DbContextOptions :
-  [T1] extends [unknown & Internal.DbContext] ? Internal.DbContextOptions_1<T1> : never;
+  [T1] extends [unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }] ? Internal.DbContextOptions_1<T1> : never;
 
 export type DbContextOptionsBuilder<
-  T1 extends unknown & Internal.DbContext | __ = __,
+  T1 extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never } | __ = __,
 > =
   [T1] extends [__] ? Internal.DbContextOptionsBuilder :
-  [T1] extends [unknown & Internal.DbContext] ? Internal.DbContextOptionsBuilder_1<T1> : never;
+  [T1] extends [unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }] ? Internal.DbContextOptionsBuilder_1<T1> : never;
 
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore as ExtensionMethods } from './__internal/extensions/index.js';

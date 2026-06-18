@@ -35,6 +35,7 @@ export type IValueConverterSelector = IValueConverterSelector$instance;
 
 export interface ValueConverterInfo$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverterInfo: never;
+    readonly __tsonic_type_System_ValueType: never;
 
     readonly MappingHints: ConverterMappingHints | null;
     readonly ModelClrType: Type;
@@ -50,8 +51,11 @@ export const ValueConverterInfo: {
 
 export type ValueConverterInfo = ValueConverterInfo$instance;
 
-export interface BoolToStringConverter$instance extends BoolToTwoValuesConverter_1<System_Internal.String> {
+export interface BoolToStringConverter$instance extends BoolToTwoValuesConverter_1$instance<System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_BoolToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_BoolToTwoValuesConverter_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -64,8 +68,10 @@ export const BoolToStringConverter: {
 
 export type BoolToStringConverter = BoolToStringConverter$instance;
 
-export interface BoolToTwoValuesConverter_1$instance<TProvider extends unknown> extends ValueConverter_2<System_Internal.Boolean, TProvider> {
+export interface BoolToTwoValuesConverter_1$instance<TProvider extends unknown> extends ValueConverter_2$instance<System_Internal.Boolean, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_BoolToTwoValuesConverter_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -77,8 +83,11 @@ export const BoolToTwoValuesConverter_1: {
 
 export type BoolToTwoValuesConverter_1<TProvider extends unknown> = BoolToTwoValuesConverter_1$instance<TProvider>;
 
-export interface BoolToZeroOneConverter_1$instance<TProvider extends unknown> extends BoolToTwoValuesConverter_1<TProvider> {
+export interface BoolToZeroOneConverter_1$instance<TProvider extends unknown> extends BoolToTwoValuesConverter_1$instance<TProvider> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_BoolToTwoValuesConverter_1: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_BoolToZeroOneConverter_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -92,8 +101,10 @@ export const BoolToZeroOneConverter_1: {
 
 export type BoolToZeroOneConverter_1<TProvider extends unknown> = BoolToZeroOneConverter_1$instance<TProvider>;
 
-export interface BytesToStringConverter$instance extends ValueConverter_2<byte[], System_Internal.String> {
+export interface BytesToStringConverter$instance extends ValueConverter_2$instance<byte[], System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_BytesToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -107,8 +118,10 @@ export const BytesToStringConverter: {
 
 export type BytesToStringConverter = BytesToStringConverter$instance;
 
-export interface CastingConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2<TModel, TProvider> {
+export interface CastingConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter_2$instance<TModel, TProvider> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_CastingConverter_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -122,8 +135,11 @@ export const CastingConverter_2: {
 
 export type CastingConverter_2<TModel extends unknown, TProvider extends unknown> = CastingConverter_2$instance<TModel, TProvider>;
 
-export interface CharToStringConverter$instance extends StringCharConverter_2<System_Internal.Char, System_Internal.String> {
+export interface CharToStringConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringCharConverter_2$instance<System_Internal.Char, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_CharToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringCharConverter_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -137,8 +153,10 @@ export const CharToStringConverter: {
 
 export type CharToStringConverter = CharToStringConverter$instance;
 
-export interface CollectionToJsonStringConverter_1$instance<TElement extends unknown> extends ValueConverter_2<IEnumerable_1<TElement>, System_Internal.String> {
+export interface CollectionToJsonStringConverter_1$instance<TElement extends unknown> extends ValueConverter_2$instance<IEnumerable_1<TElement>, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_CollectionToJsonStringConverter_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
     readonly JsonReaderWriter: JsonValueReaderWriter;
 }
@@ -171,8 +189,11 @@ export const ConverterMappingHints: {
 
 export type ConverterMappingHints = ConverterMappingHints$instance;
 
-export interface DateOnlyToStringConverter$instance extends StringDateOnlyConverter_2<DateOnly, System_Internal.String> {
+export interface DateOnlyToStringConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringDateOnlyConverter_2$instance<DateOnly, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_DateOnlyToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateOnlyConverter_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -186,8 +207,10 @@ export const DateOnlyToStringConverter: {
 
 export type DateOnlyToStringConverter = DateOnlyToStringConverter$instance;
 
-export interface DateTimeOffsetToBinaryConverter$instance extends ValueConverter_2<DateTimeOffset, System_Internal.Int64> {
+export interface DateTimeOffsetToBinaryConverter$instance extends ValueConverter_2$instance<DateTimeOffset, System_Internal.Int64> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_DateTimeOffsetToBinaryConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -203,8 +226,10 @@ export const DateTimeOffsetToBinaryConverter: {
 
 export type DateTimeOffsetToBinaryConverter = DateTimeOffsetToBinaryConverter$instance;
 
-export interface DateTimeOffsetToBytesConverter$instance extends ValueConverter_2<DateTimeOffset, byte[]> {
+export interface DateTimeOffsetToBytesConverter$instance extends ValueConverter_2$instance<DateTimeOffset, byte[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_DateTimeOffsetToBytesConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -220,8 +245,11 @@ export const DateTimeOffsetToBytesConverter: {
 
 export type DateTimeOffsetToBytesConverter = DateTimeOffsetToBytesConverter$instance;
 
-export interface DateTimeOffsetToStringConverter$instance extends StringDateTimeOffsetConverter_2<DateTimeOffset, System_Internal.String> {
+export interface DateTimeOffsetToStringConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringDateTimeOffsetConverter_2$instance<DateTimeOffset, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_DateTimeOffsetToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateTimeOffsetConverter_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -235,8 +263,10 @@ export const DateTimeOffsetToStringConverter: {
 
 export type DateTimeOffsetToStringConverter = DateTimeOffsetToStringConverter$instance;
 
-export interface DateTimeToBinaryConverter$instance extends ValueConverter_2<DateTime, System_Internal.Int64> {
+export interface DateTimeToBinaryConverter$instance extends ValueConverter_2$instance<DateTime, System_Internal.Int64> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_DateTimeToBinaryConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -250,8 +280,11 @@ export const DateTimeToBinaryConverter: {
 
 export type DateTimeToBinaryConverter = DateTimeToBinaryConverter$instance;
 
-export interface DateTimeToStringConverter$instance extends StringDateTimeConverter_2<DateTime, System_Internal.String> {
+export interface DateTimeToStringConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringDateTimeConverter_2$instance<DateTime, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_DateTimeToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateTimeConverter_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -265,8 +298,10 @@ export const DateTimeToStringConverter: {
 
 export type DateTimeToStringConverter = DateTimeToStringConverter$instance;
 
-export interface DateTimeToTicksConverter$instance extends ValueConverter_2<DateTime, System_Internal.Int64> {
+export interface DateTimeToTicksConverter$instance extends ValueConverter_2$instance<DateTime, System_Internal.Int64> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_DateTimeToTicksConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -279,38 +314,45 @@ export const DateTimeToTicksConverter: {
 
 export type DateTimeToTicksConverter = DateTimeToTicksConverter$instance;
 
-export interface EnumToNumberConverter_2$instance<TEnum extends NonNullable<unknown> & number, TNumber extends NonNullable<unknown>> extends ValueConverter_2<TEnum, TNumber> {
+export interface EnumToNumberConverter_2$instance<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }, TNumber extends { readonly __tsonic_type_System_ValueType: never }> extends ValueConverter_2$instance<TEnum, TNumber> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_EnumToNumberConverter_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
 
 export const EnumToNumberConverter_2: {
-    new<TEnum extends NonNullable<unknown> & number, TNumber extends NonNullable<unknown>>(): EnumToNumberConverter_2<TEnum, TNumber>;
-    new<TEnum extends NonNullable<unknown> & number, TNumber extends NonNullable<unknown>>(mappingHints: ConverterMappingHints | null): EnumToNumberConverter_2<TEnum, TNumber>;
+    new<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }, TNumber extends { readonly __tsonic_type_System_ValueType: never }>(): EnumToNumberConverter_2<TEnum, TNumber>;
+    new<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }, TNumber extends { readonly __tsonic_type_System_ValueType: never }>(mappingHints: ConverterMappingHints | null): EnumToNumberConverter_2<TEnum, TNumber>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type EnumToNumberConverter_2<TEnum extends NonNullable<unknown> & number, TNumber extends NonNullable<unknown>> = EnumToNumberConverter_2$instance<TEnum, TNumber>;
+export type EnumToNumberConverter_2<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }, TNumber extends { readonly __tsonic_type_System_ValueType: never }> = EnumToNumberConverter_2$instance<TEnum, TNumber>;
 
-export interface EnumToStringConverter_1$instance<TEnum extends NonNullable<unknown> & number> extends StringEnumConverter_3<TEnum, System_Internal.String, TEnum> {
+export interface EnumToStringConverter_1$instance<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }> extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringEnumConverter_3$instance<TEnum, System_Internal.String, TEnum> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_EnumToStringConverter_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringEnumConverter_3: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
 
 export const EnumToStringConverter_1: {
-    new<TEnum extends NonNullable<unknown> & number>(): EnumToStringConverter_1<TEnum>;
-    new<TEnum extends NonNullable<unknown> & number>(mappingHints: ConverterMappingHints | null): EnumToStringConverter_1<TEnum>;
+    new<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }>(): EnumToStringConverter_1<TEnum>;
+    new<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }>(mappingHints: ConverterMappingHints | null): EnumToStringConverter_1<TEnum>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type EnumToStringConverter_1<TEnum extends NonNullable<unknown> & number> = EnumToStringConverter_1$instance<TEnum>;
+export type EnumToStringConverter_1<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }> = EnumToStringConverter_1$instance<TEnum>;
 
-export interface GuidToBytesConverter$instance extends ValueConverter_2<Guid, byte[]> {
+export interface GuidToBytesConverter$instance extends ValueConverter_2$instance<Guid, byte[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_GuidToBytesConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -324,8 +366,11 @@ export const GuidToBytesConverter: {
 
 export type GuidToBytesConverter = GuidToBytesConverter$instance;
 
-export interface GuidToStringConverter$instance extends StringGuidConverter_2<Guid, System_Internal.String> {
+export interface GuidToStringConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringGuidConverter_2$instance<Guid, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_GuidToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringGuidConverter_2: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -339,8 +384,10 @@ export const GuidToStringConverter: {
 
 export type GuidToStringConverter = GuidToStringConverter$instance;
 
-export interface IPAddressToBytesConverter$instance extends ValueConverter_2<IPAddress, byte[]> {
+export interface IPAddressToBytesConverter$instance extends ValueConverter_2$instance<IPAddress, byte[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_IPAddressToBytesConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -354,8 +401,10 @@ export const IPAddressToBytesConverter: {
 
 export type IPAddressToBytesConverter = IPAddressToBytesConverter$instance;
 
-export interface IPAddressToStringConverter$instance extends ValueConverter_2<IPAddress, System_Internal.String> {
+export interface IPAddressToStringConverter$instance extends ValueConverter_2$instance<IPAddress, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_IPAddressToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -369,8 +418,10 @@ export const IPAddressToStringConverter: {
 
 export type IPAddressToStringConverter = IPAddressToStringConverter$instance;
 
-export interface NumberToBytesConverter_1$instance<TNumber extends unknown> extends ValueConverter_2<TNumber, byte[]> {
+export interface NumberToBytesConverter_1$instance<TNumber extends unknown> extends ValueConverter_2$instance<TNumber, byte[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_NumberToBytesConverter_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -391,8 +442,11 @@ export const NumberToBytesConverter_1: {
 
 export type NumberToBytesConverter_1<TNumber extends unknown> = NumberToBytesConverter_1$instance<TNumber>;
 
-export interface NumberToStringConverter_1$instance<TNumber extends unknown> extends StringNumberConverter_3<TNumber, System_Internal.String, TNumber> {
+export interface NumberToStringConverter_1$instance<TNumber extends unknown> extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringNumberConverter_3$instance<TNumber, System_Internal.String, TNumber> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringNumberConverter_3: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_NumberToStringConverter_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -406,8 +460,10 @@ export const NumberToStringConverter_1: {
 
 export type NumberToStringConverter_1<TNumber extends unknown> = NumberToStringConverter_1$instance<TNumber>;
 
-export interface PhysicalAddressToBytesConverter$instance extends ValueConverter_2<PhysicalAddress, byte[]> {
+export interface PhysicalAddressToBytesConverter$instance extends ValueConverter_2$instance<PhysicalAddress, byte[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_PhysicalAddressToBytesConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -421,8 +477,10 @@ export const PhysicalAddressToBytesConverter: {
 
 export type PhysicalAddressToBytesConverter = PhysicalAddressToBytesConverter$instance;
 
-export interface PhysicalAddressToStringConverter$instance extends ValueConverter_2<PhysicalAddress, System_Internal.String> {
+export interface PhysicalAddressToStringConverter$instance extends ValueConverter_2$instance<PhysicalAddress, System_Internal.String> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_PhysicalAddressToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -436,13 +494,14 @@ export const PhysicalAddressToStringConverter: {
 
 export type PhysicalAddressToStringConverter = PhysicalAddressToStringConverter$instance;
 
-export interface RelationalConverterMappingHints$instance extends ConverterMappingHints {
+export interface RelationalConverterMappingHints$instance extends ConverterMappingHints$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ConverterMappingHints: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_RelationalConverterMappingHints: never;
 
     readonly DbType: Nullable_1<DbType>;
     readonly IsFixedLength: Nullable_1<System_Internal.Boolean>;
-    OverrideWith(hints: ConverterMappingHints | null): ConverterMappingHints;
-    With(hints: ConverterMappingHints | null): ConverterMappingHints;
+    OverrideWith: ConverterMappingHints$instance["OverrideWith"] & ((hints: ConverterMappingHints | null) => ConverterMappingHints);
+    With: ConverterMappingHints$instance["With"] & ((hints: ConverterMappingHints | null) => ConverterMappingHints);
 }
 
 
@@ -454,8 +513,10 @@ export const RelationalConverterMappingHints: {
 
 export type RelationalConverterMappingHints = RelationalConverterMappingHints$instance;
 
-export interface StringToBoolConverter$instance extends ValueConverter_2<System_Internal.String, System_Internal.Boolean> {
+export interface StringToBoolConverter$instance extends ValueConverter_2$instance<System_Internal.String, System_Internal.Boolean> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToBoolConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -469,8 +530,10 @@ export const StringToBoolConverter: {
 
 export type StringToBoolConverter = StringToBoolConverter$instance;
 
-export interface StringToBytesConverter$instance extends ValueConverter_2<System_Internal.String, byte[]> {
+export interface StringToBytesConverter$instance extends ValueConverter_2$instance<System_Internal.String, byte[]> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToBytesConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -483,8 +546,11 @@ export const StringToBytesConverter: {
 
 export type StringToBytesConverter = StringToBytesConverter$instance;
 
-export interface StringToCharConverter$instance extends StringCharConverter_2<System_Internal.String, System_Internal.Char> {
+export interface StringToCharConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringCharConverter_2$instance<System_Internal.String, System_Internal.Char> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringCharConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToCharConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -498,8 +564,11 @@ export const StringToCharConverter: {
 
 export type StringToCharConverter = StringToCharConverter$instance;
 
-export interface StringToDateOnlyConverter$instance extends StringDateOnlyConverter_2<System_Internal.String, DateOnly> {
+export interface StringToDateOnlyConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringDateOnlyConverter_2$instance<System_Internal.String, DateOnly> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateOnlyConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToDateOnlyConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -513,8 +582,11 @@ export const StringToDateOnlyConverter: {
 
 export type StringToDateOnlyConverter = StringToDateOnlyConverter$instance;
 
-export interface StringToDateTimeConverter$instance extends StringDateTimeConverter_2<System_Internal.String, DateTime> {
+export interface StringToDateTimeConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringDateTimeConverter_2$instance<System_Internal.String, DateTime> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateTimeConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToDateTimeConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -528,8 +600,11 @@ export const StringToDateTimeConverter: {
 
 export type StringToDateTimeConverter = StringToDateTimeConverter$instance;
 
-export interface StringToDateTimeOffsetConverter$instance extends StringDateTimeOffsetConverter_2<System_Internal.String, DateTimeOffset> {
+export interface StringToDateTimeOffsetConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringDateTimeOffsetConverter_2$instance<System_Internal.String, DateTimeOffset> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringDateTimeOffsetConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToDateTimeOffsetConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -543,23 +618,29 @@ export const StringToDateTimeOffsetConverter: {
 
 export type StringToDateTimeOffsetConverter = StringToDateTimeOffsetConverter$instance;
 
-export interface StringToEnumConverter_1$instance<TEnum extends NonNullable<unknown> & number> extends StringEnumConverter_3<System_Internal.String, TEnum, TEnum> {
+export interface StringToEnumConverter_1$instance<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }> extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringEnumConverter_3$instance<System_Internal.String, TEnum, TEnum> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringEnumConverter_3: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToEnumConverter_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
 
 export const StringToEnumConverter_1: {
-    new<TEnum extends NonNullable<unknown> & number>(): StringToEnumConverter_1<TEnum>;
-    new<TEnum extends NonNullable<unknown> & number>(mappingHints: ConverterMappingHints | null): StringToEnumConverter_1<TEnum>;
+    new<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }>(): StringToEnumConverter_1<TEnum>;
+    new<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }>(mappingHints: ConverterMappingHints | null): StringToEnumConverter_1<TEnum>;
     readonly DefaultInfo: ValueConverterInfo;
 };
 
 
-export type StringToEnumConverter_1<TEnum extends NonNullable<unknown> & number> = StringToEnumConverter_1$instance<TEnum>;
+export type StringToEnumConverter_1<TEnum extends { readonly __tsonic_type_System_ValueType: never } & { readonly __tsonic_type_System_Enum: never } & { readonly __tsonic_type_System_ValueType: never }> = StringToEnumConverter_1$instance<TEnum>;
 
-export interface StringToGuidConverter$instance extends StringGuidConverter_2<System_Internal.String, Guid> {
+export interface StringToGuidConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringGuidConverter_2$instance<System_Internal.String, Guid> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringGuidConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToGuidConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -573,8 +654,11 @@ export const StringToGuidConverter: {
 
 export type StringToGuidConverter = StringToGuidConverter$instance;
 
-export interface StringToNumberConverter_1$instance<TNumber extends unknown> extends StringNumberConverter_3<System_Internal.String, TNumber, TNumber> {
+export interface StringToNumberConverter_1$instance<TNumber extends unknown> extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringNumberConverter_3$instance<System_Internal.String, TNumber, TNumber> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringNumberConverter_3: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToNumberConverter_1: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -588,8 +672,11 @@ export const StringToNumberConverter_1: {
 
 export type StringToNumberConverter_1<TNumber extends unknown> = StringToNumberConverter_1$instance<TNumber>;
 
-export interface StringToTimeOnlyConverter$instance extends StringTimeOnlyConverter_2<System_Internal.String, TimeOnly> {
+export interface StringToTimeOnlyConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringTimeOnlyConverter_2$instance<System_Internal.String, TimeOnly> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringTimeOnlyConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToTimeOnlyConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -603,8 +690,11 @@ export const StringToTimeOnlyConverter: {
 
 export type StringToTimeOnlyConverter = StringToTimeOnlyConverter$instance;
 
-export interface StringToTimeSpanConverter$instance extends StringTimeSpanConverter_2<System_Internal.String, TimeSpan> {
+export interface StringToTimeSpanConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringTimeSpanConverter_2$instance<System_Internal.String, TimeSpan> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringTimeSpanConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToTimeSpanConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -618,8 +708,11 @@ export const StringToTimeSpanConverter: {
 
 export type StringToTimeSpanConverter = StringToTimeSpanConverter$instance;
 
-export interface StringToUriConverter$instance extends StringUriConverter_2<System_Internal.String, Uri> {
+export interface StringToUriConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringUriConverter_2$instance<System_Internal.String, Uri> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringUriConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_StringToUriConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -633,8 +726,11 @@ export const StringToUriConverter: {
 
 export type StringToUriConverter = StringToUriConverter$instance;
 
-export interface TimeOnlyToStringConverter$instance extends StringTimeOnlyConverter_2<TimeOnly, System_Internal.String> {
+export interface TimeOnlyToStringConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringTimeOnlyConverter_2$instance<TimeOnly, System_Internal.String> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringTimeOnlyConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_TimeOnlyToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -648,8 +744,10 @@ export const TimeOnlyToStringConverter: {
 
 export type TimeOnlyToStringConverter = TimeOnlyToStringConverter$instance;
 
-export interface TimeOnlyToTicksConverter$instance extends ValueConverter_2<TimeOnly, System_Internal.Int64> {
+export interface TimeOnlyToTicksConverter$instance extends ValueConverter_2$instance<TimeOnly, System_Internal.Int64> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_TimeOnlyToTicksConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -663,8 +761,11 @@ export const TimeOnlyToTicksConverter: {
 
 export type TimeOnlyToTicksConverter = TimeOnlyToTicksConverter$instance;
 
-export interface TimeSpanToStringConverter$instance extends StringTimeSpanConverter_2<TimeSpan, System_Internal.String> {
+export interface TimeSpanToStringConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringTimeSpanConverter_2$instance<TimeSpan, System_Internal.String> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringTimeSpanConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_TimeSpanToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -678,8 +779,10 @@ export const TimeSpanToStringConverter: {
 
 export type TimeSpanToStringConverter = TimeSpanToStringConverter$instance;
 
-export interface TimeSpanToTicksConverter$instance extends ValueConverter_2<TimeSpan, System_Internal.Int64> {
+export interface TimeSpanToTicksConverter$instance extends ValueConverter_2$instance<TimeSpan, System_Internal.Int64> {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_TimeSpanToTicksConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -693,8 +796,11 @@ export const TimeSpanToTicksConverter: {
 
 export type TimeSpanToTicksConverter = TimeSpanToTicksConverter$instance;
 
-export interface UriToStringConverter$instance extends StringUriConverter_2<Uri, System_Internal.String> {
+export interface UriToStringConverter$instance extends Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_Internal.StringUriConverter_2$instance<Uri, System_Internal.String> {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_Internal_StringUriConverter_2: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_UriToStringConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
 }
 
@@ -724,25 +830,18 @@ export interface ValueConverter$instance {
 }
 
 
-export const ValueConverter: (abstract new(convertToProviderExpression: LambdaExpression, convertFromProviderExpression: LambdaExpression, mappingHints: ConverterMappingHints | null) => ValueConverter) & (abstract new(convertToProviderExpression: LambdaExpression, convertFromProviderExpression: LambdaExpression, convertsNulls: boolean, mappingHints: ConverterMappingHints | null) => ValueConverter) & {
-    CheckTypeSupported(type: Type, converterType: Type, ...supportedTypes: Type[]): Type;
+export const ValueConverter: {
 };
 
 
 export type ValueConverter = ValueConverter$instance;
 
-export interface ValueConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter {
+export interface ValueConverter_2$instance<TModel extends unknown, TProvider extends unknown> extends ValueConverter$instance {
+    readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter: never;
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverter_2: never;
 
-    readonly ConstructorExpression: Expression;
-    readonly ConvertFromProvider: Func_2<unknown | null, unknown | null>;
-    readonly ConvertFromProviderExpression: Expression_1<Func_2<TProvider, TModel>>;
     readonly ConvertFromProviderTyped: Func_2<TProvider, TModel>;
-    readonly ConvertToProvider: Func_2<unknown | null, unknown | null>;
-    readonly ConvertToProviderExpression: Expression_1<Func_2<TModel, TProvider>>;
     readonly ConvertToProviderTyped: Func_2<TModel, TProvider>;
-    readonly ModelClrType: Type;
-    readonly ProviderClrType: Type;
 }
 
 
@@ -754,7 +853,7 @@ export const ValueConverter_2: {
 
 export type ValueConverter_2<TModel extends unknown, TProvider extends unknown> = ValueConverter_2$instance<TModel, TProvider>;
 
-export interface ValueConverterSelector$instance extends IValueConverterSelector$instance {
+export interface ValueConverterSelector$instance {
     readonly __tsonic_type_Microsoft_EntityFrameworkCore_Storage_ValueConversion_ValueConverterSelector: never;
 
     readonly __tsonic_iface_Microsoft_EntityFrameworkCore_Storage_ValueConversion_IValueConverterSelector: never;

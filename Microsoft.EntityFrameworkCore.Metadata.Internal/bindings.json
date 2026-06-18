@@ -14899,19 +14899,7 @@
         "properties": [],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.ClrAccessorFactory`1::.ctor():void",
-            "metadataToken": 100668235,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Internal.ClrAccessorFactory`1",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.ClrCollectionAccessor`3",
@@ -16549,19 +16537,7 @@
           }
         ],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.ClrPropertySetterFactory::.ctor():void",
-            "metadataToken": 100668302,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Internal.ClrPropertySetterFactory",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.CollectionTypeFactory",
@@ -16616,19 +16592,7 @@
           }
         ],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.CollectionTypeFactory::.ctor():void",
-            "metadataToken": 100668314,
-            "canonicalSignature": "():void",
-            "normalizedSignature": "constructor|():void|static=false",
-            "isStatic": false,
-            "parameterCount": 0,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Internal.CollectionTypeFactory",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Internal.Column",
@@ -42895,12 +42859,12 @@
             "targetName": "Properties",
             "metadataToken": 385877120,
             "canonicalSignature": ":System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.Internal.Property,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
-            "normalizedSignature": "Properties|:System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.Internal.Property,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=getset",
+            "normalizedSignature": "Properties|:System.Collections.Generic.IReadOnlyList_1[[Microsoft.EntityFrameworkCore.Metadata.Internal.Property,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -42914,12 +42878,12 @@
             "targetName": "PrincipalKey",
             "metadataToken": 385877121,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Internal.Key",
-            "normalizedSignature": "PrincipalKey|:Microsoft.EntityFrameworkCore.Metadata.Internal.Key|static=false|accessor=getset",
+            "normalizedSignature": "PrincipalKey|:Microsoft.EntityFrameworkCore.Metadata.Internal.Key|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -43047,12 +43011,12 @@
             "targetName": "DependentToPrincipal",
             "metadataToken": 385877128,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Internal.Navigation",
-            "normalizedSignature": "DependentToPrincipal|:Microsoft.EntityFrameworkCore.Metadata.Internal.Navigation|static=false|accessor=getset",
+            "normalizedSignature": "DependentToPrincipal|:Microsoft.EntityFrameworkCore.Metadata.Internal.Navigation|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -43066,12 +43030,12 @@
             "targetName": "PrincipalToDependent",
             "metadataToken": 385877129,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Internal.Navigation",
-            "normalizedSignature": "PrincipalToDependent|:Microsoft.EntityFrameworkCore.Metadata.Internal.Navigation|static=false|accessor=getset",
+            "normalizedSignature": "PrincipalToDependent|:Microsoft.EntityFrameworkCore.Metadata.Internal.Navigation|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -83838,19 +83802,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyBase::.ctor(System.String,System.Reflection.PropertyInfo,System.Reflection.FieldInfo,Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource):void",
-            "metadataToken": 100670298,
-            "canonicalSignature": "(System.String,System.Reflection.PropertyInfo,System.Reflection.FieldInfo,Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource):void",
-            "normalizedSignature": "constructor|(System.String,System.Reflection.PropertyInfo,System.Reflection.FieldInfo,Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource):void|static=false",
-            "isStatic": false,
-            "parameterCount": 4,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.PropertyConfiguration",
@@ -93987,12 +93939,12 @@
             "targetName": "ForeignKey",
             "metadataToken": 385877376,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Internal.ForeignKey",
-            "normalizedSignature": "ForeignKey|:Microsoft.EntityFrameworkCore.Metadata.Internal.ForeignKey|static=false|accessor=getset",
+            "normalizedSignature": "ForeignKey|:Microsoft.EntityFrameworkCore.Metadata.Internal.ForeignKey|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -94006,12 +93958,12 @@
             "targetName": "Inverse",
             "metadataToken": 385877377,
             "canonicalSignature": ":Microsoft.EntityFrameworkCore.Metadata.Internal.SkipNavigation",
-            "normalizedSignature": "Inverse|:Microsoft.EntityFrameworkCore.Metadata.Internal.SkipNavigation|static=false|accessor=getset",
+            "normalizedSignature": "Inverse|:Microsoft.EntityFrameworkCore.Metadata.Internal.SkipNavigation|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -110079,12 +110031,12 @@
             "targetName": "IsShared",
             "metadataToken": 385877732,
             "canonicalSignature": ":System.Boolean",
-            "normalizedSignature": "IsShared|:System.Boolean|static=false|accessor=getset",
+            "normalizedSignature": "IsShared|:System.Boolean|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -110155,12 +110107,12 @@
             "targetName": "RowInternalForeignKeys",
             "metadataToken": 385877736,
             "canonicalSignature": ":System.Collections.Generic.SortedDictionary_2[[Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-            "normalizedSignature": "RowInternalForeignKeys|:System.Collections.Generic.SortedDictionary_2[[Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=getset",
+            "normalizedSignature": "RowInternalForeignKeys|:System.Collections.Generic.SortedDictionary_2[[Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -110174,12 +110126,12 @@
             "targetName": "ReferencingRowInternalForeignKeys",
             "metadataToken": 385877737,
             "canonicalSignature": ":System.Collections.Generic.SortedDictionary_2[[Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]",
-            "normalizedSignature": "ReferencingRowInternalForeignKeys|:System.Collections.Generic.SortedDictionary_2[[Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=getset",
+            "normalizedSignature": "ReferencingRowInternalForeignKeys|:System.Collections.Generic.SortedDictionary_2[[Microsoft.EntityFrameworkCore.Metadata.IEntityType,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60],[System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Metadata.IForeignKey,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]],System.Private.CoreLib,Version=10.0.0.0,Culture=neutral,PublicKeyToken=7cec85d7bea7798e]]|static=false|accessor=get",
             "emitScope": "ClassSurface",
             "provenance": "Original",
             "isIndexer": false,
             "hasGetter": true,
-            "hasSetter": true,
+            "hasSetter": false,
             "isStatic": false,
             "isAbstract": false,
             "isVirtual": true,
@@ -114852,26 +114804,6 @@
             "isExtensionMethod": false
           },
           {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.TypeBase::ToEnumerable(T):IEnumerable_1",
-            "targetName": "ToEnumerable",
-            "metadataToken": 100670627,
-            "canonicalSignature": "(T):IEnumerable_1",
-            "normalizedSignature": "ToEnumerable|(T):IEnumerable_1|static=true",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 1,
-            "parameterCount": 1,
-            "isStatic": true,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Internal.TypeBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
-          {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.TypeBase::GetFlattenedProperties():System.Collections.Generic.IEnumerable_1[[Microsoft.EntityFrameworkCore.Metadata.Internal.Property,Microsoft.EntityFrameworkCore,Version=10.0.1.0,Culture=neutral,PublicKeyToken=adb9793829ddae60]]",
             "targetName": "GetFlattenedProperties",
             "metadataToken": 100670628,
@@ -117896,30 +117828,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.TypeBase::.ctor(System.Type,Microsoft.EntityFrameworkCore.Metadata.Internal.Model,Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource):void",
-            "metadataToken": 100670531,
-            "canonicalSignature": "(System.Type,Microsoft.EntityFrameworkCore.Metadata.Internal.Model,Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource):void",
-            "normalizedSignature": "constructor|(System.Type,Microsoft.EntityFrameworkCore.Metadata.Internal.Model,Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Internal.TypeBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Metadata.Internal.TypeBase::.ctor(System.String,System.Type,Microsoft.EntityFrameworkCore.Metadata.Internal.Model,Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource):void",
-            "metadataToken": 100670532,
-            "canonicalSignature": "(System.String,System.Type,Microsoft.EntityFrameworkCore.Metadata.Internal.Model,Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource):void",
-            "normalizedSignature": "constructor|(System.String,System.Type,Microsoft.EntityFrameworkCore.Metadata.Internal.Model,Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource):void|static=false",
-            "isStatic": false,
-            "parameterCount": 4,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Metadata.Internal.TypeBase",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore.Relational:Microsoft.EntityFrameworkCore.Metadata.Internal.UniqueConstraint",

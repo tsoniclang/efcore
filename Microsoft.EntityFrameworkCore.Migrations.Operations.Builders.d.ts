@@ -14,7 +14,7 @@ import type { IInfrastructure_1 } from './Microsoft.EntityFrameworkCore.Infrastr
 import type { AddCheckConstraintOperation, AddColumnOperation, AddForeignKeyOperation, AddPrimaryKeyOperation, AddUniqueConstraintOperation, CreateTableOperation, IAlterMigrationOperation, MigrationOperation } from './Microsoft.EntityFrameworkCore.Migrations.Operations/internal/index.js';
 import type { ReferentialAction } from './Microsoft.EntityFrameworkCore.Migrations/internal/index.js';
 import type { IReadOnlyDictionary } from '@tsonic/dotnet/System.Collections.Generic.js';
-import type { Boolean as ClrBoolean, Func, Int32, Nullable, Object as ClrObject, String as ClrString } from '@tsonic/dotnet/System.js';
+import type { Boolean as ClrBoolean, Func, Int32, IServiceProvider, Nullable, Object as ClrObject, String as ClrString } from '@tsonic/dotnet/System.js';
 import type { Expression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { PropertyInfo } from '@tsonic/dotnet/System.Reflection.js';
 

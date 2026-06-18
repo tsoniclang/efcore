@@ -51,6 +51,7 @@ export { NullAsyncQueryProvider as NullAsyncQueryProvider } from './Microsoft.En
 export { NullCheckRemovingExpressionVisitor as NullCheckRemovingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { PrecompiledQueryableAsyncEnumerableAdapter_1 as PrecompiledQueryableAsyncEnumerableAdapter } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { PrecompiledQueryContext_1 as PrecompiledQueryContext } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
+export { PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2 as PrecompiledQueryContext_1_IncludablePrecompiledQueryContext_2 } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { QueryableMethodNormalizingExpressionVisitor as QueryableMethodNormalizingExpressionVisitor } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { QueryCompilationContextFactory as QueryCompilationContextFactory } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
 export { QueryCompiler as QueryCompiler } from './Microsoft.EntityFrameworkCore.Query.Internal/internal/index.js';
@@ -125,17 +126,17 @@ export type FromSqlQueryingEnumerable<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.FromSqlQueryingEnumerable :
-  [T1] extends [unknown] ? Internal.FromSqlQueryingEnumerable_1<T1> : never;
+  Internal.FromSqlQueryingEnumerable_1<T1>;
 
 export type SingleQueryingEnumerable<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.SingleQueryingEnumerable :
-  [T1] extends [unknown] ? Internal.SingleQueryingEnumerable_1<T1> : never;
+  Internal.SingleQueryingEnumerable_1<T1>;
 
 export type SplitQueryingEnumerable<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.SplitQueryingEnumerable :
-  [T1] extends [unknown] ? Internal.SplitQueryingEnumerable_1<T1> : never;
+  Internal.SplitQueryingEnumerable_1<T1>;
 

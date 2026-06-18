@@ -20,7 +20,7 @@ import type { ICollection, IEnumerable, IEqualityComparer, IList } from '@tsonic
 import type { ObservableCollection } from '@tsonic/dotnet/System.Collections.ObjectModel.js';
 import type { INotifyCollectionChanged, NotifyCollectionChangedEventArgs, NotifyCollectionChangedEventHandler } from '@tsonic/dotnet/System.Collections.Specialized.js';
 import type { BindingList, IListSource, INotifyPropertyChanged, INotifyPropertyChanging, PropertyChangedEventArgs, PropertyChangedEventHandler, PropertyChangingEventArgs, PropertyChangingEventHandler } from '@tsonic/dotnet/System.ComponentModel.js';
-import type { Action, Boolean as ClrBoolean, Enum, EventArgs, EventHandler, Func, HashCode, IComparable, IConvertible, IFormattable, Int32, ISpanFormattable, Nullable, Object as ClrObject, Predicate, String as ClrString, Type, ValueType, Void } from '@tsonic/dotnet/System.js';
+import type { Action, Boolean as ClrBoolean, Enum, EventArgs, EventHandler, Func, HashCode, IComparable, IConvertible, IFormattable, Int32, IServiceProvider, ISpanFormattable, Nullable, Object as ClrObject, Predicate, String as ClrString, Type, ValueType, Void } from '@tsonic/dotnet/System.js';
 import type { Expression, LambdaExpression } from '@tsonic/dotnet/System.Linq.Expressions.js';
 import type { IQueryable } from '@tsonic/dotnet/System.Linq.js';
 import type { MethodInfo } from '@tsonic/dotnet/System.Reflection.js';
@@ -88,25 +88,25 @@ export type EntityEntryGraphNode<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.EntityEntryGraphNode :
-  [T1] extends [unknown] ? Internal.EntityEntryGraphNode_1<T1> : never;
+  Internal.EntityEntryGraphNode_1<T1>;
 
 export type IDependentKeyValueFactory<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IDependentKeyValueFactory :
-  [T1] extends [unknown] ? Internal.IDependentKeyValueFactory_1<T1> : never;
+  Internal.IDependentKeyValueFactory_1<T1>;
 
 export type IPrincipalKeyValueFactory<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.IPrincipalKeyValueFactory :
-  [T1] extends [unknown] ? Internal.IPrincipalKeyValueFactory_1<T1> : never;
+  Internal.IPrincipalKeyValueFactory_1<T1>;
 
 export type ValueComparer<
   T1 extends unknown | __ = __,
 > =
   [T1] extends [__] ? Internal.ValueComparer :
-  [T1] extends [unknown] ? Internal.ValueComparer_1<T1> : never;
+  Internal.ValueComparer_1<T1>;
 
 // Extension methods (C# using semantics)
 export type { ExtensionMethods_Microsoft_EntityFrameworkCore_ChangeTracking as ExtensionMethods } from './__internal/extensions/index.js';

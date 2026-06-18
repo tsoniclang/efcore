@@ -3431,26 +3431,6 @@
         },
         "methods": [
           {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter::CheckTypeSupported(System.Type,System.Type,System.Type[]):System.Type",
-            "targetName": "CheckTypeSupported",
-            "metadataToken": 100664896,
-            "canonicalSignature": "(System.Type,System.Type,System.Type[]):System.Type",
-            "normalizedSignature": "CheckTypeSupported|(System.Type,System.Type,System.Type[]):System.Type|static=true",
-            "emitScope": "ClassSurface",
-            "provenance": "Original",
-            "arity": 0,
-            "parameterCount": 3,
-            "isStatic": true,
-            "isAbstract": false,
-            "isVirtual": false,
-            "isOverride": false,
-            "isSealed": false,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore",
-            "isExtensionMethod": false
-          },
-          {
             "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter::ComposeWith(Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter):Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
             "targetName": "ComposeWith",
             "metadataToken": 100664897,
@@ -3646,30 +3626,7 @@
         ],
         "fields": [],
         "events": [],
-        "constructors": [
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter::.ctor(System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
-            "metadataToken": 100664886,
-            "canonicalSignature": "(System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
-            "normalizedSignature": "constructor|(System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
-            "isStatic": false,
-            "parameterCount": 3,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          },
-          {
-            "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter::.ctor(System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,System.Boolean,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
-            "metadataToken": 100664887,
-            "canonicalSignature": "(System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,System.Boolean,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void",
-            "normalizedSignature": "constructor|(System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,System.Boolean,Microsoft.EntityFrameworkCore.Storage.ValueConversion.ConverterMappingHints):void|static=false",
-            "isStatic": false,
-            "parameterCount": 4,
-            "visibility": "Protected",
-            "ownerQualifiedName": "Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter",
-            "ownerIdentity": "Microsoft.EntityFrameworkCore"
-          }
-        ]
+        "constructors": []
       },
       {
         "stableId": "Microsoft.EntityFrameworkCore:Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter`2",

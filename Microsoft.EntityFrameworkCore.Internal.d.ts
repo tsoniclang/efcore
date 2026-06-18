@@ -53,7 +53,7 @@ export { EntityFinderCollectionLoaderAdapter as EntityFinderCollectionLoaderAdap
 export { EntityFinderFactory as EntityFinderFactory } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 export { EntityFinderSource as EntityFinderSource } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 export type IDbContextDependencies = Internal.IDbContextDependencies;
-export type IDbContextFactorySource<TContext extends unknown & Internal.DbContext> = Internal.IDbContextFactorySource_1<TContext>;
+export type IDbContextFactorySource<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = Internal.IDbContextFactorySource_1<TContext>;
 export type IDbContextPoolable = Internal.IDbContextPoolable;
 export type IDbContextServices = Internal.IDbContextServices;
 export type IDbSetCache = Internal.IDbSetCache;
@@ -65,7 +65,7 @@ export type IInjectableService = Internal.IInjectableService;
 export { InternalDbSet_1 as InternalDbSet } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 export type IPatchServiceInjectionSite = Internal.IPatchServiceInjectionSite;
 export type IRegisteredServices = Internal.IRegisteredServices;
-export type IScopedDbContextLease<TContext extends unknown & Internal.DbContext> = Internal.IScopedDbContextLease_1<TContext>;
+export type IScopedDbContextLease<TContext extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }> = Internal.IScopedDbContextLease_1<TContext>;
 export type ISingletonOptionsInitializer = Internal.ISingletonOptionsInitializer;
 export { ManyToManyLoader_2 as ManyToManyLoader } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
 export { ManyToManyLoaderFactory as ManyToManyLoaderFactory } from './Microsoft.EntityFrameworkCore.Internal/internal/index.js';
@@ -94,10 +94,10 @@ export type ICollectionLoader<
   [T1] extends [(object | null)] ? Internal.ICollectionLoader_1<T1> : never;
 
 export type IDbContextPool<
-  T1 extends unknown & DbContext | __ = __,
+  T1 extends unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never } | __ = __,
 > =
   [T1] extends [__] ? Internal.IDbContextPool :
-  [T1] extends [unknown & DbContext] ? Internal.IDbContextPool_1<T1> : never;
+  [T1] extends [unknown & { readonly __tsonic_type_Microsoft_EntityFrameworkCore_DbContext: never }] ? Internal.IDbContextPool_1<T1> : never;
 
 export type IEntityFinder<
   T1 extends (object | null) | __ = __,
